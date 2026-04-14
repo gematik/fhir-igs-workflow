@@ -1845,18 +1845,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/GEM-ERP-CS-OperationOutcomeDetails"
-      },
-      "name" : "GEM ERP CS OperationOutcomeDetails",
-      "description" : "Fachliche Fehlercodes des E-Rezept-Fachdienst",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -2265,18 +2253,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/GEM-ERP-PR-OperationOutcome"
-      },
-      "name" : "GEM ERP PR OperationOutcome",
-      "description" : "OperationOutcome für Angabe von Fehlermeldungen vom E-Rezept-Fachdienst",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
       }],
       "reference" : {
@@ -2296,18 +2272,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       },
       "name" : "GEM ERP PR Task",
       "description" : "Task für die Verwaltung des E-Rezept-Workflows",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/GEM-ERP-VS-OperationOutcomeDetails"
-      },
-      "name" : "GEM ERP VS OperationOutcomeDetails",
-      "description" : "Fachliche Fehlercodes des E-Rezept-Fachdienst",
       "exampleBoolean" : false
     },
     {
@@ -2523,6 +2487,42 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       },
       "name" : "TaskExpiryDateSP",
       "description" : "Das Ablaufdatum eines E-Rezepzes. Nach ablauf dieses Datums darf ein E-Rezept nicht mehr beliefert werden.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/tiflow-operation-outcome-details-cs"
+      },
+      "name" : "TIFLOW Operation Outcome Details CS",
+      "description" : "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/tiflow-operation-outcome-details-vs"
+      },
+      "name" : "TIFLOW Operation Outcome Details VS",
+      "description" : "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tiflow-operation-outcome"
+      },
+      "name" : "TIFLOW OperationOutcome",
+      "description" : "OperationOutcome für Angabe von Fehlermeldungen vom TI-Flow-Fachdienst",
       "exampleBoolean" : false
     },
     {
@@ -3188,8 +3188,17 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
             "title" : "Client-Anforderungen: Consent-Query",
             "generation" : "markdown"
           }]
-        },
-        {
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-schnittstellen-additional-api.html"
+        }],
+        "nameUrl" : "menu-schnittstellen-additional-api.html",
+        "title" : "Additional API",
+        "generation" : "markdown",
+        "page" : [{
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
             "valueUrl" : "query-api-channels.html"

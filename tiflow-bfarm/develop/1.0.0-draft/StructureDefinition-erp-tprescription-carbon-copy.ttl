@@ -288,6 +288,7 @@
            fhir:l fhir:BackboneElement
          ]
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -310,7 +311,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter.id" ] ;
        fhir:path [ fhir:v "Parameters.parameter.id" ] ;
@@ -350,6 +355,14 @@
      ] [
        fhir:id [ fhir:v "Parameters.parameter.extension" ] ;
        fhir:path [ fhir:v "Parameters.parameter.extension" ] ;
+       fhir:slicing [
+         fhir:discriminator ( [
+           fhir:type [ fhir:v "value" ] ;
+           fhir:path [ fhir:v "url" ]
+         ] ) ;
+         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
+         fhir:rules [ fhir:v "open" ]
+       ] ;
        fhir:short [ fhir:v "Additional content defined by implementations" ] ;
        fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
        fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
@@ -448,6 +461,7 @@
        fhir:path [ fhir:v "Parameters.parameter.name" ] ;
        fhir:short [ fhir:v "Name from the definition" ] ;
        fhir:definition [ fhir:v "The name of the parameter (reference to the operation definition)." ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -737,7 +751,7 @@
            fhir:l fhir:Meta
          ]
        ] ) ;
-       fhir:condition ( [ fhir:v "inv-1" ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "inv-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -750,7 +764,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter.resource" ] ;
        fhir:path [ fhir:v "Parameters.parameter.resource" ] ;
@@ -772,7 +790,11 @@
        ] ) ;
        fhir:condition ( [ fhir:v "inv-1" ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "Entity. Role, or Act" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter.part" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part" ] ;
@@ -790,18 +812,6 @@
          fhir:v "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter>
        ] ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription" ] ;
@@ -822,6 +832,7 @@
            fhir:l fhir:BackboneElement
          ]
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -844,7 +855,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.id" ] ;
        fhir:path [ fhir:v "Parameters.parameter.id" ] ;
@@ -884,6 +899,14 @@
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.extension" ] ;
        fhir:path [ fhir:v "Parameters.parameter.extension" ] ;
+       fhir:slicing [
+         fhir:discriminator ( [
+           fhir:type [ fhir:v "value" ] ;
+           fhir:path [ fhir:v "url" ]
+         ] ) ;
+         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
+         fhir:rules [ fhir:v "open" ]
+       ] ;
        fhir:short [ fhir:v "Additional content defined by implementations" ] ;
        fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
        fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
@@ -982,6 +1005,7 @@
        fhir:path [ fhir:v "Parameters.parameter.name" ] ;
        fhir:short [ fhir:v "Name from the definition" ] ;
        fhir:definition [ fhir:v "The name of the parameter (reference to the operation definition)." ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -1276,7 +1300,7 @@
            fhir:l fhir:Meta
          ]
        ] ) ;
-       fhir:condition ( [ fhir:v "inv-1" ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "inv-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -1289,7 +1313,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.resource" ] ;
        fhir:path [ fhir:v "Parameters.parameter.resource" ] ;
@@ -1311,7 +1339,11 @@
        ] ) ;
        fhir:condition ( [ fhir:v "inv-1" ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "Entity. Role, or Act" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part" ] ;
@@ -1336,19 +1368,7 @@
          fhir:v "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter>
        ] ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
        fhir:mustSupport [ fhir:v true ] ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part.id" ] ;
@@ -1389,6 +1409,14 @@
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part.extension" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.extension" ] ;
+       fhir:slicing [
+         fhir:discriminator ( [
+           fhir:type [ fhir:v "value" ] ;
+           fhir:path [ fhir:v "url" ]
+         ] ) ;
+         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
+         fhir:rules [ fhir:v "open" ]
+       ] ;
        fhir:short [ fhir:v "Additional content defined by implementations" ] ;
        fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
        fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
@@ -1487,6 +1515,7 @@
        fhir:path [ fhir:v "Parameters.parameter.part.name" ] ;
        fhir:short [ fhir:v "Name from the definition" ] ;
        fhir:definition [ fhir:v "The name of the parameter (reference to the operation definition)." ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -1515,6 +1544,25 @@
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part.value[x]" ] ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status>
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "normative"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version>
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "4.0.0"
+         ]
+       ] ) ;
        fhir:path [ fhir:v "Parameters.parameter.part.value[x]" ] ;
        fhir:short [ fhir:v "If parameter is a data type" ] ;
        fhir:definition [ fhir:v "If the parameter is a data type." ] ;
@@ -1776,7 +1824,7 @@
            fhir:l fhir:Meta
          ]
        ] ) ;
-       fhir:condition ( [ fhir:v "inv-1" ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "inv-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -1789,7 +1837,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part.resource" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.resource" ] ;
@@ -1811,7 +1863,11 @@
        ] ) ;
        fhir:condition ( [ fhir:v "inv-1" ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "Entity. Role, or Act" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part.part" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.part" ] ;
@@ -1829,18 +1885,6 @@
          fhir:v "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter>
        ] ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:prescriptionSignatureDate" ] ;
@@ -1862,18 +1906,6 @@
            fhir:l fhir:BackboneElement
          ]
        ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:prescriptionSignatureDate.id" ] ;
@@ -1914,6 +1946,14 @@
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:prescriptionSignatureDate.extension" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.extension" ] ;
+       fhir:slicing [
+         fhir:discriminator ( [
+           fhir:type [ fhir:v "value" ] ;
+           fhir:path [ fhir:v "url" ]
+         ] ) ;
+         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
+         fhir:rules [ fhir:v "open" ]
+       ] ;
        fhir:short [ fhir:v "Additional content defined by implementations" ] ;
        fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
        fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
@@ -2012,6 +2052,7 @@
        fhir:path [ fhir:v "Parameters.parameter.part.name" ] ;
        fhir:short [ fhir:v "Name from the definition" ] ;
        fhir:definition [ fhir:v "The name of the parameter (reference to the operation definition)." ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -2061,7 +2102,7 @@
            fhir:l fhir:instant
          ]
        ] ) ;
-       fhir:condition ( [ fhir:v "inv-1" ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "inv-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -2075,7 +2116,11 @@
        ] ) ;
        fhir:mustSupport [ fhir:v true ] ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:prescriptionSignatureDate.resource" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.resource" ] ;
@@ -2097,7 +2142,11 @@
        ] ) ;
        fhir:condition ( [ fhir:v "inv-1" ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "Entity. Role, or Act" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:prescriptionSignatureDate.part" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.part" ] ;
@@ -2115,18 +2164,6 @@
          fhir:v "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter>
        ] ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:prescriptionId" ] ;
@@ -2148,18 +2185,6 @@
            fhir:l fhir:BackboneElement
          ]
        ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:prescriptionId.id" ] ;
@@ -2200,6 +2225,14 @@
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:prescriptionId.extension" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.extension" ] ;
+       fhir:slicing [
+         fhir:discriminator ( [
+           fhir:type [ fhir:v "value" ] ;
+           fhir:path [ fhir:v "url" ]
+         ] ) ;
+         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
+         fhir:rules [ fhir:v "open" ]
+       ] ;
        fhir:short [ fhir:v "Additional content defined by implementations" ] ;
        fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
        fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
@@ -2298,6 +2331,7 @@
        fhir:path [ fhir:v "Parameters.parameter.part.name" ] ;
        fhir:short [ fhir:v "Name from the definition" ] ;
        fhir:definition [ fhir:v "The name of the parameter (reference to the operation definition)." ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -2351,7 +2385,7 @@
            fhir:l <https://gematik.de/fhir/ti/StructureDefinition/e-prescription-id>
          ] )
        ] ) ;
-       fhir:condition ( [ fhir:v "inv-1" ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "inv-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -2365,7 +2399,11 @@
        ] ) ;
        fhir:mustSupport [ fhir:v true ] ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:prescriptionId.resource" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.resource" ] ;
@@ -2387,7 +2425,11 @@
        ] ) ;
        fhir:condition ( [ fhir:v "inv-1" ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "Entity. Role, or Act" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:prescriptionId.part" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.part" ] ;
@@ -2405,18 +2447,6 @@
          fhir:v "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter>
        ] ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:medicationRequest" ] ;
@@ -2438,18 +2468,6 @@
            fhir:l fhir:BackboneElement
          ]
        ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:medicationRequest.id" ] ;
@@ -2490,6 +2508,14 @@
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:medicationRequest.extension" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.extension" ] ;
+       fhir:slicing [
+         fhir:discriminator ( [
+           fhir:type [ fhir:v "value" ] ;
+           fhir:path [ fhir:v "url" ]
+         ] ) ;
+         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
+         fhir:rules [ fhir:v "open" ]
+       ] ;
        fhir:short [ fhir:v "Additional content defined by implementations" ] ;
        fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
        fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
@@ -2588,6 +2614,7 @@
        fhir:path [ fhir:v "Parameters.parameter.part.name" ] ;
        fhir:short [ fhir:v "Name from the definition" ] ;
        fhir:definition [ fhir:v "The name of the parameter (reference to the operation definition)." ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -2882,7 +2909,7 @@
            fhir:l fhir:Meta
          ]
        ] ) ;
-       fhir:condition ( [ fhir:v "inv-1" ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "inv-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -2895,7 +2922,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:medicationRequest.resource" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.resource" ] ;
@@ -2952,18 +2983,6 @@
          fhir:v "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter>
        ] ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:medication" ] ;
@@ -2985,18 +3004,6 @@
            fhir:l fhir:BackboneElement
          ]
        ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:medication.id" ] ;
@@ -3037,6 +3044,14 @@
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:medication.extension" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.extension" ] ;
+       fhir:slicing [
+         fhir:discriminator ( [
+           fhir:type [ fhir:v "value" ] ;
+           fhir:path [ fhir:v "url" ]
+         ] ) ;
+         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
+         fhir:rules [ fhir:v "open" ]
+       ] ;
        fhir:short [ fhir:v "Additional content defined by implementations" ] ;
        fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
        fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
@@ -3135,6 +3150,7 @@
        fhir:path [ fhir:v "Parameters.parameter.part.name" ] ;
        fhir:short [ fhir:v "Name from the definition" ] ;
        fhir:definition [ fhir:v "The name of the parameter (reference to the operation definition)." ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -3429,7 +3445,7 @@
            fhir:l fhir:Meta
          ]
        ] ) ;
-       fhir:condition ( [ fhir:v "inv-1" ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "inv-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -3442,7 +3458,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxPrescription.part:medication.resource" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.resource" ] ;
@@ -3495,18 +3515,6 @@
          fhir:v "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter>
        ] ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation" ] ;
@@ -3527,6 +3535,7 @@
            fhir:l fhir:BackboneElement
          ]
        ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -3549,7 +3558,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.id" ] ;
        fhir:path [ fhir:v "Parameters.parameter.id" ] ;
@@ -3589,6 +3602,14 @@
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.extension" ] ;
        fhir:path [ fhir:v "Parameters.parameter.extension" ] ;
+       fhir:slicing [
+         fhir:discriminator ( [
+           fhir:type [ fhir:v "value" ] ;
+           fhir:path [ fhir:v "url" ]
+         ] ) ;
+         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
+         fhir:rules [ fhir:v "open" ]
+       ] ;
        fhir:short [ fhir:v "Additional content defined by implementations" ] ;
        fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
        fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
@@ -3687,6 +3708,7 @@
        fhir:path [ fhir:v "Parameters.parameter.name" ] ;
        fhir:short [ fhir:v "Name from the definition" ] ;
        fhir:definition [ fhir:v "The name of the parameter (reference to the operation definition)." ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -3981,7 +4003,7 @@
            fhir:l fhir:Meta
          ]
        ] ) ;
-       fhir:condition ( [ fhir:v "inv-1" ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "inv-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -3994,7 +4016,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.resource" ] ;
        fhir:path [ fhir:v "Parameters.parameter.resource" ] ;
@@ -4016,7 +4042,11 @@
        ] ) ;
        fhir:condition ( [ fhir:v "inv-1" ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "Entity. Role, or Act" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part" ] ;
@@ -4041,19 +4071,7 @@
          fhir:v "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter>
        ] ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
        fhir:mustSupport [ fhir:v true ] ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part.id" ] ;
@@ -4094,6 +4112,14 @@
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part.extension" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.extension" ] ;
+       fhir:slicing [
+         fhir:discriminator ( [
+           fhir:type [ fhir:v "value" ] ;
+           fhir:path [ fhir:v "url" ]
+         ] ) ;
+         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
+         fhir:rules [ fhir:v "open" ]
+       ] ;
        fhir:short [ fhir:v "Additional content defined by implementations" ] ;
        fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
        fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
@@ -4192,6 +4218,7 @@
        fhir:path [ fhir:v "Parameters.parameter.part.name" ] ;
        fhir:short [ fhir:v "Name from the definition" ] ;
        fhir:definition [ fhir:v "The name of the parameter (reference to the operation definition)." ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -4220,6 +4247,25 @@
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part.value[x]" ] ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status>
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "normative"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version>
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "4.0.0"
+         ]
+       ] ) ;
        fhir:path [ fhir:v "Parameters.parameter.part.value[x]" ] ;
        fhir:short [ fhir:v "If parameter is a data type" ] ;
        fhir:definition [ fhir:v "If the parameter is a data type." ] ;
@@ -4481,7 +4527,7 @@
            fhir:l fhir:Meta
          ]
        ] ) ;
-       fhir:condition ( [ fhir:v "inv-1" ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "inv-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -4494,7 +4540,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part.resource" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.resource" ] ;
@@ -4516,7 +4566,11 @@
        ] ) ;
        fhir:condition ( [ fhir:v "inv-1" ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "Entity. Role, or Act" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part.part" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.part" ] ;
@@ -4534,18 +4588,6 @@
          fhir:v "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter>
        ] ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation" ] ;
@@ -4567,18 +4609,6 @@
            fhir:l fhir:BackboneElement
          ]
        ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.id" ] ;
@@ -4619,6 +4649,14 @@
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.extension" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.extension" ] ;
+       fhir:slicing [
+         fhir:discriminator ( [
+           fhir:type [ fhir:v "value" ] ;
+           fhir:path [ fhir:v "url" ]
+         ] ) ;
+         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
+         fhir:rules [ fhir:v "open" ]
+       ] ;
        fhir:short [ fhir:v "Additional content defined by implementations" ] ;
        fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
        fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
@@ -4717,6 +4755,7 @@
        fhir:path [ fhir:v "Parameters.parameter.part.name" ] ;
        fhir:short [ fhir:v "Name from the definition" ] ;
        fhir:definition [ fhir:v "The name of the parameter (reference to the operation definition)." ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -5011,7 +5050,7 @@
            fhir:l fhir:Meta
          ]
        ] ) ;
-       fhir:condition ( [ fhir:v "inv-1" ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "inv-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -5024,7 +5063,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.resource" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.resource" ] ;
@@ -5046,7 +5089,11 @@
        ] ) ;
        fhir:condition ( [ fhir:v "inv-1" ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "Entity. Role, or Act" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.part" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.part" ] ;
@@ -5071,19 +5118,7 @@
          fhir:v "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter>
        ] ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
        fhir:mustSupport [ fhir:v true ] ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.part.id" ] ;
@@ -5124,6 +5159,14 @@
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.part.extension" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.part.extension" ] ;
+       fhir:slicing [
+         fhir:discriminator ( [
+           fhir:type [ fhir:v "value" ] ;
+           fhir:path [ fhir:v "url" ]
+         ] ) ;
+         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
+         fhir:rules [ fhir:v "open" ]
+       ] ;
        fhir:short [ fhir:v "Additional content defined by implementations" ] ;
        fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
        fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
@@ -5222,6 +5265,7 @@
        fhir:path [ fhir:v "Parameters.parameter.part.part.name" ] ;
        fhir:short [ fhir:v "Name from the definition" ] ;
        fhir:definition [ fhir:v "The name of the parameter (reference to the operation definition)." ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -5250,6 +5294,25 @@
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.part.value[x]" ] ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status>
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "normative"
+         ]
+       ] [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version>
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "4.0.0"
+         ]
+       ] ) ;
        fhir:path [ fhir:v "Parameters.parameter.part.part.value[x]" ] ;
        fhir:short [ fhir:v "If parameter is a data type" ] ;
        fhir:definition [ fhir:v "If the parameter is a data type." ] ;
@@ -5511,7 +5574,7 @@
            fhir:l fhir:Meta
          ]
        ] ) ;
-       fhir:condition ( [ fhir:v "inv-1" ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "inv-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -5524,7 +5587,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.part.resource" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.part.resource" ] ;
@@ -5546,7 +5613,11 @@
        ] ) ;
        fhir:condition ( [ fhir:v "inv-1" ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "Entity. Role, or Act" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.part.part" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.part.part" ] ;
@@ -5564,18 +5635,6 @@
          fhir:v "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter>
        ] ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.part:medicationDispense" ] ;
@@ -5597,18 +5656,6 @@
            fhir:l fhir:BackboneElement
          ]
        ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.part:medicationDispense.id" ] ;
@@ -5649,6 +5696,14 @@
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.part:medicationDispense.extension" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.part.extension" ] ;
+       fhir:slicing [
+         fhir:discriminator ( [
+           fhir:type [ fhir:v "value" ] ;
+           fhir:path [ fhir:v "url" ]
+         ] ) ;
+         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
+         fhir:rules [ fhir:v "open" ]
+       ] ;
        fhir:short [ fhir:v "Additional content defined by implementations" ] ;
        fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
        fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
@@ -5747,6 +5802,7 @@
        fhir:path [ fhir:v "Parameters.parameter.part.part.name" ] ;
        fhir:short [ fhir:v "Name from the definition" ] ;
        fhir:definition [ fhir:v "The name of the parameter (reference to the operation definition)." ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -6041,7 +6097,7 @@
            fhir:l fhir:Meta
          ]
        ] ) ;
-       fhir:condition ( [ fhir:v "inv-1" ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "inv-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -6054,7 +6110,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.part:medicationDispense.resource" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.part.resource" ] ;
@@ -6107,18 +6167,6 @@
          fhir:v "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter>
        ] ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.part:medication" ] ;
@@ -6140,18 +6188,6 @@
            fhir:l fhir:BackboneElement
          ]
        ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.part:medication.id" ] ;
@@ -6192,6 +6228,14 @@
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.part:medication.extension" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.part.extension" ] ;
+       fhir:slicing [
+         fhir:discriminator ( [
+           fhir:type [ fhir:v "value" ] ;
+           fhir:path [ fhir:v "url" ]
+         ] ) ;
+         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
+         fhir:rules [ fhir:v "open" ]
+       ] ;
        fhir:short [ fhir:v "Additional content defined by implementations" ] ;
        fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
        fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
@@ -6290,6 +6334,7 @@
        fhir:path [ fhir:v "Parameters.parameter.part.part.name" ] ;
        fhir:short [ fhir:v "Name from the definition" ] ;
        fhir:definition [ fhir:v "The name of the parameter (reference to the operation definition)." ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -6584,7 +6629,7 @@
            fhir:l fhir:Meta
          ]
        ] ) ;
-       fhir:condition ( [ fhir:v "inv-1" ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "inv-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -6597,7 +6642,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseInformation.part:medication.resource" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.part.resource" ] ;
@@ -6650,18 +6699,6 @@
          fhir:v "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter>
        ] ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseOrganization" ] ;
@@ -6683,18 +6720,6 @@
            fhir:l fhir:BackboneElement
          ]
        ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseOrganization.id" ] ;
@@ -6735,6 +6760,14 @@
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseOrganization.extension" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.extension" ] ;
+       fhir:slicing [
+         fhir:discriminator ( [
+           fhir:type [ fhir:v "value" ] ;
+           fhir:path [ fhir:v "url" ]
+         ] ) ;
+         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
+         fhir:rules [ fhir:v "open" ]
+       ] ;
        fhir:short [ fhir:v "Additional content defined by implementations" ] ;
        fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
        fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
@@ -6833,6 +6866,7 @@
        fhir:path [ fhir:v "Parameters.parameter.part.name" ] ;
        fhir:short [ fhir:v "Name from the definition" ] ;
        fhir:definition [ fhir:v "The name of the parameter (reference to the operation definition)." ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -7127,7 +7161,7 @@
            fhir:l fhir:Meta
          ]
        ] ) ;
-       fhir:condition ( [ fhir:v "inv-1" ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "inv-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -7140,7 +7174,11 @@
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v true ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Parameters.parameter:rxDispensation.part:dispenseOrganization.resource" ] ;
        fhir:path [ fhir:v "Parameters.parameter.part.resource" ] ;
@@ -7196,18 +7234,6 @@
          fhir:v "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter>
        ] ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ]
      ] )
   ] ; # 

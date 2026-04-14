@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"20.8.1"}
-    h3,h4,h5,h6{--heading-prefix:"20.8.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"21.2.1"}
+    h3,h4,h5,h6{--heading-prefix:"21.2.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -186,6 +186,9 @@
       <li>
         <a href="menu-schnittstellen-operation-api.html">Operation API</a>
       </li>
+      <li>
+        <a href="menu-schnittstellen-additional-api.html">Additional API</a>
+      </li>
     </ul>
   </li>
   <li>
@@ -230,7 +233,7 @@ TIFlow - Kernfunktionalitäten
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-pushers.html'><b>Query API: Pushers</b></a></li><li><b>Server-Anforderungen: Pushers-Query</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-additional-api.html'><b>Additional API</b></a></li><li><a href='query-api-pushers.html'><b>Query API: Pushers</b></a></li><li><b>Server-Anforderungen: Pushers-Query</b></li>
 
           <span style="float:right;">
 
@@ -287,12 +290,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den pusher-Endpunkt.</p>
 
 <!-- A_28114 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-268" title="TI-Flow-Fachdienst - unzulässige Operationen Pushers" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-268" title="TI-Flow-Fachdienst - unzulässige Operationen Pushers" version="1">
   <meta lockversion="false" />
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten" />
   </actor>
-  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Pushers mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden, damit keine unzulässigen Operationen auf den Daten ausgeführt werden können.
+  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Pushers mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 </requirement>
 
 <!-- A_28111 -->
@@ -308,7 +311,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-Instanzen abgefragt werden.</p>
 
 <!-- A_28113 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-270" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-270" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Rollenprüfung" version="1">
   <meta lockversion="false" />
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten" />
@@ -317,7 +320,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Error Code</th>
+            <td>invalidOid</td>
+        </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
 
 <!-- A_28530 -->
@@ -332,7 +350,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="post-pushersset">POST /pushers/set</h3>
 
 <!-- A_28112 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-272" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-272" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen - Rollenprüfung" version="1">
   <meta lockversion="false" />
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten" />
@@ -341,7 +359,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <ul>
     <li>oid_versicherter</li>
   </ul>
-  die Operation aufrufen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Error Code</th>
+            <td>invalidOid</td>
+        </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
 
 
@@ -384,7 +417,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 13, 2026 15:17+0000">2026-04-13</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Apr 14, 2026 05:36+0000">2026-04-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -186,6 +186,9 @@
       <li>
         <a href="menu-schnittstellen-operation-api.html">Operation API</a>
       </li>
+      <li>
+        <a href="menu-schnittstellen-additional-api.html">Additional API</a>
+      </li>
     </ul>
   </li>
   <li>
@@ -283,30 +286,99 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.</p>
 
 <!-- A_20546-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-140" title="TI-Flow-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-140" title="TI-Flow-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR" version="1">
   <meta lockversion="false" />
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest" />
   </actor>
-    Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten, wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter ohne Kenntnis des AccessCodes ein E-Rezept löscht.
+    Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten, wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_IDENTITY_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)</td>
+        </tr>
+    </table> 
+    abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter ohne Kenntnis des AccessCodes ein E-Rezept löscht.
 </requirement>
 
 <!-- A_19120-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-141" title="TI-Flow-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-141" title="TI-Flow-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode" version="1">
   <meta lockversion="false" />
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest" />
   </actor>
-    Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer den im HTTP-Header "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode prüfen und bei Missmatch oder Fehlen im HTTP-Header, den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
+    Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer den im HTTP-Header "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode prüfen und bei Missmatch oder Fehlen im HTTP-Header, den Aufruf mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_ACCESSCODE_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
 </requirement>
 
 <!-- A_19120-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-142" title="TI-Flow-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-142" title="TI-Flow-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status" version="1">
   <meta lockversion="false" />
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest" />
   </actor>
-    Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "ready" ist, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
+  Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "ready" ist, mit dem folgenden Fehler:
+  <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    <tr>
+        <th>HTTP-Code</th>
+        <td>412 - Precondition Failed</td>
+    </tr>
+    <tr>
+        <th>Severity</th>
+        <td>error</td>
+    </tr>
+    <tr>
+        <th>Code</th>
+        <td>invalid</td>
+    </tr>
+    <tr>
+        <th>Details Code</th>
+        <td>TIFLOW_TASK_STATUS_MISMATCH</td>
+    </tr>
+    <tr>
+        <th>Details Text</th>
+        <td>Task has invalid status.</td>
+    </tr>
+  </table> 
+  abbrechen, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
 </requirement>
 
 <!-- A_19027-06 -->
@@ -392,7 +464,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 13, 2026 15:17+0000">2026-04-13</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Apr 14, 2026 05:36+0000">2026-04-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

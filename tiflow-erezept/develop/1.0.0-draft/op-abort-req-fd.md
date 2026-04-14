@@ -19,11 +19,44 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
-Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten, wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter ohne Kenntnis des AccessCodes ein E-Rezept löscht.
+Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten, wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem folgenden Fehler:
 
-Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten/Task/<id>/$abort durch verordnende Leistungserbringer den im HTTP-Header "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode prüfen und bei Missmatch oder Fehlen im HTTP-Header, den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
+* HTTP-Code: Severity
+  * 403 - Forbidden: error
+* HTTP-Code: Code
+  * 403 - Forbidden: invalid
+* HTTP-Code: Details Code
+  * 403 - Forbidden: SVC_IDENTITY_MISMATCH
+* HTTP-Code: Details Text
+  * 403 - Forbidden: Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)
 
-Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten/Task/<id>/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "ready" ist, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
+abweisen, damit ausschließlich der begünstigte Versicherte als Berechtigter ohne Kenntnis des AccessCodes ein E-Rezept löscht.
+
+Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten/Task/<id>/$abort durch verordnende Leistungserbringer den im HTTP-Header "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode prüfen und bei Missmatch oder Fehlen im HTTP-Header, den Aufruf mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 403 - Forbidden: error
+* HTTP-Code: Code
+  * 403 - Forbidden: invalid
+* HTTP-Code: Details Code
+  * 403 - Forbidden: TIFLOW_ACCESSCODE_MISMATCH
+* HTTP-Code: Details Text
+  * 403 - Forbidden: -
+
+abweisen, damit ausschließlich die verordnende Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein E-Rezept löschen.
+
+Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten/Task/<id>/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "ready" ist, mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 412 - Precondition Failed: error
+* HTTP-Code: Code
+  * 412 - Precondition Failed: invalid
+* HTTP-Code: Details Code
+  * 412 - Precondition Failed: TIFLOW_TASK_STATUS_MISMATCH
+* HTTP-Code: Details Text
+  * 412 - Precondition Failed: Task has invalid status.
+
+abbrechen, damit die verordnende Leistungserbringerinstitution eine Verordnung nur löschen kann, wenn sie sich noch nicht in Belieferung befindet oder beliefert wurde.
 
 Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort alle personenbezogenen medizinischen Daten, außer der KVNR in Task.for, aus dem referenzierten Task entfernen. Dies gilt insbesondere für:
 * Task.input --> löschen (inkl. aller referenzierten Elemente)
@@ -53,21 +86,78 @@ Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks für eine Verordnung mit F
 * oid_institution-vorsorge-reha
 * oid_oeffentliche_apotheke
 * oid_krankenhausapotheke
-die Operation am Fachdienst aufrufen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
+die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
 
-Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort verhindern und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten Tasks gleich "in-progress" ist und die Rolle des aufrufenden Nutzers nicht einer der folgenden Rollen entspricht:
+* HTTP-Code: Severity
+  * 403 - Forbidden: error
+* HTTP-Code: Code
+  * 403 - Forbidden: invalid
+* HTTP-Code: Details Code
+  * 403 - Forbidden: TIFLOW_AUTH_ROLE_NOT_ALLOWED
+* HTTP-Code: Details Text
+  * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
+
+abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
+
+Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort verhindern und die Operation mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 403 - Forbidden: error
+* HTTP-Code: Code
+  * 403 - Forbidden: invalid
+* HTTP-Code: Details Code
+  * 403 - Forbidden: TIFLOW_TASK_STATUS_MISMATCH
+* HTTP-Code: Details Text
+  * 403 - Forbidden: Task has invalid status.
+
+abweisen, wenn der Status des adressierten Tasks gleich "in-progress" ist und die Rolle des aufrufenden Nutzers nicht einer der folgenden Rollen entspricht:
 * oid_oeffentliche_apotheke
 * oid_krankenhausapotheke
 damit Nutzer außerhalb der Apotheke keine Rezepte löschen, die sich aktuell in Belieferung befinden.
 
-Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort verhindern und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten Tasks ungleich "in-progress" ist und die Rolle des aufrufenden Nutzers einer der folgenden Rollen entspricht:
+Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort verhindern, wenn der Status des adressierten Tasks ungleich "in-progress" ist und die Rolle des aufrufenden Nutzers einer der folgenden Rollen entspricht:
 * oid_oeffentliche_apotheke
 * oid_krankenhausapotheke
-damit kein Apotheker ein Rezept löscht, das ihm nicht ausdrücklich zugewiesen wurde.
+, und die Operation mit dem folgenden Fehler:
 
-Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort durch abgebende Leistungserbringer (Apotheken) das im URL-Parameter "?secret=..." übertragene Geheimnis gegen das im referenzierten Task enthaltene Secret in Task.identifier prüfen und bei Missmatch oder Fehlen des URL-Parameters den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich Apotheker in Kenntnis des Secret als Berechtigte ein E-Rezept löschen.
+* HTTP-Code: Severity
+  * 403 - Forbidden: error
+* HTTP-Code: Code
+  * 403 - Forbidden: invalid
+* HTTP-Code: Details Code
+  * 403 - Forbidden: TIFLOW_TASK_STATUS_MISMATCH
+* HTTP-Code: Details Text
+  * 403 - Forbidden: Task has invalid status.
 
-Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts mit dem Flowtype 169 oder 209 über den mittels der <id> adressierten /Task/<id>/$abort verhindern und die Operation mit dem HTTP-Fehlercode 403 abweisen, wenn der Status des adressierten Tasks ungleich "completed" ist und die Rolle des aufrufenden Nutzers der folgenden Rollen entspricht: oid_versicherter damit kein Versicherter ein E-Rezept aus einem Workflow mit Workflowsteuerung durch Leistungserbringer (169, 209) löscht, das nicht bereits beliefert wurde.
+abbrechen, damit kein Apotheker ein Rezept löscht, das ihm nicht ausdrücklich zugewiesen wurde.
+
+Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort durch abgebende Leistungserbringer (Apotheken) das im URL-Parameter "?secret=..." übertragene Geheimnis gegen das im referenzierten Task enthaltene Secret in Task.identifier prüfen und bei Missmatch oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 403 - Forbidden: error
+* HTTP-Code: Code
+  * 403 - Forbidden: invalid
+* HTTP-Code: Details Code
+  * 403 - Forbidden: TIFLOW_SECRET_MISMATCH
+* HTTP-Code: Details Text
+  * 403 - Forbidden: -
+
+abbrechen, damit ausschließlich Apotheker in Kenntnis des Secret als Berechtigte ein E-Rezept löschen.
+
+Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts mit dem Flowtype 169 oder 209 über den mittels der <id> adressierten /Task/<id>/$abort verhindern, wenn der Status des adressierten Tasks ungleich "completed" ist und die Rolle des aufrufenden Nutzers der folgenden Rolle entspricht:
+* oid_versicherter
+, und die Operation mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 403 - Forbidden: error
+* HTTP-Code: Code
+  * 403 - Forbidden: invalid
+* HTTP-Code: Details Code
+  * 403 - Forbidden: TIFLOW_TASK_STATUS_MISMATCH
+* HTTP-Code: Details Text
+  * 403 - Forbidden: Task has invalid status.
+
+abweisen, damit kein Versicherter ein E-Rezept aus einem Workflow mit Workflowsteuerung durch Leistungserbringer (169, 209) löscht, das nicht bereits beliefert wurde.
 
 Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts mittels POST /Task/<id>/$abort durch eine verordnende oder abgebende Leistungserbringerinstitution die Daten für die Löschinformation des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.
 

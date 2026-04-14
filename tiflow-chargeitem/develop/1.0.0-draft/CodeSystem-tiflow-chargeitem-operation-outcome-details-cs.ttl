@@ -1,0 +1,92 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/chargeitem/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "tiflow-chargeitem-operation-outcome-details-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem tiflow-chargeitem-operation-outcome-details-cs</b></p><a name=\"tiflow-chargeitem-operation-outcome-details-cs\"> </a><a name=\"hctiflow-chargeitem-operation-outcome-details-cs\"> </a><p>This  code system <code>https://gematik.de/fhir/tiflow/chargeitem/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (Deutschland) (German (Germany), de)</b></td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV<a name=\"tiflow-chargeitem-operation-outcome-details-cs-TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV\"> </a></td><td>Coverage not PKV</td><td>The referenced prescription coverage type is not PKV and therefore not valid for ChargeItem processing</td><td>Kostenträgertyp nicht PKV</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID<a name=\"tiflow-chargeitem-operation-outcome-details-cs-TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID\"> </a></td><td>Dispense signature invalid</td><td>The PKV dispense dataset is missing a valid signature or contains an invalid signature</td><td>Signatur des PKV-Abgabedatensatzes ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID<a name=\"tiflow-chargeitem-operation-outcome-details-cs-TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID\"> </a></td><td>Dispense certificate invalid</td><td>The certificate used for the signature of the PKV dispense dataset is invalid, expired, or revoked</td><td>Zertifikat des PKV-Abgabedatensatzes ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CHARGEITEM_ID_REQUIRED<a name=\"tiflow-chargeitem-operation-outcome-details-cs-TIFLOW_CHARGEITEM_ID_REQUIRED\"> </a></td><td>ChargeItem id required</td><td>The operation requires a concrete ChargeItem id in the request path</td><td>ChargeItem-ID erforderlich</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_CHARGEITEM_NOT_FOUND<a name=\"tiflow-chargeitem-operation-outcome-details-cs-TIFLOW_CHARGEITEM_NOT_FOUND\"> </a></td><td>ChargeItem not found</td><td>The referenced ChargeItem resource does not exist</td><td>ChargeItem nicht gefunden</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/tiflow/chargeitem/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/tiflow/chargeitem/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs>
+  ] ; # 
+  fhir:version [ fhir:v "1.0.0-draft"] ; # 
+  fhir:name [ fhir:v "TIFLOWChargeItemOperationOutcomeDetailsCS"] ; # 
+  fhir:title [ fhir:v "TIFLOW ChargeItem Operation Outcome Details CS"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-04-14T05:44:07+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "DE" ] ;
+       fhir:display [ fhir:v "Germany" ]
+     ] )
+  ] ) ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "5"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV" ] ;
+     fhir:display [ fhir:v "Coverage not PKV" ] ;
+     fhir:definition [ fhir:v "The referenced prescription coverage type is not PKV and therefore not valid for ChargeItem processing" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Kostenträgertyp nicht PKV" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID" ] ;
+     fhir:display [ fhir:v "Dispense signature invalid" ] ;
+     fhir:definition [ fhir:v "The PKV dispense dataset is missing a valid signature or contains an invalid signature" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Signatur des PKV-Abgabedatensatzes ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID" ] ;
+     fhir:display [ fhir:v "Dispense certificate invalid" ] ;
+     fhir:definition [ fhir:v "The certificate used for the signature of the PKV dispense dataset is invalid, expired, or revoked" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "Zertifikat des PKV-Abgabedatensatzes ungültig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_CHARGEITEM_ID_REQUIRED" ] ;
+     fhir:display [ fhir:v "ChargeItem id required" ] ;
+     fhir:definition [ fhir:v "The operation requires a concrete ChargeItem id in the request path" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "ChargeItem-ID erforderlich" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TIFLOW_CHARGEITEM_NOT_FOUND" ] ;
+     fhir:display [ fhir:v "ChargeItem not found" ] ;
+     fhir:definition [ fhir:v "The referenced ChargeItem resource does not exist" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "de-DE" ] ;
+       fhir:value [ fhir:v "ChargeItem nicht gefunden" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

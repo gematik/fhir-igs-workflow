@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>TIFLOW EREZEPT Operation Outcome Details VS - TIFlow - Verordnungen für Arzneimittel v1.0.0-draft</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
+    }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
+</style>
+
+<script type="text/javascript" src="assets/js/heading-links.js"> </script>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"6.2"}
+    h3,h4,h5,h6{--heading-prefix:"6.2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Fachlichkeit
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-fachlichkeit-e-rezept.html">Arzneimittel</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-t-rezept.html">Teratogene Arzneimittel</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-mvo.html">Mehrfachverordnungen</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-wf-le.html">Workflow-Steuerung durch LE</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-ux-verordnend.html">UX verordnend</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-ux-abgebend.html">UX abgebend</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Umsetzung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-dosierung.html">Strukturierte Dosierungen</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-dispensierinformationen.html">Dispensierinformationen</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="referenced.html">Referenzen</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="license.html">Lizenz</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+TIFlow - Verordnungen für Arzneimittel
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 1.0.0-draft - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>FHIR-Artefakte</b></a></li><li><b>TIFLOW EREZEPT Operation Outcome Details VS</b></li>
+
+          <span style="float:right;">
+
+            <a href="CapabilityStatement-erp-fachdienst-server-rx.ttl.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="ValueSet-tiflow-erezept-operation-outcome-details-vs-testing.html">nächste&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div class="col-12">
+  
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-tiflow-erezept-operation-outcome-details-vs.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-tiflow-erezept-operation-outcome-details-vs.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-tiflow-erezept-operation-outcome-details-vs.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: TIFLOW EREZEPT Operation Outcome Details VS
+
+  </h2>
+  <table class="colsd">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://gematik.de/fhir/tiflow/ValueSet/tiflow-erezept-operation-outcome-details-vs<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://gematik.de/fhir/tiflow/ValueSet/tiflow-erezept-operation-outcome-details-vs"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">1.0.0-draft<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://gematik.de/fhir/tiflow/ValueSet/tiflow-erezept-operation-outcome-details-vs|1.0.0-draft"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Draft
+          
+            as of 2025-09-25
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">TIFLOWEREZEPTOperationOutcomeDetailsVS</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<p>This value set is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)</p>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+<!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"></p><a name="tiflow-erezept-operation-outcome-details-vs"> </a><a name="hctiflow-erezept-operation-outcome-details-vs"> </a><p>This value set includes codes based on the following rules:</p>
+<ul><li>Include all codes defined in <a href="CodeSystem-tiflow-erezept-operation-outcome-details-cs.html"><code>https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;1.0.0-draft</span></li>
+<li>Include these codes as defined in <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html"><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;1.0.0-draft</span>
+<table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_AUTH_ROLE_NOT_ALLOWED">TIFLOW_AUTH_ROLE_NOT_ALLOWED</a></td>
+<td>Access role not allowed</td>
+<td>The authenticated actor role is not permitted to execute this operation</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SECRET_MISMATCH">TIFLOW_SECRET_MISMATCH</a></td>
+<td>Task secret mismatch</td>
+<td>The provided task secret does not match the secret stored for the task</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_STATUS_MISMATCH">TIFLOW_TASK_STATUS_MISMATCH</a></td>
+<td>Task status mismatch</td>
+<td>The task is in a status that does not allow execution of this operation</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_MEDICATION_DISPENSE_INVALID">TIFLOW_MEDICATION_DISPENSE_INVALID</a></td>
+<td>MedicationDispense invalid</td>
+<td>The provided MedicationDispense resource is invalid for this operation</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_MEDICATION_DISPENSE_MISSING">TIFLOW_MEDICATION_DISPENSE_MISSING</a></td>
+<td>MedicationDispense missing</td>
+<td>A required MedicationDispense resource is missing for this operation</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_NO_OCSP_RESPONSE">TIFLOW_SIGNATURE_NO_OCSP_RESPONSE</a></td>
+<td>No OCSP response for signature</td>
+<td>Certificate revocation status could not be determined because no OCSP response was available</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_AUTH_NOT_OWNER">TIFLOW_AUTH_NOT_OWNER</a></td>
+<td>Authenticated actor is not owner</td>
+<td>The authenticated actor is not the owner of the addressed task</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_ACCESSCODE_MISMATCH">TIFLOW_ACCESSCODE_MISMATCH</a></td>
+<td>Access code mismatch</td>
+<td>The provided access code does not match the access code assigned to the task</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_ID_REQUIRED">TIFLOW_TASK_ID_REQUIRED</a></td>
+<td>Task id required</td>
+<td>The operation requires a task id in the request</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_KVNR_MISMATCH">TIFLOW_KVNR_MISMATCH</a></td>
+<td>KVNR mismatch</td>
+<td>The KVNR in the request does not match the KVNR assigned to the task context</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE">TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</a></td>
+<td>Signature issuing role invalid</td>
+<td>The signature was created by an actor role that is not allowed for the signed artifact</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_FLOWTYPE_MISMATCH">TIFLOW_FLOWTYPE_MISMATCH</a></td>
+<td>Flow type mismatch</td>
+<td>The task flow type does not match the expected flow for this operation</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_COVERAGE_TYPE_MISMATCH">TIFLOW_COVERAGE_TYPE_MISMATCH</a></td>
+<td>Coverage type mismatch</td>
+<td>The coverage type does not match the expected coverage context</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_CERTIFICATE_INVALID">TIFLOW_CERTIFICATE_INVALID</a></td>
+<td>Certificate invalid</td>
+<td>The certificate used for authentication or signature validation is invalid</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_OCSP_BACKEND_ERROR">TIFLOW_OCSP_BACKEND_ERROR</a></td>
+<td>Invalid OCSP response</td>
+<td>Failed to retrieve the OCSP response for the certificate of the signature</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_INVALID">TIFLOW_SIGNATURE_INVALID</a></td>
+<td>Signature invalid</td>
+<td>The digital signature is invalid or cannot be verified</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_KVNR_INVALID">TIFLOW_KVNR_INVALID</a></td>
+<td>KVNR invalid</td>
+<td>The provided KVNR is invalid or does not conform to the expected format</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH">TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH</a></td>
+<td>Signature authoredOn mismatch</td>
+<td>The authoredOn timestamp does not match the signed content</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_IKNR_INVALID">TIFLOW_IKNR_INVALID</a></td>
+<td>IKNR invalid</td>
+<td>The provided IKNR is invalid or not accepted in this context</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_LANR_ZANR_INVALID">TIFLOW_LANR_ZANR_INVALID</a></td>
+<td>LANR or ZANR invalid</td>
+<td>The provided LANR or ZANR is invalid or not accepted for this operation</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_DELETED">TIFLOW_TASK_DELETED</a></td>
+<td>Task deleted</td>
+<td>The task was already cancelled or deleted and can no longer be processed</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_EXPIRED">TIFLOW_TASK_EXPIRED</a></td>
+<td>Task expired</td>
+<td>The task cannot be processed because its redemption period has expired</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_MESSAGE_TO_SELF">TIFLOW_MESSAGE_TO_SELF</a></td>
+<td>Message to self not allowed</td>
+<td>A communication message addressed to the sender itself is not permitted</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_COMMUNICATION_PAYLOAD_INVALID">TIFLOW_COMMUNICATION_PAYLOAD_INVALID</a></td>
+<td>Communication payload invalid</td>
+<td>The communication payload is syntactically or semantically invalid</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_INSURANT_NOT_ELIGIBLE">TIFLOW_INSURANT_NOT_ELIGIBLE</a></td>
+<td>Insurant not eligible</td>
+<td>The insurant does not meet the eligibility constraints for this communication flow</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_RECIPIENT_INVALID">TIFLOW_RECIPIENT_INVALID</a></td>
+<td>Recipient invalid</td>
+<td>The specified recipient is invalid for the requested communication</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_NOT_FOUND">TIFLOW_TASK_NOT_FOUND</a></td>
+<td>Task not found</td>
+<td>The referenced task does not exist</td></tr>
+<tr><td><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_MVO_NOT_VALID_YET">TIFLOW_MVO_NOT_VALID_YET</a></td>
+<td>MVO not valid yet</td>
+<td>The multi-prescription is not yet valid at the current point in time</td></tr></table></li>
+<li>Include these codes as defined in <a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;canonical=https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes"><code>https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes</code></a><span title="Version is not explicitly stated, which means it is fixed to 1.1.1, the version found through the package references"> version &#x1F4E6;1.1.1</span>
+<table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr>
+<tr><td><a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;canonical=https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes#operation-outcome-details-codes-SVC_VALIDATION_FAILED">SVC_VALIDATION_FAILED</a></td>
+<td>FHIR Profile Validation Failed</td></tr>
+<tr><td><a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;canonical=https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes#operation-outcome-details-codes-SVC_IDENTITY_MISMATCH">SVC_IDENTITY_MISMATCH</a></td>
+<td>Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)</td></tr>
+<tr><td><a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;canonical=https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes#operation-outcome-details-codes-SVC_TELEMATIKID_TEMPORARILY_BLOCKED">SVC_TELEMATIKID_TEMPORARILY_BLOCKED</a></td>
+<td>The specified Telematik-ID is temporarily blocked</td></tr></table></li></ul></div>
+
+  <p>&#160;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"/><div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px"><p>Expansion performed internally based on:</p><ul><li><a href="CodeSystem-tiflow-erezept-operation-outcome-details-cs.html">codesystem TIFLOW EREZEPT Operation Outcome Details CS v1.0.0-draft (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs|1.0.0-draft" title="Click to Copy URL" class="btn-copy"> </button></span></li><li><a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;canonical=https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes">codesystem TI Operation Outcome Details CodeSystem v1.1.1 (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes|1.1.1" title="Click to Copy URL" class="btn-copy"> </button></span></li><li><a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html">codesystem TIFLOW Operation Outcome Details CS v1.0.0-draft (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs|1.0.0-draft" title="Click to Copy URL" class="btn-copy"> </button></span></li></ul></div><p>This value set contains 37 concepts</p><table class="codes" data-fhir="generated"><tr><td><b>System</b></td><td style="white-space:nowrap"><b>Code</b></td><td><b>Display (de)</b></td><td><b>Definition</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name="x-https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_PZN_INVALID"> </a><code>https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="CodeSystem-tiflow-erezept-operation-outcome-details-cs.html#tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_PZN_INVALID">TIFLOW_EREZEPT_PZN_INVALID</a></td><td>PZN ungültig</td><td>The provided PZN is invalid or not permitted in the current processing context</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_EREZEPT_PZN_INVALID&quot;, &quot;display&quot;: &quot;PZN ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_EREZEPT_PZN_INVALID&quot;&gt;&lt;display value=&quot;PZN ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN"> </a><code>https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="CodeSystem-tiflow-erezept-operation-outcome-details-cs.html#tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN">TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN</a></td><td>Arzneimittelkategorie nicht zulässig</td><td>The prescription contains a forbidden medication category, for example BTM</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN&quot;, &quot;display&quot;: &quot;Arzneimittelkategorie nicht zulässig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN&quot;&gt;&lt;display value=&quot;Arzneimittelkategorie nicht zulässig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID"> </a><code>https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="CodeSystem-tiflow-erezept-operation-outcome-details-cs.html#tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID">TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID</a></td><td>MVO-Flowtyp ungültig</td><td>A multiple prescription is not allowed for the addressed flow type</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID&quot;, &quot;display&quot;: &quot;MVO-Flowtyp ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID&quot;&gt;&lt;display value=&quot;MVO-Flowtyp ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_INVALID"> </a><code>https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="CodeSystem-tiflow-erezept-operation-outcome-details-cs.html#tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_INVALID">TIFLOW_EREZEPT_MVO_INVALID</a></td><td>Mehrfachverordnung ungültig</td><td>The multiple prescription metadata is inconsistent or violates MVO constraints</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_EREZEPT_MVO_INVALID&quot;, &quot;display&quot;: &quot;Mehrfachverordnung ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_EREZEPT_MVO_INVALID&quot;&gt;&lt;display value=&quot;Mehrfachverordnung ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_STARTDATE_INVALID"> </a><code>https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="CodeSystem-tiflow-erezept-operation-outcome-details-cs.html#tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_STARTDATE_INVALID">TIFLOW_EREZEPT_MVO_STARTDATE_INVALID</a></td><td>MVO-Startdatum ungültig</td><td>The start date of the multiple prescription redemption period is missing or invalid</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_EREZEPT_MVO_STARTDATE_INVALID&quot;, &quot;display&quot;: &quot;MVO-Startdatum ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_EREZEPT_MVO_STARTDATE_INVALID&quot;&gt;&lt;display value=&quot;MVO-Startdatum ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_ENDDATE_INVALID"> </a><code>https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="CodeSystem-tiflow-erezept-operation-outcome-details-cs.html#tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_ENDDATE_INVALID">TIFLOW_EREZEPT_MVO_ENDDATE_INVALID</a></td><td>MVO-Enddatum ungültig</td><td>The end date of the multiple prescription redemption period is invalid</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_EREZEPT_MVO_ENDDATE_INVALID&quot;, &quot;display&quot;: &quot;MVO-Enddatum ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_EREZEPT_MVO_ENDDATE_INVALID&quot;&gt;&lt;display value=&quot;MVO-Enddatum ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_ID_INVALID"> </a><code>https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="CodeSystem-tiflow-erezept-operation-outcome-details-cs.html#tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_ID_INVALID">TIFLOW_EREZEPT_MVO_ID_INVALID</a></td><td>MVO-ID ungültig</td><td>The multiple prescription id does not match the required identifier schema</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_EREZEPT_MVO_ID_INVALID&quot;, &quot;display&quot;: &quot;MVO-ID ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_EREZEPT_MVO_ID_INVALID&quot;&gt;&lt;display value=&quot;MVO-ID ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_NOT_VALID"> </a><code>https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="CodeSystem-tiflow-erezept-operation-outcome-details-cs.html#tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_NOT_VALID">TIFLOW_EREZEPT_MVO_NOT_VALID</a></td><td>Teilverordnung noch nicht einlösbar</td><td>The multiple prescription part is not redeemable yet because its redemption period has not started</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_EREZEPT_MVO_NOT_VALID&quot;, &quot;display&quot;: &quot;Teilverordnung noch nicht einlösbar&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_EREZEPT_MVO_NOT_VALID&quot;&gt;&lt;display value=&quot;Teilverordnung noch nicht einlösbar&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_AUTH_ROLE_NOT_ALLOWED"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_AUTH_ROLE_NOT_ALLOWED">TIFLOW_AUTH_ROLE_NOT_ALLOWED</a></td><td>Zugriffsrolle nicht zulässig</td><td>The authenticated actor role is not permitted to execute this operation</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_AUTH_ROLE_NOT_ALLOWED&quot;, &quot;display&quot;: &quot;Zugriffsrolle nicht zulässig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_AUTH_ROLE_NOT_ALLOWED&quot;&gt;&lt;display value=&quot;Zugriffsrolle nicht zulässig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_SECRET_MISMATCH"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SECRET_MISMATCH">TIFLOW_SECRET_MISMATCH</a></td><td>Task-Secret stimmt nicht überein</td><td>The provided task secret does not match the secret stored for the task</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_SECRET_MISMATCH&quot;, &quot;display&quot;: &quot;Task-Secret stimmt nicht überein&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_SECRET_MISMATCH&quot;&gt;&lt;display value=&quot;Task-Secret stimmt nicht überein&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_TASK_STATUS_MISMATCH"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_STATUS_MISMATCH">TIFLOW_TASK_STATUS_MISMATCH</a></td><td>Task-Status passt nicht</td><td>The task is in a status that does not allow execution of this operation</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_TASK_STATUS_MISMATCH&quot;, &quot;display&quot;: &quot;Task-Status passt nicht&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_TASK_STATUS_MISMATCH&quot;&gt;&lt;display value=&quot;Task-Status passt nicht&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_MEDICATION_DISPENSE_INVALID"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_MEDICATION_DISPENSE_INVALID">TIFLOW_MEDICATION_DISPENSE_INVALID</a></td><td>MedicationDispense ungültig</td><td>The provided MedicationDispense resource is invalid for this operation</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_MEDICATION_DISPENSE_INVALID&quot;, &quot;display&quot;: &quot;MedicationDispense ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_MEDICATION_DISPENSE_INVALID&quot;&gt;&lt;display value=&quot;MedicationDispense ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_MEDICATION_DISPENSE_MISSING"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_MEDICATION_DISPENSE_MISSING">TIFLOW_MEDICATION_DISPENSE_MISSING</a></td><td>MedicationDispense fehlt</td><td>A required MedicationDispense resource is missing for this operation</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_MEDICATION_DISPENSE_MISSING&quot;, &quot;display&quot;: &quot;MedicationDispense fehlt&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_MEDICATION_DISPENSE_MISSING&quot;&gt;&lt;display value=&quot;MedicationDispense fehlt&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_NO_OCSP_RESPONSE"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_NO_OCSP_RESPONSE">TIFLOW_SIGNATURE_NO_OCSP_RESPONSE</a></td><td>Keine OCSP-Antwort zur Signatur</td><td>Certificate revocation status could not be determined because no OCSP response was available</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_SIGNATURE_NO_OCSP_RESPONSE&quot;, &quot;display&quot;: &quot;Keine OCSP-Antwort zur Signatur&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_SIGNATURE_NO_OCSP_RESPONSE&quot;&gt;&lt;display value=&quot;Keine OCSP-Antwort zur Signatur&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_AUTH_NOT_OWNER"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_AUTH_NOT_OWNER">TIFLOW_AUTH_NOT_OWNER</a></td><td>Authentifizierter Akteur ist nicht Eigentümer</td><td>The authenticated actor is not the owner of the addressed task</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_AUTH_NOT_OWNER&quot;, &quot;display&quot;: &quot;Authentifizierter Akteur ist nicht Eigentümer&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_AUTH_NOT_OWNER&quot;&gt;&lt;display value=&quot;Authentifizierter Akteur ist nicht Eigentümer&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_ACCESSCODE_MISMATCH"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_ACCESSCODE_MISMATCH">TIFLOW_ACCESSCODE_MISMATCH</a></td><td>AccessCode stimmt nicht überein</td><td>The provided access code does not match the access code assigned to the task</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_ACCESSCODE_MISMATCH&quot;, &quot;display&quot;: &quot;AccessCode stimmt nicht überein&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_ACCESSCODE_MISMATCH&quot;&gt;&lt;display value=&quot;AccessCode stimmt nicht überein&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_TASK_ID_REQUIRED"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_ID_REQUIRED">TIFLOW_TASK_ID_REQUIRED</a></td><td>Task-ID erforderlich</td><td>The operation requires a task id in the request</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_TASK_ID_REQUIRED&quot;, &quot;display&quot;: &quot;Task-ID erforderlich&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_TASK_ID_REQUIRED&quot;&gt;&lt;display value=&quot;Task-ID erforderlich&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_KVNR_MISMATCH"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_KVNR_MISMATCH">TIFLOW_KVNR_MISMATCH</a></td><td>KVNR stimmt nicht überein</td><td>The KVNR in the request does not match the KVNR assigned to the task context</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_KVNR_MISMATCH&quot;, &quot;display&quot;: &quot;KVNR stimmt nicht überein&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_KVNR_MISMATCH&quot;&gt;&lt;display value=&quot;KVNR stimmt nicht überein&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE">TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</a></td><td>Signaturrolle ungültig</td><td>The signature was created by an actor role that is not allowed for the signed artifact</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE&quot;, &quot;display&quot;: &quot;Signaturrolle ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE&quot;&gt;&lt;display value=&quot;Signaturrolle ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_FLOWTYPE_MISMATCH"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_FLOWTYPE_MISMATCH">TIFLOW_FLOWTYPE_MISMATCH</a></td><td>Flowtyp passt nicht</td><td>The task flow type does not match the expected flow for this operation</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_FLOWTYPE_MISMATCH&quot;, &quot;display&quot;: &quot;Flowtyp passt nicht&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_FLOWTYPE_MISMATCH&quot;&gt;&lt;display value=&quot;Flowtyp passt nicht&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_COVERAGE_TYPE_MISMATCH"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_COVERAGE_TYPE_MISMATCH">TIFLOW_COVERAGE_TYPE_MISMATCH</a></td><td>Coverage-Typ passt nicht</td><td>The coverage type does not match the expected coverage context</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_COVERAGE_TYPE_MISMATCH&quot;, &quot;display&quot;: &quot;Coverage-Typ passt nicht&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_COVERAGE_TYPE_MISMATCH&quot;&gt;&lt;display value=&quot;Coverage-Typ passt nicht&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_CERTIFICATE_INVALID"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_CERTIFICATE_INVALID">TIFLOW_CERTIFICATE_INVALID</a></td><td>Zertifikat ungültig</td><td>The certificate used for authentication or signature validation is invalid</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_CERTIFICATE_INVALID&quot;, &quot;display&quot;: &quot;Zertifikat ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_CERTIFICATE_INVALID&quot;&gt;&lt;display value=&quot;Zertifikat ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_OCSP_BACKEND_ERROR"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_OCSP_BACKEND_ERROR">TIFLOW_OCSP_BACKEND_ERROR</a></td><td>OCSP Abfrage fehlgeschlagen</td><td>Failed to retrieve the OCSP response for the certificate of the signature</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_OCSP_BACKEND_ERROR&quot;, &quot;display&quot;: &quot;OCSP Abfrage fehlgeschlagen&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_OCSP_BACKEND_ERROR&quot;&gt;&lt;display value=&quot;OCSP Abfrage fehlgeschlagen&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_INVALID"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_INVALID">TIFLOW_SIGNATURE_INVALID</a></td><td>Signatur ungültig</td><td>The digital signature is invalid or cannot be verified</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_SIGNATURE_INVALID&quot;, &quot;display&quot;: &quot;Signatur ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_SIGNATURE_INVALID&quot;&gt;&lt;display value=&quot;Signatur ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_KVNR_INVALID"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_KVNR_INVALID">TIFLOW_KVNR_INVALID</a></td><td>KVNR ungültig</td><td>The provided KVNR is invalid or does not conform to the expected format</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_KVNR_INVALID&quot;, &quot;display&quot;: &quot;KVNR ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_KVNR_INVALID&quot;&gt;&lt;display value=&quot;KVNR ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH">TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH</a></td><td>Signaturzeitpunkt passt nicht</td><td>The authoredOn timestamp does not match the signed content</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH&quot;, &quot;display&quot;: &quot;Signaturzeitpunkt passt nicht&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH&quot;&gt;&lt;display value=&quot;Signaturzeitpunkt passt nicht&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_IKNR_INVALID"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_IKNR_INVALID">TIFLOW_IKNR_INVALID</a></td><td>IKNR ungültig</td><td>The provided IKNR is invalid or not accepted in this context</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_IKNR_INVALID&quot;, &quot;display&quot;: &quot;IKNR ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_IKNR_INVALID&quot;&gt;&lt;display value=&quot;IKNR ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_LANR_ZANR_INVALID"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_LANR_ZANR_INVALID">TIFLOW_LANR_ZANR_INVALID</a></td><td>LANR oder ZANR ungültig</td><td>The provided LANR or ZANR is invalid or not accepted for this operation</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_LANR_ZANR_INVALID&quot;, &quot;display&quot;: &quot;LANR oder ZANR ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_LANR_ZANR_INVALID&quot;&gt;&lt;display value=&quot;LANR oder ZANR ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_TASK_DELETED"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_DELETED">TIFLOW_TASK_DELETED</a></td><td>Task wurde gelöscht</td><td>The task was already cancelled or deleted and can no longer be processed</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_TASK_DELETED&quot;, &quot;display&quot;: &quot;Task wurde gelöscht&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_TASK_DELETED&quot;&gt;&lt;display value=&quot;Task wurde gelöscht&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_TASK_EXPIRED"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_EXPIRED">TIFLOW_TASK_EXPIRED</a></td><td>Task ist abgelaufen</td><td>The task cannot be processed because its redemption period has expired</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_TASK_EXPIRED&quot;, &quot;display&quot;: &quot;Task ist abgelaufen&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_TASK_EXPIRED&quot;&gt;&lt;display value=&quot;Task ist abgelaufen&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_MESSAGE_TO_SELF"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_MESSAGE_TO_SELF">TIFLOW_MESSAGE_TO_SELF</a></td><td>Nachricht an sich selbst nicht zulässig</td><td>A communication message addressed to the sender itself is not permitted</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_MESSAGE_TO_SELF&quot;, &quot;display&quot;: &quot;Nachricht an sich selbst nicht zulässig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_MESSAGE_TO_SELF&quot;&gt;&lt;display value=&quot;Nachricht an sich selbst nicht zulässig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_COMMUNICATION_PAYLOAD_INVALID"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_COMMUNICATION_PAYLOAD_INVALID">TIFLOW_COMMUNICATION_PAYLOAD_INVALID</a></td><td>Kommunikationsinhalt ungültig</td><td>The communication payload is syntactically or semantically invalid</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_COMMUNICATION_PAYLOAD_INVALID&quot;, &quot;display&quot;: &quot;Kommunikationsinhalt ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_COMMUNICATION_PAYLOAD_INVALID&quot;&gt;&lt;display value=&quot;Kommunikationsinhalt ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_INSURANT_NOT_ELIGIBLE"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_INSURANT_NOT_ELIGIBLE">TIFLOW_INSURANT_NOT_ELIGIBLE</a></td><td>Versicherter nicht berechtigt</td><td>The insurant does not meet the eligibility constraints for this communication flow</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_INSURANT_NOT_ELIGIBLE&quot;, &quot;display&quot;: &quot;Versicherter nicht berechtigt&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_INSURANT_NOT_ELIGIBLE&quot;&gt;&lt;display value=&quot;Versicherter nicht berechtigt&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_RECIPIENT_INVALID"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_RECIPIENT_INVALID">TIFLOW_RECIPIENT_INVALID</a></td><td>Empfänger ungültig</td><td>The specified recipient is invalid for the requested communication</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_RECIPIENT_INVALID&quot;, &quot;display&quot;: &quot;Empfänger ungültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_RECIPIENT_INVALID&quot;&gt;&lt;display value=&quot;Empfänger ungültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_TASK_NOT_FOUND"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_NOT_FOUND">TIFLOW_TASK_NOT_FOUND</a></td><td>Task nicht gefunden</td><td>The referenced task does not exist</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_TASK_NOT_FOUND&quot;, &quot;display&quot;: &quot;Task nicht gefunden&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_TASK_NOT_FOUND&quot;&gt;&lt;display value=&quot;Task nicht gefunden&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs-TIFLOW_MVO_NOT_VALID_YET"> </a><code>https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs</code></td><td style="white-space:nowrap">  <a href="file:///home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/output/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_MVO_NOT_VALID_YET">TIFLOW_MVO_NOT_VALID_YET</a></td><td>MVO noch nicht gültig</td><td>The multi-prescription is not yet valid at the current point in time</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;, &quot;version&quot;: &quot;1.0.0-draft&quot;, &quot;code&quot;: &quot;TIFLOW_MVO_NOT_VALID_YET&quot;, &quot;display&quot;: &quot;MVO noch nicht gültig&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs&quot;&gt;&lt;version value=&quot;1.0.0-draft&quot;&gt;&lt;code value=&quot;TIFLOW_MVO_NOT_VALID_YET&quot;&gt;&lt;display value=&quot;MVO noch nicht gültig&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes-SVC_IDENTITY_MISMATCH"> </a><code>https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes</code></td><td style="white-space:nowrap">  <a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;canonical=https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes#operation-outcome-details-codes-SVC_IDENTITY_MISMATCH">SVC_IDENTITY_MISMATCH</a></td><td/><td/><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes&quot;, &quot;version&quot;: &quot;1.1.1&quot;, &quot;code&quot;: &quot;SVC_IDENTITY_MISMATCH&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes&quot;&gt;&lt;version value=&quot;1.1.1&quot;&gt;&lt;code value=&quot;SVC_IDENTITY_MISMATCH&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr></table></div>
+
+  <hr/>
+  <p>
+    Explanation of the columns that may appear on this page:
+  </p>
+  <table class="grid">
+    <tr>
+      <td>Level</td>
+      <td>A few code lists that FHIR defines are hierarchical - each code is assigned a level.
+          In this scheme, some codes are under other codes, and imply that the code they are under also applies</td>
+    </tr>
+    <tr>
+      <td>System</td>
+      <td>The source of the definition of the code (when the value set draws in codes defined elsewhere)</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td>The code (used as the code in the resource instance)</td>
+    </tr>
+    <tr>
+      <td>Display</td>
+      <td>The display (used in the <i>display</i> element of a <a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a>). If there is no display, implementers should not simply display the code, but map the concept into their application</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>An explanation of the meaning of the concept</td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>Additional notes about how to use the code</td>
+    </tr>
+  </table>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="CapabilityStatement-erp-fachdienst-server-rx.ttl.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="ValueSet-tiflow-erezept-operation-outcome-details-vs-testing.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Apr 14, 2026 05:48+0000">2026-04-14</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -33,6 +33,13 @@ const literatureData = [
         link: "https://gemspec.gematik.de/docs/gemSpec/gemSpec_Aktensystem_ePAfueralle/latest/",
         title: "Spezifikation PKI",
         author: "gematik"
+    },
+    
+    {
+        key: "gemIG_TIFlow_erezept",
+        link: "https://gemspec.gematik.de/ig/fhir/tiflow-erezept/1.0.0/index.html",
+        title: "TIFlow - Verordnungen für Arzneimittel",
+        author: "gematik"
     }
     
 ];

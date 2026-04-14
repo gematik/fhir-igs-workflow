@@ -23,8 +23,8 @@
     "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-Task.html" : "GEM ERP PR Task",
-    "StructureDefinition-GEM-ERP-PR-Composition.html" : "GEM ERP PR Composition"
+    "StructureDefinition-GEM-ERP-PR-Composition.html" : "GEM ERP PR Composition",
+    "StructureDefinition-GEM-ERP-PR-Task.html" : "GEM ERP PR Task"
   },
   {
     "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus",
@@ -88,20 +88,6 @@
     "StructureDefinition-GEM-ERP-EX-PrescriptionType.html" : "GEM ERP EX PrescriptionType"
   },
   {
-    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_OperationOutcomeDetails",
-    "version" : "1.0.0-draft",
-    "status" : "draft",
-    "name" : "GEM_ERP_VS_OperationOutcomeDetails",
-    "title" : "GEM ERP VS OperationOutcomeDetails",
-    "description" : "Fachliche Fehlercodes des E-Rezept-Fachdienst",
-    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OperationOutcomeDetails",
-    "http://terminology.hl7.org/CodeSystem/operation-outcome",
-    "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes"],
-    "uses" : {
-    },
-    "StructureDefinition-GEM-ERP-PR-OperationOutcome.html" : "GEM ERP PR OperationOutcome"
-  },
-  {
     "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_OrganizationType",
     "version" : "1.0.0-draft",
     "status" : "draft",
@@ -112,5 +98,19 @@
     "uses" : {
     },
     "StructureDefinition-GEM-ERP-PR-Task.html" : "GEM ERP PR Task"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/tiflow-operation-outcome-details-vs",
+    "version" : "1.0.0-draft",
+    "status" : "draft",
+    "name" : "TIFLOWOperationOutcomeDetailsVS",
+    "title" : "TIFLOW Operation Outcome Details VS",
+    "description" : "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/operation-outcome",
+    "https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs",
+    "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes"],
+    "uses" : {
+    },
+    "StructureDefinition-tiflow-operation-outcome.html" : "TIFLOW OperationOutcome"
   }]
 }

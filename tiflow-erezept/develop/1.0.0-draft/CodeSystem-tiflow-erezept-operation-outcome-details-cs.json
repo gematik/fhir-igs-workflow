@@ -1,0 +1,110 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "tiflow-erezept-operation-outcome-details-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem tiflow-erezept-operation-outcome-details-cs</b></p><a name=\"tiflow-erezept-operation-outcome-details-cs\"> </a><a name=\"hctiflow-erezept-operation-outcome-details-cs\"> </a><p>This case-sensitive code system <code>https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (Deutschland) (German (Germany), de)</b></td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_PZN_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_PZN_INVALID\"> </a></td><td>PZN invalid</td><td>The provided PZN is invalid or not permitted in the current processing context</td><td>PZN ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN\"> </a></td><td>Drug category forbidden</td><td>The prescription contains a forbidden medication category, for example BTM</td><td>Arzneimittelkategorie nicht zulässig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID\"> </a></td><td>MVO flow type invalid</td><td>A multiple prescription is not allowed for the addressed flow type</td><td>MVO-Flowtyp ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_INVALID\"> </a></td><td>MVO invalid</td><td>The multiple prescription metadata is inconsistent or violates MVO constraints</td><td>Mehrfachverordnung ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_STARTDATE_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_STARTDATE_INVALID\"> </a></td><td>MVO start date invalid</td><td>The start date of the multiple prescription redemption period is missing or invalid</td><td>MVO-Startdatum ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_ENDDATE_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_ENDDATE_INVALID\"> </a></td><td>MVO end date invalid</td><td>The end date of the multiple prescription redemption period is invalid</td><td>MVO-Enddatum ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_ID_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_ID_INVALID\"> </a></td><td>MVO id invalid</td><td>The multiple prescription id does not match the required identifier schema</td><td>MVO-ID ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_NOT_VALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_NOT_VALID\"> </a></td><td>MVO not valid yet</td><td>The multiple prescription part is not redeemable yet because its redemption period has not started</td><td>Teilverordnung noch nicht einlösbar</td></tr></table></div>"
+  },
+  "url" : "https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs",
+  "version" : "1.0.0-draft",
+  "name" : "TIFLOWEREZEPTOperationOutcomeDetailsCS",
+  "title" : "TIFLOW EREZEPT Operation Outcome Details CS",
+  "status" : "draft",
+  "date" : "2025-09-25",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "copyright" : "gematik GmbH",
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 8,
+  "concept" : [{
+    "code" : "TIFLOW_EREZEPT_PZN_INVALID",
+    "display" : "PZN invalid",
+    "definition" : "The provided PZN is invalid or not permitted in the current processing context",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "PZN ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN",
+    "display" : "Drug category forbidden",
+    "definition" : "The prescription contains a forbidden medication category, for example BTM",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Arzneimittelkategorie nicht zulässig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID",
+    "display" : "MVO flow type invalid",
+    "definition" : "A multiple prescription is not allowed for the addressed flow type",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "MVO-Flowtyp ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_EREZEPT_MVO_INVALID",
+    "display" : "MVO invalid",
+    "definition" : "The multiple prescription metadata is inconsistent or violates MVO constraints",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Mehrfachverordnung ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_EREZEPT_MVO_STARTDATE_INVALID",
+    "display" : "MVO start date invalid",
+    "definition" : "The start date of the multiple prescription redemption period is missing or invalid",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "MVO-Startdatum ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_EREZEPT_MVO_ENDDATE_INVALID",
+    "display" : "MVO end date invalid",
+    "definition" : "The end date of the multiple prescription redemption period is invalid",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "MVO-Enddatum ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_EREZEPT_MVO_ID_INVALID",
+    "display" : "MVO id invalid",
+    "definition" : "The multiple prescription id does not match the required identifier schema",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "MVO-ID ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_EREZEPT_MVO_NOT_VALID",
+    "display" : "MVO not valid yet",
+    "definition" : "The multiple prescription part is not redeemable yet because its redemption period has not started",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Teilverordnung noch nicht einlösbar"
+    }]
+  }]
+}

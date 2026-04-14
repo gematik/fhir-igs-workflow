@@ -20,8 +20,9 @@ Die folgenden Value Sets sind für die FHIR-Data-Service-Funktionalitäten festg
 
 **Tabelle:**Value Sets
 
-|
-|
+| | |
+| :--- | :--- |
+| [ TIFLOW EREZEPT Operation Outcome Details VS ](ValueSet-tiflow-erezept-operation-outcome-details-vs.md) | E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können |
 
 ### Terminologien: Code Systems
 
@@ -30,8 +31,9 @@ Die folgenden Value Sets sind für die FHIR-Data-Service-Funktionalitäten festg
 
 **Tabelle:**Code Systems
 
-|
-|
+| | |
+| :--- | :--- |
+| [ TIFLOW EREZEPT Operation Outcome Details CS ](CodeSystem-tiflow-erezept-operation-outcome-details-cs.md) | E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können |
 
 ### Systemverhalten
 

@@ -294,12 +294,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den TI-Flow-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$activate</code>.</p>
 
   <!-- A_19022-01 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Rollenprüfung" version="0" key="IG-TIFLOW-CORE-173">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Rollenprüfung" version="1" key="IG-TIFLOW-CORE-173">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"></testProcedure>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks für ein E-Rezept mittels HTTP-POST/$activate-Operation auf den in der URL referenzierten&nbsp;/Task/&lt;id&gt; sicherstellen, dass ausschließlich verordnende Leistungserbringer in der Rolle
+  Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks für ein E-Rezept mittels HTTP-POST/$activate-Operation auf den in der URL referenzierten&nbsp;/Task/&lt;id&gt; die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Leistungserbringerinstitutionen in der Rolle
   <ul>
     <li>oid_praxis_arzt</li>
     <li>oid_zahnarztpraxis</li>
@@ -307,38 +307,130 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <li>oid_krankenhaus</li>
     <li>oid_institution-vorsorge-reha</li> 
   </ul>
-  die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit E-Rezepte nicht durch Unberechtigte eingestellt werden können.
+  die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist&nbsp;nicht berechtigt, die aufgerufene Operation anzufordern</td>
+        </tr>
+    </table> 
+    abbrechen, damit E-Rezepte nicht durch Unberechtigte eingestellt werden können.
 </requirement>
 
   <!-- A_19024-03 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung AccessCode" version="0" key="IG-TIFLOW-CORE-174">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung AccessCode" version="1" key="IG-TIFLOW-CORE-174">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im HTTP-RequestHeader "X-AccessCode" oder URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode und bei Ungleichheit oder Fehlen des HTTP-Headers die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.
+  Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im HTTP-RequestHeader "X-AccessCode" oder URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und bei Ungleichheit oder Fehlen des AccessCodes die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_ACCESSCODE_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.
 </requirement>
 
   <!-- A_19024-03 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Status" version="0" key="IG-TIFLOW-CORE-175">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Status" version="1" key="IG-TIFLOW-CORE-175">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "draft" ist.
+  Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "draft" ist, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>412 - Precondition Failed</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_TASK_STATUS_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Task has invalid status.</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_19020 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Schemavalidierung" version="0" key="IG-TIFLOW-CORE-176">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Schemavalidierung" version="1" key="IG-TIFLOW-CORE-176">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im Aufrufparameter übergebenen FHIR-Operationsparameter des QES-Datensatzes als PKCS#7-Datei einer Enveloping CAdES-Signatur entgegennehmen und verarbeiten und bei Fehlen oder ungültiger ASN.1 Datenstruktur die Weiterverarbeitung im Fachdienst mit dem http-Status-Code 400 beantworten, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
+  Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im Aufrufparameter übergebenen FHIR-Operationsparameter des QES-Datensatzes als PKCS#7-Datei einer Enveloping CAdES-Signatur entgegennehmen und verarbeiten und bei Fehlen oder ungültiger ASN.1 Datenstruktur die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_VALIDATION_FAILED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>FHIR Profile validation failed.</td>
+        </tr>
+    </table> 
+    abbrechen, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
 </requirement>
 
   <!-- A_20159-04 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA" version="0" key="IG-TIFLOW-CORE-177">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA" version="1" key="IG-TIFLOW-CORE-177">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"></testProcedure>
@@ -355,8 +447,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                 Signaturzertifikat des HBA (eingebettet in Signatur-Objekt des QES-Datensatzes):
                 <ul>
                     <li>C.HP.QES (oid_hba_qes = 1.2.276.0.76.4.72 gemäß gemSpec_OID)</li>
-                    <li>bzw. für HBA-Vorläuferkarten&nbsp;C.HP.ENC (oid_vk_eaa_enc = 1.3.6.1.4.1.24796.1.10 gemäß gemSpec_OID) 
-                    Hinweis: die OID dieses Profil wird für Ärzte- und Zahnärzteschaft gleichermaßen genutzt</li>
                 </ul>
             </td>
         </tr>
@@ -375,77 +465,321 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </table>
     <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_006 Parameter Prüfung Signaturzertifikat QES des HBA</figcaption></div>
 
-    und darf die OCSP-Response für die Abfrage des Zertifikatsstatus für 12 Stunden zwischenspeichern.
-    Ist keine OCSP-Response eingebettet oder die eingebettete OCSP Response nicht gültig, MUSS der TI-Flow-Fachdienst die gecachte OCSP-Response verwenden oder eine OCSP-Response beim benannten TSP anfragen und die genutzte OCSP-Response nachträglich in den QES-Datensatz einbetten.
-    Das Signaturzertifikat muss anhand der Zertifikatsprüfung für [mathematisch gültig UND zeitlich gültig UND online gültig ] befunden werden und der HTTP-Request andernfalls mit dem HTTP-Status-Code 400 abgelehnt werden, damit sichergestellt wird, dass ausschließlich E-Rezepte verwaltet werden, die von einer gültigen, nicht gesperrten Heilberufsidentität eines HBA signiert wurden.
-    Wenn die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, muss der HTTP-Request mit dem HTTP-Status-Code 512 abgelehnt werden.
+    <br/>
+    
+    Der TI-Flow-Fachdienst MUSS, wenn keine OCSP-Response eingebettet oder die eingebettete OCSP Response nicht gültig ist, eine gecachte OCSP-Response verwenden, wenn die gecachte OCSP-Response nach den Signaturzeitpunkt erstellt wurde, oder eine OCSP-Response beim zugehörigen TSP anfragen.
+
+    <br/>
+
+    Der TI-Flow-Fachdienst MUSS das Signaturzertifikat prüfen, für [mathematisch gültig UND zeitlich gültig UND online gültig ] befinden und andernfalls die Operation mit dem folgenden Fehler:
+    <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_CERTIFICATE_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table>
+    abbrechen, damit sichergestellt wird, dass ausschließlich Verordnungen verwaltet werden, die von einer gültigen, nicht gesperrten Heilberufsidentität eines HBA signiert wurden.
 </requirement>
-  <!-- ToDo: können HBA-Vorläuferkarten entfernt werden? ME ja -->
+  <!-- ToDo: Ist die Fehlermeldung umfassend genug? Was passiert wenn TUC_PKI_030 fehlschlägt? -->
+
+  <!-- A_20159-04 -->
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA - fehlender OCSP-Response" version="0" key="IG-TIFLOW-CORE-408">
+  <meta lockversion="false"/>
+  <actor name="TI_Flow_FD">
+    <testProcedure id="Produktgutachten"></testProcedure>
+  </actor>
+    Der TI-Flow-Fachdienst MUSS, wenn im Rahmen der Prüfung der Gültigkeit eines QES-Signuturzertifikates C.HP.QES die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>512 - OCSP Backend Error</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_OCSP_BACKEND_ERROR</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>OCSP Backend Error</td>
+        </tr>
+    </table>
+    abgelehnt werden.
+</requirement>
+
+  <!-- A_20159-04 -->
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA - OCSP-Response einbetten" version="0" key="IG-TIFLOW-CORE-411">
+  <meta lockversion="false"/>
+  <actor name="TI_Flow_FD">
+    <testProcedure id="Produktgutachten"></testProcedure>
+  </actor>
+    Der TI-Flow-Fachdienst MUSS, wenn im Rahmen der Prüfung der Gültigkeit eines QES-Signuturzertifikates C.HP.QES keine OCSP-Response eingebettet oder die eingebettete OCSP Response nicht gültig ist, die die Prüfung genutzte OCSP-Response in den QES-Datensatz einbetten.
+</requirement>
 
   <!-- A_19025-03 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES prüfen Rezept aktualisieren" version="0" key="IG-TIFLOW-CORE-178">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung QES prüfen" version="1" key="IG-TIFLOW-CORE-178">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
-    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate 
-    <ul>
-        <li>
-            die qualifizierte Signatur des QES-Datensatzes gemäß [ETSI_QES] prüfen und bei nicht gültiger qualifizierter Signatur die Operation mit Status 400 abbrechen 
-        </li>
-        <li>
-            bzw. bei gültiger Signatur das innerhalb des PKCS#7-Datensatz enveloping-enthaltene FHIR-Bundle einer umfänglichen FHIR-Validierung gegen die eRezept-Schema-Definition der KBV kbv.ita.erp oder kbv.itv.evdga unterziehen und bei Invalidität die Operation mit Status 400 abbrechen
-        </li>
-        <li>
-            bzw. bei gültiger Signatur und validem FHIR den Datensatz als PKCS#7-Datei sicher speichern und in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 über eine interne, eindeutige UUID referenzieren,
-        </li>
-    </ul>
-    damit der nachfolgende Workflow ausschließlich auf Basis medizinisch korrekter und vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die qualifizierte Signatur des QES-Datensatzes gemäß [ETSI_QES] prüfen und bei nicht gültiger qualifizierter Signatur die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_SIGNATURE_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table>
+    abbrechen, damit der nachfolgende Workflow ausschließlich auf Basis vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
+</requirement>
+
+  <!-- A_19025-03 -->
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung FHIR Validierung" version="0" key="IG-TIFLOW-CORE-409">
+  <meta lockversion="false"/>
+  <actor name="TI_Flow_FD">
+    <testProcedure id="Produkttest"></testProcedure>
+  </actor>
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate das innerhalb des PKCS#7-Datensatz enveloping-enthaltene FHIR-Bundle einer FHIR-Validierung gegen die eRezept-Schema-Definition der KBV kbv.ita.erp oder kbv.itv.evdga unterziehen und bei Invalidität die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_VALIDATION_FAILED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>FHIR Profile Validation Failed</td>
+        </tr>
+    </table> 
+    abbrechen.
+</requirement>
+  <!-- ToDo: Muss in der Afo das FHIR-Schema vorgegeben werden oder ergibt sich das aus dem FHIR-Datensatz oder muss es zusätzlich noch mit dem WF-Type abgeglichen werden? -->
+
+  <!-- A_19025-03 -->
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung speichern" version="0" key="IG-TIFLOW-CORE-410">
+  <meta lockversion="false"/>
+  <actor name="TI_Flow_FD">
+    <testProcedure id="Produktgutachten"></testProcedure>
+  </actor>
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den Datensatz als PKCS#7-Datei  speichern und in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 über eine interne, eindeutige UUID referenzieren, damit der nachfolgende Workflow auf Basis vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
 </requirement>
 
   <!-- Diese Afo wurde nicht zugewiesen, da die Konnektoren sich nicht so verhalten. -->
   <!-- A_23172 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mimetype Signatur" version="0" key="IG-TIFLOW-CORE-179">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mimetype Signatur" version="1" key="IG-TIFLOW-CORE-179">
     <meta lockversion="false"/>
-    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und mit dem Fehler 400 abbrechen, wenn dieser ungleich "text/plain; charset=utf-8" ist.
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und, wenn dieser ungleich "text/plain; charset=utf-8" ist, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_SIGNATURE_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_21370 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Rezept-ID und Präfix gegen Flowtype" version="0" key="IG-TIFLOW-CORE-180">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Rezept-ID in Task gegen Verordnungsdatensatz" version="1" key="IG-TIFLOW-CORE-180">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim berechtigten Aufruf der Operation POST /Task/&lt;id&gt;/$activate prüfen, dass die PrescriptionID des Tasks mit der PrescriptionID im übergebenen QES-Datensatz übereinstimmt und der Präfix der PrescriptionID gleich dem Flowtype des zu aktivierenden Tasks ist und andernfalls die Operation mit dem http-Fehlercode 400 abbrechen.
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, dass die PrescriptionID des Tasks mit der PrescriptionID im übergebenen QES-Datensatz übereinstimmt und andernfalls die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_FLOWTYPE_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen.
+</requirement>
+  <!-- ToDo: Abrenzung Fehlercode zu folgender Afo ? -->
+
+  <!-- A_21370 -->
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Präfix Rezept-ID gegen Flowtype" version="0" key="IG-TIFLOW-CORE-412">
+    <meta lockversion="false"/>
+    <actor name="TI_Flow_FD">
+        <testProcedure id="Produktgutachten"></testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, dass der Präfix der PrescriptionID gleich dem Flowtype des zu aktivierenden Tasks ist und andernfalls die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_FLOWTYPE_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_23936-01 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten" version="0" key="IG-TIFLOW-CORE-181">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten" version="1" key="IG-TIFLOW-CORE-181">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, dass Patient.identifier.system gleich "http://fhir.de/sid/gkv/kvid-10" ist und andernfalls die Operation mit dem http-Fehlercode 400 und dem Hinweis im OperationOutcome "Als Identifier für den Patienten muss eine VersichertenID (KVNR) angegeben werden." abbrechen.
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, dass Patient.identifier.system gleich "http://fhir.de/sid/gkv/kvid-10" ist und andernfalls die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_KVNR_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Als Identifier für den Patienten muss eine VersichertenID (KVNR) angegeben werden.</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_22487 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum" version="0" key="IG-TIFLOW-CORE-182">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum" version="1" key="IG-TIFLOW-CORE-182">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS den Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate mit einem Fehlercode 400 und Hinweis im OperationOutcome auf "Ausstellungsdatum und Signaturzeitpunkt weichen voneinander ab, müssen aber taggleich sein" als ungültig abweisen, wenn das Datum authoredOn zur Gültigkeitsberechnung des E-Rezepts nicht dem Datum in QES.Erstellung im Signaturobjekt entspricht.
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate, wenn das Datum authoredOn zur Gültigkeitsberechnung der Verordnung nicht dem Datum in QES.Erstellung im Signaturobjekt entspricht, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Ausstellungsdatum und Signaturzeitpunkt weichen voneinander ab, müssen aber taggleich sein</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_19127-03 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID" version="0" key="IG-TIFLOW-CORE-183">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID" version="1" key="IG-TIFLOW-CORE-183">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS im Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die KVNR des Patienten dem Identifier http://fhir.de/sid/gkv/kvid-10 der Patient-Ressource im E-Rezept-Bundle entnehmen und diesen als Identifier in Task.for mit system http://fhir.de/sid/gkv/kvid-10 hinzufügen, damit ausschließlich eine gültige, vom Arzt signierte Patientenreferenz im Workflow verwendet wird.
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die KVNR des Patienten dem Identifier http://fhir.de/sid/gkv/kvid-10 der Patient-Ressource im E-Rezept-Bundle entnehmen und diesen als Identifier in Task.for mit system http://fhir.de/sid/gkv/kvid-10 hinzufügen, damit ausschließlich eine gültige, vom Arzt signierte Patientenreferenz im Workflow verwendet wird.
 </requirement>
-  <!-- ToDo: Grammatik -->
 
   <!-- A_28126 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Push Notification Versicherter" version="0" key="IG-TIFLOW-CORE-184">
@@ -464,6 +798,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </actor>
     Der TI-Flow-Fachdienst MUSS die zulässige Aktivierung eines Tasks mittels /Task/&lt;id&gt;/$activate-Operation im Status Task.status = ready&nbsp;vollziehen und bei erfolgreichem Abschluss der Operation die Ressource Task im HTTP-Body der HTTP-Response zurückgeben, damit die verordnende Leistungserbringerinstitution über den erfolgreichen Abschluss der Operation in Kenntnis gesetzt wird.
 </requirement>
+  <!-- ToDo: Afo unter Beachtung von A_19029-06 trennen -->
 
   <!-- A_19029-06 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Serversignatur" version="0" key="IG-TIFLOW-CORE-186">
@@ -471,7 +806,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS das bei der Operation /Task/&lt;id&gt;/$activate im QES-Datensatz enthaltene Verordnung in ein Bundle gleichen Typs in JSON-Repräsentation beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task/&lt;id&gt; zurück liefern.Dies gilt für folgende Bundles: https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundlehttps://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle <br/>
+    Der TI-Flow-Fachdienst MUSS das bei der Operation /Task/&lt;id&gt;/$activate im QES-Datensatz enthaltene Verordnung in ein Bundle gleichen Typs in JSON-Repräsentation beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task/&lt;id&gt; zurück liefern. Dies gilt für folgende Bundles: https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundlehttps://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle <br/>
     Der TI-Flow-Fachdienst MUSS für diese Bundles 
     <ul>
         <li>einen neuen, eindeutigen Identifier für die Bundle.id als UUID generieren,</li>
@@ -487,30 +822,99 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 
 <h4 id="verifizieren-von-prüfziffern">Verifizieren von Prüfziffern</h4>
   <!-- A_23888 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage" version="0" key="IG-TIFLOW-CORE-187">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage" version="1" key="IG-TIFLOW-CORE-187">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate einen im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Wert für payor.identifier.value gemäß dem im "Gemeinsames Rundschreiben Institutionskennzeichen (IK)" vom 01.06.2020 unter Kapitel 1.2.5 "Prüfziffer" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung den Prozess mit einem Http-Fehler 400 (Bad Request) abbrechen sowie die Fehlermeldung "Ungültiges Institutionskennzeichen (IKNR): Das übergebene Institutionskennzeichen im Versicherungsstatus entspricht nicht den Prüfziffer-Validierungsregeln." in Form einer OperationOutcome ausliefern.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate einen im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Wert für payor.identifier.value gemäß dem im "Gemeinsames Rundschreiben Institutionskennzeichen (IK)" vom 01.06.2020 unter Kapitel 1.2.5 "Prüfziffer" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_IKNR_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Ungültiges Institutionskennzeichen (IKNR): Das übergebene Institutionskennzeichen im Versicherungsstatus entspricht nicht den Prüfziffer-Validierungsregeln.</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_24030 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage - AlternativeID" version="0" key="IG-TIFLOW-CORE-188">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage - AlternativeID" version="1" key="IG-TIFLOW-CORE-188">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate die im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Werte für payor.identifier.extension:alternativeID.value[x]:valueIdentifier gemäß dem "Gemeinsames Rundschreiben Institutionskennzeichen (IK)" vom 01.06.2020 unter Kapitel 1.2.5 "Prüfziffer" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen sowie die Fehlermeldung "Ungültiges Institutionskennzeichen (IKNR): Das übergebene Institutionskennzeichen des Kostenträgers entspricht nicht den Prüfziffer-Validierungsregeln." in Form einer OperationOutcome ausliefern.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate die im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Werte für payor.identifier.extension:alternativeID.value[x]:valueIdentifier gemäß dem "Gemeinsames Rundschreiben Institutionskennzeichen (IK)" vom 01.06.2020 unter Kapitel 1.2.5 "Prüfziffer" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_IKNR_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Ungültiges Institutionskennzeichen (IKNR): Das übergebene Institutionskennzeichen des Kostenträgers entspricht nicht den Prüfziffer-Validierungsregeln.</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_23890-01 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung KVNR im Profil KBV_PR_FOR_Patient" version="0" key="IG-TIFLOW-CORE-189">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung KVNR im Profil KBV_PR_FOR_Patient" version="1" key="IG-TIFLOW-CORE-189">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate einen im FHIR Profil KBV_PR_FOR_Patient gespeicherten Wert für Patient.identifier:versichertenId.value gemäß der Anlage 1 der "Prüfziffernberechnung für die Krankenversichertennummer nach &sect; 290 SGB V" vom 26.02.2019 beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen sowie die Fehlermeldung "Ungültige Versichertennummer (KVNR): Die übergebene Versichertennummer des Patienten entspricht nicht den Prüfziffer-Validierungsregeln." in Form einer OperationOutcome ausliefern.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate einen im FHIR Profil KBV_PR_FOR_Patient gespeicherten Wert für Patient.identifier:versichertenId.value gemäß der Anlage 1 der "Prüfziffernberechnung für die Krankenversichertennummer nach &sect; 290 SGB V" vom 26.02.2019 beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_KVNR_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Ungültige Versichertennummer (KVNR): Die übergebene Versichertennummer des Patienten entspricht nicht den Prüfziffer-Validierungsregeln.</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_23891-01 -->
@@ -574,12 +978,35 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_24032 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Fehler" version="0" key="IG-TIFLOW-CORE-192">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Fehler" version="1" key="IG-TIFLOW-CORE-192">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS für die Überprüfung der ANR/ZANR, wenn bei der Prüfung eine Auffälligkeit auftritt und die Konfiguration Fehler aktiv ist, mit dem Http-Fehlercode 400 abbrechen und die Fehlermeldung "Ungültige Arztnummer (LANR oder ZANR): Die übergebene Arztnummer entspricht nicht den Prüfziffer-Validierungsregeln." in Form einer OperationOutcome ausliefern.
+    Der TI-Flow-Fachdienst MUSS für die Überprüfung der ANR/ZANR, wenn bei der Prüfung eine Auffälligkeit auftritt und die Konfiguration Fehler aktiv ist, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_LANR_ZANR_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Ungültige Arztnummer (LANR oder ZANR): Die übergebene Arztnummer entspricht nicht den Prüfziffer-Validierungsregeln.</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_24033 -->
@@ -598,76 +1025,241 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_23892 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN" version="0" key="IG-TIFLOW-CORE-194">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN" version="1" key="IG-TIFLOW-CORE-194">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate den im FHIR Profil KBV_PR_ERP_Medication_PZN gespeicherten Wert für code.coding:pznCode.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen sowie die Fehlermeldung "Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln." in Form einer OperationOutcome ausliefern.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate den im FHIR Profil KBV_PR_ERP_Medication_PZN gespeicherten Wert für code.coding:pznCode.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_PZN_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
   <!-- ToDo: ggf. nach IG rx verschieben -->
 
   <!-- A_24034 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding" version="0" key="IG-TIFLOW-CORE-195">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding" version="1" key="IG-TIFLOW-CORE-195">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate den im FHIR Profil KBV_PR_ERP_Medication_Compounding gespeicherten Wert für ingredient.item[x]:itemCodeableConcept.coding:pznCode.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen sowie die Fehlermeldung "Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln." in Form einer OperationOutcome ausliefern.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate den im FHIR Profil KBV_PR_ERP_Medication_Compounding gespeicherten Wert für ingredient.item[x]:itemCodeableConcept.coding:pznCode.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_PZN_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
   <!-- ToDo: ggf. nach IG rx verschieben -->
 
   <!-- A_22925 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Längenprüfung PZN" version="0" key="IG-TIFLOW-CORE-196">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Längenprüfung PZN" version="1" key="IG-TIFLOW-CORE-196">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 und einem Hinweis auf die Längenprüfung der PZN ("Länge PZN unzulässig (muss 8-stellig sein))" im OperationOutcome) abbrechen, wenn die PZN einer übergebenen PZN-Verordnung in KBV_PR_ERP_Medication_PZN.code.coding.code nicht 8-stellig ist.
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate, wenn die PZN einer übergebenen PZN-Verordnung in KBV_PR_ERP_Medication_PZN.code.coding.code nicht 8-stellig ist, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_PZN_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Länge PZN unzulässig (muss 8-stellig sein)</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
   <!-- ToDo: ggf. nach IG rx verschieben -->
 
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
   <!-- A_19225-02 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - QES durch berechtigte Berufsgruppe" version="0" key="IG-TIFLOW-ERP-75">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - QES durch berechtigte Berufsgruppe" version="1" key="IG-TIFLOW-ERP-75">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 160, 169, 200 oder 209 mit dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht:
+    Der TI-Flow-Fachdienst MUSS bei der Aktivierung eines Tasks mit Flowtype 160, 169, 200 oder 209 prüfen, dass die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht:
     <ul>
         <li>oid_arzt</li> 
         <li>oid_zahnarzt</li> 
     </ul>
-    damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von Medikamenten ermächtigt sind.
+    und bei einer Abweichung die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von Medikamenten ermächtigt sind.
 </requirement>
 
   <!-- A_27812 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte Berufsgruppe" version="0" key="IG-TIFLOW-ERP-76">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte Berufsgruppe" version="1" key="IG-TIFLOW-ERP-76">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 166 mit dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht: oid_arzt damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von T-Rezepten ermächtigt sind.
+        Der TI-Flow-Fachdienst MUSS bei der Aktivierung eines Tasks mit Flowtype 166 prüfen, dass die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht: 
+        <ul>
+        <li>oid_arzt</li>
+        </ul> 
+        und bei einer Abweichung die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von T-Rezepten ermächtigt sind.
 </requirement>
 
   <!-- A_25642 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung Arzneimittelverordnung" version="0" key="IG-TIFLOW-ERP-77">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung Arzneimittelverordnung" version="1" key="IG-TIFLOW-ERP-77">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtypen 160, 169, 200 oder 209 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource und eine Medication mit Medication.extension:Arzneimittelkategorie = 00 enthalten ist. Der TI-Flow-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der OperationOutcome den Fehlertext "Für diesen Workflowtypen sind nur Arzneimittelverordnungen zulässig" ausgeben.
+    Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtypen 160, 169, 200 oder 209 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource und eine Medication mit Medication.extension:Arzneimittelkategorie = 00 enthalten ist, und andernfalls die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_FLOWTYPE_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Für diesen Workflowtypen sind nur Arzneimittelverordnungen zulässig</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_27813 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - Prüfung Arzneimittelverordnung" version="0" key="IG-TIFLOW-ERP-78">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - Prüfung Arzneimittelverordnung" version="1" key="IG-TIFLOW-ERP-78">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtyp 166 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource und eine Medication mit Medication.extension:Arzneimittelkategorie = 02 enthalten ist. Der TI-Flow-Fachdienst MUSS andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der OperationOutcome den Fehlertext "Für diesen Workflowtypen sind nur T-Rezept Verordnungen zulässig" ausgeben.
+        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtyp 166 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource und eine Medication mit Medication.extension:Arzneimittelkategorie = 02 enthalten ist, und andernfalls die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_FLOWTYPE_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Für diesen Workflowtypen sind nur T-Rezept Verordnungen zulässig</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
   <!-- ToDo: Ist hier T-Rezept in einen eigenen IG zu separieren? (Dito für alle anderen 166 Afos) -->
 
@@ -681,30 +1273,99 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_23443-01 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst – Task aktivieren – Flowtype 160/169 - Prüfung Coverage Type" version="0" key="IG-TIFLOW-ERP-80">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst – Task aktivieren – Flowtype 160/169 - Prüfung Coverage Type" version="1" key="IG-TIFLOW-ERP-80">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 160 oder 169 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, ob Coverage.type.coding.code nicht mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden.
+    Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 160 oder 169 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, ob Coverage.type.coding.code nicht mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:
+    <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_COVERAGE_TYPE_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden.
 </requirement>
 
   <!-- A_22347-01 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 200/209 - Prüfung Coverage Type" version="0" key="IG-TIFLOW-ERP-81">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 200/209 - Prüfung Coverage Type" version="1" key="IG-TIFLOW-ERP-81">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task des Flowtype Task.extension:flowType = 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, ob Coverage.type.coding.code mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows nur für E-Rezepte für PKV-Versicherte genutzt werden.
+        Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task des Flowtype Task.extension:flowType = 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, ob Coverage.type.coding.code mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_COVERAGE_TYPE_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, um sicherzustellen, dass diese Workflows nur für E-Rezepte für PKV-Versicherte genutzt werden.
 </requirement>
 
   <!-- A_22231-01 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel" version="0" key="IG-TIFLOW-ERP-82">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel" version="1" key="IG-TIFLOW-ERP-82">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Herstellererklärung"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 und einem Hinweis auf den Ausschluss von Betäubungsmittel ("BTM nicht zulässig" im OperationOutcome) abbrechen, wenn der übergebene QES-Datensatz als Betäubungsmittel-Verordnung (Bundle.Medication.extension:KBV_EX_ERP_Medication_Category:code gleich "01") gekennzeichnet ist.
+    Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn der übergebene QES-Datensatz als Betäubungsmittel-Verordnung (Bundle.Medication.extension:KBV_EX_ERP_Medication_Category:code gleich "01") gekennzeichnet ist, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>BTM nicht zulässig</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_27768 -->
@@ -1017,111 +1678,387 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 <h3 id="prüfung-von-mehrfachverordnungen">Prüfung von Mehrfachverordnungen</h3>
 
   <!-- A_22627-01 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype" version="0" key="IG-TIFLOW-ERP-91">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype" version="1" key="IG-TIFLOW-ERP-91">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Flowtype ungleich 160, 169, 200 oder 209 ist, weil Mehrfachverordnungen nur für die Verordnungen von apothekenpflichtigen Arzneimittel (kein BtM, kein T-Rezept) zulässig sind.
+        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Flowtype ungleich 160, 169, 200 oder 209 ist, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, weil Mehrfachverordnungen nur für die Verordnungen von apothekenpflichtigen Arzneimittel (kein BtM, kein T-Rezept) zulässig sind.
 </requirement>
 
   <!-- A_22628 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator kleiner 5" version="0" key="IG-TIFLOW-ERP-92">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator kleiner 5" version="1" key="IG-TIFLOW-ERP-92">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Numerator oder Denominator größer als 4 ist, weil eine Mehrfachverordnungen aus maximal 4 Teilverordnungen bestehen darf.
+        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Numerator oder Denominator größer als 4 ist, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_MVO_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, weil eine Mehrfachverordnungen aus maximal 4 Teilverordnungen bestehen darf.
 </requirement>
 
   <!-- A_22704 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator größer 0" version="0" key="IG-TIFLOW-ERP-93">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator größer 0" version="1" key="IG-TIFLOW-ERP-93">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Numerator kleiner als 1 ist.
+        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Numerator kleiner als 1 ist, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_MVO_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_22629 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Denominator größer 1" version="0" key="IG-TIFLOW-ERP-94">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Denominator größer 1" version="1" key="IG-TIFLOW-ERP-94">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Denominator kleiner als 2 ist, weil eine Mehrfachverordnungen aus mindestens 2 Teilverordnungen bestehen muss.
+        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Denominator kleiner als 2 ist, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_MVO_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, weil eine Mehrfachverordnungen aus mindestens 2 Teilverordnungen bestehen muss.
 </requirement>
 
   <!-- A_22630 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator kleiner / gleich Denominator" version="0" key="IG-TIFLOW-ERP-95">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator kleiner / gleich Denominator" version="1" key="IG-TIFLOW-ERP-95">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Numerator größer als der Denominator ist.
+        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Numerator größer als der Denominator ist, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_MVO_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_22631 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben" version="0" key="IG-TIFLOW-ERP-96">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben" version="1" key="IG-TIFLOW-ERP-96">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn die Verordnung nicht als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = false) gekennzeichnet ist, aber eine Extension Nummerierung oder Zeitraum enthält, weil normale Verordnungen keine MVO-Angaben enthalten dürfen.
+        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung nicht als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = false) gekennzeichnet ist, aber eine Extension Nummerierung oder Zeitraum enthält, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_MVO_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, weil normale Verordnungen keine MVO-Angaben enthalten dürfen.
 </requirement>
 
   <!-- A_22632 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - kein Entlassrezept" version="0" key="IG-TIFLOW-ERP-97">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - kein Entlassrezept" version="1" key="IG-TIFLOW-ERP-97">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) und als Entlassrezept ( code="04" oder "14" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, weil für Entlassrezepte keine Mehrfachverordnungen zulässig sind.
+        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) und als Entlassrezept ( code="04" oder "14" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_MVO_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, weil für Entlassrezepte keine Mehrfachverordnungen zulässig sind.
 </requirement>
 
   <!-- A_22633 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung" version="0" key="IG-TIFLOW-ERP-98">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung" version="1" key="IG-TIFLOW-ERP-98">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) und als Ersatzverordnung ( code="10" oder "11" oder "17" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, weil für Ersatzverordnungen keine Mehrfachverordnungen zulässig sind.
+        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) und als Ersatzverordnung ( code="10" oder "11" oder "17" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_MVO_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, weil für Ersatzverordnungen keine Mehrfachverordnungen zulässig sind.
 </requirement>
 
   <!-- A_22634 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht" version="0" key="IG-TIFLOW-ERP-99">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht" version="1" key="IG-TIFLOW-ERP-99">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) nicht angegeben ist, weil die Information des Beginns der Einlösefrist notwendig ist, um den Gültigkeitszeitraum zu ermitteln.
+        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) nicht angegeben ist, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_MVO_STARTDATE_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, weil die Information des Beginns der Einlösefrist notwendig ist, um den Gültigkeitszeitraum zu ermitteln.
 </requirement>
 
   <!-- A_23537 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht vor Ausstellungsdatum" version="0" key="IG-TIFLOW-ERP-100">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht vor Ausstellungsdatum" version="1" key="IG-TIFLOW-ERP-100">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist und das Startdatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) vor dem Ausstellungsdatum (MedicationRequest.authoredOn) liegt.
+        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist und das Startdatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) vor dem Ausstellungsdatum (MedicationRequest.authoredOn) liegt, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_MVO_STARTDATE_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_23164 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Endedatum nicht vor Startdatum" version="0" key="IG-TIFLOW-ERP-101">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Endedatum nicht vor Startdatum" version="1" key="IG-TIFLOW-ERP-101">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet, ein Endedatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end) angegeben ist und das Endedatum vor dem Startdatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) liegt.
+        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet, ein Endedatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end) angegeben ist und das Endedatum vor dem Startdatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) liegt, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_MVO_ENDDATE_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
   <!-- A_24901 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Schema ID" version="0" key="IG-TIFLOW-ERP-102">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Schema ID" version="1" key="IG-TIFLOW-ERP-102">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist und der dazugehörige value (MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value) nicht dem Schema aus [KBV_ITA_VGEX_Technische_Anlage_ERP] entspricht.
+        Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist und der dazugehörige value (MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value) nicht dem Schema aus [KBV_ITA_VGEX_Technische_Anlage_ERP] entspricht, die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_MVO_ID_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
 
@@ -1165,7 +2102,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 13, 2026 15:32+0000">2026-04-13</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Apr 14, 2026 05:48+0000">2026-04-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -44,6 +44,12 @@ Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und Schnittst
 
 
 
+
+
+
+
+
+
 ### Kontakt und Feedback
 
 Für Fragen und Feedback wenden Sie sich bitte an [erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de).
@@ -115,6 +121,12 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     "uri" : "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4",
     "packageId" : "de.basisprofil.r4",
     "version" : "1.5.4"
+  },
+  {
+    "id" : "de_gematik_tiflow_core",
+    "uri" : "https://gematik.de/fhir/tiflow/core/ImplementationGuide/de.gematik.tiflow.core",
+    "packageId" : "de.gematik.tiflow.core",
+    "version" : "dev"
   },
   {
     "id" : "de_gematik_ti",
@@ -1112,6 +1124,30 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       },
       "name" : "Request for Modification on ChargeItem",
       "description" : "Ressource used for the communication of Change Request on an existing ChargeItem between patient and pharmacy",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/tiflow-chargeitem-operation-outcome-details-cs"
+      },
+      "name" : "TIFLOW ChargeItem Operation Outcome Details CS",
+      "description" : "Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/tiflow-chargeitem-operation-outcome-details-vs"
+      },
+      "name" : "TIFLOW ChargeItem Operation Outcome Details VS",
+      "description" : "Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
       "exampleBoolean" : false
     },
     {

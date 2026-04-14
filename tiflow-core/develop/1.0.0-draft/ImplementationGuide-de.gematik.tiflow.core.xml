@@ -1460,17 +1460,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/GEM-ERP-CS-OperationOutcomeDetails"/>
-      </reference>
-      <name value="GEM ERP CS OperationOutcomeDetails"/>
-      <description value="Fachliche Fehlercodes des E-Rezept-Fachdienst"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -1845,17 +1834,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/GEM-ERP-PR-OperationOutcome"/>
-      </reference>
-      <name value="GEM ERP PR OperationOutcome"/>
-      <description value="OperationOutcome für Angabe von Fehlermeldungen vom E-Rezept-Fachdienst"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:complex-type"/>
       </extension>
       <reference>
@@ -1874,17 +1852,6 @@
       </reference>
       <name value="GEM ERP PR Task"/>
       <description value="Task für die Verwaltung des E-Rezept-Workflows"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/GEM-ERP-VS-OperationOutcomeDetails"/>
-      </reference>
-      <name value="GEM ERP VS OperationOutcomeDetails"/>
-      <description value="Fachliche Fehlercodes des E-Rezept-Fachdienst"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2082,6 +2049,39 @@
       </reference>
       <name value="TaskExpiryDateSP"/>
       <description value="Das Ablaufdatum eines E-Rezepzes. Nach ablauf dieses Datums darf ein E-Rezept nicht mehr beliefert werden."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/tiflow-operation-outcome-details-cs"/>
+      </reference>
+      <name value="TIFLOW Operation Outcome Details CS"/>
+      <description value="Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/tiflow-operation-outcome-details-vs"/>
+      </reference>
+      <name value="TIFLOW Operation Outcome Details VS"/>
+      <description value="Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/tiflow-operation-outcome"/>
+      </reference>
+      <name value="TIFLOW OperationOutcome"/>
+      <description value="OperationOutcome für Angabe von Fehlermeldungen vom TI-Flow-Fachdienst"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2676,6 +2676,14 @@
             <generation value="markdown"/>
           </page>
         </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="menu-schnittstellen-additional-api.html"/>
+        </extension>
+        <nameUrl value="menu-schnittstellen-additional-api.html"/>
+        <title value="Additional API"/>
+        <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
             <valueUrl value="query-api-channels.html"/>

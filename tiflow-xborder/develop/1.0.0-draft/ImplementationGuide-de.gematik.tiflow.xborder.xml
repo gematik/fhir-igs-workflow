@@ -71,6 +71,11 @@
     <packageId value="de.gematik.terminology"/>
     <version value="1.0.8"/>
   </dependsOn>
+  <dependsOn id="de_gematik_tiflow_core">
+    <uri value="https://gematik.de/fhir/tiflow/core/ImplementationGuide/de.gematik.tiflow.core"/>
+    <packageId value="de.gematik.tiflow.core"/>
+    <version value="dev"/>
+  </dependsOn>
   <dependsOn id="de_gematik_ti">
     <uri value="https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti"/>
     <packageId value="de.gematik.ti"/>
@@ -954,6 +959,28 @@
       </reference>
       <name value="Sample Simple Medication"/>
       <exampleCanonical value="https://gematik.de/fhir/tiflow/xborder/StructureDefinition/GEM-ERPEU-PR-Medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/tiflow-xborder-operation-outcome-details-cs"/>
+      </reference>
+      <name value="TIFLOW XBORDER Operation Outcome Details CS"/>
+      <description value="Fehlercodes für cross-border Szenarien, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/tiflow-xborder-operation-outcome-details-vs"/>
+      </reference>
+      <name value="TIFLOW XBORDER Operation Outcome Details VS"/>
+      <description value="Fehlercodes für cross-border Szenarien, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

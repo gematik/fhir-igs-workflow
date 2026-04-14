@@ -148,6 +148,12 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     "version" : "1.2.0"
   },
   {
+    "id" : "de_gematik_tiflow_core",
+    "uri" : "https://gematik.de/fhir/tiflow/core/ImplementationGuide/de.gematik.tiflow.core",
+    "packageId" : "de.gematik.tiflow.core",
+    "version" : "dev"
+  },
+  {
     "id" : "hl7_fhir_uv_xver_r5_r4",
     "uri" : "http://hl7.org/fhir/5.0/ImplementationGuide/hl7.fhir.uv.xver-r5.r4",
     "packageId" : "hl7.fhir.uv.xver-r5.r4",
@@ -1207,6 +1213,30 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "name" : "Task searchset response for Rx",
       "description" : "Example response for GET /Task",
       "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/tiflow-erezept-operation-outcome-details-cs"
+      },
+      "name" : "TIFLOW EREZEPT Operation Outcome Details CS",
+      "description" : "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/tiflow-erezept-operation-outcome-details-vs"
+      },
+      "name" : "TIFLOW EREZEPT Operation Outcome Details VS",
+      "description" : "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{

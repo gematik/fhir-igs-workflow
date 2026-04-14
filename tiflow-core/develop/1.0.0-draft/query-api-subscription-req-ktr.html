@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"20.9.3"}
-    h3,h4,h5,h6{--heading-prefix:"20.9.3"}</style>
+    <style type="text/css">h2{--heading-prefix:"21.3.3"}
+    h3,h4,h5,h6{--heading-prefix:"21.3.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -186,6 +186,9 @@
       <li>
         <a href="menu-schnittstellen-operation-api.html">Operation API</a>
       </li>
+      <li>
+        <a href="menu-schnittstellen-additional-api.html">Additional API</a>
+      </li>
     </ul>
   </li>
   <li>
@@ -230,7 +233,7 @@ TIFlow - Kernfunktionalitäten
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-subscription.html'><b>Additional API: Subscription</b></a></li><li><b>KTR-Anforderungen: Subscription</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-additional-api.html'><b>Additional API</b></a></li><li><a href='query-api-subscription.html'><b>Additional API: Subscription</b></a></li><li><b>KTR-Anforderungen: Subscription</b></li>
 
           <span style="float:right;">
 
@@ -283,7 +286,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein Clientsystem des Kostenträgers nicht öfter als alle 5 min nach neuen Nachrichten anfragen darf (A_21556). Die dadurch bis zu 5 min entstehende Verzögerung verlängert die Zeit, bis ein Kostenträger auf die Nachricht des Versicherten reagieren kann. Aus dem Grund wird eine Funktionalität eingeführt, mit der ein Clientsystem des Kostenträgers eine Notification erhält, dass eine neue Nachricht für eine Telematik-ID vorliegt. Nach Erhalt einer Notification darf das Clientsystem des Kostenträgers die neue Nachricht sofort abrufen.</p>
 
 <!-- A_22426 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-409" title="CS Kostenträger: Subscription für neue Communication - eine Subscription pro Telematik-ID" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-413" title="CS Kostenträger: Subscription für neue Communication - eine Subscription pro Telematik-ID" version="0">
     <meta lockversion="false" />
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung" />
@@ -292,7 +295,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22373 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-410" title="CS Kostenträger: Subscription für neue Communication - Subscription Ressource erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-414" title="CS Kostenträger: Subscription für neue Communication - Subscription Ressource erstellen" version="0">
     <meta lockversion="false" />
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung" />
@@ -301,7 +304,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22374 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-411" title="CS Kostenträger: Subscription für neue Communication - Subscription registrieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-415" title="CS Kostenträger: Subscription für neue Communication - Subscription registrieren" version="0">
     <meta lockversion="false" />
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung" />
@@ -310,7 +313,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22375 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-412" title="CS Kostenträger: Subscription für neue Communication - Subscription" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-416" title="CS Kostenträger: Subscription für neue Communication - Subscription" version="0">
     <meta lockversion="false" />
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung" />
@@ -347,7 +350,7 @@ abrufen.</p>
 <p>Bei Nutzung des Subscription Services kann abweichend von der Anforderung “A_21556 - PS abgebende LEI: Häufigkeit des Abrufen von Nachrichten” die Operation GET /Communication häufiger als alle 5 Minuten, d.h. nach jeder Notification, mit den obigen Parametern angefragt werden.</p>
 
 <!-- A_22379 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-413" title="CS Kostenträger: Subscription für neue Communication - Wartezeit" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-417" title="CS Kostenträger: Subscription für neue Communication - Wartezeit" version="0">
     <meta lockversion="false" />
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung" />
@@ -398,7 +401,7 @@ abrufen.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 13, 2026 15:17+0000">2026-04-13</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Apr 14, 2026 05:36+0000">2026-04-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

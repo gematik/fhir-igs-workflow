@@ -79,6 +79,12 @@
     "version" : "1.0.8"
   },
   {
+    "id" : "de_gematik_tiflow_core",
+    "uri" : "https://gematik.de/fhir/tiflow/core/ImplementationGuide/de.gematik.tiflow.core",
+    "packageId" : "de.gematik.tiflow.core",
+    "version" : "dev"
+  },
+  {
     "id" : "de_gematik_ti",
     "uri" : "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
     "packageId" : "de.gematik.ti",
@@ -1162,6 +1168,30 @@
       },
       "name" : "Sample Simple Medication",
       "exampleCanonical" : "https://gematik.de/fhir/tiflow/xborder/StructureDefinition/GEM-ERPEU-PR-Medication"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/tiflow-xborder-operation-outcome-details-cs"
+      },
+      "name" : "TIFLOW XBORDER Operation Outcome Details CS",
+      "description" : "Fehlercodes für cross-border Szenarien, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/tiflow-xborder-operation-outcome-details-vs"
+      },
+      "name" : "TIFLOW XBORDER Operation Outcome Details VS",
+      "description" : "Fehlercodes für cross-border Szenarien, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{

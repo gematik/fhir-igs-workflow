@@ -5,7 +5,7 @@ TIFlow - Kernfunktionalitäten
 Version 1.0.0-draft - ci-build 
 
 * [**Table of Contents**](toc.md)
-* [**Query API**](menu-schnittstellen-query-api.md)
+* [**Additional API**](menu-schnittstellen-additional-api.md)
 * [**Additional API: Subscription**](query-api-subscription.md)
 * **AVS-Anforderungen: Subscription**
 

@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"20.9.1"}
-    h3,h4,h5,h6{--heading-prefix:"20.9.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"21.3.1"}
+    h3,h4,h5,h6{--heading-prefix:"21.3.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -186,6 +186,9 @@
       <li>
         <a href="menu-schnittstellen-operation-api.html">Operation API</a>
       </li>
+      <li>
+        <a href="menu-schnittstellen-additional-api.html">Additional API</a>
+      </li>
     </ul>
   </li>
   <li>
@@ -230,7 +233,7 @@ TIFlow - Kernfunktionalitäten
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-subscription.html'><b>Additional API: Subscription</b></a></li><li><b>Server-Anforderungen: Subscription</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-additional-api.html'><b>Additional API</b></a></li><li><a href='query-api-subscription.html'><b>Additional API: Subscription</b></a></li><li><b>Server-Anforderungen: Subscription</b></li>
 
           <span style="float:right;">
 
@@ -281,12 +284,41 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Subscription-Query-Endpunkt.</p>
 
 <!-- A_22362-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-346" title="TI-Flow-Fachdienst – Subscription registrieren – Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-346" title="TI-Flow-Fachdienst – Subscription registrieren – Rollenprüfung" version="1">
     <meta lockversion="false" />
     <actor name="TI_Flow_FD">
         <testProcedure id="Produktgutachten" />
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource sicherstellen, dass ausschließlich Nutzer in der Rolle oid_oeffentliche_apotheke oid_krankenhausapotheke oid_kostentraeger die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit eine Subscription nicht durch Unberechtigte registriert werden kann.
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
+     <ul>
+     <li>oid_oeffentliche_apotheke</li> 
+     <li>oid_krankenhausapotheke</li>
+     <li>oid_kostentraeger</li>
+     </ul>
+     die Operation am TI-Flow-Fachdienst aufrufen dürfen, und bei Abweichungen die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+        </tr>
+    </table> 
+    abbrechen, damit eine Subscription nicht durch Unberechtigte registriert werden kann.
 </requirement>
 
 <!-- A_22364 -->
@@ -338,12 +370,35 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22363 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-351" title="TI-Flow-Fachdienst – Subscription registrieren – Prüfung Telematik-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-351" title="TI-Flow-Fachdienst – Subscription registrieren – Prüfung Telematik-ID" version="1">
     <meta lockversion="false" />
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource durch eine abgebende Leistungserbringerinstitution (Apotheke), diese anhand der Telematik-ID aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in der Ressource im Element criteria Attribut receipient hinterlegte Telematik-ID prüfen und bei Ungleichheit den Aufruf mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich die Apotheke für sich selbst eine Subscription registrieren kann.
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource durch eine abgebende Institution, diese anhand der Telematik-ID aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in der Ressource im Element criteria Attribut receipient hinterlegte Telematik-ID prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_IDENTITY_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Identity mismatch: Access token does not match FHIR data (Telematik-ID)</td>
+        </tr>
+    </table> 
+    abbrechen, damit eine abgebende Institution ausschließlich für sich selbst eine Subscription registrieren kann.
 </requirement>
 
 
@@ -387,7 +442,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 13, 2026 15:17+0000">2026-04-13</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Apr 14, 2026 05:36+0000">2026-04-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

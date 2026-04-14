@@ -54,6 +54,11 @@
     <packageId value="de.basisprofil.r4"/>
     <version value="1.5.4"/>
   </dependsOn>
+  <dependsOn id="de_gematik_tiflow_core">
+    <uri value="https://gematik.de/fhir/tiflow/core/ImplementationGuide/de.gematik.tiflow.core"/>
+    <packageId value="de.gematik.tiflow.core"/>
+    <version value="dev"/>
+  </dependsOn>
   <dependsOn id="de_gematik_ti">
     <uri value="https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti"/>
     <packageId value="de.gematik.ti"/>
@@ -819,6 +824,28 @@
       </reference>
       <name value="Request for Modification on ChargeItem"/>
       <description value="Ressource used for the communication of Change Request on an existing ChargeItem between patient and pharmacy"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/tiflow-chargeitem-operation-outcome-details-cs"/>
+      </reference>
+      <name value="TIFLOW ChargeItem Operation Outcome Details CS"/>
+      <description value="Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/tiflow-chargeitem-operation-outcome-details-vs"/>
+      </reference>
+      <name value="TIFLOW ChargeItem Operation Outcome Details VS"/>
+      <description value="Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

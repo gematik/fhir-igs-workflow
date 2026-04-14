@@ -3578,27 +3578,6 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "CodeSystem"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow/core/CodeSystem/GEM-ERP-CS-OperationOutcomeDetails> ;
-         fhir:reference [ fhir:v "CodeSystem/GEM-ERP-CS-OperationOutcomeDetails" ]
-       ] ;
-       fhir:name [ fhir:v "GEM ERP CS OperationOutcomeDetails" ] ;
-       fhir:description [ fhir:v "Fachliche Fehlercodes des E-Rezept-Fachdienst" ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
            fhir:v "StructureDefinition:extension"
          ]
        ] ) ;
@@ -4313,27 +4292,6 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "StructureDefinition:resource"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow/core/StructureDefinition/GEM-ERP-PR-OperationOutcome> ;
-         fhir:reference [ fhir:v "StructureDefinition/GEM-ERP-PR-OperationOutcome" ]
-       ] ;
-       fhir:name [ fhir:v "GEM ERP PR OperationOutcome" ] ;
-       fhir:description [ fhir:v "OperationOutcome für Angabe von Fehlermeldungen vom E-Rezept-Fachdienst" ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
            fhir:v "StructureDefinition:complex-type"
          ]
        ] ) ;
@@ -4364,27 +4322,6 @@
        ] ;
        fhir:name [ fhir:v "GEM ERP PR Task" ] ;
        fhir:description [ fhir:v "Task für die Verwaltung des E-Rezept-Workflows" ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "ValueSet"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow/core/ValueSet/GEM-ERP-VS-OperationOutcomeDetails> ;
-         fhir:reference [ fhir:v "ValueSet/GEM-ERP-VS-OperationOutcomeDetails" ]
-       ] ;
-       fhir:name [ fhir:v "GEM ERP VS OperationOutcomeDetails" ] ;
-       fhir:description [ fhir:v "Fachliche Fehlercodes des E-Rezept-Fachdienst" ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -4775,6 +4712,69 @@
        ] ;
        fhir:name [ fhir:v "TaskExpiryDateSP" ] ;
        fhir:description [ fhir:v "Das Ablaufdatum eines E-Rezepzes. Nach ablauf dieses Datums darf ein E-Rezept nicht mehr beliefert werden." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/tiflow-operation-outcome-details-cs" ]
+       ] ;
+       fhir:name [ fhir:v "TIFLOW Operation Outcome Details CS" ] ;
+       fhir:description [ fhir:v "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://gematik.de/fhir/tiflow/core/ValueSet/tiflow-operation-outcome-details-vs> ;
+         fhir:reference [ fhir:v "ValueSet/tiflow-operation-outcome-details-vs" ]
+       ] ;
+       fhir:name [ fhir:v "TIFLOW Operation Outcome Details VS" ] ;
+       fhir:description [ fhir:v "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://gematik.de/fhir/tiflow/core/StructureDefinition/tiflow-operation-outcome> ;
+         fhir:reference [ fhir:v "StructureDefinition/tiflow-operation-outcome" ]
+       ] ;
+       fhir:name [ fhir:v "TIFLOW OperationOutcome" ] ;
+       fhir:description [ fhir:v "OperationOutcome für Angabe von Fehlermeldungen vom TI-Flow-Fachdienst" ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -6175,7 +6175,27 @@
              fhir:title [ fhir:v "Client-Anforderungen: Consent-Query" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
-         ] [
+         ] )
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "menu-schnittstellen-additional-api.html"^^xsd:anyURI ;
+             fhir:l fhir:menu-schnittstellen-additional-api.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "menu-schnittstellen-additional-api.html"^^xsd:anyURI ;
+           fhir:l fhir:menu-schnittstellen-additional-api.html
+         ] ;
+         fhir:title [ fhir:v "Additional API" ] ;
+         fhir:generation [ fhir:v "markdown" ] ;
+         fhir:page ( [
            fhir:extension ( [
              fhir:url [
                fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;

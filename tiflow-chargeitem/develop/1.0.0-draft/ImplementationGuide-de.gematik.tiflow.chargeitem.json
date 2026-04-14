@@ -60,6 +60,12 @@
     "version" : "1.5.4"
   },
   {
+    "id" : "de_gematik_tiflow_core",
+    "uri" : "https://gematik.de/fhir/tiflow/core/ImplementationGuide/de.gematik.tiflow.core",
+    "packageId" : "de.gematik.tiflow.core",
+    "version" : "dev"
+  },
+  {
     "id" : "de_gematik_ti",
     "uri" : "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
     "packageId" : "de.gematik.ti",
@@ -1055,6 +1061,30 @@
       },
       "name" : "Request for Modification on ChargeItem",
       "description" : "Ressource used for the communication of Change Request on an existing ChargeItem between patient and pharmacy",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/tiflow-chargeitem-operation-outcome-details-cs"
+      },
+      "name" : "TIFLOW ChargeItem Operation Outcome Details CS",
+      "description" : "Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/tiflow-chargeitem-operation-outcome-details-vs"
+      },
+      "name" : "TIFLOW ChargeItem Operation Outcome Details VS",
+      "description" : "Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
       "exampleBoolean" : false
     },
     {

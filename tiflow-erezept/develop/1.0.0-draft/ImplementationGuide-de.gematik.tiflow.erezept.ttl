@@ -115,6 +115,14 @@
      fhir:packageId [ fhir:v "de.gematik.ti" ] ;
      fhir:version [ fhir:v "1.2.0" ]
   ] [
+     fhir:id [ fhir:v "de_gematik_tiflow_core" ] ;
+     fhir:uri [
+       fhir:v "https://gematik.de/fhir/tiflow/core/ImplementationGuide/de.gematik.tiflow.core"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/tiflow/core/ImplementationGuide/de.gematik.tiflow.core>
+     ] ;
+     fhir:packageId [ fhir:v "de.gematik.tiflow.core" ] ;
+     fhir:version [ fhir:v "dev" ]
+  ] [
      fhir:id [ fhir:v "hl7_fhir_uv_xver_r5_r4" ] ;
      fhir:uri [
        fhir:v "http://hl7.org/fhir/5.0/ImplementationGuide/hl7.fhir.uv.xver-r5.r4"^^xsd:anyURI ;
@@ -2309,6 +2317,48 @@
        fhir:example [
          a fhir:Boolean ;
          fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://gematik.de/fhir/tiflow/erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/tiflow-erezept-operation-outcome-details-cs" ]
+       ] ;
+       fhir:name [ fhir:v "TIFLOW EREZEPT Operation Outcome Details CS" ] ;
+       fhir:description [ fhir:v "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://gematik.de/fhir/tiflow/erezept/ValueSet/tiflow-erezept-operation-outcome-details-vs> ;
+         fhir:reference [ fhir:v "ValueSet/tiflow-erezept-operation-outcome-details-vs" ]
+       ] ;
+       fhir:name [ fhir:v "TIFLOW EREZEPT Operation Outcome Details VS" ] ;
+       fhir:description [ fhir:v "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
        ]
      ] [
        fhir:extension ( [

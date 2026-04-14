@@ -287,25 +287,71 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.</p>
 
   <!-- A_19231-02 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Prüfung Secret" version="0" key="IG-TIFLOW-CORE-60">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Prüfung Secret" version="1" key="IG-TIFLOW-CORE-60">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close das im URL-Parameter "?secret=..." übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des Secrets erfolgt.
+    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close das im URL-Parameter "?secret=..." übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:    
+    <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_SECRET_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table>
+    abbrechen, damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des Secrets erfolgt.
 </requirement>
 
   <!-- A_19231-02 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Prüfung Status" version="0" key="IG-TIFLOW-CORE-61">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Prüfung Status" version="1" key="IG-TIFLOW-CORE-61">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "in-progress" ist, damit der Workflow nur abgeschlossen werden kann, wenn sich die Verordnung in Belieferung befindet.
+    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "in-progress" ist, die Operation mit dem folgenden Fehler:
+    <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_TASK_STATUS_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Task has invalid status.</td>
+        </tr>
+    </table>
+    abbrechen, damit der Workflow nur abgeschlossen werden kann, wenn sich die Verordnung in Belieferung befindet.
 </requirement>
 
   <!-- A_19248-05 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="0" key="IG-TIFLOW-CORE-62">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="1" key="IG-TIFLOW-CORE-62">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
@@ -316,7 +362,30 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <li>die KVNR des Versicherten im referenzierten Task (Task.for) gegen KVNR in MedicationDispense.subject:identifier und</li>
         <li>ob die Telematik-ID der Apotheke gemäß ACCESS_TOKEN mit dem Wert in MedicationDispense.performer.actor:identifier übereinstimmt</li>
     </ul>
-    und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen.
+    und im Fehlerfall die Operation mit dem folgenden Fehler:
+    <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_VALIDATION_FAILED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>FHIR Profile Validation Failed</td>
+        </tr>
+    </table>
+    abbrechen.
 </requirement>
 
   <!-- A_27051 -->
@@ -329,8 +398,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_26337 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="0" key="IG-TIFLOW-CORE-64">
-    <meta lockversion="false"/>
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="1" key="IG-TIFLOW-CORE-64">
+    <meta lockversion="true"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
@@ -383,20 +452,44 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     In die Signatur wird die letzte OCSP-Antwort der regelmäßigen Statusprüfung des Signaturzertifikats C.FD.OSIG eingebettet.
     Das Signatur-Ergebnis wird als dss:Base64Signature-Objekt in Bundle.signature eingebettet und dieses Quittungs-Bundle mit Referenz in Task.output mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 3 gespeichert sowie als Response des http-Requests an den Aufrufer zurückgeben, damit die abgebende LEI einen Nachweis über den ordnungsgemäßen Abschluss des E-Rezept-Workflows als Quittung erhält.
 </requirement>
+  <!-- ToDo: Afo trennen -->
 
   <!-- A_22919 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="0" key="IG-TIFLOW-CORE-69">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="1" key="IG-TIFLOW-CORE-69">
     <meta lockversion="false"/>
     <actor name="TI_Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS, falls keine OCSP-Response für das Signaturzertifikat der Quittung vorliegt bzw. die letzte vorliegende OCSP-Response älter als 24h ist, die Operation mit dem Fehler 503 abbrechen.
+    Der TI-Flow-Fachdienst MUSS, falls keine OCSP-Response für das Signaturzertifikat der Quittung vorliegt bzw. die letzte vorliegende OCSP-Response älter als 24h ist, die Operation mit dem folgenden Fehler:
+    <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>503 - Service Unavailable</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>transient</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_SIGNATURE_NO_OCSP_RESPONSE</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table>
+    abbrechen.
 </requirement>
 
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
   <!-- A_19230-01 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung" version="0" key="IG-TIFLOW-DIGA-3">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung" version="1" key="IG-TIFLOW-DIGA-3">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produktgutachten"></testProcedure>
@@ -405,18 +498,64 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <ul>
     <li>oid_kostentraeger</li>
   </ul>
-  die Operation am Fachdienst aufrufen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
+  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
+      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist&nbsp;nicht berechtigt, die aufgerufene Operation anzufordern</td>
+        </tr>
+    </table> 
+    abbrechen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
 </requirement>
 
 <p>&lt;/br&gt;</p>
 
 <p>  <!-- A_26003-01 --></p>
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense" version="0" key="IG-TIFLOW-DIGA-4">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense" version="1" key="IG-TIFLOW-DIGA-4">
   <meta lockversion="false"/>
   <actor name="TI_Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&lt;id&gt; mit Flowtype 162 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht. Andernfalls ist die Operation mit einem Fehler abzubrechen, und im OperationOutcome muss der Text "Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen für digitale Gesundheitsanwendungen zulässig." zurückgegeben werden.
+  Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&lt;id&gt; mit Flowtype 162 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht und anderenfalls die Operation mit dem folgenden Fehler:
+  <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_MEDICATION_DISPENSE_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen für digitale Gesundheitsanwendungen zulässig.</td>
+        </tr>
+    </table>
+    abbrechen.
 </requirement>
 
 
@@ -459,7 +598,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 13, 2026 15:21+0000">2026-04-13</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Apr 14, 2026 05:41+0000">2026-04-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
