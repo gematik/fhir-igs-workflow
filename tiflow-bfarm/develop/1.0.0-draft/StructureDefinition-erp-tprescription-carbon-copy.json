@@ -219,7 +219,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -237,11 +236,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Parameters"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter.id",
@@ -273,14 +268,6 @@
     {
       "id" : "Parameters.parameter.extension",
       "path" : "Parameters.parameter.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -368,7 +355,6 @@
       "path" : "Parameters.parameter.name",
       "short" : "Name from the definition",
       "definition" : "The name of the parameter (reference to the operation definition).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -552,8 +538,7 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1",
-      "inv-1"],
+      "condition" : ["inv-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -563,11 +548,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter.resource",
@@ -587,11 +568,7 @@
       }],
       "condition" : ["inv-1"],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "Entity. Role, or Act"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter.part",
@@ -607,6 +584,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -625,7 +611,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -643,11 +628,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Parameters"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxPrescription.id",
@@ -679,14 +660,6 @@
     {
       "id" : "Parameters.parameter:rxPrescription.extension",
       "path" : "Parameters.parameter.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -774,7 +747,6 @@
       "path" : "Parameters.parameter.name",
       "short" : "Name from the definition",
       "definition" : "The name of the parameter (reference to the operation definition).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -960,8 +932,7 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1",
-      "inv-1"],
+      "condition" : ["inv-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -971,11 +942,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxPrescription.resource",
@@ -995,11 +962,7 @@
       }],
       "condition" : ["inv-1"],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "Entity. Role, or Act"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxPrescription.part",
@@ -1022,7 +985,16 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
       "mustSupport" : true,
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -1055,14 +1027,6 @@
     {
       "id" : "Parameters.parameter:rxPrescription.part.extension",
       "path" : "Parameters.parameter.part.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -1150,7 +1114,6 @@
       "path" : "Parameters.parameter.part.name",
       "short" : "Name from the definition",
       "definition" : "The name of the parameter (reference to the operation definition).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -1174,14 +1137,6 @@
     },
     {
       "id" : "Parameters.parameter:rxPrescription.part.value[x]",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Parameters.parameter.part.value[x]",
       "short" : "If parameter is a data type",
       "definition" : "If the parameter is a data type.",
@@ -1342,8 +1297,7 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1",
-      "inv-1"],
+      "condition" : ["inv-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1353,11 +1307,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxPrescription.part.resource",
@@ -1377,11 +1327,7 @@
       }],
       "condition" : ["inv-1"],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "Entity. Role, or Act"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxPrescription.part.part",
@@ -1397,6 +1343,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -1416,6 +1371,15 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -1448,14 +1412,6 @@
     {
       "id" : "Parameters.parameter:rxPrescription.part:prescriptionSignatureDate.extension",
       "path" : "Parameters.parameter.part.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -1543,7 +1499,6 @@
       "path" : "Parameters.parameter.part.name",
       "short" : "Name from the definition",
       "definition" : "The name of the parameter (reference to the operation definition).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -1582,8 +1537,7 @@
       "type" : [{
         "code" : "instant"
       }],
-      "condition" : ["ele-1",
-      "inv-1"],
+      "condition" : ["inv-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1594,11 +1548,7 @@
       }],
       "mustSupport" : true,
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxPrescription.part:prescriptionSignatureDate.resource",
@@ -1618,11 +1568,7 @@
       }],
       "condition" : ["inv-1"],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "Entity. Role, or Act"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxPrescription.part:prescriptionSignatureDate.part",
@@ -1638,6 +1584,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -1657,6 +1612,15 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -1689,14 +1653,6 @@
     {
       "id" : "Parameters.parameter:rxPrescription.part:prescriptionId.extension",
       "path" : "Parameters.parameter.part.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -1784,7 +1740,6 @@
       "path" : "Parameters.parameter.part.name",
       "short" : "Name from the definition",
       "definition" : "The name of the parameter (reference to the operation definition).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -1824,8 +1779,7 @@
         "code" : "Identifier",
         "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/e-prescription-id"]
       }],
-      "condition" : ["ele-1",
-      "inv-1"],
+      "condition" : ["inv-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1836,11 +1790,7 @@
       }],
       "mustSupport" : true,
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxPrescription.part:prescriptionId.resource",
@@ -1860,11 +1810,7 @@
       }],
       "condition" : ["inv-1"],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "Entity. Role, or Act"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxPrescription.part:prescriptionId.part",
@@ -1880,6 +1826,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -1899,6 +1854,15 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -1931,14 +1895,6 @@
     {
       "id" : "Parameters.parameter:rxPrescription.part:medicationRequest.extension",
       "path" : "Parameters.parameter.part.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -2026,7 +1982,6 @@
       "path" : "Parameters.parameter.part.name",
       "short" : "Name from the definition",
       "definition" : "The name of the parameter (reference to the operation definition).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -2212,8 +2167,7 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1",
-      "inv-1"],
+      "condition" : ["inv-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2223,11 +2177,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxPrescription.part:medicationRequest.resource",
@@ -2281,6 +2231,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -2300,6 +2259,15 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -2332,14 +2300,6 @@
     {
       "id" : "Parameters.parameter:rxPrescription.part:medication.extension",
       "path" : "Parameters.parameter.part.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -2427,7 +2387,6 @@
       "path" : "Parameters.parameter.part.name",
       "short" : "Name from the definition",
       "definition" : "The name of the parameter (reference to the operation definition).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -2613,8 +2572,7 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1",
-      "inv-1"],
+      "condition" : ["inv-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2624,11 +2582,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxPrescription.part:medication.resource",
@@ -2676,6 +2630,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -2694,7 +2657,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2712,11 +2674,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Parameters"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.id",
@@ -2748,14 +2706,6 @@
     {
       "id" : "Parameters.parameter:rxDispensation.extension",
       "path" : "Parameters.parameter.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -2843,7 +2793,6 @@
       "path" : "Parameters.parameter.name",
       "short" : "Name from the definition",
       "definition" : "The name of the parameter (reference to the operation definition).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -3029,8 +2978,7 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1",
-      "inv-1"],
+      "condition" : ["inv-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3040,11 +2988,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.resource",
@@ -3064,11 +3008,7 @@
       }],
       "condition" : ["inv-1"],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "Entity. Role, or Act"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part",
@@ -3091,7 +3031,16 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
       "mustSupport" : true,
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -3124,14 +3073,6 @@
     {
       "id" : "Parameters.parameter:rxDispensation.part.extension",
       "path" : "Parameters.parameter.part.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -3219,7 +3160,6 @@
       "path" : "Parameters.parameter.part.name",
       "short" : "Name from the definition",
       "definition" : "The name of the parameter (reference to the operation definition).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -3243,14 +3183,6 @@
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part.value[x]",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Parameters.parameter.part.value[x]",
       "short" : "If parameter is a data type",
       "definition" : "If the parameter is a data type.",
@@ -3411,8 +3343,7 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1",
-      "inv-1"],
+      "condition" : ["inv-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3422,11 +3353,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part.resource",
@@ -3446,11 +3373,7 @@
       }],
       "condition" : ["inv-1"],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "Entity. Role, or Act"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part.part",
@@ -3466,6 +3389,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -3485,6 +3417,15 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -3517,14 +3458,6 @@
     {
       "id" : "Parameters.parameter:rxDispensation.part:dispenseInformation.extension",
       "path" : "Parameters.parameter.part.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -3612,7 +3545,6 @@
       "path" : "Parameters.parameter.part.name",
       "short" : "Name from the definition",
       "definition" : "The name of the parameter (reference to the operation definition).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -3798,8 +3730,7 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1",
-      "inv-1"],
+      "condition" : ["inv-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3809,11 +3740,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part:dispenseInformation.resource",
@@ -3833,11 +3760,7 @@
       }],
       "condition" : ["inv-1"],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "Entity. Role, or Act"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part:dispenseInformation.part",
@@ -3860,7 +3783,16 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
       "mustSupport" : true,
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -3893,14 +3825,6 @@
     {
       "id" : "Parameters.parameter:rxDispensation.part:dispenseInformation.part.extension",
       "path" : "Parameters.parameter.part.part.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -3988,7 +3912,6 @@
       "path" : "Parameters.parameter.part.part.name",
       "short" : "Name from the definition",
       "definition" : "The name of the parameter (reference to the operation definition).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -4012,14 +3935,6 @@
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part:dispenseInformation.part.value[x]",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Parameters.parameter.part.part.value[x]",
       "short" : "If parameter is a data type",
       "definition" : "If the parameter is a data type.",
@@ -4180,8 +4095,7 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1",
-      "inv-1"],
+      "condition" : ["inv-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4191,11 +4105,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part:dispenseInformation.part.resource",
@@ -4215,11 +4125,7 @@
       }],
       "condition" : ["inv-1"],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "Entity. Role, or Act"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part:dispenseInformation.part.part",
@@ -4235,6 +4141,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -4254,6 +4169,15 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -4286,14 +4210,6 @@
     {
       "id" : "Parameters.parameter:rxDispensation.part:dispenseInformation.part:medicationDispense.extension",
       "path" : "Parameters.parameter.part.part.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -4381,7 +4297,6 @@
       "path" : "Parameters.parameter.part.part.name",
       "short" : "Name from the definition",
       "definition" : "The name of the parameter (reference to the operation definition).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -4567,8 +4482,7 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1",
-      "inv-1"],
+      "condition" : ["inv-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4578,11 +4492,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part:dispenseInformation.part:medicationDispense.resource",
@@ -4630,6 +4540,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -4649,6 +4568,15 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -4681,14 +4609,6 @@
     {
       "id" : "Parameters.parameter:rxDispensation.part:dispenseInformation.part:medication.extension",
       "path" : "Parameters.parameter.part.part.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -4776,7 +4696,6 @@
       "path" : "Parameters.parameter.part.part.name",
       "short" : "Name from the definition",
       "definition" : "The name of the parameter (reference to the operation definition).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -4962,8 +4881,7 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1",
-      "inv-1"],
+      "condition" : ["inv-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4973,11 +4891,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part:dispenseInformation.part:medication.resource",
@@ -5025,6 +4939,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -5044,6 +4967,15 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -5076,14 +5008,6 @@
     {
       "id" : "Parameters.parameter:rxDispensation.part:dispenseOrganization.extension",
       "path" : "Parameters.parameter.part.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -5171,7 +5095,6 @@
       "path" : "Parameters.parameter.part.name",
       "short" : "Name from the definition",
       "definition" : "The name of the parameter (reference to the operation definition).",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -5357,8 +5280,7 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1",
-      "inv-1"],
+      "condition" : ["inv-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -5368,11 +5290,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part:dispenseOrganization.resource",
@@ -5424,6 +5342,15 @@
         "max" : "*"
       },
       "contentReference" : "http://hl7.org/fhir/StructureDefinition/Parameters#Parameters.parameter",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     }]
   },

@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-ca
   "name" : "ERP_TPrescription_CarbonCopy_Logical",
   "title" : "Logisches Modell digitaler Durchschlag E-T-Rezept",
   "status" : "draft",
-  "date" : "2026-04-14T05:28:06+00:00",
+  "date" : "2026-04-14T09:34:44+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
