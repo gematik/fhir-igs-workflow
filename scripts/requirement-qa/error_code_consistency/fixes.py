@@ -123,19 +123,45 @@ def _normalize_capability_operation_canonicals(cap_file: Path, ig_root: Path) ->
 
 
 def _normalize_operation_wrapper_scoping(resp_def_file: Path) -> int:
-    """Scope unscoped inserts in *OperationStatusCodes wrappers to the correct operation path."""
+    """Scope unscoped inserts in *OperationStatusCodes wrappers to the correct operation path.
+
+    Helper rulesets (those inserted *by* other OperationStatusCodes rulesets, such as
+    ``InstanceOperationStatusCodes`` or ``TypeOperationStatusCodes``) must remain
+    context-agnostic (bare ``* insert X`` lines) so that their caller supplies the path
+    exactly once.  Only *concrete* wrappers — those not themselves referenced by another
+    *OperationStatusCodes ruleset — should have their bare inserts scoped.
+    """
     if not resp_def_file.exists():
         return 0
 
     lines = resp_def_file.read_text(encoding="utf-8").splitlines()
     updated = 0
-    current_ruleset: Optional[str] = None
 
     ruleset_re = re.compile(r"^\s*RuleSet:\s*([A-Za-z0-9_\-]+)\s*$")
     unscoped_insert_re = re.compile(r"^(\s*\*)\s+insert\s+([A-Za-z0-9_\-]+)\s*$")
     scoped_insert_re = re.compile(r"^\s*\*\s+rest\.[^\s]+\s+insert\s+")
     op_wrapper_re = re.compile(r"^[A-Za-z0-9_\-]*OperationStatusCodes$")
+    any_insert_re = re.compile(r"^\s*\*\s*(?:rest\.[^\s]+\s+)?insert\s+([A-Za-z0-9_\-]+)\s*$")
 
+    # First pass: collect helper rulesets — rulesets that are explicitly inserted
+    # (scoped or bare) from within another *OperationStatusCodes ruleset.
+    # These must stay context-agnostic; only their callers should carry the path prefix.
+    helper_rulesets: set = set()
+    current_scan: Optional[str] = None
+    for line in lines:
+        hdr = ruleset_re.match(line)
+        if hdr:
+            current_scan = hdr.group(1)
+            continue
+        if current_scan and op_wrapper_re.match(current_scan):
+            m = any_insert_re.match(line)
+            if m:
+                name = m.group(1)
+                if op_wrapper_re.match(name) or name.endswith("ErrorCodes"):
+                    helper_rulesets.add(name)
+
+    # Second pass: scope bare inserts inside concrete (non-helper) wrappers.
+    current_ruleset: Optional[str] = None
     for idx, line in enumerate(lines):
         header_match = ruleset_re.match(line)
         if header_match:
@@ -143,6 +169,9 @@ def _normalize_operation_wrapper_scoping(resp_def_file: Path) -> int:
             continue
 
         if not current_ruleset or not op_wrapper_re.match(current_ruleset):
+            continue
+        if current_ruleset in helper_rulesets:
+            # This is a helper — leave it context-agnostic.
             continue
         if scoped_insert_re.match(line):
             continue
@@ -152,8 +181,8 @@ def _normalize_operation_wrapper_scoping(resp_def_file: Path) -> int:
             continue
 
         prefix, inserted_ruleset = insert_match.groups()
-        if inserted_ruleset.endswith("OperationStatusCodes"):
-            # Nested status-code wrappers already define their own rest.* scope.
+        if inserted_ruleset.endswith("OperationStatusCodes") or inserted_ruleset.endswith("ErrorCodes"):
+            # Nested helper wrappers already define their own rest.* scope.
             continue
 
         # System-level wrappers use rest.operation; resource wrappers use rest.resource.operation.
@@ -851,8 +880,12 @@ def fix_capstat(
             wrapper_start = resp_def_content.index(wrapper_header)
             next_ruleset = resp_def_content.find("\nRuleSet:", wrapper_start + len(wrapper_header))
             if next_ruleset != -1:
+                # Ensure the inserted line starts on a new line. Without this, a section
+                # comment (e.g. ``// Task/<id>/$accept``) that immediately precedes the
+                # next RuleSet header would cause the new code to be appended to that
+                # comment line, making it syntactically invisible to the FSH compiler.
                 new_def_content = (
-                    resp_def_content[:next_ruleset] + insert_line + resp_def_content[next_ruleset:]
+                    resp_def_content[:next_ruleset] + "\n" + insert_line + resp_def_content[next_ruleset:]
                 )
             else:
                 new_def_content = resp_def_content.rstrip("\n") + "\n" + insert_line
