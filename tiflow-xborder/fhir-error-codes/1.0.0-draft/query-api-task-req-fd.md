@@ -15,18 +15,7 @@ Version 1.0.0-draft - ci-build
 
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Task-Endpunkt.
 
-Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem folgenden Fehler:
-
-* HTTP-Code: Severity
-  * 405 - Method Not Allowed: error
-* HTTP-Code: Code
-  * 405 - Method Not Allowed: invalid
-* HTTP-Code: Details Code
-  * 405 - Method Not Allowed: SVC_METHOD_NOT_ALLOWED
-* HTTP-Code: Details Text
-  * 405 - Method Not Allowed: -
-
-abbrechen, damit keine unzulässigen Operationen auf den Rezeptdaten ausgeführt werden können.
+Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter [Operations](./menu-schnittstellen-operation-api.md) beschrieben.
 
 #### GET /Task (Liste)
@@ -54,68 +43,6 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt 
 
 Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task durch einen Versicherten die gültige Ergebnisliste der Task-Ressourcen ohne die referenzierten, signierten E-Rezept-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine Übersicht aller Tasks erhält.
 
-Der TI-Flow-Fachdienst MUSS einen Konfigurationsparameter RATELIMIT_MAX1d_ERROR_UC4_12 verwalten.
-Der Defaultwert für RATELIMIT_MAX1d_ERROR_UC4_12 ist 100.
-
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit dem URL-Parameter pnw="..." durch eine abgebende LEI die Telematik-ID des Aufrufers im ACCESS_TOKEN im HTTP-Requestheader "Authorization" feststellen und den Aufruf in einer Statistik zur Prüfung des Ratelimits erfassen, wenn der Aufruf mit einem Fehler 456 oder 458 abgebrochen wird. Der TI-Flow-Fachdienst MUSS die Statistik zur Prüfung des Ratelimits alle 24h zurück auf 0 setzen.
-
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit dem URL-Parameter pnw="..." durch eine abgebende LEI prüfen, ob mit dem Aufruf die Anzahl RATELIMIT_MAX1d_ERROR_UC4_12 überschritten ist und in diesem Fall den Aufruf mit dem folgenden Fehler:
-
-* HTTP-Code: Severity
-  * 423 - Locked: error
-* HTTP-Code: Code
-  * 423 - Locked: invalid
-* HTTP-Code: Details Code
-  * 423 - Locked: SVC_TELEMATIKID_TEMPORARILY_BLOCKED
-* HTTP-Code: Details Text
-  * 423 - Locked: The specified Telematik-ID is temporarily blocked
-
-abbrechen.
-
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI,den im Parameter pnw übermittelten Prüfungsnachweis extrahieren, die Version der Prüfziffer bestimmen, den Prüfungsnachweis prüfen und bei Fehlen oder fehlerhafter Prüfung mit dem Fehler 403 abbrechen, damit nur Clients die Operation aufrufen können, welche einen Anwesenheitsnachweis erfolgreich durchgeführt haben.
-Die Version der Prüfziffer wird aus der Struktur der Prüfziffer abgeleitet.
-
-In der Version 1 beginnt die Prüfziffer mit einem Großbuchstaben. Die Prüfung des Prüfungsnachweises für Prüfziffer Version 1 ist in Kapitel “HTTP-Operation GET - Prüfung VSDM Prüfungsnachweis (Version 1)” beschrieben.
-
-In der Version 2 ist das erste Byte der Prüfziffer > 128. Die Prüfung des Prüfungsnachweises für Prüfziffer Version 2 ist in Kapitel “HTTP-Operation GET - Prüfung VSDM Prüfungsnachweis (Version 2)” beschrieben.
-
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI prüfen, ob die in der Prüfziffer übermittelte KVNR identisch ist mit dem Wert im URL-Parameter kvnr="..." und bei Ungleichheit mit dem Fehler 456 abbrechen.
-
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI prüfen, falls im Operationsaufruf der URL-Parameter hcv übermittelt wurde, den im URL-Parameter übermittelten Wert transformieren, miteinander vergleichen und bei Ungleichheit mit dem Fehler 458 abbrechen.
-Die Kodierung und das Format den in der Prüfziffer übermittelten Wert für hcv ist in A_27278-* beschrieben. Das Clientsystem übermittelt hcvBase64URLSafe-kodiert.
-
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit dem URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis eine Prüfziffer enthalten ist, prüfen, dass die Differenz zwischen Zeitstempel aus der Prüfziffer des Prüfungsnachweises und dem aktuellen Zeitpunkt nicht größer als 30 Minuten (konfigurierbar) ist und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen. Im Fehlerfall ist die Meldung "Anwesenheitsnachweis konnte nicht erfolgreich durchgeführt werden (Zeitliche Gültigkeit des Anwesenheitsnachweis überschritten)." im OperationOutcome zu übermitteln.
-Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des Prüfungsnachweises erfolgt ausschließlich nach Anpassung von A_23451-* im Rahmen des Änderungsmanagement für Spezifikationen.
-
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis eine Prüfziffer enthalten ist, die Tasks nach
-* Task.status= "ready"
-* Task.for = KVNRfür die KVNR aus der Prüfziffer des Prüfungsnachweises
-* Task.ExpiryDatenicht vor dem aktuellen Datum liegt
-* und Task.extension:flowType = 160 oder 166
-filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "ready" abrufen kann.
-
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis keine Prüfziffer enthalten ist, prüfen, ob das Ergebnis im Prüfungsnachweis gleich 3 ist und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen.
-
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI prüfen, ob ein URL-Parameter kvnr="..." übermittelt wurde und bei fehlerhafter Prüfung mit dem Fehler 455 abbrechen.
-
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI prüfen, falls enforce_hcv_check = TRUE, ob ein URL-Parameter hcv="..." übermittelt wurde und bei fehlerhafter Prüfung mit dem Fehler 457 abbrechen.
-
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls das Ergebnis im VSDM Prüfungsnachweis gleich 3 ist und URL-Parameter kvnr="..." übermittelt wurde, die IKNR des neuesten E-Rezeptes (wenn vorhanden) zum Fachdienst VSDM mappen, damit der TI-Flow-Fachdienst feststellen kann, welcher Status AcceptPN3VSDMxx zu prüfen ist.
-Die IKNR ist im Verordnungsdatensatz unter Coverage.payor.identifier.value zu finden.
-
-Der TI-Flow-Fachdienst kann eine Mapping zwischen den IKNR und dem zugehörigen Fachdiensten VSDM erstellen und hierfür das im DNS hinterlegte Mapping zwischen IKNR und den Endpunkten der Fachdienste VSDM nutzen.
-
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls das Ergebnis im VSDM Prüfungsnachweis gleich 3 ist, URL-Parameter kvnr="..." übermittelt wurde und keine E-Rezeptes für den Versicherten im TI-Flow-Fachdienst gespeichert sind, eine leere Liste mit dem Status 202 zurückgeben.
-
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls im VSDM Prüfungsnachweis keine Prüfziffer enthalten, das Ergebnis im Prüfungsnachweis gleich 3 und der passende Status AcceptPN3VSDMxx = false ist mit dem Fehler 454 abbrechen.
-
-Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit den URL-Parameter pnw="..." durch eine abgebende LEI, falls der passende Status AcceptPN3VSDMxx = true, das Ergebnis im VSDM Prüfungsnachweis gleich 3 ist und URL-Parameter kvnr="..." übermittelt wurde, die Tasks nach 
-* Task.status = "ready", 
-* Task.for = KVNR aus dem URL-Parameter,
-* Task.ExpiryDate nicht vor dem aktuellen Datum liegt
-* und Task.extension:flowType = 160 oder 166
-filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine Apotheke alle zu einem Versicherten gehörenden E-Rezepte mit dem Status "ready" abrufen kann. Der TI-Flow-Fachdienst MUSS für den Response den Returncode 202 verwenden.
-
 Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI, den im HTTP-Header X-PoPP-Token übermittelten Token extrahieren, prüfen und bei Fehlen oder fehlerhafter Prüfung mit dem Fehler 403 abbrechen, damit die Autorisierung zum Zugriff auf die Daten nur erfolgt, wenn ein Anwesenheitsnachweis erfolgreich durchgeführt wurde.
 Die Anforderungen zum Prüfen des PoPP-Token sind im Kapitel “HTTP-Operation GET - Prüfung PoPP-Token” beschrieben.
 
@@ -132,68 +59,6 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt 
 * und Task.extension:flowType = 160 oder 166
 filtern und in einem Bundle der gefundenen Tasks (ohne den signierte Anhang QES) zurückgeben, damit eine abgebende LEI alle zu einem Versicherten gehörenden einlösbaren E-Rezepte mit dem Status "offen" abrufen kann.
 Diese Operation führt nicht zu einer Statusänderung bei den zurück gelieferten Task Ressourcen.
-
-##### Prüfung VSDM Prüfungsnachweis
-
-Der VSDM Prüfungsnachweis wird URL-codiert übertragen.
-
-Das Informationsmodel des VSDM Prüfungsnachweises ist in [gemSysL_VSDM] beschrieben.
-
-Die Struktur der VSDM Prüfziffer ist in A_23453-* (siehe Änderungseintrag C_11321) beschrieben.
-
-* Nr: 1
-  * Feld: 10-stelliger unveränderlicher Teil der KVNR
-  * Format: alphanummerisch
-  * Länge: 10
-* Nr: 2
-  * Feld: aktueller Unix Timestamp
-  * Format: alphanummerisch
-  * Länge: 10
-* Nr: 3
-  * Feld: Grund des UpdatesU – Update Flag Service (UFS) AnfrageV – Versichertenstammdaten (VSD) UpdateC – Kartenmanagement (CMS) Update
-  * Format: alphanummerisch
-  * Länge: 1
-* Nr: 4
-  * Feld: Kennung des Betreibers Fachdienste VSDM gemäß Liste der gematik
-  * Format: alphanummerisch
-  * Länge: 1
-* Nr: 5
-  * Feld: Version des Hash-Schlüssels
-  * Format: alphanummerisch
-  * Länge: 1
-* Nr: 6
-  * Feld: HMAC: ersten 24 Byte der Ausgabe der SHA-256 Hashfunktion mit dem betreiberspezifischen Schlüssel für die konkatinierten Felder 1-5
-  * Format: binär
-  * Länge: 24
-
-**Tabelle: **Struktur VSDM Prüfziffer
-
-Der TI-Flow-Fachdienst MUSS die Prüfung des VSDM Prüfungsnachweises wie folgt umsetzen:
-1. die Prüfziffer aus dem Prüfungsnachweis extrahieren
-1. Falls eine Prüfziffer im Prüfungsnachweis enthalten ist:
-1. HMAC-Schlüssel auf Basis Kennung des Betreibers (Feld 4) und Version des Hash-Schlüssels (Feld 5) ermitteln
-1. HMAC über Felder 1-5 der übermittelten Prüfziffer berechnen
-1. Berechneten HMAC mit dem in der Prüfziffer übermittelten HMAC auf Gleichheit prüfen
-
-Der Vergleich für die Ermittlung des HMAC-Schlüssel (2.a.) erfolgt case-sensitive.
-
-Der TI-Flow-Fachdienst verwaltet HMAC-Schlüssel, welche durch die Betreiber der Fachdienste VSDM bereitgestellt werden. Ein HMAC-Schlüssel wird durch die Kennung des Betreibers des Fachdienstes VSDM und der Version des Schlüssels identifiziert.
-
-Der TI-Flow-Fachdienst MUSS, falls im VSDM Prüfungsnachweis eine Prüfziffer enthalten ist, für den HMAC der Prüfziffer die führenden 23 Byte der Prüfziffer (Felder 1-5) mittels SHA-256 Hashfunktion berechnen und für den nachfolgenden Vergleich die ersten 24 Byte verwenden.
-
-Der TI-Flow-Fachdienst MUSS im Fehlerfall die Meldung "Anwesenheitsnachweis konnte nicht erfolgreich durchgeführt werden (Fehler bei Prüfung der HMAC-Sicherung)." im OperationOutcome zu übermitteln.
-Die Ausgabelänge der SHA-256 Hashfunktion ist 32 Byte lang. Für die Prüfziffer werden die ersten 24 Byte verwendet. Die restlichen Bytes werden verworfen.
-
-##### Prüfung VSDM Prüfungsnachweis (Version 2)
-
-Der VSDM Prüfungsnachweis wird URL-codiert übertragen.
-
-Das Informationsmodel des VSDM Prüfungsnachweises ist in [gemSysL_VSDM] beschrieben.
-
-Die Struktur der VSDM Prüfziffer Version 2 ist in [gemSpec_Krypt#A_27278-* VSDM-FD: Struktur einer Prüfziffer der Version 2] beschrieben.
-
-Der TI-Flow-Fachdienst MUSS eine Prüfziffer Version 2 gemäß [gemSpec_Krypt#A_27279-*] entschlüsseln und prüfen.
-Hinweis: Der Abgleich der erfolgreich entschlüsselten KVNR mit der vom Client gesendeten KVNR erfolgt in A_27287-*. Der Abgleich des erfolgreich entschlüsselten Hashwert hcv mit der vom Client übermittelten hcv erfolgt in A_27347-*.
 
 ##### HTTP-Operation GET - Prüfung PoPP-TokenWenn der TI-Flow-Fachdienst in einem Aufruf einen PoPP-Token empfängt muss geprüft werden, dass der Token vom PoPP-Service ausgestellt wurde. Hierzu wird die Signatur des PoPP-Tokens geprüft.
 
