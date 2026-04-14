@@ -1,20 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: de07effab9eaf9bf33ca75a3df0bad9d84c082d9631e4b09928ce2203615875c
+content_hash: ad225deeab48ec3631c07704ee60d3ff6350961f1708d5cb81d74c5989bc55fe
 created: '2026-03-23T10:57:49.562402'
-date: '2026-03-23T13:47:27.786670'
+date: '2026-03-27T14:32:27.968614'
 key: IG-TIFLOW-XBORDER-13
-modified: '2026-03-23T10:57:49.562403'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.968614'
+release_status: MODIFIED
 source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
-  /$get-eu-prescriptions?_count=1 durch den NCPeH-FD sicherstellen, dass die Ressourcen
-  der zuletzt ausgestellten einlösbaren Verordnung zurückgegeben werden und falls
-  keine Verordnung vorliegt, mit dem HTTP-Statuscode 404 antworten.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts\
+  \ /$get-eu-prescriptions?_count=1 durch den NCPeH-FD sicherstellen, dass die Ressourcen\
+  \ der zuletzt ausgestellten einlösbaren Verordnung zurückgegeben werden und falls\
+  \ keine Verordnung vorliegt, mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>404 - Not Found</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>-</td>\n </tr>\n </table> \n antworten."
 title: TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen
-version: 0
+version: 1

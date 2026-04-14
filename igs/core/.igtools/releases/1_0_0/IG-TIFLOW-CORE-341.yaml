@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: c1c370843d763df80097dae4267773f811bdf8c599b239ba850fcb921d3fefbb
+content_hash: 141e332a199dfd5b4ee8f7ecc65afdff28e4999556221087afb0e85a000035ee
 created: '2026-03-23T10:57:48.510447'
-date: '2026-03-23T13:47:26.514900'
+date: '2026-04-02T08:29:11.056521'
 key: IG-TIFLOW-CORE-341
-modified: '2026-03-23T10:57:48.510449'
-release_status: STABLE
+modified: '2026-04-02T08:29:11.056521'
+release_status: MODIFIED
 source: input/pagecontent/error-codes.md
 status: ACTIVE
 test_procedures:
@@ -14,12 +14,13 @@ test_procedures:
   - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS im Fehlerfall (http-Statuscodes &gt;= 400) Hinweise\
   \ zur Fehlerursache \n \n <ul>\n <li>im der inneren http-Response-Body als FHIR-Ressource\
-  \ OperationOutcome</li>\n <li>falls keine innere VAU-Response existiert, in einem\
-  \ \"äußeren\" http-Response-Body in einer JSON-Struktur mit `\"x-request-id\", (http-)\"\
-  status\", \"error\"-Text, \"message\"-Details`</li>\n </ul>\n \n an den Client zurückgeben,\
-  \ ohne Implementierungsdetails (z.B. kein Stacktrace) preiszugeben und dabei sicherstellen,\
-  \ dass personenbezogene oder medizinische Daten, falls für die qualifizierte Fehlerbeschreibung\
-  \ notwendig, ausschließlich in der VAU-verschlüsselten inneren http-Response übertragen\
-  \ werden."
+  \ OperationOutcome bei FHIR-Schnittstellen</li>\n <li>im der inneren http-Response-Body\
+  \ in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail` bei non FHIR-Schnittstellen</li>\n\
+  \ <li>falls keine innere VAU-Response existiert, in einem \"äußeren\" http-Response-Body\
+  \ in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail`</li>\n </ul>\n\
+  \ \n an den Client zurückgeben, ohne Implementierungsdetails (z.B. kein Stacktrace)\
+  \ preiszugeben und dabei sicherstellen, dass personenbezogene oder medizinische\
+  \ Daten, falls für die qualifizierte Fehlerbeschreibung notwendig, ausschließlich\
+  \ in der VAU-verschlüsselten inneren http-Response übertragen werden."
 title: TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome
-version: 0
+version: 1

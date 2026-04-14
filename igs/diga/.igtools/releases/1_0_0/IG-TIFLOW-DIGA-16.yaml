@@ -1,9 +1,9 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 12ec9b31bf1d9d90871b8eb10b4922da63ee9f88e1b9dbc13b8bdd27960c6bd6
+content_hash: 535f8976025300138466ec88c17a063f8131378ba3a8e888e38a645de6ce400a
 created: '2026-03-23T10:57:49.156984'
-date: '2026-03-23T13:47:27.054292'
+date: '2026-03-27T14:32:26.784782'
 key: IG-TIFLOW-DIGA-16
 modified: '2026-03-23T10:57:49.156986'
 release_status: DELETED
@@ -12,12 +12,16 @@ status: RETIRED
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels
-  $activate prüfen, dass im Bundle eine <i>DeviceRequest</i>-Ressource und in der
-  <i>Composition.type.coding.code=e16D</i> enthalten ist. Der TI-Flow-Fachdienst MUSS
-  andernfalls mit dem HTTP-Fehlercode 400 abbrechen und in der <i>OperationOutcome</i>
-  den Fehlertext "Für diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen
-  zulässig" ausgeben.
+text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels\
+  \ $activate prüfen, dass im Bundle eine <i>DeviceRequest</i>-Ressource und in der\
+  \ <i>Composition.type.coding.code=e16D</i> enthalten ist. Der TI-Flow-Fachdienst\
+  \ MUSS andernfalls mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_FLOWTYPE_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Für\
+  \ diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen\
+  \ zulässig</td>\n </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von
   DiGAs
-version: 0
+version: 1

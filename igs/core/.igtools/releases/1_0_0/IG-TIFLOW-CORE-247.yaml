@@ -1,24 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 2a731b909e124e6effd4882eef217c021680c9071597d44efbdffe077db76de1
+content_hash: 58b3ece1c6d5aca4238c406de6dc1d0e270b065412a922cb02c8ae2a60d8b12b
 created: '2026-03-23T10:57:48.480159'
-date: '2026-03-23T13:47:26.491554'
+date: '2026-04-13T10:29:56.405777'
 key: IG-TIFLOW-CORE-247
-modified: '2026-03-23T10:57:48.480161'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.405777'
+release_status: MODIFIED
 source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$accept die Operation mit dem HTTP-Fehlercode 410 abbrechen,
-  wenn der referenzierte /Task/&lt;id&gt; existiert, jedoch kein AccessCode im Task.identifier:AccessCode
-  als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode vorhanden ist
-  oder der Status Task.status = cancelled ist, damit die abgebende Institution den
-  Versicherten über die zwischenzeitliche Löschung des Datensatzes in Kenntnis setzen
-  kann.
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$accept, wenn der referenzierte /Task/&lt;id&gt; existiert,\
+  \ jedoch kein AccessCode im Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode\
+  \ vorhanden ist oder der Status Task.status = cancelled ist, die Operation mit dem\
+  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>410 - Gone</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_DELETED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
+  \ damit die abgebende Institution den Versicherten über die zwischenzeitliche Löschung\
+  \ des Datensatzes in Kenntnis setzen kann."
 title: TI-Flow-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich
   gelöscht
-version: 0
+version: 1

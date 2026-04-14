@@ -1,24 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 61dd57d33e944ec4a17bd074ffa921e1f9e227d22062319d4a474ff69fd6ace1
+content_hash: a032ad3de104d9c16c5366cca3fef6c9889f04d345293153b7429adcb322074c
 created: '2026-03-23T10:57:48.508644'
-date: '2026-03-23T13:47:26.513241'
+date: '2026-04-13T10:29:56.432430'
 key: IG-TIFLOW-CORE-333
-modified: '2026-03-23T10:57:48.508646'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.432430'
+release_status: MODIFIED
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation
-  POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource
-  für den in Communication.basedOn referenzierten Task prüfen, dass Task.ExpiryDate
-  nicht zu einem früheren Zeitpunkt als dem aktuellem Datum liegt und anderenfalls
-  mit dem Http-Fehler 400 und dem OperationOutcome "Task has expired." abbrechen,
-  damit ausschließlich E-Rezepte zugewiesen werden, welche deren Einlösefrist noch
-  nicht erreicht ist.
+text: "Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation\
+  \ POST auf den Endpunkt /Communication mit GEM_ERP_PR_Communication_DispReq-Ressource\
+  \ für den in Communication.basedOn referenzierten Task prüfen, dass Task.ExpiryDate\
+  \ nicht zu einem früheren Zeitpunkt als dem aktuellem Datum liegt und anderenfalls\
+  \ die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400\
+  \ - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_TASK_EXPIRED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Task\
+  \ has expired.</td>\n </tr>\n </table> \n abbrechen, damit ausschließlich E-Rezepte\
+  \ zugewiesen werden, welche deren Einlösefrist noch nicht erreicht ist."
 title: TI-Flow-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Ende
   Gültigkeit Task
-version: 0
+version: 1

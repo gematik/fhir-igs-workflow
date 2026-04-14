@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 24a057a0a3f07d56f2858c94b91548ce584e76febe8829c24ce3f28ca52e88c8
+content_hash: 285d348d367f35e9b42d0994d34a05029549ec83e156392d69f3fcef1a8e9b86
 created: '2026-03-23T10:57:49.782377'
-date: '2026-03-23T13:47:28.480857'
+date: '2026-04-13T10:29:58.819049'
 key: IG-TIFLOW-ERP-19
-modified: '2026-03-23T10:57:49.782379'
-release_status: STABLE
+modified: '2026-04-13T10:29:58.819049'
+release_status: MODIFIED
 source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -14,10 +14,15 @@ test_procedures:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close\
   \ erlauben, dass der Aufruf ohne Übergabe einer MedicationDispense im Request Body\
-  \ stattfindet.Der TI-Flow-Fachdienst MUSS in dem Fall sicherstellen, dass eine MedicationDispense\
-  \ für diesen Task existiert. <br>\n Der TI-Flow-Fachdienst MUSS, falls keine MedicationDispense\
-  \ zum dazugehörigen Task existiert, mit dem Fehler 403 abbrechen. Im Fehlerfall\
-  \ ist die Meldung \"Abschluss des Workflows konnte nicht durchgeführt werden. Dispensierinformationen\
-  \ wurden nicht bereitgestellt.\" im OperationOutcome zu übermitteln."
+  \ stattfindet.Der E-Rezept-Fachdienst MUSS in dem Fall sicherstellen, dass eine\
+  \ MedicationDispense für diesen Task existiert. <br>\n Der E-Rezept-Fachdienst MUSS,\
+  \ falls keine MedicationDispense zum dazugehörigen Task existiert, die Operation\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_MEDICATION_DISPENSE_MISSING</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Abschluss des Workflows konnte nicht\
+  \ durchgeführt werden. Dispensierinformationen wurden nicht bereitgestellt.</td>\n\
+  \ </tr>\n </table>\n abbrechen."
 title: TI-Flow-Fachdienst - Task schließen - Aufruf ohne MedicationDispense
-version: 0
+version: 1

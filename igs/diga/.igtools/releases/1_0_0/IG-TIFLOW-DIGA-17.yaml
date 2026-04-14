@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 30d54b6f9bddeebd0666a84a59ae9daf1923bd626c372a8f161c12c2cb7fe459
+content_hash: 2f69d1f1e6d30ff6142cbea61fb21065fe0e441873ad82e5262c0531b3bf4d45
 created: '2026-03-23T10:57:49.157147'
-date: '2026-03-23T13:47:27.054518'
+date: '2026-04-13T10:29:56.996564'
 key: IG-TIFLOW-DIGA-17
-modified: '2026-03-23T10:57:49.157149'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.996564'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -15,10 +15,14 @@ test_procedures:
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate\
   \ den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code\
   \ gemäß den \"Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen\
-  \ der PZN, PPN und Basic UDI-DI\" beschriebenen Prüfalgorithmus validieren.<br>\n\
-  \ Der TI-Flow-Fachdienst MUSS bei einer fehlerhaften Prüfung mit einem Http-Fehler\
-  \ 400 (Bad Request) abbrechen, sowie die Fehlermeldung \"Ungültige PZN: Die übergebene\
-  \ Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.\"\
-  \ in Form eines OperationOutcome ausliefern."
+  \ der PZN, PPN und Basic UDI-DI\" beschriebenen Prüfalgorithmus validieren und bei\
+  \ einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"\
+  error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n\
+  \ <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_EREZEPT_PZN_INVALID</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht\
+  \ den vorgeschriebenen Prüfziffer-Validierungsregeln.</td>\n </tr>\n </table> \n\
+  \ abbrechen."
 title: TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest
-version: 0
+version: 1

@@ -97,12 +97,35 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 
 <!-- A_27698 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-276" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-276" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile" version="1">
 	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, dass maximal ein meta.profile-Eintrag vorhanden ist und bei Abweichung mit dem HTTP-Fehlercode 400 sowie einem entsprechenden OperationOutcome die Verarbeitung ablehnen.
+	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, dass maximal ein meta.profile-Eintrag vorhanden ist und bei Abweichung mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_META_PROFILE_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table>
+    die Verarbeitung ablehnen.
 </requirement>
 
 <!-- A_27697 -->
@@ -117,39 +140,131 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 ### Prüfung von Referenzen in Bundles
 
 <!-- A_26229-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-278" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Pruefung Konsistenz Ressource IDs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-278" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Pruefung Konsistenz Ressource IDs" version="1">
 	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Auffälligkeiten mit dem HTTP-Fehlercode 400 abbrechen und die Fehlermeldung "Die ID einer Ressource und die ID der zugehörigen fullUrl stimmen nicht überein." in Form eines OperationOutcome ausliefern.
+	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Auffälligkeiten mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>MSG_RESOURCE_ID_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Die ID einer Ressource und die ID der zugehörigen fullUrl stimmen nicht überein.</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
 <!-- A_26233-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-279" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Format fullUrl" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-279" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Format fullUrl" version="1">
 	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Auffälligkeiten mit dem HTTP-Fehlercode 400 abbrechen und die Fehlermeldung "Format der fullUrl ist ungültig." in Form eines OperationOutcome ausliefern.
+	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Auffälligkeiten mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_RESOURCE_FULLURL_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Format der fullUrl ist ungültig.</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
 <!-- A_27648 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-280" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-280" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id" version="1">
 	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Auffälligkeiten mit dem HTTP-Fehlercode 400 abbrechen und die Fehlermeldung "Die ID einer Ressource im Bundle ist nicht vorhanden." in Form eines OperationOutcome ausliefern.
+	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Auffälligkeiten mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>MSG_RESOURCE_ID_MISSING</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Die ID einer Ressource im Bundle ist nicht vorhanden.</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
 <!-- A_27649 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-281" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-281" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen" version="1">
 	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Auffälligkeiten mit dem HTTP-Fehlercode 400 abbrechen und die Fehlermeldung "Referenz einer Ressource konnte nicht aufgelöst werden." in Form eines OperationOutcome ausliefern.
+	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Auffälligkeiten mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>MSG_RESOURCE_ID_FAIL</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Referenz einer Ressource konnte nicht aufgelöst werden.</td>
+        </tr>
+    </table> 
+    abbrechen.
 </requirement>
 
 <!-- A_26237-01 -->
@@ -227,12 +342,35 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 ### Validierung von Extensions
 
 <!-- A_22927-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-285" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-285" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions" version="1">
 	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produkttest"/>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstellen, dass keine Extensions vorhanden sind, die nicht an den in den FHIR-Profilen spezifizierten Stellen verwendet werden. Sollte eine solche Extension gefunden werden, gilt der Datensatz als ungültig. In diesem Fall ist eine Fehlermeldung mit dem HTTP-Status 400 auszugeben.
+	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstellen, dass keine Extensions vorhanden sind, die nicht an den in den FHIR-Profilen spezifizierten Stellen verwendet werden. Sollte eine solche Extension gefunden werden, gilt der Datensatz als ungültig. In diesem Fall ist eine Fehlermeldung mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_VALIDATION_FAILED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>FHIR Profile Validation Failed</td>
+        </tr>
+    </table> 
+    auszugeben.
 </requirement>
 
 <!-- A_27672 -->

@@ -3,7 +3,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Subscription`-Q
 Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein Clientsystem des Kostenträgers nicht öfter als alle 5 min nach neuen Nachrichten anfragen darf (A_21556). Die dadurch bis zu 5 min entstehende Verzögerung verlängert die Zeit, bis ein Kostenträger auf die Nachricht des Versicherten reagieren kann. Aus dem Grund wird eine Funktionalität eingeführt, mit der ein Clientsystem des Kostenträgers eine Notification erhält, dass eine neue Nachricht für eine Telematik-ID vorliegt. Nach Erhalt einer Notification darf das Clientsystem des Kostenträgers die neue Nachricht sofort abrufen.
 
 <!-- A_22426 -->
-<requirement conformance="SHALL NOT" key="" title="CS Kostenträger: Subscription für neue Communication - eine Subscription pro Telematik-ID" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-413" title="CS Kostenträger: Subscription für neue Communication - eine Subscription pro Telematik-ID" version="0">
     <meta lockversion="false"/>
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
@@ -12,7 +12,7 @@ Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein C
 </requirement>
 
 <!-- A_22373 -->
-<requirement conformance="SHALL" key="" title="CS Kostenträger: Subscription für neue Communication - Subscription Ressource erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-414" title="CS Kostenträger: Subscription für neue Communication - Subscription Ressource erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
@@ -21,7 +21,7 @@ Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein C
 </requirement>
 
 <!-- A_22374 -->
-<requirement conformance="SHALL" key="" title="CS Kostenträger: Subscription für neue Communication - Subscription registrieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-415" title="CS Kostenträger: Subscription für neue Communication - Subscription registrieren" version="0">
     <meta lockversion="false"/>
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
@@ -30,7 +30,7 @@ Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein C
 </requirement>
 
 <!-- A_22375 -->
-<requirement conformance="SHALL" key="" title="CS Kostenträger: Subscription für neue Communication - Subscription" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-416" title="CS Kostenträger: Subscription für neue Communication - Subscription" version="0">
     <meta lockversion="false"/>
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
@@ -67,7 +67,7 @@ abrufen.
 Bei Nutzung des Subscription Services kann abweichend von der Anforderung "A_21556 - PS abgebende LEI: Häufigkeit des Abrufen von Nachrichten" die Operation GET /Communication häufiger als alle 5 Minuten, d.h. nach jeder Notification, mit den obigen Parametern angefragt werden.
 
 <!-- A_22379 -->
-<requirement conformance="MAY" key="" title="CS Kostenträger: Subscription für neue Communication - Wartezeit" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-417" title="CS Kostenträger: Subscription für neue Communication - Wartezeit" version="0">
     <meta lockversion="false"/>
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>

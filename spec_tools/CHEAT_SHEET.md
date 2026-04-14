@@ -15,6 +15,63 @@ Eine Nummer/key muss nicht vergeben werden, da diese automatisch generiert wird.
 Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 <id> ->  `&#60;id&#62;`
 
+### Fehlercodes in Anforderungen
+
+#### OperationOutcomes
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
+    <meta lockversion="false"/>
+    <actor name="TI_Flow_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+      ... mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>Todo: TIFLOW_FEHLER_CODE</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Todo</td>
+        </tr>
+      </table>
+      ...
+</requirement>
+
+#### Nicht FHIR
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
+    <meta lockversion="false"/>
+    <actor name="TI_Flow_FD">
+        <testProcedure id="Produkttest"/>
+    </actor>
+      ... mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Error Code</th>
+            <td>invalidOid</td>
+        </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>-</td>
+        </tr>
+    </table>
+      ...
+</requirement>
 ## Bild einfügen
 
 1. Bild in den Ordner input/images legen
@@ -99,7 +156,7 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 
 ## Suchen aller afo keys
 
-]*"
+key="[^"]*"
 
 ## Quellen und Referenzen
 

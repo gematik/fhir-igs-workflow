@@ -1,22 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 064d06737c59f164ed4eda2adf0c66b239f73d1d7abde51fbe73434e72a663e2
+content_hash: 6c6c0d64cc01f85d06ed68b7af8bdb75080f7eefcc7c2e8b5607c662201b95be
 created: '2026-03-23T10:57:49.324775'
-date: '2026-03-23T13:47:27.432780'
+date: '2026-03-27T14:32:27.594086'
 key: IG-TIFLOW-CHRG-58
-modified: '2026-03-23T10:57:49.324777'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.594086'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
-  /ChargeItem sicherstellen, dass zu der im URL-Parameter "task=..." übertragene Task-ID
-  eine Task-Ressource mit dem Status Task.status = completed existiert und bei fehlgeschlagener
-  Prüfung mit dem HTTP-Fehlercode 409 abbrechen, damit nur eine Abrechnungsinformation
-  für E-Rezepte mit dem Status „quittiert“ angelegt wird.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt\
+  \ /ChargeItem sicherstellen, dass zu der im URL-Parameter \"task=...\" übertragene\
+  \ Task-ID eine Task-Ressource mit dem Status Task.status = completed existiert und\
+  \ bei fehlgeschlagener Prüfung mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>409 - Conflict</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_TASK_NOT_FOUND</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit nur eine Abrechnungsinformation für E-Rezepte\
+  \ mit dem Status „quittiert“ angelegt wird."
 title: TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Existenz
   Task
-version: 0
+version: 1

@@ -1,20 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: a3c3d756c3e493cd5bec3cef0e8cfd913c217144ef9f962afe8c3afb80994890
+content_hash: e21b6bdc03cca7c9382bbbad045ca2b054d801314a3f0887b633945c1ebca254
 created: '2026-03-23T10:57:49.570234'
-date: '2026-03-23T13:47:27.792057'
+date: '2026-03-27T14:32:27.976777'
 key: IG-TIFLOW-XBORDER-39
-modified: '2026-03-23T10:57:49.570236'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.976777'
+release_status: MODIFIED
 source: input/pagecontent/op-eu-close-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
-  /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene
-  Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen
-  und im Fehlerfall die Operation mit HTTP-Fehlercode 400 abbrechen.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts\
+  \ /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene\
+  \ Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen\
+  \ und im Fehlerfall die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR\
+  \ Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task schließen - EU - Schemaprüfung
-version: 0
+version: 1

@@ -1,19 +1,20 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 3a7f5e687aff772d3ab61ceaa54d4bfe9ab23c779a1c2d215de2164da90c4c5e
+content_hash: 7dd416d3b36f69aab62e1ed4924faf1c998749aac87cb162eac482d323410e85
 created: '2026-03-23T10:57:48.437181'
-date: '2026-03-23T13:47:26.444286'
+date: '2026-04-13T14:33:11.783717'
 key: IG-TIFLOW-CORE-55
-modified: '2026-03-23T10:57:48.437184'
-release_status: STABLE
+modified: '2026-04-13T14:33:11.783717'
+release_status: MODIFIED
 source: input/pagecontent/query-api-channels-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
 text: Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels
-  der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden, damit keine unzulässigen
-  Operationen auf den Daten ausgeführt werden können.
+  der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem HTTP-Code
+  "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt
+  werden können.
 title: TI-Flow-Fachdienst - unzulässige Operationen Channels
-version: 0
+version: 1

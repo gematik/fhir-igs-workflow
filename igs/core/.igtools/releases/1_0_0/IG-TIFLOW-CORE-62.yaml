@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: a2bf33f055ed49c5f0982eeb8b2b09cae25e6755abdc0a97c37e4b3e06ba7f6f
+content_hash: ae2d842842bf2d25279d8e5d9eddf36553d484d2d41d9c6525b1f285a7769572
 created: '2026-03-23T10:57:48.438726'
-date: '2026-03-23T13:47:26.445788'
+date: '2026-03-24T08:30:54.210138'
 key: IG-TIFLOW-CORE-62
-modified: '2026-03-23T10:57:48.438727'
-release_status: STABLE
+modified: '2026-03-24T08:30:54.210138'
+release_status: MODIFIED
 source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -19,7 +19,12 @@ text: "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&
   \ als MedicationDispense.identifier,</li>\n <li>die KVNR des Versicherten im referenzierten\
   \ Task (Task.for) gegen KVNR in MedicationDispense.subject:identifier und</li>\n\
   \ <li>ob die Telematik-ID der Apotheke gemäß ACCESS_TOKEN mit dem Wert in MedicationDispense.performer.actor:identifier\
-  \ übereinstimmt</li>\n </ul>\n und im Fehlerfall die Operation mit Http-Fehlercode\
-  \ 400 abbrechen."
+  \ übereinstimmt</li>\n </ul>\n und im Fehlerfall die Operation mit dem folgenden\
+  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n\
+  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
+  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n\
+  \ </table>\n abbrechen."
 title: TI-Flow-Fachdienst - Task schließen - Schemaprüfung MedicationDispense
-version: 0
+version: 1

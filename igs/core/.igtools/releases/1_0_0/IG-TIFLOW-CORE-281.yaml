@@ -1,22 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 2cf6cecf3aaa41be195adf69deb7244d827d140071fddda60b0b6294c36d54e9
+content_hash: 67366d9e873f1d63231e4dcbcb94e3b6a191e4b1b6a78e86c6d556b117aaf3a2
 created: '2026-03-23T10:57:48.487293'
-date: '2026-03-23T13:47:26.501071'
+date: '2026-03-27T14:32:26.232761'
 key: IG-TIFLOW-CORE-281
-modified: '2026-03-23T10:57:48.487295'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.232761'
+release_status: MODIFIED
 source: input/pagecontent/fhir-validate.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen,
-  ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles]
-  ermittelt werden können und bei Auffälligkeiten mit dem HTTP-Fehlercode 400 abbrechen
-  und die Fehlermeldung "Referenz einer Ressource konnte nicht aufgelöst werden."
-  in Form eines OperationOutcome ausliefern.
+text: "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen,\
+  \ ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles]\
+  \ ermittelt werden können und bei Auffälligkeiten mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>MSG_RESOURCE_ID_FAIL</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>Referenz einer Ressource konnte nicht aufgelöst werden.</td>\n\
+  \ </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von
   Referenzen
-version: 0
+version: 1

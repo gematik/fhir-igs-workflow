@@ -6,12 +6,13 @@ export PATH="$HOME/.local/bin:$PATH"
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 usage() {
-  echo "Usage: $0 <igtools-subcommand> [args ...]"
+  echo "Usage: $0 <command> [args ...]"
+  echo "Example: $0 igtools process"
+  echo "Example: $0 sushi"
   echo "Example: $0 process"
-  echo "Example: $0 release --freeze"
   echo ""
-  echo "Automatically prepends 'igtools' to the command if needed."
-  echo "Both '${0##*/} igtools process' and '${0##*/} process' are equivalent."
+  echo "Runs the command in every IG directory under $ROOT_DIR/igs."
+  echo "If <command> is not found, it falls back to: igtools <command> [args ...]."
 }
 
 if [[ $# -eq 0 ]]; then
@@ -19,14 +20,17 @@ if [[ $# -eq 0 ]]; then
   exit 1
 fi
 
-# Check if the first argument is available as a command
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+  usage
+  exit 0
+fi
+
+# If the first argument is not an executable command, treat it as an igtools subcommand.
 if ! command -v "$1" >/dev/null 2>&1; then
-  # If not, try prepending 'igtools'
   if command -v "igtools" >/dev/null 2>&1; then
-    # Shift arguments and prepend 'igtools' as the command
     set -- "igtools" "$@"
   else
-    echo "Error: 'igtools' command not found and '$1' is not a valid command." >&2
+    echo "Error: '$1' is not a command and 'igtools' is not available for fallback." >&2
     exit 1
   fi
 fi

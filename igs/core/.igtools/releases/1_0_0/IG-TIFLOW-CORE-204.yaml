@@ -1,20 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 9ac675e5a762afd1079827998bb84e81b586e802622d028707104fce44f2a0f1
+content_hash: 226fa587976ea945449fb415da87637ec77030dd9c5bc017fae0113e32bb0533
 created: '2026-03-23T10:57:48.466187'
-date: '2026-03-23T13:47:26.479013'
+date: '2026-04-13T10:29:56.391129'
 key: IG-TIFLOW-CORE-204
-modified: '2026-03-23T10:57:48.466188'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.391129'
+release_status: MODIFIED
 source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Consent
-  übertragene Consent Ressource gegen das FHIR-Profil Consent prüfen und bei Nicht-Konformität
-  das Anlegen der Ressource im TI-Flow-Fachdienst mit dem http-Status-Code 400 ablehnen,
-  damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.
+text: "Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Consent\
+  \ übertragene Consent Ressource gegen das FHIR-Profil Consent prüfen und bei Nicht-Konformität\
+  \ die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400\
+  \ - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR\
+  \ Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen, damit nur FHIR-valide\
+  \ Ressourcen in den TI-Flow-Fachdienst hochgeladen werden."
 title: TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung
-version: 0
+version: 1

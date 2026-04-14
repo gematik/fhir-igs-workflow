@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: bd00e9de1ec271a87586971d2ab4b47d103ee665be984ea15b8ff664d3c34fc2
+content_hash: 752a0456780e5a266de268aabdef823c778e4ae1f6a98dc68b43d33b6e61c2c6
 created: '2026-03-23T10:57:49.329829'
-date: '2026-03-23T13:47:27.439102'
+date: '2026-03-27T14:32:27.606655'
 key: IG-TIFLOW-CHRG-86
-modified: '2026-03-23T10:57:49.329831'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.606655'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -16,8 +16,12 @@ text: "Der TI-Flow-Fachdienst MUSS die im HTTP-PUT-Operation auf die Ressource C
   \ übertragene ChargeItem-Ressource gegen das FHIR-Profil ChargeItem prüfen, auf\
   \ die Zulässigkeit der änderbaren Felder prüfen: \n<ul>\n <li>abgebende LEI: darf\
   \ nur PKV-Abgabedatensatz ändern </li>\n</ul>\nund bei fehlerhafter Prüfung die\
-  \ Operation mit dem http-Status-Code 400 und einem Hinweis auf unzulässige Änderung\
-  \ gesperrter Attribute in OperationOutcome abbrechen, damit kein Schadcode und keine\
-  \ fachfremden Daten in den TI-Flow-Fachdienst hochgeladen werden."
+  \ Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400\
+  \ - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR\
+  \ Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen, damit kein Schadcode\
+  \ und keine fachfremden Daten in den TI-Flow-Fachdienst hochgeladen werden."
 title: TI-Flow-Fachdienst – Abrechnungsinformation ändern – FHIR-Validierung ChargeItem
-version: 0
+version: 1

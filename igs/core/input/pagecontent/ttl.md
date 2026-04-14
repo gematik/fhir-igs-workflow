@@ -2,7 +2,7 @@
 Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen abgelaufener oder nicht mehr benötigter Ressourcen. Dieses Kapitel beschreibt die Loöchfristen und die zugehörigen Anforderungen.
 
 <!-- A_19252-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-123" title="TI-Flow-Fachdienst - Löschfrist abgelaufener Rezepte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-123" title="TI-Flow-Fachdienst - Löschfrist abgelaufener Rezepte" version="1">
 	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produktgutachten"/>
@@ -74,7 +74,7 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 </requirement>
 
 <!-- A_19253-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-128" title="TI-Flow-Fachdienst - Löschfrist veraltete Nachrichten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-128" title="TI-Flow-Fachdienst - Löschfrist veraltete Nachrichten" version="1">
 	<meta lockversion="false"/>
 	<actor name="TI_Flow_FD">
     	<testProcedure id="Produktgutachten"/>

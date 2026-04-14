@@ -1,23 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 5765714f19a8e6dd404df5f01c35f8b96f6daa93baaac06bce631db0f7cd0fce
+content_hash: 6f7c3b423274cb720f95008b4eed24160fd567f17f329c6d3cc5b04c8e64e626
 created: '2026-03-23T10:57:49.788752'
-date: '2026-03-23T13:47:28.487928'
+date: '2026-04-13T10:29:58.829130'
 key: IG-TIFLOW-ERP-51
-modified: '2026-03-23T10:57:49.788754'
-release_status: STABLE
+modified: '2026-04-13T10:29:58.829130'
+release_status: MODIFIED
 source: input/pagecontent/op-abort-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der
-  &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort durch abgebende Leistungserbringer
-  (Apotheken) das im URL-Parameter "?secret=..." übertragene Geheimnis gegen das im
-  referenzierten Task enthaltene Secret in Task.identifier prüfen und bei Missmatch
-  oder Fehlen des URL-Parameters den Aufruf mit dem HTTP-Fehlercode 403 abweisen,
-  damit ausschließlich Apotheker in Kenntnis des Secret als Berechtigte ein E-Rezept
-  löschen.
+text: "Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der\
+  \ &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort durch abgebende Leistungserbringer\
+  \ (Apotheken) das im URL-Parameter \"?secret=...\" übertragene Geheimnis gegen das\
+  \ im referenzierten Task enthaltene Secret in Task.identifier prüfen und bei Missmatch\
+  \ oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_SECRET_MISMATCH</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit ausschließlich Apotheker\
+  \ in Kenntnis des Secret als Berechtigte ein E-Rezept löschen."
 title: TI-Flow-Fachdienst - E-Rezept löschen - Apotheke - Prüfung Secret
-version: 0
+version: 1

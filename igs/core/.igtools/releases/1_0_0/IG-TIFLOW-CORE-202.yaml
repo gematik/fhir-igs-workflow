@@ -1,21 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: a8950cec95d3bf384af9098e73e0500330a6668620b5a9b2a58cfdc6bb38166c
+content_hash: ecf85460be64268be1a6106c7be9ba6c98877321b2f6231e4877339cdcdd4898
 created: '2026-03-23T10:57:48.465938'
-date: '2026-03-23T13:47:26.478667'
+date: '2026-04-13T10:29:56.390201'
 key: IG-TIFLOW-CORE-202
-modified: '2026-03-23T10:57:48.465939'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.390201'
+release_status: MODIFIED
 source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
-  /Consent sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter
-  die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID"
-  des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen,
-  damit eine Einwilligung nicht durch Unberechtigte erteilt werden kann.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt\
+  \ /Consent die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader\
+  \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte\
+  \ in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen, und\
+  \ bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit eine Einwilligung nicht durch Unberechtigte\
+  \ erteilt werden kann."
 title: TI-Flow-Fachdienst - Consent schreiben - Rollenprüfung
-version: 0
+version: 1

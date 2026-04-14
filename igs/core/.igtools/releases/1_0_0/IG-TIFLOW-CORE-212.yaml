@@ -1,22 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: aeb522fb43f3a884c129640b7c7b7f51702fe065a3971cdbeac44919fbe0cdcb
+content_hash: c7c6d4f992bc84b31b45cbc8c3ad1ba4063acfce54cac94d1aa2346e1fdd4362
 created: '2026-03-23T10:57:48.467570'
-date: '2026-03-23T13:47:26.480379'
+date: '2026-04-13T10:29:56.393975'
 key: IG-TIFLOW-CORE-212
-modified: '2026-03-23T10:57:48.467572'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.393975'
+release_status: MODIFIED
 source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt
-  /Consent die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader
-  "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in
-  der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen,
-  damit die Information zur Einwilligung nicht durch Unberechtigte gelöscht werden
-  kann.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt\
+  \ /Consent die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader\
+  \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte\
+  \ in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen,\
+  \ und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit die Information zur Einwilligung nicht durch\
+  \ Unberechtigte gelöscht werden kann."
 title: TI-Flow-Fachdienst - Consent löschen - Rollenprüfung
-version: 0
+version: 1

@@ -1,21 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 5004d3e9a196fe09f4a05c3ae85aea9de65dea58653c6700d293bf74d298b6fc
+content_hash: 27642772139b1ddaa1d00608958e1df6ed65dcea29a99eb3ce9894566a53b8e4
 created: '2026-03-23T10:57:49.564157'
-date: '2026-03-23T13:47:27.788120'
+date: '2026-04-13T10:29:58.031092'
 key: IG-TIFLOW-XBORDER-21
-modified: '2026-03-23T10:57:49.564162'
-release_status: STABLE
+modified: '2026-04-13T10:29:58.031092'
+release_status: MODIFIED
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete
-  über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten
-  auf die Ressource übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPEU_PR_PAR_PATCH_Task_Input
-  prüfen und bei Nicht-Konformität den Aufruf mit dem http-Status-Code 400 ablehnen,
-  damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst akzeptiert werden.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete\
+  \ über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten\
+  \ auf die Ressource übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPEU_PR_PAR_PATCH_Task_Input\
+  \ prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen,\
+  \ damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst akzeptiert werden."
 title: TI-Flow-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters
-version: 0
+version: 1

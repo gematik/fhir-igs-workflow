@@ -1,21 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: d17edbbaa46a4bc1b922373151d4588d9d56f623ff3bd6a913f7ce3b22e9bfd5
+content_hash: 30c938dbc37677894146cb898e4c4f2cc462c3cfa71c63cfb3871122b0fb2760
 created: '2026-03-23T10:57:49.570076'
-date: '2026-03-23T13:47:27.791874'
+date: '2026-04-13T10:29:58.036390'
 key: IG-TIFLOW-XBORDER-38
-modified: '2026-03-23T10:57:49.570078'
-release_status: STABLE
+modified: '2026-04-13T10:29:58.036390'
+release_status: MODIFIED
 source: input/pagecontent/op-eu-close-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: 'Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
-  /Task/&lt;id&gt;/$eu-close sicherstellen, dass ausschließlich Nutzer in der Rolle:
-  oid_ncpeh, die Operation am Fachdienst aufrufen dürfen und die Rolle professionOID
-  des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader Authorization feststellen, damit
-  der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.'
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts\
+  \ /Task/&lt;id&gt;/$eu-close sicherstellen, dass ausschließlich Nutzer in der Rolle:\
+  \ oid_ncpeh, die Operation am Fachdienst aufrufen dürfen und die Rolle professionOID\
+  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader Authorization feststellen,\
+  \ und bei Abweichungen die Operationmit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten\
+  \ abgeschlossen werden kann."
 title: TI-Flow-Fachdienst - Task schließen - EU - Rollenprüfung
-version: 0
+version: 1

@@ -1,22 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 00696d322198f8a7e42e535c61e1bf37aefb919021b21e69a7adddca17e6f0b1
+content_hash: 7e56b040a5ffe9d11b802b092d9ecb9297923f78a2b987c2b53f5f7c34dae3a8
 created: '2026-03-23T10:57:49.809351'
-date: '2026-03-23T13:47:28.507196'
+date: '2026-04-13T10:29:58.851546'
 key: IG-TIFLOW-ERP-98
-modified: '2026-03-23T10:57:49.809353'
-release_status: STABLE
+modified: '2026-04-13T10:29:58.851546'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = true) und als Ersatzverordnung ( code="10" oder "11" oder "17" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis
-  in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, weil für Ersatzverordnungen
-  keine Mehrfachverordnungen zulässig sind.
+text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
+  \ (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true)\
+  \ und als Ersatzverordnung ( code=\"10\" oder \"11\" oder \"17\" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis\
+  \ in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, die Operation\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad\
+  \ Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_EREZEPT_MVO_INVALID</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
+  \ weil für Ersatzverordnungen keine Mehrfachverordnungen zulässig sind."
 title: TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung
-version: 0
+version: 1

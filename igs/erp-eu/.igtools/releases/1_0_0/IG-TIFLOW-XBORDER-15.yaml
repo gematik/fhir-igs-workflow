@@ -1,21 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: c5a32cea7df190b83447124d14f796f4d3b5530d7c4663eed74dc014cbe2d46d
+content_hash: d9449a4e0cf58453a84c55d49e442bb6337503a12797c72762b31d5beafbbe7a
 created: '2026-03-23T10:57:49.562811'
-date: '2026-03-23T13:47:27.787012'
+date: '2026-04-13T10:29:58.029164'
 key: IG-TIFLOW-XBORDER-15
-modified: '2026-03-23T10:57:49.562813'
-release_status: STABLE
+modified: '2026-04-13T10:29:58.029164'
+release_status: MODIFIED
 source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
-  /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id
-  nicht leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden,
-  deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten
-  sind, und falls keine Verordnung vorliegt, mit dem HTTP-Statuscode 404 antworten.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts\
+  \ /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id\
+  \ nicht leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden,\
+  \ deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten\
+  \ sind, und falls keine Verordnung vorliegt, die Operation mit dem folgenden Fehler:\n\
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>404 - Not Found</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids
-version: 0
+version: 1

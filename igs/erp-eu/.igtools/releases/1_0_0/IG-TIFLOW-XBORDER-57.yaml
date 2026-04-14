@@ -1,26 +1,30 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: ab71358e6c2eafec227830e042621cf264e585dd81a180fc4a4b534f9b60ea01
+content_hash: fa720d1e25eb649fa9daa7e839a95e40a4c73671165855afab2ba568b8101ed0
 created: '2026-03-23T10:57:49.574799'
-date: '2026-03-23T13:47:27.795735'
+date: '2026-03-27T14:32:27.982401'
 key: IG-TIFLOW-XBORDER-57
-modified: '2026-03-23T10:57:49.574800'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.982401'
+release_status: MODIFIED
 source: input/pagecontent/op-grant-eu-access-permission-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
-  /$grant-eu-access-permission die KVNR des Versicherten im ACCESS_TOKEN im HTTP-RequestHeader
-  "Authorization" feststellen und sicherstellen, dass ein Consent-Datensatz mit Consent.patient.identifier
-  = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener
-  Prüfung die Operation mit dem HTTP-Fehlercode 403 und dem OperationOutcome "Das
-  Erstellen einer Zugriffsberechtigung ist erst zulässig, wenn eine Einwilligung durch
-  den Nutzer zum Einlösen von E-Rezepten im europäischen Ausland erteilt wurde." abbrechen,
-  damit nur Versicherte eine Zugriffsberechtigung schreiben, die eine Einwilligung
-  erteilt haben.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt\
+  \ /$grant-eu-access-permission die KVNR des Versicherten im ACCESS_TOKEN im HTTP-RequestHeader\
+  \ \"Authorization\" feststellen und sicherstellen, dass ein Consent-Datensatz mit\
+  \ Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS\
+  \ existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n\
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_CONSENT_REQUIRED</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>Das Erstellen einer Zugriffsberechtigung ist erst zulässig, wenn\
+  \ eine Einwilligung durch den Nutzer zum Einlösen von E-Rezepten im europäischen\
+  \ Ausland erteilt wurde.</td>\n </tr>\n </table> \n abbrechen, damit nur Versicherte\
+  \ eine Zugriffsberechtigung schreiben, die eine Einwilligung erteilt haben."
 title: TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für
   KVNR
-version: 0
+version: 1

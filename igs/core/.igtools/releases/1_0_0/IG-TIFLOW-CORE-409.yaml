@@ -1,0 +1,26 @@
+actor:
+- TI_Flow_FD
+conformance: SHALL
+content_hash: 444789cd01db080e3deecbe82e11bb9b914f501a3fa1d004aa703198652c8787
+created: '2026-03-27T14:32:26.197075'
+date: '2026-04-13T10:29:56.380304'
+key: IG-TIFLOW-CORE-409
+modified: '2026-04-13T10:29:56.380304'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI_Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate das innerhalb des PKCS#7-Datensatz enveloping-enthaltene\
+  \ FHIR-Bundle einer FHIR-Validierung gegen die eRezept-Schema-Definition der KBV\
+  \ kbv.ita.erp oder kbv.itv.evdga unterziehen und bei Invalidität die Operation mit\
+  \ dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n\
+  \ </tr>\n </table> \n abbrechen."
+title: TI-Flow-Fachdienst - Task aktivieren - Verordnung FHIR Validierung
+version: 0

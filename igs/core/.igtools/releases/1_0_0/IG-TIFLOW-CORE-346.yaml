@@ -1,22 +1,29 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 96df14ffe385f6e89e38b3b7e7ae6b6e91a481279653e7887a18a4cb49abd737
+content_hash: 44cc115a126effafae06697211ce057c64445aceb50c73c164d97457ab5a4744
 created: '2026-03-23T10:57:48.513878'
-date: '2026-03-23T13:47:26.516191'
+date: '2026-04-13T10:29:56.436371'
 key: IG-TIFLOW-CORE-346
-modified: '2026-03-23T10:57:48.513880'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.436371'
+release_status: MODIFIED
 source: input/pagecontent/query-api-subscription-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription
-  Ressource sicherstellen, dass ausschließlich Nutzer in der Rolle oid_oeffentliche_apotheke
-  oid_krankenhausapotheke oid_kostentraeger die Operation am TI-Flow-Fachdienst aufrufen
-  dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader
-  "Authorization" feststellen, damit eine Subscription nicht durch Unberechtigte registriert
-  werden kann.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription\
+  \ Ressource die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader\
+  \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich Nutzer in\
+  \ der Rolle \n <ul>\n <li>oid_oeffentliche_apotheke</li> \n <li>oid_krankenhausapotheke</li>\n\
+  \ <li>oid_kostentraeger</li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen\
+  \ dürfen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n\
+  \ <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation\
+  \ anzufordern</td>\n </tr>\n </table> \n abbrechen, damit eine Subscription nicht\
+  \ durch Unberechtigte registriert werden kann."
 title: TI-Flow-Fachdienst – Subscription registrieren – Rollenprüfung
-version: 0
+version: 1

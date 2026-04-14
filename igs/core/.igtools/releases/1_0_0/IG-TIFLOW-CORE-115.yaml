@@ -1,23 +1,29 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 4879161a14d222e504eb35c730e34104fc898949d2c3dd64162fee5fb286122e
+content_hash: d0bd0a522b99513be41cb640e26ccaedd1838b8ab698cc893b4cecbce98faddc
 created: '2026-03-23T10:57:48.448587'
-date: '2026-03-23T13:47:26.457935'
+date: '2026-03-27T14:32:26.175291'
 key: IG-TIFLOW-CORE-115
-modified: '2026-03-23T10:57:48.448588'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.175291'
+release_status: MODIFIED
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
-  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im URL-Parameter
-  "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode
-  prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem
-  HTTP-Fehlercode 403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte
-  in Kenntnis des AccessCode erfolgen.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen\
+  \ Task mittels \"/Task/&lt;id&gt;?ac=...\" durch eine abgebende Institution den\
+  \ im URL-Parameter \"?ac=...\" übertragenen AccessCode gegen den im referenzierten\
+  \ Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode\
+  \ prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem\
+  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_ACCESSCODE_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
+  \ damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCode\
+  \ erfolgen."
 title: TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen
   - Prüfung AccessCode
-version: 0
+version: 1

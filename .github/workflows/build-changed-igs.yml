@@ -31,6 +31,7 @@ jobs:
       BUILD_GENERATE_DRAWIO_IMAGES: "false"
       INSTALL_SUSHI_DEPS: "skip"
       DRAWIO_APP: "/usr/local/bin/drawio"
+      FHIR_PACKAGE_CACHE_DIR: /home/runner/.fhir/packages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -101,7 +102,7 @@ jobs:
           mkdir -p "$artifact_dir"
 
           set +e
-          ./igtools-all process 2>&1 | tee "$log_file"
+          ./all igtools process 2>&1 | tee "$log_file"
           script_exit=${PIPESTATUS[0]}
           set -e
 
@@ -124,10 +125,10 @@ jobs:
 
           if [[ "$script_exit" -ne 0 || "$found_error_keywords" == "true" ]]; then
             status="failed"
-            message="Vorprüfung fehlgeschlagen: ./igtools-all process hat Fehler geliefert (Exit-Code ungleich 0 oder Ausgabe mit ERROR/FAILED)."
+            message="Vorprüfung fehlgeschlagen: ./all igtools process hat Fehler geliefert (Exit-Code ungleich 0 oder Ausgabe mit ERROR/FAILED)."
           elif [[ "$tree_clean" != "true" ]]; then
             status="warning"
-            message="Vorprüfung mit Warnung: ./igtools-all process lief ohne offensichtliche Fehler, hat aber Dateien im Repository verändert. Bitte die erzeugten Änderungen einchecken oder die Ursache beheben."
+            message="Vorprüfung mit Warnung: ./all igtools process lief ohne offensichtliche Fehler, hat aber Dateien im Repository verändert. Bitte die erzeugten Änderungen einchecken oder die Ursache beheben."
           fi
 
           export PRECHECK_STATUS="$status"
@@ -285,7 +286,7 @@ jobs:
                       <tbody>
                         <tr><td>{igtools_icon} {igtools_text}</td><td>{igtools_result}</td></tr>
                         <tr><td>{git_icon} {git_text}</td><td>{git_result}</td></tr>
-                        <tr><td>Exit-Code von ./igtools-all process</td><td>{html.escape(script_exit)}</td></tr>
+                        <tr><td>Exit-Code von ./all igtools process</td><td>{html.escape(script_exit)}</td></tr>
                         <tr><td>Ausgabe enthält ERROR/FAILED</td><td>{html.escape(found_error_keywords)}</td></tr>
                         <tr><td>Repository nach Lauf unverändert</td><td>{html.escape(tree_clean)}</td></tr>
                       </tbody>
@@ -381,6 +382,14 @@ jobs:
 
           if [[ "$manual_ig" == "all" ]]; then
             mapfile -t ig_list < <(find igs -mindepth 2 -maxdepth 2 -name ig.ini -print | sed -E 's|^igs/([^/]+)/ig.ini$|\1|' | sort -u)
+            if printf '%s\n' "${ig_list[@]}" | grep -qx 'core'; then
+              mapfile -t ig_list < <(
+                {
+                  printf 'core\n'
+                  printf '%s\n' "${ig_list[@]}" | grep -vx 'core'
+                } | awk 'NF && !seen[$0]++'
+              )
+            fi
             echo "ig_mode=all" >> "$GITHUB_OUTPUT"
           else
             ig_list=("$manual_ig")
@@ -395,13 +404,25 @@ jobs:
           ig_list_sorted=$(printf "%s\n" "${ig_list[@]}" | tr '\n' ' ' | xargs)
           echo "ig_list=$ig_list_sorted" >> "$GITHUB_OUTPUT"
 
+      - name: Cache FHIR packages
+        if: steps.igs.outputs.ig_list != ''
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.FHIR_PACKAGE_CACHE_DIR }}
+          key: ${{ runner.os }}-fhir-packages-${{ hashFiles('igs/**/sushi-config.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-fhir-packages-
+
       - name: Install FHIR packages
         if: steps.igs.outputs.ig_list != ''
         shell: bash
         run: |
           set -euo pipefail
-          cache_dir="${FHIR_PACKAGE_CACHE_DIR:-$HOME/.fhir/packages}"
+          cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}"
           mkdir -p "$cache_dir"
+
+          declare -A dep_map=()
+
           for ig in ${{ steps.igs.outputs.ig_list }}; do
             cfg="igs/$ig/sushi-config.yaml"
             [[ -f "$cfg" ]] || continue
@@ -410,8 +431,33 @@ jobs:
               pkg="${dep%% *}"
               ver="${dep#* }"
               [[ -z "$pkg" || -z "$ver" ]] && continue
-              fhir install "$pkg" "$ver"
+              if [[ "$ver" == "dev" || "$ver" == "current" ]]; then
+                echo "Skipping local dependency ${pkg}#${ver}; it must be provided by an earlier build in this job."
+                continue
+              fi
+              dep_map["${pkg}#${ver}"]=1
             done
+          done
+
+          if [[ ${#dep_map[@]} -eq 0 ]]; then
+            echo "No external package dependencies to install."
+            exit 0
+          fi
+
+          mapfile -t dep_keys < <(printf '%s\n' "${!dep_map[@]}" | sort)
+          echo "Installing ${#dep_keys[@]} unique package dependencies..."
+
+          for key in "${dep_keys[@]}"; do
+            pkg="${key%%#*}"
+            ver="${key#*#}"
+
+            if [[ -d "$cache_dir/$key" ]]; then
+              echo "Already cached ${key}; skipping."
+              continue
+            fi
+
+            echo "Installing ${pkg} ${ver}..."
+            fhir install "$pkg" "$ver"
           done
 
       - name: Download IG Publisher
@@ -444,14 +490,31 @@ jobs:
           set -euo pipefail
           successful_igs=()
           failed_igs=()
+          core_dev_cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}/de.gematik.tiflow.core#dev"
+          core_failed=0
 
           if [[ "${{ steps.igs.outputs.ig_mode }}" == "all" ]]; then
             for ig in ${{ steps.igs.outputs.ig_list }}; do
+              if [[ "$core_failed" -eq 1 ]]; then
+                echo "Skipping $ig because core build failed and de.gematik.tiflow.core#dev is unavailable."
+                failed_igs+=("$ig")
+                continue
+              fi
+
               echo "::group::Build $ig"
               if ./build-all.sh --ig "$ig"; then
-                successful_igs+=("$ig")
+                if [[ "$ig" == "core" && ! -d "$core_dev_cache_dir" ]]; then
+                  echo "::error title=Missing local core dev package::core built but de.gematik.tiflow.core#dev was not found in $core_dev_cache_dir"
+                  failed_igs+=("core")
+                  core_failed=1
+                else
+                  successful_igs+=("$ig")
+                fi
               else
                 failed_igs+=("$ig")
+                if [[ "$ig" == "core" ]]; then
+                  core_failed=1
+                fi
               fi
               echo "::endgroup::"
             done

@@ -1,23 +1,29 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 9801e523447369d4876c4b1beb929602f77661286f35734d1bf3b0e7632361cb
+content_hash: 4640945a02f67a4030b4fe330accdbdb9383aa66e0aab04251752c183c30b618
 created: '2026-03-23T10:57:49.801182'
-date: '2026-03-23T13:47:28.497890'
+date: '2026-04-13T10:29:58.839891'
 key: IG-TIFLOW-ERP-75
-modified: '2026-03-23T10:57:49.801184'
-release_status: STABLE
+modified: '2026-04-13T10:29:58.839891'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: "Der TI-Flow-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 160, 169,\
-  \ 200 oder 209 mit dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID\
-  \ des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt\
-  \ wurde, die der folgenden professionOID entspricht:\n <ul>\n <li>oid_arzt</li>\
-  \ \n <li>oid_zahnarzt</li> \n </ul>\n damit nur solche Leistungserbringer ein signiertes\
-  \ E-Rezept einstellen, die zur Verordnung von Medikamenten ermächtigt sind."
+text: "Der TI-Flow-Fachdienst MUSS bei der Aktivierung eines Tasks mit Flowtype 160,\
+  \ 169, 200 oder 209 prüfen, dass die QES gemäß der professionOID des Signaturzertifikats\
+  \ des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden\
+  \ professionOID entspricht:\n <ul>\n <li>oid_arzt</li> \n <li>oid_zahnarzt</li>\
+  \ \n </ul>\n und bei einer Abweichung die Operation mit dem folgenden Fehler:\n\
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit\
+  \ nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung\
+  \ von Medikamenten ermächtigt sind."
 title: TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - QES durch
   berechtigte Berufsgruppe
-version: 0
+version: 1

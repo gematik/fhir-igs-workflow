@@ -1,21 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: e80bcd44d1789dd5ab23245d89976e9b795698c378a7e1f7729f09da240b2ce4
+content_hash: d25e10aeebb9df582379dbfab3639090fb90f42f2578ed0e0484af858ade7a59
 created: '2026-03-23T10:57:49.575068'
-date: '2026-03-23T13:47:27.796121'
+date: '2026-03-27T14:32:27.983351'
 key: IG-TIFLOW-XBORDER-59
-modified: '2026-03-23T10:57:49.575070'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.983351'
+release_status: MODIFIED
 source: input/pagecontent/op-grant-eu-access-permission-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
-  /$grant-eu-access-permission prüfen, dass der im Request übermittelte Zugriffscode
-  (Parameters.parameter:accessCode) das korrekte Format hat und bei fehlschlagender
-  Prüfung die Operation mit dem HTTP-Fehlercode 400 und dem OperationOutcome "Der
-  übermittelte Zugriffscode ist nicht zulässig." abbrechen.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt\
+  \ /$grant-eu-access-permission prüfen, dass der im Request übermittelte Zugriffscode\
+  \ (Parameters.parameter:accessCode) das korrekte Format hat und bei fehlschlagender\
+  \ Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_ACCESS_CODE_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Der\
+  \ übermittelte Zugriffscode ist nicht zulässig.</td>\n </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode
-version: 0
+version: 1

@@ -15,3 +15,7 @@ Alias: $op-reject = https://gematik.de/fhir/erp/OperationDefinition/RejectOperat
 Alias: $op-close = https://gematik.de/fhir/erp/OperationDefinition/CloseOperationDefinition
 Alias: $op-abort = https://gematik.de/fhir/erp/OperationDefinition/AbortOperationDefinition
 Alias: $op-dispense = https://gematik.de/fhir/erp/OperationDefinition/DispenseOperationDefinition
+
+Alias: $tiflow-core-oo-cs = https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs
+Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes
+Alias: $hl7-oo = http://terminology.hl7.org/CodeSystem/operation-outcome

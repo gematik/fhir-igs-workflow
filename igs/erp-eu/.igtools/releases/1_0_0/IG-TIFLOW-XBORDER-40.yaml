@@ -1,22 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: c34dfe7bfc9e9d309c718491e8563ac92cd484cd486e020f32d24bbb5e75a7bd
+content_hash: 682647d15235db90d9d405f518ca9cda164aa2945218a1210570ba12b338eecd
 created: '2026-03-23T10:57:49.570380'
-date: '2026-03-23T13:47:27.792233'
+date: '2026-03-27T14:32:27.977263'
 key: IG-TIFLOW-XBORDER-40
-modified: '2026-03-23T10:57:49.570382'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.977263'
+release_status: MODIFIED
 source: input/pagecontent/op-eu-close-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
-  /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr
-  übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und
-  Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung
-  die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit nur Dispensierinformationen
-  für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts\
+  \ /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr\
+  \ übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR\
+  \ und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener\
+  \ Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_CONSENT_MISSING</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit nur Dispensierinformationen für Versicherte\
+  \ übermittelt werden, die eine Einwilligung erteilt haben."
 title: TI-Flow-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR
-version: 0
+version: 1

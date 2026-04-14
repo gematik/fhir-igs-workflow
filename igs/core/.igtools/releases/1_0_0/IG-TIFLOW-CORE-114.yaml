@@ -1,23 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 318cb361bb9fed44f502fa8e127fdaa34939dbb292e0700b35f44083606aad71
+content_hash: 484ab202801c6f562b853649f56c39a480c510d1ed18c20c9a899e6cf2a75c98
 created: '2026-03-23T10:57:48.448455'
-date: '2026-03-23T13:47:26.457732'
+date: '2026-03-27T14:32:26.174773'
 key: IG-TIFLOW-CORE-114
-modified: '2026-03-23T10:57:48.448456'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.174773'
+release_status: MODIFIED
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
-  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution die zum
-  referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden Institution
-  mit der Telematik-ID aus dem ACCESS_TOKEN vergleichen und bei Ungleichheit die Operation
-  mit dem HTTP-Fehlercode 412 abbrechen, damit der Zugriff auf diesen Datensatz nur
-  durch Berechtigte erfolgt.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen\
+  \ Task mittels \"/Task/&lt;id&gt;?ac=...\" durch eine abgebende Institution die\
+  \ zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden\
+  \ Institution mit der Telematik-ID aus dem ACCESS_TOKEN vergleichen und bei Ungleichheit\
+  \ die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>412\
+  \ - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_AUTH_NOT_OWNER</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit der Zugriff auf diesen Datensatz nur durch\
+  \ Berechtigte erfolgt."
 title: TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen
   - Prüfung Telematik-ID
-version: 0
+version: 1

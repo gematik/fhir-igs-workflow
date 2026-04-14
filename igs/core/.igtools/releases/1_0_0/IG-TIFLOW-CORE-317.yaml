@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 9d097af840ddff024bdbd46743db4b3bf603f9cc157006601ac33309d565e912
+content_hash: 2c4ce9b5e16463801e7b3212a9fcddd388ab7ff726d274338adad38b64a43230
 created: '2026-03-23T10:57:48.504189'
-date: '2026-03-23T13:47:26.509245'
+date: '2026-04-13T10:29:56.426137'
 key: IG-TIFLOW-CORE-317
-modified: '2026-03-23T10:57:48.504190'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.426137'
+release_status: MODIFIED
 source: input/pagecontent/query-api-communication-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -18,7 +18,14 @@ text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET, DELETE und POST-Ope
   \ in der Rolle\n <ul>\n <li>oid_versicherter</li>\n <li>oid_oeffentliche_apotheke</li>\n\
   \ <li>oid_krankenhausapotheke</li>\n <li>oid_kostentraeger</li>\n </ul>\n die Operation\
   \ am Fachdienst aufrufen dürfen und die Rolle \"professionOID\" des Aufrufers im\
-  \ ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen, damit der Nachrichtenaustausch\
-  \ nicht zwischen Unbefugten erfolgt."
+  \ ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen, und bei Abweichungen\
+  \ die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403\
+  \ - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit der Nachrichtenaustausch nicht zwischen Unbefugten\
+  \ erfolgt."
 title: TI-Flow-Fachdienst - Communication - Rollenprüfung
-version: 0
+version: 1

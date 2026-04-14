@@ -1,7 +1,7 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 2a20b7e872e2cb5e54ad9042c59cb5c393930a61e803c374da5743908dfcba0a
+content_hash: b8d6689454befa1165bdeb8fd118aef139241117d461b57da34d837d1e17841c
 created: '2026-03-23T10:57:48.443018'
 date: '2026-04-13T07:00:25.453620'
 deleted: '2026-04-13T07:00:25.453619'
@@ -13,10 +13,16 @@ status: RETIRED
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
-  /Task mit dem URL-Parameter pnw="..." durch eine abgebende LEI prüfen, ob mit dem
-  Aufruf die Anzahl RATELIMIT_MAX1d_ERROR_UC4_12 überschritten ist und in diesem Fall
-  den Aufruf mit dem Fehler 423 abbrechen.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt\
+  \ /Task mit dem URL-Parameter pnw=\"...\" durch eine abgebende LEI prüfen, ob mit\
+  \ dem Aufruf die Anzahl RATELIMIT_MAX1d_ERROR_UC4_12 überschritten ist und in diesem\
+  \ Fall den Aufruf mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>423 - Locked</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>SVC_TELEMATIKID_TEMPORARILY_BLOCKED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>The specified Telematik-ID is temporarily blocked</td>\n </tr>\n </table>\
+  \ \n abbrechen."
 title: TI-Flow-Fachdienst - Rezepte lesen - Apotheke - Ratelimit pro Telematik-ID
   prüfen
-version: 0
+version: 1

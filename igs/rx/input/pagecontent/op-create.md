@@ -14,15 +14,14 @@ Die Nachricht wird als HTTP `POST` an `/Task/$create` gesendet.
 Die API-Beschreibung für den Aufruf der Operation findet sich auf:
 - [API-ERP: E-Rezept erstellen](https://github.com/gematik/api-erp/blob/master/docs/erp_bereitstellen.adoc#e-rezept-erstellen)
 
-{% comment %}
-TODO zum wiedereinführen für die Neuausschreibung
 <div class="gematik-api"
   data-api-type="FHIROperation"
+  data-api-fhir-resource-type="Task"
   data-api-fhir-invoke-level="type"
   data-api-operation-id="createOperation">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-erp-fachdienst-server-rx.json %}
     </pre>
   </div>
   <div id="OperationDefinition">
@@ -32,19 +31,18 @@ TODO zum wiedereinführen für die Neuausschreibung
   </div>
   <div id="Request-Examples">
     <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment Parameters/OperationCreateParametersInputExample XML %}
+      {% fragment Parameters/ExampleRxOperationRequestParameters XML %}
     </div>
   </div>
   <div id="Response-Examples">
     <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment Task/b12eb5f7-91ce-4887-93c7-800454601377 XML %}
+      {% fragment Task/ExampleRxTaskInReadyState XML %}
     </div>
     <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment OperationOutcome/ExampleOperationCreateError XML %}
+      {% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
     </div>
   </div>
 </div>
-{% endcomment %}
 
 ### Hinweise
 

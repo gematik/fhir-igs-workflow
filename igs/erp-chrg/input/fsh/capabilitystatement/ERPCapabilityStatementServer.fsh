@@ -31,18 +31,18 @@ RuleSet: TaskInteraction(expectation)
 * insert CapSupportProfileUrl($erp-task, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert TaskSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert TaskReadInteractionStatusCodes
 
 RuleSet: ChargeItemInteraction(expectation)
 * insert CapSupportResource(ChargeItem, #SHALL)
 * insert CapSupportProfile(GEM_ERPCHRG_PR_ChargeItem, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert ChargeItemSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert ChargeItemReadInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(_lastUpdated, http://hl7.org/fhir/SearchParameter/Resource-lastUpdated, #date, {expectation}, "Resource.meta.lastUpdated - Unterstützt die Suche nach dem zuletzt aktualisierten Datum")
 * insert CapSupportResourceSearchParam(entered-date, http://hl7.org/fhir/SearchParameter/ChargeItem-entered-date, #date, {expectation}, "ChargeItem.enteredDate - Unterstützt die Suche nach dem Eingangsdatum; default sort if _sort is not provided")
@@ -56,17 +56,17 @@ RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportProfile(GEM_ERPCHRG_PR_Communication_ChargChangeReply, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert CommunicationSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert CommunicationReadInteractionStatusCodes
 
 RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResource(Consent, #SHALL)
 * insert CapSupportProfile(GEM_ERPCHRG_PR_Consent, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert ConsentSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert ConsentReadInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")

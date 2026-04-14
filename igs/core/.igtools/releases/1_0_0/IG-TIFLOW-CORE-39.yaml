@@ -1,23 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: a88c28f7f6fe10d73b921cec1f18f596f8bf8090353ada138d2775f7479dd200
+content_hash: 11760a31f9a8868b939a66bca4508a11f724f02585cd090b79ec81e227fdc5f1
 created: '2026-03-23T10:57:48.433539'
-date: '2026-03-23T13:47:26.440616'
+date: '2026-03-24T08:30:54.203852'
 key: IG-TIFLOW-CORE-39
-modified: '2026-03-23T10:57:48.433540'
-release_status: STABLE
+modified: '2026-03-24T08:30:54.203852'
+release_status: MODIFIED
 source: input/pagecontent/op-reject-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&#60;id&#62;/$reject das im URL-Parameter "?secret=..." übertragene Secret
-  gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als
-  https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit
-  oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen,
-  damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des
-  Secrets erfolgt.
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$reject das im URL-Parameter \"?secret=...\" übertragene\
+  \ Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret\
+  \ als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei\
+  \ Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:\n\
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>forbidden</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_SECRET_MISMATCH</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td></td>\n </tr>\n </table> \n abbrechen, damit der Zugriff auf diesen\
+  \ Datensatz nur durch den Berechtigten in Kenntnis des Secrets erfolgt."
 title: TI-Flow-Fachdienst - Task zurückweisen - Prüfung Secret
-version: 0
+version: 1

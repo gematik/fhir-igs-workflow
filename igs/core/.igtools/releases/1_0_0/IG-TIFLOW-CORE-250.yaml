@@ -1,23 +1,29 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 6cec07d196ba9fa2db779e7e6668c3115e73f7349b9b43a49af036a8eeb5b282
+content_hash: ff4dccf90d5472bf133138968e9969136781d1f7511e2545db63465339ff0f9c
 created: '2026-03-23T10:57:48.480604'
-date: '2026-03-23T13:47:26.492203'
+date: '2026-04-13T10:29:56.407290'
 key: IG-TIFLOW-CORE-250
-modified: '2026-03-23T10:57:48.480606'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.407290'
+release_status: MODIFIED
 source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: 'Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$accept die Operation mit dem Fehlercode 403 abbrechen, wenn
-  das Ende der Einlösefrist (Task.ExpiryDate) zu einem früherem Zeitpunkt als das
-  aktuelle Datum liegt, da Verordnungen nur bis Ende der Einlösefrist abgerufen werden
-  dürfen. Im Falle dieses Fehlers ist im OperationOutcome des Response das Ende der
-  Einlösefrist wie folgt anzugeben: "Verordnung bis &lt;Datum&gt; einlösbar.", wobei
-  &lt;Datum&gt; der Wert Task.ExpiryDate im Format "dd.mm.yyyy" ist.'
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$accept, wenn das Ende der Einlösefrist (Task.ExpiryDate)\
+  \ zu einem früherem Zeitpunkt als das aktuelle Datum liegt, die Operation mit dem\
+  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_EXPIRED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Verordnung bis %d einlösbar.</td>\n\
+  \ </tr>\n </table> \n abbrechen, da Verordnungen nur bis Ende der Einlösefrist abgerufen\
+  \ werden dürfen. <br>\n Der TI-Flow-Fachdienst MUSS im Falle dieses Fehlers im OperationOutcome\
+  \ des Response das Ende der Einlösefrist wie folgt anzugeben: \"Verordnung bis &lt;Datum&gt;\
+  \ einlösbar.\", wobei &lt;Datum&gt; der Wert Task.ExpiryDate im Format \"dd.mm.yyyy\"\
+  \ ist."
 title: TI-Flow-Fachdienst - Task akzeptieren - Ende Einlösefrist prüfen
-version: 0
+version: 1

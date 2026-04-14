@@ -1,22 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: f9e1d1023324f0f51a78c1d1d7196d09729305c80991ad8b364366068552302c
+content_hash: cad09c45dda7963e308935f7fc1b66b5114bfb002d459ca9ab2c7ba087163a3f
 created: '2026-03-23T10:57:49.325023'
-date: '2026-03-23T13:47:27.433154'
+date: '2026-03-27T14:32:27.595023'
 key: IG-TIFLOW-CHRG-60
-modified: '2026-03-23T10:57:49.325024'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.595023'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
-  /ChargeItem sicherstellen, dass der zum Task zugehörige Verordnungsdatensatz unter
-  Coverage.type.coding.code den Wert "PKV" enthält und bei fehlgeschlagener Prüfung
-  mit dem HTTP-Fehlercode 400 abbrechen, damit nur eine Abrechnungsinformation für
-  E-Rezepte mit zulässigen Kostenträger angelegt wird.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt\
+  \ /ChargeItem sicherstellen, dass der zum Task zugehörige Verordnungsdatensatz unter\
+  \ Coverage.type.coding.code den Wert \"PKV\" enthält und bei fehlgeschlagener Prüfung\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad\
+  \ Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
+  \ damit nur eine Abrechnungsinformation für E-Rezepte mit zulässigen Kostenträger\
+  \ angelegt wird."
 title: TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Flowtype
   Task
-version: 0
+version: 1

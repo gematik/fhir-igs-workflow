@@ -1,19 +1,24 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 272d219d021de1d0aae783f0cb5da46a6656a03a6f770afca32b8987db57babc
+content_hash: c4e7ac90c540dc3ddb477091debcf0911caaaf3b1387daf2a26dfda3d6a732fb
 created: '2026-03-23T10:57:48.449242'
-date: '2026-03-23T13:47:26.458876'
+date: '2026-04-13T10:29:56.360075'
 key: IG-TIFLOW-CORE-120
-modified: '2026-03-23T10:57:48.449243'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.360075'
+release_status: MODIFIED
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation PATCH auf den Endpunkt
-  /Task ohne Angabe einer &lt;id&gt; für eine konkrete Ressource mit dem HTTP-Fehlercode
-  405 ablehnen, um das Markieren mehrerer Ressourcen über einen Request zu verhindern.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation PATCH auf den Endpunkt\
+  \ /Task ohne Angabe einer &lt;id&gt; für eine konkrete Ressource mit dem folgenden\
+  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>405 - Method Not Allowed</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_ID_REQUIRED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
+  \ um das Markieren mehrerer Ressourcen über einen Request zu verhindern."
 title: TI-Flow-Fachdienst – Task markieren - alles Markieren verbieten
-version: 0
+version: 1

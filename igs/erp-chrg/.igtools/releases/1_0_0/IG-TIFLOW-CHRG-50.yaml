@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 03a23bf15a174bf81a5262cf29a202e56507b82683b7db8fb27c1cb87d962a7d
+content_hash: 950d73b4bd3cd361c65094be9fdce905b136155b3217098c24d776173ea7c181
 created: '2026-03-23T10:57:49.323202'
-date: '2026-03-23T13:47:27.430991'
+date: '2026-04-13T10:29:57.462638'
 key: IG-TIFLOW-CHRG-50
-modified: '2026-03-23T10:57:49.323204'
-release_status: STABLE
+modified: '2026-04-13T10:29:57.462638'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -18,7 +18,14 @@ text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine k
   \ <li>oid_oeffentliche_apotheke</li>\n <li>oid_krankenhausapotheke</li> \n </ul>\n\
   \ die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
   \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
-  \ damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können."
+  \ und bei Abweichungen mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen\
+  \ werden können."
 title: TI-Flow-Fachdienst – Abrechnungsinformation abrufen – Rollenprüfung Versicherter
   oder Apotheker
-version: 0
+version: 1

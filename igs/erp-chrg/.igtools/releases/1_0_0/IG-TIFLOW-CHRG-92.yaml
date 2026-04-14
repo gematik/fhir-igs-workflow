@@ -1,23 +1,29 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 80a9556d6e46f968b3ed49b37bb0307e39151d85169ef51ff15dc5a1d7e79635
+content_hash: 6f2fe71f14875199916aa03593bab194330f0351a60c13af402d34d5723765fe
 created: '2026-03-23T10:57:49.330705'
-date: '2026-03-23T13:47:27.440345'
+date: '2026-04-13T10:29:57.481541'
 key: IG-TIFLOW-CHRG-92
-modified: '2026-03-23T10:57:49.330706'
-release_status: STABLE
+modified: '2026-04-13T10:29:57.481541'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konkrete
-  über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten,
-  den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header
-  des HTTP-Requests identifizieren, diese gegen die in ChargeItem.subject.identifier
-  hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf
-  mit dem HTTP-Fehlercode 403 abweisen, damit ausschließlich der begünstigte Versicherte
-  eine Abrechnungsinformation löscht.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine\
+  \ konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch\
+  \ einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im \"\
+  Authorization\"-Header des HTTP-Requests identifizieren, diese gegen die in ChargeItem.subject.identifier\
+  \ hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die\
+  \ Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403\
+  \ - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>SVC_IDENTITY_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Identity\
+  \ mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID\
+  \ / KVNR)</td>\n </tr>\n </table> \n abbrechen, damit ausschließlich der begünstigte\
+  \ Versicherte eine Abrechnungsinformation löscht."
 title: TI-Flow-Fachdienst – Abrechnungsinformation löschen – Prüfung KVNR
-version: 0
+version: 1

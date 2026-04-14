@@ -1,23 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: a1b2845af87163f3e1d23f561959b2d9f7d0281a3f003c8d1279986ed04ecfd5
+content_hash: c0202bcbdd833f50ce81f6ab164917998f4e02ac6c6d41903e6a4958721dffb2
 created: '2026-03-23T10:57:48.466313'
-date: '2026-03-23T13:47:26.479183'
+date: '2026-04-13T10:29:56.391610'
 key: IG-TIFLOW-CORE-205
-modified: '2026-03-23T10:57:48.466314'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.391610'
+release_status: MODIFIED
 source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
-  /Consent sicherstellen, dass noch keine Consent Ressource für die KVNR im ACCESS_TOKEN
-  und Consent.category.coding.code = &lt;Einwilligungstyp&gt; aus URL-Parameter category
-  gespeichert ist, um maximal eine Einwilligung für den Versicherten für jeden Einwilligungstypen
-  zu speichern. Im Fehlerfall muss der HTTP-Request mit dem HTTP-Fehlercode 409 abgewiesen
-  werden.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt\
+  \ /Consent sicherstellen, dass noch keine Consent Ressource für die KVNR im ACCESS_TOKEN\
+  \ und Consent.category.coding.code = &lt;Einwilligungstyp&gt; aus URL-Parameter\
+  \ category gespeichert ist und im Fehlerfall die Operation mit dem folgenden Fehler:\n\
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>409 - Conflict</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_CONSENT_ALREADY_EXISTS</td>\n </tr>\n <tr>\n\
+  \ <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, um maximal\
+  \ eine Einwilligung für den Versicherten für jeden Einwilligungstypen zu speichern."
 title: TI-Flow-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und
   Einwilligungstyp
-version: 0
+version: 1

@@ -30,9 +30,9 @@ RuleSet: TaskInteraction(expectation)
 * insert CapSupportProfileUrl($erp-task, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert TaskSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert TaskReadInteractionStatusCodes
 * insert CapResourceInteraction(#patch, #SHALL)
 
 * insert CapSupportResourceSearchParam(_id, http://hl7.org/fhir/SearchParameter/Resource-id, #token, {expectation}, "Task.id - Unterstützt die Suche nach der Task-ID")
@@ -48,31 +48,32 @@ RuleSet: TaskInteraction(expectation)
 * insert CapSupportResourceSearchParamNoDefinition(__offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
 
 * insert CapSupportResourceOperation(eu-close, EUCloseOperation, {expectation}, "Finishes the EU ePrescription workflow and creates a signed receipt bundle")
+* insert EuCloseOperationStatusCodes
 
 RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResource(Consent, {expectation})
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert ConsentSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#create, #SHALL)
-* insert CreateInteractionStatusCodes
+* insert ConsentCreateInteractionStatusCodes
 * insert CapResourceInteraction(#delete, #SHALL)
-* insert DeleteInteractionStatusCodes
+* insert ConsentDeleteInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")
 
 RuleSet: GrantEUAccessPermissionInteraction(expectation)
 * insert CapSupportSystemOperation(grant-eu-access-permission, Grant-EU-Access-Permission, {expectation}, "Registers access code and country for EU prescription access")
-* insert SystemLevelOperationStatusCodesWithParameters
+* insert GrantEUAccessPermissionOperationStatusCodes
 
 RuleSet: ReadEUAccessPermissionInteraction(expectation)
 * insert CapSupportSystemOperation(read-eu-access-permission, Read-EU-Access-Permission, {expectation}, "Reads the currently registered EU access code")
-* insert SystemLevelOperationStatusCodesWithParameters
+* insert ReadEUAccessPermissionOperationStatusCodes
 
 RuleSet: RevokeEUAccessPermissionInteraction(expectation)
 * insert CapSupportSystemOperation(revoke-eu-access-permission, Revoke-EU-Access-Permission, {expectation}, "Revokes the currently registered EU access code")
-* insert SystemLevelQueryOperationStatusCodesWithNormalSuccess
+* insert RevokeEUAccessPermissionOperationStatusCodes
 
 RuleSet: GetEUPrescriptionsInteraction(expectation)
 * insert CapSupportSystemOperation(get-eu-prescriptions, GET-Prescription-EU, {expectation}, "Returns prescription information for EU ePrescription workflows")
-* insert SystemLevelOperationStatusCodesWithParameters
+* insert GetEUPrescriptionsOperationStatusCodes

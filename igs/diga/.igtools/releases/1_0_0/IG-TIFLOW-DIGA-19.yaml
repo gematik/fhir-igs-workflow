@@ -1,23 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 843ff8b06738a4cbc4a4229fcf7f559c18b468afdfd381a867945786de5b89f2
+content_hash: 3dd8791495e7f709b09fe55b1ac5e0788c31f36dd178a2aa509e472ba4d15bd9
 created: '2026-03-23T10:57:49.157423'
-date: '2026-03-23T13:47:27.054912'
+date: '2026-03-27T14:32:26.786281'
 key: IG-TIFLOW-DIGA-19
-modified: '2026-03-23T10:57:49.157424'
-release_status: STABLE
+modified: '2026-03-27T14:32:26.786281'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType
-  = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, ob die
-  Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist und in
-  diesem Fall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen,
-  dass dieser Workflow nicht für Verordnungen genutzt wird, die zu Lasten von Unfallkassen
-  oder Berufsgenossenschaften gehen.
+text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType\
+  \ = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, ob\
+  \ die Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist\
+  \ und in diesem Fall die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_ALTERNATIVE_IK_FORBIDDEN</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>-</td>\n </tr>\n </table> \n abbrechen, um sicherzustellen, dass dieser Workflow\
+  \ nicht für Verordnungen genutzt wird, die zu Lasten von Unfallkassen oder Berufsgenossenschaften\
+  \ gehen."
 title: TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative
   IK
-version: 0
+version: 1

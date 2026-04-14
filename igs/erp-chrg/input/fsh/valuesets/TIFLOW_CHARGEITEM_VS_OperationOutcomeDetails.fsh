@@ -1,0 +1,25 @@
+ValueSet: TIFLOWChargeItemOperationOutcomeDetailsVS
+Id: tiflow-chargeitem-operation-outcome-details-vs
+Title: "TIFLOW ChargeItem Operation Outcome Details VS"
+Description: "Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"
+* insert ValueSet(tiflow-chargeitem-operation-outcome-details-vs)
+* include codes from system TIFLOWChargeItemOperationOutcomeDetailsCS
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_AUTH_ROLE_NOT_ALLOWED "Access role not allowed"
+* include TIOperationOutcomeDetailsCS#SVC_IDENTITY_MISMATCH "Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)"
+* include TIOperationOutcomeDetailsCS#SVC_VALIDATION_FAILED "FHIR Profile Validation Failed"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_CONSENT_ALREADY_EXISTS "Consent already exists"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_CONSENT_CATEGORY_REQUIRED "Consent category required"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_CONSENT_CATEGORY_INVALID "Consent category invalid"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_ACCESSCODE_MISMATCH "Access code mismatch"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_TASK_REQUIRED "Task required"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_TASK_NOT_FOUND "Task not found"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_SECRET_MISMATCH "Task secret mismatch"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_CONSENT_REQUIRED "Consent required"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_OCSP_BACKEND_ERROR "Invalid OCSP response"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_MESSAGE_TO_SELF "Message to self not allowed"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_COMMUNICATION_PAYLOAD_INVALID "Communication payload invalid"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_INSURANT_NOT_ELIGIBLE "Insurant not eligible"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_RECIPIENT_INVALID "Recipient invalid"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_TASK_STATUS_MISMATCH "Task status mismatch"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_TASK_EXPIRED "Task expired"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_MVO_NOT_VALID_YET "MVO not valid yet"

@@ -1,22 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 9eabbbb47f7ea9a05efb33982de8837c02b5b42b64cac29fedd8ef17814af469
+content_hash: a21fe39780b8ad95442f6e7e7821ac71045678fab99b43e803f5fdc64a2e3809
 created: '2026-03-23T10:57:49.325152'
-date: '2026-03-23T13:47:27.433327'
+date: '2026-03-27T14:32:27.595492'
 key: IG-TIFLOW-CHRG-61
-modified: '2026-03-23T10:57:49.325153'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.595492'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
-  /ChargeItem sicherstellen, dass zu der in ChargeItem.subject.identifier übermittelten
-  KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code
-  = CHARGCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode
-  403 abbrechen, damit nur eine Abrechnungsinformation für Versicherte gespeichert
-  wird, die eine Einwilligung erteilt haben.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt\
+  \ /ChargeItem sicherstellen, dass zu der in ChargeItem.subject.identifier übermittelten\
+  \ KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code\
+  \ = CHARGCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden\
+  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n\
+  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
+  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_CONSENT_REQUIRED</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit\
+  \ nur eine Abrechnungsinformation für Versicherte gespeichert wird, die eine Einwilligung\
+  \ erteilt haben."
 title: TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Einwilligung
-version: 0
+version: 1

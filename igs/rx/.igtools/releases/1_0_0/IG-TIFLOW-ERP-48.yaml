@@ -1,12 +1,12 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: ede73e747e9deacd68d595dc26155a17be7a5323fd4357aadf37c4eb9911e98b
+content_hash: 6eba9ad604a5d4b98e71baed1a804c6a2dc4e593ae6909ba4b1658f8878b50e0
 created: '2026-03-23T10:57:49.788175'
-date: '2026-03-23T13:47:28.486438'
+date: '2026-04-13T10:29:58.827420'
 key: IG-TIFLOW-ERP-48
-modified: '2026-03-23T10:57:49.788177'
-release_status: STABLE
+modified: '2026-04-13T10:29:58.827420'
+release_status: MODIFIED
 source: input/pagecontent/op-abort-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -20,6 +20,13 @@ text: "Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks für eine Verordnun
   \ <li>oid_praxis_arzt</li>\n <li>oid_zahnarztpraxis</li>\n <li>oid_krankenhaus</li>\n\
   \ <li>oid_institution-vorsorge-reha</li>\n <li>oid_oeffentliche_apotheke</li>\n\
   \ <li>oid_krankenhausapotheke</li>\n </ul>\n die Operation am Fachdienst aufrufen,\
-  \ damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann."
+  \ und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit die Verordnung nicht durch einen Unberechtigten\
+  \ gelöscht werden kann."
 title: TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 160/166/169/200/209 - Rollenprüfung
-version: 0
+version: 1

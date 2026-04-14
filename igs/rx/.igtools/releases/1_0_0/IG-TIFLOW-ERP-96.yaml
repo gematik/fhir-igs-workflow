@@ -1,21 +1,27 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: b9bdb62ce32dd636fb68b11f82a64ccbd798513da4c595c7886b30334e0b517d
+content_hash: c03912527140b8a95edd437e79a5e660edb2ae92e7188aadacd625a4060695b2
 created: '2026-03-23T10:57:49.807871'
-date: '2026-03-23T13:47:28.506822'
+date: '2026-04-13T10:29:58.850584'
 key: IG-TIFLOW-ERP-96
-modified: '2026-03-23T10:57:49.807872'
-release_status: STABLE
+modified: '2026-04-13T10:29:58.850584'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$activate die Operation mit dem Fehlercode 400 abbrechen,
-  wenn die Verordnung nicht als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
-  = false) gekennzeichnet ist, aber eine Extension Nummerierung oder Zeitraum enthält,
-  weil normale Verordnungen keine MVO-Angaben enthalten dürfen.
+text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung nicht als Mehrfachverordnung\
+  \ (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = false)\
+  \ gekennzeichnet ist, aber eine Extension Nummerierung oder Zeitraum enthält, die\
+  \ Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400\
+  \ - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_EREZEPT_MVO_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
+  \ </tr>\n </table> \n abbrechen, weil normale Verordnungen keine MVO-Angaben enthalten\
+  \ dürfen."
 title: TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben
-version: 0
+version: 1

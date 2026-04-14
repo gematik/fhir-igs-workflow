@@ -1,21 +1,26 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 1a2bad09896acb2f75d3dba6ff86544d7215225814c9badd64caea8625beeed2
+content_hash: bd742e41c33f903fad6ed529492bdbbbba4748489c2aede3c38fd8b9b6db0e86
 created: '2026-03-23T10:57:48.466062'
-date: '2026-03-23T13:47:26.478841'
+date: '2026-04-13T10:29:56.390673'
 key: IG-TIFLOW-CORE-203
-modified: '2026-03-23T10:57:48.466064'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.390673'
+release_status: MODIFIED
 source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt
-  /Consent sicherstellen, dass die KVNR im ACCESS_TOKEN im "Authorization"-Header
-  des HTTP-Requests und die KVNR in Consent.patient.identifier übereinstimmen, damit
-  eine Einwilligung für einen Versicherten nicht durch Dritte erteilt werden kann.
-  Im Fehlerfall muss der Http-Request mit dem Http-Fehlercode 403 abgewiesen werden.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt\
+  \ /Consent sicherstellen, dass die KVNR im ACCESS_TOKEN im \"Authorization\"-Header\
+  \ des HTTP-Requests und die KVNR in Consent.patient.identifier übereinstimmen und\
+  \ im Fehlerfall die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>SVC_IDENTITY_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR\
+  \ Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen, damit eine Einwilligung\
+  \ für einen Versicherten nicht durch Dritte erteilt werden kann."
 title: TI-Flow-Fachdienst - Consent schreiben - Prüfung KVNR
-version: 0
+version: 1

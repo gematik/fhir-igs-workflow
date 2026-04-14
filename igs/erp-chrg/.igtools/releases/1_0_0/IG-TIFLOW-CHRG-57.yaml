@@ -1,20 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 75dc6d2d44f628b5d6fde8acbf31b09ee72ef02dcb168143fd3049bbcc6d985f
+content_hash: 65fbb120a7bce00b92059370c974429817cdfb21d169bcace74f33c20698cdfa
 created: '2026-03-23T10:57:49.324651'
-date: '2026-03-23T13:47:27.432611'
+date: '2026-03-27T14:32:27.593627'
 key: IG-TIFLOW-CHRG-57
-modified: '2026-03-23T10:57:49.324652'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.593627'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
-  /ChargeItem sicherstellen, dass ein URL-Parameter "task=..." übermittelt wurde und
-  bei Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 400 abbrechen.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt\
+  \ /ChargeItem sicherstellen, dass ein URL-Parameter \"task=...\" übermittelt wurde\
+  \ und bei Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_TASK_REQUIRED</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst – Abrechnungsinformation bereitstellen – Prüfung Parameter
   Task
-version: 0
+version: 1

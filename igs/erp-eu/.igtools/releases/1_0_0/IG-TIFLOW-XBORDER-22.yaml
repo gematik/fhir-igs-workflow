@@ -1,21 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 050bdb67897fe366e3617222fda9f110cb7e36a958c7fb7f6ca0e58f8851d800
+content_hash: 857a01c0cd4950caee765ed6856ebafd0499ebe0f469b2c7e2fe687008a5f32a
 created: '2026-03-23T10:57:49.564361'
-date: '2026-03-23T13:47:27.788326'
+date: '2026-03-27T14:32:27.972147'
 key: IG-TIFLOW-XBORDER-22
-modified: '2026-03-23T10:57:49.564363'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.972147'
+release_status: MODIFIED
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete
-  über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten
-  prüfen, ob der adressierte Task in Task.extension:eu-isRedeemableByProperties.valueBoolean
-  = true gesetzt ist und anderfalls mit dem HTTP-Fehlercode "409 - Conflict" und einer
-  entsprechenden Fehlermeldung im OperationOutcome die Operation abbrechen.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete\
+  \ über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten\
+  \ prüfen, ob der adressierte Task in Task.extension:eu-isRedeemableByProperties.valueBoolean\
+  \ = true gesetzt ist und anderfalls mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>409 - Conflict</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_XBORDER_NOT_ACTIVATED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>-</td>\n </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte
-version: 0
+version: 1

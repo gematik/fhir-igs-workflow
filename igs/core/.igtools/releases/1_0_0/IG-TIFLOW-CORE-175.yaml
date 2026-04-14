@@ -1,20 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 52cdc83c39a2d5889e10e9ea69dad31d6326a084cf2e86a48c7c255826e22f35
+content_hash: 7001b39c6092b8372d8116d00622e4b1b3e3a516e9c761566bbfda4d2092edec
 created: '2026-03-23T10:57:48.461204'
-date: '2026-03-23T13:47:26.471441'
+date: '2026-04-13T10:29:56.377061'
 key: IG-TIFLOW-CORE-175
-modified: '2026-03-23T10:57:48.461205'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.377061'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&#60;id&#62;/$activate den im referenzierten Task gespeicherten Status
-  Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "draft"
-  ist.
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate den im referenzierten Task gespeicherten Status\
+  \ Task.status prüfen und, wenn Task.status ungleich \"draft\" ist, die Operation\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>412 - Precondition\
+  \ Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Task has invalid status.</td>\n </tr>\n\
+  \ </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task aktivieren - Prüfung Status
-version: 0
+version: 1

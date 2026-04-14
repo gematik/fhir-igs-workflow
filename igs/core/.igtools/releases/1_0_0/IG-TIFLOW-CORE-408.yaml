@@ -1,21 +1,25 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: d25359f5ab3768ffb35a63c8a652120e67279446b24421338b8ae18d925febdc
+content_hash: 26438b5606b6d09eac3104ff8d63870133f88a0f67d493ccab6cd340c9e0b5f3
 created: '2026-04-13T06:53:10.375344'
-date: '2026-04-13T06:53:10.375351'
+date: '2026-04-13T14:17:52.526049'
 key: IG-TIFLOW-CORE-408
-modified: '2026-04-13T06:53:10.375349'
+modified: '2026-04-13T14:17:52.526049'
 release_status: NEW
-source: input/pagecontent/menu-schnittstellen-generelle-prinzipien.md
+source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
-  - Herstellererklärung
-text: "Der TI-Flow-Fachdienst MUSS die Prüfungen in der folgenden Reihenfolge durchführen:\n\
-  \ <ol>\n <li>Prüfung zur Autorisierung</li>\n <li>Prüfung Pre-condition</li>\n <li>falls\
-  \ Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen</li>\n <li>falls\
-  \ Eingangsartefakt signiert: Signaturprüfung</li>\n <li>Prüfung von Business-Rules</li>\n\
-  \ </ol>"
-title: TI-Flow-Fachdienst - Reihenfolge Eingansprüfungen für Operationen
+  - Produktgutachten
+text: "Der TI-Flow-Fachdienst MUSS, wenn im Rahmen der Prüfung der Gültigkeit eines\
+  \ QES-Signuturzertifikates C.HP.QES die Abfrage des OCSP-Response für das Signaturzertifikat\
+  \ fehlschlägt, die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>512 - OCSP Backend Error</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_OCSP_BACKEND_ERROR</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>OCSP\
+  \ Backend Error</td>\n </tr>\n </table>\n abgelehnt werden."
+title: TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA
+  - fehlender OCSP-Response
 version: 0

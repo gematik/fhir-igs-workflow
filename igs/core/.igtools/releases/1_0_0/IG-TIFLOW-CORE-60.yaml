@@ -1,23 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: f216a845581e2b4573a3d2cedfa98544cbb4c9123c6797e5f2719f91a767ee72
+content_hash: ce8f7b9d2f123efed3d4587e8c8e5222b728ed0b58505d01cd256066993d149c
 created: '2026-03-23T10:57:48.438368'
-date: '2026-03-23T13:47:26.445374'
+date: '2026-03-24T08:30:54.208715'
 key: IG-TIFLOW-CORE-60
-modified: '2026-03-23T10:57:48.438370'
-release_status: STABLE
+modified: '2026-03-24T08:30:54.208715'
+release_status: MODIFIED
 source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$close das im URL-Parameter "?secret=..." übertragene Secret
-  gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als
-  https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit
-  oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen,
-  damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des
-  Secrets erfolgt.
+text: "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$close das im URL-Parameter \"?secret=...\" übertragene\
+  \ Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret\
+  \ als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei\
+  \ Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:\
+  \ \n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n\
+  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
+  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_SECRET_MISMATCH</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table>\n abbrechen, damit\
+  \ der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des Secrets\
+  \ erfolgt."
 title: TI-Flow-Fachdienst - Task schließen - Prüfung Secret
-version: 0
+version: 1

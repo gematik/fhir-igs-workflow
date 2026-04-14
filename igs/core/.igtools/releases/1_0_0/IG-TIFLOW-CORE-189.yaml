@@ -1,24 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 3905c23c1d2f6d157f54e7239f0c87f881daeae7625a65ce0bf35ee44bea4074
+content_hash: e44200a5686c27026e6cee267332994dd6d4504b577cda66a81f85bd5cf85386
 created: '2026-03-23T10:57:48.463579'
-date: '2026-03-23T13:47:26.474930'
+date: '2026-04-13T10:29:56.385246'
 key: IG-TIFLOW-CORE-189
-modified: '2026-03-23T10:57:48.463580'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.385246'
+release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: 'Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate
-  einen im FHIR Profil KBV_PR_FOR_Patient gespeicherten Wert für Patient.identifier:versichertenId.value
-  gemäß der Anlage 1 der "Prüfziffernberechnung für die Krankenversichertennummer
-  nach § 290 SGB V" vom 26.02.2019 beschriebenen Prüfalgorithmus validieren, und bei
-  einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen sowie
-  die Fehlermeldung "Ungültige Versichertennummer (KVNR): Die übergebene Versichertennummer
-  des Patienten entspricht nicht den Prüfziffer-Validierungsregeln." in Form einer
-  OperationOutcome ausliefern.'
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate\
+  \ einen im FHIR Profil KBV_PR_FOR_Patient gespeicherten Wert für Patient.identifier:versichertenId.value\
+  \ gemäß der Anlage 1 der \"Prüfziffernberechnung für die Krankenversichertennummer\
+  \ nach § 290 SGB V\" vom 26.02.2019 beschriebenen Prüfalgorithmus validieren, und\
+  \ bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_KVNR_INVALID</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>Ungültige Versichertennummer (KVNR): Die übergebene Versichertennummer\
+  \ des Patienten entspricht nicht den Prüfziffer-Validierungsregeln.</td>\n </tr>\n\
+  \ </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task aktivieren - Überprüfung KVNR im Profil KBV_PR_FOR_Patient
-version: 0
+version: 1

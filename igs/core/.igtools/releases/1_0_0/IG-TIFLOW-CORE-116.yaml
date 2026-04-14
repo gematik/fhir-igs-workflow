@@ -1,23 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: a98dfb7e38792f975d09757b315dc40bc191b5a9694d7ac148cc9cdce0b70c6e
+content_hash: 06283c024604347a2d37b64d4d684d8202a2a3f0bd431daef9777be46fd8f39b
 created: '2026-03-23T10:57:48.448718'
-date: '2026-03-23T13:47:26.458131'
+date: '2026-04-13T10:29:56.359206'
 key: IG-TIFLOW-CORE-116
-modified: '2026-03-23T10:57:48.448719'
-release_status: STABLE
+modified: '2026-04-13T10:29:56.359206'
+release_status: MODIFIED
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
-  Task mittels "/Task/&lt;id&gt;?ac=..." durch eine abgebende Institution den im referenzierten
-  Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn
-  Task.status ungleich "in-progress" und ungleich "completed" ist, damit der Datensatz
-  nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung befindet oder
-  der Workflow abgeschlossen ist.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen\
+  \ Task mittels \"/Task/&lt;id&gt;?ac=...\" durch eine abgebende Institution den\
+  \ im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status\
+  \ ungleich \"in-progress\" und ungleich \"completed\" ist, die Operation mit dem\
+  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>412 - Precondition\
+  \ Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
+  \ damit der Datensatz nur abgerufen werden, kann, wenn sich die Verordnung in Belieferung\
+  \ befindet oder der Workflow abgeschlossen ist."
 title: TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen
   - Prüfung Status
-version: 0
+version: 1

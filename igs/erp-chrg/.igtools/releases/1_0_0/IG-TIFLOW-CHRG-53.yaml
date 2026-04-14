@@ -1,24 +1,29 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: bad4bc97992dff3062292838cb9d159c34a941aca221bb229d3f14fdbb30e458
+content_hash: e361c8cc5b7d2623dcd47aa9b37df5bd99da244d5bec1e3ca31ca51354ee1c5b
 created: '2026-03-23T10:57:49.324082'
-date: '2026-03-23T13:47:27.431616'
+date: '2026-03-27T14:32:27.592191'
 key: IG-TIFLOW-CHRG-53
-modified: '2026-03-23T10:57:49.324084'
-release_status: STABLE
+modified: '2026-03-27T14:32:27.592191'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkreten
-  über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende
-  Leistungserbringerinstitution, den im URL-Parameter "?ac=..." übertragenen AccessCode
-  gegen den im referenzierten ChargeItem gespeicherten AccessCode ChargeItem.identifier:AccessCode
-  als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und bei
-  Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode
-  403 abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis
-  des AccessCodes erfolgen.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkreten\
+  \ über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende\
+  \ Leistungserbringerinstitution, den im URL-Parameter \"?ac=...\" übertragenen AccessCode\
+  \ gegen den im referenzierten ChargeItem gespeicherten AccessCode ChargeItem.identifier:AccessCode\
+  \ als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und\
+  \ bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem folgenden\
+  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n\
+  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
+  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_ACCESSCODE_MISMATCH</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit\
+  \ Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes\
+  \ erfolgen."
 title: TI-Flow-Fachdienst – Abrechnungsinformation abrufen – Apotheke – Prüfung AccessCode
-version: 0
+version: 1

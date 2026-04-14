@@ -1,0 +1,27 @@
+actor:
+- TI_Flow_FD
+conformance: SHALL
+content_hash: 1647a99f339b3718799bebe56459629f98066138e045c151a197e7cacaad83c0
+created: '2026-04-13T10:29:56.381937'
+date: '2026-04-13T10:29:56.381940'
+key: IG-TIFLOW-CORE-412
+modified: '2026-04-13T10:29:56.381939'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI_Flow_FD:
+  - Produktgutachten
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate prüfen, dass der Präfix der PrescriptionID gleich\
+  \ dem Flowtype des zu aktivierenden Tasks ist und andernfalls die Operation mit\
+  \ dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
+  \            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n         \
+  \   <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n\
+  \            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n      \
+  \  <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_FLOWTYPE_MISMATCH</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n\
+  \        </tr>\n    </table> \n    abbrechen."
+title: TI-Flow-Fachdienst - Task aktivieren - Prüfung Präfix Rezept-ID gegen Flowtype
+version: 0

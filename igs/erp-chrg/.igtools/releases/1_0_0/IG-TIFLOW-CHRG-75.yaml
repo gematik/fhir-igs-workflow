@@ -1,22 +1,28 @@
 actor:
 - TI_Flow_FD
 conformance: SHALL
-content_hash: 53b820cc61a496dd476820eaabdd615b3747b56c0ae9e33aa31f155321305ffd
+content_hash: 75cd535464a862ce2e6ac3fbec72138884c12694aee999a6da7679f8ff0d969b
 created: '2026-03-23T10:57:49.328080'
-date: '2026-03-23T13:47:27.435851'
+date: '2026-04-13T10:29:57.472970'
 key: IG-TIFLOW-CHRG-75
-modified: '2026-03-23T10:57:49.328082'
-release_status: STABLE
+modified: '2026-04-13T10:29:57.472970'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
 test_procedures:
   TI_Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PATCH-Operation auf eine konkrete
-  über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource sicherstellen,
-  dass ausschließlich Nutzer in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst
-  aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader
-  "Authorization" feststellen, damit eine Abrechnungsinformation nicht durch Unberechtigte
-  aktualisiert werden kann.
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PATCH-Operation auf eine konkrete\
+  \ über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die Rolle \"\
+  professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\"\
+  \ feststellen und sicherstellen, dass ausschließlich Nutzer in der Rolle oid_versicherter\
+  \ die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die\
+  \ aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abbrechen, damit\
+  \ eine Abrechnungsinformation nicht durch Unberechtigte aktualisiert werden kann."
 title: TI-Flow-Fachdienst – Abrechnungsinformation ändern (PATCH) – Rollenprüfung
-version: 0
+version: 1
