@@ -1,5 +1,7 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
+Anforderungen für den **NCPeH-Fachdienst** zur Nutzung der Operationen am `/Taks`-Endpunkt finden sich in [gemSpec_NCPeH_FD] ab Kapitel [6.2.4](https://gemspec.gematik.de/docs/gemSpec/gemSpec_NCPeH_FD/latest/#6.2.4).
+
 #### PATCH
 
 Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicherten zur Verfügung. Die PATCH-Operation führt zu keiner Statusänderung des Tasks.
