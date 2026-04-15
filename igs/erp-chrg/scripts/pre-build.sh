@@ -7,10 +7,10 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$PROJECT_ROOT"
 
 refresh_special_urls() {
-	local status
+	local refresh_state
 
-	status="$(python3 "$ROOT_DIR/scripts/refresh-special-urls.py" "$PROJECT_ROOT")"
-	if [[ "$status" == "updated" ]]; then
+	refresh_state="$(python3 "$ROOT_DIR/scripts/refresh-special-urls.py" "$PROJECT_ROOT")"
+	if [[ "$refresh_state" == "updated" ]]; then
 		echo "special-url list refreshed from fsh-generated/resources; rerunning SUSHI"
 		sushi .
 	fi
