@@ -1,3 +1,1 @@
-Diese Seite beschreibt Anforderungen für den NCPeH zur Nutzung des `$get-eu-presciption`-Endpunktes.
-
-<!-- ToDo Quelle für die Anforderungen referenzieren -->
+Anforderungen und Beschreibungen für den NCPeH-Fachdienst zur Nutzung der Schnittstelle finden sich in [gemSpec_NCPeH_FD] ab Kapitel [6.2.4](https://gemspec.gematik.de/docs/gemSpec/gemSpec_NCPeH_FD/latest/#6.2.4).
