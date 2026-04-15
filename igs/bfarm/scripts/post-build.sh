@@ -94,11 +94,13 @@ for sm_file in ./fsh-generated/resources/StructureMap-*.json; do
 	cp "$sm_file" "$TEMP_IG_DIR/"
 done
 
-# Build command using legacy -transform syntax compatible with HAPI validator 6.5.26+.
+# Try modern 'transform URL input' syntax first (HAPI 6.8+).
+# Fall back to legacy 'input -transform URL' syntax for older validators (HAPI 6.5.x).
+# Note: always use the temp IG dir (StructureMaps only) to avoid loading example bundles.
 set +e
 java -jar "$HAPI_VALIDATOR_JAR_PATH" \
+	transform "$TRANSFORM_MAP_URL" \
 	"$MAPPING_BUNDLE_SOURCE" \
-	-transform "$TRANSFORM_MAP_URL" \
 	-version 4.0.1 \
 	-output "$TRANSFORM_OUTPUT" \
 	-ig "$TEMP_IG_DIR" \
@@ -107,6 +109,22 @@ java -jar "$HAPI_VALIDATOR_JAR_PATH" \
 	-ig de.gematik.ti#1.1.0
 transform_rc=$?
 set -e
+
+if [[ $transform_rc -ne 0 ]]; then
+	echo "⚠️ Modern transform syntax failed (exit $transform_rc). Retrying with legacy -transform syntax..." >&2
+	set +e
+	java -jar "$HAPI_VALIDATOR_JAR_PATH" \
+		"$MAPPING_BUNDLE_SOURCE" \
+		-transform "$TRANSFORM_MAP_URL" \
+		-version 4.0.1 \
+		-output "$TRANSFORM_OUTPUT" \
+		-ig "$TEMP_IG_DIR" \
+		-ig de.gematik.erezept-workflow.r4 \
+		-ig kbv.ita.erp \
+		-ig de.gematik.ti#1.1.0
+	transform_rc=$?
+	set -e
+fi
 
 if [[ $transform_rc -ne 0 ]]; then
 	echo "❌ Transform command failed with exit code $transform_rc." >&2
