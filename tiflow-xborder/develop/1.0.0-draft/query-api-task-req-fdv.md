@@ -1,4 +1,4 @@
-# E-Rezept-FdV Anforderungen: Task - TIFlow - Grenzüberschreitender Datenaustausch v1.0.0-draft
+# Client Anforderungen: Task - TIFlow - Grenzüberschreitender Datenaustausch v1.0.0-draft
 
 TIFlow - Grenzüberschreitender Datenaustausch
 
@@ -7,11 +7,13 @@ Version 1.0.0-draft - ci-build
 * [**Table of Contents**](toc.md)
 * [**Schnittstellen - Query API**](menu-schnittstellen-query-api.md)
 * [**Query API: Task**](query-api-task.md)
-* **E-Rezept-FdV Anforderungen: Task**
+* **Client Anforderungen: Task**
 
-## E-Rezept-FdV Anforderungen: Task
+## Client Anforderungen: Task
 
 ### Anforderungen der Schnittstelle aus diesem Modul
+
+Anforderungen für den **NCPeH-Fachdienst** zur Nutzung der Operationen am `/Taks`-Endpunkt finden sich in [gemSpec_NCPeH_FD] ab Kapitel [6.2.4](https://gemspec.gematik.de/docs/gemSpec/gemSpec_NCPeH_FD/latest/#6.2.4).
 
 #### PATCH
 

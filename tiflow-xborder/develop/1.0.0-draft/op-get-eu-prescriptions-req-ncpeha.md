@@ -11,5 +11,5 @@ Version 1.0.0-draft - ci-build
 
 ## NCPeH-Anforderungen: E-Rezepte zur Einlösung im EU-Ausland abrufen
 
-Diese Seite beschreibt Anforderungen für den NCPeH zur Nutzung des `$get-eu-presciption`-Endpunktes.
+Anforderungen und Beschreibungen für den NCPeH-Fachdienst zur Nutzung der Schnittstelle finden sich in [gemSpec_NCPeH_FD] ab Kapitel [6.2.4](https://gemspec.gematik.de/docs/gemSpec/gemSpec_NCPeH_FD/latest/#6.2.4).
 
