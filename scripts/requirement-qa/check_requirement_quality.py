@@ -16,6 +16,9 @@ Checks:
   - Das PS der verordnenden LEI -> PS_E-Rezept_verordnend
   - Das Clientsystem Kostenträger -> CS_E-Rezept_KTR
 - reports unknown actor names
+- normalizes legacy actor aliases:
+    - TI_Flow_FD -> TI-Flow_FD
+    - Anb_TI_Flow_FD -> Anb_TI-Flow_FD
 - canonicalizes alias subject phrase:
     - Das CS Kostenträger -> Das Clientsystem Kostenträger
 
@@ -61,6 +64,12 @@ KNOWN_ACTORS: Set[str] = {
     "PS_E-Rezept_verordnend",
     "CS_E-Rezept_KTR",
     "Anb_TI-Flow_FD",
+}
+
+
+LEGACY_ACTOR_ALIASES: Dict[str, str] = {
+    "TI_Flow_FD": "TI-Flow_FD",
+    "Anb_TI_Flow_FD": "Anb_TI-Flow_FD",
 }
 
 
@@ -258,19 +267,41 @@ def check_file(file_path: Path, fix: bool) -> CheckResult:
         line = line_for_offset(content, start)
 
         actor_matches = list(ACTOR_RE.finditer(body))
-        actor_names = [m.group(1) for m in actor_matches]
+        actor_names: List[str] = []
 
         for m in actor_matches:
             actor_name = m.group(1)
-            if actor_name not in KNOWN_ACTORS:
-                unknown_actors.add(actor_name)
+            canonical_actor_name = LEGACY_ACTOR_ALIASES.get(actor_name, actor_name)
+            actor_names.append(canonical_actor_name)
+
+            if actor_name != canonical_actor_name:
                 findings.append(
                     Finding(
                         file_path=file_path,
                         line=line_for_offset(content, start + m.start()),
                         aid=aid,
                         key=key,
-                        message=f"unknown actor in tag: '{actor_name}'",
+                        message=(
+                            "legacy actor alias in tag: "
+                            f"'{actor_name}' -> '{canonical_actor_name}'"
+                        ),
+                    )
+                )
+                if fix:
+                    new_block = new_block.replace(
+                        f'name="{actor_name}"',
+                        f'name="{canonical_actor_name}"',
+                    )
+
+            if canonical_actor_name not in KNOWN_ACTORS:
+                unknown_actors.add(canonical_actor_name)
+                findings.append(
+                    Finding(
+                        file_path=file_path,
+                        line=line_for_offset(content, start + m.start()),
+                        aid=aid,
+                        key=key,
+                        message=f"unknown actor in tag: '{canonical_actor_name}'",
                     )
                 )
 

@@ -4,7 +4,7 @@
 Scope:
 - Scans only markdown files under igs/*/input/pagecontent.
 - Evaluates only files with recognized suffixes:
-  - -req-fd.md  -> eRp_FD
+    - -req-fd.md  -> TI-Flow_FD (also accepts Anb_TI-Flow_FD)
   - -req-fdv.md -> eRp_FdV
   - -req-avs.md -> PS_E-Rezept_abgebend
   - -req-pvs.md -> PS_E-Rezept_verordnend
@@ -33,12 +33,12 @@ ACTOR_TAG_RE = re.compile(r'<actor\b[^>]*\bname="([^"]+)"[^>]*>.*?</actor>', re.
 KEY_RE = re.compile(r'\bkey="([^"]+)"')
 ACTOR_NAME_RE = re.compile(r'(\bname=")([^"]+)(")')
 
-SUFFIX_TO_ACTOR: Dict[str, str] = {
-    "fd": "eRp_FD",
-    "fdv": "eRp_FdV",
-    "avs": "PS_E-Rezept_abgebend",
-    "pvs": "PS_E-Rezept_verordnend",
-    "ktr": "CS_E-Rezept_KTR",
+SUFFIX_TO_ALLOWED_ACTORS: Dict[str, Tuple[str, ...]] = {
+    "fd": ("TI-Flow_FD", "Anb_TI-Flow_FD"),
+    "fdv": ("eRp_FdV",),
+    "avs": ("PS_E-Rezept_abgebend",),
+    "pvs": ("PS_E-Rezept_verordnend",),
+    "ktr": ("CS_E-Rezept_KTR",),
 }
 
 FILE_SUFFIX_RE = re.compile(r"-req-(fdv|fd|avs|pvs|ktr)\.md$", re.IGNORECASE)
@@ -70,10 +70,12 @@ def clone_actor_tag_with_name(actor_tag: str, expected_actor: str) -> str:
     return ACTOR_NAME_RE.sub(rf"\1{expected_actor}\3", actor_tag, count=1)
 
 
-def process_file(path: Path, expected_actor: str, fix: bool) -> Tuple[List[Finding], bool]:
+def process_file(path: Path, allowed_actors: Sequence[str], fix: bool) -> Tuple[List[Finding], bool]:
     content = path.read_text(encoding="utf-8")
     findings: List[Finding] = []
     changed = False
+    expected_actor = allowed_actors[0]
+    allowed_actor_set = set(allowed_actors)
 
     out_parts: List[str] = []
     cursor = 0
@@ -104,7 +106,7 @@ def process_file(path: Path, expected_actor: str, fix: bool) -> Tuple[List[Findi
                 )
             )
         elif len(actor_names) == 1:
-            if actor_names[0] != expected_actor:
+            if actor_names[0] not in allowed_actor_set:
                 fixed_now = False
                 if fix:
                     new_block = ACTOR_NAME_RE.sub(
@@ -127,7 +129,7 @@ def process_file(path: Path, expected_actor: str, fix: bool) -> Tuple[List[Findi
                     )
                 )
         else:
-            if expected_actor not in actor_names:
+            if not any(actor in allowed_actor_set for actor in actor_names):
                 fixed_now = False
                 if fix:
                     first_actor_tag = actor_matches[0].group(0)
@@ -186,12 +188,12 @@ def write_csv(output_csv: Path, findings: List[Finding]) -> None:
             ])
 
 
-def expected_actor_for_file(path: Path) -> str | None:
+def expected_actors_for_file(path: Path) -> Tuple[str, ...] | None:
     match = FILE_SUFFIX_RE.search(path.name)
     if not match:
         return None
     suffix = match.group(1).lower()
-    return SUFFIX_TO_ACTOR.get(suffix)
+    return SUFFIX_TO_ALLOWED_ACTORS.get(suffix)
 
 
 def main() -> int:
@@ -227,12 +229,12 @@ def main() -> int:
     scanned_files = 0
 
     for file_path in iter_target_files(root):
-        expected = expected_actor_for_file(file_path)
-        if not expected:
+        allowed_actors = expected_actors_for_file(file_path)
+        if not allowed_actors:
             continue
 
         scanned_files += 1
-        file_findings, changed = process_file(file_path, expected, fix=args.fix)
+        file_findings, changed = process_file(file_path, allowed_actors, fix=args.fix)
         findings.extend(file_findings)
         if changed:
             changed_files += 1
