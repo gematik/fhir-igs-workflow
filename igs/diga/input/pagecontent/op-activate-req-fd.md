@@ -11,7 +11,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 <!-- A_25990 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-15" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 162 , wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht:
@@ -53,7 +53,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 <!-- A_25992 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-17" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
@@ -87,7 +87,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 <!-- A_23443-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-18" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, dass Coverage.type.coding.code nicht mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:
@@ -120,7 +120,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 <!-- A_26372 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-19" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative IK" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, ob die Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist und in diesem Fall die Operation mit dem folgenden Fehler:
@@ -154,7 +154,7 @@ Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallka
 <!-- A_27845, A_19999 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-20" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter" version="0">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.<br>

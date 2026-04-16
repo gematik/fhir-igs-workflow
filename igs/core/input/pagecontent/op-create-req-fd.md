@@ -3,7 +3,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- A_19018-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-217" title="TI-Flow-Fachdienst - Task erzeugen - Rollenprüfung" version="1">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation die Rolle "professionOID" des Aufrufenden im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich verordnende Leistungserbringerinstitutionen in der Rolle
@@ -43,7 +43,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- A_19257-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-218" title="TI-Flow-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen" version="1">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation die im Body der HTTP-POST-Operation auf die Ressource Task übertragenen Parameter gegen das Schema http://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:
@@ -75,7 +75,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- A_19112 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-219" title="TI-Flow-Fachdienst - Task erzeugen - Parametrierung Task für Workflow-Typ" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation den Parameter workflowType (Rezepttyp) aus dem HTTP-Body des POST-Requests entnehmen, als Attribut Task.extension:flowType des zu erstellenden Tasks verwenden und bei Fehlen bzw. Nicht-Konformität des Parameters den Request als unzulässig abweisen, damit auf Basis dieser Parameter ausschließlich gültige Workflows gestartet werden können und dem Versicherten bei Einsicht des Tasks der Weg in entweder eine Apotheke oder ein Sanitätshaus oder eine andere zuständige Einrichtung gewiesen werden kann.
@@ -86,7 +86,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- A_19019-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-221" title="TI-Flow-Fachdienst - Task erzeugen - Generierung Rezept-ID" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Anlegen eines neuen Tasks eine Rezept-ID gemäß der Bildungsregel [gemSpec_DM_eRp#A_19217-*] generieren und als Identifier mit Namingsystem https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId dem Task hinzufügen und sicherstellen, dass diese Rezept-ID innerhalb von 11 Jahren nach ihrer Erzeugung nicht erneut vergeben wird, damit es innerhalb der Aufbewahrungsfrist der Abrechnungsdaten bei den Krankenkassen zu keinen Dubletten kommt.
@@ -95,7 +95,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- A_23227 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-222" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID=Rezept-ID" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Erzeugen eines neuen Tasks die Rezept-ID, welche mit Task an das verordnende Primärsystem übermittelt wird, als Task-ID verwenden.
@@ -104,7 +104,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- A_19021-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-223" title="TI-Flow-Fachdienst - Task erzeugen - Generierung AccessCode" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation eine 256 Bit Zufallszahl mit einer Mindestentropie von 120 Bit erzeugen, hexadezimal kodieren ([0-9a-f]{64}) und diese im zu speichernden Task als externe ID in Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode hinzufügen, damit nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.
@@ -113,7 +113,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- A_19114 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-224" title="TI-Flow-Fachdienst - Task erzeugen - Status draft" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS die zulässige Anlage eines Tasks mittels HTTP-POST/$create-Operation im Status Task.status = draft vollziehen und beim erfolgreichen Abschluss der Operation die angelegte Ressource Task im HTTP-Body der HTTP-Response zurückgeben, damit die verordnende Leistungserbringerinstitution die generierte Rezept-ID für die QES verwenden kann.
