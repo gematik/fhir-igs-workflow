@@ -2,7 +2,7 @@ Profile: GEM_ERP_PR_PAR_CloseOperation_Input
 Parent: Parameters
 Id: GEM-ERP-PR-PAR-Close-Operation-Input
 Title: "GEM ERP PR CloseOperation Input"
-Description: "Dieses Profil definiert die Parameter für das Schließen eines Workflows für ein Rezept vom AVS zum E-Rezept-Fachdienst. Dies kann für die Operationen $close und $dispense verwendet werden."
+Description: "Dieses Profil definiert die Parameter für das Schließen eines Workflows für ein Rezept vom AVS zum TI-Flow-Fachdienst. Dies kann für die Operationen $close und $dispense verwendet werden."
 * insert Profile(GEM_ERP_PR_PAR_CloseOperation_Input)
 
 * parameter 0..* // optional durch $dispense Operation
@@ -39,7 +39,7 @@ Description: "Dieses Profil definiert die Parameter für das Schließen eines Wo
     * name = "medication"
     * value[x] 0..0
     * resource 1..1
-    * resource only GEM_ERP_PR_Medication //TODO: Generify to medication and move to rx
+    * resource only Medication //TODO: Generify to medication and move to rx
     * part 0..0
 
 Invariant: workflow-parameters-close-medication-exists

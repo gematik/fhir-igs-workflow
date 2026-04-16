@@ -1,21 +1,21 @@
-Instance: ERPFachdienstServer
-InstanceOf: GEM_ERP_PR_CapabilityStatement
+Instance: TIFlowFachdienstServer
+InstanceOf: TIFlowCapabilityStatement
 Usage: #definition
 * insert Meta-Instance
 //TODO: Rename from ERP -> TI Flow
 //TODO: Authorization Header, wie auch immer er aussieht
-* id = "erp-fachdienst-server"
-* name = "ERPFachdienstServer"
-* title = "ERP CapabilityStatement für den E-Rezept-Fachdienst"
-* description = "ERP CapabilityStatement für den E-Rezept-Fachdienst"
+* id = "ti-flow-fachdienst-server"
+* name = "TIFlowFachdienstServer"
+* title = "CapabilityStatement für den TI-Flow-Fachdienst"
+* description = "CapabilityStatement für den TI-Flow-Fachdienst"
 * contact
   * telecom
     * system = #url
     * value = "https://www.gematik.de"
-* kind = #requirements
 * fhirVersion = #4.0.1
 * format[+] = #application/fhir+json
 * format[+] = #application/fhir+xml
+* kind = #requirements
 * rest.mode = #server
 * extension[baseUrl].valueString = "http://tiflow"
 

@@ -41,6 +41,24 @@ Description: "Beispiel fuer eine AuditEvent-Suchantwort"
 * entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa"
 * entry[=].resource = AuditEventSample
 
+Instance: Example-MedicationDispense
+InstanceOf: MedicationDispense
+Usage: #example
+Title: "Beispiel Medikamentenabgabe"
+Description: "Beispiel für eine Medikamentenabgabe"
+* insert Date(whenHandedOver)
+* status = #completed
+* medicationReference = Reference(SimpleMedication)
+
+Instance: SimpleMedication
+InstanceOf: Medication
+Title: "Einfaches Beispiel-Medikament"
+Description: "Beispiel für ein einfaches Medikament mit minimalen Eigenschaften"
+Usage: #example
+* batch.lotNumber = "1234567890"
+* code.coding[+].system = "http://fhir.de/CodeSystem/ifa/pzn"
+* code.coding[=].code = #06313728
+
 Instance: QueryMedicationDispenseSearchResponseBundle
 InstanceOf: Bundle
 Usage: #example

@@ -85,7 +85,7 @@ and GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PATIENT_AUTHORIZATION named eu-isRedeemableBy
 
 // Receipt
 * output[receipt] 0..1 MS
-  * value[x] only Reference(GEM_ERP_PR_Bundle)
+  * value[x] only Reference(Bundle) //TODO check if GEM_ERP_PR_Bundle rein soll
   * type.coding 1..1
   * type.coding from GEM_ERP_VS_DocumentType (required)
     * system 1..1

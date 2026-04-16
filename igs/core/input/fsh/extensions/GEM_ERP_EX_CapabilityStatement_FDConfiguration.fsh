@@ -1,7 +1,7 @@
 Extension: GEM_ERP_EX_CapabilityStatement_FDConfiguration
 Id: GEM-ERP-EX-CapabilityStatement-FDConfiguration
 Title: "GEM ERP EX CapabilityStatement FDConfiguration"
-Description: "Diese Extension deklariert eine konkrete Konfigurationsausprägung des E-Rezept-Fachdienstes auf CapabilityStatement-Ebene. Die Konfiguration wird als Code transportiert und bevorzugt gegen GEM_ERP_VS_FDConfiguration geprüft."
+Description: "Diese Extension deklariert eine konkrete Konfigurationsausprägung des TI-Flow-Fachdienstes auf CapabilityStatement-Ebene. Die Konfiguration wird als Code transportiert und bevorzugt gegen GEM_ERP_VS_FDConfiguration geprüft."
 * insert StructureDefinition(GEM_ERP_EX_CapabilityStatement_FDConfiguration)
 * ^context[0].type = #element
 * ^context[=].expression = "CapabilityStatement"

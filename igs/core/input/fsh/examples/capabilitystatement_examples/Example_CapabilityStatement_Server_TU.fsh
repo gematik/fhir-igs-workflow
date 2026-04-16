@@ -1,5 +1,5 @@
 Instance: ExampleCapabilityStatementServerTU
-InstanceOf: GEM_ERP_PR_CapabilityStatement
+InstanceOf: TIFlowCapabilityStatement
 Title: "Example CapabilityStatement Server TU"
 Description: "Example capability statement for test environment with experimental feature toggles."
 Usage: #example

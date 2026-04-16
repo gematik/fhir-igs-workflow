@@ -1,4 +1,3 @@
-// VON ePA
 Alias: $version = 1.6.1
 
 RuleSet: MetaDate(element)

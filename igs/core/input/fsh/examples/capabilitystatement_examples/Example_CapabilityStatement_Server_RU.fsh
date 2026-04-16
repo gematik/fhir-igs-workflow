@@ -1,5 +1,5 @@
 Instance: ExampleCapabilityStatementServerRU
-InstanceOf: GEM_ERP_PR_CapabilityStatement
+InstanceOf: TIFlowCapabilityStatement
 Title: "Example CapabilityStatement Server RU"
 Description: "Example capability statement for reference environment with selected features enabled."
 Usage: #example

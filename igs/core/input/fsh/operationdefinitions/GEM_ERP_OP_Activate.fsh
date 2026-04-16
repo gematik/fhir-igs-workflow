@@ -2,7 +2,7 @@ Instance: ActivateOperation
 InstanceOf: OperationDefinition
 Usage: #definition
 * insert Operation(Activate)
-* description = "Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der E-Rezept-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow."
+* description = "Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der TI-Flow-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow."
 * code = #activate
 * inputProfile = Canonical(Parameters)
 * outputProfile = Canonical(GEM_ERP_PR_PAR_ActivateOperation_Output)
@@ -24,4 +24,3 @@ Usage: #definition
 //   * max = "1"
 //   * documentation = "Geben Sie die aktualisierte und aktivierte Aufgabe zurück."
 //   * type = #Task
-

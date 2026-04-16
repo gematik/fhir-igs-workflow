@@ -6,7 +6,7 @@ Usage: #example
 * id = "ReceiptBundleDevice"
 * status = #active
 * serialNumber = "1.14.0"
-* deviceName.name = "E-Rezept-Fachdienst"
+* deviceName.name = "TI-Flow-Fachdienst"
 * deviceName.type = #user-friendly-name
 * version.value = "1.14.0"
 * contact.system = #email

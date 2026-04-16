@@ -1,9 +1,9 @@
-Profile: TIFLOWOperationOutcome
+Profile: TIFlowOperationOutcome
 Parent: OperationOutcome
 Id: tiflow-operation-outcome
-Title: "TIFLOW OperationOutcome"
+Title: "TIFlow OperationOutcome"
 Description: "OperationOutcome für Angabe von Fehlermeldungen vom TI-Flow-Fachdienst"
-* insert Profile(TIFLOWOperationOutcome)
+* insert Meta
 
 * issue.severity MS
 * issue.code MS
