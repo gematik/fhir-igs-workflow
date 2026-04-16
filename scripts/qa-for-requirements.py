@@ -11,10 +11,39 @@ import sys
 from pathlib import Path
 
 
+ANSI_RESET = "\033[0m"
+ANSI_GREEN = "\033[32m"
+ANSI_YELLOW = "\033[33m"
+ANSI_RED = "\033[31m"
+
+
+def colorize(text: str, color: str) -> str:
+    if not sys.stdout.isatty():
+        return text
+    return f"{color}{text}{ANSI_RESET}"
+
+
+def status_from_return_code(return_code: int) -> str:
+    if return_code == 0:
+        return "OK"
+    if return_code == 1:
+        return "WARN"
+    return "ERROR"
+
+
+def format_status(status: str) -> str:
+    if status == "OK":
+        return colorize(status, ANSI_GREEN)
+    if status == "WARN":
+        return colorize(status, ANSI_YELLOW)
+    if status in {"ERROR", "FAIL"}:
+        return colorize(status, ANSI_RED)
+    return status
+
+
 def run_step(
     title: str,
     command: list[str],
-    strict: bool = True,
     cwd: Path | None = None,
 ) -> int:
     print(f"\n==> {title}")
@@ -23,16 +52,17 @@ def run_step(
     else:
         print("$ " + " ".join(command))
     result = subprocess.run(command, check=False, cwd=cwd)
-    if strict and result.returncode != 0:
-        raise subprocess.CalledProcessError(result.returncode, command)
+    status = status_from_return_code(result.returncode)
     if result.returncode == 0:
-        print(f"[OK] {title}")
+        print(f"[{format_status(status)}] {title}")
     else:
-        print(f"[WARN] {title} finished with exit code {result.returncode}")
+        print(
+            f"[{format_status(status)}] {title} finished with exit code {result.returncode}"
+        )
     return result.returncode
 
 
-def main() -> None:
+def main() -> int:
     parser = argparse.ArgumentParser(
         description="Run requirement QA (quality checks)."
     )
@@ -58,8 +88,12 @@ def main() -> None:
     )
     parser.add_argument(
         "--strict-quality",
-        action="store_true",
-        help="Fail the pipeline when quality check reports issues",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help=(
+            "Fail the pipeline when quality check reports issues "
+            "(default: enabled, use --no-strict-quality to disable)"
+        ),
     )
     parser.add_argument(
         "--error-code-output-csv",
@@ -73,8 +107,12 @@ def main() -> None:
     )
     parser.add_argument(
         "--strict-error-codes",
-        action="store_true",
-        help="Fail the pipeline when error code check reports issues",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help=(
+            "Fail the pipeline when error code check reports issues "
+            "(default: enabled, use --no-strict-error-codes to disable)"
+        ),
     )
     parser.add_argument(
         "--errors",
@@ -105,6 +143,7 @@ def main() -> None:
     print(f"- Root: {args.root}")
 
     step_results: list[tuple[str, str]] = []
+    strict_failures: list[tuple[str, int, list[str]]] = []
 
     def run_and_record(
         summary_title: str,
@@ -114,12 +153,11 @@ def main() -> None:
         strict: bool,
         cwd: Path | None = None,
     ) -> int:
-        try:
-            rc = run_step(command_title, command, strict=strict, cwd=cwd)
-        except subprocess.CalledProcessError:
-            step_results.append(("FAIL", summary_title))
-            raise
-        step_results.append(("OK" if rc == 0 else "WARN", summary_title))
+        rc = run_step(command_title, command, cwd=cwd)
+        step_status = status_from_return_code(rc)
+        step_results.append((step_status, summary_title))
+        if strict and rc != 0:
+            strict_failures.append((summary_title, rc, command))
         return rc
 
     quality_rc = 0
@@ -192,7 +230,7 @@ def main() -> None:
 
     print("\nPipeline summary")
     for status, title in step_results:
-        print(f"[{status}] {title}")
+        print(f"[{format_status(status)}] {title}")
     print(f"- Quality CSV: {args.quality_output_csv}")
     print(f"- Error Code CSV: {error_csv}")
     if quality_rc != 0 and not args.strict_quality:
@@ -200,6 +238,18 @@ def main() -> None:
     if error_code_rc != 0 and not args.strict_error_codes:
         print("- Error code consistency issues were found (non-strict mode, pipeline continued).")
 
+    if strict_failures:
+        print("\nStrict failure summary")
+        for title, return_code, command in strict_failures:
+            print(
+                f"[{format_status('ERROR')}] {title} failed in strict mode "
+                f"(exit code {return_code})"
+            )
+            print("  Command: " + " ".join(command))
+        return strict_failures[0][1] if strict_failures[0][1] != 0 else 1
+
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

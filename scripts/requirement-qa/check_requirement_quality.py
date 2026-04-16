@@ -182,28 +182,60 @@ def line_for_offset(content: str, offset: int) -> int:
     return content.count("\n", 0, offset) + 1
 
 
+def resolve_target_path(path: Path) -> Path:
+    """Resolve a possibly relative target path against cwd and repo root."""
+    if path.exists():
+        return path
+
+    repo_root = Path(__file__).resolve().parents[2]
+    repo_relative = repo_root / path
+    if repo_relative.exists():
+        return repo_relative
+
+    return path
+
+
+def display_path(path: Path) -> str:
+    """Return a compact display path, preferably relative to repo root or cwd."""
+    try:
+        return str(path.resolve().relative_to(Path.cwd().resolve()))
+    except ValueError:
+        pass
+
+    repo_root = Path(__file__).resolve().parents[2]
+    try:
+        return str(path.resolve().relative_to(repo_root.resolve()))
+    except ValueError:
+        return str(path)
+
+
 def iter_target_files(targets: Sequence[str]) -> Iterable[Path]:
     if not targets:
         targets = ["igs/*/input/pagecontent"]
 
     seen: Set[Path] = set()
+    repo_root = Path(__file__).resolve().parents[2]
+
     for target in targets:
         path = Path(target)
 
         if any(ch in target for ch in "*?[]"):
-            for matched in Path(".").glob(target):
-                if matched.is_file() and matched.suffix.lower() == ".md":
-                    resolved = matched.resolve()
-                    if resolved not in seen:
-                        seen.add(resolved)
-                        yield matched
-                elif matched.is_dir():
-                    for md_file in matched.rglob("*.md"):
-                        resolved = md_file.resolve()
+            for base in (Path("."), repo_root):
+                for matched in base.glob(target):
+                    if matched.is_file() and matched.suffix.lower() == ".md":
+                        resolved = matched.resolve()
                         if resolved not in seen:
                             seen.add(resolved)
-                            yield md_file
+                            yield matched
+                    elif matched.is_dir():
+                        for md_file in matched.rglob("*.md"):
+                            resolved = md_file.resolve()
+                            if resolved not in seen:
+                                seen.add(resolved)
+                                yield md_file
             continue
+
+        path = resolve_target_path(path)
 
         if path.is_file() and path.suffix.lower() == ".md":
             resolved = path.resolve()
@@ -429,7 +461,7 @@ def main() -> int:
     files = list(iter_target_files(args.targets))
     if not files:
         print("No markdown files found for the given targets.")
-        return 1
+        return 2
 
     all_findings: List[Finding] = []
     all_unknown_actors: Set[str] = set()
@@ -442,26 +474,10 @@ def main() -> int:
         if result.changed:
             changed_files += 1
 
-    report_lines: List[str] = []
-
-    for finding in all_findings:
-        report_lines.append(
-            (
-                f"[ISSUE] {finding.file_path}:{finding.line} {finding.aid} "
-                f"{finding.key}: {finding.message}"
-            )
-        )
-
-    if all_unknown_actors:
-        for actor in sorted(all_unknown_actors):
-            report_lines.append(f"[UNKNOWN_ACTOR] unbekannten actor '{actor}' gefunden")
-
-    report_lines.append(
+    summary_line = (
         f"Checked {len(files)} file(s), found {len(all_findings)} issue(s), "
         f"unknown actors: {len(all_unknown_actors)}, changed files: {changed_files}."
     )
-
-    report_text = "\n".join(report_lines) + "\n"
 
     csv_path = Path(args.output_csv)
     csv_path.parent.mkdir(parents=True, exist_ok=True)
@@ -504,7 +520,25 @@ def main() -> int:
             ]
         )
 
-    print(report_text, end="")
+    print("Quality check report")
+    print(summary_line)
+
+    if all_findings:
+        print("\nIssues")
+        for idx, finding in enumerate(all_findings, start=1):
+            print(
+                f"{idx}. {display_path(finding.file_path)}:{finding.line} "
+                f"[{finding.aid} | {finding.key}]"
+            )
+            print(f"   -> {finding.message}")
+    else:
+        print("\nNo issues found.")
+
+    if all_unknown_actors:
+        print("\nUnknown actors")
+        for actor in sorted(all_unknown_actors):
+            print(f"- {actor}")
+
     print(f"CSV report written to: {csv_path}")
 
     # Non-zero when issues remain (also in --fix mode, to force review).
