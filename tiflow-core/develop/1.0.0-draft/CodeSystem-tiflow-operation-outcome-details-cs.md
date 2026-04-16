@@ -35,7 +35,7 @@ Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werde
   "name" : "TIFLOWOperationOutcomeDetailsCS",
   "title" : "TIFLOW Operation Outcome Details CS",
   "status" : "draft",
-  "date" : "2026-04-16T13:59:19+00:00",
+  "date" : "2026-04-16T14:10:44+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
