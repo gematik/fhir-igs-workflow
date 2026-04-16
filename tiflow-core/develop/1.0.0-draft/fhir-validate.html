@@ -292,7 +292,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_23384-06 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-273" title="TI-Flow-Fachdienst - Prüfung Gültigkeit FHIR Ressourcen" version="1">
     <meta lockversion="false" />
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Der TI-Flow-Fachdienst MUSS bei der Prüfung der zeitlichen Gültigkeit einer FHIR Ressource den Wert aus dem Element gemäß folgender Tabelle zugrunde legen. 
@@ -370,7 +370,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_27658 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-274" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation" version="0">
 	<meta lockversion="false" />
-	<actor name="TI_Flow_FD">
+	<actor name="TI-Flow_FD">
     	<testProcedure id="Herstellererklärung" />
   	</actor>
 	Der TI-Flow-Fachdienst MUSS sicherstellen, dass alle Datums- und Zeitangaben ohne explizite Zeitzoneninformation als deutsche Zeit (CET/CEST) entsprechend der historischen oder aktuellen Regelung interpretiert werden.
@@ -379,7 +379,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_27659 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-275" title="FHIR-Ressourcen - Datumsangabe ohne Zeitzoneninformation" version="0">
     <meta lockversion="false" />
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Die Produkttypen der Anwendung E-Rezept und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Datums- und Zeitangaben ohne Zeitzoneninformation, die entsprechend dem Datum gültige deutsche Zeitzone (CET/CEST) angewendet wird.
@@ -388,7 +388,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_27698 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-276" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile" version="1">
 	<meta lockversion="false" />
-	<actor name="TI_Flow_FD">
+	<actor name="TI-Flow_FD">
     	<testProcedure id="Produkttest" />
   	</actor>
 	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, dass maximal ein meta.profile-Eintrag vorhanden ist und bei Abweichung mit dem folgenden Fehler:
@@ -420,7 +420,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_27697 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-277" title="FHIR-Ressourcen – Eindeutige Angabe meta.profile" version="0">
     <meta lockversion="false" />
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Die Produkttypen der Anwendung E-Rezept und die Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung jeder FHIR-Ressource sicherstellen, dass im Element meta.profile genau ein Eintrag enthalten ist, wenn im Profil das Element meta.profile verpflichtend anzugeben ist; bei Abweichung ist die Ressource als fehlerhaft zu behandeln und darf nicht übermittelt werden.
@@ -431,7 +431,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_26229-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-278" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Pruefung Konsistenz Ressource IDs" version="1">
 	<meta lockversion="false" />
-	<actor name="TI_Flow_FD">
+	<actor name="TI-Flow_FD">
     	<testProcedure id="Produkttest" />
   	</actor>
 	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Auffälligkeiten mit dem folgenden Fehler:
@@ -463,7 +463,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_26233-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-279" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Format fullUrl" version="1">
 	<meta lockversion="false" />
-	<actor name="TI_Flow_FD">
+	<actor name="TI-Flow_FD">
     	<testProcedure id="Produkttest" />
   	</actor>
 	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Auffälligkeiten mit dem folgenden Fehler:
@@ -495,7 +495,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_27648 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-280" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id" version="1">
 	<meta lockversion="false" />
-	<actor name="TI_Flow_FD">
+	<actor name="TI-Flow_FD">
     	<testProcedure id="Produkttest" />
   	</actor>
 	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Auffälligkeiten mit dem folgenden Fehler:
@@ -527,7 +527,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_27649 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-281" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen" version="1">
 	<meta lockversion="false" />
-	<actor name="TI_Flow_FD">
+	<actor name="TI-Flow_FD">
     	<testProcedure id="Produkttest" />
   	</actor>
 	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Auffälligkeiten mit dem folgenden Fehler:
@@ -571,7 +571,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
     </actor>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
     <actor name="PS_E-Rezept_verordnend">
@@ -595,7 +595,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
     </actor>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
     <actor name="PS_E-Rezept_verordnend">
@@ -619,7 +619,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung" />
     </actor>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
     <actor name="PS_E-Rezept_verordnend">
@@ -633,7 +633,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_22927-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-285" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions" version="1">
 	<meta lockversion="false" />
-	<actor name="TI_Flow_FD">
+	<actor name="TI-Flow_FD">
     	<testProcedure id="Produkttest" />
   	</actor>
 	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstellen, dass keine Extensions vorhanden sind, die nicht an den in den FHIR-Profilen spezifizierten Stellen verwendet werden. Sollte eine solche Extension gefunden werden, gilt der Datensatz als ungültig. In diesem Fall ist eine Fehlermeldung mit dem folgenden Fehler:
@@ -665,7 +665,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_27672 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-286" title="FHIR Ressourcen - Ausschluss unspezifizierter Extensions" version="0">
     <meta lockversion="false" />
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
      Die Produkttypen der Anwendung E-Rezept und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Extensions nur an den Stellen verwendet werden, an denen sie im FHIR-Profil ausdrücklich definiert sind.
@@ -711,7 +711,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Apr 15, 2026 07:27+0000">2026-04-15</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 16, 2026 13:59+0000">2026-04-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

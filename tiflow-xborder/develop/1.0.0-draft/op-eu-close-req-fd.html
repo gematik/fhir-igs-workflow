@@ -269,7 +269,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_27068 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - EU - Rollenprüfung" version="1" key="IG-TIFLOW-XBORDER-38">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"></testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close sicherstellen, dass ausschließlich Nutzer in der Rolle: oid_ncpeh, die Operation am Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader Authorization feststellen, und bei Abweichungen die Operationmit dem folgenden Fehler:
@@ -301,7 +301,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_27069 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - EU - Schemaprüfung" version="1" key="IG-TIFLOW-XBORDER-39">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:
@@ -333,7 +333,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_27070 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR" version="1" key="IG-TIFLOW-XBORDER-40">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:
@@ -365,7 +365,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_27071 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung" version="1" key="IG-TIFLOW-XBORDER-41">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im TI-Flow-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:
@@ -397,7 +397,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_27072 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - EU - Statusprüfung" version="1" key="IG-TIFLOW-XBORDER-42">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status = in-progress ist und bei Ungleichheit die Operation mit dem folgenden Fehler:
@@ -429,7 +429,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_27074 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - EU - Zeitstempel MedicationDispense" version="0" key="IG-TIFLOW-XBORDER-43">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass der Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) angelegt und gespeichert wird.
@@ -438,7 +438,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_27075 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - EU - Status beenden" version="0" key="IG-TIFLOW-XBORDER-44">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass die zulässige Beendigung eines übermittelten Tasks im Status Task.status = completed vollzogen wird, damit der Workflow für den Versicherten als beendet und das E-Rezept somit als eingelöst dargestellt wird.
@@ -447,7 +447,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_28206 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - EU - Push Notification Versicherter" version="0" key="IG-TIFLOW-XBORDER-45">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.eu.prescription.close" und den Versicherten mit der KVNR = Task.for initiieren.
@@ -493,7 +493,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.xborder#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Apr 15, 2026 07:36+0000">2026-04-15</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.xborder#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 16, 2026 14:09+0000">2026-04-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

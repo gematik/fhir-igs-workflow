@@ -296,7 +296,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19022-01 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Rollenprüfung" version="1" key="IG-TIFLOW-CORE-173">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"></testProcedure>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks für ein E-Rezept mittels HTTP-POST/$activate-Operation auf den in der URL referenzierten&nbsp;/Task/&lt;id&gt; die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Leistungserbringerinstitutionen in der Rolle
@@ -336,7 +336,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19024-03 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung AccessCode" version="1" key="IG-TIFLOW-CORE-174">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im HTTP-RequestHeader "X-AccessCode" oder URL-Parameter "?ac=..." übertragenen AccessCode gegen den im referenzierten Task gespeicherten AccessCode Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und bei Ungleichheit oder Fehlen des AccessCodes die Operation mit dem folgenden Fehler:
@@ -368,7 +368,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19024-03 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Status" version="1" key="IG-TIFLOW-CORE-175">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "draft" ist, die Operation mit dem folgenden Fehler:
@@ -400,7 +400,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19020 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Schemavalidierung" version="1" key="IG-TIFLOW-CORE-176">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im Aufrufparameter übergebenen FHIR-Operationsparameter des QES-Datensatzes als PKCS#7-Datei einer Enveloping CAdES-Signatur entgegennehmen und verarbeiten und bei Fehlen oder ungültiger ASN.1 Datenstruktur die Operation mit dem folgenden Fehler:
@@ -432,7 +432,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_20159-04 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA" version="1" key="IG-TIFLOW-CORE-177">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"></testProcedure>
   </actor>
     Der TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur des übergebenen QES-Datensatzes gemäß [gemSpec_PKI#TUC_PKI_030] mit folgenden Parametern auf Gültigkeit prüfen:
@@ -501,7 +501,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_20159-04 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA - fehlender OCSP-Response" version="0" key="IG-TIFLOW-CORE-408">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"></testProcedure>
   </actor>
     Der TI-Flow-Fachdienst MUSS, wenn im Rahmen der Prüfung der Gültigkeit eines QES-Signuturzertifikates C.HP.QES die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, die Operation mit dem folgenden Fehler:
@@ -533,7 +533,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_20159-04 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA - OCSP-Response einbetten" version="0" key="IG-TIFLOW-CORE-411">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"></testProcedure>
   </actor>
     Der TI-Flow-Fachdienst MUSS, wenn im Rahmen der Prüfung der Gültigkeit eines QES-Signuturzertifikates C.HP.QES keine OCSP-Response eingebettet oder die eingebettete OCSP Response nicht gültig ist, die die Prüfung genutzte OCSP-Response in den QES-Datensatz einbetten.
@@ -542,7 +542,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19025-03 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung QES prüfen" version="1" key="IG-TIFLOW-CORE-178">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die qualifizierte Signatur des QES-Datensatzes gemäß [ETSI_QES] prüfen und bei nicht gültiger qualifizierter Signatur die Operation mit dem folgenden Fehler:
@@ -574,7 +574,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19025-03 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung FHIR Validierung" version="0" key="IG-TIFLOW-CORE-409">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate das innerhalb des PKCS#7-Datensatz enveloping-enthaltene FHIR-Bundle einer FHIR-Validierung gegen die eRezept-Schema-Definition der KBV kbv.ita.erp oder kbv.itv.evdga unterziehen und bei Invalidität die Operation mit dem folgenden Fehler:
@@ -607,7 +607,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19025-03 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung speichern" version="0" key="IG-TIFLOW-CORE-410">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"></testProcedure>
   </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den Datensatz als PKCS#7-Datei  speichern und in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 über eine interne, eindeutige UUID referenzieren, damit der nachfolgende Workflow auf Basis vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
@@ -646,7 +646,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_21370 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Rezept-ID in Task gegen Verordnungsdatensatz" version="1" key="IG-TIFLOW-CORE-180">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, dass die PrescriptionID des Tasks mit der PrescriptionID im übergebenen QES-Datensatz übereinstimmt und andernfalls die Operation mit dem folgenden Fehler:
@@ -679,7 +679,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_21370 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Präfix Rezept-ID gegen Flowtype" version="0" key="IG-TIFLOW-CORE-412">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, dass der Präfix der PrescriptionID gleich dem Flowtype des zu aktivierenden Tasks ist und andernfalls die Operation mit dem folgenden Fehler:
@@ -711,7 +711,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_23936-01 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten" version="1" key="IG-TIFLOW-CORE-181">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, dass Patient.identifier.system gleich "http://fhir.de/sid/gkv/kvid-10" ist und andernfalls die Operation mit dem folgenden Fehler:
@@ -743,7 +743,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_22487 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum" version="1" key="IG-TIFLOW-CORE-182">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate, wenn das Datum authoredOn zur Gültigkeitsberechnung der Verordnung nicht dem Datum in QES.Erstellung im Signaturobjekt entspricht, die Operation mit dem folgenden Fehler:
@@ -775,7 +775,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19127-03 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID" version="1" key="IG-TIFLOW-CORE-183">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die KVNR des Patienten dem Identifier http://fhir.de/sid/gkv/kvid-10 der Patient-Ressource im E-Rezept-Bundle entnehmen und diesen als Identifier in Task.for mit system http://fhir.de/sid/gkv/kvid-10 hinzufügen, damit ausschließlich eine gültige, vom Arzt signierte Patientenreferenz im Workflow verwendet wird.
@@ -784,7 +784,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_28126 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Push Notification Versicherter" version="0" key="IG-TIFLOW-CORE-184">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.activate" und den Versicherten mit der KVNR = Task.for initiieren.
@@ -793,7 +793,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19128 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Status ready" version="0" key="IG-TIFLOW-CORE-185">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS die zulässige Aktivierung eines Tasks mittels /Task/&lt;id&gt;/$activate-Operation im Status Task.status = ready&nbsp;vollziehen und bei erfolgreichem Abschluss der Operation die Ressource Task im HTTP-Body der HTTP-Response zurückgeben, damit die verordnende Leistungserbringerinstitution über den erfolgreichen Abschluss der Operation in Kenntnis gesetzt wird.
@@ -803,7 +803,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19029-06 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Serversignatur" version="0" key="IG-TIFLOW-CORE-186">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS das bei der Operation /Task/&lt;id&gt;/$activate im QES-Datensatz enthaltene Verordnung in ein Bundle gleichen Typs in JSON-Repräsentation beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task/&lt;id&gt; zurück liefern. Dies gilt für folgende Bundles: https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundlehttps://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle <br/>
@@ -824,7 +824,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_23888 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage" version="1" key="IG-TIFLOW-CORE-187">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate einen im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Wert für payor.identifier.value gemäß dem im "Gemeinsames Rundschreiben Institutionskennzeichen (IK)" vom 01.06.2020 unter Kapitel 1.2.5 "Prüfziffer" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
@@ -856,7 +856,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_24030 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage - AlternativeID" version="1" key="IG-TIFLOW-CORE-188">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate die im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Werte für payor.identifier.extension:alternativeID.value[x]:valueIdentifier gemäß dem "Gemeinsames Rundschreiben Institutionskennzeichen (IK)" vom 01.06.2020 unter Kapitel 1.2.5 "Prüfziffer" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
@@ -888,7 +888,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_23890-01 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung KVNR im Profil KBV_PR_FOR_Patient" version="1" key="IG-TIFLOW-CORE-189">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate einen im FHIR Profil KBV_PR_FOR_Patient gespeicherten Wert für Patient.identifier:versichertenId.value gemäß der Anlage 1 der "Prüfziffernberechnung für die Krankenversichertennummer nach &sect; 290 SGB V" vom 26.02.2019 beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
@@ -920,7 +920,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_23891-01 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR im Profil KBV_PR_FOR_Practitioner" version="0" key="IG-TIFLOW-CORE-190">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate einen im FHIR Profil KBV_PR_FOR_Practitioner hinterlegten Wert für identifier:ANR.value bzw. identifier:ZANR.value gemäß der Anlage 6 BMV-Ä der "Technischen Anlage zum Vertrag über den Datenaustausch zwischen dem GKV-Spitzenverband (Spitzenverband Bund der Krankenkassen) und der Kassenärztlichen Bundesvereinigung" unter "Aufbau der lebenslangen Arztnummer – LANR" beschriebenen Prüfalgorithmus unter Beachtung der folgenden zulässigen Ausnahmen validieren, und bei einer fehlerhaften Prüfung auf diese Auffälligkeit gemäß der Konfiguration reagieren.
@@ -971,7 +971,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_24031 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration bei Auffälligkeiten" version="0" key="IG-TIFLOW-CORE-191">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS für die Überprüfung der ANR/ZANR eine Möglichkeit der Konfiguration vorsehen und bei der Durchführung einer Vergleichsoperation je nach Konfiguration bei Auffälligkeit die Operation mit einer Warnung fortführen oder mit einer Fehlermeldung abbrechen.
@@ -980,7 +980,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_24032 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Fehler" version="1" key="IG-TIFLOW-CORE-192">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS für die Überprüfung der ANR/ZANR, wenn bei der Prüfung eine Auffälligkeit auftritt und die Konfiguration Fehler aktiv ist, die Operation mit dem folgenden Fehler:
@@ -1012,7 +1012,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_24033 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Warning" version="0" key="IG-TIFLOW-CORE-193">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS für die Überprüfung der ANR/ZANR, wenn bei der Prüfung eine Auffälligkeit auftritt und die Konfiguration Warning aktiv ist, mit dem Http-Responsecode 252 antworten und den Response für die Auffälligkeit mit einem Http-Header "Warning" mit
@@ -1027,7 +1027,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_23892 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN" version="1" key="IG-TIFLOW-CORE-194">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate den im FHIR Profil KBV_PR_ERP_Medication_PZN gespeicherten Wert für code.coding:pznCode.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
@@ -1060,7 +1060,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_24034 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding" version="1" key="IG-TIFLOW-CORE-195">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate den im FHIR Profil KBV_PR_ERP_Medication_Compounding gespeicherten Wert für ingredient.item[x]:itemCodeableConcept.coding:pznCode.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
@@ -1093,7 +1093,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_22925 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Längenprüfung PZN" version="1" key="IG-TIFLOW-CORE-196">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&lt;id&gt;/$activate, wenn die PZN einer übergebenen PZN-Verordnung in KBV_PR_ERP_Medication_PZN.code.coding.code nicht 8-stellig ist, die Operation mit dem folgenden Fehler:
@@ -1128,7 +1128,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_19225-02 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - QES durch berechtigte Berufsgruppe" version="1" key="IG-TIFLOW-ERP-75">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS bei der Aktivierung eines Tasks mit Flowtype 160, 169, 200 oder 209 prüfen, dass die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht:
@@ -1165,7 +1165,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_27812 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte Berufsgruppe" version="1" key="IG-TIFLOW-ERP-76">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS bei der Aktivierung eines Tasks mit Flowtype 166 prüfen, dass die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht: 
@@ -1201,7 +1201,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_25642 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung Arzneimittelverordnung" version="1" key="IG-TIFLOW-ERP-77">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtypen 160, 169, 200 oder 209 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource und eine Medication mit Medication.extension:Arzneimittelkategorie = 00 enthalten ist, und andernfalls die Operation mit dem folgenden Fehler:
@@ -1233,7 +1233,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_27813 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - Prüfung Arzneimittelverordnung" version="1" key="IG-TIFLOW-ERP-78">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mit Workflowtyp 166 mittels $activate prüfen, dass im Bundle eine MedicationRequest-Ressource und eine Medication mit Medication.extension:Arzneimittelkategorie = 02 enthalten ist, und andernfalls die Operation mit dem folgenden Fehler:
@@ -1266,7 +1266,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_28570 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/166/169/200/209 - Prüfung Coverage Type" version="0" key="IG-TIFLOW-ERP-79">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 160, 166, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Validierung von strukturierten Dosierungen anwenden.
@@ -1275,7 +1275,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_23443-01 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst – Task aktivieren – Flowtype 160/169 - Prüfung Coverage Type" version="1" key="IG-TIFLOW-ERP-80">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 160 oder 169 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, ob Coverage.type.coding.code nicht mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:
@@ -1307,7 +1307,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_22347-01 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 200/209 - Prüfung Coverage Type" version="1" key="IG-TIFLOW-ERP-81">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task des Flowtype Task.extension:flowType = 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen, ob Coverage.type.coding.code mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:
@@ -1339,7 +1339,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_22231-01 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel" version="1" key="IG-TIFLOW-ERP-82">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Herstellererklärung"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn der übergebene QES-Datensatz als Betäubungsmittel-Verordnung (Bundle.Medication.extension:KBV_EX_ERP_Medication_Category:code gleich "01") gekennzeichnet ist, die Operation mit dem folgenden Fehler:
@@ -1371,7 +1371,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_27768 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Bestimmung der Einlösbarkeit im EU-Ausland" version="0" key="IG-TIFLOW-ERP-83">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks den Wert für&nbsp;Task.extension:eu-isRedeemableByProperties auf "true" setzen, wenn: 
@@ -1385,7 +1385,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_25925 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Daten ePA Medication Service bereitstellen (Verordnungsdatensatz)" version="0" key="IG-TIFLOW-ERP-84">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /Task/&lt;id&gt;/$activate auf einen Task des Flowtype Task.extension:flowType = 160, 166, 169, 200 oder 209 bei erfolgreichem Abschluss der Operation, die Daten des Verordnungsdatensatzes für die Übermittlung in den ePA Medication Service bereitstellen.
@@ -1396,7 +1396,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_27844, A_19999 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160 - Prozessparameter" version="0" key="IG-TIFLOW-ERP-85">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 160 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&lt;id&gt;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_004 belegen.<br/>
@@ -1453,7 +1453,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_27846, A_19999 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - Prozessparameter" version="0" key="IG-TIFLOW-ERP-86">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 166 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&lt;id&gt;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_006 belegen.<br/>
@@ -1494,7 +1494,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_27847, A_19999 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 169 - Prozessparameter" version="0" key="IG-TIFLOW-ERP-87">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 169 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&lt;id&gt;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_007 belegen.<br/>
@@ -1551,7 +1551,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_27848, A_19999 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 200 - Prozessparameter" version="0" key="IG-TIFLOW-ERP-88">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 200 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&lt;id&gt;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_008 belegen.<br/>
@@ -1608,7 +1608,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_27849, A_19999 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 209 - Prozessparameter" version="0" key="IG-TIFLOW-ERP-89">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"></testProcedure>
   </actor>
   Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 209 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&lt;id&gt;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_009 belegen.<br/>
@@ -1665,7 +1665,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_19517-04 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Entlassparameter - Prozessparameter" version="0" key="IG-TIFLOW-ERP-90">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS nach der Feststellung der Prozessparametern die folgenden Parameter mit abweichenden Werten belegen:
@@ -1680,7 +1680,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_22627-01 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype" version="1" key="IG-TIFLOW-ERP-91">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Flowtype ungleich 160, 169, 200 oder 209 ist, die Operation mit dem folgenden Fehler:
@@ -1712,7 +1712,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_22628 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator kleiner 5" version="1" key="IG-TIFLOW-ERP-92">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Numerator oder Denominator größer als 4 ist, die Operation mit dem folgenden Fehler:
@@ -1744,7 +1744,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_22704 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator größer 0" version="1" key="IG-TIFLOW-ERP-93">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Numerator kleiner als 1 ist, die Operation mit dem folgenden Fehler:
@@ -1776,7 +1776,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_22629 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Denominator größer 1" version="1" key="IG-TIFLOW-ERP-94">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Denominator kleiner als 2 ist, die Operation mit dem folgenden Fehler:
@@ -1808,7 +1808,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_22630 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator kleiner / gleich Denominator" version="1" key="IG-TIFLOW-ERP-95">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet und der Numerator größer als der Denominator ist, die Operation mit dem folgenden Fehler:
@@ -1840,7 +1840,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_22631 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben" version="1" key="IG-TIFLOW-ERP-96">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung nicht als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = false) gekennzeichnet ist, aber eine Extension Nummerierung oder Zeitraum enthält, die Operation mit dem folgenden Fehler:
@@ -1872,7 +1872,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_22632 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - kein Entlassrezept" version="1" key="IG-TIFLOW-ERP-97">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) und als Entlassrezept ( code="04" oder "14" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, die Operation mit dem folgenden Fehler:
@@ -1904,7 +1904,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_22633 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung" version="1" key="IG-TIFLOW-ERP-98">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) und als Ersatzverordnung ( code="10" oder "11" oder "17" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, die Operation mit dem folgenden Fehler:
@@ -1936,7 +1936,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_22634 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht" version="1" key="IG-TIFLOW-ERP-99">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) nicht angegeben ist, die Operation mit dem folgenden Fehler:
@@ -1968,7 +1968,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_23537 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht vor Ausstellungsdatum" version="1" key="IG-TIFLOW-ERP-100">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist und das Startdatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) vor dem Ausstellungsdatum (MedicationRequest.authoredOn) liegt, die Operation mit dem folgenden Fehler:
@@ -2000,7 +2000,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_23164 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Endedatum nicht vor Startdatum" version="1" key="IG-TIFLOW-ERP-101">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet, ein Endedatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end) angegeben ist und das Endedatum vor dem Startdatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) liegt, die Operation mit dem folgenden Fehler:
@@ -2032,7 +2032,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
   <!-- A_24901 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Schema ID" version="1" key="IG-TIFLOW-ERP-102">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist und der dazugehörige value (MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value) nicht dem Schema aus [KBV_ITA_VGEX_Technische_Anlage_ERP] entspricht, die Operation mit dem folgenden Fehler:
@@ -2102,7 +2102,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Apr 15, 2026 07:39+0000">2026-04-15</span>
+          IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 16, 2026 14:12+0000">2026-04-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
