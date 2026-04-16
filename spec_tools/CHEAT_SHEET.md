@@ -2,7 +2,7 @@
 
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
       text
@@ -20,7 +20,7 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 #### OperationOutcomes
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
       ... mit dem folgenden Fehler:
@@ -52,7 +52,7 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 #### Nicht FHIR
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
       ... mit dem folgenden Fehler:

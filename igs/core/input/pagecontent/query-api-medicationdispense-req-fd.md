@@ -4,7 +4,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_19400 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-130" title="TI-Flow-Fachdienst - MedicationDispense - unzulässige Operationen" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
    	<testProcedure id="Produktgutachten"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource MedicationDispense mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE sowie POST unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
@@ -15,7 +15,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_19405-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-131" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Rollenprüfung" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     	<testProcedure id="Produktgutachten"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /MedicationDispense sicherstellen, dass ausschließlich Nutzer in der Rolle 
@@ -51,7 +51,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
  <!-- A_19406-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-132" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Filter MedicationDispense auf KVNR des Versicherten" version="0">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
    	<testProcedure id="Produktgutachten"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /MedicationDispense die dem Versicherten zugeordneten MedicationDispense-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in MedicationDispense.subject die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen Dispensierinformationen einsehen können.
@@ -60,7 +60,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_26527 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-133" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense und Medication" version="0">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
    	<testProcedure id="Produkttest"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /MedicationDispense sicherstellen, dass alle im zurückgegebenen Search-Bundle enthaltenen Ressourcen mit eindeutig identifizierbaren IDs versehen sind und Referenzen innerhalb des Bundles auf eine Ressource mit einer eindeutigen ID verweisen.
@@ -69,7 +69,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_22070-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-134" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Rückgabe mehrerer MedicationDispenses" version="0">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
    	<testProcedure id="Produkttest"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS im Anwendungsfall "Abgabeinformationen abrufen" die Suche aller Abgabeinformationen zu einer Verordnung mit dem Aufruf GET /MedicationDispense?identifier=https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId|&lt;PrescriptionID&gt; unterstützten und dabei eines oder mehrere MedicationDispense-Objekte in einem Bundle an den Aufrufenden zurückgeben.

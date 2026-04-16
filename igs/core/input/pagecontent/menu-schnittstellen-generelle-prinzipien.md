@@ -6,7 +6,7 @@ Im Rahmen von Operationaufrufen von Clientsystemen führt der TI-Flow-Fachdienst
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-418" title="TI-Flow-Fachdienst - Reihenfolge Eingansprüfungen für Operationen" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS die Prüfungen in der folgenden Reihenfolge durchführen:
@@ -57,7 +57,7 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
 <!-- A_19536 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-352" title="TI-Flow-Fachdienst - RESTful API" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS seine Schnittstellen für alle Zugriffe auf alle Datenobjekte und alle Ressourcen in einer RESTful API gemäß der FHIR-Spezifikation in http://hl7.org/fhir/http.html der Version v4.0.1 R4 umsetzen.
@@ -66,7 +66,7 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
 <!-- A_19537 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-353" title="TI-Flow-Fachdienst - RESTful API MimeType fhir+xml" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS in seinen Schnittstellen für die Zugriffe durch Leistungserbringer und Leistungserbringerinstitutionen standardmäßig den MimeType application/fhir+xml akzeptieren und in Responses verwenden.
@@ -75,7 +75,7 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
 <!-- A_19538 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-354" title="TI-Flow-Fachdienst - RESTful API MimeType fhir+json" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS in seinen Schnittstellen für die Zugriffe durch Versicherte standardmäßig den MimeType application/fhir+json akzeptieren und in Responses verwenden.
@@ -84,7 +84,7 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
 <!-- A_19539 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-355" title="TI-Flow-Fachdienst - RESTful API MimeType Aufrufparameter" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS in seinen Schnittstellen einen von der Standardfestlegung abweichenden MimeType umsetzen, wenn der jeweilige Client eine entsprechende Anforderung in der Aufrufschnittstelle über den URL-Parameter _format=fhir+xml bzw. _format=fhir+json gemäß http://hl7.org/fhir/http.html#general oder mittels des Accept-Attributs im HTTP-Request-Header als application/fhir+xml bzw. application/fhir+json anfordert, damit Clientsysteme ein für sie leichter verarbeitbares Format in der Antwort erhalten können.
@@ -93,7 +93,7 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
 <!-- A_20171 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-356" title="TI-Flow-Fachdienst - RESTful API CapabilityStatement" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation auf den Endpunkt /metadata erlauben, in welcher er ein CapabilityStatement gemäß https://www.hl7.org/fhir/capabilitystatement.html veröffentlicht, welches die vom TI-Flow-Fachdienst verarbeiteten Ressourcen mit den zugehörigen http-Operationen der angebotenen REST-Schnittstelle auflistet: 
@@ -113,7 +113,7 @@ Die E-Rezept-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für 
 <!-- A_19217-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-357" title="Aufbau E-Rezept-ID" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS E-Rezept-IDs erzeugen und verwalten, welche der Syntax "aaa.bbb.bbb.bbb.bbb.cc" und der folgenden Semantik genügen 
@@ -151,7 +151,7 @@ Die E-Rezept-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für 
 <!-- A_19218 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="Prüfung E-Rezept-ID" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Alle Produkttypen, die eine E-Rezept-ID aus externen Systemen einlesen oder von Benutzern entgegen nehmen, MÜSSEN die E-Rezept-ID gegen ihre Prüfziffer nach dem Modulo-97-Verfahren gemäß [ISO 7064] prüfen und bei Ungültigkeit die Weiterverarbeitung verhindern, damit Benutzerfehleingaben vor der Verarbeitung erkannt werden.
@@ -166,7 +166,7 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
 <!-- A_28428  -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-359" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Verarbeiten von PKCS#7 Enveloping-Daten die Anforderungen zur Verarbeitung von Datensätzen im TI-Flow-Fachdienst anwenden.
@@ -175,7 +175,7 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
 <!-- A_28427 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-360" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Forcieren von UTF-8 ohne BOM" version="1">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der E‑Rezept‑Fachdienst MUSS eingehende Datensätze strikt als UTF‑8 ohne Byte Order Mark (BOM) decodieren und bei fehlgeschlagener Decodierung oder beim Vorhandensein eines BOM die Verarbeitung mit dem folgenden Fehler:

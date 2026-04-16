@@ -9,9 +9,9 @@ Checks:
     - KANN -> MAY
 - actor name against beginning of requirement text:
   - Das E-Rezept-FdV -> eRp_FdV
-    - Der TI-Flow-Fachdienst -> TI_Flow_FD
-    - TI-Flow-Fachdienst -> TI_Flow_FD
-    - Anbieter TI-Flow-Fachdienst -> Anb_TI_Flow_FD
+    - Der TI-Flow-Fachdienst -> TI-Flow_FD
+    - TI-Flow-Fachdienst -> TI-Flow_FD
+    - Anbieter TI-Flow-Fachdienst -> Anb_TI-Flow_FD
   - Das PS der abgebenden LEI -> PS_E-Rezept_abgebend
   - Das PS der verordnenden LEI -> PS_E-Rezept_verordnend
   - Das Clientsystem Kostenträger -> CS_E-Rezept_KTR
@@ -54,22 +54,22 @@ GENERIC_LEADING_SUBJECTS: Set[str] = {
 
 KNOWN_ACTORS: Set[str] = {
     "eRp_FdV",
-    "TI_Flow_FD",
+    "TI-Flow_FD",
     "NCPeH_ePeDA",
     "Anb_NCPeH_FD",
     "PS_E-Rezept_abgebend",
     "PS_E-Rezept_verordnend",
     "CS_E-Rezept_KTR",
-    "Anb_TI_Flow_FD",
+    "Anb_TI-Flow_FD",
 }
 
 
 # Ordered by priority and specificity.
 SUBJECT_RULES: List[Tuple[str, str, str]] = [
     ("Das E-Rezept-FdV", "eRp_FdV", "Das E-Rezept-FdV"),
-    ("Der TI-Flow-Fachdienst", "TI_Flow_FD", "Der TI-Flow-Fachdienst"),
-    ("TI-Flow-Fachdienst", "TI_Flow_FD", "Der TI-Flow-Fachdienst"),
-    ("Anbieter TI-Flow-Fachdienst", "Anb_TI_Flow_FD", "Anbieter TI-Flow-Fachdienst"),
+    ("Der TI-Flow-Fachdienst", "TI-Flow_FD", "Der TI-Flow-Fachdienst"),
+    ("TI-Flow-Fachdienst", "TI-Flow_FD", "Der TI-Flow-Fachdienst"),
+    ("Anbieter TI-Flow-Fachdienst", "Anb_TI-Flow_FD", "Anbieter TI-Flow-Fachdienst"),
     ("Der NCPeH-FD", "NCPeH_ePeDA", "Der NCPeH-FD"),
     ("Anbieter des NCPeH-FD", "Anb_NCPeH_FD", "Anbieter des NCPeH-FD"),
     ("Das PS der abgebenden LEI", "PS_E-Rezept_abgebend", "Das PS der abgebenden LEI"),
@@ -82,13 +82,13 @@ SUBJECT_RULES: List[Tuple[str, str, str]] = [
 
 ACTOR_CANONICAL_SUBJECT: Dict[str, str] = {
     "eRp_FdV": "Das E-Rezept-FdV",
-    "TI_Flow_FD": "Der TI-Flow-Fachdienst",
+    "TI-Flow_FD": "Der TI-Flow-Fachdienst",
     "NCPeH_ePeDA": "Der NCPeH-FD",
     "Anb_NCPeH_FD": "Anbieter des NCPeH-FD",
     "PS_E-Rezept_abgebend": "Das PS der abgebenden LEI",
     "PS_E-Rezept_verordnend": "Das PS der verordnenden LEI",
     "CS_E-Rezept_KTR": "Das Clientsystem Kostenträger",
-    "Anb_TI_Flow_FD": "Anbieter TI-Flow-Fachdienst",
+    "Anb_TI-Flow_FD": "Anbieter TI-Flow-Fachdienst",
 }
 
 

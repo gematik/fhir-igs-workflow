@@ -228,7 +228,7 @@ Die Kommunikation zum TI-Flow-Fachdienst wird zusätzlich zu TLS über einen sic
     <actor name="Anb_NCPeH_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienstes MUSS für alle Anfragen an den TI-Flow-Fachdienst für

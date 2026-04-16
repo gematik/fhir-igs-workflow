@@ -5,7 +5,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 <!-- A_20546-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-140" title="TI-Flow-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
     Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten, wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem folgenden Fehler:
@@ -37,7 +37,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 <!-- A_19120-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-141" title="TI-Flow-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
     Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer den im HTTP-Header "X-AccessCode" gegen den im referenzierten Task enthaltenen AccessCode prüfen und bei Missmatch oder Fehlen im HTTP-Header, den Aufruf mit dem folgenden Fehler:
@@ -69,7 +69,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 <!-- A_19120-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-142" title="TI-Flow-Fachdienst - E-Rezept löschen - Verordnender - Prüfung Status" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "ready" ist, mit dem folgenden Fehler:
@@ -101,7 +101,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 <!-- A_19027-06 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-143" title="TI-Flow-Fachdienst - E-Rezept löschen - Medizinische und personenbezogene Daten löschen" version="0">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort alle personenbezogenen medizinischen Daten, außer der KVNR in Task.for, aus dem referenzierten Task entfernen. Dies gilt insbesondere für:
@@ -126,7 +126,7 @@ Bestehende Übermittlungsaufträge in den ePA Medication Service für das zu lö
 <!-- A_19121 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-144" title="TI-Flow-Fachdienst - E-Rezept löschen - Status" version="0">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort den Status des Tasks Task.status auf den Wert "cancelled" setzen, damit der Task nicht weiter bearbeitet werden kann.
@@ -135,7 +135,7 @@ Bestehende Übermittlungsaufträge in den ePA Medication Service für das zu lö
 <!-- A_28131 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-145" title="TI-Flow-Fachdienst - E-Rezept löschen - Push Notification Versicherter" version="0">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$abort bei erfolgreichem Abschluss der Operation, wenn die Rolle des aufrufenden Nutzers ungleich oid_versicherter ist, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.abort" und den Versicherten mit der KVNR = Task.for initiieren.

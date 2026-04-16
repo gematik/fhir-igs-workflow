@@ -3,7 +3,7 @@ Der TI-Flow-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Clie
 <!-- A_19514-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-340" title="TI-Flow-Fachdienst - Http-Status-Codes" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf einer Operation im Http-Response-Header einen HTTP-Status-Codes gemäß [RFC7231] zurückgeben.
@@ -16,7 +16,7 @@ Die Fehlermeldung beinhaltet bei fachlichen Fehlern einen VAU-verschlüsselten i
 <!-- A_22103 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-341" title="TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome" version="1">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS im Fehlerfall (http-Statuscodes &gt;= 400) Hinweise zur Fehlerursache 
