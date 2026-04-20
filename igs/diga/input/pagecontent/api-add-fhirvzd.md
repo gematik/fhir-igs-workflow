@@ -41,11 +41,9 @@ Verzeichnisdienst suchen -->
   </ul>
 </requirement>
 
-Als Antwort erhält das E-Rezept-FdV ein Suchset mit mindestens 2 Ressourcen: eine oder mehrere HealthcareServices und genau eine Organization Ressource. Die Organization Ressource enthält dann einen identifier mit identifier.type == "PRN". Dieser identifier enthält die Telematik-ID unter identifier.value.
+Als Antwort erhält das E-Rezept-FdV ein Suchset mit mindestens 2 Ressourcen: eine oder mehrere HealthcareServices und genau eine Organization Ressource. Die Organization Ressource enthält dann einen identifier mit identifier.type == "PRN". Dieser Identifier enthält die Telematik-ID unter identifier.value.
 
-Falls das E-Rezept-FdV nicht in der Lage ist die IKNR oder die Telematik-ID des
-Kostenträgers des Nutzers zu ermitteln, soll der Nutzer die Möglichkeit haben den
-Kostenträger manuell zu bestimmen.
+Falls das E-Rezept-FdV nicht in der Lage ist die IKNR oder die Telematik-ID des Kostenträgers des Nutzers zu ermitteln, soll der Nutzer die Möglichkeit haben den Kostenträger manuell zu auszuwählen.
 
 Der Nutzer soll eine Liste aller Kostenträger, denen eine DiGA zugewiesen werden kann, zur Auswahl angezeigt bekommen.
 

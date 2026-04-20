@@ -106,17 +106,17 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
      </ul>
 </requirement>
 
-### E-Rezept ID
+### Verordnungs-ID
 
-Die E-Rezept-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für den Workflow des E-Rezepts erstellt.
+Die Verordnungs-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für den Workflow der Verordnung erstellt.
 
 <!-- A_19217-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-357" title="Aufbau E-Rezept-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-357" title="Aufbau Verordnungs-ID" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der TI-Flow-Fachdienst MUSS E-Rezept-IDs erzeugen und verwalten, welche der Syntax "aaa.bbb.bbb.bbb.bbb.cc" und der folgenden Semantik genügen 
+     Der TI-Flow-Fachdienst MUSS Verordnungs-IDs erzeugen und verwalten, welche der Syntax "aaa.bbb.bbb.bbb.bbb.cc" und der folgenden Semantik genügen 
      
      <table>
   <thead>
@@ -129,12 +129,12 @@ Die E-Rezept-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für 
   <tbody>
     <tr>
       <td>aaa</td>
-      <td>E-Rezept-Typ</td>
+      <td>Workflow-Typ</td>
       <td>alphanummerisch, mit der Belegung gemäß "flowType" in <a href="https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType">https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType</a></td>
     </tr>
     <tr>
       <td>bbb.bbb.bbb.bbb</td>
-      <td>fortlaufende Rezeptnummer</td>
+      <td>fortlaufende Nummer</td>
       <td>nummerisch, 12-stellig</td>
     </tr>
     <tr>
@@ -145,16 +145,16 @@ Die E-Rezept-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für 
   </tbody>
 </table>
      
-     damit Tippfehler in der manuellen Erfassung erkannt werden können und die E-Rezept-ID über 11 Jahre eine eineindeutige Zuordnung zwischen allen Datenobjekten im E-Rezept-Workflow erlaubt.
+     damit Tippfehler in der manuellen Erfassung erkannt werden können und die Verordnungs-ID über 11 Jahre eine eineindeutige Zuordnung zwischen allen Datenobjekten im Workflow erlaubt.
 </requirement>
 
 <!-- A_19218 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="Prüfung E-Rezept-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="Prüfung Verordnungs-ID" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Alle Produkttypen, die eine E-Rezept-ID aus externen Systemen einlesen oder von Benutzern entgegen nehmen, MÜSSEN die E-Rezept-ID gegen ihre Prüfziffer nach dem Modulo-97-Verfahren gemäß [ISO 7064] prüfen und bei Ungültigkeit die Weiterverarbeitung verhindern, damit Benutzerfehleingaben vor der Verarbeitung erkannt werden.
+     Alle Produkttypen, die eine Verordnungs-ID aus externen Systemen einlesen oder von Benutzern entgegen nehmen, MÜSSEN die Verordnungs-ID gegen ihre Prüfziffer nach dem Modulo-97-Verfahren gemäß [ISO 7064] prüfen und bei Ungültigkeit die Weiterverarbeitung verhindern, damit Benutzerfehleingaben vor der Verarbeitung erkannt werden.
 </requirement>
 
 ### Verarbeitung von Datensätzen
