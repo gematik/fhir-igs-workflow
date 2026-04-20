@@ -284,7 +284,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#implementierung-der-eingansprüfungen-für-operationen" id="markdown-toc-implementierung-der-eingansprüfungen-für-operationen">Implementierung der Eingansprüfungen für Operationen</a></li>
   <li><a href="#restful-api" id="markdown-toc-restful-api">RESTful API</a></li>
-  <li><a href="#e-rezept-id" id="markdown-toc-e-rezept-id">E-Rezept ID</a></li>
+  <li><a href="#verordnungs-id" id="markdown-toc-verordnungs-id">Verordnungs-ID</a></li>
   <li><a href="#verarbeitung-von-datensätzen" id="markdown-toc-verarbeitung-von-datensätzen">Verarbeitung von Datensätzen</a></li>
   <li><a href="#verarbeitung-von-fhir-ressourcen" id="markdown-toc-verarbeitung-von-fhir-ressourcen">Verarbeitung von FHIR Ressourcen</a></li>
 </ul>
@@ -398,17 +398,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
      </ul>
 </requirement>
 
-<h3 id="e-rezept-id">E-Rezept ID</h3>
+<h3 id="verordnungs-id">Verordnungs-ID</h3>
 
-<p>Die E-Rezept-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für den Workflow des E-Rezepts erstellt.</p>
+<p>Die Verordnungs-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für den Workflow der Verordnung erstellt.</p>
 
 <!-- A_19217-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-357" title="Aufbau E-Rezept-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-357" title="Aufbau Verordnungs-ID" version="1">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-     Der TI-Flow-Fachdienst MUSS E-Rezept-IDs erzeugen und verwalten, welche der Syntax "aaa.bbb.bbb.bbb.bbb.cc" und der folgenden Semantik genügen 
+     Der TI-Flow-Fachdienst MUSS Verordnungs-IDs erzeugen und verwalten, welche der Syntax "aaa.bbb.bbb.bbb.bbb.cc" und der folgenden Semantik genügen 
      
      <table>
   <thead>
@@ -421,12 +421,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tbody>
     <tr>
       <td>aaa</td>
-      <td>E-Rezept-Typ</td>
+      <td>Workflow-Typ</td>
       <td>alphanummerisch, mit der Belegung gemäß "flowType" in <a href="https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType">https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType</a></td>
     </tr>
     <tr>
       <td>bbb.bbb.bbb.bbb</td>
-      <td>fortlaufende Rezeptnummer</td>
+      <td>fortlaufende Nummer</td>
       <td>nummerisch, 12-stellig</td>
     </tr>
     <tr>
@@ -437,16 +437,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tbody>
 </table>
      
-     damit Tippfehler in der manuellen Erfassung erkannt werden können und die E-Rezept-ID über 11 Jahre eine eineindeutige Zuordnung zwischen allen Datenobjekten im E-Rezept-Workflow erlaubt.
+     damit Tippfehler in der manuellen Erfassung erkannt werden können und die Verordnungs-ID über 11 Jahre eine eineindeutige Zuordnung zwischen allen Datenobjekten im Workflow erlaubt.
 </requirement>
 
 <!-- A_19218 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="Prüfung E-Rezept-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="Prüfung Verordnungs-ID" version="1">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest" />
     </actor>
-     Alle Produkttypen, die eine E-Rezept-ID aus externen Systemen einlesen oder von Benutzern entgegen nehmen, MÜSSEN die E-Rezept-ID gegen ihre Prüfziffer nach dem Modulo-97-Verfahren gemäß [ISO 7064] prüfen und bei Ungültigkeit die Weiterverarbeitung verhindern, damit Benutzerfehleingaben vor der Verarbeitung erkannt werden.
+     Alle Produkttypen, die eine Verordnungs-ID aus externen Systemen einlesen oder von Benutzern entgegen nehmen, MÜSSEN die Verordnungs-ID gegen ihre Prüfziffer nach dem Modulo-97-Verfahren gemäß [ISO 7064] prüfen und bei Ungültigkeit die Weiterverarbeitung verhindern, damit Benutzerfehleingaben vor der Verarbeitung erkannt werden.
 </requirement>
 
 <h3 id="verarbeitung-von-datensätzen">Verarbeitung von Datensätzen</h3>
@@ -607,7 +607,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 16, 2026 14:10+0000">2026-04-16</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 20, 2026 12:14+0000">2026-04-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

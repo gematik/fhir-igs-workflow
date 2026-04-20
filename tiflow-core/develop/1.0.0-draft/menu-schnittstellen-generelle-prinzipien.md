@@ -54,20 +54,20 @@ Der TI-Flow-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation auf
 * AuditEvent – GET-Operation für die Einsicht in Protokolleinträge durch den Versicherten 
 * Device – GET-Operation mit statischen Informationen zur serverseitigen Signatur damit der Client eine Information über die FHIR-Kompatibilität zum Fachdienst erhält.
 
-### E-Rezept ID
+### Verordnungs-ID
 
-Die E-Rezept-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für den Workflow des E-Rezepts erstellt.
+Die Verordnungs-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für den Workflow der Verordnung erstellt.
 
-Der TI-Flow-Fachdienst MUSS E-Rezept-IDs erzeugen und verwalten, welche der Syntax "aaa.bbb.bbb.bbb.bbb.cc" und der folgenden Semantik genügen
+Der TI-Flow-Fachdienst MUSS Verordnungs-IDs erzeugen und verwalten, welche der Syntax "aaa.bbb.bbb.bbb.bbb.cc" und der folgenden Semantik genügen
 
 | | | |
 | :--- | :--- | :--- |
-| aaa | E-Rezept-Typ | alphanummerisch, mit der Belegung gemäß "flowType" in[https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType](https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType) |
-| bbb.bbb.bbb.bbb | fortlaufende Rezeptnummer | nummerisch, 12-stellig |
+| aaa | Workflow-Typ | alphanummerisch, mit der Belegung gemäß "flowType" in[https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType](https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType) |
+| bbb.bbb.bbb.bbb | fortlaufende Nummer | nummerisch, 12-stellig |
 | cc | Prüfnummer Verfahren gemäß [ISO 7064] | nummerisch |
-damit Tippfehler in der manuellen Erfassung erkannt werden können und die E-Rezept-ID über 11 Jahre eine eineindeutige Zuordnung zwischen allen Datenobjekten im E-Rezept-Workflow erlaubt.
+damit Tippfehler in der manuellen Erfassung erkannt werden können und die Verordnungs-ID über 11 Jahre eine eineindeutige Zuordnung zwischen allen Datenobjekten im Workflow erlaubt.
 
-Alle Produkttypen, die eine E-Rezept-ID aus externen Systemen einlesen oder von Benutzern entgegen nehmen, MÜSSEN die E-Rezept-ID gegen ihre Prüfziffer nach dem Modulo-97-Verfahren gemäß [ISO 7064] prüfen und bei Ungültigkeit die Weiterverarbeitung verhindern, damit Benutzerfehleingaben vor der Verarbeitung erkannt werden.
+Alle Produkttypen, die eine Verordnungs-ID aus externen Systemen einlesen oder von Benutzern entgegen nehmen, MÜSSEN die Verordnungs-ID gegen ihre Prüfziffer nach dem Modulo-97-Verfahren gemäß [ISO 7064] prüfen und bei Ungültigkeit die Weiterverarbeitung verhindern, damit Benutzerfehleingaben vor der Verarbeitung erkannt werden.
 ### Verarbeitung von Datensätzen
 
 Es gelten folgende Anforderungen und Vorgaben zur Verarbeitung und Interpretation von Zeichen- und Datensätzen im TI-Flow-Fachdienst.

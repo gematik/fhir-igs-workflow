@@ -25,9 +25,18 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 
 Der TI-Flow-Fachdienst MUSS vor dem Zugriff auf den BfArM Webdienst prüfen, ob der zuletzt bezogene AccessToken noch gültig ist und im Falle der Ungültigkeit einen neuen AccessToken über den /ords/rezepte/oauth/token Endpunkt am BfArM Webdienst beziehen.
 
-Der TI-Flow-Fachdienst MUSS zum Beziehen eines AccessTokens den Endpunkt /ords/rezepte/oauth/token am BfArM Webdienst mit folgenden Parametern aufrufen: HTTP-Methode POST HTTP-Header Content-Type: application/x-www-form-urlencoded Authorization: Basic <base64(client_id:client_secret)> HTTP-Body Form-Parameter: grant_type=client_credential um einen AccessToken für den Zugriff auf den BfArM Webdienst zu beziehen.
+Der TI-Flow-Fachdienst MUSS zum Beziehen eines AccessTokens den Endpunkt /ords/rezepte/oauth/token am BfArM Webdienst mit folgenden Parametern aufrufen:
 
-Der TI-Flow-Fachdienst MUSS für den Zugriff auf den BfArM Webdienst einen AccessToken für die Authentifizierung im HTTP-Header wie folgt angeben: Authorization: Bearer <AccessToken vom Token Endpunkt>, um auf die Endpunkte des BfArM Webdienstes zugreifen zu können.
+* HTTP-Methode: HTTP-Header
+  * POST: Content-Type: application/x-www-form-urlencoded Authorization: Basic <base64(client_id:client_secret)>
+* HTTP-Methode: HTTP-Body
+  * POST: Form-Parameter: grant_type=client_credential
+
+, um einen AccessToken für den Zugriff auf den BfArM Webdienst zu beziehen.
+
+Der TI-Flow-Fachdienst MUSS für den Zugriff auf den BfArM Webdienst einen AccessToken für die Authentifizierung im HTTP-Header wie folgt angeben:
+* Authorization: Bearer <AccessToken vom Token Endpunkt> 
+, um auf die Endpunkte des BfArM Webdienstes zugreifen zu können.
 ### Lokalisierung
 
 Der TI-Flow-Fachdienst MUSS einen Konfigurationsparameter BfArM_Domain für die Domain des BfArM Webdienstes verwalten.
@@ -45,7 +54,14 @@ Der digitale Durchschlag zum T-Rezept ist ein Artefakt, welches Informationen zu
 
 Als Datengrundlage für diesen Durchschlag dient der Verordnungsdatensatz samt QES, der Dispensierdatensatz, der Task der Verordnung und Daten der Apotheke aus dem FHIR-VZD. Als Kriterium für die Suche nach Apothekendaten im FHIR-VZD wird die Telematik-ID der Apotheke genutzt.
 
-Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept die Daten der abgebenden Apotheke aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird: Abfrage der Ressource "HealthcareService", HealthcareServices, deren Organisation aktiv sind, HealthcareServices, deren origin tag = ldap ist, HealthcareServices, deren Organisation als Identifier die Telematik-ID trägt, die im Dispensierdatensatz angegeben wurde, Einbeziehen der Organisation in das Rückgabeergebnis, Einbeziehen der Location in das Rückgabeergebnis
+Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept die Daten der abgebenden Apotheke aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird:
+* Abfrage der Ressource "HealthcareService", 
+* HealthcareServices, deren Organisation aktiv sind, 
+* HealthcareServices, deren origin tag = ldap ist, 
+* HealthcareServices, deren Organisation als Identifier die Telematik-ID trägt, die im Dispensierdatensatz angegeben wurde, 
+* Einbeziehen der Organisation in das Rückgabeergebnis, 
+* Einbeziehen der Location in das Rückgabeergebnis
+
 **Beispiel Aufruf**
 
 ```
@@ -62,8 +78,6 @@ Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags 
 Als Antwort erhält der TI-Flow-Fachdienst mit dieser Anfrage genau drei Ressourcen: Organization, HealthcareService und Location, welche die benötigten Daten zur Apotheke für den digitalen Durchschlag enthalten. Alle Daten sind optional im FHIR-VZD eingetragen, d.h. wenn die Daten nicht vorhanden sind, müssen diese nicht im digitalen Durchschlag enthalten sein.
 
 Anschließend erstellt der TI-Flow-Fachdienst den digitalen Durchschlag für den BfArM Webdienst. Dieser basiert auf einem definierten FHIR-Profil.
-
-Für den Austausch der Daten zwischen TI-Flow-Fachdienst und dem BfArM Webdienst existiert ein FHIR Implementation Guide (IG), der Beschreibungen, OpenAPI Definition, Profile und Mappings enthält.
 
 Der TI-Flow-Fachdienst MUSS beim Bereitstellen eines digitalen Durchschlag für ein T-Rezept an den BfArM Webdienst einen Datensatz nach dem Profil ERP_TPrescription_CarbonCopy erzeugen.
 

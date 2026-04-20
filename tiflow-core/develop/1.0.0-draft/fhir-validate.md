@@ -27,9 +27,9 @@ Der TI-Flow-Fachdienst MUSS bei der Prüfung der zeitlichen Gültigkeit einer FH
 
 Der TI-Flow-Fachdienst MUSS sicherstellen, dass alle Datums- und Zeitangaben ohne explizite Zeitzoneninformation als deutsche Zeit (CET/CEST) entsprechend der historischen oder aktuellen Regelung interpretiert werden.
 
-Die Produkttypen der Anwendung E-Rezept und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Datums- und Zeitangaben ohne Zeitzoneninformation, die entsprechend dem Datum gültige deutsche Zeitzone (CET/CEST) angewendet wird.
+Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Datums- und Zeitangaben ohne Zeitzoneninformation, die entsprechend dem Datum gültige deutsche Zeitzone (CET/CEST) angewendet wird.
 
-Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, dass maximal ein meta.profile-Eintrag vorhanden ist und bei Abweichung mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, dass maximal ein meta.profile-Eintrag vorhanden ist und bei Abweichung die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -40,12 +40,12 @@ Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, da
 * HTTP-Code: Details Text
   * 400 - Bad Request: -
 
-die Verarbeitung ablehnen.
+abbrechen.
 
-Die Produkttypen der Anwendung E-Rezept und die Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung jeder FHIR-Ressource sicherstellen, dass im Element meta.profile genau ein Eintrag enthalten ist, wenn im Profil das Element meta.profile verpflichtend anzugeben ist; bei Abweichung ist die Ressource als fehlerhaft zu behandeln und darf nicht übermittelt werden.
+Der TI-Flow-Fachdienst und die Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung jeder FHIR-Ressource sicherstellen, dass im Element meta.profile genau ein Eintrag enthalten ist, wenn im Profil das Element meta.profile verpflichtend anzugeben ist; bei Abweichung ist die Ressource als fehlerhaft zu behandeln und darf nicht übermittelt werden.
 ### Prüfung von Referenzen in Bundles
 
-Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Auffälligkeiten mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Auffälligkeiten die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -58,7 +58,7 @@ Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bun
 
 abbrechen.
 
-Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Auffälligkeiten mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Auffälligkeiten die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -71,7 +71,7 @@ Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bun
 
 abbrechen.
 
-Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Auffälligkeiten mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Auffälligkeiten die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -84,7 +84,7 @@ Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bun
 
 abbrechen.
 
-Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Auffälligkeiten mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Auffälligkeiten die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -97,14 +97,14 @@ Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob
 
 abbrechen.
 
-Die Produkttypen der Anwendung E-Rezept und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource die ID der fullURL (Bundle.entry.fullurl) der Ressource auf die ID der Ressource (Bundle.entry.resource.id) setzen, sofern das http(s)-Schema verwendet wird.
+Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource die ID der fullURL (Bundle.entry.fullurl) der Ressource auf die ID der Ressource (Bundle.entry.resource.id) setzen, sofern das http(s)-Schema verwendet wird.
 
-Die Produkttypen der Anwendung E-Rezept und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource sicherstellen, dass die fullURL (Bundle.entry.fullUrl) entweder im [Format http-Schema] oder im [Format urn:uuid-Schema] vorliegt.
+Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource sicherstellen, dass die fullURL (Bundle.entry.fullUrl) entweder im [Format http-Schema] oder im [Format urn:uuid-Schema] vorliegt.
 
-Die Produkttypen der Anwendung E-Rezept und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der Versionsnummer gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen, zu dessen aktuell gültiger Profilversion sie mutmaßlich validieren.
+Der TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der Versionsnummer gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen, zu dessen aktuell gültiger Profilversion sie mutmaßlich validieren.
 ### Validierung von Extensions
 
-Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstellen, dass keine Extensions vorhanden sind, die nicht an den in den FHIR-Profilen spezifizierten Stellen verwendet werden. Sollte eine solche Extension gefunden werden, gilt der Datensatz als ungültig. In diesem Fall ist eine Fehlermeldung mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstellen, dass keine Extension vorhanden ist, die an einer nicht im FHIR-Profil spezifizierten Stelle verwendet wird. Sollte eine solche Extension gefunden werden, gilt der Datensatz als ungültig. In diesem Fall ist die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -115,7 +115,7 @@ Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstell
 * HTTP-Code: Details Text
   * 400 - Bad Request: FHIR Profile Validation Failed
 
-auszugeben.
+abzubrechen.
 
-Die Produkttypen der Anwendung E-Rezept und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Extensions nur an den Stellen verwendet werden, an denen sie im FHIR-Profil ausdrücklich definiert sind.
+Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Extensions nur an den Stellen verwendet werden, an denen sie im FHIR-Profil ausdrücklich definiert sind.
 
