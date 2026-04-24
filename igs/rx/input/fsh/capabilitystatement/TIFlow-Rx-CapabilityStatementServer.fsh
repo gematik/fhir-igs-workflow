@@ -26,7 +26,7 @@ Description: "CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Wor
 
 RuleSet: TaskInteraction(expectation)
 * insert CapSupportResource(Task, #SHALL)
-* insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/TIFlow_RX_RX_Task, #SHALL)
+* insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert TaskSearchTypeInteractionStatusCodes

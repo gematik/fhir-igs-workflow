@@ -3,7 +3,7 @@ Parent: Element
 Id: GEM-ERP-LOG-MedicationDispense-DiGA
 Title: "Logical DiGA Medication Dispense"
 Description: "Fachliches Modell zur Beschreibung der Informationen, die bei $close und $dispense in der MedicationDispense-Ressource für DiGAs übermittelt werden."
-* insert Versioning
+* insert Meta
 * prescriptionId 1..1 string "ID des E-Rezepts"
 * status 1..1 code "Status fixedValue: #completed"
 * patientKVNR 1..1 string "KVNR des Patienten"

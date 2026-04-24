@@ -1,9 +1,9 @@
-Profile: GEM_ERP_PR_Bundle_OP_Accept
+Profile: TIFlowOpAcceptBundle
 Parent: Bundle
-Id: GEM-ERP-PR-Bundle-OP-Accept
-Title: "GEM ERP PR Bundle OP Accept"
+Id: tiflow-op-accept-bundle
+Title: "Bundle der $accept Operation"
 Description: "Antwort des TI-Flow-Fachdienst auf die $accept-Operation"
-* insert StructureDefinition(GEM_ERP_PR_Bundle_OP_Accept)
+* insert Meta
 
 * type = #collection (exactly)
 * entry 2..2
@@ -12,7 +12,7 @@ Description: "Antwort des TI-Flow-Fachdienst auf die $accept-Operation"
 * entry ^slicing.rules = #closed
 * entry ^slicing.description = "Die Aufgabe und das QES signierte Bundle."
 
-* entry contains erxTask 1..1 and erxBinary 1..1
+* entry contains task 1..1 and binary 1..1
 
-* entry[erxTask].resource only GEM_ERP_PR_Task
-* entry[erxBinary].resource only GEM_ERP_PR_Binary
+* entry[task].resource only TIFlowTask
+* entry[binary].resource only GEM_ERP_PR_Binary

@@ -1,9 +1,9 @@
-Profile: GEM_ERP_PR_Task
+Profile: TIFlowTask
 Parent: Task
-Id: GEM-ERP-PR-Task
-Title: "GEM ERP PR Task"
-Description: "Task für die Verwaltung des E-Rezept-Workflows"
-* insert Profile(GEM_ERP_PR_Task)
+Id: tiflow-task
+Title: "Task für TIFlow Anwendungen"
+Description: "Task für die Verwaltung von Workflows der TIFlow Anwendungen"
+* insert Meta
 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"

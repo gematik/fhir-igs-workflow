@@ -1,9 +1,9 @@
-Profile: TIFlow_RX_RX_Task
-Parent: GEM_ERP_PR_Task
-Id: tiflow-rx-pr-task
-Title: "TIFlow - RX - Task"
+Profile: GEM_ERP_PR_Task
+Parent: TIFlowTask
+Id: GEM-ERP-PR-Task
+Title: "Task für E-Rezept"
 Description: "Task für die Verwaltung des E-Rezept-Workflows"
-* insert Meta
+* insert LegacyMeta(StructureDefinition, GEM_ERP_PR_Task)
 
 * extension contains GEM_ERP_EX_LastMedicationDispense named lastMedicationDispense 0..1 MS
 and GEM_ERP_EX_AcceptDate named acceptDate 0..1 MS

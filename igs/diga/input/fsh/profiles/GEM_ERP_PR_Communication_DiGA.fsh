@@ -3,7 +3,7 @@ Parent: Communication
 Id: GEM-ERP-PR-Communication-DiGA
 Title: "GEM ERP PR Communication DiGA"
 Description: "Antwort des Leistungserbringers an den Patienten"
-* insert StructureDefinition(GEM_ERP_PR_Communication_DiGA)
+* insert LegacyMeta(StructureDefinition, GEM_ERP_PR_Communication_DiGA)
 
 * basedOn 1..1 MS
 * basedOn only Reference(Task)

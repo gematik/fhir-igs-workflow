@@ -1,6 +1,6 @@
 
 Instance: TaskInCreatedState
-InstanceOf: TIFlow_RX_RX_Task
+InstanceOf: GEM_ERP_PR_Task
 Title: "Task erstellt durch Fachdienst via $create Operation"
 Description: "Beispiel für einen Task, der vom Fachdienst über die $create Operation erstellt wurde"
 Usage: #example
@@ -22,7 +22,7 @@ Usage: #example
 * performerType[+].coding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OrganizationType#urn:oid:1.2.276.0.76.4.54 "Öffentliche Apotheke"
 
 Instance: TaskInReadyState
-InstanceOf: TIFlow_RX_RX_Task
+InstanceOf: GEM_ERP_PR_Task
 Title: "Task aktiviert durch (Z)PVS/KIS via $activate Operation"
 Description: "Beispiel für einen Task, der durch (Z)PVS/KIS über die $activate Operation aktiviert wurde und ein einlösbares E-Rezept trägt"
 Usage: #example
@@ -51,7 +51,7 @@ Usage: #example
 * input[patientReceipt].valueReference.reference = "f8c2298f-7c00-4a68-af29-8a2862d55d43"
 
 Instance: TaskIn-ProgressState
-InstanceOf: TIFlow_RX_RX_Task
+InstanceOf: GEM_ERP_PR_Task
 Title: "Task angenommen durch Apotheke via $accept Operation"
 Description: "Beispiel für einen Task, der von einer Apotheke über die $accept Operation angenommen wurde"
 Usage: #example
@@ -78,7 +78,7 @@ Usage: #example
 * input[ePrescription].valueReference = Reference(PrescriptionBinary)
 
 Instance: TaskIn-ProgressState-Dispensed
-InstanceOf: TIFlow_RX_RX_Task
+InstanceOf: GEM_ERP_PR_Task
 Title: "Task angenommen und abgegeben via $dispense Operation"
 Description: "Beispiel für einen Task, der von einer Apotheke angenommen und dann über die $dispense Operation abgegeben wurde"
 Usage: #example
@@ -108,7 +108,7 @@ Usage: #example
 * input[patientReceipt].valueReference.reference = "f8c2298f-7c00-4a68-af29-8a2862d55d43"
 
 Instance: TaskIn-ProgressState-Dispensed-Multiple-MedicationDispenses
-InstanceOf: TIFlow_RX_RX_Task
+InstanceOf: GEM_ERP_PR_Task
 Title: "Task mit mehreren MedicationDispenses"
 Description: "Beispiel für einen Task, der von einer Apotheke angenommen und dann über die $dispense Operation mit mehreren MedicationDispenses abgegeben wurde"
 Usage: #example
@@ -139,7 +139,7 @@ Usage: #example
 * input[patientReceipt].valueReference.reference = "f8c2298f-7c00-4a68-af29-8a2862d55d43"
 
 Instance: TaskInClosedState
-InstanceOf: TIFlow_RX_RX_Task
+InstanceOf: GEM_ERP_PR_Task
 Title: "Task abgeschlossen durch Apotheke via $close Operation"
 Description: "Beispiel für einen Task, der von einer Apotheke über die $close Operation abgeschlossen wurde"
 Usage: #example

@@ -16,10 +16,10 @@ Description: "Dieses Bundle enthält den Task und das qualifiziert signierte E-R
 * type = #collection
 * link[+].relation = "self"
 * link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/160.000.033.491.280.78/$accept/"
-* entry[erxTask].resource = TaskIn-ProgressState
-* entry[erxTask].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e"
-* entry[erxBinary].resource = PrescriptionBinaryWithMeta
-* entry[erxBinary].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Binary/PrescriptionBinaryWithMeta"
+* entry[task].resource = TaskIn-ProgressState
+* entry[task].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e"
+* entry[binary].resource = PrescriptionBinaryWithMeta
+* entry[binary].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Binary/PrescriptionBinaryWithMeta"
 
 Instance: ExampleAcceptResponseBundle
 InstanceOf: GEM_ERP_PR_Bundle_OP_Accept
@@ -30,7 +30,7 @@ Description: "Bundle-Antwort der $accept-Operation mit Task und qualifiziert sig
 * type = #collection
 * link[+].relation = "self"
 * link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/160.000.033.491.280.78/$accept/"
-* entry[erxTask].resource = TaskIn-ProgressState
-* entry[erxTask].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e"
-* entry[erxBinary].resource = PrescriptionBinaryWithMeta
-* entry[erxBinary].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Binary/PrescriptionBinaryWithMeta"
+* entry[task].resource = TaskIn-ProgressState
+* entry[task].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e"
+* entry[binary].resource = PrescriptionBinaryWithMeta
+* entry[binary].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Binary/PrescriptionBinaryWithMeta"

@@ -10,7 +10,7 @@ Usage: #definition
     * system = #url
     * value = "https://www.gematik.de"
 * kind = #requirements
-* insert Version
+* insert Meta-Instance
 * fhirVersion = #4.0.1
 * format[0] = #application/fhir+json
 * format[+] = #application/fhir+xml
