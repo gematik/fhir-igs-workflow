@@ -1,3 +1,19 @@
+Instance: GenericTask
+InstanceOf: GEM_ERP_PR_Task
+Title: "Task erstellt durch Fachdienst via $create Operation"
+Description: "Beispiel für einen Task, der vom Fachdienst über die $create Operation erstellt wurde"
+Usage: #example
+* id = "b9f1fbdd-f28b-4ec7-959c-5283d3433b0e"
+* meta.tag.display = "Task in DRAFT state just created by Fachdienst via $create operation"
+* extension[flowType].url = "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType"
+* extension[flowType].valueCoding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType#160 "Flowtype für Apothekenpflichtige Arzneimittel"
+* identifier[PrescriptionID].system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
+* identifier[PrescriptionID].value = "160.000.033.491.280.78"
+* status = #draft
+* intent = #order
+* insert DateTime(authoredOn)
+
+
 Instance: QueryTaskSearchResponseBundle
 InstanceOf: Bundle
 Usage: #example
@@ -5,28 +21,11 @@ Title: "Antwortbundle fuer GET /Task"
 Description: "Beispiel fuer eine Task-Suchantwort mit zwei Treffern"
 * id = "example-searchset-task"
 * type = #searchset
-* total = 2
+* total = 1
 * link[+].relation = "self"
 * link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task?status=ready&_count=2"
-* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/607255ed-ce41-47fc-aad3-cfce1c39963f"
-* entry[=].resource = TaskInReadyState
 * entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/b12eb5f7-91ce-4887-93c7-800454601377"
-* entry[=].resource = TaskInCreatedState
-
-Instance: QueryCommunicationSearchResponseBundle
-InstanceOf: Bundle
-Usage: #example
-Title: "Antwortbundle fuer GET /Communication"
-Description: "Beispiel fuer eine Communication-Suchantwort"
-* id = "example-searchset-communication"
-* type = #searchset
-* total = 2
-* link[+].relation = "self"
-* link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication?received=NULL"
-* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication/Communication_DispenseRequest"
-* entry[=].resource = Communication_DispenseRequest
-* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication/Communication_Reply_Pharmacy"
-* entry[=].resource = Communication_Reply_Pharmacy
+* entry[=].resource = GenericTask
 
 Instance: QueryAuditEventSearchResponseBundle
 InstanceOf: Bundle
@@ -40,24 +39,6 @@ Description: "Beispiel fuer eine AuditEvent-Suchantwort"
 * link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/AuditEvent?date=ge2025-01-01"
 * entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa"
 * entry[=].resource = AuditEventSample
-
-Instance: Example-MedicationDispense
-InstanceOf: MedicationDispense
-Usage: #example
-Title: "Beispiel Medikamentenabgabe"
-Description: "Beispiel für eine Medikamentenabgabe"
-* insert Date(whenHandedOver)
-* status = #completed
-* medicationReference = Reference(SimpleMedication)
-
-Instance: SimpleMedication
-InstanceOf: Medication
-Title: "Einfaches Beispiel-Medikament"
-Description: "Beispiel für ein einfaches Medikament mit minimalen Eigenschaften"
-Usage: #example
-* batch.lotNumber = "1234567890"
-* code.coding[+].system = "http://fhir.de/CodeSystem/ifa/pzn"
-* code.coding[=].code = #06313728
 
 Instance: QueryMedicationDispenseSearchResponseBundle
 InstanceOf: Bundle

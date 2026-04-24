@@ -12,30 +12,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$accept` gesendet.
 
 ### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIROperation"
-  data-api-fhir-resource-type="Task"
-  data-api-fhir-invoke-level="instance"
-  data-api-operation-id="acceptOperation">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
-    </pre>
-  </div>
-  <div id="OperationDefinition">
-    <pre>
-      {% include OperationDefinition-AcceptOperation.json %}
-    </pre>
-  </div>
-  <div id="Response-Examples">
-    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment Bundle/ExampleAcceptResponseBundle XML %}
-    </div>
-    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment OperationOutcome/ExampleOperationAcceptError XML %}
-    </div>
-  </div>
-</div>
+Die konkrete API, wie die Operation zu nutzen ist, ist dem jeweiligen Modul IG zu entnehmen.
 
 ### Hinweise
 

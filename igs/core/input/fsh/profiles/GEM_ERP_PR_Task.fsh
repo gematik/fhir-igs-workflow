@@ -12,9 +12,6 @@ Description: "Task für die Verwaltung des E-Rezept-Workflows"
 * extension ^slicing.ordered = false
 
 * extension contains GEM_ERP_EX_PrescriptionType named flowType 1..1 MS
-and GEM_ERP_EX_AcceptDate named acceptDate 0..1 MS
-and GEM_ERP_EX_ExpiryDate named expiryDate 0..1 MS
-and GEM_ERP_EX_LastMedicationDispense named lastMedicationDispense 0..1
 and GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PROPERTIES named eu-isRedeemableByProperties 0..1 MS
 and GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PATIENT_AUTHORIZATION named eu-isRedeemableByPatientAuthorization 0..1 MS
 
@@ -85,7 +82,7 @@ and GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PATIENT_AUTHORIZATION named eu-isRedeemableBy
 
 // Receipt
 * output[receipt] 0..1 MS
-  * value[x] only Reference(Bundle) //TODO check if GEM_ERP_PR_Bundle rein soll
+  * value[x] only Reference(Bundle)
   * type.coding 1..1
   * type.coding from GEM_ERP_VS_DocumentType (required)
     * system 1..1

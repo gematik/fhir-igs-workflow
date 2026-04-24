@@ -9,35 +9,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/$create` gesendet.
 
 ### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIROperation"
-  data-api-fhir-resource-type="Task"
-  data-api-fhir-invoke-level="type"
-  data-api-operation-id="createOperation">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
-    </pre>
-  </div>
-  <div id="OperationDefinition">
-    <pre>
-      {% include OperationDefinition-CreateOperation.json %}
-    </pre>
-  </div>
-  <div id="Request-Examples">
-    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment Parameters/OperationCreateParametersInputExample XML %}
-    </div>
-  </div>
-  <div id="Response-Examples">
-    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment Task/b12eb5f7-91ce-4887-93c7-800454601377 XML %}
-    </div>
-    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment OperationOutcome/ExampleOperationCreateError XML %}
-    </div>
-  </div>
-</div>
+Die konkrete API, wie die Operation zu nutzen ist, ist dem jeweiligen Modul IG zu entnehmen.
 
 ### Hinweise
 

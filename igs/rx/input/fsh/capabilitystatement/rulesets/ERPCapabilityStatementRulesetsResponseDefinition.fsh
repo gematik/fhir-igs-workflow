@@ -56,6 +56,12 @@ RuleSet: InstanceOperationStatusCodes
 * insert ResourceWasDeleted
 * insert GlobalOperationErrorCodes
 
+RuleSet: SubscriptionSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: SubscriptionCreateInteractionStatusCodes
+* insert CreateInteractionStatusCodes
+
 // Konkrete Operationen
 
 // Task/$create

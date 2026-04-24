@@ -1,3 +1,8 @@
+RuleSet: ImportCapabilityStatment (capabilityStatement, expectation)
+* imports[+] = Canonical({capabilityStatement})
+* imports[=].extension[+].url = $capabilitystatement-expectation
+* imports[=].extension[=].valueCode = {expectation}
+
 RuleSet: CapSupportResource(resource, expectation)
 * rest.resource[+].type = #{resource}
 * rest.resource[=].versioning = #versioned-update
@@ -7,6 +12,11 @@ RuleSet: CapSupportResource(resource, expectation)
 
 RuleSet: CapSupportProfileUrl(profileUrl, expectation)
 * rest.resource[=].supportedProfile[+] = "{profileUrl}"
+* rest.resource[=].supportedProfile[=].extension[+].url = $capabilitystatement-expectation
+* rest.resource[=].supportedProfile[=].extension[=].valueCode = {expectation}
+
+RuleSet: CapSupportProfile (profile, expectation)
+* rest.resource[=].supportedProfile[+] = Canonical({profile})
 * rest.resource[=].supportedProfile[=].extension[+].url = $capabilitystatement-expectation
 * rest.resource[=].supportedProfile[=].extension[=].valueCode = {expectation}
 

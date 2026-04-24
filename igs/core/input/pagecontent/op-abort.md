@@ -13,34 +13,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 
 ### API Beschreibung
 
-<div class="gematik-api"
-  data-api-type="FHIROperation"
-  data-api-fhir-resource-type="Task"
-  data-api-fhir-invoke-level="instance"
-  data-api-operation-id="abortOperation">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
-    </pre>
-  </div>
-  <div id="OperationDefinition">
-    <pre>
-      {% include OperationDefinition-AbortOperation.json %}
-    </pre>
-  </div>
-  <div id="Request-Examples">
-    <!-- TODO: Request-Beispiele für $abort ergänzen (PVS/AVS: XML, FdV: JSON) -->
-  </div>
-  <div id="Response-Examples">
-    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment OperationOutcome/ExampleOperationAbortErrorPVS XML %}
-    </div>
-    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment OperationOutcome/ExampleOperationAbortErrorAVS XML %}
-    </div>
-    <!-- TODO: FdV-Fehlerbeispiel für $abort als JSON ergänzen -->
-  </div>
-</div>
+Die konkrete API, wie die Operation zu nutzen ist, ist dem jeweiligen Modul IG zu entnehmen.
 
 
 ### Hinweise

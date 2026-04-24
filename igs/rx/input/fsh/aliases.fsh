@@ -1,5 +1,5 @@
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
-Alias: $erp-base-url = https://tiflow.de
+Alias: $erp-base-url = https://tiflow.de/rx/fhir
 
 Alias: $erp-task = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task
 Alias: $erp-communication = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication
@@ -8,14 +8,64 @@ Alias: $erp-communication-reply = https://gematik.de/fhir/erp/StructureDefinitio
 Alias: $erp-communication-representative = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Representative
 Alias: $erp-medication-dispense = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense
 
-Alias: $op-create = https://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition
-Alias: $op-activate = https://gematik.de/fhir/erp/OperationDefinition/ActivateOperationDefinition
-Alias: $op-accept = https://gematik.de/fhir/erp/OperationDefinition/AcceptOperationDefinition
-Alias: $op-reject = https://gematik.de/fhir/erp/OperationDefinition/RejectOperationDefinition
-Alias: $op-close = https://gematik.de/fhir/erp/OperationDefinition/CloseOperationDefinition
-Alias: $op-abort = https://gematik.de/fhir/erp/OperationDefinition/AbortOperationDefinition
-Alias: $op-dispense = https://gematik.de/fhir/erp/OperationDefinition/DispenseOperationDefinition
-
 Alias: $tiflow-core-oo-cs = https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs
 Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes
 Alias: $hl7-oo = http://terminology.hl7.org/CodeSystem/operation-outcome
+
+// DE-Basisprofile
+Alias: $identifier-kvid-10 = http://fhir.de/sid/gkv/kvid-10
+Alias: $identifier-telematik-id = https://gematik.de/fhir/sid/telematik-id
+Alias: $identifier-iknr = http://fhir.de/StructureDefinition/identifier-iknr
+Alias: $generatedMeta = http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta
+
+// FHIR
+Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
+Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
+
+// KBV
+Alias: $KBV_EX_ERP_Medication_Category = https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category
+Alias: $KBV_EX_ERP_Medication_Vaccine = https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine
+Alias: $KBV_EX_ERP_Medication_CompoundingInstruction = https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_CompoundingInstruction
+Alias: $KBV_EX_ERP_Medication_Packaging = https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Packaging
+Alias: $KBV_EX_ERP_Medication_PackagingSize = https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize
+Alias: $KBV_EX_ERP_Medication_Ingredient_Form = https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Ingredient_Form
+Alias: $KBV_EX_ERP_Medication_Ingredient_Amount = https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Ingredient_Amount
+Alias: $KBV_EX_Base_Medication_Type = https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type 
+Alias: $KBV_EX_ERP_Medication_Normgroesse = http://fhir.de/StructureDefinition/normgroesse
+Alias: $kbv-dosiereinheit =  https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT
+
+// DE-Basisprofile
+Alias: $identifier-kvid-10 = http://fhir.de/sid/gkv/kvid-10
+Alias: $identifier-telematik-id = https://gematik.de/fhir/sid/telematik-id
+Alias: $identifier-iknr = http://fhir.de/StructureDefinition/identifier-iknr
+Alias: $generatedMeta = http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta
+
+// National Codings
+Alias: $cs-atc-de = http://fhir.de/CodeSystem/bfarm/atc
+
+// Codings
+Alias: $cs-pzn = http://fhir.de/CodeSystem/ifa/pzn
+Alias: $cs-ask = http://fhir.de/CodeSystem/ask
+
+// ePA Medication
+Alias: $ePAMedicationDispense = https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-dispense
+Alias: $ePAMedication = https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
+
+// Workflow
+Alias: $prescription-id-ns = https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId
+Alias: $eu-access-code-ns = https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_EU_AccessCode
+Alias: $cs-flowtype = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType
+Alias: $cs-features = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_Features
+Alias: $ex-capability-feature = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_CapabilityStatement_Feature
+Alias: $ex-capability-environment = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_CapabilityStatement_Environment
+
+// TI Common
+Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes
+
+// International
+Alias: $sct = http://snomed.info/sct
+Alias: $cs-ucum = http://unitsofmeasure.org
+Alias: $hl7-oo = http://terminology.hl7.org/CodeSystem/operation-outcome
+
+// R5 Backport
+Alias: $medicationDispense-renderedDosageInstruction-r5 = http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction

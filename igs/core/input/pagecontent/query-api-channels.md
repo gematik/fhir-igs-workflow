@@ -32,7 +32,7 @@ Der TI-Flow-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle 
 	data-api-url-path="/channels">
 	<div id="CapabilityStatement">
 		<pre>
-		{% include CapabilityStatement-erp-fachdienst-server.json %}
+		{% include CapabilityStatement-ti-flow-fachdienst-server.json %}
 		</pre>
 	</div>
 	<div id="Formats">
@@ -61,7 +61,7 @@ Der TI-Flow-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle 
 	data-api-url-path="/channels/{pushkey}">
 	<div id="CapabilityStatement">
 		<pre>
-		{% include CapabilityStatement-erp-fachdienst-server.json %}
+		{% include CapabilityStatement-ti-flow-fachdienst-server.json %}
 		</pre>
 	</div>
 	<div id="Formats">
@@ -90,7 +90,7 @@ Der TI-Flow-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle 
 	data-api-url-path="/channels/{pushkey}">
 	<div id="CapabilityStatement">
 		<pre>
-		{% include CapabilityStatement-erp-fachdienst-server.json %}
+		{% include CapabilityStatement-ti-flow-fachdienst-server.json %}
 		</pre>
 	</div>
 	<div id="Formats">

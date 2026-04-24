@@ -32,7 +32,7 @@ Der Aufruf erfolgt als http-POST-Operation. Der Server prüft die Nachricht auf 
   data-api-fhir-interaction="create">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
     </pre>
   </div>
   <div id="Response-Examples">
@@ -67,7 +67,7 @@ Als Apotheke oder Kostenträger möchten wir alle Nachrichten des Monats April 2
   data-api-fhir-interaction="search-type">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
     </pre>
   </div>
   <div id="Response-Examples">
@@ -97,7 +97,7 @@ Als Apotheke oder Kostenträger möchten wir alle Nachrichten des Monats April 2
   data-api-fhir-interaction="read">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
     </pre>
   </div>
   <div id="Response-Examples">
@@ -120,7 +120,7 @@ Als Apotheke oder Kostenträger möchten wir eine von uns versendete Nachricht a
   data-api-fhir-interaction="delete">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
     </pre>
   </div>
 </div>

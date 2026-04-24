@@ -1,6 +1,6 @@
 
 Instance: TaskInCreatedState
-InstanceOf: GEM_ERP_PR_Task
+InstanceOf: TIFlow_RX_RX_Task
 Title: "Task erstellt durch Fachdienst via $create Operation"
 Description: "Beispiel für einen Task, der vom Fachdienst über die $create Operation erstellt wurde"
 Usage: #example
@@ -22,7 +22,7 @@ Usage: #example
 * performerType[+].coding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OrganizationType#urn:oid:1.2.276.0.76.4.54 "Öffentliche Apotheke"
 
 Instance: TaskInReadyState
-InstanceOf: GEM_ERP_PR_Task
+InstanceOf: TIFlow_RX_RX_Task
 Title: "Task aktiviert durch (Z)PVS/KIS via $activate Operation"
 Description: "Beispiel für einen Task, der durch (Z)PVS/KIS über die $activate Operation aktiviert wurde und ein einlösbares E-Rezept trägt"
 Usage: #example
@@ -51,7 +51,7 @@ Usage: #example
 * input[patientReceipt].valueReference.reference = "f8c2298f-7c00-4a68-af29-8a2862d55d43"
 
 Instance: TaskIn-ProgressState
-InstanceOf: GEM_ERP_PR_Task
+InstanceOf: TIFlow_RX_RX_Task
 Title: "Task angenommen durch Apotheke via $accept Operation"
 Description: "Beispiel für einen Task, der von einer Apotheke über die $accept Operation angenommen wurde"
 Usage: #example
@@ -78,7 +78,7 @@ Usage: #example
 * input[ePrescription].valueReference = Reference(PrescriptionBinary)
 
 Instance: TaskIn-ProgressState-Dispensed
-InstanceOf: GEM_ERP_PR_Task
+InstanceOf: TIFlow_RX_RX_Task
 Title: "Task angenommen und abgegeben via $dispense Operation"
 Description: "Beispiel für einen Task, der von einer Apotheke angenommen und dann über die $dispense Operation abgegeben wurde"
 Usage: #example
@@ -90,7 +90,6 @@ Usage: #example
 * insert Date(extension[acceptDate].valueDate)
 * extension[expiryDate].url = "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_ExpiryDate"
 * insert Date(extension[expiryDate].valueDate)
-* extension[lastMedicationDispense].url = "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_LastMedicationDispense"
 * insert DateTimeStampPlus1Hr(extension[lastMedicationDispense].valueInstant)
 * identifier[PrescriptionID].system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
 * identifier[PrescriptionID].value = "160.000.033.491.280.78"
@@ -109,7 +108,7 @@ Usage: #example
 * input[patientReceipt].valueReference.reference = "f8c2298f-7c00-4a68-af29-8a2862d55d43"
 
 Instance: TaskIn-ProgressState-Dispensed-Multiple-MedicationDispenses
-InstanceOf: GEM_ERP_PR_Task
+InstanceOf: TIFlow_RX_RX_Task
 Title: "Task mit mehreren MedicationDispenses"
 Description: "Beispiel für einen Task, der von einer Apotheke angenommen und dann über die $dispense Operation mit mehreren MedicationDispenses abgegeben wurde"
 Usage: #example
@@ -140,7 +139,7 @@ Usage: #example
 * input[patientReceipt].valueReference.reference = "f8c2298f-7c00-4a68-af29-8a2862d55d43"
 
 Instance: TaskInClosedState
-InstanceOf: GEM_ERP_PR_Task
+InstanceOf: TIFlow_RX_RX_Task
 Title: "Task abgeschlossen durch Apotheke via $close Operation"
 Description: "Beispiel für einen Task, der von einer Apotheke über die $close Operation abgeschlossen wurde"
 Usage: #example

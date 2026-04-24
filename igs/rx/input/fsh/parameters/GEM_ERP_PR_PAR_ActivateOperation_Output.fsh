@@ -3,7 +3,7 @@ Parent: Parameters
 Id: GEM-ERP-PR-PAR-Activate-Operation-Output
 Title: "GEM ERP PR ActivateOperation Output"
 Description: "Dieses Profil definiert die Parameter für die Aktivierung einer Aufgabe von PVS zum TI-Flow-Fachdienst. Dies kann für die $activate-Operation verwendet werden."
-* insert Profile(GEM_ERP_PR_PAR_ActivateOperation_Output)
+* insert Meta
 
 * parameter 1..1
 

@@ -29,7 +29,7 @@ Anfragen an die <i>Subscription</i>-Ressource können über die RESTful API mitt
   data-api-fhir-interaction="create">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
     </pre>
   </div>
   <div id="Request-Examples">

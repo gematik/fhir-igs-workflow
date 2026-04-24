@@ -17,7 +17,7 @@ Die Device-Query wird über HTTP `GET` auf `/Device` aufgerufen.
   data-api-fhir-interaction="search-type">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
     </pre>
   </div>
   <div id="Response-Examples">

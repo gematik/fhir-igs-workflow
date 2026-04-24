@@ -1,7 +1,7 @@
-Alias: $version = 1.6.1
+Alias: $version = 2.0.0
 
 RuleSet: MetaDate(element)
-* {element} = "2025-12-15"
+* {element} = "2028-04-01"
 
 RuleSet: MetaStatus(element)
 * {element} = #active
@@ -45,29 +45,27 @@ RuleSet: Meta-Instance
 * insert Gematik(publisher)
 * insert MetaDate(date)
 
-
 RuleSet: Meta-With-Versioning
 * insert Meta
 * meta MS
   * versionId MS
   * lastUpdated MS
 
-
 // Dates for Examples
 
 // Dates for Examples (Date of actual release)
 RuleSet: Date(field)
-* {field} = "2026-07-01"
+* {field} = "2028-10-01"
 
 RuleSet: DateTime(field)
-* {field} = "2026-07-01T15:29:00+00:00"
+* {field} = "2028-10-01T15:29:00+00:00"
 
 RuleSet: DateTimeStamp(field)
-* {field} = "2026-07-01T15:29:00.434+00:00"
+* {field} = "2028-10-01T15:29:00.434+00:00"
 
 RuleSet: DateTimeStampPlus1Hr(field)
-* {field} = "2026-07-01T16:44:00.434+00:00"
+* {field} = "2028-10-01T16:44:00.434+00:00"
 
 // Rules to set meta.profile in profiles and instances
 RuleSet: PackageMetaProfileExactly(profile)
-* meta.profile[workflowProfile] = "https://gematik.de/fhir/erp/{profile}|1.6" (exactly)
+* meta.profile[workflowProfile] = "https://gematik.de/fhir/erp/{profile}|2.0" (exactly)

@@ -109,13 +109,6 @@ RuleSet: MedicationDispenseSearchTypeInteractionStatusCodes
 RuleSet: DeviceSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
 
-RuleSet: SubscriptionSearchTypeInteractionStatusCodes
-* insert SearchTypeInteractionStatusCodes
-
-RuleSet: SubscriptionCreateInteractionStatusCodes
-* insert CreateInteractionStatusCodes
-
-
 // Operation-API Error-Constellations
 
 RuleSet: GlobalOperationErrorCodes
