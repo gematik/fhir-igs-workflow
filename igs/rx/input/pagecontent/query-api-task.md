@@ -30,7 +30,7 @@ Anfragen an die <i>Task</i>-Ressource können über die RESTful API mittels HTTP
 	data-api-fhir-interaction="search-type">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-rx.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
 	<div id="Response-Examples">
@@ -53,7 +53,7 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 	data-api-fhir-interaction="read">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-rx.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
 	<div id="Response-Examples">

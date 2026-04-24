@@ -3,7 +3,7 @@ Parent: TIFlowTask
 Id: GEM-ERP-PR-Task
 Title: "Task für E-Rezept"
 Description: "Task für die Verwaltung des E-Rezept-Workflows"
-* insert LegacyMeta(StructureDefinition, GEM_ERP_PR_Task)
+* insert LegacyMetaProfile(GEM_ERP_PR_Task)
 
 * extension ^slicing.rules = #closed
 

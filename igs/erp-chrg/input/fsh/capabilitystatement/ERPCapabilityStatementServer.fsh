@@ -1,7 +1,7 @@
-Instance: ERPFachdienstServerErpChrg
+Instance: TIFlowChrgFachdienstServer
 InstanceOf: TICapabilityStatement
 Usage: #definition
-* insert MetaInstance(ERPFachdienstServerChrg)
+* insert Meta-Instance
 
 * id = "erp-fachdienst-server-erpchrg"
 * title = "ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst"
@@ -21,19 +21,9 @@ Usage: #definition
 * imports[=].extension[0].url = $capabilitystatement-expectation
 * imports[=].extension[0].valueCode = #SHALL
 
-* insert TaskInteraction(#SHALL)
 * insert ChargeItemInteraction(#SHALL)
 * insert ConsentInteraction(#SHALL)
 * insert CommunicationInteraction(#SHALL)
-
-RuleSet: TaskInteraction(expectation)
-* insert CapSupportResource(Task, #SHALL)
-* insert CapSupportProfileUrl($erp-task, #SHALL)
-
-* insert CapResourceInteraction(#search-type, #SHALL)
-* insert TaskSearchTypeInteractionStatusCodes
-* insert CapResourceInteraction(#read, #SHALL)
-* insert TaskReadInteractionStatusCodes
 
 RuleSet: ChargeItemInteraction(expectation)
 * insert CapSupportResource(ChargeItem, #SHALL)

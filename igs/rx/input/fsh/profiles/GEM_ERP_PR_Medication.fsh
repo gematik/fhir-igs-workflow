@@ -3,7 +3,7 @@ Parent: EPAMedication
 Id: GEM-ERP-PR-Medication
 Title: "GEM ERP PR Medication"
 Description: "Medikament zur Ausgabe des Rezepts"
-* insert LegacyMeta(StructureDefinition, GEM_ERP_PR_Medication)
+* insert LegacyMetaProfile(GEM_ERP_PR_Medication)
  
 * contained MS
 

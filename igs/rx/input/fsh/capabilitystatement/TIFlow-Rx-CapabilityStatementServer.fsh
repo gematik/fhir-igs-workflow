@@ -1,10 +1,10 @@
-Instance: TIFlow-Fachdienst-Rx-Server
+Instance: TIFlowFachdienstRxServer
 InstanceOf: TICapabilityStatement
 Usage: #definition
-Title: "ERP Rx CapabilityStatement für den E-Rezept-Fachdienst"
+Title: "TIFlow Fachdienst Server Capabilities"
 Description: "CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)"
 * insert Meta-Instance
-* id = "erp-fachdienst-server-rx"
+* id = "ti-flow-fachdienst-server-rx"
 
 * contact
   * telecom

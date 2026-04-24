@@ -31,7 +31,7 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mit
 	data-api-fhir-interaction="search-type">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-rx.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
 	<div id="Response-Examples">
@@ -54,7 +54,7 @@ Um spezifische Details zu einer einzelnen _Communciation_ mittels der RESTful AP
 	data-api-fhir-interaction="read">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-rx.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
 	<div id="Response-Examples">

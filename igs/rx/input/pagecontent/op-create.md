@@ -21,7 +21,7 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
   data-api-operation-id="createOperation">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server-rx.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
     </pre>
   </div>
   <div id="OperationDefinition">

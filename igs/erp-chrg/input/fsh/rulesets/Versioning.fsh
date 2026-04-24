@@ -20,22 +20,8 @@ RuleSet: MetaContact
 * ^contact.telecom.value = "https://www.gematik.de"
 
 RuleSet: LegacyMeta(type, name)
-* ^url = "https://gematik.de/fhir/erp/{type}/{name}"
+* ^url = "https://gematik.de/fhir/erpchrg/{type}/{name}"
 * insert Meta
-
-RuleSet: LegacyMetaProfile(name)
-* insert LegacyMeta(StructureDefinition, {name})
-* meta 1..1 MS
-* meta.profile 1..1 MS
-  * ^slicing.discriminator.type = #value
-  * ^slicing.discriminator.path = "$this"
-  * ^slicing.rules = #closed
-  * ^slicing.description = "Slicing für meta profile"
-  * ^slicing.ordered = false
-
-* meta.profile contains workflowProfile 1..1 MS
-
-* insert PackageMetaProfileExactly(StructureDefinition/{name})
 
 RuleSet: Meta
 * insert MetaVersion(^version)
@@ -86,4 +72,5 @@ RuleSet: DateTimeStampPlus1Hr(field)
 
 // Rules to set meta.profile in profiles and instances
 RuleSet: PackageMetaProfileExactly(profile)
-* meta.profile[workflowProfile] = "https://gematik.de/fhir/erp/{profile}|2.0" (exactly)
+* meta.profile[workflowProfile] = "https://gematik.de/fhir/erpchrg/{profile}|2.0" (exactly)
+

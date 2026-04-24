@@ -3,7 +3,7 @@ Parent: Communication
 Id: GEM-ERP-PR-Communication-DispReq
 Title: "GEM ERP PR Communication DispReq"
 Description: "Anfrage zur Einlösung des E-Rezepts"
-* insert LegacyMeta(StructureDefinition, GEM_ERP_PR_Communication_DispReq)
+* insert LegacyMetaProfile(GEM_ERP_PR_Communication_DispReq)
 * obeys workflow-communication-payload-1
 
 * extension ^slicing.discriminator.type = #value
