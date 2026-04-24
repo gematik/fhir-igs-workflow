@@ -8,7 +8,7 @@ Description: "Task für die Verwaltung von Workflows der TIFlow Anwendungen"
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.description = "Erweiterungen für die Aufgabe, die durch url unterschieden werden."
-* extension ^slicing.rules = #closed
+* extension ^slicing.rules = #open
 * extension ^slicing.ordered = false
 
 * extension contains GEM_ERP_EX_PrescriptionType named flowType 1..1 MS
