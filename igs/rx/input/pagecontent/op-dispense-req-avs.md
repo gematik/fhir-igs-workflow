@@ -12,7 +12,7 @@ Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zu
 
 Das PS der abgebenden LEI erzeugt die Dispensierinformationen nach den Vorgaben aus [Erstellen von Dispensierinformationen](./menu-technische-umsetzung-dispensierinformationen.html).
 
-<!-- A_26346 -->
+<!-- A_26346-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-107" title="PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformation übermitteln" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
@@ -23,7 +23,7 @@ Das PS der abgebenden LEI erzeugt die Dispensierinformationen nach den Vorgaben 
         <li>ACCESS_TOKEN im Authorization-Header </li>
         <li>Task-ID in URL &lt;id&gt; </li>
         <li>Geheimnis in URL-Parameter ?secret= </li>
-        <li>MedicationDispense bzw. Bundle Ressource </li>
+        <li>GEM_ERP_PR_PAR_DispenseOperation_Input-Objekt </li>
     </ul>
     ausführen.
 </requirement>
