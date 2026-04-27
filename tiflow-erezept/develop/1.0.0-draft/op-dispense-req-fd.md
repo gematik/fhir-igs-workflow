@@ -78,7 +78,7 @@ Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen m
 
 Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/<id>/$dispense die Referenz auf den aufgerufenen Task /Task/<id> als MedicationDispense.supportingInformation übernehmen und die MedicationDispense, sowie die in MedicationDispense.medication referenzierte Medication, speichern.
 
-Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/<id>/$dispense auch die Übergabe mehrerer MedicationDispense-Objekte in einem validen Standard- FHIR-Bundle im http-Body des Requests ermöglichen.
+Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/<id>/$dispense auch die Übergabe mehrerer MedicationDispense-Objekte in einem validen GEM_ERP_PR_PAR_DispenseOperation_Input-Objekt im http-Body des Requests ermöglichen.
 
 Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/<id>/$dispense , wenn die übermittelten Dispensierinformationen sich von den ggf. bereits zuvor zum Task gespeicherten Dispensierinformationen unterscheiden und die Operation erfolgreich abgeschlossen werden kann, die Daten der Dispensierinformationen mit Status = "in Progress" für die Übermittlung in den ePA Medication Service bereitstellen.
 

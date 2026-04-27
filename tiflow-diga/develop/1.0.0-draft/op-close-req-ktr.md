@@ -24,7 +24,7 @@ Das Clientsystem Kostenträger MUSS im Anwendungsfall "Quittung abrufen" für zu
 * ACCESS_TOKEN im Authorization-Header
 * Task-ID in URL <id>
 * Geheimnis in URL-Parameter ?secret=
-* MedicationDispense
+* GEM_ERP_PR_PAR_CloseOperation_Input-Objekt
 ausführen.
 ### Modulspezifische Anforderungen
 

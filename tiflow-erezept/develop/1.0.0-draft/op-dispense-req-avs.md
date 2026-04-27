@@ -29,6 +29,6 @@ Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereit
 * ACCESS_TOKEN im Authorization-Header 
 * Task-ID in URL <id> 
 * Geheimnis in URL-Parameter ?secret= 
-* MedicationDispense bzw. Bundle Ressource 
+* GEM_ERP_PR_PAR_DispenseOperation_Input-Objekt 
 ausführen.
 

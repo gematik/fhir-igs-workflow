@@ -139,7 +139,7 @@ abbrechen.
 
 Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/<id>/$close sicherstellen, dass alle vorhandenen MedicationDispenses und ihre referenzierten Medications gelöscht werden, wenn der Client im Aufruf eine neue MedicationDispense übermittelt, sodass nach Abschluss der Operation nur die neu übermittelten MedicationDispenses gespeichert sind.
 
-Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/<id>/$close auch die Übergabe mehrerer MedicationDispense-Objekte in einem validen Standard-FHIR Bundle im http-Body des Requests ermöglichen.
+Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/<id>/$close auch die Übergabe mehrerer MedicationDispense-Objekte in einem validen GEM_ERP_PR_PAR_CloseOperation_Input-Objekt im http-Body des Requests ermöglichen.
 
 Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/<id>/$close, wenn die Operation erfolgreich abgeschlossen werden kann, die Daten der Dispensierinformationen mit Status = "completed" für die Übermittlung in den ePA Medication Service bereitstellen.
 

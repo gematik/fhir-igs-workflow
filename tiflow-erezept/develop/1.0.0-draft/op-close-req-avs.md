@@ -24,7 +24,7 @@ Das PS der abgebenden LEI MUSS im Anwendungsfall "Quittung abrufen" für das abg
 * ACCESS_TOKEN im Authorization-Header
 * Task-ID in URL <id>
 * Geheimnis in URL-Parameter ?secret=
-* optional, falls nicht zuvor mit Anwendungsfall "Dispensierinformation bereitstellen" übermittelt: MedicationDispense bzw. Bundle Ressource
+* optional, falls nicht zuvor mit Anwendungsfall "Dispensierinformation bereitstellen" übermittelt: GEM_ERP_PR_PAR_CloseOperation_Input-Objekt
 ausführen.
 Im Response liefert der Fachdienst die Quittung
 

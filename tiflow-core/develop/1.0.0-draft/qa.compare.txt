@@ -1,7 +1,7 @@
 gemIG_TIFlow_core : Validation Results
 =========================================
 
-err = 145, warn = 116, info = 62
+err = 145, warn = 116, info = 65
 $--
 Generated $--. FHIR version $-- for de.gematik.tiflow.core#$-- (canonical = https://gematik.de/fhir/tiflow/core)
  Build Errors : 10 / 71 / 2
@@ -15,9 +15,9 @@ Generated $--. FHIR version $-- for de.gematik.tiflow.core#$-- (canonical = http
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/Bundle-example-searchset-medicationdispense : 0 / 0 / 0
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/Bundle-example-searchset-task : 0 / 0 / 0
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/CapabilityStatement-erp-fachdienst-server : 5 / 1 / 2
- /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/CapabilityStatement-example-capabilitystatement-server-pu : 2 / 1 / 12
- /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/CapabilityStatement-example-capabilitystatement-server-ru : 2 / 1 / 12
- /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/CapabilityStatement-example-capabilitystatement-server-tu : 2 / 1 / 12
+ /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/CapabilityStatement-example-capabilitystatement-server-pu : 2 / 1 / 13
+ /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/CapabilityStatement-example-capabilitystatement-server-ru : 2 / 1 / 13
+ /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/CapabilityStatement-example-capabilitystatement-server-tu : 2 / 1 / 13
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/CodeSystem-GEM-ERP-CS-AvailabilityStatus : 2 / 1 / 2
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/CodeSystem-GEM-ERP-CS-CapabilityStatement-Environment : 2 / 1 / 2
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/CodeSystem-GEM-ERP-CS-DocumentType : 2 / 1 / 2
@@ -240,6 +240,7 @@ ERROR: CapabilityStatement/erp-fachdienst-server: CapabilityStatement.rest[0].re
 ERROR: CapabilityStatement/erp-fachdienst-server: CapabilityStatement.rest[0].resource[5].searchParam[2]: Typabweichung - SearchParameter 'http://hl7.org/fhir/SearchParameter/MedicationDispense-performer|4.0.1' sollte type reference sein, ist aber string
 WARNING: CapabilityStatement/erp-fachdienst-server: CapabilityStatement.meta.profile[0]: Die Profilreferenz 'https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_CapabilityStatement|1.6' wurde nicht geprüft, weil sie unbekannt ist und der Validator so eingestellt ist, dass er keine unbekannten Profile abruft.
 == fsh-generated/resources/CapabilityStatement-example-capabilitystatement-server-pu.json ==
+INFORMATION: CapabilityStatement/example-capabilitystatement-server-pu: CapabilityStatement.extension[1].value.ofType(code): Der angegebene Wert ('erp_2026_03') ist nicht im Valueset 'ERP FDConfiguration ValueSet' (https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FDConfiguration|1.0.0-draft), und es wird empfohlen, einen Code aus diesem Valueset zu verwenden) (error message = Der angegebene Code '#erp_2026_03' befindet sich nicht im ValueSet 'https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FDConfiguration|1.0.0-draft'; Die System-URI konnte für den Code erp_2026_03 im ValueSet https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FDConfiguration|1.0.0-draft nicht ermittelt werden)
 INFORMATION: CapabilityStatement/example-capabilitystatement-server-pu: CapabilityStatement.extension[2].extension[0].value.ofType(Coding): Reference to draft CodeSystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType|1.0.0-draft
 INFORMATION: CapabilityStatement/example-capabilitystatement-server-pu: CapabilityStatement.extension[3].extension[0].value.ofType(Coding): Reference to draft CodeSystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType|1.0.0-draft
 INFORMATION: CapabilityStatement/example-capabilitystatement-server-pu: CapabilityStatement.extension[4].extension[0].value.ofType(Coding): Reference to draft CodeSystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType|1.0.0-draft
@@ -255,6 +256,7 @@ ERROR: CapabilityStatement/example-capabilitystatement-server-pu: CapabilityStat
 WARNING: CapabilityStatement/example-capabilitystatement-server-pu: CapabilityStatement.meta.profile[0]: Die Profilreferenz 'https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_CapabilityStatement|1.6' wurde nicht geprüft, weil sie unbekannt ist und der Validator so eingestellt ist, dass er keine unbekannten Profile abruft.
 INFORMATION: Resource: The resource CapabilityStatement/example-capabilitystatement-server-pu could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/CapabilityStatement-example-capabilitystatement-server-ru.json ==
+INFORMATION: CapabilityStatement/example-capabilitystatement-server-ru: CapabilityStatement.extension[1].value.ofType(code): Der angegebene Wert ('erp_2026_02') ist nicht im Valueset 'ERP FDConfiguration ValueSet' (https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FDConfiguration|1.0.0-draft), und es wird empfohlen, einen Code aus diesem Valueset zu verwenden) (error message = Der angegebene Code '#erp_2026_02' befindet sich nicht im ValueSet 'https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FDConfiguration|1.0.0-draft'; Die System-URI konnte für den Code erp_2026_02 im ValueSet https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FDConfiguration|1.0.0-draft nicht ermittelt werden)
 INFORMATION: CapabilityStatement/example-capabilitystatement-server-ru: CapabilityStatement.extension[2].extension[0].value.ofType(Coding): Reference to draft CodeSystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType|1.0.0-draft
 INFORMATION: CapabilityStatement/example-capabilitystatement-server-ru: CapabilityStatement.extension[3].extension[0].value.ofType(Coding): Reference to draft CodeSystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType|1.0.0-draft
 INFORMATION: CapabilityStatement/example-capabilitystatement-server-ru: CapabilityStatement.extension[4].extension[0].value.ofType(Coding): Reference to draft CodeSystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType|1.0.0-draft
@@ -270,6 +272,7 @@ ERROR: CapabilityStatement/example-capabilitystatement-server-ru: CapabilityStat
 WARNING: CapabilityStatement/example-capabilitystatement-server-ru: CapabilityStatement.meta.profile[0]: Die Profilreferenz 'https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_CapabilityStatement|1.6' wurde nicht geprüft, weil sie unbekannt ist und der Validator so eingestellt ist, dass er keine unbekannten Profile abruft.
 INFORMATION: Resource: The resource CapabilityStatement/example-capabilitystatement-server-ru could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/CapabilityStatement-example-capabilitystatement-server-tu.json ==
+INFORMATION: CapabilityStatement/example-capabilitystatement-server-tu: CapabilityStatement.extension[1].value.ofType(code): Der angegebene Wert ('erp_2026_03') ist nicht im Valueset 'ERP FDConfiguration ValueSet' (https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FDConfiguration|1.0.0-draft), und es wird empfohlen, einen Code aus diesem Valueset zu verwenden) (error message = Der angegebene Code '#erp_2026_03' befindet sich nicht im ValueSet 'https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FDConfiguration|1.0.0-draft'; Die System-URI konnte für den Code erp_2026_03 im ValueSet https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FDConfiguration|1.0.0-draft nicht ermittelt werden)
 INFORMATION: CapabilityStatement/example-capabilitystatement-server-tu: CapabilityStatement.extension[2].extension[0].value.ofType(Coding): Reference to draft CodeSystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType|1.0.0-draft
 INFORMATION: CapabilityStatement/example-capabilitystatement-server-tu: CapabilityStatement.extension[3].extension[0].value.ofType(Coding): Reference to draft CodeSystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType|1.0.0-draft
 INFORMATION: CapabilityStatement/example-capabilitystatement-server-tu: CapabilityStatement.extension[4].extension[0].value.ofType(Coding): Reference to draft CodeSystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType|1.0.0-draft
