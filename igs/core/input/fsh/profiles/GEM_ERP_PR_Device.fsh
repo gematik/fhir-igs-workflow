@@ -9,4 +9,4 @@ Description: "Statische Informationen auf dem TI-Flow-Fachdienst"
 * deviceName 1..1
 * version 1..1
 * contact MS
-  * ^short = "Kontaktdaten des TI-Flow-Fachdienst."
+  * ^short = "Kontaktdaten des TI Fachdienstes."

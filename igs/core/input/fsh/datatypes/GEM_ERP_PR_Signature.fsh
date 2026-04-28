@@ -5,10 +5,10 @@ Title: "GEM_ERP_PR_Signature"
 Description: "Profil für die Signatur von Bundles im E-Rezept-Kontext"
 * insert StructureDefinition(GEM_ERP_PR_Signature)
 * type ..1 MS
-* type ^slicing.discriminator.type = #value
-* type ^slicing.discriminator.path = "code"
-* type ^slicing.rules = #closed
-* type ^binding.strength = #required
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "code"
+  * ^slicing.rules = #closed
+  * ^binding.strength = #required
 * type contains
     AuthorsSignature 0..1 and
     VerificationSignature 0..1

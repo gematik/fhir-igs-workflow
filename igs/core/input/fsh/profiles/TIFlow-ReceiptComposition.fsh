@@ -3,18 +3,20 @@ Parent: Composition
 Id: tiflow-receipt-composition
 Title: "GEM ERP PR Composition"
 Description: "Quittung für die Einlösung eines E-Rezepts"
-* insert Meta
+* insert Profile(GEM_ERP_PR_Composition)
 
 // extensions
-* extension ^slicing.discriminator.type = #value
-* extension ^slicing.discriminator.path = "url"
-* extension ^slicing.description = "Erweiterungen für die Composition, die durch url unterschieden werden sollen"
-* extension ^slicing.rules = #closed
-* extension contains GEM_ERP_EX_Beneficiary named Beneficiary 1..1
+* extension MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "url"
+  * ^slicing.description = "Erweiterungen für die Composition, die durch url unterschieden werden sollen"
+  * ^slicing.rules = #closed
+* extension contains TIFlowBeneficiary named Beneficiary 1..1
 
-* extension[Beneficiary] ^short = "Die ID des Begünstigten des E-Rezept-Belegs (z. B. TelematikID der Apotheke)"
-* extension[Beneficiary].value[x].system 1..
-* extension[Beneficiary].value[x].value 1..
+* extension[Beneficiary] MS
+  *  ^short = "Die ID des Begünstigten des E-Rezept-Belegs (z. B. TelematikID der Apotheke)"
+  * .value[x].system 1..
+  * .value[x].value 1..
 
 * status MS
 * status = #final (exactly)
