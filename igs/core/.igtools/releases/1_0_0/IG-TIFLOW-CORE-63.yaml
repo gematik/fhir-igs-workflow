@@ -1,20 +1,19 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 25bb81b5be8d5afeda3a1d092b103376b1e77eb5abbb161b1afa54d9d1d090c4
+content_hash: 7e3d25e9f94a879f183005184a91d84aa92f798b7399aec12a9d811a13661525
 created: '2026-03-23T10:57:48.438897'
-date: '2026-03-23T13:47:26.446029'
+date: '2026-04-28T16:06:33.732272'
 key: IG-TIFLOW-CORE-63
-modified: '2026-03-23T10:57:48.438898'
-release_status: STABLE
+modified: '2026-04-28T16:06:33.732272'
+release_status: MODIFIED
 source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close
-  die Referenz auf den aufgerufenen Task Task/&lt;id&gt; als MedicationDispense.supportingInformation
-  übernehmen und die MedicationDispense, sowie die in MedicationDispense.medication
-  referenzierte Medication, speichern.
+text: Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close
+  eine oder mehrere vom Client bereitgestellten MedicationDispenses, sowie die in MedicationDispense.medication referenzierten
+  Medications, speichern.
 title: TI-Flow-Fachdienst - Task schließen - MedicationDispense speichern
-version: 0
+version: 1

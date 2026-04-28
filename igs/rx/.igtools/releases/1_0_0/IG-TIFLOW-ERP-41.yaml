@@ -1,21 +1,21 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: b89690faac1f27b6e8764afe75fd0aea7f749b34d93557e3e06a1181761fb22b
+content_hash: caf80fab50a14700cab7759fe01f05eadf0392a6aba30638ab3bc20bc82b0634
 created: '2026-03-23T10:57:49.786805'
-date: '2026-03-23T13:47:28.485022'
+date: '2026-04-28T16:03:24.657405'
 key: IG-TIFLOW-ERP-41
-modified: '2026-03-23T10:57:49.786806'
-release_status: STABLE
+modified: '2026-04-28T16:03:24.657405'
+release_status: MODIFIED
 source: input/pagecontent/op-dispense-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
-  mittels POST /Task/&lt;id&gt;/$dispense die Referenz auf den aufgerufenen Task /Task/&lt;id&gt;
-  als MedicationDispense.supportingInformation übernehmen und die MedicationDispense,
-  sowie die in MedicationDispense.medication referenzierte Medication, speichern.
+text: Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen
+  mittels POST /Task/&lt;id&gt;/$dispense eine oder mehrere vom Client bereitgestellten
+  MedicationDispenses, sowie die in MedicationDispense.medication referenzierte Medication,
+  speichern.
 title: TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense
   speichern
-version: 0
+version: 1

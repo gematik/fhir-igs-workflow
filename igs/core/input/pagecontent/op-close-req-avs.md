@@ -13,7 +13,7 @@ Die Erstellung der MedicationDispense erfolgt Flowtype-spezifisch.
 
 
 <!-- A_19289-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-296" title="PS abgebende LEI: Quittung abrufen - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-296" title="PS abgebende LEI: Quittung abrufen - Statusrequest" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>

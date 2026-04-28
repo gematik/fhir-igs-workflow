@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Remove duplicate requirement key attributes in IG pagecontent markdown files.
+"""Report or remove duplicate requirement key attributes in markdown files.
 
 Scans only: igs/*/input/pagecontent/**/*.md
 Behavior:
 - First occurrence of a requirement key is kept.
-- Later occurrences of the same key have the key attribute removed.
+- Later occurrences of the same key are reported.
+- With --remove, later occurrences have the key attribute removed.
 """
 
 from __future__ import annotations
@@ -42,12 +43,9 @@ def line_for_offset(content: str, offset: int) -> int:
     return content.count("\n", 0, offset) + 1
 
 
-def process_file(
-    path: Path,
-    seen: Dict[str, KeyOccurrence],
-    removals: List[Removal],
-) -> str:
+def process_file(path: Path, seen: Dict[str, KeyOccurrence], remove: bool) -> tuple[str, List[Removal]]:
     content = path.read_text(encoding="utf-8")
+    removals: List[Removal] = []
 
     def replace(match: re.Match[str]) -> str:
         attrs = match.group("attrs")
@@ -65,10 +63,6 @@ def process_file(
             seen[key] = KeyOccurrence(file_path=path, line=line)
             return match.group(0)
 
-        new_attrs = KEY_REMOVE_RE.sub("", attrs, count=1)
-        if new_attrs == attrs:
-            return match.group(0)
-
         removals.append(
             Removal(
                 file_path=path,
@@ -77,15 +71,22 @@ def process_file(
                 first_seen=seen[key],
             )
         )
+
+        if not remove:
+            return match.group(0)
+
+        new_attrs = KEY_REMOVE_RE.sub("", attrs, count=1)
+        if new_attrs == attrs:
+            return match.group(0)
         return f"<requirement{new_attrs}>"
 
-    return REQ_OPEN_RE.sub(replace, content)
+    return REQ_OPEN_RE.sub(replace, content), removals
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(
         description=(
-            "Remove duplicate requirement key attributes in igs/*/input/pagecontent markdown files."
+            "List duplicate requirement keys in igs/*/input/pagecontent markdown files."
         )
     )
     parser.add_argument(
@@ -94,9 +95,9 @@ def main() -> int:
         help="Root folder that contains IG folders (default: igs)",
     )
     parser.add_argument(
-        "--dry-run",
+        "--remove",
         action="store_true",
-        help="Report duplicates without changing files",
+        help="Remove duplicate key attributes in-place (default is report-only)",
     )
     args = parser.parse_args()
 
@@ -114,11 +115,12 @@ def main() -> int:
     changed_files = 0
 
     for file_path in files:
-        updated = process_file(file_path, seen, removals)
         original = file_path.read_text(encoding="utf-8")
+        updated, file_removals = process_file(file_path, seen, remove=args.remove)
+        removals.extend(file_removals)
         if updated != original:
             changed_files += 1
-            if not args.dry_run:
+            if args.remove:
                 file_path.write_text(updated, encoding="utf-8")
 
     for item in removals:
@@ -127,11 +129,16 @@ def main() -> int:
             f"(first: {item.first_seen.file_path}:{item.first_seen.line})"
         )
 
-    mode = "dry-run" if args.dry_run else "apply"
-    print(
-        f"Done ({mode}): scanned {len(files)} file(s), "
-        f"duplicate keys fixed: {len(removals)}, files changed: {changed_files}."
-    )
+    if args.remove:
+        print(
+            f"Done (remove): scanned {len(files)} file(s), "
+            f"duplicate keys removed: {len(removals)}, files changed: {changed_files}."
+        )
+    else:
+        print(
+            f"Done (report): scanned {len(files)} file(s), "
+            f"duplicate keys found: {len(removals)}."
+        )
 
     return 0
 

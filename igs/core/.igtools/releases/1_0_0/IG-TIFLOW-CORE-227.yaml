@@ -1,19 +1,23 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 964ff4ed4e7bdb7a9b7c58355ffda3be49a501ed86fec3377571865552f7ec9b
+content_hash: e068114d527aca227af09168639d9dd4ea14fc8954639a39986b82bdce2fff3a
 created: '2026-03-23T10:57:48.472982'
-date: '2026-03-23T13:47:26.486154'
+date: '2026-04-28T16:06:33.779415'
 key: IG-TIFLOW-CORE-227
-modified: '2026-03-23T10:57:48.472983'
-release_status: STABLE
+modified: '2026-04-28T16:06:33.779415'
+release_status: MODIFIED
 source: input/pagecontent/menu-technische-umsetzung-push.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notification die Identifier
-  des zugehörigen Protokolleintrags (AuditEvent.id) des Triggers im Identifier-Feld
-  des äußeren Notification-Objekts (notification.identifier) angeben.
+text: "Der TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notifcation das Identifier-Feld\
+  \ des äußeren Notification-Objekts (notification.identifier) in Abhängigkeit von\
+  \ der ChannelId wie folgt befüllen:\n <table>\n <tr>\n <th>ChannelId</th>\n <th>Identifier.Feld</th>\n\
+  \ </tr>\n <tr>\n <td>erp.communication.new</td>\n <td>Identifier des zugehörigen\
+  \ Communication (Communication.id)</td>\n </tr>\n <tr>\n <td>ungleich erp.communication.new</td>\n\
+  \ <td>Identifier des zugehörigen Protokolleintrags (AuditEvent.id)</td>\n </tr>\n\
+  \ </table>"
 title: TI-Flow-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag
-version: 0
+version: 1

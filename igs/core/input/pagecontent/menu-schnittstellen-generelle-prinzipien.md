@@ -111,7 +111,7 @@ Die konkret durchzuf체hrenden Pr체fungen sind als Anforderung f체r jede Operatio
 Die Verordnungs-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks f체r den Workflow der Verordnung erstellt.
 
 <!-- A_19217-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-357" title="Aufbau Verordnungs-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-357" title="Aufbau Verordnungs-ID" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -149,7 +149,7 @@ Die Verordnungs-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks f�
 </requirement>
 
 <!-- A_19218 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="Pr체fung Verordnungs-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="Pr체fung Verordnungs-ID" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>

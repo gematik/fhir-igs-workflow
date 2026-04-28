@@ -439,7 +439,7 @@ Für die Kommunikation mit dem Medication Service wurde [gemIG_ePA_Medication] d
 <!-- ToDo Link [gemIG_ePA_Medication] -->
 
 <!-- A_28691 -->
-<requirement conformance="SHALL" key="" title="TI-Flow-Fachdienst - ePA - Übermittlung - Spezifikation der Schnittstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-420" title="TI-Flow-Fachdienst - ePA - Übermittlung - Spezifikation der Schnittstellen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Herstellererklärung"/>

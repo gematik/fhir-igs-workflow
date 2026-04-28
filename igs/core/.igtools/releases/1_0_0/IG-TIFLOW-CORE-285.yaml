@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 1e3a2f92c4171b37d75a15f4c07cdcc1323ec138177093554d0388e2d1d797c6
+content_hash: 0c1ef6291eb84ef7527a810e545479a0526fbf098e49800edafca9f6f4454f5e
 created: '2026-03-23T10:57:48.491623'
-date: '2026-03-27T14:32:26.234353'
+date: '2026-04-28T16:06:33.797756'
 key: IG-TIFLOW-CORE-285
-modified: '2026-03-27T14:32:26.234353'
+modified: '2026-04-28T16:06:33.797756'
 release_status: MODIFIED
 source: input/pagecontent/fhir-validate.md
 status: ACTIVE
@@ -13,15 +13,14 @@ test_procedures:
   TI-Flow_FD:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstellen,\
-  \ dass keine Extensions vorhanden sind, die nicht an den in den FHIR-Profilen spezifizierten\
-  \ Stellen verwendet werden. Sollte eine solche Extension gefunden werden, gilt der\
-  \ Datensatz als ungültig. In diesem Fall ist eine Fehlermeldung mit dem folgenden\
-  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
-  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n\
-  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
-  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n\
-  \ <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n\
-  \ </table> \n auszugeben."
+  \ dass keine Extension vorhanden ist, die an einer nicht im FHIR-Profil spezifizierten\
+  \ Stelle verwendet wird. Sollte eine solche Extension gefunden werden, gilt der\
+  \ Datensatz als ungültig. In diesem Fall ist die Operation mit dem folgenden Fehler:\n\
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n </table> \n abzubrechen."
 title: TI-Flow-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter
   Extensions
 version: 1

@@ -34,7 +34,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 </requirement>
 
 <!-- A_27821 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-3" title="TI-Flow-Fachdienst - BfArM - Beziehen des AccessTokens" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-3" title="TI-Flow-Fachdienst - BfArM - Beziehen des AccessTokens" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -260,7 +260,7 @@ Bei der Suche nach Apothekendaten basierend auf der Telematik-lD besteht die Mö
 4. Sollte der übermittelte Datensatz durch das BfArM untersucht werden müssen, erfolgt eine bilaterale Abstimmung zwischen gematik und BfArM zur Klärung des Sachverhalts.
 
 <!-- A_28979 -->
-<requirement conformance="SHALL" key="" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - kein VZD Eintrag für die Apotheke" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-17" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - kein VZD Eintrag für die Apotheke" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Herstellererklärung"/>

@@ -90,7 +90,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 </requirement>
 
 <!-- A_28674 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-272" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Zeitstempel ändern" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-419" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Zeitstempel ändern" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD">
     <testProcedure id="Herstellererklärung"/>

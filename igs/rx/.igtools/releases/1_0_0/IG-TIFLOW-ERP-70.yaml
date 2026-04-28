@@ -3,12 +3,12 @@ actor:
 - TI-Flow_FD
 - eRp_FdV
 conformance: SHALL
-content_hash: 985ce98888338a8a749726cac9a99f8f76d20861975ba9a8c1431061123ea0a7
+content_hash: c6a349e48d5eb1007fdec66d9d6ca3a7db90e30d1031caf3f2c7553172d0d765
 created: '2026-03-23T10:57:49.796740'
-date: '2026-03-23T13:47:28.495341'
+date: '2026-04-28T16:03:24.672421'
 key: IG-TIFLOW-ERP-70
-modified: '2026-03-23T10:57:49.796742'
-release_status: STABLE
+modified: '2026-04-28T16:03:24.672421'
+release_status: MODIFIED
 source: input/pagecontent/query-api-communication-req-data.md
 status: ACTIVE
 test_procedures:
@@ -38,7 +38,7 @@ text: "Der TI-Flow-Fachdienst, das E-Rezept-FdV und das PS der abgebenden LEI M�
   \ bereitstehen. Den Abholcode finden Sie anbei.</td>\n </tr>\n <tr>\n <td>url</td>\n\
   \ <td>Falls communicationType = link: ja<br>Ansonsten: verboten</td>\n <td>Einbettung\
   \ einer externen URL ausschließlich für das Einlösen von E-Rezepten in einer externen\
-  \ Bestellplattform.</td>\n <td>500 Stellen, URL gemäß RFC3986</td>\n <td>https://www.meine-apotheke.de/pickup/59b52340-7a6a-430d-99ea-45a8e5cd03f6</td>\n\
+  \ Bestellplattform.</td>\n <td>500 Stellen, HTTPS-URL gemäß RFC3986</td>\n <td>https://www.meine-apotheke.de/pickup/59b52340-7a6a-430d-99ea-45a8e5cd03f6</td>\n\
   \ </tr>\n <tr>\n <td>transactionID</td>\n <td>ja</td>\n <td>Wiederholung aus der\
   \ empfangenen Nachricht. Dient dazu, Nachrichten einer Transaktion zuordnen zu können.</td>\n\
   \ <td>36 Stellen, UUID</td>\n <td>8196b610-9b77-47ab-936e-362cd92ef2aa</td>\n </tr>\n\
@@ -63,9 +63,9 @@ text: "Der TI-Flow-Fachdienst, das E-Rezept-FdV und das PS der abgebenden LEI M�
   paymentMethods\": [\n { \"method\": \"cash\" },\n {\n \"method\": \"bankaccount\"\
   ,\n \"url\": \"https://my.payment.provider.de/pay/...\"\n },\n {\n \"method\": \"\
   paypal\",\n \"url\": \"https://paypal.me/&lt;some_account&gt;\"\n }\n]</pre></td>\n\
-  \ </tr>\n <tr>\n <td>pickUpCodeHR</td>\n <td>Falls communicationType = pickupCodeHR\
+  \ </tr>\n <tr>\n <td>pickupCodeHR</td>\n <td>Falls communicationType = pickupCodeHR\
   \ und supplyOptionsType = onPremise: ja<br>Ansonsten: verboten</td>\n <td>Menschenlesbarer\
-  \ Abholcode</td>\n <td>1-8 Stellen</td>\n <td>12315615</td>\n </tr>\n <tr>\n <td>pickUpCodeDMC</td>\n\
+  \ Abholcode</td>\n <td>1-8 Stellen</td>\n <td>12315615</td>\n </tr>\n <tr>\n <td>pickupCodeDMC</td>\n\
   \ <td>Falls communicationType = pickupCodeDMC und supplyOptionsType = onPremise:\
   \ ja<br>Ansonsten: verboten</td>\n <td>Maschinenlesbarer Abholcode (Data-Matrix-Code\
   \ gemäß ISO/IEC 16022:2006)</td>\n <td>8-2000 Stellen</td>\n <td>5346a991-c5c6-49c8-b87b-4cdd255bbde4</td>\n\
@@ -73,4 +73,4 @@ text: "Der TI-Flow-Fachdienst, das E-Rezept-FdV und das PS der abgebenden LEI M�
   \ Nachricht als Apotheke an einen Versicherten schicken</figcaption></div>"
 title: 'PS abgebende LEI: Nachrichtenaustausch - Nachricht durch Abgebenden übermitteln
   - Datenstruktur Nachricht'
-version: 0
+version: 1

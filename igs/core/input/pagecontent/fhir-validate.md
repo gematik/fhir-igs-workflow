@@ -88,7 +88,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 
 <!-- A_27659 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-275" title="FHIR-Ressourcen - Datumsangabe ohne Zeitzoneninformation" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-275" title="FHIR-Ressourcen - Datumsangabe ohne Zeitzoneninformation" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -129,7 +129,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 
 <!-- A_27697 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-277" title="FHIR-Ressourcen – Eindeutige Angabe meta.profile" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-277" title="FHIR-Ressourcen – Eindeutige Angabe meta.profile" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -268,7 +268,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 
 <!-- A_26237-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-282" title="FHIR-Ressourcen - Ressource-ID in fullUrl" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-282" title="FHIR-Ressourcen - Ressource-ID in fullUrl" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -292,7 +292,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 
 <!-- A_26238-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-283" title="FHIR-Ressourcen - Format fullUrl" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-283" title="FHIR-Ressourcen - Format fullUrl" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -316,7 +316,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 
 <!-- A_22216-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-284" title="FHIR-Ressourcen Versionsangabe" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-284" title="FHIR-Ressourcen Versionsangabe" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -374,7 +374,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 
 <!-- A_27672 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-286" title="FHIR Ressourcen - Ausschluss unspezifizierter Extensions" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-286" title="FHIR Ressourcen - Ausschluss unspezifizierter Extensions" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>

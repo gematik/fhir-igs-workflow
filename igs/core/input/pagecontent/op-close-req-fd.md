@@ -104,7 +104,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_28666 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-63" title="TI-Flow-Fachdienst - Task schließen - MedicationDispense speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-63" title="TI-Flow-Fachdienst - Task schließen - MedicationDispense speichern" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>

@@ -149,7 +149,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_28667 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-41" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-41" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense speichern" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
