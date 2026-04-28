@@ -256,7 +256,13 @@ run_ig() {
 
   echo "Checking internet connection..."
   local txoption=""
-  if curl -sSf tx.fhir.org > /dev/null 2>&1; then
+  # Prevent indefinite hangs on DNS/TLS/network stalls during connectivity checks.
+  local tx_connect_timeout="${BUILD_NET_CONNECT_TIMEOUT:-5}"
+  local tx_max_time="${BUILD_NET_MAX_TIME:-12}"
+  if curl --silent --show-error --fail \
+    --connect-timeout "$tx_connect_timeout" \
+    --max-time "$tx_max_time" \
+    https://tx.fhir.org/ > /dev/null 2>&1; then
     echo "Online"
   else
     echo "Offline"

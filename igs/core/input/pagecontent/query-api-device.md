@@ -7,7 +7,7 @@ Die Device-Query wird über HTTP `GET` auf `/Device` aufgerufen.
 ### Anforderungen an Schnittstelle
 
 - [Server Anforderungen zur Device-Query](./query-api-device-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-- [Client-Anforderungen zur Device-Query](./query-api-device-client-requirements.html): Anforderungen an den Client des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
+- [Client-Anforderungen zur Device-Query](./query-api-device-req-fdv.html): Anforderungen an den Client des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 

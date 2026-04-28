@@ -33,11 +33,10 @@ Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
 
 ## Aufbau
 
-- [Verbindungsaufbau Clientsysteme (über IDP-Dienst)](./verbindungsaufbau-client.html)
 - [FHIR-Artefakte](./artifacts.html)
 - [FHIR-Validierung](./fhir-validate.html)
-- [Query API (modulübergreifend)](./query-api.html)
-- [Operation API (modulübergreifend)](./operation-api.html)
+- [Query API (modulübergreifend)](./menu-schnittstellen-query-api.html)
+- [Operation API (modulübergreifend)](./menu-schnittstellen-operation-api.html)
 - [Zugriffsprotokollierung](./audit-service.html)
 - [Löschfristen](./ttl.html)
 
