@@ -259,6 +259,20 @@ Bei der Suche nach Apothekendaten basierend auf der Telematik-lD besteht die Mö
 3. Der Datensatz wird an den BfArM-Webdienst übertragen.
 4. Sollte der übermittelte Datensatz durch das BfArM untersucht werden müssen, erfolgt eine bilaterale Abstimmung zwischen gematik und BfArM zur Klärung des Sachverhalts.
 
+<!-- A_28979 -->
+<requirement conformance="SHALL" key="" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - kein VZD Eintrag für die Apotheke" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept, wenn die  Daten der abgebenden Apotheke nicht aus dem Verzeichnisdienst ermittelt werden können,
+    <ul>
+      <li>die Telematik-ID der Apotheke aus den Dispensierinformationen und</li>
+      <li>den Wert für organizationName aus dem ACCESS_TOKEN der Anfrage  bzw. falls organizationName = NULL im ACCESS_TOKEN den Wert "unbekannt" als Name der Apotheke</li>
+    </ul>
+    in den digitalen Durchschlag übernehmen.
+</requirement>
+
 Dieses Vorgehen stellt sicher, dass die Übertragung an das T-Register nicht aufgrund eines fehlenden FHIR-VZD-Eintrags blockiert wird und gleichzeitig die Nachvollziehbarkeit über die Telematik-ID gewährleistet bleibt.
 
 <!-- A_27830 -->

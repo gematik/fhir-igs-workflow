@@ -187,13 +187,27 @@ Ansonsten:<br>
 
 Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push Notification senden - Nachricht verschlüsseln` beschrieben.
 
-<!-- A_28135 -->
+<!-- A_28135-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-227" title="TI-Flow-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notification die Identifier des zugehörigen Protokolleintrags (AuditEvent.id) des Triggers im Identifier-Feld des äußeren Notification-Objekts (notification.identifier) angeben.
+     Der TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notifcation das Identifier-Feld des äußeren Notification-Objekts (notification.identifier) in Abhängigkeit von der ChannelId wie folgt befüllen:
+     <table>
+     <tr>
+        <th>ChannelId</th>
+        <th>Identifier.Feld</th>
+     </tr>
+     <tr>
+        <td>erp.communication.new</td>
+        <td>Identifier des zugehörigen Communication (Communication.id)</td>
+     </tr>
+     <tr>
+        <td>ungleich erp.communication.new</td>
+        <td>Identifier des zugehörigen Protokolleintrags (AuditEvent.id)</td>
+     </tr>
+     </table>
 </requirement>
 
 ### Push Notification Datenstruktur

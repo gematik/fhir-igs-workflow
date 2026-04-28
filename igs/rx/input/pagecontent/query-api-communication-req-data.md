@@ -151,7 +151,7 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
 
 #### Nachricht durch Abgebenden übermitteln
 
-<!-- A_23877-01 -->
+<!-- A_23877-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-70" title="PS abgebende LEI: Nachrichtenaustausch - Nachricht durch Abgebenden übermitteln - Datenstruktur Nachricht" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
@@ -201,7 +201,7 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
       <td>url</td>
       <td>Falls communicationType = link: ja<br>Ansonsten: verboten</td>
       <td>Einbettung einer externen URL ausschließlich für das Einlösen von E-Rezepten in einer externen Bestellplattform.</td>
-      <td>500 Stellen, URL gemäß RFC3986</td>
+      <td>500 Stellen, HTTPS-URL gemäß RFC3986</td>
       <td>https://www.meine-apotheke.de/pickup/59b52340-7a6a-430d-99ea-45a8e5cd03f6</td>
     </tr>
     <tr>
@@ -270,14 +270,14 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
 ]</pre></td>
     </tr>
     <tr>
-      <td>pickUpCodeHR</td>
+      <td>pickupCodeHR</td>
       <td>Falls communicationType = pickupCodeHR und supplyOptionsType = onPremise: ja<br>Ansonsten: verboten</td>
       <td>Menschenlesbarer Abholcode</td>
       <td>1-8 Stellen</td>
       <td>12315615</td>
     </tr>
     <tr>
-      <td>pickUpCodeDMC</td>
+      <td>pickupCodeDMC</td>
       <td>Falls communicationType = pickupCodeDMC und supplyOptionsType = onPremise: ja<br>Ansonsten: verboten</td>
       <td>Maschinenlesbarer Abholcode (Data-Matrix-Code gemäß ISO/IEC 16022:2006)</td>
       <td>8-2000 Stellen</td>

@@ -75,7 +75,6 @@ Löschen abzubrechen.
 
 Der Fachdienst prüft anhand der Telematik-ID im ACCESS_TOKEN, ob die LEI der Absender der zu löschenden Nachricht ist.
 
-Das PS der abgebenden LEI KANN im Anwendungsfall "Nachricht durch Abgebenden
-löschen" dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
+Das PS der abgebenden LEI KANN im Anwendungsfall "Nachricht durch Abgebenden löschen" dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 
-Hinweis: Nachrichten an Versicherte sind immer an den Workflow des referenzierten E-Rezeptes gebunden. Wenn ein E-Rezept-Workflow, bspw. durch den Versicherten oder aufgrund von durch den Fachdienst durchgesetzte Löschfristen, auf dem Fachdienst gelöscht wird, dann werden auch alle zugehörigen Nachrichten gelöscht.
+Hinweis: Nachrichten an Versicherte sind immer an den Workflow des referenzierten E-Rezeptes gebunden. Wenn ein Workflow, bspw. durch den Versicherten oder aufgrund von durch den Fachdienst durchgesetzte Löschfristen, auf dem Fachdienst gelöscht wird, dann werden auch alle zugehörigen Nachrichten gelöscht.

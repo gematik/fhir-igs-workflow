@@ -62,7 +62,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 ### POST /pushers/set
 
 <!-- A_28112 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-272" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-272" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Rollenprüfung" version="1">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
@@ -87,4 +87,13 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
         </tr>
     </table> 
     abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+</requirement>
+
+<!-- A_28674 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-272" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Zeitstempel ändern" version="1">
+  <meta lockversion="false"/>
+  <actor name="TI-Flow_FD">
+    <testProcedure id="Herstellererklärung"/>
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set, wenn eine neue App-Registrierung angelegt wird, den aktuellen Zeitpunkt als Zeitstempel des Anlegens mit der App-Registrierung verknüpft speichern.
 </requirement>

@@ -118,15 +118,6 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close sicherstellen, dass alle vorhandenen MedicationDispenses und ihre referenzierten Medications gelöscht werden, wenn der Client im Aufruf eine neue MedicationDispense übermittelt, sodass nach Abschluss der Operation nur die neu übermittelten MedicationDispenses gespeichert sind.
 </requirement>
 
-<!-- A_22069-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-21" title="TI-Flow-Fachdienst - Task schließen - Speicherung mehrerer MedicationDispenses" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close auch die Übergabe mehrerer MedicationDispense-Objekte in einem validen GEM_ERP_PR_PAR_CloseOperation_Input-Objekt im http-Body des Requests ermöglichen.
-</requirement>
-
 <!-- A_25928-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-22" title="TI-Flow-Fachdienst - Task schließen - Daten ePA Medication Service bereitstellen (Dispensierinformationen)" version="0">
     <meta lockversion="false"/>

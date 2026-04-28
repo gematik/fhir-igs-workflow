@@ -148,22 +148,13 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
         Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense sicherstellen, dass alle vorhandenen MedicationDispenses und ihre referenzierten Medications gelöscht werden, wenn bereits bestehende MedicationDispense(s) zum E-Rezept vorhanden sind, sodass nach Abschluss der Operation nur die neu übermittelten MedicationDispenses gespeichert sind.
 </requirement>
 
-<!-- A_27052 -->
+<!-- A_28667 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-41" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense speichern" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-        Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense die Referenz auf den aufgerufenen Task /Task/&lt;id&gt; als MedicationDispense.supportingInformation übernehmen und die MedicationDispense, sowie die in MedicationDispense.medication referenzierte Medication, speichern.
-</requirement>
-
-<!-- A_24283-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-42" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Speicherung mehrerer MedicationDispenses" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
-    </actor>
-        Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense auch die Übergabe mehrerer MedicationDispense-Objekte in einem validen GEM_ERP_PR_PAR_DispenseOperation_Input-Objekt im http-Body des Requests ermöglichen.
+        Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense eine oder mehrere vom Client bereitgestellten MedicationDispenses, sowie die in MedicationDispense.medication referenzierte Medication, speichern.
 </requirement>
 
 <!-- A_25933 -->

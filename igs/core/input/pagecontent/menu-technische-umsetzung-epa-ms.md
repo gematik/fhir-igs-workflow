@@ -435,6 +435,18 @@ Der TI-Flow-Fachdienst muss den Inhalt jedes Operationsaufrufes am Medication Se
 
 #### Übermitteln
 
+Für die Kommunikation mit dem Medication Service wurde [gemIG_ePA_Medication] definiert. Dieser FHIR-IG enthält Spezifikationen für Schnittstellen und Datenmodelle des ePA Medication Service.
+<!-- ToDo Link [gemIG_ePA_Medication] -->
+
+<!-- A_28691 -->
+<requirement conformance="SHALL" key="" title="TI-Flow-Fachdienst - ePA - Übermittlung - Spezifikation der Schnittstellen" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD">
+        <testProcedure id="Herstellererklärung"/>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS bei der Übermittlung von Daten an den Medication Service die Schnittstellen nach [gemIG_ePA_Medication] verwenden.
+</requirement>
+
 <!-- A_25952 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-396" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Verordnungsdaten" version="0">
     <meta lockversion="false"/>
