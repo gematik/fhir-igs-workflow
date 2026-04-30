@@ -45,7 +45,13 @@ Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemä�
 Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification verschlüsseln.
 Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push Notification senden - Nachricht verschlüsseln` beschrieben.
 
-Der TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notification die Identifier des zugehörigen Protokolleintrags (AuditEvent.id) des Triggers im Identifier-Feld des äußeren Notification-Objekts (notification.identifier) angeben.
+Der TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notifcation das Identifier-Feld des äußeren Notification-Objekts (notification.identifier) in Abhängigkeit von der ChannelId wie folgt befüllen:
+
+* ChannelId: erp.communication.new
+  * Identifier.Feld: Identifier des zugehörigen Communication (Communication.id)
+* ChannelId: ungleich erp.communication.new
+  * Identifier.Feld: Identifier des zugehörigen Protokolleintrags (AuditEvent.id)
+
 ### Push Notification Datenstruktur
 
 Der TI-Flow-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall "Push Notifications" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:

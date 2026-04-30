@@ -350,7 +350,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="post-pushersset">POST /pushers/set</h3>
 
 <!-- A_28112 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-272" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-272" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Rollenprüfung" version="1">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten" />
@@ -375,6 +375,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         </tr>
     </table> 
     abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+</requirement>
+
+<!-- A_28674 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-419" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Zeitstempel ändern" version="0">
+  <meta lockversion="false" />
+  <actor name="TI-Flow_FD">
+    <testProcedure id="Herstellererklärung" />
+  </actor>
+  Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set, wenn eine neue App-Registrierung angelegt wird, den aktuellen Zeitpunkt als Zeitstempel des Anlegens mit der App-Registrierung verknüpft speichern.
 </requirement>
 
 
@@ -417,7 +426,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 27, 2026 11:44+0000">2026-04-27</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 30, 2026 06:20+0000">2026-04-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

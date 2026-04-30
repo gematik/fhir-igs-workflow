@@ -135,6 +135,10 @@ Der TI-Flow-Fachdienst muss den Inhalt jedes Operationsaufrufes am Medication Se
 
 #### Übermitteln
 
+Für die Kommunikation mit dem Medication Service wurde [gemIG_ePA_Medication] definiert. Dieser FHIR-IG enthält Spezifikationen für Schnittstellen und Datenmodelle des ePA Medication Service. 
+
+Der TI-Flow-Fachdienst MUSS bei der Übermittlung von Daten an den Medication Service die Schnittstellen nach [gemIG_ePA_Medication] verwenden.
+
 Der TI-Flow-Fachdienst MUSS zur Bereitstellung von Verordnungsdaten an den ePA Medication Service die Operation [base]/$provide-prescription-erp des Medication Service aufrufen.
 
 Der TI-Flow-Fachdienst MUSS, um die Löschinformation für Verordnungsdaten an den ePA Medication Service zu übermitteln, die Operation [base]/$cancel-prescription-erp des Medication Service aufrufen.
