@@ -2,7 +2,7 @@ Instance: ERPFachdienstServerDiGA
 InstanceOf: TICapabilityStatement
 Usage: #definition
 
-* id = "erp-fachdienst-server-diga"
+* id = "ti-flow-fachdienst-server-diga"
 * title = "ERP DiGA CapabilityStatement für den E-Rezept-Fachdienst"
 * description = "CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendungen)"
 * contact
@@ -47,7 +47,7 @@ RuleSet: TaskInteraction(expectation)
 * insert TaskCreateOperationStatusCodes
 * insert CapSupportResourceOperation(activate, https://gematik.de/fhir/erp/OperationDefinition/ActivateOperationDefinition, {expectation}, "Activates the created Task using the signed ePrescription bundle")
 * insert TaskActivateOperationStatusCodes
-* insert CapSupportResourceOperation(accept, https://gematik.de/fhir/erp/OperationDefinition/AcceptOperationDefinition, {expectation}, "Pharmacy claims an ePrescription and sets Task status to in-progress")
+* insert CapSupportResourceOperation(accept, https://gematik.de/fhir/erp/OperationDefinition/AcceptOperationDefinition, {expectation}, "Payor claims an ePrescription and sets Task status to in-progress")
 * insert TaskAcceptOperationStatusCodes
 * insert CapSupportResourceOperation(reject, https://gematik.de/fhir/erp/OperationDefinition/RejectOperationDefinition, {expectation}, "Rejects dispensing and resets Task status to active")
 * insert TaskRejectOperationStatusCodes

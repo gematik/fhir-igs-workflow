@@ -18,7 +18,7 @@ Die Nachricht wird als HTTP `GET` an `/$read-eu-access-permission` gesendet.
 	data-api-operation-id="readEUAccessPermissionOperation">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpeu.json %}
 		</pre>
 	</div>
 	<div id="OperationDefinition">

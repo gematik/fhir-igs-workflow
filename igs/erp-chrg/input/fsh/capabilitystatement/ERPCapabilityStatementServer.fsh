@@ -3,7 +3,7 @@ InstanceOf: TICapabilityStatement
 Usage: #definition
 * insert Meta-Instance
 
-* id = "erp-fachdienst-server-erpchrg"
+* id = "ti-flow-fachdienst-server-erpchrg"
 * title = "ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst"
 * description = "CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)"
 * contact
