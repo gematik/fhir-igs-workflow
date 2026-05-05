@@ -371,8 +371,20 @@ def fix_missing_mappings(
                     re.MULTILINE,
                 )
                 if next_group:
-                    insert_pos = source_match.end() + next_group.start()
-                    # Insert before the next group with a blank line separator
+                    # Back up past any preceding blank lines and comments
+                    abs_pos = source_match.end() + next_group.start()
+                    while abs_pos > 0 and conceptmap_content[abs_pos - 1] == "\n":
+                        abs_pos -= 1
+                        # Skip over the preceding line if it's a comment or blank
+                        line_start = conceptmap_content.rfind("\n", 0, abs_pos)
+                        line_start = line_start + 1 if line_start >= 0 else 0
+                        line = conceptmap_content[line_start:abs_pos]
+                        if line.strip() == "" or line.strip().startswith("//"):
+                            abs_pos = line_start
+                        else:
+                            abs_pos = abs_pos + 1  # restore the \n we consumed
+                            break
+                    insert_pos = abs_pos
                     insert_text = "\n".join(new_lines) + "\n\n"
                 else:
                     # Append at end of file
