@@ -67,7 +67,6 @@ ValueSet/epa-ms-operation-outcome-details
 <div><figcaption><strong>Tabelle:</strong> Operation Outcomes</figcaption></div>
 {%endcomment%}
 
-Eine Mapping Tabelle, die einen Fehlercode auf den Statuscode für die Telemetriedaten abbildet
 #### Telemetriedaten
 
 {% include artifacts-table-generator.html resourceType="ConceptMap" %}
