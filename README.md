@@ -27,6 +27,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/develop/1.0.0-draft) |
 | `1.0.0-draft` | `error-codes` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/error-codes/1.0.0-draft) |
 | `1.0.0-draft` | `fhir-error-codes` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/fhir-error-codes/1.0.0-draft) |
+| `1.0.0-draft` | `telemetry-data-status-codes` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/telemetry-data-status-codes/1.0.0-draft) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/0.9.0) |
 
 ### tiflow-diga
