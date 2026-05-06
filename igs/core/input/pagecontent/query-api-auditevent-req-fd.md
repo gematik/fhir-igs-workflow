@@ -10,7 +10,6 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   </actor>
   Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource AuditEvent mittels der HTTP-Operationen PUT, PATCH, HEAD, DELETE und POST unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen werden können.
 </requirement>
-<!-- ToDo Hendre: Fehlercode einfügen -->
 
 ### GET /AuditEvent
 
@@ -40,7 +39,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
     abbrechen, damit Protokolleinträge nicht durch Unberechtigte ausgelesen werden können.
