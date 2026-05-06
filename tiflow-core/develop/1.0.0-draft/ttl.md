@@ -9,7 +9,7 @@ Version 1.0.0-draft - ci-build
 
 ## Löschfristen
 
-Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen abgelaufener oder nicht mehr benötigter Ressourcen. Dieses Kapitel beschreibt die Loöchfristen und die zugehörigen Anforderungen.
+Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen abgelaufener oder nicht mehr benötigter Ressourcen. Dieses Kapitel beschreibt die Löschfristen und die zugehörigen Anforderungen.
 
 Der TI-Flow-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäß der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.
 

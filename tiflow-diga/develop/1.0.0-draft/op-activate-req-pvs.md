@@ -40,5 +40,7 @@ Für die Spezifikation des Datamatrix-Code für E-Rezept-Token siehe [gemSpec_DM
 
 ### Modulspezifische Anforderungen
 
-Es bestehen keine modulspezifischen Anforderungen.
+Um die Einlösung einer elektronischen DiGA-Verordnung (Flowtype 162) sicherzustellen, ist dem Patienten ein Ausdruck auszuhändigen, ausgenommen der Patient lehnt einen Ausdruck ab, da er bspw. ein E-Rezept-Frontend des Versicherten der Krankenkasse oder der gematik nutzt.
+
+Das PS der verordnenden LEI MUSS nach dem erfolgreichen Einstellen einer Verordnung mit dem Flowtype 162 einen Patientenausdruck erstellen, sofern der Nutzer in Rücksprache mit dem Versicherten dies nicht aktiv ablehnt.
 

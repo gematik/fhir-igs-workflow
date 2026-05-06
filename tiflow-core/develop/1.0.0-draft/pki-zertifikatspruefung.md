@@ -39,7 +39,7 @@ Clientsysteme verwenden bei den in TAB_ILFERP_012 dargestellten Aktivitäten Zer
   * Rollen-OID: oid_erezept
   * Nutzung: aktiv
 
-**Tabelle: **Zertifikatsnutzung"
+**Tabelle: **TAB_ILFERP_012 - Zertifikatsnutzung"
 
 Es gelten folgende übergreifende Festlegungen für die Prüfung aktiv durch ein Clientsystem genutzter Zertifikate.
 
@@ -48,16 +48,16 @@ Das Clientsystem des TI-Flow-Fachdienst MUSS alle Zertifikate, die es aktiv verw
 Das Clientsystem des TI-Flow-Fachdienst MUSS alle öffentlichen Schlüssel, die es verwenden will, auf eine positiv verlaufene Zertifikatsprüfung zurückführen können.
 “Ein Zertifikat aktiv verwenden” bedeutet im Sinne von A_20769, dass ein Clientsystem einen dort aufgeführten öffentlichen Schlüssel innerhalb einer kryptografischen Operation (Signaturprüfung, Verschlüsselung, Signaturprüfung von öffentlichen (EC)DH-Schlüsseln etc.) nutzt. Erhält ein Clientsystem bspw. einen ACCESS_TOKEN, in dem Signaturen und Zertifikate enthalten sind, und behandelt es diesen Token als opakes Datenobjekt, ohne die Zertifikate darin gesondert zu betrachten, dann verwendet das Primärsystem diese Zertifikate im Sinne von A_20769 passiv.
 
-#### Zertifikatsprüfung von Zertifikaten der TI
+#### Zertifikatsprüfung von Zertifikaten der TI
 
-Das Primärsystem MUSS bei der Prüfung von X.509-Zertifikaten der TI den CertificateService des Konnektors mit der Operation VerifyCertificate gemäß [gemSpec_Kon#4.1.9.5.3] verwenden und dabei
-* das zu prüfende Zertifikat als Parameter X509Certificate verwenden
-* die aktuelle Systemzeit als Parameter VerificationTime verwenden
-Das Primärsystem MUSS bei Prüfung eines C.FD.ENC den Rückgabewert in RoleList gegen die erwartete Rollen-OID gemäß TAB_ILFERP_012 prüfen und bei Abweichungen die Benutzung des Zertifikats für einen Verbindungsaufbau zur VAU ablehnen.
-#### Zertifikatsprüfung von Internet-Zertifikaten
+Das Primärsystem MUSS bei der Prüfung von X.509-Zertifikaten der TI den CertificateService des Konnektors mit der Operation VerifyCertificate gemäß [gemSpec_Kon#4.1.9.5.3] verwenden und dabei
+* das zu prüfende Zertifikat als Parameter X509Certificate verwenden
+* die aktuelle Systemzeit als Parameter VerificationTime verwenden
+Das Primärsystem MUSS bei Prüfung eines C.FD.ENC den Rückgabewert in RoleList gegen die erwartete Rollen-OID gemäß TAB_ILFERP_012 prüfen und bei Abweichungen die Benutzung des Zertifikats für einen Verbindungsaufbau zur VAU ablehnen.
+#### Zertifikatsprüfung von Internet-Zertifikaten
 
 Folgende Vorgaben gelten für die Prüfung von Internet-Zertifikaten.
 
-Das Clientsystem des TI-Flow-Fachdienst MUSS für die Prüfung eines Zertifikats für den TLS-Verbindungsaufbau zum TI-Flow-Fachdienst und IDP das Zertifikat auf ein CA-Zertifikat einer CA, die die "CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates" [Baseline Requirements for TLS Server Certificates] erfüllt, kryptographisch (Signaturprüfung) zurückführen können. Ansonsten MUSS es das Zertifikat als "ungültig" bewerten.Das Clientsystem des TI-Flow-Fachdienst MUSS die zeitliche Gültigkeit des Zertifikats prüfen. Falls diese Prüfung negativ ausfällt, muss es das Zertifikat als "ungültig" bewerten.
-Hinweis: Der erste Teil von A_20091-* ist gleichbedeutend damit, dass das CA-Zertifikat im Zertifikats-Truststore eines aktuellen Webbrowsers ist.
+Das Clientsystem des TI-Flow-Fachdienst MUSS für die Prüfung eines Zertifikats für den TLS-Verbindungsaufbau zum TI-Flow-Fachdienst und IDP das Zertifikat auf ein CA-Zertifikat einer CA, die die "CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates" [Baseline Requirements for TLS Server Certificates] erfüllt, kryptographisch (Signaturprüfung) zurückführen können. Ansonsten MUSS es das Zertifikat als "ungültig" bewerten. Das Clientsystem des TI-Flow-Fachdienst MUSS die zeitliche Gültigkeit des Zertifikats prüfen und falls diese Prüfung negativ ausfällt, das Zertifikat als "ungültig" bewerten.
+Hinweis: Der erste Teil von IG-TIFLOW-CORE-304-* ist gleichbedeutend damit, dass das CA-Zertifikat im Zertifikats-Truststore eines aktuellen Webbrowsers ist.
 

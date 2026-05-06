@@ -283,13 +283,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul id="markdown-toc">
   <li><a href="#kommunikation-zu-den-diensten-der-ti" id="markdown-toc-kommunikation-zu-den-diensten-der-ti">Kommunikation zu den Diensten der TI</a></li>
+  <li><a href="#verschlüsselte-kommunikation-zur-vau-des-ti-flow-fachdienstes" id="markdown-toc-verschlüsselte-kommunikation-zur-vau-des-ti-flow-fachdienstes">Verschlüsselte Kommunikation zur VAU des TI-Flow-Fachdienstes</a></li>
 </ul>
 
 </div>
 
 <h3 id="kommunikation-zu-den-diensten-der-ti">Kommunikation zu den Diensten der TI</h3>
 
-<p>Clientsysteme nutzen TLS-Verbindungen für die Kommunikation zu den Diensten der TI. Es verbindet sich mit dem TI-Flow-Fachdienst und einem Identity Provider.</p>
+<p>Ein Clientsystem nutzen für die Kommunikation zu den Diensten der TI TLS-Verbindungen. Es verbindet sich bspw. mit dem TI-Flow-Fachdienst, PoPP-Service oder FHIR-VZD.</p>
 
 <!-- A_19451-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-155" title="CS: Lokalisierung TI-Flow-Fachdienst" version="0">
@@ -309,9 +310,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     Das Clientsystem des TI-Flow-Fachdienstes MUSS für die Kommunikation mit dem TI-Flow-Fachdienst die Endpunkte der Schnittstellen gemäß [gemSpec_FD_eRP#5.1 Servicelokalisierung] nutzen.
 </requirement>
 
-<!-- ToDo: Link auflösen -->
+<!-- ToDo: Link gemSpec_FD_eRP#5.1 Servicelokalisierung auflösen -->
 
-<p>Die Abfrage beim Namensdienst der TI erfolgt über einen DNS-Lookup. Hierfür muss der Konnektor als DNS-Resolver konfiguriert sein.</p>
+<p>Die Abfrage beim Namensdienst der TI erfolgt über einen DNS-Lookup. Hierfür muss der Konnektor als DNS-Resolver konfiguriert sein.
+<!-- ToDo: wie erfolgt Namensauflösung für Clientsysteme in der TI2.0 --></p>
 
 <!-- A_19744-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-156" title="CS: Endpunkt Schnittstelle TI-Flow-Fachdienst" version="0">
@@ -331,7 +333,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     Das Clientsystem des TI-Flow-Fachdienstes MUSS für die Kommunikation mit dem TI-Flow-Fachdienst die URL mit dem Port 443 bilden.
 </requirement>
 
-<p>Die Informationen zu den Endpunkten des Identity Providers ermittelt das Primärsystem aus dem Discovery Document. Für Informationen zum Discovery Document siehe auch [gemSpec_IDP_Dienst#Authorization Server Metadata (Discovery Document)]. Das Discovery Document ist vom IDP-Dienst unter der URL /.well-known/openid-configuration abrufbar. </p>
+<!-- ToDo: ggf. IDP ausbauen -->
+<p>Die Informationen zu den Endpunkten des Identity Providers ermittelt das Primärsystem aus dem Discovery Document. Für Informationen zum Discovery Document siehe auch [gemSpec_IDP_Dienst#Authorization Server Metadata (Discovery Document)]. Das Discovery Document ist vom IDP-Dienst unter der URL /.well-known/openid-configuration abrufbar.</p>
 
 <p>Die URL des Downloadpunktes im zentralen Netz der TI lautet: “https://idp.zentral.idp.splitdns.ti-dienste.de/.well-known/openid-configuration” [gemSpec_IDP_Dienst#A_19874-*].</p>
 
@@ -356,7 +359,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.</p>
 
 <!-- A_19235-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-158" title="CS: Unzulässige TLS-Verbindungen ablehnen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-158" title="CS: Unzulässige TLS-Verbindungen ablehnen" version="1">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
@@ -370,7 +373,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="Anb_NCPeH_FD">
         <testProcedure id="Produkttest" />
     </actor>
-    Das Clientsystem des TI-Flow-Fachdienst MUSS bei jedem Verbindungsaufbau zum TI-Flow-Fachdienst oder IDP-Dienst diesen anhand seines TLS-Zertifikats authentifizieren und MUSS die Verbindungen ablehnen, falls die Authentifizierung fehlschlägt.
+    Das Clientsystem des TI-Flow-Fachdienst MUSS bei jedem Verbindungsaufbau zum TI-Flow-Fachdienst diesen anhand seines TLS-Zertifikats authentifizieren und MUSS die Verbindungen ablehnen, falls die Authentifizierung fehlschlägt.
 </requirement>
 
 <!-- A_20015-02, A_20014-04 -->
@@ -391,14 +394,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
-    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle HTTP-Requests an den TI-Flow-Fachdienst und IDP-Dienst im äußeren HTTP-Request den HTTP-Header user-agent gemäß [RFC7231] mit &lt;Produktname&gt;/&lt;Produktversion&gt; &lt;Herstellername&gt;/&lt;client_id&gt; mit 
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle HTTP-Requests an den TI-Flow-Fachdienst und IDP-Dienst im äußeren HTTP-Request den HTTP-Header user-agent gemäß [RFC7231] mit &lt;Produktname&gt;/&lt;Produktversion&gt; &lt;Herstellername&gt;/&lt;client_id&gt; mit 
     <ul>
-    <li>&lt;Produktname&gt; gemäß eigener Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\-\.]</li>
-    <li>&lt;Produktversion&gt; gemäß Produktidentifikation</li>
-    <li>&lt;Herstellername&gt; gemäß eigener Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\-\.] </li>
-    <li>&lt;client_id&gt; gemäß Registrierung bei der gematik</li>
+        <li>&lt;Produktname&gt; gemäß eigener Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\-\.]</li>
+        <li>&lt;Produktversion&gt; gemäß Produktidentifikation</li>
+        <li>&lt;Herstellername&gt; gemäß eigener Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\-\.] </li>
+        <li>&lt;client_id&gt; gemäß Registrierung bei der gematik</li>
+    </ul>
     des Clientsystems befüllen.
-&lt;/requirement&gt;
+</requirement>
 
 <!-- A_21568-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-160" title="CS: HTTP-Header X-erp-user" version="0">
@@ -418,13 +422,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
-    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-erp-user" mit dem Wert
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-erp-user" mit dem Wert
     <ul>
     <li>"l" (kleines L) als PS eines Leistungserbringers</li>
     <li>"k" als CS eines Kostenträgers</li>
     <li>"v" als E-Rezept-FdV oder</li>
-    <li>"n" als NCPeH-FDeinfügen.</li>
+    <li>"n" als NCPeH-FD</li>
     </ul>
+    einfügen.
 </requirement>
 
 <!-- A_21569-01, A_21570-01  -->
@@ -445,7 +450,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
-    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-erp-resource" mit dem Wert gemäß der angefragten Ressource im FHIR-Request einfügen.
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-erp-resource" mit dem Wert gemäß der angefragten Ressource im FHIR-Request einfügen.
 </requirement>
 
 <table>
@@ -496,13 +501,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </table>
 <div><figcaption><strong>Tabelle: </strong>HTTP-Header "X-erp-resource"</figcaption></div>
 
+<h3 id="verschlüsselte-kommunikation-zur-vau-des-ti-flow-fachdienstes">Verschlüsselte Kommunikation zur VAU des TI-Flow-Fachdienstes</h3>
 
-### Verschlüsselte Kommunikation zur VAU des TI-Flow-Fachdienstes  
-  
-Die Kommunikation zum TI-Flow-Fachdienst wird zusätzlich zu TLS über einen sicheren Kanal (Verschlüsselung auf Http-Ebene) zwischen dem PS und der Vertrauenswürdigen Ausführungsumgebung (VAU) im TI-Flow-Fachdienst gesichert. 
+<p>Die Kommunikation zum TI-Flow-Fachdienst wird zusätzlich zu TLS über einen sicheren Kanal (Verschlüsselung auf Http-Ebene) zwischen dem PS und der Vertrauenswürdigen Ausführungsumgebung (VAU) im TI-Flow-Fachdienst gesichert.</p>
 
 <!-- A_19741-01, A_19740-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-162" title="CS: Umsetzung sicherer Kanal zur VAU des TI-Flow-Fachdienstes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-162" title="CS: Umsetzung sicherer Kanal zur VAU des TI-Flow-Fachdienstes" version="1">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -524,14 +528,15 @@ Die Kommunikation zum TI-Flow-Fachdienst wird zusätzlich zu TLS über einen sic
 	<li>die Abfrage des capability statement</li>
 	<li>den Zugriff auf Task, MedicationDispense, Communication, Consent, Prescription, AuditEvent oder access-permission Ressourcen</li>
 	</ul>
-	das Kommunikationsprotokoll zwischen E-Rezept-VAU und E-Rezept-Clients in der Rolle E-Rezept-Client nutzen.
+	das Kommunikationsprotokoll zwischen VAU des TI-Flow-Fachdienstes und E-Rezept-Clients in der Rolle E-Rezept-Client nutzen.
 </requirement>
 
-Für Informationen zum Kommunikationsprotokoll zwischen E-Rezept-FdV und der VAU des TI-Flow-Fachdienstes siehe [gemSpec_Krypt#E-Rezept-spezifische Vorgaben] und [gemSpec_Krypt#VAU-Protokoll für E-Rezept].
+<p>Für Informationen zum Kommunikationsprotokoll zwischen E-Rezept-FdV und der VAU des TI-Flow-Fachdienstes siehe [gemSpec_Krypt#E-Rezept-spezifische Vorgaben] und [gemSpec_Krypt#VAU-Protokoll für E-Rezept].</p>
 
-Alternativ zur Umsetzung des TUC_PKI_018 gemäß [gemSpec_Krypt#A_21216] soll das Primärsystem für die Prüfung des VAU-Zertifikates die VerifyCertificate Operation des Konnektors/Basis Consumers nutzen.
+<p>Alternativ zur Umsetzung des TUC_PKI_018 gemäß [gemSpec_Krypt#A_21216] soll das Primärsystem für die Prüfung des VAU-Zertifikates die VerifyCertificate Operation des Konnektors/Basis Consumers nutzen.</p>
 
-Folgendes kann umgesetzt werden:
+<!-- ToDo: Anpassen auf ASL -->
+<p>Folgendes kann umgesetzt werden:</p>
 <ol>
 <li>Beziehen des VAU-Zertifikat von /VAUCertificate</li>
 <li>Lokales Speichern der aktuellen Zeit mit dem VAU-Zertifikat als Tupel</li>
@@ -543,9 +548,8 @@ if (get_current_time() &gt;= gespeicherte Zeit + 12h) { VAU-Zertifikat neu bezie
 </li>
 </ol>
 
-Hinweis zum Fehlerhandling: Nur wenn der äußere Response der TI-Flow-Fachdienstes den Response-Code 200 liefert, enthält der payload eine mittels VAU-Protokoll verschlüsselte Response. Liefert der äußere Response eine Code &gt;= 400, ist im VAUProtokoll ein Fehler aufgetreten. Das PS muss nicht versuchen, den payload zu entschlüsseln.
+<p>Hinweis zum Fehlerhandling: Nur wenn der äußere Response der TI-Flow-Fachdienstes den Response-Code 200 liefert, enthält der payload eine mittels VAU-Protokoll verschlüsselte Response. Liefert der äußere Response eine Code &gt;= 400, ist im VAU Protokoll ein Fehler aufgetreten. Das PS muss nicht versuchen, den payload zu entschlüsseln.</p>
 
-</ul></requirement>
 
 
 
@@ -587,7 +591,7 @@ Hinweis zum Fehlerhandling: Nur wenn der äußere Response der TI-Flow-Fachdiens
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 30, 2026 06:20+0000">2026-04-30</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, May 6, 2026 21:45+0000">2026-05-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

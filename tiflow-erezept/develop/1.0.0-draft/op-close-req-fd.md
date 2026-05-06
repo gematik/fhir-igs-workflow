@@ -60,7 +60,7 @@ und im Fehlerfall die Operation mit dem folgenden Fehler:
 
 abbrechen.
 
-Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/<id>/$close die Referenz auf den aufgerufenen Task Task/<id> als MedicationDispense.supportingInformation übernehmen und die MedicationDispense, sowie die in MedicationDispense.medication referenzierte Medication, speichern.
+Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/<id>/$close eine oder mehrere vom Client bereitgestellten MedicationDispenses, sowie die in MedicationDispense.medication referenzierten Medications, speichern.
 
 Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/<id>/$close den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern, wenn ein MedicationDispense Objekt im Aufruf übergeben wird.
 
@@ -138,8 +138,6 @@ Der E-Rezept-Fachdienst MUSS, falls keine MedicationDispense zum dazugehörigen 
 abbrechen.
 
 Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/<id>/$close sicherstellen, dass alle vorhandenen MedicationDispenses und ihre referenzierten Medications gelöscht werden, wenn der Client im Aufruf eine neue MedicationDispense übermittelt, sodass nach Abschluss der Operation nur die neu übermittelten MedicationDispenses gespeichert sind.
-
-Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/<id>/$close auch die Übergabe mehrerer MedicationDispense-Objekte in einem validen GEM_ERP_PR_PAR_CloseOperation_Input-Objekt im http-Body des Requests ermöglichen.
 
 Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/<id>/$close, wenn die Operation erfolgreich abgeschlossen werden kann, die Daten der Dispensierinformationen mit Status = "completed" für die Übermittlung in den ePA Medication Service bereitstellen.
 

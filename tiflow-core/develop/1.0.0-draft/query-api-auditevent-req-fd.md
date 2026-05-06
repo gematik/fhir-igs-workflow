@@ -25,7 +25,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt 
 * HTTP-Code: Details Code
   * 403 - Forbidden: TIFLOW_AUTH_ROLE_NOT_ALLOWED
 * HTTP-Code: Details Text
-  * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
+  * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
 
 abbrechen, damit Protokolleinträge nicht durch Unberechtigte ausgelesen werden können.
 

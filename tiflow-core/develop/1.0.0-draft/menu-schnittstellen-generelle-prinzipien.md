@@ -47,7 +47,7 @@ Der TI-Flow-Fachdienst MUSS in seinen Schnittstellen für die Zugriffe durch Ver
 
 Der TI-Flow-Fachdienst MUSS in seinen Schnittstellen einen von der Standardfestlegung abweichenden MimeType umsetzen, wenn der jeweilige Client eine entsprechende Anforderung in der Aufrufschnittstelle über den URL-Parameter _format=fhir+xml bzw. _format=fhir+json gemäß http://hl7.org/fhir/http.html#general oder mittels des Accept-Attributs im HTTP-Request-Header als application/fhir+xml bzw. application/fhir+json anfordert, damit Clientsysteme ein für sie leichter verarbeitbares Format in der Antwort erhalten können.
 
-Der TI-Flow-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation auf den Endpunkt /metadata erlauben, in welcher er ein CapabilityStatement gemäß https://www.hl7.org/fhir/capabilitystatement.html veröffentlicht, welches die vom TI-Flow-Fachdienst verarbeiteten Ressourcen mit den zugehörigen http-Operationen der angebotenen REST-Schnittstelle auflistet:
+Der TI-Flow-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation auf den Endpunkt /metadata erlauben, in welcher er ein Capability Statement gemäß https://www.hl7.org/fhir/capabilitystatement.html veröffentlicht, welches die vom TI-Flow-Fachdienst verarbeiteten Ressourcen mit den zugehörigen http-Operationen der angebotenen REST-Schnittstelle auflistet:
 * Task – GET-, POST-Operation, FHIR-Operations für die Workflow-Steuerung und Einsicht durch den Versicherten 
 * MedicationDispense – GET-Operation für das Einsehen der Medikamentinformationen durch den Versicherten 
 * Communication – GET-, POST, DELETE-Operation für das Senden, Empfangen und Löschen von Nachrichten 

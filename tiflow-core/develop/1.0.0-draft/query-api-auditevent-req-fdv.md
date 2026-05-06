@@ -16,7 +16,7 @@ Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `AuditEven
 Das E-Rezept-FdV MUSS im Anwendungsfall "Protokolldaten anzeigen" zum Abrufen der Protokolleinträge vom TI-Flow-Fachdienst die HTTP-Operation GET /AuditEvent mit
 * ACCESS_TOKEN im Authorization-Header
 ausführen.
-Der Response beinhaltet ein Bundle mit einem searchset von AuditEvent Ressourcen. Eine AuditEvent Ressource beinhaltet die folgenden Informationen (Siehe auch [gemSpec_DM_eRp#A_19296-* - TI-Flow-Fachdienst - Inhalt Protokolleintrag ]):
+Der Response beinhaltet ein Bundle mit einem searchset von AuditEvent Ressourcen. Eine AuditEvent Ressource beinhaltet die folgenden Informationen (Siehe auch [gemSpec_DM_eRp#A_19296-* - TI-Flow-Fachdienst - Inhalt Protokolleintrag]):
 
 * ID des Datenobjektes, auf das zugegriffen wurde (AuditEvent.entity.what) Das entspricht der Task-ID oder MedicationDispense-ID
 * Rezept-ID (AuditEvent.entity.description)
@@ -25,7 +25,7 @@ Der Response beinhaltet ein Bundle mit einem searchset von AuditEvent Ressourcen
 * Zeitpunkt des Zugriffs (AuditEvent.recorded)
 * Ergebnis der aufgerufenen Operation (AuditEvent.outcome)
 
-Das E-Rezept-FdV kann es dem Nutzer über einen Link in der Anzeige ermöglichen, die Details zum referenzierten E-Rezept anzuzeigen.
+Das E-Rezept-FdV kann es dem Nutzer über einen Link in der Anzeige ermöglichen, die Details zum referenzierten E-Rezept anzuzeigen.
 
 * AuditEvent-Einträge enthalten personenbezogene Protokolldaten und sind entsprechend vertraulich zu behandeln.
 * `OperationOutcome` aus Query-Aufrufen ist im Client als konkrete Handlungsanweisung darzustellen.

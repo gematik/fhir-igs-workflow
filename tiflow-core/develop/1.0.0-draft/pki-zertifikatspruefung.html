@@ -329,7 +329,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <td>aktiv</td>
 </tr>
 </table>
-<div><figcaption><strong>Tabelle: </strong>Zertifikatsnutzung"</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>TAB_ILFERP_012 - Zertifikatsnutzung"</figcaption></div>
 
 <p>Es gelten folgende übergreifende Festlegungen für die Prüfung aktiv durch ein Clientsystem genutzter Zertifikate.</p>
 
@@ -354,7 +354,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>“Ein Zertifikat aktiv verwenden” bedeutet im Sinne von A_20769, dass ein Clientsystem einen dort aufgeführten öffentlichen Schlüssel innerhalb einer kryptografischen Operation (Signaturprüfung, Verschlüsselung, Signaturprüfung von öffentlichen (EC)DH-Schlüsseln etc.) nutzt. Erhält ein Clientsystem bspw. einen ACCESS_TOKEN, in dem Signaturen und Zertifikate enthalten sind, und behandelt es diesen Token als opakes Datenobjekt, ohne die Zertifikate darin gesondert zu betrachten, dann verwendet das Primärsystem diese Zertifikate im Sinne von A_20769 passiv.</p>
 
-<p>#### Zertifikatsprüfung von Zertifikaten der TI</p>
+<h4 id="zertifikatsprüfung-von-zertifikaten-der-ti">Zertifikatsprüfung von Zertifikaten der TI</h4>
 
 <!-- A_20764 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-303" title="CS: Prüfung TI-Zertifikate" version="0">
@@ -371,20 +371,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="Anb_NCPeH_FD">
         <testProcedure id="Produktgutachten" />
     </actor>
-    Das Primärsystem MUSS bei der Prüfung von X.509-Zertifikaten der TI den CertificateService des Konnektors mit der Operation VerifyCertificate gemäß [gemSpec_Kon#4.1.9.5.3] verwenden und dabei
+    Das Primärsystem MUSS bei der Prüfung von X.509-Zertifikaten der TI den CertificateService des Konnektors mit der Operation VerifyCertificate gemäß [gemSpec_Kon#4.1.9.5.3] verwenden und dabei
     <ul>
-    <li>das zu prüfende Zertifikat als Parameter X509Certificate verwenden</li>
-    <li>die aktuelle Systemzeit als Parameter VerificationTime verwenden</li>
+    <li>das zu prüfende Zertifikat als Parameter X509Certificate verwenden</li>
+    <li>die aktuelle Systemzeit als Parameter VerificationTime verwenden</li>
     </ul>
-    Das Primärsystem MUSS bei Prüfung eines C.FD.ENC den Rückgabewert in RoleList gegen die erwartete Rollen-OID gemäß TAB_ILFERP_012 prüfen und bei Abweichungen die Benutzung des Zertifikats für einen Verbindungsaufbau zur VAU ablehnen.
+    Das Primärsystem MUSS bei Prüfung eines C.FD.ENC den Rückgabewert in RoleList gegen die erwartete Rollen-OID gemäß TAB_ILFERP_012 prüfen und bei Abweichungen die Benutzung des Zertifikats für einen Verbindungsaufbau zur VAU ablehnen.
 </requirement>
 
-<p>#### Zertifikatsprüfung von Internet-Zertifikaten</p>
+<h4 id="zertifikatsprüfung-von-internet-zertifikaten">Zertifikatsprüfung von Internet-Zertifikaten</h4>
 
 <p>Folgende Vorgaben gelten für die Prüfung von Internet-Zertifikaten.</p>
 
 <!-- A_20091-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-304" title="CS: Prüfung der Zertifikate für TLS-Verbindung zu TI-Flow-Fachdienst und IDP-Dienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-304" title="CS: Prüfung der Zertifikate für TLS-Verbindung zu TI-Flow-Fachdienst und IDP-Dienst" version="1">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung" />
@@ -398,10 +398,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="Anb_NCPeH_FD">
         <testProcedure id="Produktgutachten" />
     </actor>
-    Das Clientsystem des TI-Flow-Fachdienst MUSS für die Prüfung eines Zertifikats für den TLS-Verbindungsaufbau zum TI-Flow-Fachdienst und IDP das Zertifikat auf ein CA-Zertifikat einer CA, die die "CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates" [Baseline Requirements for TLS Server Certificates] erfüllt, kryptographisch (Signaturprüfung) zurückführen können. Ansonsten MUSS es das Zertifikat als "ungültig" bewerten.Das Clientsystem des TI-Flow-Fachdienst MUSS die zeitliche Gültigkeit des Zertifikats prüfen. Falls diese Prüfung negativ ausfällt, muss es das Zertifikat als "ungültig" bewerten.
+    Das Clientsystem des TI-Flow-Fachdienst MUSS für die Prüfung eines Zertifikats für den TLS-Verbindungsaufbau zum TI-Flow-Fachdienst und IDP das Zertifikat auf ein CA-Zertifikat einer CA, die die "CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates" [Baseline Requirements for TLS Server Certificates] erfüllt, kryptographisch (Signaturprüfung) zurückführen können. Ansonsten MUSS es das Zertifikat als "ungültig" bewerten. 
+    Das Clientsystem des TI-Flow-Fachdienst MUSS die zeitliche Gültigkeit des Zertifikats prüfen und falls diese Prüfung negativ ausfällt, das Zertifikat als "ungültig" bewerten.
 </requirement>
 
-<p>Hinweis: Der erste Teil von A_20091-* ist gleichbedeutend damit, dass das CA-Zertifikat im Zertifikats-Truststore eines aktuellen Webbrowsers ist.</p>
+<p>Hinweis: Der erste Teil von IG-TIFLOW-CORE-304-* ist gleichbedeutend damit, dass das CA-Zertifikat im Zertifikats-Truststore eines aktuellen Webbrowsers ist.</p>
 
 
 
@@ -443,7 +444,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Apr 30, 2026 06:20+0000">2026-04-30</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, May 6, 2026 21:45+0000">2026-05-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

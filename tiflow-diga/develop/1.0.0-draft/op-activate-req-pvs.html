@@ -352,7 +352,16 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
 
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
-<p>Es bestehen keine modulspezifischen Anforderungen.</p>
+<p>Um die Einlösung einer elektronischen DiGA-Verordnung (Flowtype 162) sicherzustellen, ist dem Patienten ein Ausdruck auszuhändigen, ausgenommen der Patient lehnt einen Ausdruck ab, da er bspw. ein E-Rezept-Frontend des Versicherten der Krankenkasse oder der gematik nutzt.</p>
+
+  <!-- A_28862 -->
+<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - Flowtype 162 - Patientenausdruck" version="0" key="IG-TIFLOW-DIGA-29">
+  <meta lockversion="false"/>
+  <actor name="PS_E-Rezept_verordnend">
+    <testProcedure id="Herstellererklärung"></testProcedure>
+  </actor>
+  Das PS der verordnenden LEI MUSS nach dem erfolgreichen Einstellen einer Verordnung mit dem Flowtype 162 einen Patientenausdruck erstellen, sofern der Nutzer in Rücksprache mit dem Versicherten dies nicht aktiv ablehnt.
+</requirement>
 
 
 
@@ -394,7 +403,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Apr 27, 2026 11:49+0000">2026-04-27</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, May 6, 2026 21:50+0000">2026-05-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
