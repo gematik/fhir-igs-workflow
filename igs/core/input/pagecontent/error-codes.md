@@ -284,3 +284,8 @@ Im Folgenden, ein Beispiel:
 <br>
 
 Treten Fehler beim VAU-Transport (bspw. innerer http-Request kann nicht entschlüsselt werden) auf, beinhaltet die Fehlermeldung keinen inneren http-Response.
+
+### Telemetriedaten Statuscodes
+
+Telemetriedaten werden bei jedem Fehler übermittelt. Die Daten beinhalten einen Statuscode, der eindeutig einem Fehlercode zugeordnet ist, und das Mapping zwischen den Fehlercodes und den Telemetriedaten-Statuscodes ist hier zu finden:
+[TIFLOW_CM_TelemetryDataStatusCodes](./ConceptMap-TIFLOW-CM-TelemetryDataStatusCodes.html)

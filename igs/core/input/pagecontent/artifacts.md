@@ -70,10 +70,7 @@ ValueSet/epa-ms-operation-outcome-details
 Eine Mapping Tabelle, die einen Fehlercode auf den Statuscode für die Telemetriedaten abbildet
 #### Telemetriedaten
 
-{% capture conceptmap %}
-ConceptMap/tiflow-cm-telemetrydatastatuscodes
-{% endcapture %}
-{% include artifacts-table-generator.html render=conceptmap %}
+{% include artifacts-table-generator.html resourceType="ConceptMap" %}
 <div><figcaption><strong>Tabelle:</strong> Telemetriedaten Status Codes</figcaption></div>
 
 ### Parameterprofile für Operationen
