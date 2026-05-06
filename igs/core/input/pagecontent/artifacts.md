@@ -67,7 +67,7 @@ ValueSet/epa-ms-operation-outcome-details
 <div><figcaption><strong>Tabelle:</strong> Operation Outcomes</figcaption></div>
 {%endcomment%}
 
-#### Telemetriedaten
+### Telemetriedaten
 
 {% include artifacts-table-generator.html resourceType="ConceptMap" %}
 <div><figcaption><strong>Tabelle:</strong> Telemetriedaten Status Codes</figcaption></div>
