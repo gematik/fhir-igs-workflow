@@ -57,8 +57,9 @@ Eine Mapping Tabelle, die einen Fehlercode auf den Statuscode für die Telemetri
 
 #### Telemetriedaten
 
-|
-|
+| | |
+| :--- | :--- |
+| [ Telemetry Data Status Codes Concept Map ](ConceptMap-TIFLOW-CM-TelemetryDataStatusCodes.md) | Maps operation outcome codes to the telemetry data status codes |
 
 **Tabelle:**Telemetriedaten Status Codes
 
