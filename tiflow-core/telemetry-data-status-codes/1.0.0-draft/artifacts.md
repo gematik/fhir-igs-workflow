@@ -53,9 +53,7 @@ Das **Capability** **Statement** beschreibt die Anforderungen und Fähigkeiten, 
 
 **Tabelle:**Operation Definitions
 
-Eine Mapping Tabelle, die einen Fehlercode auf den Statuscode für die Telemetriedaten abbildet
-
-#### Telemetriedaten
+### Telemetriedaten
 
 | | |
 | :--- | :--- |
