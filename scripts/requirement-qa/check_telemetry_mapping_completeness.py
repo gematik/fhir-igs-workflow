@@ -26,6 +26,10 @@ from typing import Dict, List, Set
 # Matches lines like: * #TIFLOW_SECRET_MISMATCH "display" "description"
 CS_CODE_RE = re.compile(r"^\* #(\S+)\s+\"", re.MULTILINE)
 
+# Regex to extract individually included codes from a FSH ValueSet file.
+# Matches lines like: * include $ti-oo#SVC_IDENTITY_MISMATCH "display"
+VS_INCLUDE_CODE_RE = re.compile(r"^\*\s+include\s+\$\S+#(\S+)\s+\"", re.MULTILINE)
+
 # Regex to extract element code mappings from the ConceptMap FSH file.
 # Matches lines like: * group[=].element[0].code = #TIFLOW_OCSP_BACKEND_ERROR
 CM_ELEMENT_CODE_RE = re.compile(
@@ -76,6 +80,16 @@ def parse_codesystem_codes(fsh_path: Path) -> Set[str]:
     """Extract all code identifiers from a FSH CodeSystem file."""
     content = fsh_path.read_text(encoding="utf-8")
     return set(CS_CODE_RE.findall(content))
+
+
+def parse_valueset_individual_codes(fsh_path: Path) -> Set[str]:
+    """Extract individually included codes from a FSH ValueSet file.
+
+    Only picks up lines like: * include $alias#CODE "display"
+    (not 'include codes from system' which imports entire CodeSystems).
+    """
+    content = fsh_path.read_text(encoding="utf-8")
+    return set(VS_INCLUDE_CODE_RE.findall(content))
 
 
 def parse_codesystem_id(fsh_path: Path) -> str | None:
@@ -151,10 +165,19 @@ DEFAULT_CODESYSTEM_FILES = [
     ("TIFLOW_EREZEPT_CS_OperationOutcomeDetails.fsh", "https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs"),
 ]
 
+# ValueSet files whose individually included codes should also be checked.
+# Each entry: (ValueSet filename, CodeSystem group URL to map codes into).
+# Only individually included codes (e.g. * include $alias#CODE "display") are extracted;
+# bulk includes (include codes from system ...) are already covered via the CodeSystem entries above.
+DEFAULT_VALUESET_FILES = [
+    ("TIFLOW_VS_OperationOutcomeDetails.fsh", "https://gematik.de/fhir/erp/CodeSystem/tiflow-operation-outcome-details-cs"),
+]
+
 
 def run_check(
     ig_roots: List[Path],
     codesystem_entries: List[tuple[str, str]] | None = None,
+    valueset_entries: List[tuple[str, str]] | None = None,
     output_csv: Path | None = None,
 ) -> List[Finding]:
     """Run the telemetry mapping completeness check.
@@ -163,6 +186,8 @@ def run_check(
     """
     if codesystem_entries is None:
         codesystem_entries = DEFAULT_CODESYSTEM_FILES
+    if valueset_entries is None:
+        valueset_entries = DEFAULT_VALUESET_FILES
 
     conceptmap_path = find_conceptmap_file(ig_roots)
     if conceptmap_path is None:
@@ -208,6 +233,27 @@ def run_check(
                     code=code,
                     message=f"Code '{code}' is mapped but has no target code assigned",
                 ))
+
+    # Check individually included codes from ValueSet files
+    for vs_filename, _group_url in valueset_entries:
+        for ig_root in ig_roots:
+            for vs_path in ig_root.rglob(vs_filename):
+                vs_codes = parse_valueset_individual_codes(vs_path)
+                for code in sorted(vs_codes):
+                    if code not in mapped_codes:
+                        findings.append(Finding(
+                            type="MISSING_MAPPING",
+                            codesystem_file=vs_filename,
+                            code=code,
+                            message=f"Code '{code}' is not mapped in the ConceptMap",
+                        ))
+                    elif mapped_codes[code] is None:
+                        findings.append(Finding(
+                            type="MISSING_TARGET_CODE",
+                            codesystem_file=vs_filename,
+                            code=code,
+                            message=f"Code '{code}' is mapped but has no target code assigned",
+                        ))
 
     return findings
 
@@ -282,6 +328,7 @@ def fix_missing_mappings(
     findings: List[Finding],
     ig_roots: List[Path],
     codesystem_entries: List[tuple[str, str]],
+    valueset_entries: List[tuple[str, str]] | None = None,
 ) -> int:
     """Add missing code mappings to the ConceptMap.
 
@@ -289,6 +336,9 @@ def fix_missing_mappings(
     Creates new groups in the ConceptMap for CodeSystems that don't have one yet.
     Returns the number of fixes applied.
     """
+    if valueset_entries is None:
+        valueset_entries = DEFAULT_VALUESET_FILES
+
     missing_findings = [f for f in findings if f.type == "MISSING_MAPPING"]
     if not missing_findings:
         return 0
@@ -300,8 +350,10 @@ def fix_missing_mappings(
     # Collect all used target codes in the full range
     used_codes = _collect_all_used_target_codes(conceptmap_path)
 
-    # Build a mapping from codesystem filename -> URL
+    # Build a mapping from filename -> group URL (CodeSystems + ValueSets)
     cs_url_map: Dict[str, str] = {filename: url for filename, url in codesystem_entries}
+    for vs_filename, group_url in valueset_entries:
+        cs_url_map[vs_filename] = group_url
 
     conceptmap_content = conceptmap_path.read_text(encoding="utf-8")
 
@@ -327,7 +379,7 @@ def fix_missing_mappings(
             group_header = (
                 f"\n// {cs_filename}\n"
                 f"* group[+].source = \"{group_source_url}\"\n"
-                f"* group[=].target = \"http://telemetry-data-status-codes\"\n"
+                f"* group[=].target = \"telemetriedaten-ti-flow\"\n"
             )
             conceptmap_content = conceptmap_content.rstrip("\n") + "\n" + group_header
             existing_url = group_source_url

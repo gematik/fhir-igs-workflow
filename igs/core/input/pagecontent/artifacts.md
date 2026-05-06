@@ -67,6 +67,15 @@ ValueSet/epa-ms-operation-outcome-details
 <div><figcaption><strong>Tabelle:</strong> Operation Outcomes</figcaption></div>
 {%endcomment%}
 
+#### Telemetriedaten
+
+{% capture conceptmap %}
+ConceptMap/tiflow-cm-telemetrydatastatuscodes
+{% endcapture %}
+{% include artifacts-table-generator.html render=conceptmap %}
+<div><figcaption><strong>Tabelle:</strong> Telemetriedaten Status Codes</figcaption></div>
+{%endcomment%}
+
 
 ### Parameterprofile für Operationen
 

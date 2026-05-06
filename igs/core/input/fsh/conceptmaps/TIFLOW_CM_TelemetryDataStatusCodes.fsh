@@ -12,7 +12,7 @@ Usage: #definition
 
 // core
 * group[+].source = "https://gematik.de/fhir/erp/CodeSystem/tiflow-operation-outcome-details-cs"
-* group[=].target = "http://telemetry-data-status-codes"
+* group[=].target = "telemetriedaten-ti-flow"
 
 * group[=].element[0].code = #TIFLOW_OCSP_BACKEND_ERROR
 * group[=].element[0].target[0].code = #79001
@@ -135,10 +135,32 @@ Usage: #definition
 * group[=].element[39].code = #TIFLOW_TASK_STATUS_MISMATCH
 * group[=].element[39].target[0].code = #79238
 * group[=].element[39].target[0].equivalence = #equivalent
+* group[=].element[40].code = #MSG_RESOURCE_ID_FAIL
+* group[=].element[40].target[0].code = #79255
+* group[=].element[40].target[0].equivalence = #equivalent
+* group[=].element[41].code = #MSG_RESOURCE_ID_MISMATCH
+* group[=].element[41].target[0].code = #79256
+* group[=].element[41].target[0].equivalence = #equivalent
+* group[=].element[42].code = #MSG_RESOURCE_ID_MISSING
+* group[=].element[42].target[0].code = #79257
+* group[=].element[42].target[0].equivalence = #equivalent
+* group[=].element[43].code = #SVC_IDENTITY_MISMATCH
+* group[=].element[43].target[0].code = #79258
+* group[=].element[43].target[0].equivalence = #equivalent
+* group[=].element[44].code = #SVC_INVALID_ACCESS_TOKEN
+* group[=].element[44].target[0].code = #79259
+* group[=].element[44].target[0].equivalence = #equivalent
+* group[=].element[45].code = #SVC_TELEMATIKID_TEMPORARILY_BLOCKED
+* group[=].element[45].target[0].code = #79260
+* group[=].element[45].target[0].equivalence = #equivalent
+* group[=].element[46].code = #SVC_VALIDATION_FAILED
+* group[=].element[46].target[0].code = #79261
+* group[=].element[46].target[0].equivalence = #equivalent
+
 
 // TIFLOW_CHARGEITEM_CS_OperationOutcomeDetails.fsh
 * group[+].source = "https://gematik.de/fhir/erp/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs"
-* group[=].target = "http://telemetry-data-status-codes"
+* group[=].target = "telemetriedaten-ti-flow"
 
 * group[=].element[0].code = #TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV
 * group[=].element[0].target[0].code = #79239
@@ -158,7 +180,7 @@ Usage: #definition
 
 // TIFLOW_XBORDER_CS_OperationOutcomeDetails.fsh
 * group[+].source = "https://gematik.de/fhir/erp/CodeSystem/tiflow-xborder-operation-outcome-details-cs"
-* group[=].target = "http://telemetry-data-status-codes"
+* group[=].target = "telemetriedaten-ti-flow"
 
 * group[=].element[0].code = #TIFLOW_XBORDER_COUNTRY_CODE_INVALID
 * group[=].element[0].target[0].code = #79244
@@ -172,7 +194,7 @@ Usage: #definition
 
 // TIFLOW_EREZEPT_CS_OperationOutcomeDetails.fsh
 * group[+].source = "https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs"
-* group[=].target = "http://telemetry-data-status-codes"
+* group[=].target = "telemetriedaten-ti-flow"
 
 * group[=].element[0].code = #TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN
 * group[=].element[0].target[0].code = #79247
