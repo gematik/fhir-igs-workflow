@@ -1,0 +1,42 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "GEM-ERP-VS-CapabilityStatement-Feature",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet GEM-ERP-VS-CapabilityStatement-Feature</b></p><a name=\"GEM-ERP-VS-CapabilityStatement-Feature\"> </a><a name=\"hcGEM-ERP-VS-CapabilityStatement-Feature\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-GEM-ERP-CS-FlowType.html\"><code>https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;1.0.0-draft</span></li><li>Include all codes defined in <a href=\"CodeSystem-GEM-ERP-CS-Features.html\"><code>https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_Features</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;1.0.0-draft</span></li></ul></div>"
+  },
+  "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_CapabilityStatement_Feature",
+  "version" : "1.0.0-draft",
+  "name" : "GEM_ERP_VS_CapabilityStatement_Feature",
+  "title" : "ERP CapabilityStatement Feature ValueSet",
+  "status" : "draft",
+  "date" : "2025-09-25",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Dieses ValueSet kombiniert Workflow-Typ-Codes aus GEM_ERP_CS_FlowType und nicht-workflowbezogene Feature-Codes aus GEM_ERP_CS_Features. Damit bildet es die vollständige Menge deklarierbarer Feature-Flags für CapabilityStatements des E-Rezept-Fachdienstes ab.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"
+    },
+    {
+      "system" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_Features"
+    }]
+  }
+}
