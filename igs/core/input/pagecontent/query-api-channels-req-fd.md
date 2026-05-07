@@ -128,3 +128,26 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
     abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
 <!-- ToDo Hendre: Warum lautet der FehlerCode bei vergleichbaren Afos TIFLOW_AUTH_ROLE_NOT_ALLOWED? -->
+
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Push Notifications - Channels konfigurieren - Schemavalidierung" version="1">
+  <meta lockversion="false"/>
+  <actor name="TI-Flow_FD">
+    <testProcedure id="Produktgutachten"/>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /channels/{pushkey} das Payload gegen das Schema in [OpenAPI_FD] validieren und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Error Code</th>
+            <td>malformedRequest</td>
+        </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>Ungültiger http-Request</td>
+        </tr>
+    </table> 
+    abbrechen, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
+</requirement>

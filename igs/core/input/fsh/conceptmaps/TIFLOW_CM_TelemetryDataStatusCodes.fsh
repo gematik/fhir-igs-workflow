@@ -230,3 +230,6 @@ Usage: #definition
 * group[=].element[1].code = #methodNotAllowed
 * group[=].element[1].target[0].code = #79263
 * group[=].element[1].target[0].equivalence = #equivalent
+* group[=].element[2].code = #malformedRequest
+* group[=].element[2].target[0].code = #79264
+* group[=].element[2].target[0].equivalence = #equivalent
