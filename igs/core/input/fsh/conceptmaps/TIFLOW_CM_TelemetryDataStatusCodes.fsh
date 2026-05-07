@@ -12,7 +12,7 @@ Usage: #definition
 
 // core
 * group[+].source = "https://gematik.de/fhir/erp/CodeSystem/tiflow-operation-outcome-details-cs"
-* group[=].target = "telemetriedaten-ti-flow"
+* group[=].target = "ti-flow-telemetriedaten-statuscodes"
 
 * group[=].element[0].code = #TIFLOW_OCSP_BACKEND_ERROR
 * group[=].element[0].target[0].code = #79001
@@ -160,7 +160,7 @@ Usage: #definition
 
 // TIFLOW_CHARGEITEM_CS_OperationOutcomeDetails.fsh
 * group[+].source = "https://gematik.de/fhir/erp/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs"
-* group[=].target = "telemetriedaten-ti-flow"
+* group[=].target = "ti-flow-telemetriedaten-statuscodes"
 
 * group[=].element[0].code = #TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV
 * group[=].element[0].target[0].code = #79239
@@ -180,7 +180,7 @@ Usage: #definition
 
 // TIFLOW_XBORDER_CS_OperationOutcomeDetails.fsh
 * group[+].source = "https://gematik.de/fhir/erp/CodeSystem/tiflow-xborder-operation-outcome-details-cs"
-* group[=].target = "telemetriedaten-ti-flow"
+* group[=].target = "ti-flow-telemetriedaten-statuscodes"
 
 * group[=].element[0].code = #TIFLOW_XBORDER_COUNTRY_CODE_INVALID
 * group[=].element[0].target[0].code = #79244
@@ -194,7 +194,7 @@ Usage: #definition
 
 // TIFLOW_EREZEPT_CS_OperationOutcomeDetails.fsh
 * group[+].source = "https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs"
-* group[=].target = "telemetriedaten-ti-flow"
+* group[=].target = "ti-flow-telemetriedaten-statuscodes"
 
 * group[=].element[0].code = #TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN
 * group[=].element[0].target[0].code = #79247

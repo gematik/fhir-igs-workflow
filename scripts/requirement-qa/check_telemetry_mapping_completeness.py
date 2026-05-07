@@ -379,7 +379,7 @@ def fix_missing_mappings(
             group_header = (
                 f"\n// {cs_filename}\n"
                 f"* group[+].source = \"{group_source_url}\"\n"
-                f"* group[=].target = \"telemetriedaten-ti-flow\"\n"
+                f"* group[=].target = \"ti-flow-telemetriedaten-statuscodes\"\n"
             )
             conceptmap_content = conceptmap_content.rstrip("\n") + "\n" + group_header
             existing_url = group_source_url
