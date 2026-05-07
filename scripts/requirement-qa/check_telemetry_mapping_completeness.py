@@ -30,6 +30,14 @@ CS_CODE_RE = re.compile(r"^\* #(\S+)\s+\"", re.MULTILINE)
 # Matches lines like: * include $ti-oo#SVC_IDENTITY_MISMATCH "display"
 VS_INCLUDE_CODE_RE = re.compile(r"^\*\s+include\s+\$\S+#(\S+)\s+\"", re.MULTILINE)
 
+# Regex to extract Error Code values from error-code-json HTML tables in markdown files.
+# Matches the <td> content after a <th>Error Code</th> row.
+JSON_ERROR_CODE_RE = re.compile(
+    r'<table\s+id="error-code-json"[^>]*>.*?'
+    r"<th>Error Code</th>\s*<td>([^<]+)</td>",
+    re.DOTALL,
+)
+
 # Regex to extract element code mappings from the ConceptMap FSH file.
 # Matches lines like: * group[=].element[0].code = #TIFLOW_OCSP_BACKEND_ERROR
 CM_ELEMENT_CODE_RE = re.compile(
@@ -173,6 +181,31 @@ DEFAULT_VALUESET_FILES = [
     ("TIFLOW_VS_OperationOutcomeDetails.fsh", "https://gematik.de/fhir/erp/CodeSystem/tiflow-operation-outcome-details-cs"),
 ]
 
+# Group source identifier for JSON error codes extracted from markdown requirement tables.
+JSON_ERROR_CODES_GROUP_URL = "json-fehlercodes"
+
+# Files to skip when scanning for JSON error code tables.
+JSON_ERROR_CODE_SKIP_FILES = {"CHEAT_SHEET.md"}
+
+
+def parse_json_error_codes_from_markdown(ig_roots: List[Path]) -> Set[str]:
+    """Scan markdown files under igs/ for error-code-json tables and extract Error Code values.
+
+    Skips files listed in JSON_ERROR_CODE_SKIP_FILES.
+    Returns a set of unique error code strings.
+    """
+    codes: Set[str] = set()
+    for ig_root in ig_roots:
+        for md_file in ig_root.rglob("*.md"):
+            if md_file.name in JSON_ERROR_CODE_SKIP_FILES:
+                continue
+            content = md_file.read_text(encoding="utf-8")
+            for match in JSON_ERROR_CODE_RE.finditer(content):
+                code = match.group(1).strip()
+                if code and code != "-":
+                    codes.add(code)
+    return codes
+
 
 def run_check(
     ig_roots: List[Path],
@@ -254,6 +287,24 @@ def run_check(
                             code=code,
                             message=f"Code '{code}' is mapped but has no target code assigned",
                         ))
+
+    # Check JSON error codes from markdown requirement tables
+    json_codes = parse_json_error_codes_from_markdown(ig_roots)
+    for code in sorted(json_codes):
+        if code not in mapped_codes:
+            findings.append(Finding(
+                type="MISSING_MAPPING",
+                codesystem_file="error-code-json",
+                code=code,
+                message=f"Code '{code}' is not mapped in the ConceptMap",
+            ))
+        elif mapped_codes[code] is None:
+            findings.append(Finding(
+                type="MISSING_TARGET_CODE",
+                codesystem_file="error-code-json",
+                code=code,
+                message=f"Code '{code}' is mapped but has no target code assigned",
+            ))
 
     return findings
 
@@ -350,10 +401,11 @@ def fix_missing_mappings(
     # Collect all used target codes in the full range
     used_codes = _collect_all_used_target_codes(conceptmap_path)
 
-    # Build a mapping from filename -> group URL (CodeSystems + ValueSets)
+    # Build a mapping from filename -> group URL (CodeSystems + ValueSets + JSON error codes)
     cs_url_map: Dict[str, str] = {filename: url for filename, url in codesystem_entries}
     for vs_filename, group_url in valueset_entries:
         cs_url_map[vs_filename] = group_url
+    cs_url_map["error-code-json"] = JSON_ERROR_CODES_GROUP_URL
 
     conceptmap_content = conceptmap_path.read_text(encoding="utf-8")
 

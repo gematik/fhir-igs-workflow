@@ -220,3 +220,13 @@ Usage: #definition
 * group[=].element[7].code = #TIFLOW_EREZEPT_PZN_INVALID
 * group[=].element[7].target[0].code = #79254
 * group[=].element[7].target[0].equivalence = #equivalent
+
+// Non OperationOutcome JSON Fehlercodes
+* group[+].source = "json-fehlercodes"
+* group[=].target = "ti-flow-telemetriedaten-statuscodes"
+* group[=].element[0].code = #invalidOid
+* group[=].element[0].target[0].code = #79262
+* group[=].element[0].target[0].equivalence = #equivalent
+* group[=].element[1].code = #methodNotAllowed
+* group[=].element[1].target[0].code = #79263
+* group[=].element[1].target[0].equivalence = #equivalent
