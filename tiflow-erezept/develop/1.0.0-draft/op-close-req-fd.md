@@ -122,9 +122,9 @@ Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels H
 
 abbrechen.
 
-Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/<id>/$close erlauben, dass der Aufruf ohne Übergabe einer MedicationDispense im Request Body stattfindet.Der E-Rezept-Fachdienst MUSS in dem Fall sicherstellen, dass eine MedicationDispense für diesen Task existiert.
+Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/<id>/$close erlauben, dass der Aufruf ohne Übergabe einer MedicationDispense im Request Body stattfindet. Der TI-Flow-Fachdienst MUSS in dem Fall sicherstellen, dass eine MedicationDispense für diesen Task existiert.
 
-Der E-Rezept-Fachdienst MUSS, falls keine MedicationDispense zum dazugehörigen Task existiert, die Operation mit dem folgenden Fehler:
+Der TI-Flow-Fachdienst MUSS, falls keine MedicationDispense zum dazugehörigen Task existiert, die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error

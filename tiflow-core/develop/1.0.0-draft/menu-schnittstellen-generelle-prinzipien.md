@@ -76,7 +76,7 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
 
 Der TI-Flow-Fachdienst MUSS beim Verarbeiten von PKCS#7 Enveloping-Daten die Anforderungen zur Verarbeitung von Datensätzen im TI-Flow-Fachdienst anwenden.
 
-Der E‑Rezept‑Fachdienst MUSS eingehende Datensätze strikt als UTF‑8 ohne Byte Order Mark (BOM) decodieren und bei fehlgeschlagener Decodierung oder beim Vorhandensein eines BOM die Verarbeitung mit dem folgenden Fehler:
+Der TI‑Flow‑Fachdienst MUSS eingehende Datensätze strikt als UTF‑8 ohne Byte Order Mark (BOM) decodieren und bei fehlgeschlagener Decodierung oder beim Vorhandensein eines BOM die Verarbeitung mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
