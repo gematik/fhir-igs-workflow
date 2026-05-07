@@ -6,9 +6,23 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
+  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>405 - Method Not Allowed</td>
+        </tr>
+        <tr>
+            <th>Error Code</th>
+            <td>methodNotAllowed</td>
+        </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>Die verwendete HTTP-Methode ist für diese Ressource nicht zulässig</td>
+        </tr>
+    </table> 
+    abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 </requirement>
-<!-- ToDo Hendre: Fehlercode (Detailed code) einfügen Http Fehler 405 -->
 
 <!-- A_28117 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-56" title="TI-Flow-Fachdienst - Push Notifications - Channels- OpenApi_Notification_Fachdienst" version="0">
