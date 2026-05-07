@@ -7,7 +7,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <testProcedure id="Produktgutachten"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>405 - Method Not Allowed</td>
@@ -49,7 +49,7 @@ Mit der Operation GET /channels können die verfügbaren Channels abgefragt werd
     <li>oid_versicherter</li>
   </ul>
   die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>403 - Forbidden</td>
@@ -79,7 +79,7 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
     <li>oid_versicherter</li>
   </ul>
   die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>403 - Forbidden</td>
@@ -111,7 +111,7 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
     <li>oid_versicherter</li>
   </ul>
   die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>403 - Forbidden</td>

@@ -56,7 +56,7 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
         <testProcedure id="Produkttest"/>
     </actor>
       ... mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>403 - Forbidden</td>
