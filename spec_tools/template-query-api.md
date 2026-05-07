@@ -6,7 +6,7 @@ Diese Seite beschreibt den Einstieg in die <Resource>-Query-Schnittstelle.
 
 ### Nachricht
 
-Die Nachricht zum Abruf von <Name> wird als HTTP GET-Anfrage an den E-Rezept-Fachdienst gesendet, um eine Liste der hinterlegten _<Resource>_-Instanzen abzurufen.
+Die Nachricht zum Abruf von <Name> wird als HTTP GET-Anfrage an den TI-Flow-Fachdienst gesendet, um eine Liste der hinterlegten _<Resource>_-Instanzen abzurufen.
 
 Die Nachricht zur Interaktion mit <Name> als FHIR-Ressource _<Resource>_ wird über die folgenden HTTP-Methoden ermöglicht:
 
@@ -20,8 +20,8 @@ Die Nachricht zur Interaktion mit <Name> als FHIR-Ressource _<Resource>_ wird ü
 
 ### Anforderungen an Schnittstelle
 
-- [Server Anforderungen zur <Resource>-Query](./link.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-- [Client-Anforderungen zur <Resource>-Query](./link.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+- [Server Anforderungen zur <Resource>-Query](./link.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Client-Anforderungen zur <Resource>-Query](./link.html): Anforderungen an den Client des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### Resource API
 

@@ -95,5 +95,5 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
   <actor name="TI-Flow_FD">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set, wenn eine neue App-Registrierung angelegt wird, den aktuellen Zeitpunkt als Zeitstempel des Anlegens mit der App-Registrierung verknüpft speichern.
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set, wenn eine neue App-Registrierung angelegt wird, den aktuellen Zeitpunkt als Zeitstempel des Anlegens mit der App-Registrierung verknüpft speichern.
 </requirement>
