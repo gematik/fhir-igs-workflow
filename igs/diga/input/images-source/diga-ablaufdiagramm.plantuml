@@ -7,9 +7,6 @@ participant "E-Rezept-FdV" as FDV
 participant "TI-Flow-Fachdienst" as FD
 database "FHIR Verzeichnisdienst" as VZD
 participant "Kostenträger" as AVS
-participant "IDP-Dienst" as IDP
- 
-
 
     PVS -> FD: Workflow erstellen\nmit $Create (Workflow 162)
 
@@ -24,11 +21,7 @@ participant "IDP-Dienst" as IDP
     FDV -> FDV: Communication Ressource\nfür Zuweisen erstellen
     FDV -> FD: POST /Communication 
 
-
-	AVS <-> IDP: Bezug Token mit OID\n1.2.276.0.76.4.59\n(Betriebsstätte KTR)
-
 	AVS <- FD: WebSocket-Signal neue Communication\nmit "Zuweisung DiGA-Verordnung"
-
 
     AVS -> FD: GET /Communication 	
     AVS -> FD: Abruf der Verordnung mit $accept\n(Task-ID und AccessCode\naus Communication)

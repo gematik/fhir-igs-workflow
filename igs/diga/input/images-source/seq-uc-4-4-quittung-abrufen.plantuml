@@ -13,9 +13,9 @@ opt kein gueltiger AuthN-Token
   ref over AVS, IDP: AuthN-Token anfordern
 end
 
-AVS -> FD: POST /Task/{id}/$close?secret=... (AuthN-Token, Abgabeinfos)
+AVS -> FD: POST /Task/{id}/$close (Secret, MedicationDispense)
 activate FD
-FD -> FD: Status auf "quittiert" setzen()
+FD -> FD: Status auf "completed" setzen()
 FD -> FD: Quittung erstellen und signieren()
 FD --> AVS: Quittung, Status
 deactivate FD

@@ -3,19 +3,14 @@ title UC 4.4 - Quittung abrufen
 
 actor "Mitarbeiter Apotheke" as MA
 participant "AVS" as AVS
-participant "Identity Provider" as IDP
 participant "TI-Flow-Fachdienst" as FD
 
 MA -> AVS: Abgabe bestätigen()
 activate AVS
 
-opt kein gueltiger AuthN-Token
-  ref over AVS, IDP: AuthN-Token anfordern
-end
-
-AVS -> FD: POST /Task/{id}/$close?secret=... (AuthN-Token, Abgabeinfos)
+AVS -> FD: POST /Task/{id}/$close (Secret, Dispensierinformation)
 activate FD
-FD -> FD: Status auf "quittiert" setzen()
+FD -> FD: Status auf "completed" setzen()
 FD -> FD: Quittung erstellen und signieren()
 FD -> FD : Datenzugriff protokollieren()
 FD --> AVS: Quittung, Status
