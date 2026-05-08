@@ -70,7 +70,7 @@ Die URL des Downloadpunktes im zentralen Netz der TI lautet: "https://idp.zentra
 Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 
 <!-- A_19235-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-158" title="CS: Unzulässige TLS-Verbindungen ablehnen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-158" title="CS: Unzulässige TLS-Verbindungen ablehnen" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -218,7 +218,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 Die Kommunikation zum TI-Flow-Fachdienst wird zusätzlich zu TLS über einen sicheren Kanal (Verschlüsselung auf Http-Ebene) zwischen dem PS und der Vertrauenswürdigen Ausführungsumgebung (VAU) im TI-Flow-Fachdienst gesichert. 
 
 <!-- A_19741-01, A_19740-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-162" title="CS: Umsetzung sicherer Kanal zur VAU des TI-Flow-Fachdienstes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-162" title="CS: Umsetzung sicherer Kanal zur VAU des TI-Flow-Fachdienstes" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
