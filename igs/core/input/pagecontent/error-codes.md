@@ -125,11 +125,9 @@ Die folgenden Fehlercodes können ungeachtet des Endpunktes auftreten und gelten
             <td>Any</td>
             <td>
                 <ul>
-                    <li>MSG_AUTH_REQUIRED - Authentication required</li>
                     <li>MSG_BAD_FORMAT - Invalid request format</li>
                     <li>MSG_OP_NOT_ALLOWED - Method or Operation not allowed</li>
                     <li>MSG_TIMEOUT - Request timeout</li>
-                    <li>MSG_RATE_LIMIT - Too many requests</li>
                     <li>MSG_INTERNAL_ERROR - Internal server error</li>
                 </ul>
             </td>

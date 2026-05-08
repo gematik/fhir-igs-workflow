@@ -60,13 +60,6 @@ RuleSet: IDTokenCheck
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "SVC_IDENTITY_MISMATCH"
 
-RuleSet: Unauthorized
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "401"
-  * extension[description].valueString = "Authentication is required and has failed or has not yet been provided"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_AUTH_REQUIRED"
-
 RuleSet: MethodNotAllowed
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "405"
@@ -80,13 +73,6 @@ RuleSet: RequestTimeout
   * extension[description].valueString = "Request timeout"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_TIMEOUT"
-
-RuleSet: TooManyRequests
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "429"
-  * extension[description].valueString = "Too many requests"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_RATE_LIMIT"
 
 RuleSet: InternalServerError
 * extension[responseInfo][+]
