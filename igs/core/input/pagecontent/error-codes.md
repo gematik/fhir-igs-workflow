@@ -1,34 +1,10 @@
 Der TI-Flow-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Clientsysteme bereit. Das Ergebnis der Operation wird in der Verwendung von Http-Status-Codes [HTTP-STATUS-CODES] mitgeteilt. Die folgende Tabelle listet die vom TI-Flow-Fachdienst genutzten Http-Status-Codes auf.
 
-<!-- A_19514-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-340" title="TI-Flow-Fachdienst - Http-Status-Codes" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Herstellererklärung"/>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf einer Operation im Http-Response-Header einen HTTP-Status-Codes gemäß [RFC7231] zurückgeben.
-</requirement>
+[Server-Anforderungen zur Fehlerbehandlung](./error-codes-req-fd.html)
 
 ### Struktur der Fehlerrückgabe
 
 Die Fehlermeldung beinhaltet bei fachlichen Fehlern einen VAU-verschlüsselten inneren http-Response. In diesem inneren Response werden ggf. ausschliesslich personenbezogene oder medizinische Daten an den aufrufenden Client übermittelt, welche bereits im VAU-verschlüsselten inneren http-Request, welcher zum Fehler führte, enthalten waren. Das kann bspw. bei Fehlern bei der Prüfung der FHIR Konformität von Datensätzen auftreten.
-
-<!-- A_22103 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-341" title="TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome" version="1">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produktgutachten"/>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS im Fehlerfall (http-Statuscodes &gt;= 400) Hinweise zur Fehlerursache 
-     
-     <ul>
-        <li>im der inneren http-Response-Body als FHIR-Ressource OperationOutcome bei FHIR-Schnittstellen</li>
-        <li>im der inneren http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail` bei non FHIR-Schnittstellen</li>
-        <li>falls keine innere VAU-Response existiert, in einem "äußeren" http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail`</li>
-     </ul>
-      
-      an den Client zurückgeben, ohne Implementierungsdetails (z.B. kein Stacktrace) preiszugeben und dabei sicherstellen, dass personenbezogene oder medizinische Daten, falls für die qualifizierte Fehlerbeschreibung notwendig, ausschließlich in der VAU-verschlüsselten inneren http-Response übertragen werden.
-</requirement>
 
 ### Fehlerstruktur bei FHIR-Schnittstellen
 
@@ -126,7 +102,6 @@ Die folgenden Fehlercodes können ungeachtet des Endpunktes auftreten und gelten
             <td>
                 <ul>
                     <li>MSG_BAD_FORMAT - Invalid request format</li>
-                    <li>MSG_OP_NOT_ALLOWED - Method or Operation not allowed</li>
                     <li>MSG_TIMEOUT - Request timeout</li>
                     <li>MSG_INTERNAL_ERROR - Internal server error</li>
                 </ul>
@@ -248,7 +223,6 @@ Hierfür gelten für die TIFlow-Anwendungen die folgenden Fehlercodes für Opera
             <td>
                 <ul>
                     <li>MSG_UNKNOWN_OPERATION - unknown FHIR http operation</li>
-                    <li>MSG_OP_NOT_ALLOWED - Operation not allowed for resource</li>
                     <li>MSG_UNKNOWN_TYPE - Unknown resource type</li>
                 </ul>
             </td>

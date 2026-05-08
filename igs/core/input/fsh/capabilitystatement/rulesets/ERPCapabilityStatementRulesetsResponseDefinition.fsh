@@ -1,10 +1,7 @@
 // Errors for all Resource Endpoints
 RuleSet: GlobalQueryErrorCodes
-
 * rest.resource[=].interaction[=] insert InvalidRequest
-* rest.resource[=].interaction[=] insert MethodNotAllowed
 * rest.resource[=].interaction[=] insert RequestTimeout
-
 * rest.resource[=].interaction[=] insert InternalServerError
 
 // Query-API Interactions
@@ -121,7 +118,7 @@ RuleSet: SubscriptionCreateInteractionStatusCodes
 RuleSet: GlobalOperationErrorCodes
 
 * insert InvalidRequest
-* insert MethodNotAllowed
+
 * insert RequestTimeout
 
 * insert InternalServerError
@@ -133,7 +130,6 @@ RuleSet: InstanceOperationStatusCodes
 
 RuleSet: TypeOperationStatusCodes
 * insert OpUnknown
-* insert OpNotAllowed
 * insert UnknownResourceType
 * insert GlobalOperationErrorCodes
 

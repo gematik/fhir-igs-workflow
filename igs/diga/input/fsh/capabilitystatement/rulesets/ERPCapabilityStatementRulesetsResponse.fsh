@@ -60,13 +60,6 @@ RuleSet: IDTokenCheck
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "SVC_IDENTITY_MISMATCH"
 
-RuleSet: MethodNotAllowed
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "405"
-  * extension[description].valueString = "Method not allowed for this endpoint"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_OP_NOT_ALLOWED"
-
 RuleSet: RequestTimeout
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "408"
@@ -101,13 +94,6 @@ RuleSet: EmptyList
   * extension[description].valueString = "No Resource found matching the query"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_NO_MATCH"
-
-RuleSet: OpNotAllowed
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "405"
-  * extension[description].valueString = "Operation %s not allowed for resource %s"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_OP_NOT_ALLOWED"
 
 RuleSet: TiflowSecretMismatch
 * extension[responseInfo][+]

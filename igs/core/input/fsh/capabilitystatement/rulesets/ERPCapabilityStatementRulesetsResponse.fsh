@@ -56,13 +56,6 @@ RuleSet: UnknownResourceType
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_UNKNOWN_TYPE"
 
-RuleSet: MethodNotAllowed
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "405"
-  * extension[description].valueString = "Method not allowed for this endpoint"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_OP_NOT_ALLOWED"
-
 RuleSet: RequestTimeout
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "408"
@@ -102,13 +95,6 @@ RuleSet: EmptyList
   * extension[errorCode].valueString = "MSG_NO_MATCH"
 
 // TIFlow Related Errors
-RuleSet: OpNotAllowed
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "405"
-  * extension[description].valueString = "Operation %s not allowed for resource %s"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_OP_NOT_ALLOWED"
-
 RuleSet: OpUnknown
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "405"

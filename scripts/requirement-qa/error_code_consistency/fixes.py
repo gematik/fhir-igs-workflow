@@ -729,20 +729,21 @@ def fix_cs_vs(
                 continue
 
             vs_content = target_vs.read_text(encoding="utf-8")
-            include_token = normalize_include_token(f"{import_system}#{finding.code}")
+            include_token_original = f"{import_system}#{finding.code}"
+            include_token_normalized = normalize_include_token(include_token_original)
             existing_includes = {
                 normalize_include_token(token)
                 for token in parse_valueset_external_includes(target_vs).keys()
             }
-            if include_token in existing_includes:
+            if include_token_normalized in existing_includes:
                 continue
 
             source_descriptions = _valueset_import_description_sources(ig_roots)
-            description = source_descriptions.get(include_token)
+            description = source_descriptions.get(include_token_normalized)
             description_suffix = f' "{description}"' if description else ""
-            new_line = f"* include {include_token}{description_suffix}\n"
+            new_line = f"* include {include_token_original}{description_suffix}\n"
             target_vs.write_text(vs_content.rstrip("\n") + "\n" + new_line, encoding="utf-8")
-            print(f"  [FIX] Added include {include_token} to {target_vs}")
+            print(f"  [FIX] Added include {include_token_original} to {target_vs}")
             fixes_applied += 1
 
     return fixes_applied

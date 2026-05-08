@@ -2,7 +2,7 @@
 RuleSet: GlobalQueryErrorCodes
 
 * rest.resource[=].interaction[=] insert InvalidRequest
-* rest.resource[=].interaction[=] insert MethodNotAllowed
+
 * rest.resource[=].interaction[=] insert RequestTimeout
 
 * rest.resource[=].interaction[=] insert InternalServerError
@@ -46,7 +46,7 @@ RuleSet: SearchTypeInteractionStatusCodes
 RuleSet: GlobalOperationErrorCodes
 
 * insert InvalidRequest
-* insert MethodNotAllowed
+
 * insert RequestTimeout
 
 * insert InternalServerError
@@ -57,7 +57,6 @@ RuleSet: InstanceOperationStatusCodes
 * insert GlobalOperationErrorCodes
 
 RuleSet: TypeOperationStatusCodes
-* insert OpNotAllowed
 * insert UnknownResourceType
 * insert GlobalOperationErrorCodes
 

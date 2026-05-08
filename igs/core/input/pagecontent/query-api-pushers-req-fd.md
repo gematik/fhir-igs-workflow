@@ -76,7 +76,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 
 ### POST /pushers/set
 
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Schemavalidierung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-431" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Schemavalidierung" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
@@ -133,5 +133,5 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
   <actor name="TI-Flow_FD">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set, wenn eine neue App-Registrierung angelegt wird, den aktuellen Zeitpunkt als Zeitstempel des Anlegens mit der App-Registrierung verknüpft speichern.
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set, wenn eine neue App-Registrierung angelegt wird, den aktuellen Zeitpunkt als Zeitstempel des Anlegens mit der App-Registrierung verknüpft speichern.
 </requirement>

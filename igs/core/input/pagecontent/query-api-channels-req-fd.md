@@ -129,7 +129,7 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
 </requirement>
 <!-- ToDo Hendre: Warum lautet der FehlerCode bei vergleichbaren Afos TIFLOW_AUTH_ROLE_NOT_ALLOWED? -->
 
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Push Notifications - Channels konfigurieren - Schemavalidierung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-430" title="TI-Flow-Fachdienst - Push Notifications - Channels konfigurieren - Schemavalidierung" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
