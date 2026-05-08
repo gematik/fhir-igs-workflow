@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SearchParameter xmlns="http://hl7.org/fhir">
+  <id value="task-expiry-date-sp"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: SearchParameter task-expiry-date-sp</b></p><a name="task-expiry-date-sp"> </a><a name="hctask-expiry-date-sp"> </a><h2>TaskExpiryDateSP</h2><p>Parameter <code>expiry-date</code>:<code>date</code></p><div><p>Das Ablaufdatum eines E-Rezepzes. Nach ablauf dieses Datums darf ein E-Rezept nicht mehr beliefert werden.</p>
+</div><table class="grid"><tr><td>Resource</td><td><a href="http://hl7.org/fhir/R4/task.html">Task</a></td></tr><tr><td>Expression</td><td><code>Task.extension('https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_ExpiryDate').value.as(date)</code></td></tr><tr><td>Multiples</td><td><ul><li>multipleAnd: The parameter may repeat in order to specify multiple values that must all be true</li><li>multipleOr: The parameter may only have one value (no comma separators)</li></ul></td></tr></table></div>
+  </text>
+  <url value="https://gematik.de/fhir/workflow/core/SearchParameter/task-expiry-date-sp"/>
+  <version value="1.0.0-draft"/>
+  <name value="TaskExpiryDateSP"/>
+  <status value="active"/>
+  <date value="2025-12-15"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Das Ablaufdatum eines E-Rezepzes. Nach ablauf dieses Datums darf ein E-Rezept nicht mehr beliefert werden."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <code value="expiry-date"/>
+  <base value="Task"/>
+  <type value="date"/>
+  <expression value="Task.extension('https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_ExpiryDate').value.as(date)"/>
+  <multipleOr value="false"/>
+  <multipleAnd value="true"/>
+</SearchParameter>

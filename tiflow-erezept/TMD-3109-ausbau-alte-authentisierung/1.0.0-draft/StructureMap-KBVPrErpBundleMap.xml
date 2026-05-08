@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="KBVPrErpBundleMap"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap KBVPrErpBundleMap</b></p><a name="KBVPrErpBundleMap"> </a><a name="hcKBVPrErpBundleMap"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpBundleMap<span style="color: navy">&quot; = &quot;</span>KBVPrErpBundleMap<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">Auto-generated StructureMap for transformation KBV_PR_ERP_Bundle|1.4.0 -&gt; EPAOpProvidePrescriptionERPInputParameters|1.3.0</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span>https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle<span style="color: navy">&quot; </span><b>alias </b>KBVPRERPBundle <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.0&amp;canonical=https://gematik.de/fhir/epa-medication/StructureDefinition/epa-op-provide-prescription-erp-input-parameters" title="EPA Operation ProvidePrescription ERP Input-Parameters">https://gematik.de/fhir/epa-medication/StructureDefinition/epa-op-provide-prescription-erp-input-parameters</a><span style="color: navy">&quot; </span><b>alias </b>EPAOpProvidePrescriptionERPInputParameters <b>as </b><b>target</b>
+
+<b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-KBVPrErpMedicationCompoundingMap.html" title="KBVPrErpMedicationCompoundingMap">https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationCompoundingMap</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-KBVPrErpMedicationFreetextMap.html" title="KBVPrErpMedicationFreetextMap">https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationFreetextMap</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-KBVPrErpMedicationIngredientMap.html" title="KBVPrErpMedicationIngredientMap">https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationIngredientMap</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-KBVPrErpMedicationPznMap.html" title="KBVPrErpMedicationPznMap">https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationPznMap</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-KBVPrErpPrescriptionMap.html" title="KBVPrErpPrescriptionMap">https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-KBVPrForOrganizationMap.html" title="KBVPrForOrganizationMap">https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap</a><span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-KBVPrForPractitionerMap.html" title="KBVPrForPractitionerMap">https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap</a><span style="color: navy">&quot;
+</span>
+<span style="color: navy">// </span><span style="color: green">Transformation generated for KBV_PR_ERP_Bundle|1.4.0 -&gt; EPAOpProvidePrescriptionERPInputParameters|1.3.0</span>
+<b>group </b>KBVPrErpBundleMap<span style="color: navy">(</span><b>source</b> <span style="color: maroon">KBVPRERPBundle</span><span style="color: navy"> : </span>KBVPRERPBundle, <b>target</b> <span style="color: maroon">EPAOpProvidePrescriptionERPInputParameters</span><span style="color: navy"> : </span>EPAOpProvidePrescriptionERPInputParameters<span style="color: navy">)</span><b> &lt;&lt;types&gt;&gt;</b><span style="color: navy"> {
+</span>  KBVPRERPBundle<span style="color: navy"><b> -&gt; </b></span>EPAOpProvidePrescriptionERPInputParameters.parameter<b> as </b><span style="color: maroon">targetParameterRxprescriptionParameter77d85b46</span><b> then</b><span style="color: navy"> {
+</span>    KBVPRERPBundle<span style="color: navy"><b> -&gt; </b></span>targetParameterRxprescriptionParameter77d85b46.name = <span style="color: blue">'rxPrescription'</span> <i>&quot;SetParameterRxprescriptionName&quot;</i><span style="color: navy">;</span>
+    KBVPRERPBundle<span style="color: navy"><b> -&gt; </b></span>targetParameterRxprescriptionParameter77d85b46.part<b> as </b><span style="color: maroon">targetPartAuthoredonPartb106c48f</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRERPBundle<span style="color: navy"><b> -&gt; </b></span>targetPartAuthoredonPartb106c48f.name = <span style="color: blue">'authoredOn'</span> <i>&quot;SetPartAuthoredonName&quot;</i><span style="color: navy">;</span>
+      KBVPRERPBundle.entry<b> as </b><span style="color: maroon">inlinesourceParametersParameterRxprescriptionPartAuthoredonValue</span><b> where </b>resource.meta.profile.where($this.contains('https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription')).exists()<b> then</b><span style="color: navy"> {
+</span>        inlinesourceParametersParameterRxprescriptionPartAuthoredonValue.resource<b> as </b><span style="color: maroon">inlinesourceParametersParameterRxprescriptionPartAuthoredonValue</span><b> then</b><span style="color: navy"> {
+</span>          inlinesourceParametersParameterRxprescriptionPartAuthoredonValue.authoredOn<b> as </b><span style="color: maroon">inlinesourceParametersParameterRxprescriptionPartAuthoredonValue</span><span style="color: navy"><b> -&gt; </b></span>targetPartAuthoredonPartb106c48f.value = <span style="color: maroon">inlinesourceParametersParameterRxprescriptionPartAuthoredonValue</span><b> as </b><span style="color: maroon">inlinetargetParametersParameterRxprescriptionPartAuthoredonValue</span> <i>&quot;InlineParametersParameterRxprescriptionPartAuthoredonValueX1c6fc&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;InlineParametersParameterRxprescriptionPartAuthoredonValueX1c6fc&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;InlineParametersParameterRxprescriptionPartAuthoredonValueX1c6fc&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
+    <span style="color: navy">}</span> <i>&quot;PartAuthoredonPartContainer&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Creates part:authoredOn part container aggregating 1 child rule(s)</span>
+    KBVPRERPBundle<span style="color: navy"><b> -&gt; </b></span>targetParameterRxprescriptionParameter77d85b46.part<b> as </b><span style="color: maroon">targetPartMedicationPart88f31ec4</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRERPBundle<span style="color: navy"><b> -&gt; </b></span>targetPartMedicationPart88f31ec4.name = <span style="color: blue">'medication'</span> <i>&quot;SetPartMedicationName&quot;</i><span style="color: navy">;</span>
+      KBVPRERPBundle.entry<b> as </b><span style="color: maroon">sourceBundleEntryRezeptierdatenpznverordnungResource0Entry4c4ad0</span><b> where </b>resource is Medication<b> then</b><span style="color: navy"> {
+</span>        sourceBundleEntryRezeptierdatenpznverordnungResource0Entry4c4ad0.resource<b> as </b><span style="color: maroon">sourceBundleEntryRezeptierdatenpznverordnungResource1Resource3bd</span><b> then</b><span style="color: navy"> {
+</span>          sourceBundleEntryRezeptierdatenpznverordnungResource1Resource3bd<span style="color: navy"><b> -&gt; </b></span>targetPartMedicationPart88f31ec4.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">targetParameterRxprescriptionPartMedicationResourceResource38c62</span><b> then </b>KBVPrErpMedicationPznMap<span style="color: navy">(</span><span style="color: maroon">sourceBundleEntryRezeptierdatenpznverordnungResource1Resource3bd</span><span style="color: navy">, </span><span style="color: maroon">targetParameterRxprescriptionPartMedicationResourceResource38c62</span><span style="color: navy">)</span> <i>&quot;CallKbvprerpmedicationpznmap&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;BundleEntryRezeptierdatenpznverordnungResource7400f329&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;BundleEntryRezeptierdatenpznverordnungResource7400f329&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Bundle.entry:RezeptierdatenPZNVerordnung.resource -&gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_PZN|1.4.0 -&gt; EPAMedication|1.3.0</span>
+      KBVPRERPBundle.entry<b> as </b><span style="color: maroon">sourceBundleEntryRezeptierdatenwirkstoffverordnungResource0Ent6b</span><b> where </b>resource is Medication<b> then</b><span style="color: navy"> {
+</span>        sourceBundleEntryRezeptierdatenwirkstoffverordnungResource0Ent6b.resource<b> as </b><span style="color: maroon">sourceBundleEntryRezeptierdatenwirkstoffverordnungResource1Res9f</span><b> then</b><span style="color: navy"> {
+</span>          sourceBundleEntryRezeptierdatenwirkstoffverordnungResource1Res9f<span style="color: navy"><b> -&gt; </b></span>targetPartMedicationPart88f31ec4.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">targetParameterRxprescriptionPartMedicationResourceResource38c62</span><b> then </b>KBVPrErpMedicationIngredientMap<span style="color: navy">(</span><span style="color: maroon">sourceBundleEntryRezeptierdatenwirkstoffverordnungResource1Res9f</span><span style="color: navy">, </span><span style="color: maroon">targetParameterRxprescriptionPartMedicationResourceResource38c62</span><span style="color: navy">)</span> <i>&quot;CallKbvprerpmedicationingredientmap&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;BundleEntryRezeptierdatenwirkstoffverordnungResource7400f329&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;BundleEntryRezeptierdatenwirkstoffverordnungResource7400f329&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Bundle.entry:RezeptierdatenWirkstoffverordnung.resource -&gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_Ingredient|1.4.0 -&gt; EPAMedication|1.3.0</span>
+      KBVPRERPBundle.entry<b> as </b><span style="color: maroon">sourceBundleEntryRezeptierdatenrezepturverordnungResource0Entr83</span><b> where </b>resource is Medication<b> then</b><span style="color: navy"> {
+</span>        sourceBundleEntryRezeptierdatenrezepturverordnungResource0Entr83.resource<b> as </b><span style="color: maroon">sourceBundleEntryRezeptierdatenrezepturverordnungResource1Resocd</span><b> then</b><span style="color: navy"> {
+</span>          sourceBundleEntryRezeptierdatenrezepturverordnungResource1Resocd<span style="color: navy"><b> -&gt; </b></span>targetPartMedicationPart88f31ec4.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">targetParameterRxprescriptionPartMedicationResourceResource38c62</span><b> then </b>KBVPrErpMedicationCompoundingMap<span style="color: navy">(</span><span style="color: maroon">sourceBundleEntryRezeptierdatenrezepturverordnungResource1Resocd</span><span style="color: navy">, </span><span style="color: maroon">targetParameterRxprescriptionPartMedicationResourceResource38c62</span><span style="color: navy">)</span> <i>&quot;CallKbvprerpmedicationcompoundingmap&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;BundleEntryRezeptierdatenrezepturverordnungResource7400f329&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;BundleEntryRezeptierdatenrezepturverordnungResource7400f329&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Bundle.entry:RezeptierdatenRezepturverordnung.resource -&gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_Compounding|1.4.0 -&gt; EPAMedication|1.3.0</span>
+      KBVPRERPBundle.entry<b> as </b><span style="color: maroon">sourceBundleEntryRezeptierdatenfreitextverordnungResource0Entrb4</span><b> where </b>resource is Medication<b> then</b><span style="color: navy"> {
+</span>        sourceBundleEntryRezeptierdatenfreitextverordnungResource0Entrb4.resource<b> as </b><span style="color: maroon">sourceBundleEntryRezeptierdatenfreitextverordnungResource1Resob3</span><b> then</b><span style="color: navy"> {
+</span>          sourceBundleEntryRezeptierdatenfreitextverordnungResource1Resob3<span style="color: navy"><b> -&gt; </b></span>targetPartMedicationPart88f31ec4.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">targetParameterRxprescriptionPartMedicationResourceResource38c62</span><b> then </b>KBVPrErpMedicationFreetextMap<span style="color: navy">(</span><span style="color: maroon">sourceBundleEntryRezeptierdatenfreitextverordnungResource1Resob3</span><span style="color: navy">, </span><span style="color: maroon">targetParameterRxprescriptionPartMedicationResourceResource38c62</span><span style="color: navy">)</span> <i>&quot;CallKbvprerpmedicationfreetextmap&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;BundleEntryRezeptierdatenfreitextverordnungResource7400f329&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;BundleEntryRezeptierdatenfreitextverordnungResource7400f329&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Bundle.entry:RezeptierdatenFreitextverordnung.resource -&gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_FreeText|1.4.0 -&gt; EPAMedication|1.3.0</span>
+    <span style="color: navy">}</span> <i>&quot;PartMedicationPartContainer&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Creates part:medication part container aggregating 4 child rule(s)</span>
+    KBVPRERPBundle<span style="color: navy"><b> -&gt; </b></span>targetParameterRxprescriptionParameter77d85b46.part<b> as </b><span style="color: maroon">targetPartMedicationrequestPart3ea10d80</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRERPBundle<span style="color: navy"><b> -&gt; </b></span>targetPartMedicationrequestPart3ea10d80.name = <span style="color: blue">'medicationRequest'</span> <i>&quot;SetPartMedicationrequestName&quot;</i><span style="color: navy">;</span>
+      KBVPRERPBundle.entry<b> as </b><span style="color: maroon">sourceBundleEntryVerordnungarzneimittelResource0Entry3c6c2e1b</span><b> where </b>resource is MedicationRequest<b> then</b><span style="color: navy"> {
+</span>        sourceBundleEntryVerordnungarzneimittelResource0Entry3c6c2e1b.resource<b> as </b><span style="color: maroon">sourceBundleEntryVerordnungarzneimittelResource1Resource61f06fbc</span><b> then</b><span style="color: navy"> {
+</span>          sourceBundleEntryVerordnungarzneimittelResource1Resource61f06fbc<span style="color: navy"><b> -&gt; </b></span>targetPartMedicationrequestPart3ea10d80.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">targetParameterRxprescriptionPartMedicationrequestResourceReso52</span><b> then </b>KBVPrErpPrescriptionMap<span style="color: navy">(</span><span style="color: maroon">sourceBundleEntryVerordnungarzneimittelResource1Resource61f06fbc</span><span style="color: navy">, </span><span style="color: maroon">targetParameterRxprescriptionPartMedicationrequestResourceReso52</span><span style="color: navy">)</span> <i>&quot;CallKbvprerpprescriptionmap&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;BundleEntryVerordnungarzneimittelResource890c831b&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;BundleEntryVerordnungarzneimittelResource890c831b&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Bundle.entry:VerordnungArzneimittel.resource -&gt; .parameter:rxPrescription.part:medicationRequest.resource using KBV_PR_ERP_Prescription|1.4.0 -&gt; EPAMedicationRequest|1.3.0</span>
+    <span style="color: navy">}</span> <i>&quot;PartMedicationrequestPartContainer&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Creates part:medicationRequest part container aggregating 1 child rule(s)</span>
+    KBVPRERPBundle<span style="color: navy"><b> -&gt; </b></span>targetParameterRxprescriptionParameter77d85b46.part<b> as </b><span style="color: maroon">targetPartOrganizationPart5252e12d</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRERPBundle<span style="color: navy"><b> -&gt; </b></span>targetPartOrganizationPart5252e12d.name = <span style="color: blue">'organization'</span> <i>&quot;SetPartOrganizationName&quot;</i><span style="color: navy">;</span>
+      KBVPRERPBundle.entry<b> as </b><span style="color: maroon">sourceBundleEntryEinrichtungResource0Entry6bfa77fa</span><b> where </b>resource is Organization<b> then</b><span style="color: navy"> {
+</span>        sourceBundleEntryEinrichtungResource0Entry6bfa77fa.resource<b> as </b><span style="color: maroon">sourceBundleEntryEinrichtungResource1Resource45328e4f</span><b> then</b><span style="color: navy"> {
+</span>          sourceBundleEntryEinrichtungResource1Resource45328e4f<span style="color: navy"><b> -&gt; </b></span>targetPartOrganizationPart5252e12d.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">targetParameterRxprescriptionPartOrganizationResourceResource43b</span><b> then </b>KBVPrForOrganizationMap<span style="color: navy">(</span><span style="color: maroon">sourceBundleEntryEinrichtungResource1Resource45328e4f</span><span style="color: navy">, </span><span style="color: maroon">targetParameterRxprescriptionPartOrganizationResourceResource43b</span><span style="color: navy">)</span> <i>&quot;CallKbvprfororganizationmap&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;BundleEntryEinrichtungResourceB36f36fb&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;BundleEntryEinrichtungResourceB36f36fb&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Bundle.entry:Einrichtung.resource -&gt; .parameter:rxPrescription.part:organization.resource using KBV_PR_FOR_Organization|1.3.0 -&gt; OrganizationDirectory|1.0.0</span>
+    <span style="color: navy">}</span> <i>&quot;PartOrganizationPartContainer&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Creates part:organization part container aggregating 1 child rule(s)</span>
+    KBVPRERPBundle<span style="color: navy"><b> -&gt; </b></span>targetParameterRxprescriptionParameter77d85b46.part<b> as </b><span style="color: maroon">targetPartPractitionerParte111e9d1</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRERPBundle<span style="color: navy"><b> -&gt; </b></span>targetPartPractitionerParte111e9d1.name = <span style="color: blue">'practitioner'</span> <i>&quot;SetPartPractitionerName&quot;</i><span style="color: navy">;</span>
+      KBVPRERPBundle.entry<b> as </b><span style="color: maroon">sourceBundleEntryAusstellendeverschreibendeverantwortlichepersb5</span><b> where </b>resource is Practitioner<b> then</b><span style="color: navy"> {
+</span>        sourceBundleEntryAusstellendeverschreibendeverantwortlichepersb5.resource<b> as </b><span style="color: maroon">sourceBundleEntryAusstellendeverschreibendeverantwortlicheperse9</span><b> then</b><span style="color: navy"> {
+</span>          sourceBundleEntryAusstellendeverschreibendeverantwortlicheperse9<span style="color: navy"><b> -&gt; </b></span>targetPartPractitionerParte111e9d1.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">targetParameterRxprescriptionPartPractitionerResourceResource62d</span><b> then </b>KBVPrForPractitionerMap<span style="color: navy">(</span><span style="color: maroon">sourceBundleEntryAusstellendeverschreibendeverantwortlicheperse9</span><span style="color: navy">, </span><span style="color: maroon">targetParameterRxprescriptionPartPractitionerResourceResource62d</span><span style="color: navy">)</span> <i>&quot;CallKbvprforpractitionermap&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;BundleEntryAusstellendeverschreibendeverantwortlichepersonResour&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;BundleEntryAusstellendeverschreibendeverantwortlichepersonResour&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Bundle.entry:AusstellendeVerschreibendeVerantwortlichePerson.resource -&gt; .parameter:rxPrescription.part:practitioner.resource using KBV_PR_FOR_Practitioner|1.3.0 -&gt; PractitionerDirectory|1.0.0</span>
+    <span style="color: navy">}</span> <i>&quot;PartPractitionerPartContainer&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Creates part:practitioner part container aggregating 1 child rule(s)</span>
+    KBVPRERPBundle<span style="color: navy"><b> -&gt; </b></span>targetParameterRxprescriptionParameter77d85b46.part<b> as </b><span style="color: maroon">targetPartPrescriptionidPartee663288</span><b> then</b><span style="color: navy"> {
+</span>      KBVPRERPBundle<span style="color: navy"><b> -&gt; </b></span>targetPartPrescriptionidPartee663288.name = <span style="color: blue">'prescriptionId'</span> <i>&quot;SetPartPrescriptionidName&quot;</i><span style="color: navy">;</span>
+      KBVPRERPBundle.identifier<b> as </b><span style="color: maroon">inlinesourceParametersParameterRxprescriptionPartPrescriptionidV</span><b> then</b><span style="color: navy"> {
+</span>        inlinesourceParametersParameterRxprescriptionPartPrescriptionidV.value<b> as </b><span style="color: maroon">inlinesourceParametersParameterRxprescriptionPartPrescriptionidV</span><span style="color: navy"><b> -&gt; </b></span>targetPartPrescriptionidPartee663288.value = <span style="color: maroon">inlinesourceParametersParameterRxprescriptionPartPrescriptionidV</span><b> as </b><span style="color: maroon">inlinetargetParametersParameterRxprescriptionPartPrescriptionidV</span> <i>&quot;InlineParametersParameterRxprescriptionPartPrescriptionidValueX9&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;InlineParametersParameterRxprescriptionPartPrescriptionidValueX9&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
+    <span style="color: navy">}</span> <i>&quot;PartPrescriptionidPartContainer&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Creates part:prescriptionId part container aggregating 1 child rule(s)</span>
+  <span style="color: navy">}</span> <i>&quot;ParameterRxprescriptionContainer&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Creates parameter:rxPrescription parameter container aggregating 6 part(s)</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpBundleMap"/>
+  <version value="1.0.0-draft"/>
+  <name value="KBVPrErpBundleMap"/>
+  <status value="draft"/>
+  <date value="2026-02-02"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Auto-generated StructureMap for transformation KBV_PR_ERP_Bundle|1.4.0 -&gt; EPAOpProvidePrescriptionERPInputParameters|1.3.0"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle"/>
+    <mode value="source"/>
+    <alias value="KBVPRERPBundle"/>
+  </structure>
+  <structure>
+    <url value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-op-provide-prescription-erp-input-parameters"/>
+    <mode value="target"/>
+    <alias value="EPAOpProvidePrescriptionERPInputParameters"/>
+  </structure>
+  <import value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationCompoundingMap"/>
+  <import value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationFreetextMap"/>
+  <import value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationIngredientMap"/>
+  <import value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationPznMap"/>
+  <import value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap"/>
+  <import value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap"/>
+  <import value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap"/>
+  <group>
+    <name value="KBVPrErpBundleMap"/>
+    <typeMode value="types"/>
+    <documentation value="Transformation generated for KBV_PR_ERP_Bundle|1.4.0 -&gt; EPAOpProvidePrescriptionERPInputParameters|1.3.0"/>
+    <input>
+      <name value="KBVPRERPBundle"/>
+      <type value="KBVPRERPBundle"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="EPAOpProvidePrescriptionERPInputParameters"/>
+      <type value="EPAOpProvidePrescriptionERPInputParameters"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ParameterRxprescriptionContainer"/>
+      <source>
+        <context value="KBVPRERPBundle"/>
+      </source>
+      <target>
+        <context value="EPAOpProvidePrescriptionERPInputParameters"/>
+        <contextType value="variable"/>
+        <element value="parameter"/>
+        <variable value="targetParameterRxprescriptionParameter77d85b46"/>
+      </target>
+      <rule>
+        <name value="SetParameterRxprescriptionName"/>
+        <source>
+          <context value="KBVPRERPBundle"/>
+        </source>
+        <target>
+          <context value="targetParameterRxprescriptionParameter77d85b46"/>
+          <contextType value="variable"/>
+          <element value="name"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="rxPrescription"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="PartAuthoredonPartContainer"/>
+        <source>
+          <context value="KBVPRERPBundle"/>
+        </source>
+        <target>
+          <context value="targetParameterRxprescriptionParameter77d85b46"/>
+          <contextType value="variable"/>
+          <element value="part"/>
+          <variable value="targetPartAuthoredonPartb106c48f"/>
+        </target>
+        <rule>
+          <name value="SetPartAuthoredonName"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+          </source>
+          <target>
+            <context value="targetPartAuthoredonPartb106c48f"/>
+            <contextType value="variable"/>
+            <element value="name"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="authoredOn"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="InlineParametersParameterRxprescriptionPartAuthoredonValueX1c6fc"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+            <element value="entry"/>
+            <variable value="inlinesourceParametersParameterRxprescriptionPartAuthoredonValue"/>
+            <condition value="resource.meta.profile.where($this.contains('https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription')).exists()"/>
+          </source>
+          <rule>
+            <name value="InlineParametersParameterRxprescriptionPartAuthoredonValueX1c6fc"/>
+            <source>
+              <context value="inlinesourceParametersParameterRxprescriptionPartAuthoredonValue"/>
+              <element value="resource"/>
+              <variable value="inlinesourceParametersParameterRxprescriptionPartAuthoredonValue"/>
+            </source>
+            <rule>
+              <name value="InlineParametersParameterRxprescriptionPartAuthoredonValueX1c6fc"/>
+              <source>
+                <context value="inlinesourceParametersParameterRxprescriptionPartAuthoredonValue"/>
+                <element value="authoredOn"/>
+                <variable value="inlinesourceParametersParameterRxprescriptionPartAuthoredonValue"/>
+              </source>
+              <target>
+                <context value="targetPartAuthoredonPartb106c48f"/>
+                <contextType value="variable"/>
+                <element value="value"/>
+                <variable value="inlinetargetParametersParameterRxprescriptionPartAuthoredonValue"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueId value="inlinesourceParametersParameterRxprescriptionPartAuthoredonValue"/>
+                </parameter>
+              </target>
+            </rule>
+          </rule>
+          <documentation value="Automatic copy"/>
+        </rule>
+        <documentation value="Creates part:authoredOn part container aggregating 1 child rule(s)"/>
+      </rule>
+      <rule>
+        <name value="PartMedicationPartContainer"/>
+        <source>
+          <context value="KBVPRERPBundle"/>
+        </source>
+        <target>
+          <context value="targetParameterRxprescriptionParameter77d85b46"/>
+          <contextType value="variable"/>
+          <element value="part"/>
+          <variable value="targetPartMedicationPart88f31ec4"/>
+        </target>
+        <rule>
+          <name value="SetPartMedicationName"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+          </source>
+          <target>
+            <context value="targetPartMedicationPart88f31ec4"/>
+            <contextType value="variable"/>
+            <element value="name"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="medication"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="BundleEntryRezeptierdatenpznverordnungResource7400f329"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+            <element value="entry"/>
+            <variable value="sourceBundleEntryRezeptierdatenpznverordnungResource0Entry4c4ad0"/>
+            <condition value="resource is Medication"/>
+          </source>
+          <rule>
+            <name value="BundleEntryRezeptierdatenpznverordnungResource7400f329"/>
+            <source>
+              <context value="sourceBundleEntryRezeptierdatenpznverordnungResource0Entry4c4ad0"/>
+              <element value="resource"/>
+              <variable value="sourceBundleEntryRezeptierdatenpznverordnungResource1Resource3bd"/>
+            </source>
+            <rule>
+              <name value="CallKbvprerpmedicationpznmap"/>
+              <source>
+                <context value="sourceBundleEntryRezeptierdatenpznverordnungResource1Resource3bd"/>
+              </source>
+              <target>
+                <context value="targetPartMedicationPart88f31ec4"/>
+                <contextType value="variable"/>
+                <element value="resource"/>
+                <variable value="targetParameterRxprescriptionPartMedicationResourceResource38c62"/>
+                <transform value="create"/>
+                <parameter>
+                  <valueString value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"/>
+                </parameter>
+              </target>
+              <dependent>
+                <name value="KBVPrErpMedicationPznMap"/>
+                <variable value="sourceBundleEntryRezeptierdatenpznverordnungResource1Resource3bd"/>
+                <variable value="targetParameterRxprescriptionPartMedicationResourceResource38c62"/>
+              </dependent>
+            </rule>
+          </rule>
+          <documentation value="Bundle.entry:RezeptierdatenPZNVerordnung.resource -&gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_PZN|1.4.0 -&gt; EPAMedication|1.3.0"/>
+        </rule>
+        <rule>
+          <name value="BundleEntryRezeptierdatenwirkstoffverordnungResource7400f329"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+            <element value="entry"/>
+            <variable value="sourceBundleEntryRezeptierdatenwirkstoffverordnungResource0Ent6b"/>
+            <condition value="resource is Medication"/>
+          </source>
+          <rule>
+            <name value="BundleEntryRezeptierdatenwirkstoffverordnungResource7400f329"/>
+            <source>
+              <context value="sourceBundleEntryRezeptierdatenwirkstoffverordnungResource0Ent6b"/>
+              <element value="resource"/>
+              <variable value="sourceBundleEntryRezeptierdatenwirkstoffverordnungResource1Res9f"/>
+            </source>
+            <rule>
+              <name value="CallKbvprerpmedicationingredientmap"/>
+              <source>
+                <context value="sourceBundleEntryRezeptierdatenwirkstoffverordnungResource1Res9f"/>
+              </source>
+              <target>
+                <context value="targetPartMedicationPart88f31ec4"/>
+                <contextType value="variable"/>
+                <element value="resource"/>
+                <variable value="targetParameterRxprescriptionPartMedicationResourceResource38c62"/>
+                <transform value="create"/>
+                <parameter>
+                  <valueString value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"/>
+                </parameter>
+              </target>
+              <dependent>
+                <name value="KBVPrErpMedicationIngredientMap"/>
+                <variable value="sourceBundleEntryRezeptierdatenwirkstoffverordnungResource1Res9f"/>
+                <variable value="targetParameterRxprescriptionPartMedicationResourceResource38c62"/>
+              </dependent>
+            </rule>
+          </rule>
+          <documentation value="Bundle.entry:RezeptierdatenWirkstoffverordnung.resource -&gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_Ingredient|1.4.0 -&gt; EPAMedication|1.3.0"/>
+        </rule>
+        <rule>
+          <name value="BundleEntryRezeptierdatenrezepturverordnungResource7400f329"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+            <element value="entry"/>
+            <variable value="sourceBundleEntryRezeptierdatenrezepturverordnungResource0Entr83"/>
+            <condition value="resource is Medication"/>
+          </source>
+          <rule>
+            <name value="BundleEntryRezeptierdatenrezepturverordnungResource7400f329"/>
+            <source>
+              <context value="sourceBundleEntryRezeptierdatenrezepturverordnungResource0Entr83"/>
+              <element value="resource"/>
+              <variable value="sourceBundleEntryRezeptierdatenrezepturverordnungResource1Resocd"/>
+            </source>
+            <rule>
+              <name value="CallKbvprerpmedicationcompoundingmap"/>
+              <source>
+                <context value="sourceBundleEntryRezeptierdatenrezepturverordnungResource1Resocd"/>
+              </source>
+              <target>
+                <context value="targetPartMedicationPart88f31ec4"/>
+                <contextType value="variable"/>
+                <element value="resource"/>
+                <variable value="targetParameterRxprescriptionPartMedicationResourceResource38c62"/>
+                <transform value="create"/>
+                <parameter>
+                  <valueString value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"/>
+                </parameter>
+              </target>
+              <dependent>
+                <name value="KBVPrErpMedicationCompoundingMap"/>
+                <variable value="sourceBundleEntryRezeptierdatenrezepturverordnungResource1Resocd"/>
+                <variable value="targetParameterRxprescriptionPartMedicationResourceResource38c62"/>
+              </dependent>
+            </rule>
+          </rule>
+          <documentation value="Bundle.entry:RezeptierdatenRezepturverordnung.resource -&gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_Compounding|1.4.0 -&gt; EPAMedication|1.3.0"/>
+        </rule>
+        <rule>
+          <name value="BundleEntryRezeptierdatenfreitextverordnungResource7400f329"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+            <element value="entry"/>
+            <variable value="sourceBundleEntryRezeptierdatenfreitextverordnungResource0Entrb4"/>
+            <condition value="resource is Medication"/>
+          </source>
+          <rule>
+            <name value="BundleEntryRezeptierdatenfreitextverordnungResource7400f329"/>
+            <source>
+              <context value="sourceBundleEntryRezeptierdatenfreitextverordnungResource0Entrb4"/>
+              <element value="resource"/>
+              <variable value="sourceBundleEntryRezeptierdatenfreitextverordnungResource1Resob3"/>
+            </source>
+            <rule>
+              <name value="CallKbvprerpmedicationfreetextmap"/>
+              <source>
+                <context value="sourceBundleEntryRezeptierdatenfreitextverordnungResource1Resob3"/>
+              </source>
+              <target>
+                <context value="targetPartMedicationPart88f31ec4"/>
+                <contextType value="variable"/>
+                <element value="resource"/>
+                <variable value="targetParameterRxprescriptionPartMedicationResourceResource38c62"/>
+                <transform value="create"/>
+                <parameter>
+                  <valueString value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"/>
+                </parameter>
+              </target>
+              <dependent>
+                <name value="KBVPrErpMedicationFreetextMap"/>
+                <variable value="sourceBundleEntryRezeptierdatenfreitextverordnungResource1Resob3"/>
+                <variable value="targetParameterRxprescriptionPartMedicationResourceResource38c62"/>
+              </dependent>
+            </rule>
+          </rule>
+          <documentation value="Bundle.entry:RezeptierdatenFreitextverordnung.resource -&gt; .parameter:rxPrescription.part:medication.resource using KBV_PR_ERP_Medication_FreeText|1.4.0 -&gt; EPAMedication|1.3.0"/>
+        </rule>
+        <documentation value="Creates part:medication part container aggregating 4 child rule(s)"/>
+      </rule>
+      <rule>
+        <name value="PartMedicationrequestPartContainer"/>
+        <source>
+          <context value="KBVPRERPBundle"/>
+        </source>
+        <target>
+          <context value="targetParameterRxprescriptionParameter77d85b46"/>
+          <contextType value="variable"/>
+          <element value="part"/>
+          <variable value="targetPartMedicationrequestPart3ea10d80"/>
+        </target>
+        <rule>
+          <name value="SetPartMedicationrequestName"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+          </source>
+          <target>
+            <context value="targetPartMedicationrequestPart3ea10d80"/>
+            <contextType value="variable"/>
+            <element value="name"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="medicationRequest"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="BundleEntryVerordnungarzneimittelResource890c831b"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+            <element value="entry"/>
+            <variable value="sourceBundleEntryVerordnungarzneimittelResource0Entry3c6c2e1b"/>
+            <condition value="resource is MedicationRequest"/>
+          </source>
+          <rule>
+            <name value="BundleEntryVerordnungarzneimittelResource890c831b"/>
+            <source>
+              <context value="sourceBundleEntryVerordnungarzneimittelResource0Entry3c6c2e1b"/>
+              <element value="resource"/>
+              <variable value="sourceBundleEntryVerordnungarzneimittelResource1Resource61f06fbc"/>
+            </source>
+            <rule>
+              <name value="CallKbvprerpprescriptionmap"/>
+              <source>
+                <context value="sourceBundleEntryVerordnungarzneimittelResource1Resource61f06fbc"/>
+              </source>
+              <target>
+                <context value="targetPartMedicationrequestPart3ea10d80"/>
+                <contextType value="variable"/>
+                <element value="resource"/>
+                <variable value="targetParameterRxprescriptionPartMedicationrequestResourceReso52"/>
+                <transform value="create"/>
+                <parameter>
+                  <valueString value="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request"/>
+                </parameter>
+              </target>
+              <dependent>
+                <name value="KBVPrErpPrescriptionMap"/>
+                <variable value="sourceBundleEntryVerordnungarzneimittelResource1Resource61f06fbc"/>
+                <variable value="targetParameterRxprescriptionPartMedicationrequestResourceReso52"/>
+              </dependent>
+            </rule>
+          </rule>
+          <documentation value="Bundle.entry:VerordnungArzneimittel.resource -&gt; .parameter:rxPrescription.part:medicationRequest.resource using KBV_PR_ERP_Prescription|1.4.0 -&gt; EPAMedicationRequest|1.3.0"/>
+        </rule>
+        <documentation value="Creates part:medicationRequest part container aggregating 1 child rule(s)"/>
+      </rule>
+      <rule>
+        <name value="PartOrganizationPartContainer"/>
+        <source>
+          <context value="KBVPRERPBundle"/>
+        </source>
+        <target>
+          <context value="targetParameterRxprescriptionParameter77d85b46"/>
+          <contextType value="variable"/>
+          <element value="part"/>
+          <variable value="targetPartOrganizationPart5252e12d"/>
+        </target>
+        <rule>
+          <name value="SetPartOrganizationName"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+          </source>
+          <target>
+            <context value="targetPartOrganizationPart5252e12d"/>
+            <contextType value="variable"/>
+            <element value="name"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="organization"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="BundleEntryEinrichtungResourceB36f36fb"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+            <element value="entry"/>
+            <variable value="sourceBundleEntryEinrichtungResource0Entry6bfa77fa"/>
+            <condition value="resource is Organization"/>
+          </source>
+          <rule>
+            <name value="BundleEntryEinrichtungResourceB36f36fb"/>
+            <source>
+              <context value="sourceBundleEntryEinrichtungResource0Entry6bfa77fa"/>
+              <element value="resource"/>
+              <variable value="sourceBundleEntryEinrichtungResource1Resource45328e4f"/>
+            </source>
+            <rule>
+              <name value="CallKbvprfororganizationmap"/>
+              <source>
+                <context value="sourceBundleEntryEinrichtungResource1Resource45328e4f"/>
+              </source>
+              <target>
+                <context value="targetPartOrganizationPart5252e12d"/>
+                <contextType value="variable"/>
+                <element value="resource"/>
+                <variable value="targetParameterRxprescriptionPartOrganizationResourceResource43b"/>
+                <transform value="create"/>
+                <parameter>
+                  <valueString value="https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory"/>
+                </parameter>
+              </target>
+              <dependent>
+                <name value="KBVPrForOrganizationMap"/>
+                <variable value="sourceBundleEntryEinrichtungResource1Resource45328e4f"/>
+                <variable value="targetParameterRxprescriptionPartOrganizationResourceResource43b"/>
+              </dependent>
+            </rule>
+          </rule>
+          <documentation value="Bundle.entry:Einrichtung.resource -&gt; .parameter:rxPrescription.part:organization.resource using KBV_PR_FOR_Organization|1.3.0 -&gt; OrganizationDirectory|1.0.0"/>
+        </rule>
+        <documentation value="Creates part:organization part container aggregating 1 child rule(s)"/>
+      </rule>
+      <rule>
+        <name value="PartPractitionerPartContainer"/>
+        <source>
+          <context value="KBVPRERPBundle"/>
+        </source>
+        <target>
+          <context value="targetParameterRxprescriptionParameter77d85b46"/>
+          <contextType value="variable"/>
+          <element value="part"/>
+          <variable value="targetPartPractitionerParte111e9d1"/>
+        </target>
+        <rule>
+          <name value="SetPartPractitionerName"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+          </source>
+          <target>
+            <context value="targetPartPractitionerParte111e9d1"/>
+            <contextType value="variable"/>
+            <element value="name"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="practitioner"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="BundleEntryAusstellendeverschreibendeverantwortlichepersonResour"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+            <element value="entry"/>
+            <variable value="sourceBundleEntryAusstellendeverschreibendeverantwortlichepersb5"/>
+            <condition value="resource is Practitioner"/>
+          </source>
+          <rule>
+            <name value="BundleEntryAusstellendeverschreibendeverantwortlichepersonResour"/>
+            <source>
+              <context value="sourceBundleEntryAusstellendeverschreibendeverantwortlichepersb5"/>
+              <element value="resource"/>
+              <variable value="sourceBundleEntryAusstellendeverschreibendeverantwortlicheperse9"/>
+            </source>
+            <rule>
+              <name value="CallKbvprforpractitionermap"/>
+              <source>
+                <context value="sourceBundleEntryAusstellendeverschreibendeverantwortlicheperse9"/>
+              </source>
+              <target>
+                <context value="targetPartPractitionerParte111e9d1"/>
+                <contextType value="variable"/>
+                <element value="resource"/>
+                <variable value="targetParameterRxprescriptionPartPractitionerResourceResource62d"/>
+                <transform value="create"/>
+                <parameter>
+                  <valueString value="https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory"/>
+                </parameter>
+              </target>
+              <dependent>
+                <name value="KBVPrForPractitionerMap"/>
+                <variable value="sourceBundleEntryAusstellendeverschreibendeverantwortlicheperse9"/>
+                <variable value="targetParameterRxprescriptionPartPractitionerResourceResource62d"/>
+              </dependent>
+            </rule>
+          </rule>
+          <documentation value="Bundle.entry:AusstellendeVerschreibendeVerantwortlichePerson.resource -&gt; .parameter:rxPrescription.part:practitioner.resource using KBV_PR_FOR_Practitioner|1.3.0 -&gt; PractitionerDirectory|1.0.0"/>
+        </rule>
+        <documentation value="Creates part:practitioner part container aggregating 1 child rule(s)"/>
+      </rule>
+      <rule>
+        <name value="PartPrescriptionidPartContainer"/>
+        <source>
+          <context value="KBVPRERPBundle"/>
+        </source>
+        <target>
+          <context value="targetParameterRxprescriptionParameter77d85b46"/>
+          <contextType value="variable"/>
+          <element value="part"/>
+          <variable value="targetPartPrescriptionidPartee663288"/>
+        </target>
+        <rule>
+          <name value="SetPartPrescriptionidName"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+          </source>
+          <target>
+            <context value="targetPartPrescriptionidPartee663288"/>
+            <contextType value="variable"/>
+            <element value="name"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="prescriptionId"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="InlineParametersParameterRxprescriptionPartPrescriptionidValueX9"/>
+          <source>
+            <context value="KBVPRERPBundle"/>
+            <element value="identifier"/>
+            <variable value="inlinesourceParametersParameterRxprescriptionPartPrescriptionidV"/>
+          </source>
+          <rule>
+            <name value="InlineParametersParameterRxprescriptionPartPrescriptionidValueX9"/>
+            <source>
+              <context value="inlinesourceParametersParameterRxprescriptionPartPrescriptionidV"/>
+              <element value="value"/>
+              <variable value="inlinesourceParametersParameterRxprescriptionPartPrescriptionidV"/>
+            </source>
+            <target>
+              <context value="targetPartPrescriptionidPartee663288"/>
+              <contextType value="variable"/>
+              <element value="value"/>
+              <variable value="inlinetargetParametersParameterRxprescriptionPartPrescriptionidV"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueId value="inlinesourceParametersParameterRxprescriptionPartPrescriptionidV"/>
+              </parameter>
+            </target>
+          </rule>
+          <documentation value="Automatic copy"/>
+        </rule>
+        <documentation value="Creates part:prescriptionId part container aggregating 1 child rule(s)"/>
+      </rule>
+      <documentation value="Creates parameter:rxPrescription parameter container aggregating 6 part(s)"/>
+    </rule>
+  </group>
+</StructureMap>
