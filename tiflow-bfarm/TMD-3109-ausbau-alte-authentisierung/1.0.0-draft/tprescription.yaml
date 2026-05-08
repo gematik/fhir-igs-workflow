@@ -1,0 +1,183 @@
+openapi: 3.0.3
+servers:
+  - url: https://webapps-public.bfarm.de
+    description: BfArM Schnittstelle TI Dienste
+  - url: https://webapps-public-test.bfarm.de
+    description: Test-Schnittstelle BfArM TI Dienste
+info:
+  title: API des BfArM
+  version: 1.1.0-ballot-2
+  description: API des BfArM zur elektronsichen Bereitstellung von Daten aus der TI
+
+tags:
+  - name: OAuth
+    description: OAuth2 Authentication Endpoints
+  - name: T-Register
+    description: Endpunkte zur Bereitstellung von digitalen Durchschlägen zum E-T-Rezept
+
+security:
+  - OAuth2ClientCredentials: []
+
+paths:
+  /ords/rezepte/oauth/token:
+    post:
+      tags:
+        - OAuth
+      summary: OAuth2 Token Endpoint
+      description: Endpoint to obtain an access token using OAuth2 client credentials flow
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: Basic authentication header with base64 encoded client_id:client_secret
+          schema:
+            type: string
+            example: "Basic VEVXVFZGa0NEdpBSMGJRdEFScjE1dzBg...="
+        - name: X-Request-ID
+          in: header
+          description: A unique identifier for tracking the request.
+          required: false
+          schema:
+            type: string
+            format: uuid
+            example: "123e4567-e89b-12d3-a456-426614174000"
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+                - grant_type
+              properties:
+                grant_type:
+                  type: string
+                  enum:
+                    - client_credentials
+                  description: The OAuth2 grant type
+      responses:
+        '200':
+          description: Token successfully issued
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                    description: The access token
+                  token_type:
+                    type: string
+                    example: Bearer
+                    description: The token type
+                  expires_in:
+                    type: integer
+                    description: Token lifetime in seconds
+        '400':
+          description: Invalid request (e.g., unsupported grant type)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: invalid_request
+                  error_description:
+                    type: string
+                    example: Invalid grant type
+        '401':
+          description: Invalid client credentials
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: invalid_client
+                  error_description:
+                    type: string
+                    example: Invalid client credentials
+  /ords/rezepte/t-rezept/v1:
+    post:
+        tags:
+          - T-Register
+        summary: Bereitstellung digitaler Durchschlag E-T-Rezept
+        description: Bereitstellen eines digitalen Durchschlags eines E-T-Rezept für das T-Register des BfArM
+        parameters:
+        - name: X-Request-ID
+          in: header
+          description: A unique identifier for tracking the request.
+          required: false
+          schema:
+            type: string
+            format: uuid
+            example: "123e4567-e89b-12d3-a456-426614174000"
+        x-allowed-requester:
+          - "eRp"
+        x-request-route:
+          - "Internet"
+        requestBody:
+          required: true
+          description: Der E-Rezept-Fachdienst übergibt eine FHIR-Instanz nach dem Profil https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy
+          content: 
+            application/json+fhir:
+              schema:
+                type: object
+        responses:
+          '200':
+            description: Die Anfrage wurde erfolgreich bearbeitet. Der digitale Durchschlag wurde im T-Register eingestellt.
+          '400':
+            description: Die Anfrage-Nachricht war fehlerhaft aufgebaut.
+            content:
+              application/json:
+                examples:
+                  invalidRequest:
+                    $ref: '#/components/examples/OperationOutcomeExample'
+          '401':
+            description: Die Anfrage kann nicht ohne gültige Authentifizierung durchgeführt werden. Wie die Authentifizierung durchgeführt werden soll, wird im "WWW-Authenticate"-Header-Feld der Antwort übermittelt.
+          '403':
+            description: Die Anfrage wurde mangels Berechtigung des Clients nicht durchgeführt, bspw. weil der authentifizierte Benutzer nicht berechtigt ist.
+          '405':
+            description: Die Anfrage darf nur mit anderen HTTP-Methoden (zum Beispiel GET statt POST) gestellt werden. Gültige Methoden für die betreffende Ressource werden im "Allow"-Header-Feld der Antwort übermittelt.
+          '422':
+            description: Die Anfrage konnte nicht verarbeitet werden, da die übermittelten Daten ungültig sind oder gegen die Validierungsregeln verstoßen. Der BfArM Webdienst antwortet mit einer FHIR-Instanz nach dem Profil http://hl7.org/fhir/StructureDefinition/OperationOutcome.
+            content:
+              application/json+fhir:
+                schema:
+                  type: object
+          '429':
+            description: Der Client hat zu viele Anfragen in einem bestimmten Zeitraum gesendet.
+          '500':
+            description: Unerwarteter Serverfehler.
+
+components:
+  securitySchemes:
+    OAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://webapps-public.bfarm.de/ords/rezepte/oauth/token
+          scopes: {}
+  examples:
+    OperationOutcomeExample:
+      summary: Invalid request payload example
+      value:
+        resourceType: OperationOutcome
+        id: ERP-TPrescription-OperationOutcome-1
+        issue:
+          - details:
+              text: Invalid request payload
+            expression:
+              - parameter[rxPrescription].part[prescriptionId].value
+            severity: error
+            code: invalid
+            diagnostics: This field is required
+          - details:
+              text: Invalid format for field
+            expression:
+              - parameter[rxPrescription].part[medicationRequest].resource.authoredOn
+            severity: error
+            code: value
+            diagnostics: Value must be a date

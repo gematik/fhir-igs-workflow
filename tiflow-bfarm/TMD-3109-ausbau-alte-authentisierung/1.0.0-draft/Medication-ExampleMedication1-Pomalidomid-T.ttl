@@ -1,0 +1,34 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/bfarm/Medication/ExampleMedication1-Pomalidomid-T> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleMedication1-Pomalidomid-T"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://www.whocc.no/atc"^^xsd:anyURI ;
+         fhir:l <http://www.whocc.no/atc>
+       ] ;
+       fhir:code [ fhir:v "L04AX06" ] ;
+       fhir:display [ fhir:v "pomalidomide" ]
+     ] )
+  ] ; # 
+  fhir:form [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"^^xsd:anyURI ;
+         fhir:l <https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM>
+       ] ;
+       fhir:code [ fhir:v "HKP" ] ;
+       fhir:display [ fhir:v "Hartkapseln" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
