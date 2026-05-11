@@ -3,24 +3,19 @@ title UC 4.3 - E-Rezept durch Abgebenden loeschen
 
 actor "Mitarbeiter Apotheke" as MA
 participant "AVS" as AVS
-participant "Identity Provider" as IDP
 participant "TI-Flow-Fachdienst" as FD
 
-MA -> AVS: E-Rezept loeschen()
+MA -> AVS: E-Rezept löschen()
 activate AVS
 
-opt kein gueltiger AuthN-Token
-  ref over AVS, IDP: AuthN-Token anfordern
-end
-
-AVS -> FD: POST /Task/{id}/$abort (AuthN-Token, AccessCode, Secret)
+AVS -> FD: POST /Task/{id}/$abort (Secret)
 activate FD
-FD -> FD: Status auf "geloescht" setzen()
-FD -> FD: Daten loeschen()
+FD -> FD: Status auf "cancelled" setzen()
+FD -> FD: Daten löschen()
 FD --> AVS: Status
 deactivate FD
 
-AVS -> AVS: Token und Secret loeschen()
+AVS -> AVS: Token und Secret löschen()
 AVS --> MA: Status
 deactivate AVS
 

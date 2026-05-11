@@ -4,16 +4,11 @@ title Abrechnungsinformation durch Abgebenden abrufen
 actor "Mitarbeiter LEI" as MA
 participant "Primärsystem\nabgebende LEI" as PS
 participant "TI-Flow-Fachdienst" as FD
-participant "Identity Provider" as IDP
 
 MA -> PS: Abrechnungsinformation abrufen()
 activate PS
 
-opt kein gültiger AuthN-Token
-  ref over PS, IDP: UC 5.2 - AuthN-Token durch LEI anfordern
-end
-
-PS -> FD: GET /ChargeItem/{PrescriptionID}(AuthN-Token,\nAccessCode zum Ändern)
+PS -> FD: GET /ChargeItem/{PrescriptionID}(AccessCode zum Ändern)
 activate FD
 
 FD -> FD: AccessCode zum Ändern prüfen()

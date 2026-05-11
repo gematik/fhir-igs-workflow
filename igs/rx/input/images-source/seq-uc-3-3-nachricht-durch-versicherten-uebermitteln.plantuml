@@ -3,7 +3,6 @@ title UC 3.3 - Nachricht durch Versicherten uebermitteln
 
 actor "Versicherter" as V
 participant "FdV" as FdV
-participant "Identity Provider" as IDP
 participant "Verzeichnisdienst" as VZD
 participant "TI-Flow-Fachdienst" as FD
 
@@ -11,12 +10,9 @@ V -> FdV: Nachricht mit Token senden()
 activate FdV
 
 alt Versand ueber TI
-  opt kein gueltiger AuthN-Token
-    ref over FdV, IDP: AuthN-Token anfordern
-  end
   FdV -> VZD: Apotheke suchen()
   VZD --> FdV: Empfaengerdaten
-  FdV -> FD: POST /Communication (AuthN-Token, Token, Text)
+  FdV -> FD: POST /Communication (Token, Text)
   activate FD
   FD -> FD: Nachricht speichern()
   FD --> FdV: Status

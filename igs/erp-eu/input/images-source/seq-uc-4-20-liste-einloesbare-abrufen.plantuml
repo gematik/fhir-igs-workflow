@@ -10,7 +10,7 @@ LEEU -> NCP : Abfrage einlösbarer E-Rezepte
 NCP -> NCP : Prüfung Behandlungsverhältnis\nLE-EU und Versicherter
 NCP -> NCP : Prüfung Permission bzw. Rolle
 
-NCP -> FD : POST /$get-eu-prescriptions\n{AuthN-Token, KVNR, Zugriffscode,\nlaendercode, practitionerName,\npractitionerRole, pointOfCare,\nhealthcare-facility-type,\nrequesttype}
+NCP -> FD : POST /$get-eu-prescriptions\n{KVNR, Zugriffscode,\nlaendercode, practitionerName,\npractitionerRole, pointOfCare,\nhealthcare-facility-type,\nrequesttype}
 
 FD -> FD : Einwilligung für KVNR prüfen
 FD -> FD : Prüfung Zugriffscode für KVNR\n(KVNR, Zugriffscode, laendercode,\naktueller Zeitpunkt)
