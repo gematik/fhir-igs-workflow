@@ -13,7 +13,7 @@ activate PS
 PS -> PS : Verordnungsdatensätze auswählen()
 
 loop für jeden Verordnungsdatensatz
-  PS -> FD : POST /Task/$create\n(Leistungserbringer-Typ, Worfklow-Typ 169)
+  PS -> FD : POST /Task/$create\n(Worfklow-Typ 169)
   activate FD
   FD -> FD : Ressource erstellen
   FD --> PS : Rezept-ID, AccessCode

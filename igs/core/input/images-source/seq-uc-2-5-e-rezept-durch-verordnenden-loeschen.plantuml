@@ -10,7 +10,9 @@ activate PS
 
 PS -> FD: POST /Task/{id}/$abort (AccessCode)
 activate FD
-FD -> FD: Status auf "cancelled" setzen()
+FD -> FD: AccessCode prüfen()
+FD -> FD: Status Task prüfen()
+FD -> FD: Status Task auf "cancelled" setzen()
 FD -> FD: Daten löschen()
 FD -> FD : Datenzugriff protokollieren()
 FD --> PS: Status

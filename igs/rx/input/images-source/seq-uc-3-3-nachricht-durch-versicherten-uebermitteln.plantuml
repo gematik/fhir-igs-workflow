@@ -11,7 +11,7 @@ activate FdV
 
 alt Versand ueber TI
   FdV -> VZD: Apotheke suchen()
-  VZD --> FdV: Empfaengerdaten
+  VZD --> FdV: Empfängerdaten
   FdV -> FD: POST /Communication (Token, Text)
   activate FD
   FD -> FD: Nachricht speichern()
@@ -22,7 +22,7 @@ else 2D-Code
   FdV --> V: 2D-Code anzeigen/ausdrucken
 end
 
-FdV --> V: Bestaetigung
+FdV --> V: Bestätigung
 deactivate FdV
 
 @enduml

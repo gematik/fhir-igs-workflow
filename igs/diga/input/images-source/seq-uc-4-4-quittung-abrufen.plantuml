@@ -10,6 +10,8 @@ activate AVS
 
 AVS -> FD: POST /Task/{id}/$close (Secret, MedicationDispense)
 activate FD
+FD -> FD: Secret prüfen()
+FD -> FD: Status Task prüfen()
 FD -> FD: Status auf "completed" setzen()
 FD -> FD: Quittung erstellen und signieren()
 FD --> AVS: Quittung, Status

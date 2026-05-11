@@ -13,6 +13,7 @@ AVS -> AVS: Rezept-ID und AccessCode aus Token ermitteln()
 AVS -> FD: POST /Task/{id}/$accept (AccessCode)
 activate FD
 FD -> FD: AccessCode prüfen()
+FD -> FD: Status Task prüfen()
 FD -> FD: Status auf "in-progress" setzen()
 FD -> FD: Geheimnis erzeugen()
 FD --> AVS: Task, Binary, Geheimnis

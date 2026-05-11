@@ -8,9 +8,9 @@ participant "TI-Flow-Fachdienst" as FD
 V -> FdV: Nachrichten abrufen()
 activate FdV
 
-FdV -> FD: GET /Communication?recipient ()
+FdV -> FD: GET /Communication ()
 activate FD
-FD -> FD: Nachrichten ermitteln()
+FD -> FD: Nachrichten zu KVNR ermitteln()
 FD --> FdV: Nachrichten
 deactivate FD
 

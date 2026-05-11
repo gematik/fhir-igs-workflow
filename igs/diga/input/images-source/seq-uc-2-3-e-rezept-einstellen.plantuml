@@ -11,6 +11,7 @@ activate PS
 PS -> FD: POST /Task/{id}/$activate (AccessCode, QES-Bundle)
 activate FD
 FD -> FD: AccessCode prüfen()
+FD -> FD: Status Task prüfen()
 FD -> FD: Signatur und Daten prüfen()
 FD -> FD: Status auf "ready" setzen()
 FD --> PS: Status, Verordnung aktualisiert

@@ -1,5 +1,5 @@
 @startuml
-title UC 3.8 - Nachricht durch Versicherten loeschen
+title UC 3.8 - Nachricht durch Versicherten löschen
 
 actor "Versicherter" as V
 participant "FdV" as FdV
@@ -11,7 +11,7 @@ activate FdV
 FdV -> FD: DELETE /Communication/{id} ()
 activate FD
 FD -> FD: Nachricht löschen()
-FD --> FdV: Status (ggf. Warning)
+FD --> FdV: Status
 deactivate FD
 
 FdV -> FdV: Nachricht lokal löschen()

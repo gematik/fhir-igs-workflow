@@ -1,5 +1,5 @@
 @startuml
-title UC 2.5 - E-Rezept durch Verordnenden loeschen
+title UC 2.5 - E-Rezept durch Verordnenden löschen
 
 actor "Mitarbeiter LEI" as MA
 participant "Primärsystem" as PS
@@ -10,6 +10,8 @@ activate PS
 
 PS -> FD: POST /Task/{id}/$abort (AccessCode)
 activate FD
+FD -> FD: AccessCode prüfen()
+FD -> FD: Status Task prüfen()
 FD -> FD: Status auf "cancelled" setzen()
 FD -> FD: Personenbezogene Daten löschen()
 FD --> PS: Status

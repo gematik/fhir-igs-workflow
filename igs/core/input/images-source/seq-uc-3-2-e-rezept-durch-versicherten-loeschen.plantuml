@@ -10,6 +10,7 @@ activate FdV
 
 FdV -> FD: POST /Task/{id}/$abort ()
 activate FD
+FD -> FD: Status Task prüfen ()
 FD -> FD: Status auf "cancelled" setzen()
 FD -> FD: Daten löschen()
 FD --> FdV: Status

@@ -10,7 +10,7 @@ MA -> PS : Dispensierinformationen bereitstellen()
 
 activate PS
 PS -> PS : MedicationDispense erstellen()
-PS -> PS : Rezept-ID und AccessCode des E-Rezepts bestimmen()
+PS -> PS : Rezept-ID und Secret des E-Rezepts bestimmen()
 
 PS -> FD : POST /Task/{Rezept-ID}/$dispense (Secret, MedicationDispense)
 activate FD

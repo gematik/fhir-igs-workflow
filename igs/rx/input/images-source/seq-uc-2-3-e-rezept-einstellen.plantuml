@@ -5,11 +5,13 @@ actor "(Zahn-)Arzt" as Arzt
 participant "Primaersystem" as PS
 participant "TI-Flow-Fachdienst" as FD
 
-Arzt -> PS: E-Rezept zum Einstellen auswaehlen()
+Arzt -> PS: E-Rezept zum Einstellen auswählen()
 activate PS
 
-PS -> FD: POST /Task/{id}/$activate (QES-Bundle)
+PS -> FD: POST /Task/{id}/$activate (AccessCode, QES-Bundle)
 activate FD
+FD -> FD: AccessCode prüfen()
+FD -> FD: Status Task prüfen()
 FD -> FD: Signatur und Daten prüfen()
 FD -> FD: Status auf "ready" setzen()
 FD --> PS: Status, E-Rezept aktualisiert

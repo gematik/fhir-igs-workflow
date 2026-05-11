@@ -10,8 +10,9 @@ activate AVS
 
 AVS -> FD: GET /Task/{id} (AccessCode)
 activate FD
-FD -> FD: Task Status prüfen()
+FD -> FD: AccessCode prüfen()
 FD -> FD: Telematik-ID prüfen()
+FD -> FD: Task Status prüfen()
 FD --> AVS: Verordnung und Secret
 deactivate FD
 
