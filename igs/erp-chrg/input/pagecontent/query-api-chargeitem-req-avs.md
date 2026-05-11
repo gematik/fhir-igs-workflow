@@ -2,7 +2,7 @@
 Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu einem E-Rezept auf dem TI-Flow-Fachdienst ein.
 
 <!--A_22708-->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-22" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – Einwilligung muss vorliegen" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-22" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - Einwilligung muss vorliegen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -11,7 +11,7 @@ Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu
 </requirement>
 
 <!--A_22186-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-23" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – E-Rezept auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-23" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - E-Rezept auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -22,7 +22,7 @@ Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu
 Die Information, dass der Versicherte die Einwilligung zum Speichern der Abrechnungsinformationen auf dem TI-Flow-Fachdienst erteilt hat, wird im Anwendungsfall "E-Rezept abrufen" übermittelt.
 
 <!--A_22188-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-24" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – PKV-Abgabedatensatz erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-24" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - PKV-Abgabedatensatz erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -35,7 +35,7 @@ Für die Spezifikation der Ressource PKV-Abgabedatensatz siehe [gemSpec_DM_eRp].
 Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Abgabedatensatz signieren". Für die Wahl des Signaturverfahrens (QES oder nonQES) gelten die rechtlichen Vorgaben.
 
 <!--A_22189-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-25" title="PS abgebende LEI: Abrechnungsinformation bereitstellen – ChargeItem erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-25" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - ChargeItem erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -53,10 +53,9 @@ Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
     </actor>
       Das PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereitstellen" die HTTP-Operation POST /ChargeItem/ des TI-Flow-Fachdienstes mit
       <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Task-ID als URL-Parameter ?task=</li>
         <li>Geheimnis in URL-Parameter ?secret=</li>
-        <li>ChargeItem im http-Body des Aufrufs als data</li>
+        <li>ChargeItem im HTTP-Request-Body des Aufrufs als data</li>
       </ul>
       ausführen.
 </requirement>
@@ -78,7 +77,7 @@ Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu eine
 </requirement>
 
 <!--A_22193-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-28" title="PS abgebende LEI: PKV-Abgabedatensatz ändern – PKV-Abgabedatensatz erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-28" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -91,7 +90,7 @@ Für die Spezifikation der Ressource PKV-Abgabedatensatz siehe [gemSpec_DM_eRp].
 Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Abgabedatensatz signieren".
 
 <!--A_22194 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-29" title="PS abgebende LEI: PKV-Abgabedatensatz ändern – ChargeItem erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-29" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - ChargeItem erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
@@ -109,10 +108,9 @@ Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
     </actor>
       Das PS abgebende LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" die HTTP-Operation PUT /ChargeItem/&#60;id&#62;/ des TI-Flow-Fachdienstes mit
       <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Prescription-ID in URL &#60;id&#62;</li>
         <li>AccessCode in URL-Parameter ?ac=</li>
-        <li>ChargeItem im http-Body des Aufrufs als data</li>
+        <li>ChargeItem im HTTP-Request-Body des Aufrufs als data</li>
       </ul>
       ausführen.
 </requirement>
@@ -130,7 +128,6 @@ Mit diesem Anwendungsfall kann eine abgebende LEI die Abrechnungsinformation vom
     </actor>
       Das PS abgebende LEI MUSS im Anwendungsfall "Abrechnungsinformation abrufen" die HTTP-Operation GET /ChargeItem/&#60;id&#62; des TI-Flow-Fachdienstes mit
       <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Prescription-ID in URL &#60;id&#62;</li>
         <li>AccessCode in URL-Parameter ?ac=</li>
       </ul>

@@ -19,11 +19,7 @@ Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformatio
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-      Das E-Rezept-FdV MUSS im Anwendungsfall "Liste Abrechnungsinformationen abfragen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem mit 
-      <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
-      </ul>
-      ausführen. 
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Liste Abrechnungsinformationen abfragen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem ausführen. 
 </requirement>
 
 In der Response ist eine Liste von ChargeItem-Ressourcen enthalten. Für jede ChargeItem-Ressource ist die folgende Information enthalten:
@@ -51,7 +47,6 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformat
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation abfragen" zum Abrufen der Information zu einem einzelnen Datensatz vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem/&#60;id&#62;/ mit 
       <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Prescription-ID in URL &#60;id&#62;</li>
       </ul>
       ausführen.
@@ -93,7 +88,6 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /ChargeItem/&#60;id&#62; mit 
         <ul>
-            <li>ACCESS_TOKEN im Authorization-Header</li>
             <li>Prescription-ID in URL &#60;id&#62;</li>
         </ul>
       für jede zu ändernde Markierung
@@ -145,7 +139,6 @@ Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation löschen" die HTTP-Operation DELETE /ChargeItem/&#60;id&#62; des TI-Flow-Fachdienstes mit
       <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Prescription-ID in URL &#60;id&#62;</li>
       </ul>
       ausführen.

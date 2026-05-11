@@ -8,11 +8,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen alle E-Rezepte des Nutzers die HTTP-Operation GET /Task mit 
-     <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
-     </ul>
-     ausführen.
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen alle E-Rezepte des Nutzers die HTTP-Operation GET /Task ausführen.
 </requirement>
 
 <!-- A_19348-01 -->
@@ -36,7 +32,6 @@ Der Aufruf wird genutzt, wenn die Informationen zu einer spezifischen Verordnung
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen einer spezifischen Verordnung des Nutzers die HTTP-Operation GET /Task/&lt;id&gt; mit 
     <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Task-ID in URL &lt;id&gt; </li>
     </ul>
     ausführen.

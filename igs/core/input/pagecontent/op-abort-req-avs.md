@@ -33,7 +33,12 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
     </actor>
-     Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden löschen" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; Geheimnis in URL Parameter ?secret= ausführen.
+    Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden löschen" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort mit 
+    <ul>
+        <li>Task-ID in URL &lt;id&gt;</li>
+        <li>Geheimnis in URL Parameter ?secret=</li> 
+    </ul>
+    ausführen.
 </requirement>
 
 <!-- A_19245 -->

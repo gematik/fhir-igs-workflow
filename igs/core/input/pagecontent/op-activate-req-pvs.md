@@ -11,10 +11,9 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden einstellen" für das E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$activate mit
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Task-ID in URL &lt;id&gt; </li>
     <li>AccessCode in X-AccessCode - Header oder URL-Parameter ?ac=</li>
-    <li>QES signiertes E-Rezept-Bundle im http-Body des Aufrufs als data</li>
+    <li>QES signiertes E-Rezept-Bundle im HTTP-Request-Body des Aufrufs als data</li>
   </ul>
   ausführen.
 </requirement>

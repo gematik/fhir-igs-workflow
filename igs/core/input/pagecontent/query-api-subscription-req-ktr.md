@@ -26,7 +26,7 @@ Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein C
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Das Clientsystem Kostenträger MUSS im Anwendungsfall "Subscription für neue Communication" zum Registrieren im TI-Flow-Fachdienst die HTTP-Operation POST /v1/Subscription mit ACCESS_TOKEN im Authorization-Header ausführen.
+    Das Clientsystem Kostenträger MUSS im Anwendungsfall "Subscription für neue Communication" zum Registrieren im TI-Flow-Fachdienst die HTTP-Operation POST /v1/Subscription ausführen.
 </requirement>
 
 <!-- A_22375 -->

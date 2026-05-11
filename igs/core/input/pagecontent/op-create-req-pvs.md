@@ -32,8 +32,7 @@ Es gelten weitere modulspezifische Anforderungen für den Verordnungsdatensatz.
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die HTTP-Operation POST /Task/$create mit
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
-    <li>Rezept-Typ im FlowType als Parameter der FHIR-Operation $create für Task </li>
+    <li>Workflow-Typ im FlowType als Parameter der FHIR-Operation $create für Task </li>
   </ul>
   ausführen.
 </requirement>
