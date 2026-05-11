@@ -21,9 +21,7 @@ Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformatio
 
 Das E-Rezept-FdV KANN den Anwendungsfall "Liste Abrechnungsinformationen abrufen" umsetzen.
 
-Das E-Rezept-FdV MUSS im Anwendungsfall "Liste Abrechnungsinformationen abfragen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem mit
-* ACCESS_TOKEN im Authorization-Header
-ausführen.
+Das E-Rezept-FdV MUSS im Anwendungsfall "Liste Abrechnungsinformationen abfragen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem ausführen.
 In der Response ist eine Liste von ChargeItem-Ressourcen enthalten. Für jede ChargeItem-Ressource ist die folgende Information enthalten:
 
 * Prescription-ID
@@ -35,7 +33,6 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformat
 Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation durch den Versicherten abrufen" umsetzen.
 
 Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation abfragen" zum Abrufen der Information zu einem einzelnen Datensatz vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem/<id>/ mit
-* ACCESS_TOKEN im Authorization-Header
 * Prescription-ID in URL <id>
 ausführen.
 In der Response ist die ChargeItem Ressource und die zugehörigen Detaildatensätze Verordnungsdatensatz, PKV-Abgabedatensatz, Quittung und der AccessCode zum Ändern des PKV-Abgabedatensatzes enthalten.
@@ -52,7 +49,6 @@ Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" es de
 * zur Einreichung beim Finanzamt verwendet (extention "taxOffice")
 
 Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /ChargeItem/<id> mit
-* ACCESS_TOKEN im Authorization-Header
 * Prescription-ID in URL <id>
 für jede zu ändernde Markierung
 * "add" in type
@@ -71,7 +67,6 @@ Das E-Rezept-FdV muss im Rahmen der Bestätigung darauf hinweisen, dass mit dem 
 Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen Löschen für die zu löschende Abrechnungsinformation zusammen mit dem Löschen auf dem TI-Flow-Fachdienst auszuführen.
 
 Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation löschen" die HTTP-Operation DELETE /ChargeItem/<id> des TI-Flow-Fachdienstes mit
-* ACCESS_TOKEN im Authorization-Header
 * Prescription-ID in URL <id>
 ausführen.
 

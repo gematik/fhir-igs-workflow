@@ -17,7 +17,6 @@ Das PS der abgebenden LEI MUSS den Anwendungsfall "Quittung abrufen" für Verord
 Die Erstellung der MedicationDispense erfolgt Flowtype-spezifisch.
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "Quittung abrufen" für das abgegebene E-Rezept die HTTP-Operation POST /Task/<id>/$close mit
-* ACCESS_TOKEN im Authorization-Header
 * Task-ID in URL <id>
 * Geheimnis in URL-Parameter ?secret=
 * optional, falls nicht zuvor mit Anwendungsfall "Dispensierinformation bereitstellen" übermittelt: GEM_ERP_PR_PAR_CloseOperation_Input-Objekt

@@ -287,16 +287,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_22173 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="0" key="IG-TIFLOW-CHRG-11">
+<requirement conformance="SHALL" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="1" key="IG-TIFLOW-CHRG-11">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-      Das E-Rezept-FdV MUSS im Anwendungsfall "Liste Abrechnungsinformationen abfragen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem mit 
-      <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
-      </ul>
-      ausführen. 
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Liste Abrechnungsinformationen abfragen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem ausführen. 
 </requirement>
 
 <p>In der Response ist eine Liste von ChargeItem-Ressourcen enthalten. Für jede ChargeItem-Ressource ist die folgende Information enthalten:</p>
@@ -317,14 +313,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_22175 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="0" key="IG-TIFLOW-CHRG-13">
+<requirement conformance="SHALL" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="1" key="IG-TIFLOW-CHRG-13">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation abfragen" zum Abrufen der Information zu einem einzelnen Datensatz vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem/&lt;id&gt;/ mit 
       <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Prescription-ID in URL &lt;id&gt;</li>
       </ul>
       ausführen.
@@ -359,14 +354,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_22179-01 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="0" key="IG-TIFLOW-CHRG-16">
+<requirement conformance="SHALL" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="1" key="IG-TIFLOW-CHRG-16">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /ChargeItem/&lt;id&gt; mit 
         <ul>
-            <li>ACCESS_TOKEN im Authorization-Header</li>
             <li>Prescription-ID in URL &lt;id&gt;</li>
         </ul>
       für jede zu ändernde Markierung
@@ -411,14 +405,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen Löschen für die zu löschende Abrechnungsinformation zusammen mit dem Löschen auf dem TI-Flow-Fachdienst auszuführen.</p>
 
   <!-- A_22183 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="0" key="IG-TIFLOW-CHRG-20">
+<requirement conformance="SHALL" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="1" key="IG-TIFLOW-CHRG-20">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation löschen" die HTTP-Operation DELETE /ChargeItem/&lt;id&gt; des TI-Flow-Fachdienstes mit
       <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Prescription-ID in URL &lt;id&gt;</li>
       </ul>
       ausführen.
@@ -473,7 +466,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, May 11, 2026 05:47+0000">2026-05-11</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, May 11, 2026 10:53+0000">2026-05-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

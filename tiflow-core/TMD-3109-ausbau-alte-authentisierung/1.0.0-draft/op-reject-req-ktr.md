@@ -14,7 +14,6 @@ Version 1.0.0-draft - ci-build
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$reject`.
 
 Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für die zurückzugebende Verordnung die HTTP-Operation POST /Task/<id>/$reject mit
-* ACCESS_TOKEN im Authorization-Header
 * Task-ID in URL <id> 
 * Geheimnis in URL-Parameter ?secret=
 ausführen.

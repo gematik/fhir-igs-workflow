@@ -313,12 +313,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19239-01 -->
-<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept löschen - Löschrequest" version="0" key="IG-TIFLOW-CORE-314">
+<requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept löschen - Löschrequest" version="1" key="IG-TIFLOW-CORE-314">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"></testProcedure>
     </actor>
-     Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden löschen" für das zu löschende E-Rezept die HTTP-Operation POST /TASK/&lt;id&gt;/$abort mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; AccessCode im X-AccessCode-Header oder als URL-Parameter ?ac= ausführen.
+    Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden löschen" für das zu löschende E-Rezept die HTTP-Operation POST /TASK/&lt;id&gt;/$abort mit 
+    <ul>
+        <li>Task-ID in URL &lt;id&gt; </li>
+        <li>AccessCode im X-AccessCode-Header oder als URL-Parameter ?ac= </li>
+    </ul>
+    ausführen.
 </requirement>
 
   <!-- A_19240 -->
@@ -375,7 +380,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, May 11, 2026 05:44+0000">2026-05-11</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, May 11, 2026 10:51+0000">2026-05-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
