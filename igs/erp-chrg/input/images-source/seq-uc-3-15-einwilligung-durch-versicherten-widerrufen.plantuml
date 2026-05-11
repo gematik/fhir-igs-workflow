@@ -7,7 +7,7 @@ participant "E-Rezept-FdV" as FdV
 participant "TI-Flow-Fachdienst" as FD
 
 Ver -> FdV: Einwilligung widerrufen
-FdV -> FD: DELETE /Consent/?category()
+FdV -> FD: DELETE /Consent (category)
 FD -> FD: Einwilligung prüfen
 FD -> FD: Einwilligung löschen
 FD -> FD: Datenzugriff protokollieren

@@ -1,14 +1,14 @@
 @startuml
-title UC 4.1 - E-Rezept durch Abgebenden abrufen
+title UC 4.1 - Verordnung durch Abgebenden abrufen
 
-actor "Mitarbeiter Apotheke" as MA
-participant "AVS" as AVS
+actor "Mitarbeiter KTR" as MA
+participant "Clientsystem\nKostenträger" as AVS
 participant "TI-Flow-Fachdienst" as FD
 participant "Konnektor" as K
 
-MA -> AVS: E-Rezept abrufen()
+MA -> AVS: Verordnung abrufen()
 activate AVS
-AVS -> AVS: Rezept-ID und AccessCode aus Token ermitteln()
+AVS -> AVS: Verordnungs-ID und AccessCode aus Token ermitteln()
 
 AVS -> FD: POST /Task/{id}/$accept (AccessCode)
 activate FD
@@ -19,10 +19,12 @@ FD -> FD: Geheimnis erzeugen()
 FD --> AVS: Task, Binary, Geheimnis
 deactivate FD
 
+opt
 AVS -> K: QES prüfen(Binary)
 activate K
 K --> AVS: Ergebnis
 deactivate K
+end
 
 AVS --> MA: Status und Verordnungsdaten
 deactivate AVS

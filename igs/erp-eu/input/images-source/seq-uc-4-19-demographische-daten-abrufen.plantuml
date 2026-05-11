@@ -10,7 +10,7 @@ participant "TI-Flow-Fachdienst" as FD
 Versicherte -> LEEU : Zugriffscode und KVNR übergeben
 LEEU -> Versicherte : Datenschutzerklärung
 
-LEEU -> NCP : Abfrage demographischer Versichertendaten
+LEEU -> NCP : Abfrage demographischer\nVersichertendaten
 NCP -> NCP : Prüfung Permission bzw. Rolle
 
 NCP -> FD : POST /$get-eu-prescriptions\n{KVNR, Zugriffscode,\nlaendercode, practitionerName,\npractitionerRole, pointOfCare,\nhealthcare-facility-type,\nlatest, requesttype}

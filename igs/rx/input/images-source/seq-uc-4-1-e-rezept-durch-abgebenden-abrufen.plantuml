@@ -19,10 +19,12 @@ FD -> FD: Geheimnis erzeugen()
 FD --> AVS: Task, Binary, Geheimnis
 deactivate FD
 
-AVS -> K: QES pruefen(Binary)
+opt
+AVS -> K: QES prüfen(Binary)
 activate K
 K --> AVS: Ergebnis
 deactivate K
+end
 
 AVS --> MA: Status und Verordnungsdaten
 deactivate AVS

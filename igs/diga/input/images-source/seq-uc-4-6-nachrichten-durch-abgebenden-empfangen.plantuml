@@ -9,7 +9,7 @@ MA -> AVS: E-Rezept-Token empfangen()
 activate AVS
 
 alt Empfang über TI
-  AVS -> FD: GET /Communication?recipient=Telematik-ID ()
+  AVS -> FD: GET /Communication ()
   activate FD
   FD -> FD: Nachrichten ermitteln()
   FD --> AVS: E-Rezept-Token
