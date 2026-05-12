@@ -41,12 +41,12 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
     </actor>
     Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle
     <ul>
-        <li>UC 3.1 – E-Rezepte durch Versicherten abrufen</li>
-        <li>UC 3.2 – E-Rezept durch Versicherten löschen</li>
+        <li>UC 3.1 - E-Rezepte durch Versicherten abrufen</li>
+        <li>UC 3.2 - E-Rezept durch Versicherten löschen</li>
         <li>Kostenträger suchen</li>
-        <li>UC 3.3 – Nachricht durch Versicherten übermitteln</li>
-        <li>UC 3.4 – Nachricht durch Versicherten empfangen</li>
-        <li>UC 3.8 – Nachricht durch Versicherten löschen</li>
+        <li>UC 3.3 - Nachricht durch Versicherten übermitteln</li>
+        <li>UC 3.4 - Nachricht durch Versicherten empfangen</li>
+        <li>UC 3.8 - Nachricht durch Versicherten löschen</li>
         <li>UC 3.5 - Protokolldaten abrufen</li>
     </ul>
     umsetzen.
@@ -158,37 +158,25 @@ der Umsetzung im E-Rezept-FdV kann die Auswahl automatisiert erfolgen.
 
 ##### Ermitteln der Telematik-ID des Kostenträgers
 
-Damit das E-Rezept-FdV der gematik "UC 3.3 - Nachricht durch Versicherten übermitteln"
-ausführen kann, muss es zunächst die Telematik-ID des Kostenträgers als
-Empfängeradresse der Nachricht ermitteln.
+Damit das E-Rezept-FdV der gematik "UC 3.3 - Nachricht durch Versicherten übermitteln" ausführen kann, muss es zunächst die Telematik-ID des Kostenträgers als Empfängeradresse der Nachricht ermitteln.
 
-Das E-Rezept-FdV benötigt das Haupt-Institutionskennzeichen (IK) des Kostenträgers.
-Dieses IK wird über die Authentifizierungsmethoden des E-Rezept-FdV bereitgestellt.
-Das E-Rezept-FdV erhält sowohl bei der Authentifizierung mittels eGK, wie auch mittels
-sektoralem IDP (GesundheitsID) einen ACCESS_TOKEN vom E-Rezept Authorization Server
-(Teil des IDP-Dienstes) ausgestellt. Dieser ACCESS_TOKEN enthält das IK des Kostenträgers.
+<!-- ToDo: wie kann das FdV auf die Daten aus dem AUT-Zertifikat des Versicherten zugreifen -->
+Das E-Rezept-FdV benötigt das Haupt-Institutionskennzeichen (IK) des Kostenträgers. Dieses IK wird über die Authentifizierungsmethoden des E-Rezept-FdV bereitgestellt.
+Das E-Rezept-FdV erhält sowohl bei der Authentifizierung mittels eGK, wie auch mittels sektoralem IDP (GesundheitsID) einen ACCESS_TOKEN vom E-Rezept Authorization Server ausgestellt. Dieser ACCESS_TOKEN enthält das IK des Kostenträgers.
 
-Sobald dem E-Rezept-FdV das IK vorliegt, sucht es im FHIR-VZD nach der Telematik-ID
-des Kostenträgers mithilfe des IK.
+Sobald dem E-Rezept-FdV das IK vorliegt, sucht es im FHIR-VZD nach der Telematik-ID des Kostenträgers mithilfe des IK.
 
-Dieser Fall ist für die E-Rezept-FdVs der Krankenkassen nicht relevant, da diese die
-korrekte Telematik-ID in ihren Apps vorab festlegen können. 
+Dieser Fall ist für die E-Rezept-FdVs der Krankenkassen nicht relevant, da diese die korrekte Telematik-ID in ihren Apps vorab festlegen können. 
 
 ##### Fallback bei Fehlern und fehlenden Informationen 
 
-Falls es dem E-Rezept-FdV nicht möglich ist, das IK oder die Telematik-ID des
-Kostenträgers zu bestimmen, soll der Versicherte dennoch die Möglichkeit haben, seine
-DiGA Verordnung zuzuweisen.
+Falls es dem E-Rezept-FdV nicht möglich ist, das IK oder die Telematik-ID des Kostenträgers zu bestimmen, soll der Versicherte dennoch die Möglichkeit haben, seine DiGA Verordnung zuzuweisen.
 
-Hierzu zeigt das E-Rezept-FdV dem Versicherten alle Kostenträgereinträge des FHIR-VZD
-mit oid_kostentraeger, die eine IKNR und Telematik-ID haben. Der Versicherte wählt die
-Krankenkasse aus, bei der er versichert ist und kann so die Einlösung vornehmen.
+Hierzu zeigt das E-Rezept-FdV dem Versicherten alle Kostenträgereinträge des FHIR-VZD mit oid_kostentraeger, die eine IKNR und Telematik-ID haben. Der Versicherte wählt die Krankenkasse aus, bei der er versichert ist und kann so die Einlösung vornehmen.
 
 ##### Zuweisen der Verordnung durch den Versicherten
 
-Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Verordnung
-seinem Kostenträger zuweisen. Hierzu wird eine Communication
-(GEM_ERP_PR_Communication_DispReq) erstellt und der E-Rezept-Token eingebettet. 
+Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Verordnung seinem Kostenträger zuweisen. Hierzu wird eine Communication (GEM_ERP_PR_Communication_DispReq) erstellt und der E-Rezept-Token eingebettet. 
 Beim Zuweisen im Rahmen einer DiGA-Verordnung wird kein Payload mit Zusatzinformationen wie bspw. Kontaktdaten und Belieferungsoptionen übertragen.
 
 <!-- UC 3.4 - Nachrichten durch Versicherten empfangen -->

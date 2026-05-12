@@ -44,11 +44,6 @@ Die Abfrage beim Namensdienst der TI erfolgt über einen DNS-Lookup. Hierfür mu
     Das Clientsystem des TI-Flow-Fachdienstes MUSS für die Kommunikation mit dem TI-Flow-Fachdienst die URL mit dem Port 443 bilden.
 </requirement>
 
-<!-- ToDo: ggf. IDP ausbauen -->
-Die Informationen zu den Endpunkten des Identity Providers ermittelt das Primärsystem aus dem Discovery Document. Für Informationen zum Discovery Document siehe auch [gemSpec_IDP_Dienst#Authorization Server Metadata (Discovery Document)]. Das Discovery Document ist vom IDP-Dienst unter der URL /.well-known/openid-configuration abrufbar.
-
-Die URL des Downloadpunktes im zentralen Netz der TI lautet: "https://idp.zentral.idp.splitdns.ti-dienste.de/.well-known/openid-configuration" [gemSpec_IDP_Dienst#A_19874-*].
-
 <!-- A_19234-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-157" title="CS: Kommunikation über TLS-Verbindung" version="0">
     <meta lockversion="false"/>
@@ -105,7 +100,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle HTTP-Requests an den TI-Flow-Fachdienst und IDP-Dienst im äußeren HTTP-Request den HTTP-Header user-agent gemäß [RFC7231] mit &lt;Produktname&gt;/&lt;Produktversion&gt; &lt;Herstellername&gt;/&lt;client_id&gt; mit 
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle HTTP-Requests an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header user-agent gemäß [RFC7231] mit &lt;Produktname&gt;/&lt;Produktversion&gt; &lt;Herstellername&gt;/&lt;client_id&gt; mit 
     <ul>
         <li>&lt;Produktname&gt; gemäß eigener Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\-\.]</li>
         <li>&lt;Produktversion&gt; gemäß Produktidentifikation</li>

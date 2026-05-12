@@ -19,7 +19,6 @@ Die Erstellung der MedicationDispense erfolgt modulspezifisch.
     </actor>
     Das Clientsystem Kostenträger MUSS im Anwendungsfall "Quittung abrufen" für zum Abschliessen des Workflows für die Verordnung die HTTP-Operation POST /Task/&#60;id&#62;/$close mit
     <ul> 
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Task-ID in URL &#60;id&#62;</li>
         <li>Geheimnis in URL-Parameter ?secret=</li>
         <li>GEM_ERP_PR_PAR_CloseOperation_Input-Objekt</li>

@@ -49,7 +49,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consen
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation POST /Consent mit:
     <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
+        <li>Consent Ressource im HTTP-Request-Body</li>
     </ul>
     ausführen.
 </requirement>
@@ -67,11 +67,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consen
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligungsinformation abrufen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /Consent mit:
-    <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
-    </ul>
-    ausführen.
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligungsinformation abrufen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /Consent mit ausführen.
 </requirement>
 
 In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwilligungstyp des Consent ist in Consent.category.coding.code angegeben. Die Werte können sich auf folgende Codesysteme beziehen: [GEM_ERPCHRG_CS_ConsentType], [GEM_ERPEU_CS_ConsentType].
@@ -109,7 +105,6 @@ In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwillig
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" zum Löschen der Information im TI-Flow-Fachdienst die HTTP-Operation DELETE /Consent/?category=&lt;Einwilligungstyp&gt; mit:
     <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Einwilligungstyp in ?category</li>
     </ul>
     ausführen.

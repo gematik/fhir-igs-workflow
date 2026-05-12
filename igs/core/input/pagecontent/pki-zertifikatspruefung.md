@@ -25,13 +25,6 @@ Clientsysteme verwenden bei den in TAB_ILFERP_012 dargestellten Aktivitäten Zer
 <td>aktiv</td>
 </tr>
 <tr>
-<td>TLS-Verbindungsaufbau zum IDP-Dienst</td>
-<td>nein</td>
-<td>TLS Internet Zertifikat</td>
-<td>n/a</td>
-<td>aktiv</td>
-</tr>
-<tr>
 <td>Aufbau sicherer Kanal zur VAU des TI-Flow-Fachdienstes</td>
 <td>ja</td>
 <td>C.FD.ENC</td>
@@ -116,7 +109,7 @@ Folgende Vorgaben gelten für die Prüfung von Internet-Zertifikaten.
     <actor name="Anb_NCPeH_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Das Clientsystem des TI-Flow-Fachdienst MUSS für die Prüfung eines Zertifikats für den TLS-Verbindungsaufbau zum TI-Flow-Fachdienst und IDP das Zertifikat auf ein CA-Zertifikat einer CA, die die "CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates" [Baseline Requirements for TLS Server Certificates] erfüllt, kryptographisch (Signaturprüfung) zurückführen können. Ansonsten MUSS es das Zertifikat als "ungültig" bewerten. 
+    Das Clientsystem des TI-Flow-Fachdienst MUSS für die Prüfung eines Zertifikats für den TLS-Verbindungsaufbau zum TI-Flow-Fachdienst das Zertifikat auf ein CA-Zertifikat einer CA, die die "CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates" [Baseline Requirements for TLS Server Certificates] erfüllt, kryptographisch (Signaturprüfung) zurückführen können. Ansonsten MUSS es das Zertifikat als "ungültig" bewerten. 
     Das Clientsystem des TI-Flow-Fachdienst MUSS die zeitliche Gültigkeit des Zertifikats prüfen und falls diese Prüfung negativ ausfällt, das Zertifikat als "ungültig" bewerten.
 </requirement>
 

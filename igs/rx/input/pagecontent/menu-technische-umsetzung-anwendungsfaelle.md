@@ -34,11 +34,11 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
     </actor>
     Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneimittel die Anwendungsfälle
     <ul>
-        <li>UC 3.1 – E-Rezepte durch Versicherten abrufen</li>
-        <li>UC 3.2 – E-Rezept durch Versicherten löschen</li>
-        <li>UC 3.3 – Nachricht durch Versicherten übermitteln</li>
-        <li>UC 3.4 – Nachricht durch Versicherten empfangen</li>
-        <li>UC 3.8 – Nachricht durch Versicherten löschen</li>
+        <li>UC 3.1 - E-Rezepte durch Versicherten abrufen</li>
+        <li>UC 3.2 - E-Rezept durch Versicherten löschen</li>
+        <li>UC 3.3 - Nachricht durch Versicherten übermitteln</li>
+        <li>UC 3.4 - Nachricht durch Versicherten empfangen</li>
+        <li>UC 3.8 - Nachricht durch Versicherten löschen</li>
         <li>UC 3.5 - Protokolldaten abrufen</li>
     </ul>
     umsetzen.
@@ -102,8 +102,6 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 ##### {{ use_case.title }}
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
-
-- Die QES-Erstellung erfolgt im Primärsystem (HBA/Konnektor) vor dem Aufruf von `$activate`.
 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 

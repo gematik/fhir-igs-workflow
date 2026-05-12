@@ -10,9 +10,8 @@ Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der `Task`-Query-End
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "Recovery Secret" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit 
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Task-ID in URL &lt;id&gt; </li>
-    <li>Access_Code in URL-Parameter ?ac=</li>
+    <li>AccessCode in URL-Parameter ?ac=</li>
   </ul>
   ausführen.
 </requirement>
@@ -31,7 +30,6 @@ Der Anwendungsfall kann bei Bedarf wiederholt werden.
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "Quittung erneut abrufen" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit 
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Task-ID in URL &lt;id&gt; </li>
     <li>Geheimnis in URL-Parameter ?secret=</li>
   </ul>

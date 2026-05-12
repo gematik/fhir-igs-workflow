@@ -18,16 +18,15 @@ Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutz
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication mit
+  Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication mit
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>optional: ?received=null für nur ungelesene Nachrichten</li>
     <li>optional: ?received=gtYYYY-MM-DD für Nachrichten nach Datum DD.MM.YYYY</li>
   </ul>
   ausführen.
 </requirement>
 
-Falls eine oder mehrere E-Rezept-Nachrichten für den Kostenträger auf dem TI-Flow-Fachdienst bereitstehen, übermittelt der TI-Flow-Fachdienst ein Bundle von Communication Ressourcen. 
+Falls eine oder mehrere E-Rezept-Nachrichten für den Kostenträger auf dem TI-Flow-Fachdienst bereitstehen, übermittelt der TI-Flow-Fachdienst ein Bundle von Communication Ressourcen.
 
 
 ### Nachricht versenden
@@ -40,9 +39,8 @@ Die für die Nachricht zu verwendende Communication-Ressource wird modul- und an
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die HTTP-Operation POST /Communication mit
+  Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die HTTP-Operation POST /Communication mit
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Communication Ressource im HTTP-Request-Body</li>
   </ul>
   ausführen.
@@ -64,7 +62,6 @@ Das CS Kostenträger MUSS vom Nutzer eine Bestätigung einholen, dass die ausgew
   </actor>
   Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachricht durch Abgebenden löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; mit
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Communication-ID in URL &lt;id&gt; </li>
   </ul>
   ausführen.

@@ -8,7 +8,6 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
   </actor>
   Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für die zurückzugebende Verordnung die HTTP-Operation POST /Task/&lt;id&gt;/$reject mit 
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Task-ID in URL &lt;id&gt; </li>
     <li>Geheimnis in URL-Parameter ?secret=</li>
   </ul>

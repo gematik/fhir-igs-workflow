@@ -12,7 +12,6 @@ Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das a
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden zurückgeben" für das zurückzugebende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$reject mit 
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Task-ID in URL &lt;id&gt; </li>
     <li>Geheimnis in URL-Parameter ?secret=</li>
   </ul>

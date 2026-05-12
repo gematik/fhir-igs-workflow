@@ -42,7 +42,6 @@ Innerhalb der Textnachricht sind keine Internet-Links und keine Non-Printable-Ch
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation-Token einer Apotheke übermitteln" zum Einstellen der Nachricht die HTTP-Operation POST /Communication  mit
     <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Communication Ressource in HTTP-Request-Body</li>
     </ul>
     ausführen.
