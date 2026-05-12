@@ -1,4 +1,4 @@
-Der TI-Flow-Fachdienst wird dezentral im Internet angeboten. Zum Schutz vor unberechtigtem Zugriff wird nach dem Zero Trust-Paradigma durch einen Policy Enforcement Point und einen Policy Decision Point durchgesetzt. Diese Zero Trust (ZETA) Funktionalität wird anwendungsübergreifend in [gemSpec_ZETA] beschrieben.
+Der TI-Flow-Fachdienst ist ein Dienst im Internet. Der Schutz vor unberechtigtem Zugriff wird nach dem Zero Trust-Paradigma durch einen Policy Enforcement Point und einen Policy Decision Point durchgesetzt. Diese Zero Trust Access (ZETA) Funktionalität für Dienste der der TI wird anwendungsübergreifend in [gemSpec_ZETA] beschrieben.
 
 
 ### ZETA Guard Policy Engine - Zugriffsregeln
@@ -7,18 +7,18 @@ Dieses Dokument dient als Grundlage für die Abstimmung über eine technische Zu
 
 #### Grundprinzip der Richtlinie
 
-Die hier beschriebene Richtlinie funktioniert nach einem einfachen Prinzip: Ein Zugriff wird nur dann erlaubt, wenn **alle** definierten Bedingungen erfüllt sind. Scheitert auch nur eine einzige Prüfung, wird der Zugriff verweigert und die Gründe für die Ablehnung werden protokolliert.
+Die hier beschriebene Richtlinie funktioniert nach einem einfachen Prinzip: Ein Zugriff wird nur dann erlaubt, wenn **alle** definierten Bedingungen erfüllt sind. Scheitert eine  Prüfung, wird der Zugriff verweigert und die Gründe für die Ablehnung werden protokolliert.
 
-#### Die Prüfungen im Detail
+#### Prüfungen im Detail
 
 Im Folgenden werden die Prüfungen beschrieben, die ein anfragendes System erfolgreich durchlaufen muss.
 
-##### Prüfung des Berufs oder der Einrichtungsart
+##### Prüfung der Einrichtungsart oder der Berufsgruppe
 
 Diese Regel stellt sicher, dass nur bestimmte Berufsgruppen oder Arten von Einrichtungen auf das System zugreifen dürfen. Technisch wird dies über eine sogenannte OID (Object Identifier) geprüft, eine eindeutige Kennung für jeden Beruf oder jede Einrichtung.
 
 **Was wird geprüft?**
-Es wird die Berufs- bzw. Einrichtungs-OID des anfragenden Nutzers bzw. der anfragenden Institution mit einer Liste von erlaubten Kennungen abgeglichen.
+Es wird die Berufsgruppen- bzw. Einrichtungs-OID des anfragenden Nutzers bzw. der anfragenden Institution mit einer Liste von erlaubten Kennungen abgeglichen.
 
 **Wer darf zugreifen?**
 Folgende Berufe und Einrichtungsarten sind zugelassen:
@@ -40,8 +40,9 @@ Folgende Berufe und Einrichtungsarten sind zugelassen:
 
 ##### Prüfung der Client-Anwendung
 
-Diese Regel verifiziert, dass die verwendete Software (der "Client") und deren Version für den Zugriff bei der gematik registriert sind. Jede Software, die auf das System zugreifen möchte, identifiziert sich mit einer Produktkennung und einer Versionsnummer.
+Diese Regel verifiziert, dass das anfragende Clientsystem in der genutzten Version für den Zugriff bei der gematik registriert sind. Jede Software, die auf das System zugreifen möchte, identifiziert sich mit einer Produktkennung (product_id) und einer Versionsnummer (product_version).
 
+<!-- ToDo: warum sollte die Regel deaktiviert sein? -->
 **Disclaimer: Diese Regel ist vorerst deaktiviert**
 
 **Was wird geprüft?**
@@ -50,9 +51,9 @@ Es wird geprüft, ob die Kombination aus Produkt und Version in einer Liste der 
 **Beispiel:**
 
 * Produkt A ist in den Versionen 1.2 und 1.3 erlaubt.
-* Produkt B ist nur in Version 2.5 erlaubt.
+* Produkt B ist in Version 2.5 erlaubt.
 
-Eine Anfrage von Produkt A in Version 1.2 wäre erfolgreich, eine Anfrage in Version 1.1 würde jedoch scheitern.
+Eine Anfrage von Produkt A in Version 1.2 wäre erfolgreich, eine Anfrage von Produkt A in Version 1.1 würde jedoch scheitern.
 
 ##### Prüfung der angeforderten Berechtigungen (Scopes)
 
@@ -86,15 +87,13 @@ Die Verbindungen von Akteuren und Use Cases erzeugen die folgende Scope Definiti
 
 Diese Regel kontrolliert, auf welche Zielsysteme oder Datenbereiche ("Audiences") zugegriffen werden darf. Dies ist eine zusätzliche Sicherheitsebene, um sicherzustellen, dass ein Zugriffstoken nur für den vorgesehenen Zweck verwendet wird.
 
-**Disclaimer: Diese Regel ist für Test-Umgebungen deaktiviert**
-
 **Was wird geprüft?**
 Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der Liste der erlaubten Ressourcen enthalten sind. Ähnlich wie bei den Berechtigungen müssen **alle** angefragten "Audiences" erlaubt sein.
 
 **Beispiel:**
-
-* Erlaubte Ziel-Ressourcen: `/VAU`
-* Anwendung fordert Zugriff auf: `/VAU` -> **Erfolg**
+<!-- ToDo: Macht dieses Beispiel Sinn, da sich die Policy auf den inneren Request bezieht? -->
+* Erlaubte Ziel-Ressourcen: `/ASL`
+* Anwendung fordert Zugriff auf: `/ASL` -> **Erfolg**
 * Anwendung fordert Zugriff auf: `unknown-url` -> **Fehler** (da `unknown-url` nicht erlaubt ist)
 
 
@@ -140,7 +139,7 @@ policies:
       - "1.2.276.0.76.4.56"   # oid_institution-vorsorge-reha
 
   - name: task_activate
-    description: "POST /Task/<id>/$activate – Rezept aktivieren"
+    description: "POST /Task/<id>/$activate - Rezept aktivieren"
     scopes:
       - "task.activate"
     allowed_professions:
@@ -151,7 +150,7 @@ policies:
       - "1.2.276.0.76.4.56"   # oid_institution-vorsorge-reha
 
   - name: task_get_list
-    description: "GET /Task – Rezeptliste abrufen"
+    description: "GET /Task - Rezeptliste abrufen"
     scopes:
       - "task.read"
     allowed_professions:
@@ -160,7 +159,7 @@ policies:
       - "1.2.276.0.76.4.55"   # oid_krankenhausapotheke
 
   - name: task_get_single
-    description: "GET /Task/<id> – Einzelrezept abrufen"
+    description: "GET /Task/<id> - Einzelrezept abrufen"
     scopes:
       - "task.read.single"
     allowed_professions:
@@ -170,7 +169,7 @@ policies:
       - "1.2.276.0.76.4.59"   # oid_kostentraeger
 
   - name: task_accept
-    description: "POST /Task/<id>/$accept – Rezept annehmen"
+    description: "POST /Task/<id>/$accept - Rezept annehmen"
     scopes:
       - "task.accept"
     allowed_professions:

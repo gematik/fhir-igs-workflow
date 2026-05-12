@@ -18,7 +18,7 @@ Zur Umsetzung der ZETA Architektur müssen Clientsysteme folgende Anforderungen 
     <actor name="NCPeH_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Das Clientsystem des TI-Flow-Fachdienstes MUSS die ZETA Client Funktionen gemäß [gemSST_PS_ZETA_V] umsetzen.
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS die ZETA Client Funktionen gemäß [gemSST_PS_ZETA_V] umsetzen.
 </requirement>
 
 <!-- ToDo: link auflösen, Dokument ist noch nicht veröffentlicht. ZETA plant , es später bereitzustellen. -->
@@ -56,7 +56,7 @@ Hinweis: Der Zeta-Client beinhaltet zwingend zu nutzende Kommunikationsfunktione
     <actor name="NCPeH_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Ein Clientsystem des TI-Flow-Fachdienstes MUSS zur Authentisierung der Institution das Verfahren mittels SM(C)-B signiertem Client Assertion JWT und DPoP gemäß [RFC7523] und [RFC9449] verwenden.
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS zur Authentisierung der Institution das Verfahren mittels SM(C)-B signiertem Client Assertion JWT und DPoP gemäß [RFC7523] und [RFC9449] verwenden.
 </requirement>
 
 <requirement conformance="SHALL" key="" title="CS: ZETA Client - ZETA/ASL-Kanal" version="0">
@@ -73,5 +73,5 @@ Hinweis: Der Zeta-Client beinhaltet zwingend zu nutzende Kommunikationsfunktione
     <actor name="NCPeH_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Ein Clientsystem des TI-Flow-Fachdienstes MUSS für jede Anfrage an den TI-Flow-Fachdienst die ZETA Client Funktion mit aktivem ZETA/ASL-Kanal verwenden.
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS für jede Anfrage an den TI-Flow-Fachdienst die ZETA Client Funktion mit aktivem ZETA/ASL-Kanal verwenden.
 </requirement>
