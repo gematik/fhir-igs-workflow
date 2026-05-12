@@ -9,9 +9,9 @@ Version 1.0.0-draft - ci-build
 
 ## Health Check
 
-Ein Health-Check ist eine https-Abfrage mit der Aufgabe, die Erreichbarkeit und damit gleichzeitig die Nutzbarkeit des TI-Flow-Fachdienstes festzustellen. Ein Health-Check dient nicht dazu, die fachliche Korrektheit des TI-Flow-Fachdienstes zu überprüfen. Ein Health-Check kann genutzt werden, um die Erreichbarkeit des TI-Flow-Fachdienstes zu überprüfen. 
+Ein Health-Check ist eine https-Abfrage mit der Aufgabe, die Erreichbarkeit und damit gleichzeitig die Nutzbarkeit des TI-Flow-Fachdienstes festzustellen. Ein Health-Check dient nicht dazu, die fachliche Korrektheit des TI-Flow-Fachdienstes zu überprüfen. Ein Health-Check kann genutzt werden, um die Erreichbarkeit des TI-Flow-Fachdienstes zu überprüfen.
 
-Endanwender müssen sich darauf verlassen können, dass vom Betreiber des TI-Flow-Fachdienstes nur Endpunkte zur Verfügung gestellt werden, deren fachliche Korrektheit und Funktionalität kontinuierlich intern überwacht werden. Dadurch kann der Hersteller eines Primärsystems davon ausgehen, dass – sofern eine Erreichbarkeit eines Endpunktes gegeben ist – auch die fachliche Korrektheit und damit die Verfügbarkeit des Dienstes gegeben sind. Der Betreiber des TI-Flow-Fachdienstes prüft periodisch, ob alle verbunden Backendsysteme in den festgelegten Parametern ordnungsgemäß funktionieren. Sollte dies nicht der Fall sein, so wird der entsprechende Host automatisiert vom Netz getrennt, wodurch keine Anfragen an ihn mehr stattfinden können.
+Endanwender müssen sich darauf verlassen können, dass vom Betreiber des TI-Flow-Fachdienstes nur Endpunkte zur Verfügung gestellt werden, deren fachliche Korrektheit und Funktionalität kontinuierlich intern überwacht werden. Dadurch kann der Hersteller eines Primärsystems davon ausgehen, dass - sofern eine Erreichbarkeit eines Endpunktes gegeben ist - auch die fachliche Korrektheit und damit die Verfügbarkeit des Dienstes gegeben sind. Der Betreiber des TI-Flow-Fachdienstes prüft periodisch, ob alle verbunden Backendsysteme in den festgelegten Parametern ordnungsgemäß funktionieren. Sollte dies nicht der Fall sein, so wird der entsprechende Host automatisiert vom Netz getrennt, wodurch keine Anfragen an ihn mehr stattfinden können.
 
 Durch die kontinuierliche Weiterentwicklung und Sicherstellung dieses Verfahrens kann damit bei Erreichbarkeit des TI-Flow-Fachdienstes von einer Verfügbarkeit der angebotenen Endpunkte ausgegangen werden.
 
@@ -21,15 +21,28 @@ Es wird folgend eine Klassifikation der Health-Checks vorgenommen, um den tatsä
 
 ### Erweiterter Health-Check
 
-Ein erweiterter Health-Check ist ein spezieller Aufruf auf den Endpunkt /metadata mit der http-Methode GET im inneren, verschlüsselten http-Request an die /VAU ⇒ ( “POST /VAU [GET /metadata]” ). Ziel dieses Health-Checks soll es sein, die Anmeldung am TI-Flow-Fachdienst und dem damit einhergehenden ASL-Protokoll zur Ver- und Entschlüsselung zu überprüfen. Dabei wird ebenfalls die Autorisierung am ZETA Guard des TI-Flow-Fachdienstes überprüft. Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt werden, wenn z.B. ein neuer Client in Betrieb genommen wird. Als Abfrage zum Systemstart darf dieser Health-Check nicht eingesetzt werden!
+«««< HEAD Ein erweiterter Health-Check ist ein spezieller Aufruf auf den Endpunkt /metadata mit der http-Methode GET im inneren, verschlüsselten http-Request an die /ASL ⇒ ( “POST /ASL [GET /metadata]” ). Ziel dieses Health-Checks soll es sein, die Anmeldung am TI-Flow-Fachdienst und dem damit einhergehenden ASL-Protokoll zur Ver- und Entschlüsselung zu überprüfen. Dabei wird ebenfalls die Authentisierung überprüft. Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt werden, wenn z.B. ein neuer Client in Betrieb genommen wird. Als Abfrage zum Systemstart darf dieser Health-Check nicht eingesetzt werden! ======= Ein erweiterter Health-Check ist ein spezieller Aufruf auf den Endpunkt /metadata mit der http-Methode GET im inneren, verschlüsselten http-Request an die /VAU ⇒ ( “POST /VAU [GET /metadata]” ). Ziel dieses Health-Checks soll es sein, die Anmeldung am TI-Flow-Fachdienst und dem damit einhergehenden ASL-Protokoll zur Ver- und Entschlüsselung zu überprüfen. Dabei wird ebenfalls die Autorisierung am ZETA Guard des TI-Flow-Fachdienstes überprüft. Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt werden, wenn z.B. ein neuer Client in Betrieb genommen wird. Als Abfrage zum Systemstart darf dieser Health-Check nicht eingesetzt werden!
 
-Spezialfall: Für Hersteller von Primärsystemen der abgebenden LEI ist, ersetzend zum o.g. Verfahren, die Nutzung von /Subscription mit der http-Methode POST im inneren, verschlüsselten http-Request an die /VAU vorzuziehen, da dieses Verfahren bereits dazu dient, die Verbindungen zum TI-Flow-Fachdienst auf einen WebSocket zu reduzieren ⇒ ( “POST /VAU [POST /Subscription]” ).
+> 
+> 
+> 
+> 
+> 
+> 
+> 8246353342e4b48edca109a52adc95fa8f012f5e
+
+
+
+
+
+
+Spezialfall: Für Hersteller von Primärsystemen der abgebenden LEI ist, ersetzend zum o.g. Verfahren, die Nutzung von /Subscription mit der http-Methode POST im inneren, verschlüsselten http-Request an die /ASL vorzuziehen, da dieses Verfahren bereits dazu dient, die Verbindungen zum TI-Flow-Fachdienst auf einen WebSocket zu reduzieren ⇒ ( “POST /ASL [POST /Subscription]” ).
 
 ### Einfacher Health-Check
 
-Ein einfacher Health-Check ist ein leichtgewichtiger Aufruf auf den Fachdienst-Endpunkt / (root) mit der http-Methode GET (“äußerer http-Request”), ohne eine zusätzliche VAU-Verschlüsselung ⇒ ( “GET / [—]” ). Ziel dieses Health-Checks soll es sein, die Verfügbarkeit des TI-Flow-Fachdienstes vom Clientsystem aus sicherzustellen. Dabei werden weder ACCESS_TOKEN noch Verschlüsselung benötigt, was ihn für wiederkehrende Abfragen optimiert.
+Ein einfacher Health-Check ist ein leichtgewichtiger Aufruf auf den Fachdienst-Endpunkt / (root) mit der http-Methode GET (“äußerer http-Request”), ohne eine zusätzliche ASL-Verschlüsselung ⇒ ( “GET / [—]” ). Ziel dieses Health-Checks soll es sein, die Verfügbarkeit des TI-Flow-Fachdienstes vom Clientsystem aus sicherzustellen. Dabei weder Authentisierung oder ASL-Verschlüsselung benötigt, was ihn für wiederkehrende Abfragen optimiert.
 
-Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt werden, wenn z.B. binnen einer festgelegten Periode vom Clientsystem keine Anfragen an den TI-Flow-Fachdienst gestellt worden sind. Der Health-Check soll nicht in festgelegten Zeitintervallen, unabhängig von fachlichen Anwendungsfällen benutzt werden – sondern soll erst bei einem echten Idle-Zeitraum Anwendung finden.
+Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt werden, wenn z.B. binnen einer festgelegten Periode vom Clientsystem keine Anfragen an den TI-Flow-Fachdienst gestellt worden sind. Der Health-Check soll nicht in festgelegten Zeitintervallen, unabhängig von fachlichen Anwendungsfällen benutzt werden - sondern soll erst bei einem echten Idle-Zeitraum Anwendung finden.
 
 ### Festlegungen zum Verfahren mit Health-Checks
 
@@ -37,9 +50,9 @@ Das Clientsystem des TI-Flow-Fachdienstes MUSS auf Grundlage der Datensparsamkei
 
 Das Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen Health-Check durchführen, welcher die erwartete Rückgabe eines Fehlercodes vorsieht.
 
-Das Clientsystem des TI-Flow-Fachdienstes KANN einen erweiterten Health-Check auf der Endpunkt ⇒ "POST /VAU [GET /metadata]" durchführen.
+Das Clientsystem des TI-Flow-Fachdienstes KANN einen erweiterten Health-Check auf der Endpunkt ⇒ "POST /ASL [GET /metadata]" durchführen.
 
-Das Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen erweiterten Health-Check periodisch durchführen, welcher periodisch den Endpunkt ⇒ "POST /VAU [GET /metadata]" abfragt.
+Das Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen erweiterten Health-Check periodisch durchführen, welcher periodisch den Endpunkt ⇒ "POST /ASL [GET /metadata]" abfragt.
 
 Das Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen erweiterten Health-Check durchführen, welcher andere als die jeweils vorgegebenen Endpunkte des TI-Flow-Fachdienstes nutzt.
 
@@ -47,7 +60,7 @@ Das Clientsystem des TI-Flow-Fachdienstes KANN einen einfachen Health-Check auf 
 1. Die festgelegte Idle-Periode darf 10 Minuten nicht unterschreiten.
 1. Der Zeitraum zwischen den Aufrufen (Idle-Periode) muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am TI-Flow-Fachdienst über alle Clientsysteme zu erreichen.
 
-**Ausnahme bei technischen Störungen:** Das Primärsystem darf einen weiteren einfachen Health-Check innerhalb der Idle-Periode durchführen, sofern ein fachlicher Aufruf die Nichterreichbarkeit des E-Rezept Fachdienstes zurückmeldet. Die Wiederholung des Health-Checks muss dann den Exponential Backoff-Algorithmus zur Wiederherstellung der erfolgreichen Verbindung umsetzen.
+**Ausnahme bei technischen Störungen:** Das Primärsystem darf einen weiteren einfachen Health-Check innerhalb der Idle-Periode durchführen, sofern ein fachlicher Aufruf die Nichterreichbarkeit des TI-Flow-Fachdienstes zurückmeldet. Die Wiederholung des Health-Checks muss dann den Exponential Backoff-Algorithmus zur Wiederherstellung der erfolgreichen Verbindung umsetzen.
 
 **Ausnahme bei parallel durchgeführten, fachlichen Aufrufen:** Das Primärsystem DARF KEINEN Health-Check durchführen, wenn innerhalb der festgelegten Idle-Periode ein regulärer Aufruf an einem beliebigen Endpunkt des TI-Flow-Fachdienstes mit erhaltener Antwort durchgeführt wurde. Die Antwort des TI-Flow-Fachdienstes MUSS die festgelegte Idle-Periode von Beginn starten lassen.
 
