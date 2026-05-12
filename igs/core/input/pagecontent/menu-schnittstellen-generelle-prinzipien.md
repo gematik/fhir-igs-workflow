@@ -91,7 +91,7 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
 </requirement>
 
 <!-- A_20171 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-356" title="TI-Flow-Fachdienst - RESTful API Capability Statement" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-356" title="TI-Flow-Fachdienst - RESTful API Capability Statement" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -226,7 +226,7 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
 </requirement>
 
 <!-- A_28430 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-362" title="Verbot Angabe von BOM für TI-Flow-Fachdienst" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-362" title="Verbot Angabe von BOM für TI-Flow-Fachdienst" version="1">
     <meta lockversion="false"/>
         <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>

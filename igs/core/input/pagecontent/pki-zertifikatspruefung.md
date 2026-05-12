@@ -95,7 +95,7 @@ Es gelten folgende übergreifende Festlegungen für die Prüfung aktiv durch ein
 Folgende Vorgaben gelten für die Prüfung von Internet-Zertifikaten.
 
 <!-- A_20091-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-304" title="CS: Prüfung der Zertifikate für TLS-Verbindung zum TI-Flow-Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-304" title="CS: Prüfung der Zertifikate für TLS-Verbindung zu TI-Flow-Fachdienst und IDP-Dienst" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
