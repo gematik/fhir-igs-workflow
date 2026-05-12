@@ -67,7 +67,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consen
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligungsinformation abrufen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /Consent mit     ausführen.
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligungsinformation abrufen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /Consent mit ausführen.
 </requirement>
 
 In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwilligungstyp des Consent ist in Consent.category.coding.code angegeben. Die Werte können sich auf folgende Codesysteme beziehen: [GEM_ERPCHRG_CS_ConsentType], [GEM_ERPEU_CS_ConsentType].
