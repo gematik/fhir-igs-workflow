@@ -26,7 +26,7 @@ Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein A
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Das PS der abgebenden LEI MUSS im Anwendungsfall "Subscription für neue Communication" zum Registrieren im TI-Flow-Fachdienst die HTTP-Operation POST /v1/Subscription  ausführen.
+    Das PS der abgebenden LEI MUSS im Anwendungsfall "Subscription für neue Communication" zum Registrieren im TI-Flow-Fachdienst die HTTP-Operation POST /v1/Subscription ausführen.
 </requirement>
 
 <!-- A_22375 -->
