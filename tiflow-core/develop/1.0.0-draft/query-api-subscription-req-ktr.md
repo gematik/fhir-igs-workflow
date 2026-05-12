@@ -19,7 +19,7 @@ Das Clientsystem Kostenträger DARF NICHT mehr als eine Subscription pro Telemat
 
 Das Clientsystem Kostenträger MUSS im Anwendungsfall "Subscription für neue Communication" eine Subscription Ressource mit Telematik-ID in Element criteria Attribut receipient erstellen.
 
-Das Clientsystem Kostenträger MUSS im Anwendungsfall "Subscription für neue Communication" zum Registrieren im TI-Flow-Fachdienst die HTTP-Operation POST /v1/Subscription mit ACCESS_TOKEN im Authorization-Header ausführen.
+Das Clientsystem Kostenträger MUSS im Anwendungsfall "Subscription für neue Communication" zum Registrieren im TI-Flow-Fachdienst die HTTP-Operation POST /v1/Subscription ausführen.
 
 Das Clientsystem Kostenträger MUSS im Anwendungsfall "Subscription für neue Communication" nach der Registrierung eine Web Socket Verbindung zum Subscription Service mit Authorization Header aufbauen und ein Upgrade durchführen.
 Beispiel: GET https://subscription.zentral.erp.splitdns.ti-dienste.de/subscription Authorization: Bearer secret-token-abc-123 Connection: Upgrade Pragma: no-cache Cache-Control: no-cache Upgrade: websocket Sec-WebSocket-Version: 13 Sec-WebSocket-Key: q4xkcO32u266gldTuKaSOw==

@@ -33,7 +33,6 @@ Der TI-Flow-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" um
 Der TI-Flow-Fachdienst MUSS zur Umsetzung des Implementation Guides "E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
 ## Aufbau
 
-* [Verbindungsaufbau Clientsysteme (über IDP-Dienst)](./verbindungsaufbau-client.md)
 * [FHIR-Artefakte](./artifacts.md)
 * [FHIR-Validierung](./fhir-validate.md)
 * [Query API (modulübergreifend)](./query-api.md)
@@ -2693,15 +2692,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         }],
         "nameUrl" : "pki-zertifikatspruefung.html",
         "title" : "Zertifikatsprüfung",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "authentifizierung-client.html"
-        }],
-        "nameUrl" : "authentifizierung-client.html",
-        "title" : "Authentifizierung von Clientsystemen",
         "generation" : "markdown"
       },
       {

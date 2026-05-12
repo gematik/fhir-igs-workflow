@@ -18,10 +18,9 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$activate`.
 
 Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden einstellen" für das E-Rezept die HTTP-Operation POST /Task/<id>/$activate mit
-* ACCESS_TOKEN im Authorization-Header
 * Task-ID in URL <id> 
 * AccessCode in X-AccessCode - Header oder URL-Parameter ?ac=
-* QES signiertes E-Rezept-Bundle im http-Body des Aufrufs als data
+* QES signiertes E-Rezept-Bundle im HTTP-Request-Body des Aufrufs als data
 ausführen.
 Hinweis: Für den Fall, dass das Clientsystem beim Aufruf der Operation keinen Response erhält, soll der Aufruf wiederholt werden. Wenn im Response des zweiten Aufrufs ein Fehler 403 mit dem OperationOutcome “Task not in status draft but in status ready” zurückkommt, wurde der erste Aufruf bereits erfolgreich durch den TI-Flow-Fachdienst verarbeitet. Wenn eine Response mit dem Status 200 zurückkommt, war der zweite Aufruf erfolgreich.
 
@@ -40,7 +39,7 @@ Für die Spezifikation des Datamatrix-Code für E-Rezept-Token siehe [gemSpec_DM
 
 ### Modulspezifische Anforderungen
 
-Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für Verordnungen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG] erzeugen und im E-Rezept-Bundle angeben.
+Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für Verordnungen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG] erzeugen und im E-Rezept-Bundle angeben.
 ### Anforderungen Workflow 200, 209
 
 Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 als Identifier des Patienten in Patient.identifer.value die KVNR des Versicherten verwenden.

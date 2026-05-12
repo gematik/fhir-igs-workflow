@@ -18,7 +18,6 @@ Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept zum Zur�
 Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept zurückgegeben werden soll und die Möglichkeit geben, das Zurückgeben abzubrechen.
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden zurückgeben" für das zurückzugebende E-Rezept die HTTP-Operation POST /Task/<id>/$reject mit
-* ACCESS_TOKEN im Authorization-Header
 * Task-ID in URL <id> 
 * Geheimnis in URL-Parameter ?secret=
 ausführen.

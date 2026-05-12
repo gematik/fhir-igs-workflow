@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"20.2.2"}
-    h3,h4,h5,h6{--heading-prefix:"20.2.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"19.2.2"}
+    h3,h4,h5,h6{--heading-prefix:"19.2.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -144,9 +144,6 @@
       </li>
       <li>
         <a href="datamatrix-code-client.html">Datamatrix Code</a>
-      </li>
-      <li>
-        <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
       </li>
       <li>
         <a href="health-check.html">Health Check</a>
@@ -284,14 +281,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der <code class="language-plaintext highlighter-rouge">MedicationDispense</code>-Query-Endpunkte.</p>
 
 <!-- A_19345 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-339" title="E-Rezept-FdV: Abgabeinformationen abfragen - MedicationDispense abrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-339" title="E-Rezept-FdV: Abgabeinformationen abfragen - MedicationDispense abrufen" version="1">
     <meta lockversion="false" />
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest" />
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" die HTTP-Operation GET /MedicationDispense mit
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" die HTTP-Operation GET /MedicationDispense mit
     <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>optional: Suchparameter gemäß https://www.hl7.org/fhir/medicationdispense.html#search</li>
     </ul>
     ausführen.
@@ -337,7 +333,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 8, 2026 22:34+0000">2026-05-08</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 12, 2026 09:57+0000">2026-05-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

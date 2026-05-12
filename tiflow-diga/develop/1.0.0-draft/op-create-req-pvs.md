@@ -26,8 +26,7 @@ Das PS der verordnenden LEI MUSS sicherstellen, dass das Datum authoredOn des Ve
 Es gelten weitere modulspezifische Anforderungen für den Verordnungsdatensatz.
 
 Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die HTTP-Operation POST /Task/$create mit
-* ACCESS_TOKEN im Authorization-Header
-* Rezept-Typ im FlowType als Parameter der FHIR-Operation $create für Task 
+* Workflow-Typ im FlowType als Parameter der FHIR-Operation $create für Task 
 ausführen.
 Für weitere Informationen siehe Operation “E-Rezept erstellen” aus der API-Schnittstelle [E-Rezept API Dokumentation].
 

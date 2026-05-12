@@ -26,7 +26,6 @@ Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zu
 Das PS der abgebenden LEI erzeugt die Dispensierinformationen nach den Vorgaben aus [Erstellen von Dispensierinformationen](./menu-technische-umsetzung-dispensierinformationen.md).
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen" für das abgegebene E-Rezept die HTTP-Operation POST /Task/<id>/$dispense mit
-* ACCESS_TOKEN im Authorization-Header 
 * Task-ID in URL <id> 
 * Geheimnis in URL-Parameter ?secret= 
 * GEM_ERP_PR_PAR_DispenseOperation_Input-Objekt 

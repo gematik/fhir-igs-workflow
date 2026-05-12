@@ -293,16 +293,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="recovery-secret">Recovery Secret</h4>
 <!-- A_24181 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-37" title="PS abgebende LEI: Recovery Secret - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-37" title="PS abgebende LEI: Recovery Secret - Statusrequest" version="1">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "Recovery Secret" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit 
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Task-ID in URL &lt;id&gt; </li>
-    <li>Access_Code in URL-Parameter ?ac=</li>
+    <li>AccessCode in URL-Parameter ?ac=</li>
   </ul>
   ausführen.
 </requirement>
@@ -313,14 +312,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der Anwendungsfall kann bei Bedarf wiederholt werden.</p>
 
 <!-- A_19292 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-38" title="PS abgebende LEI: Quittung erneut abrufen - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-38" title="PS abgebende LEI: Quittung erneut abrufen - Statusrequest" version="1">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "Quittung erneut abrufen" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit 
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Task-ID in URL &lt;id&gt; </li>
     <li>Geheimnis in URL-Parameter ?secret=</li>
   </ul>
@@ -345,18 +343,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Für die Umsetzung siehe [spec-ilf-popp-client].
 <!-- ToDo: Link auflösen --></p>
 
-<p>Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den TI-Flow-Fachdienst weiter.</p>
+<p>Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den TI-Flow-Fachdienst weiter.</p>
 
 <!-- A_22437-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-11" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - E-Rezepte abrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-11" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - E-Rezepte abrufen" version="1">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung" />
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" die HTTP-Operation GET /Task mit
   <ul>
-  <li>ACCESS_TOKEN im Authorization-Header</li>
-  <li>PoPP-Token in HTTP-Header X-PoPP-Token</li>
+    <li>PoPP-Token in HTTP-Header X-PoPP-Token</li>
   </ul>
   ausführen.
 </requirement>
@@ -417,7 +414,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 8, 2026 13:34+0000">2026-05-08</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 12, 2026 10:11+0000">2026-05-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

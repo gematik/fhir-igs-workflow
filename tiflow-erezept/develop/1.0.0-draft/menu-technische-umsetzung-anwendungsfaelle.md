@@ -25,11 +25,11 @@ umsetzen.
 #### E-Rezept-FdV
 
 Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneimittel die Anwendungsfälle
-* UC 3.1 – E-Rezepte durch Versicherten abrufen
-* UC 3.2 – E-Rezept durch Versicherten löschen
-* UC 3.3 – Nachricht durch Versicherten übermitteln
-* UC 3.4 – Nachricht durch Versicherten empfangen
-* UC 3.8 – Nachricht durch Versicherten löschen
+* UC 3.1 - E-Rezepte durch Versicherten abrufen
+* UC 3.2 - E-Rezept durch Versicherten löschen
+* UC 3.3 - Nachricht durch Versicherten übermitteln
+* UC 3.4 - Nachricht durch Versicherten empfangen
+* UC 3.8 - Nachricht durch Versicherten löschen
 * UC 3.5 - Protokolldaten abrufen
 umsetzen.
 #### PS abgebende LEI
@@ -58,27 +58,27 @@ umsetzen.
 ##### UC 2.1 - E-Rezepte erzeugen
 
 * Beschreibung: Vorbedingungen
-  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * Der Versicherte ist der LEI bekannt.
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primärsystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * Der Versicherte ist der LEI bekannt.
 * Ein Verordnungsdatensatz liegt im Primärsystem vor.
 * HBA ist gesteckt und für die QES freigeschaltet.
 
 * Beschreibung: Durchzuführende Aktionen
-  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * Der Leistungserbringer wählt den Verordnungsdatensatz und ein Signaturverfahren aus.
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primärsystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * Der Leistungserbringer wählt den Verordnungsdatensatz und ein Signaturverfahren aus.
 * Das Primärsystem ruft eine Rezept-ID beim TI-Flow-Fachdienst ab und ergänzt sie im Verordnungsdatensatz.
 * Der AccessCode wird im Primärsystem gespeichert.
 * Der Verordnungsdatensatz wird über den Konnektor mit QES signiert (Einzel-, Stapel- oder Komfortsignatur).
 
 * Beschreibung: Nachbedingungen
-  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * E-Rezept enthält Rezept-ID und QES.
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primärsystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * E-Rezept enthält Rezept-ID und QES.
 * AccessCode des E-Rezepts ist im Primärsystem gespeichert.
 * Workflow zum E-Rezept ist im TI-Flow-Fachdienst im Status “draft” angelegt.
 
 * Beschreibung: Schnittstellen
-  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * [Operation API: E-Rezept erstellen](./op-create.md)
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primärsystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * [Operation API: E-Rezept erstellen](./op-create.md)
 * QES im Primärsystem (Konnektor)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).:  (ZAHN-)ARZT 
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primärsystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).:  (ZAHN-)ARZT 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 2.1 - E-Rezepte erzeugen
 **Sequenzdiagramm:**
@@ -107,8 +107,6 @@ umsetzen.
   * Der Verordnungsdatensatz wird durch den (Zahn-)Arzt mittels HBA qualifiziert elektronisch signiert (QES). Vorbereitende Tätigkeiten im Primärsystem können organisatorisch delegiert werden, die QES selbst jedoch nicht.:  (ZAHN-)ARZT 
 
 **Tabelle:**Fachlicher Anwendungsfall E-Rezept qualifiziert signieren
-* Die QES-Erstellung erfolgt im Primärsystem (HBA/Konnektor) vor dem Aufruf von `$activate`.
-
 **Sequenzdiagramm:**
 
 **Abbildung: **E-Rezept qualifiziert signieren
@@ -491,10 +489,10 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 * Beschreibung: Durchzuführende Aktionen
   * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom TI-Flow-Fachdienst abgerufen.: * Abgebender markiert das E-Rezept als abgegeben.
 * Primärsystem übermittelt Rezept-ID, Geheimnis und Abgabeinformationen an den TI-Flow-Fachdienst.
-* Status wechselt zu “quittiert”; Quittung wird erstellt und zurückgegeben.
+* Status wechselt zu “completed”; Quittung wird erstellt und zurückgegeben.
 
 * Beschreibung: Nachbedingungen
-  * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom TI-Flow-Fachdienst abgerufen.: * Status ist “quittiert”; Abgabeinformationen sind gespeichert.
+  * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom TI-Flow-Fachdienst abgerufen.: * Status ist “completed”; Abgabeinformationen sind gespeichert.
 * Statuswechsel ist protokolliert; Quittung liegt im Primärsystem vor.
 
 * Beschreibung: Schnittstellen
@@ -564,7 +562,7 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 
 * Beschreibung: Vorbedingungen
   * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * UC 4.4 wurde ausgeführt; im Primärsystem liegt keine Quittung vor.
-* Status des E-Rezepts ist “quittiert”.
+* Status des E-Rezepts ist “completed”.
 
 * Beschreibung: Durchzuführende Aktionen
   * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * Abgebender wählt das E-Rezept und ruft die Quittung erneut ab.

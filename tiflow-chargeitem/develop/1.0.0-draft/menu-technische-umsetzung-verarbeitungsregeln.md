@@ -36,11 +36,7 @@ Der Fachdienst löscht Abrechnungsinformationen automatisch 10 Jahre nach der er
 
 Die Zuordnung eines E-Rezeptes zu einem Versicherten erfolgt auf Basis der Versicherten-ID (10-stelliger unveränderlicher Teil der Krankenversichertennummer (KVNR)). D.h. teilnehmende PKV-Versicherte benötigen eine KVNR, welche ihnen über ihre Krankenversicherung zugeordnet wird. An der Versicherten-ID kann nicht erkannt werden, ob der Versicherte bei einer PKV versichert ist.
 
-Die Authentisierung des Nutzers am TI-Flow-Fachdienst erfolgt mittels eines ACCESS_TOKEN. Diese werden durch Identity Provider (IdP) ausgestellt, welche die Identität des Nutzers attestieren. Es werden ACCESS_TOKEN von IdPs akzeptiert, bei denen der TI-Flow-Fachdienst sich registriert hat.
-
-Mit dem Start der Anwendung E-Rezept kann der IdP der gematik genutzt werden. Für die Authentisierung eines Versicherten am IdP der gematik mittels E-Rezept-FdV wird eine eGK mit NFC-Schnittstelle verwendet.
-
-Mit der Entwicklung von digitalen Identitäten, bspw. föderierter IdPs, werden diese für die Authentisierung einbezogen.
+Die Authentisierung des Nutzers am TI-Flow-Fachdienst erfolgt über den ZETA Guard.
 
 ### Verarbeitungsregeln für das E-Rezept-FdV
 

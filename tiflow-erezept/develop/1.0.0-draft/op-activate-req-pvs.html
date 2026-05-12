@@ -297,17 +297,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation <code class="language-plaintext highlighter-rouge">$activate</code>.</p>
 
 <!-- A_19273-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-150" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-150" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="1">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Konformitätsbestätigung" />
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden einstellen" für das E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$activate mit
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Task-ID in URL &lt;id&gt; </li>
     <li>AccessCode in X-AccessCode - Header oder URL-Parameter ?ac=</li>
-    <li>QES signiertes E-Rezept-Bundle im http-Body des Aufrufs als data</li>
+    <li>QES signiertes E-Rezept-Bundle im HTTP-Request-Body des Aufrufs als data</li>
   </ul>
   ausführen.
 </requirement>
@@ -369,25 +368,27 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
     </actor>
-    Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für Verordnungen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG] erzeugen und im E-Rezept-Bundle angeben.
+    Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für Verordnungen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG] erzeugen und im E-Rezept-Bundle angeben.
 </requirement>
 
 <h3 id="anforderungen-workflow-200-209">Anforderungen Workflow 200, 209</h3>
+
 <!-- A_22541-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-59" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 200/209 - KVNR als Identifier" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
     </actor>
-        Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 als Identifier des Patienten in Patient.identifer.value die KVNR des Versicherten verwenden.
+    Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 als Identifier des Patienten in Patient.identifer.value die KVNR des Versicherten verwenden.
 </requirement>
+
 <!-- A_22542-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-60" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 200/209 - Versicherungstyp PKV" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
     </actor>
-        Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 für Coverage.type.coding.code den Wert "PKV" verwenden.
+    Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 für Coverage.type.coding.code den Wert "PKV" verwenden.
 </requirement>
 
 <h3 id="anforderungen-für-mehrfachverordnung">Anforderungen für Mehrfachverordnung</h3>
@@ -397,7 +398,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
     </actor>
-        Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" beim Erstellen des E-Rezept-Bundles für die Teilverordnung einer Mehrfachverordnung den Beginn der Einlösefrist der Teilverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) angeben.
+    Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" beim Erstellen des E-Rezept-Bundles für die Teilverordnung einer Mehrfachverordnung den Beginn der Einlösefrist der Teilverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) angeben.
 </requirement>
 
 <h3 id="anforderungen-workflow-166">Anforderungen Workflow 166</h3>
@@ -408,7 +409,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
     </actor>
-        Das PS der verordnenden LEI MUSS sicherstellen, dass ein Verordnungsdatensatz für ein E-Rezept des Flowtype 166 nur mit einem HBA mit der zulässigen ProfessionOID oid_arzt signiert werden kann.
+    Das PS der verordnenden LEI MUSS sicherstellen, dass ein Verordnungsdatensatz für ein E-Rezept des Flowtype 166 nur mit einem HBA mit der zulässigen ProfessionOID oid_arzt signiert werden kann.
 </requirement>
 
 <!-- A_27835 -->
@@ -417,7 +418,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
     </actor>
-        Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 166 sicherstellen, dass die maximale Reichdauer entsprechend den gesetzlichen Vorgaben nicht überschritten wird.
+    Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 166 sicherstellen, dass die maximale Reichdauer entsprechend den gesetzlichen Vorgaben nicht überschritten wird.
 </requirement>
 
 <!-- A_27836 -->
@@ -492,7 +493,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
     </actor>
-        Das Primärsystem MUSS für die Übertragung von E-Rezept-Token ein Verfahren nutzen, dass die sehr hohe Vertraulichkeit des E-Rezept-Tokens und seine Integrität schützt.
+    Das Primärsystem MUSS für die Übertragung von E-Rezept-Token ein Verfahren nutzen, dass die sehr hohe Vertraulichkeit des E-Rezept-Tokens und seine Integrität schützt.
 </requirement>
 
 <!-- A_21453 -->
@@ -501,7 +502,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung" />
     </actor>
-        Das PS der verordnenden LEI KANN die Auswahl und Verwaltung von herstellenden Apotheken für die Übermittlung der E-Rezept-Einlöseinformationen ermöglichen.
+    Das PS der verordnenden LEI KANN die Auswahl und Verwaltung von herstellenden Apotheken für die Übermittlung der E-Rezept-Einlöseinformationen ermöglichen.
 </requirement>
 
 
@@ -545,7 +546,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 8, 2026 13:34+0000">2026-05-08</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 12, 2026 10:11+0000">2026-05-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -28,12 +28,12 @@ umsetzen.
 #### E-Rezept-FdV
 
 Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle
-* UC 3.1 – E-Rezepte durch Versicherten abrufen
-* UC 3.2 – E-Rezept durch Versicherten löschen
+* UC 3.1 - E-Rezepte durch Versicherten abrufen
+* UC 3.2 - E-Rezept durch Versicherten löschen
 * Kostenträger suchen
-* UC 3.3 – Nachricht durch Versicherten übermitteln
-* UC 3.4 – Nachricht durch Versicherten empfangen
-* UC 3.8 – Nachricht durch Versicherten löschen
+* UC 3.3 - Nachricht durch Versicherten übermitteln
+* UC 3.4 - Nachricht durch Versicherten empfangen
+* UC 3.8 - Nachricht durch Versicherten löschen
 * UC 3.5 - Protokolldaten abrufen
 umsetzen.
 #### Clientsystem Kostenträger
@@ -55,27 +55,27 @@ umsetzen.
 ##### UC 2.1 - E-Rezepte erzeugen
 
 * Beschreibung: Vorbedingungen
-  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * Der Versicherte ist der LEI bekannt.
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primärsystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * Der Versicherte ist der LEI bekannt.
 * Ein Verordnungsdatensatz liegt im Primärsystem vor.
 * HBA ist gesteckt und für die QES freigeschaltet.
 
 * Beschreibung: Durchzuführende Aktionen
-  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * Der Leistungserbringer wählt den Verordnungsdatensatz und ein Signaturverfahren aus.
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primärsystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * Der Leistungserbringer wählt den Verordnungsdatensatz und ein Signaturverfahren aus.
 * Das Primärsystem ruft eine Rezept-ID beim TI-Flow-Fachdienst ab und ergänzt sie im Verordnungsdatensatz.
 * Der AccessCode wird im Primärsystem gespeichert.
 * Der Verordnungsdatensatz wird über den Konnektor mit QES signiert (Einzel-, Stapel- oder Komfortsignatur).
 
 * Beschreibung: Nachbedingungen
-  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * E-Rezept enthält Rezept-ID und QES.
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primärsystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * E-Rezept enthält Rezept-ID und QES.
 * AccessCode des E-Rezepts ist im Primärsystem gespeichert.
 * Workflow zum E-Rezept ist im TI-Flow-Fachdienst im Status “draft” angelegt.
 
 * Beschreibung: Schnittstellen
-  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * [Operation API: Verordnung erstellen](./op-create.md)
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primärsystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * [Operation API: Verordnung erstellen](./op-create.md)
 * QES im Primärsystem (Konnektor)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).:  (ZAHN-)ARZT  PSYCHOTHERAPEUT 
+  * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primärsystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).:  (ZAHN-)ARZT  PSYCHOTHERAPEUT 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 2.1 - E-Rezepte erzeugen
 **Sequenzdiagramm:**
@@ -250,7 +250,7 @@ Für das Übermitteln der Verordnung wird als Adressat der Kostenträger ausgew�
 
 Damit das E-Rezept-FdV der gematik “UC 3.3 - Nachricht durch Versicherten übermitteln” ausführen kann, muss es zunächst die Telematik-ID des Kostenträgers als Empfängeradresse der Nachricht ermitteln.
 
-Das E-Rezept-FdV benötigt das Haupt-Institutionskennzeichen (IK) des Kostenträgers. Dieses IK wird über die Authentifizierungsmethoden des E-Rezept-FdV bereitgestellt. Das E-Rezept-FdV erhält sowohl bei der Authentifizierung mittels eGK, wie auch mittels sektoralem IDP (GesundheitsID) einen ACCESS_TOKEN vom E-Rezept Authorization Server (Teil des IDP-Dienstes) ausgestellt. Dieser ACCESS_TOKEN enthält das IK des Kostenträgers.
+Das E-Rezept-FdV benötigt das Haupt-Institutionskennzeichen (IK) des Kostenträgers. Dieses IK wird über die Authentifizierungsmethoden des E-Rezept-FdV bereitgestellt. Das E-Rezept-FdV erhält sowohl bei der Authentifizierung mittels eGK, wie auch mittels sektoralem IDP (GesundheitsID) einen ACCESS_TOKEN vom E-Rezept Authorization Server ausgestellt. Dieser ACCESS_TOKEN enthält das IK des Kostenträgers.
 
 Sobald dem E-Rezept-FdV das IK vorliegt, sucht es im FHIR-VZD nach der Telematik-ID des Kostenträgers mithilfe des IK.
 
@@ -382,10 +382,10 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
 * Beschreibung: Durchzuführende Aktionen
   * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom TI-Flow-Fachdienst abgerufen.: * Abgebender markiert das E-Rezept als abgegeben.
 * Primärsystem übermittelt Rezept-ID, Geheimnis und Abgabeinformationen an den TI-Flow-Fachdienst.
-* Status wechselt zu “quittiert”; Quittung wird erstellt und zurückgegeben.
+* Status wechselt zu “completed”; Quittung wird erstellt und zurückgegeben.
 
 * Beschreibung: Nachbedingungen
-  * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom TI-Flow-Fachdienst abgerufen.: * Status ist “quittiert”; Abgabeinformationen sind gespeichert.
+  * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom TI-Flow-Fachdienst abgerufen.: * Status ist “completed”; Abgabeinformationen sind gespeichert.
 * Statuswechsel ist protokolliert; Quittung liegt im Primärsystem vor.
 
 * Beschreibung: Schnittstellen
@@ -427,7 +427,7 @@ Sobald die Telematik-ID im E-Rezept-FdV vorliegt, kann der Versicherte die Veror
 
 * Beschreibung: Vorbedingungen
   * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * UC 4.4 wurde ausgeführt; im Primärsystem liegt keine Quittung vor.
-* Status des E-Rezepts ist “quittiert”.
+* Status des E-Rezepts ist “completed”.
 
 * Beschreibung: Durchzuführende Aktionen
   * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * Abgebender wählt das E-Rezept und ruft die Quittung erneut ab.

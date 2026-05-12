@@ -29,10 +29,9 @@ Das PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereits
 Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereitstellen" die HTTP-Operation POST /ChargeItem/ des TI-Flow-Fachdienstes mit
-* ACCESS_TOKEN im Authorization-Header
 * Task-ID als URL-Parameter ?task=
 * Geheimnis in URL-Parameter ?secret=
-* ChargeItem im http-Body des Aufrufs als data
+* ChargeItem im HTTP-Request-Body des Aufrufs als data
 ausführen.
 Wenn das E-Rezept bereits vom TI-Flow-Fachdienst gelöscht wurde, dann enthält der Response den Fehlercode 405. Das Bereitstellen der Abrechnungsinformation zu einem E-Rezept ist nur möglich bevor das E-Rezept gelöscht wurde.
 
@@ -53,10 +52,9 @@ Das PS der abgebenden LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" e
 Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
 
 Das PS abgebende LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" die HTTP-Operation PUT /ChargeItem/<id>/ des TI-Flow-Fachdienstes mit
-* ACCESS_TOKEN im Authorization-Header
 * Prescription-ID in URL <id>
 * AccessCode in URL-Parameter ?ac=
-* ChargeItem im http-Body des Aufrufs als data
+* ChargeItem im HTTP-Request-Body des Aufrufs als data
 ausführen.
 Wenn der Versicherte zwischenzeitlich die Einwilligung zum Speichern von Abrechnungsinformationen im TI-Flow-Fachdienst widerrufen hat, dann enthält der Response den Fehlercode 403.
 
@@ -65,7 +63,6 @@ Wenn der Versicherte zwischenzeitlich die Einwilligung zum Speichern von Abrechn
 Mit diesem Anwendungsfall kann eine abgebende LEI die Abrechnungsinformation vom TI-Flow-Fachdienst abrufen, welche durch sie zuvor bereitgestellt und noch nicht gelöscht wurde. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.
 
 Das PS abgebende LEI MUSS im Anwendungsfall "Abrechnungsinformation abrufen" die HTTP-Operation GET /ChargeItem/<id> des TI-Flow-Fachdienstes mit
-* ACCESS_TOKEN im Authorization-Header
 * Prescription-ID in URL <id>
 * AccessCode in URL-Parameter ?ac=
 ausführen.

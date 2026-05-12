@@ -131,7 +131,7 @@ Bei der Suche nach Apothekendaten basierend auf der Telematik-lD besteht die Mö
 
 Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept, wenn die  Daten der abgebenden Apotheke nicht aus dem Verzeichnisdienst ermittelt werden können,
 * die Telematik-ID der Apotheke aus den Dispensierinformationen und
-* den Wert für organizationName aus dem ACCESS_TOKEN der Anfrage  bzw. falls organizationName = NULL im ACCESS_TOKEN den Wert "unbekannt" als Name der Apotheke
+* den Wert für organizationName aus dem ACCESS_TOKEN der Anfrage bzw. falls organizationName = NULL im ACCESS_TOKEN den Wert "unbekannt" als Name der Apotheke
 in den digitalen Durchschlag übernehmen.
 Dieses Vorgehen stellt sicher, dass die Übertragung an das T-Register nicht aufgrund eines fehlenden FHIR-VZD-Eintrags blockiert wird und gleichzeitig die Nachvollziehbarkeit über die Telematik-ID gewährleistet bleibt.
 

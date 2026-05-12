@@ -287,34 +287,32 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19329-01 -->
-<requirement conformance="SHALL" title="PS abgebende LEI: Nachrichten abrufen - Abfrage" version="0" key="IG-TIFLOW-CORE-147">
+<requirement conformance="SHALL" title="PS abgebende LEI: Nachrichten abrufen - Abfrage" version="1" key="IG-TIFLOW-CORE-147">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"></testProcedure>
   </actor>
-  Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication&nbsp;mit
+  Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication mit
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>optional: ?received=null für nur ungelesene Nachrichten</li>
     <li>optional: ?received=gtYYYY-MM-DD für Nachrichten nach Datum DD.MM.YYYY</li>
   </ul>
   ausführen.
 </requirement>
 
-<p>Falls eine oder mehrere E-Rezept-Nachrichten für die abgebende LEI auf dem TI-Flow-Fachdienst bereitstehen, übermittelt der TI-Flow-Fachdienst ein Bundle von Communication Ressourcen.&nbsp;</p>
+<p>Falls eine oder mehrere E-Rezept-Nachrichten für die abgebende LEI auf dem TI-Flow-Fachdienst bereitstehen, übermittelt der TI-Flow-Fachdienst ein Bundle von Communication Ressourcen.</p>
 
 <h4 id="nachricht-versenden">Nachricht versenden</h4>
 <p>Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.</p>
 
   <!-- A_19334 -->
-<requirement conformance="SHALL" title="PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0" key="IG-TIFLOW-CORE-148">
+<requirement conformance="SHALL" title="PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="1" key="IG-TIFLOW-CORE-148">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"></testProcedure>
   </actor>
-  Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die HTTP-Operation&nbsp;POST /Communication mit
+  Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die HTTP-Operation POST /Communication mit
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Communication Ressource im HTTP-Request-Body</li>
   </ul>
   ausführen.
@@ -331,14 +329,13 @@ ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das
 Löschen abzubrechen.</p>
 
   <!-- A_21489 -->
-<requirement conformance="SHALL" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="0" key="IG-TIFLOW-CORE-149">
+<requirement conformance="SHALL" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="1" key="IG-TIFLOW-CORE-149">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"></testProcedure>
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachricht durch Abgebenden löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; mit
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Communication-ID in URL &lt;id&gt; </li>
   </ul>
   ausführen.
@@ -403,7 +400,7 @@ Löschen abzubrechen.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 8, 2026 22:41+0000">2026-05-08</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 12, 2026 10:06+0000">2026-05-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

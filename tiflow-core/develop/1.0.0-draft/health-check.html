@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"12"}
-    h3,h4,h5,h6{--heading-prefix:"12"}</style>
+    <style type="text/css">h2{--heading-prefix:"11"}
+    h3,h4,h5,h6{--heading-prefix:"11"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -144,9 +144,6 @@
       </li>
       <li>
         <a href="datamatrix-code-client.html">Datamatrix Code</a>
-      </li>
-      <li>
-        <a href="authentifizierung-client.html">Authentifizierung von Clientsystemen</a>
       </li>
       <li>
         <a href="health-check.html">Health Check</a>
@@ -237,7 +234,7 @@ TIFlow - Kernfunktionalitäten
 
           <span style="float:right;">
 
-            <a href="authentifizierung-client.html">&lt;vorherige</a> | 
+            <a href="pki-zertifikatspruefung.html">&lt;vorherige</a> | 
 
             <a href="#bottom">unten</a>
 
@@ -301,7 +298,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="erweiterter-health-check">Erweiterter Health-Check</h3>
 
-<p>Ein erweiterter Health-Check ist ein spezieller Aufruf auf den Endpunkt /metadata mit der http-Methode GET im inneren, verschlüsselten http-Request an die /VAU ⇒ ( “POST /VAU [GET /metadata]” ). Ziel dieses Health-Checks soll es sein, die Anmeldung am TI-Flow-Fachdienst und dem damit einhergehenden VAU-Protokoll zur Ver- und Entschlüsselung zu überprüfen. Dabei wird ebenfalls das ACCESS_TOKEN überprüft, welches vorher am IDP-Dienst abgeholt wurde. Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt werden, wenn z.B. ein neuer Client in Betrieb genommen wird. Als Abfrage zum Systemstart darf dieser Health-Check nicht eingesetzt werden!</p>
+<p>Ein erweiterter Health-Check ist ein spezieller Aufruf auf den Endpunkt /metadata mit der http-Methode GET im inneren, verschlüsselten http-Request an die /VAU ⇒ ( “POST /VAU [GET /metadata]” ). Ziel dieses Health-Checks soll es sein, die Anmeldung am TI-Flow-Fachdienst und dem damit einhergehenden ASL-Protokoll zur Ver- und Entschlüsselung zu überprüfen. Dabei wird ebenfalls die Autorisierung am ZETA Guard des TI-Flow-Fachdienstes überprüft. Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt werden, wenn z.B. ein neuer Client in Betrieb genommen wird. Als Abfrage zum Systemstart darf dieser Health-Check nicht eingesetzt werden!</p>
 
 <p>Spezialfall: Für Hersteller von Primärsystemen der abgebenden LEI ist, ersetzend zum o.g. Verfahren, die Nutzung von /Subscription mit der http-Methode POST im inneren, verschlüsselten http-Request an die /VAU vorzuziehen, da dieses Verfahren bereits dazu dient, die Verbindungen zum TI-Flow-Fachdienst auf einen WebSocket zu reduzieren  ⇒ ( “POST /VAU [POST /Subscription]” ).</p>
 
@@ -450,7 +447,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="authentifizierung-client.html">&lt;vorherige</a>
+                <a href="pki-zertifikatspruefung.html">&lt;vorherige</a>
 
               </td>
               <td style="text-align:center">
@@ -468,7 +465,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 8, 2026 22:34+0000">2026-05-08</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 12, 2026 09:57+0000">2026-05-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

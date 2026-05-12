@@ -23,11 +23,6 @@ Clientsysteme verwenden bei den in TAB_ILFERP_012 dargestellten Aktivitäten Zer
   * Zertifikatstyp: TLS Internet Zertifikat
   * Rollen-OID: n/a
   * Nutzung: aktiv
-* Aktivität: TLS-Verbindungsaufbau zum IDP-Dienst
-  * Zertifikat der TI: nein
-  * Zertifikatstyp: TLS Internet Zertifikat
-  * Rollen-OID: n/a
-  * Nutzung: aktiv
 * Aktivität: Aufbau sicherer Kanal zur VAU des TI-Flow-Fachdienstes
   * Zertifikat der TI: ja
   * Zertifikatstyp: C.FD.ENC
@@ -58,6 +53,6 @@ Das Primärsystem MUSS bei Prüfung eines C.FD.ENC den Rückgabewert in RoleList
 
 Folgende Vorgaben gelten für die Prüfung von Internet-Zertifikaten.
 
-Das Clientsystem des TI-Flow-Fachdienst MUSS für die Prüfung eines Zertifikats für den TLS-Verbindungsaufbau zum TI-Flow-Fachdienst und IDP das Zertifikat auf ein CA-Zertifikat einer CA, die die "CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates" [Baseline Requirements for TLS Server Certificates] erfüllt, kryptographisch (Signaturprüfung) zurückführen können. Ansonsten MUSS es das Zertifikat als "ungültig" bewerten. Das Clientsystem des TI-Flow-Fachdienst MUSS die zeitliche Gültigkeit des Zertifikats prüfen und falls diese Prüfung negativ ausfällt, das Zertifikat als "ungültig" bewerten.
+Das Clientsystem des TI-Flow-Fachdienst MUSS für die Prüfung eines Zertifikats für den TLS-Verbindungsaufbau zum TI-Flow-Fachdienst das Zertifikat auf ein CA-Zertifikat einer CA, die die "CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates" [Baseline Requirements for TLS Server Certificates] erfüllt, kryptographisch (Signaturprüfung) zurückführen können. Ansonsten MUSS es das Zertifikat als "ungültig" bewerten. Das Clientsystem des TI-Flow-Fachdienst MUSS die zeitliche Gültigkeit des Zertifikats prüfen und falls diese Prüfung negativ ausfällt, das Zertifikat als "ungültig" bewerten.
 Hinweis: Der erste Teil von IG-TIFLOW-CORE-304-* ist gleichbedeutend damit, dass das CA-Zertifikat im Zertifikats-Truststore eines aktuellen Webbrowsers ist.
 

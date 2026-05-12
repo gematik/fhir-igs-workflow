@@ -236,7 +236,7 @@ umsetzen.
 * Beschreibung: Vorbedingungen
   * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den TI-Flow-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.: * Ein Mitarbeiter der abgebenden LEI hat den Anwendungsfall “UC 4.4 - Quittung abrufen” durchgeführt.
 * Die Task-ID und das Geheimnis zur Statusänderung “in-progress” des E-Rezepts sind im PS bekannt.
-* Das E-Rezept im TI-Flow-Fachdienst hat den Status “quittiert”.
+* Das E-Rezept im TI-Flow-Fachdienst hat den Status “completed”.
 * Der Versicherte hat im E-Rezept-FdV eine Einwilligung zum Speichern der Abrechnungsinformationen auf dem TI-Flow-Fachdienst erteilt. Diese Information liegt im PS vor.
 
 * Beschreibung: Durchzuführende Aktionen

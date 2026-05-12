@@ -11,7 +11,7 @@ Version 1.0.0-draft - ci-build
 
 ### Authentisierung
 
-Die Authentisierung am TI-Flow-Fachdienst erfolgt über ACCESS_TOKEN. Für Kostenträger wird das Token über den zentralen IDP-Dienst ausgestellt.
+Die Authentisierung von Clientsystemen am TI-Flow-Fachdienst erfolgt über den ZETA Guard.
 
 ### FHIR-VZD
 

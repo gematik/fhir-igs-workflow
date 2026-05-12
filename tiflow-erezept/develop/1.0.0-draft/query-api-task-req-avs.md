@@ -20,9 +20,8 @@ Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der `Task`-Query-End
 #### Recovery Secret
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "Recovery Secret" für das E-Rezept die HTTP-Operation GET /Task/<id>/ mit
-* ACCESS_TOKEN im Authorization-Header
 * Task-ID in URL <id> 
-* Access_Code in URL-Parameter ?ac=
+* AccessCode in URL-Parameter ?ac=
 ausführen.
 #### Quittung erneut abrufen
 
@@ -31,7 +30,6 @@ Mit diesem Anwendungsfall kann eine abgebende LEI die Quittung erneut abrufen, f
 Der Anwendungsfall kann bei Bedarf wiederholt werden.
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "Quittung erneut abrufen" für das E-Rezept die HTTP-Operation GET /Task/<id>/ mit
-* ACCESS_TOKEN im Authorization-Header
 * Task-ID in URL <id> 
 * Geheimnis in URL-Parameter ?secret=
 ausführen.
@@ -44,11 +42,10 @@ Mit diesem Anwendungsfall kann die abgebende LEI die Zugriffsinformationen zu al
 Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" einen PoPP-Token vom PoPP-Service abrufen.
 Für die Umsetzung siehe [spec-ilf-popp-client]. 
 
-Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den TI-Flow-Fachdienst weiter.
+Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den TI-Flow-Fachdienst weiter.
 
 Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" die HTTP-Operation GET /Task mit
-* ACCESS_TOKEN im Authorization-Header
-* PoPP-Token in HTTP-Header X-PoPP-Token
+* PoPP-Token in HTTP-Header X-PoPP-Token
 ausführen.
 Im Response ist eine Liste von Tasks enthalten. Für jeden Task sind u.a. folgende Informationen enthalten: Task-ID und AccessCode.
 

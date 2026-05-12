@@ -331,12 +331,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19222-01 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: E-Rezept löschen - Löschrequest" version="0" key="IG-TIFLOW-CORE-49">
+<requirement conformance="SHALL" title="E-Rezept-FdV: E-Rezept löschen - Löschrequest" version="1" key="IG-TIFLOW-CORE-49">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"></testProcedure>
     </actor>
-     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte löschen" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort des TI-Flow-Fachdienstes mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; optional: AccessCode im x-AccessCode-Header ausführen.
+    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte löschen" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort des TI-Flow-Fachdienstes mit
+    <ul>  
+        <li>Task-ID in URL &lt;id&gt;</li> 
+    </ul>
+    ausführen.
 </requirement>
 
   <!-- A_19223-01 -->
@@ -392,7 +396,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 8, 2026 22:39+0000">2026-05-08</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 12, 2026 10:03+0000">2026-05-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
