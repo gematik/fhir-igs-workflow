@@ -40,9 +40,9 @@ Der NCPeH-FD in Deutschland ist ein neuer (VAU-) Client im E-Rezept-System. Die 
 
 Indirekt wirkende Akteure sind Leistungserbringer im EU-Ausland, die über den NCPeH-FD in ihrem Land und den NCPeH-FD in Deutschland Daten aus dem TI-Flow-Fachdienst abrufen können. Die Authentisierung der Leistungserbringer im EU-Ausland erfolgt durch den NCPeH-FD in ihrem Land (vgl. unten Grenzen der Sicherheitsleistung).
 
-Die Kommunikation zwischen dem NCPeH-FD und dem TI-Flow-Fachdienst erfolgt zum einen über TLS mit serverseitiger Authentifizierung des TI-Flow-Fachdienstes und zum anderen mittels VAU-Verschlüsselung zwischen der VAU im NCPeH-FD und VAU im TI-Flow-Fachdienst. Hierbei prüft der TI-Flow-Fachdienst das VAU-Zertifikat der VAU im NCPeH-FD. Hierdurch wird eine beidseitige Authentifizierung der Systeme erreicht.
+Die Kommunikation zwischen dem NCPeH-FD und dem TI-Flow-Fachdienst erfolgt zum einen über TLS mit serverseitiger Authentifizierung des TI-Flow-Fachdienstes und zum anderen mittels ASL-Verschlüsselung zwischen der VAU im NCPeH-FD und VAU im TI-Flow-Fachdienst. Hierbei prüft der TI-Flow-Fachdienst das VAU-Zertifikat der VAU im NCPeH-FD. Hierdurch wird eine beidseitige Authentifizierung der Systeme erreicht.
 
-Der Zugriffscode dient – in Kombination mit der KVNR - der Autorisierung eines LE-EU zum Abruf der E-Rezepte eines Versicherten.
+Der Zugriffscode dient - in Kombination mit der KVNR - der Autorisierung eines LE-EU zum Abruf der E-Rezepte eines Versicherten.
 
 ### Protokollierung
 

@@ -24,7 +24,7 @@ Die Fehlermeldung beinhaltet bei fachlichen Fehlern einen VAU-verschlüsselten i
      <ul>
         <li>im der inneren http-Response-Body als FHIR-Ressource OperationOutcome bei FHIR-Schnittstellen</li>
         <li>im der inneren http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail` bei non FHIR-Schnittstellen</li>
-        <li>falls keine innere VAU-Response existiert, in einem "äußeren" http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail`</li>
+        <li>falls keine innere ASL-Response existiert, in einem "äußeren" http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail`</li>
      </ul>
       
       an den Client zurückgeben, ohne Implementierungsdetails (z.B. kein Stacktrace) preiszugeben und dabei sicherstellen, dass personenbezogene oder medizinische Daten, falls für die qualifizierte Fehlerbeschreibung notwendig, ausschließlich in der VAU-verschlüsselten inneren http-Response übertragen werden.
