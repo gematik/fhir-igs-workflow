@@ -11,6 +11,7 @@ from .classification import (
     expected_import_system,
     module_outcome_valueset_name,
     normalize_include_token,
+    normalize_import_system,
 )
 from .models import CodeDescription, ErrorCode, Finding
 from .parsing import (
@@ -728,8 +729,11 @@ def fix_cs_vs(
                 print(f"  [SKIP] No canonical import system for code '{finding.code}'")
                 continue
 
+            # Keep core ValueSet style with aliases, but prefer canonical system names in module ValueSets.
+            import_system_for_write = import_system if target_module == "core" else normalize_import_system(import_system)
+
             vs_content = target_vs.read_text(encoding="utf-8")
-            include_token_original = f"{import_system}#{finding.code}"
+            include_token_original = f"{import_system_for_write}#{finding.code}"
             include_token_normalized = normalize_include_token(include_token_original)
             existing_includes = {
                 normalize_include_token(token)
