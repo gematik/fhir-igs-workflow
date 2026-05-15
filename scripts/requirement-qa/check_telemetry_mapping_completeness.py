@@ -28,7 +28,12 @@ CS_CODE_RE = re.compile(r"^\* #(\S+)\s+\"", re.MULTILINE)
 
 # Regex to extract individually included codes from a FSH ValueSet file.
 # Matches lines like: * include $ti-oo#SVC_IDENTITY_MISMATCH "display"
-VS_INCLUDE_CODE_RE = re.compile(r"^\*\s+include\s+\$\S+#(\S+)\s+\"", re.MULTILINE)
+# Group 1: alias name (without $), Group 2: code
+VS_INCLUDE_CODE_RE = re.compile(r"^\*\s+include\s+\$(\S+)#(\S+)\s+\"", re.MULTILINE)
+
+# Regex to extract alias definitions from a FSH aliases file.
+# Matches lines like: Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/...
+ALIAS_RE = re.compile(r"^Alias:\s+\$(\S+)\s*=\s*(\S+)", re.MULTILINE)
 
 # Regex to extract Error Code values from error-code-json HTML tables in markdown files.
 # Matches the <td> content after a <th>Error Code</th> row.
@@ -90,14 +95,29 @@ def parse_codesystem_codes(fsh_path: Path) -> Set[str]:
     return set(CS_CODE_RE.findall(content))
 
 
-def parse_valueset_individual_codes(fsh_path: Path) -> Set[str]:
+def parse_valueset_individual_codes(fsh_path: Path) -> List[tuple[str, str]]:
     """Extract individually included codes from a FSH ValueSet file.
 
     Only picks up lines like: * include $alias#CODE "display"
     (not 'include codes from system' which imports entire CodeSystems).
+    Returns a list of (alias, code) tuples.
     """
     content = fsh_path.read_text(encoding="utf-8")
-    return set(VS_INCLUDE_CODE_RE.findall(content))
+    return VS_INCLUDE_CODE_RE.findall(content)
+
+
+def parse_aliases(ig_roots: List[Path]) -> Dict[str, str]:
+    """Parse FSH alias definitions from aliases.fsh files.
+
+    Returns a dict mapping alias name (without $) to the resolved URL.
+    """
+    aliases: Dict[str, str] = {}
+    for ig_root in ig_roots:
+        for alias_file in ig_root.rglob("aliases.fsh"):
+            content = alias_file.read_text(encoding="utf-8")
+            for match in ALIAS_RE.finditer(content):
+                aliases[match.group(1)] = match.group(2)
+    return aliases
 
 
 def parse_codesystem_id(fsh_path: Path) -> str | None:
@@ -174,11 +194,11 @@ DEFAULT_CODESYSTEM_FILES = [
 ]
 
 # ValueSet files whose individually included codes should also be checked.
-# Each entry: (ValueSet filename, CodeSystem group URL to map codes into).
 # Only individually included codes (e.g. * include $alias#CODE "display") are extracted;
 # bulk includes (include codes from system ...) are already covered via the CodeSystem entries above.
+# The alias in each include line is resolved via aliases.fsh to determine the target group.
 DEFAULT_VALUESET_FILES = [
-    ("TIFLOW_VS_OperationOutcomeDetails.fsh", "https://gematik.de/fhir/erp/CodeSystem/tiflow-operation-outcome-details-cs"),
+    "TIFLOW_VS_OperationOutcomeDetails.fsh",
 ]
 
 # Group source identifier for JSON error codes extracted from markdown requirement tables.
@@ -210,7 +230,7 @@ def parse_json_error_codes_from_markdown(ig_roots: List[Path]) -> Set[str]:
 def run_check(
     ig_roots: List[Path],
     codesystem_entries: List[tuple[str, str]] | None = None,
-    valueset_entries: List[tuple[str, str]] | None = None,
+    valueset_entries: List[str] | None = None,
     output_csv: Path | None = None,
 ) -> List[Finding]:
     """Run the telemetry mapping completeness check.
@@ -268,22 +288,25 @@ def run_check(
                 ))
 
     # Check individually included codes from ValueSet files
-    for vs_filename, _group_url in valueset_entries:
+    aliases = parse_aliases(ig_roots)
+    for vs_filename in valueset_entries:
         for ig_root in ig_roots:
             for vs_path in ig_root.rglob(vs_filename):
-                vs_codes = parse_valueset_individual_codes(vs_path)
-                for code in sorted(vs_codes):
+                vs_code_entries = parse_valueset_individual_codes(vs_path)
+                for alias, code in vs_code_entries:
+                    resolved_url = aliases.get(alias)
+                    source_label = resolved_url if resolved_url else vs_filename
                     if code not in mapped_codes:
                         findings.append(Finding(
                             type="MISSING_MAPPING",
-                            codesystem_file=vs_filename,
+                            codesystem_file=source_label,
                             code=code,
                             message=f"Code '{code}' is not mapped in the ConceptMap",
                         ))
                     elif mapped_codes[code] is None:
                         findings.append(Finding(
                             type="MISSING_TARGET_CODE",
-                            codesystem_file=vs_filename,
+                            codesystem_file=source_label,
                             code=code,
                             message=f"Code '{code}' is mapped but has no target code assigned",
                         ))
@@ -379,7 +402,7 @@ def fix_missing_mappings(
     findings: List[Finding],
     ig_roots: List[Path],
     codesystem_entries: List[tuple[str, str]],
-    valueset_entries: List[tuple[str, str]] | None = None,
+    valueset_entries: List[str] | None = None,
 ) -> int:
     """Add missing code mappings to the ConceptMap.
 
@@ -401,10 +424,11 @@ def fix_missing_mappings(
     # Collect all used target codes in the full range
     used_codes = _collect_all_used_target_codes(conceptmap_path)
 
-    # Build a mapping from filename -> group URL (CodeSystems + ValueSets + JSON error codes)
+    # Build a mapping from codesystem_file identifier -> group URL.
+    # For CodeSystems: filename -> URL
+    # For JSON error codes: "error-code-json" -> "json-fehlercodes"
+    # For ValueSet codes: codesystem_file is already the resolved URL itself.
     cs_url_map: Dict[str, str] = {filename: url for filename, url in codesystem_entries}
-    for vs_filename, group_url in valueset_entries:
-        cs_url_map[vs_filename] = group_url
     cs_url_map["error-code-json"] = JSON_ERROR_CODES_GROUP_URL
 
     conceptmap_content = conceptmap_path.read_text(encoding="utf-8")
@@ -421,8 +445,8 @@ def fix_missing_mappings(
     for cs_filename, cs_findings in findings_by_cs.items():
         group_source_url = cs_url_map.get(cs_filename)
         if group_source_url is None:
-            print(f"  WARNING: No URL configured for {cs_filename}, skipping")
-            continue
+            # For ValueSet codes, codesystem_file is already the resolved URL
+            group_source_url = cs_filename
 
         # Check if the group already exists in the ConceptMap; create it if not
         existing_url = _find_group_for_codesystem(conceptmap_content, group_source_url)
