@@ -1,22 +1,22 @@
 actor:
-- TI_Flow_FD
+- TI-Flow_FD
 conformance: SHALL
-content_hash: 141e332a199dfd5b4ee8f7ecc65afdff28e4999556221087afb0e85a000035ee
+content_hash: 39e3dbad6fa09884e3a3661ef3a53f89e3de5b2392e7683bb0e6d75a08289f30
 created: '2026-03-23T10:57:48.510447'
-date: '2026-04-02T08:29:11.056521'
+date: '2026-05-15T12:58:30.152090'
 key: IG-TIFLOW-CORE-341
-modified: '2026-04-02T08:29:11.056521'
+modified: '2026-05-15T12:58:30.152090'
 release_status: MODIFIED
 source: input/pagecontent/error-codes.md
 status: ACTIVE
 test_procedures:
-  TI_Flow_FD:
+  TI-Flow_FD:
   - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS im Fehlerfall (http-Statuscodes &gt;= 400) Hinweise\
   \ zur Fehlerursache \n \n <ul>\n <li>im der inneren http-Response-Body als FHIR-Ressource\
   \ OperationOutcome bei FHIR-Schnittstellen</li>\n <li>im der inneren http-Response-Body\
   \ in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail` bei non FHIR-Schnittstellen</li>\n\
-  \ <li>falls keine innere VAU-Response existiert, in einem \"äußeren\" http-Response-Body\
+  \ <li>falls keine innere ASL-Response existiert, in einem \"äußeren\" http-Response-Body\
   \ in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail`</li>\n </ul>\n\
   \ \n an den Client zurückgeben, ohne Implementierungsdetails (z.B. kein Stacktrace)\
   \ preiszugeben und dabei sicherstellen, dass personenbezogene oder medizinische\

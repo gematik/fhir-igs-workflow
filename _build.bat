@@ -67,7 +67,7 @@ IF "%online_status%"=="true" (
 ) ELSE (
     ECHO.
     ECHO *** WARNING: Working offline - this is not the normal mode.
-    ECHO     Some features including terminology rendering will not work.
+    ECHO     Some features (e.g. terminology rendering) will not work.
     ECHO.
     SET "txoption=-tx n/a"
     SET "latest_version=unknown"
@@ -372,7 +372,7 @@ ECHO jar_location is: %jar_location%
 IF NOT "%jar_location%"=="not_found" (
 	java %JAVA_OPTS% -jar "%jar_location%" -ig . %txoption% -watch %extraArgs%
 ) ELSE (
-	ECHO IG Publisher NOT FOUND in input-cache or parent folder.  Please run the script and update the publisher.  Aborting...
+	ECHO IG Publisher NOT FOUND in input-cache or parent folder.  Please run _updatePublisher.  Aborting...
 )
 
 GOTO endscript

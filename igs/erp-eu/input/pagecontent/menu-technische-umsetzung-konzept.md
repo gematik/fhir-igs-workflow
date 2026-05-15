@@ -51,7 +51,7 @@ Einen Zugriffsberechtigung eines Versicherten für das Einlösen von E-Rezepten 
 <!-- A_27097 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-1" title="Format Zugriffscode" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Produkttypen der Anwendung E-Rezept MÜSSEN, wenn sie einen Zugriffscode für das Einlösen im europäischen Ausland verarbeiten, folgende Formatvorgaben für den Zugriffscode einhalten: String mit Gesamtlänge von 6 Zeichen, erlaubte Zeichen: a-z, A-Z, 0-9.
@@ -66,7 +66,7 @@ Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory]#AF_
 <!-- A_27095 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-2" title="TI-Flow-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
      Der TI-Flow-Fachdienst MUSS die Liste aller zulässigen Länder aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird: Abfrage der Ressource "HealthcareService", HealthcareServices, deren Speciality "57833-6" aus https://loinc.org enthalten, HealthcareServices, deren Organisation aktiv sind, HealthcareServices, deren Organisation den OrganizationProfessionOIDType "1.2.276.0.76.4.292" entspricht, Einbeziehen der Organisation in das Rückgabeergebnis.
@@ -75,7 +75,7 @@ Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory]#AF_
 <!-- A_27096 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-XBORDER-3" title="TI-Flow-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
      Der TI-Flow-Fachdienst DARF NICHT Informationen zur Liste zulässiger Länder verwenden, welche länger als 96h lokal durch den TI-Flow-Fachdienst gecacht wurden.

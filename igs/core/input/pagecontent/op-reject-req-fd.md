@@ -5,7 +5,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 <!-- A_19171-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-39" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Secret" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject das im URL-Parameter "?secret=..." übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:
@@ -37,7 +37,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 <!-- A_19171-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-40" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Status" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "in-progress" ist, die Operation mit dem folgenden Fehler:
@@ -69,7 +69,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 <!-- A_19172-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-41" title="TI-Flow-Fachdienst - Task zurückweisen - Secret löschen und Status setzen" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject die externe ID in Task.identifier:Secret als https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Secret löschen und den Status des referenzierten Tasks auf Task.status = ready setzen, damit nachfolgende Zugriffe auf diesen Datensatz durch Berechtigte in Kenntnis des AccessCodes erfolgen können.
@@ -78,7 +78,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 <!-- A_24175 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-42" title="TI-Flow-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject die zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden LEI löschen.
@@ -87,7 +87,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 <!-- A_28128 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-43" title="TI-Flow-Fachdienst - Task zurückweisen - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.reject" und den Versicherten mit der KVNR = Task.for initiieren.

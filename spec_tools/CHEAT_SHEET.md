@@ -2,7 +2,7 @@
 
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
       text
@@ -20,7 +20,7 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 #### OperationOutcomes
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
       ... mit dem folgenden Fehler:
@@ -52,7 +52,7 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 #### Nicht FHIR
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
       ... mit dem folgenden Fehler:
@@ -175,3 +175,20 @@ Dadurch werden automatisch die Referenzen aufgelistet.
 
 Im Markdown text kann der key verwendet werden, um automatisch eine Verlinkung zu erzeugen, Bsp.: "Das ist in [gemIG_eRp_ChargeInformation] beschrieben...".
 Beim Bauen des IG wird der Link dann automatisch gesetzt.
+
+## Darstellung von Hinweisen im IG
+
+Um Hinweise und den FHIR-Dragon im IG anzuzeigen, muss ein besonderer Markdown Befehl am Ende eines Textes Angegeben werden. Dieser muss ohne Leerzeile direkt angehangen werden.
+Beispiel:
+
+Lorem Ipsum Dragon Text
+{:.dragon}
+
+Mögliche Werte nach [IG Guidance: Styles](https://build.fhir.org/ig/FHIR/ig-guidance/best-practice.html#styles) sind:
+
+- {:.dragon}
+- {:.stu-note}
+- {:.note-to-balloters}
+- {:.modified-content}
+- {:.new-content}
+- {:.feedback}

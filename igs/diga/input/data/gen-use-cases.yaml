@@ -34,7 +34,7 @@
     - (Zahn-)Arzt
     - Psychotherapeut
   description: |
-    Der verordnende Leistungserbringer erzeugt eine Verordnung im Primaersystem.
+    Der verordnende Leistungserbringer erzeugt eine Verordnung im Primärsystem.
     Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz
     anschließend qualifiziert elektronisch signiert (QES).
   preconditions: |
@@ -268,9 +268,9 @@
   actions: |
     - Abgebender markiert das E-Rezept als abgegeben.
     - Primärsystem übermittelt Rezept-ID, Geheimnis und Abgabeinformationen an den TI-Flow-Fachdienst.
-    - Status wechselt zu "quittiert"; Quittung wird erstellt und zurückgegeben.
+    - Status wechselt zu "completed"; Quittung wird erstellt und zurückgegeben.
   postconditions: |
-    - Status ist "quittiert"; Abgabeinformationen sind gespeichert.
+    - Status ist "completed"; Abgabeinformationen sind gespeichert.
     - Statuswechsel ist protokolliert; Quittung liegt im Primärsystem vor.
   interface: |
     - [Operation API: Task schliessen](./op-close.html)
@@ -285,7 +285,7 @@
     Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.
   preconditions: |
     - UC 4.4 wurde ausgeführt; im Primärsystem liegt keine Quittung vor.
-    - Status des E-Rezepts ist "quittiert".
+    - Status des E-Rezepts ist "completed".
   actions: |
     - Abgebender wählt das E-Rezept und ruft die Quittung erneut ab.
     - Primärsystem übermittelt Rezept-ID und Geheimnis; der TI-Flow-Fachdienst liefert die Quittung erneut aus.

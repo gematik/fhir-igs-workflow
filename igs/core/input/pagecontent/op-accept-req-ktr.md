@@ -9,7 +9,6 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     </actor>
     Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung abrufen" zum Herunterladen der Verordnung die HTTP-Operation POST /Task/&#60;id&#62;/$accept mit
     <ul> 
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Task-ID in URL &#60;id&#62;</li>
         <li>AccessCode im X-AccessCode-Header oder als URL-Parameter ?ac=</li>
     </ul>

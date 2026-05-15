@@ -15,7 +15,7 @@ Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung 
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG] erzeugen und im E-Rezept-Bundle angeben.
+    Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG] erzeugen und im E-Rezept-Bundle angeben.
 </requirement>
 <!-- ToDo: Link auflösen -->
 
@@ -72,7 +72,7 @@ Wenn der Secupharm-Code Informationen zu Charge und Haltbarkeitsdatum enthält, 
     Das PS der abgebenden LEI MUSS beim Erstellen einer MedicationDispense einer Rezeptur für ein E-Rezept des Flowtype 160, 166, 169, 200 oder 209 für jede FHIR-Ressource Medication Wirkstoff und Wirkstärke (inkl. Einheit) strukturiert angeben, wenn diese Information strukturiert im Verordnungsdatensatz vorlag.
 </requirement>
 
-Die Dosieranweisung werden in der MedicationDispense als Freitext angegeben. Die Angabe strukturierter Dosieranweisungen ist nicht erlaubt. Ein AVS gibt die Dosieranweisung in der MedicationDispense nur an, wenn der Apotheker diese im Vergleich zur Dosieranweisung in der Verordnung konkretisiert, verbessert oder anpasst.
+Die Dosieranweisung werden in der MedicationDispense als Freitext angegeben. Die Angabe strukturierter Dosieranweisungen ist nicht erlaubt. Ein AVS gibt die Dosieranweisung in der MedicationDispense nur an, wenn der Apotheker diese im Vergleich zur Dosieranweisung in der Verordnung konkretisiert, verbessert oder anpasst.
 
 <!-- A_27036-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-214" title="PS abgebende LEI: Dispensierinformationen – Flowtype 160/166/169/200/209 - Dosieranweisung" version="0">
@@ -89,7 +89,7 @@ Die Dosieranweisung werden in der MedicationDispense als Freitext angegeben. Die
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG] erzeugen und im E-Rezept-Bundle angeben.
+    Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG] erzeugen und im E-Rezept-Bundle angeben.
 </requirement>
 
 <!-- A_28417 -->
@@ -101,6 +101,6 @@ Die Dosieranweisung werden in der MedicationDispense als Freitext angegeben. Die
     Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 die FHIR-Ressource MedicationDispense in .substitution.wasSubstituted um die Angabe ergänzen, ob eine Substitution erfolgte, sofern eine PZN-Verordnung beliefert wird.
 </requirement>
 
-Hinweis: Eine Substitution im Sinne der obigen Anforderung liegt immer dann vor, wenn die PZN des abgegebenen Arzneimittels nicht identisch mit der PZN des verordneten Arzneimittels ist. Ausgeschlossen sind Sonder-PZN.
+Hinweis: Eine Substitution im Sinne der obigen Anforderung liegt immer dann vor, wenn die PZN des abgegebenen Arzneimittels nicht identisch mit der PZN des verordneten Arzneimittels ist. Ausgeschlossen sind Sonder-PZN.
 
 Hinweis: Im Falle einer Nicht-PZN-Verordnung ist das Setzen des Substitutionskennzeichens optional.

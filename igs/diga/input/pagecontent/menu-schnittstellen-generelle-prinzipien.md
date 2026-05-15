@@ -1,12 +1,10 @@
 <!-- Generelle Prinzipien -->
 
 ### Authentisierung
-Die Authentisierung am TI-Flow-Fachdienst erfolgt über ACCESS_TOKEN. Für
-Kostenträger wird das Token über den zentralen IDP-Dienst ausgestellt. 
+Die Authentisierung von Clientsystemen am TI-Flow-Fachdienst erfolgt über den ZETA Guard. 
 
 ### FHIR-VZD
-Zum Ermitteln der Telematik-ID aus der IKNR des Kostenträgers nutzt der das E-Rezept-FdV den
-FHIR-VZD. Der Zugriff erfolgt über die FHIRDirectorySearchAPI.
+Zum Ermitteln der Telematik-ID aus der IKNR des Kostenträgers nutzt der das E-Rezept-FdV den FHIR-VZD. Der Zugriff erfolgt über die FHIRDirectorySearchAPI.
 
 ### Kommunikation
 Die Zuweisung einer DiGA-Verordnung durch einen Versicherten an den Kostenträger erfolgt per Communication im E-Rezept-FdV. 

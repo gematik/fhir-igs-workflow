@@ -12,18 +12,17 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 Die Erstellung der MedicationDispense erfolgt Flowtype-spezifisch.
 
 
-<!-- A_19289-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-296" title="PS abgebende LEI: Quittung abrufen - Statusrequest" version="0">
+<!-- A_19289-03 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-296" title="PS abgebende LEI: Quittung abrufen - Statusrequest" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
     Das PS der abgebenden LEI MUSS im Anwendungsfall "Quittung abrufen" für das abgegebene E-Rezept die HTTP-Operation POST /Task/&#60;id&#62;/$close mit
     <ul> 
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Task-ID in URL &#60;id&#62;</li>
         <li>Geheimnis in URL-Parameter ?secret=</li>
-        <li>optional, falls nicht zuvor mit Anwendungsfall "Dispensierinformation bereitstellen" übermittelt: MedicationDispense bzw. Bundle Ressource</li>
+        <li>optional, falls nicht zuvor mit Anwendungsfall "Dispensierinformation bereitstellen" übermittelt: GEM_ERP_PR_PAR_CloseOperation_Input-Objekt</li>
     </ul>
     ausführen.
 </requirement>

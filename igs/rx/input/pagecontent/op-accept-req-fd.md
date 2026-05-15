@@ -9,7 +9,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_19166-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-104" title="TI-Flow-Fachdienst - Task akzeptieren - Flowtype 160/166/169/200/209 - Rollenprüfung" version="1">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 160, 166, 169, 200 oder 209 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten /Task/&lt;id&gt; sicherstellen, dass ausschließlich abgebende Institutionen in der Rolle
@@ -46,7 +46,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_22635-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-105" title="TI-Flow-Fachdienst - Task akzeptieren - Mehrfachverordnung - Beginn Einlösefrist prüfen" version="1">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept prüfen und, wenn die Verordnung als Mehrfachverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) gekennzeichnet ist und und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) zu einem späteren Zeitpunkt als das aktuelle Datum liegt, die Operation mit dem folgenden Fehler:
@@ -79,7 +79,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_22110-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-106" title="TI-Flow-Fachdienst - Task akzeptieren - Coverage PKV - Einwilligung Abrechnungsinformation ermitteln" version="0">
     <meta lockversion="false"/>
-    <actor name="TI_Flow_FD">
+    <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept, wenn der Verordnungsdatensatz Coverage.type.coding.code = "PKV" enthält und für die KVNR des begünstigten Versicherten (Task.for) eine Consent Ressource mit Consent.patient.identifier = KVNR und Consent.category.coding.code = "CHARGCONS" existiert, das Response Bundle um die Consent Ressource ergänzen, um der abgebenden LEI die Information zu übermitteln, dass der Versicherte eine Einwilligung zum Speichern der Abrechnungsinformationen auf dem TI-Flow-Fachdienst erteilt hat.

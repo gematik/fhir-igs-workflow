@@ -8,4 +8,5 @@ Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem _E-Rezept-FdV_ so
 
 ### Belieferung durch eine Apotheke im europäischen Ausland
 
+- NCPeH: [Operation API: Interaktion NCPeH - Abrufen](./op-get-eu-prescriptions.html)
 - NCPeH: [Operation API: Interaktion NCPeH - Abgeben](./op-eu-close.html)

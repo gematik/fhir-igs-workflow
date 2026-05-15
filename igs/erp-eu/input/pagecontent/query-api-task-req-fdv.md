@@ -1,5 +1,7 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
+Anforderungen für den **NCPeH-Fachdienst** zur Nutzung der Operationen am `/Taks`-Endpunkt finden sich in [gemSpec_NCPeH_FD] ab Kapitel [6.2.4](https://gemspec.gematik.de/docs/gemSpec/gemSpec_NCPeH_FD/latest/#6.2.4).
+
 #### PATCH
 
 Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicherten zur Verfügung. Die PATCH-Operation führt zu keiner Statusänderung des Tasks.
@@ -41,12 +43,12 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27490 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-30" title="E-Rezept-FdV: E-Rezept markieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-30" title="E-Rezept-FdV: E-Rezept markieren" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-     Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall umsetzt, den Anwendungsfall "E-Rezept durch den Versicherten markieren" gemäß TAB_FdVERP_029 umsetzen. Tabelle #: TAB_FdVERP_029 – E-Rezept markieren Name E-Rezept markieren Auslöser Aufruf des Anwendungsfalls in der Graphical User Interface (GUI) Akteur Versicherter Vorbedingung Der Nutzer hat eine oder mehrere Markierungen aus- oder abgewählt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Die Markierungen sind im TI-Flow-Fachdienst gespeichert. Standardablauf Task-ID bestimmen FHIR Ressource erstellen Daten im TI-Flow-Fachdienst speichern
+     Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall umsetzt, den Anwendungsfall "E-Rezept durch den Versicherten markieren" gemäß TAB_FdVERP_029 umsetzen. Tabelle #: TAB_FdVERP_029 - E-Rezept markieren Name E-Rezept markieren Auslöser Aufruf des Anwendungsfalls in der Graphical User Interface (GUI) Akteur Versicherter Vorbedingung Der Nutzer hat eine oder mehrere Markierungen aus- oder abgewählt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Die Markierungen sind im TI-Flow-Fachdienst gespeichert. Standardablauf Task-ID bestimmen FHIR Ressource erstellen Daten im TI-Flow-Fachdienst speichern
 </requirement>
 
 <!-- A_27545 -->
@@ -59,10 +61,15 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27491 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-32" title="E-Rezept-FdV: E-Rezept markieren - Speicherrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-32" title="E-Rezept-FdV: E-Rezept markieren - Speicherrequest" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept markieren" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /Task/&lt;id&gt; mit: ACCESS_TOKEN im Authorization-Header, Prescription-ID in URL &lt;id&gt;, FHIR-Ressource im HTTP-Request-Body, ausführen.
+    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept markieren" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /Task/&lt;id&gt; mit: 
+    <ul> 
+        <li>Prescription-ID in URL &lt;id&gt; </li>
+        <li>FHIR-Ressource im HTTP-Request-Body </li>
+    </ul>
+    ausführen.
 </requirement>

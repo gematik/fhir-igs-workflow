@@ -3,7 +3,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_28121 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-55" title="TI-Flow-Fachdienst - unzulässige Operationen Channels" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
@@ -13,7 +13,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_28117 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-56" title="TI-Flow-Fachdienst - Push Notifications - Channels- OpenApi_Notification_Fachdienst" version="0">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS die API mit den Endpunkten GET /channels, GET /channels/{pushkey} und POST /channels/{pushkey} gemäß [OpenAPI_FD] bereitstellen.
@@ -27,7 +27,7 @@ Mit der Operation GET /channels können die verfügbaren Channels abgefragt werd
 <!-- A_28118 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-57" title="TI-Flow-Fachdienst - Push Notifications - Channels abrufen - Rollenprüfung" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /channels die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle 
@@ -57,7 +57,7 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
 <!-- A_28119 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-58" title="TI-Flow-Fachdienst - Push Notifications - Channels einer Instanz abrufen - Rollenprüfung" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /channels/{pushkey} die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle 
@@ -89,7 +89,7 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
 <!-- A_28120 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-59" title="TI-Flow-Fachdienst - Push Notifications - Channels konfigurieren - Rollenprüfung" version="1">
   <meta lockversion="false"/>
-  <actor name="TI_Flow_FD">
+  <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /channels/{pushkey} die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle 

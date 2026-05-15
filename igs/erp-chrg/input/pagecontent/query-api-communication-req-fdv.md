@@ -35,14 +35,13 @@ Innerhalb der Textnachricht sind keine Internet-Links und keine Non-Printable-Ch
 </requirement>
 
 <!--A_22740-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-2" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf TI-Flow-Fachdienst einstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-2" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf TI-Flow-Fachdienst einstellen" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation-Token einer Apotheke übermitteln" zum Einstellen der Nachricht die HTTP-Operation POST /Communication  mit
     <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Communication Ressource in HTTP-Request-Body</li>
     </ul>
     ausführen.

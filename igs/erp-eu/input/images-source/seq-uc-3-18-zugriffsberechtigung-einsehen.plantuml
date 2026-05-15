@@ -1,19 +1,14 @@
 @startuml
-title Zugriffsberechtigung durch den Versicherten einsehen
+title UC 3.18 - Zugriffsberechtigung durch den Versicherten einsehen
 
 autonumber "<b>[0]"
 actor Versicherte as Ver
 participant "E-Rezept-FdV" as FdV
 participant "TI-Flow-Fachdienst" as FD
-participant "Identity Provider" as IDP
 
 Ver -> FdV : Zugriffsberechtigung einsehen
 
-opt kein gültiger AuthN-Token
-  ref over FdV, IDP: AuthN-Token anfordern
-end
-
-FdV -> FD : Zugriffsberechtigung abfragen\n{AuthN-Token}
+FdV -> FD : Zugriffsberechtigung abfragen
 FD --> FdV : Zugriffscode,\nZugriffscode gültig bis,\nLändercode
 
 FdV --> Ver : Anzeige

@@ -12,35 +12,33 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 </requirement>
 
 <!-- A_19329-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-147" title="PS abgebende LEI: Nachrichten abrufen - Abfrage" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-147" title="PS abgebende LEI: Nachrichten abrufen - Abfrage" version="1">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication mit
+  Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication mit
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>optional: ?received=null für nur ungelesene Nachrichten</li>
     <li>optional: ?received=gtYYYY-MM-DD für Nachrichten nach Datum DD.MM.YYYY</li>
   </ul>
   ausführen.
 </requirement>
 
-Falls eine oder mehrere E-Rezept-Nachrichten für die abgebende LEI auf dem TI-Flow-Fachdienst bereitstehen, übermittelt der TI-Flow-Fachdienst ein Bundle von Communication Ressourcen. 
+Falls eine oder mehrere E-Rezept-Nachrichten für die abgebende LEI auf dem TI-Flow-Fachdienst bereitstehen, übermittelt der TI-Flow-Fachdienst ein Bundle von Communication Ressourcen.
 
 ### Nachricht versenden
 
 Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.
 
 <!-- A_19334 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-148" title="PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-148" title="PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="1">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die HTTP-Operation POST /Communication mit
+  Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die HTTP-Operation POST /Communication mit
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Communication Ressource im HTTP-Request-Body</li>
   </ul>
   ausführen.
@@ -60,14 +58,13 @@ ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das
 Löschen abzubrechen.
 
 <!-- A_21489 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-149" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-149" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="1">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachricht durch Abgebenden löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; mit
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Communication-ID in URL &lt;id&gt; </li>
   </ul>
   ausführen.
@@ -75,7 +72,6 @@ Löschen abzubrechen.
 
 Der Fachdienst prüft anhand der Telematik-ID im ACCESS_TOKEN, ob die LEI der Absender der zu löschenden Nachricht ist.
 
-Das PS der abgebenden LEI KANN im Anwendungsfall "Nachricht durch Abgebenden
-löschen" dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
+Das PS der abgebenden LEI KANN im Anwendungsfall "Nachricht durch Abgebenden löschen" dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 
-Hinweis: Nachrichten an Versicherte sind immer an den Workflow des referenzierten E-Rezeptes gebunden. Wenn ein E-Rezept-Workflow, bspw. durch den Versicherten oder aufgrund von durch den Fachdienst durchgesetzte Löschfristen, auf dem Fachdienst gelöscht wird, dann werden auch alle zugehörigen Nachrichten gelöscht.
+Hinweis: Nachrichten an Versicherte sind immer an den Workflow des referenzierten E-Rezeptes gebunden. Wenn ein Workflow, bspw. durch den Versicherten oder aufgrund von durch den Fachdienst durchgesetzte Löschfristen, auf dem Fachdienst gelöscht wird, dann werden auch alle zugehörigen Nachrichten gelöscht.

@@ -3,19 +3,15 @@ title UC 2.1 - Verordnung erzeugen
 
 actor "(Zahn-)Arzt" as Arzt
 participant "Primärsystem" as PS
-participant "Identity Provider" as IDP
 participant "TI-Flow-Fachdienst" as FD
 participant "Konnektor" as K
 
 Arzt -> PS: Verordnungsdatensaetze auswählen()
 activate PS
 
-opt kein gültiger AuthN-Token
-  ref over PS, IDP: AuthN-Token anfordern
-end
-
-PS -> FD: POST /Task/$create (AuthN-Token, FlowType)
+PS -> FD: POST /Task/$create (FlowType)
 activate FD
+FD -> FD: Task erzeugen()
 FD -> FD: Rezept-ID erzeugen()
 FD -> FD: AccessCode erzeugen()
 FD --> PS: Task, Rezept-ID, AccessCode
@@ -24,10 +20,7 @@ deactivate FD
 PS -> PS: AccessCode speichern()
 PS -> PS: Rezept-ID in Verordnungsdatensatz ergänzen()
 
-PS -> K: QES signieren(Verordnungsdatensatz)
-activate K
-K --> PS: QES-Signatur
-deactivate K
+ref over PS, K: Verordnungdatensatz qualifiziert signieren
 
 PS --> Arzt: Signierte Verordnung
 deactivate PS
