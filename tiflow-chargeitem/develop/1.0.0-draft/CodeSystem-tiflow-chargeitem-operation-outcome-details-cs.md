@@ -13,7 +13,7 @@ Version 1.0.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/chargeitem/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs | *Version*:1.0.0-draft |
-| Draft as of 2026-05-12 | *Computable Name*:TIFLOWChargeItemOperationOutcomeDetailsCS |
+| Draft as of 2026-05-15 | *Computable Name*:TIFLOWChargeItemOperationOutcomeDetailsCS |
 
  
 Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können 
@@ -35,7 +35,7 @@ Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den Oper
   "name" : "TIFLOWChargeItemOperationOutcomeDetailsCS",
   "title" : "TIFLOW ChargeItem Operation Outcome Details CS",
   "status" : "draft",
-  "date" : "2026-05-12T14:33:10+00:00",
+  "date" : "2026-05-15T11:23:32+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
