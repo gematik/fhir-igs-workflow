@@ -74,6 +74,10 @@ class Finding:
 # Matches lines like: Id: tiflow-operation-outcome-details-cs
 CS_ID_RE = re.compile(r"^Id:\s*(\S+)", re.MULTILINE)
 
+# Regex to extract explicit URL from CodeSystem FSH (if present).
+# Matches lines like: * ^url = "https://..."
+CS_URL_RE = re.compile(r"^\*\s+\^url\s*=\s*\"([^\"]+)\"", re.MULTILINE)
+
 # Range for auto-assigned telemetry target codes.
 TARGET_CODE_RANGE_START = 79200
 TARGET_CODE_RANGE_END = 79999
@@ -87,6 +91,13 @@ CM_ALL_TARGET_CODES_RE = re.compile(
 CM_GROUP_SOURCE_URL_RE = re.compile(
     r"^\*\s+group\[\+\]\.source\s*=\s*\"([^\"]+)\"", re.MULTILINE
 )
+
+# Discovery patterns for OperationOutcomeDetails artifacts.
+CODESYSTEM_DISCOVERY_GLOB = "*CS_OperationOutcomeDetails*.fsh"
+VALUESET_DISCOVERY_GLOB = "*VS_OperationOutcomeDetails*.fsh"
+
+# Fallback base URL for CodeSystems when URL is not explicitly declared in FSH.
+DEFAULT_CODESYSTEM_URL_BASE = "https://gematik.de/fhir/erp/CodeSystem"
 
 
 def parse_codesystem_codes(fsh_path: Path) -> Set[str]:
@@ -174,32 +185,36 @@ def find_conceptmap_file(ig_roots: List[Path]) -> Path | None:
     return None
 
 
-def find_codesystem_files(ig_roots: List[Path], codesystem_entries: List[tuple[str, str]]) -> List[Path]:
-    """Locate CodeSystem FSH files by filename in known IG roots."""
+def discover_codesystem_files(ig_roots: List[Path]) -> List[Path]:
+    """Discover all OperationOutcomeDetails CodeSystem files across IG roots."""
     found: List[Path] = []
-    for filename, _url in codesystem_entries:
-        for ig_root in ig_roots:
-            candidates = list(ig_root.rglob(filename))
-            found.extend(candidates)
-    return found
+    for ig_root in ig_roots:
+        found.extend(ig_root.rglob(CODESYSTEM_DISCOVERY_GLOB))
+    return sorted(found)
 
 
-# Default CodeSystem files to check against the ConceptMap.
-# Add new CodeSystem entries here as needed: (filename, CodeSystem URL in ConceptMap).
-DEFAULT_CODESYSTEM_FILES = [
-    ("TIFLOW_CS_OperationOutcomeDetails.fsh", "https://gematik.de/fhir/erp/CodeSystem/tiflow-operation-outcome-details-cs"),
-    ("TIFLOW_CHARGEITEM_CS_OperationOutcomeDetails.fsh", "https://gematik.de/fhir/erp/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs"),
-    ("TIFLOW_XBORDER_CS_OperationOutcomeDetails.fsh", "https://gematik.de/fhir/erp/CodeSystem/tiflow-xborder-operation-outcome-details-cs"),
-    ("TIFLOW_EREZEPT_CS_OperationOutcomeDetails.fsh", "https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs"),
-]
+def discover_valueset_files(ig_roots: List[Path]) -> List[Path]:
+    """Discover all OperationOutcomeDetails ValueSet files across IG roots."""
+    found: List[Path] = []
+    for ig_root in ig_roots:
+        found.extend(ig_root.rglob(VALUESET_DISCOVERY_GLOB))
+    return sorted(found)
 
-# ValueSet files whose individually included codes should also be checked.
-# Only individually included codes (e.g. * include $alias#CODE "display") are extracted;
-# bulk includes (include codes from system ...) are already covered via the CodeSystem entries above.
-# The alias in each include line is resolved via aliases.fsh to determine the target group.
-DEFAULT_VALUESET_FILES = [
-    "TIFLOW_VS_OperationOutcomeDetails.fsh",
-]
+
+def parse_codesystem_source_url(fsh_path: Path) -> str | None:
+    """Resolve the CodeSystem source URL used in the ConceptMap for a CodeSystem file.
+
+    Prefer explicit * ^url if available. Otherwise fallback to DEFAULT_CODESYSTEM_URL_BASE + Id.
+    """
+    content = fsh_path.read_text(encoding="utf-8")
+    url_match = CS_URL_RE.search(content)
+    if url_match:
+        return url_match.group(1)
+
+    cs_id = parse_codesystem_id(fsh_path)
+    if cs_id:
+        return f"{DEFAULT_CODESYSTEM_URL_BASE}/{cs_id}"
+    return None
 
 # Group source identifier for JSON error codes extracted from markdown requirement tables.
 JSON_ERROR_CODES_GROUP_URL = "json-fehlercodes"
@@ -229,18 +244,18 @@ def parse_json_error_codes_from_markdown(ig_roots: List[Path]) -> Set[str]:
 
 def run_check(
     ig_roots: List[Path],
-    codesystem_entries: List[tuple[str, str]] | None = None,
-    valueset_entries: List[str] | None = None,
+    codesystem_paths: List[Path] | None = None,
+    valueset_paths: List[Path] | None = None,
     output_csv: Path | None = None,
 ) -> List[Finding]:
     """Run the telemetry mapping completeness check.
 
     Returns a list of findings (empty if all codes are mapped).
     """
-    if codesystem_entries is None:
-        codesystem_entries = DEFAULT_CODESYSTEM_FILES
-    if valueset_entries is None:
-        valueset_entries = DEFAULT_VALUESET_FILES
+    if codesystem_paths is None:
+        codesystem_paths = discover_codesystem_files(ig_roots)
+    if valueset_paths is None:
+        valueset_paths = discover_valueset_files(ig_roots)
 
     conceptmap_path = find_conceptmap_file(ig_roots)
     if conceptmap_path is None:
@@ -252,12 +267,11 @@ def run_check(
             message="TIFLOW_CM_TelemetryDataStatusCodes.fsh not found in any IG root",
         )]
 
-    codesystem_paths = find_codesystem_files(ig_roots, codesystem_entries)
     if not codesystem_paths:
         print("ERROR: No CodeSystem files found")
         return [Finding(
             type="CODESYSTEM_NOT_FOUND",
-            codesystem_file=", ".join(f for f, _ in codesystem_entries),
+            codesystem_file=CODESYSTEM_DISCOVERY_GLOB,
             code="",
             message="No CodeSystem files found in any IG root",
         )]
@@ -289,27 +303,25 @@ def run_check(
 
     # Check individually included codes from ValueSet files
     aliases = parse_aliases(ig_roots)
-    for vs_filename in valueset_entries:
-        for ig_root in ig_roots:
-            for vs_path in ig_root.rglob(vs_filename):
-                vs_code_entries = parse_valueset_individual_codes(vs_path)
-                for alias, code in vs_code_entries:
-                    resolved_url = aliases.get(alias)
-                    source_label = resolved_url if resolved_url else vs_filename
-                    if code not in mapped_codes:
-                        findings.append(Finding(
-                            type="MISSING_MAPPING",
-                            codesystem_file=source_label,
-                            code=code,
-                            message=f"Code '{code}' is not mapped in the ConceptMap",
-                        ))
-                    elif mapped_codes[code] is None:
-                        findings.append(Finding(
-                            type="MISSING_TARGET_CODE",
-                            codesystem_file=source_label,
-                            code=code,
-                            message=f"Code '{code}' is mapped but has no target code assigned",
-                        ))
+    for vs_path in valueset_paths:
+        vs_code_entries = parse_valueset_individual_codes(vs_path)
+        for alias, code in vs_code_entries:
+            resolved_url = aliases.get(alias)
+            source_label = resolved_url if resolved_url else vs_path.name
+            if code not in mapped_codes:
+                findings.append(Finding(
+                    type="MISSING_MAPPING",
+                    codesystem_file=source_label,
+                    code=code,
+                    message=f"Code '{code}' is not mapped in the ConceptMap",
+                ))
+            elif mapped_codes[code] is None:
+                findings.append(Finding(
+                    type="MISSING_TARGET_CODE",
+                    codesystem_file=source_label,
+                    code=code,
+                    message=f"Code '{code}' is mapped but has no target code assigned",
+                ))
 
     # Check JSON error codes from markdown requirement tables
     json_codes = parse_json_error_codes_from_markdown(ig_roots)
@@ -401,8 +413,8 @@ def _get_max_element_index(conceptmap_content: str, group_source_url: str) -> in
 def fix_missing_mappings(
     findings: List[Finding],
     ig_roots: List[Path],
-    codesystem_entries: List[tuple[str, str]],
-    valueset_entries: List[str] | None = None,
+    codesystem_paths: List[Path] | None = None,
+    valueset_paths: List[Path] | None = None,
 ) -> int:
     """Add missing code mappings to the ConceptMap.
 
@@ -410,8 +422,10 @@ def fix_missing_mappings(
     Creates new groups in the ConceptMap for CodeSystems that don't have one yet.
     Returns the number of fixes applied.
     """
-    if valueset_entries is None:
-        valueset_entries = DEFAULT_VALUESET_FILES
+    if codesystem_paths is None:
+        codesystem_paths = discover_codesystem_files(ig_roots)
+    if valueset_paths is None:
+        valueset_paths = discover_valueset_files(ig_roots)
 
     missing_findings = [f for f in findings if f.type == "MISSING_MAPPING"]
     if not missing_findings:
@@ -428,7 +442,11 @@ def fix_missing_mappings(
     # For CodeSystems: filename -> URL
     # For JSON error codes: "error-code-json" -> "json-fehlercodes"
     # For ValueSet codes: codesystem_file is already the resolved URL itself.
-    cs_url_map: Dict[str, str] = {filename: url for filename, url in codesystem_entries}
+    cs_url_map: Dict[str, str] = {}
+    for cs_path in codesystem_paths:
+        source_url = parse_codesystem_source_url(cs_path)
+        if source_url:
+            cs_url_map[cs_path.name] = source_url
     cs_url_map["error-code-json"] = JSON_ERROR_CODES_GROUP_URL
 
     conceptmap_content = conceptmap_path.read_text(encoding="utf-8")
@@ -569,17 +587,17 @@ def main() -> int:
         print(f"ERROR: No IG directories found under '{root}'.")
         return 1
 
-    codesystem_filenames = DEFAULT_CODESYSTEM_FILES
-    codesystem_paths = find_codesystem_files(ig_roots, codesystem_filenames)
+    codesystem_paths = discover_codesystem_files(ig_roots)
+    valueset_paths = discover_valueset_files(ig_roots)
 
-    findings = run_check(ig_roots, codesystem_filenames)
+    findings = run_check(ig_roots, codesystem_paths, valueset_paths)
 
     if args.fix and findings:
         print("\n==> Applying auto-fixes...")
-        applied = fix_missing_mappings(findings, ig_roots, codesystem_filenames)
+        applied = fix_missing_mappings(findings, ig_roots, codesystem_paths, valueset_paths)
         if applied > 0:
             print("\nRe-running checks after fixes...")
-            findings = run_check(ig_roots, codesystem_filenames)
+            findings = run_check(ig_roots, codesystem_paths, valueset_paths)
 
     csv_path = Path(args.output_csv)
     write_csv_report(csv_path, findings, codesystem_paths)
