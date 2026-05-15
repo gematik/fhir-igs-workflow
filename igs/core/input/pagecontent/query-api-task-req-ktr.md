@@ -2,16 +2,15 @@ Diese Seite beschreibt Anforderungen an das Clientsystem Kostenträger zur Nutzu
 
 ### Recovery Secret
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-215" title="CS Kostenträger: Recovery Secret - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-215" title="CS Kostenträger: Recovery Secret - Statusrequest" version="1">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
   Das Clientsystem Kostenträger MUSS im Anwendungsfall "Recovery Secret" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit 
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Task-ID in URL &lt;id&gt; </li>
-    <li>Access_Code in URL-Parameter ?ac=</li>
+    <li>AccessCode in URL-Parameter ?ac=</li>
   </ul>
   ausführen.
 </requirement>
@@ -23,14 +22,13 @@ Mit diesem Anwendungsfall kann ein Clientsystem eines Kostenträgers die Quittun
 Der Anwendungsfall kann bei Bedarf wiederholt werden.
 
 <!-- A_19292 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-216" title="CS Kostenträger: Quittung erneut abrufen - Statusrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-216" title="CS Kostenträger: Quittung erneut abrufen - Statusrequest" version="1">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
   </actor>
   Das Clientsystem Kostenträger MUSS im Anwendungsfall "Quittung erneut abrufen" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit 
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
     <li>Task-ID in URL &lt;id&gt; </li>
     <li>Geheimnis in URL-Parameter ?secret=</li>
   </ul>

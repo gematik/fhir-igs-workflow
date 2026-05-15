@@ -1,19 +1,14 @@
 @startuml
-title Zugriffsberechtigung durch Versicherten löschen
+title UC 3.17 - Zugriffsberechtigung durch Versicherten löschen
 
 autonumber "<b>[0]"
 actor Versicherte
 participant "E-Rezept-FdV" as FdV
 participant "TI-Flow-Fachdienst" as FD
-participant "Identity Provider" as IDP
 
 Versicherte -> FdV : Zugriffsberechtigung löschen
 
-opt kein gültiger AuthN-Token
-  ref over FdV, IDP: AuthN-Token anfordern
-end
-
-FdV -> FD : Zugriffscode löschen\n{AuthN-Token, KVNR}
+FdV -> FD : Zugriffscode löschen (KVNR)
 FD -> FD : Zugriffscode für KVNR löschen
 FD --> FdV : Status
 FdV -> FdV : Zugriffscode löschen

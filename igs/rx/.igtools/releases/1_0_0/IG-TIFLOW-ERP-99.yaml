@@ -1,19 +1,19 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: f733c8c027e80ef51b31062143f7ef94774efe1fe5ba7c04888abf6ac3e95369
+content_hash: 4a6280e59e5fa12ba5903f85f7c64d7d950c37b9fd041277e610c0fd75d3ecc9
 created: '2026-03-23T10:57:49.809512'
-date: '2026-04-13T10:29:58.852032'
+date: '2026-05-15T12:58:35.144379'
 key: IG-TIFLOW-ERP-99
-modified: '2026-04-13T10:29:58.852032'
+modified: '2026-05-15T12:58:35.144379'
 release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
-text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
-  \ über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
   \ (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true)\
   \ gekennzeichnet ist und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)\
   \ nicht angegeben ist, die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\

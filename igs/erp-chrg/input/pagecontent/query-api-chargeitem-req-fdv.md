@@ -14,16 +14,12 @@ Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformatio
 </requirement>
 
 <!--A_22173-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-11" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-11" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-      Das E-Rezept-FdV MUSS im Anwendungsfall "Liste Abrechnungsinformationen abfragen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem mit 
-      <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
-      </ul>
-      ausführen. 
+      Das E-Rezept-FdV MUSS im Anwendungsfall "Liste Abrechnungsinformationen abfragen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem ausführen. 
 </requirement>
 
 In der Response ist eine Liste von ChargeItem-Ressourcen enthalten. Für jede ChargeItem-Ressource ist die folgende Information enthalten:
@@ -44,14 +40,13 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformat
 </requirement>
 
 <!--A_22175-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-13" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-13" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation abfragen" zum Abrufen der Information zu einem einzelnen Datensatz vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem/&#60;id&#62;/ mit 
       <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Prescription-ID in URL &#60;id&#62;</li>
       </ul>
       ausführen.
@@ -86,14 +81,13 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 </requirement>
 
 <!--A_22179-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-16" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-16" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation markieren" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /ChargeItem/&#60;id&#62; mit 
         <ul>
-            <li>ACCESS_TOKEN im Authorization-Header</li>
             <li>Prescription-ID in URL &#60;id&#62;</li>
         </ul>
       für jede zu ändernde Markierung
@@ -138,14 +132,13 @@ Das E-Rezept-FdV muss im Rahmen der Bestätigung darauf hinweisen, dass mit dem 
 Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen Löschen für die zu löschende Abrechnungsinformation zusammen mit dem Löschen auf dem TI-Flow-Fachdienst auszuführen.
 
 <!--A_22183-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-20" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-20" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation löschen" die HTTP-Operation DELETE /ChargeItem/&#60;id&#62; des TI-Flow-Fachdienstes mit
       <ul>
-        <li>ACCESS_TOKEN im Authorization-Header</li>
         <li>Prescription-ID in URL &#60;id&#62;</li>
       </ul>
       ausführen.

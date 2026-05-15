@@ -1,19 +1,19 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 2daeb3a22c6ee05eaf15a9648c9b6b4e2970b8b2a3f806d581b9b5b86ed9dc52
+content_hash: 62d18767627b59139dad8abcf33f123f538e52f45fe3bea2e394350e2e2734cc
 created: '2026-03-23T10:57:49.807431'
-date: '2026-04-13T10:29:58.849195'
+date: '2026-05-15T12:58:35.141444'
 key: IG-TIFLOW-ERP-93
-modified: '2026-04-13T10:29:58.849195'
+modified: '2026-05-15T12:58:35.141444'
 release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
-text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
-  \ über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
   \ (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true)\
   \ gekennzeichnet und der Numerator kleiner als 1 ist, die Operation mit dem folgenden\
   \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\

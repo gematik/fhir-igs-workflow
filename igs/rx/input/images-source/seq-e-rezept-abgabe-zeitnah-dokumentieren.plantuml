@@ -3,17 +3,12 @@ title E-Rezept-Abgabe zeitnah dokumentieren
 
 actor "Mitarbeiter Apotheke" as MA
 participant "AVS" as AVS
-participant "Identity Provider" as IDP
 participant "TI-Flow-Fachdienst" as FD
 
 MA -> AVS: Dispensierdaten erfassen()
 activate AVS
 
-opt kein gueltiger AuthN-Token
-  ref over AVS, IDP: AuthN-Token anfordern
-end
-
-AVS -> FD: POST /Task/{id}/$dispense?secret=... (AuthN-Token, Parameters)
+AVS -> FD: POST /Task/{id}/$dispense (Secret, Parameters)
 activate FD
 FD -> FD: Dispensierdaten plausibilisieren()
 FD -> FD: Dispensierdaten speichern()

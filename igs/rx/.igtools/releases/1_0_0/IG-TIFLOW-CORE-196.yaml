@@ -1,0 +1,27 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 3e9ee236fc22bcd9ed9a86bd684471d5b1b9804c45e63a9721d2c2d83a76818d
+created: '2026-05-15T12:58:35.140022'
+date: '2026-05-15T12:58:35.140025'
+key: IG-TIFLOW-CORE-196
+modified: '2026-05-15T12:58:35.140024'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate, wenn die PZN einer übergebenen PZN-Verordnung\
+  \ in KBV_PR_ERP_Medication_PZN.code.coding.code nicht 8-stellig ist, die Operation\
+  \ mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px\
+  \ solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
+  \            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n         \
+  \   <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n\
+  \            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n      \
+  \  <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_EREZEPT_PZN_INVALID</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Länge\
+  \ PZN unzulässig (muss 8-stellig sein)</td>\n        </tr>\n    </table> \n    abbrechen."
+title: TI-Flow-Fachdienst - Task aktivieren - Längenprüfung PZN
+version: 0

@@ -25,15 +25,14 @@ Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz v
 Es gelten weitere modulspezifische Anforderungen für den Verordnungsdatensatz.
 
 <!-- A_19276 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-259" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-259" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="1">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Konformitätsbestätigung"/>
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die HTTP-Operation POST /Task/$create mit
   <ul>
-    <li>ACCESS_TOKEN im Authorization-Header</li>
-    <li>Rezept-Typ im FlowType als Parameter der FHIR-Operation $create für Task </li>
+    <li>Workflow-Typ im FlowType als Parameter der FHIR-Operation $create für Task </li>
   </ul>
   ausführen.
 </requirement>

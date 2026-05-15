@@ -12,8 +12,8 @@ Die Nachricht wird als HTTP `POST` an `/Task/<op-name>` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-- [Server Anforderungen zu `<op-name>`](./<op-name>-fd-requirements.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
-- [Client-Anforderungen zu `<op-name>`](./<op-name>-client-requirements.html): Anforderungen an den Client des E-Rezept-Fachdienstes zur Nutzung der Schnittstelle.
+- [Server Anforderungen zu `<op-name>`](./<op-name>-fd-requirements.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Client-Anforderungen zu `<op-name>`](./<op-name>-client-requirements.html): Anforderungen an den Client des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 

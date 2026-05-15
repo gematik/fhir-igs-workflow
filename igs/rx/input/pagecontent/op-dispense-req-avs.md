@@ -20,7 +20,6 @@ Das PS der abgebenden LEI erzeugt die Dispensierinformationen nach den Vorgaben 
     </actor>
     Das PS der abgebenden LEI MUSS im Anwendungsfall "Dispensierinformationen bereitstellen" für das abgegebene E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$dispense mit 
     <ul>
-        <li>ACCESS_TOKEN im Authorization-Header </li>
         <li>Task-ID in URL &lt;id&gt; </li>
         <li>Geheimnis in URL-Parameter ?secret= </li>
         <li>GEM_ERP_PR_PAR_DispenseOperation_Input-Objekt </li>

@@ -46,12 +46,16 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19222-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-49" title="E-Rezept-FdV: E-Rezept löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-49" title="E-Rezept-FdV: E-Rezept löschen - Löschrequest" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte löschen" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort des TI-Flow-Fachdienstes mit ACCESS_TOKEN im Authorization-Header Task-ID in URL &lt;id&gt; optional: AccessCode im x-AccessCode-Header ausführen.
+    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte löschen" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort des TI-Flow-Fachdienstes mit
+    <ul>  
+        <li>Task-ID in URL &lt;id&gt;</li> 
+    </ul>
+    ausführen.
 </requirement>
 
 <!-- A_19223-01 -->
