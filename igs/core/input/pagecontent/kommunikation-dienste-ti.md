@@ -83,7 +83,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 </requirement>
 
 <!-- A_20015-02, A_20014-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-159" title="CS: HTTP-Header user-agent" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-159" title="CS: HTTP-Header user-agent" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>

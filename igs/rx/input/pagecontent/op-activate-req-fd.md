@@ -144,7 +144,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_28570 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-79" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/166/169/200/209 - Prüfung Coverage Type" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-79" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/166/169/200/209 - Prüfung Coverage Type" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -249,7 +249,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_27768 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-83" title="TI-Flow-Fachdienst - Task aktivieren - Bestimmung der Einlösbarkeit im EU-Ausland" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-83" title="TI-Flow-Fachdienst - Task aktivieren - Bestimmung der Einlösbarkeit im EU-Ausland" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -263,7 +263,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_25925 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-84" title="TI-Flow-Fachdienst - Task aktivieren - Daten ePA Medication Service bereitstellen (Verordnungsdatensatz)" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-84" title="TI-Flow-Fachdienst - Task aktivieren - Daten ePA Medication Service bereitstellen (Verordnungsdatensatz)" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -559,7 +559,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 ### Verifizieren von Prüfziffern
 
 <!-- A_23892 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-194" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-194" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -591,7 +591,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_24034 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-195" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-195" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -623,7 +623,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22925 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-196" title="TI-Flow-Fachdienst - Task aktivieren - Längenprüfung PZN" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-196" title="TI-Flow-Fachdienst - Task aktivieren - Längenprüfung PZN" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>

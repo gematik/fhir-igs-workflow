@@ -26,7 +26,7 @@ Für die Umsetzung siehe [spec-ilf-popp-client].
 Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den TI-Flow-Fachdienst weiter.
 
 <!-- A_22437-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-11" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - E-Rezepte abrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-11" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - E-Rezepte abrufen" version="1">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>

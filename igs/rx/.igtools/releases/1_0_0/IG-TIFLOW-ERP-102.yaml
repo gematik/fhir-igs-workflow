@@ -1,19 +1,19 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 25571ada1a3dbb413d68e22aaba201964b69bbc79851e8562c9cc8d64130820f
+content_hash: 423ebc3f3188286aebbba4fc110c2ea9c5a850ed3c1436e11267fdb68902b494
 created: '2026-03-23T10:57:49.809948'
-date: '2026-04-13T10:29:58.853473'
+date: '2026-05-15T12:58:35.146029'
 key: IG-TIFLOW-ERP-102
-modified: '2026-04-13T10:29:58.853473'
+modified: '2026-05-15T12:58:35.146029'
 release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
-text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
-  \ über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
   \ (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true)\
   \ gekennzeichnet ist und der dazugehörige value (MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]:valueIdentifier.value)\
   \ nicht dem Schema aus [KBV_ITA_VGEX_Technische_Anlage_ERP] entspricht, die Operation\

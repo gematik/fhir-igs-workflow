@@ -28,7 +28,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19239-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-314" title="PS verordnende LEI: E-Rezept löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-314" title="PS verordnende LEI: E-Rezept löschen - Löschrequest" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Konformitätsbestätigung"/>

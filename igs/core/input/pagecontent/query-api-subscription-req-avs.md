@@ -21,7 +21,7 @@ Um die Last am TI-Flow-Fachdienst zu kontrollieren, wurde festgelegt, dass ein A
 </requirement>
 
 <!-- A_22374 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-308" title="PS abgebende LEI: Subscription für neue Communication - Subscription registrieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-308" title="PS abgebende LEI: Subscription für neue Communication - Subscription registrieren" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>

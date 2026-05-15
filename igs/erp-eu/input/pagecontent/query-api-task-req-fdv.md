@@ -43,7 +43,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27490 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-30" title="E-Rezept-FdV: E-Rezept markieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-30" title="E-Rezept-FdV: E-Rezept markieren" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
@@ -61,7 +61,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27491 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-32" title="E-Rezept-FdV: E-Rezept markieren - Speicherrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-32" title="E-Rezept-FdV: E-Rezept markieren - Speicherrequest" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>

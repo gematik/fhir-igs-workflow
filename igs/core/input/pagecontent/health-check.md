@@ -58,7 +58,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 </requirement>
 
 <!-- A_23223 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-242" title="CS: erweiterter Health-Check" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-242" title="CS: erweiterter Health-Check" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -73,7 +73,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 </requirement>
 
 <!-- A_23217 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-243" title="CS: erweiterter Health-Check - keine periodische Durchführung" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-243" title="CS: erweiterter Health-Check - keine periodische Durchführung" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
