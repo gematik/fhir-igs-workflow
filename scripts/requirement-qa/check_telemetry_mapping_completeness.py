@@ -28,8 +28,12 @@ CS_CODE_RE = re.compile(r"^\* #(\S+)\s+\"", re.MULTILINE)
 
 # Regex to extract individually included codes from a FSH ValueSet file.
 # Matches lines like: * include $ti-oo#SVC_IDENTITY_MISMATCH "display"
-# Group 1: alias name (without $), Group 2: code
-VS_INCLUDE_CODE_RE = re.compile(r"^\*\s+include\s+\$(\S+)#(\S+)\s+\"", re.MULTILINE)
+# and:              * include TIOperationOutcomeDetailsCS#SVC_INACTIVE_CODE
+# Group 1: system reference (without leading $), Group 2: code
+VS_INCLUDE_CODE_RE = re.compile(
+    r"^\*\s+include\s+\$?(\S+)#(\S+)(?:\s+\"[^\"]*\")?\s*$",
+    re.MULTILINE,
+)
 
 # Regex to extract alias definitions from a FSH aliases file.
 # Matches lines like: Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/...
@@ -74,6 +78,10 @@ class Finding:
 # Matches lines like: Id: tiflow-operation-outcome-details-cs
 CS_ID_RE = re.compile(r"^Id:\s*(\S+)", re.MULTILINE)
 
+# Regex to extract the CodeSystem name from a FSH CodeSystem file.
+# Matches lines like: CodeSystem: TIFLOWOperationOutcomeDetailsCS
+CS_NAME_RE = re.compile(r"^CodeSystem:\s*(\S+)", re.MULTILINE)
+
 # Regex to extract explicit URL from CodeSystem FSH (if present).
 # Matches lines like: * ^url = "https://..."
 CS_URL_RE = re.compile(r"^\*\s+\^url\s*=\s*\"([^\"]+)\"", re.MULTILINE)
@@ -99,6 +107,11 @@ VALUESET_DISCOVERY_GLOB = "*VS_OperationOutcomeDetails*.fsh"
 # Fallback base URL for CodeSystems when URL is not explicitly declared in FSH.
 DEFAULT_CODESYSTEM_URL_BASE = "https://gematik.de/fhir/erp/CodeSystem"
 
+# External system names used in ValueSet includes that are not declared as aliases.
+EXTERNAL_SYSTEM_REF_URLS = {
+    "TIOperationOutcomeDetailsCS": "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes",
+}
+
 
 def parse_codesystem_codes(fsh_path: Path) -> Set[str]:
     """Extract all code identifiers from a FSH CodeSystem file."""
@@ -110,8 +123,9 @@ def parse_valueset_individual_codes(fsh_path: Path) -> List[tuple[str, str]]:
     """Extract individually included codes from a FSH ValueSet file.
 
     Only picks up lines like: * include $alias#CODE "display"
+    and * include SystemName#CODE
     (not 'include codes from system' which imports entire CodeSystems).
-    Returns a list of (alias, code) tuples.
+    Returns a list of (system reference, code) tuples.
     """
     content = fsh_path.read_text(encoding="utf-8")
     return VS_INCLUDE_CODE_RE.findall(content)
@@ -135,6 +149,13 @@ def parse_codesystem_id(fsh_path: Path) -> str | None:
     """Extract the CodeSystem Id from a FSH CodeSystem file."""
     content = fsh_path.read_text(encoding="utf-8")
     match = CS_ID_RE.search(content)
+    return match.group(1) if match else None
+
+
+def parse_codesystem_name(fsh_path: Path) -> str | None:
+    """Extract the CodeSystem name from a FSH CodeSystem file."""
+    content = fsh_path.read_text(encoding="utf-8")
+    match = CS_NAME_RE.search(content)
     return match.group(1) if match else None
 
 
@@ -279,6 +300,17 @@ def run_check(
     # Parse concept map
     mapped_codes = parse_conceptmap_mappings(conceptmap_path)
 
+    # Build system reference -> URL map for ValueSet include lines.
+    # Sources: aliases, discovered local CodeSystems, and known external references.
+    system_ref_url_map: Dict[str, str] = dict(EXTERNAL_SYSTEM_REF_URLS)
+    aliases = parse_aliases(ig_roots)
+    system_ref_url_map.update(aliases)
+    for cs_path in codesystem_paths:
+        cs_name = parse_codesystem_name(cs_path)
+        cs_url = parse_codesystem_source_url(cs_path)
+        if cs_name and cs_url:
+            system_ref_url_map[cs_name] = cs_url
+
     findings: List[Finding] = []
 
     for cs_path in codesystem_paths:
@@ -302,11 +334,10 @@ def run_check(
                 ))
 
     # Check individually included codes from ValueSet files
-    aliases = parse_aliases(ig_roots)
     for vs_path in valueset_paths:
         vs_code_entries = parse_valueset_individual_codes(vs_path)
-        for alias, code in vs_code_entries:
-            resolved_url = aliases.get(alias)
+        for system_ref, code in vs_code_entries:
+            resolved_url = system_ref_url_map.get(system_ref)
             source_label = resolved_url if resolved_url else vs_path.name
             if code not in mapped_codes:
                 findings.append(Finding(
