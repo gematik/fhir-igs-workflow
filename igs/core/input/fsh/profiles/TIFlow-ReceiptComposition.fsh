@@ -3,7 +3,7 @@ Parent: Composition
 Id: tiflow-receipt-composition
 Title: "GEM ERP PR Composition"
 Description: "Quittung für die Einlösung eines E-Rezepts"
-* insert Profile(GEM_ERP_PR_Composition)
+* insert StructureDefinition(GEM_ERP_PR_Composition)
 
 // extensions
 * extension MS

@@ -3,7 +3,7 @@ Parent: Bundle
 Id: tiflow-op-accept-bundle
 Title: "Bundle der $accept Operation"
 Description: "Antwort des TI-Flow-Fachdienst auf die $accept-Operation"
-* insert Profile(GEM_ERP_PR_Bundle_OP_Accept)
+* insert Meta
 
 * type = #collection (exactly)
 * entry 2..2

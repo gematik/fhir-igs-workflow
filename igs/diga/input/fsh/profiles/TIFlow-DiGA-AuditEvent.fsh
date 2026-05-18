@@ -3,7 +3,7 @@ Parent: TIAuditEventRest
 Id: tiflow-diga-audit-event
 Title: "TIFlow DiGA AuditEvent"
 Description: "AuditEvent für die Protokollierung des Zugriffs auf DiGA-Verordnungen"
-* insert Profile(GEM_ERP_PR_AuditEvent)
+* insert Meta
 
 * source MS
   * site = "TI-Flow-Fachdienst DiGA" (exactly)
