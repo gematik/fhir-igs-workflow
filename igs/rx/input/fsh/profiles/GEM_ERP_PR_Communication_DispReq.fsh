@@ -12,7 +12,7 @@ Description: "Anfrage zur Einlösung des E-Rezepts"
 * extension ^slicing.rules = #open
 * extension ^slicing.ordered = false
 
-* extension contains GEM_ERP_EX_PrescriptionType named flowType 1..1
+* extension contains TIFlowType named flowType 1..1
 
 * recipient 1..1 MS
 * recipient.identifier 1.. MS

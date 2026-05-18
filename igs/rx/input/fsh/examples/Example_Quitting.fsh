@@ -1,5 +1,5 @@
 Instance: ReceiptBundleQuittung
-InstanceOf: GEM_ERP_PR_Bundle
+InstanceOf: TIFlowReceiptBundle
 Title: "Quittungs-Bundle für abgeschlossene Rezeptabgabe"
 Description: "Beispiel für ein Quittungs-Bundle nach erfolgter Abgabe eines E-Rezepts"
 Usage: #example
