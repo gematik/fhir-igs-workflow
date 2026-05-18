@@ -1,0 +1,26 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: bc8d990cec90521ad66a062fa01ac991f4c76c92cf09dc1a8abc92d3262ff965
+created: '2026-05-08T12:49:46.757407'
+date: '2026-05-08T12:49:46.757415'
+key: IG-TIFLOW-CORE-421
+modified: '2026-05-08T12:49:46.757413'
+release_status: NEW
+source: input/pagecontent/error-codes-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS an den Schnittstellen prüfen, dass der HTTP-Request\
+  \ well-formed ist und andernfalls die Anfrage mit dem folgenden Fehler:\n      <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n\
+  \        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n\
+  \        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>MSG_BAD_FORMAT</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Invalid\
+  \ request format</td>\n        </tr>\n      </table>\n      abbrechen, damit nur\
+  \ korrekt formattierte Requests verarbeitet werden."
+title: TI-Flow-Fachdienst - Fehlerbehandlung - HTTP Formatfehler
+version: 0

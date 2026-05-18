@@ -6,7 +6,22 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Pushers mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
+  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Pushers mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem folgenden Fehler:
+      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>405 - Method Not Allowed</td>
+        </tr>
+        <tr>
+            <th>Error Code</th>
+            <td>methodNotAllowed</td>
+        </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>Die verwendete HTTP-Methode ist für diese Ressource nicht zulässig</td>
+        </tr>
+    </table> 
+    abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 </requirement>
 
 <!-- A_28111 -->
@@ -33,7 +48,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
     <li>oid_versicherter</li>
   </ul>
   die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>403 - Forbidden</td>
@@ -61,6 +76,29 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 
 ### POST /pushers/set
 
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-431" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Schemavalidierung" version="0">
+  <meta lockversion="false"/>
+  <actor name="TI-Flow_FD">
+    <testProcedure id="Produktgutachten"/>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set das Payload gegen das Schema in [OpenAPI_FD] validieren und bei Abweichungen mit dem folgenden Fehler:
+      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Error Code</th>
+            <td>malformedRequest</td>
+        </tr>
+        <tr>
+            <th>Error Details</th>
+            <td>Ungültiger http-Request</td>
+        </tr>
+    </table> 
+    abbrechen, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
+</requirement>
+
 <!-- A_28112 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-272" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Rollenprüfung" version="1">
   <meta lockversion="false"/>
@@ -72,7 +110,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
     <li>oid_versicherter</li>
   </ul>
   die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>403 - Forbidden</td>

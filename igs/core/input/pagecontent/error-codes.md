@@ -1,20 +1,13 @@
 Der TI-Flow-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Clientsysteme bereit. Das Ergebnis der Operation wird in der Verwendung von Http-Status-Codes [HTTP-STATUS-CODES] mitgeteilt. Die folgende Tabelle listet die vom TI-Flow-Fachdienst genutzten Http-Status-Codes auf.
 
-<!-- A_19514-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-340" title="TI-Flow-Fachdienst - Http-Status-Codes" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Herstellererklärung"/>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf einer Operation im Http-Response-Header einen HTTP-Status-Codes gemäß [RFC7231] zurückgeben.
-</requirement>
+[Server-Anforderungen zur Fehlerbehandlung](./error-codes-req-fd.html)
 
 ### Struktur der Fehlerrückgabe
 
 Die Fehlermeldung beinhaltet bei fachlichen Fehlern einen VAU-verschlüsselten inneren http-Response. In diesem inneren Response werden ggf. ausschliesslich personenbezogene oder medizinische Daten an den aufrufenden Client übermittelt, welche bereits im VAU-verschlüsselten inneren http-Request, welcher zum Fehler führte, enthalten waren. Das kann bspw. bei Fehlern bei der Prüfung der FHIR Konformität von Datensätzen auftreten.
 
 <!-- A_22103 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-341" title="TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-432" title="TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -125,11 +118,8 @@ Die folgenden Fehlercodes können ungeachtet des Endpunktes auftreten und gelten
             <td>Any</td>
             <td>
                 <ul>
-                    <li>MSG_AUTH_REQUIRED - Authentication required</li>
                     <li>MSG_BAD_FORMAT - Invalid request format</li>
-                    <li>MSG_OP_NOT_ALLOWED - Method or Operation not allowed</li>
                     <li>MSG_TIMEOUT - Request timeout</li>
-                    <li>MSG_RATE_LIMIT - Too many requests</li>
                     <li>MSG_INTERNAL_ERROR - Internal server error</li>
                 </ul>
             </td>
@@ -250,7 +240,6 @@ Hierfür gelten für die TIFlow-Anwendungen die folgenden Fehlercodes für Opera
             <td>
                 <ul>
                     <li>MSG_UNKNOWN_OPERATION - unknown FHIR http operation</li>
-                    <li>MSG_OP_NOT_ALLOWED - Operation not allowed for resource</li>
                     <li>MSG_UNKNOWN_TYPE - Unknown resource type</li>
                 </ul>
             </td>
@@ -284,3 +273,8 @@ Im Folgenden, ein Beispiel:
 <br>
 
 Treten Fehler beim VAU-Transport (bspw. innerer http-Request kann nicht entschlüsselt werden) auf, beinhaltet die Fehlermeldung keinen inneren http-Response.
+
+### Telemetriedaten Statuscodes
+
+Telemetriedaten werden bei jedem Fehler übermittelt. Die Daten beinhalten einen Statuscode, der eindeutig einem Fehlercode zugeordnet ist, und das Mapping zwischen den Fehlercodes und den Telemetriedaten-Statuscodes ist hier zu finden:
+[TIFLOW_CM_TelemetryDataStatusCodes](./ConceptMap-TIFLOW-CM-TelemetryDataStatusCodes.html)
