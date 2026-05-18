@@ -11,7 +11,8 @@ Version 1.0.0-draft - ci-build
 
 Der TI-Flow-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Clientsysteme bereit. Das Ergebnis der Operation wird in der Verwendung von Http-Status-Codes [HTTP-STATUS-CODES] mitgeteilt. Die folgende Tabelle listet die vom TI-Flow-Fachdienst genutzten Http-Status-Codes auf.
 
-Der TI-Flow-Fachdienst MUSS beim Aufruf einer Operation im Http-Response-Header einen HTTP-Status-Codes gemäß [RFC7231] zurückgeben.
+[Server-Anforderungen zur Fehlerbehandlung](./error-codes-req-fd.md)
+
 ### Struktur der Fehlerrückgabe
 
 Die Fehlermeldung beinhaltet bei fachlichen Fehlern einen VAU-verschlüsselten inneren http-Response. In diesem inneren Response werden ggf. ausschliesslich personenbezogene oder medizinische Daten an den aufrufenden Client übermittelt, welche bereits im VAU-verschlüsselten inneren http-Request, welcher zum Fehler führte, enthalten waren. Das kann bspw. bei Fehlern bei der Prüfung der FHIR Konformität von Datensätzen auftreten.
@@ -87,11 +88,8 @@ Die folgenden Fehlercodes können ungeachtet des Endpunktes auftreten und gelten
 
 | | |
 | :--- | :--- |
-| Any | * MSG_AUTH_REQUIRED - Authentication required
-* MSG_BAD_FORMAT - Invalid request format
-* MSG_OP_NOT_ALLOWED - Method or Operation not allowed
+| Any | * MSG_BAD_FORMAT - Invalid request format
 * MSG_TIMEOUT - Request timeout
-* MSG_RATE_LIMIT - Too many requests
 * MSG_INTERNAL_ERROR - Internal server error
  |
 
@@ -147,7 +145,6 @@ Hierfür gelten für die TIFlow-Anwendungen die folgenden Fehlercodes für Opera
 | System Operationen | * MSG_UNKNOWN_OPERATION - unknown FHIR http operation
  |
 | Type Operationen | * MSG_UNKNOWN_OPERATION - unknown FHIR http operation
-* MSG_OP_NOT_ALLOWED - Operation not allowed for resource
 * MSG_UNKNOWN_TYPE - Unknown resource type
  |
 | Instance Operationen | * MSG_RESOURCE_ID_FAIL - Resource is not known
@@ -171,4 +168,8 @@ Im Folgenden, ein Beispiel:
 ```
 
 Treten Fehler beim VAU-Transport (bspw. innerer http-Request kann nicht entschlüsselt werden) auf, beinhaltet die Fehlermeldung keinen inneren http-Response.
+
+### Telemetriedaten Statuscodes
+
+Telemetriedaten werden bei jedem Fehler übermittelt. Die Daten beinhalten einen Statuscode, der eindeutig einem Fehlercode zugeordnet ist, und das Mapping zwischen den Fehlercodes und den Telemetriedaten-Statuscodes ist hier zu finden: [TIFLOW_CM_TelemetryDataStatusCodes](./ConceptMap-TIFLOW-CM-TelemetryDataStatusCodes.md)
 

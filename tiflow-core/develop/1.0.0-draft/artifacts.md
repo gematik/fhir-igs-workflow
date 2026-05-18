@@ -53,6 +53,14 @@ Das **Capability** **Statement** beschreibt die Anforderungen und Fähigkeiten, 
 
 **Tabelle:**Operation Definitions
 
+### Telemetriedaten
+
+| | |
+| :--- | :--- |
+| [ Telemetry Data Status Codes Concept Map ](ConceptMap-TIFLOW-CM-TelemetryDataStatusCodes.md) | Maps operation outcome codes to the telemetry data status codes |
+
+**Tabelle:**Telemetriedaten Status Codes
+
 ### Parameterprofile für Operationen
 
 | | |

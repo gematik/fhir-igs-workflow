@@ -13,7 +13,14 @@ Version 1.0.0-draft - ci-build
 
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den channels-Endpunkt.
 
-Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
+Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem folgenden Fehler:
+
+* HTTP-Code: Error Code
+  * 405 - Method Not Allowed: methodNotAllowed
+* HTTP-Code: Error Details
+  * 405 - Method Not Allowed: Die verwendete HTTP-Methode ist für diese Ressource nicht zulässig
+
+abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 
 Der TI-Flow-Fachdienst MUSS die API mit den Endpunkten GET /channels, GET /channels/{pushkey} und POST /channels/{pushkey} gemäß [OpenAPI_FD] bereitstellen.
 ### GET /channels
@@ -54,4 +61,13 @@ die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Feh
   * 403 - Forbidden: -
 
 abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+
+Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /channels/{pushkey} das Payload gegen das Schema in [OpenAPI_FD] validieren und bei Abweichungen mit dem folgenden Fehler:
+
+* HTTP-Code: Error Code
+  * 400 - Bad Request: malformedRequest
+* HTTP-Code: Error Details
+  * 400 - Bad Request: Ungültiger http-Request
+
+abbrechen, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
 

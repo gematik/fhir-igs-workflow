@@ -81,7 +81,7 @@
        fhir:l <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
      ] ;
      fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r4" ] ;
-     fhir:version [ fhir:v "5.2.0" ]
+     fhir:version [ fhir:v "5.3.0" ]
   ] [
      fhir:id [ fhir:v "de_basisprofil_r4" ] ;
      fhir:uri [
@@ -4724,6 +4724,27 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "ConceptMap"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://gematik.de/fhir/tiflow/core/ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes> ;
+         fhir:reference [ fhir:v "ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes" ]
+       ] ;
+       fhir:name [ fhir:v "Telemetry Data Status Codes Concept Map" ] ;
+       fhir:description [ fhir:v "Maps operation outcome codes to the telemetry data status codes" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "CodeSystem"
          ]
        ] ) ;
@@ -5059,7 +5080,27 @@
            fhir:l fhir:error-codes.html
          ] ;
          fhir:title [ fhir:v "Fehlercodes" ] ;
-         fhir:generation [ fhir:v "markdown" ]
+         fhir:generation [ fhir:v "markdown" ] ;
+         fhir:page ( [
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+             ] ;
+             fhir:value [
+               a fhir:Url ;
+               fhir:v "error-codes-req-fd.html"^^xsd:anyURI ;
+               fhir:l fhir:error-codes-req-fd.html
+             ]
+           ] ) ;
+           fhir:name [
+             a fhir:Url ;
+             fhir:v "error-codes-req-fd.html"^^xsd:anyURI ;
+             fhir:l fhir:error-codes-req-fd.html
+           ] ;
+           fhir:title [ fhir:v "Anforderungen zur Fehlerbehandlung" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] )
        ] [
          fhir:extension ( [
            fhir:url [
