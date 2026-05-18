@@ -259,6 +259,8 @@ def main() -> int:
                 "--output-csv",
                 telemetry_csv,
             ]
+            if args.fix:
+                telemetry_cmd.append("--fix")
             telemetry_rc = run_and_record(
                 "Check telemetry mapping completeness",
                 "Check telemetry mapping completeness",
