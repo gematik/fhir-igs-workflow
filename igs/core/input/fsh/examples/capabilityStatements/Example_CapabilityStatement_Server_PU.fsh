@@ -18,7 +18,7 @@ Usage: #example
 * implementation.description = "example"
 
 * extension[environment].valueCode = #PU
-* extension[fhirConfiguration][+].valueCode = #erp_2028_03
+* extension[fhirConfiguration][+].valueCode = #tiflow_2028_03
 * extension[feature][+]
   * extension[definition].valueCanonical = Canonical(TIFlowFeatureWF160)
   * extension[value].valueBoolean = true

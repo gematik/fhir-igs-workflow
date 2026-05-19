@@ -244,6 +244,12 @@ mkdir -p "$FSH_RESOURCES_DIR"
 # Find all JSON files in output directory and copy them flat
 find "$OUTPUT_DIR" -name "*.json" -type f | while read -r json_file; do
     filename=$(basename "$json_file")
+
+    # Skip pipeline metadata files that are not FHIR resources.
+    if [[ "$filename" == "validation-summary.json" ]]; then
+        continue
+    fi
+
     cp "$json_file" "$FSH_RESOURCES_DIR/$filename"
     echo -e "${GREEN}✓ Copied: $filename${NC}"
 done
