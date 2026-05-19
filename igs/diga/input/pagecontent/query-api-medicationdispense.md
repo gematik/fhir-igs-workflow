@@ -24,7 +24,7 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _MedicationDispense_ wird üb
 	data-api-fhir-interaction="search-type">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
 	<div id="Response-Examples">

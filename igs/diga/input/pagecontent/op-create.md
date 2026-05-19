@@ -22,7 +22,7 @@ Die Operation $create wird als HTTP POST auf /Task/$create ausgeführt.
 	data-api-operation-id="createOperation">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
 	<div id="OperationDefinition">

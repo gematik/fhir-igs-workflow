@@ -18,7 +18,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$close` gesendet.
 	data-api-operation-id="closeOperation">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-rx.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
 	<div id="OperationDefinition">

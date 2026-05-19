@@ -9,11 +9,12 @@ import os
 import subprocess
 import sys
 import tempfile
+from urllib.request import urlopen
 from pathlib import Path
 from typing import Any, Optional
 
-DEFAULT_HAPI_JAR = Path(os.getenv("HAPI_VALIDATOR_JAR", "/Users/gematik/dev/validators/current_hapi_validator.jar"))
-DEFAULT_PROFILE = "https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy"
+DEFAULT_HAPI_JAR = Path.home() / ".fhir" / "validators" / "validator_cli.jar"
+DEFAULT_PROFILE = "https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy"
 DEFAULT_FHIR_VERSION = "4.0.1"
 
 # IG dependencies to load into the HAPI validator. Mirrors tests/scripts/transform-bundle.py.
@@ -141,11 +142,45 @@ def run_validator(cmd: list[str], working_dir: Path) -> subprocess.CompletedProc
     )
 
 
+def ensure_hapi_jar(jar_path: Path) -> bool:
+    """Ensure validator jar exists, downloading when needed."""
+    if jar_path.exists():
+        return True
+
+    download_url = os.getenv(
+        "FHIR_VALIDATOR_URL",
+        "https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar",
+    )
+
+    jar_path.parent.mkdir(parents=True, exist_ok=True)
+    print(f"ℹ HAPI validator not found at: {jar_path}")
+    print(f"⬇ Downloading validator_cli.jar from: {download_url}")
+
+    try:
+        with urlopen(download_url, timeout=120) as response:
+            data = response.read()
+
+        if not data:
+            print("❌ Download failed: empty response")
+            return False
+
+        tmp_path = jar_path.with_suffix(".jar.tmp")
+        with tmp_path.open("wb") as tmp_file:
+            tmp_file.write(data)
+        tmp_path.replace(jar_path)
+        print(f"✅ Downloaded validator jar to: {jar_path}")
+        return True
+    except Exception as exc:  # noqa: BLE001
+        print(f"❌ Failed to download HAPI validator: {exc}")
+        return False
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("resources", nargs="+", type=Path, help="Path(s) to carbon copy JSON resources")
     parser.add_argument("--profile", default=DEFAULT_PROFILE, help="Canonical profile to validate against")
-    parser.add_argument("--hapi-jar", default=str(DEFAULT_HAPI_JAR), help="Path to the HAPI validator JAR")
+    default_hapi_jar = os.getenv("FHIR_VALIDATOR_JAR") or os.getenv("HAPI_VALIDATOR_JAR") or str(DEFAULT_HAPI_JAR)
+    parser.add_argument("--hapi-jar", default=default_hapi_jar, help="Path to the HAPI validator JAR")
     parser.add_argument("--fhir-version", default=DEFAULT_FHIR_VERSION, help="FHIR version for validation")
     parser.add_argument(
         "--summary-json",
@@ -164,8 +199,15 @@ def main() -> int:
             print(f"❌ Error: Resource not found: {p}")
         return 1
 
+    if not ensure_hapi_jar(jar_path):
+        print(f"❌ Error: Unable to provision HAPI validator: {jar_path}")
+        print("Set FHIR_VALIDATOR_JAR (or HAPI_VALIDATOR_JAR), or place validator_cli.jar at ~/.fhir/validators/validator_cli.jar")
+        print("Optional override: set FHIR_VALIDATOR_URL to a custom download URL")
+        return 1
+
     if not jar_path.exists():
         print(f"❌ Error: HAPI validator not found: {jar_path}")
+        print("Set FHIR_VALIDATOR_JAR (or HAPI_VALIDATOR_JAR), or place validator_cli.jar at ~/.fhir/validators/validator_cli.jar")
         return 1
 
     script_dir = Path(__file__).parent

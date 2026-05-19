@@ -18,7 +18,7 @@ Die Nachricht wird als HTTP `POST` an `/$grant-eu-access-permission` gesendet.
 	data-api-operation-id="grantEUAccessPermissionOperation">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpeu.json %}
 		</pre>
 	</div>
 	<div id="OperationDefinition">

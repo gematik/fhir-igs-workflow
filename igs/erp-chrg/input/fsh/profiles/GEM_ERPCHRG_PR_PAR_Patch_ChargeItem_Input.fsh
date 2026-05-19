@@ -3,7 +3,7 @@ Parent: Parameters
 Id: GEM-ERPCHRG-PR-PAR-Patch-ChargeItem-Input
 Title: "GEM ERPCHRG PR PAR Patch ChargeItem Input Parameter"
 Description: "This profile defines the parameters for changing Information for the ChargeItem."
-* insert MetaProfile(GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input)
+* insert LegacyMeta(StructureDefinition, GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input)
 
 * parameter 1..1
 * parameter ^slicing.discriminator.type = #pattern

@@ -13,6 +13,7 @@ Usage:
 """
 
 import json
+import os
 import sys
 import subprocess
 from pathlib import Path
@@ -29,10 +30,11 @@ def convert_to_xml(resource: Dict[str, Any], output_path: Path) -> bool:
     """Convert a FHIR JSON resource to XML using HAPI validator."""
     import tempfile
     
-    hapi_jar = Path("/Users/gematik/dev/validators/current_hapi_validator.jar")
+    configured = os.getenv("FHIR_VALIDATOR_JAR") or os.getenv("HAPI_VALIDATOR_JAR")
+    hapi_jar = Path(configured).expanduser().resolve() if configured else (Path.home() / ".fhir" / "validators" / "validator_cli.jar").resolve()
     
     if not hapi_jar.exists():
-        print(f"  ⚠ HAPI validator not found, cannot convert to XML")
+        print(f"  ⚠ HAPI validator not found at {hapi_jar}, cannot convert to XML")
         return False
     
     # Write resource to temp JSON file

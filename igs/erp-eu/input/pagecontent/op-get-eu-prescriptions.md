@@ -18,7 +18,7 @@ Die Nachricht wird als HTTP `POST` an `/$get-eu-prescriptions` gesendet.
 	data-api-operation-id="getEUPrescriptionsOperation">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpeu.json %}
 		</pre>
 	</div>
 	<div id="OperationDefinition">

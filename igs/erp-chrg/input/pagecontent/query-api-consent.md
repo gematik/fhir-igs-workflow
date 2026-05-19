@@ -17,7 +17,7 @@ Für die Verwaltung der Einwilligung zum Speichern der Abrechnungsinformationen 
 	data-api-fhir-interaction="search-type">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-erpchrg.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
 		</pre>
 	</div>
 	<div id="Response-Examples">

@@ -33,7 +33,7 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 	data-api-fhir-interaction="search-type">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-erpchrg.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
 		</pre>
 	</div>
 	<div id="Response-Examples">

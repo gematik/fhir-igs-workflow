@@ -1,7 +1,7 @@
 Instance: ERPFachdienstServerErpEu
 InstanceOf: TICapabilityStatement
 Usage: #definition
-* id = "erp-fachdienst-server-erpeu"
+* id = "ti-flow-fachdienst-server-erpeu"
 * title = "ERPEU CapabilityStatement fuer den E-Rezept-Fachdienst"
 * description = "CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)"
 * version = "1.1.1"

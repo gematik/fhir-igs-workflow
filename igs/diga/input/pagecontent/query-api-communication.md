@@ -34,7 +34,7 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 	data-api-fhir-interaction="create">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
 	<div id="Request-Examples">
@@ -62,7 +62,7 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 	data-api-fhir-interaction="search-type">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
 	<div id="Response-Examples">

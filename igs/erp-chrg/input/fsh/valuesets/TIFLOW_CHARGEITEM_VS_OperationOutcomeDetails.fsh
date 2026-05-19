@@ -2,7 +2,7 @@ ValueSet: TIFLOWChargeItemOperationOutcomeDetailsVS
 Id: tiflow-chargeitem-operation-outcome-details-vs
 Title: "TIFLOW ChargeItem Operation Outcome Details VS"
 Description: "Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"
-* insert ValueSet(tiflow-chargeitem-operation-outcome-details-vs)
+* insert Meta-VS
 * include codes from system TIFLOWChargeItemOperationOutcomeDetailsCS
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_AUTH_ROLE_NOT_ALLOWED "Access role not allowed"
 * include TIOperationOutcomeDetailsCS#SVC_IDENTITY_MISMATCH "Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)"

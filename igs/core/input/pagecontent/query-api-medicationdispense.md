@@ -4,40 +4,16 @@ Dem Versicherten werden über die Ressource MedicationDispense Informationen üb
 
 ### Nachricht
 
-Die Nachricht zur Interaktion mit Einlöseinformationen als FHIR-Ressource _MedicationDispense_ wird über die folgenden HTTP-Methoden ermöglicht:
-
-|HTTP-Methode|Ergebnis der Anfrage|
-|---|---|
-|GET|Einlöseinformation abrufen|
+Die Nachricht zur Interaktion mit Dispensierinformationen am TI-Flow-Fachdienst als FHIR-Ressource _MedicationDispense_ wird über den `/MedicationDispense` Endpunkt für das jeweilige Modul unterstützt.
 
 ### Anforderungen an Schnittstelle
 
 - [Server-Anforderungen zur MedicationDispense-Query](./query-api-medicationdispense-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [FdV-Anforderungen zur MedicationDispense-Query](./query-api-medicationdispense-req-fdv.html): Anforderungen an das E-Rezept-FdV des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
 
-### Resource API
+### API
 
-Als Versicherter möchte ich die Abgabeinformationen erhalten, um mir darüber einen digitalen Beipackzettel herunterzuladen und weitere Anwendungshinweise für mein Medikament zu erhalten.
-Die Rückgabe erfolgt als Liste im `Bundle` eines oder mehrerer MedicationDispenses, welche den ggfs. angegebenen Suchparametern entsprechen.
-
-<div class="gematik-apidoc"
-  data-api-type="FHIRResource"
-  data-api-fhir-resource-type="MedicationDispense"
-  data-api-fhir-interaction="search-type">
-  <div id="CapabilityStatement">
-    <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
-    </pre>
-  </div>
-  <div id="Response-Examples">
-    <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Bundle/example-searchset-medicationdispense JSON %}
-    </div>
-    <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment Bundle/example-searchset-medicationdispense XML %}
-    </div>
-  </div>
-</div>
+Die konkrete API, wie die Operation zu nutzen ist, ist dem jeweiligen Modul IG zu entnehmen.
 
 
 
