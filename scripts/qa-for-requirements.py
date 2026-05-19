@@ -115,6 +115,25 @@ def main() -> int:
         ),
     )
     parser.add_argument(
+        "--telemetry-output-csv",
+        default="qa/telemetry-mapping-report.csv",
+        help="Path to telemetry mapping CSV report (default: qa/telemetry-mapping-report.csv)",
+    )
+    parser.add_argument(
+        "--skip-telemetry",
+        action="store_true",
+        help="Skip telemetry mapping completeness checks",
+    )
+    parser.add_argument(
+        "--strict-telemetry",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help=(
+            "Fail the pipeline when telemetry mapping check reports issues "
+            "(default: enabled, use --no-strict-telemetry to disable)"
+        ),
+    )
+    parser.add_argument(
         "--errors",
         action="store_true",
         help="Run only the error code consistency routine (skip IG tools and quality checks)",
@@ -162,6 +181,10 @@ def main() -> int:
 
     quality_rc = 0
     error_code_rc = 0
+    telemetry_rc = 0
+
+    telemetry_script = scripts_dir / "check_telemetry_mapping_completeness.py"
+    telemetry_csv = str((repo_root / args.telemetry_output_csv).resolve())
 
     if args.errors:
         error_code_cmd = [
@@ -228,15 +251,37 @@ def main() -> int:
         else:
             step_results.append(("SKIP", "Check error code consistency"))
 
+        if not args.skip_telemetry:
+            telemetry_cmd = [
+                sys.executable,
+                str(telemetry_script),
+                error_root,
+                "--output-csv",
+                telemetry_csv,
+            ]
+            if args.fix:
+                telemetry_cmd.append("--fix")
+            telemetry_rc = run_and_record(
+                "Check telemetry mapping completeness",
+                "Check telemetry mapping completeness",
+                telemetry_cmd,
+                strict=args.strict_telemetry,
+            )
+        else:
+            step_results.append(("SKIP", "Check telemetry mapping completeness"))
+
     print("\nPipeline summary")
     for status, title in step_results:
         print(f"[{format_status(status)}] {title}")
     print(f"- Quality CSV: {args.quality_output_csv}")
     print(f"- Error Code CSV: {error_csv}")
+    print(f"- Telemetry CSV: {telemetry_csv}")
     if quality_rc != 0 and not args.strict_quality:
         print("- Quality issues were found (non-strict mode, pipeline continued)")
     if error_code_rc != 0 and not args.strict_error_codes:
         print("- Error code consistency issues were found (non-strict mode, pipeline continued).")
+    if telemetry_rc != 0 and not args.strict_telemetry:
+        print("- Telemetry mapping issues were found (non-strict mode, pipeline continued).")
 
     if strict_failures:
         print("\nStrict failure summary")

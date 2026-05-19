@@ -34,7 +34,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
     abbrechen, damit Workflows nicht durch zur Verordnung Unberechtigte erstellt werden können.

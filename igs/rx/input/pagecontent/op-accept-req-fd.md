@@ -37,7 +37,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
     abbrechen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.
@@ -69,7 +69,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Teilverordnung zur Mehrfachverordnung %1 ist ab %2 einlösbar.</td>
+            <td>Teilverordnung zur Mehrfachverordnung %1 ist ab %2 einlösbar.</td>
         </tr>
     </table> 
     abbrechen, da Teilverordnungen von Mehrfachverordnungen erst ab Beginn der Einlösefrist abgerufen werden dürfen. 

@@ -26,7 +26,7 @@
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
     abbrechen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.

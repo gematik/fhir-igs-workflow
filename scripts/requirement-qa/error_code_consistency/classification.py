@@ -60,11 +60,11 @@ def normalize_include_token(include_token: str) -> str:
 def expected_import_system(code: str, code_owner_module: str, requirement_module: str) -> Optional[str]:
     """Return preferred import system name for external code usage in module ValueSets."""
     if code.startswith("SVC_"):
-        return "TIOperationOutcomeDetailsCS"
+        return "$ti-oo"
     if code.startswith("MSG_"):
-        return "OperationOutcomeCodes"
+        return "$hl7-oo"
     if code_owner_module == "core" and requirement_module != "core" and code.startswith("TIFLOW_"):
-        return "TIFLOWOperationOutcomeDetailsCS"
+        return "$tiflow-core-oo-cs"
     return None
 
 

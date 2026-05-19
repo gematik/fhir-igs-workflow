@@ -37,7 +37,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
     abbrechen, damit die Verordnung nicht durch einen Unberechtigten abgerufen werden kann.

@@ -14,5 +14,5 @@ Diese Seite beschreibt Anforderungen ein AVS zur Nutzung der `Communication`-Que
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall "Nachricht an Versicherten versenden" bezüglich dem Änderungswunsch einer Abrechnungsinformation eine Communication Ressource mit dem Profil GEM_ERPCHRG_PR_Communication_ChargChangeReply erstellen.
+    Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall "Nachricht an Versicherten versenden" bezüglich dem Änderungswunsch einer Abrechnungsinformation eine Communication Ressource mit dem Profil GEM_ERPCHRG_PR_Communication_ChargChangeReply erstellen.
 </requirement>

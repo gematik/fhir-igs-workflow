@@ -43,7 +43,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
     abbrechen, damit der Nachrichtenaustausch nicht zwischen Unbefugten erfolgt.
@@ -371,7 +371,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der Fachdienst E-Rezept MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq", "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply" oder "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA" über die http-Operation POST auf den Endpunkt /Communication prüfen und, wenn das Pflichtfeld Communication.basedOn einen Task referenziert, der nicht existiert, die Operation mit dem folgenden Fehler:
+    Der Fachdienst E-Rezept MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq", "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply" oder "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA" über die http-Operation POST auf den Endpunkt /Communication prüfen und, wenn das Pflichtfeld Communication.basedOn einen Task referenziert, der nicht existiert, die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -515,7 +515,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 ### DELETE /Communication
 
-Mit der HTTP-Operation DELETE kann ein Nutzer eine verschickte Kommunikationsnachricht als Absender löschen, um bspw. einen Irrläufer zurückzurufen. 
+Mit der HTTP-Operation DELETE kann ein Nutzer eine verschickte Kommunikationsnachricht als Absender löschen, um bspw. einen Irrläufer zurückzurufen. 
 
 
 <!-- A_20258 -->

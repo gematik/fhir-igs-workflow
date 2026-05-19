@@ -72,5 +72,5 @@ Der TI-Flow-Fachdienst MUSS die Abrechnungsinformationen während der Verarbeitu
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-Der TI-Flow-Fachdienst MUSS die Einwilligung in das Speichern der Abrechnungsinformationen und deren Widerruf – inkl. Zeitpunkt der Aktion – für den Versicherten protokollieren.
+Der TI-Flow-Fachdienst MUSS die Einwilligung in das Speichern der Abrechnungsinformationen und deren Widerruf - inkl. Zeitpunkt der Aktion - für den Versicherten protokollieren.
 </requirement>

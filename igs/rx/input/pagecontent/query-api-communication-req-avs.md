@@ -29,7 +29,7 @@ siehe [Datenmodell Payload für Communication-Query](./query-api-communication-r
   </actor>
   Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die Nachricht gemäß der Struktur [gemSpec_DM_eRp#TAB_eRpDM_003] und 
   <ul>
-    <li>einem communicationType entsprechend der zu übermittelnden Information</li>
+    <li>einem communicationType entsprechend der zu übermittelnden Information</li>
     <li>TransactionID aus der empfangenen Nachricht des Versicherten</li>
   </ul>
   erstellen.
@@ -37,7 +37,7 @@ siehe [Datenmodell Payload für Communication-Query](./query-api-communication-r
 
 Für TAB_eRpDM_003 siehe [Datenmodell Payload für Communication-Query](./query-api-communication-req-data.html)
 
-Beispiele für diesen Anwendungsfall stehen im GitHub  https://github.com/gematik/interactive-api-erp . 
+Beispiele für diesen Anwendungsfall stehen im GitHub  https://github.com/gematik/interactive-api-erp . 
 
 Die Erläuterung und das Schema des Payloads sind in [gemSpec_DM_eRp#TAB_eRpDM_003] zu finden.
 
@@ -47,7 +47,7 @@ Die Erläuterung und das Schema des Payloads sind in [gemSpec_DM_eRp#TAB_eRpDM_0
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall "Nachricht an Versicherten versenden" bezüglich der Belieferung eines Arzneimittels eine Communication Ressource mit dem Profil GEM_ERP_PR_Communication_Reply mit 
+  Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall "Nachricht an Versicherten versenden" bezüglich der Belieferung eines Arzneimittels eine Communication Ressource mit dem Profil GEM_ERP_PR_Communication_Reply mit 
   <ul>
     <li>Versicherten-ID des Absenders der empfangenen Nachricht in recipient</li>
     <li>Task-ID des referenzierten E-Rezeptes in basedOn</li>

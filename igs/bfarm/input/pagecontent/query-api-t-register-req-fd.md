@@ -265,7 +265,7 @@ Bei der Suche nach Apothekendaten basierend auf der Telematik-lD besteht die Mö
     <actor name="TI-Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept, wenn die  Daten der abgebenden Apotheke nicht aus dem Verzeichnisdienst ermittelt werden können,
+    Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept, wenn die Daten der abgebenden Apotheke nicht aus dem Verzeichnisdienst ermittelt werden können,
     <ul>
       <li>die Telematik-ID der Apotheke aus den Dispensierinformationen und</li>
       <li>den Wert für organizationName aus dem ACCESS_TOKEN der Anfrage bzw. falls organizationName = NULL im ACCESS_TOKEN den Wert "unbekannt" als Name der Apotheke</li>

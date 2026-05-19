@@ -162,7 +162,7 @@ Falls Profil GEM_ERP_PR_Communication_DiGA: Communication.payload.content
 
 </tbody>
 </table>
-<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_028 Nachrichteninhalt Push Notification</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_028 Nachrichteninhalt Push Notification</figcaption></div>
 
 <p>
 <strong>Definition [medicationName]:</strong><br>
@@ -272,7 +272,7 @@ Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push No
 <tr>
 <td>Message</td>
 <td>nein</td>
-<td>Die Nachricht, die an den Versicherten verschickt wird.<br>Nachrichten mit mehr als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (…) ergänzt werden.</td>
+<td>Die Nachricht, die an den Versicherten verschickt wird.<br>Nachrichten mit mehr als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (...) ergänzt werden.</td>
 <td>bis zu 240 Stellen, UTF-8</td>
 <td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen.</td>
 </tr>

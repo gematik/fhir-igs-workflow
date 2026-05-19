@@ -14,7 +14,7 @@ Der Kostenträger stellt die Abgabeinformationen beim Abschluss des Workflows zu
   <actor name="eRp_FdV">
     <testProcedure id="Herstellererklärung"/>
   </actor>
-  Das E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" dem Nutzer Abgabeinformationen eines Tasks mit Flowtyp 162 den Freischaltcode in geeigneter Weise darstellen.
+  Das E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" dem Nutzer Abgabeinformationen eines Tasks mit Flowtyp 162 den Freischaltcode in geeigneter Weise darstellen.
 </requirement>
 
 <!-- A_26340 -->

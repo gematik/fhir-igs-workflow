@@ -56,33 +56,12 @@ RuleSet: UnknownResourceType
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_UNKNOWN_TYPE"
 
-RuleSet: Unauthorized
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "401"
-  * extension[description].valueString = "Authentication is required and has failed or has not yet been provided"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_AUTH_REQUIRED"
-
-RuleSet: MethodNotAllowed
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "405"
-  * extension[description].valueString = "Method not allowed for this endpoint"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_OP_NOT_ALLOWED"
-
 RuleSet: RequestTimeout
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "408"
   * extension[description].valueString = "Request timeout"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_TIMEOUT"
-
-RuleSet: TooManyRequests
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "429"
-  * extension[description].valueString = "Too many requests"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_RATE_LIMIT"
 
 RuleSet: InternalServerError
 * extension[responseInfo][+]
@@ -116,13 +95,6 @@ RuleSet: EmptyList
   * extension[errorCode].valueString = "MSG_NO_MATCH"
 
 // TIFlow Related Errors
-RuleSet: OpNotAllowed
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "405"
-  * extension[description].valueString = "Operation %s not allowed for resource %s"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_OP_NOT_ALLOWED"
-
 RuleSet: OpUnknown
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "405"
