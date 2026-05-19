@@ -14,9 +14,9 @@ Diese Seite listet und beschreibt Anforderungen zu Fehlercodes und -konstellatio
 
 ### Allgemeine Anforderungen zur Fehlerbehandlung
 
-Der TI-Flow-Fachdienst MUSS beim Aufruf einer Operation im Http-Response-Header einen HTTP-Status-Codes gemäß [RFC7231] zurückgeben.
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS beim Aufruf einer Operation im Http-Response-Header einen HTTP-Status-Codes gemäß [RFC7231] zurückgeben.
 
-Der TI-Flow-Fachdienst MUSS im Fehlerfall (http-Statuscodes >= 400) Hinweise zur Fehlerursache
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS im Fehlerfall (http-Statuscodes >= 400) Hinweise zur Fehlerursache
 * im der inneren http-Response-Body als FHIR-Ressource OperationOutcome bei FHIR-Schnittstellen
 * im der inneren http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail` bei non FHIR-Schnittstellen
 * falls keine innere VAU-Response existiert, in einem "äußeren" http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail`
@@ -25,7 +25,7 @@ an den Client zurückgeben, ohne Implementierungsdetails (z.B. kein Stacktrace) 
 
 Der TI-Flow-Fachdienst muss allgemeine Anforderungen zu Fehlercodes umsetzen, um wiederkehrende Fehlerszenarien umzusetzen.
 
-Der TI-Flow-Fachdienst MUSS an den Schnittstellen prüfen, dass der HTTP-Request well-formed ist und andernfalls die Anfrage mit dem folgenden Fehler:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS an den Schnittstellen prüfen, dass der HTTP-Request well-formed ist und andernfalls die Anfrage mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -38,7 +38,7 @@ Der TI-Flow-Fachdienst MUSS an den Schnittstellen prüfen, dass der HTTP-Request
 
 abbrechen, damit nur korrekt formattierte Requests verarbeitet werden.
 
-Der TI-Flow-Fachdienst MUSS für den Fall, dass ein Request in einen Timeout läuft die Anfrage mit folgenden Fehler:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS für den Fall, dass ein Request in einen Timeout läuft die Anfrage mit folgenden Fehler:
 
 * HTTP-Code: Severity
   * 408 - Request Timeout: error
@@ -51,7 +51,7 @@ Der TI-Flow-Fachdienst MUSS für den Fall, dass ein Request in einen Timeout lä
 
 abbrechen, damit Clients über Timeouts informiert werden und entsprechend reagieren können.
 
-Der TI-Flow-Fachdienst MUSS im Falle eines internen Serverfehlers die Anfrage mit dem folgenden Fehler:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS im Falle eines internen Serverfehlers die Anfrage mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 500 - Internal Server Error: error
@@ -67,7 +67,7 @@ abbrechen, damit Clients über transiente Serverfehler informiert werden und ein
 
 Die folgenden Anforderungen definieren spezifische Fehlercodes, die in verschiedenen Fehlerkonstellationen bei Query- und Operation-API Endpunkten verwendet werden.
 
-Der TI-Flow-Fachdienst MUSS im Falle, dass ein unbekannter Ressourcentyp angefragt wird, die Anfrage mit dem folgenden Fehler:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS im Falle, dass ein unbekannter Ressourcentyp angefragt wird, die Anfrage mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 404 - Not Found: error
@@ -80,7 +80,7 @@ Der TI-Flow-Fachdienst MUSS im Falle, dass ein unbekannter Ressourcentyp angefra
 
 abbrechen, damit Clients eindeutig identifizieren können, dass der angeforderte Ressourcentyp nicht bekannt ist.
 
-Der TI-Flow-Fachdienst MUSS im Falle, dass eine unbekannte Ressource-ID angefragt wird, die Anfrage mit dem folgenden Fehler:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS im Falle, dass eine unbekannte Ressource-ID angefragt wird, die Anfrage mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 404 - Not Found: error
@@ -93,7 +93,7 @@ Der TI-Flow-Fachdienst MUSS im Falle, dass eine unbekannte Ressource-ID angefrag
 
 abbrechen, damit Clients erkennen können, dass eine Ressource mit der angeforderten ID nicht existiert.
 
-Der TI-Flow-Fachdienst MUSS im Falle, dass auf eine gelöschte Ressource zugegriffen wird, die Anfrage mit dem folgenden Fehler:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS im Falle, dass auf eine gelöschte Ressource zugegriffen wird, die Anfrage mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 410 - Gone: error
@@ -106,7 +106,7 @@ Der TI-Flow-Fachdienst MUSS im Falle, dass auf eine gelöschte Ressource zugegri
 
 abbrechen, damit Clients erkennen können, dass eine Ressource dauerhaft gelöscht wurde.
 
-Der TI-Flow-Fachdienst MUSS im Falle, dass ein unbekannter Suchparameter verwendet wird, die Anfrage mit dem folgenden Fehler:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS im Falle, dass ein unbekannter Suchparameter verwendet wird, die Anfrage mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -119,7 +119,7 @@ Der TI-Flow-Fachdienst MUSS im Falle, dass ein unbekannter Suchparameter verwend
 
 abbrechen, damit Clients erkennen können, dass ein verwendeter Suchparameter nicht unterstützt wird.
 
-Der TI-Flow-Fachdienst MUSS im Falle, dass ungültige Query-Parameter verwendet werden, die Anfrage mit dem folgenden Fehler:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS im Falle, dass ungültige Query-Parameter verwendet werden, die Anfrage mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error
@@ -132,7 +132,7 @@ Der TI-Flow-Fachdienst MUSS im Falle, dass ungültige Query-Parameter verwendet 
 
 abbrechen, damit Clients erkennen können, dass die verwendeten Query-Parameter syntaktisch oder semantisch ungültig sind.
 
-Der TI-Flow-Fachdienst MUSS im Falle, dass eine unbekannte FHIR-Operation angefragt wird, die Anfrage mit dem folgenden Fehler:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS im Falle, dass eine unbekannte FHIR-Operation angefragt wird, die Anfrage mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 404 - Not Found: error

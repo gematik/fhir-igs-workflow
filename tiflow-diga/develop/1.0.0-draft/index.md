@@ -32,9 +32,17 @@ Die Inhalte sind in Fachlichkeit, Technische Umsetzung und Schnittstellen strukt
 
 ### Anforderungen zur Umsetzung des IGs
 
-Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Workflow 162 den Implementation Guide "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" umsetzen.
+funkt. Eignung: Herstellererklärung
 
-Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Workflow 162 den Implementation Guide "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" umsetzen.
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 ### Methodik
 
 #### Apps
@@ -68,6 +76,7 @@ Im Kontext der Verordnung einer DiGA wird unter Dispensieren die Bereitstellung 
 Anforderungen und Anwendungsfälle werden durch eine eindeutige ID sowie die Schlüsselworte MUSS, DARF NICHT, SOLL, SOLL NICHT, KANN gemäß RFC 2119 gekennzeichnet.
 
 ### Abhängigkeiten
+
 
 
 
@@ -145,7 +154,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.2.0"
+    "version" : "5.3.0"
   },
   {
     "id" : "de_basisprofil_r4",

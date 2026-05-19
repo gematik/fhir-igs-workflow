@@ -277,8 +277,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_22708 -->
 <requirement conformance="SHALL NOT" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - Einwilligung muss vorliegen" version="1" key="IG-TIFLOW-CHRG-22">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung"></testProcedure>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
       Das PS der abgebenden LEI DARF NICHT Abrechnungsinformation auf dem TI-Flow-Fachdienst bereitstellen, wenn ihm nicht zuvor die Information über die Einwilligung des Versicherten vom TI-Flow-Fachdienst übertragen wurde.
 </requirement>
@@ -286,8 +286,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_22186 -->
 <requirement conformance="SHALL" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - E-Rezept auswählen" version="1" key="IG-TIFLOW-CHRG-23">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung"></testProcedure>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
       Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept auszuwählen, zu dem die Abrechnungsinformation auf dem TI-Flow-Fachdienst bereitgestellt werden soll.
 </requirement>
@@ -297,8 +297,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_22188 -->
 <requirement conformance="SHALL" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - PKV-Abgabedatensatz erstellen" version="1" key="IG-TIFLOW-CHRG-24">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Konformitätsbestätigung"></testProcedure>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
       Das PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereitstellen" eine FHIR-Ressource des PKV-Abgabedatensatzes mit den Informationen zur Abrechnung des abgegebenen Medikaments erstellen.
 </requirement>
@@ -310,8 +310,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_22189 -->
 <requirement conformance="SHALL" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - ChargeItem erstellen" version="1" key="IG-TIFLOW-CHRG-25">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Konformitätsbestätigung"></testProcedure>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
       Das PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereitstellen" eine FHIR-Ressource ChargeItem erstellen und den PKV-Abgabedatensatzes als contained Ressource einfügen.
 </requirement>
@@ -321,8 +321,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_22190 -->
 <requirement conformance="SHALL" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - Speicherrequest" version="1" key="IG-TIFLOW-CHRG-26">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Konformitätsbestätigung"></testProcedure>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
       Das PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereitstellen" die HTTP-Operation POST /ChargeItem/ des TI-Flow-Fachdienstes mit
       <ul>
@@ -343,8 +343,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_22191 -->
 <requirement conformance="SHALL" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz zum Ändern auswählen" version="0" key="IG-TIFLOW-CHRG-27">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung"></testProcedure>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
       Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, die Abrechnungsinformation zu einem E-Rezept zum Ändern auf dem TI-Flow-Fachdienst auszuwählen.
 </requirement>
@@ -352,8 +352,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_22193 -->
 <requirement conformance="SHALL" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz erstellen" version="1" key="IG-TIFLOW-CHRG-28">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Konformitätsbestätigung"></testProcedure>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
       Das PS der abgebenden LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" eine FHIR-Ressource des PKV-Abgabedatensatzes mit den Informationen zur Abrechnung des abgegebenen Medikaments erstellen.
 </requirement>
@@ -365,8 +365,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_22194 -->
 <requirement conformance="SHALL" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - ChargeItem erstellen" version="1" key="IG-TIFLOW-CHRG-29">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Konformitätsbestätigung"></testProcedure>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
       Das PS der abgebenden LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" eine FHIR-Ressource ChargeItem erstellen und den PKV-Abgabedatensatzes als contained Ressource einfügen.
 </requirement>
@@ -376,8 +376,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_22195 -->
 <requirement conformance="SHALL" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - Speicherrequest" version="1" key="IG-TIFLOW-CHRG-30">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Konformitätsbestätigung"></testProcedure>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
       Das PS abgebende LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" die HTTP-Operation PUT /ChargeItem/&lt;id&gt;/ des TI-Flow-Fachdienstes mit
       <ul>
@@ -396,8 +396,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_22203 -->
 <requirement conformance="SHALL" title="PS abgebende LEI: Abrechnungsinformation abrufen - Leserequest" version="1" key="IG-TIFLOW-CHRG-31">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Produkttest"></testProcedure>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
       Das PS abgebende LEI MUSS im Anwendungsfall "Abrechnungsinformation abrufen" die HTTP-Operation GET /ChargeItem/&lt;id&gt; des TI-Flow-Fachdienstes mit
       <ul>
@@ -449,7 +449,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 15, 2026 11:23+0000">2026-05-15</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 19, 2026 15:25+0000">2026-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

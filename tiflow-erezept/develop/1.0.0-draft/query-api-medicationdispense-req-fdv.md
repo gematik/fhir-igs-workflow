@@ -17,7 +17,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Medica
 
 Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `MedicationDispense`-Query-Endpunkte.
 
-Das E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" die HTTP-Operation GET /MedicationDispense mit
+funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" die HTTP-Operation GET /MedicationDispense mit
 * optional: Suchparameter gemäß https://www.hl7.org/fhir/medicationdispense.html#search
 ausführen.
 ### Modulspezifische Anforderungen
@@ -26,7 +26,7 @@ Wenn die abgebende LEI ein E-Rezept beliefert, dann stellt sie dem Versicherten 
 
 Die abgebende LEI stellt die Abgabeinformationen entweder vor dem Abschluss oder beim Abschluss des Workflows zum E-Rezept ein.
 
-Werden die Abgabeinformationen vor dem Abschluss der Workflows eingestellt, dann ändert sich der Status des Workflows nicht (Task.status=in-progress). Im Task ist der Zeitpunkt des Einstellens unter Task.extension:lastMedicationDispense gespeichert. Solange der Workflow nicht abgeschlossen ist, können die Abgabeinformationen gelöscht oder geändert werden. Hierbei wird der Zeitpunkt des Einstellens jeweils gelöscht bzw. neu gesetzt.
+Werden die Abgabeinformationen vor dem Abschluss der Workflows eingestellt, dann ändert sich der Status des Workflows nicht (Task.status=in-progress). Im Task ist der Zeitpunkt des Einstellens unter Task.extension:lastMedicationDispense gespeichert. Solange der Workflow nicht abgeschlossen ist, können die Abgabeinformationen gelöscht oder geändert werden. Hierbei wird der Zeitpunkt des Einstellens jeweils gelöscht bzw. neu gesetzt.
 
 Mit dem Abschluss des Workflows ist Task.status=complete. Ein Ändern der Abgabeinformationen ist danach nicht mehr möglich.
 

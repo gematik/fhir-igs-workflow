@@ -19,7 +19,7 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 
 #### PS verordnende LEI
 
-Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle
+funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle
 * UC 2.1 - E-Rezepte erzeugen
 * E-Rezept qualifiziert signieren
 * UC 2.3 - E-Rezept einstellen
@@ -27,7 +27,7 @@ Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von DiGAs die
 umsetzen.
 #### E-Rezept-FdV
 
-Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle
+funkt. Eignung: HerstellererklärungDas E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle
 * UC 3.1 - E-Rezepte durch Versicherten abrufen
 * UC 3.2 - E-Rezept durch Versicherten löschen
 * Kostenträger suchen
@@ -38,7 +38,7 @@ Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs 
 umsetzen.
 #### Clientsystem Kostenträger
 
-Das Clientsystem des Kostenträgers MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle
+funkt. Eignung: HerstellererklärungDas Clientsystem des Kostenträgers MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle
 * UC 4.1 - E-Rezept durch Abgebenden abrufen
 * UC 4.2 - E-Rezept durch Abgebenden zurückgeben
 * UC 4.4 - Quittung abrufen

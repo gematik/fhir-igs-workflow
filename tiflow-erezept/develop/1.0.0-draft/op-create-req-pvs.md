@@ -17,15 +17,15 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an das PVS für die Nutzung der Operation `$create`.
 
-Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" eine Bundle-FHIR-Ressource gemäß Profilierung https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle Rezept-ID aus der Task-Ressource als Identifier erstellen.
+funkt. Eignung: KonformitätsbestätigungDas PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" eine Bundle-FHIR-Ressource gemäß Profilierung https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle Rezept-ID aus der Task-Ressource als Identifier erstellen.
 Dieses Bundle wird in diesem Dokument als E-Rezept-Bundle bezeichnet. Ein E-Rezept-Bundle enthält genau eine Verordnungszeile.
 
 Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz verwenden, die nicht explizit gemäß KBV-Profilversion “kbv.ita.erp” bzw. “kbv.itv.evdga” beschrieben sind.
 
-Das PS der verordnenden LEI MUSS sicherstellen, dass das Datum authoredOn des Verordnungsdatensatzes dem Datum in QES.Erstellung im Signaturobjekt entspricht.
+funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI MUSS sicherstellen, dass das Datum authoredOn des Verordnungsdatensatzes dem Datum in QES.Erstellung im Signaturobjekt entspricht.
 Es gelten weitere modulspezifische Anforderungen für den Verordnungsdatensatz.
 
-Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die HTTP-Operation POST /Task/$create mit
+funkt. Eignung: KonformitätsbestätigungDas PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die HTTP-Operation POST /Task/$create mit
 * Workflow-Typ im FlowType als Parameter der FHIR-Operation $create für Task 
 ausführen.
 Für weitere Informationen siehe Operation “E-Rezept erstellen” aus der API-Schnittstelle [E-Rezept API Dokumentation].
@@ -40,9 +40,9 @@ Der Response des Fachdienstes liefert
 
 Hinweis: Die Task-ID entspricht der Rezept-ID.
 
-Für die qualifizierte elektronische Signatur des Verordnungsbundels wird der Konnektor verwendet. Es wird eine CMS-Signatur (CAdES) erstellt. Die Operation für die QES muss durch den Leistungserbringer durchgeführt werden.
+Für die qualifizierte elektronische Signatur des Verordnungsbundels wird der Konnektor verwendet. Es wird eine CMS-Signatur (CAdES) erstellt. Die Operation für die QES muss durch den Leistungserbringer durchgeführt werden.
 
-Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die Signaturoperation des Konnektors mit
+funkt. Eignung: KonformitätsbestätigungDas PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die Signaturoperation des Konnektors mit
 * der Referenz RFC-5652 für CMS-Signatur (CAdES)
 * Signaturtype für eine enveloping Signature
 * dem base64-codierten E-Rezept-Bundle
@@ -55,7 +55,7 @@ Das PS der verordnenden LEI MUSS muss die Erstellung der E-Rezepte mittels Einze
 
 Für die Nutzung der Komfortsignatur siehe [gemILF_PS].
 
-Falls keine Komfortsignatur zur Verfügung steht oder die Komfortsignatur deaktiviert ist, soll das PS der verordnenden LEI die Stapelsignatur verwenden ist, falls mehrere E-Rezepte signiert werden sollen. 
+Falls keine Komfortsignatur zur Verfügung steht oder die Komfortsignatur deaktiviert ist, soll das PS der verordnenden LEI die Stapelsignatur verwenden ist, falls mehrere E-Rezepte signiert werden sollen.
 
 ### Modulspezifische Anforderungen
 

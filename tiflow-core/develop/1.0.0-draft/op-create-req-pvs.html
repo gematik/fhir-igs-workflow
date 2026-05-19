@@ -283,8 +283,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19275 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-257" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
     <meta lockversion="false" />
-    <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="Konformitätsbestätigung" />
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
         Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" eine Bundle-FHIR-Ressource gemäß Profilierung https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle Rezept-ID aus der Task-Ressource als Identifier erstellen.
 </requirement>
@@ -296,8 +296,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_22893 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-258" title="PS verordnende LEI: E-Rezept erstellen - Gleichheit Ausstellungsdatum und QES Erstellung" version="0">
   <meta lockversion="false" />
-  <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Herstellererklärung" />
+  <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der verordnenden LEI MUSS sicherstellen, dass das Datum authoredOn des Verordnungsdatensatzes dem Datum in QES.Erstellung im Signaturobjekt entspricht.
 </requirement>
@@ -307,8 +307,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19276 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-259" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="1">
   <meta lockversion="false" />
-  <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Konformitätsbestätigung" />
+  <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die HTTP-Operation POST /Task/$create mit
   <ul>
@@ -330,15 +330,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Hinweis: Die Task-ID entspricht der Rezept-ID.</p>
 
-<p>Für die qualifizierte elektronische Signatur des Verordnungsbundels wird der Konnektor verwendet. Es wird eine CMS-Signatur (CAdES) erstellt. Die Operation für die QES muss durch den Leistungserbringer durchgeführt werden.</p>
+<p>Für die qualifizierte elektronische Signatur des Verordnungsbundels wird der Konnektor verwendet. Es wird eine CMS-Signatur (CAdES) erstellt. Die Operation für die QES muss durch den Leistungserbringer durchgeführt werden.</p>
 
 <!-- A_19281-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-260" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren" version="0">
   <meta lockversion="false" />
-  <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Konformitätsbestätigung" />
+  <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
   </actor>
-  Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die Signaturoperation des Konnektors mit 
+  Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die Signaturoperation des Konnektors mit 
   <ul>
   <li>der Referenz RFC-5652 für CMS-Signatur (CAdES)</li>
   <li>Signaturtype für eine enveloping Signature</li>
@@ -355,7 +355,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Für die Nutzung der Komfortsignatur siehe [gemILF_PS].</p>
 
-<p>Falls keine Komfortsignatur zur Verfügung steht oder die Komfortsignatur deaktiviert ist, soll das PS der verordnenden LEI die Stapelsignatur verwenden ist, falls mehrere E-Rezepte signiert werden sollen. </p>
+<p>Falls keine Komfortsignatur zur Verfügung steht oder die Komfortsignatur deaktiviert ist, soll das PS der verordnenden LEI die Stapelsignatur verwenden ist, falls mehrere E-Rezepte signiert werden sollen.</p>
 
 
 
@@ -397,7 +397,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, May 18, 2026 04:37+0000">2026-05-18</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 19, 2026 15:16+0000">2026-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -14,11 +14,11 @@ Wenn ein E-Rezept-FdV einem Kostenträger fest zugeordnet ist, dann kann die Tel
 
 Wenn die Telematik-ID des KTR des Versicherten nicht im Programmcode hinterlegt wird, muss diese zur Laufzeit bestimmt werden. Hierfür nutzt das E-Rezept-FdV das IKNR des KTR, wodurch es dann in der Lage ist nach der Telematik-ID im FHIRVZD zu suchen.
 
-Das E-Rezept-FdV KANN den Anwendungsfall "Kostenträger suchen" umsetzen.
+funkt. Eignung: HerstellererklärungDas E-Rezept-FdV KANN den Anwendungsfall "Kostenträger suchen" umsetzen.
 
-Das E-Rezept-FdV SOLL im Anwendungsfall "Kostenträger suchen" die IKNR des Kostenträgers des Nutzers aus dem ACCESS_TOKEN claim "organizationIK" ermitteln.
+funkt. Eignung: HerstellererklärungDas E-Rezept-FdV SOLL im Anwendungsfall "Kostenträger suchen" die IKNR des Kostenträgers des Nutzers aus dem ACCESS_TOKEN claim "organizationIK" ermitteln.
 
-Das E-Rezept-FdV SOLL im Anwendungsfall "Kostenträger suchen", wenn die IKNR des Kostenträgers des Nutzers verfügbar ist, zur Ermittlung der Telematik-ID des Kostenträgers des Nutzers folgende Suchabfrage am FHIRVZD durchführen:
+funkt. Eignung: HerstellererklärungDas E-Rezept-FdV SOLL im Anwendungsfall "Kostenträger suchen", wenn die IKNR des Kostenträgers des Nutzers verfügbar ist, zur Ermittlung der Telematik-ID des Kostenträgers des Nutzers folgende Suchabfrage am FHIRVZD durchführen:
 * Abfrage der Ressource "HealthcareService"
 * HealthcareServices, deren Organisation aktiv sind
 * HealthcareServices, deren Organisation den Typ-oid "1.2.276.0.76.4.59" haben
@@ -33,7 +33,7 @@ Falls das E-Rezept-FdV nicht in der Lage ist die IKNR oder die Telematik-ID des 
 
 Der Nutzer soll eine Liste aller Kostenträger, denen eine DiGA zugewiesen werden kann, zur Auswahl angezeigt bekommen.
 
-Das E-Rezept-FdV SOLL im Anwendungsfall "Kostenträger suchen", wenn die IKNR oder Telematik-ID des Kostenträgers des Nutzers nicht verfügbar ist, die Liste aller Kostenträger aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird:
+funkt. Eignung: HerstellererklärungDas E-Rezept-FdV SOLL im Anwendungsfall "Kostenträger suchen", wenn die IKNR oder Telematik-ID des Kostenträgers des Nutzers nicht verfügbar ist, die Liste aller Kostenträger aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird:
 * Abfrage der Ressource "HealthcareService"
 * HealthcareServices, deren Organisation aktiv sind
 * HealthcareServices, deren Organisation den Typ-oid "1.2.276.0.76.4.59" haben

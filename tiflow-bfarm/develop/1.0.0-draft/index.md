@@ -28,9 +28,9 @@ Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Dat
 
 ### Anforderungen zur Umsetzung des IGs
 
-Der TI-Flow-Fachdienst MUSS zur Umsetzung der Übertragung von Daten vom TI-Flow-Fachdienst an den BfArM Webdienst den Implementation Guide "Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst" umsetzen.
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS zur Umsetzung der Übertragung von Daten vom TI-Flow-Fachdienst an den BfArM Webdienst den Implementation Guide "Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst" umsetzen.
 
-Der TI-Flow-Fachdienst MUSS zur Umsetzung des Implementation Guides "Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS zur Umsetzung des Implementation Guides "Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 ### Wie dieser IG zu lesen ist
 
 Dieser Implementation Guide ist “von links nach rechts” zu lesen. Die Menüstruktur beginnt mit fachlichen Inhalten, welche über die technischen Anwendungsfälle dann in den Spezifikationen der Endpunkte und APIs münden. Es wird empfohlen, die Inhalte in der vorgegebenen Reihenfolge zu lesen, um ein umfassendes Verständnis der Anforderungen und Spezifikationen zu erhalten.
@@ -38,6 +38,7 @@ Dieser Implementation Guide ist “von links nach rechts” zu lesen. Die Menüs
 Für einen Überblick über die Inhalte und die Struktur dieses Implementation Guides kann die [Inhaltsübersicht](toc.md) konsultiert werden. Dort sind die verschiedenen Kapitel und Abschnitte mit ihren jeweiligen Inhalten und Anforderungen aufgeführt.
 
 ### Abhängigkeiten
+
 
 
 
@@ -116,7 +117,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.2.0"
+    "version" : "5.3.0"
   },
   {
     "id" : "de_gematik_ti",

@@ -28,9 +28,9 @@ Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
 
 ### Anforderungen zur Umsetzung des IGs
 
-Der TI-Flow-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" umsetzen.
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" umsetzen.
 
-Der TI-Flow-Fachdienst MUSS zur Umsetzung des Implementation Guides "E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS zur Umsetzung des Implementation Guides "E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
 ## Aufbau
 
 * [FHIR-Artefakte](./artifacts.md)

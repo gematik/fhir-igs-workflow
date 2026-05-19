@@ -13,7 +13,7 @@ Version 1.0.0-draft - ci-build
 
 Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `MedicationDispense`-Query-Endpunkte.
 
-Das E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" die HTTP-Operation GET /MedicationDispense mit
+funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" die HTTP-Operation GET /MedicationDispense mit
 * optional: Suchparameter gemäß https://www.hl7.org/fhir/medicationdispense.html#search
 ausführen.
 

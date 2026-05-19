@@ -46,17 +46,41 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 
 ### Festlegungen zum Verfahren mit Health-Checks
 
-Das Clientsystem des TI-Flow-Fachdienstes MUSS auf Grundlage der Datensparsamkeit sicherstellen, dass neben den fachlich notwendigen Anfragen an den TI-Flow-Fachdienst so sparsam wie möglich mit Health-Checks umgegangen wird.
+funkt. Eignung: Herstellererklärung
 
-Das Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen Health-Check durchführen, welcher die erwartete Rückgabe eines Fehlercodes vorsieht.
+funkt. Eignung: Herstellererklärung
 
-Das Clientsystem des TI-Flow-Fachdienstes KANN einen erweiterten Health-Check auf der Endpunkt ⇒ "POST /ASL [GET /metadata]" durchführen.
+funkt. Eignung: HerstellererklärungDas Clientsystem des TI-Flow-Fachdienstes MUSS auf Grundlage der Datensparsamkeit sicherstellen, dass neben den fachlich notwendigen Anfragen an den TI-Flow-Fachdienst so sparsam wie möglich mit Health-Checks umgegangen wird.
 
-Das Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen erweiterten Health-Check periodisch durchführen, welcher periodisch den Endpunkt ⇒ "POST /ASL [GET /metadata]" abfragt.
+funkt. Eignung: Herstellererklärung
 
-Das Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen erweiterten Health-Check durchführen, welcher andere als die jeweils vorgegebenen Endpunkte des TI-Flow-Fachdienstes nutzt.
+funkt. Eignung: Herstellererklärung
 
-Das Clientsystem des TI-Flow-Fachdienstes KANN einen einfachen Health-Check auf der Endpunkt / (root) mit Abfrage ⇒ ( "GET / [---]" ) durchführen, welcher mit Ausnahmen periodisch die Erreichbarkeit des TI-Flow-Fachdienstes feststellt und folgende Kriterien erfüllt:
+funkt. Eignung: HerstellererklärungDas Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen Health-Check durchführen, welcher die erwartete Rückgabe eines Fehlercodes vorsieht.
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: HerstellererklärungDas Clientsystem des TI-Flow-Fachdienstes KANN einen erweiterten Health-Check auf der Endpunkt ⇒ "POST /ASL [GET /metadata]" durchführen.
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: HerstellererklärungDas Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen erweiterten Health-Check periodisch durchführen, welcher periodisch den Endpunkt ⇒ "POST /ASL [GET /metadata]" abfragt.
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: HerstellererklärungDas Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen erweiterten Health-Check durchführen, welcher andere als die jeweils vorgegebenen Endpunkte des TI-Flow-Fachdienstes nutzt.
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: HerstellererklärungDas Clientsystem des TI-Flow-Fachdienstes KANN einen einfachen Health-Check auf der Endpunkt / (root) mit Abfrage ⇒ ( "GET / [---]" ) durchführen, welcher mit Ausnahmen periodisch die Erreichbarkeit des TI-Flow-Fachdienstes feststellt und folgende Kriterien erfüllt:
 1. Die festgelegte Idle-Periode darf 10 Minuten nicht unterschreiten.
 1. Der Zeitraum zwischen den Aufrufen (Idle-Periode) muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am TI-Flow-Fachdienst über alle Clientsysteme zu erreichen.
 
@@ -64,6 +88,10 @@ Das Clientsystem des TI-Flow-Fachdienstes KANN einen einfachen Health-Check auf 
 
 **Ausnahme bei parallel durchgeführten, fachlichen Aufrufen:** Das Primärsystem DARF KEINEN Health-Check durchführen, wenn innerhalb der festgelegten Idle-Periode ein regulärer Aufruf an einem beliebigen Endpunkt des TI-Flow-Fachdienstes mit erhaltener Antwort durchgeführt wurde. Die Antwort des TI-Flow-Fachdienstes MUSS die festgelegte Idle-Periode von Beginn starten lassen.
 
-Das Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen einfachen Health-Check durchführen, welcher einen anderen Endpunkt als ⇒ ( "GET / [---]" ) abfragt.
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: HerstellererklärungDas Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen einfachen Health-Check durchführen, welcher einen anderen Endpunkt als ⇒ ( "GET / [---]" ) abfragt.
 Das Primärsystem soll zur Vermittlung der Erreichbarkeit an den Endnutzer geeignete Informationen bereitstellen, um die Fehlerursache der Nichterreichbarkeit transparent darzustellen. Fehlerursachen für die Nichterreichbarkeit können beispielsweise sein: die Verbindung zum Konnektor, Verfügbarkeit der SMC-B, Verbindung zum VPN oder andere.
 

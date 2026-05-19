@@ -284,8 +284,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19252-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-123" title="TI-Flow-Fachdienst - Löschfrist abgelaufener Rezepte" version="1">
 	<meta lockversion="false" />
-	<actor name="TI-Flow_FD">
-    	<testProcedure id="Produktgutachten" />
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäß der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.
 	<table>
@@ -319,8 +319,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_26264 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-124" title="TI-Flow-Fachdienst - Löschinformation ePA Medication Service bereitstellen" version="0">
 	<meta lockversion="false" />
-	<actor name="TI-Flow_FD">
-    	<testProcedure id="Produkttest" />
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS beim Löschen eines Task nach Ablauf der Löschfrist, wenn Task.status = "ready" oder Task.status = "in-progress", die Daten für die Löschinformation des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.
 </requirement>
@@ -328,8 +328,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19254-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-125" title="TI-Flow-Fachdienst - Löschen referenzierter Bundles" version="0">
 	<meta lockversion="false" />
-	<actor name="TI-Flow_FD">
-    	<testProcedure id="Produkttest" />
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines Tasks alle referenzierten Bundles (QES-Datensatz, Quittungs-Bundle, Dispensierinformationen) ebenfalls löschen.
 </requirement>
@@ -337,8 +337,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19255 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-126" title="TI-Flow-Fachdienst - Löschfrist veraltete MedicationDispense" version="0">
 	<meta lockversion="false" />
-	<actor name="TI-Flow_FD">
-    	<testProcedure id="Produktgutachten" />
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource MedicationDispense nach 100 Tagen ab ihrem Erzeugungsdatum MedicationDispense.whenHandedOver automatisch löschen.
 </requirement>
@@ -346,8 +346,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_22109 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-127" title="TI-Flow-Fachdienst - Löschfrist ChargeItem" version="0">
 	<meta lockversion="false" />
-	<actor name="TI-Flow_FD">
-    	<testProcedure id="Produktgutachten" />
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.<br />
 	Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.
@@ -356,8 +356,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19253-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-128" title="TI-Flow-Fachdienst - Löschfrist veraltete Nachrichten" version="1">
 	<meta lockversion="false" />
-	<actor name="TI-Flow_FD">
-    	<testProcedure id="Produktgutachten" />
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource Communication
 	automatisch löschen:
@@ -371,8 +371,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19256-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-129" title="TI-Flow-Fachdienst - Löschfrist veraltete Protokolleinträge" version="0">
 	<meta lockversion="false" />
-	<actor name="TI-Flow_FD">
-    	<testProcedure id="Produktgutachten" />
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource AuditEvent nach 3 Jahren ab dem Erzeugungsdatum AuditEvent.recorded innerhalb von einem Monat löschen.
 </requirement>
@@ -417,7 +417,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, May 18, 2026 04:37+0000">2026-05-18</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 19, 2026 15:16+0000">2026-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

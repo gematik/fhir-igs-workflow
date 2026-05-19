@@ -35,14 +35,19 @@ Die Inhalte basieren auf der Spezifikation “EU Zugriff E-Rezept”, Version 1.
 
 ### Anforderungen zur Umsetzung des IGs
 
-Der TI-Flow-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Einlösens von E-Rezepten im EU Ausland den Implementation Guide "EU Zugriff E-Rezept" umsetzen.
+funkt. Eignung: Herstellererklärung
 
-Der TI-Flow-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Implementation Guides "EU Zugriff E-Rezept" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Einlösens von E-Rezepten im EU Ausland den Implementation Guide "EU Zugriff E-Rezept" umsetzen.
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Implementation Guides "EU Zugriff E-Rezept" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 ### Wie dieser IG zu lesen ist
 
 Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und Schnittstellen. Szenarien und Anwendungsfälle verweisen auf die zugehörigen technischen Kapitel.
 
 ### Abhängigkeiten
+
 
 
 
@@ -121,7 +126,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.2.0"
+    "version" : "5.3.0"
   },
   {
     "id" : "de_basisprofil_r4",

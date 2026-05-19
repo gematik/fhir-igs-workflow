@@ -292,8 +292,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19205 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-70" title="Nachrichten abrufen - Nachrichten von Fachdienst herunterladen" version="1">
     <meta lockversion="false" />
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten von Apotheken anzeigen" zum Herunterladen von Nachrichten vom TI-Flow-Fachdienst die HTTP-Operation GET /Communication mit
     <ul>
@@ -310,8 +310,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_26318 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-71" title="Nachricht senden - E-Rezept zuweisen - Status prüfen" version="0">
     <meta lockversion="false" />
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" den aktuellen Status des E-Rezepts ermitteln, prüfen ob Task.status = ready ist und anderenfalls den Anwendungsfall abbrechen.
 </requirement>
@@ -319,8 +319,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_26319 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-72" title="Nachricht senden - E-Rezept zuweisen - Ende Gültigkeit prüfen" version="0">
     <meta lockversion="false" />
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" prüfen, ob das Ende der Einlösefrist (Task.ExpiryDate) zu einem früherem Zeitpunkt als das aktuelle Datum liegt und in diesem Fall den Anwendungsfall abbrechen.
 </requirement>
@@ -330,8 +330,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_28543 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-73" title="Nachricht senden - E-Rezept zuweisen - Zuweisen - TransactionID" version="0">
     <meta lockversion="false" />
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" im Rahmen der Belieferung eines Arzneimittels für den payload_contentstring eine TransactionID erzeugen, um Nachrichten zu dem Vorgang zuordnen zu können.
 </requirement>
@@ -339,8 +339,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_28545 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-74" title="Nachricht senden - E-Rezept zuweisen - Auf Nachricht antworten - TransactionID" version="0">
     <meta lockversion="false" />
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" im Rahmen der Belieferung eines Arzneimittels, wenn der Nutzer auf eine empfangene Nachricht einer Apotheke antwortet, die TransactionID aus der empfangenen Nachricht der Apotheke unverändert im payload contentString der Textnachricht an die Apotheke zurückgeben.
 </requirement>
@@ -348,8 +348,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19203 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-75" title="Nachricht senden - Nachricht auf Fachdienst einstellen" version="1">
     <meta lockversion="false" />
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht senden" zum Übermitteln einer Nachricht über den TI-Flow-Fachdienst die HTTP-Operation POST /Communication mit
     <ul>
@@ -367,8 +367,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_21526-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-78" title="E-Rezept-FdV: Nachricht löschen - Löschrequest" version="1">
     <meta lockversion="false" />
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; des TI-Flow-Fachdienstes mit
     <ul>
@@ -418,7 +418,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, May 18, 2026 04:37+0000">2026-05-18</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 19, 2026 15:16+0000">2026-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -292,8 +292,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19558-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-256" title="PS abgebende LEI: E-Rezept abrufen - Task herunterladen" version="1">
     <meta lockversion="false" />
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung" />
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept abrufen" zum Herunterladen des E-Rezepts die HTTP-Operation POST /Task/&#60;id&#62;/$accept mit
     <ul> 
@@ -309,17 +309,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 Wenn ein AVS eine Teilverordnung abruft, deren Einlösezeitraum noch nicht erreicht ist, dann liefert der TI-Flow-Fachdienst einen Fehler 403. Im OperationOutcome der Fehlermeldung liefert der TI-Flow-Fachdienst das Datum des Beginns der Einlösefrist.</p>
 
 <p><b>Flowtype 200/209</b>
-Für den Flowtype “200” und “209” wird im Response Bundle eine Consent Ressource mit Consent.category.coding.code = CHARGCONS übermittelt, falls der Versicherte eine Einwilligung zum Speichern von Abrechnungsinformationen erteilt hat. Diese Information kann in der Abstimmung mit dem Versicherten genutzt werden, ob die Abrechnungsinformation digital oder als Papierbeleg bereitgestellt wird.</p>
+Für den Flowtype “200” und “209” wird im Response Bundle eine Consent Ressource mit Consent.category.coding.code = CHARGCONS übermittelt, falls der Versicherte eine Einwilligung zum Speichern von Abrechnungsinformationen erteilt hat. Diese Information kann in der Abstimmung mit dem Versicherten genutzt werden, ob die Abrechnungsinformation digital oder als Papierbeleg bereitgestellt wird.</p>
 
-<p>Möchte der Versicherte die Möglichkeit einer Online-Rezepteinlösung nutzen, kann die abgebende LEI die Belieferungs- und ggfs. Zuzahlungsmodalitäten über ihr Warenwirtschaftssystem (“Onlineshop”) abwickeln. Hierzu ist ggfs. die Übernahme von Rezeptinformationen zur Befüllung eines Warenkorbs erforderlich. </p>
+<p>Möchte der Versicherte die Möglichkeit einer Online-Rezepteinlösung nutzen, kann die abgebende LEI die Belieferungs- und ggfs. Zuzahlungsmodalitäten über ihr Warenwirtschaftssystem (“Onlineshop”) abwickeln. Hierzu ist ggfs. die Übernahme von Rezeptinformationen zur Befüllung eines Warenkorbs erforderlich.</p>
 
 <!-- A_21372 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-108" title="PS abgebende LEI: Übernahme Rezeptinformationen in Warenwirtschaftssystem" version="0">
     <meta lockversion="false" />
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung" />
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das PS der abgebenden LEI MUSS bei der Übernahme von E-Rezept-Informationen in ein Warenwirtschaftssystem die Integrität und Vertraulichkeit  der personenbezogenen und medizinischen Daten sicherstellen und zusätzlich sicherstellen, dass der Umfang der übertragenen Daten nur auf das unmittelbare für die Einlösung erforderliche Maß beschränkt (Datenminimierung) ist und keine Verwendung der Daten über die unmittelbare Rezepteinlösung hinaus erfolgt (Zweckbindung).
+    Das PS der abgebenden LEI MUSS bei der Übernahme von E-Rezept-Informationen in ein Warenwirtschaftssystem die Integrität und Vertraulichkeit  der personenbezogenen und medizinischen Daten sicherstellen und zusätzlich sicherstellen, dass der Umfang der übertragenen Daten nur auf das unmittelbare für die Einlösung erforderliche Maß beschränkt (Datenminimierung) ist und keine Verwendung der Daten über die unmittelbare Rezepteinlösung hinaus erfolgt (Zweckbindung).
 </requirement>
 
 <h4 id="qes-des-verordnungsdatensatzes-prüfen">QES des Verordnungsdatensatzes prüfen</h4>
@@ -329,20 +329,20 @@ Für den Flowtype “200” und “209” wird im Response Bundle eine Consent R
 <!-- A_19745-01 -->
 <requirement conformance="MAY" key="IG-TIFLOW-ERP-109" title="PS abgebende LEI: E-Rezept abrufen - QES prüfen" version="0">
     <meta lockversion="false" />
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung" />
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das PS der abgebenden LEI KANN im Anwendungsfall "E-Rezept abrufen" die QES des E-Rezepts prüfen. Zum Prüfen der QES des E-Rezepts ist die Operation POST //Konnektorservice mit 
     <ul>
-    <li>Header "SOAPAction: \"http://ws.gematik.de/conn/SignatureService/v7.4#VerifyDocument\"" </li>
+    <li>Header "SOAPAction: \"http://ws.gematik.de/conn/SignatureService/v7.4#VerifyDocument\"" </li>
     <li>PKCS#7-Datei in SignatureObject</li>
     </ul>
     auszuführen.
 </requirement>
 
-<p>Für weitere Informationen siehe Operation “Qualifizierte Signatur des E-Rezepts prüfen” aus der API-Schnittstelle [E-Rezept API Dokumentation]. Implementierungshinweise zur Signaturprüfung für Primärsysteme sind in [gemILF_PS#4.4.2] beschrieben. Die Außenschnittstelle des Konnektors ist in [gemSpec_Kon#TIP1-A_5034-x Operation VerifyDocument (nonQES und QES)] beschrieben. </p>
+<p>Für weitere Informationen siehe Operation “Qualifizierte Signatur des E-Rezepts prüfen” aus der API-Schnittstelle [E-Rezept API Dokumentation]. Implementierungshinweise zur Signaturprüfung für Primärsysteme sind in [gemILF_PS#4.4.2] beschrieben. Die Außenschnittstelle des Konnektors ist in [gemSpec_Kon#TIP1-A_5034-x Operation VerifyDocument (nonQES und QES)] beschrieben.</p>
 
-<p>Als Response liefert der Konnektor einen standardisierten Prüfbericht in einer VerificationReport-Struktur gemäß [OASIS-VR].</p>
+<p>Als Response liefert der Konnektor einen standardisierten Prüfbericht in einer VerificationReport-Struktur gemäß [OASIS-VR].</p>
 
 <p>Für die weitere Verarbeitung wird das E-Rezept-Bundle aus der PKCS#7-Datei verwendet.</p>
 
@@ -387,7 +387,7 @@ Für den Flowtype “200” und “209” wird im Response Bundle eine Consent R
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 15, 2026 11:28+0000">2026-05-15</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 19, 2026 15:30+0000">2026-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

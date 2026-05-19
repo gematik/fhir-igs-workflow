@@ -13,31 +13,79 @@ Version 1.0.0-draft - ci-build
 
 Ein Clientsystem nutzen für die Kommunikation zu den Diensten der TI TLS-Verbindungen. Es verbindet sich bspw. mit dem TI-Flow-Fachdienst, PoPP-Service oder FHIR-VZD.
 
-Das Clientsystem des TI-Flow-Fachdienstes MUSS für die Kommunikation mit dem TI-Flow-Fachdienst die Endpunkte der Schnittstellen gemäß [gemSpec_FD_eRP#5.1 Servicelokalisierung] nutzen.
+funkt. Eignung: Konformitätsbestätigung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Test Produkt/FADas Clientsystem des TI-Flow-Fachdienstes MUSS für die Kommunikation mit dem TI-Flow-Fachdienst die Endpunkte der Schnittstellen gemäß [gemSpec_FD_eRP#5.1 Servicelokalisierung] nutzen.
 Die Abfrage beim Namensdienst der TI erfolgt über einen DNS-Lookup. Hierfür muss der Konnektor als DNS-Resolver konfiguriert sein. 
 
-Das Clientsystem des TI-Flow-Fachdienstes MUSS für die Kommunikation mit dem TI-Flow-Fachdienst die URL mit dem Port 443 bilden.
+funkt. Eignung: Konformitätsbestätigung
 
-Das Clientsystem des TI-Flow-Fachdienstes MUSS für die Anwendungsfälle der Anwendung E-Rezept mit den Diensten der TI ausschließlich über TLS kommunizieren.
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Test Produkt/FADas Clientsystem des TI-Flow-Fachdienstes MUSS für die Kommunikation mit dem TI-Flow-Fachdienst die URL mit dem Port 443 bilden.
+
+funkt. Eignung: Konformitätsbestätigung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Test Produkt/FADas Clientsystem des TI-Flow-Fachdienstes MUSS für die Anwendungsfälle der Anwendung E-Rezept mit den Diensten der TI ausschließlich über TLS kommunizieren.
 Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 
-Das Clientsystem des TI-Flow-Fachdienst MUSS bei jedem Verbindungsaufbau zum TI-Flow-Fachdienst diesen anhand seines TLS-Zertifikats authentifizieren und MUSS die Verbindungen ablehnen, falls die Authentifizierung fehlschlägt.
+funkt. Eignung: Konformitätsbestätigung
 
-Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle HTTP-Requests an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header user-agent gemäß [RFC7231] mit <Produktname>/<Produktversion> <Herstellername>/<client_id> mit
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Test Produkt/FADas Clientsystem des TI-Flow-Fachdienst MUSS bei jedem Verbindungsaufbau zum TI-Flow-Fachdienst diesen anhand seines TLS-Zertifikats authentifizieren und MUSS die Verbindungen ablehnen, falls die Authentifizierung fehlschlägt.
+
+funkt. Eignung: Konformitätsbestätigung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Test Produkt/FA
+
+funkt. Eignung: Test Produkt/FADas Clientsystem des TI-Flow-Fachdienstes MUSS in alle HTTP-Requests an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header user-agent gemäß [RFC7231] mit <Produktname>/<Produktversion> <Herstellername>/<client_id> mit
 * <Produktname> gemäß eigener Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\-\.]
 * <Produktversion> gemäß Produktidentifikation
 * <Herstellername> gemäß eigener Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\-\.] 
 * <client_id> gemäß Registrierung bei der gematik
 des Clientsystems befüllen.
 
-Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-erp-user" mit dem Wert
+funkt. Eignung: Konformitätsbestätigung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Test Produkt/FA
+
+funkt. Eignung: Test Produkt/FADas Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-erp-user" mit dem Wert
 * "l" (kleines L) als PS eines Leistungserbringers
 * "k" als CS eines Kostenträgers
 * "v" als E-Rezept-FdV oder
 * "n" als NCPeH-FD
 einfügen.
 
-Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-erp-resource" mit dem Wert gemäß der angefragten Ressource im FHIR-Request einfügen.
+funkt. Eignung: Konformitätsbestätigung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Test Produkt/FA
+
+funkt. Eignung: Test Produkt/FADas Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-erp-resource" mit dem Wert gemäß der angefragten Ressource im FHIR-Request einfügen.
 
 * API / Operation: Query API: AuditEvent
   * X-erp-resource: AuditEvent
@@ -66,7 +114,15 @@ Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-F
 
 Die Kommunikation zum TI-Flow-Fachdienst wird zusätzlich zu TLS über einen sicheren Kanal (Verschlüsselung auf Http-Ebene) zwischen dem PS und der Vertrauenswürdigen Ausführungsumgebung (VAU) im TI-Flow-Fachdienst gesichert.
 
-Das Clientsystem des TI-Flow-Fachdienstes MUSS für alle Anfragen an den TI-Flow-Fachdienst für
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: Herstellererklärung
+
+Sich.techn. Eignung: Produktgutachten
+
+funkt. Eignung: Test Produkt/FADas Clientsystem des TI-Flow-Fachdienstes MUSS für alle Anfragen an den TI-Flow-Fachdienst für
 * die Abfrage des capability statement
 * den Zugriff auf Task, MedicationDispense, Communication, Consent, Prescription, AuditEvent oder access-permission Ressourcen
 das Kommunikationsprotokoll zwischen VAU des TI-Flow-Fachdienstes und Clientsysteme des TI-Flow-Fachdienstes in der Rolle TI-Flow-Client nutzen.

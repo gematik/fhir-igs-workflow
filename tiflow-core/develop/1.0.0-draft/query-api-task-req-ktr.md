@@ -15,7 +15,7 @@ Diese Seite beschreibt Anforderungen an das Clientsystem Kostenträger zur Nutzu
 
 ### Recovery Secret
 
-Das Clientsystem Kostenträger MUSS im Anwendungsfall "Recovery Secret" für das E-Rezept die HTTP-Operation GET /Task/<id>/ mit
+funkt. Eignung: HerstellererklärungDas Clientsystem Kostenträger MUSS im Anwendungsfall "Recovery Secret" für das E-Rezept die HTTP-Operation GET /Task/<id>/ mit
 * Task-ID in URL <id> 
 * AccessCode in URL-Parameter ?ac=
 ausführen.
@@ -25,7 +25,7 @@ Mit diesem Anwendungsfall kann ein Clientsystem eines Kostenträgers die Quittun
 
 Der Anwendungsfall kann bei Bedarf wiederholt werden.
 
-Das Clientsystem Kostenträger MUSS im Anwendungsfall "Quittung erneut abrufen" für das E-Rezept die HTTP-Operation GET /Task/<id>/ mit
+funkt. Eignung: HerstellererklärungDas Clientsystem Kostenträger MUSS im Anwendungsfall "Quittung erneut abrufen" für das E-Rezept die HTTP-Operation GET /Task/<id>/ mit
 * Task-ID in URL <id> 
 * Geheimnis in URL-Parameter ?secret=
 ausführen.

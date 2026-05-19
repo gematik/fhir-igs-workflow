@@ -295,8 +295,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_28115 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-225" title="TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="1">
     <meta lockversion="false" />
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest" />
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß TAB_eRPFD_028 erzeugen.
 
@@ -448,7 +448,7 @@ Falls Profil GEM_ERP_PR_Communication_DiGA: Communication.payload.content
 
 </tbody>
 </table>
-<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_028 Nachrichteninhalt Push Notification</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_028 Nachrichteninhalt Push Notification</figcaption></div>
 
 <p>
 <strong>Definition [medicationName]:</strong><br />
@@ -465,8 +465,8 @@ Ansonsten:<br />
 <!-- A_28116 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-226" title="TI-Flow-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung" version="0">
     <meta lockversion="false" />
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest" />
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification verschlüsseln.
 </requirement>
@@ -476,8 +476,8 @@ Ansonsten:<br />
 <!-- A_28135-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-227" title="TI-Flow-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag" version="1">
     <meta lockversion="false" />
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest" />
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notifcation das Identifier-Feld des äußeren Notification-Objekts (notification.identifier) in Abhängigkeit von der ChannelId wie folgt befüllen:
      <table>
@@ -499,13 +499,13 @@ Ansonsten:<br />
 <h3 id="push-notification-datenstruktur">Push Notification Datenstruktur</h3>
 
 <!-- A_28124 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-228" title="E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-228" title="E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte" version="1">
     <meta lockversion="false" />
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Herstellererklärung" />
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall "Push Notifications" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:
 
@@ -558,7 +558,7 @@ Ansonsten:<br />
 <tr>
 <td>Message</td>
 <td>nein</td>
-<td>Die Nachricht, die an den Versicherten verschickt wird.<br />Nachrichten mit mehr als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (…) ergänzt werden.</td>
+<td>Die Nachricht, die an den Versicherten verschickt wird.<br />Nachrichten mit mehr als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (...) ergänzt werden.</td>
 <td>bis zu 240 Stellen, UTF-8</td>
 <td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen.</td>
 </tr>
@@ -608,7 +608,7 @@ Ansonsten:<br />
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, May 18, 2026 04:37+0000">2026-05-18</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 19, 2026 15:16+0000">2026-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

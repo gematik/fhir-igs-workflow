@@ -288,8 +288,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19273-01 -->
 <requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="1" key="IG-TIFLOW-CORE-150">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Konformitätsbestätigung"></testProcedure>
+  <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden einstellen" für das E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$activate mit
   <ul>
@@ -307,8 +307,8 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
   <!-- A_22503 -->
 <requirement conformance="SHALL NOT" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0" key="IG-TIFLOW-CORE-151">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Herstellererklärung"></testProcedure>
+  <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der verordnenden LEI DARF im Anwendungsfall "E-Rezept durch Verordnenden einstellen" NICHT einen Ausdruck für den Versicherten erstellen, wenn der TI-Flow-Fachdienst im Response der Operation POST /Task/&lt;id&gt;/$activate mit einem Fehler antwortet.
 </requirement>
@@ -319,8 +319,8 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
   <!-- A_22423 -->
 <requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype" version="0" key="IG-TIFLOW-CORE-152">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Herstellererklärung"></testProcedure>
+  <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der verordnenden LEI MUSS sicherstellen, dass für jeden Flowtype ein separater Patientenausdruck erfolgt, sofern der Nutzer Verordnungen mit unterschiedlichen Flowtypes einstellt und für diese Patientenausdrucke erzeugen möchte.
 </requirement>
@@ -328,8 +328,8 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
   <!-- A_19279 -->
 <requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen" version="0" key="IG-TIFLOW-CORE-153">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Herstellererklärung"></testProcedure>
+  <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden einstellen", wenn ein Patientenausdruck erstellt werden soll, einen E-Rezept-Token erstellen.
 </requirement>
@@ -340,8 +340,8 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
   <!-- A_19280 -->
 <requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - Datamatrix-Code erstellen" version="0" key="IG-TIFLOW-CORE-154">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Herstellererklärung"></testProcedure>
+  <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden einstellen", wenn ein Patientenausdruck erstellt werden soll, Datamatrix-Codes erstellen und für den Patientenausdruck verwenden.
 </requirement>
@@ -356,8 +356,8 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
   <!-- A_28862 -->
 <requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept einstellen - Flowtype 162 - Patientenausdruck" version="0" key="IG-TIFLOW-DIGA-29">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Herstellererklärung"></testProcedure>
+  <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der verordnenden LEI MUSS nach dem erfolgreichen Einstellen einer Verordnung mit dem Flowtype 162 einen Patientenausdruck erstellen, sofern der Nutzer in Rücksprache mit dem Versicherten dies nicht aktiv ablehnt.
 </requirement>
@@ -402,7 +402,7 @@ Fehler 403 mit dem OperationOutcome “Task not in status draft but in status re
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 15, 2026 11:21+0000">2026-05-15</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 19, 2026 15:22+0000">2026-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

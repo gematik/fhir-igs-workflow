@@ -14,7 +14,7 @@ Version 1.0.0-draft - ci-build
 
 #### E-Rezept-FdV
 
-Das E-Rezept-FdV MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle
+funkt. Eignung: HerstellererklärungDas E-Rezept-FdV MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle
 * UC 3.13 - Einwilligung einsehen
 * UC 3.14 - Einwilligung erteilen
 * UC 3.15 - Einwilligung widerrufen
@@ -177,7 +177,7 @@ umsetzen.
 **Abbildung: **UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen
 ### Zugriffsberechtigung anzeigen
 
-Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung anzeigen" folgende Informationen auf dem Display anzeigen:
+funkt. Eignung: HerstellererklärungDas E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung anzeigen" folgende Informationen auf dem Display anzeigen:
 * Name des Landes,
 * Gültigkeitsende,
 * Zugriffscode,
@@ -189,7 +189,7 @@ Das E-Rezept-FdV MUSS bei der Anzeige des Zugriffscodes die Lesbarkeit der Zeich
 
 Hinweis: Mit Lesbarkeit ist das Erkennen und Unterscheiden einzelner Buchstaben und Ziffern gemeint, d.h. die Unterscheidbarkeit von beispielsweise von 0 (Null) und O (Großbuchstabe O), sowie I (Großbuchstabe i) und l (Kleinbuchstabe L) und 1 (Ziffer Eins).
 
-Das E-Rezept-FdV MUSS die Gültigkeitsdauer der Zugriffsberechtigung auf dem Display hervorheben, wenn die Gültigkeitsdauer 10 Minuten unterschreitet.
+Das E-Rezept-FdV MUSS die Gültigkeitsdauer der Zugriffsberechtigung auf dem Display hervorheben, wenn die Gültigkeitsdauer 10 Minuten unterschreitet.
 
 Das E-Rezept-FdV MUSS, wenn die Gültigkeit der Zugriffsberechtigung zeitlich abgelaufen ist, den Versicherten informieren.
 

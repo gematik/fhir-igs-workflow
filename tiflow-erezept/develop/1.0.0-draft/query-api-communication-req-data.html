@@ -281,19 +281,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <p>Diese Seite beschreibt Anforderungen an das Datenmodell für den payload der <code class="language-plaintext highlighter-rouge">Communication</code>-Ressource.</p>
 
-<p>#### E-Rezept einer Apotheke zuweisen</p>
+<h4 id="e-rezept-einer-apotheke-zuweisen">E-Rezept einer Apotheke zuweisen</h4>
 
 <!-- A_23876-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-69" title="E-Rezept-FdV: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht" version="0">
     <meta lockversion="false" />
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Herstellererklärung" />
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung" />
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst, das E-Rezept-FdV und das PS der abgebenden LEI MÜSSEN für den Anwendungsfall "E-Rezept einer Apotheke zuweisen" Nachrichten mit der Datenstruktur gemäß der Tabelle in der contentString-Eigenschaft des GEM_ERP_PR_Communication_DispReq-Profils unterstützen. 
      
@@ -429,19 +429,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tr>
 </table>
 
-<p>#### Nachricht durch Abgebenden übermitteln</p>
+<h4 id="nachricht-durch-abgebenden-übermitteln">Nachricht durch Abgebenden übermitteln</h4>
 
 <!-- A_23877-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-70" title="PS abgebende LEI: Nachrichtenaustausch - Nachricht durch Abgebenden übermitteln - Datenstruktur Nachricht" version="1">
     <meta lockversion="false" />
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Herstellererklärung" />
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung" />
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst, das E-Rezept-FdV und das PS der abgebenden LEI MÜSSEN für den Anwendungsfall "Nachricht durch Abgebenden übermitteln" Nachrichten mit der folgenden Datenstruktur in der contentString-Eigenschaft des GEM_ERP_PR_Communication_Reply unterstützen.
      
@@ -518,7 +518,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>inTransportETA</td>
       <td>Falls communicationType = deliveryStatus: nein<br />Ansonsten: verboten</td>
-      <td>Erwartete Ankunft Zeitfenster von – bis</td>
+      <td>Erwartete Ankunft Zeitfenster von - bis</td>
       <td>TIMESTAMP-TIMESTAMP</td>
       <td><pre>{
   "from": 1735736400,
@@ -645,7 +645,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 15, 2026 11:28+0000">2026-05-15</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 19, 2026 15:30+0000">2026-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

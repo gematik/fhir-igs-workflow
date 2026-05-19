@@ -13,7 +13,7 @@ Version 1.0.0-draft - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs | *Version*:1.0.0-draft |
-| Draft as of 2026-05-18 | *Computable Name*:TIFLOWOperationOutcomeDetailsCS |
+| Draft as of 2026-05-19 | *Computable Name*:TIFLOWOperationOutcomeDetailsCS |
 
  
 Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können 
@@ -35,7 +35,7 @@ Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werde
   "name" : "TIFLOWOperationOutcomeDetailsCS",
   "title" : "TIFLOW Operation Outcome Details CS",
   "status" : "draft",
-  "date" : "2026-05-18T04:37:27+00:00",
+  "date" : "2026-05-19T15:16:46+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

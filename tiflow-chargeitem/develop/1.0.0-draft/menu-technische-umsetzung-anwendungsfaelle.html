@@ -291,8 +291,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19443 -->
 <requirement conformance="SHALL" title="E-Rezept-FdV: TIFlow-CHRG - verpflichtende Anwendungsfälle" version="0" key="IG-TIFLOW-CHRG-33">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung"></testProcedure>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle
     <ul>
@@ -312,8 +312,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <requirement conformance="SHALL" title="PS abgebende LEI: TIFlow-CHRG - verpflichtende Anwendungsfälle" version="0" key="IG-TIFLOW-CHRG-34">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung"></testProcedure>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das PS der abgebenden LEI MUSS für die Umsetzung der Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle
     <ul>
@@ -592,7 +592,7 @@ und kann sie anzeigen, exportieren oder weiterleiten.</p>
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
       <td style="padding: 5px;"><ul>
-  <li><a name="l1181">​</a><a href="./query-api-chargeitem.html#get-chargeitem-liste">Abrechnungsinformation abrufen</a></li>
+  <li><a name="l1183">​</a><a href="./query-api-chargeitem.html#get-chargeitem-liste">Abrechnungsinformation abrufen</a></li>
 </ul>
 </td>
     </tr>
@@ -666,7 +666,7 @@ Ziel-App weiter (z. B. Service-App der Krankenversicherung, Service-App der Beih
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
       <td style="padding: 5px;"><ul>
-  <li><a name="l1389">​</a><a href="./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformationen-exportieren">Abrechnungsinformation weitergeben</a></li>
+  <li><a name="l1391">​</a><a href="./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformationen-exportieren">Abrechnungsinformation weitergeben</a></li>
 </ul>
 </td>
     </tr>
@@ -740,7 +740,7 @@ gem-ig-badge-bg-green">
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
       <td style="padding: 5px;"><ul>
-  <li><a name="l1571">​</a><a href="./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformationen-markieren">Abrechnungsinformation markieren</a></li>
+  <li><a name="l1573">​</a><a href="./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformationen-markieren">Abrechnungsinformation markieren</a></li>
 </ul>
 </td>
     </tr>
@@ -815,7 +815,7 @@ gem-ig-badge-bg-green">
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
       <td style="padding: 5px;"><ul>
-  <li><a name="l1772">​</a><a href="./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformationen-löschen">Abrechnungsinformation löschen</a></li>
+  <li><a name="l1774">​</a><a href="./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformationen-löschen">Abrechnungsinformation löschen</a></li>
 </ul>
 </td>
     </tr>
@@ -888,7 +888,7 @@ gem-ig-badge-bg-green">
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
       <td style="padding: 5px;"><ul>
-  <li><a name="l1971">​</a><a href="./query-api-communication.html#abrechnungsinformationen-löschen">Nachricht an Apotheke übermitteln</a></li>
+  <li><a name="l1973">​</a><a href="./query-api-communication.html#abrechnungsinformationen-löschen">Nachricht an Apotheke übermitteln</a></li>
 </ul>
 </td>
     </tr>
@@ -974,7 +974,7 @@ Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnung
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
       <td style="padding: 5px;"><ul>
-  <li><a name="l2209">​</a><a href="./query-api-chargeitem.html#post-chargeitem-bereitstellen">Abrechnungsinformation bereitstellen</a></li>
+  <li><a name="l2211">​</a><a href="./query-api-chargeitem.html#post-chargeitem-bereitstellen">Abrechnungsinformation bereitstellen</a></li>
 </ul>
 </td>
     </tr>
@@ -1050,7 +1050,7 @@ wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode 
     <tr>
       <th style="padding: 5px; width: 23rem;">Schnittstelle des E-Rezept-Fachdienst</th>
       <td style="padding: 5px;"><ul>
-  <li><a name="l2476">​</a><a href="./query-api-chargeitem.html#get-chargeitemid-details">Abrechnungsinformation abrufen</a></li>
+  <li><a name="l2478">​</a><a href="./query-api-chargeitem.html#get-chargeitemid-details">Abrechnungsinformation abrufen</a></li>
 </ul>
 </td>
     </tr>
@@ -1204,7 +1204,7 @@ Der zuvor gespeicherte Datensatz wird überschrieben.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 15, 2026 11:23+0000">2026-05-15</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 19, 2026 15:25+0000">2026-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

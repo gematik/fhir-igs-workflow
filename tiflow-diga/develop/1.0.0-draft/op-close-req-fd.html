@@ -289,8 +289,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19231-02 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Prüfung Secret" version="1" key="IG-TIFLOW-CORE-60">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close das im URL-Parameter "?secret=..." übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:    
     <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
@@ -321,8 +321,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19231-02 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Prüfung Status" version="1" key="IG-TIFLOW-CORE-61">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "in-progress" ist, die Operation mit dem folgenden Fehler:
     <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
@@ -353,8 +353,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19248-05 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="1" key="IG-TIFLOW-CORE-62">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close das im HTTP-Body des Requests enthaltene Parameters-Objekt gegen das Profil https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input prüfen, insbesondere bei der darin enthaltenen MedicationDispense:
     <ul>
@@ -391,17 +391,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_28666 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - MedicationDispense speichern" version="1" key="IG-TIFLOW-CORE-63">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS&nbsp;beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close eine oder mehrere vom Client bereitgestellten MedicationDispenses, sowie die in&nbsp;MedicationDispense.medication&nbsp;referenzierten Medications, speichern.
+    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close eine oder mehrere vom Client bereitgestellten MedicationDispenses, sowie die in MedicationDispense.medication referenzierten Medications, speichern.
 </requirement>
 
   <!-- A_26337 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="1" key="IG-TIFLOW-CORE-64">
     <meta lockversion="true"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern, wenn ein MedicationDispense Objekt im Aufruf übergeben wird.
 </requirement>
@@ -409,17 +409,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_28411 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Telematik-ID der abgebenden LEI speichern" version="0" key="IG-TIFLOW-CORE-65">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close für den referenzierten Task die Telematik-ID aus dem ACCESS_TOKEN in&nbsp;Task.owner&nbsp;speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen können.
+    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close für den referenzierten Task die Telematik-ID aus dem ACCESS_TOKEN in Task.owner speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen können.
 </requirement>
 
   <!-- A_28129 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Push Notification Versicherter" version="0" key="IG-TIFLOW-CORE-66">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.close" und den Versicherten mit der KVNR = Task.for initiieren.
 </requirement>
@@ -427,8 +427,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19232 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Status beenden" version="0" key="IG-TIFLOW-CORE-67">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS die zulässige Beendigung eines Tasks mittels /Task/&lt;id&gt;/$close-Operation im StatusTask.status = "completed" vollziehen, damit der Workflow für den Versicherten als beendet und die Verordnung somit als eingelöst dargestellt wird.
 </requirement>
@@ -436,8 +436,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19233-06 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Quittung erstellen" version="0" key="IG-TIFLOW-CORE-68">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close ein Quittungsbundle gemäß des FHIR-Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle mit folgenden Informationen erstellen:
     <ul>
@@ -457,8 +457,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_22919 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="1" key="IG-TIFLOW-CORE-69">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"></testProcedure>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS, falls keine OCSP-Response für das Signaturzertifikat der Quittung vorliegt bzw. die letzte vorliegende OCSP-Response älter als 24h ist, die Operation mit dem folgenden Fehler:
     <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
@@ -491,8 +491,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- A_19230-01 -->
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung" version="1" key="IG-TIFLOW-DIGA-3">
   <meta lockversion="false"/>
-  <actor name="TI-Flow_FD">
-    <testProcedure id="Produktgutachten"></testProcedure>
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&lt;id&lt; die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
   <ul>
@@ -518,7 +518,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist&nbsp;nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
     abbrechen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
@@ -529,8 +529,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>  <!-- A_26003-01 --></p>
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense" version="1" key="IG-TIFLOW-DIGA-4">
   <meta lockversion="false"/>
-  <actor name="TI-Flow_FD">
-    <testProcedure id="Produkttest"></testProcedure>
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&lt;id&gt; sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht und anderenfalls die Operation mit dem folgenden Fehler:
   <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
@@ -598,7 +598,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 15, 2026 11:21+0000">2026-05-15</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 19, 2026 15:22+0000">2026-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

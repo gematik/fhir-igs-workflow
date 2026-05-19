@@ -13,7 +13,7 @@ Für Endpunkte, die eine Menge an FHIR-Objekten abfragen gelten einheitliche Vor
 
 Zu unterscheiden sind drei verschiedene Mechanismen: Sortierung, Filterung und Pagination. Die angefragten Funktionen sind jeweils auf einen Konkreten Endpunkt anzuwenden. Es ist möglich diese Funktionen miteinander zu kombinieren, sodass z.B. eine Anfrage sortiert und gefiltert wird.
 
-Der TI-Flow-Fachdienst MUSS das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten auf folgende Endpunkte anwenden: Tabelle #: TAB_eRPFD_021 Endpunkte des TI-Flow-Fachdienst, die das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten bereitstellen müssen
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten auf folgende Endpunkte anwenden: Tabelle #: TAB_eRPFD_021 Endpunkte des TI-Flow-Fachdienst, die das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten bereitstellen müssen
 
 | | | |
 | :--- | :--- | :--- |
@@ -31,7 +31,7 @@ Clients erhalten die Möglichkeit die Rückgabe der Elemente im FHIR-Bundle zu s
 
 Für jeden dieser Ressourcen gelten dann Kriterien, nach denen sortiert und gefiltert werden kann.
 
-Der TI-Flow-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten den FHIR-Suchparameter "_sort" unterstützen und für die folgenden Ressourcen entsprechende Such- und Sortierkriterien bereitstellen:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten den FHIR-Suchparameter "_sort" unterstützen und für die folgenden Ressourcen entsprechende Such- und Sortierkriterien bereitstellen:
 
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |
@@ -60,9 +60,9 @@ Hinweis: Standard Such- und Sortierparametern in FHIR ist ein “_” vorangeste
 
 Es können mehrere Sortierkriterien angegeben werden. Bei der Sortierung sortiert der TI-Flow-Fachdienst dann zuerst nach dem ersten, dann zweiten, usw. Kriterium.
 
-Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierung nach mehreren Kriterien ermöglichen, indem entsprechend der Reihenfolge der angegebenen Kriterien sortiert wird.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierung nach mehreren Kriterien ermöglichen, indem entsprechend der Reihenfolge der angegebenen Kriterien sortiert wird.
 
-Der TI-Flow-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Ressourcen nach folgenden Kriterien aufsteigend sortieren, wenn der Client keine Sortierung im Request angefragt hat:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Ressourcen nach folgenden Kriterien aufsteigend sortieren, wenn der Client keine Sortierung im Request angefragt hat:
 
 | | |
 | :--- | :--- |
@@ -76,12 +76,12 @@ Der TI-Flow-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe
 
 Standardmäßig werden die Einträge aufsteigend sortiert. Wenn diese Reihenfolge umgekehrt werden soll, kann ein “-“ vor das Sortierkriterium gestellt werden.
 
-Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierreihenfolge umkehren, wenn der Client das Präfix "-" am Sortierkriterium angibt.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierreihenfolge umkehren, wenn der Client das Präfix "-" am Sortierkriterium angibt.
 Clients können am TI-Flow-Fachdienst Anfragen stellen, dessen Ergebnismenge nach bestimmten Kriterien reduziert (gefiltert) werden soll.
 
 Für den Datentyp “date” sollen folgende Filterkriterien als URL-Parameter unterstützt werden:
 
-Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Filteroperatoren für Suchkriterien anbieten, deren Datentyp "date" ist:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Filteroperatoren für Suchkriterien anbieten, deren Datentyp "date" ist:
 
 | | | |
 | :--- | :--- | :--- |
@@ -112,7 +112,7 @@ Falls die Link Relations nicht zu plausiblen Ergebnissen führen (z.B. wenn es k
 
 Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung und Sortierung, diese müssen bei der Erzeugung der Link Relations erhalten bleiben.
 
-Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR ermöglichen und folgende URL-Parameter unterstützen:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR ermöglichen und folgende URL-Parameter unterstützen:
 
 | | |
 | :--- | :--- |
@@ -121,7 +121,7 @@ Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-O
 
 **Tabelle: **Paginierungsparameter für die Handhabung der Rückgabe von mehreren FHIR-Objekten
 
-Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Link Relations unter Bundle.link generieren, sofern diese erzeugt werden können:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Link Relations unter Bundle.link generieren, sofern diese erzeugt werden können:
 
 | | |
 | :--- | :--- |
@@ -130,7 +130,7 @@ Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-O
 
 **Tabelle: **Link Relations für die Handhabung der Rückgabe von mehreren FHIR-Objekten
 
-Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR für folgende Endpunkte mit den jeweiligen Parametern unterstützen
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR für folgende Endpunkte mit den jeweiligen Parametern unterstützen
 
 | | | | |
 | :--- | :--- | :--- | :--- |
@@ -142,5 +142,5 @@ Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-O
 
 **Tabelle: **Endpunkte mit Paginierung
 
-Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten und Generierung von URLs der Link Relations die vom Client angegebenen Filter- und Sortierkriterien verwerten und erhalten.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten und Generierung von URLs der Link Relations die vom Client angegebenen Filter- und Sortierkriterien verwerten und erhalten.
 

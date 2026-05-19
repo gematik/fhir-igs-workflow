@@ -13,5 +13,5 @@ Version 1.0.0-draft - ci-build
 
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Device-Query-Endpunkt.
 
-Der TI-Flow-Fachdienst MUSS über die http-Operation GET /Device dem aufrufenden Clientsystem eine statische Auskunft gemäß der Profilierung der Device-Ressource bereitstellen.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS über die http-Operation GET /Device dem aufrufenden Clientsystem eine statische Auskunft gemäß der Profilierung der Device-Ressource bereitstellen.
 

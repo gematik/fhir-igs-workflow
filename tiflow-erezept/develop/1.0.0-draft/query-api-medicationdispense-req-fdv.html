@@ -294,8 +294,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- A_19345 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-339" title="E-Rezept-FdV: Abgabeinformationen abfragen - MedicationDispense abrufen" version="1">
     <meta lockversion="false" />
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" die HTTP-Operation GET /MedicationDispense mit
     <ul>
@@ -310,7 +310,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Die abgebende LEI stellt die Abgabeinformationen entweder vor dem Abschluss oder beim Abschluss des Workflows zum E-Rezept ein.</p>
 
-<p>Werden die Abgabeinformationen vor dem Abschluss der Workflows eingestellt, dann ändert sich der Status des Workflows nicht (Task.status=in-progress). Im Task ist der Zeitpunkt des Einstellens unter Task.extension:lastMedicationDispense gespeichert. Solange der Workflow nicht abgeschlossen ist, können die Abgabeinformationen gelöscht oder geändert werden. Hierbei wird der Zeitpunkt des Einstellens jeweils gelöscht bzw. neu gesetzt.</p>
+<p>Werden die Abgabeinformationen vor dem Abschluss der Workflows eingestellt, dann ändert sich der Status des Workflows nicht (Task.status=in-progress). Im Task ist der Zeitpunkt des Einstellens unter Task.extension:lastMedicationDispense gespeichert. Solange der Workflow nicht abgeschlossen ist, können die Abgabeinformationen gelöscht oder geändert werden. Hierbei wird der Zeitpunkt des Einstellens jeweils gelöscht bzw. neu gesetzt.</p>
 
 <p>Mit dem Abschluss des Workflows ist Task.status=complete. Ein Ändern der Abgabeinformationen ist danach nicht mehr möglich.</p>
 
@@ -363,7 +363,7 @@ Der Abruf aller MedicationDispense-Objekte zu einer Verordnung erfolgt über die
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 15, 2026 11:28+0000">2026-05-15</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 19, 2026 15:30+0000">2026-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

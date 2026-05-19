@@ -16,7 +16,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 #### PS verordnende LEI
 
-Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von E-Rezepten für Arzneimittel die Anwendungsfälle
+funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von E-Rezepten für Arzneimittel die Anwendungsfälle
 * UC 2.1 - E-Rezepte erzeugen
 * E-Rezept qualifiziert signieren
 * UC 2.3 - E-Rezept einstellen
@@ -24,7 +24,7 @@ Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von E-Rezepte
 umsetzen.
 #### E-Rezept-FdV
 
-Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneimittel die Anwendungsfälle
+funkt. Eignung: HerstellererklärungDas E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneimittel die Anwendungsfälle
 * UC 3.1 - E-Rezepte durch Versicherten abrufen
 * UC 3.2 - E-Rezept durch Versicherten löschen
 * UC 3.3 - Nachricht durch Versicherten übermitteln
@@ -34,7 +34,7 @@ Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneim
 umsetzen.
 #### PS abgebende LEI
 
-Das PS der abgebenden LEI MUSS für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel die Anwendungsfälle
+funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI MUSS für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel die Anwendungsfälle
 * UC 4.15 - Einlösbare E-Rezepte durch Abgebenden abrufen
 * UC 4.1 - E-Rezept durch Abgebenden abrufen
 * UC 4.2 - E-Rezept durch Abgebenden zurückgeben
@@ -48,7 +48,7 @@ Das PS der abgebenden LEI MUSS für die Umsetzung der Belieferung von E-Rezepten
 * UC 4.9 - Nachricht durch Abgebenden löschen
 umsetzen.
 
-Das PS der abgebenden LEI SOLL für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel den Anwendungsfall
+funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI SOLL für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel den Anwendungsfall
 * UC 4.16 - Dispensierinformationen bereitstellen
 umsetzen.
 ### Technische Use Cases

@@ -16,7 +16,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios “Abrechn
 
 #### E-Rezept-FdV
 
-Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle
+funkt. Eignung: HerstellererklärungDas E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle
 * UC 3.14 - Einwilligung durch Versicherten erteilen
 * UC 3.15 - Einwilligung durch Versicherten widerrufen
 * UC 3.13 - Einwilligungen durch Versicherten einsehen
@@ -28,7 +28,7 @@ Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Abrechnungsinformatione
 umsetzen.
 #### PS abgebende LEI
 
-Das PS der abgebenden LEI MUSS für die Umsetzung der Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle
+funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI MUSS für die Umsetzung der Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle
 * UC 4.5 - Abgabedatensatz durch Abgebenden signieren
 * UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen
 * UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen

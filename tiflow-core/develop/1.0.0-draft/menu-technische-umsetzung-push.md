@@ -17,7 +17,7 @@ Der TI-Flow-Fachdienst übernimmt die Rolle „Fachdienst“. Er verwaltet FdV-I
 
 Der TI-Flow-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Notifications wie in [OpenAPI_PushGateway] beschrieben. Der Nachrichteninhalt, auf den in diesem Kapitel verwiesen wird, ist der Inhalt des Ciphertexts.
 
-Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß TAB_eRPFD_028 erzeugen.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß TAB_eRPFD_028 erzeugen.
 
 | | | | | | |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -34,7 +34,7 @@ Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemä�
 | erp.eu.prescription.redeem | Task.identifier.PrescriptionID | TaskId | KBV_PR_ERP_Bundle.entry.[medicationName] | GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString | - |
 | erp.eu.prescription.close | Task.identifier.PrescriptionID | TaskId | GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter[rxDispensation].[medication].[medicationName] | GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter.part[practionerData].name.text | - |
 
-**Tabelle: **TAB_eRPFD_028 Nachrichteninhalt Push Notification
+**Tabelle: **TAB_eRPFD_028 Nachrichteninhalt Push Notification
 
  **Definition [medicationName]:**
  Falls medication dem Profil "KBV_PR_ERP_Medication_Ingredient" entspricht:
@@ -42,10 +42,10 @@ Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemä�
  Ansonsten:
  `Medication.code.text` 
 
-Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification verschlüsseln.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification verschlüsseln.
 Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push Notification senden - Nachricht verschlüsseln` beschrieben.
 
-Der TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notifcation das Identifier-Feld des äußeren Notification-Objekts (notification.identifier) in Abhängigkeit von der ChannelId wie folgt befüllen:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notifcation das Identifier-Feld des äußeren Notification-Objekts (notification.identifier) in Abhängigkeit von der ChannelId wie folgt befüllen:
 
 * ChannelId: erp.communication.new
   * Identifier.Feld: Identifier des zugehörigen Communication (Communication.id)
@@ -54,7 +54,9 @@ Der TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notifcation das Identifier
 
 ### Push Notification Datenstruktur
 
-Der TI-Flow-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall "Push Notifications" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall "Push Notifications" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:
 
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |
@@ -63,7 +65,7 @@ Der TI-Flow-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall "Pus
 | IdentifierType | ja | Der Art Identifier, der mitgeschickt wird. | bis zu 20 Stellen, UTF-8 | TaskId |
 | Product | ja | Der Name des verordneten bzw. abgegebenen Produkts (Medikament oder DiGA). | bis zu 100 Stellen, UTF-8 | Sumatriptan-1a Pharma 100 mg Tabletten |
 | ActorName | ja | Der Name des Akteurs. Das kann zum Beispiel der Name der Apotheke oder des Kostenträgers sein. | bis zu 100 Stellen, UTF-8 | Meine Apotheke |
-| Message | nein | Die Nachricht, die an den Versicherten verschickt wird.Nachrichten mit mehr als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (…) ergänzt werden. | bis zu 240 Stellen, UTF-8 | Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen. |
+| Message | nein | Die Nachricht, die an den Versicherten verschickt wird.Nachrichten mit mehr als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (...) ergänzt werden. | bis zu 240 Stellen, UTF-8 | Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen. |
 
 **Tabelle: **TAB_eRp_DM_004 Push Notification Datenstruktur Nachrichteninhalte
 

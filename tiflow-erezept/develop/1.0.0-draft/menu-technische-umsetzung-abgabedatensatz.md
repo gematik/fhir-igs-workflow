@@ -18,10 +18,10 @@ Der Abgabedatensatz dient der Abrechnung. Demgegenüber stehen die Dispensierinf
 
 Für die Signatur des Abgabedatensatzes wird der Konnektor verwendet.
 
-Das PS der abgebenden LEI MUSS beim Signieren des Abgabedatensatzes mit einer QES die Signaturoperation des Konnektors mit eingebetteter OCSP-Antwort (IncludeRevocationInfo = true) ausführen.
+funkt. Eignung: Test Produkt/FADas PS der abgebenden LEI MUSS beim Signieren des Abgabedatensatzes mit einer QES die Signaturoperation des Konnektors mit eingebetteter OCSP-Antwort (IncludeRevocationInfo = true) ausführen.
 
-Das PS der abgebenden LEI MUSS die Signatur des Abgabedatensatzes mittels Einzelsignatur, Stapelsignatur und Komfortsignatur unterstützen.
+funkt. Eignung: Test Produkt/FADas PS der abgebenden LEI MUSS die Signatur des Abgabedatensatzes mittels Einzelsignatur, Stapelsignatur und Komfortsignatur unterstützen.
 
-Das PS der abgebenden LEI MUSS beim Signieren eines Abgabedatensatzes mit einer non-QES vor dem Signieren prüfen, dass die für die nonQES verwendet SMC-B gültig ist.
+funkt. Eignung: Test Produkt/FADas PS der abgebenden LEI MUSS beim Signieren eines Abgabedatensatzes mit einer non-QES vor dem Signieren prüfen, dass die für die nonQES verwendet SMC-B gültig ist.
 Hinweis: Die SMC-B ist gültig, wenn ein gültiger ACCESS_TOKEN für den Zugriff auf den TI-Flow-Fachdienst auf Basis dieser SMC-B vorliegt.
 

@@ -18,14 +18,14 @@ Der TI-Flow-Fachdienst nutzt den OAuth 2.0 Client Credentials Flow nach [OAuth 2
 
 Über einen organisatorischen Prozess müssen Client Credentials beim BfArM angefragt werden, welche zur Authentifizierung des TI-Flow-Fachdienst ggü. dem BfArM Webdienst genutzt werden.
 
-Der Anbieter des TI-Flow-Fachdienst MUSS sich über einen organisatorischen Prozess Client Credentials für den Zugriff auf den BfArM Webdienst beim BfArM registrieren.
+funkt. Eignung: Test Produkt/FADer Anbieter des TI-Flow-Fachdienst MUSS sich über einen organisatorischen Prozess Client Credentials für den Zugriff auf den BfArM Webdienst beim BfArM registrieren.
 Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der durch Angabe der Client Credentials dann einen AccessToken ausstellt. Mit diesem AccessToken ist der TI-Flow-Fachdienst berechtigt Daten am BfArM Webdienst einzustellen.
 
 **Abbildung: **Authentifizierung BfArM Webdienst
 
-Der TI-Flow-Fachdienst MUSS vor dem Zugriff auf den BfArM Webdienst prüfen, ob der zuletzt bezogene AccessToken noch gültig ist und im Falle der Ungültigkeit einen neuen AccessToken über den /ords/rezepte/oauth/token Endpunkt am BfArM Webdienst beziehen.
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS vor dem Zugriff auf den BfArM Webdienst prüfen, ob der zuletzt bezogene AccessToken noch gültig ist und im Falle der Ungültigkeit einen neuen AccessToken über den /ords/rezepte/oauth/token Endpunkt am BfArM Webdienst beziehen.
 
-Der TI-Flow-Fachdienst MUSS zum Beziehen eines AccessTokens den Endpunkt /ords/rezepte/oauth/token am BfArM Webdienst mit folgenden Parametern aufrufen:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS zum Beziehen eines AccessTokens den Endpunkt /ords/rezepte/oauth/token am BfArM Webdienst mit folgenden Parametern aufrufen:
 
 * HTTP-Methode: HTTP-Header
   * POST: Content-Type: application/x-www-form-urlencoded Authorization: Basic <base64(client_id:client_secret)>
@@ -34,27 +34,27 @@ Der TI-Flow-Fachdienst MUSS zum Beziehen eines AccessTokens den Endpunkt /ords/r
 
 , um einen AccessToken für den Zugriff auf den BfArM Webdienst zu beziehen.
 
-Der TI-Flow-Fachdienst MUSS für den Zugriff auf den BfArM Webdienst einen AccessToken für die Authentifizierung im HTTP-Header wie folgt angeben:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS für den Zugriff auf den BfArM Webdienst einen AccessToken für die Authentifizierung im HTTP-Header wie folgt angeben:
 * Authorization: Bearer <AccessToken vom Token Endpunkt> 
 , um auf die Endpunkte des BfArM Webdienstes zugreifen zu können.
 ### Lokalisierung
 
-Der TI-Flow-Fachdienst MUSS einen Konfigurationsparameter BfArM_Domain für die Domain des BfArM Webdienstes verwalten.
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS einen Konfigurationsparameter BfArM_Domain für die Domain des BfArM Webdienstes verwalten.
 Der Defaultwert für den Parameter ist `https://webapps-public.bfarm.de`.
 
-Der TI-Flow-Fachdienst MUSS zur Lokalisierung des BfArM Webdienstes die im DNS für BfArM_Domain eingestellten Informationen aufrufen.
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS zur Lokalisierung des BfArM Webdienstes die im DNS für BfArM_Domain eingestellten Informationen aufrufen.
 ### Bereitstellung digitaler Durchschlag
 
 Nach Abschluss eines Workflows 166 durch Aufrufen der $close Operation erstellt der TI-Flow-Fachdienst den digitalen Durchschlag für den Vorgang des E-T-Rezeptes. Die fachlichen Informationen hierzu sind im Dokument [gemF_eRp_T-Rezept] dokumentiert.
 
-Der TI-Flow-Fachdienst MUSS sicherstellen, dass ausschließlich Daten zu Tasks mit dem Flowtype 166 für den Webdienst des BfArM bereitgestellt werden.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS sicherstellen, dass ausschließlich Daten zu Tasks mit dem Flowtype 166 für den Webdienst des BfArM bereitgestellt werden.
 
-Der TI-Flow-Fachdienst MUSS das Übermitteln der Daten an den BfArM Webdienst asynchron zur Bereitstellung der Daten durch die Clientsysteme umsetzen, damit für das bereitstellende Primärsystem der abgebenden Leistungserbringerinstitution keine verlängerte Verarbeitungsdauer der auslösenden Operation auftritt.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS das Übermitteln der Daten an den BfArM Webdienst asynchron zur Bereitstellung der Daten durch die Clientsysteme umsetzen, damit für das bereitstellende Primärsystem der abgebenden Leistungserbringerinstitution keine verlängerte Verarbeitungsdauer der auslösenden Operation auftritt.
 Der digitale Durchschlag zum T-Rezept ist ein Artefakt, welches Informationen zum Vorgang eines E-T-Rezeptes bündelt und gesammelt an das BfArM übermittelt.
 
 Als Datengrundlage für diesen Durchschlag dient der Verordnungsdatensatz samt QES, der Dispensierdatensatz, der Task der Verordnung und Daten der Apotheke aus dem FHIR-VZD. Als Kriterium für die Suche nach Apothekendaten im FHIR-VZD wird die Telematik-ID der Apotheke genutzt.
 
-Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept die Daten der abgebenden Apotheke aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept die Daten der abgebenden Apotheke aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird:
 * Abfrage der Ressource "HealthcareService", 
 * HealthcareServices, deren Organisation aktiv sind, 
 * HealthcareServices, deren origin tag = ldap ist, 
@@ -79,9 +79,9 @@ Als Antwort erhält der TI-Flow-Fachdienst mit dieser Anfrage genau drei Ressour
 
 Anschließend erstellt der TI-Flow-Fachdienst den digitalen Durchschlag für den BfArM Webdienst. Dieser basiert auf einem definierten FHIR-Profil.
 
-Der TI-Flow-Fachdienst MUSS beim Bereitstellen eines digitalen Durchschlag für ein T-Rezept an den BfArM Webdienst einen Datensatz nach dem Profil ERP_TPrescription_CarbonCopy erzeugen.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Bereitstellen eines digitalen Durchschlag für ein T-Rezept an den BfArM Webdienst einen Datensatz nach dem Profil ERP_TPrescription_CarbonCopy erzeugen.
 
-Der TI-Flow-Fachdienst MUSS den Anwendungsfall "Übertragen des digitalen Durchschlags" gemäß Tabelle TAB_eRPFD_029 ausführen.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS den Anwendungsfall "Übertragen des digitalen Durchschlags" gemäß Tabelle TAB_eRPFD_029 ausführen.
 
 * Name: Auslöser
   * Übertragen des digitalen Durchschlags: Abschluss eines E-Rezept Workflows mit Flowtype 166 via Aufruf der $close-Operation
@@ -106,7 +106,7 @@ Der TI-Flow-Fachdienst MUSS den Anwendungsfall "Übertragen des digitalen Durchs
 
 **Tabelle: **title
 
-Der TI-Flow-Fachdienst MUSS für das Übertragen eines digitalen Durchschlags den BfArM Webdienst RESTful wie folgt aufrufen:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS für das Übertragen eines digitalen Durchschlags den BfArM Webdienst RESTful wie folgt aufrufen:
 
 * HTTP-Parameter: Methode
   * Wert: POST
@@ -129,13 +129,13 @@ Bei der Suche nach Apothekendaten basierend auf der Telematik-lD besteht die Mö
 1. Der Datensatz wird an den BfArM-Webdienst übertragen.
 1. Sollte der übermittelte Datensatz durch das BfArM untersucht werden müssen, erfolgt eine bilaterale Abstimmung zwischen gematik und BfArM zur Klärung des Sachverhalts.
 
-Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept, wenn die  Daten der abgebenden Apotheke nicht aus dem Verzeichnisdienst ermittelt werden können,
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept, wenn die Daten der abgebenden Apotheke nicht aus dem Verzeichnisdienst ermittelt werden können,
 * die Telematik-ID der Apotheke aus den Dispensierinformationen und
 * den Wert für organizationName aus dem ACCESS_TOKEN der Anfrage bzw. falls organizationName = NULL im ACCESS_TOKEN den Wert "unbekannt" als Name der Apotheke
 in den digitalen Durchschlag übernehmen.
 Dieses Vorgehen stellt sicher, dass die Übertragung an das T-Register nicht aufgrund eines fehlenden FHIR-VZD-Eintrags blockiert wird und gleichzeitig die Nachvollziehbarkeit über die Telematik-ID gewährleistet bleibt.
 
-Der TI-Flow-Fachdienst MUSS die Datenübermittlung an den BfArM Webdienst für mindestens eine Minute unterbrechen, wenn ein Aufruf mit dem Statuscode 500 oder 429 scheitert. Bei anhaltenden Problemen MUSS der TI-Flow-Fachdienst einen exponentiellen Backoff-Mechanismus anwenden, der die Wartezeit zwischen den Versuchen sukzessive verdoppelt, um die Systembelastung zu minimieren.
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS die Datenübermittlung an den BfArM Webdienst für mindestens eine Minute unterbrechen, wenn ein Aufruf mit dem Statuscode 500 oder 429 scheitert. Bei anhaltenden Problemen MUSS der TI-Flow-Fachdienst einen exponentiellen Backoff-Mechanismus anwenden, der die Wartezeit zwischen den Versuchen sukzessive verdoppelt, um die Systembelastung zu minimieren.
 
-Der TI-Flow-Fachdienst MUSS den Aufruf am BfArM Webdienst als fehlerhaft kennzeichnen und eine detaillierte Fehlermeldung für interne Analysezwecke protokollieren, wenn der BfArM Webdienst auf einen Operationsaufruf mit einem Statuscode 400 (Bad Request) oder 422 (Unprocessable Entity) reagiert.
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS den Aufruf am BfArM Webdienst als fehlerhaft kennzeichnen und eine detaillierte Fehlermeldung für interne Analysezwecke protokollieren, wenn der BfArM Webdienst auf einen Operationsaufruf mit einem Statuscode 400 (Bad Request) oder 422 (Unprocessable Entity) reagiert.
 

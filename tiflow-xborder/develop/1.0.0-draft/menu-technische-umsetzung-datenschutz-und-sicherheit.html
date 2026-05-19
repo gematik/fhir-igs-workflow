@@ -283,7 +283,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Aus diesem Feature ergeben sich für den TI-Flow-Fachdienst ein neuer direkter Akteur, der NCPeH-FD in Deutschland, der zur Ausführung folgender Anwendungsfälle mit seiner eigenen kryptografischen Identität auf den TI-Flow-Fachdienst zugreift:</p>
 
 <p>Demographische Daten eines Versicherten abrufen
-Damit berechtigte LE-EU die E-Rezepte des Versicherten abrufen können, ist es notwendig, die demografischen Daten des Versicherten zuvor in Deutschland ermitteln zu lassen. Ein LE-EU kann die ermittelten demografischen Versichertendaten mit den auf der eGK oder einem Ausweisdokument abgebildeten Daten vergleichen und so auf Richtigkeit prüfen. Die Ermittlung dieser Daten erfolgt aus einem E-Rezept des Versicherten im TI-Flow-Fachdienst – sofern mindestens eines vorhanden ist.</p>
+Damit berechtigte LE-EU die E-Rezepte des Versicherten abrufen können, ist es notwendig, die demografischen Daten des Versicherten zuvor in Deutschland ermitteln zu lassen. Ein LE-EU kann die ermittelten demografischen Versichertendaten mit den auf der eGK oder einem Ausweisdokument abgebildeten Daten vergleichen und so auf Richtigkeit prüfen. Die Ermittlung dieser Daten erfolgt aus einem E-Rezept des Versicherten im TI-Flow-Fachdienst - sofern mindestens eines vorhanden ist.</p>
 
 <p>Liste der einlösbaren E-Rezepte eines Versicherten abrufen
 Mittels KVNR und Zugriffscode ruft der LE-EU die Liste aller einlösbaren E-Rezepte vom TI-Flow-Fachdienst ab. Dabei liefert der TI-Flow-Fachdienst alle Informationen aus den E-Rezepten an den NCPeH-FD, der zur Erstellung der Liste nur bestimmte Informationen verwendet (mindestens die obligatorischen Angaben gemäß den europäischen Vorgaben). Der TI-Flow-Fachdienst liefert keine Informationen zu E-Rezepten, die in den europäischen Vorgaben ausgeschlossen sind, z.B. Betäubungsmittel und Arzneimittel, die nach ärztlicher Verschreibung oder nach den Vorschriften eines Arzneibuchs für den Versicherten zubereitet werden.</p>
@@ -321,17 +321,17 @@ Beim Einlösen von E-Rezepten erfolgt die Übermittlung der Datensätze über di
       <td>hoch</td>
     </tr>
     <tr>
-      <td>Zugriffscode – Schutzbedarf Vertraulichkeit</td>
+      <td>Zugriffscode - Schutzbedarf Vertraulichkeit</td>
       <td>Der Schutzbedarf für die Vertraulichkeit des Freischaltcodes wird mit „hoch“ bewertet, da die Kenntnis des Zugriffscodes allein nicht für das Einlösen eines E-Rezepts ausreicht.</td>
       <td>nein</td>
       <td>hoch</td>
-      <td>–</td>
+      <td>-</td>
     </tr>
     <tr>
-      <td>Zugriffscode – Schutzbedarf Integrität</td>
+      <td>Zugriffscode - Schutzbedarf Integrität</td>
       <td>Eine Verletzung der Integrität verhindert den Zugriff auf E-Rezepte.</td>
       <td>nein</td>
-      <td>–</td>
+      <td>-</td>
       <td>hoch</td>
     </tr>
   </tbody>
@@ -341,7 +341,7 @@ Beim Einlösen von E-Rezepten erfolgt die Übermittlung der Datensätze über di
 
 <h3 id="authentifizierung-und-autorisierung">Authentifizierung und Autorisierung</h3>
 
-<p>Der NCPeH-FD in Deutschland ist ein neuer (VAU-) Client im E-Rezept-System. Die Authentifizierung des NCPeH-FD in Deutschland findet durch den Authorization Server des TI-Flow-Fachdienstes statt, der einen ACCESS_TOKEN ausstellt, der im TI-Flow-Fachdienst validiert wird. Dabei findet ein länderspezifisches Zertifikat Verwendung – also nicht das Zertifikat des NCPeH-FD in Deutschland, sondern ein Zertifikat, dass den NCPeH-FD im jeweiligen anfragenden EU-Ausland repräsentiert.</p>
+<p>Der NCPeH-FD in Deutschland ist ein neuer (VAU-) Client im E-Rezept-System. Die Authentifizierung des NCPeH-FD in Deutschland findet durch den Authorization Server des TI-Flow-Fachdienstes statt, der einen ACCESS_TOKEN ausstellt, der im TI-Flow-Fachdienst validiert wird. Dabei findet ein länderspezifisches Zertifikat Verwendung - also nicht das Zertifikat des NCPeH-FD in Deutschland, sondern ein Zertifikat, dass den NCPeH-FD im jeweiligen anfragenden EU-Ausland repräsentiert.</p>
 
 <p>Indirekt wirkende Akteure sind Leistungserbringer im EU-Ausland, die über den NCPeH-FD in ihrem Land und den NCPeH-FD in Deutschland Daten aus dem TI-Flow-Fachdienst abrufen können. Die Authentisierung der Leistungserbringer im EU-Ausland erfolgt durch den NCPeH-FD in ihrem Land (vgl. unten Grenzen der Sicherheitsleistung).</p>
 
@@ -390,7 +390,7 @@ Beim Einlösen von E-Rezepten erfolgt die Übermittlung der Datensätze über di
 
 <p>Über die Sicherheit der Systeme der LE-EU kann keine Aussage getroffen werden. Ggf. ist die Situation in den verschiedenen EU-Ländern unterschiedlich.</p>
 
-<p>Aufgrund der Vorgaben der EU können Situationen entstehen, in denen eine Mehrfacheinlösung von E-Rezepten durch den TI-Flow-Fachdienst nicht verhindert werden kann. Dies betrifft insbesondere Situationen in grenznahen Gebieten, in denen ein Versicherter erst eine Einlösung im Ausland initiiert, aber das Medikament noch nicht erhält, er dann das E-Rezept in Deutschland regulär einlöst, um dann zurück in der EU-Apotheke das Medikament nochmals zu erhalten – sofern die EU-Apotheke das Medikament ausgibt, obwohl der TI-Flow-Fachdienst einen Fehler meldet (z.B. um den Umsatz dennoch zu machen). Ein finanzieller Schaden für Apotheken im Ausland würde hierbei nicht entstehen, da Versicherte die im Ausland erhaltenen Medikamente zunächst selbst bezahlen. Kostenträger können einen finanziellen Schaden abwenden, wenn sie durch geeignete Prüfungen eine oben geschilderte mehrfache Einlösung eines E-Rezepts feststellen. Für Apotheker in Deutschland könnte ein finanzieller Schaden entstehen, falls der Kostenträger einem Versicherten die Rechnung für ein im Ausland erhaltenes Medikament erstattet, bevor die Abrechnung des E-Rezepts durch die Apotheke in Deutschland erfolgt – unter der Annahme, dass der Kostenträger in diesem Fall das E-Rezept nicht noch einmal abrechnen wird. Solche Schadensszenarien können nicht durch die Komponenten und Dienste der TI abgewendet werden.</p>
+<p>Aufgrund der Vorgaben der EU können Situationen entstehen, in denen eine Mehrfacheinlösung von E-Rezepten durch den TI-Flow-Fachdienst nicht verhindert werden kann. Dies betrifft insbesondere Situationen in grenznahen Gebieten, in denen ein Versicherter erst eine Einlösung im Ausland initiiert, aber das Medikament noch nicht erhält, er dann das E-Rezept in Deutschland regulär einlöst, um dann zurück in der EU-Apotheke das Medikament nochmals zu erhalten - sofern die EU-Apotheke das Medikament ausgibt, obwohl der TI-Flow-Fachdienst einen Fehler meldet (z.B. um den Umsatz dennoch zu machen). Ein finanzieller Schaden für Apotheken im Ausland würde hierbei nicht entstehen, da Versicherte die im Ausland erhaltenen Medikamente zunächst selbst bezahlen. Kostenträger können einen finanziellen Schaden abwenden, wenn sie durch geeignete Prüfungen eine oben geschilderte mehrfache Einlösung eines E-Rezepts feststellen. Für Apotheker in Deutschland könnte ein finanzieller Schaden entstehen, falls der Kostenträger einem Versicherten die Rechnung für ein im Ausland erhaltenes Medikament erstattet, bevor die Abrechnung des E-Rezepts durch die Apotheke in Deutschland erfolgt - unter der Annahme, dass der Kostenträger in diesem Fall das E-Rezept nicht noch einmal abrechnen wird. Solche Schadensszenarien können nicht durch die Komponenten und Dienste der TI abgewendet werden.</p>
 
 
 
@@ -432,7 +432,7 @@ Beim Einlösen von E-Rezepten erfolgt die Übermittlung der Datensätze über di
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.xborder#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 15, 2026 11:25+0000">2026-05-15</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.xborder#1.0.0-draft basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, May 19, 2026 15:27+0000">2026-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

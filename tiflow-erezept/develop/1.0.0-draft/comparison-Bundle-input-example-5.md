@@ -37,11 +37,11 @@ Version 1.0.0-draft - ci-build
 | `MedicationRequest.authoredOn` | `MedicationRequest.authoredOn` | `2025-05-20` | ✅ Übernommen |
 | `MedicationRequest.dispenseRequest.quantity.unit` | `MedicationRequest.dispenseRequest.quantity.unit` | `Packung` | ✅ Übernommen |
 | `MedicationRequest.dispenseRequest.quantity.value` | `MedicationRequest.dispenseRequest.quantity.value` | `1` | ✅ Übernommen |
-| `MedicationRequest.dosageInstruction[0].text` | `MedicationRequest.dosageInstruction[0].text` | `1–3mal/Tag auf die erkrankten Hautstellen auftragen` | ✅ Übernommen |
+| `MedicationRequest.dosageInstruction[0].text` | `MedicationRequest.dosageInstruction[0].text` | `1-3mal/Tag auf die erkrankten Hautstellen auftragen` | ✅ Übernommen |
 | `MedicationRequest.extension[1].valueBoolean` | `MedicationRequest.extension[1].valueBoolean` | `false` | ✅ Übernommen |
 | `MedicationRequest.extension[1].valueBoolean` | `MedicationRequest.extension[2].extension[0].valueBoolean` | `false` | ✅ Übernommen |
 | `MedicationRequest.extension[5].url` | `MedicationRequest.extension[3].url` | `http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction` | ✅ Übernommen |
-| `MedicationRequest.extension[5].valueMarkdown` | `MedicationRequest.extension[3].valueMarkdown` | `1–3mal/Tag auf die erkrankten Hautstellen auftragen` | ✅ Übernommen |
+| `MedicationRequest.extension[5].valueMarkdown` | `MedicationRequest.extension[3].valueMarkdown` | `1-3mal/Tag auf die erkrankten Hautstellen auftragen` | ✅ Übernommen |
 | `MedicationRequest.extension[6].extension[0].url` | `MedicationRequest.extension[0].extension[0].url` | `algorithmVersion` | ✅ Übernommen |
 | `MedicationRequest.extension[6].extension[0].valueString` | `MedicationRequest.extension[0].extension[0].valueString` | `1.0.0` | ✅ Übernommen |
 | `MedicationRequest.extension[6].extension[1].url` | `MedicationRequest.extension[0].extension[1].url` | `language` | ✅ Übernommen |
