@@ -10,7 +10,7 @@ Wenn die abgebende LEI ein E-Rezept beliefert, dann stellt sie dem Versicherten 
 
 Die abgebende LEI stellt die Abgabeinformationen entweder vor dem Abschluss oder beim Abschluss des Workflows zum E-Rezept ein.
 
-Werden die Abgabeinformationen vor dem Abschluss der Workflows eingestellt, dann ändert sich der Status des Workflows nicht (Task.status=in-progress). Im Task ist der Zeitpunkt des Einstellens unter Task.extension:lastMedicationDispense gespeichert. Solange der Workflow nicht abgeschlossen ist, können die Abgabeinformationen gelöscht oder geändert werden. Hierbei wird der Zeitpunkt des Einstellens jeweils gelöscht bzw. neu gesetzt.
+Werden die Abgabeinformationen vor dem Abschluss der Workflows eingestellt, dann ändert sich der Status des Workflows nicht (Task.status=in-progress). Im Task ist der Zeitpunkt des Einstellens unter Task.extension:lastMedicationDispense gespeichert. Solange der Workflow nicht abgeschlossen ist, können die Abgabeinformationen gelöscht oder geändert werden. Hierbei wird der Zeitpunkt des Einstellens jeweils gelöscht bzw. neu gesetzt.
 
 Mit dem Abschluss des Workflows ist Task.status=complete. Ein Ändern der Abgabeinformationen ist danach nicht mehr möglich.
 

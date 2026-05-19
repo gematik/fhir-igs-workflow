@@ -1,6 +1,6 @@
 ## Anforderung definieren
 
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - title">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -18,7 +18,7 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 ### Fehlercodes in Anforderungen
 
 #### OperationOutcomes
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - title">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -50,7 +50,7 @@ Für Tags in Anforderungen muss die folgende Syntax verwendet werden:
 </requirement>
 
 #### Nicht FHIR
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst – title">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - title">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>

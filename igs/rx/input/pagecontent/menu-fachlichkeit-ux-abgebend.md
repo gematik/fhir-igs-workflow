@@ -146,7 +146,7 @@ Dieser Abschnitt beschreibt UX-Guidelines für den Prozess der Bedienung eines E
 
 #### Bedienen von E-Rezepten nach Ablauf von Fristen
 
-Verordnungen für apothekenpflichtige Arzneimittel für gesetzlich Versicherte unterliegen bestimmten Fristen:
+Verordnungen für apothekenpflichtige Arzneimittel für gesetzlich Versicherte unterliegen bestimmten Fristen:
 - Belieferungsfrist: Frist bis zu welcher ein Rezept zu Lasten der gesetzlichen
 Krankenkasse eingelöst werden kann (Frist endet zu Task.extension:acceptDate, bei Kassenrezepten 28 Tage nach Ausstellung). Danach kann die Apotheke entscheiden das Rezept als Privatrezept zu beliefern (§11, Abs 4 AM-RL).
 - Einlösefrist: Frist bis zu welcher ein Rezept beliefert werden darf (Frist endet zu
@@ -192,7 +192,7 @@ Der TI-Flow-Fachdienst löscht eingestellte Rezepte zehn Tage nach Ablaufen eine
 
 #### Finden von vorhandenen Vorgängen per Scan des E-Rezept-Tokens nach Zuweisung
 
-Wenn ein Versicherter das E-Rezept-Token entweder per E-Rezept-FdV übermittelt oder in der Filiale den zugehörigen Datamatrix-Code vorgezeigt hat, dann ruft die Apotheke das E-Rezept vom TI-Flow-Fachdienst ab. Das E-Rezept erhält den Status "in-progress". Ein E-Rezept mit diesem Status kann nicht noch einmal vom E-Rezept- Fachdienst abgerufen  werden. Wenn der Kunde das Medikament dann zu einem späteren Zeitpunkt in der Filiale abholt, soll es möglich sein, den zugehörigen Vorgang im AVS auch per Scan des E-Rezept-Token zu finden. Hinweis: Die Abfrage eines bereits durch die Apotheke heruntergeladenen E-Rezepts am TI-Flow-Fachdienstes liefert einen Fehler. Daher sollte diese Abfrage nicht durchgeführt werden.
+Wenn ein Versicherter das E-Rezept-Token entweder per E-Rezept-FdV übermittelt oder in der Filiale den zugehörigen Datamatrix-Code vorgezeigt hat, dann ruft die Apotheke das E-Rezept vom TI-Flow-Fachdienst ab. Das E-Rezept erhält den Status "in-progress". Ein E-Rezept mit diesem Status kann nicht noch einmal vom E-Rezept- Fachdienst abgerufen  werden. Wenn der Kunde das Medikament dann zu einem späteren Zeitpunkt in der Filiale abholt, soll es möglich sein, den zugehörigen Vorgang im AVS auch per Scan des E-Rezept-Token zu finden. Hinweis: Die Abfrage eines bereits durch die Apotheke heruntergeladenen E-Rezepts am TI-Flow-Fachdienstes liefert einen Fehler. Daher sollte diese Abfrage nicht durchgeführt werden.
 
 <!-- A_23801 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-132" title="PS abgebende LEI: UX - Suche nach Vorgang mittels E-Rezept-Token" version="0">
@@ -207,7 +207,7 @@ Ist der Vorgang zum gescannten E-Rezept-Token bereits abgeschlossen, dann soll d
 
 #### Verarbeitung von Freitextverordnungen
 
-Für die Abgabe von Medikamenten, die auf einer Freitextverordnung basieren, soll der Nutzer des AVS bestmöglich unterstützt werden, entsprechende Präparate zu finden und abzugeben. Hierzu sollen die gesamten Freitext-Informationen  der Verordnung angezeigt werden:
+Für die Abgabe von Medikamenten, die auf einer Freitextverordnung basieren, soll der Nutzer des AVS bestmöglich unterstützt werden, entsprechende Präparate zu finden und abzugeben. Hierzu sollen die gesamten Freitext-Informationen  der Verordnung angezeigt werden:
 - Darreichungsform: KBV_PR_ERP_Medication_FreeText.form.text
 - Freitextverordnung: KBV_PR_ERP_Medication_FreeText.code.text
 Das System soll den Nutzer dabei unterstützen zu erkennen, ob die Verschreibung für ein E-Rezept zulässig ist. Siehe auch https://github.com/gematik/api-erp#umfang-der- anwendung-e-rezept . Das System soll den Nutzer darin unterstützen, diese Verordnung im Sinne einer Verordnung von Fertigarzneimittel (PZN), Wirkstoff oder einer Rezeptur zu beliefern. Hierzu können beispielsweise Inhalte des Freitextes nach PZN-Pattern untersucht und anschließend in der Arzneimitteldatenbank ermittelt werden. Weiterhin könnte das System anbieten nach einzelnen Bestandteilen einer Freitextverordnung in einer geeigneten Datenbank zu suchen.
@@ -266,7 +266,7 @@ abrechnen zu lassen Es soll die Möglichkeit bestehen, einem Vorgang nachträgli
 
 #### Weiterleiten von E-Rezepten an eine andere Apotheke
 
-Für Apothekenverbünde mit mehreren Filialen besteht die Möglichkeit E-Rezepte für die Belieferung weiterzuleiten. Dies kann von Interesse sein, wenn beispielsweise innerhalb eines Verbundes eine Apotheke sich um Vorbestellungen und Botendienste kümmert.  In dem Fall können die anderen Apotheken des Verbundes die vom TI-Flow-Fachdienst heruntergeladenen E-Rezepte an diese Apotheke weiterleiten. Das Weiterleiten kann auch im Rahmen eines Inhaberwechsels genutzt werden. Hinweis: Beim Abruf der Quittung erfolgt im TI-Flow-Fachdienst keine Prüfung, ob die Telematik-ID der Quittung abrufenden Apotheke mit der Telematik-ID der Apotheke übereinstimmt, welche das E-Rezept heruntergeladen und den Status in "in-progress" geändert hat. Für das Weiterleiten eines E-Rezeptes werden AccessCode, Task-ID, Secret des E- Rezeptes sowie sämtliche Inhalte der E-Rezeptes übermittelt. Die weitere Bearbeitung des E-Rezeptes kann ohne den Umweg über Freigabe des E-Rezeptes von einer Apotheke und erneutes Herunterladen durch eine andere Apotheke erfolgen. Wenn eine Apotheke Zugang zu diesen Informationen erhält, kann diese die Abgabe vollziehen. Hierzu muss die empfangene Apotheke die FHIR-OperationPOST /Task/<id>/$close des Rezeptes beim Fachdienst aufrufen.
+Für Apothekenverbünde mit mehreren Filialen besteht die Möglichkeit E-Rezepte für die Belieferung weiterzuleiten. Dies kann von Interesse sein, wenn beispielsweise innerhalb eines Verbundes eine Apotheke sich um Vorbestellungen und Botendienste kümmert.  In dem Fall können die anderen Apotheken des Verbundes die vom TI-Flow-Fachdienst heruntergeladenen E-Rezepte an diese Apotheke weiterleiten. Das Weiterleiten kann auch im Rahmen eines Inhaberwechsels genutzt werden. Hinweis: Beim Abruf der Quittung erfolgt im TI-Flow-Fachdienst keine Prüfung, ob die Telematik-ID der Quittung abrufenden Apotheke mit der Telematik-ID der Apotheke übereinstimmt, welche das E-Rezept heruntergeladen und den Status in "in-progress" geändert hat. Für das Weiterleiten eines E-Rezeptes werden AccessCode, Task-ID, Secret des E- Rezeptes sowie sämtliche Inhalte der E-Rezeptes übermittelt. Die weitere Bearbeitung des E-Rezeptes kann ohne den Umweg über Freigabe des E-Rezeptes von einer Apotheke und erneutes Herunterladen durch eine andere Apotheke erfolgen. Wenn eine Apotheke Zugang zu diesen Informationen erhält, kann diese die Abgabe vollziehen. Hierzu muss die empfangene Apotheke die FHIR-OperationPOST /Task/<id>/$close des Rezeptes beim Fachdienst aufrufen.
 
 <!-- A_23806 -->
 <requirement conformance="MAY" key="IG-TIFLOW-ERP-137" title="PS abgebende LEI: UX - Weiterleitung eines E-Rezepts" version="0">
@@ -288,14 +288,14 @@ Für die sichere Kommunikation kann KIM verwendet werden.
      Das PS der abgebenden LEI KANN eine Möglichkeit bieten, die von einer anderen Filial-Apotheke übermittelten Informationen zu einem E-Rezept zu importieren und einen Vorgang dazu zu öffnen.
 </requirement>
 
-Unter der Annahme, dass die Apotheken in einem Apothekenverbund die gleiche Software nutzen, wurde bisher darauf verzichtet eine standardisiertes Schnittstelle bspw. auf Basis von KIM-Nachrichten zu entwickeln. Hinweis: Es ist zu vermeiden, E-Rezepte mittels Zurückweisen (Operation POST /Task/<id>/$reject) und erneuten Abrufen  (Operation POST /Task/<id>/$accept) zu übergeben. Diese Vorgehensweise erzeugt Protokolleinträge und zukünftig Notifications für den Versicherten, welche für diesen ggf. nicht nachvollziehbar sind.
+Unter der Annahme, dass die Apotheken in einem Apothekenverbund die gleiche Software nutzen, wurde bisher darauf verzichtet eine standardisiertes Schnittstelle bspw. auf Basis von KIM-Nachrichten zu entwickeln. Hinweis: Es ist zu vermeiden, E-Rezepte mittels Zurückweisen (Operation POST /Task/<id>/$reject) und erneuten Abrufen  (Operation POST /Task/<id>/$accept) zu übergeben. Diese Vorgehensweise erzeugt Protokolleinträge und zukünftig Notifications für den Versicherten, welche für diesen ggf. nicht nachvollziehbar sind.
 
 #### Bedienen von E-T-Rezepten
 
 Für die Bedienung und Belieferung von E-T-Rezepten gelten gesonderte UX-Hinweise.
 
 <!-- A_27841 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-139" title="PS abgebende LEI: UX - Bedienung T-Rezept – Hinweis T-Rezept" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-139" title="PS abgebende LEI: UX - Bedienung T-Rezept - Hinweis T-Rezept" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -304,7 +304,7 @@ Für die Bedienung und Belieferung von E-T-Rezepten gelten gesonderte UX-Hinweis
 </requirement>
 
 <!-- A_27842 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-140" title="PS abgebende LEI: UX - Bedienung T-Rezept – Hinweis T-Rezept Belieferungsoption" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-140" title="PS abgebende LEI: UX - Bedienung T-Rezept - Hinweis T-Rezept Belieferungsoption" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -319,7 +319,7 @@ Für die Bedienung und Belieferung von E-T-Rezepten gelten gesonderte UX-Hinweis
 Die Quittung für ein beliefertes E-Rezept muss innerhalb einer vertraglich vereinbarten Frist abgerufen werden. Es sind die Regelungen des Rahmenvertrags nach SGB V §300 zu berücksichtigen. Das AVS soll sicherstellen, dass die Frist nicht überschritten wird und ggf. die Quittung automatisch abrufen. Die gematik empfiehlt die Quittung zeitnah nach der Abgabe an den Kunden abzurufen, denn mit dem Quittungsabruf werden dem Versicherten die Abgabeinformationen zum Abruf mit der App bereitgestellt.
 
 <!-- A_23808 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-141" title="PS abgebende LEI: UX – Quittung automatisch abrufen" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-141" title="PS abgebende LEI: UX - Quittung automatisch abrufen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -330,7 +330,7 @@ Die Quittung für ein beliefertes E-Rezept muss innerhalb einer vertraglich vere
 Hinweis: Der TI-Flow-Fachdienst bietet mit der Operation GET /Task/<id> die Möglichkeit, die Quittung nach dem erstmaligen Aufruf der Operation POST /Task/<id>/$close noch einmal abzurufen. Dies ist nur möglich, bis das E-Rezept durch den Versicherten oder nach Erreichen der Löschfrist automatisch durch den E-Rezept- Fachdienst gelöscht wird. Der Anwendungsfall "Quittung abrufen" generiert nicht nur die Quittung für die Abrechnung der Apotheke, sondern schließt auch den Workflow im TI-Flow-Fachdienst ab. Der Versicherte hat Einblick in den Statusverlauf und kann ein E-Rezept auch nach Abschluss des Workflows löschen. Das AVS muss bei der Abgabe jeglichen Rezepttyps und unabhängig vom Kostenträger den Workflow über diesen Anwendungsfall abschließen.
 
 <!-- A_25643 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-142" title="PS abgebende LEI: UX – Workflow von E-Rezepten abschließen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-142" title="PS abgebende LEI: UX - Workflow von E-Rezepten abschließen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -340,7 +340,7 @@ Hinweis: Der TI-Flow-Fachdienst bietet mit der Operation GET /Task/<id> die Mög
 
 #### QES durch den Apotheker
 
-Jeder Abgabedatensatz zu einem E-Rezept muss signiert werden. Für die nicht- qualifizierten Signatur wird die SMC-B der Apotheke verwendet. In vertraglich vereinbarten Fällen ("Rahmenvertrag über die Arzneimittelversorgung nach §129 Absatz 2 SGB V",  https://www.abda.de/fileadmin/user_upload/assets/Vertraege/2021-10- 01_RV_129_redaktionelle_Gesamtfassung_Stand_01102021_barrierefrei.pdf) muss der HBA des Apothekers/-assistents/Pharmazieingenieurs für eine QES verwendet werden. In Fällen, in denen eine nicht-qualifizierte Signatur ausreicht, soll keine QES erzwungen werden. Dies führt zu Zeitersparnis, da unnötige PIN-Eingaben vermieden werden.
+Jeder Abgabedatensatz zu einem E-Rezept muss signiert werden. Für die nicht- qualifizierten Signatur wird die SMC-B der Apotheke verwendet. In vertraglich vereinbarten Fällen ("Rahmenvertrag über die Arzneimittelversorgung nach §129 Absatz 2 SGB V",  https://www.abda.de/fileadmin/user_upload/assets/Vertraege/2021-10- 01_RV_129_redaktionelle_Gesamtfassung_Stand_01102021_barrierefrei.pdf) muss der HBA des Apothekers/-assistents/Pharmazieingenieurs für eine QES verwendet werden. In Fällen, in denen eine nicht-qualifizierte Signatur ausreicht, soll keine QES erzwungen werden. Dies führt zu Zeitersparnis, da unnötige PIN-Eingaben vermieden werden.
 
 <!-- A_23809 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-143" title="PS abgebende LEI: UX - Abgabedatensatz signieren - QES Signatur in notwendigen Fällen" version="0">
@@ -441,7 +441,7 @@ Für das Umschwenken auf eine andere Instanz des TI-Flow-Fachdienstes siehe [gem
      Das PS der abgebende LEI SOLL beim Auftreten eines Fehlers dem Nutzer eine verständliche Fehlermeldung ausgeben.
 </requirement>
 
-Wenn das Fehler-meldende System eine technische Fehlermeldung liefert, braucht diese dem Nutzer nicht dargestellt werden.
+Wenn das Fehler-meldende System eine technische Fehlermeldung liefert, braucht diese dem Nutzer nicht dargestellt werden.
 
 <!-- A_23818 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-152" title="PS abgebende LEI: UX - Verständliche Fehlermeldungen - Handlungsempfehlung" version="0">

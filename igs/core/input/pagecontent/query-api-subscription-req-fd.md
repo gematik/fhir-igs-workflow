@@ -1,7 +1,7 @@
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Subscription-Query-Endpunkt.
 
 <!-- A_22362-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-346" title="TI-Flow-Fachdienst – Subscription registrieren – Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-346" title="TI-Flow-Fachdienst - Subscription registrieren - Rollenprüfung" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -32,14 +32,14 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
     abbrechen, damit eine Subscription nicht durch Unberechtigte registriert werden kann.
 </requirement>
 
 <!-- A_22364 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-347" title="TI-Flow-Fachdienst – Subscription registrieren – Response" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-347" title="TI-Flow-Fachdienst - Subscription registrieren - Response" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -54,7 +54,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22365 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-348" title="TI-Flow-Fachdienst – Subscription registrieren – Pseudonym der Telematik-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-348" title="TI-Flow-Fachdienst - Subscription registrieren - Pseudonym der Telematik-ID" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -63,7 +63,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22383-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-349" title="TI-Flow-Fachdienst – Generierungsschlüssel – Pseudonym der Telematik-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-349" title="TI-Flow-Fachdienst - Generierungsschlüssel - Pseudonym der Telematik-ID" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -72,7 +72,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22366 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-350" title="TI-Flow-Fachdienst – Subscription registrieren – Barrier-Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-350" title="TI-Flow-Fachdienst - Subscription registrieren - Barrier-Token" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -87,7 +87,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22363 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-351" title="TI-Flow-Fachdienst – Subscription registrieren – Prüfung Telematik-ID" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-351" title="TI-Flow-Fachdienst - Subscription registrieren - Prüfung Telematik-ID" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>

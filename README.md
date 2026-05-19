@@ -4,13 +4,13 @@ This repository is a clean, minimal, reproducible workspace for multiple HL7 FHI
 
 ## Structure
 
-- igs/eflow-core – cross-cutting patterns (security/audit/errors + base operations)
-- igs/eflow-server – umbrella server contract (CapabilityStatement + conformance matrix)
-- igs/eflow-rx – module IG
-- igs/eflow-diga – module IG
-- igs/eflow-patrech – module IG
-- igs/eflow-eu – module IG
-- igs/eflow-transfer – module IG
+- igs/eflow-core - cross-cutting patterns (security/audit/errors + base operations)
+- igs/eflow-server - umbrella server contract (CapabilityStatement + conformance matrix)
+- igs/eflow-rx - module IG
+- igs/eflow-diga - module IG
+- igs/eflow-patrech - module IG
+- igs/eflow-eu - module IG
+- igs/eflow-transfer - module IG
 
 Each IG is a self-contained IG Publisher project with its own ig.ini, sushi-config.yaml, and input/ folder. Build artifacts are ignored by git.
 

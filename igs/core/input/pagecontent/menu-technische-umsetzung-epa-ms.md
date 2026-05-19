@@ -6,7 +6,7 @@ Die Datenübermittlung zwischen TI-Flow-Fachdienst und ePA-Aktensystem erfolgt �
 
 Zur Absicherung der Datenübermittlung muss der Transport der Nachrichten zwischen TI-Flow-Fachdienst uns ePA-Aktensystem mittels HTTPS erfolgen. Transport Layer Security (TLS) ist gemäß den Vorgaben aus [gemSpec_Krypt] einzusetzen.
 
-Der ePA-Aktensystem unterstützt an den genutzten Schnittstellen mindestens die HTTP Version 1.1 (siehe A_24654 – ePA: http-Version).
+Der ePA-Aktensystem unterstützt an den genutzten Schnittstellen mindestens die HTTP Version 1.1 (siehe A_24654 - ePA: http-Version).
 
 Der ePA-Aktensystem nutzt sein C.FD.TLS-S Zertifikat für den TLS-Verbindungsaufbau. Der TI-Flow-Fachdienst prüft beim Verbindungsaufbau das Server-Zertifikat des ePA-Aktensystems entsprechend der Vorgaben von [gemSpec_PKI].
 
@@ -18,7 +18,7 @@ Der ePA-Aktensystem nutzt sein C.FD.TLS-S Zertifikat für den TLS-Verbindungsauf
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorgaben von [gemSpec_PKI] und des TUC_PKI_018 mit den Eingangsdaten gemäß der Tabelle Tab_eRPFD_018 prüfen und im Fehlerfall den Aufbau der HTTPS-Verbindung abbrechen. Tabelle #: Tab_eRPFD_018 – Eingangsdaten für die Prüfung des ePA-Aktensystem Server-Zertifikats
+Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorgaben von [gemSpec_PKI] und des TUC_PKI_018 mit den Eingangsdaten gemäß der Tabelle Tab_eRPFD_018 prüfen und im Fehlerfall den Aufbau der HTTPS-Verbindung abbrechen. Tabelle #: Tab_eRPFD_018 - Eingangsdaten für die Prüfung des ePA-Aktensystem Server-Zertifikats
 
 <table>
 <thead>

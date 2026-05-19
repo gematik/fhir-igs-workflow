@@ -78,7 +78,7 @@ Das Speichern der Abrechnungsinformationen erfolgt nur mit Einwilligung des Vers
 ### Belieferung der Abrechnungsinformation durch die Apotheke
 Nach der Einlösung kann die Apotheke die Abrechnungsinformation digital bereitstellen, sofern eine Einwilligung vorliegt.
 
-Der PKV-Abgabedatensatz wird durch die Apotheke erstellt. Er enthält – sofern in der Apotheke Änderungen bei der Abgabe vorgenommen werden – den QES-signierten PKV-Abgabedatensatz; andernfalls den fortgeschritten signierten PKV-Abgabedatensatz. Das Informationsmodell zum PKV-Abgabedatensatz wird durch den Verband der PKVen und DAV erarbeitet.
+Der PKV-Abgabedatensatz wird durch die Apotheke erstellt. Er enthält - sofern in der Apotheke Änderungen bei der Abgabe vorgenommen werden - den QES-signierten PKV-Abgabedatensatz; andernfalls den fortgeschritten signierten PKV-Abgabedatensatz. Das Informationsmodell zum PKV-Abgabedatensatz wird durch den Verband der PKVen und DAV erarbeitet.
 
 Der Versicherte kann nachträglich die Apotheke berechtigen Korrekturen am PKV-Abgabedatensatz vorzunehmen und den korrigierten Datensatz im TI-Flow-Fachdienst zu speichern. Dafür erzeugt der TI-Flow-Fachdienst einen AccessCode.
 

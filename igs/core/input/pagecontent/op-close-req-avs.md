@@ -49,9 +49,9 @@ Die Quittung wird als PKCS#7-Datei erstellt. Die quittierten Daten sind innerhal
     ausführen.
 </requirement>
 
-Implementierungshinweise zur Signaturprüfung für Primärsysteme sind in [gemILF_PS#4.4.2] beschrieben. Die Außenschnittstelle des Konnektors ist in [gemSpec_Kon#TIP1-A_5034-x Operation VerifyDocument (nonQES und QES)] beschrieben. 
+Implementierungshinweise zur Signaturprüfung für Primärsysteme sind in [gemILF_PS#4.4.2] beschrieben. Die Außenschnittstelle des Konnektors ist in [gemSpec_Kon#TIP1-A_5034-x Operation VerifyDocument (nonQES und QES)] beschrieben. 
 
-Als Response liefert der Konnektor einen standardisierten Prüfbericht in einer VerificationReport-Struktur gemäß [OASIS-VR].
+Als Response liefert der Konnektor einen standardisierten Prüfbericht in einer VerificationReport-Struktur gemäß [OASIS-VR].
 
 #### Stapelverarbeitung
 
@@ -66,7 +66,7 @@ Eine Apotheke schließt nach Belieferung eines E-Rezepts den Vorgang mittels $cl
     Das PS der abgebenden LEI KANN im Anwendungsfall "Quittung abrufen" mehrere Vorgänge im Stapel verarbeiten.
 </requirement>
 
-Falls ein AVS diese Aufrufe im Stapel verarbeitet, soll der Startzeitpunkt für die Aufrufe der $close-Operation am TI-Flow-Fachdienst zufällig verteilt sein, um die betriebliche Stabilität des TI-Flow-Fachdienstes zu gewährleisten.
+Falls ein AVS diese Aufrufe im Stapel verarbeitet, soll der Startzeitpunkt für die Aufrufe der $close-Operation am TI-Flow-Fachdienst zufällig verteilt sein, um die betriebliche Stabilität des TI-Flow-Fachdienstes zu gewährleisten.
 
 <!-- A_25220 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-299" title="PS abgebende LEI: Quittung abrufen - Stapelverarbeitung - Startzeitpunkt" version="0">

@@ -129,7 +129,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 
 <!-- A_27697 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-277" title="FHIR-Ressourcen – Eindeutige Angabe meta.profile" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-277" title="FHIR-Ressourcen - Eindeutige Angabe meta.profile" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>

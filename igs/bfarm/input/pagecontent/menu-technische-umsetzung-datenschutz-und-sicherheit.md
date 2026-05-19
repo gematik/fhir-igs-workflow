@@ -1,4 +1,4 @@
-Die Verarbeitung von E-T-Rezepten bedingt im TI-Flow-Fachdienst nicht nur einen neuen Workflow (166), sondern auch eine Kommunikationsverbindung zu einem neuen Akteur – dem BfArM – verbunden mit einem neuen Anwendungsfall.
+Die Verarbeitung von E-T-Rezepten bedingt im TI-Flow-Fachdienst nicht nur einen neuen Workflow (166), sondern auch eine Kommunikationsverbindung zu einem neuen Akteur - dem BfArM - verbunden mit einem neuen Anwendungsfall.
 
 ### Prüfungen beim Einstellen eines E-T-Rezepts
 
@@ -33,7 +33,7 @@ Der TI-Flow-Fachdienst überträgt die Daten unmittelbar - also ohne Beteiligung
 
 Nach der Übertragung der Daten in das T-Register befinden sich die Daten im Verantwortungsbereich des BfArM (Grenze der Sicherheitsleistung der TI). Dies betrifft insbesondere die weitere Verarbeitung der Daten durch das BfArM und die sich anschließenden Verarbeitungsvorgänge. Eine ggf. notwendige Kommunikation vom BfArM mit abgebenden Apotheken oder eine Übermittlung von Daten vom BfArM an den TI-Flow-Fachdienst ist durch dieses Feature nicht vorgesehen.
 
-Die Nutzung des FHIR-VZD durch den TI-Flow-Fachdienst erfolgt im Rahmen einer Anwendung der TI (E-Rezept) gemäß § 313 Abs. 3 SGB V. Dabei werden der Name, die Anschrift und – sofern eingetragen – die Telefonnummer der abgebenden Apotheke abgefragt und an das BfArM übermittelt.
+Die Nutzung des FHIR-VZD durch den TI-Flow-Fachdienst erfolgt im Rahmen einer Anwendung der TI (E-Rezept) gemäß § 313 Abs. 3 SGB V. Dabei werden der Name, die Anschrift und - sofern eingetragen - die Telefonnummer der abgebenden Apotheke abgefragt und an das BfArM übermittelt.
 
 ### Neuer Anwendungsfall
 
