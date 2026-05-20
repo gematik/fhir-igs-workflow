@@ -1,0 +1,22 @@
+@startuml
+title UC 3.2 - Verordnung durch Versicherten löschen
+
+actor "Versicherter" as V
+participant "FdV" as FdV
+participant "TI-Flow-Fachdienst" as FD
+
+V -> FdV: E-Rezept löschen()
+activate FdV
+
+FdV -> FD: POST /Task/{id}/$abort ()
+activate FD
+FD -> FD: Status auf "cancelled" setzen()
+FD -> FD: Daten löschen()
+FD --> FdV: Status
+deactivate FD
+
+FdV -> FdV: Token löschen()
+FdV --> V: Status
+deactivate FdV
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+title UC 4.17 - Verordnung erneut abrufen
+
+actor "Mitarbeiter KTR" as MA
+participant "Clientsystem\nKostenträger" as AVS
+participant "TI-Flow-Fachdienst" as FD
+
+MA -> AVS: Verordnung erneut abrufen()
+activate AVS
+
+AVS -> FD: GET /Task/{id} (AccessCode)
+activate FD
+FD -> FD: AccessCode prüfen()
+FD -> FD: Telematik-ID prüfen()
+FD -> FD: Status Task prüfen()
+FD --> AVS: Verordnung und Secret
+deactivate FD
+
+AVS --> MA: Verordnung
+deactivate AVS
+
+@enduml

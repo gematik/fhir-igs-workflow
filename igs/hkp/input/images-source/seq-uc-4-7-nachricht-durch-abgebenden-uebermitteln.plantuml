@@ -1,0 +1,20 @@
+@startuml
+title UC 4.7 - Nachricht durch Abgebenden uebermitteln
+
+actor "Mitarbeiter KTR" as MA
+participant "Clientsystem\nKostenträger" as AVS
+participant "TI-Flow-Fachdienst" as FD
+
+MA -> AVS: Antwortnachricht erstellen()
+activate AVS
+
+AVS -> FD: POST /Communication (Antwort)
+activate FD
+FD -> FD: Nachricht speichern()
+FD --> AVS: Status
+deactivate FD
+
+AVS --> MA: Bestaetigung
+deactivate AVS
+
+@enduml

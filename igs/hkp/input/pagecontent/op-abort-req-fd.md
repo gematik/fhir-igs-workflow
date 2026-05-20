@@ -1,0 +1,48 @@
+Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Operation `$abort`.
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core.op-abort-req-fd.md %}
+
+### Modulspezifische Anforderungen
+
+<!-- A_19026-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-7" title="TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 162 - Rollenprüfung" version="1">
+  <meta lockversion="false"/>
+  <actor name="TI-Flow_FD">
+    <testProcedure id="Produktgutachten"/>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks mit Flowtype 162 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
+  <ul>
+    <li>oid_versicherter</li>
+    <li>oid_praxis_arzt</li>
+    <li>oid_zahnarztpraxis</li>
+    <li>oid_krankenhaus</li>
+    <li>oid_praxis_psychotherapeut</li>
+    <li>oid_institution-vorsorge-reha</li>
+  </ul>
+  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+        </tr>
+    </table> 
+    abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
+</requirement>

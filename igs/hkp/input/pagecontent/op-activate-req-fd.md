@@ -1,0 +1,193 @@
+
+Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Operation `$activate`.
+
+### Anforderungen aus der Core Spezifikation
+
+{% include core.op-activate-req-fd.md %}
+
+### Modulspezifische Anforderungen
+
+
+<!-- A_25990 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-15" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe" version="1">
+  <meta lockversion="false"/>
+  <actor name="TI-Flow_FD">
+    <testProcedure id="Produkttest"/>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die einer der folgenden professionOID entspricht:
+  <ul>
+    <li>oid_arzt</li>
+    <li>oid_zahnarzt</li>
+    <li>oid_psychotherapeut</li>
+    <li>oid_ps_psychotherapeut</li>
+    <li>oid_kuj_psychotherapeut</li>
+  </ul>
+  die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.
+</requirement>
+
+<br>
+
+<!-- A_25992 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-17" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="1">
+  <meta lockversion="false"/>
+  <actor name="TI-Flow_FD">
+    <testProcedure id="Produkttest"/>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den "Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI" beschriebenen Prüfalgorithmus validieren und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_PZN_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.</td>
+        </tr>
+    </table> 
+    abbrechen.
+</requirement>
+
+<br>
+
+<!-- A_23443-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-18" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type" version="1">
+  <meta lockversion="false"/>
+  <actor name="TI-Flow_FD">
+    <testProcedure id="Produkttest"/>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, dass Coverage.type.coding.code nicht mit dem Wert "PKV" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_COVERAGE_TYPE_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden.
+</requirement>
+
+<br>
+<!-- A_26372 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-19" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative IK" version="1">
+  <meta lockversion="false"/>
+  <actor name="TI-Flow_FD">
+    <testProcedure id="Produkttest"/>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, ob die Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist und in diesem Fall die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_ALTERNATIVE_IK_FORBIDDEN</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, um sicherzustellen, dass dieser Workflow nicht für Verordnungen genutzt wird, die zu Lasten von Unfallkassen oder Berufsgenossenschaften gehen.
+</requirement>
+
+Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallkassen das Verordnen von DiGAs explizit unterstützen. Die konkreten Festlegungen dazu werden in einem Folgerelease getroffen.
+
+<!-- A_27845, A_19999 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-20" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter" version="0">
+  <meta lockversion="false"/>
+  <actor name="TI-Flow_FD">
+    <testProcedure id="Produkttest"/>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.<br>
+
+  <table>
+    <tr> 
+      <th>Feld in Task</th>
+      <th>Feldbelegung</th>
+    </tr>
+    <tr> 
+      <td>Task.performerType.coding.system</td>
+      <td>"https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType"</td>
+    </tr>
+    <tr> 
+      <td>Task.performerType.coding.code</td>
+      <td>"1.2.276.0.76.4.59"</td>
+    </tr>
+    <tr> 
+      <td>Task.performerType.coding.diplay</td>
+      <td>"Kostenträger"</td>
+    </tr>
+    <tr> 
+      <td>Task.PrescriptionType.valueCoding.display</td>
+      <td>"Flowtype für Digitale Gesundheitsanwendungen"</td>
+    </tr>
+    <tr> 
+      <td>Task.ExpiryDate</td>
+      <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>
+    </tr>
+    <tr> 
+      <td>Task.AcceptDate</td>
+      <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>
+    </tr>
+  </table>
+  <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_005 Prozessparameter Flowtype 162</figcaption></div>
+</requirement>

@@ -1,0 +1,23 @@
+@startuml
+title UC 4.4 - Quittung abrufen
+
+actor "Mitarbeiter KTR" as MA
+participant "Clientsystem\nKostenträger" as AVS
+participant "TI-Flow-Fachdienst" as FD
+
+MA -> AVS: Abgabe bestätigen()
+activate AVS
+
+AVS -> FD: POST /Task/{id}/$close (Secret, MedicationDispense)
+activate FD
+FD -> FD: Secret prüfen()
+FD -> FD: Status Task prüfen()
+FD -> FD: Status auf "completed" setzen()
+FD -> FD: Quittung erstellen und signieren()
+FD --> AVS: Quittung, Status
+deactivate FD
+
+AVS --> MA: Quittung
+deactivate AVS
+
+@enduml

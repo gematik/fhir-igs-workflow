@@ -1,0 +1,20 @@
+@startuml
+title UC 3.4 - Nachrichten durch Versicherten empfangen
+
+actor "Versicherter" as V
+participant "FdV" as FdV
+participant "TI-Flow-Fachdienst" as FD
+
+V -> FdV: Nachrichten abrufen()
+activate FdV
+
+FdV -> FD: GET /Communication?recipient=... ()
+activate FD
+FD -> FD: Nachrichten ermitteln()
+FD --> FdV: Nachrichten
+deactivate FD
+
+FdV --> V: Nachrichten anzeigen
+deactivate FdV
+
+@enduml

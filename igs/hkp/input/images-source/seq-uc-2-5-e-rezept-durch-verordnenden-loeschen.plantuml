@@ -1,0 +1,23 @@
+@startuml
+title UC 2.5 - Verordnung durch Verordnenden löschen
+
+actor "Mitarbeiter LEI" as MA
+participant "Primärsystem" as PS
+participant "TI-Flow-Fachdienst" as FD
+
+MA -> PS: Verordnung zum Löschen markieren()
+activate PS
+
+PS -> FD: POST /Task/{id}/$abort (AccessCode)
+activate FD
+FD -> FD: AccessCode prüfen()
+FD -> FD: Status auf "cancelled" setzen()
+FD -> FD: Personenbezogene Daten löschen()
+FD --> PS: Status
+deactivate FD
+
+PS -> PS: AccessCode löschen()
+PS --> MA: Status
+deactivate PS
+
+@enduml
