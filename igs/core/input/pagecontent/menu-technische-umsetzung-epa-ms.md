@@ -333,7 +333,7 @@ Organization in gematik Directory
 https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory
 </td>
 <td>
-Überschreiben/Setzen des "identifier:TelematikID" mit der idNummer aus dem ACCESS_TOKEN des verwendeten Operationsaufrufes
+Überschreiben/Setzen des "identifier:TelematikID" mit zeta-user-info.identifier aus den Nutzerinformationen des verwendeten Operationsaufrufes
 </td>
 </tr>
 
@@ -372,7 +372,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Bereitstellen der MedicationDispense für den ePA Medication Service eine Ressource des Profils https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory erstellen und Organization.identifier:TelematikID mit idNummer sowie Organization.name mit organizationName aus dem ACCESS_TOKEN belegen.
+     Der TI-Flow-Fachdienst MUSS beim Bereitstellen der MedicationDispense für den ePA Medication Service eine Ressource des Profils https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory erstellen und Organization.identifier:TelematikID mit zeta-user-info.identifier sowie Organization.name mit zeta-user-info.commonName aus den Nutzerinformationen belegen.
 </requirement>
 
 <!-- A_25948 -->

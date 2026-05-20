@@ -28,7 +28,7 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API dur
 Als Versicherter möchte ich einer Apotheke alle Informationen zukommen lassen, damit diese mein E-Rezept beliefern kann. Über einen JSON-Payload kann ich weitere Informationen zur Belieferung angeben.
 Uns als Apotheke möchte ich dem Versicherten eine Antwort auf seine Anfrage einstellen.
 
-Der Aufruf erfolgt als http-POST-Operation. Der Server prüft die Nachricht auf Zulässigkeit und ergänzt Metainformationen wie den Sendezeitpunkt und die Angaben des Absenders aus dessen ACCESS_TOKEN.
+Der Aufruf erfolgt als http-POST-Operation. Der Server prüft die Nachricht auf Zulässigkeit und ergänzt Metainformationen wie den Sendezeitpunkt und die Angaben des Absenders aus dessen Nutzerinformation (zeta-user-info).
 
 <div class="gematik-apidoc"
 	data-api-type="FHIRResource"
@@ -118,10 +118,10 @@ Als Apotheke oder Kostenträger möchten wir eine von uns versendete Nachricht a
 - In der Extension .payload.extension:OfferedSupplyOptions kann das AVS die zur Verfügung gestellten Optionen zur Belieferung angeben. Im JSON unter "supplyOptionsType" wird die ausgewählte Belieferungsart angegeben.
 - Die Extension `.payload.extension:AvailabilityStatus` kann genutzt werden, um anzugeben, wann eine Belieferung möglich ist. Die möglichen Werte sind in [GEM_ERP_CS_AvailabilityStatus](./CodeSystem-GEM-ERP-CS-AvailabilityStatus.html) definiert.
 - 	Der Server übernimmt beim Absenden der Nachricht den Sendezeitpunkt in die Communication-Ressource ` <sent value="2020-03-12T18:01:10+00:00" />`
-- Die Informationen zum Absender werden aus dem im Request übergebenen ACCESS_TOKEN übernommen, in diesem Fall die Telematik-ID der Apotheke in ` <sender>` als Absender der Nachricht.
+- Die Informationen zum Absender werden aus dem im Request übergebenen Nutzerinformation (zeta-user-info) übernommen, in diesem Fall die Telematik-ID der Apotheke in ` <sender>` als Absender der Nachricht.
 - Der Aufruf ist aus Performance Gründen nicht für die regelmäßige Abfrage von Nachrichten vorgesehen. Es soll nur nach neuen Nachrichten geprüft werden, wenn der Nutzer aktiv eine Aktion ausführt, die eine solche Prüfung erfordert oder in der App ein "refresh" der Daten durchgeführt wird.
 - Die abgerufene Nachricht enthält kein Element received, da die Nachricht erstmalig vom TI-Flow-Fachdienst abgerufen wurde. Dieses Attribut received wurde beim Abruf durch den Fachdienst auf dessen aktuelle Systemzeit in `"sent": "2020-03-12T18:01:10+00:00"` aktualisiert, sodass ein erneuter Aufruf mit dem Filter `?received=NULL` kein Ergebnis liefert, da keine neuen bzw. ungelesenen Nachrichten vorhanden sind.
-- In `Communication.sender.value` ist die Empfänger-ID (in diesem Fall Versicherten-ID) des Adressaten angegeben, über die die Nachrichten beim Abruf gemäß der Nutzerkennung im übergebenen ACCESS_TOKEN gefiltert werden.
+- In `Communication.sender.value` ist die Empfänger-ID (in diesem Fall Versicherten-ID) des Adressaten angegeben, über die die Nachrichten beim Abruf gemäß der Nutzerkennung in zeta-user-info gefiltert werden.
 - Dies sei die Antwort der Apotheke auf eine verbindliche Zuweisung, dann erhält die E-Rezept-App vom Warenwirtschaftssystem der Apotheke ebenfalls einen strukturierten Text im "`contentString`". In diesem sind u.a. Details für die Abholung in der Filiale wie z.B. der Abholcode `pickUpCodeHR` angegeben.
 
 

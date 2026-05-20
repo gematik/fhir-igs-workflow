@@ -275,3 +275,54 @@ Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzonen
     </actor>
     Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Verarbeitung von FHIR-Ressourcen der Anwendung E-Rezept sicherstellen, dass Datumsangaben ohne explizite Zeitzoneninformationen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) verarbeitet werden.
 </requirement>
+
+### Identifikation des Nutzers
+
+Im Rahmen des Verbindungsaufbaus eines Clientsystems mit dem TI-Flow-Fachdienst authentisiert sich der Nutzer.
+Der ZETA-Guard übermittelt die Informationen zum Nutzer in einem Http-Header im Request an den Resource Server (siehe [gemSpec_ZETA#A_25669-*]).
+
+Folgende Informationen sind im Header enthalten. (siehe [zeta-user-info.yaml])
+<!-- ToDo: Link auflösen -->
+
+<table>
+<tr>
+    <th>Attribut</th>
+    <th>Beschreibung</th>
+    <th>optional</th>
+</tr>
+<tr>
+    <td>identifier</td>
+    <td>Telematik-ID, KVNR or other unique identifier</td>
+    <td>nein</td>
+</tr>
+<tr>
+    <td>professionOID</td>
+    <td>Profession identifier (OID)</td>
+    <td>nein</td>
+</tr>
+<tr>
+    <td>commonName</td>
+    <td>Kurzname der Institution</td>
+    <td>nein</td>
+</tr>
+<tr>
+    <td>organizationName</td>
+    <td>Name der Organisation oder Institution</td>
+    <td>ja</td>
+</tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>Attribute zeta-user-info</figcaption></div>
+
+
+<!-- A_19390-01 -->
+<!-- A_19391-01 -->
+<!-- A_19392-01 --> 
+<requirement conformance="SHALL" key="" title="TI-Flow-Fachdienst - Nutzerinformationen" version="1">
+  <meta lockversion="false"/>
+  <actor name="TI-Flow_FD">
+    <testProcedure id="Herstellererklärung"/>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS den Http-Header zeta-user-info auswerten, um die Informationen zum Nutzer für die weitere Verarbeitung zu ermitteln.
+</requirement>
+
+Die Information zum aufrufenden Nutzer/Institution wird bspw. bei der Prüfung von Autorisierungsregeln (Prüfung der professionOID) und bei der Zugriffsprotokollierung für den Versicherten verwendet.

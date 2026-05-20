@@ -4,7 +4,7 @@ Wenn die Telematik-ID des KTR des Versicherten nicht im Programmcode hinterlegt 
 muss diese zur Laufzeit bestimmt werden. Hierfür nutzt das E-Rezept-FdV das IKNR des
 KTR, wodurch es dann in der Lage ist nach der Telematik-ID im FHIRVZD zu suchen.
 
-<!-- Quelle: A_26009 -E-Rezept-FdV: optional: Kostenträger suchen -->
+<!-- A_26009 -->
 <requirement conformance="MAY" key="IG-TIFLOW-DIGA-8" title="E-Rezept-FdV: optional: Kostenträger suchen" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FdV">
@@ -13,7 +13,7 @@ KTR, wodurch es dann in der Lage ist nach der Telematik-ID im FHIRVZD zu suchen.
   Das E-Rezept-FdV KANN den Anwendungsfall "Kostenträger suchen" umsetzen.
 </requirement>
 
-<!-- Quelle: A_26010 - E-Rezept-FdV: Kostenträger suchen - IKNR aus ACCESS_TOKEN beziehen -->
+<!-- A_26010  -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-DIGA-9" title="E-Rezept-FdV: Kostenträger suchen - IKNR aus ACCESS_TOKEN beziehen" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FdV">
@@ -22,8 +22,7 @@ KTR, wodurch es dann in der Lage ist nach der Telematik-ID im FHIRVZD zu suchen.
   Das E-Rezept-FdV SOLL im Anwendungsfall "Kostenträger suchen" die IKNR des Kostenträgers des Nutzers aus dem ACCESS_TOKEN claim "organizationIK" ermitteln.
 </requirement>
 
-<!-- Quelle: A_26011 -E-Rezept-FdV: Kostenträger suchen - Telematik-ID im
-Verzeichnisdienst suchen -->
+<!-- A_26011 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-DIGA-10" title="E-Rezept-FdV: Kostenträger suchen - Telematik-ID im Verzeichnisdienst suchen" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FdV">
