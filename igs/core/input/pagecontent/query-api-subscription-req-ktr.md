@@ -72,7 +72,7 @@ Bei Nutzung des Subscription Services kann abweichend von der Anforderung "A_215
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Das Clientsystem Kostenträger KANN eine beliebige Wartezeit bis zum Abruf der Nachrichten mit Anwendungsfall „Nachrichten von Versicherten empfangen“ umsetzen, wenn in einem Zeitraum sehr viele ping-Benachrichtigungen empfangen werden.
+    Das Clientsystem Kostenträger KANN eine beliebige Wartezeit bis zum Abruf der Nachrichten mit Anwendungsfall "Nachrichten von Versicherten empfangen" umsetzen, wenn in einem Zeitraum sehr viele ping-Benachrichtigungen empfangen werden.
 </requirement>
 
-Hinweis: Jede eingestellte Nachricht führt zu einem Ping, ggfs. im Millisekundenbereich, wenn viele Nachrichten an einen Empfänger gerichtet werden. In Abhängigkeit von der Implementierung kann dieses Verhalten zu einer Überlastung des Clientsystems führen, wenn bspw. jedes einzelne Ping den Anwendungsfall „Nachrichten von Versicherten empfangen“ triggert.
+Hinweis: Jede eingestellte Nachricht führt zu einem Ping, ggfs. im Millisekundenbereich, wenn viele Nachrichten an einen Empfänger gerichtet werden. In Abhängigkeit von der Implementierung kann dieses Verhalten zu einer Überlastung des Clientsystems führen, wenn bspw. jedes einzelne Ping den Anwendungsfall "Nachrichten von Versicherten empfangen" triggert.

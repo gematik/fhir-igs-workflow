@@ -331,7 +331,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
             <td>-</td>
         </tr>
     </table> 
-    abbrechen, damit nur eine Abrechnungsinformation für E-Rezepte mit dem Status „quittiert“ angelegt wird.
+    abbrechen, damit nur eine Abrechnungsinformation für E-Rezepte mit dem Status "quittiert" angelegt wird.
 </requirement>
 
 <!--A_22132-02-->

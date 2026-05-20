@@ -124,14 +124,14 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
         </li>
         <li>Optional: Die Schritte 1 bis 3 können bei mehreren auszustellenden Verordnungen wiederholt werden.</li>
         <li>
-          Mit dem Start des Prozesses „Jetzt Signieren“ durch den Arzt werden alle zur Signatur freigegebenen Verordnungen in einem 
+          Mit dem Start des Prozesses "Jetzt Signieren" durch den Arzt werden alle zur Signatur freigegebenen Verordnungen in einem 
           Hintergrundprozess qualifiziert signiert und in den TI-Flow-Fachdienst eingestellt.
         </li>
         <li>
           Es wird ein Hinweistext angezeigt, wenn das Signieren und das Einstellen in den TI-Flow-Fachdienst erfolgreich abgeschlossen wurde.
         </li>
         <li>
-          Ist die Einstellung „Patientenausdruck erstellen“ gewählt, werden nach dem erfolgreichen Einstellen in den 
+          Ist die Einstellung "Patientenausdruck erstellen" gewählt, werden nach dem erfolgreichen Einstellen in den 
           TI-Flow-Fachdienst die Patientenausdrucke automatisch gedruckt.
         </li>
       </ol>
@@ -545,7 +545,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 
 #### Zentrale Aufgabenliste
 
-Ein Arzt arbeitet in seinem Arbeitsablauf verschiedene Signaturaufgaben (bspw. für die Elektronische Arbeitsunfähigkeitsbescheinigung oder das E-Rezept) ab. Diese sollen ihm im Primärsystem an einer zentralen Stelle (im Folgenden als „Aufgabenliste“ bezeichnet) angezeigt werden, sodass die Aufgaben einfach zu finden und zu bearbeiten sind. Diese Aufgabenliste soll sortier- und filterbar sein. In Gemeinschaftspraxis, wo bspw. mehrere Ärzte gemeinsam Patienten behandeln, soll es möglich sein die Rezepte anderer Kollegen einzusehen und zu signieren.
+Ein Arzt arbeitet in seinem Arbeitsablauf verschiedene Signaturaufgaben (bspw. für die Elektronische Arbeitsunfähigkeitsbescheinigung oder das E-Rezept) ab. Diese sollen ihm im Primärsystem an einer zentralen Stelle (im Folgenden als "Aufgabenliste" bezeichnet) angezeigt werden, sodass die Aufgaben einfach zu finden und zu bearbeiten sind. Diese Aufgabenliste soll sortier- und filterbar sein. In Gemeinschaftspraxis, wo bspw. mehrere Ärzte gemeinsam Patienten behandeln, soll es möglich sein die Rezepte anderer Kollegen einzusehen und zu signieren.
 
 <!-- A_23595 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-192" title="PS verordnende LEI: UX - Aufgabenliste" version="0">

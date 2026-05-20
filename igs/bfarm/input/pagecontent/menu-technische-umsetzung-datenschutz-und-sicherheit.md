@@ -25,7 +25,7 @@ Hieraus ergibt sich, dass im Hinblick auf die Datenminimierung personenbezogener
 </ul>
 Die Daten des digitalen Durchschlags stammen im Wesentlichen aus dem Verordnungsdatensatz, dem Dispensierdatensatz und dem FHIR-VZD.
 
-Vor dem Hintergrund einer zu verhindernden Profilbildung über die abgebenden Apotheken, wird die Vertraulichkeit dieser Information mit „hoch“ innerhalb des Verantwortungsbereichs der TI bzw. der gematik bewertet. Dies gilt auch für die Bewertung der Integrität ("hoch").
+Vor dem Hintergrund einer zu verhindernden Profilbildung über die abgebenden Apotheken, wird die Vertraulichkeit dieser Information mit "hoch" innerhalb des Verantwortungsbereichs der TI bzw. der gematik bewertet. Dies gilt auch für die Bewertung der Integrität ("hoch").
 
 Dieser Schutzbedarf wird berücksichtigt, in dem der verbindungsaufbauende Endpunkt einer TLS-gesicherten Verbindung zum T-Register beim BfArM innerhalb der VAU des TI-Flow-Fachdienstes liegt, der Betreiber des TI-Flow-Fachdienstes also nicht sieht, welche Daten übertragen werden. Im Rahmen der Nutzung von TLS findet eine Authentifizierung des T-Registers des BfArM durch den TI-Flow-Fachdienst (Anforderung der gematik) und eine Authentifizierung des TI-Flow-Fachdienstes durch das T-Register des BfArM (Anforderung des BfArM) statt.
 
@@ -37,7 +37,7 @@ Die Nutzung des FHIR-VZD durch den TI-Flow-Fachdienst erfolgt im Rahmen einer An
 
 ### Neuer Anwendungsfall
 
-Neben der Nutzung bereits spezifizierter Anwendungsfälle, wird ein neuer Anwendungsfall „Digitaler Durchschlag E-T-Rezept an den BfArM Webdienst übertragen“ spezifiziert. Die Verfügbarkeit des Anwendungsfall wird mit „normal“ bewertet, da ein bei einer Nichtverfügbarkeit die Daten in einer Warteschlange aufgehoben werden, bis der Anwendungsfall erfolgreich ausgeführt werden konnte.
+Neben der Nutzung bereits spezifizierter Anwendungsfälle, wird ein neuer Anwendungsfall "Digitaler Durchschlag E-T-Rezept an den BfArM Webdienst übertragen" spezifiziert. Die Verfügbarkeit des Anwendungsfall wird mit "normal" bewertet, da ein bei einer Nichtverfügbarkeit die Daten in einer Warteschlange aufgehoben werden, bis der Anwendungsfall erfolgreich ausgeführt werden konnte.
 
 ### Protokollierung
 

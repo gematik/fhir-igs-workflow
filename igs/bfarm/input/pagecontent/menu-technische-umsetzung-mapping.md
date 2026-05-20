@@ -6,9 +6,9 @@ Hintergründe zum Datenmodell und zu den Designentscheidungen finden sich unter 
 
 ### Erstellen des digitalen Durchschlags
 
-Der TI-Flow-Fachdienst erstellt ein Artefakt mit dem Profil „digitaler Durchschlag T-Rezept“. Dabei werden Informationen aus der Verordnung, der Dispensierung (Abgabe) und dem FHIR-VZD (Verzeichnisdienst) genutzt. Die fachlichen Inhalte, die hierbei übertragen werden, sind im [Logisches Modell digitaler Durchschlag E-T-Rezept](./StructureDefinition-erp-tprescription-carbon-copy-logical.html) abgebildet.
+Der TI-Flow-Fachdienst erstellt ein Artefakt mit dem Profil "digitaler Durchschlag T-Rezept". Dabei werden Informationen aus der Verordnung, der Dispensierung (Abgabe) und dem FHIR-VZD (Verzeichnisdienst) genutzt. Die fachlichen Inhalte, die hierbei übertragen werden, sind im [Logisches Modell digitaler Durchschlag E-T-Rezept](./StructureDefinition-erp-tprescription-carbon-copy-logical.html) abgebildet.
 
-Der TI-Flow-Fachdienst erzeugt diesen Datensatz aus den Eingangsdaten, die nach abschliessender Bereitstellung der Dispensierinformation im E-Rezept-Workflows zur Verfügung stehen. Der relevante Workflow-Typ ist der [Flowtype 166](https://simplifier.net/erezept-workflow/gem-erp-cs-flowtype) („Flowtype für Arzneimittel nach § 3a AMVV“), der speziell für diesen Anwendungsfall eingeführt wurde.
+Der TI-Flow-Fachdienst erzeugt diesen Datensatz aus den Eingangsdaten, die nach abschliessender Bereitstellung der Dispensierinformation im E-Rezept-Workflows zur Verfügung stehen. Der relevante Workflow-Typ ist der [Flowtype 166](https://simplifier.net/erezept-workflow/gem-erp-cs-flowtype) ("Flowtype für Arzneimittel nach § 3a AMVV"), der speziell für diesen Anwendungsfall eingeführt wurde.
 
 ### Mapping des digitalen Durchschlags E-T-Rezept
 

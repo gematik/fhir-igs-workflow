@@ -107,7 +107,7 @@ Diese Seite beschreibt Anforderungen an das Datenmodell für den payload der `Co
     <tr>
       <td>phone</td>
       <td>Falls communicationType = order: ja<br>Ansonsten: nein</td>
-      <td>Telefonnummer. E-164 Format, jedoch anstelle des „+" mit „00" / rein nummerisch.</td>
+      <td>Telefonnummer. E-164 Format, jedoch anstelle des "+" mit "00" / rein nummerisch.</td>
       <td>32 Stellen</td>
       <td>004916094858168</td>
     </tr>

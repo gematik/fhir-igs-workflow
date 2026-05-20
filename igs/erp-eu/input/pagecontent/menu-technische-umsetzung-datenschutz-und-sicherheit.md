@@ -29,7 +29,7 @@ Durch dieses Feature werden die folgenden wesentlichen Informationsobjekte einge
 |Informationsobjekt|Beschreibung|Personenbezug|Vertraulichkeit|Integrität|
 |---|---|---|---|---|
 |Zugriffscode|Sechsstelliger alphanumerischer Zugriffscode zur Autorisierung eines LE-EU zum Abruf und zur Einlösung von E-Rezepten eines Versicherten.|nein|hoch|hoch|
-|Zugriffscode - Schutzbedarf Vertraulichkeit|Der Schutzbedarf für die Vertraulichkeit des Freischaltcodes wird mit „hoch“ bewertet, da die Kenntnis des Zugriffscodes allein nicht für das Einlösen eines E-Rezepts ausreicht.|nein|hoch|-|
+|Zugriffscode - Schutzbedarf Vertraulichkeit|Der Schutzbedarf für die Vertraulichkeit des Freischaltcodes wird mit "hoch" bewertet, da die Kenntnis des Zugriffscodes allein nicht für das Einlösen eines E-Rezepts ausreicht.|nein|hoch|-|
 |Zugriffscode - Schutzbedarf Integrität|Eine Verletzung der Integrität verhindert den Zugriff auf E-Rezepte.|nein|-|hoch|
 
 <div><figcaption><strong>Tabelle: </strong>Neue Informationsobjekte im Kontext TI-Flow-Fachdienst im EU Kontext</figcaption></div>
