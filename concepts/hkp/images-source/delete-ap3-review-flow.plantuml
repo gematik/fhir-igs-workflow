@@ -1,0 +1,29 @@
+@startuml
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+
+title Automatische Löschung während der Antragsprüfung nach Zuweisung
+
+$state_init(init)
+$state_open(open)
+$state_assigned(assigned)
+$state_deleted(deleted)
+
+state "Sub-Workflow Antragsprüfung" as subworkflow_review {
+    $state_review(review)
+}
+
+
+
+[*] -> init
+
+init -> open : <color:black><back:Lime> 1
+open -> assigned : <color:black><back:Lime> 2
+assigned -> review : <color:black><back:Salmon> AP3
+review -[dashed]> deleted : <color:black><back:Lavender> AL3
+
+deleted -> [*]
+
+@enduml

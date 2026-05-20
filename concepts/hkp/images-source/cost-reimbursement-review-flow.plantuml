@@ -1,0 +1,32 @@
+@startuml
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+
+title Antragsprüfung vor Zuweisung / Kostenerstattung
+
+$state_init(init)
+$state_open(open)
+$state_completed(completed)
+$state_deleted(deleted)
+$state_cancelled(cancelled)
+
+state "Sub-Workflow Antragsprüfung" as subworkflow_review {
+    $state_review(review)
+}
+
+
+[*] -> init
+
+init -> open : <color:black><back:Lime> 1
+open -> review : <color:black><back:Salmon> AP1
+review -> completed : <color:black><back:Salmon> AP2
+
+completed -> cancelled : <color:black><back:yellow> ML3
+completed -[dashed]> deleted : <color:black><back:Lavender> AL2
+
+cancelled -[dashed]> deleted
+deleted -> [*]
+
+@enduml

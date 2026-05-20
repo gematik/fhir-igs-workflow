@@ -1,0 +1,23 @@
+@startuml
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+
+title Löschen im offenen Zustand
+
+$state_init(init)
+$state_open(open)
+$state_deleted(deleted)
+$state_cancelled(cancelled)
+
+
+[*] -> init
+
+init -> open : <color:black><back:Lime> 1
+open -> cancelled : <color:black><back:yellow> ML2
+
+cancelled -[dashed]> deleted
+deleted -> [*]
+
+@enduml

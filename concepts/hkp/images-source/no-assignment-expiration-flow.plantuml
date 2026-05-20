@@ -1,0 +1,26 @@
+@startuml
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+
+title Keine Zuweisung bis Ablauf
+
+$state_init(init)
+$state_open(open)
+$state_completed(completed)
+$state_deleted(deleted)
+$state_cancelled(cancelled)
+
+
+[*] -> init
+
+init -> open : <color:black><back:Lime> 1
+open -[dashed]>  completed : <color:black><back:DeepSkyBlue> AA1
+completed -> cancelled : <color:black><back:yellow> ML3
+completed -[dashed]> deleted : <color:black><back:Lavender> AL2
+cancelled -[dashed]> deleted
+
+deleted -> [*]
+
+@enduml

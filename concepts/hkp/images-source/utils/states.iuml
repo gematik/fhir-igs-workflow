@@ -1,0 +1,89 @@
+@startuml
+
+!procedure $state_init($alias)
+state "<<initialisiert>>\nOrderTask" as $alias
+$alias : status = <b>draft</b>
+$alias : businessStatus = <b>initialized</b>
+!endprocedure
+
+!procedure $state_open($alias)
+state "<<offen>>\nOrderTask" as $alias
+$alias : status = <b>ready</b>
+$alias : businessStatus = <b>open</b>
+!endprocedure
+
+!procedure $state_ready_for_assignment($alias)
+state "<<offen>>\nOrderTask" as $alias
+$alias:status = <b>ready</b>
+$alias:businessStatus = <b>ready-for-final-assignment</b>
+!endprocedure
+
+!procedure $state_assigned($alias)
+state "<<zugewiesen>>\nOrderTask" as $alias
+$alias:status = <b>in-progress</b>
+$alias:businessStatus = <b>assigned</b>
+!endprocedure
+
+!procedure $state_assigned_decided($alias)
+state "<<zugewiesen (beschieden)>>\nOrderTask" as $alias:
+$alias:status = <b>in-progress</b>
+$alias:businessStatus = <b>assigned-decided</b>
+!endprocedure
+
+!procedure $state_review($alias)
+state "<<Antragsprüfung>>\nOrderTask" as $alias
+$alias:status = <b>on-hold</b>
+$alias:businessStatus = <b>in-review</b>
+!endprocedure
+
+!procedure $state_correction($alias)
+state "<<Korrekturanfrage>>\nOrderTask" as $alias
+$alias:status = <b>on-hold</b>
+$alias:businessStatus = <b>correction-requested</b>
+!endprocedure
+
+!procedure $state_completed($alias)
+state "<<abgeschlossen>>\nOrderTask" as $alias
+$alias:status = <b>completed</b>
+$alias:businessStatus = <b>completed</b>
+!endprocedure
+
+!procedure $state_deleted($alias)
+state "<color:white>gelöscht" as $alias #Crimson
+!endprocedure
+
+
+!procedure $state_cancelled($alias)
+state "<<manuell gelöscht>>\nOrderTask" as $alias #Orange
+$alias : status = <b>cancelled</b>
+$alias : businessStatus = <b>deleted</b>
+!endprocedure
+
+
+
+!procedure $state_reviewtask_requested($alias, $from)
+state "<<angefragt>>\nReviewTask" as $alias #BUSINESS
+$alias:status = <b>requested</b>
+$alias:businessStatus = <b>review-requested</b>
+$alias:fromBusinessStatus = <b>$from</b>
+$alias:partOf = OrderTask
+!endprocedure
+
+
+!procedure $state_reviewtask_in_progress($alias, $from)
+state "<<in Durchführung>>\nReviewTask" as $alias #BUSINESS
+$alias:status = <b>in-progress</b>
+$alias:businessStatus = <b>review-in-progress</b>
+$alias:fromBusinessStatus = <b>$from</b>
+$alias:partOf = OrderTask
+!endprocedure
+
+!procedure $state_reviewtask_completed($alias, $from)
+state "<<abgeschlossen>>\nReviewTask" as $alias #BUSINESS
+$alias:status = <b>in-completed</b>
+$alias:businessStatus = <b>review-completed</b>
+$alias:fromBusinessStatus = <b>$from</b>
+$alias:partOf = OrderTask
+!endprocedure
+
+@enduml

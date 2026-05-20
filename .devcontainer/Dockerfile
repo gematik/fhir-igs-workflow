@@ -1,115 +1,86 @@
-FROM mcr.microsoft.com/devcontainers/javascript-node:1-20
+FROM mcr.microsoft.com/devcontainers/base:alpine-3.20
 
-RUN apt-get update \
-   && apt-get install -y --no-install-recommends \
-       openjdk-17-jre-headless \
-       curl \
-       jq \
-       wget \
-      apt-transport-https \
-      ca-certificates \
-      gnupg \
-      zsh \
-      python3.11 \
-      python3.11-venv \
-      python3-pip \
-      build-essential \
-      autoconf \
-      bison \
-      libssl-dev \
-      libreadline-dev \
-      zlib1g-dev \
-      libyaml-dev \
-      libffi-dev \
-      libgdbm-dev \
-      libgdbm-compat-dev \
-      libdb-dev \
-      libncurses5-dev \
-      libgmp-dev \
-      libxml2-dev \
-      libxslt1-dev \
-      libsqlite3-dev \
-      libcurl4-openssl-dev \
-       xvfb \
-       libgtk-3-0 \
-       libnotify4 \
-       libxss1 \
-       libnss3 \
-       libxtst6 \
-       libasound2 \
-       libatk1.0-0 \
-       libatk-bridge2.0-0 \
-       libx11-xcb1 \
-       libxkbfile1 \
-       libxcomposite1 \
-       libxdamage1 \
-       libxrandr2 \
-       libgbm1 \
-       libdrm2 \
-       libxshmfence1 \
-        libxcb-dri3-0 \
-   && rm -rf /var/lib/apt/lists/*
 
-RUN git clone --depth 1 https://github.com/rbenv/ruby-build.git /tmp/ruby-build \
-   && /tmp/ruby-build/install.sh \
-   && ruby-build 3.2.2 /usr/local \
-   && rm -rf /tmp/ruby-build
+# Setzen der Umgebungsvariablen
+ENV CLOUD_SDK_VERSION=464.0.0
+ENV FIRELY_TERMINAL_VERSION=3.3.2
+ENV JAVA_VALIDATOR_VERSION=6.3.25
+ENV SUSHI_VERSION=3.16.4
 
-RUN wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq \
-   && chmod +x /usr/local/bin/yq
+# Google Cloud SDK herunterladen und installieren
+RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
+  tar -xf google-cloud-cli-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
+  ./google-cloud-sdk/install.sh --quiet && \
+  rm google-cloud-cli-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz
 
-RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" \
-       > /etc/apt/sources.list.d/google-cloud-sdk.list \
-   && curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg \
-       | gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg \
-   && apt-get update \
-   && apt-get install -y --no-install-recommends google-cloud-cli \
-   && rm -rf /var/lib/apt/lists/*
+# Installieren der notwendige Tools
+# Add Microsoft's .NET SDK repository and install .NET SDK
+RUN apk add --no-cache dotnet8-sdk
 
-RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh \
-   && chmod +x /tmp/dotnet-install.sh \
-   && /tmp/dotnet-install.sh --channel 8.0 --install-dir /usr/share/dotnet \
-   && ln -s /usr/share/dotnet/dotnet /usr/local/bin/dotnet \
-   && rm /tmp/dotnet-install.sh
+# Install ICU libraries
+RUN apk add --no-cache icu-libs
 
-RUN dotnet tool install --tool-path /usr/local/bin Firely.Terminal --version 3.4.0
+# Install Node.js and npm
+RUN apk add --no-cache nodejs npm
 
-RUN python3.11 -m pip install --no-cache-dir --upgrade --break-system-packages pip pipx \
-   && PIPX_HOME=/opt/pipx PIPX_BIN_DIR=/usr/local/bin pipx install git+https://github.com/onyg/req-tooling.git
+# Install Java (OpenJDK)
+RUN apk add --no-cache openjdk17
 
-RUN gem install jekyll bundler
+# Install jekyll
+RUN apk add --no-cache jekyll
 
-RUN set -e; \
-   drawio_url=$(curl -s https://api.github.com/repos/jgraph/drawio-desktop/releases/latest \
-      | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url' \
-      | head -n 1); \
-   echo "Downloading draw.io from $drawio_url"; \
-   curl -L "$drawio_url" -o /usr/local/bin/drawio.appimage; \
-   chmod +x /usr/local/bin/drawio.appimage; \
-   printf '%s\n' \
-      '#!/usr/bin/env bash' \
-      'set -euo pipefail' \
-      'exec xvfb-run -a /usr/local/bin/drawio.appimage "$@"' \
-      > /usr/local/bin/drawio; \
-   chmod +x /usr/local/bin/drawio
+# Install py-pip
+RUN apk add --no-cache py-pip py3-yaml pipx
 
-RUN printf '%s\n' \
-      '#!/usr/bin/env bash' \
-      'set -euo pipefail' \
-      'IGTOOLS_DIR="${IGTOOLS_DIR:-/opt/igtools}"' \
-      'IGTOOLS_JAR="$IGTOOLS_DIR/igtools.jar"' \
-      'IGTOOLS_URL="${IGTOOLS_URL:-https://hl7.org/fhir/tools/igtools.jar}"' \
-      'mkdir -p "$IGTOOLS_DIR"' \
-      'if [[ ! -f "$IGTOOLS_JAR" ]]; then' \
-      '  echo "Downloading igtools from $IGTOOLS_URL"' \
-      '  curl -fL "$IGTOOLS_URL" -o "$IGTOOLS_JAR" || { echo "Error: Failed to download igtools from $IGTOOLS_URL" >&2; exit 1; }' \
-      '  if ! file "$IGTOOLS_JAR" | grep -q "Java archive\|Zip archive"; then' \
-      '    echo "Error: Downloaded file is not a valid JAR archive" >&2' \
-      '    rm -f "$IGTOOLS_JAR"' \
-      '    exit 1' \
-      '  fi' \
-      'fi' \
-      'exec java -jar "$IGTOOLS_JAR" "$@"' \
-      > /usr/local/bin/igtools \
-   && chmod +x /usr/local/bin/igtools \
-   && mkdir -p /opt/igtools && chown node:node /opt/igtools
+# Install Firely Terminal as vscode user
+# Switch to the vscode user
+USER vscode
+
+RUN pipx install gsutil
+ENV PATH="/google-cloud-sdk/bin:${PATH}"
+
+# Install Firely Terminal
+RUN dotnet tool install --global Firely.Terminal --version $FIRELY_TERMINAL_VERSION
+
+# Add .NET tools to PATH for vscode user
+ENV PATH="/home/vscode/.dotnet/tools:${PATH}"
+
+# Add fhirscripts
+RUN pipx install -f git+https://github.com/gematik/fhir-scripts.git
+
+# Switch back to root user to perform remaining installations
+USER root
+
+RUN npm install -g fsh-sushi@$SUSHI_VERSION
+
+# Static webserver for local development
+RUN npm install -g http-server
+
+# Installieren der zusätzliche Abhängigkeiten
+RUN apk update && apk add --no-cache jq findutils curl ca-certificates
+
+# Setup for FHIR Validator
+RUN mkdir -p /home/vscode/.fhir/validators/
+RUN wget -q https://github.com/hapifhir/org.hl7.fhir.core/releases/download/$JAVA_VALIDATOR_VERSION/validator_cli.jar -O /home/vscode/.fhir/validators/validator_cli.jar
+
+# Set ownership
+RUN mkdir -p /home/vscode/.fhir/packages && \
+  chown -R vscode:vscode /home/vscode/.fhir/packages
+
+RUN mkdir -p /home/vscode/.fhir/settings/
+COPY codfsh-config.yaml /home/vscode/.fhir/settings/codfsh-config.yaml
+
+# Installing PlantUML...
+RUN apk add curl graphviz fontconfig
+
+# Setup scripts
+RUN mkdir /scripts
+RUN curl -L https://raw.githubusercontent.com/gematik/fhir-scripts/refs/heads/main/scripts/fhir_scripts.sh -o /scripts/fhir_scripts.sh && chmod +x /scripts/fhir_scripts.sh
+RUN /scripts/fhir_scripts.sh pytools
+
+# Setzen des Arbeitsverzeichnis
+WORKDIR /workspace
+
+COPY . /workspace
+
+CMD [ "/bin/bash" ]

@@ -1,0 +1,30 @@
+@startuml
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+
+title Rückgabe und Neuzuweisung
+
+$state_init(init)
+$state_open(open)
+$state_assigned(assigned)
+$state_completed(completed)
+$state_deleted(deleted)
+$state_cancelled(cancelled)
+
+
+[*] -> init
+
+init -> open : <color:black><back:Lime> 1
+open -> assigned : <color:black><back:Lime> 2
+assigned -> open : <color:black><back:Lime> 3
+assigned -[dashed]>  completed : <color:black><back:DeepSkyBlue> AA2
+
+completed -> cancelled : <color:black><back:yellow> ML3
+completed -[dashed]> deleted : <color:black><back:Lavender> AL2
+
+cancelled -[dashed]> deleted 
+deleted -> [*]
+
+@enduml

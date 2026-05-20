@@ -1,0 +1,53 @@
+@startuml
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+
+title HKP Workflow - Gesamtübersicht ohne Korrekturprozesse
+
+$state_init(init)
+$state_open(open)
+$state_assigned(assigned)
+$state_review(review)
+$state_ready_for_assignment(ready)
+$state_assigned_decided(assigned_decided)
+$state_completed(completed)
+$state_deleted(deleted)
+$state_cancelled(cancelled)
+
+
+[*] --> init
+
+init --> open : <color:black><back:Lime> 1
+open -> assigned : <color:black><back:Lime> 2
+assigned -> open : <color:black><back:Lime> 3
+
+assigned -> review : <color:black><back:Salmon> AP3
+review --> assigned_decided : <color:black><back:Salmon> AP4
+
+open ---> review : <color:black><back:Salmon> AP1
+review --> ready : <color:black><back:Salmon> AP1.5
+ready --> assigned_decided : <color:black><back:Lime> 2
+
+open -[dashed]->  completed : <color:black><back:DeepSkyBlue> AA1
+
+review -> completed : <color:black><back:Salmon> AP2
+
+review -[dashed]-> deleted : <color:black><back:Lavender> AL3
+
+assigned -[dashed]->  completed : <color:black><back:DeepSkyBlue> AA2
+assigned_decided --> completed : <color:black><back:DeepSkyBlue> AA2
+
+init --> cancelled : <color:black><back:yellow> ML1
+init -[dashed]-> deleted : <color:black><back:Lavender> AL1
+
+open -> cancelled : <color:black><back:yellow> ML2
+
+completed --> cancelled : <color:black><back:yellow> ML3
+completed -[dashed]-> deleted : <color:black><back:Lavender> AL2
+
+cancelled -[dashed]-> deleted 
+deleted --> [*]
+
+@enduml

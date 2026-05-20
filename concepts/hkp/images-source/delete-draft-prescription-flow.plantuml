@@ -1,0 +1,23 @@
+@startuml
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+
+title Löschen vor Veröffentlichung
+
+$state_init(init)
+$state_deleted(deleted)
+$state_cancelled(cancelled)
+
+
+[*] -> init
+
+init -> cancelled : <color:black><back:yellow> ML1
+init -[dashed]> deleted : <color:black><back:Lavender> AL1
+
+cancelled -[dashed]> deleted
+
+deleted -> [*]
+
+@enduml
