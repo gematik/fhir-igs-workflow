@@ -67,7 +67,7 @@ Der TI-Flow-Fachdienst MUSS die Abrechnungsinformationen während der Verarbeitu
 </requirement>
 
 <!--A_22214-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-42" title="Protokollierung der Einwilligung bzw. des Widerrufs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-42" title="Protokollierung der Einwilligung bzw. des Widerrufs" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>

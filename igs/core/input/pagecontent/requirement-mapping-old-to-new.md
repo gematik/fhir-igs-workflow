@@ -59,7 +59,7 @@ Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_I
 | [A_20672-02](https://gemspec.gematik.de/search/index.html?A_20672-02) | CS: Annahme des ID_TOKEN | IG-TIFLOW-CORE-20 | core |
 | [A_20673-02](https://gemspec.gematik.de/search/index.html?A_20673-02) | CS: Annahme des ACCESS_TOKEN | IG-TIFLOW-CORE-21 | core |
 | [A_20674-01](https://gemspec.gematik.de/search/index.html?A_20674-01) | CS: Formale Prüfung der Signatur des ID_TOKEN und des ACCESS_TOKEN | IG-TIFLOW-CORE-22 | core |
-| [A_20675-01](https://gemspec.gematik.de/search/index.html?A_20675-01) | CS: Gültigkeitsprüfung des Signaturzertifikats des ACCESS_TOKEN innerhalb der TI | IG-TIFLOW-CORE-23 | core |
+| [A_20675-01](https://gemspec.gematik.de/search/index.html?A_20675-01) | CS: Gültigkeitsprüfung des Signaturzertifikats des  innerhalb der TI | IG-TIFLOW-CORE-23 | core |
 | [A_20764](https://gemspec.gematik.de/search/index.html?A_20764) | PS: Prüfung TI-Zertifikate | IG-TIFLOW-CORE-265 | core |
 | [A_20766](https://gemspec.gematik.de/search/index.html?A_20766) | PS abgebende LEI: Quittung - Quittungssignatur prüfen | IG-TIFLOW-CORE-260 | core |
 | [A_20769-01](https://gemspec.gematik.de/search/index.html?A_20769-01) | CS: verpflichtende Zertifikatsprüfung | IG-TIFLOW-CORE-264 | core |

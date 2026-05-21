@@ -99,7 +99,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     </table> 
     abbrechen, damit ein bereits in Abgabe befindliches oder beliefertes E-Rezept nicht durch eine zweite Apotheke bearbeitet werden kann. <br>
     Der TI-Flow-Fachdienst MUSS in OperationOutcome die Information zum Status angeben: "Task has invalid status completed", "Task has invalid status in-progress" bzw. "Task has invalid status draft". <br>
-    Der TI-Flow-Fachdienst MUSS in OperationOutcome zusätzlich die Information "Task is processed by requesting institution" ergänzen, wenn Task.status = "in-progress" und die zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden LEI mit der Telematik-ID aus dem ACCESS_TOKEN übereinstimmt.
+    Der TI-Flow-Fachdienst MUSS in OperationOutcome zusätzlich die Information "Task is processed by requesting institution" ergänzen, wenn Task.status = "in-progress" und die zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden LEI mit zeta-user-info.identifier des Nutzers übereinstimmt.
 </requirement>
 
 <!-- ToDo: Was bedeutet %1 in der obigen Tabelle -->
@@ -149,12 +149,12 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
 </requirement>
 
 <!-- A_24174-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-252" title="TI-Flow-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden Institution speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-252" title="TI-Flow-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden Institution speichern" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept für den referenzierten Task die Telematik-ID aus dem ACCESS_TOKEN in Task.owner speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen kann.
+    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept für den referenzierten Task den identifier aus den Nutzerinformationen (Telematik-ID) in Task.owner speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen kann.
 </requirement>
 
 Die Telematik-ID ist im Task wie folgt zu hinterlegen:

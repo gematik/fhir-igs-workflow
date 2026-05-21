@@ -44,23 +44,31 @@ Mit der Operation GET /channels können die verfügbaren Channels abgefragt werd
   <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /channels die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle 
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /channels die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
   <ul>
     <li>oid_versicherter</li>
   </ul>
   die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
-      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>403 - Forbidden</td>
         </tr>
         <tr>
-            <th>Error Code</th>
-            <td>invalidOid</td>
+            <th>Severity</th>
+            <td>error</td>
         </tr>
         <tr>
-            <th>Error Details</th>
-            <td>-</td>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
     abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
@@ -74,23 +82,31 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
   <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /channels/{pushkey} die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle 
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /channels/{pushkey} die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
   <ul>
     <li>oid_versicherter</li>
   </ul>
   die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
-      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>403 - Forbidden</td>
         </tr>
         <tr>
-            <th>Error Code</th>
-            <td>invalidOid</td>
+            <th>Severity</th>
+            <td>error</td>
         </tr>
         <tr>
-            <th>Error Details</th>
-            <td>-</td>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
     abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
@@ -106,23 +122,31 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
   <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /channels/{pushkey} die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle 
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /channels/{pushkey} die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
   <ul>
     <li>oid_versicherter</li>
   </ul>
   die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
-      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>403 - Forbidden</td>
         </tr>
         <tr>
-            <th>Error Code</th>
-            <td>invalidOid</td>
+            <th>Severity</th>
+            <td>error</td>
         </tr>
         <tr>
-            <th>Error Details</th>
-            <td>-</td>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
     abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.

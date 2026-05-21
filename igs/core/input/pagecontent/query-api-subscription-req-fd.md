@@ -6,13 +6,13 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
      <ul>
      <li>oid_oeffentliche_apotheke</li> 
      <li>oid_krankenhausapotheke</li>
      <li>oid_kostentraeger</li>
      </ul>
-     die Operation am TI-Flow-Fachdienst aufrufen dürfen, und bei Abweichungen die Operation mit dem folgenden Fehler:
+     die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -39,7 +39,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22364 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-347" title="TI-Flow-Fachdienst - Subscription registrieren - Response" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-347" title="TI-Flow-Fachdienst - Subscription registrieren - Response" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -54,7 +54,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22365 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-348" title="TI-Flow-Fachdienst - Subscription registrieren - Pseudonym der Telematik-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-348" title="TI-Flow-Fachdienst - Subscription registrieren - Pseudonym der Telematik-ID" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -63,7 +63,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22383-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-349" title="TI-Flow-Fachdienst - Generierungsschlüssel - Pseudonym der Telematik-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-349" title="TI-Flow-Fachdienst - Generierungsschlüssel - Pseudonym der Telematik-ID" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -72,7 +72,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22366 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-350" title="TI-Flow-Fachdienst - Subscription registrieren - Barrier-Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-350" title="TI-Flow-Fachdienst - Subscription registrieren - Barrier-Token" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -92,7 +92,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource durch eine abgebende Institution, diese anhand der Telematik-ID aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in der Ressource im Element criteria Attribut receipient hinterlegte Telematik-ID prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource durch eine abgebende Institution, diese anhand des zeta-user-info.identifier des Nutzers (Telematik-ID) identifizieren, diese gegen die in der Ressource im Element criteria Attribut receipient hinterlegte Telematik-ID prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>

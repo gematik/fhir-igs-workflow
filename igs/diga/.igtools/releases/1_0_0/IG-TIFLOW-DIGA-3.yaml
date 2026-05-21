@@ -14,16 +14,15 @@ test_procedures:
   - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels\
   \ HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#60;\
-  \ die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader\
-  \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen\
-  \ in der Rolle\n <ul>\n <li>oid_kostentraeger</li>\n </ul>\n die Operation am Fachdienst\
-  \ aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table\
-  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
-  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
-  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
-  \ <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n\
-  \ <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation\
-  \ anzufordern</td>\n </tr>\n </table> \n abbrechen, damit der Workflow nicht durch\
-  \ einen Unberechtigten abgeschlossen werden kann."
+  \ die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass\
+  \ ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_kostentraeger</li>\n </ul>\n\
+  \ die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem\
+  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die\
+  \ aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abbrechen, damit\
+  \ der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann."
 title: TI-Flow-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung
 version: 1

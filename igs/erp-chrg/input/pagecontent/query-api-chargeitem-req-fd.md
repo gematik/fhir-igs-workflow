@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `Char
 
 ### Allgemeine Regeln
 <!--A_22111-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-44" title="TI-Flow-Fachdienst - ChargeItem - unzulässige Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-44" title="TI-Flow-Fachdienst - ChargeItem - unzulässige Operationen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -11,7 +11,7 @@ Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels d
 </requirement>
 
 <!-- A_22141 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-45" title="TI-Flow-Fachdienst - Signaturzertifikat SMC-B prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-45" title="TI-Flow-Fachdienst - Signaturzertifikat SMC-B prüfen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -26,7 +26,11 @@ Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels d
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /ChargeItem sicherstellen, dass ausschließlich Nutzer in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /ChargeItem die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
+    <ul>
+    <li>oid_versicherter</li>
+    </ul>
+    die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -53,16 +57,16 @@ Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels d
 </requirement>
 
 <!--A_22119-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-47" title="TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Versicherter - Filter KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-47" title="TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Versicherter - Filter KVNR" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /ChargeItem durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren und die ChargeItems danach filtern, damit der Versicherte nur Abrechnungsinformationen abruft, bei denen er der Begünstigte ist.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /ChargeItem durch einen Versicherten, den Versicherten anhand zeta-user-info.identifier der Nutzerinformation identifizieren und die ChargeItems danach filtern, damit der Versicherte nur Abrechnungsinformationen abruft, bei denen er der Begünstigte ist.
 </requirement>
 
 <!--A_22121-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-48" title="TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Suchkriterien" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-48" title="TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Suchkriterien" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -71,7 +75,7 @@ Der TI-Flow-Fachdienst MUSS das Eingrenzen einer Suchanfrage auf /ChargeItem üb
 </requirement>
 
 <!--A_22122-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-49" title="TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Response" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-49" title="TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Response" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -86,13 +90,13 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt 
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource sicherstellen, dass ausschließlich Versicherte oder Apotheken in den Rollen 
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der der Rollen 
     <ul>
         <li>oid_versicherter</li>
         <li>oid_oeffentliche_apotheke</li>
         <li>oid_krankenhausapotheke</li> 
     </ul>
-    die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+    die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -124,7 +128,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt 
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten, den Versicherten anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren, diese gegen die in ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -156,7 +160,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt 
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende Leistungserbringerinstitution, die LEI anhand der Telematik-ID aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in ChargeItem.enterer.identifier hinterlegte Telematik-ID der einstellenden LEI prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende Leistungserbringerinstitution, die LEI anhand des zeta-user-info.identifier des Nutzers (Telematik-ID) identifizieren, diese gegen die in ChargeItem.enterer.identifier hinterlegte Telematik-ID der einstellenden LEI prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -215,7 +219,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete
 </requirement>
 
 <!--A_22127-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-54" title="TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Versicherte - Signieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-54" title="TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Versicherte - Signieren" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -224,7 +228,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete
 </requirement>
 
 <!--A_22128-01-->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-55" title="TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Apotheke - kein AccessCode und Quittung" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-55" title="TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Apotheke - kein AccessCode und Quittung" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -239,12 +243,12 @@ Der TI-Flow-Fachdienst DARF beim Aufruf der Operation GET /ChargeItem/&#60;id&#6
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem sicherstellen, dass ausschließlich Nutzer in einer der Rollen 
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen 
     <ul>
         <li>oid_oeffentliche_apotheke</li>
         <li>oid_krankenhausapotheke</li>
     </ul>
-    die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen mit dem folgenden Fehler:
+    die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -449,7 +453,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
     <ul>
     <li>die Korrektheit der Rezept-ID (GEM_ERP_PR_PrescriptionId) im referenzierten Task als ChargeItem.identifier, </li>
     <li>die Korrektheit der Versicherten-ID des Versicherten im referenzierten Task (Task.for) gegen ChargeItem.subject.identifier </li>
-    <li>und die Korrektheit der Telematik-ID der Apotheke gemäß ACCESS_TOKEN mit dem Wert in ChargeItem.enterer.identifier</li>
+    <li>und die Korrektheit der Telematik-ID der Apotheke gemäß Nutzerinformation (zeta-user-info.identifier) mit dem Wert in ChargeItem.enterer.identifier</li>
     </ul>
     prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
@@ -478,7 +482,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
 </requirement>
 
 <!--A_22137-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-64" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - PKV-Abgabedatensatz übernehmen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-64" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - PKV-Abgabedatensatz übernehmen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -615,7 +619,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
 </requirement>
 
 <!--A_22134-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-68" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Verordnungsdatensatz übernehmen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-68" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Verordnungsdatensatz übernehmen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -624,7 +628,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
 </requirement>
 
 <!--A_22135-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-69" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Quittung übernehmen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-69" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Quittung übernehmen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -633,7 +637,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
 </requirement>
 
 <!--A_22614-02-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-70" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Generierung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-70" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Generierung AccessCode" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -642,7 +646,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
 </requirement>
 
 <!-- A_22143 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-71" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - ChargeItem befüllen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-71" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - ChargeItem befüllen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -654,7 +658,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
 </requirement>
 
 <!-- A_23704 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-72" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - kein AccessCode und Quittung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-72" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - kein AccessCode und Quittung" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -663,7 +667,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
 </requirement>
 
 <!-- A_28133 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-73" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-73" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Push Notification Versicherter" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -712,7 +716,11 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PATCH-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Nutzer in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PATCH-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
+    <ul>
+    <li>oid_versicherter</li>
+  </ul>
+    die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -744,7 +752,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten, den Versicherten anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren, diese gegen die im gespeicherten Datensatz in ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -809,7 +817,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen 
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen 
     <ul>
         <li>oid_oeffentliche_apotheke</li>
         <li>oid_krankenhausapotheke</li>
@@ -878,7 +886,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende Leistungserbringerinstitution (Apotheke), diese anhand der Telematik-ID aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in ChargeItem.enterer.identifier hinterlegte Telematik-ID prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende Leistungserbringerinstitution (Apotheke), diese anhand des zeta-user-info.identifier des Nutzers (Telematik-ID) identifizieren, diese gegen die im gespeicherten Datensatz in ChargeItem.enterer.identifier hinterlegte Telematik-ID prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -937,7 +945,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
 </requirement>
 
 <!--A_22148-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-82" title="TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - PKV-Abgabedatensatz übernehmen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-82" title="TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - PKV-Abgabedatensatz übernehmen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -1110,7 +1118,7 @@ und bei fehlerhafter Prüfung die Operation mit dem folgenden Fehler:
 </requirement>
 
 <!--A_22615-02-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-87" title="TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - Generierung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-87" title="TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - Generierung AccessCode" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -1119,7 +1127,7 @@ und bei fehlerhafter Prüfung die Operation mit dem folgenden Fehler:
 </requirement>
 
 <!--A_23624-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-88" title="TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - kein AccessCode und Quittung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-88" title="TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - kein AccessCode und Quittung" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -1175,7 +1183,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
     <ul>
         <li>oid_versicherter</li>
     </ul>
@@ -1211,7 +1219,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten, den Versicherten anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren, diese gegen die in ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -1238,7 +1246,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
 </requirement>
 
 <!--A_22117-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-93" title="TI-Flow-Fachdienst - Abrechnungsinformation löschen - zu löschende Ressourcen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-93" title="TI-Flow-Fachdienst - Abrechnungsinformation löschen - zu löschende Ressourcen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>

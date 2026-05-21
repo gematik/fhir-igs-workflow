@@ -295,7 +295,7 @@ Unter der Annahme, dass die Apotheken in einem Apothekenverbund die gleiche Soft
 Für die Bedienung und Belieferung von E-T-Rezepten gelten gesonderte UX-Hinweise.
 
 <!-- A_27841 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-139" title="PS abgebende LEI: UX - Bedienung T-Rezept - Hinweis T-Rezept" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-139" title="PS abgebende LEI: UX - Bedienung T-Rezept - Hinweis T-Rezept" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -304,7 +304,7 @@ Für die Bedienung und Belieferung von E-T-Rezepten gelten gesonderte UX-Hinweis
 </requirement>
 
 <!-- A_27842 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-140" title="PS abgebende LEI: UX - Bedienung T-Rezept - Hinweis T-Rezept Belieferungsoption" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-140" title="PS abgebende LEI: UX - Bedienung T-Rezept - Hinweis T-Rezept Belieferungsoption" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -319,7 +319,7 @@ Für die Bedienung und Belieferung von E-T-Rezepten gelten gesonderte UX-Hinweis
 Die Quittung für ein beliefertes E-Rezept muss innerhalb einer vertraglich vereinbarten Frist abgerufen werden. Es sind die Regelungen des Rahmenvertrags nach SGB V §300 zu berücksichtigen. Das AVS soll sicherstellen, dass die Frist nicht überschritten wird und ggf. die Quittung automatisch abrufen. Die gematik empfiehlt die Quittung zeitnah nach der Abgabe an den Kunden abzurufen, denn mit dem Quittungsabruf werden dem Versicherten die Abgabeinformationen zum Abruf mit der App bereitgestellt.
 
 <!-- A_23808 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-141" title="PS abgebende LEI: UX - Quittung automatisch abrufen" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-141" title="PS abgebende LEI: UX - Quittung automatisch abrufen" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -330,7 +330,7 @@ Die Quittung für ein beliefertes E-Rezept muss innerhalb einer vertraglich vere
 Hinweis: Der TI-Flow-Fachdienst bietet mit der Operation GET /Task/<id> die Möglichkeit, die Quittung nach dem erstmaligen Aufruf der Operation POST /Task/<id>/$close noch einmal abzurufen. Dies ist nur möglich, bis das E-Rezept durch den Versicherten oder nach Erreichen der Löschfrist automatisch durch den E-Rezept- Fachdienst gelöscht wird. Der Anwendungsfall "Quittung abrufen" generiert nicht nur die Quittung für die Abrechnung der Apotheke, sondern schließt auch den Workflow im TI-Flow-Fachdienst ab. Der Versicherte hat Einblick in den Statusverlauf und kann ein E-Rezept auch nach Abschluss des Workflows löschen. Das AVS muss bei der Abgabe jeglichen Rezepttyps und unabhängig vom Kostenträger den Workflow über diesen Anwendungsfall abschließen.
 
 <!-- A_25643 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-142" title="PS abgebende LEI: UX - Workflow von E-Rezepten abschließen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-142" title="PS abgebende LEI: UX - Workflow von E-Rezepten abschließen" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
