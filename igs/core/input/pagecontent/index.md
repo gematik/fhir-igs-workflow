@@ -19,7 +19,7 @@ Die Vertraulichkeit und Integrität der verarbeiteten Daten gewährleistet der F
     <figcaption><strong>Abbildung: </strong>Systemüberblick TI-Flow-Fachdienst</figcaption>
 </figure>
 
-<br
+<br>
 
 ## Zweck und Geltungsbereich
 
@@ -41,6 +41,8 @@ Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow
 | Funktions IG | Diese Implementation Guides enthalten Beschreibungen zu Endpunkten und Funktionalitäten, die als Bausteine wiederverwendet werden können und daher zentral beschrieben werden. Sie existieren nicht als eigene Anwendung in der TI-Flow-Fachdienst landschaft. |
 
 <div><figcaption><strong>Tabelle: </strong>Beschreibung der IG Arten im TI-Flow-Fachdienst</figcaption></div>
+
+<br>
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 450px; margin-bottom: 30px;">
