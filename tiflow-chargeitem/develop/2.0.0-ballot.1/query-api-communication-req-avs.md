@@ -45,7 +45,7 @@ Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass die a
 funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI MUSS im Anwendungsfall "Nachricht durch Abgebenden löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/<id> mit
 * Communication-ID in URL <id> 
 ausführen.
-Der Fachdienst prüft anhand der Telematik-ID im ACCESS_TOKEN, ob die LEI der Absender der zu löschenden Nachricht ist.
+Der Fachdienst prüft anhand der Telematik-ID aus den Nutzerinformationen (zeta-user-info), ob die LEI der Absender der zu löschenden Nachricht ist.
 
 Das PS der abgebenden LEI KANN im Anwendungsfall “Nachricht durch Abgebenden löschen” dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 

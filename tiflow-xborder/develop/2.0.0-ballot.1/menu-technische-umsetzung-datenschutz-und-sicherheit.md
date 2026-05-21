@@ -44,7 +44,7 @@ Durch dieses Feature werden die folgenden wesentlichen Informationsobjekte einge
 
 ### Authentifizierung und Autorisierung
 
-Der NCPeH-FD in Deutschland ist ein neuer (VAU-) Client im E-Rezept-System. Die Authentifizierung des NCPeH-FD in Deutschland findet durch den Authorization Server des TI-Flow-Fachdienstes statt, der einen ACCESS_TOKEN ausstellt, der im TI-Flow-Fachdienst validiert wird. Dabei findet ein länderspezifisches Zertifikat Verwendung - also nicht das Zertifikat des NCPeH-FD in Deutschland, sondern ein Zertifikat, dass den NCPeH-FD im jeweiligen anfragenden EU-Ausland repräsentiert.
+Der NCPeH-FD in Deutschland ist ein (VAU-) Client im E-Rezept-System. Die Authentifizierung des NCPeH-FD in Deutschland findet durch den Authorization Server des TI-Flow-Fachdienstes statt, der einen ACCESS_TOKEN ausstellt, der im TI-Flow-Fachdienst validiert wird. Dabei findet ein länderspezifisches Zertifikat Verwendung - also nicht das Zertifikat des NCPeH-FD in Deutschland, sondern ein Zertifikat, dass den NCPeH-FD im jeweiligen anfragenden EU-Ausland repräsentiert.
 
 Indirekt wirkende Akteure sind Leistungserbringer im EU-Ausland, die über den NCPeH-FD in ihrem Land und den NCPeH-FD in Deutschland Daten aus dem TI-Flow-Fachdienst abrufen können. Die Authentisierung der Leistungserbringer im EU-Ausland erfolgt durch den NCPeH-FD in ihrem Land (vgl. unten Grenzen der Sicherheitsleistung).
 

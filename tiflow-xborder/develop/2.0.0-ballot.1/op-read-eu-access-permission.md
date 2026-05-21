@@ -10,7 +10,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 ## Operation API: Zugriffsberechtigung einsehen
 
-Mit der FHIR-Operation kann die Zugriffsberechtigung für die im ACCESS_TOKEN angegebene KVNR abgerufen werden. Diese Operation steht Versicherten zur Verfügung.
+Mit der FHIR-Operation kann die Zugriffsberechtigung für die in der Nutzerinformation (zeta-user-info.identifier) angegebene KVNR abgerufen werden. Diese Operation steht Versicherten zur Verfügung.
 
 ### Nachricht
 

@@ -41,13 +41,13 @@ server
 
 Error processing command: Unable to find fragment resource Consent/ExampleEUConsent pointed to in file /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/erp-eu/input/pagecontent/query-api-consent </div> 
 
-Error processing command: Unable to find fragment resource Consent/ExampleEUConsent pointed to in file /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/erp-eu/input/pagecontent/query-api-consent </div> </div> </div> #### Abfragen von Einwilligungen Als Versicherter möchte ich meine erteilte Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen einsehen. Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden, der Fachdienst filtert die Consent-Einträge nach der im ACCESS_TOKEN enthaltenen KVNR des Versicherten. 
+Error processing command: Unable to find fragment resource Consent/ExampleEUConsent pointed to in file /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/erp-eu/input/pagecontent/query-api-consent </div> </div> </div> #### Abfragen von Einwilligungen Als Versicherter möchte ich meine erteilte Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen einsehen. Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden. Der Fachdienst filtert die Consent-Einträge nach der in der Nutzerinformation (zeta-user-info) enthaltenen KVNR des Versicherten. 
 
 ```
 server
 ```
 
- ### Instance API #### Löschen einer einzelnen Einwilligung Als Versicherter möchte ich meine erteilte Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen widerrufen. Mit dem Widerruf der Einwilligung werden bereits gespeicherte Abrechnungsinformationen gelöscht. Der Aufruf erfolgt als http-`DELETE`-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden, der Fachdienst filtert die Consent-Einträge nach der im ACCESS_TOKEN enthaltenen KVNR des Versicherten. 
+ ### Instance API #### Löschen einer einzelnen Einwilligung Als Versicherter möchte ich meine erteilte Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen widerrufen. Mit dem Widerruf der Einwilligung werden bereits gespeicherte Abrechnungsinformationen gelöscht. Der Aufruf erfolgt als http-`DELETE`-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden. Der Fachdienst filtert die Consent-Einträge nach der in der Nutzerinformation (zeta-user-info) enthaltenen KVNR des Versicherten. 
 
 ```
 server

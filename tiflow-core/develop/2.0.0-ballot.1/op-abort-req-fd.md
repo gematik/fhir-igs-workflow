@@ -15,7 +15,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten, wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem folgenden Fehler:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Nutzer mit zeta-user-info.professionOID = oid_versicherter den zeta-user-info.identifier mit der in Task.for hinterlegte KVNR des begünstigten Patienten vergleichen und bei Missmatch den Aufruf mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error

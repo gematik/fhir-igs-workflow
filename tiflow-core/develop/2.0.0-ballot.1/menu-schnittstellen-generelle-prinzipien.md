@@ -125,4 +125,27 @@ funkt. Eignung: Herstellererklärung
 funkt. Eignung: Herstellererklärung
 
 funkt. Eignung: HerstellererklärungClientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Verarbeitung von FHIR-Ressourcen der Anwendung E-Rezept sicherstellen, dass Datumsangaben ohne explizite Zeitzoneninformationen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) verarbeitet werden.
+### Identifikation des Nutzers
+
+Im Rahmen des Verbindungsaufbaus eines Clientsystems mit dem TI-Flow-Fachdienst authentisiert sich der Nutzer. Der ZETA-Guard übermittelt die Informationen zum Nutzer in einem Http-Header im Request an den Resource Server (siehe [gemSpec_ZETA#A_25669-*]).
+
+Folgende Informationen sind im Header enthalten. (siehe [zeta-user-info.yaml]) 
+
+* Attribut: identifier
+  * Beschreibung: Telematik-ID, KVNR or other unique identifier
+  * optional: nein
+* Attribut: professionOID
+  * Beschreibung: Profession identifier (OID)
+  * optional: nein
+* Attribut: commonName
+  * Beschreibung: Kurzname der Institution
+  * optional: nein
+* Attribut: organizationName
+  * Beschreibung: Name der Organisation oder Institution
+  * optional: ja
+
+**Tabelle: **Attribute zeta-user-info
+
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS den Http-Header zeta-user-info auswerten, um die Informationen zum Nutzer für die weitere Verarbeitung zu ermitteln.
+Die Information zum aufrufenden Nutzer/Institution wird bspw. bei der Prüfung von Autorisierungsregeln (Prüfung der professionOID) und bei der Zugriffsprotokollierung für den Versicherten verwendet.
 

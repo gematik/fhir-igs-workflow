@@ -22,11 +22,11 @@ Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter [Op
 
 Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnungen steht ausschließlich dem Versicherten bzw. einer abgebenden Institution mit Nachweis eines Behandlungskontextes zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task sicherstellen, dass ausschließlich Versicherte und Leistungserbringer in der Rolle
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
 * oid_versicherter
 * oid_oeffentliche_apotheke
 * oid_krankenhausapotheke
-die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen die Operation mit dem folgenden Fehler:
+die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -39,7 +39,7 @@ die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle "professionOI
 
 abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 
-Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task die dem Versicherten zugeordneten Task-Ressourcen anhand der KVNR des Versicherten aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in Task.for die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen E-Rezepte einsehen können.
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task die dem Versicherten zugeordneten Task-Ressourcen anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren, die in Task.for die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen E-Rezepte einsehen können.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task durch einen Versicherten die gültige Ergebnisliste der Task-Ressourcen ohne die referenzierten, signierten E-Rezept-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine Übersicht aller Tasks erhält.
 
@@ -117,17 +117,17 @@ Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat ent
 Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS prüfen, dass die im Zertifikat enthaltene Rolle (Admission) gleich oid_popp-token ist und im Fehlerfall das Signaturzertifikat nicht zur Signaturprüfung der PoPP-Token verwenden.
 Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus dem PoPP-Token wie folgt:
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Prüfung des PoPP-Token prüfen, dass die Telematik-ID actor_id aus dem Token mit der Telematik-ID der Leistungserbringerinstitution (idNumber) im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests übereinstimmt und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Prüfung des PoPP-Token prüfen, dass die Telematik-ID actor_id aus dem Token mit dem zeta-user-info.identifier des Nutzers (Telematik-ID) übereinstimmt und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen.
 #### GET /Task/ (Einzelne Verordnung)
 
 Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezifische Verordnung steht ausschließlich dem Versicherten bzw. einer abgebenden Institution mit Wissen um das Secret zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.
 
-Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen konkreten über <id> adressierten /Task/<id> (ohne die Referenz einer FHIR-Operation) sicherstellen, dass ausschließlich Clientsysteme in einer der Rollen
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen konkreten über <id> adressierten /Task/<id> (ohne die Referenz einer FHIR-Operation) die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen
 * oid_versicherter
 * oid_oeffentliche_apotheke
 * oid_krankenhausapotheke
 * oid_kostentraeger
-die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen die Operation mit dem folgenden Fehler:
+die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -140,7 +140,7 @@ die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des A
 
 abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/<id> durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/<id> durch einen Versicherten, den Versicherten anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -159,7 +159,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der Opera
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task/<id> ausschließlich solchen Clients die AccessCode Information (Task.identifier mit system="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode" ) in den Task-Ressourcen zurückgeben, welche anhand der mitgeteilten, gültigen Produktidentifikation als hierfür zulässige Clients erkannt werden.
 
-Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/<id>?ac=..." durch eine abgebende Institution die zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden Institution mit der Telematik-ID aus dem ACCESS_TOKEN vergleichen und bei Ungleichheit die Operation mit dem folgenden Fehler:
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen Task mittels "/Task/<id>?ac=..." durch eine abgebende Institution die zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden Institution mit der Telematik-ID aus der Nutzerinformation (zeta-user-info.identifier) vergleichen und bei Ungleichheit die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 412 - Bad Request: error
@@ -218,9 +218,9 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-
 
 abbrechen, um das Markieren mehrerer Ressourcen über einen Request zu verhindern.
 
-Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS bei Aufruf der HTTP-PATCH-Operation auf den Endpunkt /Task/<id> sicherstellen, dass ausschließlich Versicherte in der Rolle:
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS bei Aufruf der HTTP-PATCH-Operation auf den Endpunkt /Task/<id> die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle:
 * oid_versicherter
-die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen die Operation mit dem folgenden Fehler:
+die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error
@@ -233,7 +233,7 @@ die Operation am TI-Flow-Fachdienst aufrufen dürfen und die Rolle professionOID
 
 abbrechen, damit E-Rezepte nicht durch Unberechtigte markiert werden können.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über <id> adressierte /Task/<id> Ressource durch einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über <id> adressierte /Task/<id> Ressource durch einen Versicherten, den Versicherten anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 403 - Forbidden: error

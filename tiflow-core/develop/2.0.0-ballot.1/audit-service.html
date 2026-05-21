@@ -592,12 +592,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22217 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-35" title="TI-Flow-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-35" title="TI-Flow-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="1">
 	<meta lockversion="false" />
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS, wenn im ACCESS_TOKEN die Angabe zur "organizationName" mit NULL gefüllt ist, in der Protokollierung als agentname "unbekannt" verwenden.
+	Der TI-Flow-Fachdienst MUSS, wenn in den Nutzerinformationen zeta-user-info.commonName = NULL ist, in der Protokollierung als AuditEvent.agent.name "unbekannt" verwenden.
 </requirement>
 
 <h4 id="zugriffsprotokollierung-für-übermittlung-für-epa-medication-service">Zugriffsprotokollierung für Übermittlung für ePA Medication Service</h4>
@@ -708,7 +708,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#2.0.0-ballot.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, May 20, 2026 05:35+0000">2026-05-20</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#2.0.0-ballot.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, May 21, 2026 06:36+0000">2026-05-21</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

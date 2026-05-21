@@ -41,7 +41,7 @@ Das CS Kostenträger MUSS vom Nutzer eine Bestätigung einholen, dass die ausgew
 funkt. Eignung: HerstellererklärungDas Clientsystem Kostenträger MUSS im Anwendungsfall "Nachricht durch Abgebenden löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/<id> mit
 * Communication-ID in URL <id> 
 ausführen.
-Der Fachdienst prüft anhand der Telematik-ID im ACCESS_TOKEN, ob der Kostenträger der Absender der zu löschenden Nachricht ist.
+Der Fachdienst prüft anhand der Telematik-ID aus den Nutzerinformationen (zeta-user-info), ob der Kostenträger der Absender der zu löschenden Nachricht ist.
 
 Das CS Kostenträger KANN im Anwendungsfall “Nachricht durch Abgebenden löschen” dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 
