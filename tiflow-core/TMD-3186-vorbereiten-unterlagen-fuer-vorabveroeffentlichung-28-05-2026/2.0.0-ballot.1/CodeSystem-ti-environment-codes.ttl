@@ -1,0 +1,71 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-core/CodeSystem/ti-environment-codes> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ti-environment-codes"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem ti-environment-codes</b></p><a name=\"ti-environment-codes\"> </a><a name=\"hcti-environment-codes\"> </a><p>This case-sensitive code system <code>https://gematik.de/fhir/tiflow-core/CodeSystem/ti-environment-codes</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">PU<a name=\"ti-environment-codes-PU\"> </a></td><td>Produktivumgebung</td><td>Produktive Betriebsumgebung für realen Versorgungseinsatz.</td></tr><tr><td style=\"white-space:nowrap\">RU<a name=\"ti-environment-codes-RU\"> </a></td><td>Referenzumgebung</td><td>Referenzumgebung für Interoperabilitäts- und Konformitätsabgleiche.</td></tr><tr><td style=\"white-space:nowrap\">TU<a name=\"ti-environment-codes-TU\"> </a></td><td>Testumgebung</td><td>Testumgebung für technische und fachliche Verifikation.</td></tr><tr><td style=\"white-space:nowrap\">DEV<a name=\"ti-environment-codes-DEV\"> </a></td><td>Entwicklungsumgebung</td><td>Entwicklungsumgebung für Implementierung und frühe Integrationsprüfung.</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/tiflow-core/CodeSystem/ti-environment-codes"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/tiflow-core/CodeSystem/ti-environment-codes>
+  ] ; # 
+  fhir:version [ fhir:v "2.0.0-ballot.1"] ; # 
+  fhir:name [ fhir:v "TIEnvironmentsCS"] ; # 
+  fhir:title [ fhir:v "TI Environments CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-06-01"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Dieses CodeSystem definiert standardisierte Umgebungskennzeichen für CapabilityStatements des TI-Flow-Fachdienstes. Es erlaubt die eindeutige Kennzeichnung, ob die beschriebene Fähigkeit für Produktions-, Referenz-, Test- oder Entwicklungsumgebung gilt."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "DE" ] ;
+       fhir:display [ fhir:v "Germany" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."] ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "4"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "PU" ] ;
+     fhir:display [ fhir:v "Produktivumgebung" ] ;
+     fhir:definition [ fhir:v "Produktive Betriebsumgebung für realen Versorgungseinsatz." ]
+  ] [
+     fhir:code [ fhir:v "RU" ] ;
+     fhir:display [ fhir:v "Referenzumgebung" ] ;
+     fhir:definition [ fhir:v "Referenzumgebung für Interoperabilitäts- und Konformitätsabgleiche." ]
+  ] [
+     fhir:code [ fhir:v "TU" ] ;
+     fhir:display [ fhir:v "Testumgebung" ] ;
+     fhir:definition [ fhir:v "Testumgebung für technische und fachliche Verifikation." ]
+  ] [
+     fhir:code [ fhir:v "DEV" ] ;
+     fhir:display [ fhir:v "Entwicklungsumgebung" ] ;
+     fhir:definition [ fhir:v "Entwicklungsumgebung für Implementierung und frühe Integrationsprüfung." ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
