@@ -40,10 +40,10 @@ Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow
 | Modul IG | Diese Implementation Guides enthalten Inhalte zu einem Modul, bzw. Anwendung innerhalb des TI-Flow-Fachdienst. Diese werden über eine eigenen eigenen URL-Pfad adressiert und sind durch eine eigene Domäne und Akteure gekennzeichnet. Jede Workflow-Anwendung im TI-Flow-Fachdienst wird durch einen eigenen IG beschrieben, der auf Beschreibungen und Verhalten der Kernfunktionalitäten basiert. |
 | Funktions IG | Diese Implementation Guides enthalten Beschreibungen zu Endpunkten und Funktionalitäten, die als Bausteine wiederverwendet werden können und daher zentral beschrieben werden. Sie existieren nicht als eigene Anwendung in der TI-Flow-Fachdienst landschaft. |
 
-<div><figcaption><strong>Tabelle: </strong>title</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>Beschreibung der IG Arten im TI-Flow-Fachdienst</figcaption></div>
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 350px; margin-bottom: 30px;">
+    <div class="gem-ig-img-container" style="--box-width: 450px; margin-bottom: 30px;">
         <img src="./ig-landscape.png" alt="Übersicht der FHIR-IGs des TI-Flow-Fachdienst" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Übersicht der FHIR-IGs des TI-Flow-Fachdienst</figcaption>
