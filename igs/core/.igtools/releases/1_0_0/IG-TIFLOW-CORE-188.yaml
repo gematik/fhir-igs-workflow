@@ -1,20 +1,21 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 699d3f2c33ae52fa25eae9a78c4ffcdc06c8f84e2c15694a87d9e5f22a0f2e36
+content_hash: de4ceaf55526e0dffecec11073286178c0a3338591b66e8779b86c781ca7381b
 created: '2026-03-23T10:57:48.463430'
-date: '2026-04-13T10:29:56.384674'
+date: '2026-05-21T07:03:54.469449'
 key: IG-TIFLOW-CORE-188
-modified: '2026-04-13T10:29:56.384674'
+modified: '2026-05-21T07:03:54.469449'
 release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
-text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate\
-  \ die im FHIR Profil KBV_PR_FOR_Coverage gespeicherten Werte für payor.identifier.extension:alternativeID.value[x]:valueIdentifier\
-  \ gemäß dem \"Gemeinsames Rundschreiben Institutionskennzeichen (IK)\" vom 01.06.2020\
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate die im FHIR Profil KBV_PR_FOR_Coverage gespeicherten\
+  \ Werte für payor.identifier.extension:alternativeID.value[x]:valueIdentifier gemäß\
+  \ dem \"Gemeinsames Rundschreiben Institutionskennzeichen (IK)\" vom 01.06.2020\
   \ unter Kapitel 1.2.5 \"Prüfziffer\" beschriebenen Prüfalgorithmus validieren, und\
   \ bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:\n <table\
   \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\

@@ -1,24 +1,23 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 6eba9ad604a5d4b98e71baed1a804c6a2dc4e593ae6909ba4b1658f8878b50e0
+content_hash: 5a6c12b09140338635c2cc445dc7ddc3ef86674bc0406a1152cd36daa01c3a48
 created: '2026-03-23T10:57:49.788175'
-date: '2026-04-13T10:29:58.827420'
+date: '2026-05-21T07:03:58.276260'
 key: IG-TIFLOW-ERP-48
-modified: '2026-04-13T10:29:58.827420'
+modified: '2026-05-21T07:03:58.276260'
 release_status: MODIFIED
 source: input/pagecontent/op-abort-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produktgutachten
-text: "Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks für eine Verordnung mit\
-  \ Flowtype 160, 166, 169, 200 oder 209 mittels HTTP-POST/$abort-Operation auf den\
-  \ in der URL referenzierten/Task/&#60;id&#62; die Rolle \"professionOID\" des Aufrufers\
-  \ im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen,\
-  \ dass ausschließlich Institutionen in der Rolle\n <ul>\n <li>oid_versicherter</li>\n\
-  \ <li>oid_praxis_arzt</li>\n <li>oid_zahnarztpraxis</li>\n <li>oid_krankenhaus</li>\n\
-  \ <li>oid_institution-vorsorge-reha</li>\n <li>oid_oeffentliche_apotheke</li>\n\
+text: "Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks mit Flowtype 160, 166,\
+  \ 169, 200 oder 209 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62;\
+  \ die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader\
+  \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen\
+  \ in der Rolle\n <ul>\n <li>oid_versicherter</li>\n <li>oid_praxis_arzt</li>\n <li>oid_zahnarztpraxis</li>\n\
+  \ <li>oid_krankenhaus</li>\n <li>oid_institution-vorsorge-reha</li>\n <li>oid_oeffentliche_apotheke</li>\n\
   \ <li>oid_krankenhausapotheke</li>\n </ul>\n die Operation am Fachdienst aufrufen,\
   \ und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
   \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\

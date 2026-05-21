@@ -13,7 +13,7 @@ Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutz
 </requirement>
 
 <!-- A_19329-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-52" title="CS Kostenträger: Nachrichten abrufen - Abfrage" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-52" title="CS Kostenträger: Nachrichten abrufen - Abfrage" version="1">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
@@ -34,7 +34,7 @@ Falls eine oder mehrere E-Rezept-Nachrichten für den Kostenträger auf dem TI-F
 Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.
 
 <!-- A_19334 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-53" title="CS Kostenträger: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-53" title="CS Kostenträger: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="1">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>
@@ -55,7 +55,7 @@ Das CS Kostenträger MUSS es dem Nutzer ermöglichen, eine Nachricht zum Lösche
 Das CS Kostenträger MUSS vom Nutzer eine Bestätigung einholen, dass die ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.
 
 <!-- A_21489 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-54" title="CS Kostenträger: Nachricht löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-54" title="CS Kostenträger: Nachricht löschen - Löschrequest" version="1">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR">
     <testProcedure id="Herstellererklärung"/>

@@ -34,7 +34,7 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 
 #### E-Rezept-FdV 
 
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-13" title="E-Rezept-FdV: TIFlow-DIGA - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-13" title="E-Rezept-FdV: TIFlow-DIGA - verpflichtende Anwendungsfälle" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>

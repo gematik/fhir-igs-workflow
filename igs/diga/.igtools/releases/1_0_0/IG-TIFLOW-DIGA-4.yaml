@@ -1,28 +1,27 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: f612a8914be92e02ce3224f569153f8ae2da70ce9d334c4e2cd6e8fd2497c862
+content_hash: ad9d1ff3819b3525850220c376754fe427b8619969af2319b3407c76f9bce06f
 created: '2026-03-23T10:57:49.153804'
-date: '2026-04-13T10:29:56.991176'
+date: '2026-05-21T07:03:55.231165'
 key: IG-TIFLOW-DIGA-4
-modified: '2026-04-13T10:29:56.991176'
+modified: '2026-05-21T07:03:55.231165'
 release_status: MODIFIED
 source: input/pagecontent/op-close-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
-text: "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels\
+text: "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels\
   \ HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#62;\
-  \ mit Flowtype 162 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input\
-  \ enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA\
-  \ entspricht und anderenfalls die Operation mit dem folgenden Fehler:\n <table id=\"\
-  error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n\
-  \ <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
-  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
-  \ <th>Details Code</th>\n <td>TIFLOW_MEDICATION_DISPENSE_INVALID</td>\n </tr>\n\
-  \ <tr>\n <th>Details Text</th>\n <td>Unzulässige Abgabeinformationen: Für diesen\
-  \ Workflow sind nur Abgabeinformationen für digitale Gesundheitsanwendungen zulässig.</td>\n\
-  \ </tr>\n </table>\n abbrechen."
+  \ sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt\
+  \ dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht und anderenfalls die\
+  \ Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400\
+  \ - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_MEDICATION_DISPENSE_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen\
+  \ für digitale Gesundheitsanwendungen zulässig.</td>\n </tr>\n </table>\n abbrechen."
 title: TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense
 version: 1

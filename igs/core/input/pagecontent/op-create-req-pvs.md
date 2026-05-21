@@ -25,7 +25,7 @@ Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz v
 Es gelten weitere modulspezifische Anforderungen für den Verordnungsdatensatz.
 
 <!-- A_19276 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-259" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-259" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="1">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Konformitätsbestätigung"/>

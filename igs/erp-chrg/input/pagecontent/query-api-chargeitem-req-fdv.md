@@ -14,7 +14,7 @@ Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformatio
 </requirement>
 
 <!--A_22173-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-11" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-11" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -40,7 +40,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformat
 </requirement>
 
 <!--A_22175-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-13" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-13" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -81,7 +81,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 </requirement>
 
 <!--A_22179-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-16" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-16" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -132,7 +132,7 @@ Das E-Rezept-FdV muss im Rahmen der Bestätigung darauf hinweisen, dass mit dem 
 Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen Löschen für die zu löschende Abrechnungsinformation zusammen mit dem Löschen auf dem TI-Flow-Fachdienst auszuführen.
 
 <!--A_22183-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-20" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-20" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>

@@ -12,7 +12,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 </requirement>
 
 <!-- A_19329-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-147" title="PS abgebende LEI: Nachrichten abrufen - Abfrage" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-147" title="PS abgebende LEI: Nachrichten abrufen - Abfrage" version="1">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -32,7 +32,7 @@ Falls eine oder mehrere E-Rezept-Nachrichten für die abgebende LEI auf dem TI-F
 Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.
 
 <!-- A_19334 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-148" title="PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-148" title="PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="1">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>
@@ -58,7 +58,7 @@ ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das
 Löschen abzubrechen.
 
 <!-- A_21489 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-149" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-149" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="1">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_abgebend">
     <testProcedure id="Herstellererklärung"/>

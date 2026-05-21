@@ -1,0 +1,30 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: a45e697e6b0d47ff6cc0e39cfcbf817551fd6a65c067c4f4fca22e5266fdc43c
+created: '2026-05-21T07:03:58.298115'
+date: '2026-05-21T07:03:58.298119'
+key: IG-TIFLOW-CORE-194
+modified: '2026-05-21T07:03:58.298117'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_ERP_Medication_PZN\
+  \ gespeicherten Wert für code.coding:pznCode.code gemäß den \"Technischen Hinweisen\
+  \ zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI\" beschriebenen\
+  \ Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit\
+  \ dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
+  \            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n         \
+  \   <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n\
+  \            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n      \
+  \  <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_EREZEPT_PZN_INVALID</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Ungültige\
+  \ PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen\
+  \ Prüfziffer-Validierungsregeln.</td>\n        </tr>\n    </table> \n    abbrechen."
+title: TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN
+version: 0

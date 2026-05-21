@@ -1,21 +1,20 @@
 actor:
 - PS_E-Rezept_abgebend
 conformance: SHALL
-content_hash: cde8400fcd4f8fcc269cc0a0badb20ba4fd719c3abcaab91174360ea764c950d
+content_hash: 8092c99d85f0ab5b6b57b6707201ec8f1d7162c3ca0dde898688a38775f5daf5
 created: '2026-03-23T10:57:49.318941'
-date: '2026-03-23T13:33:34.003190'
+date: '2026-05-21T07:03:55.881389'
 key: IG-TIFLOW-CHRG-26
-modified: '2026-03-23T10:57:49.318942'
-release_status: STABLE
+modified: '2026-05-21T07:03:55.881389'
+release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-avs.md
 status: ACTIVE
 test_procedures:
   PS_E-Rezept_abgebend:
   - Konformitätsbestätigung
 text: "Das PS der abgebenden LEI MUSS im Anwendungsfall \"Abrechnungsinformation bereitstellen\"\
-  \ die HTTP-Operation POST /ChargeItem/ des TI-Flow-Fachdienstes mit\n <ul>\n <li>ACCESS_TOKEN\
-  \ im Authorization-Header</li>\n <li>Task-ID als URL-Parameter ?task=</li>\n <li>Geheimnis\
-  \ in URL-Parameter ?secret=</li>\n <li>ChargeItem im http-Body des Aufrufs als data</li>\n\
-  \ </ul>\n ausführen."
+  \ die HTTP-Operation POST /ChargeItem/ des TI-Flow-Fachdienstes mit\n <ul>\n <li>Task-ID\
+  \ als URL-Parameter ?task=</li>\n <li>Geheimnis in URL-Parameter ?secret=</li>\n\
+  \ <li>ChargeItem im HTTP-Request-Body des Aufrufs als data</li>\n </ul>\n ausführen."
 title: 'PS abgebende LEI: Abrechnungsinformation bereitstellen - Speicherrequest'
-version: 0
+version: 1

@@ -1,19 +1,19 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 9eca3f73dc237976c9e56d605a0824df09b7e7ae8996ac1606933651babc76f2
+content_hash: a6ed79c4c167540c03d2addf92cd6e617e3c8bcc6b60ca92c2d8613c36701cde
 created: '2026-03-23T10:57:49.809804'
-date: '2026-04-13T10:29:58.853002'
+date: '2026-05-21T07:03:58.304209'
 key: IG-TIFLOW-ERP-101
-modified: '2026-04-13T10:29:58.853002'
+modified: '2026-05-21T07:03:58.304209'
 release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
-text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
-  \ über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
   \ (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true)\
   \ gekennzeichnet, ein Endedatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end)\
   \ angegeben ist und das Endedatum vor dem Startdatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)\

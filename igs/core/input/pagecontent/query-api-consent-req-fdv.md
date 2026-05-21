@@ -42,7 +42,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consen
 </requirement>
 
 <!-- A_22166-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-290" title="E-Rezept-FdV: Einwilligung erteilen - Speicherrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-290" title="E-Rezept-FdV: Einwilligung erteilen - Speicherrequest" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -62,7 +62,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consen
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- A_22168-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-291" title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-291" title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
@@ -98,7 +98,7 @@ In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwillig
 </requirement>
 
 <!-- A_22171-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-294" title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-294" title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>

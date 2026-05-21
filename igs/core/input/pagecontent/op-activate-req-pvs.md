@@ -4,7 +4,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 
 <!-- A_19273-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-150" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-150" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="1">
   <meta lockversion="false"/>
   <actor name="PS_E-Rezept_verordnend">
     <testProcedure id="Konformitätsbestätigung"/>

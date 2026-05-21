@@ -1,19 +1,19 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 632d0196a70fada5e4117f97015149ad58b25a23833234822dbac973feac4b68
+content_hash: 0ece31589f8ea719f233537f68bc97f14a79400f9c71ed5c047920d76fda25b5
 created: '2026-03-23T10:57:49.807135'
-date: '2026-04-13T10:29:58.848253'
+date: '2026-05-21T07:03:58.299315'
 key: IG-TIFLOW-ERP-91
-modified: '2026-04-13T10:29:58.848253'
+modified: '2026-05-21T07:03:58.299315'
 release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
-text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
-  \ über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
   \ (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true)\
   \ gekennzeichnet und der Flowtype ungleich 160, 169, 200 oder 209 ist, die Operation\
   \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\

@@ -1,19 +1,19 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 7e56b040a5ffe9d11b802b092d9ecb9297923f78a2b987c2b53f5f7c34dae3a8
+content_hash: 743567231ea0c653b32c1ed9df3ab1e49f846abfb32261ba5a0f34f4d1a03e3c
 created: '2026-03-23T10:57:49.809351'
-date: '2026-04-13T10:29:58.851546'
+date: '2026-05-21T07:03:58.302649'
 key: IG-TIFLOW-ERP-98
-modified: '2026-04-13T10:29:58.851546'
+modified: '2026-05-21T07:03:58.302649'
 release_status: MODIFIED
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
-text: "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mittels HTTP-POST-Operation\
-  \ über /Task/&lt;id&gt;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
   \ (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true)\
   \ und als Ersatzverordnung ( code=\"10\" oder \"11\" oder \"17\" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis\
   \ in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, die Operation\

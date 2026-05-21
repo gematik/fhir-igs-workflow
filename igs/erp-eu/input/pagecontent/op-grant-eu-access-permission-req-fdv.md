@@ -54,7 +54,7 @@ Für jede weitere Erteilung einer Zugriffsberechtigung für ePrescription/Dispen
 <!-- ToDo: Afo Zugriffscode in IG übernehmen -->
 
 <!--A_27114 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-53" title="E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am TI-Flow-Fachdienst speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-53" title="E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am TI-Flow-Fachdienst speichern" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>

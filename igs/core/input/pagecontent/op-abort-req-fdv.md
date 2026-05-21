@@ -46,7 +46,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19222-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-49" title="E-Rezept-FdV: E-Rezept löschen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-49" title="E-Rezept-FdV: E-Rezept löschen - Löschrequest" version="1">
     <meta lockversion="false"/>
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>

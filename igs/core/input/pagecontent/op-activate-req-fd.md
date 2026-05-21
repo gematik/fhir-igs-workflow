@@ -509,7 +509,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- ToDo: Afo unter Beachtung von A_19029-06 trennen -->
 
 <!-- A_19029-06 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-186" title="TI-Flow-Fachdienst - Task aktivieren - Serversignatur" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-186" title="TI-Flow-Fachdienst - Task aktivieren - Serversignatur" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -627,7 +627,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
 <!-- A_23891-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-190" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR im Profil KBV_PR_FOR_Practitioner" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-190" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR im Profil KBV_PR_FOR_Practitioner" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
