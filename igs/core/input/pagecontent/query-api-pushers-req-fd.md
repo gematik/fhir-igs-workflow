@@ -48,27 +48,19 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
     <li>oid_versicherter</li>
   </ul>
   die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>403 - Forbidden</td>
         </tr>
         <tr>
-            <th>Severity</th>
-            <td>error</td>
+            <th>Error Code</th>
+            <td>invalidOid</td>
         </tr>
         <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
-        </tr>
+            <th>Error Details</th>
+            <td>-</td>
+        </tr>        
     </table> 
     abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
@@ -118,27 +110,19 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
     <li>oid_versicherter</li>
   </ul>
   die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+      <table id="error-code-json" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>403 - Forbidden</td>
         </tr>
         <tr>
-            <th>Severity</th>
-            <td>error</td>
+            <th>Error Code</th>
+            <td>invalidOid</td>
         </tr>
         <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
-        </tr>
+            <th>Error Details</th>
+            <td>-</td>
+        </tr>        
     </table> 
     abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
