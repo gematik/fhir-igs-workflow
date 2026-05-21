@@ -1,0 +1,27 @@
+@startuml
+title UC 4.15 - Verordnungen durch Pflegedienst abrufen (PoPP)
+
+actor "Versicherter/\nVertreter" as Versicherter
+actor "Mitarbeiter des Pflegedienstes" as MitarbeiterLEI
+participant "Primärsystem" as PS_LEI #pink
+participant "TI-Flow-Fachdienst" as FD #lightyellow
+participant "PoPP-Service" as PoPP_Service #lightgreen
+
+Versicherter -> Versicherter : stellt eGK bereit()
+activate PS_LEI
+MitarbeiterLEI -> PS_LEI: Verordnungen von Versicherten abrufen()
+PS_LEI -> PoPP_Service: Erstelle PoPP-Token(eGK, SMC-B)
+PoPP_Service --> PS_LEI: :PoPP-Token
+
+PS_LEI -> FD: GET /hkp/fhir/task (PoPP-Token)
+FD -> FD: Prüfe PoPP-Token()
+
+FD -> FD: Prüfe Telematik-ID PoPP-Token()
+FD -> FD: Prüfe Zeitstempel PoPP-Token()
+FD -> FD: Zugriff protokollieren()
+
+FD --> PS_LEI: :Liste Tasks
+PS_LEI --> MitarbeiterLEI
+deactivate PS_LEI
+
+@enduml

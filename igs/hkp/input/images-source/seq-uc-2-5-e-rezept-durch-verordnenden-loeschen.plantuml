@@ -1,22 +1,25 @@
 @startuml
 title UC 2.5 - Verordnung durch Verordnenden löschen
 
-actor "Mitarbeiter LEI" as MA
+actor "Mitarbeiter der medizinischen Institution" as MA
 participant "Primärsystem" as PS
 participant "TI-Flow-Fachdienst" as FD
 
 MA -> PS: Verordnung zum Löschen markieren()
 activate PS
 
-PS -> FD: POST /Task/{id}/$abort (AccessCode)
+PS -> FD: POST /hkp/fhir/task/{id}/$abort (AccessCode_state)
 activate FD
-FD -> FD: AccessCode prüfen()
+FD -> FD: AccessCode_state prüfen()
+FD -> FD: Status prüfen()
 FD -> FD: Status auf "cancelled" setzen()
+FD -> FD: Business-Status auf "gelöscht" setzen()
 FD -> FD: Personenbezogene Daten löschen()
+FD -> FD: Medizinische Daten löschen()
 FD --> PS: Status
 deactivate FD
 
-PS -> PS: AccessCode löschen()
+PS -> PS: AccessCodes löschen()
 PS --> MA: Status
 deactivate PS
 

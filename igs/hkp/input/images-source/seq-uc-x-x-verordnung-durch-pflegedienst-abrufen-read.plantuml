@@ -1,0 +1,22 @@
+@startuml
+title UC x.x - Verordnung durch Pflegedienst abrufen
+
+actor "Mitarbeiter" as MA
+participant "PS" as PS
+participant "TI-Flow-Fachdienst" as FD
+
+MA -> PS: Verordnung abrufen()
+activate PS
+PS -> PS: Verordnungs-ID und AccessCode_read aus Token ermitteln()
+
+PS -> FD: GET /hkp/fhir/task/{id}/$read (AccessCode_read)
+activate FD
+FD -> FD: AccessCode_read prüfen()
+FD -> FD: Status Task prüfen()
+FD --> PS: Task, Binary
+deactivate FD
+
+PS --> MA: Status und Verordnungsdaten
+deactivate PS
+
+@enduml

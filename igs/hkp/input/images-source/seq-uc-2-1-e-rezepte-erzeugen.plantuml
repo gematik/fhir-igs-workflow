@@ -1,27 +1,30 @@
 @startuml
-title UC 2.1 - Verordnung erzeugen
+title UC 2.1 - Verordnungen erzeugen
 
-actor "(Zahn-)Arzt" as Arzt
+actor "Arzt" as Arzt
 participant "Primärsystem" as PS
 participant "TI-Flow-Fachdienst" as FD
 participant "Konnektor" as K
 
-Arzt -> PS: Verordnungsdatensaetze auswählen()
+Arzt -> PS: Verordnungsdatensatz auswählen()
 activate PS
 
-PS -> FD: POST /Task/$create (FlowType)
+PS -> FD: POST /hkp/fhir/task/$create (Flowtype)
 activate FD
 FD -> FD: Task erzeugen()
-FD -> FD: Rezept-ID erzeugen()
-FD -> FD: AccessCode erzeugen()
-FD --> PS: Task, Rezept-ID, AccessCode
+FD -> FD: Verordnungs-ID erzeugen()
+FD -> FD: AccessCode_state erzeugen()
+FD -> FD: AccessCode_read erzeugen()
+FD -> FD: Status auf "draft" setzen()
+FD -> FD: Business-Status auf "initialized" setzen()
+FD --> PS: Task, Verordnungs-ID, AccessCode_state, AccessCode_read
 deactivate FD
 
-PS -> PS: AccessCode speichern()
-PS -> PS: Rezept-ID in Verordnungsdatensatz ergänzen()
+PS -> PS: Verordnungs-ID im Verordnungsdatensatz einfügen()
 
-ref over PS, K: Verordnungdatensatz qualifiziert signieren
+ref over PS, K: Verordnungdatensatz signieren
 
+PS -> PS: AccessCode_state speichern()
 PS --> Arzt: Signierte Verordnung
 deactivate PS
 

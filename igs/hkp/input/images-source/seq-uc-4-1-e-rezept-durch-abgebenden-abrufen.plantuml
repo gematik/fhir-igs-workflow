@@ -1,20 +1,21 @@
 @startuml
-title UC 4.1 - Verordnung durch Abgebenden abrufen
+title UC 4.1 - Verordnung durch Pflegedienst abrufen
 
-actor "Mitarbeiter KTR" as MA
-participant "Clientsystem\nKostenträger" as AVS
+actor "Mitarbeiter des Pflegedienstes" as MA
+participant "Primärsystem" as AVS
 participant "TI-Flow-Fachdienst" as FD
 participant "Konnektor" as K
 
 MA -> AVS: Verordnung abrufen()
 activate AVS
-AVS -> AVS: Verordnungs-ID und AccessCode aus Token ermitteln()
+AVS -> AVS: Verordnungs-ID und AccessCode_state aus Token ermitteln()
 
-AVS -> FD: POST /Task/{id}/$accept (AccessCode)
+AVS -> FD: POST /hkp/fhir/task/{id}/$accept (AccessCode_state)
 activate FD
-FD -> FD: AccessCode prüfen()
+FD -> FD: AccessCode_state prüfen()
 FD -> FD: Status Task prüfen()
 FD -> FD: Status auf "in-progress" setzen()
+FD -> FD: Business-Status auf "zugewiesen" setzen()
 FD -> FD: Geheimnis erzeugen()
 FD --> AVS: Task, Binary, Geheimnis
 deactivate FD

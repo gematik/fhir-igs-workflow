@@ -1,18 +1,19 @@
 @startuml
 title UC 4.2 - Verordnung durch Abgebenden zurückgeben
 
-actor "Mitarbeiter KTR" as MA
-participant "Clientsystem\nKostenträger" as AVS
+actor "Mitarbeiter des Pflegedienstes" as MA
+participant "Primärsystem" as AVS
 participant "TI-Flow-Fachdienst" as FD
 
 MA -> AVS: Verordnung zurückgeben()
 activate AVS
 
-AVS -> FD: POST /Task/{id}/$reject (Secret)
+AVS -> FD: POST /hkp/fhir/task/{id}/$reject (Secret)
 activate FD
 FD -> FD: Secret prüfen()
 FD -> FD: Status Task prüfen()
 FD -> FD: Status auf "ready" setzen()
+FD -> FD: Business-Status auf "offen" setzen()
 FD --> AVS: Status
 deactivate FD
 
