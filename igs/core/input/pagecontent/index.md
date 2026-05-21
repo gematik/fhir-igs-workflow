@@ -53,24 +53,6 @@ Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow
 
 <br>
 
-### Anforderungen zur Umsetzung des IGs
-
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-261" title="TI-Flow-Fachdienst: Anwendung des IG 'E-Rezept-Workflow Core'" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Herstellererklärung"/>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" umsetzen.
-</requirement>
-
-<!-- A_20745-01, A_19299-02, A_19298-01, A_22483-01, A_19324-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-262" title="TI-Flow-Fachdienst: Umsetzung 'Implementation Guide E-Rezept-Workflow Core'" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Herstellererklärung"/>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS zur Umsetzung des Implementation Guides "E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
-</requirement>
 
 ## Aufbau
 
