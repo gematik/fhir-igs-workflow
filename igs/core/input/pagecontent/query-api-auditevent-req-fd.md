@@ -50,7 +50,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_19396 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-137" title="TI-Flow-Fachdienst - AuditEvent lesen - Filter KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-137" title="TI-Flow-Fachdienst - AuditEvent lesen - Filter KVNR" version="1">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>

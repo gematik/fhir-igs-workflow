@@ -317,7 +317,7 @@ Folgende Informationen sind im Header enthalten. (siehe [zeta-user-info.yaml])
 <!-- A_19390-01 -->
 <!-- A_19391-01 -->
 <!-- A_19392-01 --> 
-<requirement conformance="SHALL" key="" title="TI-Flow-Fachdienst - Nutzerinformationen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-433" title="TI-Flow-Fachdienst - Nutzerinformationen" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD">
     <testProcedure id="Herstellererklärung"/>

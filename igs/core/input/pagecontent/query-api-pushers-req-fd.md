@@ -74,7 +74,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 </requirement>
 
 <!-- A_28530 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-271" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Filter auf KVNR des Versicherten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-271" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Filter auf KVNR des Versicherten" version="1">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>

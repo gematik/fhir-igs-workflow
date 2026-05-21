@@ -302,7 +302,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 </requirement>
 
 <!-- A_22217 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-35" title="TI-Flow-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-35" title="TI-Flow-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="1">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD">
     	<testProcedure id="Produkttest"/>

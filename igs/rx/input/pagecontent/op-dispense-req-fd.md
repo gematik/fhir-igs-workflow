@@ -182,7 +182,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 </requirement>
 
 <!-- A_28410 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-45" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Telematik-ID der abgebenden LEI speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-45" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Telematik-ID der abgebenden LEI speichern" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>

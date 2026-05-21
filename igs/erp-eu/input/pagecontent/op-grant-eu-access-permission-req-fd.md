@@ -1,7 +1,7 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 <!-- A_27088 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-56" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-56" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>

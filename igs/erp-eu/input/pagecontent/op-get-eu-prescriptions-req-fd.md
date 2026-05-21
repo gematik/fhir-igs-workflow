@@ -160,7 +160,7 @@
 </requirement>
 
 <!-- A_27589 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-11" title="TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-11" title="TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -292,7 +292,7 @@
 </requirement>
 
 <!-- A_27582 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-18" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-18" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>

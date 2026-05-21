@@ -39,7 +39,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22364 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-347" title="TI-Flow-Fachdienst - Subscription registrieren - Response" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-347" title="TI-Flow-Fachdienst - Subscription registrieren - Response" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -54,7 +54,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22365 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-348" title="TI-Flow-Fachdienst - Subscription registrieren - Pseudonym der Telematik-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-348" title="TI-Flow-Fachdienst - Subscription registrieren - Pseudonym der Telematik-ID" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -63,7 +63,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22383-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-349" title="TI-Flow-Fachdienst - Generierungsschlüssel - Pseudonym der Telematik-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-349" title="TI-Flow-Fachdienst - Generierungsschlüssel - Pseudonym der Telematik-ID" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -72,7 +72,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22366 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-350" title="TI-Flow-Fachdienst - Subscription registrieren - Barrier-Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-350" title="TI-Flow-Fachdienst - Subscription registrieren - Barrier-Token" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>

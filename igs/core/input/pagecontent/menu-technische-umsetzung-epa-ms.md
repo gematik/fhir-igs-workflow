@@ -13,7 +13,7 @@ Der ePA-Aktensystem nutzt sein C.FD.TLS-S Zertifikat für den TLS-Verbindungsauf
 
 
 <!-- A_25971 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-376" title="TI-Flow-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems auf Gültigkeit prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-376" title="TI-Flow-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems auf Gültigkeit prüfen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -222,7 +222,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 #### Mappingregeln
 
 <!-- A_25946 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-390" title="TI-Flow-Fachdienst - ePA - Mapping" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-390" title="TI-Flow-Fachdienst - ePA - Mapping" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -367,7 +367,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </requirement>
 
 <!-- A_25947 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-391" title="TI-Flow-Fachdienst - ePA - provide-dispensation-erp - Organisation-Ressource" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-391" title="TI-Flow-Fachdienst - ePA - provide-dispensation-erp - Organisation-Ressource" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>

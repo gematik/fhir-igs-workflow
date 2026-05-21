@@ -54,7 +54,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 
 <!-- A_19520-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-318" title="TI-Flow-Fachdienst - Nachrichten abrufen - für Empfänger filtern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-318" title="TI-Flow-Fachdienst - Nachrichten abrufen - für Empfänger filtern" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -207,7 +207,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_19448-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-323" title="TI-Flow-Fachdienst - Nachricht einstellen - Absender und Sendedatum" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-323" title="TI-Flow-Fachdienst - Nachricht einstellen - Absender und Sendedatum" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -519,7 +519,7 @@ Mit der HTTP-Operation DELETE kann ein Nutzer eine verschickte Kommunikationsnac
 
 
 <!-- A_20258 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-337" title="TI-Flow-Fachdienst - Nachricht löschen - Absender-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-337" title="TI-Flow-Fachdienst - Nachricht löschen - Absender-ID" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>

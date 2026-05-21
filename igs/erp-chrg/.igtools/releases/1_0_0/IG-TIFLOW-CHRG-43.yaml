@@ -1,12 +1,12 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 97e4cb5d407bde26d1007328e78f73bec303b3e984c73c5ddc83febcd9806dd6
+content_hash: 175b5526cc73054b6e5703ccea08a184c81e72aacf928e5e731100e9104aa921
 created: '2026-03-23T10:57:49.322138'
-date: '2026-03-23T13:47:27.429040'
+date: '2026-05-21T07:13:06.177736'
 key: IG-TIFLOW-CHRG-43
-modified: '2026-03-23T10:57:49.322140'
-release_status: STABLE
+modified: '2026-05-21T07:13:06.177736'
+release_status: MODIFIED
 source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -14,7 +14,7 @@ test_procedures:
   - Produktgutachten
 text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt
   /Consent mit ?category=CHARGCONS alle dem Versicherten zugeordneten ChargeItem-Ressourcen
-  (ChargeItem.subject.identifier) anhand der KVNR des Versicherten im ACCESS_TOKEN
-  im "Authorization"-Header des HTTP-Requests identifizieren und löschen.
-title: TI-Flow-Fachdienst – Consent löschen – Löschen der bestehenden Abrechnungsinformationen
-version: 0
+  (ChargeItem.subject.identifier) anhand des zeta-user-info.identifier des Nutzers
+  (KVNR) identifizieren und löschen.
+title: TI-Flow-Fachdienst - Consent löschen - Löschen der bestehenden Abrechnungsinformationen
+version: 1

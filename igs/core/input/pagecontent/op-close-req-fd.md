@@ -122,7 +122,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_28411 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-65" title="TI-Flow-Fachdienst - Task schließen - Telematik-ID der abgebenden LEI speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-65" title="TI-Flow-Fachdienst - Task schließen - Telematik-ID der abgebenden LEI speichern" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>

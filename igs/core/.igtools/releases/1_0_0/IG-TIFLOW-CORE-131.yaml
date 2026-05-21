@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: a705aaa93ebf824ecd4f797cf3422fc3104a175740f11791fe7201c075001d6b
+content_hash: 0bc93c3bd64b5445a574ac9f473e232c9f3f9317baa4fbd3ecd86902488ff5fd
 created: '2026-03-23T10:57:48.451953'
-date: '2026-04-13T10:29:56.364336'
+date: '2026-05-21T07:13:04.311695'
 key: IG-TIFLOW-CORE-131
-modified: '2026-04-13T10:29:56.364336'
+modified: '2026-05-21T07:13:04.311695'
 release_status: MODIFIED
 source: input/pagecontent/query-api-medicationdispense-req-fd.md
 status: ACTIVE
@@ -13,15 +13,14 @@ test_procedures:
   TI-Flow_FD:
   - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt\
-  \ /MedicationDispense sicherstellen, dass ausschließlich Nutzer in der Rolle \n\
-  \ <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation am TI-Flow-Fachdienst\
-  \ aufrufen dürfen und die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN\
-  \ im HTTP-RequestHeader \"Authorization\" feststellen, und bei Abweichungen mit\
+  \ /MedicationDispense die zeta-user-info.professionOID des Nutzers bestimmen und\
+  \ sicherstellen, dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n\
+  \ </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen mit\
   \ dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
   \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
   \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
   \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n\
-  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die\
   \ aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abbrechen, damit\
   \ Dispensierinformationen nicht durch Unberechtigte ausgelesen werden können."
 title: TI-Flow-Fachdienst - MedicationDispense abrufen - Rollenprüfung

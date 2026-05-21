@@ -1,7 +1,7 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 <!-- A_27084 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-54" title="TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-54" title="TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -37,7 +37,7 @@
 </requirement>
 
 <!-- A_27085 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-55" title="TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-55" title="TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Löschen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>

@@ -149,7 +149,7 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
 </requirement>
 
 <!-- A_24174-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-252" title="TI-Flow-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden Institution speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-252" title="TI-Flow-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden Institution speichern" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
