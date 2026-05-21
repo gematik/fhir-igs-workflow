@@ -1,0 +1,186 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/core/Bundle/example-searchset-communication> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example-searchset-communication"] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:total [ fhir:v "2"^^xsd:nonNegativeInteger] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [
+       fhir:v "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication?received=NULL"^^xsd:anyURI ;
+       fhir:l <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication?received=NULL>
+     ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [
+       fhir:v "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication/Communication_DispenseRequest"^^xsd:anyURI ;
+       fhir:l <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication/Communication_DispenseRequest>
+     ] ;
+     fhir:resource ( <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication/Communication_DispenseRequest> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication/Communication_Reply_Pharmacy"^^xsd:anyURI ;
+       fhir:l <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication/Communication_Reply_Pharmacy>
+     ] ;
+     fhir:resource ( <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication/Communication_Reply_Pharmacy> )
+  ] ) . # 
+
+<https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication/Communication_DispenseRequest> a fhir:Communication ;
+  fhir:id [ fhir:v "a218a36e-f2fd-4603-ba67-c827acfef01b"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq|1.6"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq?version=1.6>
+     ] ) ;
+     fhir:tag ( [
+       fhir:display [ fhir:v "Dispense Request from Patient to Pharmacy" ]
+     ] [
+       fhir:display [ fhir:v "Communication message sent by patient to pharmacy to request the dispensation of medicine by providing the AccessCode" ]
+     ] )
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType>
+     ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType>
+       ] ;
+       fhir:code [ fhir:v "160" ] ;
+       fhir:display [ fhir:v "Flowtype für Apothekenpflichtige Arzneimittel" ]
+     ]
+  ] ) ; # 
+  fhir:basedOn ( [
+     fhir:l <https://gematik.de/fhir/tiflow/core/Task/160.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea> ;
+     fhir:reference [ fhir:v "Task/160.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "unknown"] ; # 
+  fhir:sent [ fhir:v "2026-07-01T15:29:00.434+00:00"^^xsd:dateTime] ; # 
+  fhir:recipient ( [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/sid/telematik-id>
+       ] ;
+       fhir:value [ fhir:v "3-SMC-B-Testkarte-883110000123465" ]
+     ]
+  ] ) ; # 
+  fhir:sender [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [ fhir:v "X234567890" ]
+     ]
+  ] ; # 
+  fhir:payload ( [
+     fhir:content [
+       a fhir:String ;
+       fhir:v "{ \"version\": \"1\", \"supplyOptionsType\": \"delivery\", \"name\": \"Dr. Maximilian von Muster\", \"address\": [ \"wohnhaft bei Emilia Fischer\", \"Bundesallee 312\", \"123. OG\", \"12345 Berlin\" ], \"hint\": \"Bitte im Morsecode klingeln: -.-.\", \"phone\": \"004916094858168\" }"
+     ]
+  ] ) . # 
+
+<https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication/Communication_Reply_Pharmacy> a fhir:Communication ;
+  fhir:id [ fhir:v "7977a4ab-97a9-4d95-afb3-6c4c1e2ac596"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply|1.6"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply?version=1.6>
+     ] ) ;
+     fhir:tag ( [
+       fhir:display [ fhir:v "Reply from Pharmacy to Patient" ]
+     ] [
+       fhir:display [ fhir:v "Communication message sent by pharmacy to patient in response to a previous Task-related message" ]
+     ] )
+  ] ; # 
+  fhir:basedOn ( [
+     fhir:l <https://gematik.de/fhir/tiflow/core/Task/160.000.033.491.280.78> ;
+     fhir:reference [ fhir:v "Task/160.000.033.491.280.78" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "unknown"] ; # 
+  fhir:sent [ fhir:v "2026-07-01T15:29:00.434+00:00"^^xsd:dateTime] ; # 
+  fhir:recipient ( [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
+         fhir:l <http://fhir.de/sid/gkv/kvid-10>
+       ] ;
+       fhir:value [ fhir:v "X234567890" ]
+     ]
+  ] ) ; # 
+  fhir:sender [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/sid/telematik-id>
+       ] ;
+       fhir:value [ fhir:v "3-SMC-B-Testkarte-883110000123465" ]
+     ]
+  ] ; # 
+  fhir:payload ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AvailabilityState"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AvailabilityState>
+       ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [
+           fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_AvailabilityStatus"^^xsd:anyURI ;
+           fhir:l <https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_AvailabilityStatus>
+         ] ;
+         fhir:code [ fhir:v "20" ]
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "delivery"^^xsd:anyURI ;
+           fhir:l fhir:delivery
+         ] ;
+         fhir:value [
+           a fhir:Boolean ;
+           fhir:v true
+         ]
+       ] [
+         fhir:url [
+           fhir:v "onPremise"^^xsd:anyURI ;
+           fhir:l fhir:onPremise
+         ] ;
+         fhir:value [
+           a fhir:Boolean ;
+           fhir:v true
+         ]
+       ] [
+         fhir:url [
+           fhir:v "shipment"^^xsd:anyURI ;
+           fhir:l fhir:shipment
+         ] ;
+         fhir:value [
+           a fhir:Boolean ;
+           fhir:v false
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_SupplyOptionsType"^^xsd:anyURI ;
+         fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_SupplyOptionsType>
+       ]
+     ] ) ;
+     fhir:content [
+       a fhir:String ;
+       fhir:v "Eisern"
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
