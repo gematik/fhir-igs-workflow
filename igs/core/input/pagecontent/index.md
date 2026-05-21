@@ -45,7 +45,7 @@ Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow
 <br>
 
 <figure>
-    <div class="gem-ig-img-container" style="--box-width: 450px; margin-bottom: 30px;">
+    <div class="gem-ig-svg-container" style="--box-width: 450px; margin-bottom: 30px;">
         <img src="./ig-landscape.svg" alt="Übersicht der FHIR-IGs des TI-Flow-Fachdienst" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Übersicht der FHIR-IGs des TI-Flow-Fachdienst</figcaption>
@@ -53,6 +53,11 @@ Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow
 
 <br>
 
+## Test mit object
+
+<br/>
+<object data="./ig-landscape.svg" type="image/svg+xml"></object>
+<br/>
 
 ## Aufbau
 
