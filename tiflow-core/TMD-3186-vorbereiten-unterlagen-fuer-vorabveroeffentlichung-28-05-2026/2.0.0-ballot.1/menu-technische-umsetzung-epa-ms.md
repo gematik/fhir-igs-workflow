@@ -100,7 +100,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Bereitstellen de
   * Ausnahmeregelungen des Mappings: Überschreiben/Setzen der "identifier:Telematik-ID" des Arztes aus dem Signaturzertifikat der QES
 * Ausgangsprofil der E-Rezept FHIR Ressourcen: KBV_PR_FOR_Organization https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization
   * Zielprofil der ePA Medication Service FHIR Ressourcen: Organization in gematik Directory https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory
-  * Ausnahmeregelungen des Mappings: Überschreiben/Setzen des "identifier:TelematikID" mit der idNummer aus dem ACCESS_TOKEN des verwendeten Operationsaufrufes
+  * Ausnahmeregelungen des Mappings: Überschreiben/Setzen des "identifier:TelematikID" mit zeta-user-info.identifier aus den Nutzerinformationen des verwendeten Operationsaufrufes
 * Ausgangsprofil der E-Rezept FHIR Ressourcen: GEM_ERP_PR_MedicationDispense https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense
   * Zielprofil der ePA Medication Service FHIR Ressourcen: EPA MedicationDispense https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-dispense
   * Ausnahmeregelungen des Mappings: 
@@ -110,7 +110,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Bereitstellen de
 
 **Tabelle: **Übersicht Mapping und Ausnahmeregelungen des Mappings
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Bereitstellen der MedicationDispense für den ePA Medication Service eine Ressource des Profils https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory erstellen und Organization.identifier:TelematikID mit idNummer sowie Organization.name mit organizationName aus dem ACCESS_TOKEN belegen.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Bereitstellen der MedicationDispense für den ePA Medication Service eine Ressource des Profils https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory erstellen und Organization.identifier:TelematikID mit zeta-user-info.identifier sowie Organization.name mit zeta-user-info.commonName aus den Nutzerinformationen belegen.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Bereitstellen der Daten für den ePA Medication Service sicherstellen, dass Datenwerte der E-Rezept FHIR Ressource übernommen werden, sofern das entsprechende Element in dem Ausgangs- und Zielprofilen vorhanden ist.
 

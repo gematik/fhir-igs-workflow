@@ -294,6 +294,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#verordnungs-id" id="markdown-toc-verordnungs-id">Verordnungs-ID</a></li>
   <li><a href="#verarbeitung-von-datensätzen" id="markdown-toc-verarbeitung-von-datensätzen">Verarbeitung von Datensätzen</a></li>
   <li><a href="#verarbeitung-von-fhir-ressourcen" id="markdown-toc-verarbeitung-von-fhir-ressourcen">Verarbeitung von FHIR Ressourcen</a></li>
+  <li><a href="#identifikation-des-nutzers" id="markdown-toc-identifikation-des-nutzers">Identifikation des Nutzers</a></li>
 </ul>
 
 </div>
@@ -574,6 +575,57 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Verarbeitung von FHIR-Ressourcen der Anwendung E-Rezept sicherstellen, dass Datumsangaben ohne explizite Zeitzoneninformationen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) verarbeitet werden.
 </requirement>
 
+<h3 id="identifikation-des-nutzers">Identifikation des Nutzers</h3>
+
+<p>Im Rahmen des Verbindungsaufbaus eines Clientsystems mit dem TI-Flow-Fachdienst authentisiert sich der Nutzer.
+Der ZETA-Guard übermittelt die Informationen zum Nutzer in einem Http-Header im Request an den Resource Server (siehe [gemSpec_ZETA#A_25669-*]).</p>
+
+<p>Folgende Informationen sind im Header enthalten. (siehe [zeta-user-info.yaml])
+<!-- ToDo: Link auflösen --></p>
+
+<table>
+<tr>
+    <th>Attribut</th>
+    <th>Beschreibung</th>
+    <th>optional</th>
+</tr>
+<tr>
+    <td>identifier</td>
+    <td>Telematik-ID, KVNR or other unique identifier</td>
+    <td>nein</td>
+</tr>
+<tr>
+    <td>professionOID</td>
+    <td>Profession identifier (OID)</td>
+    <td>nein</td>
+</tr>
+<tr>
+    <td>commonName</td>
+    <td>Kurzname der Institution</td>
+    <td>nein</td>
+</tr>
+<tr>
+    <td>organizationName</td>
+    <td>Name der Organisation oder Institution</td>
+    <td>ja</td>
+</tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>Attribute zeta-user-info</figcaption></div>
+
+<!-- A_19390-01 -->
+<!-- A_19391-01 -->
+<!-- A_19392-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-433" title="TI-Flow-Fachdienst - Nutzerinformationen" version="0">
+  <meta lockversion="false" />
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS den Http-Header zeta-user-info auswerten, um die Informationen zum Nutzer für die weitere Verarbeitung zu ermitteln.
+</requirement>
+
+<p>Die Information zum aufrufenden Nutzer/Institution wird bspw. bei der Prüfung von Autorisierungsregeln (Prüfung der professionOID) und bei der Zugriffsprotokollierung für den Versicherten verwendet.</p>
+
+
 
 
 </div>
@@ -614,7 +666,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#2.0.0-ballot.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, May 21, 2026 06:03+0000">2026-05-21</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#2.0.0-ballot.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, May 21, 2026 06:33+0000">2026-05-21</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
