@@ -1,0 +1,24 @@
+@startuml
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+
+title HKP Workflow - Korrekturprozess
+
+$state_assigned(assigned)
+$state_assigned_decided(assigned_decided)
+$state_review(review)
+$state_correction(correction)
+
+assigned --> correction : <color:black><back:Salmon> K1
+assigned <-- correction : <color:black><back:Salmon> K2
+assigned <-- correction : <color:black><back:Salmon> K3
+review --> assigned_decided : <color:black><back:Salmon> AP4
+
+correction <-- review : <color:black><back:Salmon> K4
+correction --> review : <color:black><back:Salmon> K5
+correction --> review : <color:black><back:Salmon> K6
+'TODO: Frage hier AP3 noch abzudecken?
+
+@enduml
