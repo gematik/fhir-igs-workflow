@@ -55,11 +55,6 @@ Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG’s in der TI-Fl
 **Abbildung: **Übersicht der FHIR-IGs des TI-Flow-Fachdienst
 
 
-### Anforderungen zur Umsetzung des IGs
-
-funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" umsetzen.
-
-funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS zur Umsetzung des Implementation Guides "E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
 ## Aufbau
 
 * [FHIR-Artefakte](./artifacts.md)
