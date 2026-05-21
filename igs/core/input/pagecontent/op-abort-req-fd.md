@@ -8,7 +8,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
   <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-    Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten, wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Nutzer mit zeta-user-info.professionOID = oid_versicherter den zeta-user-info.identifier mit der in Task.for hinterlegte KVNR des begünstigten Patienten vergleichen und bei Missmatch den Aufruf mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>

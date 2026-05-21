@@ -1,20 +1,19 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 01024044af263fd515d0e9a69377f2b5759c36e009fe8587e16f0f2555c98375
+content_hash: 64933f0955d8db89c6cb33598aa291eb07312d27f5e5463107100eb0d0f43c49
 created: '2026-03-23T10:57:48.447588'
-date: '2026-03-23T13:47:26.455903'
+date: '2026-05-21T07:13:04.304208'
 key: IG-TIFLOW-CORE-108
-modified: '2026-03-23T10:57:48.447589'
-release_status: STABLE
+modified: '2026-05-21T07:13:04.304208'
+release_status: MODIFIED
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
 text: Der TI-Flow-Fachdienst MUSS bei der Prüfung des PoPP-Token prüfen, dass die
-  Telematik-ID actor_id aus dem Token mit der Telematik-ID der Leistungserbringerinstitution
-  (idNumber) im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests übereinstimmt
-  und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen.
+  Telematik-ID actor_id aus dem Token mit dem zeta-user-info.identifier des Nutzers
+  (Telematik-ID) übereinstimmt und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen.
 title: TI-Flow-Fachdienst - Prüfung PoPP-Token - Telematik-ID prüfen
-version: 0
+version: 1

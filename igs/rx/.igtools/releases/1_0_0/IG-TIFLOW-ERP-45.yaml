@@ -1,21 +1,22 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: c510b9f76bde19e94a578b1c6df32533cc38d1d39c29fd309848af2c0b2b9b29
+content_hash: 69733959b97b7eecc746dc6826e42e4679668428c944cb91326447873a7d8415
 created: '2026-03-23T10:57:49.787374'
-date: '2026-03-23T13:47:28.485709'
+date: '2026-05-21T07:13:08.325375'
 key: IG-TIFLOW-ERP-45
-modified: '2026-03-23T10:57:49.787375'
-release_status: STABLE
+modified: '2026-05-21T07:13:08.325375'
+release_status: MODIFIED
 source: input/pagecontent/op-dispense-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
 text: Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
-  über /Task/&lt;id&gt;/$dispense für den referenzierten Task die Telematik-ID aus
-  dem ACCESS_TOKEN in Task.owner speichern, damit sichergestellt werden kann, dass
-  nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen können.
+  über /Task/&lt;id&gt;/$dispense für den referenzierten Task den zeta-user-info.identifier
+  des Nutzers (Telematik-ID) in Task.owner speichern, damit sichergestellt werden
+  kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen
+  können.
 title: TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Telematik-ID der
   abgebenden LEI speichern
-version: 0
+version: 1

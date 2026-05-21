@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 30cec94018da8f6f2319dc918d302944ee1051cb4cee7b00dbbe806ef95e61d2
+content_hash: 8b7033c43dd8125143cef1f684ba3e66b93870c1aa6bfc8fce3596fe38bc54de
 created: '2026-03-23T10:57:48.452698'
-date: '2026-04-13T10:29:56.365981'
+date: '2026-05-21T07:13:04.313086'
 key: IG-TIFLOW-CORE-136
-modified: '2026-04-13T10:29:56.365981'
+modified: '2026-05-21T07:13:04.313086'
 release_status: MODIFIED
 source: input/pagecontent/query-api-auditevent-req-fd.md
 status: ACTIVE
@@ -14,16 +14,15 @@ test_procedures:
   - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt\
   \ /AuditEvent und auf einen konkreten über &lt;id&gt; adressierten /AuditEvent/&lt;id&gt;\
-  \ sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die\
-  \ Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\" des Aufrufers\
-  \ im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen, und bei Abweichungen\
-  \ die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
-  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403\
-  \ - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
-  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
-  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
-  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
-  \ </tr>\n </table> \n abbrechen, damit Protokolleinträge nicht durch Unberechtigte\
-  \ ausgelesen werden können."
+  \ die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass\
+  \ ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_versicherter</li>\n </ul>\
+  \ \n die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit\
+  \ dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die\
+  \ aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abbrechen, damit\
+  \ Protokolleinträge nicht durch Unberechtigte ausgelesen werden können."
 title: TI-Flow-Fachdienst - AuditEvent lesen - Rollenprüfung
 version: 1

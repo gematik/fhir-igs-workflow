@@ -36,10 +36,10 @@
 | `KBVPRFOROrganization` | `OrganizationDirectory.identifier.type.text` | Nicht Übertragen | Feld wird nicht gemappt \| Inherited from Organization.identifier:Telematik-ID.type \| Quelle: Organization.identifier:Telematik-ID.type.text |
 | `KBVPRFOROrganization.identifier.use` | `OrganizationDirectory.identifier.use` | Nicht Übertragen | Feld wird nicht gemappt \| Inherited from Organization.identifier:Telematik-ID \| Quelle: Organization.identifier:Telematik-ID.use |
 | `KBVPRFOROrganization.identifier.value` | `OrganizationDirectory.identifier.value` | Nicht Übertragen | Feld wird nicht gemappt \| Inherited from Organization.identifier:Telematik-ID \| Quelle: Organization.identifier:Telematik-ID.value |
-| `KBVPRFOROrganization` | `OrganizationDirectory.identifier` | Manuell | Telematik-ID wird aus idNummer → aus dem ACCESS_TOKEN der Anfrage bezogen \| Quelle: Organization.identifier:TelematikID |
+| `KBVPRFOROrganization` | `OrganizationDirectory.identifier` | Manuell | Telematik-ID wird aus idNummer → aus der Nutzerinformation (zeta-user-info.idrntifier) der Anfrage bezogen \| Quelle: Organization.identifier:TelematikID |
 | `KBVPRFOROrganization.meta` | `OrganizationDirectory.meta.profile` | Fester Wert | setzt festen Wert: `https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory` |
-| `KBVPRFOROrganization.name` | `OrganizationDirectory.name` | Manuell | organizationName → aus dem ACCESS_TOKEN der Anfrage beziehen \| Quelle: Organization.name |
-| `KBVPRFOROrganization` | `OrganizationDirectory.type` | Manuell | professionOID → aus dem ACCESS_TOKEN der Anfrage \| Quelle: Organization.type:profession |
+| `KBVPRFOROrganization.name` | `OrganizationDirectory.name` | Manuell | organizationName → aus der Nutzerinformation (zeta-user-info.commonName) der Anfrage beziehen \| Quelle: Organization.name |
+| `KBVPRFOROrganization` | `OrganizationDirectory.type` | Manuell | professionOID → aus der Nutzerinformation (zeta-user-info.professionOID) der Anfrage \| Quelle: Organization.type:profession |
 
 ### Extensions
 

@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: a104874ecba902fce6a7440aa1057925c3a3059ddcdec3b4ecaade2377375fc6
+content_hash: dbcc9aa893453d650900caf68d0b04e5942b2e469756dca0611e588440779b16
 created: '2026-03-23T10:57:49.812184'
-date: '2026-04-13T10:29:58.855354'
+date: '2026-05-21T07:13:08.362881'
 key: IG-TIFLOW-ERP-104
-modified: '2026-04-13T10:29:58.855354'
+modified: '2026-05-21T07:13:08.362881'
 release_status: MODIFIED
 source: input/pagecontent/op-accept-req-fd.md
 status: ACTIVE
@@ -14,10 +14,9 @@ test_procedures:
   - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 160, 166,\
   \ 169, 200 oder 209 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten\
-  \ /Task/&lt;id&gt; sicherstellen, dass ausschließlich abgebende Institutionen in\
-  \ der Rolle\n <ul>\n <li>oid_oeffentliche_apotheke</li> \n <li>oid_krankenhausapotheke</li>\n\
-  \ </ul>\n die Operation am Fachdienst aufrufen dürfen und die Rolle \"professionOID\"\
-  \ des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen,\
+  \ /Task/&lt;id&gt; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen,\
+  \ dass ausschließlich abgebende Institutionen in der Rolle\n <ul>\n <li>oid_oeffentliche_apotheke</li>\
+  \ \n <li>oid_krankenhausapotheke</li>\n </ul>\n die Operation am Fachdienst aufrufen\
   \ und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
   \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
   \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\

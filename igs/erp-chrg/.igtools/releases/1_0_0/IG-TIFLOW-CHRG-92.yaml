@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 1dab6d26b9b4b613db6820662825574cdec860199f8700cd0a1c6a7f8b633d23
+content_hash: 7e920edcf8460c94086b3e1f6112474c637a7fa371715852c6bca3501cbb7e4b
 created: '2026-03-23T10:57:49.330705'
-date: '2026-05-21T07:53:22.207159'
+date: '2026-05-21T07:13:06.249136'
 key: IG-TIFLOW-CHRG-92
-modified: '2026-05-21T07:53:22.207159'
+modified: '2026-05-21T07:13:06.249136'
 release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
@@ -14,8 +14,8 @@ test_procedures:
   - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine\
   \ konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch\
-  \ einen Versicherten, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im \"\
-  Authorization\"-Header des HTTP-Requests identifizieren, diese gegen die in ChargeItem.subject.identifier\
+  \ einen Versicherten, den Versicherten anhand des zeta-user-info.identifier des\
+  \ Nutzers (KVNR) identifizieren, diese gegen die in ChargeItem.subject.identifier\
   \ hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die\
   \ Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
   \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403\

@@ -1,12 +1,12 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 585f747544ddde57d64b6f2f35cd43cd346f4d1ed7e28aab124e0be7e0a2ff15
+content_hash: ac75ccac73308737583414d4130d466d898d622aa73be0f3814ed04e3b06b3c5
 created: '2026-03-23T10:57:49.567708'
-date: '2026-03-23T13:47:27.790916'
+date: '2026-05-21T07:13:06.997344'
 key: IG-TIFLOW-XBORDER-33
-modified: '2026-03-23T10:57:49.567710'
-release_status: STABLE
+modified: '2026-05-21T07:13:06.997344'
+release_status: MODIFIED
 source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
 test_procedures:
@@ -14,7 +14,6 @@ test_procedures:
   - Produkttest
 text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt
   `/Consent` mit `?category=EUDISPCONS` alle dem Versicherten zugeordneten Zugriffsberechtigungen
-  anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests
-  identifizieren und löschen.
+  anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren und löschen.
 title: TI-Flow-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung
-version: 0
+version: 1

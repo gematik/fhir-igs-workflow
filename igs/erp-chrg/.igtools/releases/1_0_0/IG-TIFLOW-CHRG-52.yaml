@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 05848bd77703323ac99bad0e360a938106e137125e74874d6dda532931dc3cbf
+content_hash: dde51822331ca46e0b45e2d6aeb71fd100cdfdd2c146b499aa16db4fb8638b7b
 created: '2026-03-23T10:57:49.323942'
-date: '2026-05-21T07:53:22.186419'
+date: '2026-05-21T07:13:06.193560'
 key: IG-TIFLOW-CHRG-52
-modified: '2026-05-21T07:53:22.186419'
+modified: '2026-05-21T07:13:06.193560'
 release_status: MODIFIED
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
@@ -14,17 +14,17 @@ test_procedures:
   - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete\
   \ über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende\
-  \ Leistungserbringerinstitution, die LEI anhand der Telematik-ID aus dem ACCESS_TOKEN\
-  \ im \"Authorization\"-Header des HTTP-Requests identifizieren, diese gegen die\
-  \ in ChargeItem.enterer.identifier hinterlegte Telematik-ID der einstellenden LEI\
-  \ prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:\n <table id=\"\
-  error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n\
-  \ <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
-  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
-  \ <th>Details Code</th>\n <td>SVC_IDENTITY_MISMATCH</td>\n </tr>\n <tr>\n <th>Details\
-  \ Text</th>\n <td>Identity mismatch: Access token or x-insurantid header does not\
-  \ match FHIR data (Telematik-ID / KVNR)</td>\n </tr>\n </table> \n abweisen, damit\
-  \ ausschließlich die LEI eine Abrechnungsinformation abrufen kann, welche die Abrechnungsinformation\
-  \ bereitgestellt hat."
+  \ Leistungserbringerinstitution, die LEI anhand des zeta-user-info.identifier des\
+  \ Nutzers (Telematik-ID) identifizieren, diese gegen die in ChargeItem.enterer.identifier\
+  \ hinterlegte Telematik-ID der einstellenden LEI prüfen und bei Ungleichheit den\
+  \ Aufruf mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px\
+  \ solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403\
+  \ - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>SVC_IDENTITY_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Identity\
+  \ mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID\
+  \ / KVNR)</td>\n </tr>\n </table> \n abweisen, damit ausschließlich die LEI eine\
+  \ Abrechnungsinformation abrufen kann, welche die Abrechnungsinformation bereitgestellt\
+  \ hat."
 title: TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Apotheke - Prüfung Telematik-ID
 version: 1

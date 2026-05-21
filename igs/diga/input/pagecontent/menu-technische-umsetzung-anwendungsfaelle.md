@@ -161,8 +161,7 @@ der Umsetzung im E-Rezept-FdV kann die Auswahl automatisiert erfolgen.
 Damit das E-Rezept-FdV der gematik "UC 3.3 - Nachricht durch Versicherten übermitteln" ausführen kann, muss es zunächst die Telematik-ID des Kostenträgers als Empfängeradresse der Nachricht ermitteln.
 
 <!-- ToDo: wie kann das FdV auf die Daten aus dem AUT-Zertifikat des Versicherten zugreifen -->
-Das E-Rezept-FdV benötigt das Haupt-Institutionskennzeichen (IK) des Kostenträgers. Dieses IK wird über die Authentifizierungsmethoden des E-Rezept-FdV bereitgestellt.
-Das E-Rezept-FdV erhält sowohl bei der Authentifizierung mittels eGK, wie auch mittels sektoralem IDP (GesundheitsID) einen ACCESS_TOKEN vom E-Rezept Authorization Server ausgestellt. Dieser ACCESS_TOKEN enthält das IK des Kostenträgers.
+Das E-Rezept-FdV benötigt das Haupt-Institutionskennzeichen (IK) des Kostenträgers. Dieses IK ist in den Authentisierungsinformationen des Versicherten enthalten.
 
 Sobald dem E-Rezept-FdV das IK vorliegt, sucht es im FHIR-VZD nach der Telematik-ID des Kostenträgers mithilfe des IK.
 

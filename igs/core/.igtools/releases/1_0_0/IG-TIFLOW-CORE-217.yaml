@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 16ee6cfef6c10ebc6e371c254f1c66c338e9da785b7a75fdb6a31c45ca43674a
+content_hash: 6e660a853a40b7d056f7a2d4a96046c8a853ef268d046a40d13c93f929beaa15
 created: '2026-03-23T10:57:48.469129'
-date: '2026-04-13T10:29:56.396038'
+date: '2026-05-21T07:13:04.339685'
 key: IG-TIFLOW-CORE-217
-modified: '2026-04-13T10:29:56.396038'
+modified: '2026-05-21T07:13:04.339685'
 release_status: MODIFIED
 source: input/pagecontent/op-create-req-fd.md
 status: ACTIVE
@@ -13,18 +13,16 @@ test_procedures:
   TI-Flow_FD:
   - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation\
-  \ die Rolle \"professionOID\" des Aufrufenden im ACCESS_TOKEN im HTTP-RequestHeader\
-  \ \"Authorization\" feststellen und sicherstellen, dass ausschließlich verordnende\
-  \ Leistungserbringerinstitutionen in der Rolle\n <ul>\n <li>oid_praxis_arzt</li>\n\
-  \ <li>oid_zahnarztpraxis</li>\n <li>oid_praxis_psychotherapeut</li>\n <li>oid_krankenhaus</li>\n\
-  \ <li>oid_institution-vorsorge-reha</li>\n </ul> \n die Operation im Fachdienst\
-  \ aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table\
-  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
-  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
-  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
-  \ <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n\
-  \ <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation\
-  \ anzufordern</td>\n </tr>\n </table> \n abbrechen, damit Workflows nicht durch\
-  \ zur Verordnung Unberechtigte erstellt werden können."
+  \ die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass\
+  \ ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_praxis_arzt</li>\n <li>oid_zahnarztpraxis</li>\n\
+  \ <li>oid_praxis_psychotherapeut</li>\n <li>oid_krankenhaus</li>\n <li>oid_institution-vorsorge-reha</li>\n\
+  \ </ul> \n die Operation im Fachdienst aufrufen und bei Abweichungen die Operation\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die\
+  \ aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abbrechen, damit\
+  \ Workflows nicht durch zur Verordnung Unberechtigte erstellt werden können."
 title: TI-Flow-Fachdienst - Task erzeugen - Rollenprüfung
 version: 1
