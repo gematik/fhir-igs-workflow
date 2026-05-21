@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `Char
 
 ### Allgemeine Regeln
 <!--A_22111-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-44" title="TI-Flow-Fachdienst - ChargeItem - unzulässige Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-44" title="TI-Flow-Fachdienst - ChargeItem - unzulässige Operationen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -11,7 +11,7 @@ Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels d
 </requirement>
 
 <!-- A_22141 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-45" title="TI-Flow-Fachdienst - Signaturzertifikat SMC-B prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-45" title="TI-Flow-Fachdienst - Signaturzertifikat SMC-B prüfen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -53,7 +53,7 @@ Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels d
 </requirement>
 
 <!--A_22119-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-47" title="TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Versicherter - Filter KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-47" title="TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Versicherter - Filter KVNR" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -62,7 +62,7 @@ Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels d
 </requirement>
 
 <!--A_22121-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-48" title="TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Suchkriterien" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-48" title="TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Suchkriterien" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -71,7 +71,7 @@ Der TI-Flow-Fachdienst MUSS das Eingrenzen einer Suchanfrage auf /ChargeItem üb
 </requirement>
 
 <!--A_22122-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-49" title="TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Response" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-49" title="TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Response" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -215,7 +215,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete
 </requirement>
 
 <!--A_22127-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-54" title="TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Versicherte - Signieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-54" title="TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Versicherte - Signieren" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -224,7 +224,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete
 </requirement>
 
 <!--A_22128-01-->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-55" title="TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Apotheke - kein AccessCode und Quittung" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-55" title="TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Apotheke - kein AccessCode und Quittung" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -478,7 +478,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
 </requirement>
 
 <!--A_22137-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-64" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - PKV-Abgabedatensatz übernehmen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-64" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - PKV-Abgabedatensatz übernehmen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -615,7 +615,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
 </requirement>
 
 <!--A_22134-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-68" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Verordnungsdatensatz übernehmen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-68" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Verordnungsdatensatz übernehmen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -624,7 +624,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
 </requirement>
 
 <!--A_22135-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-69" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Quittung übernehmen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-69" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Quittung übernehmen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -633,7 +633,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
 </requirement>
 
 <!--A_22614-02-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-70" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Generierung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-70" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Generierung AccessCode" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -642,7 +642,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
 </requirement>
 
 <!-- A_22143 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-71" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - ChargeItem befüllen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-71" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - ChargeItem befüllen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -654,7 +654,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
 </requirement>
 
 <!-- A_23704 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-72" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - kein AccessCode und Quittung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-72" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - kein AccessCode und Quittung" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -663,7 +663,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
 </requirement>
 
 <!-- A_28133 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-73" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-73" title="TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Push Notification Versicherter" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -937,7 +937,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
 </requirement>
 
 <!--A_22148-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-82" title="TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - PKV-Abgabedatensatz übernehmen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-82" title="TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - PKV-Abgabedatensatz übernehmen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -1110,7 +1110,7 @@ und bei fehlerhafter Prüfung die Operation mit dem folgenden Fehler:
 </requirement>
 
 <!--A_22615-02-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-87" title="TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - Generierung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-87" title="TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - Generierung AccessCode" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -1119,7 +1119,7 @@ und bei fehlerhafter Prüfung die Operation mit dem folgenden Fehler:
 </requirement>
 
 <!--A_23624-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-88" title="TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - kein AccessCode und Quittung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-88" title="TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - kein AccessCode und Quittung" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -1238,7 +1238,7 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
 </requirement>
 
 <!--A_22117-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-93" title="TI-Flow-Fachdienst - Abrechnungsinformation löschen - zu löschende Ressourcen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-93" title="TI-Flow-Fachdienst - Abrechnungsinformation löschen - zu löschende Ressourcen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>

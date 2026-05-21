@@ -19,7 +19,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19243 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-170" title="PS abgebende LEI: E-Rezept durch Abgebenden löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-170" title="PS abgebende LEI: E-Rezept durch Abgebenden löschen" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Konformitätsbestätigung"/>
