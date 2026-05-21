@@ -14,7 +14,7 @@ Die Vertraulichkeit und Integrität der verarbeiteten Daten gewährleistet der F
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 800px; margin-bottom: 30px;">
-        <img src="./systemüberblick_TI-Flow-Fachdienst.drawio.png" alt="Systemüberblick TI-Flow-Fachdienst" style="width: 100%;">
+        <img src="./systemueberblick_TI-Flow-Fachdienst.drawio.png" alt="Systemüberblick TI-Flow-Fachdienst" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Systemüberblick TI-Flow-Fachdienst</figcaption>
 </figure>
