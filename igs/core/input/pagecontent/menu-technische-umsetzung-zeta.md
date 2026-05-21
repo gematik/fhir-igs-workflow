@@ -68,19 +68,6 @@ Es wird die Liste der von der Anwendung angeforderten Berechtigungen mit der Lis
 * Client-Anwendung fordert an: `task.read` -> **Erfolg**
 * Client-Anwendung fordert an: `/erezept` -> **Fehler** (da `/erezept` nicht erlaubt ist)
 
-<!-->
-#### Akteure und Ressourcen der Anwendung TI-Flow
-Die Menge an möglichen Zugriffen bildet sich über die Use Cases der Anwendung TI-Flow. Jeder Use Case soll über die Zeta Policy steuerbar sein.
-Die Scopes leiten sich daraus ab. 
-
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-    {% include zeta-oid-to-use-case.svg %}
-    </div>
-    <figcaption><strong>Abbildung: </strong>Allowed Profession OID's to Use Cases</figcaption>
-</figure>
--->
-
 #### Scope Definition
 
 Die Verbindungen von Akteuren und Use Cases erzeugen die folgende Scope Definition. Sie ist unter Referenzen aufgeführt.
