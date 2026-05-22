@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Client-Anforderungen: Consent-Query - TIFlow - Kernfunktionalitäten v2.0.0-ballot.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
+    }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
+</style>
+
+<script type="text/javascript" src="assets/js/heading-links.js"> </script>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"19.6.2"}
+    h3,h4,h5,h6{--heading-prefix:"19.6.2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Grundlagen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
+      </li>
+      <li>
+        <a href="audit-service.html">Zugriffsprotokollierung</a>
+      </li>
+      <li>
+        <a href="fhir-validate.html">FHIR-Validierung</a>
+      </li>
+      <li>
+        <a href="ttl.html">Löschfristen</a>
+      </li>
+      <li>
+        <a href="error-codes.html">Fehlercodes</a>
+      </li>
+      <li>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
+        <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
+      </li>
+      <li>
+        <a href="datamatrix-code-client.html">Datamatrix Code</a>
+      </li>
+      <li>
+        <a href="health-check.html">Health Check</a>
+      </li>
+      <li>
+        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Funktionsmerkmale
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-epa-ms.html">ePA Medication Service</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-push.html">Push Notification</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-subscription.html">Subscrition</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-additional-api.html">Additional API</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="requirement-mapping-old-to-new.html">Anforderungsmapping</a>
+      </li>
+      <li>
+        <a href="license.html">Lizenz</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+TIFlow - Kernfunktionalitäten
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 2.0.0-ballot.1 - ci-build
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='menu-schnittstellen-query-api.html'><b>Query API</b></a></li><li><a href='query-api-consent.html'><b>Query API: Consent</b></a></li><li><b>Client-Anforderungen: Consent-Query</b></li>
+
+          <span style="float:right;">
+
+            <a href="query-api-consent-req-fd.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="menu-schnittstellen-additional-api.html">nächste&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Client-Anforderungen: Consent-Query</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#einwilligung-erteilen" id="markdown-toc-einwilligung-erteilen">Einwilligung erteilen</a></li>
+  <li><a href="#einwilligungen-einsehen" id="markdown-toc-einwilligungen-einsehen">Einwilligungen einsehen</a></li>
+  <li><a href="#einwilligung-widerrufen" id="markdown-toc-einwilligung-widerrufen">Einwilligung widerrufen</a></li>
+</ul>
+
+</div>
+
+<p>Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der <code class="language-plaintext highlighter-rouge">Consent</code>-Query-Endpunkte.</p>
+
+<h3 id="einwilligung-erteilen">Einwilligung erteilen</h3>
+
+<!-- Ablaufdiagramm Anwendungsfall -->
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
+		<?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="420px" preserveAspectRatio="none" style="width:642px;height:420px;background:#FFFFFF;" version="1.1" viewBox="0 0 642 420" width="642px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="431" x="105.25" y="27.9951">UC 3.14 - Einwilligung durch den Versicherten erteilen</text><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="47" x2="47" y1="118.5938" y2="339.3906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="220" x2="220" y1="118.5938" y2="339.3906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="434" x2="434" y1="118.5938" y2="339.3906" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="5" y="115.292">Versicherte</text><ellipse cx="47.5" cy="50.7969" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M47.5,58.7969 L47.5,85.7969 M34.5,66.7969 L60.5,66.7969 M47.5,85.7969 L34.5,100.7969 M47.5,85.7969 L60.5,100.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="5" y="351.3857">Versicherte</text><ellipse cx="47.5" cy="363.1875" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M47.5,371.1875 L47.5,398.1875 M34.5,379.1875 L60.5,379.1875 M47.5,398.1875 L34.5,413.1875 M47.5,398.1875 L60.5,413.1875 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="109" x="166" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="173" y="107.292">E-Rezept-FdV</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="109" x="166" y="338.3906" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="173" y="358.3857">E-Rezept-FdV</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="143" x="363" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="370" y="107.292">TI-Flow-Fachdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="143" x="363" y="338.3906" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="370" y="358.3857">TI-Flow-Fachdienst</text><polygon fill="#181818" points="208.5,145.7266,218.5,149.7266,208.5,153.7266,212.5,149.7266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="47.5" x2="214.5" y1="149.7266" y2="149.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="54.5" y="144.6606">[1]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="124" x="79.5" y="144.6606">Einwilligung erteilen</text><polygon fill="#181818" points="422.5,174.8594,432.5,178.8594,422.5,182.8594,426.5,178.8594" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="220.5" x2="428.5" y1="178.8594" y2="178.8594" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="227.5" y="173.7935">[2]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="165" x="252.5" y="173.7935">POST /Consent (category)</text><line style="stroke:#181818;stroke-width:1.0;" x1="434.5" x2="476.5" y1="207.9922" y2="207.9922" /><line style="stroke:#181818;stroke-width:1.0;" x1="476.5" x2="476.5" y1="207.9922" y2="220.9922" /><line style="stroke:#181818;stroke-width:1.0;" x1="435.5" x2="476.5" y1="220.9922" y2="220.9922" /><polygon fill="#181818" points="445.5,216.9922,435.5,220.9922,445.5,224.9922,441.5,220.9922" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="441.5" y="202.9263">[3]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="138" x="466.5" y="202.9263">Einwilligung speichern</text><line style="stroke:#181818;stroke-width:1.0;" x1="434.5" x2="476.5" y1="250.125" y2="250.125" /><line style="stroke:#181818;stroke-width:1.0;" x1="476.5" x2="476.5" y1="250.125" y2="263.125" /><line style="stroke:#181818;stroke-width:1.0;" x1="435.5" x2="476.5" y1="263.125" y2="263.125" /><polygon fill="#181818" points="445.5,259.125,435.5,263.125,445.5,267.125,441.5,263.125" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="441.5" y="245.0591">[4]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="169" x="466.5" y="245.0591">Datenzugriff protokollieren</text><polygon fill="#181818" points="231.5,288.2578,221.5,292.2578,231.5,296.2578,227.5,292.2578" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="225.5" x2="433.5" y1="292.2578" y2="292.2578" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="237.5" y="287.1919">[5]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="262.5" y="287.1919">:Consent</text><polygon fill="#181818" points="58.5,317.3906,48.5,321.3906,58.5,325.3906,54.5,321.3906" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="52.5" x2="219.5" y1="321.3906" y2="321.3906" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="64.5" y="316.3247">[6]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42" x="89.5" y="316.3247">Status</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.14 - Einwilligung durch Versicherten erteilen</figcaption>
+</figure>
+
+<!-- A_22709-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-287" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" den Text für die Einwilligung derart gestalten, dass dem Nutzer eine informierte Einwilligung möglich ist. Insbesondere MÜSSEN enthalten sein: der Verwendungszweck, die konkreten Informationen über die Art der erhobenen Daten, die Speicherdauer, Hinweis auf Freiwilligkeit, auf Widerrufsrecht, Hinweis auf die Folgen bei Verweigerung oder Widerruf.
+</requirement>
+
+<!-- A_22163-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-288" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" es dem Nutzer ermöglichen, die Einwilligung einzugeben.
+</requirement>
+
+<!-- A_22165-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-289" title="E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" eine Consent Ressource mit:
+    <ul>
+        <li>Versicherten-ID in Consent.patient.identifier</li>
+        <li>Einwilligungstyp in Consent.category.coding.code</li>
+    </ul>
+    erstellen.
+</requirement>
+
+<!-- A_22166-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-290" title="E-Rezept-FdV: Einwilligung erteilen - Speicherrequest" version="1">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation POST /Consent mit:
+    <ul>
+        <li>Consent Ressource im HTTP-Request-Body</li>
+    </ul>
+    ausführen.
+</requirement>
+
+<h3 id="einwilligungen-einsehen">Einwilligungen einsehen</h3>
+
+<!-- Ablaufdiagramm Anwendungsfall -->
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
+		<?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="335px" preserveAspectRatio="none" style="width:491px;height:335px;background:#FFFFFF;" version="1.1" viewBox="0 0 491 335" width="491px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="463" x="10" y="27.9951">UC 3.13 - Einwilligungen durch den Versicherten einsehen</text><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="53" x2="53" y1="118.5938" y2="255.125" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="252" x2="252" y1="118.5938" y2="255.125" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="401" x2="401" y1="118.5938" y2="255.125" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="11" y="115.292">Versicherte</text><ellipse cx="53.5" cy="50.7969" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M53.5,58.7969 L53.5,85.7969 M40.5,66.7969 L66.5,66.7969 M53.5,85.7969 L40.5,100.7969 M53.5,85.7969 L66.5,100.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="11" y="267.1201">Versicherte</text><ellipse cx="53.5" cy="278.9219" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M53.5,286.9219 L53.5,313.9219 M40.5,294.9219 L66.5,294.9219 M53.5,313.9219 L40.5,328.9219 M53.5,313.9219 L66.5,328.9219 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="109" x="198" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="205" y="107.292">E-Rezept-FdV</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="109" x="198" y="254.125" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="205" y="274.1201">E-Rezept-FdV</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="143" x="330" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="337" y="107.292">TI-Flow-Fachdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="143" x="330" y="254.125" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="337" y="274.1201">TI-Flow-Fachdienst</text><polygon fill="#181818" points="240.5,145.7266,250.5,149.7266,240.5,153.7266,244.5,149.7266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="53.5" x2="246.5" y1="149.7266" y2="149.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="60.5" y="144.6606">[1]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="150" x="85.5" y="144.6606">Einwilligungen einsehen</text><polygon fill="#181818" points="389.5,174.8594,399.5,178.8594,389.5,182.8594,393.5,178.8594" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="252.5" x2="395.5" y1="178.8594" y2="178.8594" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="259.5" y="173.7935">[2]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="100" x="284.5" y="173.7935">GET /Consent ()</text><polygon fill="#181818" points="263.5,203.9922,253.5,207.9922,263.5,211.9922,259.5,207.9922" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="257.5" x2="400.5" y1="207.9922" y2="207.9922" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="269.5" y="202.9263">[3]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="91" x="294.5" y="202.9263">:Consent Liste</text><polygon fill="#181818" points="64.5,233.125,54.5,237.125,64.5,241.125,60.5,237.125" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="58.5" x2="251.5" y1="237.125" y2="237.125" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="70.5" y="232.0591">[4]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="51" x="95.5" y="232.0591">Anzeige</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.13 - Einwilligungen durch Versicherten einsehen</figcaption>
+</figure>
+
+<!-- A_22168-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-291" title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="1">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligungsinformation abrufen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /Consent mit ausführen.
+</requirement>
+
+<p>In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwilligungstyp des Consent ist in Consent.category.coding.code angegeben. Die Werte können sich auf folgende Codesysteme beziehen: [GEM_ERPCHRG_CS_ConsentType], [GEM_ERPEU_CS_ConsentType].</p>
+
+<h3 id="einwilligung-widerrufen">Einwilligung widerrufen</h3>
+
+<!-- Ablaufdiagramm Anwendungsfall -->
+
+<p><strong>Sequenzdiagramm:</strong></p>
+
+<figure>
+	<div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
+		<?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="504px" preserveAspectRatio="none" style="width:729px;height:504px;background:#FFFFFF;" version="1.1" viewBox="0 0 729 504" width="729px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="453" x="137.75" y="27.9951">UC 3.15 -Einwilligung durch den Versicherten widerrufen</text><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="47" x2="47" y1="118.5938" y2="423.6563" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="238" x2="238" y1="118.5938" y2="423.6563" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="466" x2="466" y1="118.5938" y2="423.6563" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="5" y="115.292">Versicherte</text><ellipse cx="47.5" cy="50.7969" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M47.5,58.7969 L47.5,85.7969 M34.5,66.7969 L60.5,66.7969 M47.5,85.7969 L34.5,100.7969 M47.5,85.7969 L60.5,100.7969 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="5" y="435.6514">Versicherte</text><ellipse cx="47.5" cy="447.4531" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M47.5,455.4531 L47.5,482.4531 M34.5,463.4531 L60.5,463.4531 M47.5,482.4531 L34.5,497.4531 M47.5,482.4531 L60.5,497.4531 " fill="none" style="stroke:#181818;stroke-width:0.5;" /><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="109" x="184" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="191" y="107.292">E-Rezept-FdV</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="109" x="184" y="422.6563" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="191" y="442.6514">E-Rezept-FdV</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="143" x="395" y="87.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="402" y="107.292">TI-Flow-Fachdienst</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="143" x="395" y="422.6563" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="402" y="442.6514">TI-Flow-Fachdienst</text><polygon fill="#181818" points="226.5,145.7266,236.5,149.7266,226.5,153.7266,230.5,149.7266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="47.5" x2="232.5" y1="149.7266" y2="149.7266" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="54.5" y="144.6606">[1]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="142" x="79.5" y="144.6606">Einwilligung widerrufen</text><polygon fill="#181818" points="454.5,174.8594,464.5,178.8594,454.5,182.8594,458.5,178.8594" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="238.5" x2="460.5" y1="178.8594" y2="178.8594" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="245.5" y="173.7935">[2]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="270.5" y="173.7935">DELETE /Consent (category)</text><line style="stroke:#181818;stroke-width:1.0;" x1="466.5" x2="508.5" y1="207.9922" y2="207.9922" /><line style="stroke:#181818;stroke-width:1.0;" x1="508.5" x2="508.5" y1="207.9922" y2="220.9922" /><line style="stroke:#181818;stroke-width:1.0;" x1="467.5" x2="508.5" y1="220.9922" y2="220.9922" /><polygon fill="#181818" points="477.5,216.9922,467.5,220.9922,477.5,224.9922,473.5,220.9922" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="473.5" y="202.9263">[3]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117" x="498.5" y="202.9263">Einwilligung pr&#252;fen</text><line style="stroke:#181818;stroke-width:1.0;" x1="466.5" x2="508.5" y1="250.125" y2="250.125" /><line style="stroke:#181818;stroke-width:1.0;" x1="508.5" x2="508.5" y1="250.125" y2="263.125" /><line style="stroke:#181818;stroke-width:1.0;" x1="467.5" x2="508.5" y1="263.125" y2="263.125" /><polygon fill="#181818" points="477.5,259.125,467.5,263.125,477.5,267.125,473.5,263.125" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="473.5" y="245.0591">[4]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125" x="498.5" y="245.0591">Einwilligung l&#246;schen</text><line style="stroke:#181818;stroke-width:1.0;" x1="466.5" x2="508.5" y1="292.2578" y2="292.2578" /><line style="stroke:#181818;stroke-width:1.0;" x1="508.5" x2="508.5" y1="292.2578" y2="305.2578" /><line style="stroke:#181818;stroke-width:1.0;" x1="467.5" x2="508.5" y1="305.2578" y2="305.2578" /><polygon fill="#181818" points="477.5,301.2578,467.5,305.2578,477.5,309.2578,473.5,305.2578" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="473.5" y="287.1919">[5]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="169" x="498.5" y="287.1919">Datenzugriff protokollieren</text><line style="stroke:#181818;stroke-width:1.0;" x1="466.5" x2="508.5" y1="334.3906" y2="334.3906" /><line style="stroke:#181818;stroke-width:1.0;" x1="508.5" x2="508.5" y1="334.3906" y2="347.3906" /><line style="stroke:#181818;stroke-width:1.0;" x1="467.5" x2="508.5" y1="347.3906" y2="347.3906" /><polygon fill="#181818" points="477.5,343.3906,467.5,347.3906,477.5,351.3906,473.5,347.3906" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="473.5" y="329.3247">[6]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="224" x="498.5" y="329.3247">optional: L&#246;schen relevanter Daten</text><polygon fill="#181818" points="249.5,372.5234,239.5,376.5234,249.5,380.5234,245.5,376.5234" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="243.5" x2="465.5" y1="376.5234" y2="376.5234" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="255.5" y="371.4575">[7]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="46" x="280.5" y="371.4575">:Status</text><polygon fill="#181818" points="58.5,401.6563,48.5,405.6563,58.5,409.6563,54.5,405.6563" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="52.5" x2="237.5" y1="405.6563" y2="405.6563" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="21" x="64.5" y="400.5903">[8]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42" x="89.5" y="400.5903">Status</text></g></svg>
+	</div>
+	<figcaption><strong>Abbildung: </strong>UC 3.15 - Einwilligung durch Versicherten widerrufen</figcaption>
+</figure>
+
+<!-- A_22169-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-292" title="E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" es dem Nutzer ermöglichen, den Widerruf zu erfassen.
+</requirement>
+
+<!-- A_22330-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-293" title="E-Rezept-FdV: Einwilligung widerrufen - Bestätigung" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" vom Nutzer eine Bestätigung einholen, dass die Einwilligung widerrufen werden soll, somit ggf. korrespondierende Daten gelöscht werden und die Möglichkeit geben, das Widerrufen abzubrechen.
+</requirement>
+
+<!-- A_22171-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-294" title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="1">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" zum Löschen der Information im TI-Flow-Fachdienst die HTTP-Operation DELETE /Consent/?category=&lt;Einwilligungstyp&gt; mit:
+    <ul>
+        <li>Einwilligungstyp in ?category</li>
+    </ul>
+    ausführen.
+</requirement>
+
+<p>Der Einwilligungstyp ist entsprechend dem Codesystem [GEM_ERPCHRG_CS_ConsentType] oder [GEM_ERPEU_CS_ConsentType] anzugeben.</p>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="query-api-consent-req-fd.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="menu-schnittstellen-additional-api.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#2.0.0-ballot.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 22, 2026 09:07+0000">2026-05-22</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
