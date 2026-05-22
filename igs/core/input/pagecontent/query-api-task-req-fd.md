@@ -79,7 +79,30 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnunge
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI, den im HTTP-Header X-PoPP-Token übermittelten Token extrahieren, prüfen und bei Fehlen oder fehlerhafter Prüfung mit dem Fehler 403 abbrechen, damit die Autorisierung zum Zugriff auf die Daten nur erfolgt, wenn ein Anwesenheitsnachweis erfolgreich durchgeführt wurde.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI, den im HTTP-Header X-PoPP-Token übermittelten Token extrahieren, prüfen und bei Fehlen oder fehlerhafter Prüfung mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_POPP_TOKEN_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>PoPP token invalid</td>
+        </tr>
+      </table> 
+      abbrechen, damit die Autorisierung zum Zugriff auf die Daten nur erfolgt, wenn ein Anwesenheitsnachweis erfolgreich durchgeführt wurde.
 </requirement>
 
 Die Anforderungen zum Prüfen des PoPP-Token sind im Kapitel "HTTP-Operation GET - Prüfung PoPP-Token" beschrieben.
@@ -90,7 +113,30 @@ Die Anforderungen zum Prüfen des PoPP-Token sind im Kapitel "HTTP-Operation GET
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI prüfen, dass die Differenz zwischen Zeitstempel iat im Token und dem aktuellen Zeitpunkt nicht größer als 30 Minuten (konfigurierbar) ist und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI prüfen, dass die Differenz zwischen Zeitstempel iat im Token und dem aktuellen Zeitpunkt nicht größer als 30 Minuten (konfigurierbar) ist und bei fehlerhafter Prüfung mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_POPP_TOKEN_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>PoPP token invalid</td>
+        </tr>
+      </table> 
+      abbrechen.
 </requirement>
 
 Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung von A_23399-* im Rahmen des Änderungsmanagement für Spezifikationen.
@@ -252,7 +298,30 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS bei der Prüfung des PoPP-Token prüfen, dass die Telematik-ID actor_id aus dem Token mit dem zeta-user-info.identifier des Nutzers (Telematik-ID) übereinstimmt und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen.
+    Der TI-Flow-Fachdienst MUSS bei der Prüfung des PoPP-Token prüfen, dass die Telematik-ID actor_id aus dem Token mit dem zeta-user-info.identifier des Nutzers (Telematik-ID) übereinstimmt und bei fehlerhafter Prüfung mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_POPP_TOKEN_INVALID</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>PoPP token invalid</td>
+        </tr>
+      </table> 
+      abbrechen.
 </requirement>
 
 ### GET /Task/<id> (Einzelne Verordnung)
