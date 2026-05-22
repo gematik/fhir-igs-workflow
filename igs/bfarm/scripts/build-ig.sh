@@ -55,12 +55,16 @@ if [[ ! -f "$HAPI_JAR" ]]; then
 fi
 
 # Run Transformation of Mapping Bundle
-# Create a temporary directory containing only the StructureMaps to avoid loading example bundles
+# Create a temporary directory with mapping artifacts only to avoid loading example bundles
 TEMP_IG_DIR=$(mktemp -d)
 trap "rm -rf '$TEMP_IG_DIR'" EXIT
 
 for sm_file in ./fsh-generated/resources/StructureMap-*.json; do
     cp "$sm_file" "$TEMP_IG_DIR/"
+done
+
+for sd_file in ./fsh-generated/resources/StructureDefinition-*.json; do
+    cp "$sd_file" "$TEMP_IG_DIR/"
 done
 
 # Use modern HAPI 6.8+ syntax: transform URL input_file
