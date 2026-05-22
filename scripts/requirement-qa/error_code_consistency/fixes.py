@@ -31,11 +31,52 @@ from .parsing import (
 
 
 def _cap_files(ig_root: Path) -> Tuple[Path, Path, Path]:
-    cap_dir = ig_root / "input" / "fsh" / "capabilitystatement"
+    def _pick_first(candidates: List[Path]) -> Path:
+        for candidate in candidates:
+            if candidate.exists():
+                return candidate
+        return candidates[0]
+
+    cap_candidates = [
+        ig_root / "input" / "fsh" / "capabilitystatement" / "ERPCapabilityStatementServer.fsh",
+        ig_root / "input" / "fsh" / "capabilitystatement" / "TIFlow-Rx-CapabilityStatementServer.fsh",
+        ig_root / "input" / "fsh" / "capabilitystatements" / "TIFlowCapabilityStatement.fsh",
+    ]
+
+    resp_def_candidates = [
+        ig_root
+        / "input"
+        / "fsh"
+        / "capabilitystatement"
+        / "rulesets"
+        / "ERPCapabilityStatementRulesetsResponseDefinition.fsh",
+        ig_root
+        / "input"
+        / "fsh"
+        / "capabilitystatements"
+        / "capst-rulesets"
+        / "TIFlowCapabilityStatementResponseDefinition.fsh",
+    ]
+
+    resp_candidates = [
+        ig_root
+        / "input"
+        / "fsh"
+        / "capabilitystatement"
+        / "rulesets"
+        / "ERPCapabilityStatementRulesetsResponse.fsh",
+        ig_root
+        / "input"
+        / "fsh"
+        / "capabilitystatements"
+        / "capst-rulesets"
+        / "TIFlowCapabilityStatementResponse.fsh",
+    ]
+
     return (
-        cap_dir / "ERPCapabilityStatementServer.fsh",
-        cap_dir / "rulesets" / "ERPCapabilityStatementRulesetsResponseDefinition.fsh",
-        cap_dir / "rulesets" / "ERPCapabilityStatementRulesetsResponse.fsh",
+        _pick_first(cap_candidates),
+        _pick_first(resp_def_candidates),
+        _pick_first(resp_candidates),
     )
 
 
