@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="ExampleCapabilityStatementServerPU"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-flow-capability-statement"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CapabilityStatement ExampleCapabilityStatementServerPU</b></p><a name="ExampleCapabilityStatementServerPU"> </a><a name="hcExampleCapabilityStatementServerPU"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-ti-flow-capability-statement.html">Capability Statement Profil für den TI-Flow-Fachdienst</a></p></div><h2 id="title"/><ul><li>Implementation Guide Version: 2.0.0-ballot.1 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+json</code>, <code>application/fhir+xml</code></li><li>Published on: 2026-03-16 </li><li>Published by: gematik GmbH </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"/></div></div>
+  </text>
+  <extension url="https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-environment">
+    <valueCode value="PU"/>
+  </extension>
+  <extension url="https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-fhir-configuration">
+    <valueCode value="tiflow_2028_03"/>
+  </extension>
+  <extension url="https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-feature">
+    <extension url="definition">
+      <valueCanonical value="https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-flow-feature-wf160"/>
+    </extension>
+    <extension url="value">
+      <valueBoolean value="true"/>
+    </extension>
+  </extension>
+  <extension url="https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-feature">
+    <extension url="definition">
+      <valueCanonical value="https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-flow-feature-wf169"/>
+    </extension>
+    <extension url="value">
+      <valueBoolean value="false"/>
+    </extension>
+  </extension>
+  <url value="https://gematik.de/fhir/tiflow-core/CapabilityStatement/ExampleCapabilityStatementServerPU"/>
+  <version value="2.0.0-ballot.1"/>
+  <status value="active"/>
+  <date value="2026-03-16"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <kind value="instance"/>
+  <implementation>
+    <description value="example"/>
+  </implementation>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+json"/>
+  <format value="application/fhir+xml"/>
+  <rest>
+    <mode value="server"/>
+  </rest>
+</CapabilityStatement>
