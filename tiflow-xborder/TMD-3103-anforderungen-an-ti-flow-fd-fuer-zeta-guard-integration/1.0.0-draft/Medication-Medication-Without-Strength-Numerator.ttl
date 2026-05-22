@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/xborder/Medication/Medication-Without-Strength-Numerator> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Medication-Without-Strength-Numerator"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://gematik.de/fhir/tiflow/xborder/StructureDefinition/GEM-ERPEU-PR-Medication"^^xsd:anyURI ;
+       fhir:l <https://gematik.de/fhir/tiflow/xborder/StructureDefinition/GEM-ERPEU-PR-Medication>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Medication Medication-Without-Strength-Numerator</b></p><a name=\"Medication-Without-Strength-Numerator\"> </a><a name=\"hcMedication-Without-Strength-Numerator\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERPEU-PR-Medication.html\">EU-Medication</a></p></div><p><b>code</b>: <span title=\"Codes:\">Infusion bestehend aus 85mg Doxorubicin aufgeloest zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionsloesung</span></p><p><b>form</b>: <span title=\"Codes:{http://standardterms.edqm.eu 11210000}\">Solution for infusion</span></p><p><b style=\"color: maroon\">Exception Generating Narrative: Cannot invoke \"String.equals(Object)\" because the return value of \"org.hl7.fhir.r5.renderers.utils.ResourceWrapper.primitiveValue(String)\" is null </b></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:code [
+     fhir:text [ fhir:v "Infusion bestehend aus 85mg Doxorubicin aufgeloest zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionsloesung" ]
+  ] ; # 
+  fhir:form [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://standardterms.edqm.eu"^^xsd:anyURI ;
+         fhir:l <http://standardterms.edqm.eu>
+       ] ;
+       fhir:code [ fhir:v "11210000" ] ;
+       fhir:display [ fhir:v "Solution for infusion" ]
+     ] )
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://fhir.de/CodeSystem/bfarm/atc"^^xsd:anyURI ;
+           fhir:l <http://fhir.de/CodeSystem/bfarm/atc>
+         ] ;
+         fhir:version [ fhir:v "2024" ] ;
+         fhir:code [ fhir:v "L01DB01" ] ;
+         fhir:display [ fhir:v "Doxorubicin" ]
+       ] )
+     ] ;
+     fhir:isActive [ fhir:v true ] ;
+     fhir:strength [
+       fhir:numerator [
+         fhir:value [
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ;
+               fhir:l <http://hl7.org/fhir/StructureDefinition/data-absent-reason>
+             ] ;
+             fhir:value [
+               a fhir:Code ;
+               fhir:v "unknown"
+             ]
+           ] )
+         ] ;
+         fhir:system [
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ;
+               fhir:l <http://hl7.org/fhir/StructureDefinition/data-absent-reason>
+             ] ;
+             fhir:value [
+               a fhir:Code ;
+               fhir:v "unknown"
+             ]
+           ] )
+         ] ;
+         fhir:code [
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ;
+               fhir:l <http://hl7.org/fhir/StructureDefinition/data-absent-reason>
+             ] ;
+             fhir:value [
+               a fhir:Code ;
+               fhir:v "unknown"
+             ]
+           ] )
+         ]
+       ] ;
+       fhir:denominator [
+         fhir:value [ fhir:v "1"^^xsd:decimal ]
+       ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

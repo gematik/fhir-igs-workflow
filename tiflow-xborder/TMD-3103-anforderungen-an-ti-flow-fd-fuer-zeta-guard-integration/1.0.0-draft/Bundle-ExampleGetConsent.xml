@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="ExampleGetConsent"/>
+  <type value="searchset"/>
+  <timestamp value="2025-10-01T12:03:23Z"/>
+  <total value="1"/>
+  <entry>
+    <fullUrl value="https://erp-dev.zentral.erp.splitdns.ti-dienste.de/Consent/f97a0772-c99f-4159-90c6-2a41c7d96779"/>
+    <resource>
+      <Consent>
+        <id value="f97a0772-c99f-4159-90c6-2a41c7d96779"/>
+        <meta>
+          <profile value="https://gematik.de/fhir/tiflow/xborder/StructureDefinition/GEM-ERPEU-PR-Consent"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Consent_f97a0772-c99f-4159-90c6-2a41c7d96779"> </a><p class="res-header-id"><b>Generated Narrative: Consent f97a0772-c99f-4159-90c6-2a41c7d96779</b></p><a name="f97a0772-c99f-4159-90c6-2a41c7d96779"> </a><a name="hcf97a0772-c99f-4159-90c6-2a41c7d96779"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-GEM-ERPEU-PR-Consent.html">Consent for ePrescriptions</a></p></div><h2>Participants</h2><table class="grid"><tr><td><b>Role</b></td><td><b>Details</b></td></tr><tr><td title="Who the consent applies to">Patient</td><td>Identifier: NamingSystemKVID/X123456789</td></tr></table><p>This consent is made under the regulation <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode OPTIN}">opt-in</span> .</p><p>The subject has given their consent.</p></div>
+        </text>
+        <status value="active"/>
+        <scope>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
+            <code value="patient-privacy"/>
+            <display value="Privacy Consent"/>
+          </coding>
+        </scope>
+        <category>
+          <coding>
+            <system value="https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_ConsentType"/>
+            <code value="EUDISPCONS"/>
+            <display value="Consent for redeeming e-prescriptions in EU countries"/>
+          </coding>
+        </category>
+        <patient>
+          <identifier>
+            <system value="http://fhir.de/sid/gkv/kvid-10"/>
+            <value value="X123456789"/>
+            <assigner>
+              <identifier>
+                <system value="http://fhir.de/sid/arge-ik/iknr"/>
+                <value value="98765543"/>
+              </identifier>
+            </assigner>
+          </identifier>
+        </patient>
+        <dateTime value="2025-10-01T12:03:23Z"/>
+        <policyRule>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+            <code value="OPTIN"/>
+          </coding>
+        </policyRule>
+      </Consent>
+    </resource>
+  </entry>
+</Bundle>
