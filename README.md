@@ -14,9 +14,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 
 | Version | Branch | Link |
 |---------|--------|------|
-| `1.0.0-draft` | `TMD-3109-ausbau-alte-authentisierung` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-bfarm/TMD-3109-ausbau-alte-authentisierung/1.0.0-draft) |
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-bfarm/develop/1.0.0-draft) |
-| `1.0.0-draft` | `fhir-error-codes` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-bfarm/fhir-error-codes/1.0.0-draft) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-bfarm/0.9.0) |
 
 ### tiflow-chargeitem
@@ -24,9 +22,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | Version | Branch | Link |
 |---------|--------|------|
 | `2.0.0-ballot.1` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-chargeitem/develop/2.0.0-ballot.1) |
-| `1.0.0-draft` | `TMD-3109-ausbau-alte-authentisierung` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-chargeitem/TMD-3109-ausbau-alte-authentisierung/1.0.0-draft) |
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-chargeitem/develop/1.0.0-draft) |
-| `1.0.0-draft` | `fhir-error-codes` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-chargeitem/fhir-error-codes/1.0.0-draft) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-chargeitem/0.9.0) |
 
 ### tiflow-core
@@ -36,31 +32,21 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | `2.0.0-ballot.1` | `TMD-3186-vorbereiten-unterlagen-fuer-vorabveroeffentlichung-28-05-2026` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/TMD-3186-vorbereiten-unterlagen-fuer-vorabveroeffentlichung-28-05-2026/2.0.0-ballot.1) |
 | `2.0.0-ballot.1` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/develop/2.0.0-ballot.1) |
 | `1.0.0-draft` | `TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration/1.0.0-draft) |
-| `1.0.0-draft` | `TMD-3109-ausbau-alte-authentisierung` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/TMD-3109-ausbau-alte-authentisierung/1.0.0-draft) |
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/develop/1.0.0-draft) |
-| `1.0.0-draft` | `error-codes` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/error-codes/1.0.0-draft) |
-| `1.0.0-draft` | `fhir-error-codes` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/fhir-error-codes/1.0.0-draft) |
-| `1.0.0-draft` | `telemetry-data-status-codes` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/telemetry-data-status-codes/1.0.0-draft) |
-| `0.9.0` | `build` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/build/0.9.0) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-core/0.9.0) |
 
 ### tiflow-diga
 
 | Version | Branch | Link |
 |---------|--------|------|
-| `1.0.0-draft` | `TMD-3108-status-diga` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/TMD-3108-status-diga/1.0.0-draft) |
-| `1.0.0-draft` | `TMD-3109-ausbau-alte-authentisierung` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/TMD-3109-ausbau-alte-authentisierung/1.0.0-draft) |
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/develop/1.0.0-draft) |
-| `1.0.0-draft` | `fhir-error-codes` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/fhir-error-codes/1.0.0-draft) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/0.9.0) |
 
 ### tiflow-erezept
 
 | Version | Branch | Link |
 |---------|--------|------|
-| `1.0.0-draft` | `TMD-3109-ausbau-alte-authentisierung` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/TMD-3109-ausbau-alte-authentisierung/1.0.0-draft) |
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/develop/1.0.0-draft) |
-| `1.0.0-draft` | `fhir-error-codes` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/fhir-error-codes/1.0.0-draft) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/0.9.0) |
 
 ### tiflow-xborder
@@ -68,9 +54,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | Version | Branch | Link |
 |---------|--------|------|
 | `2.0.0-ballot.1` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-xborder/develop/2.0.0-ballot.1) |
-| `1.0.0-draft` | `TMD-3109-ausbau-alte-authentisierung` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-xborder/TMD-3109-ausbau-alte-authentisierung/1.0.0-draft) |
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-xborder/develop/1.0.0-draft) |
-| `1.0.0-draft` | `fhir-error-codes` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-xborder/fhir-error-codes/1.0.0-draft) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-xborder/0.9.0) |
 
 ## About
