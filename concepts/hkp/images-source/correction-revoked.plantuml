@@ -1,0 +1,40 @@
+@startuml
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+
+title Korrekturprozess mit Rücknahme (K3-K6)
+
+$state_init(init)
+$state_open(open)
+$state_assigned(assigned)
+$state_completed(completed)
+
+state "Sub-Workflow Antragsprüfung" as subworkflow_review {
+    $state_review(review)
+}
+
+state "Sub-Workflow Korrekturprozess" as subworkflow_correction {
+    $state_correction(correction)
+}
+
+[*] -> init
+
+init -> open : <color:black><back:Lime> 1
+open -> assigned : <color:black><back:Lime> 2
+
+assigned --> correction : <color:black><back:Salmon> K1
+correction -> assigned : <color:black><back:Salmon> K3
+
+assigned -> review : <color:black><back:Salmon> AP3
+
+review --> correction : <color:black><back:Salmon> K4
+correction -> review : <color:black><back:Salmon> K6
+
+review -> assigned_decided : <color:black><back:Salmon> AP4
+assigned_decided -> completed : <color:black><back:DeepSkyBlue> AA2
+
+completed -> [*]
+
+@enduml
