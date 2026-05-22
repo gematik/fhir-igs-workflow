@@ -4,7 +4,7 @@
 !include ./utils/states.iuml
 hide empty description
 
-title HKP Workflow - Gesamtübersicht ohne Korrekturprozesse
+title HKP Workflow - Gesamtübersicht
 
 $state_init(init)
 $state_open(open)
@@ -23,6 +23,21 @@ open --> assigned : <color:black><back:Lime> 2
 assigned --> open : <color:black><back:Lime> 3
 
 assigned --> review : <color:black><back:Salmon> AP3
+
+state "Korrekturprozess" as korrekturprozess {
+    $state_assigned(assigned)
+    $state_review(review)
+    $state_correction(correction)
+
+    assigned --> correction : <color:black><back:Salmon> K1
+    assigned <-- correction : <color:black><back:Salmon> K2
+    assigned <-- correction : <color:black><back:Salmon> K3
+
+    correction <-- review : <color:black><back:Salmon> K4
+    correction --> review : <color:black><back:Salmon> K5
+    correction --> review : <color:black><back:Salmon> K6
+}
+
 review --> assigned_decided : <color:black><back:Salmon> AP4
 
 open --> review : <color:black><back:Salmon> AP1
