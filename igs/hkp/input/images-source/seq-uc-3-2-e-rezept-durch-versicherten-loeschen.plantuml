@@ -5,12 +5,14 @@ actor "Versicherter" as V
 participant "FdV" as FdV
 participant "TI-Flow-Fachdienst" as FD
 
-V -> FdV: E-Rezept löschen()
+V -> FdV: Verordnung löschen()
 activate FdV
 
-FdV -> FD: POST /Task/{id}/$abort ()
+FdV -> FD: POST /hkp/fhir/task/{id}/$abort ()
 activate FD
+FD -> FD: Status prüfen()
 FD -> FD: Status auf "cancelled" setzen()
+FD -> FD: Business-Status auf "gelöscht" setzen()
 FD -> FD: Daten löschen()
 FD --> FdV: Status
 deactivate FD
