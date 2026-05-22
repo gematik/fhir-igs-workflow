@@ -124,3 +124,6 @@ Description: "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details a
 * #TIFLOW_OCSP_BACKEND_ERROR "Invalid OCSP response" "Failed to retrieve the OCSP response for the certificate of the signature"
   * ^designation.language = #de-DE
   * ^designation.value = "OCSP Abfrage fehlgeschlagen"
+* #TIFLOW_POPP_TOKEN_INVALID "Invalid PoPP token" "The provided PoPP token is invalid"
+  * ^designation.language = #de-DE
+  * ^designation.value = "PoPP-Token ungültig"
