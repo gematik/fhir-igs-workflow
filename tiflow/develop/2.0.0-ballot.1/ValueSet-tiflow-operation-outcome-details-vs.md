@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/ValueSet/tiflow-operation-outcome-details-vs | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/ValueSet/tiflow-operation-outcome-details-vs | *Version*:2.0.0-ballot.1 |
 | Active as of 2028-04-01 | *Computable Name*:TIFLOWOperationOutcomeDetailsVS |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -50,7 +50,7 @@ Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werde
 {
   "resourceType" : "ValueSet",
   "id" : "tiflow-operation-outcome-details-vs",
-  "url" : "https://gematik.de/fhir/tiflow-core/ValueSet/tiflow-operation-outcome-details-vs",
+  "url" : "https://gematik.de/fhir/tiflow/ValueSet/tiflow-operation-outcome-details-vs",
   "version" : "2.0.0-ballot.1",
   "name" : "TIFLOWOperationOutcomeDetailsVS",
   "title" : "TIFLOW Operation Outcome Details VS",
@@ -81,7 +81,7 @@ Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werde
   "copyright" : "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0.",
   "compose" : {
     "include" : [{
-      "system" : "https://gematik.de/fhir/tiflow-core/CodeSystem/tiflow-operation-outcome-details-cs"
+      "system" : "https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs"
     },
     {
       "system" : "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes",

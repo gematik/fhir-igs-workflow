@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/CodeSystem/tiflow-operation-outcome-details-cs | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs | *Version*:2.0.0-ballot.1 |
 | Active as of 2028-04-01 | *Computable Name*:TIFLOWOperationOutcomeDetailsCS |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -31,7 +31,7 @@ Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werde
 {
   "resourceType" : "CodeSystem",
   "id" : "tiflow-operation-outcome-details-cs",
-  "url" : "https://gematik.de/fhir/tiflow-core/CodeSystem/tiflow-operation-outcome-details-cs",
+  "url" : "https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs",
   "version" : "2.0.0-ballot.1",
   "name" : "TIFLOWOperationOutcomeDetailsCS",
   "title" : "TIFLOW Operation Outcome Details CS",

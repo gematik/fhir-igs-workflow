@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/CodeSystem/ti-fhir-configuration-cs | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/CodeSystem/ti-fhir-configuration-cs | *Version*:2.0.0-ballot.1 |
 | Active as of 2026-06-01 | *Computable Name*:TIFHIRConfigurationCS |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -31,7 +31,7 @@ Dieses CodeSystem beschreibt die FHIR-Konfigurationen eines FHIR-Data Service de
 {
   "resourceType" : "CodeSystem",
   "id" : "ti-fhir-configuration-cs",
-  "url" : "https://gematik.de/fhir/tiflow-core/CodeSystem/ti-fhir-configuration-cs",
+  "url" : "https://gematik.de/fhir/tiflow/CodeSystem/ti-fhir-configuration-cs",
   "version" : "2.0.0-ballot.1",
   "name" : "TIFHIRConfigurationCS",
   "title" : "TIFHIR Configuration CS",

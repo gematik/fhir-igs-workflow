@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/StructureDefinition/audit-event-rest | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/audit-event-rest | *Version*:2.0.0-ballot.1 |
 | Active as of 2026-06-01 | *Computable Name*:TIAuditEventRest |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -24,7 +24,7 @@ Das AuditEvent-Profil für die Protokollierung des Zugriffs auf einen FHIR Data 
 * CapabilityStatements using this Profile: [CapabilityStatement für den TI-Flow-Fachdienst](CapabilityStatement-ti-flow-fachdienst-server.md)
 * This Profile is not used by any profiles in this Implementation Guide
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/audit-event-rest)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/audit-event-rest)
 
 ### Formal Views of Profile Content
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-audit-event-rest.csv
 {
   "resourceType" : "StructureDefinition",
   "id" : "audit-event-rest",
-  "url" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/audit-event-rest",
+  "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/audit-event-rest",
   "version" : "2.0.0-ballot.1",
   "name" : "TIAuditEventRest",
   "title" : "TI Audit Event Rest",

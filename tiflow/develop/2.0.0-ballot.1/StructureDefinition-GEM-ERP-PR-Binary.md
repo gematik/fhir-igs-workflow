@@ -23,7 +23,7 @@ PKCS7 signiertes Bundle im enveloping style
 
 * Use this Profile: [Bundle der $accept Operation](StructureDefinition-tiflow-op-accept-bundle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/GEM-ERP-PR-Binary)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/GEM-ERP-PR-Binary)
 
 ### Formal Views of Profile Content
 

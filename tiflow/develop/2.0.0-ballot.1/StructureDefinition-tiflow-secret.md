@@ -23,7 +23,7 @@ Das Secret ist ein generiertes Geheimnis, das Zugriff auf eine TIFlow Verordnung
 
 * Use this DataType Profile: [Task für TIFlow Anwendungen](StructureDefinition-ti-task.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/tiflow-secret)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/tiflow-secret)
 
 ### Formal Views of Profile Content
 

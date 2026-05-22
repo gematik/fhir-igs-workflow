@@ -23,7 +23,7 @@ Dokumentenbündel für Quittung
 
 * This Profile is not used by any profiles in this Implementation Guide
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/tiflow-receipt-bundle)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/tiflow-receipt-bundle)
 
 ### Formal Views of Profile Content
 

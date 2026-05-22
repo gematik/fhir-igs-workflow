@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/CodeSystem/ti-environment-codes | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/CodeSystem/ti-environment-codes | *Version*:2.0.0-ballot.1 |
 | Active as of 2026-06-01 | *Computable Name*:TIEnvironmentsCS |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -31,7 +31,7 @@ Dieses CodeSystem definiert standardisierte Umgebungskennzeichen für Capability
 {
   "resourceType" : "CodeSystem",
   "id" : "ti-environment-codes",
-  "url" : "https://gematik.de/fhir/tiflow-core/CodeSystem/ti-environment-codes",
+  "url" : "https://gematik.de/fhir/tiflow/CodeSystem/ti-environment-codes",
   "version" : "2.0.0-ballot.1",
   "name" : "TIEnvironmentsCS",
   "title" : "TI Environments CodeSystem",

@@ -23,7 +23,7 @@ Composition für die Quittung für die Einlösung eines E-Rezepts
 
 * Use this Profile: [TIFlow Receipt Bundle](StructureDefinition-tiflow-receipt-bundle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/tiflow-receipt-composition)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/tiflow-receipt-composition)
 
 ### Formal Views of Profile Content
 

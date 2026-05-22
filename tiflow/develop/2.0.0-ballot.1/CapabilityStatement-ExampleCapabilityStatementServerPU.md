@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/CapabilityStatement/ExampleCapabilityStatementServerPU | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/CapabilityStatement/ExampleCapabilityStatementServerPU | *Version*:2.0.0-ballot.1 |
 | Active as of 2026-03-16 | *Computable Name*: |
 
 
@@ -24,39 +24,39 @@ Version 2.0.0-ballot.1 - ci-build
   "resourceType" : "CapabilityStatement",
   "id" : "ExampleCapabilityStatementServerPU",
   "meta" : {
-    "profile" : ["https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-flow-capability-statement"]
+    "profile" : ["https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-capability-statement"]
   },
   "extension" : [{
-    "url" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-environment",
+    "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment",
     "valueCode" : "PU"
   },
   {
-    "url" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-fhir-configuration",
+    "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration",
     "valueCode" : "tiflow_2028_03"
   },
   {
     "extension" : [{
       "url" : "definition",
-      "valueCanonical" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-flow-feature-wf160"
+      "valueCanonical" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160"
     },
     {
       "url" : "value",
       "valueBoolean" : true
     }],
-    "url" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-feature"
+    "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
   },
   {
     "extension" : [{
       "url" : "definition",
-      "valueCanonical" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-flow-feature-wf169"
+      "valueCanonical" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf169"
     },
     {
       "url" : "value",
       "valueBoolean" : false
     }],
-    "url" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-feature"
+    "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
   }],
-  "url" : "https://gematik.de/fhir/tiflow-core/CapabilityStatement/ExampleCapabilityStatementServerPU",
+  "url" : "https://gematik.de/fhir/tiflow/CapabilityStatement/ExampleCapabilityStatementServerPU",
   "version" : "2.0.0-ballot.1",
   "status" : "active",
   "date" : "2026-03-16",

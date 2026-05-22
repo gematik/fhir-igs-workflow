@@ -11,14 +11,31 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/ImplementationGuide/de.gematik.tiflow.core | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/ImplementationGuide/de.gematik.tiflow | *Version*:2.0.0-ballot.1 |
 | Draft as of 2026-05-25 | *Computable Name*:gemIG_TIFlow_core |
 
 Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den TI-Flow-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet werden.
 
+## Systemübersicht
+
+Der TI-Flow-Fachdienst ist ein zentraler Ressourcenserver der Telematikinfrastruktur, der anwendungsübergreifende Workflows auf Basis des FHIR-Standards über eine RESTful API verwaltet.
+
+Jeder Workflow wird über eine eindeutige Ressourcen-ID (Task-ID) adressiert und durchläuft ein definiertes Statusmodell. Der Fachdienst steuert die Statusübergänge und stellt sicher, dass nur zulässige, durch Nutzer initiierte Übergänge ausgeführt werden.
+
+Alle Zugriffe auf einen Workflow werden für den zugeordneten Versicherten protokolliert. Die Datenhaltung erfolgt ausschließlich im Rahmen der gesetzlich zulässigen Speicherdauer.
+
+Nach außen bietet der TI-Flow-Fachdienst seine Schnittstellen im Internet an und setzt für die Authentisierung und Autorisierung von Clientsystemen Zero Trust Access (ZETA) Mechanismen um. Ergänzend unterstützt er die asynchrone Übermittlung von Daten an Drittsysteme, etwa den ePA Medication Service.
+
+Die Vertraulichkeit und Integrität der verarbeiteten Daten gewährleistet der Fachdienst durch das Konzept der vertrauenswürdigen Ausführungsumgebung (VAU). Diese sichert eine durchgängige Verschlüsselung der Verordnungen und zugehörigen Daten – während des Transports, der Verarbeitung und der persistierten Speicherung – durch eine Kombination kryptographischer Verfahren. Die VAU wird dabei nicht vom TI-Flow-Fachdienst selbst implementiert, sondern durch seinen Betrieb auf einem TI-Flow-Cluster, das als Healthcare Confidential Computing (HCC) Plattform dient und auch weiteren TI-Anwendungen zur Verfügung steht.
+
+**Abbildung: **Systemüberblick TI-Flow-Fachdienst
+
+
 ## Zweck und Geltungsbereich
 
-Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
+Um die Funktionalität des TI-Flow-Fachdienst verständlich und adressatengerecht zu beschreiben wurden mehrere FHIR-Implementation Guides angelegt.
+
+Dieser “IG TIFlow Kernfunktionalitäten” fokussiert auf die technische Basisschicht und Kernfunktionalitäten des Fachdienstes und beschreibt mehrfach verwendete Funktionalitäten sowie übergreifendes Verhalten:
 
 * Verbindungsaufbau der Clientsysteme zum TI-Flow-Fachdienst
 * Validierung von FHIR-Ressourcen und Bundles
@@ -26,11 +43,18 @@ Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
 * Zugriffs- und Systemprotokollierung (AuditEvent)
 * Löschfristen und automatisches Löschen
 
-### Anforderungen zur Umsetzung des IGs
+Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG’s in der TI-Flow Landschaft weiterverwendet:
 
-funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" umsetzen.
+| | |
+| :--- | :--- |
+| Modul IG | Diese Implementation Guides enthalten Inhalte zu einem Modul, bzw. Anwendung innerhalb des TI-Flow-Fachdienst. Diese werden über eine eigenen eigenen URL-Pfad adressiert und sind durch eine eigene Domäne und Akteure gekennzeichnet. Jede Workflow-Anwendung im TI-Flow-Fachdienst wird durch einen eigenen IG beschrieben, der auf Beschreibungen und Verhalten der Kernfunktionalitäten basiert. |
+| Funktions IG | Diese Implementation Guides enthalten Beschreibungen zu Endpunkten und Funktionalitäten, die als Bausteine wiederverwendet werden können und daher zentral beschrieben werden. Sie existieren nicht als eigene Anwendung in der TI-Flow-Fachdienst landschaft. |
 
-funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS zur Umsetzung des Implementation Guides "E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
+**Tabelle: **Beschreibung der IG Arten im TI-Flow-Fachdienst
+
+**Abbildung: **Übersicht der FHIR-IGs des TI-Flow-Fachdienst
+
+
 ## Aufbau
 
 * [FHIR-Artefakte](./artifacts.md)
@@ -51,8 +75,8 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
 ```json
 {
   "resourceType" : "ImplementationGuide",
-  "id" : "de.gematik.tiflow.core",
-  "url" : "https://gematik.de/fhir/tiflow-core/ImplementationGuide/de.gematik.tiflow.core",
+  "id" : "de.gematik.tiflow",
+  "url" : "https://gematik.de/fhir/tiflow/ImplementationGuide/de.gematik.tiflow",
   "version" : "2.0.0-ballot.1",
   "name" : "gemIG_TIFlow_core",
   "title" : "TIFlow - Kernfunktionalitäten",
@@ -77,7 +101,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       "display" : "Germany"
     }]
   }],
-  "packageId" : "de.gematik.tiflow.core",
+  "packageId" : "de.gematik.tiflow",
   "license" : "Apache-2.0",
   "fhirVersion" : ["4.0.1"],
   "dependsOn" : [{
@@ -638,7 +662,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       },
       {
         "url" : "value",
-        "valueString" : "https://gematik.de/fhir/tiflow-core/history.html"
+        "valueString" : "https://gematik.de/fhir/tiflow/history.html"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1324,7 +1348,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       },
       {
         "url" : "value",
-        "valueString" : "https://gematik.de/fhir/tiflow-core/history.html"
+        "valueString" : "https://gematik.de/fhir/tiflow/history.html"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1575,7 +1599,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       },
       "name" : "Example CapabilityStatement Server PU - RX",
       "description" : "Example capability statement for productive environment with common features enabled.",
-      "exampleCanonical" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-flow-capability-statement"
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-capability-statement"
     },
     {
       "extension" : [{

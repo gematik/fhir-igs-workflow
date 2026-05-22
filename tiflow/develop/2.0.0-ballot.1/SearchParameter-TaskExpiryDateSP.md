@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/SearchParameter/TaskExpiryDateSP | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/SearchParameter/TaskExpiryDateSP | *Version*:2.0.0-ballot.1 |
 | Active as of 2028-04-01 | *Computable Name*:TaskExpiryDateSP |
 
  
@@ -26,7 +26,7 @@ Das Ablaufdatum eines E-Rezepzes. Nach ablauf dieses Datums darf ein E-Rezept ni
 {
   "resourceType" : "SearchParameter",
   "id" : "TaskExpiryDateSP",
-  "url" : "https://gematik.de/fhir/tiflow-core/SearchParameter/TaskExpiryDateSP",
+  "url" : "https://gematik.de/fhir/tiflow/SearchParameter/TaskExpiryDateSP",
   "version" : "2.0.0-ballot.1",
   "name" : "TaskExpiryDateSP",
   "status" : "active",

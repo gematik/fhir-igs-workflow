@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-fhir-configuration | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration | *Version*:2.0.0-ballot.1 |
 | Active as of 2026-06-01 | *Computable Name*:TIFHIRConfiguration |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -31,7 +31,7 @@ This extension may be used on the following element(s):
 * Use this Extension: [Capability Statement Profil für den TI-Flow-Fachdienst](StructureDefinition-ti-flow-capability-statement.md)
 * Examples for this Extension: [CapabilityStatement/ExampleCapabilityStatementServerPU](CapabilityStatement-ExampleCapabilityStatementServerPU.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/ti-fhir-configuration)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/ti-fhir-configuration)
 
 ### Formal Views of Extension Content
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-fhir-configuratio
 {
   "resourceType" : "StructureDefinition",
   "id" : "ti-fhir-configuration",
-  "url" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-fhir-configuration",
+  "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration",
   "version" : "2.0.0-ballot.1",
   "name" : "TIFHIRConfiguration",
   "title" : "TI FHIR Configuration",
@@ -110,7 +110,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-fhir-configuratio
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-fhir-configuration"
+      "fixedUri" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration"
     },
     {
       "id" : "Extension.value[x]",

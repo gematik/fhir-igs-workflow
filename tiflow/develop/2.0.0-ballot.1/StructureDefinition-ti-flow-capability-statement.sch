@@ -13,8 +13,8 @@
     <sch:title>f:CapabilityStatement</sch:title>
     <sch:rule context="f:CapabilityStatement">
       <sch:assert test="count(f:extension[@url = 'https://gematik.de/fhir/ti/StructureDefinition/extension-base-url']) &lt;= 1">extension with URL = 'https://gematik.de/fhir/ti/StructureDefinition/extension-base-url': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-environment']) &lt;= 1">extension with URL = 'https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-environment': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-fhir-configuration']) &lt;= 1">extension with URL = 'https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-fhir-configuration': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment']) &lt;= 1">extension with URL = 'https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration']) &lt;= 1">extension with URL = 'https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

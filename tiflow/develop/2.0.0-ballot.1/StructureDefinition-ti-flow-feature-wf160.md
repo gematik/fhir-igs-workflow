@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-flow-feature-wf160 | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160 | *Version*:2.0.0-ballot.1 |
 | Active as of 2028-04-01 | *Computable Name*:TIFlowFeatureWF160 |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -23,7 +23,7 @@ Featurebeschreibung für die Verordnung von Apothekenpflichtigen Arzneimitteln
 
 * This Logical Model is not used by any profiles in this Implementation Guide
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/ti-flow-feature-wf160)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/ti-flow-feature-wf160)
 
 ### Formal Views of Profile Content
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-flow-feature-wf16
 {
   "resourceType" : "StructureDefinition",
   "id" : "ti-flow-feature-wf160",
-  "url" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-flow-feature-wf160",
+  "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160",
   "version" : "2.0.0-ballot.1",
   "name" : "TIFlowFeatureWF160",
   "title" : "Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel",
@@ -72,8 +72,8 @@ Other representations of profile: [CSV](StructureDefinition-ti-flow-feature-wf16
   "fhirVersion" : "4.0.1",
   "kind" : "logical",
   "abstract" : false,
-  "type" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-flow-feature-wf160",
-  "baseDefinition" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-feature-definition",
+  "type" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160",
+  "baseDefinition" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition",
   "derivation" : "specialization",
   "differential" : {
     "element" : [{

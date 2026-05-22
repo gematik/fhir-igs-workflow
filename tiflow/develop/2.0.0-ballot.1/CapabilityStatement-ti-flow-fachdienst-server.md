@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/CapabilityStatement/ti-flow-fachdienst-server | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/CapabilityStatement/ti-flow-fachdienst-server | *Version*:2.0.0-ballot.1 |
 | Active as of 2028-04-01 | *Computable Name*:TIFlowFachdienstServer |
 
  
@@ -67,7 +67,7 @@ CapabilityStatement für den TI-Flow-Fachdienst
     }],
     "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-header"
   }],
-  "url" : "https://gematik.de/fhir/tiflow-core/CapabilityStatement/ti-flow-fachdienst-server",
+  "url" : "https://gematik.de/fhir/tiflow/CapabilityStatement/ti-flow-fachdienst-server",
   "version" : "2.0.0-ballot.1",
   "name" : "TIFlowFachdienstServer",
   "title" : "CapabilityStatement für den TI-Flow-Fachdienst",
@@ -252,7 +252,7 @@ CapabilityStatement für den TI-Flow-Fachdienst
         "valueCode" : "SHALL"
       }],
       "type" : "AuditEvent",
-      "supportedProfile" : ["https://gematik.de/fhir/tiflow-core/StructureDefinition/audit-event-rest"],
+      "supportedProfile" : ["https://gematik.de/fhir/tiflow/StructureDefinition/audit-event-rest"],
       "_supportedProfile" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",

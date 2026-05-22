@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/ValueSet/ti-fhir-configuration-vs | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/ValueSet/ti-fhir-configuration-vs | *Version*:2.0.0-ballot.1 |
 | Active as of 2026-06-01 | *Computable Name*:TIFHIRConfigurationVS |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -52,7 +52,7 @@ No Expansion for this valueset (Unknown Code System)
 {
   "resourceType" : "ValueSet",
   "id" : "ti-fhir-configuration-vs",
-  "url" : "https://gematik.de/fhir/tiflow-core/ValueSet/ti-fhir-configuration-vs",
+  "url" : "https://gematik.de/fhir/tiflow/ValueSet/ti-fhir-configuration-vs",
   "version" : "2.0.0-ballot.1",
   "name" : "TIFHIRConfigurationVS",
   "title" : "TI FHIR Configuration ValueSet",
@@ -83,7 +83,7 @@ No Expansion for this valueset (Unknown Code System)
   "copyright" : "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0.",
   "compose" : {
     "include" : [{
-      "system" : "https://gematik.de/fhir/tiflow-core/CodeSystem/ti-fhir-configuration-cs"
+      "system" : "https://gematik.de/fhir/tiflow/CodeSystem/ti-fhir-configuration-cs"
     }]
   }
 }

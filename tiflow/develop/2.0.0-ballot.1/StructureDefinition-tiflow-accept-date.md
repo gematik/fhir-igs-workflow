@@ -31,7 +31,7 @@ This extension may be used on the following element(s):
 * Search Parameters using this Extension: [TaskAcceptDateSP](SearchParameter-TaskAcceptDateSP.md)
 * This Extension is not used by any profiles in this Implementation Guide
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/tiflow-accept-date)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/tiflow-accept-date)
 
 ### Formal Views of Extension Content
 

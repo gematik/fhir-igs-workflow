@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-environment | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment | *Version*:2.0.0-ballot.1 |
 | Active as of 2026-06-01 | *Computable Name*:TIEnvironment |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -31,7 +31,7 @@ This extension may be used on the following element(s):
 * Use this Extension: [Capability Statement Profil für den TI-Flow-Fachdienst](StructureDefinition-ti-flow-capability-statement.md)
 * Examples for this Extension: [CapabilityStatement/ExampleCapabilityStatementServerPU](CapabilityStatement-ExampleCapabilityStatementServerPU.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/ti-environment)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/ti-environment)
 
 ### Formal Views of Extension Content
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-environment.csv),
 {
   "resourceType" : "StructureDefinition",
   "id" : "ti-environment",
-  "url" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-environment",
+  "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment",
   "version" : "2.0.0-ballot.1",
   "name" : "TIEnvironment",
   "title" : "TI Environment",
@@ -112,7 +112,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-environment.csv),
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-environment"
+      "fixedUri" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment"
     },
     {
       "id" : "Extension.value[x]",
@@ -126,7 +126,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-environment.csv),
       }],
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://gematik.de/fhir/tiflow-core/ValueSet/ti-environment-vs"
+        "valueSet" : "https://gematik.de/fhir/tiflow/ValueSet/ti-environment-vs"
       }
     }]
   }

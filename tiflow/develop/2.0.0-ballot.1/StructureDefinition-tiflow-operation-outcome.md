@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/StructureDefinition/tiflow-operation-outcome | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-operation-outcome | *Version*:2.0.0-ballot.1 |
 | Active as of 2028-04-01 | *Computable Name*:TIFlowOperationOutcome |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -23,7 +23,7 @@ OperationOutcome für Angabe von Fehlermeldungen vom TI-Flow-Fachdienst
 
 * This Profile is not used by any profiles in this Implementation Guide
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/tiflow-operation-outcome)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/tiflow-operation-outcome)
 
 ### Formal Views of Profile Content
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-operation-out
 {
   "resourceType" : "StructureDefinition",
   "id" : "tiflow-operation-outcome",
-  "url" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/tiflow-operation-outcome",
+  "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-operation-outcome",
   "version" : "2.0.0-ballot.1",
   "name" : "TIFlowOperationOutcome",
   "title" : "TIFlow OperationOutcome",
@@ -107,7 +107,7 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-operation-out
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://gematik.de/fhir/tiflow-core/ValueSet/tiflow-operation-outcome-details-vs"
+        "valueSet" : "https://gematik.de/fhir/tiflow/ValueSet/tiflow-operation-outcome-details-vs"
       }
     }]
   }

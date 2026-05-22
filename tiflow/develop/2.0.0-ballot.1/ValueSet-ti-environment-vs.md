@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/ValueSet/ti-environment-vs | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/ValueSet/ti-environment-vs | *Version*:2.0.0-ballot.1 |
 | Active as of 2026-06-01 | *Computable Name*:TIEnvironmentsVS |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -50,7 +50,7 @@ Dieses ValueSet enthält alle zulässigen Umgebungskennzeichen für CapabilitySt
 {
   "resourceType" : "ValueSet",
   "id" : "ti-environment-vs",
-  "url" : "https://gematik.de/fhir/tiflow-core/ValueSet/ti-environment-vs",
+  "url" : "https://gematik.de/fhir/tiflow/ValueSet/ti-environment-vs",
   "version" : "2.0.0-ballot.1",
   "name" : "TIEnvironmentsVS",
   "title" : "TI Environments ValueSet",
@@ -81,7 +81,7 @@ Dieses ValueSet enthält alle zulässigen Umgebungskennzeichen für CapabilitySt
   "copyright" : "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0.",
   "compose" : {
     "include" : [{
-      "system" : "https://gematik.de/fhir/tiflow-core/CodeSystem/ti-environment-codes"
+      "system" : "https://gematik.de/fhir/tiflow/CodeSystem/ti-environment-codes"
     }]
   }
 }

@@ -281,10 +281,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <table class="colsd">
 
     <tr>
-      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://gematik.de/fhir/tiflow-core/ImplementationGuide/de.gematik.tiflow.core<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://gematik.de/fhir/tiflow-core/ImplementationGuide/de.gematik.tiflow.core"/></span>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://gematik.de/fhir/tiflow/ImplementationGuide/de.gematik.tiflow<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://gematik.de/fhir/tiflow/ImplementationGuide/de.gematik.tiflow"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">2.0.0-ballot.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://gematik.de/fhir/tiflow-core/ImplementationGuide/de.gematik.tiflow.core|2.0.0-ballot.1"/></span>
+      <span class="copy-text">2.0.0-ballot.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://gematik.de/fhir/tiflow/ImplementationGuide/de.gematik.tiflow|2.0.0-ballot.1"/></span>
       </td>
     </tr>
 
@@ -329,9 +329,32 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <p>Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den TI-Flow-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet werden.</p>
 
+<h2 id="systemübersicht">Systemübersicht</h2>
+
+<p>Der TI-Flow-Fachdienst ist ein zentraler Ressourcenserver der Telematikinfrastruktur, der anwendungsübergreifende Workflows auf Basis des FHIR-Standards über eine RESTful API verwaltet.</p>
+
+<p>Jeder Workflow wird über eine eindeutige Ressourcen-ID (Task-ID) adressiert und durchläuft ein definiertes Statusmodell. Der Fachdienst steuert die Statusübergänge und stellt sicher, dass nur zulässige, durch Nutzer initiierte Übergänge ausgeführt werden.</p>
+
+<p>Alle Zugriffe auf einen Workflow werden für den zugeordneten Versicherten protokolliert. Die Datenhaltung erfolgt ausschließlich im Rahmen der gesetzlich zulässigen Speicherdauer.</p>
+
+<p>Nach außen bietet der TI-Flow-Fachdienst seine Schnittstellen im Internet an und setzt für die Authentisierung und Autorisierung von Clientsystemen Zero Trust Access (ZETA) Mechanismen um. Ergänzend unterstützt er die asynchrone Übermittlung von Daten an Drittsysteme, etwa den ePA Medication Service.</p>
+
+<p>Die Vertraulichkeit und Integrität der verarbeiteten Daten gewährleistet der Fachdienst durch das Konzept der vertrauenswürdigen Ausführungsumgebung (VAU). Diese sichert eine durchgängige Verschlüsselung der Verordnungen und zugehörigen Daten – während des Transports, der Verarbeitung und der persistierten Speicherung – durch eine Kombination kryptographischer Verfahren. Die VAU wird dabei nicht vom TI-Flow-Fachdienst selbst implementiert, sondern durch seinen Betrieb auf einem TI-Flow-Cluster, das als Healthcare Confidential Computing (HCC) Plattform dient und auch weiteren TI-Anwendungen zur Verfügung steht.</p>
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 800px; margin-bottom: 30px;">
+        <img src="./systemueberblick_TI-Flow-Fachdienst.drawio.png" alt="Systemüberblick TI-Flow-Fachdienst" style="width: 100%;" />
+    </div>
+    <figcaption><strong>Abbildung: </strong>Systemüberblick TI-Flow-Fachdienst</figcaption>
+</figure>
+
+<p><br /></p>
+
 <h2 id="zweck-und-geltungsbereich">Zweck und Geltungsbereich</h2>
 
-<p>Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:</p>
+<p>Um die Funktionalität des TI-Flow-Fachdienst verständlich und adressatengerecht zu beschreiben wurden mehrere FHIR-Implementation Guides angelegt.</p>
+
+<p>Dieser “IG TIFlow Kernfunktionalitäten” fokussiert auf die technische Basisschicht und Kernfunktionalitäten des Fachdienstes und beschreibt mehrfach verwendete Funktionalitäten sowie übergreifendes Verhalten:</p>
 
 <ul>
   <li>Verbindungsaufbau der Clientsysteme zum TI-Flow-Fachdienst</li>
@@ -341,24 +364,41 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Löschfristen und automatisches Löschen</li>
 </ul>
 
-<h3 id="anforderungen-zur-umsetzung-des-igs">Anforderungen zur Umsetzung des IGs</h3>
+<p>Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG’s in der TI-Flow Landschaft weiterverwendet:</p>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-261" title="TI-Flow-Fachdienst: Anwendung des IG 'E-Rezept-Workflow Core'" version="0">
-    <meta lockversion="false" />
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" umsetzen.
-</requirement>
+<table>
+  <thead>
+    <tr>
+      <th>Art des IG</th>
+      <th>Beschreibung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Modul IG</td>
+      <td>Diese Implementation Guides enthalten Inhalte zu einem Modul, bzw. Anwendung innerhalb des TI-Flow-Fachdienst. Diese werden über eine eigenen eigenen URL-Pfad adressiert und sind durch eine eigene Domäne und Akteure gekennzeichnet. Jede Workflow-Anwendung im TI-Flow-Fachdienst wird durch einen eigenen IG beschrieben, der auf Beschreibungen und Verhalten der Kernfunktionalitäten basiert.</td>
+    </tr>
+    <tr>
+      <td>Funktions IG</td>
+      <td>Diese Implementation Guides enthalten Beschreibungen zu Endpunkten und Funktionalitäten, die als Bausteine wiederverwendet werden können und daher zentral beschrieben werden. Sie existieren nicht als eigene Anwendung in der TI-Flow-Fachdienst landschaft.</td>
+    </tr>
+  </tbody>
+</table>
 
-<!-- A_20745-01, A_19299-02, A_19298-01, A_22483-01, A_19324-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-262" title="TI-Flow-Fachdienst: Umsetzung 'Implementation Guide E-Rezept-Workflow Core'" version="0">
-    <meta lockversion="false" />
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS zur Umsetzung des Implementation Guides "E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
-</requirement>
+<div><figcaption><strong>Tabelle: </strong>Beschreibung der IG Arten im TI-Flow-Fachdienst</figcaption></div>
+
+<p><br /></p>
+
+<figure>
+    <div class="gem-ig-svg-container" style="--box-width: 500px; margin-bottom: 30px;">
+        <object data="./ig-landscape.svg" type="image/svg+xml" aria-label="Übersicht der FHIR-IGs des TI-Flow-Fachdienst" style="width: 100%;">
+            <img src="./ig-landscape.svg" alt="Übersicht der FHIR-IGs des TI-Flow-Fachdienst" style="width: 100%;" />
+            </object>
+    </div>
+    <figcaption><strong>Abbildung: </strong>Übersicht der FHIR-IGs des TI-Flow-Fachdienst</figcaption>
+</figure>
+
+<p><br /></p>
 
 <h2 id="aufbau">Aufbau</h2>
 
@@ -416,7 +456,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.core#2.0.0-ballot.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, May 21, 2026 06:36+0000">2026-05-21</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.1 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, May 22, 2026 12:36+0000">2026-05-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -31,7 +31,7 @@ This extension may be used on the following element(s):
 
 * Use this Extension: [GEM ERP PR Composition](StructureDefinition-tiflow-receipt-composition.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/tiflow-beneficiary)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/tiflow-beneficiary)
 
 ### Formal Views of Extension Content
 

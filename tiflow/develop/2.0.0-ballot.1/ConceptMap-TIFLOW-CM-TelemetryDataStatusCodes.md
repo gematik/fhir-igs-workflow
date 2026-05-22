@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes | *Version*:2.0.0-ballot.1 |
 | Draft as of 2026-05-04 | *Computable Name*: |
 
  
@@ -26,7 +26,7 @@ Maps operation outcome codes to the telemetry data status codes
 {
   "resourceType" : "ConceptMap",
   "id" : "TIFLOW-CM-TelemetryDataStatusCodes",
-  "url" : "https://gematik.de/fhir/tiflow-core/ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes",
+  "url" : "https://gematik.de/fhir/tiflow/ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes",
   "version" : "2.0.0-ballot.1",
   "title" : "Telemetry Data Status Codes Concept Map",
   "status" : "draft",

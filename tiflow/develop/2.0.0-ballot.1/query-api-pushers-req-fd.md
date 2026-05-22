@@ -31,14 +31,10 @@ Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der
 * oid_versicherter
 die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
 
-* HTTP-Code: Severity
-  * 403 - Forbidden: error
-* HTTP-Code: Code
-  * 403 - Forbidden: invalid
-* HTTP-Code: Details Code
-  * 403 - Forbidden: TIFLOW_AUTH_ROLE_NOT_ALLOWED
-* HTTP-Code: Details Text
-  * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
+* HTTP-Code: Error Code
+  * 403 - Forbidden: invalidOid
+* HTTP-Code: Error Details
+  * 403 - Forbidden: -
 
 abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 
@@ -58,14 +54,10 @@ Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der
 * oid_versicherter
 die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
 
-* HTTP-Code: Severity
-  * 403 - Forbidden: error
-* HTTP-Code: Code
-  * 403 - Forbidden: invalid
-* HTTP-Code: Details Code
-  * 403 - Forbidden: TIFLOW_AUTH_ROLE_NOT_ALLOWED
-* HTTP-Code: Details Text
-  * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
+* HTTP-Code: Error Code
+  * 403 - Forbidden: invalidOid
+* HTTP-Code: Error Details
+  * 403 - Forbidden: -
 
 abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 

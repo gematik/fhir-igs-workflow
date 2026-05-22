@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-flow-capability-statement | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-capability-statement | *Version*:2.0.0-ballot.1 |
 | Active as of 2028-04-01 | *Computable Name*:TIFlowCapabilityStatement |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -23,7 +23,7 @@ Dieses Profil beschreibt die Fähigkeiten des TI-Flow-Fachdienst.
 
 * Examples for this Profile: [CapabilityStatement/ExampleCapabilityStatementServerPU](CapabilityStatement-ExampleCapabilityStatementServerPU.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/ti-flow-capability-statement)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/ti-flow-capability-statement)
 
 ### Formal Views of Profile Content
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-flow-capability-s
 {
   "resourceType" : "StructureDefinition",
   "id" : "ti-flow-capability-statement",
-  "url" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-flow-capability-statement",
+  "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-capability-statement",
   "version" : "2.0.0-ballot.1",
   "name" : "TIFlowCapabilityStatement",
   "title" : "Capability Statement Profil für den TI-Flow-Fachdienst",
@@ -108,7 +108,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-flow-capability-s
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-environment"]
+        "profile" : ["https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment"]
       }]
     },
     {
@@ -119,7 +119,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-flow-capability-s
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-fhir-configuration"]
+        "profile" : ["https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration"]
       }]
     },
     {
@@ -130,7 +130,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-flow-capability-s
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-feature"]
+        "profile" : ["https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"]
       }]
     }]
   }

@@ -12,8 +12,8 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-feature-definition | *Version*:2.0.0-ballot.1 |
-| Draft as of 2026-05-21 | *Computable Name*:TIFeatureDefinition |
+| *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition | *Version*:2.0.0-ballot.1 |
+| Draft as of 2026-05-22 | *Computable Name*:TIFeatureDefinition |
 
  
 Logical Model zur Beschreibung eines aktivierbaren Features. 
@@ -22,7 +22,7 @@ Logical Model zur Beschreibung eines aktivierbaren Features.
 
 * Derived from this Logical Model: [Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel](StructureDefinition-ti-flow-feature-wf160.md) and [Feature: WF169 - Flowtype für Apothekenpflichtige Arzneimittel mit Steuerung durch den Leistungserbringer](StructureDefinition-ti-flow-feature-wf169.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/ti-feature-definition)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/ti-feature-definition)
 
 ### Formal Views of Profile Content
 
@@ -40,12 +40,12 @@ Other representations of profile: [CSV](StructureDefinition-ti-feature-definitio
 {
   "resourceType" : "StructureDefinition",
   "id" : "ti-feature-definition",
-  "url" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-feature-definition",
+  "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition",
   "version" : "2.0.0-ballot.1",
   "name" : "TIFeatureDefinition",
   "title" : "TI Feature Definition",
   "status" : "draft",
-  "date" : "2026-05-21T06:36:31+00:00",
+  "date" : "2026-05-22T12:36:03+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -69,7 +69,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-feature-definitio
   "fhirVersion" : "4.0.1",
   "kind" : "logical",
   "abstract" : false,
-  "type" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-feature-definition",
+  "type" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
   "derivation" : "specialization",
   "differential" : {

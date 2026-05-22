@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-feature | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature | *Version*:2.0.0-ballot.1 |
 | Active as of 2028-04-01 | *Computable Name*:TIFeature |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -35,7 +35,7 @@ This extension may be used on the following element(s):
 * Use this Extension: [Capability Statement Profil für den TI-Flow-Fachdienst](StructureDefinition-ti-flow-capability-statement.md)
 * Examples for this Extension: [CapabilityStatement/ExampleCapabilityStatementServerPU](CapabilityStatement-ExampleCapabilityStatementServerPU.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/ti-feature)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/ti-feature)
 
 ### Formal Views of Extension Content
 
@@ -55,7 +55,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-feature.csv), [Ex
 {
   "resourceType" : "StructureDefinition",
   "id" : "ti-feature",
-  "url" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-feature",
+  "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature",
   "version" : "2.0.0-ballot.1",
   "name" : "TIFeature",
   "title" : "TI Feature",
@@ -194,7 +194,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-feature.csv), [Ex
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-feature"
+      "fixedUri" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
     },
     {
       "id" : "Extension.value[x]",

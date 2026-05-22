@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/StructureDefinition/tiflow-op-accept-bundle | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-op-accept-bundle | *Version*:2.0.0-ballot.1 |
 | Active as of 2028-04-01 | *Computable Name*:TIFlowOpAcceptBundle |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -23,7 +23,7 @@ Antwort des TI-Flow-Fachdienst auf die $accept-Operation
 
 * This Profile is not used by any profiles in this Implementation Guide
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/tiflow-op-accept-bundle)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/tiflow-op-accept-bundle)
 
 ### Formal Views of Profile Content
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-op-accept-bun
 {
   "resourceType" : "StructureDefinition",
   "id" : "tiflow-op-accept-bundle",
-  "url" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/tiflow-op-accept-bundle",
+  "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-op-accept-bundle",
   "version" : "2.0.0-ballot.1",
   "name" : "TIFlowOpAcceptBundle",
   "title" : "Bundle der $accept Operation",
@@ -131,7 +131,7 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-op-accept-bun
       "path" : "Bundle.entry.resource",
       "type" : [{
         "code" : "Task",
-        "profile" : ["https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-task"]
+        "profile" : ["https://gematik.de/fhir/tiflow/StructureDefinition/ti-task"]
       }]
     },
     {

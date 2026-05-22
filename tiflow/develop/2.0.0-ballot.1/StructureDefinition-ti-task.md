@@ -12,7 +12,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-task | *Version*:2.0.0-ballot.1 |
+| *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/ti-task | *Version*:2.0.0-ballot.1 |
 | Active as of 2026-06-01 | *Computable Name*:TIFlowTask |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
@@ -23,7 +23,7 @@ Task für die Verwaltung von Workflows der TIFlow Anwendungen
 
 * Use this Profile: [Bundle der $accept Operation](StructureDefinition-tiflow-op-accept-bundle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/ti-task)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/ti-task)
 
 ### Formal Views of Profile Content
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-task.csv), [Excel
 {
   "resourceType" : "StructureDefinition",
   "id" : "ti-task",
-  "url" : "https://gematik.de/fhir/tiflow-core/StructureDefinition/ti-task",
+  "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-task",
   "version" : "2.0.0-ballot.1",
   "name" : "TIFlowTask",
   "title" : "Task für TIFlow Anwendungen",

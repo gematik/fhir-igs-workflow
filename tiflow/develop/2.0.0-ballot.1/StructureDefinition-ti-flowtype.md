@@ -30,7 +30,7 @@ This extension may be used on the following element(s):
 
 * Use this Extension: [Task für TIFlow Anwendungen](StructureDefinition-ti-task.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/ti-flowtype)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/ti-flowtype)
 
 ### Formal Views of Extension Content
 

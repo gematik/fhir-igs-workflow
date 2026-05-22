@@ -25,7 +25,7 @@ Statische Informationen auf dem TI-Flow-Fachdienst
 * Refer to this Profile: [GEM_ERP_PR_Signature](StructureDefinition-GEM-ERP-PR-Signature.md) and [GEM ERP PR Composition](StructureDefinition-tiflow-receipt-composition.md)
 * CapabilityStatements using this Profile: [CapabilityStatement für den TI-Flow-Fachdienst](CapabilityStatement-ti-flow-fachdienst-server.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow.core|current/StructureDefinition/GEM-ERP-PR-Device)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/GEM-ERP-PR-Device)
 
 ### Formal Views of Profile Content
 
