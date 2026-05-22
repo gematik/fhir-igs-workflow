@@ -4,7 +4,7 @@ Der TI-Flow-Fachdienst muss daher in der Lage sein, die von den verordnenden Sys
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
-        <img src="./mapping-fachdienst.png" alt="Mapping des TI-Flow-Fachdienstes" style="width: 100%;">
+        <img src="./mapping-fachdienst.svg" alt="Mapping des TI-Flow-Fachdienstes" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Mapping des TI-Flow-Fachdienstes</figcaption>
 </figure>

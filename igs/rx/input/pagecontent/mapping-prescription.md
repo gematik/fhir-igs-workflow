@@ -6,7 +6,7 @@ Die Verordnung wird technisch als ein [KBV_PR_ERP_Bundle](https://simplifier.net
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 400px; margin-bottom: 30px;">
-        <img src="./bundle-transform.png" alt="Transformation des Bundles" style="width: 100%;">
+        <img src="./bundle-transform.svg" alt="Transformation des Bundles" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Transformation des KBV_PR_ERP_Bundle in EPAOpProvidePrescriptionERPInputParameters</figcaption>
 </figure>
