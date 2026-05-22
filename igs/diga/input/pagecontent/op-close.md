@@ -23,7 +23,7 @@ Die Operation $close wird als HTTP POST auf /Task/&#60;id&#62;/$close ausgeführ
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-CloseOperation.json %}
+			{% include OperationDefinition-tiflow-diga-close-op.json %}
 		</pre>
 	</div>
 	<div id="Request-Examples">

@@ -23,7 +23,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet.
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-ActivateOperation.json %}
+			{% include OperationDefinition-tiflow-rx-activate-op.json %}
 		</pre>
 	</div>
 	<div id="Request-Examples">

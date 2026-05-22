@@ -36,7 +36,7 @@ Der Aufruf erfolgt als http-POST-Operation. Der Server prüft die Nachricht auf 
 	data-api-fhir-interaction="create">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-ti-flow-fachdienst-server.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
 	<div id="Response-Examples">
