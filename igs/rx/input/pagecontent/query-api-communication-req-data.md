@@ -1,9 +1,9 @@
 Diese Seite beschreibt Anforderungen an das Datenmodell für den payload der `Communication`-Ressource.
 
-#### E-Rezept einer Apotheke zuweisen
+#### E-Rezept einer Apotheke zuweisen
 
 <!-- A_23876-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-69" title="E-Rezept-FdV: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-69" title="E-Rezept-FdV: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -107,7 +107,7 @@ Diese Seite beschreibt Anforderungen an das Datenmodell für den payload der `Co
     <tr>
       <td>phone</td>
       <td>Falls communicationType = order: ja<br>Ansonsten: nein</td>
-      <td>Telefonnummer. E-164 Format, jedoch anstelle des „+" mit „00" / rein nummerisch.</td>
+      <td>Telefonnummer. E-164 Format, jedoch anstelle des "+" mit "00" / rein nummerisch.</td>
       <td>32 Stellen</td>
       <td>004916094858168</td>
     </tr>
@@ -149,7 +149,7 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
 </table>
 
 
-#### Nachricht durch Abgebenden übermitteln
+#### Nachricht durch Abgebenden übermitteln
 
 <!-- A_23877-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-70" title="PS abgebende LEI: Nachrichtenaustausch - Nachricht durch Abgebenden übermitteln - Datenstruktur Nachricht" version="1">
@@ -238,7 +238,7 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
     <tr>
       <td>inTransportETA</td>
       <td>Falls communicationType = deliveryStatus: nein<br>Ansonsten: verboten</td>
-      <td>Erwartete Ankunft Zeitfenster von – bis</td>
+      <td>Erwartete Ankunft Zeitfenster von - bis</td>
       <td>TIMESTAMP-TIMESTAMP</td>
       <td><pre>{
   "from": 1735736400,

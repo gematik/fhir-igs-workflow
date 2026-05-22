@@ -1,0 +1,17 @@
+install:
+  - firely_terminal
+  - sushi
+  - igpub
+  - publishtools
+deploy:
+  env:
+    dev: gematik_gemspec_fhir_dev-0
+    prod: gematik_gemspec_fhir_prod-0
+build:
+  pipeline:
+    - shell: ./scripts/pre-build.sh
+    - sushi
+    - shell: ./scripts/post-build.sh
+    - shell: ./scripts/build-ig.sh
+    - igpub
+    - igpub_qa

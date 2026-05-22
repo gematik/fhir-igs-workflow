@@ -1,28 +1,27 @@
 actor:
-- CS_E-Rezept_KTR
-- NCPeH_FD
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
+- TI-Flow_FD
 conformance: SHALL
-content_hash: 456473112f0a55d44fc81317e14893621c37d6a089b1542f8949b190122a3230
-created: '2026-05-21T07:03:54.494277'
-date: '2026-05-21T07:03:54.494279'
+content_hash: 6e2e7acd5fb563dded8c7266b645d7dafe29f3d7aaed07b73b8096effba8339c
+created: '2026-05-08T12:49:46.758260'
+date: '2026-05-08T12:49:46.758263'
 key: IG-TIFLOW-CORE-423
-modified: '2026-05-21T07:03:54.494278'
+modified: '2026-05-08T12:49:46.758262'
 release_status: NEW
-source: input/pagecontent/zeta-client.md
+source: input/pagecontent/error-codes-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-  NCPeH_FD:
-  - Produktgutachten
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
-text: Das Clientsystem des TI-Flow-Fachdienstes MUSS zur Authentisierung der Institution
-  das Verfahren mittels SM(C)-B signiertem Client Assertion JWT und DPoP gemäß [RFC7523]
-  und [RFC9449] verwenden.
-title: 'CS: ZETA Client - Authentisierung'
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS im Falle eines internen Serverfehlers die Anfrage\
+  \ mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px\
+  \ solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
+  \            <td>500 - Internal Server Error</td>\n        </tr>\n        <tr>\n\
+  \            <th>Severity</th>\n            <td>error</td>\n        </tr>\n    \
+  \    <tr>\n            <th>Code</th>\n            <td>transient</td>\n        </tr>\n\
+  \        <tr>\n            <th>Details Code</th>\n            <td>MSG_INTERNAL_ERROR</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Internal\
+  \ Server Error</td>\n        </tr>\n      </table>\n      abbrechen, damit Clients\
+  \ über transiente Serverfehler informiert werden und eine Wiederholung in Erwägung\
+  \ ziehen können."
+title: TI-Flow-Fachdienst - Fehlerbehandlung - Serverfehler
 version: 0

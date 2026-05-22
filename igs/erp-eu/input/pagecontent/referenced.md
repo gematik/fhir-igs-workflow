@@ -6,7 +6,7 @@
 | --- | --- |
 | API | Application Programming Interface |
 | CS | Clientsystem |
-| DVKA | Deutsche Verbindungsstelle Krankenversicherung – Ausland |
+| DVKA | Deutsche Verbindungsstelle Krankenversicherung - Ausland |
 | eHDSI | eHealth Digital Service Infrastructure |
 | FD | Fachdienst |
 | FdV | Frontend des Versicherten |
@@ -27,9 +27,9 @@
 ## Referenzierte Dokumente der gematik
 
 * gemGlossar: Glossar der Telematikinfrastruktur
-* gemILF_PS: Implementierungsleitfaden Primärsysteme – TI
+* gemILF_PS: Implementierungsleitfaden Primärsysteme - TI
 * gemILF_PS_ePA: Implementierungsleitfaden Primärsysteme ePA
-* gemILF_PS_eRp: Implementierungsleitfaden Primärsysteme – E‑Rezept
+* gemILF_PS_eRp: Implementierungsleitfaden Primärsysteme - E‑Rezept
 * gemSpec_Basis_KTR_Consumer: Spezifikation Basis- und KTR-Consumer
 * gemSpec_DM_eRp: Spezifikation Datenmodell E‑Rezept
 * gemSpec_FD_eRp: Spezifikation E‑Rezept‑Fachdienst
@@ -42,17 +42,17 @@
 
 ## Weitere referenzierte Quellen
 
-* Wikipedia: User Story – https://de.wikipedia.org/wiki/User_Story
-* gemWebShop – https://fachportal.gematik.de/toolkit/pruefkarte-egk-fuer-dvo
-* RFC2119 – https://www.rfc-editor.org/rfc/rfc2119
-* RFC7231 – https://www.rfc-editor.org/rfc/rfc7231
-* RFC8414 – https://www.rfc-editor.org/rfc/rfc8414
-* RFC7515 – https://www.rfc-editor.org/rfc/rfc7515
-* RFC7636 – https://www.rfc-editor.org/rfc/rfc7636
-* Baseline Requirements for TLS Server Certificates – https://cabforum.org/working-groups/server/baseline-requirements/documents/
-* HL7 FHIR Audit Event Terminology – https://www.hl7.org/fhir/valueset-audit-event-sub-type.html
-* HL7 FHIR RESTful Interaction Codes – http://hl7.org/fhir/restful-interaction
-* HL7 FHIR Audit Event Actions – https://www.hl7.org/fhir/valueset-audit-event-action.html
-* HL7 FHIR Audit Event Outcome – https://www.hl7.org/fhir/valueset-audit-event-outcome.html
-* HL7 Security Role Type – http://terminology.hl7.org/CodeSystem/extra-security-role-type
-* FHIR canonical datatype – https://www.hl7.org/fhir/datatypes.html#canonical
+* Wikipedia: User Story - https://de.wikipedia.org/wiki/User_Story
+* gemWebShop - https://fachportal.gematik.de/toolkit/pruefkarte-egk-fuer-dvo
+* RFC2119 - https://www.rfc-editor.org/rfc/rfc2119
+* RFC7231 - https://www.rfc-editor.org/rfc/rfc7231
+* RFC8414 - https://www.rfc-editor.org/rfc/rfc8414
+* RFC7515 - https://www.rfc-editor.org/rfc/rfc7515
+* RFC7636 - https://www.rfc-editor.org/rfc/rfc7636
+* Baseline Requirements for TLS Server Certificates - https://cabforum.org/working-groups/server/baseline-requirements/documents/
+* HL7 FHIR Audit Event Terminology - https://www.hl7.org/fhir/valueset-audit-event-sub-type.html
+* HL7 FHIR RESTful Interaction Codes - http://hl7.org/fhir/restful-interaction
+* HL7 FHIR Audit Event Actions - https://www.hl7.org/fhir/valueset-audit-event-action.html
+* HL7 FHIR Audit Event Outcome - https://www.hl7.org/fhir/valueset-audit-event-outcome.html
+* HL7 Security Role Type - http://terminology.hl7.org/CodeSystem/extra-security-role-type
+* FHIR canonical datatype - https://www.hl7.org/fhir/datatypes.html#canonical

@@ -1,0 +1,27 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 39e3dbad6fa09884e3a3661ef3a53f89e3de5b2392e7683bb0e6d75a08289f30
+created: '2026-05-15T13:09:00.105267'
+date: '2026-05-15T13:09:00.105276'
+key: IG-TIFLOW-CORE-432
+modified: '2026-05-15T13:09:00.105275'
+release_status: NEW
+source: input/pagecontent/error-codes.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produktgutachten
+text: "Der TI-Flow-Fachdienst MUSS im Fehlerfall (http-Statuscodes &gt;= 400) Hinweise\
+  \ zur Fehlerursache \n     \n     <ul>\n        <li>im der inneren http-Response-Body\
+  \ als FHIR-Ressource OperationOutcome bei FHIR-Schnittstellen</li>\n        <li>im\
+  \ der inneren http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode`\
+  \ und `errorDetail` bei non FHIR-Schnittstellen</li>\n        <li>falls keine innere\
+  \ ASL-Response existiert, in einem \"äußeren\" http-Response-Body in einer JSON-Struktur\
+  \ mit den Feldern `errorCode` und `errorDetail`</li>\n     </ul>\n      \n     \
+  \ an den Client zurückgeben, ohne Implementierungsdetails (z.B. kein Stacktrace)\
+  \ preiszugeben und dabei sicherstellen, dass personenbezogene oder medizinische\
+  \ Daten, falls für die qualifizierte Fehlerbeschreibung notwendig, ausschließlich\
+  \ in der VAU-verschlüsselten inneren http-Response übertragen werden."
+title: TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome
+version: 0

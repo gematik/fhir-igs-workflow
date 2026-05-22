@@ -29,7 +29,7 @@ Anfragen an die <i>Subscription</i>-Ressource können über die RESTful API mitt
   data-api-fhir-interaction="create">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
     </pre>
   </div>
   <div id="Request-Examples">
@@ -91,4 +91,4 @@ Die Websocket-Verbindung kann bis zu 12 h bestehen. Danach muss das Clientsystem
 - Das Signaturzertifikat muss nicht aus der Komponenten-PKI der TI abgeleitet werden.
 - Es wird kein fester Turnus festgelegt, in dem der Schlüssel gewechselt wird. Ein Wechsel kann über betriebliche Prozesse initiiert werden.
 - Der Schlüssel für die Signatur muss sicher gespeichert, jedoch nicht zwingend im HSM abgelegt werden.
-- Jede eingestellte Nachricht führt zu einem Ping, ggfs. im Millisekundenbereich, wenn viele Nachrichten an einen Empfänger gerichtet werden. In Abhängigkeit von der Implementierung kann dieses Verhalten zu einer Überlastung des PS führen, wenn bspw. jedes einzelne Ping den Anwendungsfall „Nachrichten von Versicherten empfangen“ triggert.
+- Jede eingestellte Nachricht führt zu einem Ping, ggfs. im Millisekundenbereich, wenn viele Nachrichten an einen Empfänger gerichtet werden. In Abhängigkeit von der Implementierung kann dieses Verhalten zu einer Überlastung des PS führen, wenn bspw. jedes einzelne Ping den Anwendungsfall "Nachrichten von Versicherten empfangen" triggert.

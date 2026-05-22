@@ -1,4 +1,4 @@
-Die Verarbeitung von E-T-Rezepten bedingt im TI-Flow-Fachdienst nicht nur einen neuen Workflow (166), sondern auch eine Kommunikationsverbindung zu einem neuen Akteur – dem BfArM – verbunden mit einem neuen Anwendungsfall.
+Die Verarbeitung von E-T-Rezepten bedingt im TI-Flow-Fachdienst nicht nur einen neuen Workflow (166), sondern auch eine Kommunikationsverbindung zu einem neuen Akteur - dem BfArM - verbunden mit einem neuen Anwendungsfall.
 
 ### Prüfungen beim Einstellen eines E-T-Rezepts
 
@@ -25,7 +25,7 @@ Hieraus ergibt sich, dass im Hinblick auf die Datenminimierung personenbezogener
 </ul>
 Die Daten des digitalen Durchschlags stammen im Wesentlichen aus dem Verordnungsdatensatz, dem Dispensierdatensatz und dem FHIR-VZD.
 
-Vor dem Hintergrund einer zu verhindernden Profilbildung über die abgebenden Apotheken, wird die Vertraulichkeit dieser Information mit „hoch“ innerhalb des Verantwortungsbereichs der TI bzw. der gematik bewertet. Dies gilt auch für die Bewertung der Integrität ("hoch").
+Vor dem Hintergrund einer zu verhindernden Profilbildung über die abgebenden Apotheken, wird die Vertraulichkeit dieser Information mit "hoch" innerhalb des Verantwortungsbereichs der TI bzw. der gematik bewertet. Dies gilt auch für die Bewertung der Integrität ("hoch").
 
 Dieser Schutzbedarf wird berücksichtigt, in dem der verbindungsaufbauende Endpunkt einer TLS-gesicherten Verbindung zum T-Register beim BfArM innerhalb der VAU des TI-Flow-Fachdienstes liegt, der Betreiber des TI-Flow-Fachdienstes also nicht sieht, welche Daten übertragen werden. Im Rahmen der Nutzung von TLS findet eine Authentifizierung des T-Registers des BfArM durch den TI-Flow-Fachdienst (Anforderung der gematik) und eine Authentifizierung des TI-Flow-Fachdienstes durch das T-Register des BfArM (Anforderung des BfArM) statt.
 
@@ -33,11 +33,11 @@ Der TI-Flow-Fachdienst überträgt die Daten unmittelbar - also ohne Beteiligung
 
 Nach der Übertragung der Daten in das T-Register befinden sich die Daten im Verantwortungsbereich des BfArM (Grenze der Sicherheitsleistung der TI). Dies betrifft insbesondere die weitere Verarbeitung der Daten durch das BfArM und die sich anschließenden Verarbeitungsvorgänge. Eine ggf. notwendige Kommunikation vom BfArM mit abgebenden Apotheken oder eine Übermittlung von Daten vom BfArM an den TI-Flow-Fachdienst ist durch dieses Feature nicht vorgesehen.
 
-Die Nutzung des FHIR-VZD durch den TI-Flow-Fachdienst erfolgt im Rahmen einer Anwendung der TI (E-Rezept) gemäß § 313 Abs. 3 SGB V. Dabei werden der Name, die Anschrift und – sofern eingetragen – die Telefonnummer der abgebenden Apotheke abgefragt und an das BfArM übermittelt.
+Die Nutzung des FHIR-VZD durch den TI-Flow-Fachdienst erfolgt im Rahmen einer Anwendung der TI (E-Rezept) gemäß § 313 Abs. 3 SGB V. Dabei werden der Name, die Anschrift und - sofern eingetragen - die Telefonnummer der abgebenden Apotheke abgefragt und an das BfArM übermittelt.
 
 ### Neuer Anwendungsfall
 
-Neben der Nutzung bereits spezifizierter Anwendungsfälle, wird ein neuer Anwendungsfall „Digitaler Durchschlag E-T-Rezept an den BfArM Webdienst übertragen“ spezifiziert. Die Verfügbarkeit des Anwendungsfall wird mit „normal“ bewertet, da ein bei einer Nichtverfügbarkeit die Daten in einer Warteschlange aufgehoben werden, bis der Anwendungsfall erfolgreich ausgeführt werden konnte.
+Neben der Nutzung bereits spezifizierter Anwendungsfälle, wird ein neuer Anwendungsfall "Digitaler Durchschlag E-T-Rezept an den BfArM Webdienst übertragen" spezifiziert. Die Verfügbarkeit des Anwendungsfall wird mit "normal" bewertet, da ein bei einer Nichtverfügbarkeit die Daten in einer Warteschlange aufgehoben werden, bis der Anwendungsfall erfolgreich ausgeführt werden konnte.
 
 ### Protokollierung
 

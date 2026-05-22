@@ -6,19 +6,19 @@ Die Datenübermittlung zwischen TI-Flow-Fachdienst und ePA-Aktensystem erfolgt �
 
 Zur Absicherung der Datenübermittlung muss der Transport der Nachrichten zwischen TI-Flow-Fachdienst uns ePA-Aktensystem mittels HTTPS erfolgen. Transport Layer Security (TLS) ist gemäß den Vorgaben aus [gemSpec_Krypt] einzusetzen.
 
-Der ePA-Aktensystem unterstützt an den genutzten Schnittstellen mindestens die HTTP Version 1.1 (siehe A_24654 – ePA: http-Version).
+Der ePA-Aktensystem unterstützt an den genutzten Schnittstellen mindestens die HTTP Version 1.1 (siehe A_24654 - ePA: http-Version).
 
 Der ePA-Aktensystem nutzt sein C.FD.TLS-S Zertifikat für den TLS-Verbindungsaufbau. Der TI-Flow-Fachdienst prüft beim Verbindungsaufbau das Server-Zertifikat des ePA-Aktensystems entsprechend der Vorgaben von [gemSpec_PKI].
 
 
 
 <!-- A_25971 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-376" title="TI-Flow-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems auf Gültigkeit prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-376" title="TI-Flow-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems auf Gültigkeit prüfen" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorgaben von [gemSpec_PKI] und des TUC_PKI_018 mit den Eingangsdaten gemäß der Tabelle Tab_eRPFD_018 prüfen und im Fehlerfall den Aufbau der HTTPS-Verbindung abbrechen. Tabelle #: Tab_eRPFD_018 – Eingangsdaten für die Prüfung des ePA-Aktensystem Server-Zertifikats
+Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorgaben von [gemSpec_PKI] und des TUC_PKI_018 mit den Eingangsdaten gemäß der Tabelle Tab_eRPFD_018 prüfen und im Fehlerfall den Aufbau der HTTPS-Verbindung abbrechen. Tabelle #: Tab_eRPFD_018 - Eingangsdaten für die Prüfung des ePA-Aktensystem Server-Zertifikats
 
 <table>
 <thead>
@@ -92,7 +92,7 @@ Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat ent
 
 #### VAU-Protokoll
 
-Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermittelten Daten mit dem VAU-Protokoll gesichert. Es gelten die Vorgaben aus [gemSpec_Krypt]#7 VAU-Protokoll für ePA für alle.
+Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermittelten Daten mit dem VAU-Protokoll gesichert. Es gelten die Vorgaben aus [gemSpec_Krypt#7 VAU-Protokoll für ePA für alle].
 
 <figure>
 	<div class="gem-ig-img-container" style="--box-width: 800px; margin-bottom: 30px;">
@@ -222,7 +222,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 #### Mappingregeln
 
 <!-- A_25946 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-390" title="TI-Flow-Fachdienst - ePA - Mapping" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-390" title="TI-Flow-Fachdienst - ePA - Mapping" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
@@ -333,7 +333,7 @@ Organization in gematik Directory
 https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory
 </td>
 <td>
-Überschreiben/Setzen des "identifier:TelematikID" mit der idNummer aus dem ACCESS_TOKEN des verwendeten Operationsaufrufes
+Überschreiben/Setzen des "identifier:TelematikID" mit zeta-user-info.identifier aus den Nutzerinformationen des verwendeten Operationsaufrufes
 </td>
 </tr>
 
@@ -367,12 +367,12 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </requirement>
 
 <!-- A_25947 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-391" title="TI-Flow-Fachdienst - ePA - provide-dispensation-erp - Organisation-Ressource" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-391" title="TI-Flow-Fachdienst - ePA - provide-dispensation-erp - Organisation-Ressource" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Bereitstellen der MedicationDispense für den ePA Medication Service eine Ressource des Profils https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory erstellen und Organization.identifier:TelematikID mit idNummer sowie Organization.name mit organizationName aus dem ACCESS_TOKEN belegen.
+     Der TI-Flow-Fachdienst MUSS beim Bereitstellen der MedicationDispense für den ePA Medication Service eine Ressource des Profils https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory erstellen und Organization.identifier:TelematikID mit zeta-user-info.identifier sowie Organization.name mit zeta-user-info.commonName aus den Nutzerinformationen belegen.
 </requirement>
 
 <!-- A_25948 -->

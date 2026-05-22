@@ -2,7 +2,7 @@ Instance: ERPTPrescriptionStructureMapCarbonCopy
 InstanceOf: StructureMap
 Usage: #definition
 Title: "E-T-Rezept Structure Map for CarbonCopy"
-Description: "Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./menu-technische-umsetzung-mapping.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden."
+Description: "Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./trezept.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden."
 * insert Instance(StructureMap, ERPTPrescriptionStructureMapCarbonCopy)
 
 * import[+] = Canonical(ERPTPrescriptionStructureMapMedicationDispense)
@@ -12,7 +12,7 @@ Description: "Diese Ressource beschreibt das Mapping und führt die Mappings all
 * import[+] = Canonical(ERPTPrescriptionStructureMapMedication)
 
 * insert sd_structure(http://hl7.org/fhir/StructureDefinition/Bundle, source, bundle)
-* insert sd_structure(https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy, target, erpTCarbonCopy)
+* insert sd_structure(https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-carbon-copy, target, erpTCarbonCopy)
 
 // Map rxDispense
 * group[+]
@@ -59,8 +59,10 @@ Description: "Diese Ressource beschreibt das Mapping und führt die Mappings all
         // part prescriptionId
         * rule[+]
           * name = "parameterrXPrescriptionPart"
-          * source[+].context = "srcEntryResourceVar"
+          * source[+].context = "srcEntryVar"
+          * source[=].element = "resource"
           * source[=].variable = "srcEntryTaskVar"
+          * source[=].type = "Task"
           * source[=].condition = "ofType(Task)"
           // * source[=].logMessage = "ofType(Task)"
           * insert targetSetStringVariable(tgtRxPrescriptionPartId, name, prescriptionId)
@@ -76,8 +78,10 @@ Description: "Diese Ressource beschreibt das Mapping und führt die Mappings all
         // part medicationRequest
         * rule[+]
           * name = "entryMedicationRequest"
-          * source[+].context = "srcEntryResourceVar"
+          * source[+].context = "srcEntryVar"
+          * source[=].element = "resource"
           * source[=].variable = "srcEntryBundleMRVar"
+          * source[=].type = "MedicationRequest"
           * source[=].condition = "ofType(MedicationRequest)"
           // * source[=].logMessage = "ofType(MedicationRequest)"
           * insert targetSetStringVariable(tgtRxPrescriptionPartMR, name, medicationRequest)
@@ -110,8 +114,8 @@ Description: "Diese Ressource beschreibt das Mapping und führt die Mappings all
               * name = "entryMedicationPrescriptionMedicationPart"
               * source[+].context = "srcEntryVar2"
               * source[=].variable = "srcEntryBundleMRMedIdVar"
-              * source[=].condition = "resource.ofType(Medication).where(id=%srcMedicationRequestId.resource.medicationReference.reference.replace('urn:uuid:', '').split('/').last())"
-              // * source[=].logMessage = "resource.ofType(Medication).where(id=%srcMedicationRequestId.resource.medicationReference.reference.replace('urn:uuid:', '').split('/').last())"
+              * source[=].condition = "resource.ofType(Medication).where(id=%srcMedicationRequestId.resource.medication.reference.replace('urn:uuid:', '').split('/').last())"
+              // * source[=].logMessage = "resource.ofType(Medication).where(id=%srcMedicationRequestId.resource.medication.reference.replace('urn:uuid:', '').split('/').last())"
               * insert createType(tgtRxPrescriptionPartMed, resource, newMedicationPrescriptionMedication, Medication)
               * documentation = "Findet die vom MedicationRequest referenzierte Medication und transformiert sie in BfArM Format"
               * rule[+]
@@ -120,6 +124,7 @@ Description: "Diese Ressource beschreibt das Mapping und führt die Mappings all
                 * source[+].context = "srcEntryBundleMRMedIdVar"
                 * source[=].variable = "srcEntryBundleMRMedIdVarRes"
                 * source[=].element = "resource"
+                * source[=].type = "Medication"
                 // * source[=].logMessage = "%srcEntryBundleMRMedIdVar"
                 * insert dependent(ERPTPrescriptionStructureMapMedication, srcEntryBundleMRMedIdVarRes, newMedicationPrescriptionMedication)
 
@@ -145,8 +150,10 @@ Description: "Diese Ressource beschreibt das Mapping und führt die Mappings all
         // part Organization
         * rule[+]
           * name = "entryVZDSearchSet"
-          * source[+].context = "srcEntryResourceVar"
+          * source[+].context = "srcEntryVar"
+          * source[=].element = "resource"
           * source[=].variable = "srcEntryBundleOrgVar"
+          * source[=].type = "Bundle"
           * source[=].condition = "ofType(Bundle).where(entry.first().fullUrl.contains('fhir-directory'))"
           // * source[=].logMessage = "ofType(Bundle).where(entry.first().fullUrl.contains('fhir-directory'))"
           * insert targetSetStringVariable(tgtRxDispensationPartOrg, name, dispenseOrganization)
@@ -165,8 +172,10 @@ Description: "Diese Ressource beschreibt das Mapping und führt die Mappings all
         // part MedicationDispense inkl. Medication
         * rule[+]
           * name = "entryMedicationDispense"
-          * source[+].context = "srcEntryResourceVar"
+          * source[+].context = "srcEntryVar"
+          * source[=].element = "resource"
           * source[=].variable = "srcEntryBundleMDVar"
+          * source[=].type = "MedicationDispense"
           * source[=].condition = "ofType(MedicationDispense)"
           //* source[=].logMessage = "ofType(MedicationDispense)"
           * insert treeTarget(tgtRxDispensation, part, tgtDispenseInformationPart)
@@ -213,5 +222,6 @@ Description: "Diese Ressource beschreibt das Mapping und führt die Mappings all
                     * source[+].context = "srcEntryBundleMDMedIdVar"
                     * source[=].variable = "srcEntryBundleMDMedIdVarRes"
                     * source[=].element = "resource"
+                    * source[=].type = "Medication"
                     // * source[=].logMessage = "%srcEntryBundleMDMedIdVar"
                     * insert dependent(ERPTPrescriptionStructureMapMedication, srcEntryBundleMDMedIdVarRes, newMedicationDispensationMedication)

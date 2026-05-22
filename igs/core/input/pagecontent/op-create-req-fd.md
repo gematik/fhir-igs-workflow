@@ -6,7 +6,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation die Rolle "professionOID" des Aufrufenden im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich verordnende Leistungserbringerinstitutionen in der Rolle
+    Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
     <ul>
         <li>oid_praxis_arzt</li>
         <li>oid_zahnarztpraxis</li>
@@ -34,7 +34,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
     abbrechen, damit Workflows nicht durch zur Verordnung Unberechtigte erstellt werden können.

@@ -1,27 +1,26 @@
 actor:
-- CS_E-Rezept_KTR
-- NCPeH_FD
-- PS_E-Rezept_abgebend
-- PS_E-Rezept_verordnend
+- TI-Flow_FD
 conformance: SHALL
-content_hash: 2ed8fd4cfbdf94f63d48029776961214c90d377c3aa63d6bfe9013b8e3dbe199
-created: '2026-05-21T07:03:54.494019'
-date: '2026-05-21T07:03:54.494022'
+content_hash: 21e3591dd7b5eea6e053e4590e2d44ebe6ed2b638d383a5c43d6e188dcb9137d
+created: '2026-05-08T12:49:46.757837'
+date: '2026-05-08T12:49:46.757840'
 key: IG-TIFLOW-CORE-422
-modified: '2026-05-21T07:03:54.494021'
+modified: '2026-05-08T12:49:46.757839'
 release_status: NEW
-source: input/pagecontent/zeta-client.md
+source: input/pagecontent/error-codes-req-fd.md
 status: ACTIVE
 test_procedures:
-  CS_E-Rezept_KTR:
-  - Herstellererklärung
-  NCPeH_FD:
-  - Produktgutachten
-  PS_E-Rezept_abgebend:
-  - Herstellererklärung
-  PS_E-Rezept_verordnend:
-  - Herstellererklärung
-text: Das Clientsystem des TI-Flow-Fachdienstes MUSS sicherstellen, dass jegliche
-  Kommunikation mit dem TI-FlowFachdienst über den ZETA Client erfolgt.
-title: 'CS: ZETA Client - Kommunikation mit Fachdienst'
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS für den Fall, dass ein Request in einen Timeout\
+  \ läuft die Anfrage mit folgenden Fehler:\n      <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n         \
+  \   <th>HTTP-Code</th>\n            <td>408 - Request Timeout</td>\n        </tr>\n\
+  \        <tr>\n            <th>Severity</th>\n            <td>error</td>\n     \
+  \   </tr>\n        <tr>\n            <th>Code</th>\n            <td>timeout</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>MSG_TIMEOUT</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>The\
+  \ request timed out.</td>\n        </tr>\n      </table>\n      abbrechen, damit\
+  \ Clients über Timeouts informiert werden und entsprechend reagieren können."
+title: TI-Flow-Fachdienst - Fehlerbehandlung - HTTP-Timeoutfehler
 version: 0

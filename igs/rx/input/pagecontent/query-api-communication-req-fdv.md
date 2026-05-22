@@ -53,7 +53,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
     <actor name="eRp_FdV">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" prüfen, dass die durch den Nutzer erfasst Textnachricht keinen Internet-Link und keine Non-Printable-Characters enthält und die Textnachricht nur bei erfolgreicher Prüfung weiterverarbeiten.
+    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" prüfen, dass die durch den Nutzer erfasst Textnachricht keinen Internet-Link und keine Non-Printable-Characters enthält und die Textnachricht nur bei erfolgreicher Prüfung weiterverarbeiten.
 </requirement>
 
 <!-- A_28542 -->
@@ -62,7 +62,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" im Rahmen der Belieferung eines Arzneimittels für den payload_contentstring einen JSON Datensatz mit communicationType = "order" erstellen.
+    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" im Rahmen der Belieferung eines Arzneimittels für den payload_contentstring einen JSON Datensatz mit communicationType = "order" erstellen.
 </requirement>
 
 <!-- A_28544 -->
@@ -71,7 +71,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" im Rahmen der Belieferung eines Arzneimittels , wenn der Nutzer auf eine empfangene Nachricht einer Apotheke antwortet, für den payload_contentstring einen JSON Datensatz mit communicationType = "text" erstellen.
+    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" im Rahmen der Belieferung eines Arzneimittels , wenn der Nutzer auf eine empfangene Nachricht einer Apotheke antwortet, für den payload_contentstring einen JSON Datensatz mit communicationType = "text" erstellen.
 </requirement>
 
 siehe [Datenmodell Payload für Communication-Query](./query-api-communication-req-data.html)
@@ -82,24 +82,24 @@ siehe [Datenmodell Payload für Communication-Query](./query-api-communication-r
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq mit  
+    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq mit  
     <ul>
-      <li>Telematik-ID der ausgewählten abgebenden LEI in recipient</li>
-      <li>Textnachricht in payload contentString</li>
-      <li>E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als "/Task/&lt;id&gt;/$accept?ac=..." </li>
+      <li>Telematik-ID der ausgewählten abgebenden LEI in recipient</li>
+      <li>Textnachricht in payload contentString</li>
+      <li>E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als "/Task/&lt;id&gt;/$accept?ac=..." </li>
     </ul>
     erstellen.
 </requirement>
 
 <b>Apotheke suchen</b>
 
-Die Anfrage zur Suche von Apotheken, richtet sich an das FHIR-Directory des Verzeichnisdienstes der TI (FHIR-VZD TI). 
+Die Anfrage zur Suche von Apotheken, richtet sich an das FHIR-Directory des Verzeichnisdienstes der TI (FHIR-VZD TI). 
 
 Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory#Versicherter sucht Einträge im FHIR-Directory] beschrieben.
 
 Für weitere Informationen siehe Anwendungsfall "Suche nach Apotheken im FHIR VZD" aus der API-Schnittstelle [E-Rezept API Dokumentation].
 
-Für weitere Informationen siehe "Eine Apotheke aus dem Apotheken-Verzeichnis auswählen" in der API-Schnittstelle [VZD API Dokumentation].
+Für weitere Informationen siehe "Eine Apotheke aus dem Apotheken-Verzeichnis auswählen" in der API-Schnittstelle [VZD API Dokumentation].
 
 <!-- A_28197 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-33" title="E-Rezept-FdV: Apotheke suchen - Filter Öffentliche Apotheke" version="0">
@@ -112,7 +112,7 @@ Für weitere Informationen siehe "Eine Apotheke aus dem Apotheken-Verzeichnis au
 
 Das E-Rezept-FdV MUSS im Anwendungsfall "Apotheke suchen" sicherstellen, dass dem Nutzer nur Einträge aus dem Verzeichnisdienst zur Auswahl gestellt werden, welche mindestens eine Belieferungsoption im Feld specialization angegeben haben.
 
-Der Wertebereich für specialization ist in https://simplifier.net/vzd-fhir-directory/pharmacyhealthcarespecialtycs beschrieben. 
+Der Wertebereich für specialization ist in https://simplifier.net/vzd-fhir-directory/pharmacyhealthcarespecialtycs beschrieben. 
 Belieferungsoptionen sind:
 - 10 - Handverkauf
 - 30 - Botendienst
@@ -120,6 +120,6 @@ Belieferungsoptionen sind:
 
 Das E-Rezept-FdV MUSS es dem Versicherten ermöglichen, sich alle Einträge aus einem Suchergebnis anzeigen zu lassen.
 
-Das E-Rezept-FdV MUSS ein Suchergebnis so darstellen, dass einzelne Apotheken nicht hervorgehoben oder bevorzugt werden.
+Das E-Rezept-FdV MUSS ein Suchergebnis so darstellen, dass einzelne Apotheken nicht hervorgehoben oder bevorzugt werden.
 
 Das E-Rezept-FdV MUSS die Apothekensuche und die Suchergebnisse so darstellen, dass Belieferungsoptionen nicht hervorgehoben oder bevorzugt werden.

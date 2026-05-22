@@ -29,10 +29,10 @@ Beim Zuweisen einer DiGA-Verordnung ist keine freie Textnachricht vorgesehen, um
     <actor name="eRp_FdV">
         <testProcedure id="Produkttest"/>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq mit  
+    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq mit  
     <ul>
-      <li>Telematik-ID der ausgewählten abgebenden LEI in recipient</li>
-      <li>E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als "/Task/&lt;id&gt;/$accept?ac=..." </li>
+      <li>Telematik-ID der ausgewählten abgebenden LEI in recipient</li>
+      <li>E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als "/Task/&lt;id&gt;/$accept?ac=..." </li>
     </ul>
     erstellen.
 </requirement>

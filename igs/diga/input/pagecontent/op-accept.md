@@ -18,7 +18,7 @@ Die Operation $accept wird als HTTP POST auf /Task/&#60;id&#62;/$accept ausgefü
 	data-api-operation-id="acceptOperation">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
 	<div id="OperationDefinition">

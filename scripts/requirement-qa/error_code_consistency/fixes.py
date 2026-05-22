@@ -11,6 +11,7 @@ from .classification import (
     expected_import_system,
     module_outcome_valueset_name,
     normalize_include_token,
+    normalize_import_system,
 )
 from .models import CodeDescription, ErrorCode, Finding
 from .parsing import (
@@ -728,21 +729,25 @@ def fix_cs_vs(
                 print(f"  [SKIP] No canonical import system for code '{finding.code}'")
                 continue
 
+            # Keep core ValueSet style with aliases, but prefer canonical system names in module ValueSets.
+            import_system_for_write = import_system if target_module == "core" else normalize_import_system(import_system)
+
             vs_content = target_vs.read_text(encoding="utf-8")
-            include_token = normalize_include_token(f"{import_system}#{finding.code}")
+            include_token_original = f"{import_system_for_write}#{finding.code}"
+            include_token_normalized = normalize_include_token(include_token_original)
             existing_includes = {
                 normalize_include_token(token)
                 for token in parse_valueset_external_includes(target_vs).keys()
             }
-            if include_token in existing_includes:
+            if include_token_normalized in existing_includes:
                 continue
 
             source_descriptions = _valueset_import_description_sources(ig_roots)
-            description = source_descriptions.get(include_token)
+            description = source_descriptions.get(include_token_normalized)
             description_suffix = f' "{description}"' if description else ""
-            new_line = f"* include {include_token}{description_suffix}\n"
+            new_line = f"* include {include_token_original}{description_suffix}\n"
             target_vs.write_text(vs_content.rstrip("\n") + "\n" + new_line, encoding="utf-8")
-            print(f"  [FIX] Added include {include_token} to {target_vs}")
+            print(f"  [FIX] Added include {include_token_original} to {target_vs}")
             fixes_applied += 1
 
     return fixes_applied

@@ -17,7 +17,7 @@ Die AuditEvent-Query wird über HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
   data-api-fhir-interaction="search-type">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
     </pre>
   </div>
   <div id="Response-Examples">

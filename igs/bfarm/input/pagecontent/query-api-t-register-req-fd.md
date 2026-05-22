@@ -255,7 +255,7 @@ Anschließend erstellt der TI-Flow-Fachdienst den digitalen Durchschlag für den
 Bei der Suche nach Apothekendaten basierend auf der Telematik-lD besteht die Möglichkeit, dass im FHIR-VZD kein Eintrag gefunden wird Falls zu der zu übermittelnden Apotheke (Identifikation durch die Telematik-lD) kein entsprechender Eintrag im FHIR-VZD gefunden werden kann, setzt der TI-Flow-Fachdienst folgendes um:
 
 1. Die betroffene Telematik-ID wird unverändert in den digitalen Durchschlag aus den Dispensierinformationen übernommen.
-2. Der Wert für organizationName wird aus dem ACCESS_TOKEN der Anfrage als Name der Apotheke im digitalen Durchschlag gesetzt. Sollte der organizationName aus ACCESS_TOKEN nicht gesetzt sein (NULL), dann wird "unbekannt" als Name der Apotheke im digitalen Durchschlag gesetzt.
+2. Der Wert für commonName aus den Nutzerinformationen der Anfrage (zeta-user-info) wird als Name der Apotheke im digitalen Durchschlag gesetzt. Sollte der commonName in den Nutzerinformationen nicht gesetzt sein (NULL), dann wird "unbekannt" als Name der Apotheke im digitalen Durchschlag gesetzt.
 3. Der Datensatz wird an den BfArM-Webdienst übertragen.
 4. Sollte der übermittelte Datensatz durch das BfArM untersucht werden müssen, erfolgt eine bilaterale Abstimmung zwischen gematik und BfArM zur Klärung des Sachverhalts.
 
@@ -265,10 +265,10 @@ Bei der Suche nach Apothekendaten basierend auf der Telematik-lD besteht die Mö
     <actor name="TI-Flow_FD">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept, wenn die  Daten der abgebenden Apotheke nicht aus dem Verzeichnisdienst ermittelt werden können,
+    Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept, wenn die Daten der abgebenden Apotheke nicht aus dem Verzeichnisdienst ermittelt werden können,
     <ul>
       <li>die Telematik-ID der Apotheke aus den Dispensierinformationen und</li>
-      <li>den Wert für organizationName aus dem ACCESS_TOKEN der Anfrage bzw. falls organizationName = NULL im ACCESS_TOKEN den Wert "unbekannt" als Name der Apotheke</li>
+      <li>den Wert für zeta-user-info.commonName aus Nutzerinformationen bzw. falls zeta-user-info.commonName = NULL den Wert "unbekannt" als Name der Apotheke</li>
     </ul>
     in den digitalen Durchschlag übernehmen.
 </requirement>

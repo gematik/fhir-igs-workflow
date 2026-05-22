@@ -8,7 +8,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
   <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-    Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Versicherten, wenn der HTTP-Request keinen HTTP-Header "X-AccessCode" oder URL-Parameter "?ac=..." enthält, den Versicherten anhand der KVNR aus dem ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, diese gegen die in Task.for hinterlegte KVNR des begünstigten Patienten prüfen und bei Missmatch den Aufruf mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Nutzer mit zeta-user-info.professionOID = oid_versicherter den zeta-user-info.identifier mit der in Task.for hinterlegte KVNR des begünstigten Patienten vergleichen und bei Missmatch den Aufruf mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -104,7 +104,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
   <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort alle personenbezogenen medizinischen Daten, außer der KVNR in Task.for, aus dem referenzierten Task entfernen. Dies gilt insbesondere für:
+  Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort alle personenbezogenen medizinischen Daten, außer der KVNR in Task.for, aus dem referenzierten Task entfernen. Dies gilt insbesondere für:
   <ul>
     <li>Task.input --> löschen (inkl. aller referenzierten Elemente)</li>
     <li>Task.output --> löschen (inkl. aller referenzierten Elemente)</li>
@@ -113,10 +113,10 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     <li>Task.extension:lastMedicationDispense (Zeitstempel, falls vorhanden) --> löschen</li>
     <li>Task.owner --> löschen</li>
     <li>Medication --> die in MedicationDispense.medication referenzierte Medication löschen</li>
-    <li>MedicationDispense --> die in MedicationDispense.supportingInformation auf Task.id verweist löschen</li>
+    <li>MedicationDispense --> die in MedicationDispense.supportingInformation auf Task.id verweist löschen</li>
     <li>Communication --> die in Communication.basedOn auf Task.id verweist</li>
   </ul>
-  damit dem Betroffenenrecht auf Löschen durch den Versicherten entsprochen wird und beim Löschen durch den Verordnenden dem Versicherten eine aussagekräftige Fehlermeldung durch einen Apotheker vermittelt werden kann.
+  damit dem Betroffenenrecht auf Löschen durch den Versicherten entsprochen wird und beim Löschen durch den Verordnenden dem Versicherten eine aussagekräftige Fehlermeldung durch einen Apotheker vermittelt werden kann.
 </requirement>
 
 Hinweis: Die KVNR in Task.for wird nicht gelöscht, damit der Versicherte den Status des Task mit dem E-Rezept-FdV abrufen kann.
@@ -129,7 +129,7 @@ Bestehende Übermittlungsaufträge in den ePA Medication Service für das zu lö
   <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort den Status des Tasks Task.status auf den Wert "cancelled" setzen, damit der Task nicht weiter bearbeitet werden kann.
+  Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der &#60;id&#62; adressierten /Task/&#60;id&#62;/$abort den Status des Tasks Task.status auf den Wert "cancelled" setzen, damit der Task nicht weiter bearbeitet werden kann.
 </requirement>
 
 <!-- A_28131 -->

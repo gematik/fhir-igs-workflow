@@ -1,20 +1,24 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 54f456ddcb6b345e0f511a5c81aff98c1b467d7cee884d9f7421f016f7bd61f1
+content_hash: afa98d6d78c7796bf4dde0dad36a0a7821f7fcf7c23780c67ba4a82f51724214
 created: '2026-03-23T10:57:48.484192'
-date: '2026-04-13T14:33:11.847272'
+date: '2026-05-08T12:49:46.835129'
 key: IG-TIFLOW-CORE-268
-modified: '2026-04-13T14:33:11.847272'
+modified: '2026-05-08T12:49:46.835129'
 release_status: MODIFIED
 source: input/pagecontent/query-api-pushers-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Pushers mittels
-  der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit mit dem HTTP-Code
-  "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt
-  werden können.
+text: "Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Pushers mittels\
+  \ der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem folgenden\
+  \ Fehler:\n <table id=\"error-code-json\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>405 - Method Not Allowed</td>\n\
+  \ </tr>\n <tr>\n <th>Error Code</th>\n <td>methodNotAllowed</td>\n </tr>\n <tr>\n\
+  \ <th>Error Details</th>\n <td>Die verwendete HTTP-Methode ist für diese Ressource\
+  \ nicht zulässig</td>\n </tr>\n </table> \n abbrechen, damit keine unzulässigen\
+  \ Operationen ausgeführt werden können."
 title: TI-Flow-Fachdienst - unzulässige Operationen Pushers
 version: 1

@@ -17,7 +17,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$reject` gesendet.
 	data-api-operation-id="rejectOperation">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-rx.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
 	<div id="OperationDefinition">

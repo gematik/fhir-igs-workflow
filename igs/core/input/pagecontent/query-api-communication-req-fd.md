@@ -16,14 +16,14 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET, DELETE und POST-Operation auf den Endpunkt /Communication bzw. /Communication/&lt;id&gt; sicherstellen, dass ausschließlich Versicherte, Leistungserbingerinstitutionen und Kostenträger in der Rolle
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET, DELETE und POST-Operation auf den Endpunkt /Communication bzw. /Communication/&lt;id&gt; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
     <ul>
         <li>oid_versicherter</li>
         <li>oid_oeffentliche_apotheke</li>
         <li>oid_krankenhausapotheke</li>
         <li>oid_kostentraeger</li>
     </ul>
-    die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, und bei Abweichungen die Operation mit dem folgenden Fehler:
+    die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -43,7 +43,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
         </tr>
     </table> 
     abbrechen, damit der Nachrichtenaustausch nicht zwischen Unbefugten erfolgt.
@@ -54,12 +54,12 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 
 <!-- A_19520-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-318" title="TI-Flow-Fachdienst - Nachrichten abrufen - für Empfänger filtern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-318" title="TI-Flow-Fachdienst - Nachrichten abrufen - für Empfänger filtern" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Abrufen von Nachrichten über die http-Operation GET auf den Endpunkt /Communication bzw. beim Abruf einer einzelnen Nachricht über /Communication/&lt;id&gt; ausschließlich die Nachrichten an den Aufrufer zurückgeben, die im Attribut Communication.recipient oder Communication.sender mit dem entsprechenden Identifier https://gematik.de/fhir/sid/telematik-id für Apotheken bzw. http://fhir.de/sid/gkv/kvid-10 für Versicherte den gleichen Typ und den identischen Wert haben wie im Attribut "idNummer" des übergebenen ACCESS_TOKEN im HTTP-Header "Authorization" für Versicherten-ID bzw. Telematik-ID, damit keine Nachrichten an Dritte unrechtmäßig ausgelesen werden.
+    Der TI-Flow-Fachdienst MUSS beim Abrufen von Nachrichten über die http-Operation GET auf den Endpunkt /Communication bzw. beim Abruf einer einzelnen Nachricht über /Communication/&lt;id&gt; ausschließlich die Nachrichten an den Aufrufer zurückgeben, die im Attribut Communication.recipient oder Communication.sender mit dem entsprechenden Identifier https://gematik.de/fhir/sid/telematik-id für Apotheken bzw. http://fhir.de/sid/gkv/kvid-10 für Versicherte den gleichen Typ und den identischen Wert haben wie zeta-user-info.identifier in den Nutzerinformationen, damit keine Nachrichten an Dritte unrechtmäßig ausgelesen werden.
 </requirement>
 
 <!-- A_19521 -->
@@ -207,12 +207,12 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_19448-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-323" title="TI-Flow-Fachdienst - Nachricht einstellen - Absender und Sendedatum" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-323" title="TI-Flow-Fachdienst - Nachricht einstellen - Absender und Sendedatum" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication die Absenderidentifikation aus dem Attribut idNummer des im HTTP-Header "Authorization" übergebenen ACCESS_TOKEN mit dem entsprechenden System https://gematik.de/fhir/sid/telematik-id für Institutionen der TI bzw. http://fhir.de/sid/gkv/kvid-10 für Versicherte übernehmen sowie das Absendedatum Communication.sent auf die aktuelle Systemzeit des TI-Flow-Fachdienstes setzen, damit Absender und Sendezeitpunkt für den Empfänger eindeutig sind.
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication die Absenderidentifikation aus dem zeta-user-info.identifier der Nutzerinformation mit dem entsprechenden System https://gematik.de/fhir/sid/telematik-id für Institutionen der TI bzw. http://fhir.de/sid/gkv/kvid-10 für Versicherte übernehmen sowie das Absendedatum Communication.sent auf die aktuelle Systemzeit des TI-Flow-Fachdienstes setzen, damit Absender und Sendezeitpunkt für den Empfänger eindeutig sind.
 </requirement>
 
 <!-- A_20231-01 -->
@@ -221,7 +221,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication den Empfänger prüfen und, wenn der Empfänger Communication.recipient gleich der Absenderidentifikation im Attribut idNummer des übergebenen ACCESS_TOKEN im HTTP-Header "Authorization" ist, die Operation mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication den Empfänger prüfen und, wenn der Empfänger Communication.recipient gleich der Absenderidentifikation zeta-user-info.identifier in der Nutzerinformation ist, die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -291,7 +291,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS das Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq" durch einen Versicherten über die http-Operation POST auf den Endpunkt /Communication den Versichertenbezug prüfen und, wenn die KVNR des in Communication.basedOn referenzierten Tasks Task.for ungleich der KVNR des Einstellenden in "idNummer" des übergebenen ACCESS_TOKEN ist, die Operation mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq" durch einen Versicherten über die http-Operation POST auf den Endpunkt /Communication den Versichertenbezug prüfen und, wenn die KVNR des in Communication.basedOn referenzierten Tasks Task.for ungleich der KVNR des Einstellenden in zeta-user-info.identifier in der Nutzerinformation ist, die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -371,7 +371,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der Fachdienst E-Rezept MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq", "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply" oder "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA" über die http-Operation POST auf den Endpunkt /Communication prüfen und, wenn das Pflichtfeld Communication.basedOn einen Task referenziert, der nicht existiert, die Operation mit dem folgenden Fehler:
+    Der Fachdienst E-Rezept MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq", "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply" oder "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA" über die http-Operation POST auf den Endpunkt /Communication prüfen und, wenn das Pflichtfeld Communication.basedOn einen Task referenziert, der nicht existiert, die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -515,15 +515,15 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 ### DELETE /Communication
 
-Mit der HTTP-Operation DELETE kann ein Nutzer eine verschickte Kommunikationsnachricht als Absender löschen, um bspw. einen Irrläufer zurückzurufen. 
+Mit der HTTP-Operation DELETE kann ein Nutzer eine verschickte Kommunikationsnachricht als Absender löschen, um bspw. einen Irrläufer zurückzurufen. 
 
 
 <!-- A_20258 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-337" title="TI-Flow-Fachdienst - Nachricht löschen - Absender-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-337" title="TI-Flow-Fachdienst - Nachricht löschen - Absender-ID" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf /Communication/&lt;id&gt; die über &lt;id&gt; identifizierte Communication-Ressource anhand der KVNR bzw. Telematik-ID des aufrufenden Nutzers im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests über das Absender-Attribut Communication.sender lokalisieren und löschen, damit Nutzer irrtümlich versendete oder nicht mehr gewünschte Nachrichten vom TI-Flow-Fachdienst entfernen können.
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf /Communication/&lt;id&gt; die über &lt;id&gt; identifizierte Communication-Ressource anhand der KVNR bzw. Telematik-ID des aufrufenden Nutzers in zeta-user-info.identifier über das Absender-Attribut Communication.sender lokalisieren und löschen, damit Nutzer irrtümlich versendete oder nicht mehr gewünschte Nachrichten vom TI-Flow-Fachdienst entfernen können.
 </requirement>
 <!-- ToDo: 2 Afos 1. prüfen Zugreifender = sender , 2. löschen -->

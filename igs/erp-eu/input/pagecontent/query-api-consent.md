@@ -29,7 +29,7 @@ Der Aufruf erfolgt als http-`POST`-Operation auf die Ressource /Consent. Im Aufr
   data-api-fhir-interaction="create">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server-erpeu.json %}
     </pre>
   </div>
   <div id="Response-Examples">
@@ -46,7 +46,7 @@ Der Aufruf erfolgt als http-`POST`-Operation auf die Ressource /Consent. Im Aufr
 
 Als Versicherter möchte ich meine erteilte Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen einsehen.
 
-Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden, der Fachdienst filtert die Consent-Einträge nach der im ACCESS_TOKEN enthaltenen KVNR des Versicherten.
+Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden. Der Fachdienst filtert die Consent-Einträge nach der in der Nutzerinformation (zeta-user-info) enthaltenen KVNR des Versicherten.
 
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"
@@ -54,7 +54,7 @@ Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Im Aufruf 
   data-api-fhir-interaction="search-type">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server-erpeu.json %}
     </pre>
   </div>
   <div id="Response-Examples">
@@ -73,7 +73,7 @@ Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Im Aufruf 
 
 Als Versicherter möchte ich meine erteilte Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen widerrufen. Mit dem Widerruf der Einwilligung werden bereits gespeicherte Abrechnungsinformationen gelöscht.
 
-Der Aufruf erfolgt als http-`DELETE`-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden, der Fachdienst filtert die Consent-Einträge nach der im ACCESS_TOKEN enthaltenen KVNR des Versicherten.
+Der Aufruf erfolgt als http-`DELETE`-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden. Der Fachdienst filtert die Consent-Einträge nach der in der Nutzerinformation (zeta-user-info) enthaltenen KVNR des Versicherten.
 
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"
@@ -81,7 +81,7 @@ Der Aufruf erfolgt als http-`DELETE`-Operation auf die Ressource /Consent. Im Au
   data-api-fhir-interaction="delete">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server-erpeu.json %}
     </pre>
   </div>
 </div>

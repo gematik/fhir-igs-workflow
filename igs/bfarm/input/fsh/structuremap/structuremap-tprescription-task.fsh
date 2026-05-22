@@ -6,7 +6,8 @@ Title: "E-T-Rezept Structure Map for Task"
 Description: "Mappt die E-Rezept ID aus dem Task in ein Identifier Objekt"
 * insert Instance(StructureMap, ERPTPrescriptionStructureMapTask)
 
-* insert sd_structure(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task, source, task)
+// * insert sd_structure(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task, source, task)
+* insert sd_structure(http://hl7.org/fhir/StructureDefinition/Task, source, task)
 * insert sd_structure(http://hl7.org/fhir/StructureDefinition/Identifier, target, tgtIdentifier)
 
 * group[+]

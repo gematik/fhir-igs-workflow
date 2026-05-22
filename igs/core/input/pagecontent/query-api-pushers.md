@@ -31,7 +31,7 @@ Ist `kind` nicht `null`, wird der Pusher mit dieser `app_id` und `pushkey` für 
 	data-api-url-path="/pushers">
 	<div id="CapabilityStatement">
 		<pre>
-		{% include CapabilityStatement-erp-fachdienst-server.json %}
+		{% include CapabilityStatement-ti-flow-fachdienst-server.json %}
 		</pre>
 	</div>
 	<div id="Formats">
@@ -60,7 +60,7 @@ Ist `kind` nicht `null`, wird der Pusher mit dieser `app_id` und `pushkey` für 
 	data-api-url-path="/pushers/set">
 	<div id="CapabilityStatement">
 		<pre>
-		{% include CapabilityStatement-erp-fachdienst-server.json %}
+		{% include CapabilityStatement-ti-flow-fachdienst-server.json %}
 		</pre>
 	</div>
 	<div id="Formats">

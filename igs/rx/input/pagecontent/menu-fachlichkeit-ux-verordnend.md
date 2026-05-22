@@ -1,4 +1,4 @@
-> Hinweis: Für den Verordnungsprozess von Rezepten gibt es regulierende Vorgaben, welche durch die  Primärsysteme der verordnenden Leistungserbringerinstitutionen umgesetzt werden müssen. U.a.
+> Hinweis: Für den Verordnungsprozess von Rezepten gibt es regulierende Vorgaben, welche durch die  Primärsysteme der verordnenden Leistungserbringerinstitutionen umgesetzt werden müssen. U.a.
 > 
 > - § 73 SGB V
 > - Bundesmantelvertrag-Ärzte
@@ -23,7 +23,7 @@ Der Nutzer des Systems soll in jedem Verordnungsvorgang für Arzneimittel die M�
 
 #### Ladevorgänge im Hintergrund
 
-Das Primärsystem soll bei Ladevorgängen zum Anlegen, Speichern und Verarbeiten eines E-Rezepts dem Nutzer das Weiterarbeiten im System erlauben. Insbesondere Signaturen sollen gemäß[gemILF_PS#A_23502 - Signaturerstellung im Hintergrund] im Hintergrund verarbeitet werden. Dem Nutzer werden nur bei Fehlermeldungen auffällige und für den Nutzer verständliche Hinweise angezeigt. Erfolgsmeldungen können so in die Benutzeroberfläche integriert werden, dass sie keine Interaktion des Nutzers verlangen und den Nutzer nicht im weiteren Arbeitsprozess stören.
+Das Primärsystem soll bei Ladevorgängen zum Anlegen, Speichern und Verarbeiten eines E-Rezepts dem Nutzer das Weiterarbeiten im System erlauben. Insbesondere Signaturen sollen gemäß[gemILF_PS#A_23502 - Signaturerstellung im Hintergrund] im Hintergrund verarbeitet werden. Dem Nutzer werden nur bei Fehlermeldungen auffällige und für den Nutzer verständliche Hinweise angezeigt. Erfolgsmeldungen können so in die Benutzeroberfläche integriert werden, dass sie keine Interaktion des Nutzers verlangen und den Nutzer nicht im weiteren Arbeitsprozess stören.
 
 <!-- A_23561 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-154" title="PS verordnende LEI: UX - Verarbeitungsvorgänge im Hintergrund" version="0">
@@ -60,7 +60,7 @@ In den Einstellungen des Primärsystems kann das E-Rezept übergreifend oder fü
 
 #### Default Konfiguration und Vorbelegung für die Erstellung
 
-eines E-Rezeptes Um Rezepte schnell erstellen zu können, soll es möglich sein, in den Einstellungen bestimmte Parameter und Verhalten von neu erstellten E-Rezepten zu setzen. In den Einstellungen des Primärsystems kann für das E-Rezept je Patient der Einlöseweg als Default eingestellt werden (Patientenausdruck, E-Rezept-App oder eGK). Wenn der Ausdruck konfiguriert wurde, wird dann standardmäßig bei jedem E-Rezept automatisch der Patientenausdruck gedruckt. Der Nutzer spart sich in dem Fall einen zusätzlichen Klick bei jedem E-Rezept. Weitere Konfigurationsparameter und Übernahme von hinterlegten Stammdaten können den Verordnungsprozess beschleunigen.
+eines E-Rezeptes Um Rezepte schnell erstellen zu können, soll es möglich sein, in den Einstellungen bestimmte Parameter und Verhalten von neu erstellten E-Rezepten zu setzen. In den Einstellungen des Primärsystems kann für das E-Rezept je Patient der Einlöseweg als Default eingestellt werden (Patientenausdruck, E-Rezept-App oder eGK). Wenn der Ausdruck konfiguriert wurde, wird dann standardmäßig bei jedem E-Rezept automatisch der Patientenausdruck gedruckt. Der Nutzer spart sich in dem Fall einen zusätzlichen Klick bei jedem E-Rezept. Weitere Konfigurationsparameter und Übernahme von hinterlegten Stammdaten können den Verordnungsprozess beschleunigen.
 
 <!-- A_23564 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-157" title="PS verordnende LEI: UX - Defaulteinstellung E-Rezept-Ausdruck" version="0">
@@ -74,7 +74,7 @@ eines E-Rezeptes Um Rezepte schnell erstellen zu können, soll es möglich sein,
 Das Primärsystem soll für die Einführung des patienten-individuellen Konfigurationsparameter einen Defaultwert anbieten.Die initiale Wert der Einstellung kann auf Basis der letztmaligen oder ersten Ausstellung eines E-Rezeptes für den Versicherten gesetzt werden.
 
 <!-- A_23565 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-158" title="PS verordnende LEI: UX – Stammdaten für Arzt und Einrichtung übernehmen" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-158" title="PS verordnende LEI: UX - Stammdaten für Arzt und Einrichtung übernehmen" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -87,7 +87,7 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
 #### Optimaler Klickpfad
 
 <!-- A_23566 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-159" title="PS verordnende LEI: UX - Optimaler Klickpfad" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-159" title="PS verordnende LEI: UX - Optimaler Klickpfad" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend">
         <testProcedure id="Herstellererklärung"/>
@@ -124,14 +124,14 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
         </li>
         <li>Optional: Die Schritte 1 bis 3 können bei mehreren auszustellenden Verordnungen wiederholt werden.</li>
         <li>
-          Mit dem Start des Prozesses „Jetzt Signieren“ durch den Arzt werden alle zur Signatur freigegebenen Verordnungen in einem 
+          Mit dem Start des Prozesses "Jetzt Signieren" durch den Arzt werden alle zur Signatur freigegebenen Verordnungen in einem 
           Hintergrundprozess qualifiziert signiert und in den TI-Flow-Fachdienst eingestellt.
         </li>
         <li>
           Es wird ein Hinweistext angezeigt, wenn das Signieren und das Einstellen in den TI-Flow-Fachdienst erfolgreich abgeschlossen wurde.
         </li>
         <li>
-          Ist die Einstellung „Patientenausdruck erstellen“ gewählt, werden nach dem erfolgreichen Einstellen in den 
+          Ist die Einstellung "Patientenausdruck erstellen" gewählt, werden nach dem erfolgreichen Einstellen in den 
           TI-Flow-Fachdienst die Patientenausdrucke automatisch gedruckt.
         </li>
       </ol>
@@ -208,9 +208,9 @@ Das PS kann dem Nutzer in diesem Arbeitsschritt auch eine Liste der häufig vers
 
 Hinweis: Um den Nutzer hinreichend auf den folgenden Signaturschritt (nach [gemILF_PS#A_19138- PS: Auslösen der Komfortsignatur bei Nachnutzung der Primärsystem-Authentisierung]) hinzuweisen, muss z.B. bei der Verwendung einer Schaltfläche diese deutlich machen, dass
 1. eine Verordnung erzeugt werden wird. Dies kann erreicht werden durch eine
-passende Benennung z.B. mit  "Verordnen", "Dem Rezept hinzufügen".
+passende Benennung z.B. mit  "Verordnen", "Dem Rezept hinzufügen".
 1. im nächsten Schritt die Signatur erfolgen kann. Dies kann erreicht werden, durch eine
-passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" oder durch die Verwendung eines Signatur-Icons.
+passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" oder durch die Verwendung eines Signatur-Icons.
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 600px; margin-bottom: 30px;">
@@ -285,7 +285,7 @@ Hinweis: Mit der Umsetzung der Aufgabenliste für das Signieren der Verordnungen
 Derzeit können nicht alle Verordnungsinhalte, die per Muster 16 zu verschreiben sind, als E-Rezept abgebildet werden. Der Nutzer soll hier nicht überlegen müssen, was er per E- Rezept verschreiben kann und was nicht. In der Benutzerführung soll der Nutzer informiert werden, ob eine Verordnung als E-Rezept erstellt werden kann oder nicht. Um zu vermeiden, dass der Nutzer etwas über die Freitextverordnung verschreibt, was derzeit nicht als E-Rezept zulässig ist, soll der Nutzer bei einer Freitextverordnung darüber in Kenntnis gesetzt werden, was derzeit als E-Rezept verordnet werden darf. Ein aktueller Stand der verfügbaren Features (Umfang der Anwendung E-Rezept) ist auf der gematik/api-erp Seite auf GitHub zu finden.
 
 <!-- A_23576 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-169" title="PS verordnende LEI: UX – Anwendbarkeit E-Rezept" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-169" title="PS verordnende LEI: UX - Anwendbarkeit E-Rezept" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -296,7 +296,7 @@ Derzeit können nicht alle Verordnungsinhalte, die per Muster 16 zu verschreiben
 Freitextverordnungen sollen nur verwendet werden, wenn das Erstellen einer strukturierten Verordnung für PZN, Wirkstoff oder Rezepturen nicht möglich ist.
 
 <!-- A_23577 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-170" title="PS verordnende LEI: UX – Hinweis bei Freitextverordnungen" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-170" title="PS verordnende LEI: UX - Hinweis bei Freitextverordnungen" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -321,7 +321,7 @@ Um weiterführende Informationen zu einer Verordnung zu notieren (z.B. die Diagn
 
 #### Verordnender Arzt aus HBA gefüllt
 
-Beim Erstellen einer Verordnung kann es zu einer Abweichung zwischen dem die Verordnung Erstellenden und dem die Verordnung Signierenden kommen. Dies ist nach der §2 AMVV in Absatz (1) Satz 1 nicht zulässig.Es ist verpflichtend, dass der im Verordnungsdatensatz in author referenzierte Practitioner mit dem im Signaturzertifikat der QES angegebenen Person übereinstimmt.
+Beim Erstellen einer Verordnung kann es zu einer Abweichung zwischen dem die Verordnung Erstellenden und dem die Verordnung Signierenden kommen. Dies ist nach der §2 AMVV in Absatz (1) Satz 1 nicht zulässig.Es ist verpflichtend, dass der im Verordnungsdatensatz in author referenzierte Practitioner mit dem im Signaturzertifikat der QES angegebenen Person übereinstimmt.
 
 <!-- A_23579 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-172" title="PS verordnende LEI: E-Rezept erstellen - author Practitioner gemäß signierendem HBA" version="0">
@@ -334,9 +334,9 @@ Beim Erstellen einer Verordnung kann es zu einer Abweichung zwischen dem die Ver
 
 ##### Sonderfall Vertretungssituation
 
-Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Vertretungsfall" findet keine Anwendung in ZPVS. Wenn Ärzte aufgrund von Urlaub/Krankheit/Abwesenheit in der eigenen Praxis ausfallen, dürfen sie sich von einem Kollegen für maximal bis zu 3 Monate innerhalb von 12 Monaten vertreten lassen. Der Nutzer soll (ggf. für einen bestimmten Zeitraum) entscheiden können, welcher der Vertretungsfälle zutrifft (z.B. im Rechtemanagement des Systems). Das System füllt dann die Informationen zum Verordnenden Arzt in der Verordnung automatisch richtig aus. Dabei gibt es folgende Vertretungsfälle (siehe [https://www.kbv.de/html/erezept.php], Stand 27.02.2023)
+Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Vertretungsfall" findet keine Anwendung in ZPVS. Wenn Ärzte aufgrund von Urlaub/Krankheit/Abwesenheit in der eigenen Praxis ausfallen, dürfen sie sich von einem Kollegen für maximal bis zu 3 Monate innerhalb von 12 Monaten vertreten lassen. Der Nutzer soll (ggf. für einen bestimmten Zeitraum) entscheiden können, welcher der Vertretungsfälle zutrifft (z.B. im Rechtemanagement des Systems). Das System füllt dann die Informationen zum Verordnenden Arzt in der Verordnung automatisch richtig aus. Dabei gibt es folgende Vertretungsfälle (siehe [https://www.kbv.de/html/erezept.php], Stand 27.02.2023)
 
-- **Kollegiale Vertretung**: (nach § 20 Musterberufsordnung): Die/der abwesende Arzt lässt sich von einem fachgleichen Kollegen/in in dessen Praxis vertreten. Die Abrechnung erfolgt über die LANR/BSNR des Vertretenden. Im Datensatz der elektronischen Verordnung erfolgt keine Kennzeichnung einer Vertretungskonstellation, es werden die Daten der ausstellenden Person und der vertretenden Praxis übermittelt.
+- **Kollegiale Vertretung**: (nach § 20 Musterberufsordnung): Die/der abwesende Arzt lässt sich von einem fachgleichen Kollegen/in in dessen Praxis vertreten. Die Abrechnung erfolgt über die LANR/BSNR des Vertretenden. Im Datensatz der elektronischen Verordnung erfolgt keine Kennzeichnung einer Vertretungskonstellation, es werden die Daten der ausstellenden Person und der vertretenden Praxis übermittelt.
 - **Persönliche Vertretung**: Ein Vertreter oder eine Vertreterin wird in der Praxis des Vertretenen tätig, bspw. als dessen Sicherstellungsassistentin im Falle von Kindererziehungszeiten. Rechtsgrundlage wäre hier § 32 Abs. 2, Satz 2 Ärzte- Zulassungsverordnung. Die Abrechnung erfolgt über die LANR/BSNR des Vertretenen. Es muss eine Kennzeichnung des Vertreters im Datensatz erfolgen. Es werden die Daten der vertretenden ausstellenden Person sowie des vertretenen Arztes und dessen Praxis übermittelt.
 
 <!-- A_23580 -->
@@ -366,7 +366,7 @@ Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Vertretungsfa
      Das PS der verordnenden LEI SOLL bei der Vertretungskonstellation "Kollegiale Vertretung" (nach § 20 Musterberufsordnung) den vertretenden Arzt, der die Verordnung ausstellt und signiert, in der Verordnung hinterlegen.
 </requirement>
 
-Der ausstellende (signierende) Arzt wird in KBV_PR_ERP_Composition Composition.author angegeben.
+Der ausstellende (signierende) Arzt wird in KBV_PR_ERP_Composition Composition.author angegeben.
 
 <!-- A_23582 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-176" title="PS verordnende LEI: UX - Vertretungssituation - Persönliche Vertretung" version="0">
@@ -378,7 +378,7 @@ Der ausstellende (signierende) Arzt wird in KBV_PR_ERP_Composition Composition
 </requirement>
 
 Nach der "Technischen Anlage zur elektronischen Arzneimittelversorgung" (P36-34, Stand 15.11.2022) der KBV wird die Verordnung bei der persönlichen Vertretung wie folgt angepasst werden:
-- Der ausstellende (signierende) Arzt wird in KBV_PR_ERP_Composition
+- Der ausstellende (signierende) Arzt wird in KBV_PR_ERP_Composition
 Composition.author hinterlegt.
 - Der verantwortliche (zu vertretende) Arzt wird in KBV_PR_ERP_Composition
 Composition.attester.party hinterlegt.
@@ -388,7 +388,7 @@ Composition.attester.party hinterlegt.
 Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Weiterbildungsassistent" findet keine Anwendung in ZPVS. EinWeiterbildungsassistent ist berechtigt, E-Rezepte auszustellen, solange die ordnungsgemäße Überwachung und Anleitung durch eine Vertragsärztin oder einen Vertragsarzt gewährleistet ist.
 
 <!-- A_23583 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-177" title="PS verordnende LEI: UX – Weiterbildungsassistent - Möglichkeit zur Entscheidung über Weiterbildungsassistent" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-177" title="PS verordnende LEI: UX - Weiterbildungsassistent - Möglichkeit zur Entscheidung über Weiterbildungsassistent" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -397,7 +397,7 @@ Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Weiterbildung
 </requirement>
 
 <!-- A_23584 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-178" title="PS verordnende LEI: UX – Weiterbildungsassistent – Konfiguration ausbildende Person" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-178" title="PS verordnende LEI: UX - Weiterbildungsassistent - Konfiguration ausbildende Person" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -408,7 +408,7 @@ Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Weiterbildung
 Die für den Weiterbildungsassistenten und die ausbildende Person anzugebenden Daten sind in [KBV_ITA_VGEX_Technische_Anlage_ERP] festgelegt.
 
 <!-- A_23585 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-179" title="PS verordnende LEI: UX – Weiterbildungsassistent – E-Rezept erstellen" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-179" title="PS verordnende LEI: UX - Weiterbildungsassistent - E-Rezept erstellen" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -423,7 +423,7 @@ Der Weiterbildungsassistent signiert mit seinem HBA das E-Rezept. Wenn der Weite
 Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um den Anwender dabei zu unterstützen, die gesetzlichen Vorgaben einzuhalten und eine Verordnung erfolgreich im TI-Flow-Fachdienst einzustellen.
 
 <!-- A_27837 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-180" title="PS verordnende LEI: UX - E-T-Rezept – Hinweis T-Rezept" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-180" title="PS verordnende LEI: UX - E-T-Rezept - Hinweis T-Rezept" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -432,7 +432,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 </requirement>
 
 <!-- A_27861 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-181" title="PS verordnende LEI: UX - E-T-Rezept – Automatische Berechnung der Reichdauer" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-181" title="PS verordnende LEI: UX - E-T-Rezept - Automatische Berechnung der Reichdauer" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -441,7 +441,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 </requirement>
 
 <!-- A_27838 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-182" title="PS verordnende LEI: UX - E-T-Rezept – Manuelle Eingabe der Reichdauer" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-182" title="PS verordnende LEI: UX - E-T-Rezept - Manuelle Eingabe der Reichdauer" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -450,7 +450,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 </requirement>
 
 <!-- A_27839 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-183" title="PS verordnende LEI: UX - E-T-Rezept – Warnung Reichdauer" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-183" title="PS verordnende LEI: UX - E-T-Rezept - Warnung Reichdauer" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -545,10 +545,10 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
 
 #### Zentrale Aufgabenliste
 
-Ein Arzt arbeitet in seinem Arbeitsablauf verschiedene Signaturaufgaben (bspw. für die Elektronische Arbeitsunfähigkeitsbescheinigung oder das E-Rezept) ab. Diese sollen ihm im Primärsystem an einer zentralen Stelle (im Folgenden als „Aufgabenliste“ bezeichnet) angezeigt werden, sodass die Aufgaben einfach zu finden und zu bearbeiten sind. Diese Aufgabenliste soll sortier- und filterbar sein. In Gemeinschaftspraxis, wo bspw. mehrere Ärzte gemeinsam Patienten behandeln, soll es möglich sein die Rezepte anderer Kollegen einzusehen und zu signieren.
+Ein Arzt arbeitet in seinem Arbeitsablauf verschiedene Signaturaufgaben (bspw. für die Elektronische Arbeitsunfähigkeitsbescheinigung oder das E-Rezept) ab. Diese sollen ihm im Primärsystem an einer zentralen Stelle (im Folgenden als "Aufgabenliste" bezeichnet) angezeigt werden, sodass die Aufgaben einfach zu finden und zu bearbeiten sind. Diese Aufgabenliste soll sortier- und filterbar sein. In Gemeinschaftspraxis, wo bspw. mehrere Ärzte gemeinsam Patienten behandeln, soll es möglich sein die Rezepte anderer Kollegen einzusehen und zu signieren.
 
 <!-- A_23595 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-192" title="PS verordnende LEI: UX – Aufgabenliste" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-192" title="PS verordnende LEI: UX - Aufgabenliste" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -568,7 +568,7 @@ Zu den relevanten Informationen einer Verordnung gehören Patient, Medikament, E
 <br>
 
 <!-- A_23596 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-193" title="PS verordnende LEI: UX – Aufgabenliste - Filtern und Sortieren" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-193" title="PS verordnende LEI: UX - Aufgabenliste - Filtern und Sortieren" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -578,10 +578,10 @@ Zu den relevanten Informationen einer Verordnung gehören Patient, Medikament, E
 
 #### Erstellen von Folgerezepten durch MFA
 
-Für einen effizienten Arbeitsablauf soll ein MFA E-Rezepte anlegen, ausfüllen und anschließend dem Arzt zum Signieren vorlegen können. Hierbei soll der behandelnde Arzt über die Patientenakte automatisch ausgewählt werden, um das Rezept in der Aufgabenliste einem Arzt zuordnen zu können (siehe auch Kap. 1.2.2 Default Konfiguration und Vorbelegung für die Erstellung eines E-Rezeptes). Das System muss verhindern,  dass ein Rezept von einer Person ohne persönlichen HBA signiert werden kann. Das bedeutet insbesondere, dass aus dem Benutzeraccount einer MFA nicht auf die Komfortsignatur des Arztes zugegriffen werden kann. Es darf lediglich gespeichert werden, um es dem Arzt dann zum Signieren zu übergeben.
+Für einen effizienten Arbeitsablauf soll ein MFA E-Rezepte anlegen, ausfüllen und anschließend dem Arzt zum Signieren vorlegen können. Hierbei soll der behandelnde Arzt über die Patientenakte automatisch ausgewählt werden, um das Rezept in der Aufgabenliste einem Arzt zuordnen zu können (siehe auch Kap. 1.2.2 Default Konfiguration und Vorbelegung für die Erstellung eines E-Rezeptes). Das System muss verhindern,  dass ein Rezept von einer Person ohne persönlichen HBA signiert werden kann. Das bedeutet insbesondere, dass aus dem Benutzeraccount einer MFA nicht auf die Komfortsignatur des Arztes zugegriffen werden kann. Es darf lediglich gespeichert werden, um es dem Arzt dann zum Signieren zu übergeben.
 
 <!-- A_23586 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-194" title="PS verordnende LEI: UX – Anlegen eines E-Rezeptes durch MFA" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-194" title="PS verordnende LEI: UX - Anlegen eines E-Rezeptes durch MFA" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -590,7 +590,7 @@ Für einen effizienten Arbeitsablauf soll ein MFA E-Rezepte anlegen, ausfüllen 
 </requirement>
 
 <!-- A_23587 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-195" title="PS verordnende LEI: UX – Keine Signatur von Nutzern ohne HBA" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-195" title="PS verordnende LEI: UX - Keine Signatur von Nutzern ohne HBA" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -603,7 +603,7 @@ Für einen effizienten Arbeitsablauf soll ein MFA E-Rezepte anlegen, ausfüllen 
 Um eine zeitnahe Bearbeitung von Signaturaufgaben des Arztes zu ermöglichen, soll der Arzt auf diese in Form einer Benachrichtigung hingewiesen werden. So können noch nicht signierte und vorbereitete E-Rezepte schneller signiert werden. Das System kann den Arzt in verschiedenen Formen bspw. Pushnachrichten oder Statusfeld über die Anzahl der offenen Aufgaben benachrichtigen.
 
 <!-- A_23597 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-196" title="PS verordnende LEI: UX – Aufgabenliste – Benachrichtigungen für neue Aufgaben" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-196" title="PS verordnende LEI: UX - Aufgabenliste - Benachrichtigungen für neue Aufgaben" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -616,7 +616,7 @@ Um eine zeitnahe Bearbeitung von Signaturaufgaben des Arztes zu ermöglichen, so
 Der Verordnende hat die Möglichkeit die in der Aufgabenliste vorbereiteten Verordnungen vor dem Signieren zu prüfen. Er soll aus der Aufgabenliste heraus einzelne Einträge bearbeiten können. Er soll aus der Aufgabenliste heraus die Informationen des Patienten, für den das E-Rezept ausgestellt werden soll, einsehen können, falls er für die Prüfung weitere Informationen zum Patienten benötigt.
 
 <!-- A_23599 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-197" title="PS verordnende LEI: UX – Aufgabenliste - Bearbeiten einzelner Einträge" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-197" title="PS verordnende LEI: UX - Aufgabenliste - Bearbeiten einzelner Einträge" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -625,7 +625,7 @@ Der Verordnende hat die Möglichkeit die in der Aufgabenliste vorbereiteten Vero
 </requirement>
 
 <!-- A_23600 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-198" title="PS verordnende LEI: UX – Aufgabenliste - Zugriff auf Patientendaten" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-198" title="PS verordnende LEI: UX - Aufgabenliste - Zugriff auf Patientendaten" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -634,7 +634,7 @@ Der Verordnende hat die Möglichkeit die in der Aufgabenliste vorbereiteten Vero
 </requirement>
 
 <!-- A_23601 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-199" title="PS verordnende LEI: UX – Aufgabenliste - Grafische Anzeige E-Rezepte" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-199" title="PS verordnende LEI: UX - Aufgabenliste - Grafische Anzeige E-Rezepte" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -644,10 +644,10 @@ Der Verordnende hat die Möglichkeit die in der Aufgabenliste vorbereiteten Vero
 
 #### Sammelbearbeitung der Aufgaben (Signieren)
 
-Wie in[gemILF_PS#A_23503 - Bündeln von Signaturen zur Stapelsignatur] beschrieben, muss der Arzt Signaturen bündeln und als Sammelbearbeitung abarbeiten können. Dies gilt auch für das Signieren von E-Rezepten.
+Wie in[gemILF_PS#A_23503 - Bündeln von Signaturen zur Stapelsignatur] beschrieben, muss der Arzt Signaturen bündeln und als Sammelbearbeitung abarbeiten können. Dies gilt auch für das Signieren von E-Rezepten.
 
 <!-- A_23598 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-200" title="PS verordnende LEI: UX – Aufgabenliste - Mehrfachauswahl zur Signatur" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-200" title="PS verordnende LEI: UX - Aufgabenliste - Mehrfachauswahl zur Signatur" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend">
         <testProcedure id="Herstellererklärung"/>
@@ -687,7 +687,7 @@ Beispiel für eine Nachricht: "Ihr E-Rezept wurde soeben von Ihrem Arzt untersch
 
 #### Bei Ausfall auf Muster 16 zurückgreifen
 
-Wenn es technisch nicht möglich ist ein E-Rezept auszustellen (Ausfall einer der relevanten Komponenten), wird automatisch ein Muster 16 mit dem Verordnungsinhalt ausgewählt. Dem Nutzer wird ein Hinweis eingeblendet, dass es aktuell nicht möglich ist, ein E-Rezept auszustellen. Um festzustellen, ob relevante Komponenten der TI nicht erreichbar sind, kann ein einfacher Healthcheck (https://github.com/gematik/api-erp/blob/master/docs/erp_ps_probing.adoc#einfacher-health-check )  genutzt werden. Es sollte ebenfalls auf ein Muster 16 zurückgegriffen werden, wenn beim Erstellen eines Rezeptes in der Kommunikation mit den Diensten der TI ein Fehler auftritt.
+Wenn es technisch nicht möglich ist ein E-Rezept auszustellen (Ausfall einer der relevanten Komponenten), wird automatisch ein Muster 16 mit dem Verordnungsinhalt ausgewählt. Dem Nutzer wird ein Hinweis eingeblendet, dass es aktuell nicht möglich ist, ein E-Rezept auszustellen. Um festzustellen, ob relevante Komponenten der TI nicht erreichbar sind, kann ein einfacher Healthcheck (https://github.com/gematik/api-erp/blob/master/docs/erp_ps_probing.adoc#einfacher-health-check )  genutzt werden. Es sollte ebenfalls auf ein Muster 16 zurückgegriffen werden, wenn beim Erstellen eines Rezeptes in der Kommunikation mit den Diensten der TI ein Fehler auftritt.
 
 <!-- A_23604 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-203" title="PS verordnende LEI: UX - Verhalten bei Ausfall von TI Komponenten des E-Rezepts" version="0">
@@ -727,7 +727,7 @@ Die Bereitstellung der Fehlerdetails per Email o.Ä. steht mit diesen Anforderun
 ##### Status des E-Rezepts bei Versuch es zu löschen
 
 Ein Arzt kann ein von ihm ausgestelltes E-Rezept löschen. Wenn das nicht möglich ist, soll der Arzt aus dem PS heraus den Grund erkennen können, um besser darauf reagieren zu können. Wenn versucht wird das Rezept zu löschen, sind folgende Fehlermeldungen auszuwerten:
-- Returncode 403 - Forbidden: Das Rezept ist gesperrt und befindet sich in Bearbeitung bei einer Apotheke. Solange das E-Rezept noch nicht durch die Apotheke beliefert wurde, kann es durch die Apotheke gelöscht werden.
+- Returncode 403 - Forbidden: Das Rezept ist gesperrt und befindet sich in Bearbeitung bei einer Apotheke. Solange das E-Rezept noch nicht durch die Apotheke beliefert wurde, kann es durch die Apotheke gelöscht werden.
 - Returncode 410 - Gone: Das Rezept wurde bereits gelöscht und ist nicht mehr im TI-Flow-Fachdienst verfügbar
 
 <!-- A_23607-01 -->

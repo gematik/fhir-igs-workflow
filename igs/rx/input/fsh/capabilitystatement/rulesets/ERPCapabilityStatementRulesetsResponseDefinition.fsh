@@ -1,10 +1,10 @@
 // Errors for all Resource Endpoints
 RuleSet: GlobalQueryErrorCodes
-* rest.resource[=].interaction[=] insert Unauthorized
+
 * rest.resource[=].interaction[=] insert InvalidRequest
-* rest.resource[=].interaction[=] insert MethodNotAllowed
+
 * rest.resource[=].interaction[=] insert RequestTimeout
-* rest.resource[=].interaction[=] insert TooManyRequests
+
 * rest.resource[=].interaction[=] insert InternalServerError
 
 // Query-API Interactions
@@ -44,17 +44,23 @@ RuleSet: SearchTypeInteractionStatusCodes
 // Operation-API Error-Constellations
 
 RuleSet: GlobalOperationErrorCodes
-* insert Unauthorized
+
 * insert InvalidRequest
-* insert MethodNotAllowed
+
 * insert RequestTimeout
-* insert TooManyRequests
+
 * insert InternalServerError
 
 RuleSet: InstanceOperationStatusCodes
 * insert ResourceIsNotKnown
 * insert ResourceWasDeleted
 * insert GlobalOperationErrorCodes
+
+RuleSet: SubscriptionSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: SubscriptionCreateInteractionStatusCodes
+* insert CreateInteractionStatusCodes
 
 // Konkrete Operationen
 
