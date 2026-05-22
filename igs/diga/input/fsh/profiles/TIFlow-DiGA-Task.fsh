@@ -24,7 +24,7 @@ and TIFlowExpiryDate named expiryDate 0..1 MS
 // QES Binary ePrescription
 * input[ePrescription] 0..1 MS
   * ^short = "QES-Binary der DiGA Verordnung"
-  * value[x] only Reference(GEM_ERP_PR_Binary)
+  * value[x] only Reference(TIFlowDiGABinary)
   * type.coding 1..1
   * type.coding from GEM_ERP_VS_DocumentType (required)
     * system 1..1

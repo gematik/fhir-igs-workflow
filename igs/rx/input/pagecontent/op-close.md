@@ -23,7 +23,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$close` gesendet.
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-CloseOperation.json %}
+			{% include OperationDefinition-tiflow-rx-close-op.json %}
 		</pre>
 	</div>
 	<div id="Request-Examples">
