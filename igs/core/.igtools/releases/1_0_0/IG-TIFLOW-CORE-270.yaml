@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 1f21b9ebc0411c420c5a6b96a97fe937b107e4409c8fa6fac9ae3af47823e95f
+content_hash: 90303ffe809f487b07b570361ae551f092bb1a792bc473afff1dc01e10bb6cdb
 created: '2026-03-23T10:57:48.484484'
-date: '2026-05-21T07:13:04.355862'
+date: '2026-05-22T10:10:19.314934'
 key: IG-TIFLOW-CORE-270
-modified: '2026-05-21T07:13:04.355862'
+modified: '2026-05-22T10:10:19.314934'
 release_status: MODIFIED
 source: input/pagecontent/query-api-pushers-req-fd.md
 status: ACTIVE
@@ -15,13 +15,10 @@ test_procedures:
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /pushers die zeta-user-info.professionOID\
   \ des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\
   \ \n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation aufrufen, und bei\
-  \ Abweichungen mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
-  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403\
-  \ - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
-  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
-  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
-  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
-  \ </tr>\n </table> \n abbrechen, damit die Operation nicht durch unberechtigte Dritte\
-  \ ausgeführt wird."
+  \ Abweichungen mit dem folgenden Fehler:\n <table id=\"error-code-json\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Error Code</th>\n <td>invalidOid</td>\n\
+  \ </tr>\n <tr>\n <th>Error Details</th>\n <td>-</td>\n </tr> \n </table> \n abbrechen,\
+  \ damit die Operation nicht durch unberechtigte Dritte ausgeführt wird."
 title: TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Rollenprüfung
 version: 1
