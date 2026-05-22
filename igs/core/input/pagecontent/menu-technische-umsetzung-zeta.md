@@ -25,25 +25,22 @@ Folgende Berufe und Einrichtungsarten sind zugelassen:
 
 ##### Akteure & OIDs
 
-| Akteur | OID(s) | Kurzname |
-|---|---|---|
-| Versicherter | `1.2.276.0.76.4.49` | `VERS` |
-| Betriebsstätte Arzt | `1.2.276.0.76.4.50` | `VERO` |
-| Zahnarztpraxis | `1.2.276.0.76.4.51` | `VERO` |
-| Betriebsstätte Psychotherapeut | `1.2.276.0.76.4.52` | `VERO` |
-| Krankenhaus | `1.2.276.0.76.4.53` | `VERO` |
-| Öffentliche Apotheke | `1.2.276.0.76.4.54` | `APO` |
-| Krankenhausapotheke | `1.2.276.0.76.4.55` | `APO` |
-| Institution Vorsorge/Reha | `1.2.276.0.76.4.56` | `VERO` |
-| Kostenträger | `1.2.276.0.76.4.59` | `KT` |
-| NCPeH-FD / EU | `1.2.276.0.76.4.292` | `NCPEH` |
+| Akteur | OID(s) |
+|---|---|
+| Versicherter | `1.2.276.0.76.4.49` |
+| Betriebsstätte Arzt | `1.2.276.0.76.4.50` |
+| Zahnarztpraxis | `1.2.276.0.76.4.51` |
+| Betriebsstätte Psychotherapeut | `1.2.276.0.76.4.52` |
+| Krankenhaus | `1.2.276.0.76.4.53` |
+| Öffentliche Apotheke | `1.2.276.0.76.4.54` |
+| Krankenhausapotheke | `1.2.276.0.76.4.55` |
+| Institution Vorsorge/Reha | `1.2.276.0.76.4.56` |
+| Kostenträger | `1.2.276.0.76.4.59` |
+| NCPeH-Fachdienst | `1.2.276.0.76.4.292` |
 
 ##### Prüfung der Client-Anwendung
 
 Diese Regel verifiziert, dass das anfragende Clientsystem in der genutzten Version für den Zugriff bei der gematik registriert sind. Jede Software, die auf das System zugreifen möchte, identifiziert sich mit einer Produktkennung (product_id) und einer Versionsnummer (product_version).
-
-<!-- ToDo: warum sollte die Regel deaktiviert sein? -->
-**Disclaimer: Diese Regel ist vorerst deaktiviert**
 
 **Was wird geprüft?**
 Es wird geprüft, ob die Kombination aus Produkt und Version in einer Liste der erlaubten Software-Versionen enthalten ist.
@@ -80,9 +77,8 @@ Diese Regel kontrolliert, auf welche Zielsysteme oder Datenbereiche ("Audiences"
 Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der Liste der erlaubten Ressourcen enthalten sind. Ähnlich wie bei den Berechtigungen müssen **alle** angefragten "Audiences" erlaubt sein.
 
 **Beispiel:**
-<!-- ToDo: Macht dieses Beispiel Sinn, da sich die Policy auf den inneren Request bezieht? -->
-* Erlaubte Ziel-Ressourcen: `/Task`
-* Anwendung fordert Zugriff auf: `/Task` -> **Erfolg**
+* Erlaubte Ziel-Ressourcen: `rx/Task`
+* Anwendung fordert Zugriff auf: `rx/Task` -> **Erfolg**
 * Anwendung fordert Zugriff auf: `/eRezept` -> **Fehler** (da `eRezept` unbekannt und somit nicht erlaubt ist)
 
 
@@ -114,7 +110,7 @@ Es gibt zwei Arten von Token:
 
 policies:
 
-  # ── Medikamente ─────────────────────────────────────────────────────────────
+  # ── Arzneimittel ─────────────────────────────────────────────────────────────
 
   "tif-rx-task-prescribe": {
       "description": "E-Rezept verordnen",
