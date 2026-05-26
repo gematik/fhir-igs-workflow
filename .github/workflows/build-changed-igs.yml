@@ -499,6 +499,10 @@ jobs:
           run_pipeline() {
             local ig="$1"
             local fs_cmd=""
+            local root_publisher="$GITHUB_WORKSPACE/input-cache/publisher.jar"
+            local ig_input_cache="igs/$ig/input-cache"
+            local ig_publisher="$ig_input_cache/publisher.jar"
+
             if command -v fhirscripts >/dev/null 2>&1; then
               fs_cmd="fhirscripts"
             elif command -v fhirscripts-dev >/dev/null 2>&1; then
@@ -506,6 +510,15 @@ jobs:
             else
               echo "Neither fhirscripts nor fhirscripts-dev is available in PATH" >&2
               return 1
+            fi
+
+            # Keep IG Publisher discoverable for IG-local fhirscripts runs.
+            # TODO: Remove once fhirscripts resolves publisher from workspace root automatically.
+            mkdir -p "$ig_input_cache"
+            if [[ -f "$root_publisher" ]]; then
+              cp -f "$root_publisher" "$ig_publisher"
+            else
+              echo "Warning: Root publisher jar not found at $root_publisher" >&2
             fi
 
             # Ensure required tools (e.g. IG Publisher) are present before build.
