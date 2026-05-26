@@ -113,8 +113,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.620"],
     "uses" : {
     },
-    "StructureDefinition-tiflow-op-accept-bundle.html" : "Bundle der $accept Operation",
-    "StructureDefinition-tiflow-receipt-bundle.html" : "TIFlow Receipt Bundle"
+    "StructureDefinition-tiflow-receipt-bundle.html" : "TIFlow Receipt Bundle",
+    "StructureDefinition-tiflow-op-accept-bundle.html" : "Bundle der $accept Operation"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/capability-statement-kind",
@@ -352,8 +352,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.624"],
     "uses" : {
     },
-    "StructureDefinition-tiflow-op-accept-bundle.html" : "Bundle der $accept Operation",
-    "StructureDefinition-tiflow-receipt-bundle.html" : "TIFlow Receipt Bundle"
+    "StructureDefinition-tiflow-receipt-bundle.html" : "TIFlow Receipt Bundle",
+    "StructureDefinition-tiflow-op-accept-bundle.html" : "Bundle der $accept Operation"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/identifier-type",
@@ -441,16 +441,16 @@
     "sources" : ["2.16.840.1.113883.4.642.3.20"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-Binary.html" : "GEM ERP PR Binary",
-    "StructureDefinition-ti-flow-capability-statement.html" : "Capability Statement Profil für den TI-Flow-Fachdienst",
-    "StructureDefinition-ti-task.html" : "Task für TIFlow Anwendungen",
     "StructureDefinition-GEM-ERP-PR-Device.html" : "GEM ERP PR Device",
+    "StructureDefinition-GEM-ERP-PR-Digest.html" : "GEM ERP PR Digest",
+    "StructureDefinition-audit-event-rest.html" : "TI Audit Event Rest",
+    "StructureDefinition-ti-task.html" : "Task für TIFlow Anwendungen",
+    "StructureDefinition-tiflow-receipt-bundle.html" : "TIFlow Receipt Bundle",
     "StructureDefinition-tiflow-op-accept-bundle.html" : "Bundle der $accept Operation",
     "StructureDefinition-tiflow-operation-outcome.html" : "TIFlow OperationOutcome",
     "StructureDefinition-tiflow-receipt-composition.html" : "GEM ERP PR Composition",
-    "StructureDefinition-tiflow-receipt-bundle.html" : "TIFlow Receipt Bundle",
-    "StructureDefinition-GEM-ERP-PR-Digest.html" : "GEM ERP PR Digest",
-    "StructureDefinition-audit-event-rest.html" : "TI Audit Event Rest"
+    "StructureDefinition-GEM-ERP-PR-Binary.html" : "GEM ERP PR Binary",
+    "StructureDefinition-ti-flow-capability-statement.html" : "Capability Statement Profil für den TI-Flow-Fachdienst"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/list-empty-reason",
@@ -520,10 +520,10 @@
     "sources" : ["2.16.840.1.113883.4.642.3.1024"],
     "uses" : {
     },
+    "StructureDefinition-GEM-ERP-PR-Digest.html" : "GEM ERP PR Digest",
     "StructureDefinition-GEM-ERP-PR-Binary.html" : "GEM ERP PR Binary",
     "StructureDefinition-ti-flow-capability-statement.html" : "Capability Statement Profil für den TI-Flow-Fachdienst",
-    "StructureDefinition-GEM-ERP-PR-Signature.html" : "GEM_ERP_PR_Signature",
-    "StructureDefinition-GEM-ERP-PR-Digest.html" : "GEM ERP PR Digest"
+    "StructureDefinition-GEM-ERP-PR-Signature.html" : "GEM_ERP_PR_Signature"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/network-type",
@@ -654,11 +654,11 @@
     "sources" : ["2.16.840.1.113883.4.642.3.27"],
     "uses" : {
     },
-    "StructureDefinition-ti-flow-capability-statement.html" : "Capability Statement Profil für den TI-Flow-Fachdienst",
+    "StructureDefinition-audit-event-rest.html" : "TI Audit Event Rest",
     "StructureDefinition-ti-task.html" : "Task für TIFlow Anwendungen",
-    "StructureDefinition-GEM-ERP-PR-Signature.html" : "GEM_ERP_PR_Signature",
     "StructureDefinition-tiflow-receipt-composition.html" : "GEM ERP PR Composition",
-    "StructureDefinition-audit-event-rest.html" : "TI Audit Event Rest"
+    "StructureDefinition-ti-flow-capability-statement.html" : "Capability Statement Profil für den TI-Flow-Fachdienst",
+    "StructureDefinition-GEM-ERP-PR-Signature.html" : "GEM_ERP_PR_Signature"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/restful-capability-mode",
@@ -700,8 +700,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.622"],
     "uses" : {
     },
-    "StructureDefinition-tiflow-op-accept-bundle.html" : "Bundle der $accept Operation",
-    "StructureDefinition-tiflow-receipt-bundle.html" : "TIFlow Receipt Bundle"
+    "StructureDefinition-tiflow-receipt-bundle.html" : "TIFlow Receipt Bundle",
+    "StructureDefinition-tiflow-op-accept-bundle.html" : "Bundle der $accept Operation"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/search-param-type",
@@ -870,11 +870,11 @@
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/v3-ActCode",
-    "version" : "3.0.0",
+    "version" : "2018-08-12",
     "status" : "active",
-    "name" : "ActCode",
+    "name" : "v3.ActCode",
     "title" : "v3 Code System ActCode",
-    "description" : "A code specifying the particular kind of Act that the Act-instance represents within its class.  Constraints:\r\nThe kind of Act (e.g. physical examination, serum potassium, inpatient encounter, charge financial transaction, etc.) is specified with a code from one of several, typically external, coding systems.  The coding system will depend on the class of Act, such as LOINC for observations, etc. Conceptually, the Act.code must be a specialization of the Act.classCode. This is why the structure of ActClass domain should be reflected in the superstructure of the ActCode domain and then individual codes or externally referenced vocabularies subordinated under these domains that reflect the ActClass structure. Act.classCode and Act.code are not modifiers of each other but the Act.code concept should really imply the Act.classCode concept. For a negative example, it is not appropriate to use an Act.code \"potassium\" together with and Act.classCode for \"laboratory observation\" to somehow mean \"potassium laboratory observation\" and then use the same Act.code for \"potassium\" together with Act.classCode for \"medication\" to mean \"substitution of potassium\". This mutually modifying use of Act.code and Act.classCode is not permitted.",
+    "description" : " A code specifying the particular kind of Act that the Act-instance represents within its class.  Constraints:\r\nThe kind of Act (e.g. physical examination, serum potassium, inpatient encounter, charge financial transaction, etc.) is specified with a code from one of several, typically external, coding systems.  The coding system will depend on the class of Act, such as LOINC for observations, etc. Conceptually, the Act.code must be a specialization of the Act.classCode. This is why the structure of ActClass domain should be reflected in the superstructure of the ActCode domain and then individual codes or externally referenced vocabularies subordinated under these domains that reflect the ActClass structure. Act.classCode and Act.code are not modifiers of each other but the Act.code concept should really imply the Act.classCode concept. For a negative example, it is not appropriate to use an Act.code \"potassium\" together with and Act.classCode for \"laboratory observation\" to somehow mean \"potassium laboratory observation\" and then use the same Act.code for \"potassium\" together with Act.classCode for \"medication\" to mean \"substitution of potassium\". This mutually modifying use of Act.code and Act.classCode is not permitted.",
     "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
     "uses" : {
     },
@@ -896,11 +896,11 @@
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/v3-PurposeOfUse",
-    "version" : "3.1.0",
+    "version" : "2014-03-26",
     "status" : "active",
-    "name" : "PurposeOfUse",
-    "title" : "PurposeOfUse",
-    "description" : "Supports communication of purpose of use at a general level.",
+    "name" : "v3.PurposeOfUse",
+    "title" : "V3 Value SetPurposeOfUse",
+    "description" : " Supports communication of purpose of use at a general level.",
     "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActReason"],
     "oids" : ["2.16.840.1.113883.1.11.20448"],
     "sources" : ["2.16.840.1.113883.1.11.20448"],

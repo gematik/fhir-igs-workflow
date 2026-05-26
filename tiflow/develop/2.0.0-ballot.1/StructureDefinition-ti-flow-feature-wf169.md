@@ -21,9 +21,9 @@ Featurebeschreibung für die Verordnung von Apothekenpflichtigen Arzneimitteln m
 
 **Usages:**
 
-* This Logical Model is not used by any profiles in this Implementation Guide
+* This Logical Model is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/ti-flow-feature-wf169)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow|current/StructureDefinition/StructureDefinition-ti-flow-feature-wf169.json)
 
 ### Formal Views of Profile Content
 

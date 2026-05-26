@@ -13,7 +13,7 @@ Version 2.0.0-ballot.1 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition | *Version*:2.0.0-ballot.1 |
-| Draft as of 2026-05-22 | *Computable Name*:TIFeatureDefinition |
+| Draft as of 2026-05-26 | *Computable Name*:TIFeatureDefinition |
 
  
 Logical Model zur Beschreibung eines aktivierbaren Features. 
@@ -22,7 +22,7 @@ Logical Model zur Beschreibung eines aktivierbaren Features.
 
 * Derived from this Logical Model: [Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel](StructureDefinition-ti-flow-feature-wf160.md) and [Feature: WF169 - Flowtype für Apothekenpflichtige Arzneimittel mit Steuerung durch den Leistungserbringer](StructureDefinition-ti-flow-feature-wf169.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/ti-feature-definition)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow|current/StructureDefinition/StructureDefinition-ti-feature-definition.json)
 
 ### Formal Views of Profile Content
 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-feature-definitio
   "name" : "TIFeatureDefinition",
   "title" : "TI Feature Definition",
   "status" : "draft",
-  "date" : "2026-05-22T13:53:02+00:00",
+  "date" : "2026-05-26T05:55:50+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

@@ -15,10 +15,6 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consen
 
 ### Einwilligung erteilen
 
-**Sequenzdiagramm:**
-
-**Abbildung: **UC 3.14 - Einwilligung durch Versicherten erteilen
-
 funkt. Eignung: HerstellererklärungDas E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" den Text für die Einwilligung derart gestalten, dass dem Nutzer eine informierte Einwilligung möglich ist. Insbesondere MÜSSEN enthalten sein: der Verwendungszweck, die konkreten Informationen über die Art der erhobenen Daten, die Speicherdauer, Hinweis auf Freiwilligkeit, auf Widerrufsrecht, Hinweis auf die Folgen bei Verweigerung oder Widerruf.
 
 funkt. Eignung: HerstellererklärungDas E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" es dem Nutzer ermöglichen, die Einwilligung einzugeben.
@@ -33,18 +29,10 @@ funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "Einwilli
 ausführen.
 ### Einwilligungen einsehen
 
-**Sequenzdiagramm:**
-
-**Abbildung: **UC 3.13 - Einwilligungen durch Versicherten einsehen
-
 funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "Einwilligungsinformation abrufen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /Consent mit ausführen.
 In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwilligungstyp des Consent ist in Consent.category.coding.code angegeben. Die Werte können sich auf folgende Codesysteme beziehen: [GEM_ERPCHRG_CS_ConsentType], [GEM_ERPEU_CS_ConsentType].
 
 ### Einwilligung widerrufen
-
-**Sequenzdiagramm:**
-
-**Abbildung: **UC 3.15 - Einwilligung durch Versicherten widerrufen
 
 funkt. Eignung: HerstellererklärungDas E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" es dem Nutzer ermöglichen, den Widerruf zu erfassen.
 

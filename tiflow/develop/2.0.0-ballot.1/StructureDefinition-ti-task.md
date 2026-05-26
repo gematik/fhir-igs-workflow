@@ -23,7 +23,7 @@ Task für die Verwaltung von Workflows der TIFlow Anwendungen
 
 * Use this Profile: [Bundle der $accept Operation](StructureDefinition-tiflow-op-accept-bundle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/ti-task)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow|current/StructureDefinition/StructureDefinition-ti-task.json)
 
 ### Formal Views of Profile Content
 

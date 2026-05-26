@@ -22,9 +22,9 @@ Das AuditEvent-Profil für die Protokollierung des Zugriffs auf einen FHIR Data 
 **Usages:**
 
 * CapabilityStatements using this Profile: [CapabilityStatement für den TI-Flow-Fachdienst](CapabilityStatement-ti-flow-fachdienst-server.md)
-* This Profile is not used by any profiles in this Implementation Guide
+* This Profile is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/audit-event-rest)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow|current/StructureDefinition/StructureDefinition-audit-event-rest.json)
 
 ### Formal Views of Profile Content
 

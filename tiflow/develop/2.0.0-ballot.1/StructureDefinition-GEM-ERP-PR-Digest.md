@@ -23,7 +23,7 @@ QES-Digest in Binary
 
 * Use this Profile: [TIFlow Receipt Bundle](StructureDefinition-tiflow-receipt-bundle.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/GEM-ERP-PR-Digest)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow|current/StructureDefinition/StructureDefinition-GEM-ERP-PR-Digest.json)
 
 ### Formal Views of Profile Content
 

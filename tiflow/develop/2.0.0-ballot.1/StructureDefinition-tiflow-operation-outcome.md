@@ -21,9 +21,9 @@ OperationOutcome für Angabe von Fehlermeldungen vom TI-Flow-Fachdienst
 
 **Usages:**
 
-* This Profile is not used by any profiles in this Implementation Guide
+* This Profile is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/de.gematik.tiflow|current/StructureDefinition/tiflow-operation-outcome)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow|current/StructureDefinition/StructureDefinition-tiflow-operation-outcome.json)
 
 ### Formal Views of Profile Content
 

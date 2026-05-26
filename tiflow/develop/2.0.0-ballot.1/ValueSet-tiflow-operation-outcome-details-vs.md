@@ -104,7 +104,7 @@ Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werde
     },
     {
       "system" : "http://terminology.hl7.org/CodeSystem/operation-outcome",
-      "version" : "4.0.0",
+      "version" : "4.0.1",
       "concept" : [{
         "code" : "MSG_RESOURCE_ID_MISMATCH",
         "display" : "Resource Id Mismatch"
