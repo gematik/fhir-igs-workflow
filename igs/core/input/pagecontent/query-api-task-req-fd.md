@@ -74,7 +74,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnunge
 <!-- eGK in der Apotheke -->
 
 <!-- A_22432-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-98" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - Prüfung PoPP-Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-98" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - Prüfung PoPP-Token" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produktgutachten"/>
@@ -108,7 +108,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnunge
 Die Anforderungen zum Prüfen des PoPP-Token sind im Kapitel "HTTP-Operation GET - Prüfung PoPP-Token" beschrieben.
 
 <!-- A_23399-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-99" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - PoPP - Zeitraum Akzeptanz PoPP-Token" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-99" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - PoPP - Zeitraum Akzeptanz PoPP-Token" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Produkttest"/>
