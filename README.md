@@ -16,19 +16,29 @@ Each IG is a self-contained IG Publisher project with its own ig.ini, sushi-conf
 
 ## Build one IG
 
-Example:
+Run the pipeline from the IG directory:
 
 ```shell
-./build-all.sh --ig [list of ig names]
-
-# Beispiel
-- ./build-all.sh --ig rx erp-eu
+cd igs/rx
+fhirscripts install
+fhirscripts build pipeline
 ```
 
-## Build all IGs
+If your local binary is named `fhirscripts-dev`, use that command instead.
+
+## Build multiple IGs
+
+Build IGs sequentially (core first):
 
 ```shell
-./build-all.sh
+for ig in core bfarm diga erp-chrg erp-eu rx; do
+	echo "=== Building $ig ==="
+	(
+		cd "igs/$ig"
+		fhirscripts install
+		fhirscripts build pipeline
+	)
+done
 ```
 
 ## Devcontainer (Windows-friendly)
@@ -43,20 +53,19 @@ Steps:
 4) Build an IG inside the container:
 
 ```shell
-./build-all.sh --ig rx
+cd igs/rx
+fhirscripts install
+fhirscripts build pipeline
 ```
 
 Notes:
 
 - The container installs Java, `yq`, `fsh-sushi`, `igtools`, draw.io (headless), Google Cloud CLI, and Firely Terminal.
-- Optional steps are enabled by default inside the container:
-	- `BUILD_USE_IGTOOLS=true`
-	- `BUILD_GENERATE_DRAWIO_IMAGES=true`
 - draw.io runs via `xvfb` and uses `DRAWIO_APP=/usr/local/bin/drawio`.
 
 ## Notes
 
-- The publisher JAR is shared under tools/publisher/ and downloaded on first build.
+- `fhirscripts install` ensures required tooling is available for the selected IG pipeline.
 - All IGs target FHIR R4 (4.0.1).
 
 ## License
