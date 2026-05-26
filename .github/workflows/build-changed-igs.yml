@@ -508,6 +508,8 @@ jobs:
             fi
           }
 
+          # TODO: Remove this core-first orchestration once fhirscripts natively
+          # handles local core dependency bootstrapping in CI.
           if [[ "${{ steps.igs.outputs.ig_mode }}" == "all" ]]; then
             for ig in ${{ steps.igs.outputs.ig_list }}; do
               if [[ "$core_failed" -eq 1 ]]; then
@@ -535,10 +537,50 @@ jobs:
             done
           else
             ig="${{ steps.igs.outputs.ig_list }}"
-            if run_pipeline "$ig"; then
-              successful_igs+=("$ig")
+
+            if [[ "$ig" == "core" ]]; then
+              echo "::group::Build core"
+              if run_pipeline "core"; then
+                if [[ ! -d "$core_dev_cache_dir" ]]; then
+                  echo "::error title=Missing local core dev package::core built but de.gematik.tiflow.core#dev was not found in $core_dev_cache_dir"
+                  failed_igs+=("core")
+                else
+                  successful_igs+=("core")
+                fi
+              else
+                failed_igs+=("core")
+              fi
+              echo "::endgroup::"
             else
-              failed_igs+=("$ig")
+              echo "::group::Build core (prerequisite for $ig)"
+              if run_pipeline "core"; then
+                if [[ ! -d "$core_dev_cache_dir" ]]; then
+                  echo "::error title=Missing local core dev package::core built but de.gematik.tiflow.core#dev was not found in $core_dev_cache_dir"
+                  core_failed=1
+                  failed_igs+=("core")
+                else
+                  successful_igs+=("core")
+                fi
+              else
+                core_failed=1
+                failed_igs+=("core")
+              fi
+              echo "::endgroup::"
+
+              # TODO: Remove this prerequisite gate when fhirscripts no longer
+              # requires manual core cache warm-up for dependent IG builds.
+              if [[ "$core_failed" -eq 1 ]]; then
+                echo "Skipping $ig because core build failed and de.gematik.tiflow.core#dev is unavailable."
+                failed_igs+=("$ig")
+              else
+                echo "::group::Build $ig"
+                if run_pipeline "$ig"; then
+                  successful_igs+=("$ig")
+                else
+                  failed_igs+=("$ig")
+                fi
+                echo "::endgroup::"
+              fi
             fi
           fi
 
