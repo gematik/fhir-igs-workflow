@@ -18,3 +18,16 @@ refresh_special_urls() {
 
 refresh_special_urls
 
+# Merge use cases and core includes
+if [[ -x "$ROOT_DIR/scripts/merge-use-cases.sh" ]]; then
+	"$ROOT_DIR/scripts/merge-use-cases.sh" erp-chrg
+else
+	echo "Warning: merge-use-cases.sh not found or not executable"
+fi
+
+if [[ -x "$ROOT_DIR/scripts/merge-core-includes.sh" ]]; then
+	"$ROOT_DIR/scripts/merge-core-includes.sh" erp-chrg
+else
+	echo "Warning: merge-core-includes.sh not found or not executable"
+fi
+
