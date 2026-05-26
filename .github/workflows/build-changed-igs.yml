@@ -498,14 +498,18 @@ jobs:
 
           run_pipeline() {
             local ig="$1"
+            local fs_cmd=""
             if command -v fhirscripts >/dev/null 2>&1; then
-              (cd "igs/$ig" && fhirscripts build pipeline)
+              fs_cmd="fhirscripts"
             elif command -v fhirscripts-dev >/dev/null 2>&1; then
-              (cd "igs/$ig" && fhirscripts-dev build pipeline)
+              fs_cmd="fhirscripts-dev"
             else
               echo "Neither fhirscripts nor fhirscripts-dev is available in PATH" >&2
               return 1
             fi
+
+            # Ensure required tools (e.g. IG Publisher) are present before build.
+            (cd "igs/$ig" && "$fs_cmd" install && "$fs_cmd" build pipeline)
           }
 
           # TODO: Remove this core-first orchestration once fhirscripts natively
