@@ -26,7 +26,7 @@ Die Operation $reject wird als HTTP POST auf /Task/&#60;id&#62;/$reject ausgefü
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-RejectOperation.json %}
+			{% include OperationDefinition-tiflow-diga-reject-op.json %}
 		</pre>
 	</div>
 	<div id="Request-Examples">

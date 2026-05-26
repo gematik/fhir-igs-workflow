@@ -1,7 +1,7 @@
 {
   "resourceType" : "Parameters",
   "meta" : {
-    "profile" : ["https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy|1.1"]
+    "profile" : ["https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.1"]
   },
   "parameter" : [{
     "name" : "rxPrescription",
@@ -9,7 +9,7 @@
       "name" : "prescriptionId",
       "valueIdentifier" : {
         "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
-        "value" : "160.100.000.000.001.39"
+        "value" : "166.100.000.000.001.39"
       }
     },
     {
@@ -18,37 +18,62 @@
         "resourceType" : "MedicationRequest",
         "extension" : [{
           "extension" : [{
-            "url" : "Off-Label",
+            "url" : "off-label",
             "valueBoolean" : true
           },
           {
-            "url" : "GebaerfaehigeFrau",
+            "url" : "childbearing-potential",
             "valueBoolean" : false
           },
           {
-            "url" : "EinhaltungSicherheitsmassnahmen",
+            "url" : "security-compliance",
             "valueBoolean" : true
           },
           {
-            "url" : "AushaendigungInformationsmaterialien",
+            "url" : "hand-out-information-material",
             "valueBoolean" : true
           },
           {
-            "url" : "ErklaerungSachkenntnis",
+            "url" : "declaration-of-expertise",
             "valueBoolean" : true
           }],
-          "url" : "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Teratogenic"
+          "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/teratogenic-extension"
+        },
+        {
+          "extension" : [{
+            "url" : "algorithmVersion",
+            "valueString" : "1.0.0"
+          },
+          {
+            "url" : "language",
+            "valueCode" : "de-DE"
+          }],
+          "url" : "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta"
+        },
+        {
+          "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+          "valueMarkdown" : "0-0-1-0 Stück"
         }],
         "status" : "completed",
         "intent" : "order",
         "medicationReference" : {
-          "reference" : "Medication/a3ca01a4-92c1-422a-87d9-ef046e94527f"
+          "reference" : "urn:uuid:a3ca01a4-92c1-422a-87d9-ef046e94527f"
         },
         "subject" : {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-            "valueCode" : "not-permitted"
-          }]
+          "identifier" : {
+            "_system" : {
+              "extension" : [{
+                "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                "valueCode" : "not-permitted"
+              }]
+            },
+            "_value" : {
+              "extension" : [{
+                "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                "valueCode" : "not-permitted"
+              }]
+            }
+          }
         },
         "authoredOn" : "2025-05-20",
         "dosageInstruction" : [{
@@ -82,7 +107,55 @@
       }
     },
     {
-      "name" : "medication"
+      "name" : "medication",
+      "resource" : {
+        "resourceType" : "Medication",
+        "id" : "a3ca01a4-92c1-422a-87d9-ef046e94527f",
+        "extension" : [{
+          "url" : "http://fhir.de/StructureDefinition/normgroesse",
+          "valueCode" : "N1"
+        }],
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.de/CodeSystem/ifa/pzn",
+            "code" : "19201712"
+          }],
+          "text" : "Pomalidomid Accord 1 mg 21 x 1 Hartkapseln"
+        },
+        "form" : {
+          "coding" : [{
+            "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
+            "code" : "HKP"
+          }]
+        },
+        "amount" : {
+          "numerator" : {
+            "extension" : [{
+              "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension",
+              "valueString" : "21"
+            }],
+            "unit" : "Stück"
+          },
+          "denominator" : {
+            "value" : 1
+          }
+        },
+        "ingredient" : [{
+          "itemCodeableConcept" : {
+            "text" : "Pomalidomid"
+          },
+          "strength" : {
+            "numerator" : {
+              "value" : 1,
+              "unit" : "mg"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "Stück"
+            }
+          }
+        }]
+      }
     }]
   },
   {
@@ -91,12 +164,12 @@
       "name" : "dispenseOrganization",
       "resource" : {
         "resourceType" : "Organization",
-        "id" : "3-Test-APO000053",
+        "id" : "3-07.2.1234560000.10.789",
         "identifier" : [{
           "system" : "https://gematik.de/fhir/sid/telematik-id",
-          "value" : "3-Test-APO000053"
+          "value" : "3-07.2.1234560000.10.789"
         }],
-        "name" : "Organisation 3-Test-APO000053",
+        "name" : "Schwarzwald Apotheke",
         "telecom" : [{
           "system" : "phone",
           "value" : "1234",
@@ -122,25 +195,25 @@
           "resourceType" : "MedicationDispense",
           "status" : "completed",
           "medicationReference" : {
-            "reference" : "Medication/PomalidomidMedication"
+            "reference" : "urn:uuid:8e2e5e65-4c5d-49f2-8efc-c30e40838273"
           },
           "performer" : [{
             "actor" : {
-              "reference" : "Organization/3-SMC-B-Testkarte-883110000095957"
+              "reference" : "Organization/3-07.2.1234560000.10.789"
             }
           }],
-          "whenHandedOver" : "2026-04-01"
+          "quantity" : {
+            "value" : 1,
+            "unit" : "Packung"
+          },
+          "whenHandedOver" : "2025-10-30"
         }
       },
       {
         "name" : "medication",
         "resource" : {
           "resourceType" : "Medication",
-          "id" : "PomalidomidMedication",
-          "extension" : [{
-            "url" : "http://fhir.de/StructureDefinition/normgroesse",
-            "valueCode" : "N1"
-          }],
+          "id" : "8e2e5e65-4c5d-49f2-8efc-c30e40838273",
           "code" : {
             "coding" : [{
               "system" : "http://fhir.de/CodeSystem/ifa/pzn",
@@ -151,21 +224,37 @@
           "form" : {
             "coding" : [{
               "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
-              "code" : "HKP"
+              "code" : "TAB",
+              "display" : "Tabletten"
             }]
           },
           "amount" : {
             "numerator" : {
               "extension" : [{
-                "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension",
+                "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension",
                 "valueString" : "21"
               }],
-              "unit" : "Stück"
+              "unit" : "St"
             },
             "denominator" : {
               "value" : 1
             }
-          }
+          },
+          "ingredient" : [{
+            "itemCodeableConcept" : {
+              "text" : "Pomalidomid"
+            },
+            "strength" : {
+              "numerator" : {
+                "value" : 1,
+                "unit" : "mg"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "Tbl."
+              }
+            }
+          }]
         }
       }]
     }]

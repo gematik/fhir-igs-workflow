@@ -25,7 +25,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-AbortOperation.json %}
+			{% include OperationDefinition-tiflow-rx-abort-op.json %}
 		</pre>
 	</div>
 	<div id="Request-Examples">

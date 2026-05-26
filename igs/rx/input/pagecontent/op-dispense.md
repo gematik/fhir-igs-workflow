@@ -22,7 +22,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$dispense` gesendet.
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-DispenseOperation.json %}
+			{% include OperationDefinition-tiflow-rx-dispense-op.json %}
 		</pre>
 	</div>
 	<div id="Request-Examples">

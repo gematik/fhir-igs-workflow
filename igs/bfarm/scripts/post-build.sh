@@ -84,9 +84,9 @@ fi
 TRANSFORM_MAP_URL="https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapCarbonCopy"
 TRANSFORM_OUTPUT="./input/content/Bundle-erp-t-prescription-carbon-copy-actual.json"
 
-# Create a temporary directory containing only the StructureMaps (excluding example bundles).
-# The HAPI validator 6.5.26 loads ALL JSON files from -ig directories, including example
-# bundles, which can cause JSON type casting errors. We isolate just the StructureMaps.
+# Create a temporary directory with mapping artifacts only (excluding examples).
+# The validator loads all JSON files from -ig directories; keep it lean to avoid
+# type-casting issues from example bundles while still including required profiles.
 TEMP_IG_DIR=$(mktemp -d)
 trap "rm -rf '$TEMP_IG_DIR'" EXIT
 
@@ -94,9 +94,13 @@ for sm_file in ./fsh-generated/resources/StructureMap-*.json; do
 	cp "$sm_file" "$TEMP_IG_DIR/"
 done
 
+for sd_file in ./fsh-generated/resources/StructureDefinition-*.json; do
+	cp "$sd_file" "$TEMP_IG_DIR/"
+done
+
 # Try modern 'transform URL input' syntax first (HAPI 6.8+).
 # Fall back to legacy 'input -transform URL' syntax for older validators (HAPI 6.5.x).
-# Note: always use the temp IG dir (StructureMaps only) to avoid loading example bundles.
+# Note: always use the temp IG dir to avoid loading example bundles.
 set +e
 java -jar "$HAPI_VALIDATOR_JAR_PATH" \
 	transform "$TRANSFORM_MAP_URL" \

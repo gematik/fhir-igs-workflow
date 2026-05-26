@@ -23,7 +23,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$accept` gesendet.
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-AcceptOperation.json %}
+			{% include OperationDefinition-tiflow-rx-accept-op.json %}
 		</pre>
 	</div>
 	<div id="Response-Examples">
