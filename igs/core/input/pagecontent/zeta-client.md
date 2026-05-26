@@ -15,7 +15,7 @@ Zur Umsetzung der ZETA Architektur müssen Clientsysteme folgende Anforderungen 
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    <actor name="NCPeH_FD">
+    <actor name="NCPeH_ePeDA">
         <testProcedure id="Produktgutachten"/>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienstes MUSS die ZETA Client Funktionen gemäß [gemSST_PS_ZETA_V] umsetzen.
@@ -34,7 +34,7 @@ Zur Umsetzung der ZETA Architektur müssen Clientsysteme folgende Anforderungen 
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    <actor name="NCPeH_FD">
+    <actor name="NCPeH_ePeDA">
         <testProcedure id="Produktgutachten"/>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienstes MUSS sicherstellen, dass jegliche Kommunikation mit dem TI-FlowFachdienst über den ZETA Client erfolgt.
@@ -53,7 +53,7 @@ Hinweis: Der Zeta-Client beinhaltet zwingend zu nutzende Kommunikationsfunktione
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    <actor name="NCPeH_FD">
+    <actor name="NCPeH_ePeDA">
         <testProcedure id="Produktgutachten"/>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienstes MUSS zur Authentisierung der Institution das Verfahren mittels SM(C)-B signiertem Client Assertion JWT und DPoP gemäß [RFC7523] und [RFC9449] verwenden.
@@ -70,7 +70,7 @@ Hinweis: Der Zeta-Client beinhaltet zwingend zu nutzende Kommunikationsfunktione
     <actor name="CS_E-Rezept_KTR">
         <testProcedure id="Herstellererklärung"/>
     </actor>
-    <actor name="NCPeH_FD">
+    <actor name="NCPeH_ePeDA">
         <testProcedure id="Produktgutachten"/>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienstes MUSS für jede Anfrage an den TI-Flow-Fachdienst die ZETA Client Funktion mit aktivem ZETA/ASL-Kanal verwenden.
