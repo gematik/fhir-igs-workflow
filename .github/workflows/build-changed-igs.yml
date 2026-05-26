@@ -416,53 +416,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-fhir-packages-
 
-      - name: Install FHIR packages
-        if: steps.igs.outputs.ig_list != ''
-        shell: bash
-        run: |
-          set -euo pipefail
-          cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}"
-          mkdir -p "$cache_dir"
-
-          declare -A dep_map=()
-
-          for ig in ${{ steps.igs.outputs.ig_list }}; do
-            cfg="igs/$ig/sushi-config.yaml"
-            [[ -f "$cfg" ]] || continue
-            mapfile -t deps < <(yq eval '.dependencies // {} | to_entries | .[] | "\(.key) \(.value)"' "$cfg")
-            for dep in "${deps[@]}"; do
-              pkg="${dep%% *}"
-              ver="${dep#* }"
-              [[ -z "$pkg" || -z "$ver" ]] && continue
-              if [[ "$ver" == "dev" || "$ver" == "current" ]]; then
-                echo "Skipping local dependency ${pkg}#${ver}; it must be provided by an earlier build in this job."
-                continue
-              fi
-              dep_map["${pkg}#${ver}"]=1
-            done
-          done
-
-          if [[ ${#dep_map[@]} -eq 0 ]]; then
-            echo "No external package dependencies to install."
-            exit 0
-          fi
-
-          mapfile -t dep_keys < <(printf '%s\n' "${!dep_map[@]}" | sort)
-          echo "Installing ${#dep_keys[@]} unique package dependencies..."
-
-          for key in "${dep_keys[@]}"; do
-            pkg="${key%%#*}"
-            ver="${key#*#}"
-
-            if [[ -d "$cache_dir/$key" ]]; then
-              echo "Already cached ${key}; skipping."
-              continue
-            fi
-
-            echo "Installing ${pkg} ${ver}..."
-            fhir install "$pkg" "$ver"
-          done
-
       - name: Download IG Publisher
         if: steps.igs.outputs.ig_list != ''
         run: ./update-publisher.sh -y
@@ -493,8 +446,60 @@ jobs:
           set -euo pipefail
           successful_igs=()
           failed_igs=()
-          core_dev_cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}/de.gematik.tiflow.core#dev"
+          cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}"
+          core_pkg_id="de.gematik.tiflow"
+          core_pkg_version="$(yq -r '.version // ""' igs/core/sushi-config.yaml)"
+          core_dev_cache_dir="$cache_dir/${core_pkg_id}#dev"
+          core_version_cache_dir="$cache_dir/${core_pkg_id}#${core_pkg_version}"
           core_failed=0
+
+          core_cache_available() {
+            [[ -d "$core_dev_cache_dir" || -d "$core_version_cache_dir" ]]
+          }
+
+          install_ig_dependencies() {
+            local ig="$1"
+            local cfg="igs/$ig/sushi-config.yaml"
+            local cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}"
+            mkdir -p "$cache_dir"
+
+            if [[ ! -f "$cfg" ]]; then
+              return 0
+            fi
+
+            mapfile -t deps < <(yq eval '.dependencies // {} | to_entries | .[] | "\(.key) \(.value)"' "$cfg")
+            if [[ ${#deps[@]} -eq 0 ]]; then
+              echo "No dependencies declared in $cfg"
+              return 0
+            fi
+
+            for dep in "${deps[@]}"; do
+              local pkg="${dep%% *}"
+              local ver="${dep#* }"
+              [[ -z "$pkg" || -z "$ver" ]] && continue
+
+              if [[ "$ver" == "dev" || "$ver" == "current" ]]; then
+                echo "Skipping local dependency ${pkg}#${ver}; expected from an earlier local build."
+                continue
+              fi
+
+              if [[ -d "$cache_dir/${pkg}#${ver}" ]]; then
+                echo "Already cached ${pkg}#${ver}; skipping."
+                continue
+              fi
+
+              # If core was built in this job as #dev, reuse it for fixed-version
+              # dependencies such as de.gematik.tiflow#<ballot-version>.
+              if [[ "$pkg" == "$core_pkg_id" && -d "$core_dev_cache_dir" ]]; then
+                echo "Reusing locally built ${core_pkg_id}#dev for ${pkg}#${ver}."
+                cp -R "$core_dev_cache_dir" "$cache_dir/${pkg}#${ver}"
+                continue
+              fi
+
+              echo "Installing ${pkg} ${ver} for IG ${ig}..."
+              fhir install "$pkg" "$ver"
+            done
+          }
 
           run_pipeline() {
             local ig="$1"
@@ -511,6 +516,9 @@ jobs:
               echo "Neither fhirscripts nor fhirscripts-dev is available in PATH" >&2
               return 1
             fi
+
+            # Install dependencies for this IG only, right before its build.
+            install_ig_dependencies "$ig"
 
             # Keep IG Publisher discoverable for IG-local fhirscripts runs.
             # TODO: Remove once fhirscripts resolves publisher from workspace root automatically.
@@ -537,8 +545,8 @@ jobs:
 
               echo "::group::Build $ig"
               if run_pipeline "$ig"; then
-                if [[ "$ig" == "core" && ! -d "$core_dev_cache_dir" ]]; then
-                  echo "::error title=Missing local core dev package::core built but de.gematik.tiflow.core#dev was not found in $core_dev_cache_dir"
+                if [[ "$ig" == "core" && ! core_cache_available ]]; then
+                  echo "::error title=Missing local core package::core built but neither $core_dev_cache_dir nor $core_version_cache_dir was found"
                   failed_igs+=("core")
                   core_failed=1
                 else
@@ -558,8 +566,8 @@ jobs:
             if [[ "$ig" == "core" ]]; then
               echo "::group::Build core"
               if run_pipeline "core"; then
-                if [[ ! -d "$core_dev_cache_dir" ]]; then
-                  echo "::error title=Missing local core dev package::core built but de.gematik.tiflow.core#dev was not found in $core_dev_cache_dir"
+                if ! core_cache_available; then
+                  echo "::error title=Missing local core package::core built but neither $core_dev_cache_dir nor $core_version_cache_dir was found"
                   failed_igs+=("core")
                 else
                   successful_igs+=("core")
@@ -571,8 +579,8 @@ jobs:
             else
               echo "::group::Build core (prerequisite for $ig)"
               if run_pipeline "core"; then
-                if [[ ! -d "$core_dev_cache_dir" ]]; then
-                  echo "::error title=Missing local core dev package::core built but de.gematik.tiflow.core#dev was not found in $core_dev_cache_dir"
+                if ! core_cache_available; then
+                  echo "::error title=Missing local core package::core built but neither $core_dev_cache_dir nor $core_version_cache_dir was found"
                   core_failed=1
                   failed_igs+=("core")
                 else
