@@ -135,6 +135,10 @@ Usage: #definition
 * group[=].element[39].code = #TIFLOW_TASK_STATUS_MISMATCH
 * group[=].element[39].target[0].code = #79238
 * group[=].element[39].target[0].equivalence = #equivalent
+* group[=].element[40].code = #TIFLOW_POPP_TOKEN_INVALID
+* group[=].element[40].target[0].code = #79273
+* group[=].element[40].target[0].equivalence = #equivalent
+
 
 
 // TIFLOW_CHARGEITEM_CS_OperationOutcomeDetails.fsh
