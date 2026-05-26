@@ -8,5 +8,5 @@ Description: "Diese Operation aktiviert die erstellte Aufgabe für das Rezept. D
 * id = "tiflow-diga-activate-op"
 * name = "TIFlow-DIGA-OP-Activate"
 
-* inputProfile = Canonical(TIFlow-DiGA-Activate-Operation-Input)
-* outputProfile = Canonical(TIFlow-DiGA-Activate-Operation-Output)
+* inputProfile = Canonical(TIFlowDiGAActivateOperationInput)
+* outputProfile = Canonical(TIFlowDiGAActivateOperationOutput)

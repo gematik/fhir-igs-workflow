@@ -1,4 +1,4 @@
-Profile: TIFlow-DiGA-Close-Operation-Input
+Profile: TIFlowDiGACloseOperationInput
 Parent: Parameters
 Id: ti-flow-di-ga-close-operation-input
 Title: "TIFlow DiGA Close Operation Input"

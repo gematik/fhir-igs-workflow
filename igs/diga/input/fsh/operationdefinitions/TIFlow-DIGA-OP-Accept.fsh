@@ -8,7 +8,7 @@ Description: "Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. 
 * id = "tiflow-diga-accept-op"
 * name = "TIFlow-DIGA-OP-Accept"
 
-* outputProfile = Canonical(TIFlow-DiGA-Accept-Operation-Output)
+* outputProfile = Canonical(TIFlowDiGAAcceptOperationOutput)
 
 // in
 * parameter[+]

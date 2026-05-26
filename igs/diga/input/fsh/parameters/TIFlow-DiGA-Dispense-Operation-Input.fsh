@@ -1,4 +1,4 @@
-Profile: TIFlow-DiGA-Dispense-Operation-Input
+Profile: TIFlowDiGADispenseOperationInput
 Parent: Parameters
 Id: ti-flow-di-ga-dispense-operation-input
 Title: "TIFlow DiGA Dispense Operation Input"

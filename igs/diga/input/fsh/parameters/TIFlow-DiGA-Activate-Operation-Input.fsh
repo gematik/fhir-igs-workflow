@@ -1,4 +1,4 @@
-Profile: TIFlow-DiGA-Activate-Operation-Input
+Profile: TIFlowDiGAActivateOperationInput
 Parent: Parameters
 Id: ti-flow-di-ga-activate-operation-input
 Title: "TIFlow DiGA Activate Operation Input"

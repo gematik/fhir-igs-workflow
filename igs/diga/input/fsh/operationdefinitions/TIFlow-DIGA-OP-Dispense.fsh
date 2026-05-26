@@ -8,4 +8,4 @@ Description: "Die Operation $dispense ermöglicht es dem Kostenträger, eine Aus
 * id = "tiflow-diga-dispense-op"
 * name = "TIFlow-DIGA-OP-Dispense"
 
-* inputProfile = Canonical(TIFlow-DiGA-Dispense-Operation-Input)
+* inputProfile = Canonical(TIFlowDiGADispenseOperationInput)

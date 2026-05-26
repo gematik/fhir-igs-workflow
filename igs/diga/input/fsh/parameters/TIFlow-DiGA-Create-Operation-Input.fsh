@@ -1,4 +1,4 @@
-Profile: TIFlow-DiGA-Create-Operation-Input
+Profile: TIFlowDiGACreateOperationInput
 Parent: Parameters
 Id: ti-flow-di-ga-create-operation-input
 Title: "TIFlow DiGA Create Operation Input"

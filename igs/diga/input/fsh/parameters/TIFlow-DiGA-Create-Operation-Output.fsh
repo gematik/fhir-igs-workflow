@@ -1,4 +1,4 @@
-Profile: TIFlow-DiGA-Create-Operation-Output
+Profile: TIFlowDiGACreateOperationOutput
 Parent: Parameters
 Id: ti-flow-di-ga-create-operation-output
 Title: "TIFlow DiGA Create Operation Output"

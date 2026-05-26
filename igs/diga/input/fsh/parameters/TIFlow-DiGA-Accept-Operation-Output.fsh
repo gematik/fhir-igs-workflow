@@ -1,4 +1,4 @@
-Profile: TIFlow-DiGA-Accept-Operation-Output
+Profile: TIFlowDiGAAcceptOperationOutput
 Parent: Parameters
 Id: ti-flow-di-ga-accept-operation-output
 Title: "TIFlow DiGA Accept Operation Output"

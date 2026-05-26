@@ -1,4 +1,4 @@
-Profile: TIFlow-DiGA-Close-Operation-Output
+Profile: TIFlowDiGACloseOperationOutput
 Parent: Parameters
 Id: ti-flow-di-ga-close-operation-output
 Title: "TIFlow DiGA Close Operation Output"

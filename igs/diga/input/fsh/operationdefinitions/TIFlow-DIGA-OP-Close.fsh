@@ -8,5 +8,5 @@ Description: "Die $close-Operation beendet den E-Rezept-Workflow und erstellt ei
 * id = "tiflow-diga-close-op"
 * name = "TIFlow-DIGA-OP-Close"
 
-* inputProfile = Canonical(TIFlow-DiGA-Close-Operation-Input)
-* outputProfile = Canonical(TIFlow-DiGA-Close-Operation-Output)
+* inputProfile = Canonical(TIFlowDiGACloseOperationInput)
+* outputProfile = Canonical(TIFlowDiGACloseOperationOutput)
