@@ -29,8 +29,8 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
   <ul>
-  <li>oid_versicherter</li>
-  </ul>
+    <li>oid_versicherter</li>
+  </ul> 
   die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
@@ -163,7 +163,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22350 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-207" title="TI-Flow-Fachdienst - Consent schreiben - Persistieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-207" title="TI-Flow-Fachdienst - Consent schreiben - Persistieren" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD">
         <testProcedure id="Herstellererklärung"/>
@@ -190,7 +190,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
   <ul>
     <li>oid_versicherter</li>
-  </ul>
+  </ul>  
   die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
@@ -218,7 +218,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22160 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-210" title="TI-Flow-Fachdienst - Consent lesen - Filter KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-210" title="TI-Flow-Fachdienst - Consent lesen - Filter KVNR" version="1">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD">
     <testProcedure id="Produkttest"/>
@@ -269,7 +269,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
   <ul>
     <li>oid_versicherter</li>
-  </ul>
+  </ul> 
   die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
@@ -337,7 +337,7 @@ Es bestehen anwendungsfall-spezifische Anforderungen, welche Inhalte beim Widerr
 <!-- ToDo: A_27131 -> EU IG -->
 
 <!-- A_22158 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-214" title="TI-Flow-Fachdienst - Consent löschen - Ressource löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-214" title="TI-Flow-Fachdienst - Consent löschen - Ressource löschen" version="1">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD">
     <testProcedure id="Produktgutachten"/>
