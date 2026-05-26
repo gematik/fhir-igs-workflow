@@ -4,6 +4,8 @@ Dargestellt werden je Quelldokument nur übernommene Anforderungen (gemappte Anf
 
 Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{{NEW_IG_BASE_URL}}`.
 
+Hinweis: Dieses Mapping bezieht sich auf die initiale Überführung der Anforderungen aus gemSpec zu FHIR-IGs.
+
 ### gemILF_PS_eRp
 
 #### Übernommene Anforderungen
