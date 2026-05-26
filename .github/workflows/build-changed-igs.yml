@@ -72,7 +72,7 @@ jobs:
           sudo wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
           python -m pip install --upgrade pip pipx
-          python -m pipx install fhirscripts
+          python -m pipx install git+https://github.com/gematik/fhir-scripts.git
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Verify Graphviz
