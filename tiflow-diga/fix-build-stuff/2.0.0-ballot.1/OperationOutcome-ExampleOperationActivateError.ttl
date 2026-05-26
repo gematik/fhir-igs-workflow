@@ -1,0 +1,26 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationActivateError> a fhir:OperationOutcome ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleOperationActivateError"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationOutcome ExampleOperationActivateError</b></p><a name=\"ExampleOperationActivateError\"> </a><a name=\"hcExampleOperationActivateError\"> </a><h3>Issues</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td><td><b>Diagnostics</b></td></tr><tr><td style=\"display: none\">*</td><td>Error</td><td>Invalid Content</td><td><span title=\"Codes:\">unknown or unexpected profile</span></td><td>Unable to determine profile type from name: https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:issue ( [
+     fhir:severity [ fhir:v "error" ] ;
+     fhir:code [ fhir:v "invalid" ] ;
+     fhir:details [
+       fhir:text [ fhir:v "unknown or unexpected profile" ]
+     ] ;
+     fhir:diagnostics [ fhir:v "Unable to determine profile type from name: https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

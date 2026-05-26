@@ -1,0 +1,308 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition> a fhir:StructureDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ti-feature-definition"] ; # 
+  fhir:url [
+     fhir:v "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition>
+  ] ; # 
+  fhir:version [ fhir:v "2.0.0-ballot.1"] ; # 
+  fhir:name [ fhir:v "TIFeatureDefinition"] ; # 
+  fhir:title [ fhir:v "TI Feature Definition"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-05-26T10:13:46+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "gematik GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://gematik.de" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Logical Model zur Beschreibung eines aktivierbaren Features."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "DE" ] ;
+       fhir:display [ fhir:v "Germany" ]
+     ] )
+  ] ) ; # 
+  fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
+  fhir:kind [ fhir:v "logical"] ; # 
+  fhir:abstract [ fhir:v false] ; # 
+  fhir:type [
+     fhir:v "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition"^^xsd:anyURI ;
+     fhir:l <https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition>
+  ] ; # 
+  fhir:baseDefinition [
+     fhir:v "http://hl7.org/fhir/StructureDefinition/Base"^^xsd:anyURI ;
+     fhir:l <http://hl7.org/fhir/StructureDefinition/Base>
+  ] ; # 
+  fhir:derivation [ fhir:v "specialization"] ; # 
+  fhir:snapshot [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "4.0.1"
+       ]
+     ] ) ;
+     fhir:element ( [
+       fhir:id [ fhir:v "ti-feature-definition" ] ;
+       fhir:path [ fhir:v "ti-feature-definition" ] ;
+       fhir:short [ fhir:v "TI Feature Definition" ] ;
+       fhir:definition [ fhir:v "Logical Model zur Beschreibung eines aktivierbaren Features." ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "Base" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:isModifier [ fhir:v false ]
+     ] [
+       fhir:id [ fhir:v "ti-feature-definition.url" ] ;
+       fhir:path [ fhir:v "ti-feature-definition.url" ] ;
+       fhir:short [ fhir:v "Canonical-URL des Features" ] ;
+       fhir:definition [ fhir:v "Canonical-URL des Features" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "ti-feature-definition.url" ] ;
+         fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "uri"^^xsd:anyURI ;
+           fhir:l fhir:uri
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "ti-feature-definition.name" ] ;
+       fhir:path [ fhir:v "ti-feature-definition.name" ] ;
+       fhir:short [ fhir:v "Maschinell verarbeitbarer Name" ] ;
+       fhir:definition [ fhir:v "Maschinell verarbeitbarer Name" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "ti-feature-definition.name" ] ;
+         fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "string"^^xsd:anyURI ;
+           fhir:l fhir:string
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "ti-feature-definition.title" ] ;
+       fhir:path [ fhir:v "ti-feature-definition.title" ] ;
+       fhir:short [ fhir:v "Menschenlesbarer Titel" ] ;
+       fhir:definition [ fhir:v "Menschenlesbarer Titel" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "ti-feature-definition.title" ] ;
+         fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "string"^^xsd:anyURI ;
+           fhir:l fhir:string
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "ti-feature-definition.status" ] ;
+       fhir:path [ fhir:v "ti-feature-definition.status" ] ;
+       fhir:short [ fhir:v "draft | active | retired" ] ;
+       fhir:definition [ fhir:v "draft | active | retired" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "ti-feature-definition.status" ] ;
+         fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "code"^^xsd:anyURI ;
+           fhir:l fhir:code
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "ti-feature-definition.description" ] ;
+       fhir:path [ fhir:v "ti-feature-definition.description" ] ;
+       fhir:short [ fhir:v "Fachliche Beschreibung" ] ;
+       fhir:definition [ fhir:v "Fachliche Beschreibung" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "ti-feature-definition.description" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "markdown"^^xsd:anyURI ;
+           fhir:l fhir:markdown
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "ti-feature-definition.valueType" ] ;
+       fhir:path [ fhir:v "ti-feature-definition.valueType" ] ;
+       fhir:short [ fhir:v "boolean | code | Coding — Typ des value-Felds" ] ;
+       fhir:definition [ fhir:v "boolean | code | Coding — Typ des value-Felds" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "ti-feature-definition.valueType" ] ;
+         fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "code"^^xsd:anyURI ;
+           fhir:l fhir:code
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "ti-feature-definition.context" ] ;
+       fhir:path [ fhir:v "ti-feature-definition.context" ] ;
+       fhir:short [ fhir:v "Element-Kontexte im CapabilityStatement" ] ;
+       fhir:definition [ fhir:v "Element-Kontexte im CapabilityStatement" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "ti-feature-definition.context" ] ;
+         fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "uri"^^xsd:anyURI ;
+           fhir:l fhir:uri
+         ]
+       ] )
+     ] )
+  ] ; # 
+  fhir:differential [
+     fhir:element ( [
+       fhir:id [ fhir:v "ti-feature-definition" ] ;
+       fhir:path [ fhir:v "ti-feature-definition" ] ;
+       fhir:short [ fhir:v "TI Feature Definition" ] ;
+       fhir:definition [ fhir:v "Logical Model zur Beschreibung eines aktivierbaren Features." ]
+     ] [
+       fhir:id [ fhir:v "ti-feature-definition.url" ] ;
+       fhir:path [ fhir:v "ti-feature-definition.url" ] ;
+       fhir:short [ fhir:v "Canonical-URL des Features" ] ;
+       fhir:definition [ fhir:v "Canonical-URL des Features" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "uri"^^xsd:anyURI ;
+           fhir:l fhir:uri
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "ti-feature-definition.name" ] ;
+       fhir:path [ fhir:v "ti-feature-definition.name" ] ;
+       fhir:short [ fhir:v "Maschinell verarbeitbarer Name" ] ;
+       fhir:definition [ fhir:v "Maschinell verarbeitbarer Name" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "string"^^xsd:anyURI ;
+           fhir:l fhir:string
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "ti-feature-definition.title" ] ;
+       fhir:path [ fhir:v "ti-feature-definition.title" ] ;
+       fhir:short [ fhir:v "Menschenlesbarer Titel" ] ;
+       fhir:definition [ fhir:v "Menschenlesbarer Titel" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "string"^^xsd:anyURI ;
+           fhir:l fhir:string
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "ti-feature-definition.status" ] ;
+       fhir:path [ fhir:v "ti-feature-definition.status" ] ;
+       fhir:short [ fhir:v "draft | active | retired" ] ;
+       fhir:definition [ fhir:v "draft | active | retired" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "code"^^xsd:anyURI ;
+           fhir:l fhir:code
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "ti-feature-definition.description" ] ;
+       fhir:path [ fhir:v "ti-feature-definition.description" ] ;
+       fhir:short [ fhir:v "Fachliche Beschreibung" ] ;
+       fhir:definition [ fhir:v "Fachliche Beschreibung" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "markdown"^^xsd:anyURI ;
+           fhir:l fhir:markdown
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "ti-feature-definition.valueType" ] ;
+       fhir:path [ fhir:v "ti-feature-definition.valueType" ] ;
+       fhir:short [ fhir:v "boolean | code | Coding — Typ des value-Felds" ] ;
+       fhir:definition [ fhir:v "boolean | code | Coding — Typ des value-Felds" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "code"^^xsd:anyURI ;
+           fhir:l fhir:code
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "ti-feature-definition.context" ] ;
+       fhir:path [ fhir:v "ti-feature-definition.context" ] ;
+       fhir:short [ fhir:v "Element-Kontexte im CapabilityStatement" ] ;
+       fhir:definition [ fhir:v "Element-Kontexte im CapabilityStatement" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "uri"^^xsd:anyURI ;
+           fhir:l fhir:uri
+         ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

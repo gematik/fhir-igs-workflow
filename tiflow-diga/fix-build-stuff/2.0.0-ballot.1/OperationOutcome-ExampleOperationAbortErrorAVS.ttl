@@ -1,0 +1,25 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationAbortErrorAVS> a fhir:OperationOutcome ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleOperationAbortErrorAVS"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationOutcome ExampleOperationAbortErrorAVS</b></p><a name=\"ExampleOperationAbortErrorAVS\"> </a><a name=\"hcExampleOperationAbortErrorAVS\"> </a><h3>Issues</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td style=\"display: none\">*</td><td>Error</td><td>Forbidden</td><td><span title=\"Codes:\">Abort not expected for newly created Task</span></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:issue ( [
+     fhir:severity [ fhir:v "error" ] ;
+     fhir:code [ fhir:v "forbidden" ] ;
+     fhir:details [
+       fhir:text [ fhir:v "Abort not expected for newly created Task" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

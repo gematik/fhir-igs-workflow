@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="ti-flow-fachdienst-server"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CapabilityStatement ti-flow-fachdienst-server</b></p><a name="ti-flow-fachdienst-server"> </a><a name="hcti-flow-fachdienst-server"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="https://simplifier.net/resolve?scope=de.gematik.ti@1.3.1&amp;canonical=https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement">Capability Statement Profil für TI FHIR Data Service</a></p></div><h2 id="title">CapabilityStatement für den TI-Flow-Fachdienst</h2><ul><li>Implementation Guide Version: 2.0.0-ballot.1 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+json</code>, <code>application/fhir+xml</code></li><li>Published on: 2028-04-01 </li><li>Published by: gematik GmbH </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"/></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#Device1-1">Device</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-GEM-ERP-PR-Device.html">GEM ERP PR Device</a></td><td class="text-center"/><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td/><td/><td/><td/></tr><tr><td><a href="#AuditEvent1-2">AuditEvent</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-audit-event-rest.html">TI Audit Event Rest</a></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"><span title="SHALL"><b>Y</b></span></td><td class="text-center"/><td class="text-center"/><td>date, entity, _sort, _count, _offset</td><td/><td/><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div class="panel-heading"><h4 id="Device1-1" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Device</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/device.html">Device</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-GEM-ERP-PR-Device.html">GEM ERP PR Device</a></p></div></div><p/></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="AuditEvent1-2" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>AuditEvent</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/auditevent.html">AuditEvent</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-audit-event-rest.html">TI Audit Event Rest</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/auditevent.html#search">date</a></td><td><code>date</code></td><td><div><p>AuditEvent.recorded - Unterstützt die Suche nach dem Aufzeichnungsdatum; default sort if _sort is not provided</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/auditevent.html#search">entity</a></td><td><code>reference</code></td><td><div><p>AuditEvent.entity.what.identifier.value - Unterstützt die Suche nach betroffenen Entitäten</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_sort</td><td><code>string</code></td><td><div><p>Unterstützt das Sortieren nach unterstützten AuditEvent-Suchkriterien</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_count</td><td><code>number</code></td><td><div><p>Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_offset</td><td><code>number</code></td><td><div><p>Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div>
+  </text>
+  <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-header">
+    <extension url="name">
+      <valueString value="content-type"/>
+    </extension>
+    <extension url="type">
+      <valueString value="string"/>
+    </extension>
+    <extension url="required">
+      <valueBoolean value="true"/>
+    </extension>
+    <extension url="description">
+      <valueString value="INNERER REQUEST: Content-Type des HTTP-Body"/>
+    </extension>
+  </extension>
+  <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-header">
+    <extension url="name">
+      <valueString value="authorization"/>
+    </extension>
+    <extension url="type">
+      <valueString value="string"/>
+    </extension>
+    <extension url="required">
+      <valueBoolean value="true"/>
+    </extension>
+    <extension url="description">
+      <valueString value="INNERER REQUEST: Bearer Token zur Authentifizierung gegenüber dem TI-Flow-Fachdienst"/>
+    </extension>
+  </extension>
+  <url value="https://gematik.de/fhir/tiflow/CapabilityStatement/ti-flow-fachdienst-server"/>
+  <version value="2.0.0-ballot.1"/>
+  <name value="TIFlowFachdienstServer"/>
+  <title value="CapabilityStatement für den TI-Flow-Fachdienst"/>
+  <status value="active"/>
+  <date value="2028-04-01"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="CapabilityStatement für den TI-Flow-Fachdienst"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <kind value="requirements"/>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+json"/>
+  <format value="application/fhir+xml"/>
+  <rest>
+    <mode value="server"/>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <type value="Device"/>
+      <supportedProfile value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Device">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+      </supportedProfile>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="408"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Request timeout"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_TIMEOUT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="500"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Internal server error"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown search parameter"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_PARAM_UNKNOWN"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid query parameter(s)"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_SYNTAX"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <readHistory value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <type value="AuditEvent"/>
+      <supportedProfile value="https://gematik.de/fhir/tiflow/StructureDefinition/audit-event-rest">
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+      </supportedProfile>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="408"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Request timeout"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_TIMEOUT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="500"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Internal server error"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown search parameter"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_PARAM_UNKNOWN"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid query parameter(s)"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_SYNTAX"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="408"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Request timeout"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_TIMEOUT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="500"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Internal server error"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource is not known"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RESOURCE_ID_FAIL"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="410"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource was deleted"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_DELETED"/>
+          </extension>
+        </extension>
+        <code value="read"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <readHistory value="true"/>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="date"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/AuditEvent-date"/>
+        <type value="date"/>
+        <documentation value="AuditEvent.recorded - Unterstützt die Suche nach dem Aufzeichnungsdatum; default sort if _sort is not provided"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="entity"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/AuditEvent-entity"/>
+        <type value="reference"/>
+        <documentation value="AuditEvent.entity.what.identifier.value - Unterstützt die Suche nach betroffenen Entitäten"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_sort"/>
+        <type value="string"/>
+        <documentation value="Unterstützt das Sortieren nach unterstützten AuditEvent-Suchkriterien"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_count"/>
+        <type value="number"/>
+        <documentation value="Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_offset"/>
+        <type value="number"/>
+        <documentation value="Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0"/>
+      </searchParam>
+    </resource>
+  </rest>
+</CapabilityStatement>
