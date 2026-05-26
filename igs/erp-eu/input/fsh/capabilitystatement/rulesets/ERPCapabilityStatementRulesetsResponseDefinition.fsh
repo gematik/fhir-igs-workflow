@@ -89,11 +89,17 @@ RuleSet: GrantEUAccessPermissionOperationStatusCodes
 * rest.operation[=] insert TiflowConsentRequired
 * rest.operation[=] insert TiflowXborderCountryCodeInvalid
 
+* rest.operation[=] insert TiflowAuthRoleNotAllowed
+
 RuleSet: ReadEUAccessPermissionOperationStatusCodes
 * rest.operation[=] insert SystemOperationStatusCodesWithParameters
 
+* rest.operation[=] insert TiflowAuthRoleNotAllowed
+
 RuleSet: RevokeEUAccessPermissionOperationStatusCodes
 * rest.operation[=] insert SystemQueryOperationStatusCodesWithNormalSuccess
+
+* rest.operation[=] insert TiflowAuthRoleNotAllowed
 
 RuleSet: GetEUPrescriptionsOperationStatusCodes
 * rest.operation[=] insert SystemOperationStatusCodesWithParameters
