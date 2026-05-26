@@ -41,10 +41,32 @@ Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task durch einen Versicherten die gültige Ergebnisliste der Task-Ressourcen ohne die referenzierten, signierten E-Rezept-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine Übersicht aller Tasks erhält.
 
-Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI, den im HTTP-Header X-PoPP-Token übermittelten Token extrahieren, prüfen und bei Fehlen oder fehlerhafter Prüfung mit dem Fehler 403 abbrechen, damit die Autorisierung zum Zugriff auf die Daten nur erfolgt, wenn ein Anwesenheitsnachweis erfolgreich durchgeführt wurde.
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI, den im HTTP-Header X-PoPP-Token übermittelten Token extrahieren, prüfen und bei Fehlen oder fehlerhafter Prüfung mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 403 - Bad Request: error
+* HTTP-Code: Code
+  * 403 - Bad Request: invalid
+* HTTP-Code: Details Code
+  * 403 - Bad Request: TIFLOW_POPP_TOKEN_INVALID
+* HTTP-Code: Details Text
+  * 403 - Bad Request: PoPP token invalid
+
+abbrechen, damit die Autorisierung zum Zugriff auf die Daten nur erfolgt, wenn ein Anwesenheitsnachweis erfolgreich durchgeführt wurde.
 Die Anforderungen zum Prüfen des PoPP-Token sind im Kapitel “HTTP-Operation GET - Prüfung PoPP-Token” beschrieben.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI prüfen, dass die Differenz zwischen Zeitstempel iat im Token und dem aktuellen Zeitpunkt nicht größer als 30 Minuten (konfigurierbar) ist und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI prüfen, dass die Differenz zwischen Zeitstempel iat im Token und dem aktuellen Zeitpunkt nicht größer als 30 Minuten (konfigurierbar) ist und bei fehlerhafter Prüfung mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 403 - Bad Request: error
+* HTTP-Code: Code
+  * 403 - Bad Request: invalid
+* HTTP-Code: Details Code
+  * 403 - Bad Request: TIFLOW_POPP_TOKEN_INVALID
+* HTTP-Code: Details Text
+  * 403 - Bad Request: PoPP token invalid
+
+abbrechen.
 Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung von A_23399-* im Rahmen des Änderungsmanagement für Spezifikationen.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI mit der Rolle
@@ -117,7 +139,18 @@ Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat ent
 Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS prüfen, dass die im Zertifikat enthaltene Rolle (Admission) gleich oid_popp-token ist und im Fehlerfall das Signaturzertifikat nicht zur Signaturprüfung der PoPP-Token verwenden.
 Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus dem PoPP-Token wie folgt:
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Prüfung des PoPP-Token prüfen, dass die Telematik-ID actor_id aus dem Token mit dem zeta-user-info.identifier des Nutzers (Telematik-ID) übereinstimmt und bei fehlerhafter Prüfung mit dem Fehler 403 abbrechen.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Prüfung des PoPP-Token prüfen, dass die Telematik-ID actor_id aus dem Token mit dem zeta-user-info.identifier des Nutzers (Telematik-ID) übereinstimmt und bei fehlerhafter Prüfung mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 403 - Bad Request: error
+* HTTP-Code: Code
+  * 403 - Bad Request: invalid
+* HTTP-Code: Details Code
+  * 403 - Bad Request: TIFLOW_POPP_TOKEN_INVALID
+* HTTP-Code: Details Text
+  * 403 - Bad Request: PoPP token invalid
+
+abbrechen.
 ### GET /Task/ (Einzelne Verordnung)
 
 Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezifische Verordnung steht ausschließlich dem Versicherten bzw. einer abgebenden Institution mit Wissen um das Secret zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.

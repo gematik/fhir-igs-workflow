@@ -61,7 +61,7 @@ Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werde
   "copyright" : "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0.",
   "caseSensitive" : true,
   "content" : "complete",
-  "count" : 40,
+  "count" : 41,
   "concept" : [{
     "code" : "TIFLOW_SECRET_MISMATCH",
     "display" : "Task secret mismatch",
@@ -420,6 +420,15 @@ Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werde
     "designation" : [{
       "language" : "de-DE",
       "value" : "OCSP Abfrage fehlgeschlagen"
+    }]
+  },
+  {
+    "code" : "TIFLOW_POPP_TOKEN_INVALID",
+    "display" : "Invalid PoPP token",
+    "definition" : "The provided PoPP token is invalid",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "PoPP-Token ungültig"
     }]
   }]
 }

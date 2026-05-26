@@ -334,6 +334,13 @@ Maps operation outcome codes to the telemetry data status codes
         "code" : "79238",
         "equivalence" : "equivalent"
       }]
+    },
+    {
+      "code" : "TIFLOW_POPP_TOKEN_INVALID",
+      "target" : [{
+        "code" : "79273",
+        "equivalence" : "equivalent"
+      }]
     }]
   },
   {
