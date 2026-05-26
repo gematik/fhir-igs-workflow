@@ -71,6 +71,8 @@ jobs:
           npm install -g fsh-sushi
           sudo wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
+          python -m pipx install fhirscripts
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Verify Graphviz
         run: |
@@ -493,6 +495,18 @@ jobs:
           core_dev_cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}/de.gematik.tiflow.core#dev"
           core_failed=0
 
+          run_pipeline() {
+            local ig="$1"
+            if command -v fhirscripts >/dev/null 2>&1; then
+              (cd "igs/$ig" && fhirscripts build pipeline)
+            elif command -v fhirscripts-dev >/dev/null 2>&1; then
+              (cd "igs/$ig" && fhirscripts-dev build pipeline)
+            else
+              echo "Neither fhirscripts nor fhirscripts-dev is available in PATH" >&2
+              return 1
+            fi
+          }
+
           if [[ "${{ steps.igs.outputs.ig_mode }}" == "all" ]]; then
             for ig in ${{ steps.igs.outputs.ig_list }}; do
               if [[ "$core_failed" -eq 1 ]]; then
@@ -502,7 +516,7 @@ jobs:
               fi
 
               echo "::group::Build $ig"
-              if ./build-all.sh --ig "$ig"; then
+              if run_pipeline "$ig"; then
                 if [[ "$ig" == "core" && ! -d "$core_dev_cache_dir" ]]; then
                   echo "::error title=Missing local core dev package::core built but de.gematik.tiflow.core#dev was not found in $core_dev_cache_dir"
                   failed_igs+=("core")
@@ -520,7 +534,7 @@ jobs:
             done
           else
             ig="${{ steps.igs.outputs.ig_list }}"
-            if ./build-all.sh --ig "$ig"; then
+            if run_pipeline "$ig"; then
               successful_igs+=("$ig")
             else
               failed_igs+=("$ig")
