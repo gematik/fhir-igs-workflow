@@ -17,3 +17,9 @@ refresh_special_urls() {
 }
 
 refresh_special_urls
+
+if [[ -x "$ROOT_DIR/scripts/generate-drawio-images.sh" ]]; then
+	"$ROOT_DIR/scripts/generate-drawio-images.sh" core
+else
+	echo "Warning: generate-drawio-images.sh not found or not executable"
+fi
