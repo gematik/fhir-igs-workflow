@@ -9,17 +9,15 @@ title Keine Zuweisung bis Ablauf
 $state_init(init)
 $state_open(open)
 $state_completed(completed)
-$state_deleted(deleted)
-$state_cancelled(cancelled)
+$state_cancelled(deleted)
 
 
 [*] -> init
 
 init -> open : <color:black><back:Lime> 1
 open -[dashed]>  completed : <color:black><back:DeepSkyBlue> AA1
-completed -> cancelled : <color:black><back:yellow> ML3
+completed -> deleted : <color:black><back:yellow> ML3
 completed -[dashed]> deleted : <color:black><back:Lavender> AL2
-cancelled -[dashed]> deleted
 
 deleted -> [*]
 

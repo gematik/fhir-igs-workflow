@@ -54,7 +54,7 @@ state "<color:white>gelöscht" as $alias #Crimson
 
 
 !procedure $state_cancelled($alias)
-state "<<manuell gelöscht>>\nOrderTask" as $alias #Orange
+state "<<gelöscht>>\nOrderTask" as $alias #Orange
 $alias : status = <b>cancelled</b>
 $alias : businessStatus = <b>deleted</b>
 !endprocedure
@@ -85,5 +85,6 @@ $alias:businessStatus = <b>review-completed</b>
 $alias:fromBusinessStatus = <b>$from</b>
 $alias:partOf = OrderTask
 !endprocedure
+
 
 @enduml

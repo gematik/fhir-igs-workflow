@@ -8,11 +8,12 @@ title Automatische Löschung während der Antragsprüfung vor Zuweisung
 
 $state_init(init)
 $state_open(open)
-$state_deleted(deleted)
+$state_cancelled(deleted)
+$state_review(review)
 
-state "Sub-Workflow Antragsprüfung" as subworkflow_review {
-    $state_review(review)
-}
+' state "Sub-Workflow Antragsprüfung" as subworkflow_review {
+'     $state_review(review)
+' }
 
 
 [*] -> init

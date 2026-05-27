@@ -4,22 +4,22 @@
 !include ./utils/states.iuml
 hide empty description
 
-title Leistungsentscheidung nach Zuweisung
+title Standardablauf: Leistungsentscheidung nach Zuweisung (ohne Korrektur)
 
 $state_init(init)
 $state_open(open)
 $state_assigned(assigned)
 $state_assigned_decided(assigned_decided)
 $state_completed(completed)
-$state_deleted(deleted)
-$state_cancelled(cancelled)
+$state_cancelled(deleted)
+$state_review(review)
 
-state "Sub-Workflow Antragsprüfung" as subworkflow_review {
-    $state_review(review)
-    ' $state_reviewtask_requested(subreview_requested, assigned)
-    ' $state_reviewtask_in_progress(subreview_progress, assigned)
-    ' $state_reviewtask_completed(subreview_completed, assigned)
-}
+' state "Sub-Workflow Antragsprüfung" as subworkflow_review {
+'     ' $state_review(review)
+'     ' $state_reviewtask_requested(subreview_requested, assigned)
+'     ' $state_reviewtask_in_progress(subreview_progress, assigned)
+'     ' $state_reviewtask_completed(subreview_completed, assigned)
+' }
 
 
 [*] -> init
@@ -37,10 +37,9 @@ review -> assigned_decided : <color:black><back:Salmon> AP4
 
 assigned_decided -[dashed]>  completed : <color:black><back:DeepSkyBlue> AA2
 
-completed -> cancelled : <color:black><back:yellow> ML3
+completed -> deleted : <color:black><back:yellow> ML3
 completed -[dashed]> deleted : <color:black><back:Lavender> AL2
 
-cancelled -[dashed]> deleted
 deleted -> [*]
 
 @enduml
