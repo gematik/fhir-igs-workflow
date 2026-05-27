@@ -362,17 +362,21 @@ jobs:
         if: env.BUILD_GENERATE_DRAWIO_IMAGES == 'true'
         run: |
           sudo apt-get update
-          sudo apt-get install -y jq xvfb
+          sudo apt-get install -y jq xvfb libgbm1 libglib2.0-0 libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 libxss1 libasound2t64
           drawio_url=$(curl -s https://api.github.com/repos/jgraph/drawio-desktop/releases/latest \
             | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url' \
             | head -n 1)
           echo "Downloading draw.io from $drawio_url"
-          sudo curl -L "$drawio_url" -o /usr/local/bin/drawio.appimage
-          sudo chmod +x /usr/local/bin/drawio.appimage
+          curl -L "$drawio_url" -o /tmp/drawio.appimage
+          chmod +x /tmp/drawio.appimage
+          # Extract AppImage (avoids FUSE requirement on GitHub Actions runners)
+          cd /tmp && /tmp/drawio.appimage --appimage-extract > /dev/null 2>&1
+          sudo mv /tmp/squashfs-root /opt/drawio
+          # Create headless wrapper
           printf '%s\n' \
             '#!/usr/bin/env bash' \
             'set -euo pipefail' \
-            'exec xvfb-run -a /usr/local/bin/drawio.appimage "$@"' \
+            'exec xvfb-run -a /opt/drawio/drawio "$@"' \
             | sudo tee /usr/local/bin/drawio >/dev/null
           sudo chmod +x /usr/local/bin/drawio
 
