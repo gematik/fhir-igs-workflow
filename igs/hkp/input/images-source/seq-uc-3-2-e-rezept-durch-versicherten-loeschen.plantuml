@@ -12,8 +12,9 @@ FdV -> FD: POST /hkp/fhir/task/{id}/$abort ()
 activate FD
 FD -> FD: Status prüfen()
 FD -> FD: Status auf "cancelled" setzen()
-FD -> FD: Business-Status auf "gelöscht" setzen()
+FD -> FD: Business-Status auf "deleted" setzen()
 FD -> FD: Daten löschen()
+FD -> FD: Datenzugriff protokollieren()
 FD --> FdV: Status
 deactivate FD
 

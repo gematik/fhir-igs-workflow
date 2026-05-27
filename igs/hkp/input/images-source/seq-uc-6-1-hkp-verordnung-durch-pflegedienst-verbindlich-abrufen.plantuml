@@ -1,5 +1,5 @@
 @startuml
-title UC 4.1 - Verordnung durch Pflegedienst abrufen
+title UC 6.1 - HKP Verordnung durch Pflegedienst verbindlich abrufen
 
 actor "Mitarbeiter des Pflegedienstes" as MA
 participant "Primärsystem" as AVS
@@ -15,9 +15,10 @@ activate FD
 FD -> FD: AccessCode_state prüfen()
 FD -> FD: Status Task prüfen()
 FD -> FD: Status auf "in-progress" setzen()
-FD -> FD: Business-Status auf "zugewiesen" setzen()
-FD -> FD: Geheimnis erzeugen()
-FD --> AVS: Task, Binary, Geheimnis
+FD -> FD: Business-Status auf "assigned" setzen()
+FD -> FD: Secret erzeugen()
+FD -> FD: Datenzugriff protokollieren()
+FD --> AVS: Task, Binary, Secret
 deactivate FD
 
 opt

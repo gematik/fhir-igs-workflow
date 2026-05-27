@@ -1,9 +1,9 @@
 @startuml
-title UC x.x - Verordnung durch Pflegedienst abrufen
+title UC 6.x - HKP Verordnung durch Pflegedienst unverbindlich einsehen
 
 actor "Mitarbeiter" as MA
-participant "PS" as PS
-participant "TI-Flow-Fachdienst" as FD
+participant "Primärsystem" as PS
+participant "T_Flow-Fachdienst" as FD
 
 MA -> PS: Verordnung abrufen()
 activate PS
@@ -13,6 +13,7 @@ PS -> FD: GET /hkp/fhir/task/{id}/$read (AccessCode_read)
 activate FD
 FD -> FD: AccessCode_read prüfen()
 FD -> FD: Status Task prüfen()
+FD -> FD: Datenzugriff protokollieren()
 FD --> PS: Task, Binary
 deactivate FD
 

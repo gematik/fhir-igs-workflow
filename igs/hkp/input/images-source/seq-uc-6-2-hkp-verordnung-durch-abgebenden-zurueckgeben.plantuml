@@ -1,5 +1,5 @@
 @startuml
-title UC 4.2 - Verordnung durch Abgebenden zurückgeben
+title UC 6.2 - Verordnung durch Abgebenden zurückgeben
 
 actor "Mitarbeiter des Pflegedienstes" as MA
 participant "Primärsystem" as AVS
@@ -13,7 +13,8 @@ activate FD
 FD -> FD: Secret prüfen()
 FD -> FD: Status Task prüfen()
 FD -> FD: Status auf "ready" setzen()
-FD -> FD: Business-Status auf "offen" setzen()
+FD -> FD: Business-Status auf "open" setzen()
+FD -> FD: Datenzugriff protokollieren()
 FD --> AVS: Status
 deactivate FD
 
