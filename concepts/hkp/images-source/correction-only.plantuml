@@ -8,19 +8,18 @@ title HKP Workflow - Korrekturprozess
 
 $state_assigned_decided(assigned_decided)
 
-    state "Korrekturprozess" as korrekturprozess {
-        $state_assigned(assigned)
-        $state_review(review)
-        $state_correction(correction)
+$state_assigned(assigned)
+$state_review(review)
+$state_correction(correction)
 
-        assigned --> correction : <color:black><back:Salmon> K1
-        assigned <-- correction : <color:black><back:Salmon> K2
-        assigned <-- correction : <color:black><back:Salmon> K3
+assigned --> correction : <color:black><back:Khaki> K1
+assigned <-- correction : <color:black><back:Khaki> K2
+assigned <-- correction : <color:black><back:Khaki> K3
 
-        correction <-- review : <color:black><back:Salmon> K4
-        correction --> review : <color:black><back:Salmon> K5
-        correction --> review : <color:black><back:Salmon> K6
-    }
+correction <-- review : <color:black><back:Khaki> K4
+correction --> review : <color:black><back:Khaki> K5
+correction --> review : <color:black><back:Khaki> K6
+
 
 review --> assigned_decided : <color:black><back:Salmon> AP4
 

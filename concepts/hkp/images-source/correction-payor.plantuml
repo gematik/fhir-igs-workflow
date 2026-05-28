@@ -9,15 +9,11 @@ title Korrekturprozess durch Kostenträger (K4-K5)
 $state_init(init)
 $state_open(open)
 $state_assigned(assigned)
+$state_assigned_decided(assigned_decided)
 $state_completed(completed)
+$state_review(review)
+$state_review_correction(correction_review)
 
-state "Sub-Workflow Antragsprüfung" as subworkflow_review {
-    $state_review(review)
-}
-
-state "Sub-Workflow Korrekturprozess" as subworkflow_correction {
-    $state_correction(correction)
-}
 
 [*] -> init
 
@@ -26,8 +22,8 @@ open -> assigned : <color:black><back:Lime> 2
 
 assigned -> review : <color:black><back:Salmon> AP3
 
-review --> correction : <color:black><back:Salmon> K4
-correction -> review : <color:black><back:Salmon> K5
+review --> correction_review : <color:black><back:Khaki> K4
+correction_review -> review : <color:black><back:Khaki> K5
 
 review -> assigned_decided : <color:black><back:Salmon> AP4
 assigned_decided -> completed : <color:black><back:DeepSkyBlue> AA2

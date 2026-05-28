@@ -1,0 +1,35 @@
+@startuml
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+$state_assigned(assigned)
+$state_assigned_correction(correction)
+
+state "Sub-Workflow Korrektur" as correction_workflow {
+    $state_correction_requested(correction_requested, "Pflegedienst", "verordnenden Praxis")
+    $state_correction_cancelled(correction_cancelled, "Pflegedienst", "verordnenden Praxis")
+    $state_correction_rejected(correction_rejected, "Pflegedienst", "verordnenden Praxis")
+    $state_correction_in_progress(correction_in_progress, "Pflegedienst", "verordnenden Praxis")
+    $state_correction_completed(correction_completed, "Pflegedienst", "verordnenden Praxis")
+}
+
+
+
+assigned -d-> correction : <color:black><back:Khaki> K1
+' correction -u-> assigned : <color:black><back:Khaki> K3
+correction -d-> correction_requested : <color:black><size:12> <<invoke>>
+
+correction_requested  -r-> correction_cancelled
+correction_requested -d-> correction_in_progress
+correction_in_progress -[dashed]u-> correction_requested
+correction_in_progress -d-> correction_completed
+correction_in_progress  -d-> correction_rejected
+
+correction_completed -l-> assigned : <color:black><back:Khaki> K2
+correction_rejected -l-> assigned : <color:black><back:Khaki> K3
+correction_cancelled -l-> assigned : <color:black><back:Khaki> K3
+
+
+
+@enduml

@@ -9,25 +9,20 @@ title Korrekturprozess durch Pflegedienst (K1-K2)
 $state_init(init)
 $state_open(open)
 $state_assigned(assigned)
+$state_assigned_decided(assigned_decided)
 $state_completed(completed)
-
-state "Sub-Workflow Antragsprüfung" as subworkflow_review {
-    $state_review(review)
-}
-
-state "Sub-Workflow Korrekturprozess" as subworkflow_correction {
-    $state_correction(correction)
-}
+$state_review(review)
+$state_assigned_correction(correction_assigned)
 
 [*] -> init
 
 init -> open : <color:black><back:Lime> 1
 open -> assigned : <color:black><back:Lime> 2
 
-assigned --> correction : <color:black><back:Salmon> K1
-correction -> assigned : <color:black><back:Salmon> K2
+assigned -d-> correction_assigned : <color:black><back:Khaki> K1
+correction_assigned -u-> assigned : <color:black><back:Khaki> K2
 
-assigned --> review : <color:black><back:Salmon> AP3
+assigned -> review : <color:black><back:Salmon> AP3
 review -> assigned_decided : <color:black><back:Salmon> AP4
 
 assigned_decided -> completed : <color:black><back:DeepSkyBlue> AA2
