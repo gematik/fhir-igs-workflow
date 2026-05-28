@@ -85,7 +85,7 @@ Der TI-Flow-Fachdienst muss allgemeine Anforderungen zu Fehlercodes umsetzen, um
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>MSG_TIMEOUT</td>
+            <td>TIFLOW_TIMEOUT</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -116,7 +116,7 @@ Der TI-Flow-Fachdienst muss allgemeine Anforderungen zu Fehlercodes umsetzen, um
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>MSG_INTERNAL_ERROR</td>
+            <td>TIFLOW_INTERNAL_ERROR</td>
         </tr>
         <tr>
             <th>Details Text</th>

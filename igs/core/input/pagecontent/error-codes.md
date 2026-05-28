@@ -119,8 +119,8 @@ Die folgenden Fehlercodes können ungeachtet des Endpunktes auftreten und gelten
             <td>
                 <ul>
                     <li>MSG_BAD_FORMAT - Invalid request format</li>
-                    <li>MSG_TIMEOUT - Request timeout</li>
-                    <li>MSG_INTERNAL_ERROR - Internal server error</li>
+                    <li>TIFLOW_TIMEOUT - Request timeout</li>
+                    <li>TIFLOW_INTERNAL_ERROR - Internal server error</li>
                 </ul>
             </td>
         </tr>

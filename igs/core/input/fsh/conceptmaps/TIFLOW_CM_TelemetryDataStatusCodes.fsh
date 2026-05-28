@@ -138,6 +138,13 @@ Usage: #definition
 * group[=].element[40].code = #TIFLOW_POPP_TOKEN_INVALID
 * group[=].element[40].target[0].code = #79273
 * group[=].element[40].target[0].equivalence = #equivalent
+* group[=].element[41].code = #TIFLOW_INTERNAL_ERROR
+* group[=].element[41].target[0].code = #79274
+* group[=].element[41].target[0].equivalence = #equivalent
+* group[=].element[42].code = #TIFLOW_TIMEOUT
+* group[=].element[42].target[0].code = #79275
+* group[=].element[42].target[0].equivalence = #equivalent
+
 
 
 
