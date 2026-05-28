@@ -1,6 +1,6 @@
 Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den TI-Flow-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet werden.
 
-## Systemübersicht
+### Systemübersicht
 
 Der TI-Flow-Fachdienst ist ein zentraler Ressourcenserver der Telematikinfrastruktur, der anwendungsübergreifende Workflows auf Basis des FHIR-Standards über eine RESTful API verwaltet.
 
@@ -21,7 +21,7 @@ Die Vertraulichkeit und Integrität der verarbeiteten Daten gewährleistet der F
 
 <br>
 
-## Zweck und Geltungsbereich
+### Zweck und Geltungsbereich
 
 Um die Funktionalität des TI-Flow-Fachdienst verständlich und adressatengerecht zu beschreiben wurden mehrere FHIR-Implementation Guides angelegt.
 
@@ -60,7 +60,7 @@ Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow
 
 <br>
 
-## Aufbau
+### Aufbau
 
 - [FHIR-Artefakte](./artifacts.html)
 - [FHIR-Validierung](./fhir-validate.html)
