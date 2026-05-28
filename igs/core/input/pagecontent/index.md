@@ -19,7 +19,10 @@ Die Vertraulichkeit und Integrität der verarbeiteten Daten gewährleistet der F
     <figcaption><strong>Abbildung: </strong>Systemüberblick TI-Flow-Fachdienst</figcaption>
 </figure>
 
-<br>
+
+**Hinweis:** Die Anbindung des TI-Flow-Fachdienst an die ePA Aktensysteme erfolgt bis zu deren Unterstütztung von ZETA auf Basis der aktuellen Lösung.
+
+<br> 
 
 ### Zweck und Geltungsbereich
 

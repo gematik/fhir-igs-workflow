@@ -10,8 +10,8 @@ Output:
 
 Links:
 - Old requirement: https://gemspec.gematik.de/search/index.html?<req-id>
-- New requirement: placeholder URL based on mapped file location
-  (default placeholder base: {{NEW_IG_BASE_URL}}) //TODO: set base url for new IGs!
+- New requirement: URL based on mapped file location and IG key
+    (defaults can be overridden via --ig-base-url)
 """
 
 from __future__ import annotations
@@ -30,6 +30,17 @@ import openpyxl
 OLD_REQ_RE = re.compile(r"^A_\d+(?:-\d+)?$")
 OLD_REQ_TOKEN_RE = re.compile(r"A_\d+(?:-\d+)?")
 SOURCE_VERSION_SUFFIX_RE = re.compile(r"\s+\d+(?:\.\d+)+$")
+DEFAULT_FALLBACK_BASE_URL = "{{NEW_IG_BASE_URL}}"
+
+# Map repository IG keys to their published gemSpec base URLs.
+DEFAULT_IG_BASE_URLS = {
+    "core": "https://gemspec.gematik.de/ig/fhir/tiflow/2.0.0-ballot.1",
+    "bfarm": "https://gemspec.gematik.de/ig/fhir/tiflow-bfarm/2.0.0-ballot.1",
+    "erp-chrg": "https://gemspec.gematik.de/ig/fhir/tiflow-chargeitem/2.0.0-ballot.1",
+    "diga": "https://gemspec.gematik.de/ig/fhir/tiflow-diga/2.0.0-ballot.1",
+    "rx": "https://gemspec.gematik.de/ig/fhir/tiflow-erezept/2.0.0-ballot.1",
+    "erp-eu": "https://gemspec.gematik.de/ig/fhir/tiflow-xborder/2.0.0-ballot.1",
+}
 
 
 def first_non_empty(row: tuple, indexes: List[int]) -> str:
@@ -227,17 +238,43 @@ def metadata_for_req(
     return {"titles": set(), "sources": set()}
 
 
-def page_url_from_mapping_file(file_path: str, base_url: str) -> str:
+def parse_ig_base_url_overrides(overrides: Iterable[str]) -> Dict[str, str]:
+    parsed: Dict[str, str] = {}
+    for item in overrides:
+        text = str(item).strip()
+        if not text or "=" not in text:
+            continue
+        key, value = text.split("=", 1)
+        key = key.strip()
+        value = value.strip().rstrip("/")
+        if key and value:
+            parsed[key] = value
+    return parsed
+
+
+def page_url_from_mapping_file(
+    file_path: str,
+    ig_base_urls: Dict[str, str],
+    fallback_base_url: str,
+) -> str:
     # Example: igs/core/input/pagecontent/op-create-req-fd.md ->
-    # {{NEW_IG_BASE_URL}}/core/op-create-req-fd.html
+    # https://gemspec.gematik.de/ig/fhir/tiflow/2.0.0-ballot.1/op-create-req-fd.html
     path = Path(file_path)
     parts = path.parts
     ig_name = parts[1] if len(parts) > 1 else "ig"
     page_name = path.stem
-    return f"{base_url}/{ig_name}/{page_name}.html"
+    base_url = ig_base_urls.get(ig_name)
+    if base_url:
+        return f"{base_url.rstrip('/')}/{page_name}.html"
+    return f"{fallback_base_url.rstrip('/')}/{ig_name}/{page_name}.html"
 
 
-def new_req_links(entry: dict, base_url: str, no_links: bool = False) -> str:
+def new_req_links(
+    entry: dict,
+    ig_base_urls: Dict[str, str],
+    fallback_base_url: str,
+    no_links: bool = False,
+) -> str:
     occs = entry.get("occurrences") or []
     if isinstance(occs, list) and occs:
         links = []
@@ -256,8 +293,8 @@ def new_req_links(entry: dict, base_url: str, no_links: bool = False) -> str:
             if no_links:
                 links.append(new_req)
             else:
-                url = page_url_from_mapping_file(file_path, base_url)
-                links.append(f"[{new_req}]({url})")
+                url = page_url_from_mapping_file(file_path, ig_base_urls, fallback_base_url)
+                links.append(f"[{new_req}]({url}#{new_req})")
         if links:
             return "<br/>".join(links)
 
@@ -270,7 +307,8 @@ def build_markdown(
     old_meta: Dict[str, Dict[str, Set[str]]],
     mapping_by_old_req: Dict[str, dict],
     ignored_requirements: Dict[str, str],
-    new_req_base_url: str,
+    ig_base_urls: Dict[str, str],
+    fallback_base_url: str,
     no_links: bool = False,
 ) -> str:
     meta_by_base = aggregate_metadata_by_base(old_meta)
@@ -303,7 +341,8 @@ def build_markdown(
     )
     lines.append("")
     lines.append(
-        f"Hinweis: Links auf neue Anforderungen verwenden aktuell den Platzhalter `{new_req_base_url}`."
+        "Hinweis: Links auf neue Anforderungen verwenden die konfigurierten IG-Basis-URLs "
+        "(pro IG-Schluessel)."
     )
     lines.append("")
     for source in all_sources:
@@ -323,7 +362,15 @@ def build_markdown(
             titles = "<br/>".join(sorted(meta.get("titles", set()))) or "-"
 
             # old_req is from mapping_by_old_req, so entry is expected.
-            new_links = new_req_links(entry, new_req_base_url, no_links=no_links) or "-"
+            new_links = (
+                new_req_links(
+                    entry,
+                    ig_base_urls,
+                    fallback_base_url,
+                    no_links=no_links,
+                )
+                or "-"
+            )
             igs = "<br/>".join(entry.get("igs") or []) or "-"
 
             lines.append(f"| {old_link} | {titles} | {new_links} | {igs} |")
@@ -377,8 +424,18 @@ def main() -> int:
     )
     parser.add_argument(
         "--new-req-base-url",
-        default="{{NEW_IG_BASE_URL}}",
-        help="Placeholder base URL for links to new requirements",
+        default=DEFAULT_FALLBACK_BASE_URL,
+        help=(
+            "Fallback base URL for links to new requirements when no IG-specific URL is configured"
+        ),
+    )
+    parser.add_argument(
+        "--ig-base-url",
+        action="append",
+        default=[],
+        help=(
+            "Override IG-specific base URL as <ig-key>=<url> (can be provided multiple times)"
+        ),
     )
     parser.add_argument(
         "--no-links",
@@ -406,11 +463,14 @@ def main() -> int:
     old_meta = collect_old_req_metadata(xlsx_paths)
     mapping_by_old_req = load_mapping(mapping_path)
     ignored_requirements = load_ignored_requirements(req_ignore_csv)
+    ig_base_urls = dict(DEFAULT_IG_BASE_URLS)
+    ig_base_urls.update(parse_ig_base_url_overrides(args.ig_base_url))
 
     markdown = build_markdown(
         old_meta,
         mapping_by_old_req,
         ignored_requirements,
+        ig_base_urls,
         args.new_req_base_url,
         no_links=args.no_links,
     )

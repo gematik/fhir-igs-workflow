@@ -15,7 +15,25 @@ REQ_BLOCK_RE = re.compile(
 )
 REQ_KEY_RE = re.compile(r'\bkey="([^"]+)"')
 REQ_TITLE_RE = re.compile(r'\btitle="([^"]*)"')
+REQ_VERSION_RE = re.compile(r'\bversion="([^"]*)"')
 ACTOR_RE = re.compile(r'<actor\b[^>]*\bname="([^"]+)"[^>]*>', re.DOTALL)
+
+
+def requirement_id_with_version(req_key: str, version_raw: str) -> str:
+    text = (version_raw or "").strip()
+    if not text:
+        return req_key
+
+    if text == "0":
+        return req_key
+
+    if req_key.endswith(f"-{text}"):
+        return req_key
+
+    if text.isdigit():
+        return f"{req_key}-{int(text):02d}"
+
+    return f"{req_key}-{text}"
 
 
 def collect_markdown_files(root: Path) -> List[Path]:
@@ -63,11 +81,15 @@ def parse_file(path: Path, root: Path, mapping: Dict[str, Dict[str, Set[str]]]) 
         key_match = REQ_KEY_RE.search(attrs)
         if not key_match:
             continue
+        version_match = REQ_VERSION_RE.search(attrs)
 
         title_match = REQ_TITLE_RE.search(attrs)
         title = (title_match.group(1) if title_match else "").strip()
         actors = set(ACTOR_RE.findall(body))
-        new_req = key_match.group(1)
+        new_req = requirement_id_with_version(
+            key_match.group(1),
+            version_match.group(1) if version_match else "",
+        )
 
         for old_req in old_reqs:
             add_mapping(mapping, old_req, new_req, ig_name, rel_path, title, actors)
