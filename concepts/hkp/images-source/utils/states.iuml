@@ -7,32 +7,32 @@ $alias : businessStatus = <b>initialized</b>
 !endprocedure
 
 !procedure $state_open($alias)
-state "<<offen>>\nOrderTask" as $alias
+state "<<offen>>\nOrderTask" as $alias #Aquamarine
 $alias : status = <b>ready</b>
 $alias : businessStatus = <b>open</b>
 !endprocedure
 
 !procedure $state_ready_for_assignment($alias)
-state "<<offen>>\nOrderTask" as $alias
+state "<<offen>>\nOrderTask" as $alias #Aquamarine
 $alias:status = <b>ready</b>
 $alias:businessStatus = <b>ready-for-final-assignment</b>
 !endprocedure
 
 !procedure $state_assigned($alias)
-state "<<zugewiesen>>\nOrderTask" as $alias
+state "<<zugewiesen>>\nOrderTask" as $alias #LimeGreen
 $alias:status = <b>in-progress</b>
 $alias:businessStatus = <b>assigned</b>
 !endprocedure
 
 !procedure $state_assigned_decided($alias)
-state "<<zugewiesen (beschieden)>>\nOrderTask" as $alias:
+state "<<zugewiesen (beschieden)>>\nOrderTask" as $alias #LimeGreen
 $alias:status = <b>in-progress</b>
 $alias:businessStatus = <b>assigned-decided</b>
 !endprocedure
 
 !procedure $state_review($alias)
-state "<<Antragsprüfung>>\nOrderTask" as $alias
-$alias:status = <b>on-hold</b>
+state "<<Antragsprüfung>>\nOrderTask" as $alias #LimeGreen
+$alias:status = <b>in-progress</b>
 $alias:businessStatus = <b>in-review</b>
 !endprocedure
 
@@ -43,7 +43,7 @@ $alias:businessStatus = <b>correction-requested</b>
 !endprocedure
 
 !procedure $state_completed($alias)
-state "<<abgeschlossen>>\nOrderTask" as $alias
+state "<<abgeschlossen>>\nOrderTask" as $alias #DodgerBlue
 $alias:status = <b>completed</b>
 $alias:businessStatus = <b>completed</b>
 !endprocedure
