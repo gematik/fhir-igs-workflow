@@ -31,7 +31,8 @@ jobs:
       BUILD_GENERATE_DRAWIO_IMAGES: "true"
       INSTALL_SUSHI_DEPS: "skip"
       DRAWIO_APP: "/usr/local/bin/drawio"
-      FHIR_PACKAGE_CACHE_DIR: /home/runner/.fhir/packages
+      CI_HOME: ${{ github.workspace }}/.ci-home
+      FHIR_PACKAGE_CACHE_DIR: ${{ github.workspace }}/.ci-home/.fhir/packages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -440,37 +441,18 @@ jobs:
           set -euo pipefail
           successful_igs=()
           failed_igs=()
-          cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}"
-          home_cache_dir="${HOME}/.fhir/packages"
-          github_home_cache_dir="/github/home/.fhir/packages"
-          cache_candidates=("$cache_dir")
+          ci_home="${CI_HOME:-$GITHUB_WORKSPACE/.ci-home}"
+          cache_dir="${FHIR_PACKAGE_CACHE_DIR:-$ci_home/.fhir/packages}"
+          legacy_cache_dir="${HOME}/.fhir/packages"
 
+          mkdir -p "$ci_home"
           mkdir -p "$cache_dir"
 
-          # Keep cache lookup resilient across tool-specific HOME differences,
-          # but do not create protected directories on hosted runners.
-          if [[ "$home_cache_dir" != "$cache_dir" ]]; then
-            cache_candidates+=("$home_cache_dir")
-            if [[ -d "$home_cache_dir" ]]; then
-              cp -Rn "$home_cache_dir"/. "$cache_dir"/ || true
-            fi
+          # Keep old runner cache content if present, then use one canonical
+          # cache path for the rest of this step.
+          if [[ -d "$legacy_cache_dir" && "$legacy_cache_dir" != "$cache_dir" ]]; then
+            cp -Rn "$legacy_cache_dir"/. "$cache_dir"/ || true
           fi
-          if [[ -d "$github_home_cache_dir" || -L "$github_home_cache_dir" ]]; then
-            cache_candidates+=("$github_home_cache_dir")
-          fi
-
-          package_cached() {
-            local pkg="$1"
-            local ver="$2"
-
-            for candidate in "${cache_candidates[@]}"; do
-              if [[ -d "$candidate/${pkg}#${ver}" ]]; then
-                return 0
-              fi
-            done
-
-            return 1
-          }
 
           core_pkg_id="de.gematik.tiflow"
           core_pkg_version="$(yq -r '.version // ""' igs/core/sushi-config.yaml)"
@@ -482,56 +464,13 @@ jobs:
             [[ -d "$core_dev_cache_dir" || -d "$core_version_cache_dir" ]]
           }
 
-          install_ig_dependencies() {
-            local ig="$1"
-            local cfg="igs/$ig/sushi-config.yaml"
-            local cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}"
-            mkdir -p "$cache_dir"
-
-            if [[ ! -f "$cfg" ]]; then
-              return 0
-            fi
-
-            mapfile -t deps < <(yq eval '.dependencies // {} | to_entries | .[] | "\(.key) \(.value)"' "$cfg")
-            if [[ ${#deps[@]} -eq 0 ]]; then
-              echo "No dependencies declared in $cfg"
-              return 0
-            fi
-
-            for dep in "${deps[@]}"; do
-              local pkg="${dep%% *}"
-              local ver="${dep#* }"
-              [[ -z "$pkg" || -z "$ver" ]] && continue
-
-              if [[ "$ver" == "dev" || "$ver" == "current" ]]; then
-                echo "Skipping local dependency ${pkg}#${ver}; expected from an earlier local build."
-                continue
-              fi
-
-              if package_cached "$pkg" "$ver"; then
-                echo "Already cached ${pkg}#${ver}; skipping."
-                continue
-              fi
-
-              # If core was built in this job as #dev, reuse it for fixed-version
-              # dependencies such as de.gematik.tiflow#<ballot-version>.
-              if [[ "$pkg" == "$core_pkg_id" && -d "$core_dev_cache_dir" ]]; then
-                echo "Reusing locally built ${core_pkg_id}#dev for ${pkg}#${ver}."
-                cp -R "$core_dev_cache_dir" "$cache_dir/${pkg}#${ver}"
-                continue
-              fi
-
-              echo "Installing ${pkg} ${ver} for IG ${ig}..."
-              HOME="${HOME:-/home/runner}" DOTNET_CLI_HOME="${HOME:-/home/runner}" fhir install "$pkg" "$ver"
-            done
-          }
-
           run_pipeline() {
             local ig="$1"
             local fs_cmd=""
             local root_publisher="$GITHUB_WORKSPACE/input-cache/publisher.jar"
             local ig_input_cache="igs/$ig/input-cache"
             local ig_publisher="$ig_input_cache/publisher.jar"
+            local java_tool_options="${JAVA_TOOL_OPTIONS:-} -Dfile.encoding=UTF-8 -Duser.home=${ci_home}"
 
             if command -v fhirscripts >/dev/null 2>&1; then
               fs_cmd="fhirscripts"
@@ -542,9 +481,6 @@ jobs:
               return 1
             fi
 
-            # Install dependencies for this IG only, right before its build.
-            install_ig_dependencies "$ig"
-
             # Keep IG Publisher discoverable for IG-local fhirscripts runs.
             # TODO: Remove once fhirscripts resolves publisher from workspace root automatically.
             mkdir -p "$ig_input_cache"
@@ -554,8 +490,17 @@ jobs:
               echo "Warning: Root publisher jar not found at $root_publisher" >&2
             fi
 
-            # Ensure required tools (e.g. IG Publisher) are present before build.
-            (cd "igs/$ig" && "$fs_cmd" install && "$fs_cmd" build pipeline)
+            # Run install/build with one deterministic HOME so SUSHI and
+            # IG Publisher share the same ~/.fhir/packages cache.
+            (
+              cd "igs/$ig"
+              export HOME="$ci_home"
+              export DOTNET_CLI_HOME="$ci_home"
+              export FHIR_PACKAGE_CACHE_DIR="$cache_dir"
+              export JAVA_TOOL_OPTIONS="$java_tool_options"
+              "$fs_cmd" install
+              "$fs_cmd" build pipeline
+            )
           }
 
           # TODO: Remove this core-first orchestration once fhirscripts natively
