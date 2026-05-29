@@ -443,30 +443,21 @@ jobs:
           cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}"
           home_cache_dir="${HOME}/.fhir/packages"
           github_home_cache_dir="/github/home/.fhir/packages"
-          cache_candidates=("$cache_dir" "$home_cache_dir" "$github_home_cache_dir")
+          cache_candidates=("$cache_dir")
 
           mkdir -p "$cache_dir"
 
-          # Normalize the most common cache roots used by tooling in CI so all
-          # commands see the same package store.
-          for candidate in "${cache_candidates[@]}"; do
-            [[ "$candidate" == "$cache_dir" ]] && continue
-            mkdir -p "$(dirname "$candidate")"
-
-            if [[ -L "$candidate" ]]; then
-              continue
+          # Keep cache lookup resilient across tool-specific HOME differences,
+          # but do not create protected directories on hosted runners.
+          if [[ "$home_cache_dir" != "$cache_dir" ]]; then
+            cache_candidates+=("$home_cache_dir")
+            if [[ -d "$home_cache_dir" ]]; then
+              cp -Rn "$home_cache_dir"/. "$cache_dir"/ || true
             fi
-
-            if [[ -d "$candidate" ]]; then
-              # Merge existing cache content once, then keep candidate as-is.
-              cp -Rn "$candidate"/. "$cache_dir"/ || true
-              continue
-            fi
-
-            if [[ ! -e "$candidate" ]]; then
-              ln -s "$cache_dir" "$candidate"
-            fi
-          done
+          fi
+          if [[ -d "$github_home_cache_dir" || -L "$github_home_cache_dir" ]]; then
+            cache_candidates+=("$github_home_cache_dir")
+          fi
 
           package_cached() {
             local pkg="$1"
