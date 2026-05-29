@@ -127,3 +127,9 @@ Description: "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details a
 * #TIFLOW_POPP_TOKEN_INVALID "Invalid PoPP token" "The provided PoPP token is invalid"
   * ^designation.language = #de-DE
   * ^designation.value = "PoPP-Token ungültig"
+* #TIFLOW_TIMEOUT "Timeout" "The service took to long to process the request and cancelled it."
+  * ^designation.language = #de-DE
+  * ^designation.value = "Timeout"
+* #TIFLOW_INTERNAL_ERROR "Internal Server Error" "The service ran into an unspecified error."
+  * ^designation.language = #de-DE
+  * ^designation.value = "Server Fehler"

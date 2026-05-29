@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BUILD_USE_IGTOOLS: "false"
-      BUILD_GENERATE_DRAWIO_IMAGES: "false"
+      BUILD_GENERATE_DRAWIO_IMAGES: "true"
       INSTALL_SUSHI_DEPS: "skip"
       DRAWIO_APP: "/usr/local/bin/drawio"
       FHIR_PACKAGE_CACHE_DIR: /home/runner/.fhir/packages
@@ -358,24 +358,6 @@ jobs:
           echo "- $igtools_line" >> "$GITHUB_STEP_SUMMARY"
           echo "- $git_line" >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Install draw.io (headless)
-        if: env.BUILD_GENERATE_DRAWIO_IMAGES == 'true'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y jq xvfb
-          drawio_url=$(curl -s https://api.github.com/repos/jgraph/drawio-desktop/releases/latest \
-            | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url' \
-            | head -n 1)
-          echo "Downloading draw.io from $drawio_url"
-          sudo curl -L "$drawio_url" -o /usr/local/bin/drawio.appimage
-          sudo chmod +x /usr/local/bin/drawio.appimage
-          printf '%s\n' \
-            '#!/usr/bin/env bash' \
-            'set -euo pipefail' \
-            'exec xvfb-run -a /usr/local/bin/drawio.appimage "$@"' \
-            | sudo tee /usr/local/bin/drawio >/dev/null
-          sudo chmod +x /usr/local/bin/drawio
-
       - name: Determine IGs to build
         id: igs
         shell: bash
@@ -406,6 +388,18 @@ jobs:
 
           ig_list_sorted=$(printf "%s\n" "${ig_list[@]}" | tr '\n' ' ' | xargs)
           echo "ig_list=$ig_list_sorted" >> "$GITHUB_OUTPUT"
+
+      - name: Export draw.io files (CI)
+        if: steps.igs.outputs.ig_list != '' && env.BUILD_GENERATE_DRAWIO_IMAGES == 'true'
+        uses: rlespinasse/drawio-export-action@v2
+        with:
+          path: igs
+          format: svg
+          output: ../images
+          remove-page-suffix: true
+          action-mode: all
+          embed-svg-fonts: true
+          svg-links-target: auto
 
       - name: Cache FHIR packages
         if: steps.igs.outputs.ig_list != ''
