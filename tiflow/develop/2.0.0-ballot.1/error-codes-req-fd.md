@@ -45,7 +45,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS für den Fall, dass e
 * HTTP-Code: Code
   * 408 - Request Timeout: timeout
 * HTTP-Code: Details Code
-  * 408 - Request Timeout: MSG_TIMEOUT
+  * 408 - Request Timeout: TIFLOW_TIMEOUT
 * HTTP-Code: Details Text
   * 408 - Request Timeout: The request timed out.
 
@@ -58,7 +58,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS im Falle eines intern
 * HTTP-Code: Code
   * 500 - Internal Server Error: transient
 * HTTP-Code: Details Code
-  * 500 - Internal Server Error: MSG_INTERNAL_ERROR
+  * 500 - Internal Server Error: TIFLOW_INTERNAL_ERROR
 * HTTP-Code: Details Text
   * 500 - Internal Server Error: Internal Server Error
 

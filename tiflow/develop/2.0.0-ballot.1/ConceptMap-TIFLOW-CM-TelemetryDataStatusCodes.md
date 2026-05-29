@@ -341,6 +341,20 @@ Maps operation outcome codes to the telemetry data status codes
         "code" : "79273",
         "equivalence" : "equivalent"
       }]
+    },
+    {
+      "code" : "TIFLOW_INTERNAL_ERROR",
+      "target" : [{
+        "code" : "79274",
+        "equivalence" : "equivalent"
+      }]
+    },
+    {
+      "code" : "TIFLOW_TIMEOUT",
+      "target" : [{
+        "code" : "79275",
+        "equivalence" : "equivalent"
+      }]
     }]
   },
   {

@@ -61,7 +61,7 @@ Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werde
   "copyright" : "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0.",
   "caseSensitive" : true,
   "content" : "complete",
-  "count" : 41,
+  "count" : 43,
   "concept" : [{
     "code" : "TIFLOW_SECRET_MISMATCH",
     "display" : "Task secret mismatch",
@@ -429,6 +429,24 @@ Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werde
     "designation" : [{
       "language" : "de-DE",
       "value" : "PoPP-Token ungültig"
+    }]
+  },
+  {
+    "code" : "TIFLOW_TIMEOUT",
+    "display" : "Timeout",
+    "definition" : "The service took to long to process the request and cancelled it.",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Timeout"
+    }]
+  },
+  {
+    "code" : "TIFLOW_INTERNAL_ERROR",
+    "display" : "Internal Server Error",
+    "definition" : "The service ran into an unspecified error.",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Server Fehler"
     }]
   }]
 }

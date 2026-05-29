@@ -21,20 +21,7 @@ Es wird folgend eine Klassifikation der Health-Checks vorgenommen, um den tatsä
 
 ### Erweiterter Health-Check
 
-«««< HEAD Ein erweiterter Health-Check ist ein spezieller Aufruf auf den Endpunkt /metadata mit der http-Methode GET im inneren, verschlüsselten http-Request an die /ASL ⇒ ( “POST /ASL [GET /metadata]” ). Ziel dieses Health-Checks soll es sein, die Anmeldung am TI-Flow-Fachdienst und dem damit einhergehenden ASL-Protokoll zur Ver- und Entschlüsselung zu überprüfen. Dabei wird ebenfalls die Authentisierung überprüft. Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt werden, wenn z.B. ein neuer Client in Betrieb genommen wird. Als Abfrage zum Systemstart darf dieser Health-Check nicht eingesetzt werden! ======= Ein erweiterter Health-Check ist ein spezieller Aufruf auf den Endpunkt /metadata mit der http-Methode GET im inneren, verschlüsselten http-Request an die /VAU ⇒ ( “POST /VAU [GET /metadata]” ). Ziel dieses Health-Checks soll es sein, die Anmeldung am TI-Flow-Fachdienst und dem damit einhergehenden ASL-Protokoll zur Ver- und Entschlüsselung zu überprüfen. Dabei wird ebenfalls die Autorisierung am ZETA Guard des TI-Flow-Fachdienstes überprüft. Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt werden, wenn z.B. ein neuer Client in Betrieb genommen wird. Als Abfrage zum Systemstart darf dieser Health-Check nicht eingesetzt werden!
-
-> 
-> 
-> 
-> 
-> 
-> 
-> 8246353342e4b48edca109a52adc95fa8f012f5e
-
-
-
-
-
+Ein erweiterter Health-Check ist ein spezieller Aufruf auf den Endpunkt /metadata mit der http-Methode GET im inneren, verschlüsselten http-Request an die /VAU ⇒ ( “POST /VAU [GET /metadata]” ). Ziel dieses Health-Checks soll es sein, die Anmeldung am TI-Flow-Fachdienst und dem damit einhergehenden ASL-Protokoll zur Ver- und Entschlüsselung zu überprüfen. Dabei wird ebenfalls die Autorisierung am ZETA Guard des TI-Flow-Fachdienstes überprüft. Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt werden, wenn z.B. ein neuer Client in Betrieb genommen wird. Als Abfrage zum Systemstart darf dieser Health-Check nicht eingesetzt werden!
 
 Spezialfall: Für Hersteller von Primärsystemen der abgebenden LEI ist, ersetzend zum o.g. Verfahren, die Nutzung von /Subscription mit der http-Methode POST im inneren, verschlüsselten http-Request an die /ASL vorzuziehen, da dieses Verfahren bereits dazu dient, die Verbindungen zum TI-Flow-Fachdienst auf einen WebSocket zu reduzieren ⇒ ( “POST /ASL [POST /Subscription]” ).
 

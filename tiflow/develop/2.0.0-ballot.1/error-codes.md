@@ -89,8 +89,8 @@ Die folgenden Fehlercodes können ungeachtet des Endpunktes auftreten und gelten
 | | |
 | :--- | :--- |
 | Any | * MSG_BAD_FORMAT - Invalid request format
-* MSG_TIMEOUT - Request timeout
-* MSG_INTERNAL_ERROR - Internal server error
+* TIFLOW_TIMEOUT - Request timeout
+* TIFLOW_INTERNAL_ERROR - Internal server error
  |
 
 **Tabelle: **Globale Fehlercodes

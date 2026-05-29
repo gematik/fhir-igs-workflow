@@ -16,7 +16,7 @@ Version 2.0.0-ballot.1 - ci-build
 
 Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den TI-Flow-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet werden.
 
-## Systemübersicht
+### Systemübersicht
 
 Der TI-Flow-Fachdienst ist ein zentraler Ressourcenserver der Telematikinfrastruktur, der anwendungsübergreifende Workflows auf Basis des FHIR-Standards über eine RESTful API verwaltet.
 
@@ -29,9 +29,9 @@ Nach außen bietet der TI-Flow-Fachdienst seine Schnittstellen im Internet an un
 Die Vertraulichkeit und Integrität der verarbeiteten Daten gewährleistet der Fachdienst durch das Konzept der vertrauenswürdigen Ausführungsumgebung (VAU). Diese sichert eine durchgängige Verschlüsselung der Verordnungen und zugehörigen Daten – während des Transports, der Verarbeitung und der persistierten Speicherung – durch eine Kombination kryptographischer Verfahren. Die VAU wird dabei nicht vom TI-Flow-Fachdienst selbst implementiert, sondern durch seinen Betrieb auf einem TI-Flow-Cluster, das als Healthcare Confidential Computing (HCC) Plattform dient und auch weiteren TI-Anwendungen zur Verfügung steht.
 
 **Abbildung: **Systemüberblick TI-Flow-Fachdienst
+**Hinweis:** Die Anbindung des TI-Flow-Fachdienst an die ePA Aktensysteme erfolgt bis zu deren Unterstütztung von ZETA auf Basis der aktuellen Lösung.
 
-
-## Zweck und Geltungsbereich
+### Zweck und Geltungsbereich
 
 Um die Funktionalität des TI-Flow-Fachdienst verständlich und adressatengerecht zu beschreiben wurden mehrere FHIR-Implementation Guides angelegt.
 
@@ -55,7 +55,7 @@ Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG’s in der TI-Fl
 **Abbildung: **Übersicht der FHIR-IGs des TI-Flow-Fachdienst
 
 
-## Aufbau
+### Aufbau
 
 * [FHIR-Artefakte](./artifacts.md)
 * [FHIR-Validierung](./fhir-validate.md)
@@ -2323,9 +2323,9 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "requirement-mapping-old-to-new.html"
+          "valueUrl" : "requirement-mapping-0_9_0-to-2_0_0.html"
         }],
-        "nameUrl" : "requirement-mapping-old-to-new.html",
+        "nameUrl" : "requirement-mapping-0_9_0-to-2_0_0.html",
         "title" : "Mapping alter Anforderungen auf FHIR-IG Anforderungen",
         "generation" : "markdown"
       },
