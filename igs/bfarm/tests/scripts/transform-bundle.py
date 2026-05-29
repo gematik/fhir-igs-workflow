@@ -153,7 +153,7 @@ def run_hapi_transform(
     input_bundle: Path,
     output_file: Path,
     fhir_version: str = "4.0.1",
-    transform_url: str = "https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapCarbonCopy"
+    transform_url: str = "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy"
 ) -> tuple[int, str, str]:
     """
     Run HAPI FHIR transformation on the mapping bundle.

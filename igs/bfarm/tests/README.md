@@ -154,13 +154,13 @@ Runs HAPI FHIR validator with the StructureMap transformation to convert the map
 
 Uses the StructureMap:
 ```
-https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapCarbonCopy
+https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy
 ```
 
 Command line equivalent:
 ```bash
 java -jar validator.jar <bundle.json> \
-  -transform https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapCarbonCopy \
+   -transform https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy \
   -version 4.0.1 \
   -ig ./fsh-generated/resources \
   -ig de.gematik.erezept-workflow.r4 \

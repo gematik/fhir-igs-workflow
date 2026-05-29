@@ -71,7 +71,7 @@ Um HAPI FHIR zur Transformation zu nutzen, müssen FHIR-Version, die verwendeten
 ```
 sushi && \
 java -jar <path-to>/fhir_hapi.jar fsh-generated/resources/example-case-01-mapping-bundle.json \
--transform https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapCarbonCopy \
+-transform https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy \
 -version 4.0.1 \
 -ig ./fsh-generated/resources \
 -ig de.gematik.erezept-workflow.r4 \

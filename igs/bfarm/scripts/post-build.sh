@@ -81,7 +81,7 @@ if [[ -z "$MAPPING_BUNDLE_SOURCE" ]]; then
 	exit 1
 fi
 
-TRANSFORM_MAP_URL="https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapCarbonCopy"
+TRANSFORM_MAP_URL="https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy"
 TRANSFORM_OUTPUT="./input/content/Bundle-erp-t-prescription-carbon-copy-actual.json"
 
 # Create a temporary directory with mapping artifacts only (excluding examples).
