@@ -441,6 +441,46 @@ jobs:
           successful_igs=()
           failed_igs=()
           cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}"
+          home_cache_dir="${HOME}/.fhir/packages"
+          github_home_cache_dir="/github/home/.fhir/packages"
+          cache_candidates=("$cache_dir" "$home_cache_dir" "$github_home_cache_dir")
+
+          mkdir -p "$cache_dir"
+
+          # Normalize the most common cache roots used by tooling in CI so all
+          # commands see the same package store.
+          for candidate in "${cache_candidates[@]}"; do
+            [[ "$candidate" == "$cache_dir" ]] && continue
+            mkdir -p "$(dirname "$candidate")"
+
+            if [[ -L "$candidate" ]]; then
+              continue
+            fi
+
+            if [[ -d "$candidate" ]]; then
+              # Merge existing cache content once, then keep candidate as-is.
+              cp -Rn "$candidate"/. "$cache_dir"/ || true
+              continue
+            fi
+
+            if [[ ! -e "$candidate" ]]; then
+              ln -s "$cache_dir" "$candidate"
+            fi
+          done
+
+          package_cached() {
+            local pkg="$1"
+            local ver="$2"
+
+            for candidate in "${cache_candidates[@]}"; do
+              if [[ -d "$candidate/${pkg}#${ver}" ]]; then
+                return 0
+              fi
+            done
+
+            return 1
+          }
+
           core_pkg_id="de.gematik.tiflow"
           core_pkg_version="$(yq -r '.version // ""' igs/core/sushi-config.yaml)"
           core_dev_cache_dir="$cache_dir/${core_pkg_id}#dev"
@@ -477,7 +517,7 @@ jobs:
                 continue
               fi
 
-              if [[ -d "$cache_dir/${pkg}#${ver}" ]]; then
+              if package_cached "$pkg" "$ver"; then
                 echo "Already cached ${pkg}#${ver}; skipping."
                 continue
               fi
@@ -491,7 +531,7 @@ jobs:
               fi
 
               echo "Installing ${pkg} ${ver} for IG ${ig}..."
-              fhir install "$pkg" "$ver"
+              HOME="${HOME:-/home/runner}" DOTNET_CLI_HOME="${HOME:-/home/runner}" fhir install "$pkg" "$ver"
             done
           }
 
