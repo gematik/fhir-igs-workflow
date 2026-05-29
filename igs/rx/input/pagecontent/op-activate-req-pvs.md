@@ -9,8 +9,8 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 <!-- A_28574 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-58" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 160/166/169/200/209 - Bereitstellen von Dosierinformationen" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="Konformitätsbestätigung"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
     Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für Verordnungen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG] erzeugen und im E-Rezept-Bundle angeben.
 </requirement>
@@ -20,8 +20,8 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 <!-- A_22541-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-59" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 200/209 - KVNR als Identifier" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="Konformitätsbestätigung"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
     Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 als Identifier des Patienten in Patient.identifer.value die KVNR des Versicherten verwenden.
 </requirement>
@@ -29,8 +29,8 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 <!-- A_22542-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-60" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 200/209 - Versicherungstyp PKV" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="Konformitätsbestätigung"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
     Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 für Coverage.type.coding.code den Wert "PKV" verwenden.
 </requirement>
@@ -39,8 +39,8 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 <!-- A_22636 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-61" title="PS verordnende LEI: E-Rezept erstellen - Mehrfachverordnung - Beginn Einlösefrist" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="Konformitätsbestätigung"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
     Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" beim Erstellen des E-Rezept-Bundles für die Teilverordnung einer Mehrfachverordnung den Beginn der Einlösefrist der Teilverordnung (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) angeben.
 </requirement>
@@ -50,8 +50,8 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 <!-- A_27834 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-62" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - zulässige Signatur Arzt" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="Konformitätsbestätigung"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
     Das PS der verordnenden LEI MUSS sicherstellen, dass ein Verordnungsdatensatz für ein E-Rezept des Flowtype 166 nur mit einem HBA mit der zulässigen ProfessionOID oid_arzt signiert werden kann.
 </requirement>
@@ -59,8 +59,8 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 <!-- A_27835 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-63" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - Reichdauer nach Vorgaben" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="Konformitätsbestätigung"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
     Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 166 sicherstellen, dass die maximale Reichdauer entsprechend den gesetzlichen Vorgaben nicht überschritten wird.
 </requirement>
@@ -68,8 +68,8 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 <!-- A_27836 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-64" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - Bestätigungen nach §3a Abs. 2, 5 AMVV" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="Konformitätsbestätigung"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
 <table>
   <thead>
@@ -113,8 +113,8 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-65" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 169/209 - kein Patientenausdruck" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das PS der verordnenden LEI DARF für E-Rezepte des Workflowtype mit Steuerung durch den Leistungserbringer (169, 209) NICHT einen Patientenausdruck erstellen.
 </requirement>
@@ -126,8 +126,8 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 <!-- A_21400 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-66" title="PS verordnende LEI: Übergabe E-Rezept-Token an Apotheke" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="Konformitätsbestätigung"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
         Das PS der verordnenden LEI MUSS es dem Nutzer ermöglichen, die Einlöseinformationen (Task.id und AccessCode) als E-Rezept-Token über ein geeignetes Übermittlungsverfahren an eine Apotheke der Wahl zu schicken.
 </requirement>
@@ -135,8 +135,8 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 <!-- A_21349 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-67" title="PS: Schutz des E-Rezept-Tokens bei Übertragung" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="Konformitätsbestätigung"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
     Das Primärsystem MUSS für die Übertragung von E-Rezept-Token ein Verfahren nutzen, dass die sehr hohe Vertraulichkeit des E-Rezept-Tokens und seine Integrität schützt.
 </requirement>
@@ -144,8 +144,8 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 <!-- A_21453 -->
 <requirement conformance="MAY" key="IG-TIFLOW-ERP-68" title="PS verordnende LEI: Herstellende Apotheke für Übermittlungsverfahren" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="Konformitätsbestätigung"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
     Das PS der verordnenden LEI KANN die Auswahl und Verwaltung von herstellenden Apotheken für die Übermittlung der E-Rezept-Einlöseinformationen ermöglichen.
 </requirement>

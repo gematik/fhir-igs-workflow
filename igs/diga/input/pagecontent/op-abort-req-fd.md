@@ -9,8 +9,8 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 <!-- A_19026-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-7" title="TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 162 - Rollenprüfung" version="1">
   <meta lockversion="false"/>
-  <actor name="TI-Flow_FD">
-    <testProcedure id="Produktgutachten"/>
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks mit Flowtype 162 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
   <ul>

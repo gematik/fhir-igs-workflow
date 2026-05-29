@@ -3,8 +3,8 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_22362-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-346" title="TI-Flow-Fachdienst - Subscription registrieren - Rollenprüfung" version="1">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produktgutachten"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
      <ul>
@@ -41,8 +41,8 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_22364 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-347" title="TI-Flow-Fachdienst - Subscription registrieren - Response" version="1">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource mit einem Response antworten, welcher eine Subscription Ressource mit 
     <ul>
@@ -56,8 +56,8 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_22365 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-348" title="TI-Flow-Fachdienst - Subscription registrieren - Pseudonym der Telematik-ID" version="1">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produktgutachten"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS das Pseudonym innerhalb der VAU mittels eines 128-Bit-AES-CMAC-Schlüssels erstellen und hexadezimal kodieren (32 Byte lang) (vgl gemSpec_Krypt#A_20163).
 </requirement>
@@ -65,8 +65,8 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_22383-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-349" title="TI-Flow-Fachdienst - Generierungsschlüssel - Pseudonym der Telematik-ID" version="1">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produktgutachten"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS den AES-CMAC-Schlüssel zur Pseudonymgenerierung regelmäßig mindestens alle 3 Monate ändern.
 </requirement>
@@ -74,8 +74,8 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_22366 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-350" title="TI-Flow-Fachdienst - Subscription registrieren - Barrier-Token" version="1">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produktgutachten"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS für die Registrierung der Subscription einen Bearer-Token mit den Claims 
      <ul>
@@ -89,8 +89,8 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- A_22363 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-351" title="TI-Flow-Fachdienst - Subscription registrieren - Prüfung Telematik-ID" version="1">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription Ressource durch eine abgebende Institution, diese anhand des zeta-user-info.identifier des Nutzers (Telematik-ID) identifizieren, diese gegen die in der Ressource im Element criteria Attribut receipient hinterlegte Telematik-ID prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">

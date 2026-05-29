@@ -10,8 +10,8 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 <!-- A_25993 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-21" title="TI-Flow-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung" version="1">
   <meta lockversion="false"/>
-  <actor name="TI-Flow_FD">
-    <testProcedure id="Produktgutachten"/>
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   </actor>
   Der TI-Flow-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 162 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
   <ul>

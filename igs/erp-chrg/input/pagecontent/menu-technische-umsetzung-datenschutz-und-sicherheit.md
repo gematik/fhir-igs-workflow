@@ -5,8 +5,8 @@ Um zu vermeiden, dass der Anbieter des TI-Flow-Fachdienstes ein Profil über all
 <!--A_22207-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-35" title="Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
 Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Einwilligung in die Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte möglich ist.
 </requirement>
@@ -15,8 +15,8 @@ Für den TI-Flow-Fachdienst heißt dies:
 <!--A_22208-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-36" title="Verarbeitung von Abrechnungsinformationen nur nach Einwilligung" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
 Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte erfolgt, die hierfür eingewilligt haben.
 </requirement>
@@ -24,8 +24,8 @@ Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Verarbeitung von Abrech
 <!--A_22209-->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-37" title="Verarbeitung von Abrechnungsinformationen im TI-Flow-Fachdienst nur nach Einwilligung" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
 Der TI-Flow-Fachdienst DARF NICHT Abrechnungsinformationen verarbeiten, wenn keine Einwilligung des PKV-Versicherten erfolgt ist.
 </requirement>
@@ -33,8 +33,8 @@ Der TI-Flow-Fachdienst DARF NICHT Abrechnungsinformationen verarbeiten, wenn kei
 <!--A_22210-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-38" title="Nichtabstreitbarkeit der Einwilligung" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
 Die Fachanwendung E-Rezept MUSS sicherstellen, dass die technische Umsetzung der Einwilligung im E-Rezept-FdV und des Vermerkens dieser im TI-Flow-Fachdienst so zuverlässig ist, dass der Vermerk im TI-Flow-Fachdienst als nicht abstreitbar angesehen werden kann.
 </requirement>
@@ -42,8 +42,8 @@ Die Fachanwendung E-Rezept MUSS sicherstellen, dass die technische Umsetzung der
 <!--A_22211-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-39" title="Löschen von Abrechnungsinformationen nach zehn Jahren" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
 Der TI-Flow-Fachdienst MUSS Abrechnungsinformationen zu einem E-Rezept nach zehn Jahren löschen.
 </requirement>
@@ -51,8 +51,8 @@ Der TI-Flow-Fachdienst MUSS Abrechnungsinformationen zu einem E-Rezept nach zehn
 <!--A_22212-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-40" title="Information über Möglichkeit des Speicherns der Abrechnungsinformationen nur für konkretes E-Rezept" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
 Der TI-Flow-Fachdienst MUSS sicherstellen, dass abgebende Leistungserbringer die Information über die Möglichkeit des Speicherns der Abrechnungsinformationen im TI-Flow-Fachdienst nur im Kontext eines konkreten E-Rezepts erhalten.
 </requirement>
@@ -60,8 +60,8 @@ Der TI-Flow-Fachdienst MUSS sicherstellen, dass abgebende Leistungserbringer die
 <!--A_22213-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-41" title="Schutz der Abrechnungsinformationen" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
 Der TI-Flow-Fachdienst MUSS die Abrechnungsinformationen während der Verarbeitung (inkl. Transport und Speichern) vor unberechtigter Einsichtnahme oder Manipulation schützen.
 </requirement>
@@ -69,8 +69,8 @@ Der TI-Flow-Fachdienst MUSS die Abrechnungsinformationen während der Verarbeitu
 <!--A_22214-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-42" title="Protokollierung der Einwilligung bzw. des Widerrufs" version="1">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
 Der TI-Flow-Fachdienst MUSS die Einwilligung in das Speichern der Abrechnungsinformationen und deren Widerruf - inkl. Zeitpunkt der Aktion - für den Versicherten protokollieren.
 </requirement>

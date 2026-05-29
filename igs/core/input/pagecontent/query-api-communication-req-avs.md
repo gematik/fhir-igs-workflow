@@ -5,8 +5,8 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 <!-- A_21556 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-146" title="PS abgebende LEI: Nachrichten abrufen - Häufigkeit" version="1">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend">
-    <testProcedure id="Herstellererklärung"/>
+  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am TI-Flow-Fachdienst über alle Clientsysteme zu erreichen.
 </requirement>
@@ -14,8 +14,8 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `Communication`-
 <!-- A_19329-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-147" title="PS abgebende LEI: Nachrichten abrufen - Abfrage" version="1">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend">
-    <testProcedure id="Herstellererklärung"/>
+  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication mit
   <ul>
@@ -34,8 +34,8 @@ Die für die Nachricht zu verwendende Communication-Ressource wird modul- und an
 <!-- A_19334 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-148" title="PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="1">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend">
-    <testProcedure id="Herstellererklärung"/>
+  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die HTTP-Operation POST /Communication mit
   <ul>
@@ -60,8 +60,8 @@ Löschen abzubrechen.
 <!-- A_21489 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-149" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="1">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend">
-    <testProcedure id="Herstellererklärung"/>
+  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "Nachricht durch Abgebenden löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; mit
   <ul>

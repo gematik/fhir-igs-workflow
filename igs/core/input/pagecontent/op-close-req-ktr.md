@@ -3,8 +3,8 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- A_27840 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-342" title="CS Kostenträger: Quittung abrufen - Abschluss des Workflows durchführen" version="0">
     <meta lockversion="false"/>
-    <actor name="CS_E-Rezept_KTR">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das Clientsystem Kostenträger MUSS den Anwendungsfall "Quittung abrufen" für Verordnungen, welche abschließend verarbeitet wurden, ausführen, um den Workflow am TI-Flow-Fachdienst abzuschließen.
 </requirement>
@@ -14,8 +14,8 @@ Die Erstellung der MedicationDispense erfolgt modulspezifisch.
 <!-- A_19289-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-343" title="CS Kostenträger: Quittung abrufen - Statusrequest" version="1">
     <meta lockversion="false"/>
-    <actor name="CS_E-Rezept_KTR">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das Clientsystem Kostenträger MUSS im Anwendungsfall "Quittung abrufen" für zum Abschliessen des Workflows für die Verordnung die HTTP-Operation POST /Task/&#60;id&#62;/$close mit
     <ul> 

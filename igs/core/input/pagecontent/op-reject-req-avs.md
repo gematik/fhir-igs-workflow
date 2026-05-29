@@ -7,8 +7,8 @@ Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das a
 <!-- A_19250 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-254" title="PS abgebende LEI: E-Rezept zurückgeben - Statusrequest" version="1">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend">
-    <testProcedure id="Herstellererklärung"/>
+  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden zurückgeben" für das zurückzugebende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$reject mit 
   <ul>
@@ -21,8 +21,8 @@ Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das a
 <!-- A_19251 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-255" title="PS abgebende LEI: E-Rezept zurückgeben - E-Rezept löschen" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend">
-    <testProcedure id="Herstellererklärung"/>
+  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezept durch Abgebenden zurückgeben" für das zurückzugebende E-Rezept nach erfolgreichem Aufruf der Operation "Ein E-Rezept zurückweisen" die Daten zum E-Rezept, E-Rezept-Token und das Geheimnis im PS löschen.
 </requirement>

@@ -4,8 +4,8 @@ Diese Seite beschreibt Anforderungen an das Clientsystem Kostenträger zur Nutzu
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-215" title="CS Kostenträger: Recovery Secret - Statusrequest" version="1">
   <meta lockversion="false"/>
-  <actor name="CS_E-Rezept_KTR">
-    <testProcedure id="Herstellererklärung"/>
+  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das Clientsystem Kostenträger MUSS im Anwendungsfall "Recovery Secret" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit 
   <ul>
@@ -24,8 +24,8 @@ Der Anwendungsfall kann bei Bedarf wiederholt werden.
 <!-- A_19292 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-216" title="CS Kostenträger: Quittung erneut abrufen - Statusrequest" version="1">
   <meta lockversion="false"/>
-  <actor name="CS_E-Rezept_KTR">
-    <testProcedure id="Herstellererklärung"/>
+  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das Clientsystem Kostenträger MUSS im Anwendungsfall "Quittung erneut abrufen" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit 
   <ul>

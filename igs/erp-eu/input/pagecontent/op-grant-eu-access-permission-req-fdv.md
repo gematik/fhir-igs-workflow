@@ -8,8 +8,8 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 <!--A_27109 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-49" title="E-Rezept-FdV: Zugriffsberechtigung - Liste zulässiger Länder" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS Anwendungsfall "Zugriffsberechtigung erteilen" die Liste aller zulässigen Länder aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird:
     <ul>
@@ -24,8 +24,8 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 <!--A_27110 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-XBORDER-50" title="E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
    Das E-Rezept-FdV DARF NICHT Informationen zur Liste zulässiger Länder verwenden, welche länger als 96h lokal durch das E-Rezept-FdV gecacht wurden.
 </requirement>
@@ -33,8 +33,8 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 <!--A_27111 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-51" title="E-Rezept-FdV: Zugriffsberechtigung - Land auswählen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung erteilen" es dem Nutzer ermöglichen, ein Land aus der Liste der zulässigen Länder auszuwählen, für das der Nutzer die Zugriffsberechtigung erteilen möchte.
 </requirement>
@@ -42,8 +42,8 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
 <!--A_27113 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-52" title="E-Rezept-FdV: Zugriffsberechtigung - Zugriffscode erzeugen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Produktgutachten"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung" einen eigens generierten Zugriffscode als Zufallswert erzeugen.
 </requirement>
@@ -56,8 +56,8 @@ Für jede weitere Erteilung einer Zugriffsberechtigung für ePrescription/Dispen
 <!--A_27114 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-53" title="E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am TI-Flow-Fachdienst speichern" version="1">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung erteilen" zum Speichern der Information am TI-Flow-Fachdienst die HTTP-Operation POST /$grant-eu-access-permission mit:
     <ul>

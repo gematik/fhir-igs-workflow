@@ -19,8 +19,8 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-12" title="PS verordnende LEI: TIFlow-DIGA - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle
     <ul>
@@ -36,8 +36,8 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-13" title="E-Rezept-FdV: TIFlow-DIGA - verpflichtende Anwendungsfälle" version="1">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle
     <ul>
@@ -56,8 +56,8 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-14" title="CS Kostenträger: TIFlow-DIGA - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
-    <actor name="CS_E-Rezept_KTR">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das Clientsystem des Kostenträgers MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle
     <ul>

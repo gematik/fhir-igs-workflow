@@ -11,8 +11,8 @@ Der Kostenträger stellt die Abgabeinformationen beim Abschluss des Workflows zu
 <!-- A_26013 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-25" title="E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Anzeige des Freischaltcodes" version="0">
   <meta lockversion="false"/>
-  <actor name="eRp_FdV">
-    <testProcedure id="Herstellererklärung"/>
+  <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" dem Nutzer Abgabeinformationen eines Tasks mit Flowtyp 162 den Freischaltcode in geeigneter Weise darstellen.
 </requirement>
@@ -20,8 +20,8 @@ Der Kostenträger stellt die Abgabeinformationen beim Abschluss des Workflows zu
 <!-- A_26340 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-26" title="E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Supportinformationen für DiGA-App" version="0">
   <meta lockversion="false"/>
-  <actor name="eRp_FdV">
-    <testProcedure id="Herstellererklärung"/>
+  <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" dem Nutzer zusammen mit den Abgabeinformationen zu einer DiGA-App Supportinformationen zu der DiGA-App anzeigen.
 </requirement>
