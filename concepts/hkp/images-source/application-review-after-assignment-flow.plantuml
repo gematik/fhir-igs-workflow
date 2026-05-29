@@ -12,7 +12,7 @@ $state_assigned(assigned)
 $state_assigned_decided(assigned_decided)
 $state_completed(completed)
 $state_cancelled(deleted)
-$state_review(review)
+$state_review_from_assigned(review)
 
 
 [*] -> init
@@ -21,7 +21,10 @@ init -> open : <color:black><back:Lime> 1
 open -> assigned : <color:black><back:Lime> 2
 
 assigned -> review : <color:black><back:Salmon> AP3
+
+
 review -> assigned_decided : <color:black><back:Salmon> AP4
+
 ' review --> subreview_requested
 
 ' subreview_requested --> subreview_progress 

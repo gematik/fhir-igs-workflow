@@ -18,7 +18,7 @@ state "Sub-Workflow Korrektur" as correction_workflow {
 
 assigned -d-> correction : <color:black><back:Khaki> K1
 ' correction -u-> assigned : <color:black><back:Khaki> K3
-correction -d-> correction_requested : <color:black><size:12> <<invoke>>
+correction -d-> correction_requested : <color:black><back:Khaki><size:12> K1 <<invoke>>
 
 correction_requested  -r-> correction_cancelled
 correction_requested -d-> correction_in_progress
@@ -26,9 +26,13 @@ correction_in_progress -[dashed]u-> correction_requested
 correction_in_progress -d-> correction_completed
 correction_in_progress  -d-> correction_rejected
 
-correction_completed -l-> assigned : <color:black><back:Khaki> K2
-correction_rejected -l-> assigned : <color:black><back:Khaki> K3
-correction_cancelled -l-> assigned : <color:black><back:Khaki> K3
+correction_completed -l-> correction : <color:black><back:Khaki><size:16> K2
+correction_rejected -l-> correction : <color:black><back:Khaki><size:16> K3
+correction_cancelled -l-> correction : <color:black><back:Khaki><size:16> K3
+
+correction -l-> assigned : <color:black><back:Khaki> K2
+correction -l-> assigned : <color:black><back:Khaki> K3
+correction -l-> assigned : <color:black><back:Khaki> K3
 
 
 

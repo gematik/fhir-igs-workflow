@@ -3,7 +3,7 @@
 !include ./utils/style.iuml
 !include ./utils/states.iuml
 hide empty description
-$state_review(review)
+$state_review_from_assigned(review)
 $state_review_correction(correction)
 
 state "Sub-Workflow Korrektur" as correction_workflow {
@@ -18,7 +18,7 @@ state "Sub-Workflow Korrektur" as correction_workflow {
 
 review -d-> correction : <color:black><back:Khaki> K4
 ' correction -u-> review : <color:black><back:Khaki> K6
-correction -d-> correction_requested : <color:black><size:12> <<invoke>>
+correction -d-> correction_requested : <color:black><back:Khaki><size:12> K4 <<invoke>>
 
 correction_requested  -r-> correction_cancelled
 correction_requested -d-> correction_in_progress
@@ -26,9 +26,14 @@ correction_in_progress -[dashed]u-> correction_requested
 correction_in_progress -d-> correction_completed
 correction_in_progress  -d-> correction_rejected
 
-correction_completed -l-> review : <color:black><back:Khaki> K5
-correction_rejected -l-> review : <color:black><back:Khaki> K6
-correction_cancelled -l-> review : <color:black><back:Khaki> K6
+correction_completed -l-> correction : <color:black><back:Khaki><size:16> K5
+correction_rejected -l-> correction : <color:black><back:Khaki><size:16> K6
+correction_cancelled -l-> correction : <color:black><back:Khaki><size:16> K6
+
+
+correction -l-> review : <color:black><back:Khaki> K5
+correction -l-> review : <color:black><back:Khaki> K6
+correction -l-> review : <color:black><back:Khaki> K6
 
 
 

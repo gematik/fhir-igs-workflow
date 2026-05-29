@@ -30,30 +30,58 @@ $alias:status = <b>in-progress</b>
 $alias:businessStatus = <b>assigned-decided</b>
 !endprocedure
 
-!procedure $state_review($alias)
-state "<<Antragsprüfung>>\nOrderTask" as $alias #LimeGreen
-$alias:status = <b>in-progress</b>
-$alias:businessStatus = <b>in-review</b>
+!procedure $state_review_from_open($alias)
+state "<<offen>>\nOrderTask" as $alias #OldLace {
+    state "<i><<Antragsprüfung>></i>\nSub-Workflow" as sub_review_from_open #Coral
+}
+$alias:status = <b>on-hold</b>
+$alias:businessStatus = <b>open</b> 
+
+!endprocedure
+
+!procedure $state_review_from_assigned($alias)
+state "<<zugewiesen>>\nOrderTask" as $alias #OldLace {
+    state "<i><<Antragsprüfung>></i>\nSub-Workflow" as sub_review_from_assigned #Coral
+}
+$alias:status = <b>on-hold</b>
+$alias:businessStatus = <b>assigned</b>
+!endprocedure
+
+!procedure $state_review_subworkflow($alias)
+state "<<Antragsprüfung>>\nSub-Workflow" as $alias #SkyBlue {
+}
 !endprocedure
 
 
+' !procedure $state_correction($alias)
+' state "<<Korrekturanfrage>>\nOrderTask" as $alias #OldLace
+' $alias:status = <b>on-hold</b>
+' $alias:businessStatus = <b>review-correction-requested</b> or <b>review-correction-requested</b>
+' !endprocedure
+
 !procedure $state_correction($alias)
-state "<<Korrekturanfrage>>\nOrderTask" as $alias #OldLace
+state "<<zugewiesen>>\nOrderTask" as $alias #OldLace {
+    state "<i><<Korrekturanfrage>></i>\nSub-Workflow" as sub_correction_from_review #Coral
+}
 $alias:status = <b>on-hold</b>
-$alias:businessStatus = <b>review-correction-requested</b> or <b>review-correction-requested</b>
+$alias:businessStatus = <b>assigned</b>
 !endprocedure
 
 !procedure $state_review_correction($alias)
-state "<<Korrekturanfrage>>\nOrderTask" as $alias #OldLace
+state "<<zugewiesen>>\nOrderTask" as $alias #OldLace {
+    state "<i><<Korrekturanfrage>></i>\nSub-Workflow" as sub_correction_from_review #Coral
+}
 $alias:status = <b>on-hold</b>
-$alias:businessStatus = <b>review-correction-requested</b>
+$alias:businessStatus = <b>assigned</b>
 !endprocedure
 
 
 !procedure $state_assigned_correction($alias)
-state "<<Korrekturanfrage>>\nOrderTask" as $alias #OldLace
+state "<<zugewiesen>>\nOrderTask" as $alias #OldLace {
+    state "<i><<Korrekturanfrage>></i>\nSub-Workflow" as sub_correction_from_assigned #Coral
+}
 $alias:status = <b>on-hold</b>
-$alias:businessStatus = <b>assigned-correction-requested</b>
+$alias:businessStatus = <b>assigned</b>
 !endprocedure
 
 
