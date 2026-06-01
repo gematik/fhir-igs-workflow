@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="tiflow-diga-accept-op"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition tiflow-diga-accept-op</b></p><a name="tiflow-diga-accept-op"> </a><a name="hctiflow-diga-accept-op"> </a><p>URL: [base]/Task/[id]/$accept</p><p>Output parameters Profile:<a href="StructureDefinition-ti-flow-di-ga-accept-operation-output.html">TIFlow DiGA Accept Operation Output</a></p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>ac</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>Der Secret-Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-accept-op"/>
+  <version value="2.0.0-ballot.2"/>
+  <name value="TIFlow-DIGA-OP-Accept"/>
+  <title value="E-Rezept abrufen"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2028-04-01"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="true"/>
+  <code value="accept"/>
+  <resource value="Task"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <outputProfile value="https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-accept-operation-output"/>
+  <parameter>
+    <name value="ac"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der Secret-Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen."/>
+    <type value="string"/>
+  </parameter>
+</OperationDefinition>

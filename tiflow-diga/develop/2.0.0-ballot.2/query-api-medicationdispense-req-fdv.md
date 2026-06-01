@@ -1,0 +1,31 @@
+# FdV-Anforderungen: MedicationDispense-Query - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
+
+Version 2.0.0-ballot.2 - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**Query API**](query-api.md)
+* [**Query API: MedicationDispense**](query-api-medicationdispense.md)
+* **FdV-Anforderungen: MedicationDispense-Query**
+
+## FdV-Anforderungen: MedicationDispense-Query
+
+Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `MedicationDispense`-Query-Endpunkte.
+
+### Anforderungen aus der Core Spezifikation
+
+Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `MedicationDispense`-Query-Endpunkte.
+
+funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" die HTTP-Operation GET /MedicationDispense mit
+* optional: Suchparameter gemäß https://www.hl7.org/fhir/medicationdispense.html#search
+ausführen.
+### Modulspezifische Anforderungen
+
+Der Kostenträger stellt die Abgabeinformationen beim Abschluss des Workflows zur Verordnung ein. Der Task hat dann den Status “completed”.
+
+funkt. Eignung: HerstellererklärungDas E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" dem Nutzer Abgabeinformationen eines Tasks mit Flowtyp 162 den Freischaltcode in geeigneter Weise darstellen.
+
+funkt. Eignung: HerstellererklärungDas E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" dem Nutzer zusammen mit den Abgabeinformationen zu einer DiGA-App Supportinformationen zu der DiGA-App anzeigen.
+Supportinformationen zu DiGA-Apps sind im BfArM-Verzeichnis verfügbar.
+
