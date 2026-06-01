@@ -257,3 +257,17 @@ RuleSet: TiflowOcspBackendError
   * extension[description].valueString = "Invalid OCSP response"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_OCSP_BACKEND_ERROR"
+
+RuleSet: TiflowInternalError
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "500"
+  * extension[description].valueString = "Internal Server Error"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_INTERNAL_ERROR"
+
+RuleSet: TiflowTimeout
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "408"
+  * extension[description].valueString = "Timeout"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_TIMEOUT"
