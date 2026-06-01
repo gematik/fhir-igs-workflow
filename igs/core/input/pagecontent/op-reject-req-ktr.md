@@ -3,8 +3,8 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- A_19250 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-344" title="CS Kostenträger: Verordnung zurückgeben - Statusrequest" version="1">
   <meta lockversion="false"/>
-  <actor name="CS_E-Rezept_KTR">
-    <testProcedure id="Herstellererklärung"/>
+  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für die zurückzugebende Verordnung die HTTP-Operation POST /Task/&lt;id&gt;/$reject mit 
   <ul>
@@ -17,8 +17,8 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- A_19251 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-345" title="CS Kostenträger: Verordnung zurückgeben - Verordnung löschen" version="1">
   <meta lockversion="false"/>
-  <actor name="CS_E-Rezept_KTR">
-    <testProcedure id="Herstellererklärung"/>
+  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das Clientsystem Kostenträger MUSS im Anwendungsfall "Verordnung durch Clientsystem zurückgeben" für die zurückzugebende Verornung nach erfolgreichem Aufruf der Operation "Eine Verordnung zurückweisen" die Daten zu Verordnung, E-Rezept-Token und das Geheimnis im CS löschen.
 </requirement>

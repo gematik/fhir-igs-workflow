@@ -3,8 +3,8 @@ Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `AuditEven
 <!-- A_19210 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-301" title="E-Rezept-FdV: Protokolldaten anzeigen - Protokolleinträge abrufen" version="1">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Produkttest"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Protokolldaten anzeigen" zum Abrufen der Protokolleinträge vom TI-Flow-Fachdienst die HTTP-Operation GET /AuditEvent ausführen.
 </requirement>

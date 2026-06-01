@@ -11,8 +11,8 @@ Um die Einlösung einer elektronischen DiGA-Verordnung (Flowtype 162) sicherzust
 <!-- A_28862 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-29" title="PS verordnende LEI: E-Rezept einstellen - Flowtype 162 - Patientenausdruck" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_verordnend">
-    <testProcedure id="Herstellererklärung"/>
+  <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der verordnenden LEI MUSS nach dem erfolgreichen Einstellen einer Verordnung mit dem Flowtype 162 einen Patientenausdruck erstellen, sofern der Nutzer in Rücksprache mit dem Versicherten dies nicht aktiv ablehnt.
 </requirement>
