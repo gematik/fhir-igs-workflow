@@ -2,7 +2,7 @@ Instance: ERPTPrescriptionStructureMapCarbonCopy
 InstanceOf: StructureMap
 Usage: #definition
 Title: "E-T-Rezept Structure Map for CarbonCopy"
-Description: "Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./trezept.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden."
+Description: "Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./menu-technische-umsetzung-mapping.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden."
 * insert Instance(StructureMap, ERPTPrescriptionStructureMapCarbonCopy)
 
 * import[+] = Canonical(ERPTPrescriptionStructureMapMedicationDispense)

@@ -159,7 +159,7 @@ for test_case_path in "${BUILT_TEST_CASES[@]}"; do
 
     test_output_dir="$OUTPUT_DIR/$test_case_name"
     bundle_file="$test_output_dir/${test_case_name}-mapping-bundle.json"
-    result_file="$test_output_dir/${test_case_name}-digitaler-durchschlag.json"
+    result_file="$test_output_dir/Parameters/${test_case_name}-digitaler-durchschlag.json"
 
     echo -e "${YELLOW}[2/3] Transforming with StructureMap...${NC}"
     if python3 "$TRANSFORM_SCRIPT" "$bundle_file" "$test_output_dir"; then
