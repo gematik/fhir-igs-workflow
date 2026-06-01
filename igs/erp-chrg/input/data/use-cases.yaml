@@ -25,7 +25,7 @@
     - Die Abrechnungsinformation ist im TI-Flow-Fachdienst gespeichert.
     - Das Einstellen der Abrechnungsinformation ist im TI-Flow-Fachdienst protokolliert. 
   interface: |
-    - [Abrechnungsinformation bereitstellen](./query-api-chargeitem.html#post-chargeitem-bereitstellen)
+    - [Abrechnungsinformation bereitstellen](./query-api-chargeitem.html#nachricht)
   diagram: seq-uc-4-11-abrechungsinformation-durch-abgebenden-bereitstellen
   
 - id: UC_4_10_Abrechungsinformationen_durch_Abgebenden_abrufen
@@ -47,7 +47,7 @@
     - Der PKV-Abgabedatensatz und der Verordnungsdatensatz liegen im PS vor, um Änderungen am PKV-Abgabedatensatz zu ermöglichen.
     - Der Datenzugriff ist im TI-Flow-Fachdienst protokolliert.
   interface: |
-    - [Abrechnungsinformation abrufen](./query-api-chargeitem.html#get-chargeitemid-details)
+    - [Abrechnungsinformation abrufen](./query-api-chargeitem.html#nachricht)
   diagram: seq-uc-4-10-abrechungsinformationen-durch-abgebenden-abrufen
 
 - id: UC_4_13_Abgabedatensatz_durch_Abgebenden_aktualisieren
@@ -102,7 +102,7 @@
   postconditions: |
     - Daten stehen im FdV zur Anzeige und zum Export bereit; Abruf ist protokolliert.
   interface: |
-    - [Abrechnungsinformation abrufen](./query-api-chargeitem.html#get-chargeitem-liste)
+    - [Abrechnungsinformation abrufen](./query-api-chargeitem.html#nachricht)
   diagram: seq-uc-3-10-abrechungsinformationen-durch-versicherten-abrufen
 
 - id: Abrechungsinformationen_durch_Versicherten_weitergeben
@@ -121,12 +121,12 @@
   postconditions: |
     - Die Abrechnungsinformation ist in der Ziel-App übertragen.
   interface: |
-    - [Abrechnungsinformation weitergeben](./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformationen-exportieren)
+    - [Abrechnungsinformation weitergeben](./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformation-exportieren)
   diagram: seq-abrechnungsinformation-weitergeben
 
 - id: UC_3_12_Abrechungsinformation_durch_Versicherten_markieren
   anchor: uc_3_12_abrechungsinformation_durch_versicherten_markieren
-  link: menu-technische-umsetzung-anwendungsfaelle.html#uc_3_12_abrechungsinformationen_durch_versicherten_markieren
+  link: menu-technische-umsetzung-anwendungsfaelle.html#uc_3_12_abrechungsinformation_durch_versicherten_markieren
   title: "UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren"
   roles: ["Versicherter"]
   description: |
@@ -140,7 +140,7 @@
   postconditions: |
     - Die Information zur Markierung ist im TI-Flow-Fachdienst gespeichert. Der Datenzugriff ist im TI-Flow-Fachdienst protokolliert.
   interface: |
-    - [Abrechnungsinformation markieren](./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformationen-markieren)
+    - [Abrechnungsinformation markieren](./query-api-chargeitem.html#nachricht)
   diagram: seq-uc-3-12-abrechungsinformation-durch-versicherten-markieren
 
 - id: UC_3_11_Abrechungsinformation_durch_Versicherten_löschen
@@ -160,7 +160,7 @@
   postconditions: |
     - Die Abrechnungsinformation sind auf dem TI-Flow-Fachdienst gelöscht. Das Löschen ist im TI-Flow-Fachdienst protokolliert.
   interface: |
-    - [Abrechnungsinformation löschen](./menu-technische-umsetzung-verarbeitungsregeln.html#abrechnungsinformationen-löschen)
+    - [Abrechnungsinformation löschen](./query-api-chargeitem.html#nachricht)
   diagram: seq-uc-3-11-abrechungsinformation-durch-versicherten-loeschen
 
 - id: chrg-accesscode-an-apotheke-übermitteln
@@ -176,6 +176,6 @@
     - Das E-Rezept-FdV erzeugt einen Abrechnungsinformation-Token.
     - Der Versicherte übermittelt den Token per Nachricht (Communication) oder zeigt einen 2D-Code.    
   interface: |
-    - [Nachricht an Apotheke übermitteln](./query-api-communication.html#abrechnungsinformationen-löschen)
+    - [Nachricht an Apotheke übermitteln](./query-api-communication.html#nachricht)
   postconditions: |
     - Das AVS nutzt den AccessCode für Abruf/Änderung der Abrechnungsinformation.
