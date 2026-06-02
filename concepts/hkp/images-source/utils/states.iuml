@@ -12,11 +12,6 @@ $alias : status = <b>ready</b>
 $alias : businessStatus = <b>open</b>
 !endprocedure
 
-!procedure $state_ready_for_assignment($alias)
-state "<<offen>>\nOrderTask" as $alias #Aquamarine
-$alias:status = <b>ready</b>
-$alias:businessStatus = <b>ready-for-final-assignment</b>
-!endprocedure
 
 !procedure $state_assigned($alias)
 state "<<zugewiesen>>\nOrderTask" as $alias #LimeGreen
@@ -24,15 +19,15 @@ $alias:status = <b>in-progress</b>
 $alias:businessStatus = <b>assigned</b>
 !endprocedure
 
-!procedure $state_assigned_decided($alias)
+!procedure $state_assigned_approved($alias)
 state "<<zugewiesen (beschieden)>>\nOrderTask" as $alias #LimeGreen
 $alias:status = <b>in-progress</b>
-$alias:businessStatus = <b>assigned-decided</b>
+$alias:businessStatus = <b>assigned-approved</b>
 !endprocedure
 
 !procedure $state_review_from_open($alias)
 state "<<offen>>\nOrderTask" as $alias #OldLace {
-    state "<i><<Antragsprüfung>></i>\nSub-Workflow" as sub_review_from_open #Coral
+    state "<i><<Antragsprüfung>></i>\n-Workflow" as sub_review_from_open #Coral
 }
 $alias:status = <b>on-hold</b>
 $alias:businessStatus = <b>open</b> 
@@ -41,27 +36,21 @@ $alias:businessStatus = <b>open</b>
 
 !procedure $state_review_from_assigned($alias)
 state "<<zugewiesen>>\nOrderTask" as $alias #OldLace {
-    state "<i><<Antragsprüfung>></i>\nSub-Workflow" as sub_review_from_assigned #Coral
+    state "<i><<Antragsprüfung>></i>\nWorkflow" as sub_review_from_assigned #Coral
 }
 $alias:status = <b>on-hold</b>
 $alias:businessStatus = <b>assigned</b>
 !endprocedure
 
 !procedure $state_review_subworkflow($alias)
-state "<<Antragsprüfung>>\nSub-Workflow" as $alias #SkyBlue {
+state "<<Antragsprüfung>>\nWorkflow" as $alias #SkyBlue {
 }
 !endprocedure
 
 
-' !procedure $state_correction($alias)
-' state "<<Korrekturanfrage>>\nOrderTask" as $alias #OldLace
-' $alias:status = <b>on-hold</b>
-' $alias:businessStatus = <b>review-correction-requested</b> or <b>review-correction-requested</b>
-' !endprocedure
-
 !procedure $state_correction($alias)
 state "<<zugewiesen>>\nOrderTask" as $alias #OldLace {
-    state "<i><<Korrekturanfrage>></i>\nSub-Workflow" as sub_correction_from_review #Coral
+    state "<i><<Korrektur/Anfrage>></i>\nWorkflow" as sub_correction_from_review #Coral
 }
 $alias:status = <b>on-hold</b>
 $alias:businessStatus = <b>assigned</b>
@@ -69,7 +58,7 @@ $alias:businessStatus = <b>assigned</b>
 
 !procedure $state_review_correction($alias)
 state "<<zugewiesen>>\nOrderTask" as $alias #OldLace {
-    state "<i><<Korrekturanfrage>></i>\nSub-Workflow" as sub_correction_from_review #Coral
+    state "<i><<Korrektur/Anfrage>></i>\nWorkflow" as sub_correction_from_review #Coral
 }
 $alias:status = <b>on-hold</b>
 $alias:businessStatus = <b>assigned</b>
@@ -78,7 +67,7 @@ $alias:businessStatus = <b>assigned</b>
 
 !procedure $state_assigned_correction($alias)
 state "<<zugewiesen>>\nOrderTask" as $alias #OldLace {
-    state "<i><<Korrekturanfrage>></i>\nSub-Workflow" as sub_correction_from_assigned #Coral
+    state "<i><<Korrektur/Anfrage>></i>\nWorkflow" as sub_correction_from_assigned #Coral
 }
 $alias:status = <b>on-hold</b>
 $alias:businessStatus = <b>assigned</b>
@@ -179,5 +168,11 @@ $alias:owner = <b>$owner</b>
 $alias:partOf = OrderTask
 !endprocedure
 
+
+!procedure $state_open_approved($alias)
+state "<<offen>>\nOrderTask" as $alias #Aquamarine
+$alias:status = <b>ready</b>
+$alias:businessStatus = <b>open-approved</b>
+!endprocedure
 
 @enduml

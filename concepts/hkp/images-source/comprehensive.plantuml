@@ -8,73 +8,64 @@ title HKP Workflow - Gesamtübersicht
 
 $state_init(init)
 $state_open(open)
+$state_open_approved(open_approved)
 $state_assigned(assigned)
-' $state_review(review)
 $state_review_from_open(open_review)
 $state_review_from_assigned(assigned_review)
 
-$state_assigned_decided(assigned_decided)
+$state_assigned_approved(assigned_approved)
 $state_completed(completed)
 $state_cancelled(deleted)
 
-' $state_review_correction(correction_review)
-' $state_assigned_correction(correction_assigned)
 
 $state_correction(correction)
 
 
-[*] -r-> init
+[*] -d-> init
 
 init -d-> open : <color:black><back:Lime> 1
-open -> assigned : <color:black><back:Lime> 2
-assigned --> open : <color:black><back:Lime> 3
+open -d-> assigned : <color:black><back:Lime> 2
+assigned -d-> open : <color:black><back:Lime> 3
 
-assigned --> assigned_review : <color:black><back:Salmon> AP3
+assigned -d-> assigned_review : <color:black><back:Salmon> AP3
 
-
-' assigned -u-> correction_assigned : <color:black><back:Khaki> K1
-' assigned <-d- correction_assigned : <color:black><back:Khaki> K2
-' assigned <-d- correction_assigned : <color:black><back:Khaki> K3
-
-' correction_review <-r- assigned_review : <color:black><back:Khaki> K4
-' correction_review -l-> assigned_review : <color:black><back:Khaki> K5
-' correction_review -l-> assigned_review : <color:black><back:Khaki> K6
-
-assigned -u-> correction : <color:black><back:Khaki> K1
+assigned -d-> correction : <color:black><back:Khaki> K1
 assigned <-d- correction : <color:black><back:Khaki> K2
 assigned <-d- correction : <color:black><back:Khaki> K3
 
-correction <-r- assigned_review : <color:black><back:Khaki> K4
-correction -l-> assigned_review : <color:black><back:Khaki> K5
-correction -l-> assigned_review : <color:black><back:Khaki> K6
+correction <-d- assigned_review : <color:black><back:Khaki> K4
+correction -d-> assigned_review : <color:black><back:Khaki> K5
+correction -d-> assigned_review : <color:black><back:Khaki> K6
 
-correction <-r- open_review : <color:black><back:Khaki> K4
-correction -l-> open_review : <color:black><back:Khaki> K5
-correction -l-> open_review : <color:black><back:Khaki> K6
+correction <-d- open_review : <color:black><back:Khaki> K4
+correction -d-> open_review : <color:black><back:Khaki> K5
+correction -d-> open_review : <color:black><back:Khaki> K6
 
 
-assigned_review --> assigned_decided : <color:black><back:Salmon> AP4
+assigned_review -d-> assigned_approved : <color:black><back:Salmon> AP4
 
-open ---> open_review : <color:black><back:Salmon> AP1
+open -d-> open_review : <color:black><back:Salmon> AP1
 
 open -[dashed]->  completed : <color:black><back:DeepSkyBlue> AA1
-open --> completed : <color:black><back:Lime> 4
+open -d-> completed : <color:black><back:Lime> 4
 
-open_review ---> completed : <color:black><back:Salmon> AP2
+open_review -d-> open_approved : <color:black><back:Salmon> AP2
+open_approved -[dashed]->  completed : <color:black><back:DeepSkyBlue> AA1
+open_approved -d-> completed : <color:black><back:Lime> 4
 
 assigned_review -[dashed]-> deleted : <color:black><back:Lavender> AL3
-open_review -[dashed]> deleted : <color:black><back:Lavender> AL3
+open_review -[dashed]-> deleted : <color:black><back:Lavender> AL3
 
 assigned -[dashed]->  completed : <color:black><back:DeepSkyBlue> AA2
-assigned_decided --> completed : <color:black><back:DeepSkyBlue> AA2
+assigned_approved -d-> completed : <color:black><back:DeepSkyBlue> AA2
 
-init --> deleted : <color:black><back:yellow> ML1
+init -d-> deleted : <color:black><back:yellow> ML1
 init -[dashed]-> deleted : <color:black><back:Lavender> AL1
 
-open --> deleted : <color:black><back:yellow> ML2
+open -d-> deleted : <color:black><back:yellow> ML2
 
-completed --> deleted : <color:black><back:yellow> ML3
-completed -[dashed]> deleted : <color:black><back:Lavender> AL2
+completed -d-> deleted : <color:black><back:yellow> ML3
+completed -[dashed]-> deleted : <color:black><back:Lavender> AL2
 
 deleted -d-> [*]
 

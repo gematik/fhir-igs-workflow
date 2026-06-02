@@ -3,6 +3,11 @@
 !include ./utils/style.iuml
 !include ./utils/states.iuml
 hide empty description
+
+$state_open(open)
+$state_open_approved(open_approved)
+$state_assigned(assigned)
+$state_assigned_approved(assigned_approved)
 $state_review_from_assigned(review)
 $state_review_correction(correction)
 
@@ -14,7 +19,11 @@ state "Sub-Workflow Korrektur" as correction_workflow {
     $state_correction_completed(correction_completed, "Kostenträger", "verordnenden Praxis / Pflegedienst")
 }
 
+open -r-> review : <color:black><back:Salmon> AP1
+review -r-> open_approved : <color:black><back:Salmon> AP2
 
+assigned -r-> review : <color:black><back:Salmon> AP3
+review -r-> assigned_approved : <color:black><back:Salmon> AP4
 
 review -d-> correction : <color:black><back:Khaki> K4
 ' correction -u-> review : <color:black><back:Khaki> K6
@@ -32,7 +41,6 @@ correction_cancelled -l-> correction : <color:black><back:Khaki><size:16> K6
 
 
 correction -l-> review : <color:black><back:Khaki> K5
-correction -l-> review : <color:black><back:Khaki> K6
 correction -l-> review : <color:black><back:Khaki> K6
 
 

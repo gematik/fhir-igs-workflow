@@ -11,13 +11,17 @@ $state_open(open)
 $state_completed(completed)
 $state_cancelled(deleted)
 $state_review_from_open(review)
+$state_open_approved(open_approved)
 
 
 [*] -> init
 
 init -> open : <color:black><back:Lime> 1
 open -> review : <color:black><back:Salmon> AP1
-review -> completed : <color:black><back:Salmon> AP2
+review -> open_approved : <color:black><back:Salmon> AP2
+
+open_approved -[dashed]>  completed : <color:black><back:DeepSkyBlue> AA1
+open_approved -> completed : <color:black><back:Lime> 4
 
 completed -> deleted : <color:black><back:yellow> ML3
 completed -[dashed]> deleted : <color:black><back:Lavender> AL2
