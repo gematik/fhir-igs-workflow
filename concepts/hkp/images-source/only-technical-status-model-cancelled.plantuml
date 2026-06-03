@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+
+$tech_state_draft(draft)
+$tech_state_ready(ready)
+$tech_state_on_hold(onhold)
+$tech_state_completed(completed)
+$tech_state_cancelled(cancelled)
+
+draft --> cancelled
+completed --> cancelled
+ready --> cancelled
+onhold --> cancelled
+
+
+
+@enduml

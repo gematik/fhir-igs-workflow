@@ -1,5 +1,35 @@
 @startuml
 
+!procedure $tech_state_draft($alias)
+state "draft" as $alias
+!endprocedure
+
+
+!procedure $tech_state_ready($alias)
+state "ready" as $alias #Aquamarine
+!endprocedure
+
+
+!procedure $tech_state_in_progress($alias)
+state "in-progress" as $alias #LimeGreen
+!endprocedure
+
+
+!procedure $tech_state_on_hold($alias)
+state "on-hold" as $alias #OldLace
+!endprocedure
+
+
+!procedure $tech_state_completed($alias)
+state "completed" as $alias #DodgerBlue
+!endprocedure
+
+
+!procedure $tech_state_cancelled($alias)
+state "cancelled" as $alias #Orange
+!endprocedure
+
+
 !procedure $state_init($alias)
 state "<<initialisiert>>\nOrderTask" as $alias
 $alias : status = <b>draft</b>
@@ -31,7 +61,6 @@ state "<<offen>>\nOrderTask" as $alias #OldLace {
 }
 $alias:status = <b>on-hold</b>
 $alias:businessStatus = <b>open</b> 
-
 !endprocedure
 
 !procedure $state_review_from_assigned($alias)

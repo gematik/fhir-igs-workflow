@@ -1,0 +1,28 @@
+@startuml
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+
+$tech_state_draft(draft)
+
+$tech_state_ready(ready)
+$tech_state_on_hold(onhold)
+$tech_state_in_progress(inprogress)
+$tech_state_on_hold(onhold_inprogress)
+$tech_state_completed(completed)
+
+
+[*] -d-> draft
+draft -r-> ready
+ready -u-> onhold
+onhold -d-> ready
+ready -r-> inprogress
+inprogress -l-> ready
+inprogress -u-> onhold_inprogress
+onhold_inprogress -d-> inprogress
+inprogress -d-> completed
+ready -d-> completed
+
+
+@enduml
