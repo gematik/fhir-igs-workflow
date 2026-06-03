@@ -25,9 +25,9 @@ review -r-> open_approved : <color:black><back:Salmon> AP2
 assigned -r-> review : <color:black><back:Salmon> AP3
 review -r-> assigned_approved : <color:black><back:Salmon> AP4
 
-review -d-> correction : <color:black><back:Khaki> K4
-' correction -u-> review : <color:black><back:Khaki> K6
-correction -d-> correction_requested : <color:black><back:Khaki><size:12> K4 <<invoke>>
+review -d-> correction : <color:black><back:DarkOrange> K4
+' correction -u-> review : <color:black><back:DarkOrange> K6
+correction -d-> correction_requested : <color:black><back:DarkOrange><size:12> K4 <<invoke>>
 
 correction_requested  -r-> correction_cancelled
 correction_requested -d-> correction_in_progress
@@ -35,13 +35,13 @@ correction_in_progress -[dashed]u-> correction_requested
 correction_in_progress -d-> correction_completed
 correction_in_progress  -d-> correction_rejected
 
-correction_completed -l-> correction : <color:black><back:Khaki><size:16> K5
-correction_rejected -l-> correction : <color:black><back:Khaki><size:16> K6
-correction_cancelled -l-> correction : <color:black><back:Khaki><size:16> K6
+correction_completed -l-> correction : <color:black><back:DarkOrange><size:16> K5
+correction_rejected -l-> correction : <color:black><back:DarkOrange><size:16> K6
+correction_cancelled -l-> correction : <color:black><back:DarkOrange><size:16> K6
 
 
-correction -l-> review : <color:black><back:Khaki> K5
-correction -l-> review : <color:black><back:Khaki> K6
+correction -l-> review : <color:black><back:DarkOrange> K5
+correction -l-> review : <color:black><back:DarkOrange> K6
 
 
 
