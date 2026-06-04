@@ -85,6 +85,16 @@ $alias:status = <b>on-hold</b>
 $alias:businessStatus = <b>assigned</b>
 !endprocedure
 
+
+!procedure $state_correction_open($alias)
+state "<<zugewiesen>>\nOrderTask" as $alias #OldLace {
+    state "<i><<Korrektur/Anfrage>></i>\nWorkflow" as sub_correction_open_from_review #Coral
+}
+$alias:status = <b>on-hold</b>
+$alias:businessStatus = <b>open</b>
+!endprocedure
+
+
 !procedure $state_review_correction($alias)
 state "<<zugewiesen>>\nOrderTask" as $alias #OldLace {
     state "<i><<Korrektur/Anfrage>></i>\nWorkflow" as sub_correction_from_review #Coral
