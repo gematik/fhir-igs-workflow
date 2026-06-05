@@ -87,7 +87,7 @@ $alias:businessStatus = <b>assigned</b>
 
 
 !procedure $state_correction_open($alias)
-state "<<zugewiesen>>\nOrderTask" as $alias #OldLace {
+state "<<offen>>\nOrderTask" as $alias #OldLace {
     state "<i><<Korrektur/Anfrage>></i>\nWorkflow" as sub_correction_open_from_review #Coral
 }
 $alias:status = <b>on-hold</b>
@@ -131,80 +131,53 @@ $alias : businessStatus = <b>deleted</b>
 !endprocedure
 
 
-
-' !procedure $state_reviewtask_requested($alias, $from)
-' state "<<angefragt>>\nReviewTask" as $alias #BUSINESS
-' $alias:status = <b>requested</b>
-' $alias:businessStatus = <b>review-requested</b>
-' $alias:invokesFromStatus = <b>$from</b>
-' $alias:partOf = OrderTask
-' !endprocedure
-
-
-' !procedure $state_reviewtask_in_progress($alias, $from)
-' state "<<in Durchführung>>\nReviewTask" as $alias #BUSINESS
-' $alias:status = <b>in-progress</b>
-' $alias:businessStatus = <b>review-in-progress</b>
-' $alias:invokesFromStatus = <b>$from</b>
-' $alias:partOf = OrderTask
-' !endprocedure
-
-' !procedure $state_reviewtask_completed($alias, $from)
-' state "<<abgeschlossen>>\nReviewTask" as $alias #BUSINESS
-' $alias:status = <b>in-completed</b>
-' $alias:businessStatus = <b>review-completed</b>
-' $alias:invokesFromStatus = <b>$from</b>
-' $alias:partOf = OrderTask
-' !endprocedure
-
-
-!procedure $state_correction_requested($alias, $requestor, $owner)
-state "<<Korrekturanfrage>>\n CorrectionFlowTask" as $alias #Coral
+!procedure $state_correction_requested($alias, $requestor, $owner, $task)
+state "<<Korrekturanfrage>>\n CorrectionFlowTask" as $alias #Aquamarine
 $alias:status = <b>requested</b>
 $alias:businessStatus = <b>correction-requested</b>
 $alias:requestor = <b>$requestor</b>
 $alias:owner = <b>$owner</b>
-$alias:partOf = OrderTask
+$alias:partOf = $task
 !endprocedure
 
 
-!procedure $state_correction_cancelled($alias, $requestor, $owner)
-state "<<Korrekturanfrage storniert>>\n CorrectionFlowTask" as $alias #Coral
+!procedure $state_correction_cancelled($alias, $requestor, $owner, $task)
+state "<<Korrekturanfrage storniert>>\n CorrectionFlowTask" as $alias #Orange
 $alias:status = <b>cancelled</b>
 $alias:businessStatus = <b>correction-cancelled</b>
 $alias:requestor = <b>$requestor</b>
 $alias:owner = <b>$owner</b>
-$alias:partOf = OrderTask
+$alias:partOf = $task
 !endprocedure
 
 
-!procedure $state_correction_rejected($alias, $requestor, $owner)
+!procedure $state_correction_rejected($alias, $requestor, $owner, $task)
 state "<<Korrektur abgelehnt>>\n CorrectionFlowTask" as $alias #Coral
 $alias:status = <b>rejected</b>
 $alias:businessStatus = <b>correction-rejected</b>
 $alias:requestor = <b>$requestor</b>
 $alias:owner = <b>$owner</b>
-$alias:partOf = OrderTask
+$alias:partOf = $task
 !endprocedure
 
 
-!procedure $state_correction_in_progress($alias, $requestor, $owner)
-state "<<Korrektur in Bearbeitung>>\n CorrectionFlowTask" as $alias #Coral
+!procedure $state_correction_in_progress($alias, $requestor, $owner, $task)
+state "<<Korrektur in Bearbeitung>>\n CorrectionFlowTask" as $alias #LimeGreen
 $alias:status = <b>in-progress</b>
 $alias:businessStatus = <b>correction-in-progress</b>
 $alias:requestor = <b>$requestor</b>
 $alias:owner = <b>$owner</b>
-$alias:partOf = OrderTask
+$alias:partOf = $task
 !endprocedure
 
 
-!procedure $state_correction_completed($alias, $requestor, $owner)
-state "<<Korrektur abgeschlossen>>\n CorrectionFlowTask" as $alias #Coral
+!procedure $state_correction_completed($alias, $requestor, $owner, $task)
+state "<<Korrektur abgeschlossen>>\n CorrectionFlowTask" as $alias #DodgerBlue
 $alias:status = <b>completed</b>
 $alias:businessStatus = <b>correction-completed</b>
 $alias:requestor = <b>$requestor</b>
 $alias:owner = <b>$owner</b>
-$alias:partOf = OrderTask
+$alias:partOf = $task
 !endprocedure
 
 
@@ -212,6 +185,79 @@ $alias:partOf = OrderTask
 state "<<offen>>\nOrderTask" as $alias #Aquamarine
 $alias:status = <b>ready</b>
 $alias:businessStatus = <b>open-reviewed</b>
+!endprocedure
+
+
+
+
+
+
+
+!procedure $state_reviewtask_requested($alias, $requestor, $owner)
+state "<<Prüfung angefragt>>\nReviewTask" as $alias #Aquamarine
+$alias:status = <b>requested</b>
+$alias:businessStatus = <b>review-open</b>
+$alias:requestor = <b>$requestor</b>
+$alias:owner = <b>$owner</b>
+$alias:partOf = OrderTask
+!endprocedure
+
+!procedure $state_reviewtask_ready($alias, $requestor, $owner)
+state "<<Prüfung angefragt>>\nReviewTask" as $alias #Aquamarine
+$alias:status = <b>ready</b>
+$alias:businessStatus = <b>review-open</b>
+$alias:requestor = <b>$requestor</b>
+$alias:owner = <b>$owner</b>
+$alias:partOf = OrderTask
+!endprocedure
+
+
+!procedure $state_reviewtask_cancelled($alias, $requestor, $owner)
+state "<<Prüfung storniert>>\nReviewTask" as $alias #Orange
+$alias:status = <b>cancelled</b>
+$alias:businessStatus = <b>review-cancelled</b>
+$alias:requestor = <b>$requestor</b>
+$alias:owner = <b>$owner</b>
+$alias:partOf = OrderTask
+!endprocedure
+
+!procedure $state_reviewtask_in_progress($alias, $requestor, $owner)
+state "<<Prüfung läuft>>\nReviewTask" as $alias #LimeGreen
+$alias:status = <b>in-progress</b>
+$alias:businessStatus = <b>review-in-progress</b>
+$alias:requestor = <b>$requestor</b>
+$alias:owner = <b>$owner</b>
+$alias:partOf = OrderTask
+!endprocedure
+
+
+!procedure $state_reviewtask_on_hold($alias, $requestor, $owner)
+state "<<Korrektur erforderlich>>\nReviewTask" as $alias #OldLace
+$alias:status = <b>on-hold</b>
+$alias:businessStatus = <b>review-in-progress</b>
+$alias:requestor = <b>$requestor</b>
+$alias:owner = <b>$owner</b>
+$alias:partOf = OrderTask
+!endprocedure
+
+
+!procedure $state_reviewtask_completed($alias, $requestor, $owner)
+state "<<Prüfung beendet>>\nReviewTask" as $alias #DodgerBlue
+$alias:status = <b>completed</b>
+$alias:businessStatus = <b>review-completed</b>
+$alias:requestor = <b>$requestor</b>
+$alias:owner = <b>$owner</b>
+$alias:partOf = OrderTask
+!endprocedure
+
+
+!procedure $state_reviewtask_rejected($alias, $requestor, $owner)
+state "<<Prüfung abgebrochen>>\nReviewTask" as $alias #Coral
+$alias:status = <b>rejected</b>
+$alias:businessStatus = <b>review-rejected</b>
+$alias:requestor = <b>$requestor</b>
+$alias:owner = <b>$owner</b>
+$alias:partOf = OrderTask
 !endprocedure
 
 @enduml

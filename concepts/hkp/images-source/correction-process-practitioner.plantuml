@@ -7,11 +7,11 @@ $state_assigned(assigned)
 $state_assigned_correction(correction)
 
 state "Sub-Workflow Korrektur" as correction_workflow {
-    $state_correction_requested(correction_requested, "Pflegedienst", "verordnenden Praxis")
-    $state_correction_cancelled(correction_cancelled, "Pflegedienst", "verordnenden Praxis")
-    $state_correction_rejected(correction_rejected, "Pflegedienst", "verordnenden Praxis")
-    $state_correction_in_progress(correction_in_progress, "Pflegedienst", "verordnenden Praxis")
-    $state_correction_completed(correction_completed, "Pflegedienst", "verordnenden Praxis")
+    $state_correction_requested(correction_requested, "Pflegedienst", "verordnenden Praxis", OrderTask)
+    $state_correction_cancelled(correction_cancelled, "Pflegedienst", "verordnenden Praxis", OrderTask)
+    $state_correction_rejected(correction_rejected, "Pflegedienst", "verordnenden Praxis", OrderTask)
+    $state_correction_in_progress(correction_in_progress, "Pflegedienst", "verordnenden Praxis", OrderTask)
+    $state_correction_completed(correction_completed, "Pflegedienst", "verordnenden Praxis", OrderTask)
 }
 
 

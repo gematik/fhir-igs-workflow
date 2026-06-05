@@ -29,6 +29,7 @@ open -d-> assigned : <color:black><back:Lime> 2
 assigned -d-> open : <color:black><back:Lime> 3
 
 assigned -d-> assigned_review : <color:black><back:Salmon> AP3
+' assigned_review --> assigned: <color:black><back:Salmon> ???
 
 assigned -d-> correction : <color:black><back:DarkOrange> K1
 assigned <-d- correction : <color:black><back:DarkOrange> K2
@@ -48,16 +49,15 @@ correction_open -l-> open_review : <color:black><back:DarkOrange> K6
 
 
 assigned_review -d-> assigned_reviewed : <color:black><back:Salmon> AP4
-assigned_review -u-> assigned  : <color:black><back:Salmon> AP?
 
 open -l-> open_review : <color:black><back:Salmon> AP1
+' open_review -r-> open : <color:black><back:Salmon> ???
 
 open -[dashed]->  completed : <color:black><back:DeepSkyBlue> AA1
 ' open -d-> completed : <color:black><back:Lime> 4
 
 open_review -d-> open_reviewed : <color:black><back:Salmon> AP2
 open_reviewed -[dashed]->  completed : <color:black><back:DeepSkyBlue> AA1
-open_review -l-> open : <color:black><back:Salmon> AP?
 ' open_reviewed -d-> completed : <color:black><back:Lime> 4
 
 assigned_review -[dashed]-> deleted : <color:black><back:Lavender> AL3

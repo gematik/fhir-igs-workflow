@@ -1,0 +1,66 @@
+@startuml
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+
+$state_reviewtask_requested(requested, "Pflegedienst / Versicherter", "Kostenträger")
+$state_reviewtask_cancelled(cancelled, "Pflegedienst / Versicherter", "Kostenträger")
+$state_reviewtask_in_progress(in_progress, "Pflegedienst / Versicherter", "Kostenträger")
+$state_reviewtask_on_hold(on_hold, "Pflegedienst / Versicherter", "Kostenträger")
+$state_reviewtask_completed(completed, "Pflegedienst / Versicherter", "Kostenträger")
+$state_reviewtask_rejected(rejected, "Pflegedienst / Versicherter", "Kostenträger")
+
+
+' [*] -d-> requested
+' requested -d-> in_progress
+' requested -l-> cancelled
+
+' in_progress -r-> on_hold
+' on_hold -l-> in_progress
+
+' in_progress -d-> completed
+' in_progress -l-> rejected
+
+' rejected -d-> [*]
+' cancelled -d->[*]
+' completed -d-> [*]
+
+[*] -d-> requested
+requested -r-> cancelled
+
+requested -d-> in_progress
+
+
+in_progress -r-> on_hold
+on_hold -l-> in_progress
+
+in_progress -d-> completed
+in_progress -l-> rejected
+
+rejected -d-> [*]
+cancelled -d-> [*]
+completed -d-> [*]
+
+
+note left of completed
+Ergebnis im Entscheidungsdatensatz:
+- Genehmigt
+- Teilweise genehmigt
+- Nicht genehmigt
+- Nicht genehmigt mit vorläufiger Kostenzusage
+end note
+
+note top of rejected
+Prüfung wurde beendet 
+ohne Leistungsentscheidung:
+- Unzuständig
+end note
+
+@enduml
+
+correction_requested  -r-> correction_cancelled
+correction_requested -d-> correction_in_progress
+correction_in_progress -[dashed]u-> correction_requested
+correction_in_progress -d-> correction_completed
+correction_in_progress  -d-> correction_rejected
