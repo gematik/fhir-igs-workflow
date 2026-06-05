@@ -9,7 +9,7 @@ title Korrekturprozess durch Pflegedienst (K1-K2)
 $state_init(init)
 $state_open(open)
 $state_assigned(assigned)
-$state_assigned_approved(assigned_approved)
+$state_assigned_reviewed(assigned_reviewed)
 $state_completed(completed)
 $state_review_from_open(review)
 $state_correction(correction_assigned)
@@ -23,9 +23,9 @@ assigned -d-> correction_assigned : <color:black><back:DarkOrange> K1
 correction_assigned -u-> assigned : <color:black><back:DarkOrange> K2
 
 assigned -> review : <color:black><back:Salmon> AP3
-review -> assigned_approved : <color:black><back:Salmon> AP4
+review -> assigned_reviewed : <color:black><back:Salmon> AP4
 
-assigned_approved -> completed : <color:black><back:DeepSkyBlue> AA2
+assigned_reviewed -> completed : <color:black><back:DeepSkyBlue> AA2
 
 completed -> [*]
 

@@ -9,7 +9,7 @@ title Korrekturprozess durch Kostenträger (K4-K5)
 $state_init(init)
 $state_open(open)
 $state_assigned(assigned)
-$state_assigned_approved(assigned_approved)
+$state_assigned_reviewed(assigned_reviewed)
 $state_completed(completed)
 $state_review_from_assigned(review)
 $state_correction(correction_review)
@@ -26,8 +26,8 @@ assigned -> review : <color:black><back:Salmon> AP3
 review --> correction_review : <color:black><back:DarkOrange> K4
 correction_review -> review : <color:black><back:DarkOrange> K5
 
-review -> assigned_approved : <color:black><back:Salmon> AP4
-assigned_approved -> completed : <color:black><back:DeepSkyBlue> AA2
+review -> assigned_reviewed : <color:black><back:Salmon> AP4
+assigned_reviewed -> completed : <color:black><back:DeepSkyBlue> AA2
 
 completed -> [*]
 

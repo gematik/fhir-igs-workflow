@@ -49,10 +49,10 @@ $alias:status = <b>in-progress</b>
 $alias:businessStatus = <b>assigned</b>
 !endprocedure
 
-!procedure $state_assigned_approved($alias)
+!procedure $state_assigned_reviewed($alias)
 state "<<zugewiesen (beschieden)>>\nOrderTask" as $alias #LimeGreen
 $alias:status = <b>in-progress</b>
-$alias:businessStatus = <b>assigned-approved</b>
+$alias:businessStatus = <b>assigned-reviewed</b>
 !endprocedure
 
 !procedure $state_review_from_open($alias)
@@ -208,10 +208,10 @@ $alias:partOf = OrderTask
 !endprocedure
 
 
-!procedure $state_open_approved($alias)
+!procedure $state_open_reviewed($alias)
 state "<<offen>>\nOrderTask" as $alias #Aquamarine
 $alias:status = <b>ready</b>
-$alias:businessStatus = <b>open-approved</b>
+$alias:businessStatus = <b>open-reviewed</b>
 !endprocedure
 
 @enduml

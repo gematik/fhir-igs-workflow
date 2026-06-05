@@ -9,7 +9,7 @@ title Standardablauf: Leistungsentscheidung nach Zuweisung (ohne Korrektur)
 $state_init(init)
 $state_open(open)
 $state_assigned(assigned)
-$state_assigned_approved(assigned_approved)
+$state_assigned_reviewed(assigned_reviewed)
 $state_completed(completed)
 $state_cancelled(deleted)
 $state_review_from_assigned(review)
@@ -23,15 +23,15 @@ open -> assigned : <color:black><back:Lime> 2
 assigned -> review : <color:black><back:Salmon> AP3
 
 
-review -> assigned_approved : <color:black><back:Salmon> AP4
+review -> assigned_reviewed : <color:black><back:Salmon> AP4
 
 ' review --> subreview_requested
 
 ' subreview_requested --> subreview_progress 
 ' subreview_progress --> subreview_completed
-' subreview_completed --> assigned_approved : <color:black><back:Salmon> AP4
+' subreview_completed --> assigned_reviewed : <color:black><back:Salmon> AP4
 
-assigned_approved -[dashed]>  completed : <color:black><back:DeepSkyBlue> AA2
+assigned_reviewed -[dashed]>  completed : <color:black><back:DeepSkyBlue> AA2
 
 completed -> deleted : <color:black><back:yellow> ML3
 completed -[dashed]> deleted : <color:black><back:Lavender> AL2
