@@ -100,7 +100,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-erp-user" mit dem Wert
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-tif-user" mit dem Wert
     <ul>
     <li>"l" (kleines L) als PS eines Leistungserbringers</li>
     <li>"k" als CS eines Kostenträgers</li>
@@ -128,7 +128,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-erp-resource" mit dem Wert gemäß der angefragten Ressource im FHIR-Request einfügen.
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-tif-resource" mit dem Wert gemäß der angefragten Ressource im FHIR-Request einfügen.
 </requirement>
 
 <table>
@@ -176,6 +176,10 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 <td>GET /$read-eu-access-permission<br>POST /$grant-eu-access-permission<br>DELETE /$revoke-eu-access-permission</td>
 <td>access-permission</td>
 </tr>
+<tr>
+<td>Query API: Pusher<br>Query API: Channels</td>
+<td>PushNotification</td>
+</tr>
 </table>
 <div><figcaption><strong>Tabelle: </strong>HTTP-Header "X-erp-resource"</figcaption></div>
 
@@ -205,7 +209,7 @@ Die Kommunikation zum TI-Flow-Fachdienst wird zusätzlich zu TLS über einen sic
     Das Clientsystem des TI-Flow-Fachdienstes MUSS für alle Anfragen an den TI-Flow-Fachdienst für
 	<ul>
 	<li>die Abfrage des capability statement</li>
-	<li>den Zugriff auf Task, MedicationDispense, Communication, Consent, Prescription, AuditEvent oder access-permission Ressourcen</li>
+	<li>den Zugriff auf Task, MedicationDispense, Communication, Consent, Prescription, AuditEvent, Pusher, Channels oder access-permission Ressourcen</li>
 	</ul>
 	das Kommunikationsprotokoll zwischen VAU des TI-Flow-Fachdienstes und Clientsysteme des TI-Flow-Fachdienstes in der Rolle TI-Flow-Client nutzen.
 </requirement>
