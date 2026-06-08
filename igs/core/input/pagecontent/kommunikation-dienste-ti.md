@@ -83,7 +83,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 </requirement>
 
 <!-- A_21568-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-160" title="CS: HTTP-Header X-erp-user" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-160" title="CS: HTTP-Header X-tif-user" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -111,7 +111,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 </requirement>
 
 <!-- A_21569-01, A_21570-01  -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-161" title="CS: HTTP-Header X-erp-resource" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-161" title="CS: HTTP-Header X-tif-resource" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -134,7 +134,7 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 <table>
 <tr>
 <th>API / Operation</th>
-<th>X-erp-resource</th>
+<th>X-tif-resource</th>
 </tr>
 <tr>
 <td>Query API: AuditEvent</td>
@@ -181,8 +181,34 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
 <td>PushNotification</td>
 </tr>
 </table>
-<div><figcaption><strong>Tabelle: </strong>HTTP-Header "X-erp-resource"</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>HTTP-Header "X-tif-resource"</figcaption></div>
 
+<requirement conformance="SHALL" key="" title="CS: HTTP-Header X-tif-module" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
+    </actor>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    <actor name="Anb_NCPeH_FD" description="Anbieter eines NCPeH-Fachdienstes">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle modul-spezifischen Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header "X-tif-module" mit dem Wert
+    <ul>
+    <li>"r" für rx-Modul</li>
+    <li>"d" für diga-Modul</li>
+    </ul>
+    einfügen.
+</requirement>
+
+Modul-spezifischen Anfragen sind dadurch gekennzeichnet, dass im URL-Path ein Modul angegeben ist.
 
 ### Verschlüsselte Kommunikation zur VAU des TI-Flow-Fachdienstes  
   
