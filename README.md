@@ -8,6 +8,8 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 
 | Version | Branch | Link |
 |---------|--------|------|
+| `2.0.0-ballot.2` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/develop/2.0.0-ballot.2) |
+| `2.0.0-ballot.2` | `ti-flow-system-diagram` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/ti-flow-system-diagram/2.0.0-ballot.2) |
 | `2.0.0-ballot.1` | `TMD-3186-vorbereiten-unterlagen-fuer-vorabveroeffentlichung-28-05-2026` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/TMD-3186-vorbereiten-unterlagen-fuer-vorabveroeffentlichung-28-05-2026/2.0.0-ballot.1) |
 | `2.0.0-ballot.1` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/develop/2.0.0-ballot.1) |
 | `2.0.0-ballot.1` | `fix-build-stuff` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/fix-build-stuff/2.0.0-ballot.1) |
@@ -28,6 +30,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 
 | Version | Branch | Link |
 |---------|--------|------|
+| `2.0.0-ballot.2` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-chargeitem/develop/2.0.0-ballot.2) |
 | `2.0.0-ballot.1` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-chargeitem/develop/2.0.0-ballot.1) |
 | `1.0.0-draft` | `TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-chargeitem/TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration/1.0.0-draft) |
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-chargeitem/develop/1.0.0-draft) |
@@ -45,6 +48,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 
 | Version | Branch | Link |
 |---------|--------|------|
+| `2.0.0-ballot.2` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/develop/2.0.0-ballot.2) |
 | `2.0.0-ballot.1` | `fix-build-stuff` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/fix-build-stuff/2.0.0-ballot.1) |
 | `1.0.0-draft` | `TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration/1.0.0-draft) |
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/develop/1.0.0-draft) |
@@ -54,6 +58,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 
 | Version | Branch | Link |
 |---------|--------|------|
+| `2.0.0-ballot.2` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/develop/2.0.0-ballot.2) |
 | `1.0.0-draft` | `TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration/1.0.0-draft) |
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/develop/1.0.0-draft) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/0.9.0) |
@@ -62,6 +67,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 
 | Version | Branch | Link |
 |---------|--------|------|
+| `2.0.0-ballot.2` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-xborder/develop/2.0.0-ballot.2) |
 | `2.0.0-ballot.1` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-xborder/develop/2.0.0-ballot.1) |
 | `1.0.0-draft` | `TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-xborder/TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration/1.0.0-draft) |
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-xborder/develop/1.0.0-draft) |
