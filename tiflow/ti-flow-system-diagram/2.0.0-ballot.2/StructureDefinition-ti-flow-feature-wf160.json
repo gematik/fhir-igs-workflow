@@ -1,0 +1,202 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "ti-flow-feature-wf160",
+  "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160",
+  "version" : "2.0.0-ballot.2",
+  "name" : "TIFlowFeatureWF160",
+  "title" : "Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2028-04-01",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Featurebeschreibung für die Verordnung von Apothekenpflichtigen Arzneimitteln",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "copyright" : "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0.",
+  "fhirVersion" : "4.0.1",
+  "kind" : "logical",
+  "abstract" : false,
+  "type" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160",
+  "baseDefinition" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition",
+  "derivation" : "specialization",
+  "snapshot" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version",
+      "valueString" : "2.0.0-ballot.2"
+    }],
+    "element" : [{
+      "id" : "ti-flow-feature-wf160",
+      "path" : "ti-flow-feature-wf160",
+      "short" : "Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel",
+      "definition" : "Featurebeschreibung für die Verordnung von Apothekenpflichtigen Arzneimitteln",
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "Base",
+        "min" : 0,
+        "max" : "*"
+      },
+      "isModifier" : false
+    },
+    {
+      "id" : "ti-flow-feature-wf160.url",
+      "path" : "ti-flow-feature-wf160.url",
+      "short" : "Canonical-URL des Features",
+      "definition" : "Canonical-URL des Features",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ti-feature-definition.url",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "uri"
+      }],
+      "patternUri" : "https://gematik.de/fhir/tiflow/FeatureDefinition/WF160"
+    },
+    {
+      "id" : "ti-flow-feature-wf160.name",
+      "path" : "ti-flow-feature-wf160.name",
+      "short" : "Maschinell verarbeitbarer Name",
+      "definition" : "Maschinell verarbeitbarer Name",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ti-feature-definition.name",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "ti-flow-feature-wf160.title",
+      "path" : "ti-flow-feature-wf160.title",
+      "short" : "Menschenlesbarer Titel",
+      "definition" : "Menschenlesbarer Titel",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ti-feature-definition.title",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "ti-flow-feature-wf160.status",
+      "path" : "ti-flow-feature-wf160.status",
+      "short" : "draft | active | retired",
+      "definition" : "draft | active | retired",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ti-feature-definition.status",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "code"
+      }],
+      "patternCode" : "active"
+    },
+    {
+      "id" : "ti-flow-feature-wf160.description",
+      "path" : "ti-flow-feature-wf160.description",
+      "short" : "Fachliche Beschreibung",
+      "definition" : "Fachliche Beschreibung",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "ti-feature-definition.description",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "markdown"
+      }],
+      "patternMarkdown" : "Dieses Feature deklariert, ob der TI-Flow-Fachdienst den `Flowtype für Apothekenpflichtige Arzneimittel` unterstützt und aktuell aktiv ist.\n\n**Wert `true`**: Der Flowtype ist aktiviert, alle Operationen und Abfragen nach Spezifikation sind erlaubt und dürfen durchgeführt werden.\n\n**Wert `false`**: Die Operation $create gestattet keine Erstellung von Tasks des betreffenden Flowtypes\nAlle FHIR-Operationen auf dem RessourceType \"Task\" des betreffenden Flowtypes werden mit dem entsprechendem Fehler abgebrochen\nAlle FHIR-Operationen auf System Ebene, durch eine andere oid als \"oid_versicherter\", die Informationen zu einem Task des betreffenden Flowtypes herausgeben oder manipulieren werden mit entsprechendem Fehler abgebrochen\nDer Aufruf GET /Task auf Tasks des betreffenden Flowtypes durch eine andere oid als \"oid_versicherter\" wird mit entsprechendem Fehler abgebrochen"
+    },
+    {
+      "id" : "ti-flow-feature-wf160.valueType",
+      "path" : "ti-flow-feature-wf160.valueType",
+      "short" : "boolean | code | Coding — Typ des value-Felds",
+      "definition" : "boolean | code | Coding — Typ des value-Felds",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ti-feature-definition.valueType",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "code"
+      }],
+      "patternCode" : "boolean"
+    },
+    {
+      "id" : "ti-flow-feature-wf160.context",
+      "path" : "ti-flow-feature-wf160.context",
+      "short" : "Element-Kontexte im CapabilityStatement",
+      "definition" : "Element-Kontexte im CapabilityStatement",
+      "min" : 1,
+      "max" : "*",
+      "base" : {
+        "path" : "ti-feature-definition.context",
+        "min" : 1,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "uri"
+      }]
+    }]
+  },
+  "differential" : {
+    "element" : [{
+      "id" : "ti-flow-feature-wf160",
+      "path" : "ti-flow-feature-wf160",
+      "short" : "Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel",
+      "definition" : "Featurebeschreibung für die Verordnung von Apothekenpflichtigen Arzneimitteln"
+    },
+    {
+      "id" : "ti-flow-feature-wf160.url",
+      "path" : "ti-flow-feature-wf160.url",
+      "patternUri" : "https://gematik.de/fhir/tiflow/FeatureDefinition/WF160"
+    },
+    {
+      "id" : "ti-flow-feature-wf160.status",
+      "path" : "ti-flow-feature-wf160.status",
+      "patternCode" : "active"
+    },
+    {
+      "id" : "ti-flow-feature-wf160.description",
+      "path" : "ti-flow-feature-wf160.description",
+      "patternMarkdown" : "Dieses Feature deklariert, ob der TI-Flow-Fachdienst den `Flowtype für Apothekenpflichtige Arzneimittel` unterstützt und aktuell aktiv ist.\n\n**Wert `true`**: Der Flowtype ist aktiviert, alle Operationen und Abfragen nach Spezifikation sind erlaubt und dürfen durchgeführt werden.\n\n**Wert `false`**: Die Operation $create gestattet keine Erstellung von Tasks des betreffenden Flowtypes\nAlle FHIR-Operationen auf dem RessourceType \"Task\" des betreffenden Flowtypes werden mit dem entsprechendem Fehler abgebrochen\nAlle FHIR-Operationen auf System Ebene, durch eine andere oid als \"oid_versicherter\", die Informationen zu einem Task des betreffenden Flowtypes herausgeben oder manipulieren werden mit entsprechendem Fehler abgebrochen\nDer Aufruf GET /Task auf Tasks des betreffenden Flowtypes durch eine andere oid als \"oid_versicherter\" wird mit entsprechendem Fehler abgebrochen"
+    },
+    {
+      "id" : "ti-flow-feature-wf160.valueType",
+      "path" : "ti-flow-feature-wf160.valueType",
+      "patternCode" : "boolean"
+    }]
+  }
+}
