@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+
+state "requested" as requested #Aquamarine
+state "on-hold" as onhold #OldLace
+state "in-progress" as inprogress #LimeGreen
+state "completed" as completed #DodgerBlue
+state "cancelled" as cancelled #Orange
+state "rejected" as rejected #Coral
+
+[*] -> requested
+requested -> inprogress
+inprogress -> onhold
+onhold -> inprogress
+inprogress --> rejected
+inprogress --> completed
+requested --> cancelled
+rejected -> [*]
+completed -> [*]
+cancelled --> [*]
+
+
+@enduml
