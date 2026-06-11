@@ -25,18 +25,19 @@ Folgende Berufe und Einrichtungsarten sind zugelassen:
 
 ##### Akteure & OIDs
 
-| Akteur | OID(s) |
-|---|---|
-| Versicherter | `1.2.276.0.76.4.49` |
-| Betriebsstätte Arzt | `1.2.276.0.76.4.50` |
-| Zahnarztpraxis | `1.2.276.0.76.4.51` |
-| Betriebsstätte Psychotherapeut | `1.2.276.0.76.4.52` |
-| Krankenhaus | `1.2.276.0.76.4.53` |
-| Öffentliche Apotheke | `1.2.276.0.76.4.54` |
-| Krankenhausapotheke | `1.2.276.0.76.4.55` |
-| Institution Vorsorge/Reha | `1.2.276.0.76.4.56` |
-| Kostenträger | `1.2.276.0.76.4.59` |
-| NCPeH-Fachdienst | `1.2.276.0.76.4.292` |
+| Akteur | OID Referenz | OID |
+|---|---|---|
+| Versicherter | oid_versicherter | `1.2.276.0.76.4.49` |
+| Betriebsstätte Arzt | oid_praxis_arzt | `1.2.276.0.76.4.50` |
+| Zahnarztpraxis | oid_zahnarztpraxis | `1.2.276.0.76.4.51` |
+| Betriebsstätte Psychotherapeut | oid_praxis_psychotherapeut | `1.2.276.0.76.4.52` |
+| Krankenhaus | oid_krankenhaus | `1.2.276.0.76.4.53` |
+| Öffentliche Apotheke | oid_oeffentliche_apotheke | `1.2.276.0.76.4.54` |
+| Krankenhausapotheke | oid_krankenhausapotheke | `1.2.276.0.76.4.55` |
+| Institution Vorsorge/Reha | oid_institution-vorsorge-reha | `1.2.276.0.76.4.257` |
+| Kostenträger | oid_kostentraeger | `1.2.276.0.76.4.59` |
+| NCPeH-Fachdienst | oid_ncpeh | `1.2.276.0.76.4.292` |
+| Betriebsstätte gematik | oid_bs_gematik | `1.2.276.0.76.4.58` |
 
 ##### Prüfung der Client-Anwendung
 
@@ -270,6 +271,16 @@ policies:
         ]
       }
 
+  "tif-rx-task-probe": {
+        "description": "Probing E-Rezept",
+        "roles": [
+          { "oid": "1.2.276.0.76.4.58", "description": "oid_bs_gematik" }
+        ],
+        "rules": [
+          { "method": "POST", "path": "rx/Task/$create" }
+        ]
+      }
+
   # ── DiGA Verordnung ────────────────────────────────────────────────────────
 
   "tif-diga-task-prescribe": {
@@ -350,6 +361,16 @@ policies:
         ]
       }
 
+"tif-diga-task-probe": {
+        "description": "Probing DiGA",
+        "roles": [
+          { "oid": "1.2.276.0.76.4.58", "description": "oid_bs_gematik" }
+        ],
+        "rules": [
+          { "method": "POST", "path": "diga/Task/$create" }
+        ]
+      }
+
 ```
 
 ---
@@ -373,12 +394,14 @@ policies:
     "tif-rx-audit",
     "tif-rx-notification",
     "tif-rx-subscription",
+    "tif-rx-task-probe",
     "tif-diga-task-prescribe",
     "tif-diga-task-dispense",
     "tif-diga-task-manage",
     "tif-diga-communication",
     "tif-diga-audit",
-    "tif-diga-subscription"
+    "tif-diga-subscription",
+    "tif-diga-task-probe"
   ]
 }
 ```
