@@ -51,7 +51,7 @@ Im Response ist eine Liste von Tasks enthalten. Für jeden Task sind u.a. folgen
 
 Auf Basis dieser Informationen können die Verordnungsdatensätze zu den E-Rezepten vom TI-Flow-Fachdienst abgerufen werden. Erst dann sind die Inhalte der Verordnungen im AVS bekannt und können mit dem Versicherten abgestimmt werden.
 
-Abgerufene Rezepte, welche nicht durch die Apotheke beliefert werden, müssen durch die Apotheke zurückgegeben (Anwendungsfall “E-Rezept durch Abgebenden zurückgeben”) werden.
+Abgerufene Rezepte, welche nicht durch die Apotheke beliefert werden, müssen durch die Apotheke zurückgegeben (Anwendungsfall "E-Rezept durch Abgebenden zurückgeben") werden.
 
 funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" den Nutzer geeignet unterstützen, heruntergeladene und damit reservierte E-Rezepte, welche nicht beliefert werden, wieder zurückzugeben, um dem Versicherten zu ermöglichen, diese in einer anderen Apotheke einzulösen.
 

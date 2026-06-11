@@ -296,7 +296,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="zuweisung-von-e-rezepten-an-eine-apotheke">Zuweisung von E-Rezepten an eine Apotheke</h3>
 
-<p>Dieser Abschnitt beschreibt UX-Guidelines für den Fall der Zuweisung eines E-Rezeptes an eine Apotheke via E-Rezept-FdV oder via KIM (KIM-Dienstkennung: “eRezept;Zuweisung;V1.0”). Im folgenden werden diese beiden Fälle als “Zuweisung” bezeichnet.</p>
+<p>Dieser Abschnitt beschreibt UX-Guidelines für den Fall der Zuweisung eines E-Rezeptes an eine Apotheke via E-Rezept-FdV oder via KIM (KIM-Dienstkennung: "eRezept;Zuweisung;V1.0"). Im folgenden werden diese beiden Fälle als "Zuweisung" bezeichnet.</p>
 
 <h4 id="hinweise-bei-zugewiesenen-e-rezepten">Hinweise bei zugewiesenen E-Rezepten</h4>
 
@@ -313,7 +313,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Nachdem die Apotheke eine Zuweisung erhalten hat soll das Primärsystem, so weit möglich, Daten im Hintergrund verarbeiten und einen möglichst automatischen Arbeitsablauf starten. Zuweisungen, die einen E-Rezept-Token enthalten, sollen dabei einfach in das System integriert werden können, indem automatisch ein Vorgang angelegt wird, dem das E- Rezept zugeordnet wird. Folgende Nachrichten enthalten einen E-Rezept-Token:</p>
 <ul>
-  <li>KIM-Nachricht mit Dienstkennung “eRezept;Zuweisung;V1.0”</li>
+  <li>KIM-Nachricht mit Dienstkennung "eRezept;Zuweisung;V1.0"</li>
   <li>Communication des E-Rezept-FdV (GEM_ERP_PR_Communication_DispReq)</li>
 </ul>
 
@@ -490,7 +490,7 @@ Task.extension:expiryDate, bei Kassenrezepten 3 Monate nach Ausstellung). Danach
 
 <h4 id="finden-von-vorhandenen-vorgängen-per-scan-des-e-rezept-tokens-nach-zuweisung">Finden von vorhandenen Vorgängen per Scan des E-Rezept-Tokens nach Zuweisung</h4>
 
-<p>Wenn ein Versicherter das E-Rezept-Token entweder per E-Rezept-FdV übermittelt oder in der Filiale den zugehörigen Datamatrix-Code vorgezeigt hat, dann ruft die Apotheke das E-Rezept vom TI-Flow-Fachdienst ab. Das E-Rezept erhält den Status “in-progress”. Ein E-Rezept mit diesem Status kann nicht noch einmal vom E-Rezept- Fachdienst abgerufen  werden. Wenn der Kunde das Medikament dann zu einem späteren Zeitpunkt in der Filiale abholt, soll es möglich sein, den zugehörigen Vorgang im AVS auch per Scan des E-Rezept-Token zu finden. Hinweis: Die Abfrage eines bereits durch die Apotheke heruntergeladenen E-Rezepts am TI-Flow-Fachdienstes liefert einen Fehler. Daher sollte diese Abfrage nicht durchgeführt werden.</p>
+<p>Wenn ein Versicherter das E-Rezept-Token entweder per E-Rezept-FdV übermittelt oder in der Filiale den zugehörigen Datamatrix-Code vorgezeigt hat, dann ruft die Apotheke das E-Rezept vom TI-Flow-Fachdienst ab. Das E-Rezept erhält den Status "in-progress". Ein E-Rezept mit diesem Status kann nicht noch einmal vom E-Rezept- Fachdienst abgerufen  werden. Wenn der Kunde das Medikament dann zu einem späteren Zeitpunkt in der Filiale abholt, soll es möglich sein, den zugehörigen Vorgang im AVS auch per Scan des E-Rezept-Token zu finden. Hinweis: Die Abfrage eines bereits durch die Apotheke heruntergeladenen E-Rezepts am TI-Flow-Fachdienstes liefert einen Fehler. Daher sollte diese Abfrage nicht durchgeführt werden.</p>
 
 <!-- A_23801 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-132" title="PS abgebende LEI: UX - Suche nach Vorgang mittels E-Rezept-Token" version="0">
@@ -568,7 +568,7 @@ abrechnen zu lassen Es soll die Möglichkeit bestehen, einem Vorgang nachträgli
 
 <h4 id="weiterleiten-von-e-rezepten-an-eine-andere-apotheke">Weiterleiten von E-Rezepten an eine andere Apotheke</h4>
 
-<p>Für Apothekenverbünde mit mehreren Filialen besteht die Möglichkeit E-Rezepte für die Belieferung weiterzuleiten. Dies kann von Interesse sein, wenn beispielsweise innerhalb eines Verbundes eine Apotheke sich um Vorbestellungen und Botendienste kümmert.  In dem Fall können die anderen Apotheken des Verbundes die vom TI-Flow-Fachdienst heruntergeladenen E-Rezepte an diese Apotheke weiterleiten. Das Weiterleiten kann auch im Rahmen eines Inhaberwechsels genutzt werden. Hinweis: Beim Abruf der Quittung erfolgt im TI-Flow-Fachdienst keine Prüfung, ob die Telematik-ID der Quittung abrufenden Apotheke mit der Telematik-ID der Apotheke übereinstimmt, welche das E-Rezept heruntergeladen und den Status in “in-progress” geändert hat. Für das Weiterleiten eines E-Rezeptes werden AccessCode, Task-ID, Secret des E- Rezeptes sowie sämtliche Inhalte der E-Rezeptes übermittelt. Die weitere Bearbeitung des E-Rezeptes kann ohne den Umweg über Freigabe des E-Rezeptes von einer Apotheke und erneutes Herunterladen durch eine andere Apotheke erfolgen. Wenn eine Apotheke Zugang zu diesen Informationen erhält, kann diese die Abgabe vollziehen. Hierzu muss die empfangene Apotheke die FHIR-OperationPOST /Task/<id>/$close des Rezeptes beim Fachdienst aufrufen.</id></p>
+<p>Für Apothekenverbünde mit mehreren Filialen besteht die Möglichkeit E-Rezepte für die Belieferung weiterzuleiten. Dies kann von Interesse sein, wenn beispielsweise innerhalb eines Verbundes eine Apotheke sich um Vorbestellungen und Botendienste kümmert.  In dem Fall können die anderen Apotheken des Verbundes die vom TI-Flow-Fachdienst heruntergeladenen E-Rezepte an diese Apotheke weiterleiten. Das Weiterleiten kann auch im Rahmen eines Inhaberwechsels genutzt werden. Hinweis: Beim Abruf der Quittung erfolgt im TI-Flow-Fachdienst keine Prüfung, ob die Telematik-ID der Quittung abrufenden Apotheke mit der Telematik-ID der Apotheke übereinstimmt, welche das E-Rezept heruntergeladen und den Status in "in-progress" geändert hat. Für das Weiterleiten eines E-Rezeptes werden AccessCode, Task-ID, Secret des E- Rezeptes sowie sämtliche Inhalte der E-Rezeptes übermittelt. Die weitere Bearbeitung des E-Rezeptes kann ohne den Umweg über Freigabe des E-Rezeptes von einer Apotheke und erneutes Herunterladen durch eine andere Apotheke erfolgen. Wenn eine Apotheke Zugang zu diesen Informationen erhält, kann diese die Abgabe vollziehen. Hierzu muss die empfangene Apotheke die FHIR-OperationPOST /Task/<id>/$close des Rezeptes beim Fachdienst aufrufen.</id></p>
 
 <!-- A_23806 -->
 <requirement conformance="MAY" key="IG-TIFLOW-ERP-137" title="PS abgebende LEI: UX - Weiterleitung eines E-Rezepts" version="0">
@@ -642,7 +642,7 @@ abrechnen zu lassen Es soll die Möglichkeit bestehen, einem Vorgang nachträgli
 
 <h4 id="qes-durch-den-apotheker">QES durch den Apotheker</h4>
 
-<p>Jeder Abgabedatensatz zu einem E-Rezept muss signiert werden. Für die nicht- qualifizierten Signatur wird die SMC-B der Apotheke verwendet. In vertraglich vereinbarten Fällen (“Rahmenvertrag über die Arzneimittelversorgung nach §129 Absatz 2 SGB V”,  https://www.abda.de/fileadmin/user_upload/assets/Vertraege/2021-10- 01_RV_129_redaktionelle_Gesamtfassung_Stand_01102021_barrierefrei.pdf) muss der HBA des Apothekers/-assistents/Pharmazieingenieurs für eine QES verwendet werden. In Fällen, in denen eine nicht-qualifizierte Signatur ausreicht, soll keine QES erzwungen werden. Dies führt zu Zeitersparnis, da unnötige PIN-Eingaben vermieden werden.</p>
+<p>Jeder Abgabedatensatz zu einem E-Rezept muss signiert werden. Für die nicht- qualifizierten Signatur wird die SMC-B der Apotheke verwendet. In vertraglich vereinbarten Fällen ("Rahmenvertrag über die Arzneimittelversorgung nach §129 Absatz 2 SGB V",  https://www.abda.de/fileadmin/user_upload/assets/Vertraege/2021-10- 01_RV_129_redaktionelle_Gesamtfassung_Stand_01102021_barrierefrei.pdf) muss der HBA des Apothekers/-assistents/Pharmazieingenieurs für eine QES verwendet werden. In Fällen, in denen eine nicht-qualifizierte Signatur ausreicht, soll keine QES erzwungen werden. Dies führt zu Zeitersparnis, da unnötige PIN-Eingaben vermieden werden.</p>
 
 <!-- A_23809 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-143" title="PS abgebende LEI: UX - Abgabedatensatz signieren - QES Signatur in notwendigen Fällen" version="0">
@@ -797,7 +797,7 @@ abrechnen zu lassen Es soll die Möglichkeit bestehen, einem Vorgang nachträgli
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 1, 2026 06:04+0000">2026-06-01</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jun 11, 2026 21:46+0000">2026-06-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

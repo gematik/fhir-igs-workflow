@@ -34,7 +34,7 @@ Auch die Überwachung der Verschreibung und Abgabe von Arzneimitteln nach §3a A
 
 E-T-Rezepte können in der ambulanten vertragsärztlichen Versorgung und im Rahmen des Entlassmanagements von Krankenhäusern durch alle Ärzte mit einem Heilberufsausweis ausgestellt werden. Tierärzte und Zahnärzte sind nicht befugt E-T-Rezepte auszustellen. Damit Vorliegen des elektronischen Heilberufsausweis nachgewiesen wurde, dass eine gültige Approbation vorliegt, ist keine vorherige Registrierung beim BfArM mehr notwendig. Die bereits etablierten und erlernten Arbeitsprozesse für die Erstellung eines E-Rezepts, sollen für die E-T-Rezepte nachgenutzt und erweitert werden (z.B. Vorbereitung durch MFAs, Signaturprozesse, etc.). Es muss für Versicherte von allen Kostenträgern genutzt werden, sofern dies technisch möglich ist.
 
-Verordnung von Arzneimitteln nach §3a AMVV müssen gemäß §3a Abs. 1 AMVV als “T-Rezept” gekennzeichnet werden. Das Primärsystem des Arztes soll sicherstellen, dass das Kennzeichen “T-Rezept” immer bei Verordnungen für Arzneimittel nach §3a AMVV gesetzt wird. Es soll auch sicherstellen, dass das Kennzeichen für andere Arzneimittel nicht gesetzt werden kann und diese somit nicht fälschlicherweise als E-T-Rezepte verordnet werden.
+Verordnung von Arzneimitteln nach §3a AMVV müssen gemäß §3a Abs. 1 AMVV als "T-Rezept" gekennzeichnet werden. Das Primärsystem des Arztes soll sicherstellen, dass das Kennzeichen "T-Rezept" immer bei Verordnungen für Arzneimittel nach §3a AMVV gesetzt wird. Es soll auch sicherstellen, dass das Kennzeichen für andere Arzneimittel nicht gesetzt werden kann und diese somit nicht fälschlicherweise als E-T-Rezepte verordnet werden.
 
 Weiterhin müssen gemäß §3a AMVV folgende zusätzliche Angaben durch den Arzt auf der elektronischen Verordnung zwingend erfasst werden:
 
@@ -56,13 +56,13 @@ Das Ausstellen von E-T-Rezepten für Stations- oder Praxisbedarf ist nicht zulä
 
 Versicherte können E-T-Rezepte über dieselben Wege wie E-Rezepte für andere apothekenpflichtige Arzneimittel einlösen (jedoch nicht im EU-Ausland und via Versand).
 
-E-T-Rezepte dürfen nur 6 Kalendertage nach dem Ausstellungstag beliefert werden (§ 3a Abs. 4 AMVV). Der TI-Flow-Fachdienst stellt sicher, dass die Rezepte nur innerhalb dieser Frist eingelöst werden. Die fristgerechte Abgabe des Arzneimittels ist durch die Apotheke sicherzustellen. Die Einhaltung der Gültigkeit wird durch den TI-Flow-Fachdienst sichergestellt. E-T-Rezepte mit dem Kennzeichen “Entlassrezept” dürfen (analog zu “normalen” Arzneimittel Rezepten und der AM-RL im Rahmen des Entlassmangements) nur 3 Werktage zulasten der GKV abgerechnet werden, danach aber bis zum Ende der Gültigkeit als Selbstzahlerrezept eingelöst werden.
+E-T-Rezepte dürfen nur 6 Kalendertage nach dem Ausstellungstag beliefert werden (§ 3a Abs. 4 AMVV). Der TI-Flow-Fachdienst stellt sicher, dass die Rezepte nur innerhalb dieser Frist eingelöst werden. Die fristgerechte Abgabe des Arzneimittels ist durch die Apotheke sicherzustellen. Die Einhaltung der Gültigkeit wird durch den TI-Flow-Fachdienst sichergestellt. E-T-Rezepte mit dem Kennzeichen "Entlassrezept" dürfen (analog zu "normalen" Arzneimittel Rezepten und der AM-RL im Rahmen des Entlassmangements) nur 3 Werktage zulasten der GKV abgerechnet werden, danach aber bis zum Ende der Gültigkeit als Selbstzahlerrezept eingelöst werden.
 
 Eine Belieferung von E-T-Rezepten via Versand ist ausgeschlossen (§17 Abs. 2b ApBetrO).
 
 Für Versicherte ist es wichtig, auf dem Patientenausdruck bzw. im E-Rezept-FdV erkennen zu können, dass es sich um ein E-Rezept mit kürzerer Gültigkeit handelt und dass nicht alle Belieferungsoptionen zur Verfügung stehen.
 
-Die Verarbeitung von E-T-Rezepten in dem Primärsystem der abgebenden Apotheke verhält sich grundsätzlich analog zu E-Rezepten von apothekenpflichtigen Arzneimitteln. Die Kategorie “T-Rezept” sowie die zusätzlichen Angaben des Arztes aus §3a Abs. 2, 3 und 5 AMVV müssen in der Warenwirtschaft leicht zu erkennen sein, damit die Apotheke die Rezepte prüfen können.
+Die Verarbeitung von E-T-Rezepten in dem Primärsystem der abgebenden Apotheke verhält sich grundsätzlich analog zu E-Rezepten von apothekenpflichtigen Arzneimitteln. Die Kategorie "T-Rezept" sowie die zusätzlichen Angaben des Arztes aus §3a Abs. 2, 3 und 5 AMVV müssen in der Warenwirtschaft leicht zu erkennen sein, damit die Apotheke die Rezepte prüfen können.
 
 Die Abrechnung von E-T-Rezepten verläuft je nach Kostenträger analog zu den Prozessen von E-Rezepten von Arzneimitteln.
 
@@ -79,8 +79,8 @@ Als Arzt möchte ich …
 * … in meinem Primärsystem elektronisch T-Rezepte ausstellen können, so dass ich die Therapie und die Therapiesicherheit meines Patienten gewährleisten kann.
 * … , dass mein System automatisch ein E-T-Rezept erstellt, sobald ich einen Wirkstoff nach §3a Absatz 1 Satz AMVV verordne, sodass ich mich an die gesetzlichen Vorgaben halte.
 * … , dass sich T-Rezepte, in der Handhabung in meinem Primärsystem nicht wesentlich von normalen Arzneimittelrezepten unterscheiden, so dass sich die Prozesse in meiner Praxis nicht unterscheiden.
-* … E-T-Rezepte gemeinsam mit “normalen” E-Rezepten signieren können, sodass ich bspw. Begleitmedikamente und Arzneimittel nach §3a Abs. 1 Satz 1 AMVV in einem Vorgang verordnen kann.
-* … , dass mich mein Primärsystem mich bei der Verordnung von E-T-Rezepten unterstützt, die Reichweite des verordneten Arzneimittels zu berechnen, damit ich diese nicht selbst berechnen muss und die gesetzliche Höchstmenge nicht überschreite. Hierbei soll mein System auch die Dosierung aus einem Medikationsplan in die Berechnung einschließen, sofern ich dort die Dosierung notiert habe (und auf dem E-T-Rezept “Dosieranweisung/Medikationsplan mitgegeben” angegeben habe).
+* … E-T-Rezepte gemeinsam mit "normalen" E-Rezepten signieren können, sodass ich bspw. Begleitmedikamente und Arzneimittel nach §3a Abs. 1 Satz 1 AMVV in einem Vorgang verordnen kann.
+* … , dass mich mein Primärsystem mich bei der Verordnung von E-T-Rezepten unterstützt, die Reichweite des verordneten Arzneimittels zu berechnen, damit ich diese nicht selbst berechnen muss und die gesetzliche Höchstmenge nicht überschreite. Hierbei soll mein System auch die Dosierung aus einem Medikationsplan in die Berechnung einschließen, sofern ich dort die Dosierung notiert habe (und auf dem E-T-Rezept "Dosieranweisung/Medikationsplan mitgegeben" angegeben habe).
 * … , dass mein System mich in einer verständlichen Fehlermeldung darauf hinweist, wenn die zulässige Höchstmenge überschritten wird und mir einen Vorschlag anbietet, wie ich die Angaben ändern kann, um die Höchstmenge einzuhalten (z.B. kleinere Packungsgröße).
 * … die Reichweite selbst berechnen und in der Verordnung eintragen können, wenn mein System diese nicht selbst berechnen kann.
 * … , dass mein Primärsystem automatisch in der Verordnung erfasst, dass es sich nicht um eine gebärfähige Frau handelt, nachdem ich diese Information einmalig erfasst habe.

@@ -299,7 +299,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Dieses Bundle wird in diesem Dokument als E-Rezept-Bundle bezeichnet. Ein E-Rezept-Bundle enthält genau eine Verordnungszeile.</p>
 
-<p>Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz verwenden, die nicht explizit gemäß KBV-Profilversion “kbv.ita.erp” bzw. “kbv.itv.evdga” beschrieben sind.</p>
+<p>Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz verwenden, die nicht explizit gemäß KBV-Profilversion "kbv.ita.erp" bzw. "kbv.itv.evdga" beschrieben sind.</p>
 
   <!-- A_22893 -->
 <requirement conformance="SHALL" title="PS verordnende LEI: E-Rezept erstellen - Gleichheit Ausstellungsdatum und QES Erstellung" version="0" key="IG-TIFLOW-CORE-258">
@@ -325,15 +325,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   ausführen.
 </requirement>
 
-<p>Für weitere Informationen siehe Operation “E-Rezept erstellen” aus der API-Schnittstelle [E-Rezept API Dokumentation].</p>
+<p>Für weitere Informationen siehe Operation "E-Rezept erstellen" aus der API-Schnittstelle [E-Rezept API Dokumentation].</p>
 
 <p>Der Value-Katalog für FlowType ist in [gemSpec_DM_eRp] beschrieben.</p>
 
 <p>Der Response des Fachdienstes liefert</p>
 <ul>
-  <li>die Rezept-ID (Task.Identifier mit “https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId”), mit der das E-Rezept-Bundle vervollständigt wird,</li>
+  <li>die Rezept-ID (Task.Identifier mit "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId"), mit der das E-Rezept-Bundle vervollständigt wird,</li>
   <li>die Task-ID (Task.id), mit dem der Task bei Aufrufen des TI-Flow-Fachdienstes referenziert wird,</li>
-  <li>und den AccessCode (Task.Identifier mit “https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AccessCode”), welcher für den Zugriff auf das E-Rezept im Fachdienst berechtigt</li>
+  <li>und den AccessCode (Task.Identifier mit "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AccessCode"), welcher für den Zugriff auf das E-Rezept im Fachdienst berechtigt</li>
 </ul>
 
 <p>Hinweis: Die Task-ID entspricht der Rezept-ID.</p>
@@ -357,7 +357,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   ausführen.
 </requirement>
 
-<p>Für weitere Informationen siehe Operation “E-Rezept qualifiziert signieren” aus der API-Schnittstelle [E-Rezept API Dokumentation].</p>
+<p>Für weitere Informationen siehe Operation "E-Rezept qualifiziert signieren" aus der API-Schnittstelle [E-Rezept API Dokumentation].</p>
 
 <p>Das PS der verordnenden LEI MUSS muss die Erstellung der E-Rezepte mittels Einzelsignatur, Stapelsignatur und Komfortsignatur des Konnektors unterstützen.</p>
 
@@ -369,7 +369,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Zur Verordnung von DiGAs werden die DiGA-FHIR-Profile der KBV genutzt: https://simplifier.net/evdga.</p>
 
-<p>Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz verwenden, die nicht explizit gemäß KBV-Profilversion “kbv.itv.evdga” beschrieben sind.</p>
+<p>Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz verwenden, die nicht explizit gemäß KBV-Profilversion "kbv.itv.evdga" beschrieben sind.</p>
 
   <!-- A_26373 -->
 <requirement conformance="SHALL NOT" title="PS verordnende LEI: keine elektronische Verordnung einer DiGA zu Lasten BG/UK" version="0" key="IG-TIFLOW-DIGA-22">
@@ -382,7 +382,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Das PS der verordnenden LEI DARF bei der Verordnung einer DiGA NICHT eine Mehrfachverordnung erstellen.</p>
 
-<p>Das PS der verordnenden LEI MUSS im Anwendungsfall “E-Rezept durch Verordnenden erstellen” beim Verordnen einer DiGA die HTTP-Operation POST /Task/$create mit Parameter FlowType = 162 ausführen.</p>
+<p>Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" beim Verordnen einer DiGA die HTTP-Operation POST /Task/$create mit Parameter FlowType = 162 ausführen.</p>
 
 
 
@@ -425,7 +425,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 1, 2026 05:58+0000">2026-06-01</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jun 11, 2026 21:39+0000">2026-06-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

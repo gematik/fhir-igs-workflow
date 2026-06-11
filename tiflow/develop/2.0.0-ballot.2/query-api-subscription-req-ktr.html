@@ -350,17 +350,17 @@ Upgrade: websocket
 Connection: Upgrade
 Sec-WebSocket-Accept: fA9dggdnMPU79lJgAE3W4TRnyDM=</p>
 
-<p>Das Upgrade erfolgt mit einer “bind” Text-Nachricht über die Web Socket-Verbindung an den Server.
+<p>Das Upgrade erfolgt mit einer "bind" Text-Nachricht über die Web Socket-Verbindung an den Server.
 bind: &lt;subscription id&gt;</p>
 
-<p>Der Subscription Service antwortet mit einer “bound” um die Einrichtung der Subscription zu bestätigen.
+<p>Der Subscription Service antwortet mit einer "bound" um die Einrichtung der Subscription zu bestätigen.
 bound: &lt;subscription id&gt;</p>
 
-<p>Wenn eine neue Nachricht für die Telematik-ID des Clients eingestellt wird, dann sendet der TI-Flow-Fachdienst eine Nachricht ping: &lt;subscription-id&gt;. Das Clientsystem kann dann diese Nachricht mittels des Anwendungsfalls “Nachrichten von Versicherten empfangen” unter Nutzung des Requests
+<p>Wenn eine neue Nachricht für die Telematik-ID des Clients eingestellt wird, dann sendet der TI-Flow-Fachdienst eine Nachricht ping: &lt;subscription-id&gt;. Das Clientsystem kann dann diese Nachricht mittels des Anwendungsfalls "Nachrichten von Versicherten empfangen" unter Nutzung des Requests
 GET /Communication?received=null&amp;recipient=&lt;Telematik-ID&gt;
 abrufen.</p>
 
-<p>Bei Nutzung des Subscription Services kann abweichend von der Anforderung “A_21556 - PS abgebende LEI: Häufigkeit des Abrufen von Nachrichten” die Operation GET /Communication häufiger als alle 5 Minuten, d.h. nach jeder Notification, mit den obigen Parametern angefragt werden.</p>
+<p>Bei Nutzung des Subscription Services kann abweichend von der Anforderung "A_21556 - PS abgebende LEI: Häufigkeit des Abrufen von Nachrichten" die Operation GET /Communication häufiger als alle 5 Minuten, d.h. nach jeder Notification, mit den obigen Parametern angefragt werden.</p>
 
 <!-- A_22379 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-417" title="CS Kostenträger: Subscription für neue Communication - Wartezeit" version="0">
@@ -371,7 +371,7 @@ abrufen.</p>
     Das Clientsystem Kostenträger KANN eine beliebige Wartezeit bis zum Abruf der Nachrichten mit Anwendungsfall "Nachrichten von Versicherten empfangen" umsetzen, wenn in einem Zeitraum sehr viele ping-Benachrichtigungen empfangen werden.
 </requirement>
 
-<p>Hinweis: Jede eingestellte Nachricht führt zu einem Ping, ggfs. im Millisekundenbereich, wenn viele Nachrichten an einen Empfänger gerichtet werden. In Abhängigkeit von der Implementierung kann dieses Verhalten zu einer Überlastung des Clientsystems führen, wenn bspw. jedes einzelne Ping den Anwendungsfall “Nachrichten von Versicherten empfangen” triggert.</p>
+<p>Hinweis: Jede eingestellte Nachricht führt zu einem Ping, ggfs. im Millisekundenbereich, wenn viele Nachrichten an einen Empfänger gerichtet werden. In Abhängigkeit von der Implementierung kann dieses Verhalten zu einer Überlastung des Clientsystems führen, wenn bspw. jedes einzelne Ping den Anwendungsfall "Nachrichten von Versicherten empfangen" triggert.</p>
 
 
 
@@ -414,7 +414,7 @@ abrufen.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 1, 2026 05:49+0000">2026-06-01</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jun 11, 2026 21:31+0000">2026-06-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

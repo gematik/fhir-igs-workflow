@@ -38,5 +38,5 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet.
 ### Hinweise
 
 * Bei ausbleibender Antwort soll der Client den Aufruf wiederholen.
-* Wenn ein wiederholter Aufruf mit `403` und “Task not in status draft but in status ready” antwortet, war ein vorheriger Aufruf bereits erfolgreich.
+* Wenn ein wiederholter Aufruf mit `403` und "Task not in status draft but in status ready" antwortet, war ein vorheriger Aufruf bereits erfolgreich.
 

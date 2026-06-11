@@ -26,14 +26,14 @@ Beispiel: GET https://subscription.zentral.erp.splitdns.ti-dienste.de/subscripti
 
 Der Subscription Service antwortet mit dem Upgrade HTTP/1.1 101 Switching Protocols Upgrade: websocket Connection: Upgrade Sec-WebSocket-Accept: fA9dggdnMPU79lJgAE3W4TRnyDM=
 
-Das Upgrade erfolgt mit einer “bind” Text-Nachricht über die Web Socket-Verbindung an den Server. bind: <subscription id>
+Das Upgrade erfolgt mit einer "bind" Text-Nachricht über die Web Socket-Verbindung an den Server. bind: <subscription id>
 
-Der Subscription Service antwortet mit einer “bound” um die Einrichtung der Subscription zu bestätigen. bound: <subscription id>
+Der Subscription Service antwortet mit einer "bound" um die Einrichtung der Subscription zu bestätigen. bound: <subscription id>
 
-Wenn eine neue Nachricht für die Telematik-ID des Clients eingestellt wird, dann sendet der TI-Flow-Fachdienst eine Nachricht ping: <subscription-id>. Das Clientsystem kann dann diese Nachricht mittels des Anwendungsfalls “Nachrichten von Versicherten empfangen” unter Nutzung des Requests GET /Communication?received=null&recipient=<Telematik-ID> abrufen.
+Wenn eine neue Nachricht für die Telematik-ID des Clients eingestellt wird, dann sendet der TI-Flow-Fachdienst eine Nachricht ping: <subscription-id>. Das Clientsystem kann dann diese Nachricht mittels des Anwendungsfalls "Nachrichten von Versicherten empfangen" unter Nutzung des Requests GET /Communication?received=null&recipient=<Telematik-ID> abrufen.
 
-Bei Nutzung des Subscription Services kann abweichend von der Anforderung “A_21556 - PS abgebende LEI: Häufigkeit des Abrufen von Nachrichten” die Operation GET /Communication häufiger als alle 5 Minuten, d.h. nach jeder Notification, mit den obigen Parametern angefragt werden.
+Bei Nutzung des Subscription Services kann abweichend von der Anforderung "A_21556 - PS abgebende LEI: Häufigkeit des Abrufen von Nachrichten" die Operation GET /Communication häufiger als alle 5 Minuten, d.h. nach jeder Notification, mit den obigen Parametern angefragt werden.
 
 funkt. Eignung: HerstellererklärungDas Clientsystem Kostenträger KANN eine beliebige Wartezeit bis zum Abruf der Nachrichten mit Anwendungsfall "Nachrichten von Versicherten empfangen" umsetzen, wenn in einem Zeitraum sehr viele ping-Benachrichtigungen empfangen werden.
-Hinweis: Jede eingestellte Nachricht führt zu einem Ping, ggfs. im Millisekundenbereich, wenn viele Nachrichten an einen Empfänger gerichtet werden. In Abhängigkeit von der Implementierung kann dieses Verhalten zu einer Überlastung des Clientsystems führen, wenn bspw. jedes einzelne Ping den Anwendungsfall “Nachrichten von Versicherten empfangen” triggert.
+Hinweis: Jede eingestellte Nachricht führt zu einem Ping, ggfs. im Millisekundenbereich, wenn viele Nachrichten an einen Empfänger gerichtet werden. In Abhängigkeit von der Implementierung kann dieses Verhalten zu einer Überlastung des Clientsystems führen, wenn bspw. jedes einzelne Ping den Anwendungsfall "Nachrichten von Versicherten empfangen" triggert.
 

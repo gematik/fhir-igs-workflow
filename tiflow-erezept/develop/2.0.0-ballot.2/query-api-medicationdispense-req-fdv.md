@@ -30,7 +30,7 @@ Werden die Abgabeinformationen vor dem Abschluss der Workflows eingestellt, dann
 
 Mit dem Abschluss des Workflows ist Task.status=complete. Ein Ändern der Abgabeinformationen ist danach nicht mehr möglich.
 
-Hinweis: Die Information, dass eine Abgabeinformation eingestellt wurde (Task.status = “in-progress” und Task.extension:lastMedicationDispense existiert) kann dafür genutzt werden den Status des E-Rezepts als Abgegeben darzustellen.
+Hinweis: Die Information, dass eine Abgabeinformation eingestellt wurde (Task.status = "in-progress" und Task.extension:lastMedicationDispense existiert) kann dafür genutzt werden den Status des E-Rezepts als Abgegeben darzustellen.
 
 Falls auf dem TI-Flow-Fachdienst Informationen zur Abgabe durch die abgebende LEI hinterlegt wurden, liefert der Response ein MedicationDispense Ressource. Zur Spezifikation der MedicationDispense Ressource siehe [gemSpec_DM_eRp]. Diese beinhaltet u.a. die folgenden fachlichen Informationen zum abgegebenen Arzneimittel:
 

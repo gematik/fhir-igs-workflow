@@ -13,7 +13,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 Diese Seite beschreibt Anforderungen für das E-Rezept-FdV zur Nutzung des `$revoke-eu-access-permission`-Endpunktes.
 
-Das E-Rezept-FdV MUSS es dem Nutzer im Anwendungsfall “Zugriffsberechtigung löschen” ermöglichen den Löschwunsch einzugeben.
+Das E-Rezept-FdV MUSS es dem Nutzer im Anwendungsfall "Zugriffsberechtigung löschen" ermöglichen den Löschwunsch einzugeben.
 
 funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung löschen" zum Löschen der Information auf dem TI-Flow-Fachdienst die HTTP-Operation DELETE /$revoke-eu-access-permission ausführen.
 

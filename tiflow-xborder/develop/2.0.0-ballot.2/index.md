@@ -18,7 +18,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 Dieser Implementation Guide beschreibt das Feature zur Übermittlung von Verordnungen für die Einlösung im EU-Ausland. Im Fokus stehen die Prozessparameter und Ergänzungen an den Schnittstellen des TI-Flow-Fachdienstes sowie die Use Cases für Versicherte zur Verwaltung von Einwilligung und Zugriff.
 
-Die Inhalte basieren auf der Spezifikation “EU Zugriff E-Rezept”, Version 1.0.1 (Stand: 10.04.2025). [gemspec eRp EU 1.0.1](https://gemspec.gematik.de/docs/gemF/gemF_eRp_EU/gemF_eRp_EU_V1.0.1/)
+Die Inhalte basieren auf der Spezifikation "EU Zugriff E-Rezept", Version 1.0.1 (Stand: 10.04.2025). [gemspec eRp EU 1.0.1](https://gemspec.gematik.de/docs/gemF/gemF_eRp_EU/gemF_eRp_EU_V1.0.1/)
 
 ### Zweck und Geltungsbereich
 

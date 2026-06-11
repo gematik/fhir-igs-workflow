@@ -22,7 +22,7 @@ funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "Abgabein
 ausführen.
 ### Modulspezifische Anforderungen
 
-Der Kostenträger stellt die Abgabeinformationen beim Abschluss des Workflows zur Verordnung ein. Der Task hat dann den Status “completed”.
+Der Kostenträger stellt die Abgabeinformationen beim Abschluss des Workflows zur Verordnung ein. Der Task hat dann den Status "completed".
 
 funkt. Eignung: HerstellererklärungDas E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" dem Nutzer Abgabeinformationen eines Tasks mit Flowtyp 162 den Freischaltcode in geeigneter Weise darstellen.
 

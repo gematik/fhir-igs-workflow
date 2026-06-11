@@ -14,7 +14,7 @@ Das Szenario beschreibt die Mehrfachverordnung (MVO) für apothekenpflichtige Ar
 
 ### Kontext
 
-Mehrfachverordnungen sollen die Versorgung mit Arzneimittel für chronisch Kranke erleichtern. Hierfür wurde in § 31 Absatz 1b SGB V die Grundlage geschaffen: “Für Versicherte, die eine kontinuierliche Versorgung mit einem bestimmten Arzneimittel benötigen, können Vertragsärzte Verordnungen ausstellen, nach denen eine nach der Erstabgabe bis zu dreimal sich wiederholende Abgabe erlaubt ist. Die Verordnungen sind besonders zu kennzeichnen. Sie dürfen bis zu einem Jahr nach Ausstellungsdatum zu Lasten der gesetzlichen Krankenkasse durch Apotheken beliefert werden.”
+Mehrfachverordnungen sollen die Versorgung mit Arzneimittel für chronisch Kranke erleichtern. Hierfür wurde in § 31 Absatz 1b SGB V die Grundlage geschaffen: "Für Versicherte, die eine kontinuierliche Versorgung mit einem bestimmten Arzneimittel benötigen, können Vertragsärzte Verordnungen ausstellen, nach denen eine nach der Erstabgabe bis zu dreimal sich wiederholende Abgabe erlaubt ist. Die Verordnungen sind besonders zu kennzeichnen. Sie dürfen bis zu einem Jahr nach Ausstellungsdatum zu Lasten der gesetzlichen Krankenkasse durch Apotheken beliefert werden."
 
 Neben § 31 Absatz 1b SGB V regelt § 4 Abs. 3 AMVV i.V.m. § 2 Abs. 1 Nr. 6a AMVV die gesetzliche Grundlage der Mehrfachverordnungen.
 
@@ -90,7 +90,7 @@ Für die Teilverordnungen gelten die gleichen Löschfristen wie für Einzelrezep
 
 #### Ausdruck für den Versicherten
 
-Der Versicherte kann einen Ausdruck für die Teilverordnungen durch den Verordnenden erhalten. Regelungen für das Erstellen des Ausdrucks für die Teilverordnungen einer Mehrfachverordnung sind in der , Technischen Anlage zur elektronischen Arzneimittelverordnung (E16A)” [KBV ITA_VGEX TECHNISCHE ANLAGE_ ERP] getroffen.
+Der Versicherte kann einen Ausdruck für die Teilverordnungen durch den Verordnenden erhalten. Regelungen für das Erstellen des Ausdrucks für die Teilverordnungen einer Mehrfachverordnung sind in der , Technischen Anlage zur elektronischen Arzneimittelverordnung (E16A)" [KBV ITA_VGEX TECHNISCHE ANLAGE_ ERP] getroffen.
 
 Wenn ein Ausdruck die Daten zu mehrere Teilverordnungen einer Mehrfachverordnung beinhaltet und diese eingescannt werden, dann dürfen die E-Rezept-Token der Teilverordnungen, welche noch nicht ihren Gültigkeitszeitraum erreicht haben, nicht automatisch im AVS gespeichert werden, da der Versicherte das Recht hat, für diese ggf. eine andere Apotheke für das Einlösen auszuwählen. Das Speichern kann auf Wunsch des Versicherten erfolgen.
 

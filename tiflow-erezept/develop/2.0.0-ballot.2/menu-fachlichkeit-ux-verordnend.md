@@ -13,7 +13,7 @@ Version 2.0.0-ballot.2 - ci-build
 > Hinweis: Für den Verordnungsprozess von Rezepten gibt es regulierende Vorgaben, welche durch die Primärsysteme der verordnenden Leistungserbringerinstitutionen umgesetzt werden müssen. U.a.
 * § 73 SGB V
 * Bundesmantelvertrag-Ärzte
-* “Technische Anlage zur elektronischen Arzneimittelversorgung”
+* "Technische Anlage zur elektronischen Arzneimittelversorgung"
 [KBV_ITA_VGEX_Technische_Anlage_ERP] Die in diesem Implementierungsleitfaden beschriebenen best practice für User Experience soll die Umsetzung im Primärsystem so unterstützen, dass der Verordnungsprozess für den Nutzer effizient erfolgen kann. Die best practice für User Experience stellen eine Umsetzungsempfehlung dar. D.h. es ist den Herstellern der Primärsystem freigestellt, effizientere Lösungen zu implementieren, welche den Verordnungsprozessen in den Primärsystemen entsprechen.
 
 ### Allgemeine Hinweise
@@ -86,8 +86,8 @@ Das PS kann dem Nutzer in diesem Arbeitsschritt auch eine Liste der häufig vers
 funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL dem Nutzer nach der Auswahl des Verordnungsinhalts die Möglichkeit geben, weitere Details (z.B. Anzahl der Packungen) der aktuellen als E-Rezept dargestellten Verordnung hinzuzufügen. Es SOLL den Nutzer darauf hinweisen, dass mit der Bestätigung dieser Auswahl die Verordnung erfolgen soll und der erste Schritt zur Signatur ausgelöst wird. Dieser Hinweis muss durch den Nutzer nicht bestätigt werden.
 Hinweis: Um den Nutzer hinreichend auf den folgenden Signaturschritt (nach [gemILF_PS#A_19138- PS: Auslösen der Komfortsignatur bei Nachnutzung der Primärsystem-Authentisierung]) hinzuweisen, muss z.B. bei der Verwendung einer Schaltfläche diese deutlich machen, dass
 
-1. eine Verordnung erzeugt werden wird. Dies kann erreicht werden durch eine passende Benennung z.B. mit “Verordnen”, “Dem Rezept hinzufügen”.
-1. im nächsten Schritt die Signatur erfolgen kann. Dies kann erreicht werden, durch eine passende Benennung z.B. mit “[Verordnung/Arzneimittel]zur Signatur auswählen” oder durch die Verwendung eines Signatur-Icons.
+1. eine Verordnung erzeugt werden wird. Dies kann erreicht werden durch eine passende Benennung z.B. mit "Verordnen", "Dem Rezept hinzufügen".
+1. im nächsten Schritt die Signatur erfolgen kann. Dies kann erreicht werden, durch eine passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" oder durch die Verwendung eines Signatur-Icons.
 
 **Abbildung: **Beispiel der Maske einer neuen Verordnung
 
@@ -118,7 +118,7 @@ Der Hinweis soll sichtbar sein, aber nicht den Arbeitsablauf stören.
 
 #### Abgabehinweis für Apotheken (zus. Freitext)
 
-Um weiterführende Informationen zu einer Verordnung zu notieren (z.B. die Diagnose als Hinweis für den Apotheker), soll der Arzt das Feld im Verordnungsdatensatz “Abgabehinweis für Apotheken” nutzen. Dieses Feld muss dem Arzt im Verordnungsprozess angezeigt werden, so dass er es wahrnimmt und in Situationen, in denen er eigentlich etwas handschriftlich auf dem Muster 16 notiert hätte, nutzt.
+Um weiterführende Informationen zu einer Verordnung zu notieren (z.B. die Diagnose als Hinweis für den Apotheker), soll der Arzt das Feld im Verordnungsdatensatz "Abgabehinweis für Apotheken" nutzen. Dieses Feld muss dem Arzt im Verordnungsprozess angezeigt werden, so dass er es wahrnimmt und in Situationen, in denen er eigentlich etwas handschriftlich auf dem Muster 16 notiert hätte, nutzt.
 
 funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, Freitexteingaben für Abgabehinweise für den Verordnungsdatensatz (KBV_ERP_Prescription MedicationRequest.note) zu erfassen.
 #### Verordnender Arzt aus HBA gefüllt
@@ -128,7 +128,7 @@ Beim Erstellen einer Verordnung kann es zu einer Abweichung zwischen dem die Ver
 funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL sicherstellen, dass für den im Verordnungsdatensatz referenzierten Practitioner (KBV_PR_ERP_Composition Composition.author) die Daten des Leistungserbringers verwendet werden, mit dessen HBA der Verordnungsdatensatz signiert wird.
 ##### Sonderfall Vertretungssituation
 
-Hinweis: Das in diesem Abschnitt beschriebene Szenario “Sonderfall Vertretungsfall” findet keine Anwendung in ZPVS. Wenn Ärzte aufgrund von Urlaub/Krankheit/Abwesenheit in der eigenen Praxis ausfallen, dürfen sie sich von einem Kollegen für maximal bis zu 3 Monate innerhalb von 12 Monaten vertreten lassen. Der Nutzer soll (ggf. für einen bestimmten Zeitraum) entscheiden können, welcher der Vertretungsfälle zutrifft (z.B. im Rechtemanagement des Systems). Das System füllt dann die Informationen zum Verordnenden Arzt in der Verordnung automatisch richtig aus. Dabei gibt es folgende Vertretungsfälle (siehe [https://www.kbv.de/html/erezept.php], Stand 27.02.2023)
+Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Vertretungsfall" findet keine Anwendung in ZPVS. Wenn Ärzte aufgrund von Urlaub/Krankheit/Abwesenheit in der eigenen Praxis ausfallen, dürfen sie sich von einem Kollegen für maximal bis zu 3 Monate innerhalb von 12 Monaten vertreten lassen. Der Nutzer soll (ggf. für einen bestimmten Zeitraum) entscheiden können, welcher der Vertretungsfälle zutrifft (z.B. im Rechtemanagement des Systems). Das System füllt dann die Informationen zum Verordnenden Arzt in der Verordnung automatisch richtig aus. Dabei gibt es folgende Vertretungsfälle (siehe [https://www.kbv.de/html/erezept.php], Stand 27.02.2023)
 
 * **Kollegiale Vertretung**: (nach § 20 Musterberufsordnung): Die/der abwesende Arzt lässt sich von einem fachgleichen Kollegen/in in dessen Praxis vertreten. Die Abrechnung erfolgt über die LANR/BSNR des Vertretenden. Im Datensatz der elektronischen Verordnung erfolgt keine Kennzeichnung einer Vertretungskonstellation, es werden die Daten der ausstellenden Person und der vertretenden Praxis übermittelt.
 * **Persönliche Vertretung**: Ein Vertreter oder eine Vertreterin wird in der Praxis des Vertretenen tätig, bspw. als dessen Sicherstellungsassistentin im Falle von Kindererziehungszeiten. Rechtsgrundlage wäre hier § 32 Abs. 2, Satz 2 Ärzte- Zulassungsverordnung. Die Abrechnung erfolgt über die LANR/BSNR des Vertretenen. Es muss eine Kennzeichnung des Vertreters im Datensatz erfolgen. Es werden die Daten der vertretenden ausstellenden Person sowie des vertretenen Arztes und dessen Praxis übermittelt.
@@ -141,14 +141,14 @@ funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL bei der Ver
 Der ausstellende (signierende) Arzt wird in KBV_PR_ERP_Composition Composition.author angegeben.
 
 funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL bei der Vertretungskonstellation "Persönliche Vertretung" (nach § 32 Abs. 2, Satz 2 Ärzte-Zulassungsverordnung) sowohl den vertretenden Arzt, der die Verordnung ausstellt und signiert, als auch den zu vertretenden Arzt in der Verordnung hinterlegen.
-Nach der “Technischen Anlage zur elektronischen Arzneimittelversorgung” (P36-34, Stand 15.11.2022) der KBV wird die Verordnung bei der persönlichen Vertretung wie folgt angepasst werden:
+Nach der "Technischen Anlage zur elektronischen Arzneimittelversorgung" (P36-34, Stand 15.11.2022) der KBV wird die Verordnung bei der persönlichen Vertretung wie folgt angepasst werden:
 
 * Der ausstellende (signierende) Arzt wird in KBV_PR_ERP_Composition Composition.author hinterlegt.
 * Der verantwortliche (zu vertretende) Arzt wird in KBV_PR_ERP_Composition Composition.attester.party hinterlegt.
 
 ##### Sonderfall Weiterbildungsassistent
 
-Hinweis: Das in diesem Abschnitt beschriebene Szenario “Sonderfall Weiterbildungsassistent” findet keine Anwendung in ZPVS. EinWeiterbildungsassistent ist berechtigt, E-Rezepte auszustellen, solange die ordnungsgemäße Überwachung und Anleitung durch eine Vertragsärztin oder einen Vertragsarzt gewährleistet ist.
+Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Weiterbildungsassistent" findet keine Anwendung in ZPVS. EinWeiterbildungsassistent ist berechtigt, E-Rezepte auszustellen, solange die ordnungsgemäße Überwachung und Anleitung durch eine Vertragsärztin oder einen Vertragsarzt gewährleistet ist.
 
 funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, zu entscheiden, ob der Verordnende ein Weiterbildungsassistent ist.
 
@@ -193,7 +193,7 @@ funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL es ermögli
 
 #### Zentrale Aufgabenliste
 
-Ein Arzt arbeitet in seinem Arbeitsablauf verschiedene Signaturaufgaben (bspw. für die Elektronische Arbeitsunfähigkeitsbescheinigung oder das E-Rezept) ab. Diese sollen ihm im Primärsystem an einer zentralen Stelle (im Folgenden als “Aufgabenliste” bezeichnet) angezeigt werden, sodass die Aufgaben einfach zu finden und zu bearbeiten sind. Diese Aufgabenliste soll sortier- und filterbar sein. In Gemeinschaftspraxis, wo bspw. mehrere Ärzte gemeinsam Patienten behandeln, soll es möglich sein die Rezepte anderer Kollegen einzusehen und zu signieren.
+Ein Arzt arbeitet in seinem Arbeitsablauf verschiedene Signaturaufgaben (bspw. für die Elektronische Arbeitsunfähigkeitsbescheinigung oder das E-Rezept) ab. Diese sollen ihm im Primärsystem an einer zentralen Stelle (im Folgenden als "Aufgabenliste" bezeichnet) angezeigt werden, sodass die Aufgaben einfach zu finden und zu bearbeiten sind. Diese Aufgabenliste soll sortier- und filterbar sein. In Gemeinschaftspraxis, wo bspw. mehrere Ärzte gemeinsam Patienten behandeln, soll es möglich sein die Rezepte anderer Kollegen einzusehen und zu signieren.
 
 funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, die zu signierenden Verordnungen in einer Liste anzuzeigen und zu bearbeiten.
 Zu den relevanten Informationen einer Verordnung gehören Patient, Medikament, Einnahmehinweise, Arzt, Weg der Einlösung, Ersteller etc.. Die Aufgabenliste kann weitere Signaturaufträge oder andere Praxisaufgaben beinhalten. Folgende Grafik dient als Beispiel:
@@ -239,7 +239,7 @@ Folgerezeptes In den Fällen, wo der Patient nicht in der Praxis anwesend ist, w
 funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, nach dem erfolgreichen Einstellen eines E-Rezepts im TI-Flow-Fachdienst eine Benachrichtigung (bspw. per SMS oder E-Mail) an den Patienten zu versenden.
 
 funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI DARF in der Nachricht, die den Patienten darüber informiert, dass ein E-Rezept ausgestellt wurde, NICHT medizinische oder personenbezogene Informationen einfügen.
-Beispiel für eine Nachricht: “Ihr E-Rezept wurde soeben von Ihrem Arzt unterschrieben und kann nun mit der Gesundheitskarte oder der E-Rezept App in der Apotheke eingelöst werden. Um das Rezept anzusehen und vorab an Ihre Apotheke zu senden, empfehlen wir die Nutzung der E-Rezept App der gematik.”
+Beispiel für eine Nachricht: "Ihr E-Rezept wurde soeben von Ihrem Arzt unterschrieben und kann nun mit der Gesundheitskarte oder der E-Rezept App in der Apotheke eingelöst werden. Um das Rezept anzusehen und vorab an Ihre Apotheke zu senden, empfehlen wir die Nutzung der E-Rezept App der gematik."
 
 ### Fehlermanagement
 

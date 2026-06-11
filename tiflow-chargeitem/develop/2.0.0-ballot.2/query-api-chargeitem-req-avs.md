@@ -18,12 +18,12 @@ Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu
 funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI DARF NICHT Abrechnungsinformation auf dem TI-Flow-Fachdienst bereitstellen, wenn ihm nicht zuvor die Information über die Einwilligung des Versicherten vom TI-Flow-Fachdienst übertragen wurde.
 
 funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept auszuwählen, zu dem die Abrechnungsinformation auf dem TI-Flow-Fachdienst bereitgestellt werden soll.
-Die Information, dass der Versicherte die Einwilligung zum Speichern der Abrechnungsinformationen auf dem TI-Flow-Fachdienst erteilt hat, wird im Anwendungsfall “E-Rezept abrufen” übermittelt.
+Die Information, dass der Versicherte die Einwilligung zum Speichern der Abrechnungsinformationen auf dem TI-Flow-Fachdienst erteilt hat, wird im Anwendungsfall "E-Rezept abrufen" übermittelt.
 
 funkt. Eignung: KonformitätsbestätigungDas PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereitstellen" eine FHIR-Ressource des PKV-Abgabedatensatzes mit den Informationen zur Abrechnung des abgegebenen Medikaments erstellen.
 Für die Spezifikation der Ressource PKV-Abgabedatensatz siehe [gemSpec_DM_eRp].
 
-Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. “Abgabedatensatz signieren”. Für die Wahl des Signaturverfahrens (QES oder nonQES) gelten die rechtlichen Vorgaben.
+Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Abgabedatensatz signieren". Für die Wahl des Signaturverfahrens (QES oder nonQES) gelten die rechtlichen Vorgaben.
 
 funkt. Eignung: KonformitätsbestätigungDas PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereitstellen" eine FHIR-Ressource ChargeItem erstellen und den PKV-Abgabedatensatzes als contained Ressource einfügen.
 Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
@@ -46,7 +46,7 @@ funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI MUSS es dem Nutzer
 funkt. Eignung: KonformitätsbestätigungDas PS der abgebenden LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" eine FHIR-Ressource des PKV-Abgabedatensatzes mit den Informationen zur Abrechnung des abgegebenen Medikaments erstellen.
 Für die Spezifikation der Ressource PKV-Abgabedatensatz siehe [gemSpec_DM_eRp].
 
-Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. “Abgabedatensatz signieren”.
+Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Abgabedatensatz signieren".
 
 funkt. Eignung: KonformitätsbestätigungDas PS der abgebenden LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" eine FHIR-Ressource ChargeItem erstellen und den PKV-Abgabedatensatzes als contained Ressource einfügen.
 Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].

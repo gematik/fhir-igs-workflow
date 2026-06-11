@@ -41,9 +41,9 @@ funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "Nachrich
 ausführen.
 #### Nachricht löschen
 
-Das E-Rezept-FdV MUSS im Anwendungsfall “Nachricht löschen” es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem TI-Flow-Fachdienst auszuwählen.
+Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem TI-Flow-Fachdienst auszuwählen.
 
-Das E-Rezept-FdV MUSS im Anwendungsfall “Nachricht löschen” vom Nutzer eine Bestätigung einholen, dass die selektierte Nachricht gelöscht werden sollen und die Möglichkeit geben, das Löschen abzubrechen.
+Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" vom Nutzer eine Bestätigung einholen, dass die selektierte Nachricht gelöscht werden sollen und die Möglichkeit geben, das Löschen abzubrechen.
 
 funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/<id> des TI-Flow-Fachdienstes mit
 * Communication-ID in URL <id>
@@ -56,7 +56,7 @@ ausführen.
 
 Mit dem Anwendungsfall kann die Apotheke , welche den PKV-Abgabedatensatz bereitgestellt hat, für das Ändern des PKV-Abgabedatensatzes berechtigt werden. Die Berechtigung erfolgt mit der Übermittlung des zugehörigen Abrechnungsinformation-Token
 
-Das E-Rezept-FdV KANN den Anwendungsfall “Abrechnungsinformations-Token einer Apotheke übermitteln” umsetzen.
+Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformations-Token einer Apotheke übermitteln" umsetzen.
 
 Die Korrektur des PKV-Abgabedatensatzes wird durch die Apotheke durchgeführt, welche die ursprünglichen Abrechnungsinformation erstellt hat. Daher ist keine freie Apothekenwahl für den Nutzer notwendig. Es ist ausreichend, die Apotheke aus den vorliegenden Abrechnungsinformationen zu ermitteln und dem Nutzer als Adressat der Nachricht anzuzeigen.
 

@@ -47,8 +47,8 @@ Für den Zugang zur Telematikinfrastruktur nutzt der Versicherte seine eGK mit N
 
 ##### E-Rezepte Abrufen
 
-* Als Patient möchte ich ein “E-Rezept” auswählen können, das ich herunterladen möchte, so dass ich es später einlösen oder zuweisen kann.
-* Als Patient möchte ich, dass alle für mich verfügbaren “E-Rezepte” automatisch auf mein Gerät heruntergeladen werden, wenn sie dort noch nicht gespeichert sind, so dass ich nicht selbst meine Rezepte herunterladen muss. (eRP_159)
+* Als Patient möchte ich ein "E-Rezept" auswählen können, das ich herunterladen möchte, so dass ich es später einlösen oder zuweisen kann.
+* Als Patient möchte ich, dass alle für mich verfügbaren "E-Rezepte" automatisch auf mein Gerät heruntergeladen werden, wenn sie dort noch nicht gespeichert sind, so dass ich nicht selbst meine Rezepte herunterladen muss. (eRP_159)
 * Als Patient möchte ich, dass meine E-Rezept-App für einen konsistenten Zustand zwischen dem Fachdienst und der App sorgt, so dass ich keine Rezepte doppelt auf meinem Gerät habe oder andere Inkonsistenzen entstehen, so dass ich nicht verwirrt werde. (eRP_160)
 * Als Patient möchte ich, dass der Status meiner Rezepte automatisch von der App aktualisiert wird, wenn er sich im Fachdienst geändert hat, so dass ich immer auf dem neuesten Stand bin und nicht Rezepte einlösen will, die bereits eingelöst sind. (eRP_161)
 * Als Patient möchte ich alle E-Rezepte, die für mich verfügbar sind, sehen können, so dass ich entscheiden kann, was ich mit diesen E-Rezepten machen will.

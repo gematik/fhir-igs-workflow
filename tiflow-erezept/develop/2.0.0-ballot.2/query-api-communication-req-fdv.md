@@ -41,9 +41,9 @@ funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "Nachrich
 ausführen.
 #### Nachricht löschen
 
-Das E-Rezept-FdV MUSS im Anwendungsfall “Nachricht löschen” es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem TI-Flow-Fachdienst auszuwählen.
+Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem TI-Flow-Fachdienst auszuwählen.
 
-Das E-Rezept-FdV MUSS im Anwendungsfall “Nachricht löschen” vom Nutzer eine Bestätigung einholen, dass die selektierte Nachricht gelöscht werden sollen und die Möglichkeit geben, das Löschen abzubrechen.
+Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" vom Nutzer eine Bestätigung einholen, dass die selektierte Nachricht gelöscht werden sollen und die Möglichkeit geben, das Löschen abzubrechen.
 
 funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/<id> des TI-Flow-Fachdienstes mit
 * Communication-ID in URL <id>
@@ -80,12 +80,12 @@ Die Anfrage zur Suche von Apotheken, richtet sich an das FHIR-Directory des Verz
 
 Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory#Versicherter sucht Einträge im FHIR-Directory] beschrieben.
 
-Für weitere Informationen siehe Anwendungsfall “Suche nach Apotheken im FHIR VZD” aus der API-Schnittstelle [E-Rezept API Dokumentation].
+Für weitere Informationen siehe Anwendungsfall "Suche nach Apotheken im FHIR VZD" aus der API-Schnittstelle [E-Rezept API Dokumentation].
 
-Für weitere Informationen siehe “Eine Apotheke aus dem Apotheken-Verzeichnis auswählen” in der API-Schnittstelle [VZD API Dokumentation].
+Für weitere Informationen siehe "Eine Apotheke aus dem Apotheken-Verzeichnis auswählen" in der API-Schnittstelle [VZD API Dokumentation].
 
 funkt. Eignung: HerstellererklärungDas E-Rezept-FdV MUSS im Anwendungsfall "Apotheke suchen" sicherstellen, dass dem Nutzer nur Einträge aus dem Verzeichnisdienst mit OrganizationProfessionOID = 1.2.276.0.76.4.54 zur Auswahl gestellt werden.
-Das E-Rezept-FdV MUSS im Anwendungsfall “Apotheke suchen” sicherstellen, dass dem Nutzer nur Einträge aus dem Verzeichnisdienst zur Auswahl gestellt werden, welche mindestens eine Belieferungsoption im Feld specialization angegeben haben.
+Das E-Rezept-FdV MUSS im Anwendungsfall "Apotheke suchen" sicherstellen, dass dem Nutzer nur Einträge aus dem Verzeichnisdienst zur Auswahl gestellt werden, welche mindestens eine Belieferungsoption im Feld specialization angegeben haben.
 
 Der Wertebereich für specialization ist in https://simplifier.net/vzd-fhir-directory/pharmacyhealthcarespecialtycs beschrieben. Belieferungsoptionen sind:
 

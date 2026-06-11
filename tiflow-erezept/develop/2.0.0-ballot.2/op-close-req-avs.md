@@ -51,7 +51,7 @@ Falls ein AVS diese Aufrufe im Stapel verarbeitet, soll der Startzeitpunkt für 
 funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI MUSS bei Stapelverarbeitung im Anwendungsfall "Quittung abrufen" den Startzeitpunkt zufällig in einem Zeitraum mehreren Stunden setzen.
 
 funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI MUSS bei Stapelverarbeitung im Anwendungsfall "Quittung abrufen" nach 40 Aufrufen jeweils 1000ms warten, bevor die Stapelverarbeitung fortgeführt wird.
-Hinweis: Die [E-Rezept API Dokumentation] enthält im Abschnitt “E-Rezept-Abgabe vollziehen” einen Beispielalgorithmus, um den Startzeitpunkt der $close-Stapelverarbeitung zufällig zwischen 18:00 und 22:00 zu setzen.
+Hinweis: Die [E-Rezept API Dokumentation] enthält im Abschnitt "E-Rezept-Abgabe vollziehen" einen Beispielalgorithmus, um den Startzeitpunkt der $close-Stapelverarbeitung zufällig zwischen 18:00 und 22:00 zu setzen.
 
 ### Modulspezifische Anforderungen
 

@@ -29,7 +29,7 @@ Die Nachricht zur Interaktion mit Konfigurationen für Push Notifications als Re
 
 ### Resource API
 
-Der TI-Flow-Fachdienst unterstützt das optionale Feature “Channels”. Ruft alle verfügbaren Channels für den authentifizierten Nutzer ab.
+Der TI-Flow-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle verfügbaren Channels für den authentifizierten Nutzer ab.
 
 #### API Beschreibung
 

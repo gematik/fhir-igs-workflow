@@ -27,7 +27,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS das Konzept zur Handh
 
 ### Sortieren und Filtern von FHIR-Objekten
 
-Clients erhalten die Möglichkeit die Rückgabe der Elemente im FHIR-Bundle zu sortieren und zu filtern. Mit einem URL-Parameter “_sort” kann eine Sortierung der Ressourcen angefragt werden. Die Angabe eines Filterkriteriums als URL-Parameter schränkt die Ergebnismenge auf die angegebenen Kriterien ein.
+Clients erhalten die Möglichkeit die Rückgabe der Elemente im FHIR-Bundle zu sortieren und zu filtern. Mit einem URL-Parameter "_sort" kann eine Sortierung der Ressourcen angefragt werden. Die Angabe eines Filterkriteriums als URL-Parameter schränkt die Ergebnismenge auf die angegebenen Kriterien ein.
 
 Für jeden dieser Ressourcen gelten dann Kriterien, nach denen sortiert und gefiltert werden kann.
 
@@ -56,7 +56,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS für die Sortierung b
 
 Hinweis: für die Handhabung mit den FHIR-Datentypen zu Suche und Sortierung siehe https://hl7.org/fhir/R4/search.html#Summary
 
-Hinweis: Standard Such- und Sortierparametern in FHIR ist ein “_” vorangestellt werden. Der Aufruf sieht dann bspw. so aus: GET `[base]/ChargeItem?_lastUpdated=le2023-10-01&_sort=-_lastUpdated`
+Hinweis: Standard Such- und Sortierparametern in FHIR ist ein "_" vorangestellt werden. Der Aufruf sieht dann bspw. so aus: GET `[base]/ChargeItem?_lastUpdated=le2023-10-01&_sort=-_lastUpdated`
 
 Es können mehrere Sortierkriterien angegeben werden. Bei der Sortierung sortiert der TI-Flow-Fachdienst dann zuerst nach dem ersten, dann zweiten, usw. Kriterium.
 
@@ -74,12 +74,12 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS für die Sortierung b
 
 **Tabelle: **Default Sortierparameter für die Handhabung der Rückgabe von mehreren FHIR-Objekten
 
-Standardmäßig werden die Einträge aufsteigend sortiert. Wenn diese Reihenfolge umgekehrt werden soll, kann ein “-“ vor das Sortierkriterium gestellt werden.
+Standardmäßig werden die Einträge aufsteigend sortiert. Wenn diese Reihenfolge umgekehrt werden soll, kann ein "-" vor das Sortierkriterium gestellt werden.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierreihenfolge umkehren, wenn der Client das Präfix "-" am Sortierkriterium angibt.
 Clients können am TI-Flow-Fachdienst Anfragen stellen, dessen Ergebnismenge nach bestimmten Kriterien reduziert (gefiltert) werden soll.
 
-Für den Datentyp “date” sollen folgende Filterkriterien als URL-Parameter unterstützt werden:
+Für den Datentyp "date" sollen folgende Filterkriterien als URL-Parameter unterstützt werden:
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Filteroperatoren für Suchkriterien anbieten, deren Datentyp "date" ist:
 
@@ -98,17 +98,17 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Handhabung de
 
 Ziel der Paginierung ist es, eine Ausgabe von mehreren Instanzen in Seiten zu unterteilen, damit der Datenverkehr je Aufruf minimiert wird und der Client dem Nutzer schneller Informationen darstellen kann.
 
-Der Client kann unter Angabe der Einträge je Seite und dem Index des Elements an dem die Anzeige zu beginnenden soll steuern, welche ‘Seite’ dem Client zu übermitteln ist.
+Der Client kann unter Angabe der Einträge je Seite und dem Index des Elements an dem die Anzeige zu beginnenden soll steuern, welche 'Seite' dem Client zu übermitteln ist.
 
-Mit “_count” kann der Client angeben, wie viele Elemente maximal auf einer “Seite” der Antwort enthalten sein sollen. D.h. der TI-Flow-Fachdienst beschränkt die Ergebnismenge auf diese maximal angegebene Anzahl.
+Mit "_count" kann der Client angeben, wie viele Elemente maximal auf einer "Seite" der Antwort enthalten sein sollen. D.h. der TI-Flow-Fachdienst beschränkt die Ergebnismenge auf diese maximal angegebene Anzahl.
 
-Der URL-Parameter “__offset” gibt den nullbasierten Versatz des ersten zurückgegebenen Elements in der Sammlung an.
+Der URL-Parameter "__offset" gibt den nullbasierten Versatz des ersten zurückgegebenen Elements in der Sammlung an.
 
-Der TI-Flow-Fachdienst gibt immer die Gesamtanzahl der Suchtreffer zurück. Diese Information wird im Feld “Bundle.total” des FHIR-Bundles angegeben.
+Der TI-Flow-Fachdienst gibt immer die Gesamtanzahl der Suchtreffer zurück. Diese Information wird im Feld "Bundle.total" des FHIR-Bundles angegeben.
 
 Zusätzlich zur Rückgabe der Elemente bietet der TI-Flow-Fachdienst dem Client Link-Relations nach http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1 an, damit der Client einfacher durch die Ergebnismenge navigieren kann.
 
-Falls die Link Relations nicht zu plausiblen Ergebnissen führen (z.B. wenn es keine vorherige Seite gibt, kann keine “prev” Seite angegeben werden), dann darf diese Link Relation nicht übermittelt werden.
+Falls die Link Relations nicht zu plausiblen Ergebnissen führen (z.B. wenn es keine vorherige Seite gibt, kann keine "prev" Seite angegeben werden), dann darf diese Link Relation nicht übermittelt werden.
 
 Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung und Sortierung, diese müssen bei der Erzeugung der Link Relations erhalten bleiben.
 

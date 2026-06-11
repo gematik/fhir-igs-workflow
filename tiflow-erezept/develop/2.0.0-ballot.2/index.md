@@ -14,7 +14,7 @@ Version 2.0.0-ballot.2 - ci-build
 | *Official URL*:https://gematik.de/fhir/tiflow-erezept/ImplementationGuide/de.gematik.tiflow.erezept | *Version*:2.0.0-ballot.2 |
 | Draft as of 2026-05-25 | *Computable Name*:gemIG_TIFlow_erezept |
 
-Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des TI-Flow-Fachdienstes für den Anwendungsfall von “Arzneimittelverordnung”. Er bildet das Fundament für die fachlichen Szenarien und die technischen Schnittstellen im E-Rezept-Workflow für dieses Szenario.
+Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des TI-Flow-Fachdienstes für den Anwendungsfall von "Arzneimittelverordnung". Er bildet das Fundament für die fachlichen Szenarien und die technischen Schnittstellen im E-Rezept-Workflow für dieses Szenario.
 
 ### Zweck und Geltungsbereich
 
@@ -51,7 +51,7 @@ funkt. Eignung: Herstellererklärung
 funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 ### Wie dieser IG zu lesen ist
 
-Dieser Implementation Guide ist “von links nach rechts” zu lesen. Die Menüstruktur beginnt mit fachlichen Inhalten, welche über die technischen Anwendungsfälle dann in den Spezifikationen der Endpunkte und APIs münden. Es wird empfohlen, die Inhalte in der vorgegebenen Reihenfolge zu lesen, um ein umfassendes Verständnis der Anforderungen und Spezifikationen zu erhalten.
+Dieser Implementation Guide ist "von links nach rechts" zu lesen. Die Menüstruktur beginnt mit fachlichen Inhalten, welche über die technischen Anwendungsfälle dann in den Spezifikationen der Endpunkte und APIs münden. Es wird empfohlen, die Inhalte in der vorgegebenen Reihenfolge zu lesen, um ein umfassendes Verständnis der Anforderungen und Spezifikationen zu erhalten.
 
 Für einen Überblick über die Inhalte und die Struktur dieses Implementation Guides kann die [Inhaltsübersicht](toc.md) konsultiert werden. Dort sind die verschiedenen Kapitel und Abschnitte mit ihren jeweiligen Inhalten und Anforderungen aufgeführt.
 

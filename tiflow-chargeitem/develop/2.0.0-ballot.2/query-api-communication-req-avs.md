@@ -11,7 +11,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 ## AVS-Anforderungen: Communication-Query
 
-Diese Seite beschreibt Anforderungen ein AVS zur Nutzung der `Communication`-Query-Endpunkte für “Bereitstellung von Abrechnungsinformationen für PKV-Versicherte”.
+Diese Seite beschreibt Anforderungen ein AVS zur Nutzung der `Communication`-Query-Endpunkte für "Bereitstellung von Abrechnungsinformationen für PKV-Versicherte".
 
 ### Anforderungen aus der Core Spezifikation
 
@@ -47,7 +47,7 @@ funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI MUSS im Anwendungs
 ausführen.
 Der Fachdienst prüft anhand der Telematik-ID aus den Nutzerinformationen (zeta-user-info), ob die LEI der Absender der zu löschenden Nachricht ist.
 
-Das PS der abgebenden LEI KANN im Anwendungsfall “Nachricht durch Abgebenden löschen” dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
+Das PS der abgebenden LEI KANN im Anwendungsfall "Nachricht durch Abgebenden löschen" dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 
 Hinweis: Nachrichten an Versicherte sind immer an den Workflow des referenzierten E-Rezeptes gebunden. Wenn ein Workflow, bspw. durch den Versicherten oder aufgrund von durch den Fachdienst durchgesetzte Löschfristen, auf dem Fachdienst gelöscht wird, dann werden auch alle zugehörigen Nachrichten gelöscht.
 

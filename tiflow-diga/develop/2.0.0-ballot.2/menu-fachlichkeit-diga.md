@@ -9,7 +9,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 ## Elektronische Verordnung von DiGAs
 
-Das Feature “Elektronische Verordnung von DiGAs” erweitert die bestehenden Workflows um Verordnungen für Digitale Gesundheitsanwendungen (DiGA). DiGAs sind zertifizierte Apps oder Webanwendungen, die Patienten bei der Erkennung, Überwachung und Behandlung von Erkrankungen unterstützen. Das Feature beschreibt die Prozessparameter, Rollen und fachlichen Anforderungen für den Workflow-Fachdienst und beteiligte Clientsysteme.
+Das Feature "Elektronische Verordnung von DiGAs" erweitert die bestehenden Workflows um Verordnungen für Digitale Gesundheitsanwendungen (DiGA). DiGAs sind zertifizierte Apps oder Webanwendungen, die Patienten bei der Erkennung, Überwachung und Behandlung von Erkrankungen unterstützen. Das Feature beschreibt die Prozessparameter, Rollen und fachlichen Anforderungen für den Workflow-Fachdienst und beteiligte Clientsysteme.
 
 ### Abgrenzungen
 
@@ -22,7 +22,7 @@ Folgende Aspekte sind nicht Gegenstand dieses IG:
 
 ### Epic
 
-Durch das Digitale Versorgungsgesetz wurde ermöglicht, “digitale Gesundheitsanwendungen” (DiGAs) ärztlich zu verordnen.
+Durch das Digitale Versorgungsgesetz wurde ermöglicht, "digitale Gesundheitsanwendungen" (DiGAs) ärztlich zu verordnen.
 
 Beschreibung DiGA: (Quelle: https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/arznei-heil-und-hilfsmittel/digitale-gesundheitsanwendungen):
 
@@ -30,14 +30,14 @@ Beschreibung DiGA: (Quelle: https://www.bundesgesundheitsministerium.de/themen/k
 
 Beschreibung des Verordnungsvorgangs: (Quelle: https://www.kbv.de/html/diga.php) Ärzte und Psychotherapeuten können bislang ein Rezept auf Muster 16 für eine DiGA ausstellen. Zu jeder gelisteten DiGA stellt das BfArM im Verzeichnis Informationen bereit, die verordnungsrelevant sind. Diese Informationen stehen den Praxisverwaltungssystemen (PVS) bereit:
 
-* Im DiGA-Verzeichnis steht zu jeder DiGA unter “Informationen für Fachkreise” eine eindeutige PZN.
+* Im DiGA-Verzeichnis steht zu jeder DiGA unter "Informationen für Fachkreise" eine eindeutige PZN.
 * Kann eine DiGA für unterschiedliche Indikationen mit jeweils unterschiedlichen Inhalten angewendet werden, ist jeder Indikation eine eigene PZN zugeordnet.
 * Sofern für eine DiGA unterschiedliche Anwendungsdauern hinterlegt sein sollten, würden ebenfalls eigene PZN zugeordnet sein.
 * Die PZN ist auf dem Rezept anzugeben.
 
 Verordnungsdauer und Menge:
 
-* Für jede DiGA ist eine bestimmte, vom Hersteller bereits vorgegebene Anwendungsdauer festgelegt; diese Informationen können im DiGA-Verzeichnis ebenfalls unter “Informationen für Fachkreise” eingesehen werden. Eine Angabe auf der Verordnung ist nicht erforderlich.
+* Für jede DiGA ist eine bestimmte, vom Hersteller bereits vorgegebene Anwendungsdauer festgelegt; diese Informationen können im DiGA-Verzeichnis ebenfalls unter "Informationen für Fachkreise" eingesehen werden. Eine Angabe auf der Verordnung ist nicht erforderlich.
 * Eine Folgeverordnung für die gleiche DiGA kann ausgestellt werden, wenn sie aus medizinischer Sicht indiziert ist und das angestrebte Therapieziel damit voraussichtlich erreicht werden kann.
 * Derzeit sind keine DiGA-Höchstverordnungsmengen pro Versicherten festgelegt; das heißt, dass gegebenenfalls mehrere unterschiedliche DiGA für unterschiedliche Indikationen gleichzeitig verordnet werden können.
 * Pro Rezeptblatt darf nur eine DiGA verordnet werden.
@@ -94,7 +94,7 @@ Es besteht der gesetzliche Auftrag, die ärztlichen und psychotherapeutischen Ve
 
 * Für Verordnungen von DiGAs wird ein separater Rezepttyp (Workflow mit Flowtype 162) genutzt.
 * Neben approbierten Ärzten, Zahnärzten dürfen DiGA auch von Psychotherapeuten verschrieben werden.
-* Die Krankenkasse terminiert den Workflow durch Bereitstellung eines Freischaltcodes oder einer Rückmeldung; weshalb dies nicht erfolgen kann. Der Freischaltcode oder die Rückmeldung ist im TI-Flow-Fachdienst von der Krankenkasse zu hinterlegen, damit, gemäß SGB V § 312 Abs. 1 Satz 1 Nr. 3 “Abgabeinformationen zu elektronischen Verordnungen nach den Nummern 7 […] den Versicherten elektronisch verfügbar gemacht werden können”. Dies kann die in SGB V § 360 Abs. 14 vorgesehenen automatisierte Bereitstellung der Verordnungsdaten und Dispensierinformationen auch zur elektronischen Verordnung von DiGA in der elektronischen Patientenakte ermöglichen.
+* Die Krankenkasse terminiert den Workflow durch Bereitstellung eines Freischaltcodes oder einer Rückmeldung; weshalb dies nicht erfolgen kann. Der Freischaltcode oder die Rückmeldung ist im TI-Flow-Fachdienst von der Krankenkasse zu hinterlegen, damit, gemäß SGB V § 312 Abs. 1 Satz 1 Nr. 3 "Abgabeinformationen zu elektronischen Verordnungen nach den Nummern 7 […] den Versicherten elektronisch verfügbar gemacht werden können". Dies kann die in SGB V § 360 Abs. 14 vorgesehenen automatisierte Bereitstellung der Verordnungsdaten und Dispensierinformationen auch zur elektronischen Verordnung von DiGA in der elektronischen Patientenakte ermöglichen.
 
 ### User Stories
 
@@ -108,14 +108,14 @@ Als Patient möchte ich
 * …, dass ich über den Erhalt einer DiGA-Verordnung in meinem E-Rezept-FdV benachrichtigt werde, so dass ich reagieren kann und den Erhalt nicht selbst prüfen muss.
 * …, dass meine sensiblen medizinischen Daten nur den Personen oder Institutionen offenbart werden, die sie wirklich brauchen, so dass ich mich sicher fühle.
 * …, dass eine mir verordnete DiGA ganz leicht freigeschaltet werden kann, so dass ich möglichst ohne Hürden in die Nutzung der DiGA einsteigen und damit meine Therapie unterstützen kann.
-* …, dass ich beim Freischaltprozess, so weit es geht, von der Technik unterstützt werde, so dass dieser Vorgang leicht ist und sich für mich “automatisch” anfühlt.
+* …, dass ich beim Freischaltprozess, so weit es geht, von der Technik unterstützt werde, so dass dieser Vorgang leicht ist und sich für mich "automatisch" anfühlt.
 * …, dass ich die Freischaltcode-Anforderung bei meiner Krankenkasse einfach starten und den Status verfolgen kann. Der Start kann über ein E-Rezept-FdV, die Krankenkassen-App (mindestens per Scan des Tokens), per Post oder im Servicecenter der Krankenkasse erfolgen.
 * …, dass ich den Freischaltcode der DiGA sowohl als Information meiner Krankenkasse (via Krankenkassen-App/Brief) oder direkt im E-Rezept-FdV erhalten kann.
 * …, dass der Abrechnungsprozess ohne mein Mitwirken abläuft, so dass ich wie gewohnt Leistungen meiner Krankenkasse einfach beziehen kann und keinen administrativen Aufwand habe.
 * … installierbare DiGA-Apps direkt aus der Ansicht der Verordnungen im E-Rezept-FdV (alternativ Krankenkassen-App) heraus installieren können, so dass ich nicht manuell im App/Play-Store suchen muss und der Prozess für mich einfach ist.
 * … auf DiGAs, die nicht installiert werden können (Bsp. Web-Apps) direkt aus der Ansicht der Verordnung in der App mit E-Rezept-Funktionalität (alternativ Krankenkassen-App) heraus aufrufen können, so dass ich nicht auf Bookmarks oder andere Quellen angewiesen bin.
 * …, dass ich einfach auf die beim BfArM hinterlegte Informationsseite der DiGA sowie die Gebrauchsanweisung per Link aus dem E-Rezept-FdV zugreifen kann, so dass ich mich schnell informieren kann.
-* …, dass ich einfach die Mindestanforderungen der verordneten DiGA-App aus dem Verzeichnis des BfArM per E-Rezept-FdV finden kann, so dass ich in der Lage bin die Mindestanforderungen an mein Endgerät zu prüfen. Im E-Rezept-FdV wird ein Hinweis ausgespielt (z.B.: “Auf diesem Gerät kann die DiGA ggf. nicht verwendet werden”).
+* …, dass ich einfach die Mindestanforderungen der verordneten DiGA-App aus dem Verzeichnis des BfArM per E-Rezept-FdV finden kann, so dass ich in der Lage bin die Mindestanforderungen an mein Endgerät zu prüfen. Im E-Rezept-FdV wird ein Hinweis ausgespielt (z.B.: "Auf diesem Gerät kann die DiGA ggf. nicht verwendet werden").
 
 #### Verordnende
 

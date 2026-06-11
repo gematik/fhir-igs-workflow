@@ -49,7 +49,7 @@ Der Aufruf erfolgt als http-POST-Operation. Der Server prüft die Nachricht auf 
 
 #### Abrufen von Communications
 
-Als Versicherter und als Apotheke möchte ich wissen, ob im Fachdienst “ungelesene” Nachrichten für mich vorhanden sind. Als Apotheke oder Kostenträger möchten wir alle Nachrichten des Monats April 2020 abrufen, um uns einen Überblick der bisherigen E-Rezept-Anfragen zu beschaffen.
+Als Versicherter und als Apotheke möchte ich wissen, ob im Fachdienst "ungelesene" Nachrichten für mich vorhanden sind. Als Apotheke oder Kostenträger möchten wir alle Nachrichten des Monats April 2020 abrufen, um uns einen Überblick der bisherigen E-Rezept-Anfragen zu beschaffen.
 
 ```
 

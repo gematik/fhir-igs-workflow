@@ -54,7 +54,7 @@ Einige Daten müssen zusätzlich durch Transformationsregeln angepasst oder erg�
 #### Befüllung von MedicationDispense.subject.identifier
 
 * ID: Beschreibung
-  * `F_014`: Beim Mapping von MedicationDispense.subject.identifier muss der Wert aus .value übernommen werden. Als system für jeden KVNR-Identifier eines Patienten “http://fhir.de/sid/gkv/kvid-10” gesetzt werden.Eine Unterscheidung nach GKV und PKV im System findet beim Mapping nicht mehr statt. Durch A_19248-03> “die KVNR des Versicherten im referenzierten Task (Task.for) gegen KVNR in MedicationDispense.subject:identifier (prüfen) und” kann man sich darauf verlassen, dass die KVNR im value gesetzt ist.
+  * `F_014`: Beim Mapping von MedicationDispense.subject.identifier muss der Wert aus .value übernommen werden. Als system für jeden KVNR-Identifier eines Patienten "http://fhir.de/sid/gkv/kvid-10" gesetzt werden.Eine Unterscheidung nach GKV und PKV im System findet beim Mapping nicht mehr statt. Durch A_19248-03> "die KVNR des Versicherten im referenzierten Task (Task.for) gegen KVNR in MedicationDispense.subject:identifier (prüfen) und" kann man sich darauf verlassen, dass die KVNR im value gesetzt ist.
 * ID: Profile
   * `F_014`: * [EPA MedicationDispense](https://gemspec.gematik.de/ig/fhir/epa-medication/{{ site.data.constants.epa_med_service_version }}/StructureDefinition-epa-medication-dispense.md)
 
@@ -69,7 +69,7 @@ Einige Daten müssen zusätzlich durch Transformationsregeln angepasst oder erg�
 | | |
 | :--- | :--- |
 | Beim Mapping von Medication.code.coding müssen alle Codings entfernt werden welche nicht explizit unter coding im EPA Medication Profil profiliert sind de.gematik.epa.medication | EPA Medication - SIMPLIFIER.NET auch wenn es sich bei Medication.code.coding um ein open Slizing handelt. |
-Im E-Rezept-Fachdienst ist jetzt “hart” konfiguriert welche erlaubt sind. D.h. wenn im ePA Medication FHIR Profil neue hinzkommen, muss das explizit im eRP Fachdienst umgesetzt werden. ![](./medication-codings.png) **Abbildung: **Erlaubte Medication Codings 
+Im E-Rezept-Fachdienst ist jetzt "hart" konfiguriert welche erlaubt sind. D.h. wenn im ePA Medication FHIR Profil neue hinzkommen, muss das explizit im eRP Fachdienst umgesetzt werden. ![](./medication-codings.png) **Abbildung: **Erlaubte Medication Codings 
 * ID: Profile
   * `F_015`: * [EPA Medication](https://gemspec.gematik.de/ig/fhir/epa-medication/{{ site.data.constants.epa_med_service_version }}/StructureDefinition-epa-medication.md)
 
@@ -80,8 +80,8 @@ Im E-Rezept-Fachdienst ist jetzt “hart” konfiguriert welche erlaubt sind. D.
 #### Mapping von KBV_PR_ERP_Medication_Compounding
 
 * ID: Beschreibung
-  * `F_017`: Handelt es sich bei der ingredient des QuellProfils um einen PZN Codierten Wirkstoff muss eine contained Medication vom Typ “EPA Medication Ingredient” hinzugefügt werden**Hinweis**: F_009 findet hier auch AnwendungDaher muss wenn Medication eine KBV_PR_ERP_Medication_Compounding ist:Für jedes ingredient:1. Wenn ingredient.itemCodeableConcept.coding.system=`http://fhir.de/CodeSystem/ifa/pzn`dann weiter zu 2.
-1. Füge eine Medication (contained) hinzu vom Typ “EPA Medication Ingredient”:
+  * `F_017`: Handelt es sich bei der ingredient des QuellProfils um einen PZN Codierten Wirkstoff muss eine contained Medication vom Typ "EPA Medication Ingredient" hinzugefügt werden**Hinweis**: F_009 findet hier auch AnwendungDaher muss wenn Medication eine KBV_PR_ERP_Medication_Compounding ist:Für jedes ingredient:1. Wenn ingredient.itemCodeableConcept.coding.system=`http://fhir.de/CodeSystem/ifa/pzn`dann weiter zu 2.
+1. Füge eine Medication (contained) hinzu vom Typ "EPA Medication Ingredient":
 ```
   <Medication>
       <id value="MedicationHydrocortison-FD" />
@@ -115,7 +115,7 @@ Im E-Rezept-Fachdienst ist jetzt “hart” konfiguriert welche erlaubt sind. D.
 </itemReference>
 
 ```
-**Hinweise:**“EPA Medication Ingredients” haben haben immer die Extension:```
+**Hinweise:**"EPA Medication Ingredients" haben haben immer die Extension:```
   <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension">
     <valueCoding>
         <system value="http://snomed.info/sct" />

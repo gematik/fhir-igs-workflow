@@ -39,5 +39,5 @@ server
 
 Falls es bei der Verarbeitung einer Zuweisung einer digitalen Gesundheitsanwendung zu einem Fehler kommt, bspw. wenn der Nutzer nicht beim Kostenträger versichert ist, muss das Clientsystem den Nutzer informieren und das E-Rezept zur weiteren Nutzung zurückgeben.
 
-Hierzu führt der Kostenträger die TI-Flow-Fachdienst Operation “$reject” aus und übermittelt dem Nutzer eine Communication GEM_ERP_PR_Communication_DiGA in der der Kostenträger angeben kann, warum die Verordnung nicht bearbeitet werden kann.
+Hierzu führt der Kostenträger die TI-Flow-Fachdienst Operation "$reject" aus und übermittelt dem Nutzer eine Communication GEM_ERP_PR_Communication_DiGA in der der Kostenträger angeben kann, warum die Verordnung nicht bearbeitet werden kann.
 

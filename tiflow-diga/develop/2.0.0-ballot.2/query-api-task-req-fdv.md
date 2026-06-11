@@ -29,7 +29,7 @@ Der Aufruf wird genutzt, wenn die Informationen zu einer spezifischen Verordnung
 funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "E-Rezepte abrufen" zum Herunterladen einer spezifischen Verordnung des Nutzers die HTTP-Operation GET /Task/<id> mit
 * Task-ID in URL <id> 
 ausführen.
-Für weitere Informationen siehe Operation “Ein einzelnes E-Rezept abrufen” aus der API-Schnittstelle [E-Rezept API Dokumentation].
+Für weitere Informationen siehe Operation "Ein einzelnes E-Rezept abrufen" aus der API-Schnittstelle [E-Rezept API Dokumentation].
 
 Der Response beinhaltet die Task Ressource des E-Rezepts.
 

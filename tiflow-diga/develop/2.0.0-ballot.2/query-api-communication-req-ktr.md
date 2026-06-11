@@ -47,7 +47,7 @@ funkt. Eignung: HerstellererklärungDas Clientsystem Kostenträger MUSS im Anwen
 ausführen.
 Der Fachdienst prüft anhand der Telematik-ID aus den Nutzerinformationen (zeta-user-info), ob der Kostenträger der Absender der zu löschenden Nachricht ist.
 
-Das CS Kostenträger KANN im Anwendungsfall “Nachricht durch Abgebenden löschen” dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
+Das CS Kostenträger KANN im Anwendungsfall "Nachricht durch Abgebenden löschen" dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 
 Hinweis: Nachrichten an Versicherte sind immer an den Workflow der referenzierten Verordnung gebunden. Wenn ein Workflow, bspw. durch den Versicherten oder aufgrund von durch den Fachdienst durchgesetzte Löschfristen, auf dem Fachdienst gelöscht wird, dann werden auch alle zugehörigen Nachrichten gelöscht.
 

@@ -47,7 +47,7 @@ Einige Daten müssen zusätzlich durch Transformationsregeln angepasst oder erg�
 #### Organization für provide Prescription
 
 * ID: Beschreibung
-  * `F_006b`: Bei provide Prescription ist die Organization aus der KBV_PR_FOR_Organization zu mappen.Der Transformator muss sicherstellen, dass bei Organization.identifier mindestens die TelematikID der Organisation enthalten, die auch im ACCESS_TOKEN der Anfrage angegeben ist. Dazu muss nach der A_25946 die TelematikId bei “identifier:TelematikID” durch die idNummer aus dem ACCESS_TOKEN des verwendeten Operationsaufrufes ersetzt werden bzw. erzeugt werden, wenn diese nicht vorhanden ist.Folgende Operationen sind zusätzlich zum Mapping der StructureMaps durchzuführen:Organization.identifier:TelematikID idNummer → aus dem ACCESS_TOKEN der AnfrageOrganization.name organizationName → aus dem ACCESS_TOKEN der AnfrageOrganization.type:profession professionOID → aus dem ACCESS_TOKEN der Anfrage
+  * `F_006b`: Bei provide Prescription ist die Organization aus der KBV_PR_FOR_Organization zu mappen.Der Transformator muss sicherstellen, dass bei Organization.identifier mindestens die TelematikID der Organisation enthalten, die auch im ACCESS_TOKEN der Anfrage angegeben ist. Dazu muss nach der A_25946 die TelematikId bei "identifier:TelematikID" durch die idNummer aus dem ACCESS_TOKEN des verwendeten Operationsaufrufes ersetzt werden bzw. erzeugt werden, wenn diese nicht vorhanden ist.Folgende Operationen sind zusätzlich zum Mapping der StructureMaps durchzuführen:Organization.identifier:TelematikID idNummer → aus dem ACCESS_TOKEN der AnfrageOrganization.name organizationName → aus dem ACCESS_TOKEN der AnfrageOrganization.type:profession professionOID → aus dem ACCESS_TOKEN der Anfrage
 * ID: Profile
   * `F_006b`: * [OrganizationDirectory](https://simplifier.net/vzd-fhir-directory/organizationdirectorystrict)
 
@@ -228,8 +228,8 @@ print(build_practitioner_name(practitioner_example))
 #### Mapping von KBV_PR_ERP_Medication_Compounding
 
 * ID: Beschreibung
-  * `F_017`: Handelt es sich bei der ingredient des QuellProfils um einen PZN Codierten Wirkstoff muss eine contained Medication vom Typ “EPA Medication Ingredient” hinzugefügt werden**Hinweis**: F_009 findet hier auch AnwendungDaher muss wenn Medication eine KBV_PR_ERP_Medication_Compounding ist:Für jedes ingredient:1. Wenn ingredient.itemCodeableConcept.coding.system=`http://fhir.de/CodeSystem/ifa/pzn`dann weiter zu 2.
-1. Füge eine Medication (contained) hinzu vom Typ “EPA Medication Ingredient”:
+  * `F_017`: Handelt es sich bei der ingredient des QuellProfils um einen PZN Codierten Wirkstoff muss eine contained Medication vom Typ "EPA Medication Ingredient" hinzugefügt werden**Hinweis**: F_009 findet hier auch AnwendungDaher muss wenn Medication eine KBV_PR_ERP_Medication_Compounding ist:Für jedes ingredient:1. Wenn ingredient.itemCodeableConcept.coding.system=`http://fhir.de/CodeSystem/ifa/pzn`dann weiter zu 2.
+1. Füge eine Medication (contained) hinzu vom Typ "EPA Medication Ingredient":
 ```
   <Medication>
       <id value="MedicationHydrocortison-FD" />
@@ -263,7 +263,7 @@ print(build_practitioner_name(practitioner_example))
 </itemReference>
 
 ```
-**Hinweise:**“EPA Medication Ingredients” haben haben immer die Extension:```
+**Hinweise:**"EPA Medication Ingredients" haben haben immer die Extension:```
   <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension">
     <valueCoding>
         <system value="http://snomed.info/sct" />

@@ -35,7 +35,7 @@ Die Vertraulichkeit und Integrität der verarbeiteten Daten gewährleistet der F
 
 Um die Funktionalität des TI-Flow-Fachdienst verständlich und adressatengerecht zu beschreiben wurden mehrere FHIR-Implementation Guides angelegt.
 
-Dieser “IG TIFlow Kernfunktionalitäten” fokussiert auf die technische Basisschicht und Kernfunktionalitäten des Fachdienstes und beschreibt mehrfach verwendete Funktionalitäten sowie übergreifendes Verhalten:
+Dieser "IG TIFlow Kernfunktionalitäten" fokussiert auf die technische Basisschicht und Kernfunktionalitäten des Fachdienstes und beschreibt mehrfach verwendete Funktionalitäten sowie übergreifendes Verhalten:
 
 * Verbindungsaufbau der Clientsysteme zum TI-Flow-Fachdienst
 * Validierung von FHIR-Ressourcen und Bundles
@@ -43,7 +43,7 @@ Dieser “IG TIFlow Kernfunktionalitäten” fokussiert auf die technische Basis
 * Zugriffs- und Systemprotokollierung (AuditEvent)
 * Löschfristen und automatisches Löschen
 
-Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG’s in der TI-Flow Landschaft weiterverwendet:
+Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow Landschaft weiterverwendet:
 
 | | |
 | :--- | :--- |

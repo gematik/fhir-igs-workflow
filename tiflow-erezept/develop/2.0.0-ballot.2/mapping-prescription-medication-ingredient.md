@@ -73,8 +73,8 @@ Folgende zusätzliche Anmerkungen und Regeln sind für das Mapping zu umzusetzen
 ### Mapping von KBV_PR_ERP_Medication_Compounding
 
 * ID: Beschreibung
-  * `F_017`: Handelt es sich bei der ingredient des QuellProfils um einen PZN Codierten Wirkstoff muss eine contained Medication vom Typ “EPA Medication Ingredient” hinzugefügt werden**Hinweis**: F_009 findet hier auch AnwendungDaher muss wenn Medication eine KBV_PR_ERP_Medication_Compounding ist:Für jedes ingredient:1. Wenn ingredient.itemCodeableConcept.coding.system=`http://fhir.de/CodeSystem/ifa/pzn`dann weiter zu 2.
-1. Füge eine Medication (contained) hinzu vom Typ “EPA Medication Ingredient”:
+  * `F_017`: Handelt es sich bei der ingredient des QuellProfils um einen PZN Codierten Wirkstoff muss eine contained Medication vom Typ "EPA Medication Ingredient" hinzugefügt werden**Hinweis**: F_009 findet hier auch AnwendungDaher muss wenn Medication eine KBV_PR_ERP_Medication_Compounding ist:Für jedes ingredient:1. Wenn ingredient.itemCodeableConcept.coding.system=`http://fhir.de/CodeSystem/ifa/pzn`dann weiter zu 2.
+1. Füge eine Medication (contained) hinzu vom Typ "EPA Medication Ingredient":
 ```
   <Medication>
       <id value="MedicationHydrocortison-FD" />
@@ -108,7 +108,7 @@ Folgende zusätzliche Anmerkungen und Regeln sind für das Mapping zu umzusetzen
 </itemReference>
 
 ```
-**Hinweise:**“EPA Medication Ingredients” haben haben immer die Extension:```
+**Hinweise:**"EPA Medication Ingredients" haben haben immer die Extension:```
   <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension">
     <valueCoding>
         <system value="http://snomed.info/sct" />

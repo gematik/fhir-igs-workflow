@@ -40,7 +40,7 @@ Im Fehlerfall gibt der TI-Flow-Fachdienst eine entsprechende Fehlermeldung an de
 
 ### Validierung von strukturierten Dosierungen
 
-In FHIR-Ressourcen ist es möglich, strukturierte Dosierinformationen anzugeben. Diese Angaben sind im komplexen FHIRDatentyp “Dosage” definiert. Beispielsweise bieten die FHIR-Ressourcen MedicationRequest und MedicationDispense die Möglichkeit, diese Angaben unter dosagelnstruction zu vermerken. Der [Medication IG] der HL7 Deutschland legt für den dgMP fest, dass diese strukturierten Dosierinformationen zusätzlich als textuelle Repräsentation von erzeugenden Systemen bereitgestellt und von entgegennehmenden zentralen Diensten validiert werden müssen.
+In FHIR-Ressourcen ist es möglich, strukturierte Dosierinformationen anzugeben. Diese Angaben sind im komplexen FHIRDatentyp "Dosage" definiert. Beispielsweise bieten die FHIR-Ressourcen MedicationRequest und MedicationDispense die Möglichkeit, diese Angaben unter dosagelnstruction zu vermerken. Der [Medication IG] der HL7 Deutschland legt für den dgMP fest, dass diese strukturierten Dosierinformationen zusätzlich als textuelle Repräsentation von erzeugenden Systemen bereitgestellt und von entgegennehmenden zentralen Diensten validiert werden müssen.
 
 Der TI-Flow-Fachdienst ist daher verpflichtet, über die strukturelle FHIR-Validierung hinaus sicherzustellen, dass die textuelle Repräsentation mit den strukturierten Dosierinformationen übereinstimmt.
 

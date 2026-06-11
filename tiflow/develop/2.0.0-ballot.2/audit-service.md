@@ -204,7 +204,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS einen Aufruf der folg
 
 **Tabelle: **Tab_eRPFD_020 Versichertenprotokoll für ePA Medication Service
 
-Das Ergebnis “final nicht übermittelbar” bedeutet, dass die Übermittlung auch nach den definierten Wiederholversuchen nicht erfolgreich durchgeführt werden konnte.
+Das Ergebnis "final nicht übermittelbar" bedeutet, dass die Übermittlung auch nach den definierten Wiederholversuchen nicht erfolgreich durchgeführt werden konnte.
 
 Für Übermittlungsversuche, welche nicht erfolgreich durchgeführt werden konnten und für die die Übermittlung erneut versucht werden soll, wird kein Eintrag im Zugriffsprotokoll angelegt.
 

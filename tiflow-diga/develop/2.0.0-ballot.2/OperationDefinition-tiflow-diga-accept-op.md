@@ -16,7 +16,7 @@ Version 2.0.0-ballot.2 - ci-build
 | Active as of 2028-04-01 | *Computable Name*:TIFlow-DIGA-OP-Accept |
 
  
-Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in ‘in-progress’. 
+Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'. 
 
 
 

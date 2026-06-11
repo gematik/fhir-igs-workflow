@@ -71,7 +71,7 @@ umsetzen.
 * Beschreibung: Nachbedingungen
   * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primärsystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * E-Rezept enthält Rezept-ID und QES.
 * AccessCode des E-Rezepts ist im Primärsystem gespeichert.
-* Workflow zum E-Rezept ist im TI-Flow-Fachdienst im Status “draft” angelegt.
+* Workflow zum E-Rezept ist im TI-Flow-Fachdienst im Status "draft" angelegt.
 
 * Beschreibung: Schnittstellen
   * Der verordnende Leistungserbringer erzeugt eine Verordnung im Primärsystem. Für die Verordnung wird eine Rezept-ID aus dem TI-Flow-Fachdienst bezogen und der Verordnungsdatensatz anschließend qualifiziert elektronisch signiert (QES).: * [Operation API: E-Rezept erstellen](./op-create.md)
@@ -116,7 +116,7 @@ umsetzen.
 * Beschreibung: Vorbedingungen
   * Ein E-Rezept wird vom Primärsystem beim TI-Flow-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * UC 2.1 wurde ausgeführt; E-Rezept und Signatur liegen im Primärsystem vor.
 * Rezept-ID und AccessCode sind bekannt.
-* Status im TI-Flow-Fachdienst ist “draft”.
+* Status im TI-Flow-Fachdienst ist "draft".
 
 * Beschreibung: Durchzuführende Aktionen
   * Ein E-Rezept wird vom Primärsystem beim TI-Flow-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * Der Leistungserbringer wählt ein E-Rezept zum Einstellen aus.
@@ -125,7 +125,7 @@ umsetzen.
 
 * Beschreibung: Nachbedingungen
   * Ein E-Rezept wird vom Primärsystem beim TI-Flow-Fachdienst eingestellt und ein E-Rezept-Token erzeugt.: * Das E-Rezept ist im TI-Flow-Fachdienst gespeichert.
-* Der Workflow hat den Status “ready”.
+* Der Workflow hat den Status "ready".
 * Das Einstellen ist im TI-Flow-Fachdienst für den Versicherten protokolliert.
 
 * Beschreibung: Schnittstellen
@@ -154,26 +154,26 @@ Jede Teilverordnung einer Mehrfachverordnung wird im TI-Flow-Fachdienst mit eine
 ##### UC 2.5 - E-Rezept durch Verordnenden löschen
 
 * Beschreibung: Vorbedingungen
-  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im TI-Flow-Fachdienst auf “cancelled” gesetzt.: * UC 2.3 wurde ausgeführt.
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im TI-Flow-Fachdienst auf "cancelled" gesetzt.: * UC 2.3 wurde ausgeführt.
 * Rezept-ID und AccessCode sind bekannt.
-* Status im TI-Flow-Fachdienst ist “ready”.
+* Status im TI-Flow-Fachdienst ist "ready".
 
 * Beschreibung: Durchzuführende Aktionen
-  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im TI-Flow-Fachdienst auf “cancelled” gesetzt.: * Ein Mitarbeiter der verordnenden LEI markiert das E-Rezept zum Löschen und bestätigt den Vorgang.
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im TI-Flow-Fachdienst auf "cancelled" gesetzt.: * Ein Mitarbeiter der verordnenden LEI markiert das E-Rezept zum Löschen und bestätigt den Vorgang.
 * Das Primärsystem ruft den TI-Flow-Fachdienst mit Rezept-ID und AccessCode auf.
-* Der Status wird auf “cancelled” gesetzt und medizinische Daten werden gelöscht.
+* Der Status wird auf "cancelled" gesetzt und medizinische Daten werden gelöscht.
 * Der AccessCode wird im Primärsystem gelöscht.
 
 * Beschreibung: Nachbedingungen
-  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im TI-Flow-Fachdienst auf “cancelled” gesetzt.: * Der Workflow hat den Status “cancelled”.
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im TI-Flow-Fachdienst auf "cancelled" gesetzt.: * Der Workflow hat den Status "cancelled".
 * Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
 * Das Löschen ist im TI-Flow-Fachdienst für den Versicherten protokolliert.
 
 * Beschreibung: Schnittstellen
-  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im TI-Flow-Fachdienst auf “cancelled” gesetzt.: * [Operation API: E-Rezept löschen](./op-abort.md)
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im TI-Flow-Fachdienst auf "cancelled" gesetzt.: * [Operation API: E-Rezept löschen](./op-abort.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im TI-Flow-Fachdienst auf “cancelled” gesetzt.:  (ZAHN-)ARZT 
+  * Ein E-Rezept wird durch die verordnende LEI gelöscht und der Status im TI-Flow-Fachdienst auf "cancelled" gesetzt.:  (ZAHN-)ARZT 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 2.5 - E-Rezept durch Verordnenden löschen
 **Sequenzdiagramm:**
@@ -209,25 +209,25 @@ Jede Teilverordnung einer Mehrfachverordnung wird im TI-Flow-Fachdienst mit eine
 ##### UC 3.2 - E-Rezept durch Versicherten löschen
 
 * Beschreibung: Vorbedingungen
-  * Der Versicherte setzt den Status eines E-Rezepts auf “cancelled” und löscht es im TI-Flow-Fachdienst.: * UC 3.1 wurde ausgeführt.
-* Status des E-Rezepts ist ungleich “in-progress”.
+  * Der Versicherte setzt den Status eines E-Rezepts auf "cancelled" und löscht es im TI-Flow-Fachdienst.: * UC 3.1 wurde ausgeführt.
+* Status des E-Rezepts ist ungleich "in-progress".
 
 * Beschreibung: Durchzuführende Aktionen
-  * Der Versicherte setzt den Status eines E-Rezepts auf “cancelled” und löscht es im TI-Flow-Fachdienst.: * Versicherter wählt ein E-Rezept im E-Rezept-FdV und bestätigt das Löschen.
+  * Der Versicherte setzt den Status eines E-Rezepts auf "cancelled" und löscht es im TI-Flow-Fachdienst.: * Versicherter wählt ein E-Rezept im E-Rezept-FdV und bestätigt das Löschen.
 * Das E-Rezept-FdV überträgt die Löschanforderung an den TI-Flow-Fachdienst.
 * Der Status wird geändert; Daten im E-Rezept werden gelöscht.
 * Der E-Rezept-Token wird im E-Rezept-FdV gelöscht.
 
 * Beschreibung: Nachbedingungen
-  * Der Versicherte setzt den Status eines E-Rezepts auf “cancelled” und löscht es im TI-Flow-Fachdienst.: * Der Workflow hat den Status “cancelled”.
+  * Der Versicherte setzt den Status eines E-Rezepts auf "cancelled" und löscht es im TI-Flow-Fachdienst.: * Der Workflow hat den Status "cancelled".
 * Die personenbezogene und medizinische Daten (ausser Versicherten-ID) sind aus dem Workflow entfernt.
 * Das Löschen ist im TI-Flow-Fachdienst für den Versicherten protokolliert.
 
 * Beschreibung: Schnittstellen
-  * Der Versicherte setzt den Status eines E-Rezepts auf “cancelled” und löscht es im TI-Flow-Fachdienst.: * [Operation API: E-Rezept löschen](./op-abort.md)
+  * Der Versicherte setzt den Status eines E-Rezepts auf "cancelled" und löscht es im TI-Flow-Fachdienst.: * [Operation API: E-Rezept löschen](./op-abort.md)
 
 * Beschreibung: Relevante(r) Sektor(en)
-  * Der Versicherte setzt den Status eines E-Rezepts auf “cancelled” und löscht es im TI-Flow-Fachdienst.:  VERSICHERTER 
+  * Der Versicherte setzt den Status eines E-Rezepts auf "cancelled" und löscht es im TI-Flow-Fachdienst.:  VERSICHERTER 
 
 **Tabelle:**Fachlicher Anwendungsfall UC 3.2 - E-Rezept durch Versicherten löschen
 **Sequenzdiagramm:**
@@ -349,7 +349,7 @@ Jede Teilverordnung einer Mehrfachverordnung wird im TI-Flow-Fachdienst mit eine
 
 * Beschreibung: Nachbedingungen
   * Eine Apotheke kann nach dem Einlesen der eGK auf die einlösbaren E-Rezepte des Versicherten zugreifen.: * Im PS stehen die Zugriffsinformationen (Task-ID und AccessCode) für alle einlösbaren E-Rezepte zur Verfügung.
-* Im PS kann zu den einzelnen E-Rezepten der Anwendungsfall “UC 4.1 - E-Rezept durch Abgebenden abrufen” ausführen, um die E-Rezepte im PS anzuzeigen.
+* Im PS kann zu den einzelnen E-Rezepten der Anwendungsfall "UC 4.1 - E-Rezept durch Abgebenden abrufen" ausführen, um die E-Rezepte im PS anzuzeigen.
 * Der Zugriff der Apotheke auf die E-Rezepte ist für den Versicherten auf dem TI-Flow-Fachdienst protokolliert.
 
 * Beschreibung: Schnittstellen
@@ -368,17 +368,17 @@ Jede Teilverordnung einer Mehrfachverordnung wird im TI-Flow-Fachdienst mit eine
 * Beschreibung: Vorbedingungen
   * Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem TI-Flow-Fachdienst ab.: * Ein E-Rezept-Token wurde übermittelt.
 * UC 4.6 wurde ausgeführt.
-* Token liegt im Primärsystem vor; Status des E-Rezepts ist “ready”.
+* Token liegt im Primärsystem vor; Status des E-Rezepts ist "ready".
 
 * Beschreibung: Durchzuführende Aktionen
   * Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem TI-Flow-Fachdienst ab.: * Primärsystem ermittelt Rezept-ID und AccessCode aus dem Token.
 * Primärsystem ruft das E-Rezept beim TI-Flow-Fachdienst ab.
-* Status wechselt auf “in-progress”.
+* Status wechselt auf "in-progress".
 * TI-Flow-Fachdienst erzeugt ein Geheimnis zur Statusänderung und übermittelt es.
 * optional: Primärsystem prüft die QES über den Konnektor.
 
 * Beschreibung: Nachbedingungen
-  * Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem TI-Flow-Fachdienst ab.: * Status ist “in-progress” und protokolliert.
+  * Eine abgebende LEI ruft ein E-Rezept auf Basis eines E-Rezept-Tokens aus dem TI-Flow-Fachdienst ab.: * Status ist "in-progress" und protokolliert.
 * E-Rezept liegt im AVS vor; Geheimnis ist gespeichert.
 
 * Beschreibung: Schnittstellen
@@ -402,15 +402,15 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 * Beschreibung: Vorbedingungen
   * Ein abgerufenes E-Rezept wird an den TI-Flow-Fachdienst zurückgegeben.: * UC 4.1 wurde ausgeführt.
 * Rezept-ID, AccessCode und Geheimnis sind bekannt.
-* Status ist “in-progress”.
+* Status ist "in-progress".
 
 * Beschreibung: Durchzuführende Aktionen
   * Ein abgerufenes E-Rezept wird an den TI-Flow-Fachdienst zurückgegeben.: * Abgebender markiert das E-Rezept zum Zurückgeben und bestätigt.
 * Primärsystem ruft den TI-Flow-Fachdienst mit Rezept-ID und Geheimnis auf.
-* Status wird auf “ready” geändert.
+* Status wird auf "ready" geändert.
 
 * Beschreibung: Nachbedingungen
-  * Ein abgerufenes E-Rezept wird an den TI-Flow-Fachdienst zurückgegeben.: * Status ist “ready” und protokolliert.
+  * Ein abgerufenes E-Rezept wird an den TI-Flow-Fachdienst zurückgegeben.: * Status ist "ready" und protokolliert.
 * E-Rezept, Token und Geheimnis sind im Primärsystem gelöscht.
 
 * Beschreibung: Schnittstellen
@@ -429,15 +429,15 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 * Beschreibung: Vorbedingungen
   * Der abgebende Leistungserbringer löscht ein zuvor abgerufenes E-Rezept.: * Ein E-Rezept-Token wurde übermittelt und der Wunsch zum Löschen liegt vor.
 * UC 4.6 und UC 4.1 wurden ausgeführt.
-* Rezept-ID, AccessCode und Geheimnis sind bekannt; Status ist “in-progress”.
+* Rezept-ID, AccessCode und Geheimnis sind bekannt; Status ist "in-progress".
 
 * Beschreibung: Durchzuführende Aktionen
   * Der abgebende Leistungserbringer löscht ein zuvor abgerufenes E-Rezept.: * Abgebender markiert das E-Rezept zum Löschen und bestätigt.
 * Primärsystem ruft den TI-Flow-Fachdienst mit Rezept-ID und Geheimnis auf.
-* Status wechselt auf “cancelled”; Daten werden entfernt.
+* Status wechselt auf "cancelled"; Daten werden entfernt.
 
 * Beschreibung: Nachbedingungen
-  * Der abgebende Leistungserbringer löscht ein zuvor abgerufenes E-Rezept.: * Status ist “cancelled” und protokolliert; Daten sind entfernt.
+  * Der abgebende Leistungserbringer löscht ein zuvor abgerufenes E-Rezept.: * Status ist "cancelled" und protokolliert; Daten sind entfernt.
 * E-Rezept, Token und Geheimnis sind im Primärsystem gelöscht.
 
 * Beschreibung: Schnittstellen
@@ -454,16 +454,16 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 ##### UC 4.16 - Dispensierinformationen bereitstellen
 
 * Beschreibung: Vorbedingungen
-  * Ein Mitarbeiter der abgebenden LEI hat ein E-Rezept dispensiert. Er markiert das E-Rezept über das Primärsystem als abgegeben und bestätigt es. Das Primärsystem übermittelt beim Aufruf des TI-Flow-Fachdienstes die Rezept-ID und das Geheimnis zur Bereitstellung der Dispensierinformationen. Im Aufruf ist die Dispensierinformation enthalten.: * Ein Mitarbeiter der abgebenden LEI hat den Anwendungsfall “UC 4.1 - E-Rezept durch Abgebenden abrufen” durchgeführt.- Das Primärsystem hat die QES des E-Rezepts erfolgreich geprüft. Die QES des E-Rezepts ist gültig.
-* Die Rezept-ID, der AccessCode und das Geheimnis zur Statusänderung “in-progress” des E-Rezepts sind im Primärsystem bekannt.
-* Das E-Rezept im TI-Flow-Fachdienst hat den Status “in-progress”.
+  * Ein Mitarbeiter der abgebenden LEI hat ein E-Rezept dispensiert. Er markiert das E-Rezept über das Primärsystem als abgegeben und bestätigt es. Das Primärsystem übermittelt beim Aufruf des TI-Flow-Fachdienstes die Rezept-ID und das Geheimnis zur Bereitstellung der Dispensierinformationen. Im Aufruf ist die Dispensierinformation enthalten.: * Ein Mitarbeiter der abgebenden LEI hat den Anwendungsfall "UC 4.1 - E-Rezept durch Abgebenden abrufen" durchgeführt.- Das Primärsystem hat die QES des E-Rezepts erfolgreich geprüft. Die QES des E-Rezepts ist gültig.
+* Die Rezept-ID, der AccessCode und das Geheimnis zur Statusänderung "in-progress" des E-Rezepts sind im Primärsystem bekannt.
+* Das E-Rezept im TI-Flow-Fachdienst hat den Status "in-progress".
 
 * Beschreibung: Durchzuführende Aktionen
   * Ein Mitarbeiter der abgebenden LEI hat ein E-Rezept dispensiert. Er markiert das E-Rezept über das Primärsystem als abgegeben und bestätigt es. Das Primärsystem übermittelt beim Aufruf des TI-Flow-Fachdienstes die Rezept-ID und das Geheimnis zur Bereitstellung der Dispensierinformationen. Im Aufruf ist die Dispensierinformation enthalten.: * Abgebender wählt ein beliefertes E-Rezept zur Bereitstellung von Dispensierinformationen aus.
 * Das Primärsystem übermittelt die Dispensierinformationen an den TI-Flow-Fachdienst.
 
 * Beschreibung: Nachbedingungen
-  * Ein Mitarbeiter der abgebenden LEI hat ein E-Rezept dispensiert. Er markiert das E-Rezept über das Primärsystem als abgegeben und bestätigt es. Das Primärsystem übermittelt beim Aufruf des TI-Flow-Fachdienstes die Rezept-ID und das Geheimnis zur Bereitstellung der Dispensierinformationen. Im Aufruf ist die Dispensierinformation enthalten.: * Das E-Rezept im TI-Flow-Fachdienst hat den Status “in-progress”.
+  * Ein Mitarbeiter der abgebenden LEI hat ein E-Rezept dispensiert. Er markiert das E-Rezept über das Primärsystem als abgegeben und bestätigt es. Das Primärsystem übermittelt beim Aufruf des TI-Flow-Fachdienstes die Rezept-ID und das Geheimnis zur Bereitstellung der Dispensierinformationen. Im Aufruf ist die Dispensierinformation enthalten.: * Das E-Rezept im TI-Flow-Fachdienst hat den Status "in-progress".
 * Die Information zur Abgabe liegen im TI-Flow-Fachdienst.
 * Das Bereitstellen der Dispensierinformationen ist im TI-Flow-Fachdienst protokolliert.
 * Das Primärsystem erhält eine Bestätigung, dass die Dispensierinformationen bereitgestellt wurden.
@@ -484,15 +484,15 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 * Beschreibung: Vorbedingungen
   * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom TI-Flow-Fachdienst abgerufen.: * UC 4.1 wurde ausgeführt.
 * QES des E-Rezepts ist gültig geprüft.
-* Rezept-ID, AccessCode und Geheimnis sind bekannt; Status ist “in-progress”.
+* Rezept-ID, AccessCode und Geheimnis sind bekannt; Status ist "in-progress".
 
 * Beschreibung: Durchzuführende Aktionen
   * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom TI-Flow-Fachdienst abgerufen.: * Abgebender markiert das E-Rezept als abgegeben.
 * Primärsystem übermittelt Rezept-ID, Geheimnis und Abgabeinformationen an den TI-Flow-Fachdienst.
-* Status wechselt zu “completed”; Quittung wird erstellt und zurückgegeben.
+* Status wechselt zu "completed"; Quittung wird erstellt und zurückgegeben.
 
 * Beschreibung: Nachbedingungen
-  * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom TI-Flow-Fachdienst abgerufen.: * Status ist “completed”; Abgabeinformationen sind gespeichert.
+  * Nach der Abgabe wird das E-Rezept quittiert und eine Quittung vom TI-Flow-Fachdienst abgerufen.: * Status ist "completed"; Abgabeinformationen sind gespeichert.
 * Statuswechsel ist protokolliert; Quittung liegt im Primärsystem vor.
 
 * Beschreibung: Schnittstellen
@@ -538,7 +538,7 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 
 * Beschreibung: Vorbedingungen
   * Die Verordnung wird erneut abgerufen, falls die Übertragung beim ersten Abruf mit $accept fehlgeschlagen ist.: * UC 4.1 wurde ausgeführt; im Clientsystem liegt keine Verordnung oder das zugehörige Secret vor.
-* Status des E-Rezepts ist “in-progress”.
+* Status des E-Rezepts ist "in-progress".
 
 * Beschreibung: Durchzuführende Aktionen
   * Die Verordnung wird erneut abgerufen, falls die Übertragung beim ersten Abruf mit $accept fehlgeschlagen ist.: * Abgebender wählt die Zugriffsinformation für die Verordnung (E-Rezept-Token) aus und ruft die Verordnung erneut ab.
@@ -562,7 +562,7 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 
 * Beschreibung: Vorbedingungen
   * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * UC 4.4 wurde ausgeführt; im Primärsystem liegt keine Quittung vor.
-* Status des E-Rezepts ist “completed”.
+* Status des E-Rezepts ist "completed".
 
 * Beschreibung: Durchzuführende Aktionen
   * Die Quittung wird erneut abgerufen, falls die Übertragung beim ersten Abruf fehlgeschlagen ist.: * Abgebender wählt das E-Rezept und ruft die Quittung erneut ab.

@@ -354,7 +354,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="sortieren-und-filtern-von-fhir-objekten">Sortieren und Filtern von FHIR-Objekten</h3>
 
-<p>Clients erhalten die Möglichkeit die Rückgabe der Elemente im FHIR-Bundle zu sortieren und zu filtern. Mit einem URL-Parameter “_sort” kann eine Sortierung der Ressourcen angefragt werden. Die Angabe eines Filterkriteriums als URL-Parameter schränkt die Ergebnismenge auf die angegebenen Kriterien ein.</p>
+<p>Clients erhalten die Möglichkeit die Rückgabe der Elemente im FHIR-Bundle zu sortieren und zu filtern. Mit einem URL-Parameter "_sort" kann eine Sortierung der Ressourcen angefragt werden. Die Angabe eines Filterkriteriums als URL-Parameter schränkt die Ergebnismenge auf die angegebenen Kriterien ein.</p>
 
 <p>Für jeden dieser Ressourcen gelten dann Kriterien, nach denen sortiert und gefiltert werden kann.</p>
 
@@ -492,7 +492,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Hinweis:  für die Handhabung mit den FHIR-Datentypen zu Suche und Sortierung siehe https://hl7.org/fhir/R4/search.html#Summary</p>
 
-<p>Hinweis: Standard Such- und Sortierparametern in FHIR ist ein “_” vorangestellt werden. Der Aufruf sieht dann bspw. so aus: GET <code class="language-plaintext highlighter-rouge">[base]/ChargeItem?_lastUpdated=le2023-10-01&amp;_sort=-_lastUpdated</code></p>
+<p>Hinweis: Standard Such- und Sortierparametern in FHIR ist ein "_" vorangestellt werden. Der Aufruf sieht dann bspw. so aus: GET <code class="language-plaintext highlighter-rouge">[base]/ChargeItem?_lastUpdated=le2023-10-01&amp;_sort=-_lastUpdated</code></p>
 
 <p>Es können mehrere Sortierkriterien angegeben werden. Bei der Sortierung sortiert der TI-Flow-Fachdienst dann zuerst nach dem ersten, dann zweiten, usw. Kriterium.</p>
 
@@ -547,7 +547,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div><figcaption><strong>Tabelle: </strong>Default Sortierparameter für die Handhabung der Rückgabe von mehreren FHIR-Objekten</figcaption></div>
 </requirement>
 
-<p>Standardmäßig werden die Einträge aufsteigend sortiert. Wenn diese Reihenfolge umgekehrt werden soll, kann ein “-“ vor das Sortierkriterium gestellt werden.</p>
+<p>Standardmäßig werden die Einträge aufsteigend sortiert. Wenn diese Reihenfolge umgekehrt werden soll, kann ein "-" vor das Sortierkriterium gestellt werden.</p>
 
 <!-- A_24440 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-368" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortierreihenfolge der Einträge" version="0">
@@ -560,7 +560,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Clients können am TI-Flow-Fachdienst Anfragen stellen, dessen Ergebnismenge nach bestimmten Kriterien reduziert (gefiltert) werden soll.</p>
 
-<p>Für den Datentyp “date” sollen folgende Filterkriterien als URL-Parameter unterstützt werden:</p>
+<p>Für den Datentyp "date" sollen folgende Filterkriterien als URL-Parameter unterstützt werden:</p>
 
 <!-- A_25515 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-369" title="TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filteroperatoren für Datumsabfragen" version="0">
@@ -619,17 +619,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Ziel der Paginierung ist es, eine Ausgabe von mehreren Instanzen in Seiten zu unterteilen, damit der Datenverkehr je Aufruf minimiert wird und der Client dem Nutzer schneller Informationen darstellen kann.</p>
 
-<p>Der Client kann unter Angabe der Einträge je Seite und dem Index des Elements an dem die Anzeige zu beginnenden soll steuern, welche ‘Seite’ dem Client zu übermitteln ist.</p>
+<p>Der Client kann unter Angabe der Einträge je Seite und dem Index des Elements an dem die Anzeige zu beginnenden soll steuern, welche 'Seite' dem Client zu übermitteln ist.</p>
 
-<p>Mit “_count” kann der Client angeben, wie viele Elemente maximal auf einer “Seite” der Antwort enthalten sein sollen. D.h. der TI-Flow-Fachdienst beschränkt die Ergebnismenge auf diese maximal angegebene Anzahl.</p>
+<p>Mit "_count" kann der Client angeben, wie viele Elemente maximal auf einer "Seite" der Antwort enthalten sein sollen. D.h. der TI-Flow-Fachdienst beschränkt die Ergebnismenge auf diese maximal angegebene Anzahl.</p>
 
-<p>Der URL-Parameter “__offset” gibt den nullbasierten Versatz des ersten zurückgegebenen Elements in der Sammlung an.</p>
+<p>Der URL-Parameter "__offset" gibt den nullbasierten Versatz des ersten zurückgegebenen Elements in der Sammlung an.</p>
 
-<p>Der TI-Flow-Fachdienst gibt immer die Gesamtanzahl der Suchtreffer zurück. Diese Information wird im Feld “Bundle.total” des FHIR-Bundles angegeben.</p>
+<p>Der TI-Flow-Fachdienst gibt immer die Gesamtanzahl der Suchtreffer zurück. Diese Information wird im Feld "Bundle.total" des FHIR-Bundles angegeben.</p>
 
 <p>Zusätzlich zur Rückgabe der Elemente bietet der TI-Flow-Fachdienst dem Client Link-Relations nach http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1 an, damit der Client einfacher durch die Ergebnismenge navigieren kann.</p>
 
-<p>Falls die Link Relations nicht zu plausiblen Ergebnissen führen (z.B. wenn es keine vorherige Seite gibt, kann keine “prev” Seite angegeben werden), dann darf diese Link Relation nicht übermittelt werden.</p>
+<p>Falls die Link Relations nicht zu plausiblen Ergebnissen führen (z.B. wenn es keine vorherige Seite gibt, kann keine "prev" Seite angegeben werden), dann darf diese Link Relation nicht übermittelt werden.</p>
 
 <p>Neben Angaben zur Paginierung übermittelt der Client auch Angaben zur Filterung und Sortierung, diese müssen bei der Erzeugung der Link Relations erhalten bleiben.</p>
 
@@ -797,7 +797,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 1, 2026 05:49+0000">2026-06-01</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jun 11, 2026 21:31+0000">2026-06-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

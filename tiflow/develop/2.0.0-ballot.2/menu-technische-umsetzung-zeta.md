@@ -33,18 +33,19 @@ Diese Regel stellt sicher, dass nur bestimmte Berufsgruppen oder Arten von Einri
 
 ##### Akteure & OIDs
 
-| | |
-| :--- | :--- |
-| Versicherter | `1.2.276.0.76.4.49` |
-| Betriebsstätte Arzt | `1.2.276.0.76.4.50` |
-| Zahnarztpraxis | `1.2.276.0.76.4.51` |
-| Betriebsstätte Psychotherapeut | `1.2.276.0.76.4.52` |
-| Krankenhaus | `1.2.276.0.76.4.53` |
-| Öffentliche Apotheke | `1.2.276.0.76.4.54` |
-| Krankenhausapotheke | `1.2.276.0.76.4.55` |
-| Institution Vorsorge/Reha | `1.2.276.0.76.4.56` |
-| Kostenträger | `1.2.276.0.76.4.59` |
-| NCPeH-Fachdienst | `1.2.276.0.76.4.292` |
+| | | |
+| :--- | :--- | :--- |
+| Versicherter | oid_versicherter | `1.2.276.0.76.4.49` |
+| Betriebsstätte Arzt | oid_praxis_arzt | `1.2.276.0.76.4.50` |
+| Zahnarztpraxis | oid_zahnarztpraxis | `1.2.276.0.76.4.51` |
+| Betriebsstätte Psychotherapeut | oid_praxis_psychotherapeut | `1.2.276.0.76.4.52` |
+| Krankenhaus | oid_krankenhaus | `1.2.276.0.76.4.53` |
+| Öffentliche Apotheke | oid_oeffentliche_apotheke | `1.2.276.0.76.4.54` |
+| Krankenhausapotheke | oid_krankenhausapotheke | `1.2.276.0.76.4.55` |
+| Institution Vorsorge/Reha | oid_institution-vorsorge-reha | `1.2.276.0.76.4.257` |
+| Kostenträger | oid_kostentraeger | `1.2.276.0.76.4.59` |
+| NCPeH-Fachdienst | oid_ncpeh | `1.2.276.0.76.4.292` |
+| Betriebsstätte gematik | oid_bs_gematik | `1.2.276.0.76.4.58` |
 
 ##### Prüfung der Client-Anwendung
 
@@ -61,7 +62,7 @@ Eine Anfrage von Produkt A in Version 1.2 wäre erfolgreich, eine Anfrage von Pr
 
 ##### Prüfung der angeforderten Berechtigungen (Scopes)
 
-Diese Regel stellt sicher, dass die anfragende Anwendung nur die Berechtigungen anfordert, die ihr auch gewährt werden dürfen. Anwendungen können bestimmte “Scopes” anfordern, die ihnen Lese- oder Schreibzugriff auf bestimmte Datenbereiche gewähren.
+Diese Regel stellt sicher, dass die anfragende Anwendung nur die Berechtigungen anfordert, die ihr auch gewährt werden dürfen. Anwendungen können bestimmte "Scopes" anfordern, die ihnen Lese- oder Schreibzugriff auf bestimmte Datenbereiche gewähren.
 
 **Was wird geprüft?** Es wird die Liste der von der Anwendung angeforderten Berechtigungen mit der Liste der maximal erlaubten Berechtigungen abgeglichen. Die Anfrage ist nur dann erfolgreich, wenn **alle** angeforderten Berechtigungen in der Liste der erlaubten Berechtigungen enthalten sind.
 
@@ -77,9 +78,9 @@ Die Verbindungen von Akteuren und Use Cases erzeugen die folgende Scope Definiti
 
 ##### Prüfung der Ziel-Ressource (Audience)
 
-Diese Regel kontrolliert, auf welche Zielsysteme oder Datenbereiche (“Audiences”) zugegriffen werden darf. Dies ist eine zusätzliche Sicherheitsebene, um sicherzustellen, dass ein Zugriffstoken nur für den vorgesehenen Zweck verwendet wird.
+Diese Regel kontrolliert, auf welche Zielsysteme oder Datenbereiche ("Audiences") zugegriffen werden darf. Dies ist eine zusätzliche Sicherheitsebene, um sicherzustellen, dass ein Zugriffstoken nur für den vorgesehenen Zweck verwendet wird.
 
-**Was wird geprüft?** Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der Liste der erlaubten Ressourcen enthalten sind. Ähnlich wie bei den Berechtigungen müssen **alle** angefragten “Audiences” erlaubt sein.
+**Was wird geprüft?** Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der Liste der erlaubten Ressourcen enthalten sind. Ähnlich wie bei den Berechtigungen müssen **alle** angefragten "Audiences" erlaubt sein.
 
 **Beispiel:**
 
@@ -89,11 +90,11 @@ Diese Regel kontrolliert, auf welche Zielsysteme oder Datenbereiche (“Audience
 
 #### Gültigkeitsdauer der Zugriffstoken (TTL)
 
-Wenn alle Prüfungen erfolgreich sind, erhält die Anwendung zeitlich begrenzte “Token” für den Zugriff. Die Gültigkeitsdauer (Time-To-Live, TTL) ist aus Sicherheitsgründen bewusst kurz gewählt.
+Wenn alle Prüfungen erfolgreich sind, erhält die Anwendung zeitlich begrenzte "Token" für den Zugriff. Die Gültigkeitsdauer (Time-To-Live, TTL) ist aus Sicherheitsgründen bewusst kurz gewählt.
 
 Es gibt zwei Arten von Token:
 
-* **Access Token:** Dies ist der eigentliche “Schlüssel” für den direkten Zugriff auf Daten. Er hat eine kurze Lebensdauer. 
+* **Access Token:** Dies ist der eigentliche "Schlüssel" für den direkten Zugriff auf Daten. Er hat eine kurze Lebensdauer. 
 * **Gültigkeit:** 300 Sekunden (5 Minuten)
  
 * **Refresh Token:** Wenn das Access Token abgelaufen ist, kann die Anwendung dieses zweite Token verwenden, um ein neues Access Token zu erhalten, ohne dass sich der Benutzer erneut anmelden muss. Es hat eine deutlich längere Lebensdauer. 
@@ -103,7 +104,7 @@ Es gibt zwei Arten von Token:
 #### Ergebnis der Prüfung
 
 * **Erfolgsfall:** Wenn **alle vier Prüfungen** erfolgreich sind, wird der Zugriff gestattet. Die Anwendung erhält ein zeitlich begrenztes Zugriffstoken.
-* **Fehlerfall:** Wenn **mindestens eine Prüfung scheitert**, wird der Zugriff verweigert. Die genauen Gründe für die Ablehnung (z.B. “User profession is not allowed”, “One or more requested scopes are not allowed”) werden zurückgemeldet.
+* **Fehlerfall:** Wenn **mindestens eine Prüfung scheitert**, wird der Zugriff verweigert. Die genauen Gründe für die Ablehnung (z.B. "User profession is not allowed", "One or more requested scopes are not allowed") werden zurückgemeldet.
 
 #### Anforderungen zur Nutzung der ZETA Funktionalität
 
@@ -277,6 +278,16 @@ policies:
         ]
       }
 
+  "tif-rx-task-probe": {
+        "description": "Probing E-Rezept",
+        "roles": [
+          { "oid": "1.2.276.0.76.4.58", "description": "oid_bs_gematik" }
+        ],
+        "rules": [
+          { "method": "POST", "path": "rx/Task/$create" }
+        ]
+      }
+
   # ── DiGA Verordnung ────────────────────────────────────────────────────────
 
   "tif-diga-task-prescribe": {
@@ -357,6 +368,16 @@ policies:
         ]
       }
 
+"tif-diga-task-probe": {
+        "description": "Probing DiGA",
+        "roles": [
+          { "oid": "1.2.276.0.76.4.58", "description": "oid_bs_gematik" }
+        ],
+        "rules": [
+          { "method": "POST", "path": "diga/Task/$create" }
+        ]
+      }
+
 
 ```
 
@@ -381,12 +402,14 @@ policies:
     "tif-rx-audit",
     "tif-rx-notification",
     "tif-rx-subscription",
+    "tif-rx-task-probe",
     "tif-diga-task-prescribe",
     "tif-diga-task-dispense",
     "tif-diga-task-manage",
     "tif-diga-communication",
     "tif-diga-audit",
-    "tif-diga-subscription"
+    "tif-diga-subscription",
+    "tif-diga-task-probe"
   ]
 }
 

@@ -102,7 +102,7 @@ umsetzen.
 ### UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen
 
 * Beschreibung: Vorbedingungen
-  * Der Versicherte erstellt einen Zugriffscode am TI-Flow-Fachdienst, um die Abfrage von E-Rezepten im Ausland zu ermöglichen.: * Der Versicherte hat seine “Einwilligung zum Einlösen im EU-Ausland” erteilt.
+  * Der Versicherte erstellt einen Zugriffscode am TI-Flow-Fachdienst, um die Abfrage von E-Rezepten im Ausland zu ermöglichen.: * Der Versicherte hat seine "Einwilligung zum Einlösen im EU-Ausland" erteilt.
 * Im E-Rezept-FdV liegt die Information vor, welche europäischen Länder das Einlösen von in Deutschland verordneten E-Rezepten unterstützen.
 
 * Beschreibung: Durchzuführende Aktionen
@@ -228,8 +228,8 @@ Der zeitliche Ablauf der Zugriffsberechtigung wird nicht durch den TI-Flow-Fachd
 ### UC 4.19 - Demographische Daten eines Versicherten abrufen
 
 * Beschreibung: Vorbedingungen
-  * Mit diesem Anwendungsfall werden die demographischen Daten zu einem Versicherten vom TI-Flow-Fachdienst abgerufen.: * Der Versicherte hat seine Einwilligung zum Einlösen im EU-Ausland erteilen (Anwendungsfall “Einwilligung durch Versicherten erteilen”).
-* Der Versicherte hat eine Zugriffsberechtigung für Land B erteilt (Anwendungsfall “Zugriffsberechtigung durch Versicherten erstellen”).
+  * Mit diesem Anwendungsfall werden die demographischen Daten zu einem Versicherten vom TI-Flow-Fachdienst abgerufen.: * Der Versicherte hat seine Einwilligung zum Einlösen im EU-Ausland erteilen (Anwendungsfall "Einwilligung durch Versicherten erteilen").
+* Der Versicherte hat eine Zugriffsberechtigung für Land B erteilt (Anwendungsfall "Zugriffsberechtigung durch Versicherten erstellen").
 * Der Versicherte hat mindestens ein E-Rezept zum Einlösen im EU-Ausland markiert.
 
 * Beschreibung: Durchzuführende Aktionen
@@ -261,7 +261,7 @@ Der zeitliche Ablauf der Zugriffsberechtigung wird nicht durch den TI-Flow-Fachd
 
 * Beschreibung: Vorbedingungen
   * Mit diesem Anwendungsfall werden die im europäischen Ausland einlösbaren E-Rezepte zu einem Versicherten vom TI-Flow-Fachdienst abgerufen.: * Der Versicherte hat eine Zugriffsberechtigung für Land B erteilt.
-* Der Versicherte hat die Informationen zur Zugriffsberechtigung an den LE-EU übermittelt. (Anwendungsfall “Demographische Daten eines Versicherten abrufen”)
+* Der Versicherte hat die Informationen zur Zugriffsberechtigung an den LE-EU übermittelt. (Anwendungsfall "Demographische Daten eines Versicherten abrufen")
 * Der Versicherte hat mindestens ein E-Rezept zum Einlösen im EU-Ausland markiert.
 
 * Beschreibung: Durchzuführende Aktionen
@@ -292,7 +292,7 @@ Der zeitliche Ablauf der Zugriffsberechtigung wird nicht durch den TI-Flow-Fachd
 
 * Beschreibung: Vorbedingungen
   * Mit diesem Anwendungsfall werden die zum Einlösen vorgesehenen E-Rezepte zu einem Versicherten vom TI-Flow-Fachdienst abgerufen.: * Der Versicherte hat eine Zugriffsberechtigung für Land B erteilt.
-* Der Versicherte hat die Informationen zur Zugriffsberechtigung an den LE-EU übermittelt. (Anwendungsfall “Demographische Daten eines Versicherten abrufen”)
+* Der Versicherte hat die Informationen zur Zugriffsberechtigung an den LE-EU übermittelt. (Anwendungsfall "Demographische Daten eines Versicherten abrufen")
 * Der LE-EU hat die Liste der einlösbaren E-Rezepte für den Versicherten abgerufen.
 
 * Beschreibung: Durchzuführende Aktionen
@@ -300,12 +300,12 @@ Der zeitliche Ablauf der Zugriffsberechtigung wird nicht durch den TI-Flow-Fachd
 * Der NCPeH-FD prüft das Vorliegen einer Behandlungsbeziehung zwischen LE-EU und Versicherten.
 * Der NCPeH-FD prüft die Permission aus der Anfrage und falls nicht vorhanden die Rolle des anfragenden LE-EU.
 * Der NCPeH-FD sendet einen Request mit der Liste von Rezept-IDs des Versicherten an den TI-Flow-Fachdienst.
-* Der TI-Flow-Fachdienst ändert den Status der abgefragten E-Rezepte, falls der Status “ready” ist, in “in-progress”.
+* Der TI-Flow-Fachdienst ändert den Status der abgefragten E-Rezepte, falls der Status "ready" ist, in "in-progress".
 * Der TI-Flow-Fachdienst übermittelt die Liste der E-Rezepte an den NCPeH-FD.
 * Der NCPeH-FD transformiert und transkodiert die E-Rezepte in das entsprechende eHDSI-Dokumentenformat und erstellt den Response für den LE-EU.
 
 * Beschreibung: Nachbedingungen
-  * Mit diesem Anwendungsfall werden die zum Einlösen vorgesehenen E-Rezepte zu einem Versicherten vom TI-Flow-Fachdienst abgerufen.: * Der Status der einlösbaren E-Rezepte des Versicherten ist “in-progress”.
+  * Mit diesem Anwendungsfall werden die zum Einlösen vorgesehenen E-Rezepte zu einem Versicherten vom TI-Flow-Fachdienst abgerufen.: * Der Status der einlösbaren E-Rezepte des Versicherten ist "in-progress".
 * Die Abfrage ist im TI-Flow-Fachdienst protokolliert.
 * Der LE-EU stehen die Liste der E-Rezepte des Versicherten zur Verfügung.
 
@@ -324,7 +324,7 @@ Der zeitliche Ablauf der Zugriffsberechtigung wird nicht durch den TI-Flow-Fachd
 
 * Beschreibung: Vorbedingungen
   * Mit diesem Anwendungsfall werden die Dispensierinformationen zu einem eingelösten E-Rezept an den TI-Flow-Fachdienst übermittelt.: * Der Versicherte hat eine Zugriffsberechtigung für Land B erteilt.
-* Der Versicherte hat die Informationen zur Zugriffsberechtigung an den LE-EU übermittelt. (Anwendungsfall “Demographische Daten eines Versicherten abrufen”)
+* Der Versicherte hat die Informationen zur Zugriffsberechtigung an den LE-EU übermittelt. (Anwendungsfall "Demographische Daten eines Versicherten abrufen")
 * Der LE-EU hat ausgewählte E-Rezepte des Versicherten abgerufen.
 
 * Beschreibung: Durchzuführende Aktionen
@@ -334,11 +334,11 @@ Der zeitliche Ablauf der Zugriffsberechtigung wird nicht durch den TI-Flow-Fachd
 * Der NCPeH-FD prüft die Permission und falls nicht vorhanden die Rolle des anfragenden LE-EU.
 * Der NCPeH-FD transformiert und transkodiert die Information zu jedem eDispensation Document in einen Dispensierinformationsdatensatz für das E-Rezept.
 * Der NCPeH-FD sendet für jedes übermittelte eDispensation Document (CDA) einen Request mit den Dispensierinformationsdatensatz für das E-Rezept an den TI-Flow-Fachdienst.
-* Der TI-Flow-Fachdienst speichert die Dispensierinformationen und ändert den Status des Task zu “completed”.
+* Der TI-Flow-Fachdienst speichert die Dispensierinformationen und ändert den Status des Task zu "completed".
 * Der TI-Flow-Fachdienst übermittelt den Status der Operation an den NCPeH-FD. Der NCPeH-FD übermittelt den Status an den LE-EU.
 
 * Beschreibung: Nachbedingungen
-  * Mit diesem Anwendungsfall werden die Dispensierinformationen zu einem eingelösten E-Rezept an den TI-Flow-Fachdienst übermittelt.: * Der Status der eingelösten E-Rezepte ist “completed”.
+  * Mit diesem Anwendungsfall werden die Dispensierinformationen zu einem eingelösten E-Rezept an den TI-Flow-Fachdienst übermittelt.: * Der Status der eingelösten E-Rezepte ist "completed".
 * Der Datenzugriff ist im TI-Flow-Fachdienst für jedes E-Rezept protokolliert.
 
 * Beschreibung: Schnittstellen
@@ -351,7 +351,7 @@ Der zeitliche Ablauf der Zugriffsberechtigung wird nicht durch den TI-Flow-Fachd
 **Sequenzdiagramm:**
 
 **Abbildung: **UC 4.22 - Abgabe eines E-Rezeptes im europäischen Ausland
-**Hinweis: Für den Anwendungsfall “Abgabe von E-Rezepten im europäischen Ausland” wird angenommen, dass die vollständigen Dispensierinformationen zu einer ePrescription (E-Rezept) in genau einem eDispensation Dokument (CDA) vom LE-EU übermittelt werden.**
+**Hinweis: Für den Anwendungsfall "Abgabe von E-Rezepten im europäischen Ausland" wird angenommen, dass die vollständigen Dispensierinformationen zu einer ePrescription (E-Rezept) in genau einem eDispensation Dokument (CDA) vom LE-EU übermittelt werden.**
 
 Nach der Bereitstellung der Dispensierinformationen im TI-Flow-Fachdienst kann der Versicherte diese mit seinem E-Rezept-FdV herunterladen und anzeigen lassen.
 

@@ -29,9 +29,9 @@ Die Nachricht zur Interaktion mit E-Rezepten als FHIR-Ressource **Task** wird ü
 
 Anfragen an die *Task*-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden.
 
-Durch Angabe des URL-Parameter `?ac=` bei der GET-Operation kann eine abgebende Institution den Anwendungsfall “Recovery Secret” ausführen.
+Durch Angabe des URL-Parameter `?ac=` bei der GET-Operation kann eine abgebende Institution den Anwendungsfall "Recovery Secret" ausführen.
 
-Durch Angabe des URL-Parameter `?secret=` bei der GET-Operation kann eine abgebende Institution den Anwendungsfall “UC 4.8 - Quittung erneut abrufen” ausführen.
+Durch Angabe des URL-Parameter `?secret=` bei der GET-Operation kann eine abgebende Institution den Anwendungsfall "UC 4.8 - Quittung erneut abrufen" ausführen.
 
 #### Task abrufen
 

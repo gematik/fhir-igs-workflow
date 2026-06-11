@@ -16,15 +16,15 @@ Diese Seite beschreibt gesonderte Verarbeitungsregeln und technische Aspekte fü
 
 #### Zuordnung Workflow
 
-Für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel für PKV-Versicherte wird der Workflow-Typ “200” eingeführt. Für den Workflow von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel mit Steuerung durch Leistungserbringer wird der Workflow-Typ “209” eingeführt.
+Für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel für PKV-Versicherte wird der Workflow-Typ "200" eingeführt. Für den Workflow von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel mit Steuerung durch Leistungserbringer wird der Workflow-Typ "209" eingeführt.
 
-Im Workflow-Typ “200” und Workflow-Typ “209” werden dasselbe Informationsmodell für den Verordnungsdatensatz (siehe https://simplifier.net/erezept ) wie bei der Verordnung für GKV-Versicherte verwendet. Hinweis: In MedicationRequest.insurance.Coverage.type mit dem Codesystem Coverage.type.coding in https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage ist erkennbar, ob der Versicherte, für den das E-Rezept erstellt wurde, bei einer PKV versichert ist.
+Im Workflow-Typ "200" und Workflow-Typ "209" werden dasselbe Informationsmodell für den Verordnungsdatensatz (siehe https://simplifier.net/erezept ) wie bei der Verordnung für GKV-Versicherte verwendet. Hinweis: In MedicationRequest.insurance.Coverage.type mit dem Codesystem Coverage.type.coding in https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage ist erkennbar, ob der Versicherte, für den das E-Rezept erstellt wurde, bei einer PKV versichert ist.
 
-Der Ablauf im Workflow-Typ “200” ist identisch zum Workflow-Typ “160”. Der Ablauf im Workflow-Typ “209” ist identisch zum Workflow-Typ “169”.
+Der Ablauf im Workflow-Typ "200" ist identisch zum Workflow-Typ "160". Der Ablauf im Workflow-Typ "209" ist identisch zum Workflow-Typ "169".
 
-Der Workflow-Typ “200” und der Workflow-Typ “209” verwenden dasselbe Statusmodell, wie der Workflow-Typ “160”. Siehe [gemSysL_eRp#2.4.6 Konzept Status E-Rezept].
+Der Workflow-Typ "200" und der Workflow-Typ "209" verwenden dasselbe Statusmodell, wie der Workflow-Typ "160". Siehe [gemSysL_eRp#2.4.6 Konzept Status E-Rezept].
 
-Für E-Rezepte der Workflow-Types “200” und “209” können die Abrechnungsinformationen über den TI-Flow-Fachdienst an den Versicherten übermittelt werden.
+Für E-Rezepte der Workflow-Types "200" und "209" können die Abrechnungsinformationen über den TI-Flow-Fachdienst an den Versicherten übermittelt werden.
 
 ### Verarbeitungsregeln für den TI-Flow-Fachdienst
 

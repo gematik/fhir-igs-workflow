@@ -11,7 +11,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 ### Epic und User Story
 
-Das fachliche Konzept zum Einlösen von E-Rezepten im europäischen Ausland wurde im Rahmen von “Feature ePrescription/eDispensation Land A” [gemF_ePres-eDisp] abgestimmt.
+Das fachliche Konzept zum Einlösen von E-Rezepten im europäischen Ausland wurde im Rahmen von "Feature ePrescription/eDispensation Land A" [gemF_ePres-eDisp] abgestimmt.
 
 ### Fachliches Konzept
 
@@ -20,7 +20,7 @@ Das fachliche Konzept zum Einlösen von E-Rezepten im europäischen Ausland wurd
 Für das europäische Nutzungsszenario ePrescription/eDispensation dürfen folgende E-Rezepte nicht verarbeitet werden:
 
 * Betäubungsmittel
-* Arzneimittel, die nach ärztlicher Verschreibung oder nach den Vorschriften eines Arzneibuchs für den Versicherten zubereitet werden (bezeichnet als “formula magistralis” oder “extemporale Zubereitungen”).
+* Arzneimittel, die nach ärztlicher Verschreibung oder nach den Vorschriften eines Arzneibuchs für den Versicherten zubereitet werden (bezeichnet als "formula magistralis" oder "extemporale Zubereitungen").
 * Arzneimittel, die als Humanarzneimittel eingestuft sind, aber nicht durch ein industrielles Verfahren hergestellt oder bei deren Herstellung kein industrielles Verfahren angewandt wurde.
 * Arzneimittel, die nicht als Humanarzneimittel eingestuft sind, noch nicht gültige oder abgelaufene E-Rezepte. Zusätzlich bestehen Einschränkungen, wenn das Mapping aus den Verordnungsdaten in das geforderte europäische Datenformat nicht möglich ist.
 
@@ -30,7 +30,7 @@ Der TI-Flow-Fachdienst prüft bei Operationsaufrufen, ob die E-Rezepte die folge
 * PZN-Verordnung (KBV_PR_ERP_Medication_PZN) mit strukturierter Angabe der Stückzahl sowie der Packungsgröße, getrennt nach Einheit und numerischem Wert,
 * Gültigkeitszeitraum ist erreicht,
 * Gültigkeitszeitraum ist nicht überschritten,
-* der Workflow zum E-Rezept hat den Status “ready”.
+* der Workflow zum E-Rezept hat den Status "ready".
 * Ein E-Rezept, welches die obigen Kriterien erfüllt, wird im Kontext dieses Features als einlösbares E-Rezept bezeichnet.
 
 Ein Versicherter kann sich im E-Rezept-FdV anzeigen lassen, welche seiner E-Rezepte im europäischen Ausland einlösbar sind
@@ -51,7 +51,7 @@ Versicherten-ID und Zugriffscode bilden zusammen die Information zur Zugriffsber
 
 Der Zugriffscode wird dezentral im E-Rezept-Frontend des Versicherten (FdV) erzeugt. Das E-Rezept-FdV registriert den Zugriffscode am TI-Flow-Fachdienst.
 
-Ein Zugriffscode kann nur am TI-Flow-Fachdienst registriert werden, wenn eine “Einwilligung zum Einlösen im EU-Ausland” des Versicherten vorliegt.
+Ein Zugriffscode kann nur am TI-Flow-Fachdienst registriert werden, wenn eine "Einwilligung zum Einlösen im EU-Ausland" des Versicherten vorliegt.
 
 Bei der Registrierung des Zugriffscodes am TI-Flow-Fachdienst wird geprüft, ob einlösbare Rezepte im TI-Flow-Fachdienst für die KVNR des Versicherten vorliegen. Falls keine einlösbaren E-Rezepte vorliegen, wird der Zugriffscode nicht registriert und der Versicherte erhält eine entsprechende Meldung in seinem E-Rezept-FdV.
 

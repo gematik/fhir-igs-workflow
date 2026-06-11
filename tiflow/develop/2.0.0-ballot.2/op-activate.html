@@ -324,7 +324,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Der TI-Flow-Fachdienst prüft die Gültigkeit der qualifizierten Signatur des übergebenen FHIR-Bundles. Bei Gültigkeit wird der Task aktiviert und die Zuordnung des Task zum Patienten auf Basis der KVNR im Task unter dem value von <system value="http://fhir.de/sid/gkv/kvid-10"></system> hinterlegt.</li>
   <li>Das signierte FHIR-Bundle wird als Ganzes gespeichert und steht inkl. der Signatur für den Abruf durch einen berechtigten, abgebenden Leistungserbringer zur Verfügung. Der Verweis erfolgt über die ID des Bundles unter <code class="language-plaintext highlighter-rouge">Task.input[coding.code = 1].reference</code>. Der Abruf erfolgt immer über den Task.</li>
   <li>Für den Versicherten wird eine Kopie des Bundles im JSON-Format inkl. serverseitiger Signatur bereitgestellt, die an der Stelle <code class="language-plaintext highlighter-rouge">Task.input[coding.code = 2].reference</code> referenziert wird.</li>
-  <li>Für den Fall, dass das Clientsystem beim Aufruf der Operation keinen Response erhält, soll der Aufruf wiederholt werden. Wenn im Response des zweiten Aufrufs ein Fehler 403 mit dem OperationOutcome “Task not in status draft but in status ready” zurückkommt, wurde der erste Aufruf bereits erfolgreich durch den TI-Flow-Fachdienst verarbeitet. Wenn eine Response mit dem Status 200 zurückkommt, war der zweite Aufruf erfolgreich.</li>
+  <li>Für den Fall, dass das Clientsystem beim Aufruf der Operation keinen Response erhält, soll der Aufruf wiederholt werden. Wenn im Response des zweiten Aufrufs ein Fehler 403 mit dem OperationOutcome "Task not in status draft but in status ready" zurückkommt, wurde der erste Aufruf bereits erfolgreich durch den TI-Flow-Fachdienst verarbeitet. Wenn eine Response mit dem Status 200 zurückkommt, war der zweite Aufruf erfolgreich.</li>
 </ul>
 
 
@@ -367,7 +367,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 1, 2026 05:49+0000">2026-06-01</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jun 11, 2026 21:31+0000">2026-06-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

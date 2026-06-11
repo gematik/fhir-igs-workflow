@@ -41,9 +41,9 @@ funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "Nachrich
 ausführen.
 #### Nachricht löschen
 
-Das E-Rezept-FdV MUSS im Anwendungsfall “Nachricht löschen” es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem TI-Flow-Fachdienst auszuwählen.
+Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem TI-Flow-Fachdienst auszuwählen.
 
-Das E-Rezept-FdV MUSS im Anwendungsfall “Nachricht löschen” vom Nutzer eine Bestätigung einholen, dass die selektierte Nachricht gelöscht werden sollen und die Möglichkeit geben, das Löschen abzubrechen.
+Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" vom Nutzer eine Bestätigung einholen, dass die selektierte Nachricht gelöscht werden sollen und die Möglichkeit geben, das Löschen abzubrechen.
 
 funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "Nachrichten löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/<id> des TI-Flow-Fachdienstes mit
 * Communication-ID in URL <id>
@@ -55,7 +55,7 @@ ausführen.
 ##### Verordnung zuweisen
 
 funkt. Eignung: HerstellererklärungDas E-Rezept-FdV KANN im Anwendungsfall "E-Rezept einer abgebenden Institution zuweisen" es dem Nutzer ermöglichen, für E-Rezepte mit dem Flowtype 162 einen Kostenträger zum Zuweisen einer DiGA auszuwählen.
-Die Auswahl kann mit dem Anwendungsfall “Kostenträger suchen” erfolgen.
+Die Auswahl kann mit dem Anwendungsfall "Kostenträger suchen" erfolgen.
 
 Beim Zuweisen einer DiGA-Verordnung ist keine freie Textnachricht vorgesehen, um eine maschinelle Verarbeitung zur Bereitstellung des Freischaltcodes zu ermöglichen.
 

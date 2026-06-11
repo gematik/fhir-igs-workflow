@@ -27,7 +27,7 @@ funkt. Eignung: HerstellererklärungDas E-Rezept-FdV SOLL im Anwendungsfall "Kos
 * HealthcareServices, deren Organisation einen Identifier vom Typ "Telematik-ID" haben
 * Einbeziehen der Organisation in das Rückgabeergebnis
 
-Als Antwort erhält das E-Rezept-FdV ein Suchset mit mindestens 2 Ressourcen: eine oder mehrere HealthcareServices und genau eine Organization Ressource. Die Organization Ressource enthält dann einen identifier mit identifier.type == “PRN”. Dieser Identifier enthält die Telematik-ID unter identifier.value.
+Als Antwort erhält das E-Rezept-FdV ein Suchset mit mindestens 2 Ressourcen: eine oder mehrere HealthcareServices und genau eine Organization Ressource. Die Organization Ressource enthält dann einen identifier mit identifier.type == "PRN". Dieser Identifier enthält die Telematik-ID unter identifier.value.
 
 Falls das E-Rezept-FdV nicht in der Lage ist die IKNR oder die Telematik-ID des Kostenträgers des Nutzers zu ermitteln, soll der Nutzer die Möglichkeit haben den Kostenträger manuell zu auszuwählen.
 

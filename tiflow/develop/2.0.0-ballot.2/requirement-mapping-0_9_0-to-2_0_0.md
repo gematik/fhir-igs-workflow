@@ -316,7 +316,7 @@ Hinweis: Links auf neue Anforderungen verwenden die konfigurierten IG-Basis-URLs
 
 | | |
 | :--- | :--- |
-| [A_23333](https://gemspec.gematik.de/search/index.html?A_23333) | E-Rezept - Übergangszeit Packages “kbv.ita.erp 1.0.2” |
+| [A_23333](https://gemspec.gematik.de/search/index.html?A_23333) | E-Rezept - Übergangszeit Packages "kbv.ita.erp 1.0.2" |
 
 ### gemSpec_eRp_FdV
 

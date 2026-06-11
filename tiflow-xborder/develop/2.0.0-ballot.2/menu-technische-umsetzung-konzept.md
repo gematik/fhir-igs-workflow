@@ -36,7 +36,7 @@ Für die im Rahmen des Einlösens im europäischen Ausland vorgegebenen Prozesss
 
 **Tabelle: **Statusübergänge EU Mapping
 
-Sobald ein E-Rezept durch eine LE-EU mit dem Anwendungsfall “Abruf der abzugebenden E-Rezepten des Versicherten” abgerufen wurde, kann es nicht mehr erneut abgerufen werden oder in einer anderen Apotheke eingelöst werden.
+Sobald ein E-Rezept durch eine LE-EU mit dem Anwendungsfall "Abruf der abzugebenden E-Rezepten des Versicherten" abgerufen wurde, kann es nicht mehr erneut abgerufen werden oder in einer anderen Apotheke eingelöst werden.
 
 ### Zugriffsberechtigung eines Versicherten für das Einlösen von E-Rezepten im europäischen Ausland
 
