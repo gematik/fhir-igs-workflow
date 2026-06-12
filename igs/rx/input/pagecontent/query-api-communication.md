@@ -65,10 +65,10 @@ Als Apotheke oder Kostenträger möchten wir alle Nachrichten des Monats April 2
 	</div>
 	<div id="Response-Examples">
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Bundle/example-searchset-communication JSON %}
+			{% fragment Bundle/ExampleRxCommunicationSearchset JSON %}
 		</div>
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/example-searchset-communication XML %}
+			{% fragment Bundle/ExampleRxCommunicationSearchset XML %}
 		</div>
 	</div>
 </div>

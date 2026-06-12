@@ -3,9 +3,9 @@ RuleSet: GlobalQueryErrorCodes
 
 * rest.resource[=].interaction[=] insert InvalidRequest
 
-* rest.resource[=].interaction[=] insert RequestTimeout
+* rest.resource[=].interaction[=] insert TiflowTimeout
 
-* rest.resource[=].interaction[=] insert InternalServerError
+* rest.resource[=].interaction[=] insert TiflowInternalError
 
 // Query-API Interactions
 RuleSet: ReadInteractionStatusCodes
@@ -46,10 +46,6 @@ RuleSet: SearchTypeInteractionStatusCodes
 RuleSet: GlobalOperationErrorCodes
 
 * insert InvalidRequest
-
-* insert RequestTimeout
-
-* insert InternalServerError
 
 * insert TiflowInternalError
 
