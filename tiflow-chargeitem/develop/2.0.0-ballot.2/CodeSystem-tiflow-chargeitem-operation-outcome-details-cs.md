@@ -35,7 +35,7 @@ Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den Oper
   "name" : "TIFLOWChargeItemOperationOutcomeDetailsCS",
   "title" : "TIFLOW ChargeItem Operation Outcome Details CS",
   "status" : "draft",
-  "date" : "2026-06-12T05:53:24+00:00",
+  "date" : "2026-06-12T06:40:03+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
