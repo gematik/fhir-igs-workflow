@@ -8,8 +8,8 @@ to show which fields were mapped and which were not.
 
 import json
 import sys
-import shutil
 import re
+import shutil
 from functools import lru_cache
 from pathlib import Path
 from typing import Dict, Any, List, Set, Tuple, Optional
@@ -79,66 +79,6 @@ def get_resource_paths(resource: Dict[str, Any], prefix: str = '') -> Set[str]:
     return paths
 
 
-def copy_artifacts_to_includes(test_output_dir: Path, test_case_name: str, includes_dir: Path) -> Dict[str, Any]:
-    """
-    Copy test artifacts to the includes directory with proper naming.
-    
-    Args:
-        test_output_dir: Test output directory containing the artifacts
-        test_case_name: Name of the test case (e.g., 'example-case-01')
-        includes_dir: Target includes directory
-    
-    Returns:
-        Dictionary mapping artifact type to copied filename
-    """
-    artifacts = {}
-    
-    # Define source files
-    mapping_bundle_src = test_output_dir / f"{test_case_name}-mapping-bundle.json"
-    digitaler_durchschlag_src = test_output_dir / f"{test_case_name}-digitaler-durchschlag.json"
-
-    # Determine content directory for downloadable artifacts
-    content_dir = includes_dir.parent / "content" / "test-examples"
-    content_dir.mkdir(parents=True, exist_ok=True)
-
-    # Helper to copy file and return display/link info
-    def copy_to_content(src: Path, target_name: str) -> Optional[Dict[str, str]]:
-        if not src.exists():
-            return None
-        target_path = content_dir / target_name
-        shutil.copy2(src, target_path)
-        rel_path = f"test-examples/{target_name}"
-        return {"display": target_name, "link": rel_path}
-
-    # Copy generated files if they exist
-    if mapping_bundle_src.exists():
-        entry = copy_to_content(mapping_bundle_src, f"{test_case_name}-mapping-bundle.json")
-        if entry:
-            artifacts['mapping_bundle'] = entry
-            print(f"📄 Copied mapping bundle: {entry['display']}")
-    
-    if digitaler_durchschlag_src.exists():
-        entry = copy_to_content(digitaler_durchschlag_src, f"{test_case_name}-digitaler-durchschlag.json")
-        if entry:
-            artifacts['digitaler_durchschlag'] = entry
-            print(f"📄 Copied digitaler durchschlag: {entry['display']}")
-    
-    # Copy source XML files from test case directory
-    test_case_dir = Path(str(test_output_dir).replace('/output/', '/test-cases/'))
-    if test_case_dir.exists():
-        xml_files = list(test_case_dir.glob('*.xml'))
-        artifacts['source_files'] = []
-        
-        for xml_file in xml_files:
-            target_name = f"{test_case_name}-{xml_file.name}"
-            entry = copy_to_content(xml_file, target_name)
-            if entry:
-                artifacts['source_files'].append(entry)
-                print(f"📄 Copied source XML: {entry['display']}")
-    
-    return artifacts
-
-
 def get_german_use_case_description(test_case_name: str) -> str:
     """
     Get German description for the test case.
@@ -197,6 +137,27 @@ def create_enhanced_summary_section(test_case_name: str, artifacts: Dict[str, st
         lines.append("")
     
     return lines
+
+
+def copy_result_artifact_to_content(test_output_dir: Path, test_case_name: str, includes_dir: Path) -> Dict[str, Dict[str, str]]:
+    """Copy the generated Parameters result file into input/content/test-examples."""
+    result_src = test_output_dir / f"Parameters-{test_case_name}-digitaler-durchschlag.json"
+    if not result_src.exists():
+        return {}
+
+    content_dir = includes_dir.parent / "content" / "test-examples"
+    content_dir.mkdir(parents=True, exist_ok=True)
+
+    target_name = result_src.name
+    target_path = content_dir / target_name
+    shutil.copy2(result_src, target_path)
+
+    return {
+        'digitaler_durchschlag': {
+            'display': target_name,
+            'link': f"test-examples/{target_name}",
+        }
+    }
 
 
 def normalize_path(path: str) -> str:
@@ -902,7 +863,9 @@ def generate_markdown_report(test_case_dir: Path, output_file: Path) -> None:
         mapping_bundle = json.load(f)
     
     # Load target digitaler durchschlag
-    dd_path = test_case_dir / f"{test_case_name}-digitaler-durchschlag.json"
+    dd_path = test_case_dir / f"Parameters-{test_case_name}-digitaler-durchschlag.json"
+    if not dd_path.exists():
+        dd_path = test_case_dir / f"{test_case_name}-digitaler-durchschlag.json"
     if not dd_path.exists():
         print(f"❌ Digitaler Durchschlag not found: {dd_path}")
         sys.exit(1)
@@ -915,11 +878,9 @@ def generate_markdown_report(test_case_dir: Path, output_file: Path) -> None:
     target_resources = extract_resources_from_parameters(digitaler_durchschlag)
     alias_map = load_extension_alias_map()
     
-    # Copy artifacts to includes directory (if output file is in includes)
     artifacts = {}
     if 'input/includes' in str(output_file):
-        includes_dir = output_file.parent
-        artifacts = copy_artifacts_to_includes(test_case_dir, test_case_name, includes_dir)
+        artifacts = copy_result_artifact_to_content(test_case_dir, test_case_name, output_file.parent)
     
     # Generate report
     md = []

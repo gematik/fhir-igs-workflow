@@ -63,6 +63,10 @@ RuleSet: GlobalOperationErrorCodes
 
 * insert InternalServerError
 
+* insert TiflowInternalError
+
+* insert TiflowTimeout
+
 RuleSet: InstanceOperationStatusCodes
 * insert ResourceIsNotKnown
 * insert ResourceWasDeleted

@@ -1,7 +1,7 @@
 Instance: Read-EU-Access-Permission
 InstanceOf: OperationDefinition
 Usage: #definition
-* insert Operation(Read_Access_Permission)
+* insert Operation(Read-EU-Access-Permission)
 * description = "This operation reads the currenty in the E-Rezept-Fachdienst registered Access Code for redeeming ePrescriptions in an EU country."
 * code = #read-eu-access-permission
 * system = true

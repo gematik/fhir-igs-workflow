@@ -1,5 +1,5 @@
 RuleSet: CodeSystem(name)
-* ^url = "https://gematik.de/fhir/erp-eu/CodeSystem/{name}"
+* ^url = "https://gematik.de/fhir/tiflow-xborder/CodeSystem/{name}"
 * insert Versioning
 * ^publisher = "gematik GmbH"
 * ^contact.telecom.system = #url

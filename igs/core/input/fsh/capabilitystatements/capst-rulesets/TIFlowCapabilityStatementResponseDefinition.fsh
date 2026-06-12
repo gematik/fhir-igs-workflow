@@ -1,8 +1,8 @@
 // Errors for all Resource Endpoints
 RuleSet: GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert InvalidRequest
-* rest.resource[=].interaction[=] insert RequestTimeout
-* rest.resource[=].interaction[=] insert InternalServerError
+* rest.resource[=].interaction[=] insert TiflowInternalError
+* rest.resource[=].interaction[=] insert TiflowTimeout
 
 // Query-API Interactions
 RuleSet: ReadInteractionStatusCodes
@@ -115,6 +115,10 @@ RuleSet: GlobalOperationErrorCodes
 * insert RequestTimeout
 
 * insert InternalServerError
+
+* insert TiflowInternalError
+
+* insert TiflowTimeout
 
 RuleSet: InstanceOperationStatusCodes
 * insert ResourceIsNotKnown

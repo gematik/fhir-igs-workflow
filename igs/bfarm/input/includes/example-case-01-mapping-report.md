@@ -6,13 +6,7 @@
 **Anwendungsfall:** Verschreibung und Abgabe eines PZN-Medikaments (Pomalidomid) mit spezifischer Dosierung und Transformation in einen digitalen Durchschlag.
 
 **Beispiel-Artefakte:**
-- **Quell-Dateien:**
-  - [`example-case-01-KBV_Bundle.xml`](test-examples/example-case-01-KBV_Bundle.xml)
-  - [`example-case-01-MedicationDispense_Parameters.xml`](test-examples/example-case-01-MedicationDispense_Parameters.xml)
-  - [`example-case-01-Task.xml`](test-examples/example-case-01-Task.xml)
-  - [`example-case-01-VZDSearchSet.xml`](test-examples/example-case-01-VZDSearchSet.xml)
-- **Mapping Bundle (generiert):** [`example-case-01-mapping-bundle.json`](test-examples/example-case-01-mapping-bundle.json)
-- **Digitaler Durchschlag (Ergebnis):** [`example-case-01-digitaler-durchschlag.json`](test-examples/example-case-01-digitaler-durchschlag.json)
+- **Digitaler Durchschlag (Ergebnis):** [`Parameters-example-case-01-digitaler-durchschlag.json`](test-examples/Parameters-example-case-01-digitaler-durchschlag.json)
 
 
 ## Resource Mapping Details

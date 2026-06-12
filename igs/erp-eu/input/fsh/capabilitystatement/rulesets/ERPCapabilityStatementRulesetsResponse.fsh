@@ -47,13 +47,6 @@ RuleSet: UnknownResourceType
   * extension[responseType].valueString = "EPAMSOperationOutcome"
   * extension[errorCode].valueString = "MSG_UNKNOWN_TYPE"
 
-RuleSet: RequestTimeout
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "408"
-  * extension[description].valueString = "Request timeout"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
-  * extension[errorCode].valueString = "MSG_TIMEOUT"
-
 RuleSet: Conflict
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "409"
@@ -74,13 +67,6 @@ RuleSet: ResourceWasDeleted
   * extension[description].valueString = "Resource was deleted"
   * extension[responseType].valueString = "EPAMSOperationOutcome"
   * extension[errorCode].valueString = "MSG_DELETED"
-
-RuleSet: InternalServerError
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "500"
-  * extension[description].valueString = "Internal server error"
-  * extension[responseType].valueString = "EPAMSOperationOutcome"
-  * extension[errorCode].valueString = "MSG_INTERNAL_ERROR"
 
 RuleSet: SvcValidationFailed
 * extension[responseInfo][+]
@@ -145,3 +131,17 @@ RuleSet: TiflowConsentMissing
   * extension[description].valueString = "Consent missing"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_CONSENT_MISSING"
+
+RuleSet: TiflowInternalError
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "500"
+  * extension[description].valueString = "Internal Server Error"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_INTERNAL_ERROR"
+
+RuleSet: TiflowTimeout
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "408"
+  * extension[description].valueString = "Timeout"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_TIMEOUT"

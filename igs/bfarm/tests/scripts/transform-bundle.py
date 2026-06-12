@@ -236,7 +236,7 @@ def main():
         test_case_name = bundle_name
     
     # Create output file path with naming convention
-    output_file = output_dir / f"{test_case_name}-digitaler-durchschlag.json"
+    output_file = output_dir / f"Parameters-{test_case_name}-digitaler-durchschlag.json"
     
     # Find HAPI validator
     hapi_jar_path = resolve_hapi_jar()

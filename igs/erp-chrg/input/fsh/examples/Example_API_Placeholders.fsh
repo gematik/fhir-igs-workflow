@@ -38,6 +38,6 @@ Description: "Example response for GET /Consent"
 * total = 1
 * link[+].relation = "self"
 * link[=].url = "https://erp-ref.example.org/Consent?category=CHARGCONS"
-* entry[+].fullUrl = "https://erp-ref.example.org/Consent/ChargeItemConsent-Response"
+* entry[+].fullUrl = "https://erp-ref.example.org/Consent/0dcc5d4c-bf24-4c06-b02e-be5bc24587e2"
 * entry[=].resource = ChargeItemConsent-Response
 * entry[=].search.mode = #match

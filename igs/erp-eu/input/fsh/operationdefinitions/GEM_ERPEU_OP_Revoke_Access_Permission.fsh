@@ -1,7 +1,7 @@
 Instance: Revoke-EU-Access-Permission
 InstanceOf: OperationDefinition
 Usage: #definition
-* insert Operation(Revoke_Access_Permission)
+* insert Operation(Revoke-EU-Access-Permission)
 * description = "This operation revokes the currently registered access code for redeeming prescriptions in an EU country."
 * code = #revoke-eu-access-permission
 * system = true
