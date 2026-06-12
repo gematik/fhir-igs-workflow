@@ -178,38 +178,81 @@ def run_hapi_transform(
         "de.gematik.epa.medication",
     ]
     
-    # Build the command with modern HAPI 6.8+ syntax: transform URL input_file ...
-    cmd = [
+    # Build argument tail shared by modern and legacy syntax variants.
+    shared_args = [
+        "-version",
+        fhir_version,
+        "-output",
+        str(output_file),
+    ]
+
+    for ig_path in ig_paths:
+        shared_args.extend(["-ig", ig_path])
+
+    modern_cmd = [
         "java",
         "-jar",
         str(hapi_jar_path),
         "transform",
         transform_url,
         str(input_bundle),
-        "-version",
-        fhir_version,
-        "-output",
-        str(output_file)
+        *shared_args,
     ]
-    
-    # Add all IG dependencies
-    for ig_path in ig_paths:
-        cmd.extend(["-ig", ig_path])
+
+    legacy_cmd = [
+        "java",
+        "-jar",
+        str(hapi_jar_path),
+        str(input_bundle),
+        "-transform",
+        transform_url,
+        *shared_args,
+    ]
     
     print("🚀 Running HAPI FHIR transformation...")
     print(f"   Input: {input_bundle}")
     print(f"   Output: {output_file}")
     print(f"   Transform: {transform_url}\n")
     
-    # Run the command
+    # Try modern syntax first, then retry with legacy syntax for older validators.
     result = subprocess.run(
-        cmd,
+        modern_cmd,
         capture_output=True,
         text=True,
         cwd=str(project_root)
     )
-    
-    return result.returncode, result.stdout, result.stderr
+
+    if result.returncode == 0:
+        return result.returncode, result.stdout, result.stderr
+
+    print(
+        "⚠ Modern transform syntax failed. "
+        "Retrying with legacy '-transform' syntax..."
+    )
+
+    legacy_result = subprocess.run(
+        legacy_cmd,
+        capture_output=True,
+        text=True,
+        cwd=str(project_root)
+    )
+
+    if legacy_result.returncode == 0:
+        combined_stdout = "\n".join(
+            text for text in [result.stdout, legacy_result.stdout] if text
+        )
+        combined_stderr = "\n".join(
+            text for text in [result.stderr, legacy_result.stderr] if text
+        )
+        return legacy_result.returncode, combined_stdout, combined_stderr
+
+    combined_stdout = "\n".join(
+        text for text in [result.stdout, legacy_result.stdout] if text
+    )
+    combined_stderr = "\n".join(
+        text for text in [result.stderr, legacy_result.stderr] if text
+    )
+    return legacy_result.returncode, combined_stdout, combined_stderr
 
 
 def main():
