@@ -31,9 +31,9 @@ Profile: [GEM_ERPCHRG_PR_ChargeItem](StructureDefinition-GEM-ERPCHRG-PR-ChargeIt
 
 **supportingInformation**: 
 
-* [http://fhir.abda.de/eRezeptAbgabedaten/StructureDefinition/DAV-PKV-PR-ERP-AbgabedatenBundle](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Bundle/72bd741c-7ad8-41d8-97c3-9aabbdd0f5b4)
-* [https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Bundle/200.000.000.000.000.01)
-* [https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Bundle/0428d416-149e-48a4-977c-394887b3d85c)
+* [http://fhir.abda.de/eRezeptAbgabedaten/StructureDefinition/DAV-PKV-PR-ERP-AbgabedatenBundle](Bundle-72bd741c-7ad8-41d8-97c3-9aabbdd0f5b4.md)
+* [https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle](Bundle-200.000.000.000.000.01.md)
+* [https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle](Bundle-0428d416-149e-48a4-977c-394887b3d85c.md)
 
 
 

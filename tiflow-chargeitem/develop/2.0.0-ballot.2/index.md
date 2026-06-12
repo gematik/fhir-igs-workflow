@@ -54,8 +54,6 @@ Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und Schnittst
 
 
 
-
-
 ### Kontakt und Feedback
 
 Für Fragen und Feedback wenden Sie sich bitte an [erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de).
@@ -138,7 +136,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     "id" : "de_gematik_ti",
     "uri" : "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
     "packageId" : "de.gematik.ti",
-    "version" : "1.2.0"
+    "version" : "1.3.1"
   }],
   "definition" : {
     "extension" : [{
@@ -933,6 +931,17 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         "valueString" : "ChargeItem"
       }],
       "reference" : {
+        "reference" : "ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8"
+      },
+      "name" : "ChargeItem target for Communication basedOn example",
+      "exampleCanonical" : "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_ChargeItem"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ChargeItem"
+      }],
+      "reference" : {
         "reference" : "ChargeItem/ChargeItem-GET-Completed"
       },
       "name" : "ChargeItem with Bundles completed by Fachdienst",
@@ -1107,6 +1116,39 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       },
       "name" : "GEM_ERPCHRG_PR_Consent",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/72bd741c-7ad8-41d8-97c3-9aabbdd0f5b4"
+      },
+      "name" : "Placeholder bundle for DAV-PKV dispense item",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/0428d416-149e-48a4-977c-394887b3d85c"
+      },
+      "name" : "Placeholder bundle for KBV prescription item",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/200.000.000.000.000.01"
+      },
+      "name" : "Placeholder bundle for receipt",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{

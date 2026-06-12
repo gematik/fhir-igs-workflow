@@ -15,6 +15,12 @@ Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen dieses 
 
 **Bundle**
 
+* [Placeholder bundle for KBV prescription item](Bundle-0428d416-149e-48a4-977c-394887b3d85c.md)
+
+* [Placeholder bundle for receipt](Bundle-200.000.000.000.000.01.md)
+
+* [Placeholder bundle for DAV-PKV dispense item](Bundle-72bd741c-7ad8-41d8-97c3-9aabbdd0f5b4.md)
+
 * [ChargeItem searchset response for ERP-CHRG](Bundle-ExampleERPCHRGChargeItemSearchset.md)
 
 * [Communication searchset response for ERP-CHRG](Bundle-ExampleERPCHRGCommunicationSearchset.md)
@@ -26,6 +32,8 @@ Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen dieses 
 * [ChargeItem with Bundles completed by Fachdienst](ChargeItem-ChargeItem-GET-Completed.md)
 
 * [ChargeItem with contained Binary to Fachdienst](ChargeItem-ChargeItem-POST-Binary.md)
+
+* [ChargeItem target for Communication basedOn example](ChargeItem-a51520ec-0899-404f-bb97-fe7d461f90a8.md)
 
 **Communication**
 

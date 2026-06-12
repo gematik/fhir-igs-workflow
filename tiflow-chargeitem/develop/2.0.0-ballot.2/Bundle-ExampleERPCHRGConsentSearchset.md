@@ -25,7 +25,7 @@ Version 2.0.0-ballot.2 - ci-build
     "url" : "https://erp-ref.example.org/Consent?category=CHARGCONS"
   }],
   "entry" : [{
-    "fullUrl" : "https://erp-ref.example.org/Consent/ChargeItemConsent-Response",
+    "fullUrl" : "https://erp-ref.example.org/Consent/0dcc5d4c-bf24-4c06-b02e-be5bc24587e2",
     "resource" : {
       "resourceType" : "Consent",
       "id" : "0dcc5d4c-bf24-4c06-b02e-be5bc24587e2",

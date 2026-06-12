@@ -156,7 +156,6 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
     },
     {
       "system" : "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes",
-      "version" : "1.3.0",
       "concept" : [{
         "code" : "SVC_IDENTITY_MISMATCH",
         "display" : "Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)"

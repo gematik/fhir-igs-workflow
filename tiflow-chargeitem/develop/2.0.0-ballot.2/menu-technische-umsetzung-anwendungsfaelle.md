@@ -125,7 +125,7 @@ umsetzen.
   * Der Versicherte ruft die Abrechnungsinformationen aus dem TI-Flow-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: * Daten stehen im FdV zur Anzeige und zum Export bereit; Abruf ist protokolliert.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Der Versicherte ruft die Abrechnungsinformationen aus dem TI-Flow-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: * [Abrechnungsinformation abrufen](./query-api-chargeitem.md#get-chargeitem-liste)
+  * Der Versicherte ruft die Abrechnungsinformationen aus dem TI-Flow-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.: * [Abrechnungsinformation abrufen](./query-api-chargeitem.md#nachricht)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte ruft die Abrechnungsinformationen aus dem TI-Flow-Fachdienst ab und kann sie anzeigen, exportieren oder weiterleiten.:  VERSICHERTER 
@@ -148,7 +148,7 @@ umsetzen.
   * Der Versicherte gibt die Abrechnungsinformation aus dem E-Rezept-FdV heraus an eine Ziel-App weiter (z. B. Service-App der Krankenversicherung, Service-App der Beihilfe) oder exportiert sie als PDF/A.: * Die Abrechnungsinformation ist in der Ziel-App übertragen.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Der Versicherte gibt die Abrechnungsinformation aus dem E-Rezept-FdV heraus an eine Ziel-App weiter (z. B. Service-App der Krankenversicherung, Service-App der Beihilfe) oder exportiert sie als PDF/A.: * [Abrechnungsinformation weitergeben](./menu-technische-umsetzung-verarbeitungsregeln.md#abrechnungsinformationen-exportieren)
+  * Der Versicherte gibt die Abrechnungsinformation aus dem E-Rezept-FdV heraus an eine Ziel-App weiter (z. B. Service-App der Krankenversicherung, Service-App der Beihilfe) oder exportiert sie als PDF/A.: * [Abrechnungsinformation weitergeben](./menu-technische-umsetzung-verarbeitungsregeln.md#abrechnungsinformation-exportieren)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte gibt die Abrechnungsinformation aus dem E-Rezept-FdV heraus an eine Ziel-App weiter (z. B. Service-App der Krankenversicherung, Service-App der Beihilfe) oder exportiert sie als PDF/A.:  VERSICHERTER 
@@ -172,7 +172,7 @@ umsetzen.
   * Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der TI-Flow-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * Die Information zur Markierung ist im TI-Flow-Fachdienst gespeichert. Der Datenzugriff ist im TI-Flow-Fachdienst protokolliert.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der TI-Flow-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * [Abrechnungsinformation markieren](./menu-technische-umsetzung-verarbeitungsregeln.md#abrechnungsinformationen-markieren)
+  * Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der TI-Flow-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.: * [Abrechnungsinformation markieren](./query-api-chargeitem.md#nachricht)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte markiert die Abrechnungsinformation im E-Rezept-FdV, um sie für bestimmte Aktionen zu kennzeichnen. Der TI-Flow-Fachdienst speichert die Markierung und stellt sie bei Abruf der Abrechnungsinformation bereit.:  VERSICHERTER 
@@ -197,7 +197,7 @@ umsetzen.
   * Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der TI-Flow-Fachdienst löscht die Abrechnungsinformation: * Die Abrechnungsinformation sind auf dem TI-Flow-Fachdienst gelöscht. Das Löschen ist im TI-Flow-Fachdienst protokolliert.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der TI-Flow-Fachdienst löscht die Abrechnungsinformation: * [Abrechnungsinformation löschen](./menu-technische-umsetzung-verarbeitungsregeln.md#abrechnungsinformationen-löschen)
+  * Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der TI-Flow-Fachdienst löscht die Abrechnungsinformation: * [Abrechnungsinformation löschen](./query-api-chargeitem.md#nachricht)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Ein Versicherter wählt im E-Rezept-FdV die zu löschende Abrechnungsinformation aus und bestätigt das Löschen. Das FdV überträgt den Lösch-Request. Der TI-Flow-Fachdienst löscht die Abrechnungsinformation:  VERSICHERTER 
@@ -220,7 +220,7 @@ umsetzen.
   * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen. Die Übermittlung erfolgt gemäß dem Anwendungsfall "UC 3.3 - Nachricht durch Versicherten übermitteln".: * Das AVS nutzt den AccessCode für Abruf/Änderung der Abrechnungsinformation.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen. Die Übermittlung erfolgt gemäß dem Anwendungsfall "UC 3.3 - Nachricht durch Versicherten übermitteln".: * [Nachricht an Apotheke übermitteln](./query-api-communication.md#abrechnungsinformationen-löschen)
+  * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen. Die Übermittlung erfolgt gemäß dem Anwendungsfall "UC 3.3 - Nachricht durch Versicherten übermitteln".: * [Nachricht an Apotheke übermitteln](./query-api-communication.md#nachricht)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Der Versicherte übermittelt der abgebenden LEI einen AccessCode, um die Apotheke zum Abruf und einmaligen Ändern zu berechtigen. Die Übermittlung erfolgt gemäß dem Anwendungsfall "UC 3.3 - Nachricht durch Versicherten übermitteln".:  VERSICHERTER 
@@ -253,7 +253,7 @@ umsetzen.
 * Das Einstellen der Abrechnungsinformation ist im TI-Flow-Fachdienst protokolliert.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den TI-Flow-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.: * [Abrechnungsinformation bereitstellen](./query-api-chargeitem.md#post-chargeitem-bereitstellen)
+  * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den TI-Flow-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.: * [Abrechnungsinformation bereitstellen](./query-api-chargeitem.md#nachricht)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Mit der Belieferung des E-Rezepts übermittelt die abgebende LEI den PKV-Abgabedatensatz an den TI-Flow-Fachdienst und stellt damit die Abrechnungsinformation digital bereit. Voraussetzung ist die Einwilligung des Versicherten zum Speichern der Abrechnungsinformationen.:  APOTHEKER 
@@ -279,7 +279,7 @@ umsetzen.
 * Der Datenzugriff ist im TI-Flow-Fachdienst protokolliert.
 
 * Beschreibung: Schnittstelle des E-Rezept-Fachdienst
-  * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.: * [Abrechnungsinformation abrufen](./query-api-chargeitem.md#get-chargeitemid-details)
+  * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.: * [Abrechnungsinformation abrufen](./query-api-chargeitem.md#nachricht)
 
 * Beschreibung: Relevante(r) Sektor(en)
   * Die Apotheke ruft eine zuvor von ihr bereitgestellte Abrechnungsinformation ab, wenn sie die Daten im Primärsystem nicht mehr vorliegen hat und der AccessCode bekannt ist.:  APOTHEKER 

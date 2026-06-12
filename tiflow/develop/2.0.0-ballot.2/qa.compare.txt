@@ -1,7 +1,7 @@
 gemIG_TIFlow_core : Validation Results
 =========================================
 
-err = 40, warn = 48, info = 25
+err = 36, warn = 48, info = 25
 $--
 Generated $--. FHIR version $-- for de.gematik.tiflow#$-- (canonical = https://gematik.de/fhir/tiflow)
  Build Errors : 0 / 3 / 1
@@ -13,7 +13,7 @@ Generated $--. FHIR version $-- for de.gematik.tiflow#$-- (canonical = https://g
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/CodeSystem-ti-fhir-configuration-cs : 0 / 0 / 2
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/CodeSystem-ti-flowtypes-codes : 2 / 0 / 2
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/CodeSystem-tiflow-operation-outcome-details-cs : 0 / 0 / 2
- /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/ConceptMap-TIFLOW-CM-TelemetryDataStatusCodes : 2 / 26 / 2
+ /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/ConceptMap-TIFLOW-CM-TelemetryDataStatusCodes : 0 / 26 / 2
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/ImplementationGuide-de.gematik.tiflow : 0 / 3 / 2
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/SearchParameter-TaskAcceptDateSP : 0 / 0 / 2
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/SearchParameter-TaskExpiryDateSP : 0 / 0 / 2
@@ -45,7 +45,7 @@ Generated $--. FHIR version $-- for de.gematik.tiflow#$-- (canonical = https://g
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/ValueSet-ti-environment-vs : 0 / 0 / 2
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/ValueSet-ti-fhir-configuration-vs : 0 / 1 / 2
  /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/ValueSet-ti-flowtypes-vs : 2 / 0 / 2
- /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/ValueSet-tiflow-operation-outcome-details-vs : 2 / 0 / 4
+ /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-generated/resources/ValueSet-tiflow-operation-outcome-details-vs : 0 / 0 / 4
 </table>
 == n/a ==
 INFORMATION: op-activate-req-fd.html: No conformance term found in the text: 
@@ -122,8 +122,6 @@ WARNING: ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes: ConceptMap.group[4].targ
 WARNING: ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes: ConceptMap.group[5].target: Unbekanntes Zielcodesystem ti-flow-telemetriedaten-statuscodes, daher können die Zielcodes nicht überprüft werden
 WARNING: ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes: ConceptMap.group[6]: There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/operation-outcome'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '4.0.1', found versions: 2.0.0 (from hl7.fhir.uv.xver-r5.r4#0.1.0), 4.0.0 (from hl7.terminology.r4#7.1.0). Suggested fix: change the canonical reference from 'http://terminology.hl7.org/CodeSystem/operation-outcome' to 'http://terminology.hl7.org/CodeSystem/operation-outcome|4.0.1'
 WARNING: ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes: ConceptMap.group[6].target: Unbekanntes Zielcodesystem ti-flow-telemetriedaten-statuscodes, daher können die Zielcodes nicht überprüft werden
-ERROR: ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes: ConceptMap.group[6].element[6].code: Der Quell-Code 'MSG_INTERNAL_ERROR' ist im Codesystem http://terminology.hl7.org/CodeSystem/operation-outcome|4.0.1 nicht gültig
-ERROR: ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes: ConceptMap.group[6].element[8].code: Der Quell-Code 'MSG_TIMEOUT' ist im Codesystem http://terminology.hl7.org/CodeSystem/operation-outcome|4.0.1 nicht gültig
 WARNING: ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes: ConceptMap: Das ShareableConceptMap-Profil empfiehlt, dass das Element name befüllt wird, aber es ist nicht vorhanden. Veröffentlichte Concept Maps SOLLTEN mit dem ShareableConceptMap-Profil übereinstimmen
 == fsh-generated/resources/ImplementationGuide-de.gematik.tiflow.json ==
 INFORMATION: ImplementationGuide/de.gematik.tiflow: ImplementationGuide.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display
@@ -217,6 +215,4 @@ ERROR: /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/fsh-genera
 == fsh-generated/resources/ValueSet-tiflow-operation-outcome-details-vs.json ==
 INFORMATION: ValueSet.compose.include[2]: Pinned the version of http://terminology.hl7.org/CodeSystem/operation-outcome to 4.0.1 from choices of 2.0.0 (hl7.fhir.uv.xver-r5.r4#0.1.0), 4.0.0 (hl7.terminology.r4#7.1.0)
 INFORMATION: ValueSet/tiflow-operation-outcome-details-vs: ValueSet.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is the default language display
-ERROR: ValueSet/tiflow-operation-outcome-details-vs: ValueSet.compose.include[2].concept[4]: Der Code MSG_TIMEOUT ist im System http://terminology.hl7.org/CodeSystem/operation-outcome Version 4.0.1 nicht gültig
-ERROR: ValueSet/tiflow-operation-outcome-details-vs: ValueSet.compose.include[2].concept[5]: Der Code MSG_INTERNAL_ERROR ist im System http://terminology.hl7.org/CodeSystem/operation-outcome Version 4.0.1 nicht gültig
 INFORMATION: ValueSet/tiflow-operation-outcome-details-vs: ValueSet.compose.include[2]: This include has some concepts with displays and some without - check that this is what is intended

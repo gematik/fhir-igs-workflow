@@ -27,7 +27,7 @@ This extension may be used on the following element(s):
 **Usages:**
 
 * Use this Extension: [GEM_ERPCHRG_PR_ChargeItem](StructureDefinition-GEM-ERPCHRG-PR-ChargeItem.md)
-* Examples for this Extension: [Bundle/ExampleERPCHRGChargeItemSearchset](Bundle-ExampleERPCHRGChargeItemSearchset.md) and [ChargeItem/ChargeItem-GET-Completed](ChargeItem-ChargeItem-GET-Completed.md)
+* Examples for this Extension: [Bundle/ExampleERPCHRGChargeItemSearchset](Bundle-ExampleERPCHRGChargeItemSearchset.md), [ChargeItem/ChargeItem-GET-Completed](ChargeItem-ChargeItem-GET-Completed.md) and [ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8](ChargeItem-a51520ec-0899-404f-bb97-fe7d461f90a8.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow.chargeitem|current/StructureDefinition/StructureDefinition-GEM-ERPCHRG-EX-MarkingFlag.json)
 

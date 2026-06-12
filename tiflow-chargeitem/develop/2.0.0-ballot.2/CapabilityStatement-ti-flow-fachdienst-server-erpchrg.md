@@ -85,6 +85,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
       }],
       "interaction" : [{
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -101,8 +105,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
           }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -214,6 +217,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -230,8 +237,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
           }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -406,6 +412,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
       }],
       "interaction" : [{
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -422,8 +432,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
           }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -535,6 +544,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -551,8 +564,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
           }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -697,6 +709,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
       }],
       "interaction" : [{
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -713,8 +729,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
           }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -826,6 +841,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -842,8 +861,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
           }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{

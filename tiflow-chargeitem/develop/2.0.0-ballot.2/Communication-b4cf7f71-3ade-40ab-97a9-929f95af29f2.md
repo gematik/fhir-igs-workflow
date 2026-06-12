@@ -14,7 +14,7 @@ Profile: [Request for Modification on ChargeItem](StructureDefinition-GEM-ERPCHR
 
 Tag: 
 
-**basedOn**: [ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea)
+**basedOn**: [ChargeItem Not Applicable](ChargeItem-a51520ec-0899-404f-bb97-fe7d461f90a8.md)
 
 **status**: Unknown
 
@@ -46,7 +46,7 @@ Tag:
     }]
   },
   "basedOn" : [{
-    "reference" : "ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+    "reference" : "ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8"
   }],
   "status" : "unknown",
   "sent" : "2028-10-01T15:29:00.434+00:00",

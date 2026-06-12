@@ -114,7 +114,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -122,7 +122,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -133,7 +133,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -141,7 +141,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -246,7 +246,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -254,7 +254,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -265,7 +265,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -273,7 +273,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -538,11 +538,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "408"
+            "valueString" : "500"
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -550,18 +550,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "500"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -569,7 +569,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -1052,11 +1052,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "408"
+            "valueString" : "500"
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -1064,18 +1064,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "500"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -1083,7 +1083,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -1281,11 +1281,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "408"
+            "valueString" : "500"
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -1293,18 +1293,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "500"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -1312,7 +1312,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -1453,11 +1453,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "408"
+            "valueString" : "500"
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -1465,18 +1465,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "500"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -1484,7 +1484,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -1701,11 +1701,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "408"
+            "valueString" : "500"
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -1713,18 +1713,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "500"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -1732,7 +1732,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -1911,11 +1911,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "408"
+            "valueString" : "500"
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -1923,18 +1923,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "500"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -1942,7 +1942,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -2102,11 +2102,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "408"
+            "valueString" : "500"
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -2114,18 +2114,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "500"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -2133,7 +2133,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -2193,7 +2193,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -2201,7 +2201,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2212,7 +2212,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -2220,7 +2220,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2325,7 +2325,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -2333,7 +2333,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2344,7 +2344,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -2352,7 +2352,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2457,7 +2457,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -2465,7 +2465,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2476,7 +2476,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -2484,7 +2484,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2551,7 +2551,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -2559,7 +2559,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2570,7 +2570,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -2578,7 +2578,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2766,7 +2766,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -2774,7 +2774,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2785,7 +2785,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -2793,7 +2793,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2898,7 +2898,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -2906,7 +2906,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2917,7 +2917,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -2925,7 +2925,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -3096,7 +3096,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -3104,7 +3104,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -3115,7 +3115,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -3123,7 +3123,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -3228,7 +3228,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -3236,7 +3236,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -3247,7 +3247,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -3255,7 +3255,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },

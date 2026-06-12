@@ -19,7 +19,7 @@ Version 2.0.0-ballot.2 - ci-build
 **Usages:**
 
 * Refer to this Profile: [Reply on change Request on ChargeItem from pharmacy to Patient](StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReply.md) and [Request for Modification on ChargeItem](StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReq.md)
-* Examples for this Profile: [ChargeItem/ChargeItem-GET-Completed](ChargeItem-ChargeItem-GET-Completed.md) and [ChargeItem/ChargeItem-POST-Binary](ChargeItem-ChargeItem-POST-Binary.md)
+* Examples for this Profile: [ChargeItem/ChargeItem-GET-Completed](ChargeItem-ChargeItem-GET-Completed.md), [ChargeItem/ChargeItem-POST-Binary](ChargeItem-ChargeItem-POST-Binary.md) and [ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8](ChargeItem-a51520ec-0899-404f-bb97-fe7d461f90a8.md)
 * CapabilityStatements using this Profile: [ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst](CapabilityStatement-ti-flow-fachdienst-server-erpchrg.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow.chargeitem|current/StructureDefinition/StructureDefinition-GEM-ERPCHRG-PR-ChargeItem.json)

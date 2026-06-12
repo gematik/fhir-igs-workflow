@@ -14,7 +14,7 @@ Profile: [Reply on change Request on ChargeItem from pharmacy to Patient](Struct
 
 Tag: 
 
-**basedOn**: [ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8)
+**basedOn**: [ChargeItem Not Applicable](ChargeItem-a51520ec-0899-404f-bb97-fe7d461f90a8.md)
 
 **status**: Unknown
 
