@@ -13,7 +13,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-06-11 | *Computable Name*:TIFeatureDefinition |
+| Draft as of 2026-06-12 | *Computable Name*:TIFeatureDefinition |
 
  
 Logical Model zur Beschreibung eines aktivierbaren Features. 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-feature-definitio
   "name" : "TIFeatureDefinition",
   "title" : "TI Feature Definition",
   "status" : "draft",
-  "date" : "2026-06-11T21:31:14+00:00",
+  "date" : "2026-06-12T05:42:07+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
