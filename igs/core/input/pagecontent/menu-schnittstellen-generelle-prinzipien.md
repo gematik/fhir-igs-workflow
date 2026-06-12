@@ -357,7 +357,7 @@ Folgende Informationen sind im Header zeta-client-data enthalten. (siehe [client
 </table>
 <div><figcaption><strong>Tabelle: </strong>Attribute zeta-client-data</figcaption></div>
 
-<requirement conformance="SHALL" key="" title="TI-Flow-Fachdienst - Clientsystem-Informationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-438" title="TI-Flow-Fachdienst - Clientsystem-Informationen" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
