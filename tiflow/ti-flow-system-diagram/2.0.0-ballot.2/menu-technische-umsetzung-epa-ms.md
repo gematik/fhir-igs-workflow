@@ -57,7 +57,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei allen Operationsa
 ### ePA-Aktensysteme ermitteln
 
 funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS zur Lokalisierung der ePA-Aktensysteme die durch die im DNS für die übergreifende ePA-Domäne epa4all.de eingestellten Informationen aufrufen.
-Für die Bezeichnung der Ressourcen Records siehe “A_24592-* Anbieter ePA-Aktensystem - Registrierung an übergreifender ePA-Domäne”. Die Informationen zu jedem ePA-Aktensystem enthalten den Endpunkt für den Authorization Service [I_Authorization_Service], Medication Service [I_Medication_Service] und Information Service [I_Information_Service].
+Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktensystem - Registrierung an übergreifender ePA-Domäne". Die Informationen zu jedem ePA-Aktensystem enthalten den Endpunkt für den Authorization Service [I_Authorization_Service], Medication Service [I_Medication_Service] und Information Service [I_Information_Service].
 
 funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst DARF NICHT Lokalisierungsinformationen zu ePA-Aktensystemen verwenden, welche länger als 24h lokal durch den TI-Flow-Fachdienst gecacht wurden.
 ### ePA-Aktensystem für KVNR ermitteln

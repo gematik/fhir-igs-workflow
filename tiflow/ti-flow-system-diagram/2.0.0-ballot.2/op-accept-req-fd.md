@@ -79,7 +79,7 @@ Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Zugriff au
 Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$accept für den referenzierten Task den identifier aus den Nutzerinformationen (Telematik-ID) in Task.owner speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen kann.
 Die Telematik-ID ist im Task wie folgt zu hinterlegen:
 
-* Task.owner.identifier.system= “https://gematik.de/fhir/sid/telematik-id”
+* Task.owner.identifier.system= "https://gematik.de/fhir/sid/telematik-id"
 * Task.owner.identifier.value= $Telematik-ID der Apotheke gemäß https://simplifier.net/basisprofil-de-r4/identifiertelematikid
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$accept bei erfolgreichem Abschluss der Operation den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.accept" und den Versicherten mit der KVNR = Task.for initiieren.

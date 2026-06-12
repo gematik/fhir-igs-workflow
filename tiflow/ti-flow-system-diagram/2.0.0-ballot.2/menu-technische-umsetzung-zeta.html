@@ -395,7 +395,7 @@ Es wird geprüft, ob die Kombination aus Produkt und Version in einer Liste der 
 
 <h5 id="prüfung-der-angeforderten-berechtigungen-scopes">Prüfung der angeforderten Berechtigungen (Scopes)</h5>
 
-<p>Diese Regel stellt sicher, dass die anfragende Anwendung nur die Berechtigungen anfordert, die ihr auch gewährt werden dürfen. Anwendungen können bestimmte “Scopes” anfordern, die ihnen Lese- oder Schreibzugriff auf bestimmte Datenbereiche gewähren.</p>
+<p>Diese Regel stellt sicher, dass die anfragende Anwendung nur die Berechtigungen anfordert, die ihr auch gewährt werden dürfen. Anwendungen können bestimmte "Scopes" anfordern, die ihnen Lese- oder Schreibzugriff auf bestimmte Datenbereiche gewähren.</p>
 
 <p><strong>Was wird geprüft?</strong>
 Es wird die Liste der von der Anwendung angeforderten Berechtigungen mit der Liste der maximal erlaubten Berechtigungen abgeglichen. Die Anfrage ist nur dann erfolgreich, wenn <strong>alle</strong> angeforderten Berechtigungen in der Liste der erlaubten Berechtigungen enthalten sind.</p>
@@ -414,10 +414,10 @@ Es wird die Liste der von der Anwendung angeforderten Berechtigungen mit der Lis
 
 <h5 id="prüfung-der-ziel-ressource-audience">Prüfung der Ziel-Ressource (Audience)</h5>
 
-<p>Diese Regel kontrolliert, auf welche Zielsysteme oder Datenbereiche (“Audiences”) zugegriffen werden darf. Dies ist eine zusätzliche Sicherheitsebene, um sicherzustellen, dass ein Zugriffstoken nur für den vorgesehenen Zweck verwendet wird.</p>
+<p>Diese Regel kontrolliert, auf welche Zielsysteme oder Datenbereiche ("Audiences") zugegriffen werden darf. Dies ist eine zusätzliche Sicherheitsebene, um sicherzustellen, dass ein Zugriffstoken nur für den vorgesehenen Zweck verwendet wird.</p>
 
 <p><strong>Was wird geprüft?</strong>
-Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der Liste der erlaubten Ressourcen enthalten sind. Ähnlich wie bei den Berechtigungen müssen <strong>alle</strong> angefragten “Audiences” erlaubt sein.</p>
+Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der Liste der erlaubten Ressourcen enthalten sind. Ähnlich wie bei den Berechtigungen müssen <strong>alle</strong> angefragten "Audiences" erlaubt sein.</p>
 
 <p><strong>Beispiel:</strong></p>
 <ul>
@@ -428,12 +428,12 @@ Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der
 
 <h4 id="gültigkeitsdauer-der-zugriffstoken-ttl">Gültigkeitsdauer der Zugriffstoken (TTL)</h4>
 
-<p>Wenn alle Prüfungen erfolgreich sind, erhält die Anwendung zeitlich begrenzte “Token” für den Zugriff. Die Gültigkeitsdauer (Time-To-Live, TTL) ist aus Sicherheitsgründen bewusst kurz gewählt.</p>
+<p>Wenn alle Prüfungen erfolgreich sind, erhält die Anwendung zeitlich begrenzte "Token" für den Zugriff. Die Gültigkeitsdauer (Time-To-Live, TTL) ist aus Sicherheitsgründen bewusst kurz gewählt.</p>
 
 <p>Es gibt zwei Arten von Token:</p>
 
 <ul>
-  <li><strong>Access Token:</strong> Dies ist der eigentliche “Schlüssel” für den direkten Zugriff auf Daten. Er hat eine kurze Lebensdauer.
+  <li><strong>Access Token:</strong> Dies ist der eigentliche "Schlüssel" für den direkten Zugriff auf Daten. Er hat eine kurze Lebensdauer.
     <ul>
       <li><strong>Gültigkeit:</strong> 300 Sekunden (5 Minuten)</li>
     </ul>
@@ -449,7 +449,7 @@ Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der
 
 <ul>
   <li><strong>Erfolgsfall:</strong> Wenn <strong>alle vier Prüfungen</strong> erfolgreich sind, wird der Zugriff gestattet. Die Anwendung erhält ein zeitlich begrenztes Zugriffstoken.</li>
-  <li><strong>Fehlerfall:</strong> Wenn <strong>mindestens eine Prüfung scheitert</strong>, wird der Zugriff verweigert. Die genauen Gründe für die Ablehnung (z.B. “User profession is not allowed”, “One or more requested scopes are not allowed”) werden zurückgemeldet.</li>
+  <li><strong>Fehlerfall:</strong> Wenn <strong>mindestens eine Prüfung scheitert</strong>, wird der Zugriff verweigert. Die genauen Gründe für die Ablehnung (z.B. "User profession is not allowed", "One or more requested scopes are not allowed") werden zurückgemeldet.</li>
 </ul>
 
 <h4 id="anforderungen-zur-nutzung-der-zeta-funktionalität">Anforderungen zur Nutzung der ZETA Funktionalität</h4>
@@ -778,7 +778,7 @@ Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Jun 10, 2026 09:00+0000">2026-06-10</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 12, 2026 12:16+0000">2026-06-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
