@@ -79,20 +79,6 @@ RUN python3.11 -m pip install --no-cache-dir --upgrade --break-system-packages p
 
 RUN gem install jekyll bundler
 
-RUN set -e; \
-   drawio_url=$(curl -s https://api.github.com/repos/jgraph/drawio-desktop/releases/latest \
-      | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url' \
-      | head -n 1); \
-   echo "Downloading draw.io from $drawio_url"; \
-   curl -L "$drawio_url" -o /usr/local/bin/drawio.appimage; \
-   chmod +x /usr/local/bin/drawio.appimage; \
-   printf '%s\n' \
-      '#!/usr/bin/env bash' \
-      'set -euo pipefail' \
-      'exec xvfb-run -a /usr/local/bin/drawio.appimage "$@"' \
-      > /usr/local/bin/drawio; \
-   chmod +x /usr/local/bin/drawio
-
 RUN printf '%s\n' \
       '#!/usr/bin/env bash' \
       'set -euo pipefail' \
