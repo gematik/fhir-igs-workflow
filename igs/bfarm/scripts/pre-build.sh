@@ -16,6 +16,8 @@ refresh_special_urls() {
 	fi
 }
 
+source "$ROOT_DIR/scripts/prepare-environment.sh"
+
 refresh_special_urls
 
 if [[ "${CI:-}" == "true" && "${GITHUB_ACTIONS:-}" == "true" && "${BUILD_GENERATE_DRAWIO_IMAGES:-false}" == "true" ]]; then
