@@ -14,7 +14,7 @@ Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung 
 
 funkt. Eignung: Test Produkt/FADas PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 eine FHIR-Ressource mit dem Profil GEM_ERP_PR_MedicationDispense erstellen.
 
-funkt. Eignung: Test Produkt/FADas PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG] erzeugen und im E-Rezept-Bundle angeben.
+funkt. Eignung: Test Produkt/FADas PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG](https://ig.fhir.de/igs/medication/) erzeugen und im E-Rezept-Bundle angeben.
 
 funkt. Eignung: Test Produkt/FADas PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit mehreren Teilabgaben und mit Flowtype 160, 166, 169, 200 oder 209 mehrere MedicationDispenses im Parameters Profil angeben.
 Die Profilversion bei der Abgabe richtet sich nach dem Abgabedatum der Arzneimittel. Wenn mehrere Arzneimittel zu einer Verordnung abgegeben werden, dann richtet sich die gültige Profilversion nach dem Datum der neuesten Abgabe (s. [gemSpec_DM_eRp#Zeitliche Gültigkeit von FHIR-Ressourcen]). 

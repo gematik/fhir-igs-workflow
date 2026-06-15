@@ -22,7 +22,7 @@ funkt. Eignung: Herstellererklärung
 
 funkt. Eignung: Herstellererklärung
 
-funkt. Eignung: HerstellererklärungDas Clientsystem des TI-Flow-Fachdienstes MUSS im Falle von Fehlern bei einer Anfrage am TI-Flow-Fachdienst einen Retry und/oder Client-Failover nur gemäß der Fehlerbehandlung in [E-Rezept API Dokumentation] durchführen.
+funkt. Eignung: HerstellererklärungDas Clientsystem des TI-Flow-Fachdienstes MUSS im Falle von Fehlern bei einer Anfrage am TI-Flow-Fachdienst einen Retry und/oder Client-Failover nur gemäß der Fehlerbehandlung in [E-Rezept API Dokumentation](https://github.com/gematik/api-erp) durchführen.
 ### Logging und Meldungen
 
 funkt. Eignung: Herstellererklärung

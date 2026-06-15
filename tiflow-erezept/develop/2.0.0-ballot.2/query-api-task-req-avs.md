@@ -40,7 +40,7 @@ ausführen.
 Mit diesem Anwendungsfall kann die abgebende LEI die Zugriffsinformationen zu allen einlösbaren E-Rezepten von einem Versicherten, dessen eGK mit einem im Rahmen von PoPP zulässigen Kartenlesegerät eingelesen wurde, vom TI-Flow-Fachdienst abrufen.
 
 funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" einen PoPP-Token vom PoPP-Service abrufen.
-Für die Umsetzung siehe [spec-ilf-popp-client]. 
+Für die Umsetzung siehe [spec-ilf-popp-client](https://github.com/gematik/spec-ilf-popp-client/tree/main).
 
 Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den TI-Flow-Fachdienst weiter.
 
