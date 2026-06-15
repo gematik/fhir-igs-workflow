@@ -507,6 +507,63 @@ jobs:
             [[ -f "$core_dev_cache_dir/package/package.json" || -f "$core_version_cache_dir/package/package.json" ]]
           }
 
+          ensure_core_package_in_cache() {
+            local dependent_ig="$1"
+
+            # Core itself obviously must not depend on a pre-hydrated core package.
+            if [[ "$dependent_ig" == "core" ]]; then
+              return 0
+            fi
+
+            if core_cache_available; then
+              return 0
+            fi
+
+            local core_pkg_tgz="igs/core/output/package.tgz"
+            if [[ ! -f "$core_pkg_tgz" ]]; then
+              echo "Error: Missing local core package artifact at $core_pkg_tgz; cannot build $dependent_ig." >&2
+              return 1
+            fi
+
+            if [[ -z "$core_pkg_version" ]]; then
+              echo "Error: Could not read core version from igs/core/sushi-config.yaml; cannot build $dependent_ig." >&2
+              return 1
+            fi
+
+            rm -rf "$core_version_cache_dir"
+            mkdir -p "$core_version_cache_dir"
+            tar -xzf "$core_pkg_tgz" -C "$core_version_cache_dir"
+
+            local core_pkg_json="$core_version_cache_dir/package/package.json"
+            local extracted_id=""
+            local extracted_version=""
+
+            if [[ ! -f "$core_pkg_json" ]]; then
+              echo "Error: Rehydrated core package is missing package/package.json at $core_pkg_json" >&2
+              return 1
+            fi
+
+            extracted_id="$(yq -r '.name // ""' "$core_pkg_json")"
+            extracted_version="$(yq -r '.version // ""' "$core_pkg_json")"
+            if [[ "$extracted_id" != "$core_pkg_id" || "$extracted_version" != "$core_pkg_version" ]]; then
+              echo "Error: Core package metadata mismatch while preparing $dependent_ig." >&2
+              echo "Expected: ${core_pkg_id}#${core_pkg_version}" >&2
+              echo "Found: ${extracted_id}#${extracted_version} from $core_pkg_tgz" >&2
+              return 1
+            fi
+
+            rm -rf "$core_dev_cache_dir"
+            cp -R "$core_version_cache_dir" "$core_dev_cache_dir"
+            mirror_package_to_runner_caches "$core_pkg_id" "$core_pkg_version" "$core_version_cache_dir"
+
+            if ! core_cache_available; then
+              echo "Error: Core package cache hydration failed before building $dependent_ig" >&2
+              return 1
+            fi
+
+            echo "Prepared local ${core_pkg_id}#${core_pkg_version} cache for $dependent_ig"
+          }
+
           resolve_local_package_artifact() {
             local ig="$1"
             local base_dir="igs/$ig/output"
@@ -718,6 +775,7 @@ jobs:
             # Run install/build with one deterministic HOME so SUSHI and
             # IG Publisher share the same ~/.fhir/packages cache.
             sanitize_package_cache "$cache_dir"
+            ensure_core_package_in_cache "$ig"
 
             local build_exit_code=0
             (
