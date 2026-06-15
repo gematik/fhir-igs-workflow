@@ -42,19 +42,19 @@ RuleSet: TaskInteraction(expectation)
 * insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50")
 * insert CapSupportResourceSearchParamNoDefinition(_offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
 
-* insert CapSupportResourceOperation(create, TIFlow-RX-OP-Create, {expectation}, "Creates a Task for a specific flow type")
+* insert CapSupportResourceOperation(create, https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-create-op, {expectation}, "Creates a Task for a specific flow type")
 * insert TaskCreateOperationStatusCodes
-* insert CapSupportResourceOperation(activate, TIFlow-RX-OP-Activate, {expectation}, "Activates the created Task using the signed ePrescription bundle")
+* insert CapSupportResourceOperation(activate, https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-activate-op, {expectation}, "Activates the created Task using the signed ePrescription bundle")
 * insert TaskActivateOperationStatusCodes
-* insert CapSupportResourceOperation(accept, TIFlow-RX-OP-Accept, {expectation}, "Pharmacy claims an ePrescription and sets Task status to in-progress")
+* insert CapSupportResourceOperation(accept, https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-accept-op, {expectation}, "Pharmacy claims an ePrescription and sets Task status to in-progress")
 * insert TaskAcceptOperationStatusCodes
-* insert CapSupportResourceOperation(reject, TIFlow-RX-OP-Reject, {expectation}, "Rejects dispensing and resets Task status to active")
+* insert CapSupportResourceOperation(reject, https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-reject-op, {expectation}, "Rejects dispensing and resets Task status to active")
 * insert TaskRejectOperationStatusCodes
-* insert CapSupportResourceOperation(close, TIFlow-RX-OP-Close, {expectation}, "Finishes the ePrescription workflow and sets Task status to completed")
+* insert CapSupportResourceOperation(close, https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-close-op, {expectation}, "Finishes the ePrescription workflow and sets Task status to completed")
 * insert TaskCloseOperationStatusCodes
-* insert CapSupportResourceOperation(abort, TIFlow-RX-OP-Abort, {expectation}, "Aborts the ePrescription workflow and deletes Task related data")
+* insert CapSupportResourceOperation(abort, https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-abort-op, {expectation}, "Aborts the ePrescription workflow and deletes Task related data")
 * insert TaskAbortOperationStatusCodes
-* insert CapSupportResourceOperation(dispense, TIFlow-RX-OP-Dispense, {expectation}, "Documents medication dispensation without changing Task status")
+* insert CapSupportResourceOperation(dispense, https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-dispense-op, {expectation}, "Documents medication dispensation without changing Task status")
 * insert TaskDispenseOperationStatusCodes
 
 RuleSet: MedicationDispenseInteraction(expectation)
@@ -68,7 +68,7 @@ RuleSet: MedicationDispenseInteraction(expectation)
 
 * insert CapSupportResourceSearchParam(whenhandedover, http://hl7.org/fhir/SearchParameter/MedicationDispense-whenhandedover, #date, {expectation}, "MedicationDispense.whenHandedOver - Unterstützt die Suche nach dem Abgabedatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(whenprepared, http://hl7.org/fhir/SearchParameter/MedicationDispense-whenprepared, #date, {expectation}, "MedicationDispense.whenPrepared - Unterstützt die Suche nach dem Herstellungsdatum")
-* insert CapSupportResourceSearchParam(performer, http://hl7.org/fhir/SearchParameter/MedicationDispense-performer, #string, {expectation}, "MedicationDispense.performer.actor.identifier.value - Unterstützt die Suche einer MedicationDispense zu einer Abgebenden LEI.")
+* insert CapSupportResourceSearchParam(performer, http://hl7.org/fhir/SearchParameter/MedicationDispense-performer, #reference, {expectation}, "MedicationDispense.performer.actor.identifier.value - Unterstützt die Suche einer MedicationDispense zu einer Abgebenden LEI.")
 * insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Unterstützt das Sortieren nach unterstützten MedicationDispense-Suchkriterien")
 * insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50")
 * insert CapSupportResourceSearchParamNoDefinition(_offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
@@ -89,8 +89,8 @@ RuleSet: CommunicationInteraction(expectation)
 
 * insert CapSupportResourceSearchParam(sent, http://hl7.org/fhir/SearchParameter/Communication-sent, #date, {expectation}, "Communication.sent - Unterstützt die Suche nach dem Sendedatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(received, http://hl7.org/fhir/SearchParameter/Communication-received, #date, {expectation}, "Communication.received - Unterstützt die Suche nach dem Empfangsdatum")
-* insert CapSupportResourceSearchParam(recipient, http://hl7.org/fhir/SearchParameter/Communication-recipient, #string, {expectation}, "Communication.recipient.identifier.value - Unterstützt die Suche nach dem Empfänger einer Nachricht")
-* insert CapSupportResourceSearchParam(sender, http://hl7.org/fhir/SearchParameter/Communication-sender, #string, {expectation}, "Communication.sender.identifier.value - Unterstützt die Suche nach dem Absender einer Nachricht")
+* insert CapSupportResourceSearchParam(recipient, http://hl7.org/fhir/SearchParameter/Communication-recipient, #reference, {expectation}, "Communication.recipient.identifier.value - Unterstützt die Suche nach dem Empfänger einer Nachricht")
+* insert CapSupportResourceSearchParam(sender, http://hl7.org/fhir/SearchParameter/Communication-sender, #reference, {expectation}, "Communication.sender.identifier.value - Unterstützt die Suche nach dem Absender einer Nachricht")
 * insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Unterstützt das Sortieren nach unterstützten Communication-Suchkriterien")
 * insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50")
 * insert CapSupportResourceSearchParamNoDefinition(_offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")

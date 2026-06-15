@@ -2,7 +2,7 @@ Instance: PrescriptionBinary
 InstanceOf: Binary
 Title: "Binary einer Verschreibung (QES)"
 Description: "Beispiel für binäre Daten einer elektronischen Verschreibung im PKCS#7-Format"
-Usage: #inline
+Usage: #example
 * contentType = #application/pkcs7-mime
 * data = "dGhpcyBibG9iIGlzIHNuaXBwZWQ="
 

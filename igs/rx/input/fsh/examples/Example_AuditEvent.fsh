@@ -25,7 +25,7 @@ Usage: #example
 * agent[=].requestor = false
 * source.site = "TI-Flow-Fachdienst"
 * source.observer = Reference(ReceiptBundleDevice)
-* entity[+].what.reference = "https://erp.app.ti-dienste.de/Task/160.123.456.789.123.58"
+* entity[+].what.reference = "Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e"
 * entity[=].what.identifier.system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
 * entity[=].what.identifier.value = "160.123.456.789.123.58"
 * entity[=].name = "X234567890"

@@ -24,7 +24,7 @@ Description: "Beispiel fuer eine Task-Suchantwort mit zwei Treffern"
 * total = 1
 * link[+].relation = "self"
 * link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task?status=ready&_count=2"
-* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/b12eb5f7-91ce-4887-93c7-800454601377"
+* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/b9f1fbdd-f28b-4ec7-959c-5283d3433b0e"
 * entry[=].resource = GenericTask
 
 Instance: QueryAuditEventSearchResponseBundle
@@ -61,7 +61,7 @@ Description: "Beispiel einer Consent-Ressource fuer die Consent-Query"
 * id = "QueryConsentCHARGCONS"
 * status = #active
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy "Privacy Consent"
-* category[+] = http://loinc.org#59284-0 "Consent Document"
+* category[+] = http://loinc.org#59284-0 "Einwilligung - Dokument"
 * patient.identifier.system = "http://fhir.de/sid/gkv/kvid-10"
 * patient.identifier.value = "X123456789"
 * dateTime = "2025-01-15T10:15:00+01:00"
