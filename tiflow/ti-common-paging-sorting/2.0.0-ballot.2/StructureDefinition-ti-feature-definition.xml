@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ti-feature-definition"/>
+  <url value="https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition"/>
+  <version value="2.0.0-ballot.2"/>
+  <name value="TIFeatureDefinition"/>
+  <title value="TI Feature Definition"/>
+  <status value="draft"/>
+  <date value="2026-06-15T14:31:41+00:00"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Logical Model zur Beschreibung eines aktivierbaren Features."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="4.0.1"/>
+  <kind value="logical"/>
+  <abstract value="false"/>
+  <type value="https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Base"/>
+  <derivation value="specialization"/>
+  <snapshot>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version">
+      <valueString value="4.0.1"/>
+    </extension>
+    <element id="ti-feature-definition">
+      <path value="ti-feature-definition"/>
+      <short value="TI Feature Definition"/>
+      <definition value="Logical Model zur Beschreibung eines aktivierbaren Features."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Base"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <isModifier value="false"/>
+    </element>
+    <element id="ti-feature-definition.url">
+      <path value="ti-feature-definition.url"/>
+      <short value="Canonical-URL des Features"/>
+      <definition value="Canonical-URL des Features"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ti-feature-definition.url"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="uri"/>
+      </type>
+    </element>
+    <element id="ti-feature-definition.name">
+      <path value="ti-feature-definition.name"/>
+      <short value="Maschinell verarbeitbarer Name"/>
+      <definition value="Maschinell verarbeitbarer Name"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ti-feature-definition.name"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="ti-feature-definition.title">
+      <path value="ti-feature-definition.title"/>
+      <short value="Menschenlesbarer Titel"/>
+      <definition value="Menschenlesbarer Titel"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ti-feature-definition.title"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="ti-feature-definition.status">
+      <path value="ti-feature-definition.status"/>
+      <short value="draft | active | retired"/>
+      <definition value="draft | active | retired"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ti-feature-definition.status"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+    </element>
+    <element id="ti-feature-definition.description">
+      <path value="ti-feature-definition.description"/>
+      <short value="Fachliche Beschreibung"/>
+      <definition value="Fachliche Beschreibung"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="ti-feature-definition.description"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="markdown"/>
+      </type>
+    </element>
+    <element id="ti-feature-definition.valueType">
+      <path value="ti-feature-definition.valueType"/>
+      <short value="boolean | code | Coding — Typ des value-Felds"/>
+      <definition value="boolean | code | Coding — Typ des value-Felds"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ti-feature-definition.valueType"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+    </element>
+    <element id="ti-feature-definition.context">
+      <path value="ti-feature-definition.context"/>
+      <short value="Element-Kontexte im CapabilityStatement"/>
+      <definition value="Element-Kontexte im CapabilityStatement"/>
+      <min value="1"/>
+      <max value="*"/>
+      <base>
+        <path value="ti-feature-definition.context"/>
+        <min value="1"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="uri"/>
+      </type>
+    </element>
+  </snapshot>
+  <differential>
+    <element id="ti-feature-definition">
+      <path value="ti-feature-definition"/>
+      <short value="TI Feature Definition"/>
+      <definition value="Logical Model zur Beschreibung eines aktivierbaren Features."/>
+    </element>
+    <element id="ti-feature-definition.url">
+      <path value="ti-feature-definition.url"/>
+      <short value="Canonical-URL des Features"/>
+      <definition value="Canonical-URL des Features"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="uri"/>
+      </type>
+    </element>
+    <element id="ti-feature-definition.name">
+      <path value="ti-feature-definition.name"/>
+      <short value="Maschinell verarbeitbarer Name"/>
+      <definition value="Maschinell verarbeitbarer Name"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="ti-feature-definition.title">
+      <path value="ti-feature-definition.title"/>
+      <short value="Menschenlesbarer Titel"/>
+      <definition value="Menschenlesbarer Titel"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="ti-feature-definition.status">
+      <path value="ti-feature-definition.status"/>
+      <short value="draft | active | retired"/>
+      <definition value="draft | active | retired"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+    </element>
+    <element id="ti-feature-definition.description">
+      <path value="ti-feature-definition.description"/>
+      <short value="Fachliche Beschreibung"/>
+      <definition value="Fachliche Beschreibung"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="markdown"/>
+      </type>
+    </element>
+    <element id="ti-feature-definition.valueType">
+      <path value="ti-feature-definition.valueType"/>
+      <short value="boolean | code | Coding — Typ des value-Felds"/>
+      <definition value="boolean | code | Coding — Typ des value-Felds"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+    </element>
+    <element id="ti-feature-definition.context">
+      <path value="ti-feature-definition.context"/>
+      <short value="Element-Kontexte im CapabilityStatement"/>
+      <definition value="Element-Kontexte im CapabilityStatement"/>
+      <min value="1"/>
+      <max value="*"/>
+      <type>
+        <code value="uri"/>
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
