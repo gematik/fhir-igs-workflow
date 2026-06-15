@@ -13,10 +13,7 @@
      fhir:status [ fhir:v "generated" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem tiflow-erezept-operation-outcome-details-cs</b></p><a name=\"tiflow-erezept-operation-outcome-details-cs\"> </a><a name=\"hctiflow-erezept-operation-outcome-details-cs\"> </a><p>This case-sensitive code system <code>https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (Deutschland) (German (Germany), de)</b></td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_PZN_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_PZN_INVALID\"> </a></td><td>PZN invalid</td><td>The provided PZN is invalid or not permitted in the current processing context</td><td>PZN ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN\"> </a></td><td>Drug category forbidden</td><td>The prescription contains a forbidden medication category, for example BTM</td><td>Arzneimittelkategorie nicht zulässig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID\"> </a></td><td>MVO flow type invalid</td><td>A multiple prescription is not allowed for the addressed flow type</td><td>MVO-Flowtyp ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_INVALID\"> </a></td><td>MVO invalid</td><td>The multiple prescription metadata is inconsistent or violates MVO constraints</td><td>Mehrfachverordnung ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_STARTDATE_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_STARTDATE_INVALID\"> </a></td><td>MVO start date invalid</td><td>The start date of the multiple prescription redemption period is missing or invalid</td><td>MVO-Startdatum ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_ENDDATE_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_ENDDATE_INVALID\"> </a></td><td>MVO end date invalid</td><td>The end date of the multiple prescription redemption period is invalid</td><td>MVO-Enddatum ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_ID_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_ID_INVALID\"> </a></td><td>MVO id invalid</td><td>The multiple prescription id does not match the required identifier schema</td><td>MVO-ID ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_NOT_VALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_NOT_VALID\"> </a></td><td>MVO not valid yet</td><td>The multiple prescription part is not redeemable yet because its redemption period has not started</td><td>Teilverordnung noch nicht einlösbar</td></tr></table></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [
-     fhir:v "https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs>
-  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
   fhir:name [ fhir:v "TIFLOWEREZEPTOperationOutcomeDetailsCS"] ; # 
   fhir:title [ fhir:v "TIFLOW EREZEPT Operation Outcome Details CS"] ; # 
@@ -37,10 +34,7 @@
   fhir:description [ fhir:v "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "DE" ] ;
        fhir:display [ fhir:v "Germany" ]
      ] )

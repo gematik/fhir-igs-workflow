@@ -12,7 +12,7 @@
   fhir:meta [
      fhir:profile ( [
        fhir:v "https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-medication-dispense"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-medication-dispense>
+       fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-medication-dispense>
      ] )
   ] ; # 
   fhir:text [
@@ -22,16 +22,13 @@
   fhir:status [ fhir:v "completed"] ; # 
   fhir:medication [
      a fhir:Reference ;
-     fhir:l <https://gematik.de/fhir/tiflow-bfarm/Medication/ExampleMedication2-Pomalidomid-T> ;
+     fhir:link <https://gematik.de/fhir/tiflow-bfarm/Medication/ExampleMedication2-Pomalidomid-T> ;
      fhir:reference [ fhir:v "Medication/ExampleMedication2-Pomalidomid-T" ]
   ] ; # 
   fhir:performer ( [
      fhir:actor [
        fhir:identifier [
-         fhir:system [
-           fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
-           fhir:l <https://gematik.de/fhir/sid/telematik-id>
-         ] ;
+         fhir:system [ fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "3-07.2.1234560000.10.789" ]
        ]
      ]

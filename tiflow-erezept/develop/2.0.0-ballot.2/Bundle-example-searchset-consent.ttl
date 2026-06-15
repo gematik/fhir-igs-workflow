@@ -14,16 +14,10 @@
   fhir:total [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
   fhir:link ( [
      fhir:relation [ fhir:v "self" ] ;
-     fhir:url [
-       fhir:v "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent?category=CHARGCONS"^^xsd:anyURI ;
-       fhir:l <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent?category=CHARGCONS>
-     ]
+     fhir:url [ fhir:v "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent?category=CHARGCONS"^^xsd:anyURI ]
   ] ) ; # 
   fhir:entry ( [
-     fhir:fullUrl [
-       fhir:v "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent/QueryConsentCHARGCONS"^^xsd:anyURI ;
-       fhir:l <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent/QueryConsentCHARGCONS>
-     ] ;
+     fhir:fullUrl [ fhir:v "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent/QueryConsentCHARGCONS"^^xsd:anyURI ] ;
      fhir:resource ( <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent/QueryConsentCHARGCONS> )
   ] ) . # 
 
@@ -32,10 +26,7 @@
   fhir:status [ fhir:v "active"] ; # 
   fhir:scope [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "http://terminology.hl7.org/CodeSystem/consentscope"^^xsd:anyURI ;
-         fhir:l <http://terminology.hl7.org/CodeSystem/consentscope>
-       ] ;
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/consentscope"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "patient-privacy" ] ;
        fhir:display [ fhir:v "Privacy Consent" ]
      ] )
@@ -43,30 +34,21 @@
   fhir:category ( [
      fhir:coding ( [
        a loinc:59284-0 ;
-       fhir:system [
-         fhir:v "http://loinc.org"^^xsd:anyURI ;
-         fhir:l <http://loinc.org>
-       ] ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "59284-0" ] ;
        fhir:display [ fhir:v "Consent Document" ]
      ] )
   ] ) ; # 
   fhir:patient [
      fhir:identifier [
-       fhir:system [
-         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
-         fhir:l <http://fhir.de/sid/gkv/kvid-10>
-       ] ;
+       fhir:system [ fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ] ;
        fhir:value [ fhir:v "X123456789" ]
      ]
   ] ; # 
   fhir:dateTime [ fhir:v "2025-01-15T10:15:00+01:00"^^xsd:dateTime] ; # 
   fhir:policyRule [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
-         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
-       ] ;
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "OPTIN" ]
      ] )
   ] . # 

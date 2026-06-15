@@ -12,38 +12,29 @@
   fhir:meta [
      fhir:profile ( [
        fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense?version=2.0>
+       fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0>
      ] )
   ] ; # 
   fhir:identifier ( [
-     fhir:system [
-       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId>
-     ] ;
+     fhir:system [ fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ] ;
      fhir:value [ fhir:v "160.000.033.491.280.78" ]
   ] ) ; # 
   fhir:status [ fhir:v "completed"] ; # 
   fhir:medication [
      a fhir:Reference ;
-     fhir:l <https://gematik.de/fhir/tiflow-erezept/Medication/SimpleMedication> ;
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/Medication/SimpleMedication> ;
      fhir:reference [ fhir:v "Medication/SimpleMedication" ]
   ] ; # 
   fhir:subject [
      fhir:identifier [
-       fhir:system [
-         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
-         fhir:l <http://fhir.de/sid/gkv/kvid-10>
-       ] ;
+       fhir:system [ fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ] ;
        fhir:value [ fhir:v "X123456789" ]
      ]
   ] ; # 
   fhir:performer ( [
      fhir:actor [
        fhir:identifier [
-         fhir:system [
-           fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
-           fhir:l <https://gematik.de/fhir/sid/telematik-id>
-         ] ;
+         fhir:system [ fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "3-SMC-B-Testkarte-883110000095957" ]
        ]
      ]

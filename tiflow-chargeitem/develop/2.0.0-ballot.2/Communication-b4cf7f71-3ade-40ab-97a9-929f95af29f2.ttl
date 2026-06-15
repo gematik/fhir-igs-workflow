@@ -12,7 +12,7 @@
   fhir:meta [
      fhir:profile ( [
        fhir:v "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq>
+       fhir:link <https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq>
      ] ) ;
      fhir:tag ( [
        fhir:display [ fhir:v "Communication message sent by patient to pharmacy to request the change of an existing ChargeItem by providing the AccessCode" ]
@@ -23,32 +23,26 @@
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Communication b4cf7f71-3ade-40ab-97a9-929f95af29f2</b></p><a name=\"b4cf7f71-3ade-40ab-97a9-929f95af29f2\"> </a><a name=\"hcb4cf7f71-3ade-40ab-97a9-929f95af29f2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReq.html\">Request for Modification on ChargeItem</a></p><p style=\"margin-bottom: 0px\">Tag: </p></div><p><b>basedOn</b>: <a href=\"ChargeItem-a51520ec-0899-404f-bb97-fe7d461f90a8.html\">ChargeItem Not Applicable</a></p><p><b>status</b>: Unknown</p><p><b>sent</b>: 2028-10-01 15:29:00+0000</p><p><b>recipient</b>: Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/3-2-APO-XanthippeVeilchenblau01</p><p><b>sender</b>: Identifier: NamingSystemKVID/P987654321</p><h3>Payloads</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Content[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>Bitte meinen Namen in Günther ändern, Waltraud ist falsch.</td></tr></table></div>"^^rdf:XMLLiteral ]
   ] ; # 
   fhir:basedOn ( [
-     fhir:l <https://gematik.de/fhir/tiflow-chargeitem/ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8> ;
+     fhir:link <https://gematik.de/fhir/tiflow-chargeitem/ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8> ;
      fhir:reference [ fhir:v "ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8" ]
   ] ) ; # 
   fhir:status [ fhir:v "unknown"] ; # 
   fhir:sent [ fhir:v "2028-10-01T15:29:00.434+00:00"^^xsd:dateTime] ; # 
   fhir:recipient ( [
      fhir:identifier [
-       fhir:system [
-         fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/sid/telematik-id>
-       ] ;
+       fhir:system [ fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ] ;
        fhir:value [ fhir:v "3-2-APO-XanthippeVeilchenblau01" ]
      ]
   ] ) ; # 
   fhir:sender [
      fhir:identifier [
-       fhir:system [
-         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
-         fhir:l <http://fhir.de/sid/gkv/kvid-10>
-       ] ;
+       fhir:system [ fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ] ;
        fhir:value [ fhir:v "P987654321" ]
      ]
   ] ; # 
   fhir:payload ( [
      fhir:content [
-       a fhir:String ;
+       a fhir:string ;
        fhir:v "Bitte meinen Namen in Günther ändern, Waltraud ist falsch."
      ]
   ] ) . # 

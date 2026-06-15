@@ -12,7 +12,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-eu/ValueSet/GEM_ERPEU_VS_Consent_PolicyRule | *Version*:2.0.0-ballot.2 |
+| *Official URL*:https://gematik.de/fhir/tiflow-xborder/ValueSet/GEM-ERPEU-VS-Consent-PolicyRule | *Version*:2.0.0-ballot.2 |
 | Draft as of 2026-05-26 | *Computable Name*:GEM_ERPEU_VS_Consent_PolicyRule |
 
  
@@ -49,7 +49,7 @@ Type of Policy Rules for Consents of the ePrescription.
 {
   "resourceType" : "ValueSet",
   "id" : "GEM-ERPEU-VS-Consent-PolicyRule",
-  "url" : "https://gematik.de/fhir/erp-eu/ValueSet/GEM_ERPEU_VS_Consent_PolicyRule",
+  "url" : "https://gematik.de/fhir/tiflow-xborder/ValueSet/GEM-ERPEU-VS-Consent-PolicyRule",
   "version" : "2.0.0-ballot.2",
   "name" : "GEM_ERPEU_VS_Consent_PolicyRule",
   "title" : "ValueSet of Consent PolyRule Codes",
@@ -78,7 +78,7 @@ Type of Policy Rules for Consents of the ePrescription.
   "compose" : {
     "include" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-      "version" : "2018-08-12",
+      "version" : "10.0.0",
       "concept" : [{
         "code" : "OPTIN"
       }]

@@ -12,8 +12,8 @@ Version 2.0.0-ballot.2 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-eu/OperationDefinition/EUCloseOperationDefinition | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-05-26 | *Computable Name*:EUClose |
+| *Official URL*:https://gematik.de/fhir/tiflow-xborder/OperationDefinition/EUCloseOperation | *Version*:2.0.0-ballot.2 |
+| Draft as of 2026-05-26 | *Computable Name*:EUCloseOperation |
 
  
 The operation $close finishes the e-prescription workflow and creates a receipt. The Output of this operation is a signed Bundle, to be used for further financial processing. The status of the Task then changes into #completed 
@@ -26,9 +26,9 @@ The operation $close finishes the e-prescription workflow and creates a receipt.
 {
   "resourceType" : "OperationDefinition",
   "id" : "EUCloseOperation",
-  "url" : "https://gematik.de/fhir/erp-eu/OperationDefinition/EUCloseOperationDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-xborder/OperationDefinition/EUCloseOperation",
   "version" : "2.0.0-ballot.2",
-  "name" : "EUClose",
+  "name" : "EUCloseOperation",
   "status" : "draft",
   "kind" : "operation",
   "date" : "2026-05-26",

@@ -13,10 +13,7 @@
      fhir:status [ fhir:v "generated" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition tiflow-rx-accept-op</b></p><a name=\"tiflow-rx-accept-op\"> </a><a name=\"hctiflow-rx-accept-op\"> </a><p>URL: [base]/Task/[id]/$accept</p><p>Output parameters Profile:<a href=\"StructureDefinition-GEM-ERP-PR-PAR-Accept-Operation-Output.html\">GEM ERP PR AcceptOperation Output</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>ac</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>Der Secret-Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen.</p>\n</div></td></tr></table></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [
-     fhir:v "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-accept-op"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-accept-op>
-  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-accept-op"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
   fhir:name [ fhir:v "TIFlow-RX-OP-Accept"] ; # 
   fhir:title [ fhir:v "E-Rezept abrufen"] ; # 
@@ -37,10 +34,7 @@
   fhir:description [ fhir:v "Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'."] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "DE" ] ;
        fhir:display [ fhir:v "Germany" ]
      ] )
@@ -53,7 +47,7 @@
   fhir:instance [ fhir:v true] ; # 
   fhir:outputProfile [
      fhir:v "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Accept-Operation-Output"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Accept-Operation-Output>
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Accept-Operation-Output>
   ] ; # 
   fhir:parameter ( [
      fhir:name [ fhir:v "ac" ] ;

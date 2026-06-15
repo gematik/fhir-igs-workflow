@@ -13,12 +13,9 @@
      fhir:status [ fhir:v "generated" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition EUCloseOperation</b></p><a name=\"EUCloseOperation\"> </a><a name=\"hcEUCloseOperation\"> </a><p>URL: [base]/Task/[id]/$eu-close</p><p>Input parameters Profile:<a href=\"StructureDefinition-GEM-ERPEU-PR-PAR-Close-Operation-Input.html\">GEM ERP PR EU CloseOperation Input</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>requestData</td><td/><td>1..1</td><td/><td/><td><div><p>Additional request information</p>\n</div></td></tr><tr><td>IN</td><td>requestData.kvnr</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.accessCode</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.countryCode</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.practitionerName</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.practitionerRole</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.pointOfCare</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.healthcare-facility-type</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td/></tr><tr><td>IN</td><td>practitionerData</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/practitioner.html\">Practitioner</a></td><td/><td><div><p>Information on the practitioner who dispensed</p>\n</div></td></tr><tr><td>IN</td><td>organizationData</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/organization.html\">Organization</a></td><td/><td><div><p>Information on the organization where the dispensation happened</p>\n</div></td></tr><tr><td>IN</td><td>practitionerRoleData</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/practitionerrole.html\">PractitionerRole</a></td><td/><td/></tr><tr><td>IN</td><td>rxDispensation</td><td/><td>1..*</td><td/><td/><td><div><p>Information on dispensed Medication(s)</p>\n</div></td></tr><tr><td>IN</td><td>rxDispensation.medicationDispense</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/medicationdispense.html\">MedicationDispense</a></td><td/><td/></tr><tr><td>IN</td><td>rxDispensation.medication</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/medication.html\">Medication</a></td><td/><td/></tr></table></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [
-     fhir:v "https://gematik.de/fhir/erp-eu/OperationDefinition/EUCloseOperationDefinition"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/erp-eu/OperationDefinition/EUCloseOperationDefinition>
-  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow-xborder/OperationDefinition/EUCloseOperation"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
-  fhir:name [ fhir:v "EUClose"] ; # 
+  fhir:name [ fhir:v "EUCloseOperation"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "operation"] ; # 
   fhir:date [ fhir:v "2026-05-26"^^xsd:date] ; # 
@@ -36,10 +33,7 @@
   fhir:description [ fhir:v "The operation $close finishes the e-prescription workflow and creates a receipt. The Output of this operation is a signed Bundle, to be used for further financial processing. The status of the Task then changes into #completed"] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "DE" ] ;
        fhir:display [ fhir:v "Germany" ]
      ] )
@@ -51,7 +45,7 @@
   fhir:instance [ fhir:v true] ; # 
   fhir:inputProfile [
      fhir:v "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-Close-Operation-Input"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-Close-Operation-Input>
+     fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-Close-Operation-Input>
   ] ; # 
   fhir:parameter ( [
      fhir:name [ fhir:v "requestData" ] ;

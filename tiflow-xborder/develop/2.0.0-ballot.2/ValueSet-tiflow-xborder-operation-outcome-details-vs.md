@@ -12,7 +12,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-eu/ValueSet/tiflow-xborder-operation-outcome-details-vs | *Version*:2.0.0-ballot.2 |
+| *Official URL*:https://gematik.de/fhir/tiflow-xborder/ValueSet/tiflow-xborder-operation-outcome-details-vs | *Version*:2.0.0-ballot.2 |
 | Draft as of 2026-05-26 | *Computable Name*:TIFLOWXBORDEROperationOutcomeDetailsVS |
 
  
@@ -49,7 +49,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
 {
   "resourceType" : "ValueSet",
   "id" : "tiflow-xborder-operation-outcome-details-vs",
-  "url" : "https://gematik.de/fhir/erp-eu/ValueSet/tiflow-xborder-operation-outcome-details-vs",
+  "url" : "https://gematik.de/fhir/tiflow-xborder/ValueSet/tiflow-xborder-operation-outcome-details-vs",
   "version" : "2.0.0-ballot.2",
   "name" : "TIFLOWXBORDEROperationOutcomeDetailsVS",
   "title" : "TIFLOW XBORDER Operation Outcome Details VS",
@@ -77,7 +77,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   }],
   "compose" : {
     "include" : [{
-      "system" : "https://gematik.de/fhir/erp-eu/CodeSystem/tiflow-xborder-operation-outcome-details-cs"
+      "system" : "https://gematik.de/fhir/tiflow-xborder/CodeSystem/tiflow-xborder-operation-outcome-details-cs"
     },
     {
       "system" : "https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs",

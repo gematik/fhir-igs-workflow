@@ -12,7 +12,7 @@
   fhir:meta [
      fhir:profile ( [
        fhir:v "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_ChargeItem"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_ChargeItem>
+       fhir:link <https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_ChargeItem>
      ] )
   ] ; # 
   fhir:text [
@@ -21,76 +21,49 @@
   ] ; # 
   fhir:extension ( [
      fhir:extension ( [
-       fhir:url [
-         fhir:v "insuranceProvider"^^xsd:anyURI ;
-         fhir:l fhir:insuranceProvider
-       ] ;
+       fhir:url [ fhir:v "insuranceProvider"^^xsd:anyURI ] ;
        fhir:value [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
-       fhir:url [
-         fhir:v "subsidy"^^xsd:anyURI ;
-         fhir:l fhir:subsidy
-       ] ;
+       fhir:url [ fhir:v "subsidy"^^xsd:anyURI ] ;
        fhir:value [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
-       fhir:url [
-         fhir:v "taxOffice"^^xsd:anyURI ;
-         fhir:l fhir:taxOffice
-       ] ;
+       fhir:url [ fhir:v "taxOffice"^^xsd:anyURI ] ;
        fhir:value [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] ) ;
-     fhir:url [
-       fhir:v "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_EX_MarkingFlag"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_EX_MarkingFlag>
-     ]
+     fhir:url [ fhir:v "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_EX_MarkingFlag"^^xsd:anyURI ]
   ] ) ; # 
   fhir:identifier ( [
-     fhir:system [
-       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId>
-     ] ;
+     fhir:system [ fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ] ;
      fhir:value [ fhir:v "200.000.000.000.000.01" ]
   ] [
-     fhir:system [
-       fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode>
-     ] ;
+     fhir:system [ fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode"^^xsd:anyURI ] ;
      fhir:value [ fhir:v "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]
   ] ) ; # 
   fhir:status [ fhir:v "billable"] ; # 
   fhir:code [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "http://terminology.hl7.org/CodeSystem/data-absent-reason"^^xsd:anyURI ;
-         fhir:l <http://terminology.hl7.org/CodeSystem/data-absent-reason>
-       ] ;
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/data-absent-reason"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "not-applicable" ]
      ] )
   ] ; # 
   fhir:subject [
      fhir:identifier [
-       fhir:system [
-         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
-         fhir:l <http://fhir.de/sid/gkv/kvid-10>
-       ] ;
+       fhir:system [ fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ] ;
        fhir:value [ fhir:v "P987654321" ]
      ]
   ] ; # 
   fhir:enterer [
      fhir:identifier [
-       fhir:system [
-         fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/sid/telematik-id>
-       ] ;
+       fhir:system [ fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ] ;
        fhir:value [ fhir:v "3-2-APO-XanthippeVeilchenblau01" ]
      ]
   ] ; # 

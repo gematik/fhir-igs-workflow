@@ -12,7 +12,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-eu/CodeSystem/tiflow-xborder-operation-outcome-details-cs | *Version*:2.0.0-ballot.2 |
+| *Official URL*:https://gematik.de/fhir/tiflow-xborder/CodeSystem/tiflow-xborder-operation-outcome-details-cs | *Version*:2.0.0-ballot.2 |
 | Draft as of 2026-05-26 | *Computable Name*:TIFLOWXBORDEROperationOutcomeDetailsCS |
 | **Copyright/Legal**: gematik GmbH | |
 
@@ -31,7 +31,7 @@ Fehlercodes für cross-border Szenarien, die im Rahmen des TIFlow in den Operati
 {
   "resourceType" : "CodeSystem",
   "id" : "tiflow-xborder-operation-outcome-details-cs",
-  "url" : "https://gematik.de/fhir/erp-eu/CodeSystem/tiflow-xborder-operation-outcome-details-cs",
+  "url" : "https://gematik.de/fhir/tiflow-xborder/CodeSystem/tiflow-xborder-operation-outcome-details-cs",
   "version" : "2.0.0-ballot.2",
   "name" : "TIFLOWXBORDEROperationOutcomeDetailsCS",
   "title" : "TIFLOW XBORDER Operation Outcome Details CS",

@@ -12,7 +12,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_RequestType | *Version*:2.0.0-ballot.2 |
+| *Official URL*:https://gematik.de/fhir/tiflow-xborder/CodeSystem/GEM-ERPEU-CS-RequestType | *Version*:2.0.0-ballot.2 |
 | Draft as of 2026-05-26 | *Computable Name*:GEM_ERPEU_CS_RequestType |
 | **Copyright/Legal**: gematik GmbH | |
 
@@ -31,7 +31,7 @@ Type of Request from NCPeH
 {
   "resourceType" : "CodeSystem",
   "id" : "GEM-ERPEU-CS-RequestType",
-  "url" : "https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_RequestType",
+  "url" : "https://gematik.de/fhir/tiflow-xborder/CodeSystem/GEM-ERPEU-CS-RequestType",
   "version" : "2.0.0-ballot.2",
   "name" : "GEM_ERPEU_CS_RequestType",
   "title" : "CodeSystem of NCPeH Request Types",

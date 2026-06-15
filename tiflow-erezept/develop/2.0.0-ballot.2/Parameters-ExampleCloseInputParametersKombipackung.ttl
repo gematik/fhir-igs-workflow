@@ -13,7 +13,7 @@
   fhir:meta [
      fhir:profile ( [
        fhir:v "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input>
+       fhir:link <https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input>
      ] )
   ] ; # 
   fhir:parameter ( [
@@ -26,38 +26,29 @@
          fhir:meta [
            fhir:profile ( [
              fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0"^^xsd:anyURI ;
-             fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense?version=2.0>
+             fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0>
            ] )
          ] ;
          fhir:identifier ( [
-           fhir:system [
-             fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ;
-             fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId>
-           ] ;
+           fhir:system [ fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "160.000.033.491.280.78" ]
          ] ) ;
          fhir:status [ fhir:v "completed" ] ;
          fhir:medication [
            a fhir:Reference ;
-           fhir:l <https://gematik.de/fhir/tiflow-erezept/Medication/Medication-Kombipackung> ;
+           fhir:link <https://gematik.de/fhir/tiflow-erezept/Medication/Medication-Kombipackung> ;
            fhir:reference [ fhir:v "Medication/Medication-Kombipackung" ]
          ] ;
          fhir:subject [
            fhir:identifier [
-             fhir:system [
-               fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
-               fhir:l <http://fhir.de/sid/gkv/kvid-10>
-             ] ;
+             fhir:system [ fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ] ;
              fhir:value [ fhir:v "X123456789" ]
            ]
          ] ;
          fhir:performer ( [
            fhir:actor [
              fhir:identifier [
-               fhir:system [
-                 fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
-                 fhir:l <https://gematik.de/fhir/sid/telematik-id>
-               ] ;
+               fhir:system [ fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ] ;
                fhir:value [ fhir:v "3-SMC-B-Testkarte-883110000095957" ]
              ]
            ]
@@ -72,7 +63,7 @@
          fhir:meta [
            fhir:profile ( [
              fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0"^^xsd:anyURI ;
-             fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication?version=2.0>
+             fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0>
            ] )
          ] ;
          fhir:contained ( [
@@ -81,20 +72,14 @@
            fhir:meta [
              fhir:profile ( [
                fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pharmaceutical-product"^^xsd:anyURI ;
-               fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pharmaceutical-product>
+               fhir:link <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pharmaceutical-product>
              ] )
            ] ;
            fhir:extension ( [
-             fhir:url [
-               fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension"^^xsd:anyURI ;
-               fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension>
-             ] ;
+             fhir:url [ fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension"^^xsd:anyURI ] ;
              fhir:value [
                a fhir:Coding, sct:373873005 ;
-               fhir:system [
-                 fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-                 fhir:l <http://snomed.info/sct>
-               ] ;
+               fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
                fhir:code [ fhir:v "373873005" ] ;
                fhir:display [ fhir:v "Pharmaceutical / biologic product (product)" ]
              ]
@@ -103,10 +88,7 @@
              fhir:item [
                a fhir:CodeableConcept ;
                fhir:coding ( [
-                 fhir:system [
-                   fhir:v "http://fhir.de/CodeSystem/bfarm/atc"^^xsd:anyURI ;
-                   fhir:l <http://fhir.de/CodeSystem/bfarm/atc>
-                 ] ;
+                 fhir:system [ fhir:v "http://fhir.de/CodeSystem/bfarm/atc"^^xsd:anyURI ] ;
                  fhir:version [ fhir:v "1.4.0" ] ;
                  fhir:code [ fhir:v "R01AC01" ] ;
                  fhir:display [ fhir:v "Natriumcromoglicat" ]
@@ -116,19 +98,13 @@
                fhir:numerator [
                  fhir:value [ fhir:v "20"^^xsd:decimal ] ;
                  fhir:unit [ fhir:v "mg" ] ;
-                 fhir:system [
-                   fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
-                   fhir:l <http://unitsofmeasure.org>
-                 ] ;
+                 fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
                  fhir:code [ fhir:v "mg" ]
                ] ;
                fhir:denominator [
                  fhir:value [ fhir:v "1"^^xsd:decimal ] ;
                  fhir:unit [ fhir:v "ml" ] ;
-                 fhir:system [
-                   fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
-                   fhir:l <http://unitsofmeasure.org>
-                 ] ;
+                 fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
                  fhir:code [ fhir:v "ml" ]
                ]
              ]
@@ -139,20 +115,14 @@
            fhir:meta [
              fhir:profile ( [
                fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pharmaceutical-product"^^xsd:anyURI ;
-               fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pharmaceutical-product>
+               fhir:link <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pharmaceutical-product>
              ] )
            ] ;
            fhir:extension ( [
-             fhir:url [
-               fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension"^^xsd:anyURI ;
-               fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension>
-             ] ;
+             fhir:url [ fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension"^^xsd:anyURI ] ;
              fhir:value [
                a fhir:Coding, sct:373873005 ;
-               fhir:system [
-                 fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-                 fhir:l <http://snomed.info/sct>
-               ] ;
+               fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
                fhir:code [ fhir:v "373873005" ] ;
                fhir:display [ fhir:v "Pharmaceutical / biologic product (product)" ]
              ]
@@ -161,10 +131,7 @@
              fhir:item [
                a fhir:CodeableConcept ;
                fhir:coding ( [
-                 fhir:system [
-                   fhir:v "http://fhir.de/CodeSystem/bfarm/atc"^^xsd:anyURI ;
-                   fhir:l <http://fhir.de/CodeSystem/bfarm/atc>
-                 ] ;
+                 fhir:system [ fhir:v "http://fhir.de/CodeSystem/bfarm/atc"^^xsd:anyURI ] ;
                  fhir:version [ fhir:v "1.4.0" ] ;
                  fhir:code [ fhir:v "R01AC01" ] ;
                  fhir:display [ fhir:v "Natriumcromoglicat" ]
@@ -174,54 +141,36 @@
                fhir:numerator [
                  fhir:value [ fhir:v 2.8 ] ;
                  fhir:unit [ fhir:v "mg" ] ;
-                 fhir:system [
-                   fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
-                   fhir:l <http://unitsofmeasure.org>
-                 ] ;
+                 fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
                  fhir:code [ fhir:v "mg" ]
                ] ;
                fhir:denominator [
                  fhir:value [ fhir:v "1"^^xsd:decimal ] ;
                  fhir:unit [ fhir:v "Sprühstoß" ] ;
-                 fhir:system [
-                   fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
-                   fhir:l <http://unitsofmeasure.org>
-                 ] ;
+                 fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
                  fhir:code [ fhir:v "1" ]
                ]
              ]
            ] )
          ] ) ;
          fhir:extension ( [
-           fhir:url [
-             fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension"^^xsd:anyURI ;
-             fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension>
-           ] ;
+           fhir:url [ fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Boolean ;
+             a fhir:boolean ;
              fhir:v false
            ]
          ] [
-           fhir:url [
-             fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension"^^xsd:anyURI ;
-             fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension>
-           ] ;
+           fhir:url [ fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension"^^xsd:anyURI ] ;
            fhir:value [
              a fhir:Coding ;
-             fhir:system [
-               fhir:v "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs"^^xsd:anyURI ;
-               fhir:l <https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs>
-             ] ;
+             fhir:system [ fhir:v "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs"^^xsd:anyURI ] ;
              fhir:code [ fhir:v "00" ] ;
              fhir:display [ fhir:v "Arzneimittel oder in die Arzneimittelversorgung nach § 31 SGB V einbezogenes Produkt" ]
            ]
          ] ) ;
          fhir:code [
            fhir:coding ( [
-             fhir:system [
-               fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ;
-               fhir:l <http://fhir.de/CodeSystem/ifa/pzn>
-             ] ;
+             fhir:system [ fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ] ;
              fhir:code [ fhir:v "1746517" ] ;
              fhir:display [ fhir:v "CROMO-RATIOPHARM Kombipackung" ]
            ] )
@@ -229,10 +178,7 @@
          fhir:status [ fhir:v "active" ] ;
          fhir:form [
            fhir:coding ( [
-             fhir:system [
-               fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"^^xsd:anyURI ;
-               fhir:l <https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM>
-             ] ;
+             fhir:system [ fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"^^xsd:anyURI ] ;
              fhir:code [ fhir:v "KPG" ]
            ] ) ;
            fhir:text [ fhir:v "Kombipackung" ]
@@ -240,13 +186,11 @@
          fhir:ingredient ( [
            fhir:item [
              a fhir:Reference ;
-             fhir:l <#NasenSpray> ;
              fhir:reference [ fhir:v "#NasenSpray" ]
            ]
          ] [
            fhir:item [
              a fhir:Reference ;
-             fhir:l <#Augentropfen> ;
              fhir:reference [ fhir:v "#Augentropfen" ]
            ]
          ] ) ;

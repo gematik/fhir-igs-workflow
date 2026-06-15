@@ -12,7 +12,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-eu/OperationDefinition/GET-Prescription-EUOperationDefinition | *Version*:2.0.0-ballot.2 |
+| *Official URL*:https://gematik.de/fhir/tiflow-xborder/OperationDefinition/GET-Prescription-EU | *Version*:2.0.0-ballot.2 |
 | Draft as of 2026-05-26 | *Computable Name*:GET-Prescription-EU |
 
  
@@ -26,7 +26,7 @@ The Operation gets Presciption Information from the ERP System for usage in the 
 {
   "resourceType" : "OperationDefinition",
   "id" : "GET-Prescription-EU",
-  "url" : "https://gematik.de/fhir/erp-eu/OperationDefinition/GET-Prescription-EUOperationDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-xborder/OperationDefinition/GET-Prescription-EU",
   "version" : "2.0.0-ballot.2",
   "name" : "GET-Prescription-EU",
   "status" : "draft",

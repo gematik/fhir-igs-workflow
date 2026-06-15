@@ -13,7 +13,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-carbon-copy-logical | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-06-12 | *Computable Name*:ERP_TPrescription_CarbonCopy_Logical |
+| Draft as of 2026-06-15 | *Computable Name*:ERP_TPrescription_CarbonCopy_Logical |
 
  
 Logical Model zur Abbildung der im digitalen Durchschlag E-T-Rezept erforderlichen fachlichen Informationen. 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-ca
   "name" : "ERP_TPrescription_CarbonCopy_Logical",
   "title" : "Logisches Modell digitaler Durchschlag E-T-Rezept",
   "status" : "draft",
-  "date" : "2026-06-12T14:54:45+00:00",
+  "date" : "2026-06-15T07:12:36+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

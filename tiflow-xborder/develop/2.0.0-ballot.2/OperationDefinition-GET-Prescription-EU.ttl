@@ -13,10 +13,7 @@
      fhir:status [ fhir:v "generated" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition GET-Prescription-EU</b></p><a name=\"GET-Prescription-EU\"> </a><a name=\"hcGET-Prescription-EU\"> </a><p>URL: [base]/$get-eu-prescriptions</p><p>Input parameters Profile:<a href=\"StructureDefinition-GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input.html\">GEM ERPEU PR PAR GET Prescription Input</a></p><p>Output parameters Profile:<a href=\"StructureDefinition-gem-erpeu-pr-par-get-prescription-output.html\">GEM ERPEU PR PAR GET Prescription Output</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>requestData</td><td/><td>1..1</td><td/><td/><td><div><p>Additional request information</p>\n</div></td></tr><tr><td>IN</td><td>requestData.requesttype</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.kvnr</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.accessCode</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.countryCode</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.prescription-id</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.practitionerName</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.practitionerRole</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.pointOfCare</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td/></tr><tr><td>IN</td><td>requestData.healthcare-facility-type</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td><div><p>Depending on the requesttype this operation returns a Bundle containing eRezept KBV_PR_ERP_Bundle Prescription-Bundles.</p>\n</div></td></tr></table></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [
-     fhir:v "https://gematik.de/fhir/erp-eu/OperationDefinition/GET-Prescription-EUOperationDefinition"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/erp-eu/OperationDefinition/GET-Prescription-EUOperationDefinition>
-  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow-xborder/OperationDefinition/GET-Prescription-EU"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
   fhir:name [ fhir:v "GET-Prescription-EU"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
@@ -36,10 +33,7 @@
   fhir:description [ fhir:v "The Operation gets Presciption Information from the ERP System for usage in the e-prescription workflow for EU countries"] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "DE" ] ;
        fhir:display [ fhir:v "Germany" ]
      ] )
@@ -51,11 +45,11 @@
   fhir:instance [ fhir:v false] ; # 
   fhir:inputProfile [
      fhir:v "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input>
+     fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input>
   ] ; # 
   fhir:outputProfile [
      fhir:v "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/gem-erpeu-pr-par-get-prescription-output"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/gem-erpeu-pr-par-get-prescription-output>
+     fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/gem-erpeu-pr-par-get-prescription-output>
   ] ; # 
   fhir:parameter ( [
      fhir:name [ fhir:v "requestData" ] ;

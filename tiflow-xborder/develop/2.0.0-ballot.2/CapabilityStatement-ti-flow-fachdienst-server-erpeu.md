@@ -78,6 +78,10 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
       }],
       "interaction" : [{
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -93,45 +97,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -207,6 +172,10 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -222,45 +191,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -447,6 +377,10 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
       }],
       "operation" : [{
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -463,8 +397,7 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
             "url" : "errorCode",
             "valueString" : "SVC_VALIDATION_FAILED"
           }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -602,43 +535,43 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "408"
+            "valueString" : "500"
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
+            "valueString" : "TIFlowOperationOutcome"
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "500"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
+            "valueString" : "TIFlowOperationOutcome"
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
         "name" : "eu-close",
-        "definition" : "https://gematik.de/fhir/erp-eu/OperationDefinition/EUCloseOperationDefinition",
+        "definition" : "https://gematik.de/fhir/tiflow-xborder/OperationDefinition/EUCloseOperation",
         "documentation" : "Finishes the EU ePrescription workflow and creates a signed receipt bundle"
       }]
     },
@@ -650,6 +583,10 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
       "type" : "Consent",
       "interaction" : [{
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -665,45 +602,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -779,6 +677,10 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -794,45 +696,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -870,6 +733,10 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -885,45 +752,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "EPAMSOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -1012,6 +840,10 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
     }],
     "operation" : [{
       "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
         "extension" : [{
           "url" : "statusCode",
           "valueString" : "200"
@@ -1024,8 +856,7 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           "url" : "responseType",
           "valueString" : "Parameters"
         }],
-        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-        "valueCode" : "SHALL"
+        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       },
       {
         "extension" : [{
@@ -1043,44 +874,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         {
           "url" : "errorCode",
           "valueString" : "MSG_BAD_FORMAT"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "408"
-        },
-        {
-          "url" : "description",
-          "valueString" : "Request timeout"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_TIMEOUT"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "500"
-        },
-        {
-          "url" : "description",
-          "valueString" : "Internal server error"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_INTERNAL_ERROR"
         }],
         "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       },
@@ -1161,11 +954,15 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       }],
       "name" : "grant-eu-access-permission",
-      "definition" : "https://gematik.de/fhir/erp-eu/OperationDefinition/Grant_Access_PermissionOperationDefinition",
+      "definition" : "https://gematik.de/fhir/tiflow-xborder/OperationDefinition/Grant-EU-Access-Permission",
       "documentation" : "Registers access code and country for EU prescription access"
     },
     {
       "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
         "extension" : [{
           "url" : "statusCode",
           "valueString" : "200"
@@ -1178,8 +975,7 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           "url" : "responseType",
           "valueString" : "Parameters"
         }],
-        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-        "valueCode" : "SHALL"
+        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       },
       {
         "extension" : [{
@@ -1197,44 +993,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         {
           "url" : "errorCode",
           "valueString" : "MSG_BAD_FORMAT"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "408"
-        },
-        {
-          "url" : "description",
-          "valueString" : "Request timeout"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_TIMEOUT"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "500"
-        },
-        {
-          "url" : "description",
-          "valueString" : "Internal server error"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_INTERNAL_ERROR"
         }],
         "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       },
@@ -1258,11 +1016,15 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       }],
       "name" : "read-eu-access-permission",
-      "definition" : "https://gematik.de/fhir/erp-eu/OperationDefinition/Read_Access_PermissionOperationDefinition",
+      "definition" : "https://gematik.de/fhir/tiflow-xborder/OperationDefinition/Read-EU-Access-Permission",
       "documentation" : "Reads the currently registered EU access code"
     },
     {
       "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
         "extension" : [{
           "url" : "statusCode",
           "valueString" : "200"
@@ -1271,8 +1033,7 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           "url" : "description",
           "valueString" : "Successful operation"
         }],
-        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-        "valueCode" : "SHALL"
+        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       },
       {
         "extension" : [{
@@ -1290,44 +1051,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         {
           "url" : "errorCode",
           "valueString" : "MSG_BAD_FORMAT"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "408"
-        },
-        {
-          "url" : "description",
-          "valueString" : "Request timeout"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_TIMEOUT"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "500"
-        },
-        {
-          "url" : "description",
-          "valueString" : "Internal server error"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_INTERNAL_ERROR"
         }],
         "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       },
@@ -1351,11 +1074,15 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       }],
       "name" : "revoke-eu-access-permission",
-      "definition" : "https://gematik.de/fhir/erp-eu/OperationDefinition/Revoke_Access_PermissionOperationDefinition",
+      "definition" : "https://gematik.de/fhir/tiflow-xborder/OperationDefinition/Revoke-EU-Access-Permission",
       "documentation" : "Revokes the currently registered EU access code"
     },
     {
       "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode" : "SHALL"
+      },
+      {
         "extension" : [{
           "url" : "statusCode",
           "valueString" : "200"
@@ -1368,8 +1095,7 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
           "url" : "responseType",
           "valueString" : "Parameters"
         }],
-        "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-        "valueCode" : "SHALL"
+        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       },
       {
         "extension" : [{
@@ -1387,44 +1113,6 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         {
           "url" : "errorCode",
           "valueString" : "MSG_BAD_FORMAT"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "408"
-        },
-        {
-          "url" : "description",
-          "valueString" : "Request timeout"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_TIMEOUT"
-        }],
-        "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-      },
-      {
-        "extension" : [{
-          "url" : "statusCode",
-          "valueString" : "500"
-        },
-        {
-          "url" : "description",
-          "valueString" : "Internal server error"
-        },
-        {
-          "url" : "responseType",
-          "valueString" : "EPAMSOperationOutcome"
-        },
-        {
-          "url" : "errorCode",
-          "valueString" : "MSG_INTERNAL_ERROR"
         }],
         "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       },
@@ -1524,7 +1212,7 @@ CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)
         "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
       }],
       "name" : "get-eu-prescriptions",
-      "definition" : "https://gematik.de/fhir/erp-eu/OperationDefinition/GET-Prescription-EUOperationDefinition",
+      "definition" : "https://gematik.de/fhir/tiflow-xborder/OperationDefinition/GET-Prescription-EU",
       "documentation" : "Returns prescription information for EU ePrescription workflows"
     }]
   }]

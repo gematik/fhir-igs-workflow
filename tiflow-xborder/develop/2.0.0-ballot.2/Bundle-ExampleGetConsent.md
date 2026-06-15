@@ -43,7 +43,7 @@ Version 2.0.0-ballot.2 - ci-build
       },
       "category" : [{
         "coding" : [{
-          "system" : "https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_ConsentType",
+          "system" : "https://gematik.de/fhir/tiflow-xborder/CodeSystem/GEM-ERPEU-CS-ConsentType",
           "code" : "EUDISPCONS",
           "display" : "Consent for redeeming e-prescriptions in EU countries"
         }]

@@ -13,10 +13,7 @@
      fhir:status [ fhir:v "generated" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap ERPTPrescriptionStructureMapTask</b></p><a name=\"ERPTPrescriptionStructureMapTask\"> </a><a name=\"hcERPTPrescriptionStructureMapTask\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapTask<span style=\"color: navy\">\" = \"</span>ERPTPrescriptionStructureMapTask<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Mappt die E-Rezept ID aus dem Task in ein Identifier Objekt</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/task.html\" title=\"Task\">http://hl7.org/fhir/StructureDefinition/Task</a><span style=\"color: navy\">\" </span><b>alias </b>task <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\" title=\"Identifier\">http://hl7.org/fhir/StructureDefinition/Identifier</a><span style=\"color: navy\">\" </span><b>alias </b>tgtIdentifier <b>as </b><b>target</b>#xD;\n#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Mapping Anweisungen für GEM_Task</span>#xD;\n<b>group </b>ERPTPrescriptionStructureMapTask<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">task</span><span style=\"color: navy\"> : </span>task, <b>target</b> <span style=\"color: maroon\">tgtIdentifier</span><span style=\"color: navy\"> : </span>tgtIdentifier<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  task.identifier<b> as </b><span style=\"color: maroon\">srcTaskIdentifier</span><b> where </b>$this.system='https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId'<b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcTaskIdentifier.value<b> as </b><span style=\"color: maroon\">srcTaskIdentifierValue</span><b> log </b>tgtIdentifier<span style=\"color: navy\"><b> -&gt; </b></span> tgtIdentifier.system = <span style=\"color: blue\">'https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId'</span><span style=\"color: navy\">, </span> tgtIdentifier.value = <span style=\"color: maroon\">srcTaskIdentifierValue</span> <i>\"prescriptionIdValue\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt die E-Rezept-ID aus dem Task in den Identifier</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"prescriptionId\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [
-     fhir:v "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapTask"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapTask>
-  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapTask"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
   fhir:name [ fhir:v "ERPTPrescriptionStructureMapTask"] ; # 
   fhir:title [ fhir:v "E-T-Rezept Structure Map for Task"] ; # 
@@ -37,10 +34,7 @@
   fhir:description [ fhir:v "Mappt die E-Rezept ID aus dem Task in ein Identifier Objekt"] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "DE" ] ;
        fhir:display [ fhir:v "Germany" ]
      ] )
@@ -48,14 +42,14 @@
   fhir:structure ( [
      fhir:url [
        fhir:v "http://hl7.org/fhir/StructureDefinition/Task"^^xsd:anyURI ;
-       fhir:l <http://hl7.org/fhir/StructureDefinition/Task>
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Task>
      ] ;
      fhir:mode [ fhir:v "source" ] ;
      fhir:alias [ fhir:v "task" ]
   ] [
      fhir:url [
        fhir:v "http://hl7.org/fhir/StructureDefinition/Identifier"^^xsd:anyURI ;
-       fhir:l <http://hl7.org/fhir/StructureDefinition/Identifier>
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
      ] ;
      fhir:mode [ fhir:v "target" ] ;
      fhir:alias [ fhir:v "tgtIdentifier" ]
@@ -96,7 +90,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
              ]
            ] )
@@ -107,7 +101,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:Id ;
+               a fhir:id ;
                fhir:v "srcTaskIdentifierValue"
              ]
            ] )

@@ -170,7 +170,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPEU-PR-PAR-EU-
       }],
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://gematik.de/fhir/erp-eu/ValueSet/GEM_ERPEU_VS_RequestType"
+        "valueSet" : "https://gematik.de/fhir/tiflow-xborder/ValueSet/GEM-ERPEU-VS-RequestType"
       }
     },
     {

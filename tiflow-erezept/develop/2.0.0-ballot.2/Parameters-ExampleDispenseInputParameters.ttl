@@ -12,7 +12,7 @@
   fhir:meta [
      fhir:profile ( [
        fhir:v "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input>
+       fhir:link <https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input>
      ] )
   ] ; # 
   fhir:parameter ( [
@@ -25,38 +25,29 @@
          fhir:meta [
            fhir:profile ( [
              fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0"^^xsd:anyURI ;
-             fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense?version=2.0>
+             fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0>
            ] )
          ] ;
          fhir:identifier ( [
-           fhir:system [
-             fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ;
-             fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId>
-           ] ;
+           fhir:system [ fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "160.000.033.491.280.78" ]
          ] ) ;
          fhir:status [ fhir:v "completed" ] ;
          fhir:medication [
            a fhir:Reference ;
-           fhir:l <https://gematik.de/fhir/tiflow-erezept/Medication/SumatripanMedication> ;
+           fhir:link <https://gematik.de/fhir/tiflow-erezept/Medication/SumatripanMedication> ;
            fhir:reference [ fhir:v "Medication/SumatripanMedication" ]
          ] ;
          fhir:subject [
            fhir:identifier [
-             fhir:system [
-               fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
-               fhir:l <http://fhir.de/sid/gkv/kvid-10>
-             ] ;
+             fhir:system [ fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ] ;
              fhir:value [ fhir:v "X123456789" ]
            ]
          ] ;
          fhir:performer ( [
            fhir:actor [
              fhir:identifier [
-               fhir:system [
-                 fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ;
-                 fhir:l <https://gematik.de/fhir/sid/telematik-id>
-               ] ;
+               fhir:system [ fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ] ;
                fhir:value [ fhir:v "3-SMC-B-Testkarte-883110000095957" ]
              ]
            ]
@@ -71,69 +62,48 @@
          fhir:meta [
            fhir:profile ( [
              fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0"^^xsd:anyURI ;
-             fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication?version=2.0>
+             fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0>
            ] )
          ] ;
          fhir:extension ( [
-           fhir:url [
-             fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension"^^xsd:anyURI ;
-             fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension>
-           ] ;
+           fhir:url [ fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension"^^xsd:anyURI ] ;
            fhir:value [
              a fhir:Coding ;
-             fhir:system [
-               fhir:v "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs"^^xsd:anyURI ;
-               fhir:l <https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs>
-             ] ;
+             fhir:system [ fhir:v "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs"^^xsd:anyURI ] ;
              fhir:code [ fhir:v "00" ]
            ]
          ] [
-           fhir:url [
-             fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension"^^xsd:anyURI ;
-             fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension>
-           ] ;
+           fhir:url [ fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Boolean ;
+             a fhir:boolean ;
              fhir:v false
            ]
          ] [
-           fhir:url [
-             fhir:v "http://fhir.de/StructureDefinition/normgroesse"^^xsd:anyURI ;
-             fhir:l <http://fhir.de/StructureDefinition/normgroesse>
-           ] ;
+           fhir:url [ fhir:v "http://fhir.de/StructureDefinition/normgroesse"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Code ;
+             a fhir:code ;
              fhir:v "N1"
            ]
          ] ) ;
          fhir:code [
            fhir:coding ( [
-             fhir:system [
-               fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ;
-               fhir:l <http://fhir.de/CodeSystem/ifa/pzn>
-             ] ;
+             fhir:system [ fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ] ;
              fhir:code [ fhir:v "06313728" ]
            ] ) ;
            fhir:text [ fhir:v "Sumatriptan-1a Pharma 100 mg Tabletten" ]
          ] ;
          fhir:form [
            fhir:coding ( [
-             fhir:system [
-               fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"^^xsd:anyURI ;
-               fhir:l <https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM>
-             ] ;
+             fhir:system [ fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"^^xsd:anyURI ] ;
              fhir:code [ fhir:v "TAB" ]
            ] )
          ] ;
          fhir:amount [
            fhir:numerator [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension"^^xsd:anyURI ;
-                 fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension>
-               ] ;
+               fhir:url [ fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:String ;
+                 a fhir:string ;
                  fhir:v "20"
                ]
              ] ) ;

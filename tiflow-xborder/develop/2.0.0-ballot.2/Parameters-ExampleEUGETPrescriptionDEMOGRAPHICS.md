@@ -26,7 +26,7 @@ Version 2.0.0-ballot.2 - ci-build
     "part" : [{
       "name" : "requesttype",
       "valueCoding" : {
-        "system" : "https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_RequestType",
+        "system" : "https://gematik.de/fhir/tiflow-xborder/CodeSystem/GEM-ERPEU-CS-RequestType",
         "code" : "demographics"
       }
     },

@@ -13,12 +13,9 @@
      fhir:status [ fhir:v "generated" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition Grant-EU-Access-Permission</b></p><a name=\"Grant-EU-Access-Permission\"> </a><a name=\"hcGrant-EU-Access-Permission\"> </a><p>URL: [base]/$grant-eu-access-permission</p><p>Input parameters Profile:<a href=\"StructureDefinition-GEM-ERPEU-PR-PAR-AccessAuthorization-Request.html\">GEM ERPEU PR PAR Access Authorization Request</a></p><p>Output parameters Profile:<a href=\"StructureDefinition-GEM-ERPEU-PR-PAR-AccessAuthorization-Response.html\">GEM ERPEU PR PAR Access Authorization Response</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>countryCode</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td><div><p>The country for which the patient wants to grant access.</p>\n</div></td></tr><tr><td>IN</td><td>accessCode</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>The access code for that country.</p>\n</div></td></tr><tr><td>OUT</td><td>countryCode</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td><div><p>The country for which the patient wants to grant access.</p>\n</div></td></tr><tr><td>OUT</td><td>accessCode</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>The access code for that country.</p>\n</div></td></tr><tr><td>OUT</td><td>validUntil</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#instant\">instant</a></td><td/><td><div><p>The instant until the access code is valid.</p>\n</div></td></tr><tr><td>OUT</td><td>createdAt</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#instant\">instant</a></td><td/><td><div><p>The instant when the record was created in the E-Rezept-Fachdienst.</p>\n</div></td></tr></table></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [
-     fhir:v "https://gematik.de/fhir/erp-eu/OperationDefinition/Grant_Access_PermissionOperationDefinition"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/erp-eu/OperationDefinition/Grant_Access_PermissionOperationDefinition>
-  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow-xborder/OperationDefinition/Grant-EU-Access-Permission"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
-  fhir:name [ fhir:v "Grant_Access_Permission"] ; # 
+  fhir:name [ fhir:v "Grant-EU-Access-Permission"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "operation"] ; # 
   fhir:date [ fhir:v "2026-05-26"^^xsd:date] ; # 
@@ -36,10 +33,7 @@
   fhir:description [ fhir:v "This operation receives the access code and the country that the patient wants to grant access to. The operation validates the country and creates registeres the Access Code."] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "DE" ] ;
        fhir:display [ fhir:v "Germany" ]
      ] )
@@ -51,11 +45,11 @@
   fhir:instance [ fhir:v false] ; # 
   fhir:inputProfile [
      fhir:v "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Request"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Request>
+     fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Request>
   ] ; # 
   fhir:outputProfile [
      fhir:v "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Response"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Response>
+     fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Response>
   ] ; # 
   fhir:parameter ( [
      fhir:name [ fhir:v "countryCode" ] ;

@@ -12,7 +12,7 @@
   fhir:meta [
      fhir:profile ( [
        fhir:v "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Consent"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Consent>
+       fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Consent>
      ] )
   ] ; # 
   fhir:text [
@@ -22,37 +22,25 @@
   fhir:status [ fhir:v "active"] ; # 
   fhir:scope [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "http://terminology.hl7.org/CodeSystem/consentscope"^^xsd:anyURI ;
-         fhir:l <http://terminology.hl7.org/CodeSystem/consentscope>
-       ] ;
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/consentscope"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "patient-privacy" ] ;
        fhir:display [ fhir:v "Privacy Consent" ]
      ] )
   ] ; # 
   fhir:category ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_ConsentType"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_ConsentType>
-       ] ;
+       fhir:system [ fhir:v "https://gematik.de/fhir/tiflow-xborder/CodeSystem/GEM-ERPEU-CS-ConsentType"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "EUDISPCONS" ] ;
        fhir:display [ fhir:v "Consent for redeeming e-prescriptions in EU countries" ]
      ] )
   ] ) ; # 
   fhir:patient [
      fhir:identifier [
-       fhir:system [
-         fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ;
-         fhir:l <http://fhir.de/sid/gkv/kvid-10>
-       ] ;
+       fhir:system [ fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ] ;
        fhir:value [ fhir:v "X123456789" ] ;
        fhir:assigner [
          fhir:identifier [
-           fhir:system [
-             fhir:v "http://fhir.de/sid/arge-ik/iknr"^^xsd:anyURI ;
-             fhir:l <http://fhir.de/sid/arge-ik/iknr>
-           ] ;
+           fhir:system [ fhir:v "http://fhir.de/sid/arge-ik/iknr"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "98765543" ]
          ]
        ]
@@ -61,10 +49,7 @@
   fhir:dateTime [ fhir:v "2025-10-01T12:03:23Z"^^xsd:dateTime] ; # 
   fhir:policyRule [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
-         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
-       ] ;
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "OPTIN" ]
      ] )
   ] . # 

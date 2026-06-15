@@ -12,8 +12,8 @@ Version 2.0.0-ballot.2 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-eu/OperationDefinition/Grant_Access_PermissionOperationDefinition | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-05-26 | *Computable Name*:Grant_Access_Permission |
+| *Official URL*:https://gematik.de/fhir/tiflow-xborder/OperationDefinition/Grant-EU-Access-Permission | *Version*:2.0.0-ballot.2 |
+| Draft as of 2026-05-26 | *Computable Name*:Grant-EU-Access-Permission |
 
  
 This operation receives the access code and the country that the patient wants to grant access to. The operation validates the country and creates registeres the Access Code. 
@@ -26,9 +26,9 @@ This operation receives the access code and the country that the patient wants t
 {
   "resourceType" : "OperationDefinition",
   "id" : "Grant-EU-Access-Permission",
-  "url" : "https://gematik.de/fhir/erp-eu/OperationDefinition/Grant_Access_PermissionOperationDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-xborder/OperationDefinition/Grant-EU-Access-Permission",
   "version" : "2.0.0-ballot.2",
-  "name" : "Grant_Access_Permission",
+  "name" : "Grant-EU-Access-Permission",
   "status" : "draft",
   "kind" : "operation",
   "date" : "2026-05-26",

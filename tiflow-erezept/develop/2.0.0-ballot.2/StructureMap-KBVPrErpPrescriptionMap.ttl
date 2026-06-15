@@ -13,10 +13,7 @@
      fhir:status [ fhir:v "generated" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap KBVPrErpPrescriptionMap</b></p><a name=\"KBVPrErpPrescriptionMap\"> </a><a name=\"hcKBVPrErpPrescriptionMap\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap<span style=\"color: navy\">\" = \"</span>KBVPrErpPrescriptionMap<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Auto-generated StructureMap for KBV_PR_ERP_Prescription|1.4.0 -&gt; EPAMedicationRequest|1.3.0</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span>https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription<span style=\"color: navy\">\" </span><b>alias </b>KBVPRERPPrescription <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.2&amp;canonical=https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request\" title=\"EPA MedicationRequest\">https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request</a><span style=\"color: navy\">\" </span><b>alias </b>EPAMedicationRequest <b>as </b><b>target</b>#xD;\n#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Mapping generated for KBV_PR_ERP_Prescription|1.4.0 -&gt; EPAMedicationRequest|1.3.0</span>#xD;\n<b>group </b>KBVPrErpPrescriptionMap<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">KBVPRERPPrescription</span><span style=\"color: navy\"> : </span>KBVPRERPPrescription, <b>target</b> <span style=\"color: maroon\">EPAMedicationRequest</span><span style=\"color: navy\"> : </span>EPAMedicationRequest<span style=\"color: navy\">)</span><b> &lt;&lt;types&gt;&gt;</b><span style=\"color: navy\"> {#xD;\n</span>  KBVPRERPPrescription.authoredOn<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionAuthoredon3962f227</span><span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.authoredOn = <span style=\"color: maroon\">srcKBVPRERPPrescriptionAuthoredon3962f227</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestAuthoredonbb8b1afd</span> <i>\"MedicationRequestAuthoredoncccaaca3\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Automatic copy</span>#xD;\n  KBVPRERPPrescription.basedOn<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionBasedon44096147</span><span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.basedOn = <span style=\"color: maroon\">srcKBVPRERPPrescriptionBasedon44096147</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestBasedon1481cab7</span> <i>\"MedicationRequestBasedonc8b5003b\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'MedicationRequest.basedOn'</span>#xD;\n  KBVPRERPPrescription.dispenseRequest<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionDispenserequest1783274a</span><span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.dispenseRequest = <span style=\"color: maroon\">srcKBVPRERPPrescriptionDispenserequest1783274a</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestDispenserequest519b8c09</span> <i>\"MedicationRequestDispenserequestabc39b18\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'MedicationRequest.dispenseRequest'</span>#xD;\n  KBVPRERPPrescription.dosageInstruction<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionDosageinstructionc10ce439</span><span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.dosageInstruction = <span style=\"color: maroon\">srcKBVPRERPPrescriptionDosageinstructionc10ce439</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestDosageinstructionc76ffbd5</span> <i>\"MedicationRequestDosageinstruction0c18f214\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'MedicationRequest.dosageInstruction'</span>#xD;\n  KBVPRERPPrescription.extension<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionExtensione3b6d5d3</span><b> where </b>url != 'renderedDosageInstruction' and url != 'prescriberID' and url != 'id' and url != 'ID' and url != 'narcotics' and url != 'Betaeubungsmittel' and url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Patient_ID' and url != 'indicator' and url != 'Off-Label' and url != 'declaration-of-expertise' and url != 'teratogenic' and url != 'narcotics-markings' and url != 'Mehrfachverordnung' and url != 'Unfallkennzeichen' and url != 'additional-information-substitutes' and url != 'Zeitraum' and url != 'valueString' and url != 'multiplePrescription' and url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee' and url != 'VerschreiberID' and url != 'isBvg' and url != 'period' and url != 'https://gematik.de/fhir/epa-medication/StructureDefinition/multiple-prescription-extension' and url != 'ErklaerungSachkenntnis' and url != 'valuePeriod' and url != 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction' and url != 'Unfalltag' and url != 'valueDate' and url != 'security-compliance' and url != 'https://gematik.de/fhir/epa-medication/StructureDefinition/teratogenic-extension' and url != 'hand-out-information-material' and url != 'valueBoolean' and url != 'https://gematik.de/fhir/epa-medication/StructureDefinition/patient-id-extension' and url != 'https://gematik.de/fhir/epa-medication/StructureDefinition/prescriber-id-extension' and url != 'valueCoding' and url != 'BtM-Sonderkennzeichen' and url != 'EinhaltungSicherheitsmassnahmen' and url != 'PatientenID' and url != 'Notdienstgebuehr' and url != 'Nummerierung' and url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Narcotic' and url != 'ErgaenzendeAngabenSubstitutionsmittel' and url != 'GebaerfaehigeFrau' and url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_SER' and url != 'Kennzeichen' and url != 'patientID' and url != 'valueRatio' and url != 'http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta' and url != 'childbearing-potential' and url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag' and url != 'isSer' and url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription' and url != 'counter' and url != 'valueIdentifier' and url != 'https://gematik.de/fhir/epa-medication/StructureDefinition/indicator-ser-extension' and url != 'Dosierungskennzeichen' and url != 'AushaendigungInformationsmaterialien' and url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Prescriber_ID' and url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Teratogenic' and url != 'https://gematik.de/fhir/epa-medication/StructureDefinition/narcotics-extension' and url != 'Unfallinformationen' and url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Accident' and url != 'Zuzahlungsstatus' and url != 'T-Rezept' and url != 'SER' and url != 'Unfallbetrieb' and url != 'generatedDosageInstructionsMeta' and url != 'off-label' and url != 'https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment'<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.extension = <span style=\"color: maroon\">srcKBVPRERPPrescriptionExtensione3b6d5d3</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestExtension84dbff80</span> <i>\"MedicationRequestExtension9fb7a1e1\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Automatic copy</span>#xD;\n  KBVPRERPPrescription.extension<b> where </b>url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag'<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.extension <i>\"MedicationRequestExtensionDosierungskennzeichen196725c7\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Quelle: MedicationRequest.extension:Dosierungskennzeichen</span>#xD;\n  KBVPRERPPrescription.extension<b> where </b>url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee'<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.extension <i>\"MedicationRequestExtensionNotdienstgebuehr2bd5d6b0\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Quelle: MedicationRequest.extension:Notdienstgebuehr</span>#xD;\n  KBVPRERPPrescription.extension<b> where </b>url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Accident'<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.extension <i>\"MedicationRequestExtensionUnfallinformationen3a7c229e\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Quelle: MedicationRequest.extension:Unfallinformationen</span>#xD;\n  KBVPRERPPrescription.extension<b> where </b>url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment'<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.extension <i>\"MedicationRequestExtensionZuzahlungsstatus32a86828\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Quelle: MedicationRequest.extension:Zuzahlungsstatus</span>#xD;\n  KBVPRERPPrescription.extension<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionExtensionGenerateddosageinstructionsa922a</span><b> where </b>url = 'http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta' and url = 'http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta'<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.extension = <span style=\"color: maroon\">srcKBVPRERPPrescriptionExtensionGenerateddosageinstructionsa922a</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestExtensionGenerateddosageinstructionsf5747</span> <i>\"MedicationRequestExtensionGenerateddosageinstructionsmetdb6c77e4\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Automatic copy</span>#xD;\n  KBVPRERPPrescription.extension<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionExtensionSere0662047</span><b> where </b>url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_SER' and url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_SER'<span style=\"color: navy\"><b> -&gt; </b></span> EPAMedicationRequest.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestExtensionIsser3ffad0d8</span><span style=\"color: navy\">, </span> tgtEPAMedicationRequestExtensionIsser3ffad0d8.url = <span style=\"color: blue\">'https://gematik.de/fhir/epa-medication/StructureDefinition/indicator-ser-extension'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcKBVPRERPPrescriptionExtensionSere0662047.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionIsserValueXc593588c</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestExtensionIsser3ffad0d8.value = <span style=\"color: maroon\">srcMedicationRequestExtensionIsserValueXc593588c</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionIsserValueXc593588c</span> <i>\"MedicationRequestExtensionIsserValueXc593588c\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:SER.value[x]'</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionIsser59899e4f\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:SER'</span>#xD;\n  KBVPRERPPrescription.extension<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionExtensionMehrfachverordnungc7120a1c</span><b> where </b>url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription' and url != 'period' and url != 'indicator' and url != 'id' and url != 'counter' and url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription'<span style=\"color: navy\"><b> -&gt; </b></span> EPAMedicationRequest.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestExtensionMultipleprescriptionb8edbb86</span><span style=\"color: navy\">, </span> tgtEPAMedicationRequestExtensionMultipleprescriptionb8edbb86.url = <span style=\"color: blue\">'https://gematik.de/fhir/epa-medication/StructureDefinition/multiple-prescription-extension'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcKBVPRERPPrescriptionExtensionMehrfachverordnungc7120a1c.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionMultipleprescriptionExtensionfb1469</span><b> where </b>url != 'period' and url != 'indicator' and url != 'id' and url != 'counter' and url != 'indicator' and url != 'counter' and url != 'period' and url != 'id' and url != 'indicator' and url != 'counter' and url != 'period' and url != 'id' and url != 'Kennzeichen' and url != 'Nummerierung' and url != 'Zeitraum' and url != 'ID' and url != 'valueBoolean' and url != 'valueRatio' and url != 'valuePeriod' and url != 'valueIdentifier'<span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestExtensionMultipleprescriptionb8edbb86.extension = <span style=\"color: maroon\">srcMedicationRequestExtensionMultipleprescriptionExtensionfb1469</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionMultipleprescriptionExtensionfb1469</span> <i>\"MedicationRequestExtensionMultipleprescriptionExtensionfb1469fa\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Mehrfachverordnung.extension'</span>#xD;\n    srcKBVPRERPPrescriptionExtensionMehrfachverordnungc7120a1c.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionMultipleprescriptionExtensionCfaa56</span><b> where </b>url = 'Nummerierung'<span style=\"color: navy\"><b> -&gt; </b></span> tgtEPAMedicationRequestExtensionMultipleprescriptionb8edbb86.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionMultipleprescriptionExtensionCfaa56</span><span style=\"color: navy\">, </span> tgtMedicationRequestExtensionMultipleprescriptionExtensionCfaa56.url = <span style=\"color: blue\">'counter'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcMedicationRequestExtensionMultipleprescriptionExtensionCfaa56.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionMultipleprescriptionExtensionC871d2</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtMedicationRequestExtensionMultipleprescriptionExtensionCfaa56.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Ratio'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionMultipleprescriptionExtensionC871d2</span> <i>\"MedicationRequestExtensionMultipleprescriptionExtensionC871d22e9\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Mehrfachverordnung.extension:Nummerierung.value[x]'</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionMultipleprescriptionExtensionCfaa566e2\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Mehrfachverordnung.extension:Nummerierung'</span>#xD;\n    srcKBVPRERPPrescriptionExtensionMehrfachverordnungc7120a1c.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionMultipleprescriptionExtensionI16b59</span><b> where </b>url = 'ID'<span style=\"color: navy\"><b> -&gt; </b></span> tgtEPAMedicationRequestExtensionMultipleprescriptionb8edbb86.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionMultipleprescriptionExtensionI16b59</span><span style=\"color: navy\">, </span> tgtMedicationRequestExtensionMultipleprescriptionExtensionI16b59.url = <span style=\"color: blue\">'id'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcMedicationRequestExtensionMultipleprescriptionExtensionI16b59.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionMultipleprescriptionExtensionIe062e</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtMedicationRequestExtensionMultipleprescriptionExtensionI16b59.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Identifier'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionMultipleprescriptionExtensionIe062e</span> <i>\"MedicationRequestExtensionMultipleprescriptionExtensionIe062e3e2\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Mehrfachverordnung.extension:ID.value[x]'</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionMultipleprescriptionExtensionI16b5928d\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Mehrfachverordnung.extension:ID'</span>#xD;\n    srcKBVPRERPPrescriptionExtensionMehrfachverordnungc7120a1c.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionMultipleprescriptionExtensionI4e3b3</span><b> where </b>url = 'Kennzeichen'<span style=\"color: navy\"><b> -&gt; </b></span> tgtEPAMedicationRequestExtensionMultipleprescriptionb8edbb86.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionMultipleprescriptionExtensionI4e3b3</span><span style=\"color: navy\">, </span> tgtMedicationRequestExtensionMultipleprescriptionExtensionI4e3b3.url = <span style=\"color: blue\">'indicator'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcMedicationRequestExtensionMultipleprescriptionExtensionI4e3b3.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionMultipleprescriptionExtensionI405de</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtMedicationRequestExtensionMultipleprescriptionExtensionI4e3b3.value = <span style=\"color: maroon\">srcMedicationRequestExtensionMultipleprescriptionExtensionI405de</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionMultipleprescriptionExtensionI405de</span> <i>\"MedicationRequestExtensionMultipleprescriptionExtensionI405debc2\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen.value[x]'</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionMultipleprescriptionExtensionI4e3b384b\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen'</span>#xD;\n    srcKBVPRERPPrescriptionExtensionMehrfachverordnungc7120a1c.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionMultipleprescriptionExtensionP141be</span><b> where </b>url = 'Zeitraum'<span style=\"color: navy\"><b> -&gt; </b></span> tgtEPAMedicationRequestExtensionMultipleprescriptionb8edbb86.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionMultipleprescriptionExtensionP141be</span><span style=\"color: navy\">, </span> tgtMedicationRequestExtensionMultipleprescriptionExtensionP141be.url = <span style=\"color: blue\">'period'</span> <i>\"MedicationRequestExtensionMultipleprescriptionExtensionP141be3dc\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum'</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionMultipleprescriptionbdc5607f\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Mehrfachverordnung'</span>#xD;\n  KBVPRERPPrescription.extension<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionExtensionBetaeubungsmitteld93a4b99</span><b> where </b>url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Narcotic' and url != 'narcotics-markings' and url != 'additional-information-substitutes' and url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Narcotic'<span style=\"color: navy\"><b> -&gt; </b></span> EPAMedicationRequest.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestExtensionNarcotics6cf17625</span><span style=\"color: navy\">, </span> tgtEPAMedicationRequestExtensionNarcotics6cf17625.url = <span style=\"color: blue\">'https://gematik.de/fhir/epa-medication/StructureDefinition/narcotics-extension'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcKBVPRERPPrescriptionExtensionBetaeubungsmitteld93a4b99.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionNarcoticsExtension5781be10</span><b> where </b>url != 'narcotics-markings' and url != 'additional-information-substitutes' and url != 'narcotics-markings' and url != 'additional-information-substitutes' and url != 'narcotics-markings' and url != 'additional-information-substitutes' and url != 'valueCoding' and url != 'valueString' and url != 'BtM-Sonderkennzeichen' and url != 'ErgaenzendeAngabenSubstitutionsmittel' and url != 'valueCoding' and url != 'valueString'<span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestExtensionNarcotics6cf17625.extension = <span style=\"color: maroon\">srcMedicationRequestExtensionNarcoticsExtension5781be10</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionNarcoticsExtension5781be10</span> <i>\"MedicationRequestExtensionNarcoticsExtension5781be10\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Betaeubungsmittel.extension'</span>#xD;\n    srcKBVPRERPPrescriptionExtensionBetaeubungsmitteld93a4b99.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionNarcoticsExtensionAdditionalInceae9</span><b> where </b>url = 'ErgaenzendeAngabenSubstitutionsmittel'<span style=\"color: navy\"><b> -&gt; </b></span> tgtEPAMedicationRequestExtensionNarcotics6cf17625.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionNarcoticsExtensionAdditionalInceae9</span><span style=\"color: navy\">, </span> tgtMedicationRequestExtensionNarcoticsExtensionAdditionalInceae9.url = <span style=\"color: blue\">'additional-information-substitutes'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcMedicationRequestExtensionNarcoticsExtensionAdditionalInceae9.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionNarcoticsExtensionAdditionalIn7d0f9</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtMedicationRequestExtensionNarcoticsExtensionAdditionalInceae9.value = <span style=\"color: maroon\">srcMedicationRequestExtensionNarcoticsExtensionAdditionalIn7d0f9</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionNarcoticsExtensionAdditionalIn7d0f9</span> <i>\"MedicationRequestExtensionNarcoticsExtensionAdditionalIn7d0f9455\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Betaeubungsmittel.extension:ErgaenzendeAngabenSubstitutionsmittel.value[x]'</span>#xD;\n      srcMedicationRequestExtensionNarcoticsExtensionAdditionalInceae9.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionNarcoticsExtensionAdditionalIn5c447</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtMedicationRequestExtensionNarcoticsExtensionAdditionalInceae9.value = <span style=\"color: maroon\">srcMedicationRequestExtensionNarcoticsExtensionAdditionalIn5c447</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionNarcoticsExtensionAdditionalIn5c447</span> <i>\"MedicationRequestExtensionNarcoticsExtensionAdditionalIn5c447f30\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Betaeubungsmittel.extension:ErgaenzendeAngabenSubstitutionsmittel.value[x]:valueString'</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionNarcoticsExtensionAdditionalInceae9d9c\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Betaeubungsmittel.extension:ErgaenzendeAngabenSubstitutionsmittel'</span>#xD;\n    srcKBVPRERPPrescriptionExtensionBetaeubungsmitteld93a4b99.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionNarcoticsExtensionNarcoticsMar7ca5c</span><b> where </b>url = 'BtM-Sonderkennzeichen'<span style=\"color: navy\"><b> -&gt; </b></span> tgtEPAMedicationRequestExtensionNarcotics6cf17625.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionNarcoticsExtensionNarcoticsMar7ca5c</span><span style=\"color: navy\">, </span> tgtMedicationRequestExtensionNarcoticsExtensionNarcoticsMar7ca5c.url = <span style=\"color: blue\">'narcotics-markings'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcMedicationRequestExtensionNarcoticsExtensionNarcoticsMar7ca5c.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionNarcoticsExtensionNarcoticsMar57aa6</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtMedicationRequestExtensionNarcoticsExtensionNarcoticsMar7ca5c.value = <span style=\"color: maroon\">srcMedicationRequestExtensionNarcoticsExtensionNarcoticsMar57aa6</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionNarcoticsExtensionNarcoticsMar57aa6</span> <i>\"MedicationRequestExtensionNarcoticsExtensionNarcoticsMar57aa6081\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Betaeubungsmittel.extension:BtM-Sonderkennzeichen.value[x]'</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionNarcoticsExtensionNarcoticsMar7ca5c532\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Betaeubungsmittel.extension:BtM-Sonderkennzeichen'</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionNarcotics79f21928\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:Betaeubungsmittel'</span>#xD;\n  KBVPRERPPrescription.extension<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionExtensionPatientenidb1aba372</span><b> where </b>url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Patient_ID' and url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Patient_ID'<span style=\"color: navy\"><b> -&gt; </b></span> EPAMedicationRequest.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestExtensionPatientid606310bd</span><span style=\"color: navy\">, </span> tgtEPAMedicationRequestExtensionPatientid606310bd.url = <span style=\"color: blue\">'https://gematik.de/fhir/epa-medication/StructureDefinition/patient-id-extension'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcKBVPRERPPrescriptionExtensionPatientenidb1aba372.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionPatientidValueX6b0e4b53</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestExtensionPatientid606310bd.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Identifier'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionPatientidValueX6b0e4b53</span> <i>\"MedicationRequestExtensionPatientidValueX6b0e4b53\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:PatientenID.value[x]'</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionPatientid212ef156\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:PatientenID'</span>#xD;\n  KBVPRERPPrescription.extension<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionExtensionVerschreiberid969b0514</span><b> where </b>url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Prescriber_ID' and url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Prescriber_ID'<span style=\"color: navy\"><b> -&gt; </b></span> EPAMedicationRequest.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestExtensionPrescriberid10873256</span><span style=\"color: navy\">, </span> tgtEPAMedicationRequestExtensionPrescriberid10873256.url = <span style=\"color: blue\">'https://gematik.de/fhir/epa-medication/StructureDefinition/prescriber-id-extension'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcKBVPRERPPrescriptionExtensionVerschreiberid969b0514.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionPrescriberidValueXaaa15668</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestExtensionPrescriberid10873256.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Identifier'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionPrescriberidValueXaaa15668</span> <i>\"MedicationRequestExtensionPrescriberidValueXaaa15668\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:VerschreiberID.value[x]'</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionPrescriberid3f6e2305\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:VerschreiberID'</span>#xD;\n  KBVPRERPPrescription.extension<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionExtensionRendereddosageinstruction1f1ed86</span><b> where </b>url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction' and url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction'<span style=\"color: navy\"><b> -&gt; </b></span> EPAMedicationRequest.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestExtensionRendereddosageinstruction1278f9e</span><span style=\"color: navy\">, </span> tgtEPAMedicationRequestExtensionRendereddosageinstruction1278f9e.url = <span style=\"color: blue\">'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcKBVPRERPPrescriptionExtensionRendereddosageinstruction1f1ed86.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionRendereddosageinstructionExten28c17</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestExtensionRendereddosageinstruction1278f9e.extension = <span style=\"color: maroon\">srcMedicationRequestExtensionRendereddosageinstructionExten28c17</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionRendereddosageinstructionExten28c17</span> <i>\"MedicationRequestExtensionRendereddosageinstructionExten28c174a3\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'MedicationRequest.extension:renderedDosageInstruction.extension'</span>#xD;\n    srcKBVPRERPPrescriptionExtensionRendereddosageinstruction1f1ed86.id<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionRendereddosageinstructionId1f949ff1</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestExtensionRendereddosageinstruction1278f9e.id = <span style=\"color: maroon\">srcMedicationRequestExtensionRendereddosageinstructionId1f949ff1</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionRendereddosageinstructionId1f949ff1</span> <i>\"MedicationRequestExtensionRendereddosageinstructionId1f949ff1\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'MedicationRequest.extension:renderedDosageInstruction.id'</span>#xD;\n    srcKBVPRERPPrescriptionExtensionRendereddosageinstruction1f1ed86.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionRendereddosageinstructionValue43194</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestExtensionRendereddosageinstruction1278f9e.value = <span style=\"color: maroon\">srcMedicationRequestExtensionRendereddosageinstructionValue43194</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionRendereddosageinstructionValue43194</span> <i>\"MedicationRequestExtensionRendereddosageinstructionValue43194174\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'MedicationRequest.extension:renderedDosageInstruction.value[x]'</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionRendereddosageinstruction77697624\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'MedicationRequest.extension:renderedDosageInstruction'</span>#xD;\n  KBVPRERPPrescription.extension<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionExtensionTRezept7033d9f5</span><b> where </b>url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Teratogenic' and url != 'security-compliance' and url != 'declaration-of-expertise' and url != 'hand-out-information-material' and url != 'off-label' and url != 'childbearing-potential' and url = 'https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Teratogenic'<span style=\"color: navy\"><b> -&gt; </b></span> EPAMedicationRequest.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestExtensionTeratogenic4ac07394</span><span style=\"color: navy\">, </span> tgtEPAMedicationRequestExtensionTeratogenic4ac07394.url = <span style=\"color: blue\">'https://gematik.de/fhir/epa-medication/StructureDefinition/teratogenic-extension'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcKBVPRERPPrescriptionExtensionTRezept7033d9f5.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtension7f45302b</span><b> where </b>url != 'security-compliance' and url != 'declaration-of-expertise' and url != 'hand-out-information-material' and url != 'off-label' and url != 'childbearing-potential' and url != 'off-label' and url != 'childbearing-potential' and url != 'security-compliance' and url != 'hand-out-information-material' and url != 'declaration-of-expertise' and url != 'off-label' and url != 'childbearing-potential' and url != 'security-compliance' and url != 'hand-out-information-material' and url != 'declaration-of-expertise' and url != 'Off-Label' and url != 'GebaerfaehigeFrau' and url != 'EinhaltungSicherheitsmassnahmen' and url != 'AushaendigungInformationsmaterialien' and url != 'ErklaerungSachkenntnis' and url != 'valueBoolean' and url != 'valueBoolean' and url != 'valueBoolean' and url != 'valueBoolean' and url != 'valueBoolean'<span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestExtensionTeratogenic4ac07394.extension = <span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtension7f45302b</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionTeratogenicExtension7f45302b</span> <i>\"MedicationRequestExtensionTeratogenicExtension7f45302b\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:T-Rezept.extension'</span>#xD;\n    srcKBVPRERPPrescriptionExtensionTRezept7033d9f5.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionChildbearid7eea</span><b> where </b>url = 'GebaerfaehigeFrau'<span style=\"color: navy\"><b> -&gt; </b></span> tgtEPAMedicationRequestExtensionTeratogenic4ac07394.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionTeratogenicExtensionChildbearid7eea</span><span style=\"color: navy\">, </span> tgtMedicationRequestExtensionTeratogenicExtensionChildbearid7eea.url = <span style=\"color: blue\">'childbearing-potential'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcMedicationRequestExtensionTeratogenicExtensionChildbearid7eea.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionChildbeari0d33c</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtMedicationRequestExtensionTeratogenicExtensionChildbearid7eea.value = <span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionChildbeari0d33c</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionTeratogenicExtensionChildbeari0d33c</span> <i>\"MedicationRequestExtensionTeratogenicExtensionChildbeari0d33c9ce\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:T-Rezept.extension:GebaerfaehigeFrau.value[x]'</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionTeratogenicExtensionChildbearid7eea4d5\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:T-Rezept.extension:GebaerfaehigeFrau'</span>#xD;\n    srcKBVPRERPPrescriptionExtensionTRezept7033d9f5.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionDeclaratio505fc</span><b> where </b>url = 'ErklaerungSachkenntnis'<span style=\"color: navy\"><b> -&gt; </b></span> tgtEPAMedicationRequestExtensionTeratogenic4ac07394.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionTeratogenicExtensionDeclaratio505fc</span><span style=\"color: navy\">, </span> tgtMedicationRequestExtensionTeratogenicExtensionDeclaratio505fc.url = <span style=\"color: blue\">'declaration-of-expertise'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcMedicationRequestExtensionTeratogenicExtensionDeclaratio505fc.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionDeclaratio21424</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtMedicationRequestExtensionTeratogenicExtensionDeclaratio505fc.value = <span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionDeclaratio21424</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionTeratogenicExtensionDeclaratio21424</span> <i>\"MedicationRequestExtensionTeratogenicExtensionDeclaratio21424ea3\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:T-Rezept.extension:ErklaerungSachkenntnis.value[x]'</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionTeratogenicExtensionDeclaratio505fc233\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:T-Rezept.extension:ErklaerungSachkenntnis'</span>#xD;\n    srcKBVPRERPPrescriptionExtensionTRezept7033d9f5.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionHandOutInfb6c2b</span><b> where </b>url = 'AushaendigungInformationsmaterialien'<span style=\"color: navy\"><b> -&gt; </b></span> tgtEPAMedicationRequestExtensionTeratogenic4ac07394.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionTeratogenicExtensionHandOutInfb6c2b</span><span style=\"color: navy\">, </span> tgtMedicationRequestExtensionTeratogenicExtensionHandOutInfb6c2b.url = <span style=\"color: blue\">'hand-out-information-material'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcMedicationRequestExtensionTeratogenicExtensionHandOutInfb6c2b.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionHandOutInf0b865</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtMedicationRequestExtensionTeratogenicExtensionHandOutInfb6c2b.value = <span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionHandOutInf0b865</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionTeratogenicExtensionHandOutInf0b865</span> <i>\"MedicationRequestExtensionTeratogenicExtensionHandOutInf0b865a8b\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:T-Rezept.extension:AushaendigungInformationsmaterialien.value[x]'</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionTeratogenicExtensionHandOutInfb6c2b48d\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:T-Rezept.extension:AushaendigungInformationsmaterialien'</span>#xD;\n    srcKBVPRERPPrescriptionExtensionTRezept7033d9f5.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionOffLabel59ec860</span><b> where </b>url = 'Off-Label'<span style=\"color: navy\"><b> -&gt; </b></span> tgtEPAMedicationRequestExtensionTeratogenic4ac07394.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionTeratogenicExtensionOffLabel59ec860</span><span style=\"color: navy\">, </span> tgtMedicationRequestExtensionTeratogenicExtensionOffLabel59ec860.url = <span style=\"color: blue\">'off-label'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcMedicationRequestExtensionTeratogenicExtensionOffLabel59ec860.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionOffLabelVa7de99</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtMedicationRequestExtensionTeratogenicExtensionOffLabel59ec860.value = <span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionOffLabelVa7de99</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionTeratogenicExtensionOffLabelVa7de99</span> <i>\"MedicationRequestExtensionTeratogenicExtensionOffLabelVa7de9945c\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:T-Rezept.extension:Off-Label.value[x]'</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionTeratogenicExtensionOffLabel59ec860e\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:T-Rezept.extension:Off-Label'</span>#xD;\n    srcKBVPRERPPrescriptionExtensionTRezept7033d9f5.extension<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionSecurityCoac4e9</span><b> where </b>url = 'EinhaltungSicherheitsmassnahmen'<span style=\"color: navy\"><b> -&gt; </b></span> tgtEPAMedicationRequestExtensionTeratogenic4ac07394.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionTeratogenicExtensionSecurityCoac4e9</span><span style=\"color: navy\">, </span> tgtMedicationRequestExtensionTeratogenicExtensionSecurityCoac4e9.url = <span style=\"color: blue\">'security-compliance'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcMedicationRequestExtensionTeratogenicExtensionSecurityCoac4e9.value<b> as </b><span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionSecurityCo39f18</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtMedicationRequestExtensionTeratogenicExtensionSecurityCoac4e9.value = <span style=\"color: maroon\">srcMedicationRequestExtensionTeratogenicExtensionSecurityCo39f18</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestExtensionTeratogenicExtensionSecurityCo39f18</span> <i>\"MedicationRequestExtensionTeratogenicExtensionSecurityCo39f181ed\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:T-Rezept.extension:EinhaltungSicherheitsmassnahmen.value[x]'</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionTeratogenicExtensionSecurityCoac4e9d6c\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:T-Rezept.extension:EinhaltungSicherheitsmassnahmen'</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestExtensionTeratogenic8a23741f\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied from 'MedicationRequest.extension:T-Rezept'</span>#xD;\n  KBVPRERPPrescription.insurance<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.insurance <i>\"MedicationRequestInsurance8b499ebd\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Quelle: MedicationRequest.insurance</span>#xD;\n  KBVPRERPPrescription<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.insurance<b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestInsurance9fe43701</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRERPPrescription<b> as </b><span style=\"color: maroon\">manualsrcMedicationRequestInsuranceDisplayc37e796c</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestInsurance9fe43701.display<b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestInsuranceDisplay17d9b64c</span> <i>\"MedicationRequestInsuranceDisplayc37e796c\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from MedicationRequest.insurance | Quelle: MedicationRequest.insurance.display</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestInsuranceDisplayc37e796c\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRERPPrescription<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.insurance<b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestInsurance9fe43701</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRERPPrescription.insurance<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionInsurance97877d04</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRERPPrescriptionInsurance97877d04.extension<span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestInsurance9fe43701.extension <i>\"MedicationRequestInsuranceExtension863b718a\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from MedicationRequest.insurance | Quelle: MedicationRequest.insurance.extension</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"MedicationRequestInsuranceExtension863b718a\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestInsuranceExtension863b718a\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRERPPrescription<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.insurance<b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestInsurance9fe43701</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRERPPrescription.insurance<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionInsurance97877d04</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRERPPrescriptionInsurance97877d04.id<span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestInsurance9fe43701.id <i>\"MedicationRequestInsuranceIdd780df33\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from MedicationRequest.insurance | Quelle: MedicationRequest.insurance.id</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"MedicationRequestInsuranceIdd780df33\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestInsuranceIdd780df33\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRERPPrescription<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.insurance<b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestInsurance9fe43701</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRERPPrescription<b> as </b><span style=\"color: maroon\">manualsrcMedicationRequestInsuranceIdentifier795c84b1</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestInsurance9fe43701.identifier<b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestInsuranceIdentifierd814480c</span> <i>\"MedicationRequestInsuranceIdentifier795c84b1\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from MedicationRequest.insurance | Quelle: MedicationRequest.insurance.identifier</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestInsuranceIdentifier795c84b1\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRERPPrescription<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.insurance<b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestInsurance9fe43701</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRERPPrescription.insurance<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionInsurance97877d04</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcKBVPRERPPrescriptionInsurance97877d04.reference<span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestInsurance9fe43701.reference <i>\"MedicationRequestInsuranceReferenced20f7e2a\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from MedicationRequest.insurance | Quelle: MedicationRequest.insurance.reference</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"MedicationRequestInsuranceReferenced20f7e2a\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestInsuranceReferenced20f7e2a\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRERPPrescription<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.insurance<b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestInsurance9fe43701</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRERPPrescription<b> as </b><span style=\"color: maroon\">manualsrcMedicationRequestInsuranceTypec5db1613</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestInsurance9fe43701.type<b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestInsuranceType76384abe</span> <i>\"MedicationRequestInsuranceTypec5db1613\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Inherited from MedicationRequest.insurance | Quelle: MedicationRequest.insurance.type</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestInsuranceTypec5db1613\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRERPPrescription.intent<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionIntentd287d5c0</span><span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.intent = <span style=\"color: maroon\">srcKBVPRERPPrescriptionIntentd287d5c0</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestIntentc2c09deb</span> <i>\"MedicationRequestIntentd6f3b441\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Automatic copy</span>#xD;\n  KBVPRERPPrescription.medication<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionMedicationXMedicationreferencee836d317</span><span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.medication = <span style=\"color: maroon\">srcKBVPRERPPrescriptionMedicationXMedicationreferencee836d317</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestMedicationXb2342a1d</span> <i>\"MedicationRequestMedicationXMedicationreferencecdf4aaa2\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'MedicationRequest.medication[x]'</span>#xD;\n  KBVPRERPPrescription.meta<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionMetaebbb9882</span><span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.meta = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Meta'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestMeta55fad1b0</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcKBVPRERPPrescriptionMetaebbb9882<b> as </b><span style=\"color: maroon\">srcMedicationRequestMetaProfile56c958a8</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestMeta55fad1b0.profile = <span style=\"color: blue\">'https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request'</span><b> as </b><span style=\"color: maroon\">tgtMedicationRequestMetaProfile56c958a8</span> <i>\"MedicationRequestMetaProfile56c958a8\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Fixed value 'https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request'</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestMeta9962a339\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Automatic copy</span>#xD;\n  KBVPRERPPrescription.note<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionNote271cad5f</span><span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.note = <span style=\"color: maroon\">srcKBVPRERPPrescriptionNote271cad5f</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestNote7f5e9d21</span> <i>\"MedicationRequestNote3f48e22b\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'MedicationRequest.note'</span>#xD;\n  KBVPRERPPrescription.requester<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionRequester66a1f0a5</span><span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.requester = <span style=\"color: maroon\">srcKBVPRERPPrescriptionRequester66a1f0a5</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestRequester76629bb4</span> <i>\"MedicationRequestRequester3e498d80\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'MedicationRequest.requester'</span>#xD;\n  KBVPRERPPrescription.status<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionStatusdacc71a5</span><span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.status = <span style=\"color: maroon\">srcKBVPRERPPrescriptionStatusdacc71a5</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestStatuse5522c01</span> <i>\"MedicationRequestStatus67a37e7d\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Automatic copy</span>#xD;\n  KBVPRERPPrescription.subject<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.subject <i>\"MedicationRequestSubjectfe47ad58\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Manual action required | Transformationsregel F_007: Wird aus KBV_PR_FOR_Patient.identifier:versichertenId übernommen. | Quelle: MedicationRequest.subject</span>#xD;\n  KBVPRERPPrescription<span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.subject<b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestSubject8a8bf8a9</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    KBVPRERPPrescription<b> as </b><span style=\"color: maroon\">manualsrcMedicationRequestSubjectIdentifier9f3d69ea</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtEPAMedicationRequestSubject8a8bf8a9.identifier<b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestSubjectIdentifier1e1464d1</span> <i>\"MedicationRequestSubjectIdentifier9f3d69ea\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Manual action required | Befüllen von .subject nach Transformationsregel F_010 | Quelle: MedicationRequest.subject.identifier</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationRequestSubjectIdentifier9f3d69ea\"</i><span style=\"color: navy\">;</span>#xD;\n  KBVPRERPPrescription.substitution<b> as </b><span style=\"color: maroon\">srcKBVPRERPPrescriptionSubstitution3af41d78</span><span style=\"color: navy\"><b> -&gt; </b></span>EPAMedicationRequest.substitution = <span style=\"color: maroon\">srcKBVPRERPPrescriptionSubstitution3af41d78</span><b> as </b><span style=\"color: maroon\">tgtEPAMedicationRequestSubstitution4b4fd116</span> <i>\"MedicationRequestSubstitution5015c761\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'MedicationRequest.substitution'</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [
-     fhir:v "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap>
-  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
   fhir:name [ fhir:v "KBVPrErpPrescriptionMap"] ; # 
   fhir:status [ fhir:v "active"] ; # 
@@ -35,10 +32,7 @@
   fhir:description [ fhir:v "Auto-generated StructureMap for KBV_PR_ERP_Prescription|1.4.0 -> EPAMedicationRequest|1.3.0"] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "DE" ] ;
        fhir:display [ fhir:v "Germany" ]
      ] )
@@ -46,14 +40,14 @@
   fhir:structure ( [
      fhir:url [
        fhir:v "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription"^^xsd:anyURI ;
-       fhir:l <https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription>
+       fhir:link <https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription>
      ] ;
      fhir:mode [ fhir:v "source" ] ;
      fhir:alias [ fhir:v "KBVPRERPPrescription" ]
   ] [
      fhir:url [
        fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request>
+       fhir:link <https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request>
      ] ;
      fhir:mode [ fhir:v "target" ] ;
      fhir:alias [ fhir:v "EPAMedicationRequest" ]
@@ -86,7 +80,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "srcKBVPRERPPrescriptionAuthoredon3962f227"
            ]
          ] )
@@ -107,7 +101,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "srcKBVPRERPPrescriptionBasedon44096147"
            ]
          ] )
@@ -128,7 +122,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "srcKBVPRERPPrescriptionDispenserequest1783274a"
            ]
          ] )
@@ -149,7 +143,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "srcKBVPRERPPrescriptionDosageinstructionc10ce439"
            ]
          ] )
@@ -171,7 +165,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "srcKBVPRERPPrescriptionExtensione3b6d5d3"
            ]
          ] )
@@ -253,7 +247,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "srcKBVPRERPPrescriptionExtensionGenerateddosageinstructionsa922a"
            ]
          ] )
@@ -275,7 +269,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Extension"
            ]
          ] )
@@ -286,7 +280,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/indicator-ser-extension"
            ]
          ] )
@@ -306,7 +300,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:Id ;
+               a fhir:id ;
                fhir:v "srcMedicationRequestExtensionIsserValueXc593588c"
              ]
            ] )
@@ -330,7 +324,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Extension"
            ]
          ] )
@@ -341,7 +335,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/multiple-prescription-extension"
            ]
          ] )
@@ -362,7 +356,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:Id ;
+               a fhir:id ;
                fhir:v "srcMedicationRequestExtensionMultipleprescriptionExtensionfb1469"
              ]
            ] )
@@ -384,7 +378,7 @@
            fhir:transform [ fhir:v "create" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "Extension"
              ]
            ] )
@@ -395,7 +389,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "counter"
              ]
            ] )
@@ -415,7 +409,7 @@
              fhir:transform [ fhir:v "create" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:String ;
+                 a fhir:string ;
                  fhir:v "Ratio"
                ]
              ] )
@@ -439,7 +433,7 @@
            fhir:transform [ fhir:v "create" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "Extension"
              ]
            ] )
@@ -450,7 +444,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "id"
              ]
            ] )
@@ -470,7 +464,7 @@
              fhir:transform [ fhir:v "create" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:String ;
+                 a fhir:string ;
                  fhir:v "Identifier"
                ]
              ] )
@@ -494,7 +488,7 @@
            fhir:transform [ fhir:v "create" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "Extension"
              ]
            ] )
@@ -505,7 +499,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "indicator"
              ]
            ] )
@@ -525,7 +519,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "srcMedicationRequestExtensionMultipleprescriptionExtensionI405de"
                ]
              ] )
@@ -549,7 +543,7 @@
            fhir:transform [ fhir:v "create" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "Extension"
              ]
            ] )
@@ -560,7 +554,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "period"
              ]
            ] )
@@ -584,7 +578,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Extension"
            ]
          ] )
@@ -595,7 +589,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/narcotics-extension"
            ]
          ] )
@@ -616,7 +610,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:Id ;
+               a fhir:id ;
                fhir:v "srcMedicationRequestExtensionNarcoticsExtension5781be10"
              ]
            ] )
@@ -638,7 +632,7 @@
            fhir:transform [ fhir:v "create" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "Extension"
              ]
            ] )
@@ -649,7 +643,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "additional-information-substitutes"
              ]
            ] )
@@ -669,7 +663,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "srcMedicationRequestExtensionNarcoticsExtensionAdditionalIn7d0f9"
                ]
              ] )
@@ -690,7 +684,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "srcMedicationRequestExtensionNarcoticsExtensionAdditionalIn5c447"
                ]
              ] )
@@ -714,7 +708,7 @@
            fhir:transform [ fhir:v "create" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "Extension"
              ]
            ] )
@@ -725,7 +719,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "narcotics-markings"
              ]
            ] )
@@ -745,7 +739,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "srcMedicationRequestExtensionNarcoticsExtensionNarcoticsMar57aa6"
                ]
              ] )
@@ -771,7 +765,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Extension"
            ]
          ] )
@@ -782,7 +776,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/patient-id-extension"
            ]
          ] )
@@ -802,7 +796,7 @@
            fhir:transform [ fhir:v "create" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "Identifier"
              ]
            ] )
@@ -826,7 +820,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Extension"
            ]
          ] )
@@ -837,7 +831,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/prescriber-id-extension"
            ]
          ] )
@@ -857,7 +851,7 @@
            fhir:transform [ fhir:v "create" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "Identifier"
              ]
            ] )
@@ -881,7 +875,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Extension"
            ]
          ] )
@@ -892,7 +886,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction"
            ]
          ] )
@@ -912,7 +906,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:Id ;
+               a fhir:id ;
                fhir:v "srcMedicationRequestExtensionRendereddosageinstructionExten28c17"
              ]
            ] )
@@ -933,7 +927,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:Id ;
+               a fhir:id ;
                fhir:v "srcMedicationRequestExtensionRendereddosageinstructionId1f949ff1"
              ]
            ] )
@@ -954,7 +948,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:Id ;
+               a fhir:id ;
                fhir:v "srcMedicationRequestExtensionRendereddosageinstructionValue43194"
              ]
            ] )
@@ -978,7 +972,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Extension"
            ]
          ] )
@@ -989,7 +983,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/teratogenic-extension"
            ]
          ] )
@@ -1010,7 +1004,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:Id ;
+               a fhir:id ;
                fhir:v "srcMedicationRequestExtensionTeratogenicExtension7f45302b"
              ]
            ] )
@@ -1032,7 +1026,7 @@
            fhir:transform [ fhir:v "create" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "Extension"
              ]
            ] )
@@ -1043,7 +1037,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "childbearing-potential"
              ]
            ] )
@@ -1063,7 +1057,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "srcMedicationRequestExtensionTeratogenicExtensionChildbeari0d33c"
                ]
              ] )
@@ -1087,7 +1081,7 @@
            fhir:transform [ fhir:v "create" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "Extension"
              ]
            ] )
@@ -1098,7 +1092,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "declaration-of-expertise"
              ]
            ] )
@@ -1118,7 +1112,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "srcMedicationRequestExtensionTeratogenicExtensionDeclaratio21424"
                ]
              ] )
@@ -1142,7 +1136,7 @@
            fhir:transform [ fhir:v "create" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "Extension"
              ]
            ] )
@@ -1153,7 +1147,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "hand-out-information-material"
              ]
            ] )
@@ -1173,7 +1167,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "srcMedicationRequestExtensionTeratogenicExtensionHandOutInf0b865"
                ]
              ] )
@@ -1197,7 +1191,7 @@
            fhir:transform [ fhir:v "create" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "Extension"
              ]
            ] )
@@ -1208,7 +1202,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "off-label"
              ]
            ] )
@@ -1228,7 +1222,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "srcMedicationRequestExtensionTeratogenicExtensionOffLabelVa7de99"
                ]
              ] )
@@ -1252,7 +1246,7 @@
            fhir:transform [ fhir:v "create" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "Extension"
              ]
            ] )
@@ -1263,7 +1257,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "security-compliance"
              ]
            ] )
@@ -1283,7 +1277,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "srcMedicationRequestExtensionTeratogenicExtensionSecurityCo39f18"
                ]
              ] )
@@ -1499,7 +1493,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "srcKBVPRERPPrescriptionIntentd287d5c0"
            ]
          ] )
@@ -1520,7 +1514,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "srcKBVPRERPPrescriptionMedicationXMedicationreferencee836d317"
            ]
          ] )
@@ -1541,7 +1535,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Meta"
            ]
          ] )
@@ -1560,7 +1554,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request"
              ]
            ] )
@@ -1583,7 +1577,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "srcKBVPRERPPrescriptionNote271cad5f"
            ]
          ] )
@@ -1604,7 +1598,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "srcKBVPRERPPrescriptionRequester66a1f0a5"
            ]
          ] )
@@ -1625,7 +1619,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "srcKBVPRERPPrescriptionStatusdacc71a5"
            ]
          ] )
@@ -1685,7 +1679,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "srcKBVPRERPPrescriptionSubstitution3af41d78"
            ]
          ] )

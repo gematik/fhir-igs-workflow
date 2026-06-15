@@ -12,8 +12,8 @@ Version 2.0.0-ballot.2 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-eu/OperationDefinition/Revoke_Access_PermissionOperationDefinition | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-05-26 | *Computable Name*:Revoke_Access_Permission |
+| *Official URL*:https://gematik.de/fhir/tiflow-xborder/OperationDefinition/Revoke-EU-Access-Permission | *Version*:2.0.0-ballot.2 |
+| Draft as of 2026-05-26 | *Computable Name*:Revoke-EU-Access-Permission |
 
  
 This operation revokes the currently registered access code for redeeming prescriptions in an EU country. 
@@ -26,9 +26,9 @@ This operation revokes the currently registered access code for redeeming prescr
 {
   "resourceType" : "OperationDefinition",
   "id" : "Revoke-EU-Access-Permission",
-  "url" : "https://gematik.de/fhir/erp-eu/OperationDefinition/Revoke_Access_PermissionOperationDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-xborder/OperationDefinition/Revoke-EU-Access-Permission",
   "version" : "2.0.0-ballot.2",
-  "name" : "Revoke_Access_Permission",
+  "name" : "Revoke-EU-Access-Permission",
   "status" : "draft",
   "kind" : "operation",
   "date" : "2026-05-26",

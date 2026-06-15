@@ -129,7 +129,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPEU-PR-Consent
       "max" : "1",
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://gematik.de/fhir/erp-eu/ValueSet/GEM_ERPEU_VS_ConsentType"
+        "valueSet" : "https://gematik.de/fhir/tiflow-xborder/ValueSet/GEM-ERPEU-VS-ConsentType"
       }
     },
     {
@@ -171,7 +171,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPEU-PR-Consent
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://gematik.de/fhir/erp-eu/ValueSet/GEM_ERPEU_VS_Consent_PolicyRule"
+        "valueSet" : "https://gematik.de/fhir/tiflow-xborder/ValueSet/GEM-ERPEU-VS-Consent-PolicyRule"
       }
     }]
   }

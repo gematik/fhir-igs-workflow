@@ -12,27 +12,21 @@
   fhir:meta [
      fhir:profile ( [
        fhir:v "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Request"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Request>
+       fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Request>
      ] )
   ] ; # 
   fhir:parameter ( [
      fhir:name [ fhir:v "countryCode" ] ;
      fhir:value [
        a fhir:Coding ;
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "BE" ]
      ]
   ] [
      fhir:name [ fhir:v "accessCode" ] ;
      fhir:value [
        a fhir:Identifier ;
-       fhir:system [
-         fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_EU_AccessCode"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_EU_AccessCode>
-       ] ;
+       fhir:system [ fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_EU_AccessCode"^^xsd:anyURI ] ;
        fhir:value [ fhir:v "ABC123" ]
      ]
   ] ) . # 

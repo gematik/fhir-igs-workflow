@@ -333,10 +333,7 @@ TIFlow - Datenaustausch BfArM Webdienst
 <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
 <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">fhir:div</a> [ <a href="http://hl7.org/fhir/R4/narrative.html#xhtml">fhir:v</a> &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: StructureMap ERPTPrescriptionStructureMapTask&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;ERPTPrescriptionStructureMapTask\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcERPTPrescriptionStructureMapTask\&quot;&gt; &lt;/a&gt;&lt;pre class=\&quot;fml\&quot;&gt;#xD;\n&lt;b&gt;map&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapTask&lt;span style=\&quot;color: navy\&quot;&gt;\&quot; = \&quot;&lt;/span&gt;ERPTPrescriptionStructureMapTask&lt;span style=\&quot;color: navy\&quot;&gt;\&quot;#xD;\n#xD;\n&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Mappt die E-Rezept ID aus dem Task in ein Identifier Objekt&lt;/span&gt;#xD;\n#xD;\n&lt;b&gt;uses&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/task.html\&quot; title=\&quot;Task\&quot;&gt;http://hl7.org/fhir/StructureDefinition/Task&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot; &lt;/span&gt;&lt;b&gt;alias &lt;/b&gt;task &lt;b&gt;as &lt;/b&gt;&lt;b&gt;source&lt;/b&gt;#xD;\n&lt;b&gt;uses&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/datatypes.html#Identifier\&quot; title=\&quot;Identifier\&quot;&gt;http://hl7.org/fhir/StructureDefinition/Identifier&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot; &lt;/span&gt;&lt;b&gt;alias &lt;/b&gt;tgtIdentifier &lt;b&gt;as &lt;/b&gt;&lt;b&gt;target&lt;/b&gt;#xD;\n#xD;\n&lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Mapping Anweisungen für GEM_Task&lt;/span&gt;#xD;\n&lt;b&gt;group &lt;/b&gt;ERPTPrescriptionStructureMapTask&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;b&gt;source&lt;/b&gt; &lt;span style=\&quot;color: maroon\&quot;&gt;task&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt; : &lt;/span&gt;task, &lt;b&gt;target&lt;/b&gt; &lt;span style=\&quot;color: maroon\&quot;&gt;tgtIdentifier&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt; : &lt;/span&gt;tgtIdentifier&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {#xD;\n&lt;/span&gt;  task.identifier&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcTaskIdentifier&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;$this.system='https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId'&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {#xD;\n&lt;/span&gt;    srcTaskIdentifier.value&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcTaskIdentifierValue&lt;/span&gt;&lt;b&gt; log &lt;/b&gt;tgtIdentifier&lt;span style=\&quot;color: navy\&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt; tgtIdentifier.system = &lt;span style=\&quot;color: blue\&quot;&gt;'https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId'&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt; tgtIdentifier.value = &lt;span style=\&quot;color: maroon\&quot;&gt;srcTaskIdentifierValue&lt;/span&gt; &lt;i&gt;\&quot;prescriptionIdValue\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Mappt die E-Rezept-ID aus dem Task in den Identifier&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;\&quot;prescriptionId\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;#xD;\n&lt;span style=\&quot;color: navy\&quot;&gt;}#xD;\n#xD;\n&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&quot;^^rdf:XMLLiteral ]
   ] ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.url">fhir:url</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapTask&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapTask&gt;
-  ] ; # 
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapTask&quot;^^xsd:anyURI] ; # 
   <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.version">fhir:version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;2.0.0-ballot.2&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;ERPTPrescriptionStructureMapTask&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.title">fhir:title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;E-T-Rezept Structure Map for Task&quot;] ; # 
@@ -355,22 +352,20 @@ TIFlow - Datenaustausch BfArM Webdienst
   <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.description">fhir:description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:v</a> &quot;Mappt die E-Rezept ID aus dem Task in ein Identifier Objekt&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.jurisdiction">fhir:jurisdiction</a> ( [
     ( <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:coding</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;urn:iso:std:iso:3166&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;urn:iso:std:iso:3166&gt;       ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;urn:iso:std:iso:3166&quot;^^xsd:anyURI ] ;
 <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DE&quot; ] ;
 <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Germany&quot; ]     ] )
   ] ) ; # 
   <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure">fhir:structure</a> ( [
 <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.url">fhir:url</a> [
 <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;http://hl7.org/fhir/StructureDefinition/Task&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:l</a> &lt;http://hl7.org/fhir/StructureDefinition/Task&gt;     ] ;
+<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/StructureDefinition/Task&gt;     ] ;
 <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.mode">fhir:mode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;source&quot; ] ;
 <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.alias">fhir:alias</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;task&quot; ]
   ] [
 <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.url">fhir:url</a> [
 <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;http://hl7.org/fhir/StructureDefinition/Identifier&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:l</a> &lt;http://hl7.org/fhir/StructureDefinition/Identifier&gt;     ] ;
+<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/StructureDefinition/Identifier&gt;     ] ;
 <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.mode">fhir:mode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;target&quot; ] ;
 <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.alias">fhir:alias</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;tgtIdentifier&quot; ]
   ] ) ; # 
@@ -406,7 +401,7 @@ TIFlow - Datenaustausch BfArM Webdienst
 <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">fhir:transform</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;copy&quot; ] ;
           ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">fhir:parameter</a> [
 <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">a</a> fhir:String ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#string">a</a> fhir:string ;
 <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId&quot;             ]           ] )         ] [
 <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">fhir:context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;tgtIdentifier&quot; ] ;
 <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">fhir:contextType</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;variable&quot; ] ;
@@ -414,7 +409,7 @@ TIFlow - Datenaustausch BfArM Webdienst
 <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">fhir:transform</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;copy&quot; ] ;
           ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">fhir:parameter</a> [
 <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#id">a</a> fhir:Id ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#id">a</a> fhir:id ;
 <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcTaskIdentifierValue&quot;             ]           ] )         ] ) ;
 <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Mappt die E-Rezept-ID aus dem Task in den Identifier&quot; ]       ] )     ] )
   ] ) . # 
@@ -466,7 +461,7 @@ TIFlow - Datenaustausch BfArM Webdienst
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 12, 2026 14:54+0000">2026-06-12</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:12+0000">2026-06-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

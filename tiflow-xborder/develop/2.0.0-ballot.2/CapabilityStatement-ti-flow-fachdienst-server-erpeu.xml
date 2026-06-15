@@ -71,6 +71,9 @@
       </supportedProfile>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
           <extension url="statusCode">
             <valueString value="400"/>
           </extension>
@@ -82,35 +85,6 @@
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_BAD_FORMAT"/>
-          </extension>
-          <valueCode value="SHALL"/>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="408"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Request timeout"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_TIMEOUT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="500"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Internal server error"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_INTERNAL_ERROR"/>
           </extension>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -167,6 +141,9 @@
       </interaction>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
           <extension url="statusCode">
             <valueString value="400"/>
           </extension>
@@ -178,35 +155,6 @@
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_BAD_FORMAT"/>
-          </extension>
-          <valueCode value="SHALL"/>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="408"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Request timeout"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_TIMEOUT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="500"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Internal server error"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_INTERNAL_ERROR"/>
           </extension>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -362,6 +310,9 @@
       </searchParam>
       <operation>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
           <extension url="statusCode">
             <valueString value="400"/>
           </extension>
@@ -374,7 +325,6 @@
           <extension url="errorCode">
             <valueString value="SVC_VALIDATION_FAILED"/>
           </extension>
-          <valueCode value="SHALL"/>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
           <extension url="statusCode">
@@ -476,34 +426,34 @@
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
           <extension url="statusCode">
-            <valueString value="408"/>
+            <valueString value="500"/>
           </extension>
           <extension url="description">
-            <valueString value="Request timeout"/>
+            <valueString value="Internal Server Error"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
-            <valueString value="MSG_TIMEOUT"/>
+            <valueString value="TIFLOW_INTERNAL_ERROR"/>
           </extension>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
           <extension url="statusCode">
-            <valueString value="500"/>
+            <valueString value="408"/>
           </extension>
           <extension url="description">
-            <valueString value="Internal server error"/>
+            <valueString value="Timeout"/>
           </extension>
           <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
+            <valueString value="TIFlowOperationOutcome"/>
           </extension>
           <extension url="errorCode">
-            <valueString value="MSG_INTERNAL_ERROR"/>
+            <valueString value="TIFLOW_TIMEOUT"/>
           </extension>
         </extension>
         <name value="eu-close"/>
-        <definition value="https://gematik.de/fhir/erp-eu/OperationDefinition/EUCloseOperationDefinition"/>
+        <definition value="https://gematik.de/fhir/tiflow-xborder/OperationDefinition/EUCloseOperation"/>
         <documentation value="Finishes the EU ePrescription workflow and creates a signed receipt bundle"/>
       </operation>
     </resource>
@@ -514,6 +464,9 @@
       <type value="Consent"/>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
           <extension url="statusCode">
             <valueString value="400"/>
           </extension>
@@ -525,35 +478,6 @@
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_BAD_FORMAT"/>
-          </extension>
-          <valueCode value="SHALL"/>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="408"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Request timeout"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_TIMEOUT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="500"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Internal server error"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_INTERNAL_ERROR"/>
           </extension>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -610,6 +534,9 @@
       </interaction>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
           <extension url="statusCode">
             <valueString value="400"/>
           </extension>
@@ -621,35 +548,6 @@
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_BAD_FORMAT"/>
-          </extension>
-          <valueCode value="SHALL"/>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="408"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Request timeout"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_TIMEOUT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="500"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Internal server error"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_INTERNAL_ERROR"/>
           </extension>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -678,6 +576,9 @@
       </interaction>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
           <extension url="statusCode">
             <valueString value="400"/>
           </extension>
@@ -689,35 +590,6 @@
           </extension>
           <extension url="errorCode">
             <valueString value="MSG_BAD_FORMAT"/>
-          </extension>
-          <valueCode value="SHALL"/>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="408"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Request timeout"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_TIMEOUT"/>
-          </extension>
-        </extension>
-        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-          <extension url="statusCode">
-            <valueString value="500"/>
-          </extension>
-          <extension url="description">
-            <valueString value="Internal server error"/>
-          </extension>
-          <extension url="responseType">
-            <valueString value="EPAMSOperationOutcome"/>
-          </extension>
-          <extension url="errorCode">
-            <valueString value="MSG_INTERNAL_ERROR"/>
           </extension>
         </extension>
         <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -786,6 +658,9 @@
     </resource>
     <operation>
       <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
         <extension url="statusCode">
           <valueString value="200"/>
         </extension>
@@ -795,7 +670,6 @@
         <extension url="responseType">
           <valueString value="Parameters"/>
         </extension>
-        <valueCode value="SHALL"/>
       </extension>
       <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
         <extension url="statusCode">
@@ -809,34 +683,6 @@
         </extension>
         <extension url="errorCode">
           <valueString value="MSG_BAD_FORMAT"/>
-        </extension>
-      </extension>
-      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-        <extension url="statusCode">
-          <valueString value="408"/>
-        </extension>
-        <extension url="description">
-          <valueString value="Request timeout"/>
-        </extension>
-        <extension url="responseType">
-          <valueString value="EPAMSOperationOutcome"/>
-        </extension>
-        <extension url="errorCode">
-          <valueString value="MSG_TIMEOUT"/>
-        </extension>
-      </extension>
-      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-        <extension url="statusCode">
-          <valueString value="500"/>
-        </extension>
-        <extension url="description">
-          <valueString value="Internal server error"/>
-        </extension>
-        <extension url="responseType">
-          <valueString value="EPAMSOperationOutcome"/>
-        </extension>
-        <extension url="errorCode">
-          <valueString value="MSG_INTERNAL_ERROR"/>
         </extension>
       </extension>
       <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -896,11 +742,14 @@
         </extension>
       </extension>
       <name value="grant-eu-access-permission"/>
-      <definition value="https://gematik.de/fhir/erp-eu/OperationDefinition/Grant_Access_PermissionOperationDefinition"/>
+      <definition value="https://gematik.de/fhir/tiflow-xborder/OperationDefinition/Grant-EU-Access-Permission"/>
       <documentation value="Registers access code and country for EU prescription access"/>
     </operation>
     <operation>
       <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
         <extension url="statusCode">
           <valueString value="200"/>
         </extension>
@@ -910,7 +759,6 @@
         <extension url="responseType">
           <valueString value="Parameters"/>
         </extension>
-        <valueCode value="SHALL"/>
       </extension>
       <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
         <extension url="statusCode">
@@ -924,34 +772,6 @@
         </extension>
         <extension url="errorCode">
           <valueString value="MSG_BAD_FORMAT"/>
-        </extension>
-      </extension>
-      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-        <extension url="statusCode">
-          <valueString value="408"/>
-        </extension>
-        <extension url="description">
-          <valueString value="Request timeout"/>
-        </extension>
-        <extension url="responseType">
-          <valueString value="EPAMSOperationOutcome"/>
-        </extension>
-        <extension url="errorCode">
-          <valueString value="MSG_TIMEOUT"/>
-        </extension>
-      </extension>
-      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-        <extension url="statusCode">
-          <valueString value="500"/>
-        </extension>
-        <extension url="description">
-          <valueString value="Internal server error"/>
-        </extension>
-        <extension url="responseType">
-          <valueString value="EPAMSOperationOutcome"/>
-        </extension>
-        <extension url="errorCode">
-          <valueString value="MSG_INTERNAL_ERROR"/>
         </extension>
       </extension>
       <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -969,18 +789,20 @@
         </extension>
       </extension>
       <name value="read-eu-access-permission"/>
-      <definition value="https://gematik.de/fhir/erp-eu/OperationDefinition/Read_Access_PermissionOperationDefinition"/>
+      <definition value="https://gematik.de/fhir/tiflow-xborder/OperationDefinition/Read-EU-Access-Permission"/>
       <documentation value="Reads the currently registered EU access code"/>
     </operation>
     <operation>
       <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
         <extension url="statusCode">
           <valueString value="200"/>
         </extension>
         <extension url="description">
           <valueString value="Successful operation"/>
         </extension>
-        <valueCode value="SHALL"/>
       </extension>
       <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
         <extension url="statusCode">
@@ -994,34 +816,6 @@
         </extension>
         <extension url="errorCode">
           <valueString value="MSG_BAD_FORMAT"/>
-        </extension>
-      </extension>
-      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-        <extension url="statusCode">
-          <valueString value="408"/>
-        </extension>
-        <extension url="description">
-          <valueString value="Request timeout"/>
-        </extension>
-        <extension url="responseType">
-          <valueString value="EPAMSOperationOutcome"/>
-        </extension>
-        <extension url="errorCode">
-          <valueString value="MSG_TIMEOUT"/>
-        </extension>
-      </extension>
-      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-        <extension url="statusCode">
-          <valueString value="500"/>
-        </extension>
-        <extension url="description">
-          <valueString value="Internal server error"/>
-        </extension>
-        <extension url="responseType">
-          <valueString value="EPAMSOperationOutcome"/>
-        </extension>
-        <extension url="errorCode">
-          <valueString value="MSG_INTERNAL_ERROR"/>
         </extension>
       </extension>
       <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -1039,11 +833,14 @@
         </extension>
       </extension>
       <name value="revoke-eu-access-permission"/>
-      <definition value="https://gematik.de/fhir/erp-eu/OperationDefinition/Revoke_Access_PermissionOperationDefinition"/>
+      <definition value="https://gematik.de/fhir/tiflow-xborder/OperationDefinition/Revoke-EU-Access-Permission"/>
       <documentation value="Revokes the currently registered EU access code"/>
     </operation>
     <operation>
       <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
         <extension url="statusCode">
           <valueString value="200"/>
         </extension>
@@ -1053,7 +850,6 @@
         <extension url="responseType">
           <valueString value="Parameters"/>
         </extension>
-        <valueCode value="SHALL"/>
       </extension>
       <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
         <extension url="statusCode">
@@ -1067,34 +863,6 @@
         </extension>
         <extension url="errorCode">
           <valueString value="MSG_BAD_FORMAT"/>
-        </extension>
-      </extension>
-      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-        <extension url="statusCode">
-          <valueString value="408"/>
-        </extension>
-        <extension url="description">
-          <valueString value="Request timeout"/>
-        </extension>
-        <extension url="responseType">
-          <valueString value="EPAMSOperationOutcome"/>
-        </extension>
-        <extension url="errorCode">
-          <valueString value="MSG_TIMEOUT"/>
-        </extension>
-      </extension>
-      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
-        <extension url="statusCode">
-          <valueString value="500"/>
-        </extension>
-        <extension url="description">
-          <valueString value="Internal server error"/>
-        </extension>
-        <extension url="responseType">
-          <valueString value="EPAMSOperationOutcome"/>
-        </extension>
-        <extension url="errorCode">
-          <valueString value="MSG_INTERNAL_ERROR"/>
         </extension>
       </extension>
       <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
@@ -1168,7 +936,7 @@
         </extension>
       </extension>
       <name value="get-eu-prescriptions"/>
-      <definition value="https://gematik.de/fhir/erp-eu/OperationDefinition/GET-Prescription-EUOperationDefinition"/>
+      <definition value="https://gematik.de/fhir/tiflow-xborder/OperationDefinition/GET-Prescription-EU"/>
       <documentation value="Returns prescription information for EU ePrescription workflows"/>
     </operation>
   </rest>

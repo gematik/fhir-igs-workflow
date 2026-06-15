@@ -13,10 +13,7 @@
      fhir:status [ fhir:v "generated" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition tiflow-rx-dispense-op</b></p><a name=\"tiflow-rx-dispense-op\"> </a><a name=\"hctiflow-rx-dispense-op\"> </a><p>URL: [base]/Task/[id]/$dispense</p><p>Input parameters Profile:<a href=\"StructureDefinition-GEM-ERP-PR-PAR-Dispense-Operation-Input.html\">GEM ERP PR DispenseOperation Input</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr></table></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [
-     fhir:v "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-dispense-op"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-dispense-op>
-  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-dispense-op"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
   fhir:name [ fhir:v "TIFlow-RX-OP-Dispense"] ; # 
   fhir:title [ fhir:v "E-Rezept vorläufig abgeben"] ; # 
@@ -37,10 +34,7 @@
   fhir:description [ fhir:v "Die Operation $dispense ermöglicht es der Apotheke, eine Ausgabe für ein Medikament durchzuführen, ohne den Status der Aufgabe zu ändern. Diese Aktion erlaubt es einem Frontend anzuzeigen, dass ein Medikament ausgegeben wurde, bevor es von der Apotheke abgeschlossen wird."] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "DE" ] ;
        fhir:display [ fhir:v "Germany" ]
      ] )
@@ -53,7 +47,7 @@
   fhir:instance [ fhir:v true] ; # 
   fhir:inputProfile [
      fhir:v "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input>
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input>
   ] . # 
 
 # -------------------------------------------------------------------------------------

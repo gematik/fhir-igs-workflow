@@ -12,7 +12,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-eu/ValueSet/GEM_ERPEU_VS_RequestType | *Version*:2.0.0-ballot.2 |
+| *Official URL*:https://gematik.de/fhir/tiflow-xborder/ValueSet/GEM-ERPEU-VS-RequestType | *Version*:2.0.0-ballot.2 |
 | Draft as of 2026-05-26 | *Computable Name*:GEM_ERPEU_VS_RequestType |
 
  
@@ -49,7 +49,7 @@ Type of Request from NCPeH
 {
   "resourceType" : "ValueSet",
   "id" : "GEM-ERPEU-VS-RequestType",
-  "url" : "https://gematik.de/fhir/erp-eu/ValueSet/GEM_ERPEU_VS_RequestType",
+  "url" : "https://gematik.de/fhir/tiflow-xborder/ValueSet/GEM-ERPEU-VS-RequestType",
   "version" : "2.0.0-ballot.2",
   "name" : "GEM_ERPEU_VS_RequestType",
   "title" : "ValueSet of NCPeH Request Types",
@@ -77,7 +77,7 @@ Type of Request from NCPeH
   }],
   "compose" : {
     "include" : [{
-      "system" : "https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_RequestType"
+      "system" : "https://gematik.de/fhir/tiflow-xborder/CodeSystem/GEM-ERPEU-CS-RequestType"
     }]
   }
 }

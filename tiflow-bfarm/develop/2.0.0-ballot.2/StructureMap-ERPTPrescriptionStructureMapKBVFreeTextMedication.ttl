@@ -13,10 +13,7 @@
      fhir:status [ fhir:v "generated" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap ERPTPrescriptionStructureMapKBVFreeTextMedication</b></p><a name=\"ERPTPrescriptionStructureMapKBVFreeTextMedication\"> </a><a name=\"hcERPTPrescriptionStructureMapKBVFreeTextMedication\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication<span style=\"color: navy\">\" = \"</span>ERPTPrescriptionStructureMapKBVFreeTextMedication<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Maps KBV FreeText Medication to BfArM T-Prescription Medication format</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/medication.html\" title=\"Medication\">http://hl7.org/fhir/StructureDefinition/Medication</a><span style=\"color: navy\">\" </span><b>alias </b>kbvMedicationFreeText <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/medication.html\" title=\"Medication\">http://hl7.org/fhir/StructureDefinition/Medication</a><span style=\"color: navy\">\" </span><b>alias </b>bfarmMedication <b>as </b><b>target</b>#xD;\n#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Mapping-Anweisungen zur Transformation von KBV Freitext-Medikamenten zu BfArM T-Prescription Format</span>#xD;\n<b>group </b>ERPTPrescriptionStructureMapKBVFreeTextMedication<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">kbvMedicationFreeText</span><span style=\"color: navy\"> : </span>kbvMedicationFreeText, <b>target</b> <span style=\"color: maroon\">bfarmMedication</span><span style=\"color: navy\"> : </span>bfarmMedication<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  kbvMedicationFreeText.id<b> as </b><span style=\"color: maroon\">IdVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedication.id = <span style=\"color: maroon\">IdVar</span> <i>\"medicationId\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt die eindeutige Medication-ID unverändert</span>#xD;\n  kbvMedicationFreeText.code<b> as </b><span style=\"color: maroon\">srcCodeVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedication.code<b> as </b><span style=\"color: maroon\">tgtCodeVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcCodeVar.text<b> as </b><span style=\"color: maroon\">srcCodeTextVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtCodeVar.text = <span style=\"color: maroon\">srcCodeTextVar</span> <i>\"medicationCodeText\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Kopiert die Freitext-Bezeichnung des Medikaments (z.B. 'Aspirin 500mg Tabletten')</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"medicationCode\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt den Medikamentencode mit Freitext-Beschreibung</span>#xD;\n  kbvMedicationFreeText.form<b> as </b><span style=\"color: maroon\">srcFormVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedication.form<b> as </b><span style=\"color: maroon\">tgtFormVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcFormVar.text<b> as </b><span style=\"color: maroon\">srcformTextVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtFormVar.text = <span style=\"color: maroon\">srcformTextVar</span> <i>\"medicationFormText\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt die Freitext-Darreichungsform (z.B. 'Tabletten', 'Tropfen zum Einnehmen')</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"medicationForm\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt die Darreichungsform als Freitext</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [
-     fhir:v "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication>
-  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
   fhir:name [ fhir:v "ERPTPrescriptionStructureMapKBVFreeTextMedication"] ; # 
   fhir:title [ fhir:v "E-T-Rezept Structure Map for KBV FreeText Medication"] ; # 
@@ -37,10 +34,7 @@
   fhir:description [ fhir:v "Maps KBV FreeText Medication to BfArM T-Prescription Medication format"] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "DE" ] ;
        fhir:display [ fhir:v "Germany" ]
      ] )
@@ -48,14 +42,14 @@
   fhir:structure ( [
      fhir:url [
        fhir:v "http://hl7.org/fhir/StructureDefinition/Medication"^^xsd:anyURI ;
-       fhir:l <http://hl7.org/fhir/StructureDefinition/Medication>
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Medication>
      ] ;
      fhir:mode [ fhir:v "source" ] ;
      fhir:alias [ fhir:v "kbvMedicationFreeText" ]
   ] [
      fhir:url [
        fhir:v "http://hl7.org/fhir/StructureDefinition/Medication"^^xsd:anyURI ;
-       fhir:l <http://hl7.org/fhir/StructureDefinition/Medication>
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Medication>
      ] ;
      fhir:mode [ fhir:v "target" ] ;
      fhir:alias [ fhir:v "bfarmMedication" ]
@@ -87,7 +81,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "IdVar"
            ]
          ] )
@@ -120,7 +114,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:Id ;
+               a fhir:id ;
                fhir:v "srcCodeTextVar"
              ]
            ] )
@@ -155,7 +149,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:Id ;
+               a fhir:id ;
                fhir:v "srcformTextVar"
              ]
            ] )

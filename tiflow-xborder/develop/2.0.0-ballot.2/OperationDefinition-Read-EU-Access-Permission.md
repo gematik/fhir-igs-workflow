@@ -12,8 +12,8 @@ Version 2.0.0-ballot.2 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-eu/OperationDefinition/Read_Access_PermissionOperationDefinition | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-05-26 | *Computable Name*:Read_Access_Permission |
+| *Official URL*:https://gematik.de/fhir/tiflow-xborder/OperationDefinition/Read-EU-Access-Permission | *Version*:2.0.0-ballot.2 |
+| Draft as of 2026-05-26 | *Computable Name*:Read-EU-Access-Permission |
 
  
 This operation reads the currenty in the E-Rezept-Fachdienst registered Access Code for redeeming ePrescriptions in an EU country. 
@@ -26,9 +26,9 @@ This operation reads the currenty in the E-Rezept-Fachdienst registered Access C
 {
   "resourceType" : "OperationDefinition",
   "id" : "Read-EU-Access-Permission",
-  "url" : "https://gematik.de/fhir/erp-eu/OperationDefinition/Read_Access_PermissionOperationDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-xborder/OperationDefinition/Read-EU-Access-Permission",
   "version" : "2.0.0-ballot.2",
-  "name" : "Read_Access_Permission",
+  "name" : "Read-EU-Access-Permission",
   "status" : "draft",
   "kind" : "operation",
   "date" : "2026-05-26",

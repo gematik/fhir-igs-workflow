@@ -301,9 +301,9 @@
     },
     "StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReply.html" : "Reply on change Request on ChargeItem from pharmacy to Patient",
     "StructureDefinition-GEM-ERPCHRG-PR-Consent.html" : "GEM_ERPCHRG_PR_Consent",
+    "StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReq.html" : "Request for Modification on ChargeItem",
     "StructureDefinition-GEM-ERPCHRG-PR-ChargeItem.html" : "GEM_ERPCHRG_PR_ChargeItem",
-    "StructureDefinition-GEM-ERPCHRG-PR-PAR-Patch-ChargeItem-Input.html" : "GEM ERPCHRG PR PAR Patch ChargeItem Input Parameter",
-    "StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReq.html" : "Request for Modification on ChargeItem"
+    "StructureDefinition-GEM-ERPCHRG-PR-PAR-Patch-ChargeItem-Input.html" : "GEM ERPCHRG PR PAR Patch ChargeItem Input Parameter"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/performer-role",
@@ -348,8 +348,8 @@
     },
     "StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReply.html" : "Reply on change Request on ChargeItem from pharmacy to Patient",
     "StructureDefinition-GEM-ERPCHRG-PR-Consent.html" : "GEM_ERPCHRG_PR_Consent",
-    "StructureDefinition-GEM-ERPCHRG-PR-ChargeItem.html" : "GEM_ERPCHRG_PR_ChargeItem",
-    "StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReq.html" : "Request for Modification on ChargeItem"
+    "StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReq.html" : "Request for Modification on ChargeItem",
+    "StructureDefinition-GEM-ERPCHRG-PR-ChargeItem.html" : "GEM_ERPCHRG_PR_ChargeItem"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/security-labels",
@@ -391,11 +391,11 @@
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/v3-ActCode",
-    "version" : "2018-08-12",
+    "version" : "3.0.0",
     "status" : "active",
-    "name" : "v3.ActCode",
+    "name" : "ActCode",
     "title" : "v3 Code System ActCode",
-    "description" : " A code specifying the particular kind of Act that the Act-instance represents within its class.  Constraints:\r\nThe kind of Act (e.g. physical examination, serum potassium, inpatient encounter, charge financial transaction, etc.) is specified with a code from one of several, typically external, coding systems.  The coding system will depend on the class of Act, such as LOINC for observations, etc. Conceptually, the Act.code must be a specialization of the Act.classCode. This is why the structure of ActClass domain should be reflected in the superstructure of the ActCode domain and then individual codes or externally referenced vocabularies subordinated under these domains that reflect the ActClass structure. Act.classCode and Act.code are not modifiers of each other but the Act.code concept should really imply the Act.classCode concept. For a negative example, it is not appropriate to use an Act.code \"potassium\" together with and Act.classCode for \"laboratory observation\" to somehow mean \"potassium laboratory observation\" and then use the same Act.code for \"potassium\" together with Act.classCode for \"medication\" to mean \"substitution of potassium\". This mutually modifying use of Act.code and Act.classCode is not permitted.",
+    "description" : "A code specifying the particular kind of Act that the Act-instance represents within its class.  Constraints:\r\nThe kind of Act (e.g. physical examination, serum potassium, inpatient encounter, charge financial transaction, etc.) is specified with a code from one of several, typically external, coding systems.  The coding system will depend on the class of Act, such as LOINC for observations, etc. Conceptually, the Act.code must be a specialization of the Act.classCode. This is why the structure of ActClass domain should be reflected in the superstructure of the ActCode domain and then individual codes or externally referenced vocabularies subordinated under these domains that reflect the ActClass structure. Act.classCode and Act.code are not modifiers of each other but the Act.code concept should really imply the Act.classCode concept. For a negative example, it is not appropriate to use an Act.code \"potassium\" together with and Act.classCode for \"laboratory observation\" to somehow mean \"potassium laboratory observation\" and then use the same Act.code for \"potassium\" together with Act.classCode for \"medication\" to mean \"substitution of potassium\". This mutually modifying use of Act.code and Act.classCode is not permitted.",
     "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
     "uses" : {
     },
@@ -403,12 +403,14 @@
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/v3-ParticipationMode",
-    "version" : "2018-08-12",
+    "version" : "3.0.0",
     "status" : "active",
-    "name" : "v3.ParticipationMode",
-    "title" : "v3 Code System ParticipationMode",
-    "description" : " A set of codes specifying the modality by which the Entity playing the Role is participating in the Act.  Examples:\r\nPhysically present, over the telephone, written communication.  Rationale:\r\nParticularly for author (originator) participants this is used to specify whether the information represented by the act was initially provided verbally, (hand-)written, or electronically.  Open Issue:\r\nThere needs to be a reexamination of the hierarchies as there seems to be some muddling between ELECTRONIC and other concepts that involve electronic communication that are in other hierarchies.",
+    "name" : "ParticipationMode",
+    "title" : "ParticipationMode",
+    "description" : "Identifies the primary means by which an Entity participates in an Act.",
     "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ParticipationMode"],
+    "oids" : ["2.16.840.1.113883.1.11.16543"],
+    "sources" : ["2.16.840.1.113883.1.11.16543"],
     "uses" : {
     },
     "StructureDefinition-GEM-ERPCHRG-PR-Communication-ChargChangeReply.html" : "Reply on change Request on ChargeItem from pharmacy to Patient",
@@ -416,11 +418,11 @@
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/v3-PurposeOfUse",
-    "version" : "2014-03-26",
+    "version" : "3.1.0",
     "status" : "active",
-    "name" : "v3.PurposeOfUse",
-    "title" : "V3 Value SetPurposeOfUse",
-    "description" : " Supports communication of purpose of use at a general level.",
+    "name" : "PurposeOfUse",
+    "title" : "PurposeOfUse",
+    "description" : "Supports communication of purpose of use at a general level.",
     "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActReason"],
     "oids" : ["2.16.840.1.113883.1.11.20448"],
     "sources" : ["2.16.840.1.113883.1.11.20448"],

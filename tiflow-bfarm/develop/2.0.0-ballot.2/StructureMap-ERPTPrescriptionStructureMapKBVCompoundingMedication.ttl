@@ -13,10 +13,7 @@
      fhir:status [ fhir:v "generated" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap ERPTPrescriptionStructureMapKBVCompoundingMedication</b></p><a name=\"ERPTPrescriptionStructureMapKBVCompoundingMedication\"> </a><a name=\"hcERPTPrescriptionStructureMapKBVCompoundingMedication\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVCompoundingMedication<span style=\"color: navy\">\" = \"</span>ERPTPrescriptionStructureMapKBVCompoundingMedication<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Mapping-Anweisungen zur Transformation von KBV Rezeptur-Medikamenten zu BfArM T-Prescription Format</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/medication.html\" title=\"Medication\">http://hl7.org/fhir/StructureDefinition/Medication</a><span style=\"color: navy\">\" </span><b>alias </b>kbvMedicationCompounding <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/medication.html\" title=\"Medication\">http://hl7.org/fhir/StructureDefinition/Medication</a><span style=\"color: navy\">\" </span><b>alias </b>bfarmMedication <b>as </b><b>target</b>#xD;\n#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Mapping-Anweisungen zur Transformation von KBV Rezeptur-Medikamenten zu BfArM T-Prescription Format</span>#xD;\n<b>group </b>ERPTPrescriptionStructureMapKBVCompoundingMedication<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">kbvMedicationCompounding</span><span style=\"color: navy\"> : </span>kbvMedicationCompounding, <b>target</b> <span style=\"color: maroon\">bfarmMedication</span><span style=\"color: navy\"> : </span>bfarmMedication<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  kbvMedicationCompounding.extension<b> as </b><span style=\"color: maroon\">extVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedication.extension<b> as </b><span style=\"color: maroon\">tgtExtVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    extVar<b> as </b><span style=\"color: maroon\">extMatchVar</span><b> where </b>url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Packaging'<span style=\"color: navy\"><b> -&gt; </b></span>tgtExtVar.url = <span style=\"color: blue\">'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-formulation-packaging-extension'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      extMatchVar.value<b> as </b><span style=\"color: maroon\">extValVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtExtVar.value = <span style=\"color: maroon\">extValVar</span> <i>\"copyExtensionValue\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt den Verpackungswert für die Rezeptur</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"copyFormulaPackagingExtensionUrl\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Transformiert KBV-Verpackungs-Extension in gematik-Formulierungs-Verpackungs-Extension</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"medicationExt\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt Rezeptur-spezifische Extensions von KBV- zu BfArM-Format</span>#xD;\n  kbvMedicationCompounding.id<b> as </b><span style=\"color: maroon\">IdVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedication.id = <span style=\"color: maroon\">IdVar</span> <i>\"medicationId\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt die eindeutige Medication-ID unverändert</span>#xD;\n  kbvMedicationCompounding.code<b> as </b><span style=\"color: maroon\">srcCodeVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedication.code<b> as </b><span style=\"color: maroon\">tgtCodeVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcCodeVar.text<b> as </b><span style=\"color: maroon\">srcCodeTextVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtCodeVar.text = <span style=\"color: maroon\">srcCodeTextVar</span> <i>\"medicationCodeText\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Kopiert die Bezeichnung der Rezeptur (z.B. 'Hydrocortison-Salbe 1%')</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"medicationCode\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt den Rezeptur-Code mit Bezeichnung</span>#xD;\n  kbvMedicationCompounding.form<b> as </b><span style=\"color: maroon\">formVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedication.form = <span style=\"color: maroon\">formVar</span> <i>\"medicationForm\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt die Darreichungsform der Rezeptur (Salbe, Creme, Kapseln, etc.)</span>#xD;\n  kbvMedicationCompounding.amount<b> as </b><span style=\"color: maroon\">amountVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedication.amount<b> as </b><span style=\"color: maroon\">tgtAmountVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    amountVar.denominator<b> as </b><span style=\"color: maroon\">amountDenominatorVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtAmountVar.denominator = <span style=\"color: maroon\">amountDenominatorVar</span> <i>\"medicationAmountDenominator\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Kopiert den Nenner der Mengenangabe (z.B. '1' für 'pro Rezeptur')</span>#xD;\n    amountVar.numerator<b> as </b><span style=\"color: maroon\">amountNumeratorVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtAmountVar.numerator<b> as </b><span style=\"color: maroon\">tgtAmountNumeratorVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      amountNumeratorVar.extension<b> as </b><span style=\"color: maroon\">amountNumExtVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtAmountNumeratorVar.extension<b> as </b><span style=\"color: maroon\">tgtAmountNumExtVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        amountNumExtVar<b> where </b>url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize'<span style=\"color: navy\"><b> -&gt; </b></span>tgtAmountNumExtVar.url = <span style=\"color: blue\">'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension'</span> <i>\"copyPackagingSizeExtensionUrl\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Wandelt KBV-Packungsgrößen-Extension in gematik EPA-Medication Extension um</span>#xD;\n        amountNumExtVar.value<b> as </b><span style=\"color: maroon\">extValVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtAmountNumExtVar.value = <span style=\"color: maroon\">extValVar</span> <i>\"copyExtensionValue\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt den Packungsgrößenwert für die Rezeptur</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"medicationAmountExt\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Transformiert Packungsgrößen-Extensions für Rezepturen</span>#xD;\n      amountNumeratorVar.value<b> as </b><span style=\"color: maroon\">amountNumeratorValueVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtAmountNumeratorVar.value = <span style=\"color: maroon\">amountNumeratorValueVar</span> <i>\"medicationAmountNumeratorValue\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Kopiert den numerischen Wert der Gesamtmenge (z.B. '50' für 50g Salbe)</span>#xD;\n      amountNumeratorVar.unit<b> as </b><span style=\"color: maroon\">amountNumeratorUnitVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtAmountNumeratorVar.unit = <span style=\"color: maroon\">amountNumeratorUnitVar</span> <i>\"medicationAmountNumeratorUnit\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt die Mengeneinheit für die Rezeptur (g, ml, Stück, etc.)</span>#xD;\n      amountNumeratorVar.system<b> as </b><span style=\"color: maroon\">amountNumeratorSystemVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtAmountNumeratorVar.system = <span style=\"color: maroon\">amountNumeratorSystemVar</span> <i>\"medicationAmountNumeratorSystem\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Kopiert das Codesystem für die Mengeneinheit (meist UCUM)</span>#xD;\n      amountNumeratorVar.code<b> as </b><span style=\"color: maroon\">amountNumeratorCodeVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtAmountNumeratorVar.code = <span style=\"color: maroon\">amountNumeratorCodeVar</span> <i>\"medicationAmountNumeratorCode\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt den standardisierten Code für die Mengeneinheit</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"medicationAmountNumerator\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt die detaillierte Mengenangabe der Rezeptur</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"medicationAmount\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt die Gesamtmenge der herzustellenden Rezeptur</span>#xD;\n  kbvMedicationCompounding.ingredient<b> as </b><span style=\"color: maroon\">ingredientVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedication.ingredient<b> as </b><span style=\"color: maroon\">tgtIngredientVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    ingredientVar.item<b> as </b><span style=\"color: maroon\">IngredientItemValueVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtIngredientVar.item = <span style=\"color: maroon\">IngredientItemValueVar</span> <i>\"medicationIngredientItemValue\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Kopiert die Referenz oder den Code des Rezeptur-Bestandteils</span>#xD;\n    ingredientVar.extension<b> as </b><span style=\"color: maroon\">IngredientExtVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtIngredientVar.extension<b> as </b><span style=\"color: maroon\">tgtIngredientExtVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      IngredientExtVar<b> where </b>url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Ingredient_Form'<span style=\"color: navy\"><b> -&gt; </b></span>tgtIngredientExtVar.url = <span style=\"color: blue\">'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-darreichungsform-extension'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        IngredientExtVar.value<b> as </b><span style=\"color: maroon\">extValVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtIngredientExtVar.value = <span style=\"color: maroon\">extValVar</span> <i>\"copyExtensionValue\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt die Darreichungsform des Bestandteils</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"copyIngredientFormExtensionUrl\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Wandelt KBV-Bestandteil-Darreichungsform-Extension in gematik-Format um</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"medicationIngredientExt\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Transformiert Bestandteil-spezifische Extensions</span>#xD;\n    ingredientVar.strength<b> as </b><span style=\"color: maroon\">IngredientStrengthValueVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtIngredientVar.strength<b> as </b><span style=\"color: maroon\">IngredientStrengthValueVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      IngredientStrengthValueVar.denominator<b> as </b><span style=\"color: maroon\">ingredientDenominatorVar</span><span style=\"color: navy\"><b> -&gt; </b></span>IngredientStrengthValueVar.denominator = <span style=\"color: maroon\">ingredientDenominatorVar</span> <i>\"medicationIngredientDenominator\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Kopiert den Nenner für die Stärkeangabe (Bezugsmenge)</span>#xD;\n      IngredientStrengthValueVar.numerator<b> as </b><span style=\"color: maroon\">ingredientNumeratorVar</span><span style=\"color: navy\"><b> -&gt; </b></span>IngredientStrengthValueVar.numerator = <span style=\"color: maroon\">ingredientNumeratorVar</span> <i>\"medicationIngredientNumerator\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Kopiert den Zähler für die Stärkeangabe (Wirkstoffmenge)</span>#xD;\n      IngredientStrengthValueVar.extension<b> as </b><span style=\"color: maroon\">IngredientStrExtVar</span><span style=\"color: navy\"><b> -&gt; </b></span>IngredientStrengthValueVar.extension<b> as </b><span style=\"color: maroon\">tgtIngredientStrExtVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        IngredientStrExtVar<b> where </b>url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Ingredient_Amount'<span style=\"color: navy\"><b> -&gt; </b></span>tgtIngredientStrExtVar.url = <span style=\"color: blue\">'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-amount-extension'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          IngredientStrExtVar.value<b> as </b><span style=\"color: maroon\">extValVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtIngredientStrExtVar.value = <span style=\"color: maroon\">extValVar</span> <i>\"copyExtensionValue\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt die Mengenangabe des Bestandteils</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"copyIngredientAmountExtensionUrl\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Wandelt KBV-Bestandteil-Mengen-Extension in gematik-Format um</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"medicationIngredientStrengthExt\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Transformiert Bestandteil-Mengen-Extensions</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"medicationIngredientStrength\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt die Stärke/Konzentration des Bestandteils in der Rezeptur</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"medicationIngredient\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt die Bestandteile der Rezeptur mit detaillierten Mengen- und Stärkeangaben</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [
-     fhir:v "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVCompoundingMedication"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVCompoundingMedication>
-  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVCompoundingMedication"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
   fhir:name [ fhir:v "ERPTPrescriptionStructureMapKBVCompoundingMedication"] ; # 
   fhir:title [ fhir:v "E-T-Rezept Structure Map for KBV Compounding Medication"] ; # 
@@ -37,10 +34,7 @@
   fhir:description [ fhir:v "Mapping-Anweisungen zur Transformation von KBV Rezeptur-Medikamenten zu BfArM T-Prescription Format"] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "DE" ] ;
        fhir:display [ fhir:v "Germany" ]
      ] )
@@ -48,14 +42,14 @@
   fhir:structure ( [
      fhir:url [
        fhir:v "http://hl7.org/fhir/StructureDefinition/Medication"^^xsd:anyURI ;
-       fhir:l <http://hl7.org/fhir/StructureDefinition/Medication>
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Medication>
      ] ;
      fhir:mode [ fhir:v "source" ] ;
      fhir:alias [ fhir:v "kbvMedicationCompounding" ]
   ] [
      fhir:url [
        fhir:v "http://hl7.org/fhir/StructureDefinition/Medication"^^xsd:anyURI ;
-       fhir:l <http://hl7.org/fhir/StructureDefinition/Medication>
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Medication>
      ] ;
      fhir:mode [ fhir:v "target" ] ;
      fhir:alias [ fhir:v "bfarmMedication" ]
@@ -100,7 +94,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:String ;
+               a fhir:string ;
                fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-formulation-packaging-extension"
              ]
            ] )
@@ -119,7 +113,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "extValVar"
                ]
              ] )
@@ -143,7 +137,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "IdVar"
            ]
          ] )
@@ -176,7 +170,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:Id ;
+               a fhir:id ;
                fhir:v "srcCodeTextVar"
              ]
            ] )
@@ -198,7 +192,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "formVar"
            ]
          ] )
@@ -231,7 +225,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:Id ;
+               a fhir:id ;
                fhir:v "amountDenominatorVar"
              ]
            ] )
@@ -276,7 +270,7 @@
                fhir:transform [ fhir:v "copy" ] ;
                fhir:parameter ( [
                  fhir:value [
-                   a fhir:String ;
+                   a fhir:string ;
                    fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension"
                  ]
                ] )
@@ -296,7 +290,7 @@
                fhir:transform [ fhir:v "copy" ] ;
                fhir:parameter ( [
                  fhir:value [
-                   a fhir:Id ;
+                   a fhir:id ;
                    fhir:v "extValVar"
                  ]
                ] )
@@ -318,7 +312,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "amountNumeratorValueVar"
                ]
              ] )
@@ -338,7 +332,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "amountNumeratorUnitVar"
                ]
              ] )
@@ -358,7 +352,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "amountNumeratorSystemVar"
                ]
              ] )
@@ -378,7 +372,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "amountNumeratorCodeVar"
                ]
              ] )
@@ -415,7 +409,7 @@
            fhir:transform [ fhir:v "copy" ] ;
            fhir:parameter ( [
              fhir:value [
-               a fhir:Id ;
+               a fhir:id ;
                fhir:v "IngredientItemValueVar"
              ]
            ] )
@@ -447,7 +441,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:String ;
+                 a fhir:string ;
                  fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-darreichungsform-extension"
                ]
              ] )
@@ -466,7 +460,7 @@
                fhir:transform [ fhir:v "copy" ] ;
                fhir:parameter ( [
                  fhir:value [
-                   a fhir:Id ;
+                   a fhir:id ;
                    fhir:v "extValVar"
                  ]
                ] )
@@ -503,7 +497,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "ingredientDenominatorVar"
                ]
              ] )
@@ -523,7 +517,7 @@
              fhir:transform [ fhir:v "copy" ] ;
              fhir:parameter ( [
                fhir:value [
-                 a fhir:Id ;
+                 a fhir:id ;
                  fhir:v "ingredientNumeratorVar"
                ]
              ] )
@@ -555,7 +549,7 @@
                fhir:transform [ fhir:v "copy" ] ;
                fhir:parameter ( [
                  fhir:value [
-                   a fhir:String ;
+                   a fhir:string ;
                    fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-amount-extension"
                  ]
                ] )
@@ -574,7 +568,7 @@
                  fhir:transform [ fhir:v "copy" ] ;
                  fhir:parameter ( [
                    fhir:value [
-                     a fhir:Id ;
+                     a fhir:id ;
                      fhir:v "extValVar"
                    ]
                  ] )

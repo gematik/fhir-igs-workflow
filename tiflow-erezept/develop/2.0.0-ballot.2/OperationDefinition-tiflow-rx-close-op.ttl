@@ -13,10 +13,7 @@
      fhir:status [ fhir:v "generated" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition tiflow-rx-close-op</b></p><a name=\"tiflow-rx-close-op\"> </a><a name=\"hctiflow-rx-close-op\"> </a><p>URL: [base]/Task/[id]/$close</p><p>Input parameters Profile:<a href=\"StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.html\">GEM ERP PR CloseOperation Input</a></p><p>Output parameters Profile:<a href=\"StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Output.html\">GEM ERP PR CloseOperation Output</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr></table></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [
-     fhir:v "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-close-op"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-close-op>
-  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-close-op"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
   fhir:name [ fhir:v "TIFlow-RX-OP-Close"] ; # 
   fhir:title [ fhir:v "E-Rezept Abgabe vollziehen"] ; # 
@@ -37,10 +34,7 @@
   fhir:description [ fhir:v "Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed."] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "DE" ] ;
        fhir:display [ fhir:v "Germany" ]
      ] )
@@ -53,11 +47,11 @@
   fhir:instance [ fhir:v true] ; # 
   fhir:inputProfile [
      fhir:v "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input>
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input>
   ] ; # 
   fhir:outputProfile [
      fhir:v "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Output"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Output>
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Output>
   ] . # 
 
 # -------------------------------------------------------------------------------------

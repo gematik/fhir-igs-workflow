@@ -12,7 +12,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://gematik.de/fhir/erp-eu/ValueSet/GEM_ERPEU_VS_ConsentType | *Version*:2.0.0-ballot.2 |
+| *Official URL*:https://gematik.de/fhir/tiflow-xborder/ValueSet/GEM-ERPEU-VS-ConsentType | *Version*:2.0.0-ballot.2 |
 | Draft as of 2026-05-26 | *Computable Name*:GEM_ERPEU_VS_ConsentType |
 
  
@@ -49,7 +49,7 @@ Type of Consents for the ePrescription.
 {
   "resourceType" : "ValueSet",
   "id" : "GEM-ERPEU-VS-ConsentType",
-  "url" : "https://gematik.de/fhir/erp-eu/ValueSet/GEM_ERPEU_VS_ConsentType",
+  "url" : "https://gematik.de/fhir/tiflow-xborder/ValueSet/GEM-ERPEU-VS-ConsentType",
   "version" : "2.0.0-ballot.2",
   "name" : "GEM_ERPEU_VS_ConsentType",
   "title" : "ValueSet of Consent Codes",
@@ -77,7 +77,7 @@ Type of Consents for the ePrescription.
   }],
   "compose" : {
     "include" : [{
-      "system" : "https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_ConsentType"
+      "system" : "https://gematik.de/fhir/tiflow-xborder/CodeSystem/GEM-ERPEU-CS-ConsentType"
     }]
   }
 }
