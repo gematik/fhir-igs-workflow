@@ -12,7 +12,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 Profile: [GEM ERP PR Communication DiGA](StructureDefinition-GEM-ERP-PR-Communication-DiGA.md)
 
-**basedOn**: [Task/162.000.000.000.000.01](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Task/162.000.000.000.000.01)
+**basedOn**: [Task: status = ready; intent = order; authoredOn = 2026-03-20](Task-ExampleDiGATaskInReadyState.md)
 
 **status**: Unknown
 
@@ -41,7 +41,7 @@ Profile: [GEM ERP PR Communication DiGA](StructureDefinition-GEM-ERP-PR-Communic
     "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA"]
   },
   "basedOn" : [{
-    "reference" : "Task/162.000.000.000.000.01"
+    "reference" : "Task/ExampleDiGATaskInReadyState"
   }],
   "status" : "unknown",
   "sent" : "2028-10-01T15:29:00.434+00:00",

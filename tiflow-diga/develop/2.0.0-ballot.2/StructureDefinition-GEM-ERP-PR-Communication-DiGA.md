@@ -22,6 +22,7 @@ Antwort des Leistungserbringers an den Patienten
 **Usages:**
 
 * Examples for this Profile: [Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3](Communication-140f716f-f649-44fe-9a4e-157eb3c8adf3.md)
+* CapabilityStatements using this Profile: [ERP DiGA CapabilityStatement für den E-Rezept-Fachdienst](CapabilityStatement-ti-flow-fachdienst-server-diga.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow.diga|current/StructureDefinition/StructureDefinition-GEM-ERP-PR-Communication-DiGA.json)
 

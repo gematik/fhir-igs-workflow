@@ -85,6 +85,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       }],
       "interaction" : [{
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -100,45 +104,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -214,6 +179,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -229,45 +198,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -343,6 +273,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -358,45 +292,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -531,6 +426,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       }],
       "operation" : [{
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "201"
@@ -539,8 +438,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
             "url" : "description",
             "valueString" : "Resource created"
           }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -602,11 +500,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "408"
+            "valueString" : "500"
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -614,18 +512,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "500"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -633,7 +531,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -662,6 +560,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "200"
@@ -670,8 +572,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
             "url" : "description",
             "valueString" : "Successful operation"
           }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -1037,11 +938,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "408"
+            "valueString" : "500"
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -1049,18 +950,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "500"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -1068,7 +969,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -1078,6 +979,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "200"
@@ -1086,8 +991,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
             "url" : "description",
             "valueString" : "Successful operation"
           }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -1244,11 +1148,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "408"
+            "valueString" : "500"
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -1256,18 +1160,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "500"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -1275,7 +1179,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -1285,6 +1189,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "204"
@@ -1293,8 +1201,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
             "url" : "description",
             "valueString" : "Successful operation without response body"
           }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -1413,11 +1320,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "408"
+            "valueString" : "500"
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -1425,18 +1332,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "500"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -1444,7 +1351,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -1454,6 +1361,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "200"
@@ -1462,8 +1373,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
             "url" : "description",
             "valueString" : "Successful operation"
           }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -1639,11 +1549,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "408"
+            "valueString" : "500"
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -1651,18 +1561,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "500"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -1670,7 +1580,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -1680,6 +1590,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "204"
@@ -1688,8 +1602,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
             "url" : "description",
             "valueString" : "Successful operation without response body"
           }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
+          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
@@ -1827,11 +1740,11 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "408"
+            "valueString" : "500"
           },
           {
             "url" : "description",
-            "valueString" : "Request timeout"
+            "valueString" : "Internal Server Error"
           },
           {
             "url" : "responseType",
@@ -1839,18 +1752,18 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
+            "valueString" : "TIFLOW_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
         {
           "extension" : [{
             "url" : "statusCode",
-            "valueString" : "500"
+            "valueString" : "408"
           },
           {
             "url" : "description",
-            "valueString" : "Internal server error"
+            "valueString" : "Timeout"
           },
           {
             "url" : "responseType",
@@ -1858,7 +1771,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           },
           {
             "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
+            "valueString" : "TIFLOW_TIMEOUT"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         }],
@@ -1873,7 +1786,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
         "valueCode" : "SHALL"
       }],
       "type" : "Communication",
-      "supportedProfile" : ["GEM_ERP_PR_Communication_DiGA"],
+      "supportedProfile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA"],
       "_supportedProfile" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -1882,6 +1795,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       }],
       "interaction" : [{
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -1897,45 +1814,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2011,6 +1889,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -2026,45 +1908,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2140,6 +1983,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -2155,45 +2002,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2231,6 +2039,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -2246,45 +2058,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2387,7 +2160,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
         }],
         "name" : "recipient",
         "definition" : "http://hl7.org/fhir/SearchParameter/Communication-recipient",
-        "type" : "string",
+        "type" : "reference",
         "documentation" : "Communication.recipient.identifier.value - Unterstützt die Suche nach dem Empfänger einer Nachricht"
       },
       {
@@ -2397,7 +2170,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
         }],
         "name" : "sender",
         "definition" : "http://hl7.org/fhir/SearchParameter/Communication-sender",
-        "type" : "string",
+        "type" : "reference",
         "documentation" : "Communication.sender.identifier.value - Unterstützt die Suche nach dem Absender einer Nachricht"
       },
       {
@@ -2443,6 +2216,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       }],
       "interaction" : [{
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -2458,45 +2235,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2572,6 +2310,10 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
       },
       {
         "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        },
+        {
           "extension" : [{
             "url" : "statusCode",
             "valueString" : "400"
@@ -2587,45 +2329,6 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
           {
             "url" : "errorCode",
             "valueString" : "MSG_BAD_FORMAT"
-          }],
-          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode" : "SHALL"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "408"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Request timeout"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_TIMEOUT"
-          }],
-          "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
-        },
-        {
-          "extension" : [{
-            "url" : "statusCode",
-            "valueString" : "500"
-          },
-          {
-            "url" : "description",
-            "valueString" : "Internal server error"
-          },
-          {
-            "url" : "responseType",
-            "valueString" : "TIFlowOperationOutcome"
-          },
-          {
-            "url" : "errorCode",
-            "valueString" : "MSG_INTERNAL_ERROR"
           }],
           "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"
         },
@@ -2728,7 +2431,7 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
         }],
         "name" : "performer",
         "definition" : "http://hl7.org/fhir/SearchParameter/MedicationDispense-performer",
-        "type" : "string",
+        "type" : "reference",
         "documentation" : "MedicationDispense.performer.actor.identifier.value - Unterstützt die Suche einer MedicationDispense zu einer Abgebenden LEI."
       },
       {

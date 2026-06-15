@@ -13,10 +13,7 @@
      fhir:status [ fhir:v "generated" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide de.gematik.tiflow.diga</b></p><a name=\"de.gematik.tiflow.diga\"> </a><a name=\"hcde.gematik.tiflow.diga\"> </a><h2>gemIG_TIFlow_diga</h2><p>The official URL for this implementation guide is: </p><pre>https://gematik.de/fhir/tiflow-diga/ImplementationGuide/de.gematik.tiflow.diga</pre></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [
-     fhir:v "https://gematik.de/fhir/tiflow-diga/ImplementationGuide/de.gematik.tiflow.diga"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow-diga/ImplementationGuide/de.gematik.tiflow.diga>
-  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow-diga/ImplementationGuide/de.gematik.tiflow.diga"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
   fhir:name [ fhir:v "gemIG_TIFlow_diga"] ; # 
   fhir:title [ fhir:v "TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)"] ; # 
@@ -35,10 +32,7 @@
   ] ) ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "DE" ] ;
        fhir:display [ fhir:v "Germany" ]
      ] )
@@ -49,36 +43,30 @@
   fhir:dependsOn ( [
      fhir:id [ fhir:v "hl7tx" ] ;
      fhir:extension ( [
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment>
-       ] ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
        fhir:value [
-         a fhir:Markdown ;
+         a fhir:markdown ;
          fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology"
        ]
      ] ) ;
      fhir:uri [
        fhir:v "http://terminology.hl7.org/ImplementationGuide/hl7.terminology"^^xsd:anyURI ;
-       fhir:l <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
+       fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
      fhir:version [ fhir:v "7.1.0" ]
   ] [
      fhir:id [ fhir:v "hl7ext" ] ;
      fhir:extension ( [
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment>
-       ] ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
        fhir:value [
-         a fhir:Markdown ;
+         a fhir:markdown ;
          fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
        ]
      ] ) ;
      fhir:uri [
        fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
-       fhir:l <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
+       fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
      ] ;
      fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r4" ] ;
      fhir:version [ fhir:v "5.3.0" ]
@@ -86,7 +74,7 @@
      fhir:id [ fhir:v "de_basisprofil_r4" ] ;
      fhir:uri [
        fhir:v "http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4"^^xsd:anyURI ;
-       fhir:l <http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4>
+       fhir:link <http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4>
      ] ;
      fhir:packageId [ fhir:v "de.basisprofil.r4" ] ;
      fhir:version [ fhir:v "1.5.4" ]
@@ -94,7 +82,7 @@
      fhir:id [ fhir:v "de_gematik_epa_medication" ] ;
      fhir:uri [
        fhir:v "https://gematik.de/fhir/epa-medication/ImplementationGuide/de.gematik.epa.medication"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/epa-medication/ImplementationGuide/de.gematik.epa.medication>
+       fhir:link <https://gematik.de/fhir/epa-medication/ImplementationGuide/de.gematik.epa.medication>
      ] ;
      fhir:packageId [ fhir:v "de.gematik.epa.medication" ] ;
      fhir:version [ fhir:v "1.3.2" ]
@@ -102,7 +90,7 @@
      fhir:id [ fhir:v "de_gematik_terminology" ] ;
      fhir:uri [
        fhir:v "https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology>
+       fhir:link <https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology>
      ] ;
      fhir:packageId [ fhir:v "de.gematik.terminology" ] ;
      fhir:version [ fhir:v "1.0.9" ]
@@ -110,7 +98,7 @@
      fhir:id [ fhir:v "de_gematik_ti" ] ;
      fhir:uri [
        fhir:v "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti>
+       fhir:link <https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti>
      ] ;
      fhir:packageId [ fhir:v "de.gematik.ti" ] ;
      fhir:version [ fhir:v "1.3.1" ]
@@ -118,7 +106,7 @@
      fhir:id [ fhir:v "de_gematik_tiflow" ] ;
      fhir:uri [
        fhir:v "https://gematik.de/fhir/tiflow/ImplementationGuide/de.gematik.tiflow"^^xsd:anyURI ;
-       fhir:l <https://gematik.de/fhir/tiflow/ImplementationGuide/de.gematik.tiflow>
+       fhir:link <https://gematik.de/fhir/tiflow/ImplementationGuide/de.gematik.tiflow>
      ] ;
      fhir:packageId [ fhir:v "de.gematik.tiflow" ] ;
      fhir:version [ fhir:v "2.0.0-ballot.2" ]
@@ -126,2630 +114,1918 @@
   fhir:definition [
      fhir:extension ( [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "copyrightyear"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "2026+"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "releaselabel"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "ci-build"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "shownav"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "autoload-resources"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "path-liquid"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "template/liquid"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "path-liquid"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "input/liquid"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "path-qa"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "temp/qa"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "path-temp"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "temp/pages"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "path-output"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "output"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "path-suppressed-warnings"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "input/ignoreWarnings.txt"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "path-history"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "https://gematik.de/fhir/tiflow-diga/history.html"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "template-html"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "template-page.html"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "template-md"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "template-page-md.html"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "apply-contact"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "apply-context"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "apply-copyright"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "apply-jurisdiction"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "apply-license"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "apply-publisher"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "apply-version"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "apply-wg"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "active-tables"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "fmm-definition"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "http://hl7.org/fhir/versions.html#maturity"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "propagate-status"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "excludelogbinaryformat"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "tabbed-snapshots"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency>
-       ] ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
        fhir:value [
-         a fhir:Code ;
+         a fhir:code ;
          fhir:v "hl7.fhir.uv.tools.r4#1.1.2"
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "copyrightyear"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "2026+"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "releaselabel"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "ci-build"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "shownav"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "autoload-resources"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "path-liquid"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "template/liquid"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "path-liquid"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "input/liquid"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "path-qa"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "temp/qa"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "path-temp"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "temp/pages"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "path-output"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "output"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "path-suppressed-warnings"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "input/ignoreWarnings.txt"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "path-history"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "https://gematik.de/fhir/tiflow-diga/history.html"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "template-html"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "template-page.html"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "template-md"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "template-page-md.html"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "apply-contact"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "apply-context"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "apply-copyright"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "apply-jurisdiction"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "apply-license"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "apply-publisher"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "apply-version"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "apply-wg"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "active-tables"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "fmm-definition"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "http://hl7.org/fhir/versions.html#maturity"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "propagate-status"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "excludelogbinaryformat"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ] ;
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Code ;
+           a fhir:code ;
            fhir:v "tabbed-snapshots"
          ]
        ] [
-         fhir:url [
-           fhir:v "value"^^xsd:anyURI ;
-           fhir:l fhir:value
-         ] ;
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "true"
          ]
        ] ) ;
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-parameter>
-       ]
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] ) ;
      fhir:resource ( [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "ValueSet"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/ValueSet/tiflow-diga-task-organizations-vs> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/ValueSet/tiflow-diga-task-organizations-vs> ;
          fhir:reference [ fhir:v "ValueSet/tiflow-diga-task-organizations-vs" ]
        ] ;
        fhir:name [ fhir:v "Bearbeiter eines E-Rezeptes" ] ;
        fhir:description [ fhir:v "ValueSet der Organisationstyp-Codes eines Performers für den DiGA Task" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "Parameters"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/Parameters/OperationCreateParametersInputExample> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/Parameters/OperationCreateParametersInputExample> ;
          fhir:reference [ fhir:v "Parameters/OperationCreateParametersInputExample" ]
        ] ;
        fhir:name [ fhir:v "Beispiel für $create Operation Parameter" ] ;
        fhir:description [ fhir:v "Beispiel für Eingabeparameter der $create Operation zur Erstellung einer neuen Aufgabe" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationOutcome"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationAbortErrorAVS> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationAbortErrorAVS> ;
          fhir:reference [ fhir:v "OperationOutcome/ExampleOperationAbortErrorAVS" ]
        ] ;
        fhir:name [ fhir:v "Beispiel für Abort-Operation Fehlerantwort (AVS)" ] ;
        fhir:description [ fhir:v "Beispiel für eine Fehlerantwort bei der Abort-Operation aus Sicht des AVS" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationOutcome"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationAbortErrorPVS> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationAbortErrorPVS> ;
          fhir:reference [ fhir:v "OperationOutcome/ExampleOperationAbortErrorPVS" ]
        ] ;
        fhir:name [ fhir:v "Beispiel für Abort-Operation Fehlerantwort (PVS)" ] ;
        fhir:description [ fhir:v "Beispiel für eine Fehlerantwort bei der Abort-Operation aus Sicht des PVS" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationOutcome"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationAcceptError> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationAcceptError> ;
          fhir:reference [ fhir:v "OperationOutcome/ExampleOperationAcceptError" ]
        ] ;
        fhir:name [ fhir:v "Beispiel für Accept-Operation Fehlerantwort" ] ;
        fhir:description [ fhir:v "Beispiel für eine Fehlerantwort bei der Accept-Operation eines E-Rezepts" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationOutcome"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationCloseError> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationCloseError> ;
          fhir:reference [ fhir:v "OperationOutcome/ExampleOperationCloseError" ]
        ] ;
        fhir:name [ fhir:v "Beispiel für Close-Operation Fehlerantwort" ] ;
        fhir:description [ fhir:v "Beispiel für eine Fehlerantwort bei der Close-Operation mit FHIR-Validierungsfehlern" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationOutcome"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationCreateError> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationCreateError> ;
          fhir:reference [ fhir:v "OperationOutcome/ExampleOperationCreateError" ]
        ] ;
        fhir:name [ fhir:v "Beispiel für Create-Operation Fehlerantwort" ] ;
        fhir:description [ fhir:v "Beispiel für eine Fehlerantwort bei der Create-Operation mit FHIR-Validierungsfehlern" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationOutcome"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationRejectError> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationRejectError> ;
          fhir:reference [ fhir:v "OperationOutcome/ExampleOperationRejectError" ]
        ] ;
        fhir:name [ fhir:v "Beispiel für Reject-Operation Fehlerantwort" ] ;
        fhir:description [ fhir:v "Beispiel für eine Fehlerantwort bei der Reject-Operation wegen falschen Task-Status" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "Bundle"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/Bundle/ExampleDiGACommunicationSearchset> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/Bundle/ExampleDiGACommunicationSearchset> ;
          fhir:reference [ fhir:v "Bundle/ExampleDiGACommunicationSearchset" ]
        ] ;
        fhir:name [ fhir:v "Communication searchset response for DiGA" ] ;
        fhir:description [ fhir:v "Example response for GET /Communication in DiGA workflow" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-receipt-bundle> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-receipt-bundle> ;
          fhir:reference [ fhir:v "StructureDefinition/tiflow-diga-receipt-bundle" ]
        ] ;
        fhir:name [ fhir:v "DiGA Quittungsbundle" ] ;
        fhir:description [ fhir:v "Dokumentenbündel für Quittung für Verordnungen von digitale Gesundheitsanwendungen" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-receipt-composition> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-receipt-composition> ;
          fhir:reference [ fhir:v "StructureDefinition/tiflow-diga-receipt-composition" ]
        ] ;
        fhir:name [ fhir:v "DiGA QuittungsComposition" ] ;
        fhir:description [ fhir:v "Composition für Quittung für Verordnungen von digitale Gesundheitsanwendungen" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "Task"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/Task/ExampleDiGATaskInReadyState> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/Task/ExampleDiGATaskInReadyState> ;
          fhir:reference [ fhir:v "Task/ExampleDiGATaskInReadyState" ]
        ] ;
        fhir:name [ fhir:v "DiGA Task in ready state" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "Communication"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3> ;
          fhir:reference [ fhir:v "Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3" ]
        ] ;
        fhir:name [ fhir:v "DiGA-Nachricht eines Kostenträgers an den Patienten" ] ;
        fhir:description [ fhir:v "Beispiel für eine DiGA-bezogene Nachricht, die vom Kostenträgers an den Patienten gesendet wird" ] ;
        fhir:example [
-         a fhir:Canonical ;
+         a fhir:canonical ;
          fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA>
+         fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA>
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationDefinition"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-abort-op> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-abort-op> ;
          fhir:reference [ fhir:v "OperationDefinition/tiflow-diga-abort-op" ]
        ] ;
        fhir:name [ fhir:v "E-Rezept abbrechen" ] ;
        fhir:description [ fhir:v "Diese Operation bricht den Workflow einer DiGA-Verordnung ab und löscht alle Daten, die mit dieser Aufgabe zusammenhängen." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationDefinition"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-close-op> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-close-op> ;
          fhir:reference [ fhir:v "OperationDefinition/tiflow-diga-close-op" ]
        ] ;
        fhir:name [ fhir:v "E-Rezept Abgabe vollziehen" ] ;
        fhir:description [ fhir:v "Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationDefinition"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-accept-op> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-accept-op> ;
          fhir:reference [ fhir:v "OperationDefinition/tiflow-diga-accept-op" ]
        ] ;
        fhir:name [ fhir:v "E-Rezept abrufen" ] ;
        fhir:description [ fhir:v "Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationDefinition"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-activate-op> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-activate-op> ;
          fhir:reference [ fhir:v "OperationDefinition/tiflow-diga-activate-op" ]
        ] ;
        fhir:name [ fhir:v "E-Rezept aktivieren" ] ;
        fhir:description [ fhir:v "Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der TI-Flow-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationDefinition"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-create-op> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-create-op> ;
          fhir:reference [ fhir:v "OperationDefinition/tiflow-diga-create-op" ]
        ] ;
        fhir:name [ fhir:v "E-Rezept erstellen" ] ;
        fhir:description [ fhir:v "Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Flowtypes." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationDefinition"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-dispense-op> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-dispense-op> ;
          fhir:reference [ fhir:v "OperationDefinition/tiflow-diga-dispense-op" ]
        ] ;
        fhir:name [ fhir:v "E-Rezept vorläufig abgeben" ] ;
        fhir:description [ fhir:v "Die Operation $dispense ermöglicht es dem Kostenträger, eine Ausgabe für eine DiGA-Verordnung durchzuführen, ohne den Status der Aufgabe zu ändern. Diese Aktion erlaubt es einem Frontend anzuzeigen, dass eine DiGA ausgegeben wurde, bevor sie vom Kostenträger abgeschlossen wird." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationDefinition"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-reject-op> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-reject-op> ;
          fhir:reference [ fhir:v "OperationDefinition/tiflow-diga-reject-op" ]
        ] ;
        fhir:name [ fhir:v "E-Rezept zurückgeben" ] ;
        fhir:description [ fhir:v "Lehnt die Ausgabe einer DiGA-Verordnung ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Kostenträger zugänglich oder kann vom Patienten gelöscht werden." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "CapabilityStatement"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/CapabilityStatement/ti-flow-fachdienst-server-diga> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/CapabilityStatement/ti-flow-fachdienst-server-diga> ;
          fhir:reference [ fhir:v "CapabilityStatement/ti-flow-fachdienst-server-diga" ]
        ] ;
        fhir:name [ fhir:v "ERP DiGA CapabilityStatement für den E-Rezept-Fachdienst" ] ;
        fhir:description [ fhir:v "CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendungen)" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationOutcome"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationActivateError> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleOperationActivateError> ;
          fhir:reference [ fhir:v "OperationOutcome/ExampleOperationActivateError" ]
        ] ;
        fhir:name [ fhir:v "Example Activate operation error response" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "Parameters"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/Parameters/ExampleOperationActivateParametersInput> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/Parameters/ExampleOperationActivateParametersInput> ;
          fhir:reference [ fhir:v "Parameters/ExampleOperationActivateParametersInput" ]
        ] ;
        fhir:name [ fhir:v "Example Activate operation input parameters" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "Parameters"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/Parameters/ExampleCloseInputParametersDiGA> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/Parameters/ExampleCloseInputParametersDiGA> ;
          fhir:reference [ fhir:v "Parameters/ExampleCloseInputParametersDiGA" ]
        ] ;
        fhir:name [ fhir:v "Example Close Parameters" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "OperationOutcome"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleDiGAOperationOutcomeError> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/OperationOutcome/ExampleDiGAOperationOutcomeError> ;
          fhir:reference [ fhir:v "OperationOutcome/ExampleDiGAOperationOutcomeError" ]
        ] ;
        fhir:name [ fhir:v "Example error response for DiGA operations" ] ;
        fhir:description [ fhir:v "Representative business error for DiGA operation calls" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "Parameters"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/Parameters/ExampleDiGAOperationRequestParameters> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/Parameters/ExampleDiGAOperationRequestParameters> ;
          fhir:reference [ fhir:v "Parameters/ExampleDiGAOperationRequestParameters" ]
        ] ;
        fhir:name [ fhir:v "Example request parameters for DiGA operations" ] ;
        fhir:description [ fhir:v "Reusable operation request payload for DiGA API documentation" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:extension"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-EX-DeepLink> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-EX-DeepLink> ;
          fhir:reference [ fhir:v "StructureDefinition/GEM-ERP-EX-DeepLink" ]
        ] ;
        fhir:name [ fhir:v "GEM ERP EX DeepLink" ] ;
        fhir:description [ fhir:v "Enthält Informationen zum Deep Link für eine DiGA." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:extension"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-EX-RedeemCode> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-EX-RedeemCode> ;
          fhir:reference [ fhir:v "StructureDefinition/GEM-ERP-EX-RedeemCode" ]
        ] ;
        fhir:name [ fhir:v "GEM ERP EX RedeemCode" ] ;
        fhir:description [ fhir:v "Gibt den Einlösecode für eine DiGA an." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-PR-Communication-DiGA> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-PR-Communication-DiGA> ;
          fhir:reference [ fhir:v "StructureDefinition/GEM-ERP-PR-Communication-DiGA" ]
        ] ;
        fhir:name [ fhir:v "GEM ERP PR Communication DiGA" ] ;
        fhir:description [ fhir:v "Antwort des Leistungserbringers an den Patienten" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA> ;
          fhir:reference [ fhir:v "StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA" ]
        ] ;
        fhir:name [ fhir:v "GEM ERP PR MedicationDispense DiGA" ] ;
        fhir:description [ fhir:v "Dispensierung einer DiGA-Verordnung" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:logical"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-LOG-MedicationDispense-DiGA> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-LOG-MedicationDispense-DiGA> ;
          fhir:reference [ fhir:v "StructureDefinition/GEM-ERP-LOG-MedicationDispense-DiGA" ]
        ] ;
        fhir:name [ fhir:v "Logical DiGA Medication Dispense" ] ;
        fhir:description [ fhir:v "Fachliches Modell zur Beschreibung der Informationen, die bei $close in der MedicationDispense-Ressource für DiGAs übermittelt werden." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "MedicationDispense"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/MedicationDispense/Example-MedicationDispense-DiGA-DeepLink> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/MedicationDispense/Example-MedicationDispense-DiGA-DeepLink> ;
          fhir:reference [ fhir:v "MedicationDispense/Example-MedicationDispense-DiGA-DeepLink" ]
        ] ;
        fhir:name [ fhir:v "Medication Dispense DiGA with a deep link." ] ;
        fhir:description [ fhir:v "Example of a Medication Dispense for DiGAs which states a deep link." ] ;
        fhir:example [
-         a fhir:Canonical ;
+         a fhir:canonical ;
          fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA>
+         fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA>
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "MedicationDispense"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/MedicationDispense/Example-MedicationDispense-DiGA-NoRedeemCode> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/MedicationDispense/Example-MedicationDispense-DiGA-NoRedeemCode> ;
          fhir:reference [ fhir:v "MedicationDispense/Example-MedicationDispense-DiGA-NoRedeemCode" ]
        ] ;
        fhir:name [ fhir:v "Medication Dispense DiGA without a redeem code" ] ;
        fhir:description [ fhir:v "Example of a Medication Dispense for DiGAs which has no redeem code." ] ;
        fhir:example [
-         a fhir:Canonical ;
+         a fhir:canonical ;
          fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA>
+         fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA>
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "MedicationDispense"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/MedicationDispense/Example-MedicationDispense-DiGA-Name-And-PZN> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/MedicationDispense/Example-MedicationDispense-DiGA-Name-And-PZN> ;
          fhir:reference [ fhir:v "MedicationDispense/Example-MedicationDispense-DiGA-Name-And-PZN" ]
        ] ;
        fhir:name [ fhir:v "Medication Dispense DiGA, Name and PZN" ] ;
        fhir:description [ fhir:v "Example of a Medication Dispense for DiGAs only stating the name of the DiGA." ] ;
        fhir:example [
-         a fhir:Canonical ;
+         a fhir:canonical ;
          fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA>
+         fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA>
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "Bundle"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/Bundle/ExampleDiGAMedicationDispenseSearchset> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/Bundle/ExampleDiGAMedicationDispenseSearchset> ;
          fhir:reference [ fhir:v "Bundle/ExampleDiGAMedicationDispenseSearchset" ]
        ] ;
        fhir:name [ fhir:v "MedicationDispense searchset response for DiGA" ] ;
        fhir:description [ fhir:v "Example response for GET /MedicationDispense in DiGA workflow" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "Bundle"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/Bundle/ExampleDiGATaskSearchset> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/Bundle/ExampleDiGATaskSearchset> ;
          fhir:reference [ fhir:v "Bundle/ExampleDiGATaskSearchset" ]
        ] ;
        fhir:name [ fhir:v "Task searchset response for DiGA" ] ;
        fhir:description [ fhir:v "Example response for GET /Task in DiGA workflow" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v true
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-binary> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-binary> ;
          fhir:reference [ fhir:v "StructureDefinition/tiflow-diga-binary" ]
        ] ;
        fhir:name [ fhir:v "TIFlow - DiGA - Binary" ] ;
        fhir:description [ fhir:v "Binary für die DiGA Verordnungsdaten" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-task> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-task> ;
          fhir:reference [ fhir:v "StructureDefinition/tiflow-diga-task" ]
        ] ;
        fhir:name [ fhir:v "TIFlow - DiGA - Task" ] ;
        fhir:description [ fhir:v "Task für die Verwaltung des E-Rezept-Workflows für digitale Gesundheitsanwendungen" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-accept-operation-output> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-accept-operation-output> ;
          fhir:reference [ fhir:v "StructureDefinition/ti-flow-di-ga-accept-operation-output" ]
        ] ;
        fhir:name [ fhir:v "TIFlow DiGA Accept Operation Output" ] ;
        fhir:description [ fhir:v "Dieses Profil definiert die Parameter für die Annahme einer DiGA Verordnung vom Kostenträger zum TI-Flow-Fachdienst. Dies kann für die $accept-Operation verwendet werden." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-activate-operation-input> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-activate-operation-input> ;
          fhir:reference [ fhir:v "StructureDefinition/ti-flow-di-ga-activate-operation-input" ]
        ] ;
        fhir:name [ fhir:v "TIFlow DiGA Activate Operation Input" ] ;
        fhir:description [ fhir:v "Dieses Profil definiert die Parameter für die Aktivierung einer DiGA Verordnung vom Kostenträger zum TI-Flow-Fachdienst. Dies kann für die $activate-Operation verwendet werden." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-activate-operation-output> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-activate-operation-output> ;
          fhir:reference [ fhir:v "StructureDefinition/ti-flow-di-ga-activate-operation-output" ]
        ] ;
        fhir:name [ fhir:v "TIFlow DiGA Activate Operation Output" ] ;
        fhir:description [ fhir:v "Dieses Profil definiert die Parameter für die Aktivierung einer DiGA Aufgabe vom TI-Flow-Fachdienst. Dies kann für die $activate-Operation verwendet werden." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-audit-event> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-audit-event> ;
          fhir:reference [ fhir:v "StructureDefinition/tiflow-diga-audit-event" ]
        ] ;
        fhir:name [ fhir:v "TIFlow DiGA AuditEvent" ] ;
        fhir:description [ fhir:v "AuditEvent für die Protokollierung des Zugriffs auf DiGA-Verordnungen" ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-close-operation-input> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-close-operation-input> ;
          fhir:reference [ fhir:v "StructureDefinition/ti-flow-di-ga-close-operation-input" ]
        ] ;
        fhir:name [ fhir:v "TIFlow DiGA Close Operation Input" ] ;
        fhir:description [ fhir:v "Dieses Profil definiert die Parameter für das Schließen einer DiGA Verordnung vom Kostenträger zum TI-Flow-Fachdienst. Dies kann für die $close-Operation verwendet werden." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-close-operation-output> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-close-operation-output> ;
          fhir:reference [ fhir:v "StructureDefinition/ti-flow-di-ga-close-operation-output" ]
        ] ;
        fhir:name [ fhir:v "TIFlow DiGA Close Operation Output" ] ;
        fhir:description [ fhir:v "Dieses Profil definiert die Parameter für die Ausgabe einer DiGA Verordnung vom TI-Flow-Fachdienst. Dies kann für die $close-Operation verwendet werden." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-create-operation-input> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-create-operation-input> ;
          fhir:reference [ fhir:v "StructureDefinition/ti-flow-di-ga-create-operation-input" ]
        ] ;
        fhir:name [ fhir:v "TIFlow DiGA Create Operation Input" ] ;
        fhir:description [ fhir:v "Dieses Profil definiert die Parameter für die Erstellung einer DiGA Aufgabe vom Kostenträger zum TI-Flow-Fachdienst. Dies kann für die $create-Operation verwendet werden." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-create-operation-output> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-create-operation-output> ;
          fhir:reference [ fhir:v "StructureDefinition/ti-flow-di-ga-create-operation-output" ]
        ] ;
        fhir:name [ fhir:v "TIFlow DiGA Create Operation Output" ] ;
        fhir:description [ fhir:v "Dieses Profil definiert die Parameter für die Erstellung einer DiGA Aufgabe vom TI-Flow-Fachdienst. Dies kann für die $create-Operation verwendet werden." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:String ;
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-dispense-operation-input> ;
+         fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-dispense-operation-input> ;
          fhir:reference [ fhir:v "StructureDefinition/ti-flow-di-ga-dispense-operation-input" ]
        ] ;
        fhir:name [ fhir:v "TIFlow DiGA Dispense Operation Input" ] ;
        fhir:description [ fhir:v "Dieses Profil definiert die Parameter für die Abgabe einer DiGA Verordnung vom Kostenträger an den TI-Flow-Fachdienst. Dies kann für die $dispense-Operation verwendet werden." ] ;
        fhir:example [
-         a fhir:Boolean ;
+         a fhir:boolean ;
          fhir:v false
        ]
      ] ) ;
      fhir:page [
        fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-         ] ;
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
          fhir:value [
-           a fhir:Url ;
-           fhir:v "toc.html"^^xsd:anyURI ;
-           fhir:l fhir:toc.html
+           a fhir:url ;
+           fhir:v "toc.html"^^xsd:anyURI
          ]
        ] ) ;
        fhir:name [
-         a fhir:Url ;
-         fhir:v "toc.html"^^xsd:anyURI ;
-         fhir:l fhir:toc.html
+         a fhir:url ;
+         fhir:v "toc.html"^^xsd:anyURI
        ] ;
        fhir:title [ fhir:v "Table of Contents" ] ;
        fhir:generation [ fhir:v "html" ] ;
        fhir:page ( [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "index.html"^^xsd:anyURI ;
-             fhir:l fhir:index.html
+             a fhir:url ;
+             fhir:v "index.html"^^xsd:anyURI
            ]
          ] ) ;
          fhir:name [
-           a fhir:Url ;
-           fhir:v "index.html"^^xsd:anyURI ;
-           fhir:l fhir:index.html
+           a fhir:url ;
+           fhir:v "index.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Implementation Guide elektronische Verordnung von DiGAs" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "menu-fachlichkeit-diga.html"^^xsd:anyURI ;
-             fhir:l fhir:menu-fachlichkeit-diga.html
+             a fhir:url ;
+             fhir:v "menu-fachlichkeit-diga.html"^^xsd:anyURI
            ]
          ] ) ;
          fhir:name [
-           a fhir:Url ;
-           fhir:v "menu-fachlichkeit-diga.html"^^xsd:anyURI ;
-           fhir:l fhir:menu-fachlichkeit-diga.html
+           a fhir:url ;
+           fhir:v "menu-fachlichkeit-diga.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Elektronische Verordnung von DiGAs" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "menu-technische-umsetzung-systemueberblick.html"^^xsd:anyURI ;
-             fhir:l fhir:menu-technische-umsetzung-systemueberblick.html
+             a fhir:url ;
+             fhir:v "menu-technische-umsetzung-systemueberblick.html"^^xsd:anyURI
            ]
          ] ) ;
          fhir:name [
-           a fhir:Url ;
-           fhir:v "menu-technische-umsetzung-systemueberblick.html"^^xsd:anyURI ;
-           fhir:l fhir:menu-technische-umsetzung-systemueberblick.html
+           a fhir:url ;
+           fhir:v "menu-technische-umsetzung-systemueberblick.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Systemüberblick" ] ;
          fhir:generation [ fhir:v "markdown" ] ;
          fhir:page ( [
            fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
              fhir:value [
-               a fhir:Url ;
-               fhir:v "menu-technische-umsetzung-anwendungsfaelle.html"^^xsd:anyURI ;
-               fhir:l fhir:menu-technische-umsetzung-anwendungsfaelle.html
+               a fhir:url ;
+               fhir:v "menu-technische-umsetzung-anwendungsfaelle.html"^^xsd:anyURI
              ]
            ] ) ;
            fhir:name [
-             a fhir:Url ;
-             fhir:v "menu-technische-umsetzung-anwendungsfaelle.html"^^xsd:anyURI ;
-             fhir:l fhir:menu-technische-umsetzung-anwendungsfaelle.html
+             a fhir:url ;
+             fhir:v "menu-technische-umsetzung-anwendungsfaelle.html"^^xsd:anyURI
            ] ;
            fhir:title [ fhir:v "Technische Anwendungsfälle" ] ;
            fhir:generation [ fhir:v "markdown" ]
          ] [
            fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
              fhir:value [
-               a fhir:Url ;
-               fhir:v "menu-technische-umsetzung-verarbeitungsregeln.html"^^xsd:anyURI ;
-               fhir:l fhir:menu-technische-umsetzung-verarbeitungsregeln.html
+               a fhir:url ;
+               fhir:v "menu-technische-umsetzung-verarbeitungsregeln.html"^^xsd:anyURI
              ]
            ] ) ;
            fhir:name [
-             a fhir:Url ;
-             fhir:v "menu-technische-umsetzung-verarbeitungsregeln.html"^^xsd:anyURI ;
-             fhir:l fhir:menu-technische-umsetzung-verarbeitungsregeln.html
+             a fhir:url ;
+             fhir:v "menu-technische-umsetzung-verarbeitungsregeln.html"^^xsd:anyURI
            ] ;
            fhir:title [ fhir:v "Verarbeitungsregeln" ] ;
            fhir:generation [ fhir:v "markdown" ]
          ] )
        ] [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "menu-schnittstellen-generelle-prinzipien.html"^^xsd:anyURI ;
-             fhir:l fhir:menu-schnittstellen-generelle-prinzipien.html
+             a fhir:url ;
+             fhir:v "menu-schnittstellen-generelle-prinzipien.html"^^xsd:anyURI
            ]
          ] ) ;
          fhir:name [
-           a fhir:Url ;
-           fhir:v "menu-schnittstellen-generelle-prinzipien.html"^^xsd:anyURI ;
-           fhir:l fhir:menu-schnittstellen-generelle-prinzipien.html
+           a fhir:url ;
+           fhir:v "menu-schnittstellen-generelle-prinzipien.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Generelle Prinzipien" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "menu-datenschutz-und-sicherheit.html"^^xsd:anyURI ;
-             fhir:l fhir:menu-datenschutz-und-sicherheit.html
+             a fhir:url ;
+             fhir:v "menu-datenschutz-und-sicherheit.html"^^xsd:anyURI
            ]
          ] ) ;
          fhir:name [
-           a fhir:Url ;
-           fhir:v "menu-datenschutz-und-sicherheit.html"^^xsd:anyURI ;
-           fhir:l fhir:menu-datenschutz-und-sicherheit.html
+           a fhir:url ;
+           fhir:v "menu-datenschutz-und-sicherheit.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Datenschutz und Informationssicherheit" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "query-api.html"^^xsd:anyURI ;
-             fhir:l fhir:query-api.html
+             a fhir:url ;
+             fhir:v "query-api.html"^^xsd:anyURI
            ]
          ] ) ;
          fhir:name [
-           a fhir:Url ;
-           fhir:v "query-api.html"^^xsd:anyURI ;
-           fhir:l fhir:query-api.html
+           a fhir:url ;
+           fhir:v "query-api.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Query API" ] ;
          fhir:generation [ fhir:v "markdown" ] ;
          fhir:page ( [
            fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
              fhir:value [
-               a fhir:Url ;
-               fhir:v "query-api-task.html"^^xsd:anyURI ;
-               fhir:l fhir:query-api-task.html
+               a fhir:url ;
+               fhir:v "query-api-task.html"^^xsd:anyURI
              ]
            ] ) ;
            fhir:name [
-             a fhir:Url ;
-             fhir:v "query-api-task.html"^^xsd:anyURI ;
-             fhir:l fhir:query-api-task.html
+             a fhir:url ;
+             fhir:v "query-api-task.html"^^xsd:anyURI
            ] ;
            fhir:title [ fhir:v "Query API: Task" ] ;
            fhir:generation [ fhir:v "markdown" ] ;
            fhir:page ( [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "query-api-task-req-fd.html"^^xsd:anyURI ;
-                 fhir:l fhir:query-api-task-req-fd.html
+                 a fhir:url ;
+                 fhir:v "query-api-task-req-fd.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "query-api-task-req-fd.html"^^xsd:anyURI ;
-               fhir:l fhir:query-api-task-req-fd.html
+               a fhir:url ;
+               fhir:v "query-api-task-req-fd.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "FD-Anforderungen: Task-Query" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "query-api-task-req-fdv.html"^^xsd:anyURI ;
-                 fhir:l fhir:query-api-task-req-fdv.html
+                 a fhir:url ;
+                 fhir:v "query-api-task-req-fdv.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "query-api-task-req-fdv.html"^^xsd:anyURI ;
-               fhir:l fhir:query-api-task-req-fdv.html
+               a fhir:url ;
+               fhir:v "query-api-task-req-fdv.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "FdV-Anforderungen: Task-Query" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "query-api-task-req-ktr.html"^^xsd:anyURI ;
-                 fhir:l fhir:query-api-task-req-ktr.html
+                 a fhir:url ;
+                 fhir:v "query-api-task-req-ktr.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "query-api-task-req-ktr.html"^^xsd:anyURI ;
-               fhir:l fhir:query-api-task-req-ktr.html
+               a fhir:url ;
+               fhir:v "query-api-task-req-ktr.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "KTR-Anforderungen: Task-Query" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [
            fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
              fhir:value [
-               a fhir:Url ;
-               fhir:v "query-api-communication.html"^^xsd:anyURI ;
-               fhir:l fhir:query-api-communication.html
+               a fhir:url ;
+               fhir:v "query-api-communication.html"^^xsd:anyURI
              ]
            ] ) ;
            fhir:name [
-             a fhir:Url ;
-             fhir:v "query-api-communication.html"^^xsd:anyURI ;
-             fhir:l fhir:query-api-communication.html
+             a fhir:url ;
+             fhir:v "query-api-communication.html"^^xsd:anyURI
            ] ;
            fhir:title [ fhir:v "Query API: Communication" ] ;
            fhir:generation [ fhir:v "markdown" ] ;
            fhir:page ( [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "query-api-communication-req-fd.html"^^xsd:anyURI ;
-                 fhir:l fhir:query-api-communication-req-fd.html
+                 a fhir:url ;
+                 fhir:v "query-api-communication-req-fd.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "query-api-communication-req-fd.html"^^xsd:anyURI ;
-               fhir:l fhir:query-api-communication-req-fd.html
+               a fhir:url ;
+               fhir:v "query-api-communication-req-fd.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "FD-Anforderungen: Communication-Query" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "query-api-communication-req-fdv.html"^^xsd:anyURI ;
-                 fhir:l fhir:query-api-communication-req-fdv.html
+                 a fhir:url ;
+                 fhir:v "query-api-communication-req-fdv.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "query-api-communication-req-fdv.html"^^xsd:anyURI ;
-               fhir:l fhir:query-api-communication-req-fdv.html
+               a fhir:url ;
+               fhir:v "query-api-communication-req-fdv.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "FdV-Anforderungen: Communication-Query" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "query-api-communication-req-ktr.html"^^xsd:anyURI ;
-                 fhir:l fhir:query-api-communication-req-ktr.html
+                 a fhir:url ;
+                 fhir:v "query-api-communication-req-ktr.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "query-api-communication-req-ktr.html"^^xsd:anyURI ;
-               fhir:l fhir:query-api-communication-req-ktr.html
+               a fhir:url ;
+               fhir:v "query-api-communication-req-ktr.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "KTR-Anforderungen: Communication-Query" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [
            fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
              fhir:value [
-               a fhir:Url ;
-               fhir:v "query-api-medicationdispense.html"^^xsd:anyURI ;
-               fhir:l fhir:query-api-medicationdispense.html
+               a fhir:url ;
+               fhir:v "query-api-medicationdispense.html"^^xsd:anyURI
              ]
            ] ) ;
            fhir:name [
-             a fhir:Url ;
-             fhir:v "query-api-medicationdispense.html"^^xsd:anyURI ;
-             fhir:l fhir:query-api-medicationdispense.html
+             a fhir:url ;
+             fhir:v "query-api-medicationdispense.html"^^xsd:anyURI
            ] ;
            fhir:title [ fhir:v "Query API: MedicationDispense" ] ;
            fhir:generation [ fhir:v "markdown" ] ;
            fhir:page ( [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "query-api-medicationdispense-req-fd.html"^^xsd:anyURI ;
-                 fhir:l fhir:query-api-medicationdispense-req-fd.html
+                 a fhir:url ;
+                 fhir:v "query-api-medicationdispense-req-fd.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "query-api-medicationdispense-req-fd.html"^^xsd:anyURI ;
-               fhir:l fhir:query-api-medicationdispense-req-fd.html
+               a fhir:url ;
+               fhir:v "query-api-medicationdispense-req-fd.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "FD-Anforderungen: MedicationDispense-Query" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "query-api-medicationdispense-req-fdv.html"^^xsd:anyURI ;
-                 fhir:l fhir:query-api-medicationdispense-req-fdv.html
+                 a fhir:url ;
+                 fhir:v "query-api-medicationdispense-req-fdv.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "query-api-medicationdispense-req-fdv.html"^^xsd:anyURI ;
-               fhir:l fhir:query-api-medicationdispense-req-fdv.html
+               a fhir:url ;
+               fhir:v "query-api-medicationdispense-req-fdv.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "FdV-Anforderungen: MedicationDispense-Query" ] ;
              fhir:generation [ fhir:v "markdown" ]
@@ -2757,386 +2033,286 @@
          ] )
        ] [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "operation-api.html"^^xsd:anyURI ;
-             fhir:l fhir:operation-api.html
+             a fhir:url ;
+             fhir:v "operation-api.html"^^xsd:anyURI
            ]
          ] ) ;
          fhir:name [
-           a fhir:Url ;
-           fhir:v "operation-api.html"^^xsd:anyURI ;
-           fhir:l fhir:operation-api.html
+           a fhir:url ;
+           fhir:v "operation-api.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Operation API" ] ;
          fhir:generation [ fhir:v "markdown" ] ;
          fhir:page ( [
            fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
              fhir:value [
-               a fhir:Url ;
-               fhir:v "op-create.html"^^xsd:anyURI ;
-               fhir:l fhir:op-create.html
+               a fhir:url ;
+               fhir:v "op-create.html"^^xsd:anyURI
              ]
            ] ) ;
            fhir:name [
-             a fhir:Url ;
-             fhir:v "op-create.html"^^xsd:anyURI ;
-             fhir:l fhir:op-create.html
+             a fhir:url ;
+             fhir:v "op-create.html"^^xsd:anyURI
            ] ;
            fhir:title [ fhir:v "Operation: $create" ] ;
            fhir:generation [ fhir:v "markdown" ] ;
            fhir:page ( [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "op-create-req-fd.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-create-req-fd.html
+                 a fhir:url ;
+                 fhir:v "op-create-req-fd.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "op-create-req-fd.html"^^xsd:anyURI ;
-               fhir:l fhir:op-create-req-fd.html
+               a fhir:url ;
+               fhir:v "op-create-req-fd.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "Anforderungen an den TI-Flow-Fachdienst für die $create-Operation" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "op-create-req-pvs.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-create-req-pvs.html
+                 a fhir:url ;
+                 fhir:v "op-create-req-pvs.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "op-create-req-pvs.html"^^xsd:anyURI ;
-               fhir:l fhir:op-create-req-pvs.html
+               a fhir:url ;
+               fhir:v "op-create-req-pvs.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "Anforderungen an den verordnende Primärsystem für die $create-Operation" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [
            fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
              fhir:value [
-               a fhir:Url ;
-               fhir:v "op-activate.html"^^xsd:anyURI ;
-               fhir:l fhir:op-activate.html
+               a fhir:url ;
+               fhir:v "op-activate.html"^^xsd:anyURI
              ]
            ] ) ;
            fhir:name [
-             a fhir:Url ;
-             fhir:v "op-activate.html"^^xsd:anyURI ;
-             fhir:l fhir:op-activate.html
+             a fhir:url ;
+             fhir:v "op-activate.html"^^xsd:anyURI
            ] ;
            fhir:title [ fhir:v "Operation: $activate" ] ;
            fhir:generation [ fhir:v "markdown" ] ;
            fhir:page ( [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "op-activate-req-fd.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-activate-req-fd.html
+                 a fhir:url ;
+                 fhir:v "op-activate-req-fd.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "op-activate-req-fd.html"^^xsd:anyURI ;
-               fhir:l fhir:op-activate-req-fd.html
+               a fhir:url ;
+               fhir:v "op-activate-req-fd.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "Anforderungen an den TI-Flow-Fachdienst für die $activate-Operation" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "op-activate-req-pvs.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-activate-req-pvs.html
+                 a fhir:url ;
+                 fhir:v "op-activate-req-pvs.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "op-activate-req-pvs.html"^^xsd:anyURI ;
-               fhir:l fhir:op-activate-req-pvs.html
+               a fhir:url ;
+               fhir:v "op-activate-req-pvs.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "Anforderungen an den verordnende Primärsystem für die $activate-Operation" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [
            fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
              fhir:value [
-               a fhir:Url ;
-               fhir:v "op-accept.html"^^xsd:anyURI ;
-               fhir:l fhir:op-accept.html
+               a fhir:url ;
+               fhir:v "op-accept.html"^^xsd:anyURI
              ]
            ] ) ;
            fhir:name [
-             a fhir:Url ;
-             fhir:v "op-accept.html"^^xsd:anyURI ;
-             fhir:l fhir:op-accept.html
+             a fhir:url ;
+             fhir:v "op-accept.html"^^xsd:anyURI
            ] ;
            fhir:title [ fhir:v "Operation: $accept" ] ;
            fhir:generation [ fhir:v "markdown" ] ;
            fhir:page ( [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "op-accept-req-fd.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-accept-req-fd.html
+                 a fhir:url ;
+                 fhir:v "op-accept-req-fd.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "op-accept-req-fd.html"^^xsd:anyURI ;
-               fhir:l fhir:op-accept-req-fd.html
+               a fhir:url ;
+               fhir:v "op-accept-req-fd.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "Anforderungen an den TI-Flow-Fachdienst für die $accept-Operation" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "op-accept-req-ktr.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-accept-req-ktr.html
+                 a fhir:url ;
+                 fhir:v "op-accept-req-ktr.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "op-accept-req-ktr.html"^^xsd:anyURI ;
-               fhir:l fhir:op-accept-req-ktr.html
+               a fhir:url ;
+               fhir:v "op-accept-req-ktr.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "Anforderungen an das Clientsystem des Kostenträger für die $accept-Operation" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [
            fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
              fhir:value [
-               a fhir:Url ;
-               fhir:v "op-reject.html"^^xsd:anyURI ;
-               fhir:l fhir:op-reject.html
+               a fhir:url ;
+               fhir:v "op-reject.html"^^xsd:anyURI
              ]
            ] ) ;
            fhir:name [
-             a fhir:Url ;
-             fhir:v "op-reject.html"^^xsd:anyURI ;
-             fhir:l fhir:op-reject.html
+             a fhir:url ;
+             fhir:v "op-reject.html"^^xsd:anyURI
            ] ;
            fhir:title [ fhir:v "Operation: $reject" ] ;
            fhir:generation [ fhir:v "markdown" ] ;
            fhir:page ( [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "op-reject-req-fd.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-reject-req-fd.html
+                 a fhir:url ;
+                 fhir:v "op-reject-req-fd.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "op-reject-req-fd.html"^^xsd:anyURI ;
-               fhir:l fhir:op-reject-req-fd.html
+               a fhir:url ;
+               fhir:v "op-reject-req-fd.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "Anforderungen an den TI-Flow-Fachdienst für die $reject-Operation" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "op-reject-req-ktr.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-reject-req-ktr.html
+                 a fhir:url ;
+                 fhir:v "op-reject-req-ktr.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "op-reject-req-ktr.html"^^xsd:anyURI ;
-               fhir:l fhir:op-reject-req-ktr.html
+               a fhir:url ;
+               fhir:v "op-reject-req-ktr.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "Anforderungen an das Clientsystem des Kostenträger für die $reject-Operation" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [
            fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
              fhir:value [
-               a fhir:Url ;
-               fhir:v "op-close.html"^^xsd:anyURI ;
-               fhir:l fhir:op-close.html
+               a fhir:url ;
+               fhir:v "op-close.html"^^xsd:anyURI
              ]
            ] ) ;
            fhir:name [
-             a fhir:Url ;
-             fhir:v "op-close.html"^^xsd:anyURI ;
-             fhir:l fhir:op-close.html
+             a fhir:url ;
+             fhir:v "op-close.html"^^xsd:anyURI
            ] ;
            fhir:title [ fhir:v "Operation: $close" ] ;
            fhir:generation [ fhir:v "markdown" ] ;
            fhir:page ( [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "op-close-req-fd.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-close-req-fd.html
+                 a fhir:url ;
+                 fhir:v "op-close-req-fd.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "op-close-req-fd.html"^^xsd:anyURI ;
-               fhir:l fhir:op-close-req-fd.html
+               a fhir:url ;
+               fhir:v "op-close-req-fd.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "Anforderungen an den TI-Flow-Fachdienst für die $close-Operation" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "op-close-req-ktr.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-close-req-ktr.html
+                 a fhir:url ;
+                 fhir:v "op-close-req-ktr.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "op-close-req-ktr.html"^^xsd:anyURI ;
-               fhir:l fhir:op-close-req-ktr.html
+               a fhir:url ;
+               fhir:v "op-close-req-ktr.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "Anforderungen an das Clientsystem des Kostenträger für die $close-Operation" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] )
          ] [
            fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
              fhir:value [
-               a fhir:Url ;
-               fhir:v "op-abort.html"^^xsd:anyURI ;
-               fhir:l fhir:op-abort.html
+               a fhir:url ;
+               fhir:v "op-abort.html"^^xsd:anyURI
              ]
            ] ) ;
            fhir:name [
-             a fhir:Url ;
-             fhir:v "op-abort.html"^^xsd:anyURI ;
-             fhir:l fhir:op-abort.html
+             a fhir:url ;
+             fhir:v "op-abort.html"^^xsd:anyURI
            ] ;
            fhir:title [ fhir:v "Operation: $abort" ] ;
            fhir:generation [ fhir:v "markdown" ] ;
            fhir:page ( [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "op-abort-req-fd.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-abort-req-fd.html
+                 a fhir:url ;
+                 fhir:v "op-abort-req-fd.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "op-abort-req-fd.html"^^xsd:anyURI ;
-               fhir:l fhir:op-abort-req-fd.html
+               a fhir:url ;
+               fhir:v "op-abort-req-fd.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "Anforderungen an den TI-Flow-Fachdienst für die $abort-Operation" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "op-abort-req-fdv.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-abort-req-fdv.html
+                 a fhir:url ;
+                 fhir:v "op-abort-req-fdv.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "op-abort-req-fdv.html"^^xsd:anyURI ;
-               fhir:l fhir:op-abort-req-fdv.html
+               a fhir:url ;
+               fhir:v "op-abort-req-fdv.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "Anforderungen an das E-Rezept-FdV für die $abort-Operation" ] ;
              fhir:generation [ fhir:v "markdown" ]
            ] [
              fhir:extension ( [
-               fhir:url [
-                 fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-                 fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-               ] ;
+               fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
                fhir:value [
-                 a fhir:Url ;
-                 fhir:v "op-abort-req-pvs.html"^^xsd:anyURI ;
-                 fhir:l fhir:op-abort-req-pvs.html
+                 a fhir:url ;
+                 fhir:v "op-abort-req-pvs.html"^^xsd:anyURI
                ]
              ] ) ;
              fhir:name [
-               a fhir:Url ;
-               fhir:v "op-abort-req-pvs.html"^^xsd:anyURI ;
-               fhir:l fhir:op-abort-req-pvs.html
+               a fhir:url ;
+               fhir:v "op-abort-req-pvs.html"^^xsd:anyURI
              ] ;
              fhir:title [ fhir:v "Anforderungen an den verordnende Primärsystem für die $abort-Operation" ] ;
              fhir:generation [ fhir:v "markdown" ]
@@ -3144,135 +2320,100 @@
          ] )
        ] [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "artifacts.html"^^xsd:anyURI ;
-             fhir:l fhir:artifacts.html
+             a fhir:url ;
+             fhir:v "artifacts.html"^^xsd:anyURI
            ]
          ] ) ;
          fhir:name [
-           a fhir:Url ;
-           fhir:v "artifacts.html"^^xsd:anyURI ;
-           fhir:l fhir:artifacts.html
+           a fhir:url ;
+           fhir:v "artifacts.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "FHIR-Artefakte" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "menu-schnittstellen-additional-api.html"^^xsd:anyURI ;
-             fhir:l fhir:menu-schnittstellen-additional-api.html
+             a fhir:url ;
+             fhir:v "menu-schnittstellen-additional-api.html"^^xsd:anyURI
            ]
          ] ) ;
          fhir:name [
-           a fhir:Url ;
-           fhir:v "menu-schnittstellen-additional-api.html"^^xsd:anyURI ;
-           fhir:l fhir:menu-schnittstellen-additional-api.html
+           a fhir:url ;
+           fhir:v "menu-schnittstellen-additional-api.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Additional APIs" ] ;
          fhir:generation [ fhir:v "markdown" ] ;
          fhir:page ( [
            fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
              fhir:value [
-               a fhir:Url ;
-               fhir:v "api-add-fhirvzd.html"^^xsd:anyURI ;
-               fhir:l fhir:api-add-fhirvzd.html
+               a fhir:url ;
+               fhir:v "api-add-fhirvzd.html"^^xsd:anyURI
              ]
            ] ) ;
            fhir:name [
-             a fhir:Url ;
-             fhir:v "api-add-fhirvzd.html"^^xsd:anyURI ;
-             fhir:l fhir:api-add-fhirvzd.html
+             a fhir:url ;
+             fhir:v "api-add-fhirvzd.html"^^xsd:anyURI
            ] ;
            fhir:title [ fhir:v "API FHIR-VZD" ] ;
            fhir:generation [ fhir:v "markdown" ]
          ] )
        ] [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "referenced.html"^^xsd:anyURI ;
-             fhir:l fhir:referenced.html
+             a fhir:url ;
+             fhir:v "referenced.html"^^xsd:anyURI
            ]
          ] ) ;
          fhir:name [
-           a fhir:Url ;
-           fhir:v "referenced.html"^^xsd:anyURI ;
-           fhir:l fhir:referenced.html
+           a fhir:url ;
+           fhir:v "referenced.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Referenzen" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "downloads.html"^^xsd:anyURI ;
-             fhir:l fhir:downloads.html
+             a fhir:url ;
+             fhir:v "downloads.html"^^xsd:anyURI
            ]
          ] ) ;
          fhir:name [
-           a fhir:Url ;
-           fhir:v "downloads.html"^^xsd:anyURI ;
-           fhir:l fhir:downloads.html
+           a fhir:url ;
+           fhir:v "downloads.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Downloads" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "release-notes.html"^^xsd:anyURI ;
-             fhir:l fhir:release-notes.html
+             a fhir:url ;
+             fhir:v "release-notes.html"^^xsd:anyURI
            ]
          ] ) ;
          fhir:name [
-           a fhir:Url ;
-           fhir:v "release-notes.html"^^xsd:anyURI ;
-           fhir:l fhir:release-notes.html
+           a fhir:url ;
+           fhir:v "release-notes.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Release Notes" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "license.html"^^xsd:anyURI ;
-             fhir:l fhir:license.html
+             a fhir:url ;
+             fhir:v "license.html"^^xsd:anyURI
            ]
          ] ) ;
          fhir:name [
-           a fhir:Url ;
-           fhir:v "license.html"^^xsd:anyURI ;
-           fhir:l fhir:license.html
+           a fhir:url ;
+           fhir:v "license.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Apache Licence" ] ;
          fhir:generation [ fhir:v "markdown" ]

@@ -9,10 +9,7 @@
 <https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160> a fhir:StructureDefinition ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "ti-flow-feature-wf160"] ; # 
-  fhir:url [
-     fhir:v "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160>
-  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
   fhir:name [ fhir:v "TIFlowFeatureWF160"] ; # 
   fhir:title [ fhir:v "Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel"] ; # 
@@ -33,10 +30,7 @@
   fhir:description [ fhir:v "Featurebeschreibung für die Verordnung von Apothekenpflichtigen Arzneimitteln"] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "DE" ] ;
        fhir:display [ fhir:v "Germany" ]
      ] )
@@ -45,23 +39,17 @@
   fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
   fhir:kind [ fhir:v "logical"] ; # 
   fhir:abstract [ fhir:v false] ; # 
-  fhir:type [
-     fhir:v "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160>
-  ] ; # 
+  fhir:type [ fhir:v "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160"^^xsd:anyURI] ; # 
   fhir:baseDefinition [
      fhir:v "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition>
+     fhir:link <https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition>
   ] ; # 
   fhir:derivation [ fhir:v "specialization"] ; # 
   fhir:snapshot [
      fhir:extension ( [
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version>
-       ] ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version"^^xsd:anyURI ] ;
        fhir:value [
-         a fhir:String ;
+         a fhir:string ;
          fhir:v "2.0.0-ballot.2"
        ]
      ] ) ;
@@ -91,15 +79,11 @@
          fhir:max [ fhir:v "1" ]
        ] ;
        fhir:type ( [
-         fhir:code [
-           fhir:v "uri"^^xsd:anyURI ;
-           fhir:l fhir:uri
-         ]
+         fhir:code [ fhir:v "uri"^^xsd:anyURI ]
        ] ) ;
        fhir:pattern [
-         a fhir:Uri ;
-         fhir:v "https://gematik.de/fhir/tiflow/FeatureDefinition/WF160"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/tiflow/FeatureDefinition/WF160>
+         a fhir:uri ;
+         fhir:v "https://gematik.de/fhir/tiflow/FeatureDefinition/WF160"^^xsd:anyURI
        ]
      ] [
        fhir:id [ fhir:v "ti-flow-feature-wf160.name" ] ;
@@ -114,10 +98,7 @@
          fhir:max [ fhir:v "1" ]
        ] ;
        fhir:type ( [
-         fhir:code [
-           fhir:v "string"^^xsd:anyURI ;
-           fhir:l fhir:string
-         ]
+         fhir:code [ fhir:v "string"^^xsd:anyURI ]
        ] )
      ] [
        fhir:id [ fhir:v "ti-flow-feature-wf160.title" ] ;
@@ -132,10 +113,7 @@
          fhir:max [ fhir:v "1" ]
        ] ;
        fhir:type ( [
-         fhir:code [
-           fhir:v "string"^^xsd:anyURI ;
-           fhir:l fhir:string
-         ]
+         fhir:code [ fhir:v "string"^^xsd:anyURI ]
        ] )
      ] [
        fhir:id [ fhir:v "ti-flow-feature-wf160.status" ] ;
@@ -150,13 +128,10 @@
          fhir:max [ fhir:v "1" ]
        ] ;
        fhir:type ( [
-         fhir:code [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ]
+         fhir:code [ fhir:v "code"^^xsd:anyURI ]
        ] ) ;
        fhir:pattern [
-         a fhir:Code ;
+         a fhir:code ;
          fhir:v "active"
        ]
      ] [
@@ -172,13 +147,10 @@
          fhir:max [ fhir:v "1" ]
        ] ;
        fhir:type ( [
-         fhir:code [
-           fhir:v "markdown"^^xsd:anyURI ;
-           fhir:l fhir:markdown
-         ]
+         fhir:code [ fhir:v "markdown"^^xsd:anyURI ]
        ] ) ;
        fhir:pattern [
-         a fhir:Markdown ;
+         a fhir:markdown ;
          fhir:v "Dieses Feature deklariert, ob der TI-Flow-Fachdienst den `Flowtype für Apothekenpflichtige Arzneimittel` unterstützt und aktuell aktiv ist.\n\n**Wert `true`**: Der Flowtype ist aktiviert, alle Operationen und Abfragen nach Spezifikation sind erlaubt und dürfen durchgeführt werden.\n\n**Wert `false`**: Die Operation $create gestattet keine Erstellung von Tasks des betreffenden Flowtypes\nAlle FHIR-Operationen auf dem RessourceType \"Task\" des betreffenden Flowtypes werden mit dem entsprechendem Fehler abgebrochen\nAlle FHIR-Operationen auf System Ebene, durch eine andere oid als \"oid_versicherter\", die Informationen zu einem Task des betreffenden Flowtypes herausgeben oder manipulieren werden mit entsprechendem Fehler abgebrochen\nDer Aufruf GET /Task auf Tasks des betreffenden Flowtypes durch eine andere oid als \"oid_versicherter\" wird mit entsprechendem Fehler abgebrochen"
        ]
      ] [
@@ -194,13 +166,10 @@
          fhir:max [ fhir:v "1" ]
        ] ;
        fhir:type ( [
-         fhir:code [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ]
+         fhir:code [ fhir:v "code"^^xsd:anyURI ]
        ] ) ;
        fhir:pattern [
-         a fhir:Code ;
+         a fhir:code ;
          fhir:v "boolean"
        ]
      ] [
@@ -216,10 +185,7 @@
          fhir:max [ fhir:v "*" ]
        ] ;
        fhir:type ( [
-         fhir:code [
-           fhir:v "uri"^^xsd:anyURI ;
-           fhir:l fhir:uri
-         ]
+         fhir:code [ fhir:v "uri"^^xsd:anyURI ]
        ] )
      ] )
   ] ; # 
@@ -233,29 +199,28 @@
        fhir:id [ fhir:v "ti-flow-feature-wf160.url" ] ;
        fhir:path [ fhir:v "ti-flow-feature-wf160.url" ] ;
        fhir:pattern [
-         a fhir:Uri ;
-         fhir:v "https://gematik.de/fhir/tiflow/FeatureDefinition/WF160"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/tiflow/FeatureDefinition/WF160>
+         a fhir:uri ;
+         fhir:v "https://gematik.de/fhir/tiflow/FeatureDefinition/WF160"^^xsd:anyURI
        ]
      ] [
        fhir:id [ fhir:v "ti-flow-feature-wf160.status" ] ;
        fhir:path [ fhir:v "ti-flow-feature-wf160.status" ] ;
        fhir:pattern [
-         a fhir:Code ;
+         a fhir:code ;
          fhir:v "active"
        ]
      ] [
        fhir:id [ fhir:v "ti-flow-feature-wf160.description" ] ;
        fhir:path [ fhir:v "ti-flow-feature-wf160.description" ] ;
        fhir:pattern [
-         a fhir:Markdown ;
+         a fhir:markdown ;
          fhir:v "Dieses Feature deklariert, ob der TI-Flow-Fachdienst den `Flowtype für Apothekenpflichtige Arzneimittel` unterstützt und aktuell aktiv ist.\n\n**Wert `true`**: Der Flowtype ist aktiviert, alle Operationen und Abfragen nach Spezifikation sind erlaubt und dürfen durchgeführt werden.\n\n**Wert `false`**: Die Operation $create gestattet keine Erstellung von Tasks des betreffenden Flowtypes\nAlle FHIR-Operationen auf dem RessourceType \"Task\" des betreffenden Flowtypes werden mit dem entsprechendem Fehler abgebrochen\nAlle FHIR-Operationen auf System Ebene, durch eine andere oid als \"oid_versicherter\", die Informationen zu einem Task des betreffenden Flowtypes herausgeben oder manipulieren werden mit entsprechendem Fehler abgebrochen\nDer Aufruf GET /Task auf Tasks des betreffenden Flowtypes durch eine andere oid als \"oid_versicherter\" wird mit entsprechendem Fehler abgebrochen"
        ]
      ] [
        fhir:id [ fhir:v "ti-flow-feature-wf160.valueType" ] ;
        fhir:path [ fhir:v "ti-flow-feature-wf160.valueType" ] ;
        fhir:pattern [
-         a fhir:Code ;
+         a fhir:code ;
          fhir:v "boolean"
        ]
      ] )
