@@ -513,8 +513,8 @@ jobs:
             local candidate=""
 
             for candidate in \
-              "$base_dir/package-combined.tgz" \
-              "$base_dir/package.tgz"; do
+              "$base_dir/package.tgz" \
+              "$base_dir/package-combined.tgz"; do
               if [[ -f "$candidate" ]]; then
                 echo "$candidate"
                 return 0
@@ -556,6 +556,24 @@ jobs:
             mkdir -p "$target_dir"
             tar -xzf "$pkg_tgz" -C "$target_dir"
 
+            local extracted_pkg_json="$target_dir/package/package.json"
+            local extracted_id=""
+            local extracted_version=""
+
+            if [[ ! -f "$extracted_pkg_json" ]]; then
+              echo "Error: Materialized package for $ig is missing package/package.json: $extracted_pkg_json" >&2
+              return 1
+            fi
+
+            extracted_id="$(yq -r '.name // ""' "$extracted_pkg_json")"
+            extracted_version="$(yq -r '.version // ""' "$extracted_pkg_json")"
+            if [[ "$extracted_id" != "$pkg_id" || "$extracted_version" != "$pkg_version" ]]; then
+              echo "Error: Package metadata mismatch for $ig." >&2
+              echo "Expected: ${pkg_id}#${pkg_version}" >&2
+              echo "Found: ${extracted_id}#${extracted_version} from $pkg_tgz" >&2
+              return 1
+            fi
+
             # Keep a #dev alias for locally built packages for tooling that
             # still resolves local dependencies via "dev".
             rm -rf "$cache_dir/${pkg_id}#dev"
@@ -567,32 +585,6 @@ jobs:
             # cache roots despite env overrides. Mirror the package there when
             # writable so local resolution works before any remote fallback.
             mirror_package_to_runner_caches "$pkg_id" "$pkg_version" "$target_dir"
-          }
-
-          install_local_package_with_fhir() {
-            local ig="$1"
-            local pkg_tgz=""
-            local java_tool_options="${JAVA_TOOL_OPTIONS:-} -Dfile.encoding=UTF-8 -Duser.home=${ci_home}"
-
-            pkg_tgz="$(resolve_local_package_artifact "$ig" || true)"
-            if [[ -z "$pkg_tgz" ]]; then
-              echo "[$ig] No local package artifact found to install with fhir CLI."
-              return 0
-            fi
-
-            if ! command -v fhir >/dev/null 2>&1; then
-              echo "[$ig] fhir CLI not available; skipping explicit local package install."
-              return 0
-            fi
-
-            echo "[$ig] Installing local package artifact via fhir CLI: $pkg_tgz"
-            (
-              export HOME="$ci_home"
-              export DOTNET_CLI_HOME="$ci_home"
-              export FHIR_PACKAGE_CACHE_DIR="$cache_dir"
-              export JAVA_TOOL_OPTIONS="$java_tool_options"
-              fhir install "$pkg_tgz"
-            )
           }
 
           mirror_package_to_runner_caches() {
@@ -761,7 +753,6 @@ jobs:
             fi
 
             materialize_ig_package_to_cache "$ig"
-            install_local_package_with_fhir "$ig"
           }
 
           # TODO: Remove this core-first orchestration once fhirscripts natively
