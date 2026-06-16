@@ -20,8 +20,7 @@ Mit diesem Anwendungsfall kann die abgebende LEI die Zugriffsinformationen zu al
   Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" einen PoPP-Token vom PoPP-Service abrufen.
 </requirement>
 
-Für die Umsetzung siehe [spec-ilf-popp-client].
-<!-- ToDo: Link auflösen -->
+Für die Umsetzung siehe [spec-ilf-popp-client](https://github.com/gematik/spec-ilf-popp-client/tree/main).
 
 Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den TI-Flow-Fachdienst weiter.
 

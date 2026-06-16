@@ -15,9 +15,9 @@ Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung 
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG] erzeugen und im E-Rezept-Bundle angeben.
+    Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG](https://ig.fhir.de/igs/medication/) erzeugen und im E-Rezept-Bundle angeben.
 </requirement>
-<!-- ToDo: Link auflösen -->
+<!-- ToDo: Gibt es eine Quelle die festlegt, welche Version des Medication IG umzusetzen ist? -->
 
 
 <!-- A_22071-02 -->
