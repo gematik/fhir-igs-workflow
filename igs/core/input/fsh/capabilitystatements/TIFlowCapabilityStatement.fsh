@@ -16,6 +16,8 @@ Usage: #definition
 * kind = #requirements
 * rest.mode = #server
 
+* extension[baseUrl].valueString = $erp-base-url
+
 //Header
 * insert Content-Type(true)
 * insert Authorization(true)
