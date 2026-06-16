@@ -21,7 +21,7 @@ Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource _Consent_ wi
 
 Als Versicherter möchte ich eine Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen erstellen und dem Fachdienst übermitteln. Die Einwilligung wird über die FHIR-Ressource "Consent" abgebildet.
 
-Der Aufruf erfolgt als http-`POST`-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden.
+Der Aufruf erfolgt als http-`POST`-Operation auf die Ressource /Consent.
 
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"
@@ -46,7 +46,7 @@ Der Aufruf erfolgt als http-`POST`-Operation auf die Ressource /Consent. Im Aufr
 
 Als Versicherter möchte ich meine erteilte Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen einsehen.
 
-Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden. Der Fachdienst filtert die Consent-Einträge nach der in der Nutzerinformation (zeta-user-info) enthaltenen KVNR des Versicherten.
+Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Der Fachdienst filtert die Consent-Einträge nach der in der Nutzerinformation (zeta-user-info) enthaltenen KVNR des Versicherten.
 
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"
@@ -73,7 +73,7 @@ Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Im Aufruf 
 
 Als Versicherter möchte ich meine erteilte Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen widerrufen. Mit dem Widerruf der Einwilligung werden bereits gespeicherte Abrechnungsinformationen gelöscht.
 
-Der Aufruf erfolgt als http-`DELETE`-Operation auf die Ressource /Consent. Im Aufruf muss das während der Authentisierung erhaltene ACCESS_TOKEN im http-Request-Header Authorization übergeben werden. Der Fachdienst filtert die Consent-Einträge nach der in der Nutzerinformation (zeta-user-info) enthaltenen KVNR des Versicherten.
+Der Aufruf erfolgt als http-`DELETE`-Operation auf die Ressource /Consent. Der Fachdienst filtert die Consent-Einträge nach der in der Nutzerinformation (zeta-user-info) enthaltenen KVNR des Versicherten.
 
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"
