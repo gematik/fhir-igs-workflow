@@ -2,14 +2,6 @@ Die folgenden Query APIs stellt der TI-Flow-Fachdienst den Clientsystemen zur Ve
 
 Im Core-IG werden sowohl Endpunkte beschrieben, die in allen Modulen verwendet werden, wie auch Endpunkte die in mehreren IGs verwendet werden.
 
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Verarbeitung von Suchparameter">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-      Der TI-Flow-Fachdienst MUSS die Suchparameter verarbeiten können, wie sie im CapabilityStatement festgelegt sind.
-</requirement>
-
 ### Ressourcen in allen Modul IGs
 - [Aufgabenverwaltung: Task](./query-api-task.html)
 - [Protokollierung: AuditEvent](./query-api-auditevent.html)

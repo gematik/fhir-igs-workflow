@@ -18,10 +18,14 @@ refresh_special_urls() {
 
 refresh_special_urls
 
-if [[ "${CI:-}" == "true" && "${GITHUB_ACTIONS:-}" == "true" && "${BUILD_GENERATE_DRAWIO_IMAGES:-false}" == "true" ]]; then
+if [[ "${BUILD_GENERATE_DRAWIO_IMAGES:-true}" != "true" ]]; then
+	echo "Skipping draw.io generation (BUILD_GENERATE_DRAWIO_IMAGES=${BUILD_GENERATE_DRAWIO_IMAGES:-true})"
+elif [[ "${CI:-}" == "true" && "${GITHUB_ACTIONS:-}" == "true" && "${BUILD_GENERATE_DRAWIO_IMAGES:-false}" == "true" ]]; then
 	echo "Skipping local draw.io generation in CI (handled by drawio-export-action)"
 elif [[ -x "$ROOT_DIR/scripts/generate-drawio-images.sh" ]]; then
-	"$ROOT_DIR/scripts/generate-drawio-images.sh" core
+	if ! "$ROOT_DIR/scripts/generate-drawio-images.sh" core; then
+		echo "Warning: draw.io generation failed locally; continuing build without regenerated diagrams"
+	fi
 else
 	echo "Warning: generate-drawio-images.sh not found or not executable"
 fi

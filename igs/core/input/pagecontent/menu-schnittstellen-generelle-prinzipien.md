@@ -276,6 +276,17 @@ Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzonen
     Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Verarbeitung von FHIR-Ressourcen der Anwendung E-Rezept sicherstellen, dass Datumsangaben ohne explizite Zeitzoneninformationen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) verarbeitet werden.
 </requirement>
 
+#### Filtern von FHIR-Objekten
+Clients erhalten die Möglichkeit die Rückgabe der Elemente im FHIR-Bundle durch Suchparameter zu filtern.
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-439" title="TI-Flow-Fachdienst - Verarbeitung von Suchparameter" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+      Der TI-Flow-Fachdienst MUSS die Suchparameter verarbeiten können, wie sie im CapabilityStatement festgelegt sind.
+</requirement>
+
 ### Identifikation des Nutzers
 
 Im Rahmen des Verbindungsaufbaus eines Clientsystems mit dem TI-Flow-Fachdienst authentisiert sich der Nutzer.
