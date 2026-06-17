@@ -60,20 +60,6 @@ RuleSet: IDTokenCheck
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "SVC_IDENTITY_MISMATCH"
 
-RuleSet: RequestTimeout
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "408"
-  * extension[description].valueString = "Request timeout"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_TIMEOUT"
-
-RuleSet: InternalServerError
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "500"
-  * extension[description].valueString = "Internal server error"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_INTERNAL_ERROR"
-
 RuleSet: ResourceIsNotKnown
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "404"
@@ -248,3 +234,17 @@ RuleSet: TiflowOcspBackendError
   * extension[description].valueString = "Invalid OCSP response"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_OCSP_BACKEND_ERROR"
+
+RuleSet: TiflowInternalError
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "500"
+  * extension[description].valueString = "Internal Server Error"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_INTERNAL_ERROR"
+
+RuleSet: TiflowTimeout
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "408"
+  * extension[description].valueString = "Timeout"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_TIMEOUT"

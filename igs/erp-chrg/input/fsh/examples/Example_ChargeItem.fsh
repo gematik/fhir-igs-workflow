@@ -35,3 +35,20 @@ Usage: #example
 * insert DateTimeStamp(enteredDate)
 * supportingInformation[dispenseItemBinary].reference = "#c8720f99-6641-432d-94be-d49eaa164755"
 * supportingInformation[dispenseItemBinary].display = "Binary"
+
+//TODO: Review - placeholder ChargeItem to resolve Communication.basedOn references in QA examples.
+Instance: ChargeItem-Communication-Reference
+InstanceOf: GEM_ERPCHRG_PR_ChargeItem
+Title:   "ChargeItem target for Communication basedOn example"
+Usage: #example
+* id = "a51520ec-0899-404f-bb97-fe7d461f90a8"
+* extension[markingFlag].extension[insuranceProvider].valueBoolean = false
+* extension[markingFlag].extension[subsidy].valueBoolean = false
+* extension[markingFlag].extension[taxOffice].valueBoolean = false
+* identifier[PrescriptionID].value = "200.000.000.000.000.01"
+* identifier[AccessCode].value = "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+* status = #billable
+* code = http://terminology.hl7.org/CodeSystem/data-absent-reason#not-applicable
+* insert PKV_Identifier(subject.identifier)
+* insert ApoTelematikID(enterer.identifier)
+* insert DateTimeStamp(enteredDate)

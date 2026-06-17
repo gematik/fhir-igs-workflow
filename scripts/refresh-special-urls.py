@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
+import yaml
 
-ERP_PREFIX = "https://gematik.de/fhir/erp/"
+URL_ASSIGNMENT_PATTERN = re.compile(r'^\*\s*\^url\s*=\s*"([^"]+)"\s*$')
 SUPPORTED_RESOURCE_TYPES = {
     "StructureDefinition",
     "CodeSystem",
@@ -14,7 +16,16 @@ SUPPORTED_RESOURCE_TYPES = {
 }
 
 
-def collect_special_urls(resources_dir: Path) -> list[str]:
+def get_canonical_url(sushi_config_path: Path) -> str:
+    with open(sushi_config_path, encoding="utf-8") as f:
+        config = yaml.safe_load(f)
+    canonical = config.get("canonical", "")
+    if not canonical:
+        raise RuntimeError("No 'canonical' URL found in sushi-config.yaml")
+    return canonical
+
+
+def collect_all_resource_urls(resources_dir: Path) -> list[str]:
     urls: set[str] = set()
 
     if not resources_dir.is_dir():
@@ -30,10 +41,18 @@ def collect_special_urls(resources_dir: Path) -> list[str]:
             continue
 
         url = resource.get("url")
-        if isinstance(url, str) and url.startswith(ERP_PREFIX):
+        if isinstance(url, str):
             urls.add(url)
 
     return sorted(urls)
+
+
+def collect_special_urls(all_urls: list[str], canonical_prefix: str) -> list[str]:
+    special_urls: list[str] = []
+    for url in all_urls:
+        if not url.startswith(canonical_prefix):
+            special_urls.append(url)
+    return special_urls
 
 
 def find_parameters_block(lines: list[str]) -> tuple[int, int]:
@@ -141,8 +160,10 @@ def main() -> int:
     if not sushi_config_path.is_file():
         raise RuntimeError(f"Missing sushi-config.yaml: {sushi_config_path}")
 
-    urls = collect_special_urls(resources_dir)
-    changed = refresh_sushi_config(sushi_config_path, urls)
+    canonical_url = get_canonical_url(sushi_config_path)
+    all_urls = collect_all_resource_urls(resources_dir)
+    special_urls = collect_special_urls(all_urls, canonical_url)
+    changed = refresh_sushi_config(sushi_config_path, special_urls)
 
     print("updated" if changed else "unchanged")
     return 0

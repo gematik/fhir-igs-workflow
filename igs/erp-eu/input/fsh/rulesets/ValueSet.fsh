@@ -1,5 +1,5 @@
 RuleSet: ValueSet(name)
-* ^url = "https://gematik.de/fhir/erp-eu/ValueSet/{name}"
+* ^url = "https://gematik.de/fhir/tiflow-xborder/ValueSet/{name}"
 * insert Versioning
 * ^publisher = "gematik GmbH"
 * ^contact.telecom.system = #url

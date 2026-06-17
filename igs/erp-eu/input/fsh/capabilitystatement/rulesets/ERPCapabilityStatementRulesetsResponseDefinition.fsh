@@ -4,10 +4,6 @@ RuleSet: GlobalQueryErrorCodes
 
 * rest.resource[=].interaction[=] insert InvalidRequest
 
-* rest.resource[=].interaction[=] insert RequestTimeout
-
-* rest.resource[=].interaction[=] insert InternalServerError
-
 // Query-API Interactions
 RuleSet: ReadInteractionStatusCodes
 * insert GlobalQueryErrorCodes
@@ -42,10 +38,6 @@ RuleSet: GlobalSystemOperationErrorCodes
 
 * insert InvalidRequest
 
-* insert RequestTimeout
-
-* insert InternalServerError
-
 RuleSet: SystemOperationStatusCodesWithParameters
 * insert SuccessfulWithParameters
 * insert GlobalSystemOperationErrorCodes
@@ -59,9 +51,9 @@ RuleSet: GlobalOperationErrorCodes
 
 * insert InvalidRequest
 
-* insert RequestTimeout
+* insert TiflowInternalError
 
-* insert InternalServerError
+* insert TiflowTimeout
 
 RuleSet: InstanceOperationStatusCodes
 * insert ResourceIsNotKnown

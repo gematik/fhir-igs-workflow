@@ -279,10 +279,9 @@ Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzonen
 ### Identifikation des Nutzers
 
 Im Rahmen des Verbindungsaufbaus eines Clientsystems mit dem TI-Flow-Fachdienst authentisiert sich der Nutzer.
-Der ZETA-Guard übermittelt die Informationen zum Nutzer in einem Http-Header im Request an den Resource Server (siehe [gemSpec_ZETA#A_25669-*]).
+Der ZETA-Guard übermittelt die Informationen zum Nutzer und das Clientsystem in Http-Headern im Request an den Resource Server (siehe [gemSpec_ZETA#A_25669-*]).
 
-Folgende Informationen sind im Header enthalten. (siehe [zeta-user-info.yaml])
-<!-- ToDo: Link auflösen -->
+Folgende Informationen sind im Header zeta-user-info enthalten. (siehe [zeta-user-info.yaml](https://raw.githubusercontent.com/gematik/zeta/refs/heads/main/src/schemas/zeta-user-info.yaml))
 
 <table>
 <tr>
@@ -326,3 +325,44 @@ Folgende Informationen sind im Header enthalten. (siehe [zeta-user-info.yaml])
 </requirement>
 
 Die Information zum aufrufenden Nutzer/Institution wird bspw. bei der Prüfung von Autorisierungsregeln (Prüfung der professionOID) und bei der Zugriffsprotokollierung für den Versicherten verwendet.
+
+Folgende Informationen sind im Header zeta-client-data enthalten. (siehe [client-data.yaml](https://raw.githubusercontent.com/gematik/zeta/refs/heads/main/src/schemas/client-data.yaml))
+
+<table>
+<tr>
+    <th>Attribut</th>
+    <th>Beschreibung</th>
+    <th>optional</th>
+</tr>
+<tr>
+    <td>client_id</td>
+    <td>client identifier</td>
+    <td>nein</td>
+</tr>
+<tr>
+    <td>product_id</td>
+    <td>product identifier</td>
+    <td>nein</td>
+</tr>
+<tr>
+    <td>product_version</td>
+    <td>product version</td>
+    <td>nein</td>
+</tr>
+<tr>
+    <td>platform</td>
+    <td>platform of client instance</td>
+    <td>ja</td>
+</tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>Attribute zeta-client-data</figcaption></div>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-438" title="TI-Flow-Fachdienst - Clientsystem-Informationen" version="0">
+  <meta lockversion="false"/>
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS den Http-Header zeta-client-data auswerten, um die Informationen zum Clientsystem für die weitere Verarbeitung zu ermitteln.
+</requirement>
+
+Die Information zum aufrufenden Clientsystem wird bspw. für die Betriebsdatenerfassung genutzt. 

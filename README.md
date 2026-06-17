@@ -60,8 +60,19 @@ fhirscripts build pipeline
 
 Notes:
 
-- The container installs Java, `yq`, `fsh-sushi`, `igtools`, draw.io (headless), Google Cloud CLI, and Firely Terminal.
-- draw.io runs via `xvfb` and uses `DRAWIO_APP=/usr/local/bin/drawio`.
+- The container installs Java, `yq`, `fsh-sushi`, `igtools`, Google Cloud CLI, and Firely Terminal.
+
+### Local Draw.io Workflow
+
+- Draw.io source files live in each IG under `input/drawio-source`.
+- Generated draw.io images live in each IG under `input/images`.
+- Build all draw.io images locally with:
+
+```shell
+./scripts/build-drawio-images-local.sh
+```
+
+- You can override the local draw.io executable path via `DRAWIO_APP`.
 
 ## Notes
 
