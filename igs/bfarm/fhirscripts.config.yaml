@@ -3,14 +3,19 @@ install:
   - sushi
   - igpub
   - publishtools
+  - igtools
 deploy:
   env:
     dev: gematik_gemspec_fhir_dev-0
     prod: gematik_gemspec_fhir_prod-0
 build:
   pipeline:
+    - shell: ../../scripts/install-hapi-validator.sh
     - shell: ./scripts/pre-build.sh
+    - shell: ../../scripts/install-ig-packages.sh ./fhir-ig-installer.conf
+    - requirements
     - sushi
     - shell: ./scripts/post-build.sh
+    - shell: ../../scripts/install-ig-packages.sh ./fhir-ig-installer.conf --reinstall
     - igpub
     - igpub_qa
