@@ -9,10 +9,7 @@
 <https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration> a fhir:StructureDefinition ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "ti-fhir-configuration"] ; # 
-  fhir:url [
-     fhir:v "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration"^^xsd:anyURI ;
-     fhir:l <https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration>
-  ] ; # 
+  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
   fhir:name [ fhir:v "TIFHIRConfiguration"] ; # 
   fhir:title [ fhir:v "TI FHIR Configuration"] ; # 
@@ -33,10 +30,7 @@
   fhir:description [ fhir:v "Diese Extension deklariert eine konkrete Konfigurationsausprägung eines FHIR-Data Service in der TI auf CapabilityStatement-Ebene. Die Konfiguration wird als Code transportiert. Die Bedeutung und Konstellation einer FHIR-Konfiguration ist aus externen Quellen der Releaseplanung zu entnehmen."] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
-       ] ;
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "DE" ] ;
        fhir:display [ fhir:v "Germany" ]
      ] )
@@ -45,10 +39,7 @@
   fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
   fhir:mapping ( [
      fhir:identity [ fhir:v "rim" ] ;
-     fhir:uri [
-       fhir:v "http://hl7.org/v3"^^xsd:anyURI ;
-       fhir:l <http://hl7.org/v3>
-     ] ;
+     fhir:uri [ fhir:v "http://hl7.org/v3"^^xsd:anyURI ] ;
      fhir:name [ fhir:v "RIM Mapping" ]
   ] ) ; # 
   fhir:kind [ fhir:v "complex-type"] ; # 
@@ -57,23 +48,17 @@
      fhir:type [ fhir:v "element" ] ;
      fhir:expression [ fhir:v "CapabilityStatement" ]
   ] ) ; # 
-  fhir:type [
-     fhir:v "Extension"^^xsd:anyURI ;
-     fhir:l fhir:Extension
-  ] ; # 
+  fhir:type [ fhir:v "Extension"^^xsd:anyURI] ; # 
   fhir:baseDefinition [
      fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
-     fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
+     fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
   ] ; # 
   fhir:derivation [ fhir:v "constraint"] ; # 
   fhir:snapshot [
      fhir:extension ( [
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version>
-       ] ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version"^^xsd:anyURI ] ;
        fhir:value [
-         a fhir:String ;
+         a fhir:string ;
          fhir:v "4.0.1"
        ]
      ] ) ;
@@ -99,7 +84,7 @@
          fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] [
          fhir:key [ fhir:v "ext-1" ] ;
@@ -109,7 +94,7 @@
          fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ]
@@ -128,20 +113,13 @@
        ] ;
        fhir:type ( [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "string"^^xsd:anyURI ;
-             fhir:l fhir:string
+             a fhir:url ;
+             fhir:v "string"^^xsd:anyURI
            ]
          ] ) ;
-         fhir:code [
-           fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhirpath/System.String>
-         ]
+         fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v false ] ;
@@ -170,10 +148,7 @@
          fhir:max [ fhir:v "*" ]
        ] ;
        fhir:type ( [
-         fhir:code [
-           fhir:v "Extension"^^xsd:anyURI ;
-           fhir:l fhir:Extension
-         ]
+         fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
@@ -183,7 +158,7 @@
          fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] [
          fhir:key [ fhir:v "ext-1" ] ;
@@ -193,7 +168,7 @@
          fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Extension>
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
@@ -214,25 +189,17 @@
        ] ;
        fhir:type ( [
          fhir:extension ( [
-           fhir:url [
-             fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type>
-           ] ;
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type"^^xsd:anyURI ] ;
            fhir:value [
-             a fhir:Url ;
-             fhir:v "uri"^^xsd:anyURI ;
-             fhir:l fhir:uri
+             a fhir:url ;
+             fhir:v "uri"^^xsd:anyURI
            ]
          ] ) ;
-         fhir:code [
-           fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhirpath/System.String>
-         ]
+         fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
        fhir:fixed [
-         a fhir:Uri ;
-         fhir:v "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration>
+         a fhir:uri ;
+         fhir:v "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration"^^xsd:anyURI
        ] ;
        fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v false ] ;
@@ -254,10 +221,7 @@
          fhir:max [ fhir:v "1" ]
        ] ;
        fhir:type ( [
-         fhir:code [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ]
+         fhir:code [ fhir:v "code"^^xsd:anyURI ]
        ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
@@ -267,7 +231,7 @@
          fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v false ] ;
@@ -293,9 +257,8 @@
        fhir:id [ fhir:v "Extension.url" ] ;
        fhir:path [ fhir:v "Extension.url" ] ;
        fhir:fixed [
-         a fhir:Uri ;
-         fhir:v "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration"^^xsd:anyURI ;
-         fhir:l <https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration>
+         a fhir:uri ;
+         fhir:v "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration"^^xsd:anyURI
        ]
      ] [
        fhir:id [ fhir:v "Extension.value[x]" ] ;
@@ -305,10 +268,7 @@
        fhir:comment [ fhir:v "Hinweis an Spezifikateure: Wenn diese Extension genutzt wird, muss ein ValueSet hinterlegt oder die Quelle der Werte referenziert werden." ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:type ( [
-         fhir:code [
-           fhir:v "code"^^xsd:anyURI ;
-           fhir:l fhir:code
-         ]
+         fhir:code [ fhir:v "code"^^xsd:anyURI ]
        ] )
      ] )
   ] . # 

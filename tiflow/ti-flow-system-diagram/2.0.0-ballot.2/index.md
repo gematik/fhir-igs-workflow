@@ -112,7 +112,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.1.0"
+    "version" : "7.2.0"
   },
   {
     "id" : "hl7ext",
