@@ -3,6 +3,7 @@ install:
   - sushi
   - igpub
   - publishtools
+  - igtools
 deploy:
   env:
     dev: gematik_gemspec_fhir_dev-0
@@ -10,6 +11,8 @@ deploy:
 build:
   pipeline:
     - shell: ./scripts/pre-build.sh
+    - shell: ../../scripts/install-ig-packages.sh ./fhir-ig-installer.conf
+    - requirements
     - sushi
     - igpub
     - igpub_qa
