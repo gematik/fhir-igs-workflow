@@ -584,23 +584,9 @@ Maps operation outcome codes to the telemetry data status codes
       }]
     },
     {
-      "code" : "MSG_INTERNAL_ERROR",
-      "target" : [{
-        "code" : "79268",
-        "equivalence" : "equivalent"
-      }]
-    },
-    {
       "code" : "MSG_PARAM_UNKNOWN",
       "target" : [{
         "code" : "79269",
-        "equivalence" : "equivalent"
-      }]
-    },
-    {
-      "code" : "MSG_TIMEOUT",
-      "target" : [{
-        "code" : "79270",
         "equivalence" : "equivalent"
       }]
     },

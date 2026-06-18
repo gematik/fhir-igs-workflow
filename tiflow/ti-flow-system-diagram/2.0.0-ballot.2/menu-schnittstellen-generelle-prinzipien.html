@@ -584,10 +584,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="identifikation-des-nutzers">Identifikation des Nutzers</h3>
 
 <p>Im Rahmen des Verbindungsaufbaus eines Clientsystems mit dem TI-Flow-Fachdienst authentisiert sich der Nutzer.
-Der ZETA-Guard übermittelt die Informationen zum Nutzer in einem Http-Header im Request an den Resource Server (siehe [gemSpec_ZETA#A_25669-*]).</p>
+Der ZETA-Guard übermittelt die Informationen zum Nutzer und das Clientsystem in Http-Headern im Request an den Resource Server (siehe [gemSpec_ZETA#A_25669-*]).</p>
 
-<p>Folgende Informationen sind im Header enthalten. (siehe [zeta-user-info.yaml])
-<!-- ToDo: Link auflösen --></p>
+<p>Folgende Informationen sind im Header zeta-user-info enthalten. (siehe <a href="https://raw.githubusercontent.com/gematik/zeta/refs/heads/main/src/schemas/zeta-user-info.yaml">zeta-user-info.yaml</a>)</p>
 
 <table>
 <tr>
@@ -631,6 +630,46 @@ Der ZETA-Guard übermittelt die Informationen zum Nutzer in einem Http-Header im
 
 <p>Die Information zum aufrufenden Nutzer/Institution wird bspw. bei der Prüfung von Autorisierungsregeln (Prüfung der professionOID) und bei der Zugriffsprotokollierung für den Versicherten verwendet.</p>
 
+<p>Folgende Informationen sind im Header zeta-client-data enthalten. (siehe <a href="https://raw.githubusercontent.com/gematik/zeta/refs/heads/main/src/schemas/client-data.yaml">client-data.yaml</a>)</p>
+
+<table>
+<tr>
+    <th>Attribut</th>
+    <th>Beschreibung</th>
+    <th>optional</th>
+</tr>
+<tr>
+    <td>client_id</td>
+    <td>client identifier</td>
+    <td>nein</td>
+</tr>
+<tr>
+    <td>product_id</td>
+    <td>product identifier</td>
+    <td>nein</td>
+</tr>
+<tr>
+    <td>product_version</td>
+    <td>product version</td>
+    <td>nein</td>
+</tr>
+<tr>
+    <td>platform</td>
+    <td>platform of client instance</td>
+    <td>ja</td>
+</tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>Attribute zeta-client-data</figcaption></div>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-438" title="TI-Flow-Fachdienst - Clientsystem-Informationen" version="0">
+  <meta lockversion="false" />
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS den Http-Header zeta-client-data auswerten, um die Informationen zum Clientsystem für die weitere Verarbeitung zu ermitteln.
+</requirement>
+
+<p>Die Information zum aufrufenden Clientsystem wird bspw. für die Betriebsdatenerfassung genutzt.</p>
 
 
 
@@ -672,7 +711,7 @@ Der ZETA-Guard übermittelt die Informationen zum Nutzer in einem Http-Header im
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Jun 17, 2026 07:52+0000">2026-06-17</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jun 18, 2026 06:59+0000">2026-06-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

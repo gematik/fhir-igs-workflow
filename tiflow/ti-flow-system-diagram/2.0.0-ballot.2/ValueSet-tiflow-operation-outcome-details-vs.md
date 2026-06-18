@@ -121,12 +121,6 @@ Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werde
         "code" : "MSG_BAD_FORMAT"
       },
       {
-        "code" : "MSG_TIMEOUT"
-      },
-      {
-        "code" : "MSG_INTERNAL_ERROR"
-      },
-      {
         "code" : "MSG_UNKNOWN_TYPE"
       },
       {

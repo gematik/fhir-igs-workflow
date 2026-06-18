@@ -330,49 +330,65 @@ Folgende Berufe und Einrichtungsarten sind zugelassen:</p>
   <thead>
     <tr>
       <th>Akteur</th>
-      <th>OID(s)</th>
+      <th>OID Referenz</th>
+      <th>OID</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Versicherter</td>
+      <td>oid_versicherter</td>
       <td><code class="language-plaintext highlighter-rouge">1.2.276.0.76.4.49</code></td>
     </tr>
     <tr>
       <td>Betriebsstätte Arzt</td>
+      <td>oid_praxis_arzt</td>
       <td><code class="language-plaintext highlighter-rouge">1.2.276.0.76.4.50</code></td>
     </tr>
     <tr>
       <td>Zahnarztpraxis</td>
+      <td>oid_zahnarztpraxis</td>
       <td><code class="language-plaintext highlighter-rouge">1.2.276.0.76.4.51</code></td>
     </tr>
     <tr>
       <td>Betriebsstätte Psychotherapeut</td>
+      <td>oid_praxis_psychotherapeut</td>
       <td><code class="language-plaintext highlighter-rouge">1.2.276.0.76.4.52</code></td>
     </tr>
     <tr>
       <td>Krankenhaus</td>
+      <td>oid_krankenhaus</td>
       <td><code class="language-plaintext highlighter-rouge">1.2.276.0.76.4.53</code></td>
     </tr>
     <tr>
       <td>Öffentliche Apotheke</td>
+      <td>oid_oeffentliche_apotheke</td>
       <td><code class="language-plaintext highlighter-rouge">1.2.276.0.76.4.54</code></td>
     </tr>
     <tr>
       <td>Krankenhausapotheke</td>
+      <td>oid_krankenhausapotheke</td>
       <td><code class="language-plaintext highlighter-rouge">1.2.276.0.76.4.55</code></td>
     </tr>
     <tr>
       <td>Institution Vorsorge/Reha</td>
-      <td><code class="language-plaintext highlighter-rouge">1.2.276.0.76.4.56</code></td>
+      <td>oid_institution-vorsorge-reha</td>
+      <td><code class="language-plaintext highlighter-rouge">1.2.276.0.76.4.257</code></td>
     </tr>
     <tr>
       <td>Kostenträger</td>
+      <td>oid_kostentraeger</td>
       <td><code class="language-plaintext highlighter-rouge">1.2.276.0.76.4.59</code></td>
     </tr>
     <tr>
       <td>NCPeH-Fachdienst</td>
+      <td>oid_ncpeh</td>
       <td><code class="language-plaintext highlighter-rouge">1.2.276.0.76.4.292</code></td>
+    </tr>
+    <tr>
+      <td>Betriebsstätte gematik</td>
+      <td>oid_bs_gematik</td>
+      <td><code class="language-plaintext highlighter-rouge">1.2.276.0.76.4.58</code></td>
     </tr>
   </tbody>
 </table>
@@ -623,6 +639,16 @@ Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der
         <span class="pi">]</span>
       <span class="pi">}</span>
 
+  <span class="s2">"</span><span class="s">tif-rx-task-probe"</span><span class="err">:</span> <span class="pi">{</span>
+        <span class="s2">"</span><span class="s">description"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Probing</span><span class="nv"> </span><span class="s">E-Rezept"</span><span class="pi">,</span>
+        <span class="s2">"</span><span class="s">roles"</span><span class="pi">:</span> <span class="pi">[</span>
+          <span class="pi">{</span> <span class="s2">"</span><span class="s">oid"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.2.276.0.76.4.58"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">description"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">oid_bs_gematik"</span> <span class="pi">}</span>
+        <span class="pi">],</span>
+        <span class="s2">"</span><span class="s">rules"</span><span class="pi">:</span> <span class="pi">[</span>
+          <span class="pi">{</span> <span class="s2">"</span><span class="s">method"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">POST"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">path"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">rx/Task/$create"</span> <span class="pi">}</span>
+        <span class="pi">]</span>
+      <span class="pi">}</span>
+
   <span class="c1"># ── DiGA Verordnung ────────────────────────────────────────────────────────</span>
 
   <span class="s2">"</span><span class="s">tif-diga-task-prescribe"</span><span class="err">:</span> <span class="pi">{</span>
@@ -703,6 +729,16 @@ Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der
         <span class="pi">]</span>
       <span class="pi">}</span>
 
+<span class="s2">"</span><span class="s">tif-diga-task-probe"</span><span class="err">:</span> <span class="pi">{</span>
+        <span class="s2">"</span><span class="s">description"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Probing</span><span class="nv"> </span><span class="s">DiGA"</span><span class="pi">,</span>
+        <span class="s2">"</span><span class="s">roles"</span><span class="pi">:</span> <span class="pi">[</span>
+          <span class="pi">{</span> <span class="s2">"</span><span class="s">oid"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.2.276.0.76.4.58"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">description"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">oid_bs_gematik"</span> <span class="pi">}</span>
+        <span class="pi">],</span>
+        <span class="s2">"</span><span class="s">rules"</span><span class="pi">:</span> <span class="pi">[</span>
+          <span class="pi">{</span> <span class="s2">"</span><span class="s">method"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">POST"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">path"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">diga/Task/$create"</span> <span class="pi">}</span>
+        <span class="pi">]</span>
+      <span class="pi">}</span>
+
 </code></pre></div></div>
 
 <hr />
@@ -725,12 +761,14 @@ Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der
     </span><span class="s2">"tif-rx-audit"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tif-rx-notification"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tif-rx-subscription"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tif-rx-task-probe"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tif-diga-task-prescribe"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tif-diga-task-dispense"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tif-diga-task-manage"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tif-diga-communication"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tif-diga-audit"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"tif-diga-subscription"</span><span class="w">
+    </span><span class="s2">"tif-diga-subscription"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tif-diga-task-probe"</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -778,7 +816,7 @@ Es wird abgeglichen, ob die von der Anwendung angefragten Ziel-Ressourcen in der
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Wed, Jun 17, 2026 07:52+0000">2026-06-17</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jun 18, 2026 06:59+0000">2026-06-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
