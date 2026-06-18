@@ -96,15 +96,10 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation auf den Endpunkt /metadata erlauben, in welcher er ein Capability Statement gemäß https://www.hl7.org/fhir/capabilitystatement.html veröffentlicht, welches die vom TI-Flow-Fachdienst verarbeiteten Ressourcen mit den zugehörigen http-Operationen der angebotenen REST-Schnittstelle auflistet: 
-    <ul>
-     <li>Task - GET-, POST-Operation, FHIR-Operations für die Workflow-Steuerung und Einsicht durch den Versicherten </li>
-     <li>MedicationDispense - GET-Operation für das Einsehen der Medikamentinformationen durch den Versicherten </li>
-     <li>Communication - GET-, POST, DELETE-Operation für das Senden, Empfangen und Löschen von Nachrichten </li>
-     <li>AuditEvent - GET-Operation für die Einsicht in Protokolleinträge durch den Versicherten </li>
-     <li>Device - GET-Operation mit statischen Informationen zur serverseitigen Signatur damit der Client eine Information über die FHIR-Kompatibilität zum Fachdienst erhält.</li>
-     </ul>
+     Der TI-Flow-Fachdienst MUSS über den Endpunkt `&#60;modul&#62;/metadata` das FHIR CapabilityStatement des TI-Flow-Fachdienst des jeweilgen Anwendungsmoduls zurückgeben.
 </requirement>
+
+*Hinweis*: Das Capability Statement bietet eine detaillierte Beschreibung der Fähigkeiten des TI-Flow-Fachdienst und ist entscheidend für das Verständnis der unterstützten FHIR-Funktionalitäten. Je Anwendungsmodul (bspw. Arzneimittel oder DiGA) wird ein eigenes CapabilityStatement bereitgestellt.
 
 ### Verordnungs-ID
 
