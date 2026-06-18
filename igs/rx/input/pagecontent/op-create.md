@@ -31,15 +31,15 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
   </div>
   <div id="Request-Examples">
     <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment Parameters/ExampleRxOperationRequestParameters XML %}
+      {% fragment Parameters/ExampleRxCreateOperationRequestParameters XML %}
     </div>
   </div>
   <div id="Response-Examples">
     <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment Task/ExampleRxTaskInReadyState XML %}
+      {% fragment Task/TaskInCreatedState XML %}
     </div>
     <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
+      {% fragment OperationOutcome/ExampleRxCreateOperationOutcomeError XML %}
     </div>
   </div>
 </div>
