@@ -45,3 +45,28 @@ Die folgenden Beispielhaften Architekturen bilden daher **Möglichkeiten** ab, w
 
 <br>
 
+### Adressierung der Anwendungen
+
+Für die Kommunikation mit den Diensten des TI-Flow-Fachdienst muss das ASL-Protokoll des ZETA-Guards verwendet werden. Siehe hierzu [gemSpec_Krypt]#7 ZETA/ASL (VAU-Protokoll). Dadurch wird ein äußerer Request erstellt, der einen inneren ASL-verschlüsselten Request an den ZETA-Guard enthält. Im inneren Request sind die fachlichen Informationen des Aufrufs enthalten.
+
+Im Folgenden wird beschrieben, wie das Zusammenspiel dieser Requests genutzt wird, um die Anwendungen des TI-Flow-Fachdienst zu adressieren.
+
+#### Authentifizierung am TI-Flow-Fachdienst
+
+Clients, die mit einer Anwendung des TI-Flow-Fachdienst kommunizieren möchten, müssen zunächst die Authentifizierung und Autorisierung am ZETA-Guard durchlaufen. Um sicherzustellen, dass nur einmal der Login-Prozess durchlaufen wird, werden alle Anwendungen des TI-Flow-Fachdienst im äußeren und inneren Request über denselben Host angesprochen, z. B. `https://prod.tiflow.de`.
+
+Damit wird der Request an den entsprechenden ZETA-Guard geleitet, der dann die Autorisierungsprüfung nach [gemSpec_ZETA] durchführt.
+
+#### Adressierung einer Anwendung vom TI-Flow-Fachdienst
+
+Das Adressieren einer Anwendung (z.B. E-Rezept, DiGA) erfolgt dann im ersten Abschnitt des Pfades des inneren ASL-Requests:
+
+```http
+GET /rx/fhir/v1/Task HTTP/1.1
+Host: prod.tiflow.de
+Content-Type: application/fhir+json
+```
+
+<figcaption><strong>HTTP-Request: </strong>Beispiel der Adressierung des E-Rezept Moduls im TI-Flow-Fachdienst</figcaption>
+
+Die Angabe von `rx` leitet den Request an die E-Rezept-Anwendung des TI-Flow-Fachdienst. Die jeweiligen Pfade können den API-Beschreibungen der Modul-IGs entnommen werden.
