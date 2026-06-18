@@ -37,7 +37,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 </requirement>
 
 <!-- A_19284-14 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-31" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-31" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Operationen" version="1">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -50,127 +50,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
     <th>Operation</th>
     <th>Rolle des zugreifenden Nutzers</th>
     <th>Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>
-  </tr>
-  <tr>
-    <td>http GET /Task/&#60;id&#62;</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat das E-Rezept heruntergeladen</td>
-  </tr>
-  <tr>
-    <td>http GET /Task/&#60;id&#62;?secret</td>
-    <td>Apotheke/Kostenträger</td>
-    <td>Apotheke/Kostenträger hat die E-Rezept-Quittung heruntergeladen</td>
-  </tr>
-  <tr>
-    <td>http GET /Task</td>
-    <td>Apotheke (PoPP)</td>
-    <td>Die Apotheke hat die Liste der einlösbaren E-Rezepte abgerufen durch Autorisierung mittels &#60;PoPP-Anwendungsfall&#62;.<br>Siehe TAB_eRPFD_004c Versichertenprotokoll PoPP-Anwendungsfall</td>
-  </tr>
-  <tr>
-    <td>http GET /Task</td>
-    <td>Kostenträger</td>
-    <td>Krankenkasse hat die Liste der einlösbaren Verordnungen (DiGA-Verordnungen) abgerufen.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$activate</td>
-    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut</td>
-    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut hat das E-Rezept bereitgestellt.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$accept</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat das E-Rezept heruntergeladen</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$accept</td>
-    <td>Kostenträger</td>
-    <td>Krankenkasse hat die Verordnung heruntergeladen</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$reject</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat das E-Rezept zurückgegeben.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$reject</td>
-    <td>Kostenträger</td>
-    <td>Krankenkasse hat die Verordnung zurückgegeben.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$dispense</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat das E-Rezept beliefert.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$close</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat das E-Rezept abgeschlossen.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$close</td>
-    <td>Kostenträger</td>
-    <td>Krankenkasse hat die Verordnung abgeschlossen.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$abort</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat das E-Rezept gelöscht.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$abort</td>
-    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut</td>
-    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut hat das E-Rezept gelöscht.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$abort</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat das E-Rezept gelöscht.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$eu-close</td>
-    <td>NCPeH-FD</td>
-    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihr E-Rezept eingelöst.</td>
-  </tr>
-  <tr>
-    <td>http PATCH /Task/&#60;id&#62;</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat Markierung zu Einlösung im EU Ausland gespeichert</td>
-  </tr>
-  <tr>
-    <td>http GET /MedicationDispense</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat Medikament-Informationen heruntergeladen.</td>
-  </tr>
-  <tr>
-    <td>http DELETE /ChargeItem/&#60;id&#62;</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat Abrechnungsinformation gelöscht</td>
-  </tr>
-  <tr>
-    <td>http GET /ChargeItem/&#60;id&#62;</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat Abrechnungsinformation gelesen</td>
-  </tr>
-  <tr>
-    <td>http GET /ChargeItem/&#60;id&#62;</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat Abrechnungsinformation gelesen</td>
-  </tr>
-  <tr>
-    <td>http POST /ChargeItem</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat Abrechnungsinformation bereitgestellt</td>
-  </tr>
-  <tr>
-    <td>http PATCH /ChargeItem/&#60;id&#62;</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat Markierung zu Abrechnungsinformation gespeichert</td>
-  </tr>
-  <tr>
-    <td>http PUT /ChargeItem/&#60;id&#62;</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat Abrechnungsinformation geändert</td>
-  </tr>
+  </tr>  
   <tr>
     <td>http POST /Consent</td>
     <td>Versicherter</td>
@@ -180,32 +60,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
     <td>http DELETE /Consent</td>
     <td>Versicherter</td>
     <td>Versicherter hat Einwilligung für "Beschreibung für Consent.category.coding.code" widerrufen.</td>
-  </tr>
-  <tr>
-    <td>http POST /$grant-eu-access-permission</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat eine Zugriffsberechtigung zum Einlösen von E-Rezepten für das Land "Land B" erteilt.</td>
-  </tr>
-  <tr>
-    <td>http DELETE /$revoke-eu-access-permission</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat die Zugriffsberechtigung zum Einlösen von E-Rezepten für das Land "Land B" widerrufen.</td>
-  </tr>
-  <tr>
-    <td>POST /$get-eu-prescriptions<br>Parameters.parameter:requestData.part:requesttype = demographics</td>
-    <td>NCPeH-FD</td>
-    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre Patientendaten abgerufen.</td>
-  </tr>
-  <tr>
-    <td>POST /$get-eu-prescriptions<br>Parameters.parameter:requestData.part:requesttype = e-prescriptions-list</td>
-    <td>NCPeH-FD</td>
-    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre ausgwählten und einlösbaren E-Rezepte abgerufen.</td>
-  </tr>
-  <tr>
-    <td>POST /$get-eu-prescriptions<br>Parameters.parameter:requestData.part:requesttype = e-prescriptions-retrieval</td>
-    <td>NCPeH-FD</td>
-    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre einzulösenden E-Rezepte abgerufen.</td>
-  </tr>
+  </tr>  
   <tr>
     <td>http POST /pushers/set</td>
     <td>Versicherter</td>
@@ -232,7 +87,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 <div><figcaption><strong>Tabelle: </strong>TAB_TIFlowFD_004c Versichertenprotokoll PoPP Anwendungsfall</figcaption></div>
 
 <!-- A_19284-14 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-32" title="TI-Flow-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-32" title="TI-Flow-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="1">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -270,7 +125,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 <div><figcaption><strong>Tabelle: </strong>TAB_TIFlowFD_004a Versichertenprotokoll nach automatischen Löschen</figcaption></div>
 
 <!-- A_19284-14 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-33" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-33" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="1">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -309,71 +164,3 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
   	</actor>
 	Der TI-Flow-Fachdienst MUSS, wenn in den Nutzerinformationen zeta-user-info.commonName = NULL ist, in der Protokollierung als AuditEvent.agent.name "unbekannt" verwenden.
 </requirement>
-
-#### Zugriffsprotokollierung für Übermittlung für ePA Medication Service
-
-Der TI-Flow-Fachdienst protokolliert das erfolgreiche Übermitteln von Daten für jedes E-Rezept an den Medication Service im Zugriffsprotokoll des Versicherten. Für Übermittlungsversuche, welche nicht erfolgreich durchgeführt werden konnten und für die die Übermittlung erneut versucht wird, wird kein Eintrag im Zugriffsprotokoll angelegt.
-
-<!-- A_25962 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-36" title="TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll" version="0">
-	<meta lockversion="false"/>
-	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-    <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-  </actor>
-	Der TI-Flow-Fachdienst MUSS einen Aufruf der folgenden Endpunkte, für jeden betroffene E-Rezept abhängig von Ergebnis des Operationsaufrufes gemäß Tab_TIFlowFD_020 im Zugriffsprotokoll des Versicherten protokollieren:
-  <table>
-    <tr>
-      <th>Endpunkt</th>
-      <th>Ergebnis der Operation</th>
-      <th>Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>
-    </tr>
-    <tr>
-      <td>/epa/medication/api/{version}/fhir/$provide-prescription-erp</td>
-      <td>erfolgreich</td>
-      <td>Die Verordnung wurde in die Patientenakte übertragen.</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>final nicht übermittelbar</td>
-      <td>Die Verordnung konnte nicht in die Patientenakte übertragen werden.</td>
-    </tr>
-    <tr>
-      <td>/epa/medication/api/{version}/fhir/$provide-dispensation-erp</td>
-      <td>erfolgreich</td>
-      <td>Die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>final nicht übermittelbar</td>
-      <td>Die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>
-    </tr>
-    <tr>
-      <td>/epa/medication/api/{version}/fhir/$cancel-prescription-erp</td>
-      <td>erfolgreich</td>
-      <td>Die Löschinformation zum E-Rezept wurde in die Patientenakte übermittelt.</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>final nicht übermittelbar</td>
-      <td>Die Löschinformation zum E-Rezept konnte nicht in die Patientenakte übermittelt werden.</td>
-    </tr>
-    <tr>
-      <td>/epa/medication/api/{version}/fhir/$cancel-dispensation-erp</td>
-      <td>erfolgreich</td>
-      <td>Die Löschinformation für die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>final nicht übermittelbar</td>
-      <td>Die Löschinformation für die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>
-    </tr>
-  </table>
-  <div><figcaption><strong>Tabelle: </strong>Tab_TIFlowFD_020 Versichertenprotokoll für ePA Medication Service</figcaption></div>
-
-</requirement>
-
-Das Ergebnis "final nicht übermittelbar" bedeutet, dass die Übermittlung auch nach den definierten Wiederholversuchen nicht erfolgreich durchgeführt werden konnte.
-
-Für Übermittlungsversuche, welche nicht erfolgreich durchgeführt werden konnten und für die die Übermittlung erneut versucht werden soll, wird kein Eintrag im Zugriffsprotokoll angelegt.
-
-Wenn ein Versicherter dem Einstellen von Verordnungsdaten und Dispensierinformationen durch den TI-Flow-Fachdienst widersprochen hat, wird keine Übermittlung von Daten gestartet (siehe A_25951-*). In dem Fall wird kein Eintrag im Zugriffsprotokoll angelegt.

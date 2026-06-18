@@ -3863,8 +3863,8 @@
         "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS im Falle von Fehlern bei einer Anfrage am TI-Flow-Fachdienst einen Retry und/oder Client-Failover nur gemäß der Fehlerbehandlung in [E-Rezept API Dokumentation](https://github.com/gematik/api-erp) durchführen.",
         "conformance": "SHALL",
         "created": "2026-03-23T10:57:48.483335",
-        "modified": "2026-06-17T09:22:11.755430",
-        "date": "2026-06-17T09:22:11.755430",
+        "modified": "2026-06-18T13:56:46.428946",
+        "date": "2026-06-18T13:56:46.428946",
         "content_hash": "d11bcde798c2d23eb3d5a425e77fc09a31a158e4cddc1a734e9261ef96439e1c",
         "path": "fehlerbehandlung-client.html",
         "release": "1.0.0"
@@ -4800,16 +4800,16 @@
                 "Produkttest"
             ]
         },
-        "version": 0,
-        "release_status": "STABLE",
+        "version": 1,
+        "release_status": "MODIFIED",
         "status": "ACTIVE",
         "source": "input/pagecontent/audit-service.md",
-        "text": "Der TI-Flow-Fachdienst MUSS einen Protokolleintrag mit den folgenden Werten befüllen:\n\t<ul>\n <li>AuditEvent.text: Generierung eines HTML-&lt;div&gt;-Elements mit lesbarer Beschreibung in einfacher Sprache</li>\n <li>AuditEvent.type: Fester Wertrest gemäß [CodeSystem: Audit Event ID]</li>\n <li>AuditEvent.subtype: aus dem ValueSet [ValueSet http://hl7.org/fhir/ValueSet/auditevent-sub-type] gemäß [CodeSystem http://hl7.org/fhir/restful-interaction]:\n <ul>\n <li>create beim Hinzufügen/Speichern/Anlegen eines Datenobjekts mit Versichertenbezug (mit Ausnahme von AuditEvent- und Communication-Ressource)</li>\n <li>read beim lesenden Zugriff auf ein Datenobjekt mit Versichertenbezug</li>\n <li>update, wenn das Datenobjekt mit Versichertenbezug geändert/aktualisiert wird</li>\n <li>delete, wenn das Datenobjekt mit Versichertenbezug manuell oder automatisch gelöscht wird</li>\n </ul>\n </li>\n <li>AuditEvent.action: analog AuditEvent.subType (C, R, U, D) gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-action]</li>\n <li>AuditEvent.recorded: aktuelle Systemzeit des TI-Flow-Fachdienstes</li>\n <li>AuditEvent.outcome: Ergebnis der aufgerufenen Operation gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-outcome] (0 = Erfolg, 4 = Fehler auf Clientseite, 8 = Serverfehler)</li>\n <li>AuditEvent.agent.type: Fester Werthumanuser bzw. bei Übermittlung an ePA oder NCPeH-FDdataprocessor aus [CodeSystem: Security Role Type (Experimental)]</li>\n <li>AuditEvent.agent.name:Lesbarer Name aus ID_TOKEN des Zugreifenden, der die zu protokollierende Aktion getriggert hat, z.B. \"Praxis Dr. Müller, Bahnhofstr. 78\" oder Versicherter z.B. \"Max Mustermann\" bzw. bei Übermittlung an ePA \"TI-Flow-Fachdienst\"</li>\n <li>AuditEvent.agent.who: KVNR bzw. Telematik-ID des zugreifenden Nutzers aus ID_TOKEN, der diesen Protokolleintrag ausgelöst hat</li>\n <li>AuditEvent.agent.requestor: Fester Wert false, da keine Protokolleinträge von außen erzeugt werden</li>\n <li>AuditEvent.soure.site: Fester Wert TI-Flow-Fachdienst</li>\n <li>AuditEvent.soure.observer: Device-Informationen des TI-Flow-Fachdienstes (status, serialnumber=gemäß Release)</li>\n <li>AuditEvent.entity.what: Referenz auf das durch den Abruf betroffene Datenobjekt Task, ChargeItem, MedicationDispense, Consent oder Objekt der Zugriffsberechtigung</li>\n <li>AuditEvent.entity.name: Eintrag der KVNR des betroffenen Versicherten aus dem Identifier des protokollierten Datenobjekts (String)</li>\n <li>AuditEvent.entity.description: Rezept-ID als Identifier, wird übernommen aus MedicationDispense, ChargeItem oder Task bzw. Consent.category.coding.code bei Anlegen oder Löschen eines Consent bzw. countryCode bei Anlegen oder Löschen einer Zugriffsberechtigung</li>\n </ul>",
+        "text": "Der TI-Flow-Fachdienst MUSS einen Protokolleintrag mit den folgenden Werten befüllen:\n\t<ul>\n <li>AuditEvent.text: Generierung eines HTML-&lt;div&gt;-Elements mit lesbarer Beschreibung in einfacher Sprache</li>\n <li>AuditEvent.type: Fester Wertrest gemäß [CodeSystem: Audit Event ID]</li>\n <li>AuditEvent.subtype: aus dem ValueSet [ValueSet http://hl7.org/fhir/ValueSet/auditevent-sub-type] gemäß [CodeSystem http://hl7.org/fhir/restful-interaction]:\n <ul>\n <li>create beim Hinzufügen/Speichern/Anlegen eines Datenobjekts mit Versichertenbezug (mit Ausnahme von AuditEvent- und Communication-Ressource)</li>\n <li>read beim lesenden Zugriff auf ein Datenobjekt mit Versichertenbezug</li>\n <li>update, wenn das Datenobjekt mit Versichertenbezug geändert/aktualisiert wird</li>\n <li>delete, wenn das Datenobjekt mit Versichertenbezug manuell oder automatisch gelöscht wird</li>\n </ul>\n </li>\n <li>AuditEvent.action: analog AuditEvent.subType (C, R, U, D) gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-action]</li>\n <li>AuditEvent.recorded: aktuelle Systemzeit des TI-Flow-Fachdienstes</li>\n <li>AuditEvent.outcome: Ergebnis der aufgerufenen Operation gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-outcome] (0 = Erfolg, 4 = Fehler auf Clientseite, 8 = Serverfehler)</li>\n <li>AuditEvent.agent.type: Fester Werthumanuser bzw. bei Übermittlung an ePA oder NCPeH-FDdataprocessor aus [CodeSystem: Security Role Type (Experimental)]</li>\n <li>AuditEvent.agent.name:Lesbarer Name aus ID_TOKEN des Zugreifenden, der die zu protokollierende Aktion getriggert hat, z.B. \"Praxis Dr. Müller, Bahnhofstr. 78\" oder Versicherter z.B. \"Max Mustermann\" bzw. bei Übermittlung an ePA \"TI-Flow-Fachdienst\"</li>\n <li>AuditEvent.agent.who: KVNR bzw. Telematik-ID des zugreifenden Nutzers aus ID_TOKEN, der diesen Protokolleintrag ausgelöst hat</li>\n <li>AuditEvent.agent.requestor: Fester Wert false, da keine Protokolleinträge von außen erzeugt werden</li>\n <li>AuditEvent.soure.site: Fester Wert TI-Flow-Fachdienst</li>\n <li>AuditEvent.soure.observer: Device-Informationen des TI-Flow-Fachdienstes (status, serialnumber=gemäß Release)</li>\n <li>AuditEvent.entity.what: Referenz auf das durch den Abruf betroffene Datenobjekt Task, ChargeItem, MedicationDispense, Consent oder Objekt der Zugriffsberechtigung</li>\n <li>AuditEvent.entity.name: Eintrag der KVNR des betroffenen Versicherten aus dem Identifier des protokollierten Datenobjekts (String)</li>\n <li>AuditEvent.entity.description: Task-ID als Identifier, wird übernommen aus MedicationDispense, ChargeItem oder Task bzw. Consent.category.coding.code bei Anlegen oder Löschen eines Consent bzw. countryCode bei Anlegen oder Löschen einer Zugriffsberechtigung</li>\n </ul>",
         "conformance": "SHALL",
         "created": "2026-03-23T10:57:48.431051",
-        "modified": "2026-03-23T10:57:48.431052",
-        "date": "2026-03-23T13:47:26.437508",
-        "content_hash": "9e1a0edfb4254eeff4cbf41fab720af956d18534155ea1d3fdcfe49d274dc402",
+        "modified": "2026-06-18T13:56:46.337084",
+        "date": "2026-06-18T13:56:46.337084",
+        "content_hash": "cf3da499d13bb0884ace0ee4d11537ef808de758979d166ff02c097704a4cc4b",
         "path": "audit-service.html",
         "release": "1.0.0"
     },
@@ -5076,16 +5076,16 @@
                 "Produkttest"
             ]
         },
-        "version": 0,
-        "release_status": "STABLE",
+        "version": 1,
+        "release_status": "MODIFIED",
         "status": "ACTIVE",
         "source": "input/pagecontent/audit-service.md",
-        "text": "Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß \"TAB_eRPFD_004 Versichertenprotokoll\" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß \"TAB_TIFlowFD_004 Versichertenprotokoll\" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.",
         "conformance": "SHALL",
         "created": "2026-03-23T10:57:48.431281",
-        "modified": "2026-03-23T10:57:48.431282",
-        "date": "2026-03-23T13:47:26.437999",
-        "content_hash": "25996f41b71c07a24b75084d237e7c1989ab7f41a61c4a4602e7613c488b6f71",
+        "modified": "2026-06-18T13:56:46.340940",
+        "date": "2026-06-18T13:56:46.340940",
+        "content_hash": "7282ca7c77d2fd978c9418dd77f41951ffffbf15d7f36c4af299a9f4400ad7d0",
         "path": "audit-service.html",
         "release": "1.0.0"
     },
@@ -5340,16 +5340,16 @@
                 "Produkttest"
             ]
         },
-        "version": 0,
-        "release_status": "STABLE",
+        "version": 1,
+        "release_status": "MODIFIED",
         "status": "ACTIVE",
         "source": "input/pagecontent/audit-service.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Erreichen einer Löschfrist gemäß \"TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen\" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Erreichen einer Löschfrist gemäß \"TAB_TIFlowFD_004a Versichertenprotokoll nach automatischen Löschen\" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.",
         "conformance": "SHALL",
         "created": "2026-03-23T10:57:48.431412",
-        "modified": "2026-03-23T10:57:48.431413",
-        "date": "2026-03-23T13:47:26.438181",
-        "content_hash": "c6a8b81a304c2245d261dd1f3ee17d9dd7d3e88bbb5ad674efc542c0faa8f559",
+        "modified": "2026-06-18T13:56:46.341783",
+        "date": "2026-06-18T13:56:46.341783",
+        "content_hash": "3db81a3947d170a8d5920c67b25297a31c07ebf2ff8dbca0561623bc3efec7ce",
         "path": "audit-service.html",
         "release": "1.0.0"
     },
@@ -5532,16 +5532,16 @@
                 "Produkttest"
             ]
         },
-        "version": 0,
-        "release_status": "STABLE",
+        "version": 1,
+        "release_status": "MODIFIED",
         "status": "ACTIVE",
         "source": "input/pagecontent/audit-service.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Fehlerbehandlung gemäß \"TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung\" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Fehlerbehandlung gemäß \"TAB_TIFlowFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung\" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.",
         "conformance": "SHALL",
         "created": "2026-03-23T10:57:48.431539",
-        "modified": "2026-03-23T10:57:48.431541",
-        "date": "2026-03-23T13:47:26.438365",
-        "content_hash": "3f13116457cf390e5c69bf182c711c41843bf7b92fb52f7ed03f8a634d2ee8d6",
+        "modified": "2026-06-18T13:56:46.343221",
+        "date": "2026-06-18T13:56:46.343221",
+        "content_hash": "843975264e0781ce722c610d824b7c003afb360a41d0bb51fb60c2c5bd01eafa",
         "path": "audit-service.html",
         "release": "1.0.0"
     },
@@ -6287,30 +6287,6 @@
         "date": "2026-03-23T13:47:26.519066",
         "content_hash": "5c548d81f537afe0d15a7b961664c92385102940cf7ac140b9f7a532401c08a3",
         "path": "menu-schnittstellen-generelle-prinzipien.html",
-        "release": "1.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-36",
-        "title": "TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "STABLE",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/audit-service.md",
-        "text": "Der TI-Flow-Fachdienst MUSS einen Aufruf der folgenden Endpunkte, für jeden betroffene E-Rezept abhängig von Ergebnis des Operationsaufrufes gemäß Tab_eRPFD_020 im Zugriffsprotokoll des Versicherten protokollieren:\n <table>\n <tr>\n <th>Endpunkt</th>\n <th>Ergebnis der Operation</th>\n <th>Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>\n </tr>\n <tr>\n <td>/epa/medication/api/{version}/fhir/$provide-prescription-erp</td>\n <td>erfolgreich</td>\n <td>Die Verordnung wurde in die Patientenakte übertragen.</td>\n </tr>\n <tr>\n <td></td>\n <td>final nicht übermittelbar</td>\n <td>Die Verordnung konnte nicht in die Patientenakte übertragen werden.</td>\n </tr>\n <tr>\n <td>/epa/medication/api/{version}/fhir/$provide-dispensation-erp</td>\n <td>erfolgreich</td>\n <td>Die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>\n </tr>\n <tr>\n <td></td>\n <td>final nicht übermittelbar</td>\n <td>Die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>\n </tr>\n <tr>\n <td>/epa/medication/api/{version}/fhir/$cancel-prescription-erp</td>\n <td>erfolgreich</td>\n <td>Die Löschinformation zum E-Rezept wurde in die Patientenakte übermittelt.</td>\n </tr>\n <tr>\n <td></td>\n <td>final nicht übermittelbar</td>\n <td>Die Löschinformation zum E-Rezept konnte nicht in die Patientenakte übermittelt werden.</td>\n </tr>\n <tr>\n <td>/epa/medication/api/{version}/fhir/$cancel-dispensation-erp</td>\n <td>erfolgreich</td>\n <td>Die Löschinformation für die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>\n </tr>\n <tr>\n <td></td>\n <td>final nicht übermittelbar</td>\n <td>Die Löschinformation für die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>\n </tr>\n </table>\n <div><figcaption><strong>Tabelle: </strong>Tab_eRPFD_020 Versichertenprotokoll für ePA Medication Service</figcaption></div>",
-        "conformance": "SHALL",
-        "created": "2026-03-23T10:57:48.432352",
-        "modified": "2026-03-23T10:57:48.432353",
-        "date": "2026-03-23T13:47:26.439433",
-        "content_hash": "26d42e0e72e625928a42adeec374ce207f56d3cad939df98e51b4abd5f5a6631",
-        "path": "audit-service.html",
         "release": "1.0.0"
     },
     {
