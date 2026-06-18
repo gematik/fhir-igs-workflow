@@ -92,7 +92,7 @@ Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat ent
 
 #### VAU-Protokoll
 
-Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermittelten Daten mit dem VAU-Protokoll gesichert. Es gelten die Vorgaben aus [gemSpec_Krypt#7 VAU-Protokoll für ePA für alle].
+Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermittelten Daten mit dem VAU-Protokoll gesichert. Es gelten die Vorgaben aus [gemSpec_Krypt]#VAU-Protokoll für ePA für alle.
 
 <figure>
 	<div class="gem-ig-img-container" style="--box-width: 800px; margin-bottom: 30px;">
@@ -101,7 +101,7 @@ Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermitt
 	<figcaption><strong>Abbildung: </strong>Transport durch die TI</figcaption>
 </figure>
 
-Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Bearer-Token. Für die Signatur wird das AUT-Zertifikat der E-Rezept-VAU verwendet. Siehe [gemSpec_Krypt]#7.4 Authentisierung des E-Rezept-FD als ePA-Client und [gemSpec_Aktensystem_ePAfueralle]#3.16.3 Anforderungen an den Authorization Service für die Authentisierung des TI-Flow-Fachdienstes.
+Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Bearer-Token. Für die Signatur wird das AUT-Zertifikat der E-Rezept-VAU verwendet. Siehe [gemSpec_Krypt]#Authentisierung des E-Rezept-FD als ePA-Client und [gemSpec_Aktensystem_ePAfueralle]#3.16.3 Anforderungen an den Authorization Service für die Authentisierung des TI-Flow-Fachdienstes.
 
 <!-- A_26066 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-378" title="TI-Flow-Fachdienst - ePA - JWT Bearer-Token Claims" version="0">
