@@ -1621,6 +1621,24 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-schnittstellen-generelle-prinzipien.html"
+        }],
+        "nameUrl" : "menu-schnittstellen-generelle-prinzipien.html",
+        "title" : "Generelle Prinzipien",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "architecture.html"
+        }],
+        "nameUrl" : "architecture.html",
+        "title" : "Architekturmöglichkeiten TI-Flow-Fachdienst",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "audit-service.html"
         }],
         "nameUrl" : "audit-service.html",
@@ -1643,6 +1661,87 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         }],
         "nameUrl" : "ttl.html",
         "title" : "Löschfristen",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "error-codes.html"
+        }],
+        "nameUrl" : "error-codes.html",
+        "title" : "Fehlercodes",
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "error-codes-req-fd.html"
+          }],
+          "nameUrl" : "error-codes-req-fd.html",
+          "title" : "Anforderungen zur Fehlerbehandlung",
+          "generation" : "markdown"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "kommunikation-dienste-ti.html"
+        }],
+        "nameUrl" : "kommunikation-dienste-ti.html",
+        "title" : "Kommunikation zu Diensten der TI",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "pki-zertifikatspruefung.html"
+        }],
+        "nameUrl" : "pki-zertifikatspruefung.html",
+        "title" : "Zertifikatsprüfung",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "datamatrix-code-client.html"
+        }],
+        "nameUrl" : "datamatrix-code-client.html",
+        "title" : "Datamatrix Code",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "health-check.html"
+        }],
+        "nameUrl" : "health-check.html",
+        "title" : "Health Check",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "fehlerbehandlung-client.html"
+        }],
+        "nameUrl" : "fehlerbehandlung-client.html",
+        "title" : "Fehlerbehandlung Clientsysteme",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html"
+        }],
+        "nameUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html",
+        "title" : "Datenschutz und Sicherheit",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-technische-umsetzung-systemueberblick.html"
+        }],
+        "nameUrl" : "menu-technische-umsetzung-systemueberblick.html",
+        "title" : "Technische Umsetzung - Systemüberblick",
         "generation" : "markdown"
       },
       {
@@ -1679,96 +1778,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         }],
         "nameUrl" : "menu-technische-umsetzung-push.html",
         "title" : "Push Notification senden",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "error-codes.html"
-        }],
-        "nameUrl" : "error-codes.html",
-        "title" : "Fehlercodes",
-        "generation" : "markdown",
-        "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "error-codes-req-fd.html"
-          }],
-          "nameUrl" : "error-codes-req-fd.html",
-          "title" : "Anforderungen zur Fehlerbehandlung",
-          "generation" : "markdown"
-        }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "kommunikation-dienste-ti.html"
-        }],
-        "nameUrl" : "kommunikation-dienste-ti.html",
-        "title" : "Kommunikation zu Diensten der TI",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "datamatrix-code-client.html"
-        }],
-        "nameUrl" : "datamatrix-code-client.html",
-        "title" : "Datamatrix Code",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "pki-zertifikatspruefung.html"
-        }],
-        "nameUrl" : "pki-zertifikatspruefung.html",
-        "title" : "Zertifikatsprüfung",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "health-check.html"
-        }],
-        "nameUrl" : "health-check.html",
-        "title" : "Health Check",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "fehlerbehandlung-client.html"
-        }],
-        "nameUrl" : "fehlerbehandlung-client.html",
-        "title" : "Fehlerbehandlung Clientsysteme",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html"
-        }],
-        "nameUrl" : "menu-schnittstellen-datenschutz-und-sicherheit.html",
-        "title" : "Datenschutz und Sicherheit",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-schnittstellen-generelle-prinzipien.html"
-        }],
-        "nameUrl" : "menu-schnittstellen-generelle-prinzipien.html",
-        "title" : "Generelle Prinzipien",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-technische-umsetzung-systemueberblick.html"
-        }],
-        "nameUrl" : "menu-technische-umsetzung-systemueberblick.html",
-        "title" : "Technische Umsetzung - Systemüberblick",
         "generation" : "markdown"
       },
       {
