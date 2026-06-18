@@ -1,14 +1,3 @@
-# Architekturmöglichkeiten TI-Flow-Fachdienst - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
-
-TIFlow - Kernfunktionalitäten
-
-Version 2.0.0-ballot.2 - ci-build 
-
-* [**Table of Contents**](toc.md)
-* **Architekturmöglichkeiten TI-Flow-Fachdienst**
-
-## Architekturmöglichkeiten TI-Flow-Fachdienst
-
 Der TI-Flow-Fachdienst bettet sich in eine HCC-Cloud Umgebung ein. Von dort aus erhält der Dienst Anfragen von Clients und Diensten und stellt selbst anfragen an andere Dienste.
 
 Diese Seite dient der beispielhaften Darstellung möglicher Architekturen, die im Rahmen dieser Spezifikation möglich sein sollen. Dem Hersteller sollen so viele Freiheiten wie möglich gegeben werden, um eine geeignete Architektur zu finden, die die Sicherheits- und Leistungsansprüche erfüllt.
@@ -17,8 +6,16 @@ Diese Seite dient der beispielhaften Darstellung möglicher Architekturen, die i
 
 Die folgenden Schnittstellen und Interaktionen sind vom TI-Flow-Fachdienst zu erfüllen. Es soll die Anzahl an Diensten und Schnittstellen bereitstellen. Der TI-Flow-Fachdienst ist im Internet erreichbar und wird über einen ZETA Guard abgesichert.
 
-**Abbildung: **Systemüberblick TI-Flow-Fachdienst
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 800px; margin-bottom: 30px;">
+        <img src="./systemueberblick_TI-Flow-Fachdienst.drawio.png" alt="Systemüberblick TI-Flow-Fachdienst" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Systemüberblick TI-Flow-Fachdienst</figcaption>
+</figure>
+
+
 **Hinweis:** Die Anbindung des TI-Flow-Fachdienst an die ePA Aktensysteme erfolgt bis zu deren Unterstütztung von ZETA auf Basis der aktuellen Lösung.
+<br>
 
 ### Möglicher Aufbau der inneren Komponenten des TI-Flow-Fachdienst
 
@@ -28,8 +25,23 @@ Die folgenden Beispielhaften Architekturen bilden daher **Möglichkeiten** ab, w
 
 #### Serviceorientierte Architektur
 
-**Abbildung: **Serviceorientierte Architektur des TI-Flow-Fachdienst
+<figure>
+    <div class="gem-ig-svg-container" style="--box-width: 500px; margin-bottom: 30px;">
+        <img src="./inner-architecture-services.svg" alt="Serviceorientierte Architektur des TI-Flow-Fachdienst" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Serviceorientierte Architektur des TI-Flow-Fachdienst</figcaption>
+</figure>
+
+<br>
+
 #### Monolithische Architektur
 
-**Abbildung: **Monolithische Architektur des TI-Flow-Fachdienst
+<figure>
+    <div class="gem-ig-svg-container" style="--box-width: 500px; margin-bottom: 30px;">
+        <img src="./inner-architecture-monolith.svg" alt="Monolithische Architektur des TI-Flow-Fachdienst" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Monolithische Architektur des TI-Flow-Fachdienst</figcaption>
+</figure>
+
+<br>
 
