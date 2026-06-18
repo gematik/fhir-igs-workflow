@@ -67,6 +67,13 @@ Host: prod.tiflow.de
 Content-Type: application/fhir+json
 ```
 
-<figcaption><strong>HTTP-Request: </strong>Beispiel der Adressierung des E-Rezept Moduls im TI-Flow-Fachdienst</figcaption>
-
 Die Angabe von `rx` leitet den Request an die E-Rezept-Anwendung des TI-Flow-Fachdienst. Die jeweiligen Pfade können den API-Beschreibungen der Modul-IGs entnommen werden.
+
+<figure>
+    <div class="gem-ig-svg-container" style="--box-width: 500px; margin-bottom: 30px;">
+        <img src="./address-tif-application.svg" alt="Adressierung von Anwendungen im TI-Flow-Fachdienst" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Adressierung von Anwendungen im TI-Flow-Fachdienst</figcaption>
+</figure>
+
+<br>
