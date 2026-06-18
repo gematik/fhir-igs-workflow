@@ -29,3 +29,18 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
   * observer only Reference(Device)
   * observer.reference 1..1
 
+* entity 1..* MS
+* entity ^slicing.discriminator.type = #value
+* entity ^slicing.discriminator.path = "type"
+* entity ^slicing.rules = #open
+* entity ^slicing.ordered = false
+* entity contains 
+  patient 1..1 and
+  task 0..1 and
+  consent 0..1
+* entity[patient].type.code = #Patient
+* entity[patient].type.system = "http://terminology.hl7.org/CodeSystem/audit-entity-type"
+* entity[task].type.code = #Task
+* entity[task].type.system = "http://terminology.hl7.org/CodeSystem/audit-entity-type"
+* entity[consent].type.code = #Consent
+* entity[consent].type.system = "http://terminology.hl7.org/CodeSystem/audit-entity-type"

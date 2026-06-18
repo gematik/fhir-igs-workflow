@@ -1,6 +1,7 @@
 install:
   - firely_terminal
   - sushi
+  - requirements
   - igpub
   - publishtools
 deploy:
@@ -11,6 +12,7 @@ build:
   pipeline:
     - shell: ./scripts/pre-build.sh
     - sushi
+    - requirements
     - igpub
     - igpub_qa
     - shell: ./scripts/post-build.sh
