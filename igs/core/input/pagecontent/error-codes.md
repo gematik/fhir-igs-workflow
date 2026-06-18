@@ -213,7 +213,7 @@ FHIR definiert drei Ebenen auf denen Operationen ausgeführt werden können:
 |---|---|
 |System Level|[baseUrl]/$operation|
 |Type Level|[baseUrl]/Task/$operation|
-|Instance Level|[baseUrl]/Task/<id>/$operation|
+|Instance Level|[baseUrl]/Task/&#60;id&#62;/$operation|
 
 <div><figcaption><strong>Tabelle: </strong>Ebenen von FHIR Operationen</figcaption></div><br>
 
