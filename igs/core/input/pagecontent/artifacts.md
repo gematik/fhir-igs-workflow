@@ -78,17 +78,15 @@ ValueSet/epa-ms-operation-outcome-details
 <div><figcaption><strong>Tabelle:</strong> Parameterprofile</figcaption></div>
 
 
-{%comment%}
 //TODO
 ### Ressourcenprofile
 
 {% capture profiles %}
-StructureDefinition/epa-medication,
-StructureDefinition/epa-medication-statement,
+StructureDefinition/tiflow-order-task,
+StructureDefinition/tiflow-communication,
 {% endcapture %}
 {% include artifacts-table-generator.html render=profiles %}
 <div><figcaption><strong>Tabelle:</strong> Ressourcenprofile</figcaption></div>
-{%endcomment%}
 
 {%comment%}
 //TODO
