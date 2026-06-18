@@ -13,8 +13,8 @@ Im Rahmen von Operationaufrufen von Clientsystemen führt der TI-Flow-Fachdienst
     <ol>
     <li>Prüfung zur Autorisierung</li>
     <li>Prüfung Pre-condition</li>
-    <li>falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen</li>
     <li>falls Eingangsartefakt signiert: Signaturprüfung</li>
+    <li>falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen</li>
     <li>Prüfung von Business-Rules</li>
     </ol>
 </requirement>
