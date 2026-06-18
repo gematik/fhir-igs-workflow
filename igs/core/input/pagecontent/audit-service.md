@@ -32,7 +32,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
     <li>AuditEvent.soure.observer: Device-Informationen des TI-Flow-Fachdienstes (status, serialnumber=gemäß Release)</li>
     <li>AuditEvent.entity.what: Referenz auf das durch den Abruf betroffene Datenobjekt Task, ChargeItem, MedicationDispense, Consent oder Objekt der Zugriffsberechtigung</li>
     <li>AuditEvent.entity.name: Eintrag der KVNR des betroffenen Versicherten aus dem Identifier des protokollierten Datenobjekts (String)</li>
-    <li>AuditEvent.entity.description: Rezept-ID als Identifier, wird übernommen aus MedicationDispense, ChargeItem oder Task bzw. Consent.category.coding.code bei Anlegen oder Löschen eines Consent bzw. countryCode bei Anlegen oder Löschen einer Zugriffsberechtigung</li>
+    <li>AuditEvent.entity.description: Task-ID als Identifier, wird übernommen aus MedicationDispense, ChargeItem oder Task bzw. Consent.category.coding.code bei Anlegen oder Löschen eines Consent bzw. countryCode bei Anlegen oder Löschen einer Zugriffsberechtigung</li>
   </ul>
 </requirement>
 
@@ -42,7 +42,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß "TAB_eRPFD_004 Versichertenprotokoll" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+	Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß "TAB_TIFlowFD_004 Versichertenprotokoll" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
 </requirement>
 
 <table>
@@ -217,9 +217,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
     </td>
   </tr>
 </table>
-<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004 Versichertenprotokoll</figcaption></div>
-
-<br><br>
+<div><figcaption><strong>Tabelle: </strong>TAB_TIFlowFD_004 Versichertenprotokoll</figcaption></div>
 
 <table>
   <tr>
@@ -231,9 +229,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
     <td>eGK in der Apotheke</td>
   </tr>
 </table>
-<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004c Versichertenprotokoll PoPP-Anwendungsfall</figcaption></div>
-
-<br><br>
+<div><figcaption><strong>Tabelle: </strong>TAB_TIFlowFD_004c Versichertenprotokoll PoPP Anwendungsfall</figcaption></div>
 
 <!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-32" title="TI-Flow-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
@@ -241,7 +237,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Erreichen einer Löschfrist gemäß "TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+	Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Erreichen einer Löschfrist gemäß "TAB_TIFlowFD_004a Versichertenprotokoll nach automatischen Löschen" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
 </requirement>
 
 <table>
@@ -271,9 +267,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
     <td>Veraltete Abrechnungsinformation vom Fachdienst automatisch gelöscht.</td>
   </tr>
 </table>
-<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen</figcaption></div>
-
-<br><br>
+<div><figcaption><strong>Tabelle: </strong>TAB_TIFlowFD_004a Versichertenprotokoll nach automatischen Löschen</figcaption></div>
 
 <!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-33" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
@@ -281,7 +275,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   </actor>
-	Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Fehlerbehandlung gemäß "TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+	Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Fehlerbehandlung gemäß "TAB_TIFlowFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
 </requirement>
 
 <table>
@@ -296,9 +290,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
     <td>Fachdienst hat das Gerät "device_display_name" für Push-Nachrichten deregistriert.</td>
   </tr>
 </table>
-<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung</figcaption></div>
-
-<br><br>
+<div><figcaption><strong>Tabelle: </strong>TAB_TIFlowFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung</figcaption></div>
 
 <!-- A_19302 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-34" title="TI-Flow-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0">
@@ -328,7 +320,7 @@ Der TI-Flow-Fachdienst protokolliert das erfolgreiche Übermitteln von Daten fü
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   </actor>
-	Der TI-Flow-Fachdienst MUSS einen Aufruf der folgenden Endpunkte, für jeden betroffene E-Rezept abhängig von Ergebnis des Operationsaufrufes gemäß Tab_eRPFD_020 im Zugriffsprotokoll des Versicherten protokollieren:
+	Der TI-Flow-Fachdienst MUSS einen Aufruf der folgenden Endpunkte, für jeden betroffene E-Rezept abhängig von Ergebnis des Operationsaufrufes gemäß Tab_TIFlowFD_020 im Zugriffsprotokoll des Versicherten protokollieren:
   <table>
     <tr>
       <th>Endpunkt</th>
@@ -376,7 +368,7 @@ Der TI-Flow-Fachdienst protokolliert das erfolgreiche Übermitteln von Daten fü
       <td>Die Löschinformation für die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>
     </tr>
   </table>
-  <div><figcaption><strong>Tabelle: </strong>Tab_eRPFD_020 Versichertenprotokoll für ePA Medication Service</figcaption></div>
+  <div><figcaption><strong>Tabelle: </strong>Tab_TIFlowFD_020 Versichertenprotokoll für ePA Medication Service</figcaption></div>
 
 </requirement>
 
