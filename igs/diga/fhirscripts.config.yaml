@@ -4,13 +4,17 @@ install:
   - igpub
   - requirements
   - publishtools
+  - igtools
 deploy:
   env:
     dev: gematik_gemspec_fhir_dev-0
     prod: gematik_gemspec_fhir_prod-0
 build:
   pipeline:
+    - shell: ../../scripts/install-ig-packages.sh ./fhir-ig-installer.conf
     - shell: ./scripts/pre-build.sh
+    - requirements
+    - shell: reqtools polarion ./input/content
     - sushi
     - requirements
     - igpub
