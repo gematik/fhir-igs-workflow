@@ -82,6 +82,30 @@
             "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-CORE-196"
         },
         {
+            "key": "IG-TIFLOW-CORE-36",
+            "title": "TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS einen Aufruf der folgenden Endpunkte, für jeden betroffene E-Rezept abhängig von Ergebnis des Operationsaufrufes gemäß Tab_TIFlowFD_020 im Zugriffsprotokoll des Versicherten protokollieren:\n  <table>\n    <tr>\n      <th>Endpunkt</th>\n      <th>Ergebnis der Operation</th>\n      <th>Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$provide-prescription-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Verordnung wurde in die Patientenakte übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Verordnung konnte nicht in die Patientenakte übertragen werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$provide-dispensation-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$cancel-prescription-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Löschinformation zum E-Rezept wurde in die Patientenakte übermittelt.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Löschinformation zum E-Rezept konnte nicht in die Patientenakte übermittelt werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$cancel-dispensation-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Löschinformation für die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Löschinformation für die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>\n    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>Tab_TIFlowFD_020 Versichertenprotokoll für ePA Medication Service</figcaption></div>",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/menu-technische-umsetzung-audit-service.html#IG-TIFLOW-CORE-36"
+        },
+        {
             "key": "IG-TIFLOW-ERP-1",
             "title": "PS abgebende LEI: Abgabedatensatz mit QES: OCSP Response einbetten",
             "version": 0,
@@ -3326,6 +3350,30 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-create-req-fd.html#IG-TIFLOW-ERP-217"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-218",
+            "title": "TI-Flow-Fachdienst - Versichertenprotokoll zu Rx-Operationen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß \"TAB_RX_004 Versichertenprotokoll\" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/menu-technische-umsetzung-audit-service.html#IG-TIFLOW-ERP-218"
         },
         {
             "key": "IG-TIFLOW-ERP-22",
