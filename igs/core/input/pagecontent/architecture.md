@@ -55,11 +55,11 @@ Im Folgenden wird beschrieben, wie das Zusammenspiel dieser Requests genutzt wir
 
 Clients, die mit einer Anwendung des TI-Flow-Fachdienst kommunizieren möchten, müssen zunächst die Authentifizierung und Autorisierung am ZETA-Guard durchlaufen. Um sicherzustellen, dass nur einmal der Login-Prozess durchlaufen wird, werden alle Anwendungen des TI-Flow-Fachdienst im äußeren und inneren Request über denselben Host angesprochen, z. B. `https://prod.tiflow.de`.
 
-Damit wird der Request an den entsprechenden ZETA-Guard geleitet, der dann die Autorisierungsprüfung nach [gemSpec_ZETA] durchführt.
+Damit wird der Request an den entsprechenden ZETA-Guard geleitet, der dann die Autorisierungsprüfung nach [gemSpec_ZETA] durchführt. Weitere Informationen hierzu sind unter [Zero Trust Access (ZETA)](./menu-technische-umsetzung-zeta.html) zu finden.
 
 #### Adressierung einer Anwendung vom TI-Flow-Fachdienst
 
-Das Adressieren einer Anwendung (z.B. E-Rezept, DiGA) erfolgt dann im ersten Abschnitt des Pfades des inneren ASL-Requests:
+Das Adressieren eines Anwendungsmoduls (z.B. E-Rezept, DiGA) erfolgt im ersten Abschnitt des Pfades des inneren ASL-Requests:
 
 ```http
 GET /rx/fhir/v1/Task HTTP/1.1
@@ -67,7 +67,9 @@ Host: prod.tiflow.de
 Content-Type: application/fhir+json
 ```
 
-Die Angabe von `rx` leitet den Request an die E-Rezept-Anwendung des TI-Flow-Fachdienst. Die jeweiligen Pfade können den API-Beschreibungen der Modul-IGs entnommen werden.
+Die Angabe von `rx` leitet den Request an die E-Rezept-Anwendung des TI-Flow-Fachdienst. Die jeweiligen Pfade können den API-Beschreibungen der Anwendungsmodul-IGs entnommen werden.
+
+Der HTTP-Proxy des ZETA Guard kann so konfiguriert werden, dass die Anfragen an einen entsprechenden Container weitergeleitet werden.
 
 <figure>
     <div class="gem-ig-svg-container" style="--box-width: 500px; margin-bottom: 30px;">
