@@ -72,6 +72,30 @@
         "release": "1.0.0"
     },
     {
+        "key": "IG-TIFLOW-CORE-36",
+        "title": "TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-audit-service.md",
+        "text": "Der TI-Flow-Fachdienst MUSS einen Aufruf der folgenden Endpunkte, für jeden betroffene E-Rezept abhängig von Ergebnis des Operationsaufrufes gemäß Tab_TIFlowFD_020 im Zugriffsprotokoll des Versicherten protokollieren:\n  <table>\n    <tr>\n      <th>Endpunkt</th>\n      <th>Ergebnis der Operation</th>\n      <th>Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$provide-prescription-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Verordnung wurde in die Patientenakte übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Verordnung konnte nicht in die Patientenakte übertragen werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$provide-dispensation-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$cancel-prescription-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Löschinformation zum E-Rezept wurde in die Patientenakte übermittelt.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Löschinformation zum E-Rezept konnte nicht in die Patientenakte übermittelt werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$cancel-dispensation-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Löschinformation für die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Löschinformation für die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>\n    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>Tab_TIFlowFD_020 Versichertenprotokoll für ePA Medication Service</figcaption></div>",
+        "conformance": "SHALL",
+        "created": "2026-06-19T08:44:57.945913",
+        "modified": "2026-06-19T08:44:57.945929",
+        "date": "2026-06-19T08:44:57.945934",
+        "content_hash": "c2bb0ff55402e95b12f367cc618d37b7cff6e5d514200c442ca520317663f4f3",
+        "path": "menu-technische-umsetzung-audit-service.html",
+        "release": "1.0.0"
+    },
+    {
         "key": "IG-TIFLOW-ERP-1",
         "title": "PS abgebende LEI: Abgabedatensatz mit QES: OCSP Response einbetten",
         "actor": [
@@ -3237,6 +3261,30 @@
         "date": "2026-04-13T14:16:19.777094",
         "content_hash": "27d2ac7175e5caf5d4174b1f70844c593089b99a9d81b8e4f6ea17b6b920d355",
         "path": "op-create-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-218",
+        "title": "TI-Flow-Fachdienst - Versichertenprotokoll zu Rx-Operationen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-audit-service.md",
+        "text": "Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß \"TAB_RX_004 Versichertenprotokoll\" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.",
+        "conformance": "SHALL",
+        "created": "2026-06-19T08:44:57.942261",
+        "modified": "2026-06-19T08:44:57.942277",
+        "date": "2026-06-19T08:44:57.942282",
+        "content_hash": "417b31ec567fa69fe66800ee0dadf171a40831de9422f65f02fc8eb3baea543b",
+        "path": "menu-technische-umsetzung-audit-service.html",
         "release": "1.0.0"
     },
     {

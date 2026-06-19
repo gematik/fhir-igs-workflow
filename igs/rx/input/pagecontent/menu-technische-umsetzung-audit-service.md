@@ -2,7 +2,7 @@
 
 Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Weitere Details sind in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/audit-service.html) zu finden, und unten sind die modulspezifischen Anforderungen.
 
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Rx-Operationen">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-218" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Rx-Operationen" version="0">
     <meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
