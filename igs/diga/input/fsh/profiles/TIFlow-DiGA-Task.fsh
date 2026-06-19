@@ -5,8 +5,13 @@ Title: "TIFlow - DiGA - Task"
 Description: "Task für die Verwaltung des E-Rezept-Workflows für digitale Gesundheitsanwendungen"
 * insert Meta
 
-* extension contains TIFlowAcceptDate named acceptDate 0..1 MS
-and TIFlowExpiryDate named expiryDate 0..1 MS
+* extension contains TIFlowAcGEM_ERP_EX_AcceptDateceptDate named acceptDate 0..1 MS
+and GEM_ERP_EX_ExpiryDate named expiryDate 0..1 MS
+
+* identifier contains PrescriptionID 1..1 MS
+* identifier[PrescriptionID] only EPrescriptionId
+  * ^short = "E-Rezept-ID"
+  * ^definition = "Die E-Rezept-ID ist der Hauptidentifikator für die Task Ressource und den gesamten TIFlow Workflow. Dieser Identifikator wird vom TI-Flow-Fachdienst generiert und darf nicht manuell geändert werden."
 
 * for.identifier only IdentifierKvid10
 
