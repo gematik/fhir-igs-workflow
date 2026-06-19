@@ -14,5 +14,5 @@ Description: "Antwort des TI-Flow-Fachdienst auf die $accept-Operation"
 
 * entry contains task 1..1 and binary 1..1
 
-* entry[task].resource only TIFlowTask
-* entry[binary].resource only GEM_ERP_PR_Binary
+* entry[task].resource only TIFlowOrderTask
+// * entry[binary].resource only GEM_ERP_PR_Binary

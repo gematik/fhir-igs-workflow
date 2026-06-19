@@ -1,12 +1,12 @@
-Profile: TIAuditEventRest
+Profile: TIFlowAuditEventRest
 Parent: AuditEvent
-Id: audit-event-rest
-Title: "TI Audit Event Rest"
-Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf einen FHIR Data Service der Telematikinfrastruktur (TI)"
+Id: tiflow-audit-event-rest
+Title: "TIFlow Audit Event Rest"
+Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf einen TIFLow Service"
 * insert Meta
 // preserve the version of this resource
-* ^version = "1.0.0"
-* ^date = "2026-06-01"
+// * ^version = "2.0.0"
+// * ^date = "2026-06-20"
 * ^status = #active
 
 * type MS

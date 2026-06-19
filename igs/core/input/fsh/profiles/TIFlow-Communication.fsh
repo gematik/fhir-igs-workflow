@@ -4,7 +4,10 @@ Id: tiflow-communication
 Title: "Generische TIFlow Communication"
 Description: "Generische TIFlow Workflow-Communication"
 * insert Meta-With-Versioning
-* ^status = #draft
+// preserve the version of this resource
+// * ^version = "2.0.0"
+// * ^date = "2028-04-01"
+// * ^status = #active
 
 * basedOn only Reference(Task)
 * basedOn ^type.aggregation = #referenced

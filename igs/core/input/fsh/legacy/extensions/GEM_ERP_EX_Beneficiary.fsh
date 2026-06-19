@@ -1,5 +1,5 @@
-Extension: TIFlowBeneficiary
-Id: tiflow-beneficiary
+Extension: GEM_ERP_EX_Beneficiary
+Id: GEM-ERP-EX-Beneficiary
 Title: "TIFlow Beneficiary"
 Description: "Der Begünstigte (z. B. Apotheke) der Quittung eines TIFlow Vorgangs, der erstellt wird, wenn der Workflow abgeschlossen ist."
 Context: Bundle, Composition
