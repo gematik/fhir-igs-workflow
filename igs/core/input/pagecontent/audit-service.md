@@ -4,7 +4,7 @@
 Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Diese Zugriffsprotokolle sind unabhängig vom Systemprotokoll und stehen ausschließlich dem Versicherten zur Wahrnehmung seiner Betroffenenrechte zur Einsicht zur Verfügung.
 
 <!-- A_19296-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-30" title="TI-Flow-Fachdienst - Inhalt Protokolleintrag" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-30" title="TI-Flow-Fachdienst - Inhalt Protokolleintrag" version="1">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -24,9 +24,9 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
     <li>AuditEvent.action: analog AuditEvent.subType (C, R, U, D) gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-action]</li>
     <li>AuditEvent.recorded: aktuelle Systemzeit des TI-Flow-Fachdienstes</li>
     <li>AuditEvent.outcome: Ergebnis der aufgerufenen Operation gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-outcome] (0 = Erfolg, 4 = Fehler auf Clientseite, 8 = Serverfehler)</li>
-    <li>AuditEvent.agent.type: Fester Werthumanuser bzw. bei Übermittlung an ePA oder NCPeH-FDdataprocessor aus [CodeSystem: Security Role Type (Experimental)]</li>
-    <li>AuditEvent.agent.name:Lesbarer Name aus ID_TOKEN des Zugreifenden, der die zu protokollierende Aktion getriggert hat, z.B. "Praxis Dr. Müller, Bahnhofstr. 78" oder Versicherter z.B. "Max Mustermann" bzw. bei Übermittlung an ePA "TI-Flow-Fachdienst"</li>
-    <li>AuditEvent.agent.who: KVNR bzw. Telematik-ID des zugreifenden Nutzers aus ID_TOKEN, der diesen Protokolleintrag ausgelöst hat</li>
+    <li>AuditEvent.agent.type: Fester Wert humanuser bzw. bei Übermittlung an ePA oder NCPeH-FD dataprocessor aus [CodeSystem: Security Role Type (Experimental)]</li>
+    <li>AuditEvent.agent.name: zeta-user-info.commonName bzw. bei Übermittlung an ePA "TI-Flow-Fachdienst"</li>
+    <li>AuditEvent.agent.who: zeta-user-info.identifier</li>
     <li>AuditEvent.agent.requestor: Fester Wert false, da keine Protokolleinträge von außen erzeugt werden</li>
     <li>AuditEvent.soure.site: Fester Wert TI-Flow-Fachdienst</li>
     <li>AuditEvent.soure.observer: Device-Informationen des TI-Flow-Fachdienstes (status, serialnumber=gemäß Release)</li>
@@ -64,7 +64,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
   <tr>
     <td>http GET /Task</td>
     <td>Apotheke (PoPP)</td>
-    <td>Die Apotheke hat die Liste der einlösbaren E-Rezepte abgerufen durch Autorisierung mittels &#60;PoPP-Anwendungsfall&#62;.</td>
+    <td>Die Apotheke hat die Liste der einlösbaren E-Rezepte abgerufen durch Autorisierung mittels &#60;PoPP-Anwendungsfall&#62;.<br>Siehe TAB_eRPFD_004c Versichertenprotokoll PoPP-Anwendungsfall</td>
   </tr>
   <tr>
     <td>http GET /Task</td>
@@ -219,6 +219,8 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004 Versichertenprotokoll</figcaption></div>
 
+<br><br>
+
 <table>
   <tr>
     <th>Wert in proofMethod</th>
@@ -229,7 +231,9 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
     <td>eGK in der Apotheke</td>
   </tr>
 </table>
-<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004c Versichertenprotokoll PoPP Anwendungsfall</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004c Versichertenprotokoll PoPP-Anwendungsfall</figcaption></div>
+
+<br><br>
 
 <!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-32" title="TI-Flow-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
@@ -269,6 +273,8 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen</figcaption></div>
 
+<br><br>
+
 <!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-33" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
 	<meta lockversion="false"/>
@@ -291,6 +297,8 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
   </tr>
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung</figcaption></div>
+
+<br><br>
 
 <!-- A_19302 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-34" title="TI-Flow-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0">

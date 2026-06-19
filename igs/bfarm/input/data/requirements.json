@@ -1,0 +1,410 @@
+[
+    {
+        "key": "IG-TIFLOW-BFARM-1",
+        "title": "Anbieter TI-Flow-Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der Anbieter des TI-Flow-Fachdienst MUSS sich über einen organisatorischen Prozess Client Credentials für den Zugriff auf den BfArM Webdienst beim BfArM registrieren.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.239983",
+        "modified": "2026-03-23T10:57:48.239993",
+        "date": "2026-03-23T13:47:25.315171",
+        "content_hash": "6d460aa7132f057ee49bf60c9452bfec30cafa9a2e838cc347f646b25a69ff0b",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-10",
+        "title": "TI-Flow-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Bereitstellen eines digitalen Durchschlag für ein T-Rezept an den BfArM Webdienst einen Datensatz nach dem Profil ERP_TPrescription_CarbonCopy erzeugen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.241447",
+        "modified": "2026-03-23T10:57:48.241448",
+        "date": "2026-03-23T13:47:25.317011",
+        "content_hash": "d562fd67f15a53ab1979887b7fe0c9bf61493ecbeb6580cc16f24f151e95f1be",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-11",
+        "title": "TI-Flow-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS den Anwendungsfall \"Übertragen des digitalen Durchschlags\" gemäß Tabelle TAB_eRPFD_029 ausführen. \n <table>\n <tr>\n <th>Name</th>\n <td>Übertragen des digitalen Durchschlags</td>\n </tr>\n <tr>\n <th>Auslöser</th>\n <td>Abschluss eines E-Rezept Workflows mit Flowtype 166 via Aufruf der $close-Operation</td>\n </tr>\n <tr>\n <th>Akteur</th>\n <td>TI-Flow-Fachdienst</td>\n </tr>\n <tr>\n <th>Vorbedingung</th>\n <td>\n <ul>\n <li>Dem TI-Flow-Fachdienst liegen Client Credentials des BfArM zur Authentifizierung vor</li>\n <li>Verordnungsdaten, Dispensierinformationen und Informationen aus dem FHIR-VZD liegen vor</li>\n <li>Ein gültiger AccessToken für den Zugriff auf den BfArM Webdienst liegt vor</li>\n </ul>\n </td>\n </tr>\n <tr>\n <th>Nachbedingung</th>\n <td>Am BfArM Webdienst wurde der digitale Durchschlag E-T-Rezept erfolgreich übertragen.</td>\n </tr>\n <tr>\n <th>Standardablauf</th>\n <td>\n <ol>\n <li>Prüfen, ob ein gültiger AccessToken vorliegt.</li>\n <li>Falls nicht: Client Credentials an den Token-Endpunkt übertragen.</li>\n <li>AccessToken speichern.</li>\n <li>Erzeugen des digitalen Durchschlags E-T-Rezept.</li>\n <li>Auftrag zur Übertragung des digitalen Durchschlags E-T-Rezept in einer Warteschlange einstellen.</li>\n <li>Aufruf des Endpunktes <code>/ords/rezepte/t-rezept/v1</code>.</li>\n <li>Nach erfolgreicher Übertragung: Löschen des Auftrags aus der Warteschlange.</li>\n </ol>\n </td>\n </tr>\n </table>\n <div><figcaption><strong>Tabelle: </strong>title</figcaption></div>",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.242009",
+        "modified": "2026-03-23T10:57:48.242011",
+        "date": "2026-03-23T13:47:25.317594",
+        "content_hash": "ce54aad91951d1b784510d7c4924c7c8ff32857da92b96e65b5351e5a2e7085b",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-12",
+        "title": "TI-Flow-Fachdienst - BfArM - Übertragen des digitalen Durchschlags",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS für das Übertragen eines digitalen Durchschlags den BfArM Webdienst RESTful wie folgt aufrufen: \n <table>\n <tr>\n <th>HTTP-Parameter</th>\n <th>Wert</th>\n </tr>\n <tr>\n <td>Methode</td>\n <td>POST</td>\n </tr>\n <tr>\n <td>Endpunkt</td>\n <td>/ords/rezepte/t-rezept/v1</td>\n </tr>\n <tr>\n <td>Header</td>\n <td>\n <ul>\n <li>Authorization: Bearer &lt;AccessToken&gt;</li>\n <li>Content-Type: application/fhir+json</li>\n <li>X-Request-ID: &lt;random-uuid&gt;</li>\n </ul>\n </td>\n </tr>\n <tr>\n <td>Body</td>\n <td>&lt;digitaler Durchschlag E-T-Rezept&gt;</td>\n </tr>\n </table>",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.242531",
+        "modified": "2026-03-23T10:57:48.242532",
+        "date": "2026-03-23T13:47:25.318396",
+        "content_hash": "0ecb44bc495245b9364a491806ee3a0d0c5bf3dfe5d6e9f99ca70daca698a2ec",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-13",
+        "title": "TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Datenübermittlung an den BfArM Webdienst für mindestens eine Minute unterbrechen, wenn ein Aufruf mit dem Statuscode 500 oder 429 scheitert. Bei anhaltenden Problemen MUSS der TI-Flow-Fachdienst einen exponentiellen Backoff-Mechanismus anwenden, der die Wartezeit zwischen den Versuchen sukzessive verdoppelt, um die Systembelastung zu minimieren.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.242759",
+        "modified": "2026-03-23T10:57:48.242760",
+        "date": "2026-03-23T13:47:25.318770",
+        "content_hash": "62a1789e9a9a7d6f164126851966f4c99b8d42c8c3a5557a784be4c5871e1bc8",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-14",
+        "title": "TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS den Aufruf am BfArM Webdienst als fehlerhaft kennzeichnen und eine detaillierte Fehlermeldung für interne Analysezwecke protokollieren, wenn der BfArM Webdienst auf einen Operationsaufruf mit einem Statuscode 400 (Bad Request) oder 422 (Unprocessable Entity) reagiert.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.242886",
+        "modified": "2026-03-23T10:57:48.242887",
+        "date": "2026-03-23T13:47:25.318963",
+        "content_hash": "e95a0842762cc4b975c8e45cc8be5a80c380254d69234beda7b2db17634fc94e",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-15",
+        "title": "E-Rezept: Anwendung des IG 'Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst' für Übertragung von Daten vom TI-Flow-Fachdienst an den BfArM Webdienst",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/index.md",
+        "text": "Der TI-Flow-Fachdienst MUSS zur Umsetzung der Übertragung von Daten vom TI-Flow-Fachdienst an den BfArM Webdienst den Implementation Guide \"Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst\" umsetzen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.243601",
+        "modified": "2026-03-23T10:57:48.243602",
+        "date": "2026-03-23T13:47:25.319524",
+        "content_hash": "025c253fde4f1e0cda91c57582c4377e25a65416301156dd860abd0d0662808e",
+        "path": "index.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-16",
+        "title": "E-Rezept: Umsetzung des Moduls 'Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst'",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/index.md",
+        "text": "Der TI-Flow-Fachdienst MUSS zur Umsetzung des Implementation Guides \"Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst\" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.243735",
+        "modified": "2026-03-23T10:57:48.243736",
+        "date": "2026-03-23T13:47:25.319686",
+        "content_hash": "5b04c82c7d12e67f426342328d1e2d4ac84e6d5082ef49a6b33941f9f9f97606",
+        "path": "index.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-17",
+        "title": "TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - kein VZD Eintrag für die Apotheke",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept, wenn die Daten der abgebenden Apotheke nicht aus dem Verzeichnisdienst ermittelt werden können,\n <ul>\n <li>die Telematik-ID der Apotheke aus den Dispensierinformationen und</li>\n <li>den Wert für zeta-user-info.commonName aus Nutzerinformationen bzw. falls zeta-user-info.commonName = NULL den Wert \"unbekannt\" als Name der Apotheke</li>\n </ul>\n in den digitalen Durchschlag übernehmen.",
+        "conformance": "SHALL",
+        "created": "2026-04-28T16:03:17.472574",
+        "modified": "2026-05-21T07:13:01.532204",
+        "date": "2026-05-21T07:13:01.532204",
+        "content_hash": "b99e261b8fad0239379816cca6b56766949bfd98e462d0d57eb3fab23a7ec1b9",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-2",
+        "title": "TI-Flow-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS vor dem Zugriff auf den BfArM Webdienst prüfen, ob der zuletzt bezogene AccessToken noch gültig ist und im Falle der Ungültigkeit einen neuen AccessToken über den /ords/rezepte/oauth/token Endpunkt am BfArM Webdienst beziehen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.240182",
+        "modified": "2026-03-23T10:57:48.240185",
+        "date": "2026-03-23T13:47:25.315548",
+        "content_hash": "85d51b06efbb196b6d0fe75b2864fb92b0499f79b9ca40808768aecefcdc3ede",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-3",
+        "title": "TI-Flow-Fachdienst - BfArM - Beziehen des AccessTokens",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 1,
+        "release_status": "MODIFIED",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS zum Beziehen eines AccessTokens den Endpunkt /ords/rezepte/oauth/token am BfArM Webdienst mit folgenden Parametern aufrufen: \n <table>\n <tr>\n <th>HTTP-Methode </th>\n <td>POST</td>\n </tr>\n <tr> \n <th>HTTP-Header </th>\n <td>Content-Type: application/x-www-form-urlencoded Authorization: Basic &lt;base64(client_id:client_secret)&gt; </td>\n </tr>\n <tr>\n <th>HTTP-Body </th>\n <td>Form-Parameter: grant_type=client_credential</td>\n </tr>\n </table>\n , um einen AccessToken für den Zugriff auf den BfArM Webdienst zu beziehen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.240342",
+        "modified": "2026-04-28T16:03:17.464877",
+        "date": "2026-04-28T16:03:17.464877",
+        "content_hash": "d35be5078fe131e8541de96bdd7ea540074817400be2e8f738e95125a985b6f7",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-4",
+        "title": "TI-Flow-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS für den Zugriff auf den BfArM Webdienst einen AccessToken für die Authentifizierung im HTTP-Header wie folgt angeben: \n <ul>\n <li>Authorization: Bearer &lt;AccessToken vom Token Endpunkt&gt; </li>\n </ul>\n , um auf die Endpunkte des BfArM Webdienstes zugreifen zu können.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.240486",
+        "modified": "2026-03-23T10:57:48.240488",
+        "date": "2026-03-23T13:47:25.315971",
+        "content_hash": "a8b384b97e29b7d524eecb983ff750e2b425892c743d7ec988d012e5934a77f7",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-5",
+        "title": "TI-Flow-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS einen Konfigurationsparameter BfArM_Domain für die Domain des BfArM Webdienstes verwalten.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.240632",
+        "modified": "2026-03-23T10:57:48.240634",
+        "date": "2026-03-23T13:47:25.316155",
+        "content_hash": "448f13e4a2738811a97601fcf98bb3f0da38f171b0d9255dc16d7c1cc5a2d5cc",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-6",
+        "title": "TI-Flow-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS zur Lokalisierung des BfArM Webdienstes die im DNS für BfArM_Domain eingestellten Informationen aufrufen.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.240767",
+        "modified": "2026-03-23T10:57:48.240769",
+        "date": "2026-03-23T13:47:25.316312",
+        "content_hash": "d0a0cc5ec494b51fcb80de4e8901e643892ff4506268f1da94eb4e1fd7e277e5",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-7",
+        "title": "TI-Flow-Fachdienst - BfArM - Flowtype 166",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS sicherstellen, dass ausschließlich Daten zu Tasks mit dem Flowtype 166 für den Webdienst des BfArM bereitgestellt werden.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.240978",
+        "modified": "2026-03-23T10:57:48.240985",
+        "date": "2026-03-23T13:47:25.316470",
+        "content_hash": "93864fa2ac108f8890705c8795bdb501371d6bbe4a5179a31b6fac011917b59d",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-8",
+        "title": "TI-Flow-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS das Übermitteln der Daten an den BfArM Webdienst asynchron zur Bereitstellung der Daten durch die Clientsysteme umsetzen, damit für das bereitstellende Primärsystem der abgebenden Leistungserbringerinstitution keine verlängerte Verarbeitungsdauer der auslösenden Operation auftritt.",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.241148",
+        "modified": "2026-03-23T10:57:48.241150",
+        "date": "2026-03-23T13:47:25.316628",
+        "content_hash": "54c598b9668e5285c2278929cea7a4e57c5b740ae0476c1821af4ace3a0fdef7",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-BFARM-9",
+        "title": "TI-Flow-Fachdienst - BfArM - Suche nach Apothekendaten",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "STABLE",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-t-register-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept die Daten der abgebenden Apotheke aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird: \n <ul>\n <li>Abfrage der Ressource \"HealthcareService\", </li>\n <li>HealthcareServices, deren Organisation aktiv sind, </li>\n <li>HealthcareServices, deren origin tag = ldap ist, </li>\n <li>HealthcareServices, deren Organisation als Identifier die Telematik-ID trägt, die im Dispensierdatensatz angegeben wurde, </li>\n <li>Einbeziehen der Organisation in das Rückgabeergebnis, </li>\n <li>Einbeziehen der Location in das Rückgabeergebnis</li>\n </ul>",
+        "conformance": "SHALL",
+        "created": "2026-03-23T10:57:48.241300",
+        "modified": "2026-03-23T10:57:48.241302",
+        "date": "2026-03-23T13:47:25.316809",
+        "content_hash": "2509603b048783efc5d33fa3931b4184e2a10ee9a705137368cab88cc023b68f",
+        "path": "query-api-t-register-req-fd.html",
+        "release": "1.0.0"
+    }
+]

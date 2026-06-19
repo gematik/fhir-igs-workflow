@@ -11,8 +11,10 @@ deploy:
 build:
   pipeline:
     - shell: ./scripts/pre-build.sh
+    - shell: ../../scripts/install-ig-packages.sh ./fhir-ig-installer.conf
     - requirements
-    - sushi    
+    - shell: reqtools polarion ./input/content
+    - sushi
     - igpub
     - igpub_qa    
     - shell: ./scripts/post-build.sh

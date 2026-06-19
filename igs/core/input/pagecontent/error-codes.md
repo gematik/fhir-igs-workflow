@@ -213,7 +213,7 @@ FHIR definiert drei Ebenen auf denen Operationen ausgeführt werden können:
 |---|---|
 |System Level|[baseUrl]/$operation|
 |Type Level|[baseUrl]/Task/$operation|
-|Instance Level|[baseUrl]/Task/<id>/$operation|
+|Instance Level|[baseUrl]/Task/&#60;id&#62;/$operation|
 
 <div><figcaption><strong>Tabelle: </strong>Ebenen von FHIR Operationen</figcaption></div><br>
 
@@ -258,7 +258,7 @@ Hierfür gelten für die TIFlow-Anwendungen die folgenden Fehlercodes für Opera
 
 ### Struktur von Fehlern bei Nicht-FHIR APIs
 
-Der TI-Flow-Fachdienst bietet Schnittstellen, deren Austauschformat nicht nach FHIR modelliert wurde. Bspw. [Push-API: Pusher](./query-api-pushers.md). 
+Der TI-Flow-Fachdienst bietet Schnittstellen, deren Austauschformat nicht nach FHIR modelliert wurde. Bspw. [Push-API: Pusher](./query-api-pushers.html). 
 
 Diese Schnittstellen haben eine eigens definierte JSON Struktur von Fehlern, die in der jeweils referenzierten OpenAPI dokumentiert ist. Im Fehlerfall erhalten Clients eine HTTP Antwort mit HTTP Status Code und einem Response Body im Media Type <i>application/json</i>.
 
