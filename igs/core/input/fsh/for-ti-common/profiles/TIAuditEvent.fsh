@@ -29,7 +29,7 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
   * observer only Reference(Device)
   * observer.reference 1..1
 
-* entity 2..2 MS
+* entity 1..* MS
 * entity ^slicing.discriminator.type = #value
 * entity ^slicing.discriminator.path = "type"
 * entity ^slicing.rules = #open
