@@ -1,4 +1,4 @@
-Profile: TIAuditEventRest
+Profile: TIFlowAuditEventRest
 Parent: AuditEvent
 Id: audit-event-rest
 Title: "TI Audit Event Rest"
