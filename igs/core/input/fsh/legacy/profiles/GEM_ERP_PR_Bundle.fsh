@@ -1,6 +1,6 @@
-Profile: TIFlowReceiptBundle
+Profile: GEM_ERP_PR_Bundle
 Parent: Bundle
-Id: tiflow-receipt-bundle
+Id: GEM-ERP-PR-Bundle
 Title: "TIFlow Receipt Bundle"
 Description: "Dokumentenbündel für Quittung"
 * insert StructureDefinition(GEM_ERP_PR_Bundle)
@@ -23,7 +23,7 @@ Description: "Dokumentenbündel für Quittung"
     PrescriptionDigest 1..1
 
 * entry[DocumentInformation] MS
-  * resource only TIFlowReceiptComposition
+  * resource only GEM_ERP_PR_Composition
   * resource 1..1
   * fullUrl 1..1
   * link 0..0

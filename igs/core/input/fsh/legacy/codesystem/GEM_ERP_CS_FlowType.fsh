@@ -1,5 +1,5 @@
-CodeSystem: TIFlowTypesCS
-Id: ti-flowtypes-codes
+CodeSystem: GEM_ERP_CS_FlowType
+Id: GEM-ERP-CS-FlowType
 Title: "CodeSystem der Flowtypes in TIFlow Anwendungen"
 Description: """
 Zeigt die verschiedenen Typen der TI Workflows entsprechend der Verordnungsformulare.
