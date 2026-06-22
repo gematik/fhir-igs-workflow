@@ -6415,7 +6415,7 @@
             "title": "FHIR-Ressourcen Versionsangabe",
             "version": 1,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der Versionsnummer gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen, zu dessen aktuell gültiger Profilversion sie mutmaßlich validieren.",
+            "text": "Der TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der zweistelligen Versionsnummer (major.minor) gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen, zu dessen aktuell gültiger Profilversion sie mutmaßlich validieren.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -8569,7 +8569,7 @@
             "title": "TI-Flow-Fachdienst - RESTful API Capability Statement",
             "version": 1,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation auf den Endpunkt /metadata erlauben, in welcher er ein Capability Statement gemäß https://www.hl7.org/fhir/capabilitystatement.html veröffentlicht, welches die vom TI-Flow-Fachdienst verarbeiteten Ressourcen mit den zugehörigen http-Operationen der angebotenen REST-Schnittstelle auflistet: \n <ul>\n <li>Task - GET-, POST-Operation, FHIR-Operations für die Workflow-Steuerung und Einsicht durch den Versicherten </li>\n <li>MedicationDispense - GET-Operation für das Einsehen der Medikamentinformationen durch den Versicherten </li>\n <li>Communication - GET-, POST, DELETE-Operation für das Senden, Empfangen und Löschen von Nachrichten </li>\n <li>AuditEvent - GET-Operation für die Einsicht in Protokolleinträge durch den Versicherten </li>\n <li>Device - GET-Operation mit statischen Informationen zur serverseitigen Signatur damit der Client eine Information über die FHIR-Kompatibilität zum Fachdienst erhält.</li>\n </ul>",
+            "text": "Der TI-Flow-Fachdienst MUSS über den Endpunkt `&#60;modul&#62;/metadata` das FHIR CapabilityStatement des TI-Flow-Fachdienst des jeweilgen Anwendungsmoduls zurückgeben.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -10420,7 +10420,7 @@
             "title": "TI-Flow-Fachdienst - Reihenfolge Eingansprüfungen für Operationen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS die Prüfungen in der folgenden Reihenfolge durchführen:\n    <ol>\n    <li>Prüfung zur Autorisierung</li>\n    <li>Prüfung Pre-condition</li>\n    <li>falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen</li>\n    <li>falls Eingangsartefakt signiert: Signaturprüfung</li>\n    <li>Prüfung von Business-Rules</li>\n    </ol>",
+            "text": "Der TI-Flow-Fachdienst MUSS die Prüfungen in der folgenden Reihenfolge durchführen:\n <ol>\n <li>Prüfung zur Autorisierung</li>\n <li>Prüfung Pre-condition</li>\n <li>falls Eingangsartefakt signiert: Signaturprüfung</li>\n <li>falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen</li>\n <li>Prüfung von Business-Rules</li>\n </ol>",
             "conformance": "SHALL",
             "characteristics": [
                 {

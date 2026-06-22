@@ -17,7 +17,6 @@ Description: "Task für die Verwaltung von Workflows der TIFlow Verordnungen"
   * ^short = "AccessCode Identifier"
   * ^definition = "Generiert vom TI-Flow-Fachdienst. Dieser Identifikator muss in jeder Anfrage zur Task Ressource übertragen werden."
   * system 1..
-  * system = $GEM_ERP_NS_AccessCode (exactly)
   * value 1..
 * identifier[Secret] only TIFlowSecret
 * identifier[Secret] 
