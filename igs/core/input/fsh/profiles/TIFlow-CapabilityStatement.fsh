@@ -1,13 +1,12 @@
 Profile: TIFlowCapabilityStatement
 Parent: TICapabilityStatement
-Id: ti-flow-capability-statement
+Id: tiflow-capability-statement
 Title: "Capability Statement Profil für den TI-Flow-Fachdienst"
 Description: "Dieses Profil beschreibt die Fähigkeiten des TI-Flow-Fachdienst."
 * insert Meta
-
-// preserve the version of this resource
-* ^version = "2.0.0"
-* ^date = "2028-04-01"
+// // preserve the version of this resource
+// * ^version = "2.0.0"
+// * ^date = "2028-04-01"
 * ^status = #active
 
 * extension contains 
