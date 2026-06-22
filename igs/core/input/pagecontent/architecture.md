@@ -55,7 +55,7 @@ Im Folgenden wird beschrieben, wie das Zusammenspiel dieser Requests genutzt wir
 
 Clients, die mit einer Anwendung des TI-Flow-Fachdienst kommunizieren möchten, müssen zunächst die Authentifizierung und Autorisierung am ZETA Guard durchlaufen. Um sicherzustellen, dass nur einmal der Login-Prozess durchlaufen wird, werden alle Anwendungen des TI-Flow-Fachdienst im äußeren und inneren Request über denselben Host angesprochen, z. B. `https://prod.tiflow.de`.
 
-Damit wird der Request an den entsprechenden ZETA Guard geleitet, der dann die Autorisierungsprüfung nach [gemSpec_ZETA] durchführt. Weitere Informationen hierzu sind unter [Zero Trust Access (ZETA)](./menu-technische-umsetzung-zeta.html) zu finden.
+Der Request wird an den ZETA Guard des TI-Flow-Fachdienst geleitet, der dann die Autorisierungsprüfung nach [gemSpec_ZETA] durchführt. Weitere Informationen hierzu sind unter [Zero Trust Access (ZETA)](./menu-technische-umsetzung-zeta.html) zu finden.
 
 #### Adressierung einer Anwendung vom TI-Flow-Fachdienst
 
