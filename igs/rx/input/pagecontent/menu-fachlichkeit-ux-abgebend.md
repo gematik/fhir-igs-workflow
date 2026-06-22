@@ -412,7 +412,7 @@ Solch eine Nicht-Erreichbarkeit kann durch einen Ausfall der TI- Dienste oder de
      Das PS der abgebenden LEI SOLL im Falle der Nicht-Erreichbarkeit von zentralen Diensten der TI automatisch versuchen eine Fehlerbehebung durchzuführen.
 </requirement>
 
-Für das Umschwenken auf eine andere Instanz des TI-Flow-Fachdienstes siehe [gemSpec_ILF_PS_eRp#4.2 Namensauflösung].
+Für das Umschwenken auf eine andere Instanz des TI-Flow-Fachdienstes siehe [gemILF_PS_eRp#4.2 Namensauflösung].
 
 <!-- A_23815 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-149" title="PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des TI-Flow-Fachdienstes" version="0">

@@ -82,7 +82,7 @@ Es gelten folgende übergreifende Festlegungen für die Prüfung aktiv durch ein
     <actor name="Anb_NCPeH_FD" description="Anbieter eines NCPeH-Fachdienstes">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
-    Das Primärsystem MUSS bei der Prüfung von X.509-Zertifikaten der TI den CertificateService des Konnektors mit der Operation VerifyCertificate gemäß [gemSpec_Kon#4.1.9.5.3] verwenden und dabei
+    Das Primärsystem MUSS bei der Prüfung von X.509-Zertifikaten der TI den CertificateService des Konnektors mit der Operation VerifyCertificate gemäß [gemSpec_Kon]#4.1.9.5.3 verwenden und dabei
     <ul>
     <li>das zu prüfende Zertifikat als Parameter X509Certificate verwenden</li>
     <li>die aktuelle Systemzeit als Parameter VerificationTime verwenden</li>

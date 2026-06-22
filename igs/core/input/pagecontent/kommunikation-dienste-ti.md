@@ -18,7 +18,7 @@ Ein Clientsystem nutzen für die Kommunikation zu den Diensten der TI TLS-Verbin
     <actor name="Anb_NCPeH_FD" description="Anbieter eines NCPeH-Fachdienstes">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Das Clientsystem des TI-Flow-Fachdienstes MUSS für die Kommunikation mit dem TI-Flow-Fachdienst die Endpunkte der Schnittstellen gemäß [gemSpec_FD_eRP#5.1 Servicelokalisierung] nutzen.
+    Das Clientsystem des TI-Flow-Fachdienstes MUSS für die Kommunikation mit dem TI-Flow-Fachdienst die Endpunkte der Schnittstellen gemäß [gemSpec_FD_eRP]#5.1 Servicelokalisierung nutzen.
 </requirement>
 
 <!-- ToDo: Link gemSpec_FD_eRP#5.1 Servicelokalisierung auflösen -->
@@ -238,9 +238,9 @@ Die Kommunikation zum TI-Flow-Fachdienst wird zusätzlich zu TLS über einen sic
 	das Kommunikationsprotokoll zwischen VAU des TI-Flow-Fachdienstes und Clientsysteme des TI-Flow-Fachdienstes in der Rolle TI-Flow-Client nutzen.
 </requirement>
 
-Für Informationen zum Kommunikationsprotokoll zwischen E-Rezept-FdV und der VAU des TI-Flow-Fachdienstes siehe [gemSpec_Krypt#E-Rezept-spezifische Vorgaben] und [gemSpec_Krypt#ZETA/ASL (VAU-Protokoll)].
+Für Informationen zum Kommunikationsprotokoll zwischen E-Rezept-FdV und der VAU des TI-Flow-Fachdienstes siehe [gemSpec_Krypt]#E-Rezept-spezifische Vorgaben und [gemSpec_Krypt]#ZETA/ASL (VAU-Protokoll).
 
-Alternativ zur Umsetzung des TUC_PKI_018 gemäß [gemSpec_Krypt#A_21216] soll das Primärsystem für die Prüfung des VAU-Zertifikates die VerifyCertificate Operation des Konnektors/Basis Consumers nutzen.
+Alternativ zur Umsetzung des TUC_PKI_018 gemäß [gemSpec_Krypt]#A_21216 soll das Primärsystem für die Prüfung des VAU-Zertifikates die VerifyCertificate Operation des Konnektors/Basis Consumers nutzen.
 
 <!-- ToDo: Anpassen auf ASL -->
 Folgendes kann umgesetzt werden:

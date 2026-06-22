@@ -49,7 +49,7 @@ Die Quittung wird als PKCS#7-Datei erstellt. Die quittierten Daten sind innerhal
     ausführen.
 </requirement>
 
-Implementierungshinweise zur Signaturprüfung für Primärsysteme sind in [gemILF_PS#4.4.2] beschrieben. Die Außenschnittstelle des Konnektors ist in [gemSpec_Kon#TIP1-A_5034-x Operation VerifyDocument (nonQES und QES)] beschrieben. 
+Implementierungshinweise zur Signaturprüfung für Primärsysteme sind in [gemILF_PS]#4.4.2 beschrieben. Die Außenschnittstelle des Konnektors ist in [gemSpec_Kon]#TIP1-A_5034-* Operation VerifyDocument (nonQES und QES) beschrieben. 
 
 Als Response liefert der Konnektor einen standardisierten Prüfbericht in einer VerificationReport-Struktur gemäß [OASIS-VR].
 
