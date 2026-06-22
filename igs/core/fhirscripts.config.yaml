@@ -10,9 +10,7 @@ deploy:
     prod: gematik_gemspec_fhir_prod-0
 build:
   pipeline:
-    - shell: echo "Installing FHIR-Packages to Cache"
     - shell: ../../scripts/install-ig-packages.sh ./fhir-ig-installer.conf
-    - shell: echo "Running Pre-Build
     - shell: ./scripts/pre-build.sh
     - requirements
     - shell: reqtools polarion ./input/content
