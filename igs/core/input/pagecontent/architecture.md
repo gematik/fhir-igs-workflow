@@ -47,15 +47,15 @@ Die folgenden Beispielhaften Architekturen bilden daher **Möglichkeiten** ab, w
 
 ### Adressierung der Anwendungen
 
-Für die Kommunikation mit den Diensten des TI-Flow-Fachdienst muss das ASL-Protokoll des ZETA-Guards verwendet werden. Siehe hierzu [gemSpec_Krypt]#7 ZETA/ASL (VAU-Protokoll). Dadurch wird ein äußerer Request erstellt, der einen inneren ASL-verschlüsselten Request an den ZETA-Guard enthält. Im inneren Request sind die fachlichen Informationen des Aufrufs enthalten.
+Für die Kommunikation mit den Diensten des TI-Flow-Fachdienst muss das ASL-Protokoll des ZETA Guards verwendet werden. Siehe hierzu [gemSpec_Krypt]#7 ZETA/ASL (VAU-Protokoll). Dadurch wird ein äußerer Request erstellt, der einen inneren ASL-verschlüsselten Request an den ZETA Guard enthält. Im inneren Request sind die fachlichen Informationen des Aufrufs enthalten.
 
 Im Folgenden wird beschrieben, wie das Zusammenspiel dieser Requests genutzt wird, um die Anwendungen des TI-Flow-Fachdienst zu adressieren.
 
 #### Authentifizierung am TI-Flow-Fachdienst
 
-Clients, die mit einer Anwendung des TI-Flow-Fachdienst kommunizieren möchten, müssen zunächst die Authentifizierung und Autorisierung am ZETA-Guard durchlaufen. Um sicherzustellen, dass nur einmal der Login-Prozess durchlaufen wird, werden alle Anwendungen des TI-Flow-Fachdienst im äußeren und inneren Request über denselben Host angesprochen, z. B. `https://prod.tiflow.de`.
+Clients, die mit einer Anwendung des TI-Flow-Fachdienst kommunizieren möchten, müssen zunächst die Authentifizierung und Autorisierung am ZETA Guard durchlaufen. Um sicherzustellen, dass nur einmal der Login-Prozess durchlaufen wird, werden alle Anwendungen des TI-Flow-Fachdienst im äußeren und inneren Request über denselben Host angesprochen, z. B. `https://prod.tiflow.de`.
 
-Damit wird der Request an den entsprechenden ZETA-Guard geleitet, der dann die Autorisierungsprüfung nach [gemSpec_ZETA] durchführt. Weitere Informationen hierzu sind unter [Zero Trust Access (ZETA)](./menu-technische-umsetzung-zeta.html) zu finden.
+Damit wird der Request an den entsprechenden ZETA Guard geleitet, der dann die Autorisierungsprüfung nach [gemSpec_ZETA] durchführt. Weitere Informationen hierzu sind unter [Zero Trust Access (ZETA)](./menu-technische-umsetzung-zeta.html) zu finden.
 
 #### Adressierung einer Anwendung vom TI-Flow-Fachdienst
 
