@@ -113,4 +113,6 @@ Folgende Vorgaben gelten für die Prüfung von Internet-Zertifikaten.
     Das Clientsystem des TI-Flow-Fachdienst MUSS die zeitliche Gültigkeit des Zertifikats prüfen und falls diese Prüfung negativ ausfällt, das Zertifikat als "ungültig" bewerten.
 </requirement>
 
+Es wird empfohlen für Internetzertifikate kein "Certificate Pinning" umzusetzen, da das die betribliche Stabilität beeinträchtigen kann.
+
 Hinweis: Der erste Teil von IG-TIFLOW-CORE-304-* ist gleichbedeutend damit, dass das CA-Zertifikat im Zertifikats-Truststore eines aktuellen Webbrowsers ist.
