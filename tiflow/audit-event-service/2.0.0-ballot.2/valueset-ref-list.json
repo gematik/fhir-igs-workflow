@@ -1,0 +1,84 @@
+{
+  "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/ValueSet/signature-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SignatureTypeCodes",
+    "title" : "Signature Type Codes",
+    "description" : "The Digital Signature Purposes, an indication of the reason an entity signs a document. This is included in the signed information and can be used when determining accountability for various actions concerning the document. Examples include: author, transcriptionist/recorder, and witness.",
+    "systems" : ["urn:iso-astm:E1762-95:2013"],
+    "oids" : ["1.2.840.10065.1.12"],
+    "sources" : ["1.2.840.10065.1.12"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERP-PR-Signature.html" : "GEM_ERP_PR_Signature"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_VS_DocumentType",
+    "version" : "2.0.0-ballot.2",
+    "status" : "active",
+    "name" : "GEM_ERP_VS_DocumentType",
+    "title" : "ValueSet der Dokumenttyp-Codes",
+    "description" : "Art der Dokumente je nach Empfänger.",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType"],
+    "uses" : {
+    },
+    "StructureDefinition-tiflow-receipt-composition.html" : "GEM ERP PR Composition"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus",
+    "version" : "2.0.0-ballot.2",
+    "status" : "active",
+    "name" : "GEM_ERP_VS_AvailabilityStatus",
+    "title" : "ValueSet der Verfügbarkeitsstatus-Codes",
+    "description" : "Art des Verfügbarkeitsstatus für die Verfügbarkeitsanfrage von Medikamenten",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_AvailabilityStatus"]
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FlowType",
+    "version" : "2.0.0-ballot.2",
+    "status" : "active",
+    "name" : "TIFlowTypesVS",
+    "title" : "ValueSet der Flowtypes in TIFlow Anwendungen",
+    "description" : "Zeigt die verschiedenen Typen der TI Workflows entsprechend der Verordnungsformulare.",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"],
+    "uses" : {
+    },
+    "StructureDefinition-ti-flowtype.html" : "TI Flow Type"
+  },
+  {
+    "url" : "https://gematik.de/fhir/tiflow/ValueSet/ti-environment-vs",
+    "version" : "2.0.0-ballot.2",
+    "status" : "active",
+    "name" : "TIEnvironmentsVS",
+    "title" : "TI Environments ValueSet",
+    "description" : "Dieses ValueSet enthält alle zulässigen Umgebungskennzeichen für CapabilityStatements des TI-Flow-Fachdienstes und wird für die verpflichtende Kennzeichnung der Zielumgebung verwendet.",
+    "systems" : ["https://gematik.de/fhir/tiflow/CodeSystem/ti-environment-codes"],
+    "uses" : {
+    },
+    "StructureDefinition-ti-environment.html" : "TI Environment"
+  },
+  {
+    "url" : "https://gematik.de/fhir/tiflow/ValueSet/ti-fhir-configuration-vs",
+    "version" : "2.0.0-ballot.2",
+    "status" : "active",
+    "name" : "TIFHIRConfigurationVS",
+    "title" : "TI FHIR Configuration ValueSet",
+    "description" : "Dieses ValueSet bildet den zulässigen Wertebereich für die FHIR-Konfiguration eines FHIR-Data Service der TI ab.",
+    "systems" : ["https://gematik.de/fhir/tiflow/CodeSystem/ti-fhir-configuration-cs"]
+  },
+  {
+    "url" : "https://gematik.de/fhir/tiflow/ValueSet/tiflow-operation-outcome-details-vs",
+    "version" : "2.0.0-ballot.2",
+    "status" : "active",
+    "name" : "TIFLOWOperationOutcomeDetailsVS",
+    "title" : "TIFLOW Operation Outcome Details VS",
+    "description" : "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+    "systems" : ["https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs",
+    "http://terminology.hl7.org/CodeSystem/operation-outcome",
+    "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes"],
+    "uses" : {
+    },
+    "StructureDefinition-tiflow-operation-outcome.html" : "TIFlow OperationOutcome"
+  }]
+}
