@@ -1,4 +1,4 @@
-Der TI-Flow-Fachdienst bettet sich in eine HCC-Cloud Umgebung ein. Von dort aus erhält der Dienst Anfragen von Clients und Diensten und stellt selbst anfragen an andere Dienste.
+Der TI-Flow-Fachdienst bettet sich in eine HCC-Cloud Umgebung ein. Der TI-Flow-Fachdienst erhält Anfragen von Clients und Diensten und stellt selbst Anfragen an andere Dienste.
 
 Diese Seite dient der beispielhaften Darstellung möglicher Architekturen, die im Rahmen dieser Spezifikation möglich sein sollen. Dem Hersteller sollen so viele Freiheiten wie möglich gegeben werden, um eine geeignete Architektur zu finden, die die Sicherheits- und Leistungsansprüche erfüllt.
 
