@@ -37,13 +37,17 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
 * entity contains 
   patient 1..1 and
   task 0..1 and
-  consent 0..1 and 
   service 0..1
 * entity[patient].type.code = #Patient
 * entity[patient].type.system = "http://terminology.hl7.org/CodeSystem/audit-entity-type"
+* entity[patient].what.identifier 1..1 MS
+* entity[patient].what.identifier only IdentifierKvid10 or IdentifierTelematikId
 * entity[task].type.code = #Task
 * entity[task].type.system = "http://terminology.hl7.org/CodeSystem/audit-entity-type"
-* entity[consent].type.code = #Consent
-* entity[consent].type.system = "http://terminology.hl7.org/CodeSystem/audit-entity-type"
+* entity[task].what.identifier 1..1 MS
+* entity[task].what.identifier only EPrescriptionId
 * entity[service].type.code = #4 //Other
 * entity[service].type.system = "http://terminology.hl7.org/CodeSystem/audit-entity-type"
+* entity[service].name 1..1 MS
+  * ^short = "Name des FHIR Data Service"
+  * ^definition = "Der Name des FHIR Data Service, auf den zugegriffen wurde."  
