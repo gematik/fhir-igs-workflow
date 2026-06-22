@@ -1,4 +1,6 @@
-Tritt ein Fehler bei der Verarbeitung von Operationsaufrufen an einem Dienst der TI (bspw. TI-Flow-Fachdienst) auf, dann antwortet der Dienst mit einer Fehlermeldung. Das Format und die verwendeten Fehlercodes sind in den Spezifikationen der Interfaces (bspw. [gemSpec_FD_eRp]) beschrieben. Weiterhin können Fehler in der lokalen Verarbeitung auftreten.
+Tritt ein Fehler bei der Verarbeitung von Operationsaufrufen an einem Dienst der TI (bspw. TI-Flow-Fachdienst) auf, dann antwortet der Dienst mit einer Fehlermeldung. Das Format und die verwendeten Fehlercodes sind in [Fehlercodes](./error-codes.html) beschrieben. Die API-Beschreibungen der Schnittstellen in den Anwendungsmodul- sowie Funktions-IGs enthalten die Fehlercodes für die Endpunkte.
+
+Weiterhin können Fehler in der lokalen Verarbeitung auftreten.
 
 <!-- A_20152 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-263" title="CS: Verständliche Fehlermeldung" version="0">
@@ -15,7 +17,9 @@ Tritt ein Fehler bei der Verarbeitung von Operationsaufrufen an einem Dienst der
         Das Clientsystem des TI-Flow-Fachdienstes MUSS im Falle von Fehlern Fehlermeldungen bereitstellen, die es den Mitarbeitern der Leistungserbringerinstitution ermöglichen, die Ursache des Fehlers zu identifizieren und mögliche Gegenmaßnahmen zu ergreifen.
 </requirement>
 
-Während der Auslösung von Anfragen durch einen Client können diverse Fehler auftreten. Bei einigen dieser Fehler ist eine erneute Anfrage (Retry) sinnvoll, für alle anderen Fälle soll kein Retry versucht werden. Um eine klare Leitlinie für die Fehlerbehandlung zu etablieren, wird auf die Webseite https://github.com/gematik/api-erp/blob/master/docs/erp_statuscodes.adoc verwiesen. Dort sind sämtliche Fehlercodes aufgeführt und für jeden einzelnen Code wird bewertet, ob ein erneuter Versuch der Anfrage (Retry) sowie ein Client-Failover empfohlen sind. Diese Bewertungen dienen als Orientierungshilfe für die Implementierung einer effektiven Fehlerbehandlungsstrategie, um die Robustheit und Zuverlässigkeit des Systems zu gewährleisten.
+Während der Auslösung von Anfragen durch einen Client können diverse Fehler auftreten. Bei einigen dieser Fehler ist eine erneute Anfrage (Retry) sinnvoll, für alle anderen Fälle soll kein Retry versucht werden. Um eine klare Leitlinie für die Fehlerbehandlung zu etablieren, sind unten auf dieser Seite weitere Informationen zu finden. 
+
+Dort sind sämtliche Fehlercodes aufgeführt und für jeden einzelnen Code wird bewertet, ob ein erneuter Versuch der Anfrage (Retry) sowie ein Client-Failover empfohlen sind. Diese Bewertungen dienen als Orientierungshilfe für die Implementierung einer effektiven Fehlerbehandlungsstrategie, um die Robustheit und Zuverlässigkeit des Systems zu gewährleisten.
 
 <!-- A_25460 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-264" title="CS: Fehlerbehandlung - Retry von Anfragen an TI-Flow-Fachdienst" version="1">
@@ -32,7 +36,30 @@ Während der Auslösung von Anfragen durch einen Client können diverse Fehler a
         Das Clientsystem des TI-Flow-Fachdienstes MUSS im Falle von Fehlern bei einer Anfrage am TI-Flow-Fachdienst einen Retry und/oder Client-Failover nur gemäß der Fehlerbehandlung in [E-Rezept API Dokumentation](https://github.com/gematik/api-erp) durchführen.
 </requirement>
 
-<!-- ToDo: Hat die API Beschreibung Bestand oder wird es durch diesen OG ersetzt? -->
+
+#### Retry und Failover
+
+Folgende Fehler können in allen Operationen ausgegeben werden. Im Folgenden sind Vorgaben beschrieben, wie sich Clients im diesen Fehlerfällen verhalten sollen. Die Fehlercodes können im äußeren HTTP- sowie inneren ASL-Request enthalten sein.
+
+| Mögliche http Status Codes | Bedeutung/Fehlerdetails | Verhalten im Fehlerfall |
+|---|---|---|
+| 4XX (außer 408 und 429) | Fehlerhafte Anfrage | **Client-Failover angeraten: Nein.** Ein Retry ist nicht zulässig. |
+| 408 | Timeout | Client-Failover angeraten: Ja. Ein Retry gemäß Exponential Backoff ist zulässig. (Max 10 Wiederholungen) |
+| 429 | Zu viele Anfragen pro Zeiteinheit durch Nutzer | Client-Failover angeraten: Ja. Ein Retry ist stündlich zulässig. (Max 10 Wiederholungen) |
+| 500 | Internal Server Error | Client-Failover angeraten: Ja. Ein Retry gemäß Exponential Backoff ist zulässig. (Max 10 Wiederholungen) |
+| 501 | Not Implemented | Client-Failover angeraten: Nein. Ein Retry ist nicht zulässig. |
+| 502 | Bad Gateway | Client-Failover angeraten: Ja. Ein Retry nur mit Client-Failover (Max. 10 Wiederholungen) |
+| 503 | Service Unavailable | Client-Failover angeraten: Ja. Ein Retry gemäß Exponential Backoff ist zulässig. (Max 10 Wiederholungen) |
+| 504 | Gateway Timeout | Client-Failover angeraten: Ja. Ein Retry gemäß Exponential Backoff ist zulässig. (Max 10 Wiederholungen) |
+| 505 | HTTP Version not supported | Client-Failover angeraten: Nein. Ein Retry ist nicht zulässig. |
+| 506 | Variant Also Negotiates | Client-Failover angeraten: Ja. Ein Retry nur mit Client-Failover (Max. 10 Wiederholungen) |
+| 507 | Insufficient Storage | Client-Failover angeraten: Ja. Ein Retry gemäß Exponential Backoff ist zulässig. (Max 10 Wiederholungen) |
+| 508 | Loop Detected | Client-Failover angeraten: Nein. Ein Retry ist nicht zulässig. |
+| 509 | Bandwidth Limit Exceeded | Client-Failover angeraten: Ja. Ein Retry gemäß Exponential Backoff ist zulässig. (Max 10 Wiederholungen) |
+| 510 | Not Extended | Client-Failover angeraten: Nein. Ein Retry ist nicht zulässig. |
+| 511 | Network Authentication Required | Client-Failover angeraten: Nein. Ein Retry ist nicht zulässig. |
+| 512 | OCSP Backend Error | Client-Failover angeraten: Ja. Ein Retry gemäß Exponential Backoff ist zulässig. (Max 10 Wiederholungen) |
+
 
 ### Logging und Meldungen
 
@@ -77,4 +104,3 @@ Während der Auslösung von Anfragen durch einen Client können diverse Fehler a
     </actor>
     Das Clientsystem des TI-Flow-Fachdienstes SOLL bei serverseitigen Fehlermeldungen, die auf eine Überlastung des Zielsystems schließen lassen (z.B. http-status 5xx, 429 - too many requests, etc.), erneute Verbindungsversuche nach dem Prinzips des Exponential Backoffs [ExpBack] durchführen.
 </requirement>
-
