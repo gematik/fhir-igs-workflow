@@ -68,7 +68,7 @@ Es gelten folgende übergreifende Festlegungen für die Prüfung aktiv durch ein
 
 
 <!-- A_20764 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-303" title="CS: Prüfung TI-Zertifikate" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-303" title="CS: Prüfung TI-Zertifikate" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
