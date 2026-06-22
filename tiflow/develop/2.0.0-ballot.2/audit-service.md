@@ -25,9 +25,9 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS einen Protokolleintra
 * AuditEvent.action: analog AuditEvent.subType (C, R, U, D) gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-action]
 * AuditEvent.recorded: aktuelle Systemzeit des TI-Flow-Fachdienstes
 * AuditEvent.outcome: Ergebnis der aufgerufenen Operation gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-outcome] (0 = Erfolg, 4 = Fehler auf Clientseite, 8 = Serverfehler)
-* AuditEvent.agent.type: Fester Werthumanuser bzw. bei Übermittlung an ePA oder NCPeH-FDdataprocessor aus [CodeSystem: Security Role Type (Experimental)]
-* AuditEvent.agent.name:Lesbarer Name aus ID_TOKEN des Zugreifenden, der die zu protokollierende Aktion getriggert hat, z.B. "Praxis Dr. Müller, Bahnhofstr. 78" oder Versicherter z.B. "Max Mustermann" bzw. bei Übermittlung an ePA "TI-Flow-Fachdienst"
-* AuditEvent.agent.who: KVNR bzw. Telematik-ID des zugreifenden Nutzers aus ID_TOKEN, der diesen Protokolleintrag ausgelöst hat
+* AuditEvent.agent.type: Fester Wert humanuser bzw. bei Übermittlung an ePA oder NCPeH-FD dataprocessor aus [CodeSystem: Security Role Type (Experimental)]
+* AuditEvent.agent.name: zeta-user-info.commonName bzw. bei Übermittlung an ePA "TI-Flow-Fachdienst"
+* AuditEvent.agent.who: zeta-user-info.identifier
 * AuditEvent.agent.requestor: Fester Wert false, da keine Protokolleinträge von außen erzeugt werden
 * AuditEvent.soure.site: Fester Wert TI-Flow-Fachdienst
 * AuditEvent.soure.observer: Device-Informationen des TI-Flow-Fachdienstes (status, serialnumber=gemäß Release)
@@ -45,7 +45,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS jeden Aufruf von Oper
   * Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Apotheke/Kostenträger hat die E-Rezept-Quittung heruntergeladen
 * Operation: http GET /Task
   * Rolle des zugreifenden Nutzers: Apotheke (PoPP)
-  * Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Die Apotheke hat die Liste der einlösbaren E-Rezepte abgerufen durch Autorisierung mittels <PoPP-Anwendungsfall>.
+  * Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Die Apotheke hat die Liste der einlösbaren E-Rezepte abgerufen durch Autorisierung mittels <PoPP-Anwendungsfall>.Siehe TAB_eRPFD_004c Versichertenprotokoll PoPP-Anwendungsfall
 * Operation: http GET /Task
   * Rolle des zugreifenden Nutzers: Kostenträger
   * Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache): Krankenkasse hat die Liste der einlösbaren Verordnungen (DiGA-Verordnungen) abgerufen.
@@ -141,7 +141,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS jeden Aufruf von Oper
 * Wert in proofMethod: ehc-practitioner-*
   * Wert für <PoPP-Anwendungsfall>: eGK in der Apotheke
 
-**Tabelle: **TAB_eRPFD_004c Versichertenprotokoll PoPP Anwendungsfall
+**Tabelle: **TAB_eRPFD_004c Versichertenprotokoll PoPP-Anwendungsfall
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Erreichen einer Löschfrist gemäß "TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
 

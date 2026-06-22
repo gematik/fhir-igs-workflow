@@ -149,10 +149,13 @@
         <a href="datamatrix-code-client.html">Datamatrix Code</a>
       </li>
       <li>
-        <a href="health-check.html">Health Check</a>
+        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
       </li>
       <li>
-        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
+        <a href="capability-statement-extensions.html">Konfigurationsabfrage</a>
+      </li>
+      <li>
+        <a href="health-check.html">Health Check</a>
       </li>
     </ul>
   </li>
@@ -300,7 +303,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Diese Zugriffsprotokolle sind unabhängig vom Systemprotokoll und stehen ausschließlich dem Versicherten zur Wahrnehmung seiner Betroffenenrechte zur Einsicht zur Verfügung.</p>
 
 <!-- A_19296-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-30" title="TI-Flow-Fachdienst - Inhalt Protokolleintrag" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-30" title="TI-Flow-Fachdienst - Inhalt Protokolleintrag" version="1">
 	<meta lockversion="false" />
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -320,9 +323,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <li>AuditEvent.action: analog AuditEvent.subType (C, R, U, D) gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-action]</li>
     <li>AuditEvent.recorded: aktuelle Systemzeit des TI-Flow-Fachdienstes</li>
     <li>AuditEvent.outcome: Ergebnis der aufgerufenen Operation gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-outcome] (0 = Erfolg, 4 = Fehler auf Clientseite, 8 = Serverfehler)</li>
-    <li>AuditEvent.agent.type: Fester Werthumanuser bzw. bei Übermittlung an ePA oder NCPeH-FDdataprocessor aus [CodeSystem: Security Role Type (Experimental)]</li>
-    <li>AuditEvent.agent.name:Lesbarer Name aus ID_TOKEN des Zugreifenden, der die zu protokollierende Aktion getriggert hat, z.B. "Praxis Dr. Müller, Bahnhofstr. 78" oder Versicherter z.B. "Max Mustermann" bzw. bei Übermittlung an ePA "TI-Flow-Fachdienst"</li>
-    <li>AuditEvent.agent.who: KVNR bzw. Telematik-ID des zugreifenden Nutzers aus ID_TOKEN, der diesen Protokolleintrag ausgelöst hat</li>
+    <li>AuditEvent.agent.type: Fester Wert humanuser bzw. bei Übermittlung an ePA oder NCPeH-FD dataprocessor aus [CodeSystem: Security Role Type (Experimental)]</li>
+    <li>AuditEvent.agent.name: zeta-user-info.commonName bzw. bei Übermittlung an ePA "TI-Flow-Fachdienst"</li>
+    <li>AuditEvent.agent.who: zeta-user-info.identifier</li>
     <li>AuditEvent.agent.requestor: Fester Wert false, da keine Protokolleinträge von außen erzeugt werden</li>
     <li>AuditEvent.soure.site: Fester Wert TI-Flow-Fachdienst</li>
     <li>AuditEvent.soure.observer: Device-Informationen des TI-Flow-Fachdienstes (status, serialnumber=gemäß Release)</li>
@@ -360,7 +363,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>http GET /Task</td>
     <td>Apotheke (PoPP)</td>
-    <td>Die Apotheke hat die Liste der einlösbaren E-Rezepte abgerufen durch Autorisierung mittels &#60;PoPP-Anwendungsfall&#62;.</td>
+    <td>Die Apotheke hat die Liste der einlösbaren E-Rezepte abgerufen durch Autorisierung mittels &#60;PoPP-Anwendungsfall&#62;.<br />Siehe TAB_eRPFD_004c Versichertenprotokoll PoPP-Anwendungsfall</td>
   </tr>
   <tr>
     <td>http GET /Task</td>
@@ -515,6 +518,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004 Versichertenprotokoll</figcaption></div>
 
+<p><br /><br /></p>
+
 <table>
   <tr>
     <th>Wert in proofMethod</th>
@@ -525,7 +530,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>eGK in der Apotheke</td>
   </tr>
 </table>
-<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004c Versichertenprotokoll PoPP Anwendungsfall</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004c Versichertenprotokoll PoPP-Anwendungsfall</figcaption></div>
+
+<p><br /><br /></p>
 
 <!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-32" title="TI-Flow-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
@@ -565,6 +572,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen</figcaption></div>
 
+<p><br /><br /></p>
+
 <!-- A_19284-14 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-33" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
 	<meta lockversion="false" />
@@ -587,6 +596,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tr>
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung</figcaption></div>
+
+<p><br /><br /></p>
 
 <!-- A_19302 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-34" title="TI-Flow-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0">
@@ -714,7 +725,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:38+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 22, 2026 06:40+0000">2026-06-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

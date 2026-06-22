@@ -74,12 +74,76 @@
         "max" : "*"
       },
       "constraint" : [{
+        "key" : "cpb-0",
+        "severity" : "warning",
+        "human" : "Name should be usable as an identifier for the module by machine processing applications such as code generation",
+        "expression" : "name.matches('[A-Z]([A-Za-z0-9_]){0,254}')",
+        "xpath" : "not(exists(f:name/@value)) or matches(f:name/@value, '[A-Z]([A-Za-z0-9_]){0,254}')",
+        "source" : "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
+      },
+      {
+        "key" : "cpb-1",
+        "severity" : "error",
+        "human" : "A Capability Statement SHALL have at least one of REST, messaging or document element.",
+        "expression" : "rest.exists() or messaging.exists() or document.exists()",
+        "xpath" : "exists(f:rest) or exists(f:messaging) or exists(f:document)",
+        "source" : "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
+      },
+      {
+        "key" : "cpb-2",
+        "severity" : "error",
+        "human" : "A Capability Statement SHALL have at least one of description, software, or implementation element.",
+        "expression" : "(description.count() + software.count() + implementation.count()) > 0",
+        "xpath" : "count(f:software | f:implementation | f:description) > 0",
+        "source" : "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
+      },
+      {
+        "key" : "cpb-3",
+        "severity" : "error",
+        "human" : "Messaging end-point is required (and is only permitted) when a statement is for an implementation.",
+        "expression" : "messaging.endpoint.empty() or kind = 'instance'",
+        "xpath" : "not(exists(f:messaging/f:endpoint)) or f:kind/@value = 'instance'",
+        "source" : "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
+      },
+      {
+        "key" : "cpb-7",
+        "severity" : "error",
+        "human" : "The set of documents must be unique by the combination of profile and mode.",
+        "expression" : "document.select(profile&mode).isDistinct()",
+        "xpath" : "count(f:document[f:mode/@value='producer'])=count(distinct-values(f:document[f:mode/@value='producer']/f:profile/f:reference/@value)) and count(f:document[f:mode/@value='consumer'])=count(distinct-values(f:document[f:mode/@value='consumer']/f:profile/f:reference/@value))",
+        "source" : "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
+      },
+      {
+        "key" : "cpb-14",
+        "severity" : "error",
+        "human" : "If kind = instance, implementation must be present and software may be present",
+        "expression" : "(kind != 'instance') or implementation.exists()",
+        "xpath" : "not(f:kind/@value='instance') or exists(f:implementation)",
+        "source" : "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
+      },
+      {
+        "key" : "cpb-15",
+        "severity" : "error",
+        "human" : "If kind = capability, implementation must be absent, software must be present",
+        "expression" : "(kind != 'capability') or (implementation.exists().not() and software.exists())",
+        "xpath" : " not(f:kind/@value='instance') or (not(exists(f:implementation)) and exists(f:software))",
+        "source" : "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
+      },
+      {
+        "key" : "cpb-16",
+        "severity" : "error",
+        "human" : "If kind = requirements, implementation and software must be absent",
+        "expression" : "(kind!='requirements') or (implementation.exists().not() and software.exists().not())",
+        "xpath" : "not(f:kind/@value='instance') or (not(exists(f:implementation)) and not(exists(f:software)))",
+        "source" : "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
+      },
+      {
         "key" : "dom-2",
         "severity" : "error",
         "human" : "If the resource is contained in another resource, it SHALL NOT contain nested Resources",
         "expression" : "contained.contained.empty()",
         "xpath" : "not(parent::f:contained and f:contained)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
       },
       {
         "key" : "dom-3",
@@ -87,7 +151,7 @@
         "human" : "If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource",
         "expression" : "contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()",
         "xpath" : "not(exists(for $id in f:contained/*/f:id/@value return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
       },
       {
         "key" : "dom-4",
@@ -95,7 +159,7 @@
         "human" : "If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated",
         "expression" : "contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()",
         "xpath" : "not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
       },
       {
         "key" : "dom-5",
@@ -103,7 +167,7 @@
         "human" : "If a resource is contained in another resource, it SHALL NOT have a security label",
         "expression" : "contained.meta.security.empty()",
         "xpath" : "not(exists(f:contained/*/f:meta/f:security))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
       },
       {
         "extension" : [{
@@ -119,71 +183,7 @@
         "human" : "A resource should have narrative for robust management",
         "expression" : "text.`div`.exists()",
         "xpath" : "exists(f:text/h:div)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
-      },
-      {
-        "key" : "cpb-7",
-        "severity" : "error",
-        "human" : "The set of documents must be unique by the combination of profile and mode.",
-        "expression" : "document.select(profile&mode).isDistinct()",
-        "xpath" : "count(f:document[f:mode/@value='producer'])=count(distinct-values(f:document[f:mode/@value='producer']/f:profile/f:reference/@value)) and count(f:document[f:mode/@value='consumer'])=count(distinct-values(f:document[f:mode/@value='consumer']/f:profile/f:reference/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
-      },
-      {
-        "key" : "cpb-16",
-        "severity" : "error",
-        "human" : "If kind = requirements, implementation and software must be absent",
-        "expression" : "(kind!='requirements') or (implementation.exists().not() and software.exists().not())",
-        "xpath" : "not(f:kind/@value='instance') or (not(exists(f:implementation)) and not(exists(f:software)))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
-      },
-      {
-        "key" : "cpb-15",
-        "severity" : "error",
-        "human" : "If kind = capability, implementation must be absent, software must be present",
-        "expression" : "(kind != 'capability') or (implementation.exists().not() and software.exists())",
-        "xpath" : " not(f:kind/@value='instance') or (not(exists(f:implementation)) and exists(f:software))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
-      },
-      {
-        "key" : "cpb-3",
-        "severity" : "error",
-        "human" : "Messaging end-point is required (and is only permitted) when a statement is for an implementation.",
-        "expression" : "messaging.endpoint.empty() or kind = 'instance'",
-        "xpath" : "not(exists(f:messaging/f:endpoint)) or f:kind/@value = 'instance'",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
-      },
-      {
-        "key" : "cpb-14",
-        "severity" : "error",
-        "human" : "If kind = instance, implementation must be present and software may be present",
-        "expression" : "(kind != 'instance') or implementation.exists()",
-        "xpath" : "not(f:kind/@value='instance') or exists(f:implementation)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
-      },
-      {
-        "key" : "cpb-2",
-        "severity" : "error",
-        "human" : "A Capability Statement SHALL have at least one of description, software, or implementation element.",
-        "expression" : "(description.count() + software.count() + implementation.count()) > 0",
-        "xpath" : "count(f:software | f:implementation | f:description) > 0",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
-      },
-      {
-        "key" : "cpb-1",
-        "severity" : "error",
-        "human" : "A Capability Statement SHALL have at least one of REST, messaging or document element.",
-        "expression" : "rest.exists() or messaging.exists() or document.exists()",
-        "xpath" : "exists(f:rest) or exists(f:messaging) or exists(f:document)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
-      },
-      {
-        "key" : "cpb-0",
-        "severity" : "warning",
-        "human" : "Name should be usable as an identifier for the module by machine processing applications such as code generation",
-        "expression" : "name.matches('[A-Z]([A-Za-z0-9_]){0,254}')",
-        "xpath" : "not(exists(f:name/@value)) or matches(f:name/@value, '[A-Z]([A-Za-z0-9_]){0,254}')",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
       }],
       "isModifier" : false,
       "isSummary" : false,
@@ -310,7 +310,7 @@
         }],
         "strength" : "preferred",
         "description" : "A human language.",
-        "valueSet" : "http://hl7.org/fhir/ValueSet/languages|4.0.1"
+        "valueSet" : "http://hl7.org/fhir/ValueSet/languages"
       }
     },
     {
@@ -382,7 +382,7 @@
           "type" : "value",
           "path" : "url"
         }],
-        "description" : "Extensions are always sliced by (at least) url",
+        "ordered" : false,
         "rules" : "open"
       },
       "short" : "Additional content defined by implementations",
@@ -429,6 +429,9 @@
       "sliceName" : "baseUrl",
       "short" : "Base URL der FHIR-API",
       "definition" : "Gibt die Basis-URL des FHIR-Servers als Zeichenkette an. Beispiel: http://epa4all/epa/medication/api/v1/fhir",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -440,6 +443,7 @@
         "code" : "Extension",
         "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-base-url"]
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -453,11 +457,19 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
       "isModifier" : false,
-      "isSummary" : false
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "N/A"
+      },
+      {
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
     },
     {
       "id" : "CapabilityStatement.extension:header",
@@ -465,6 +477,9 @@
       "sliceName" : "header",
       "short" : "HTTP Header",
       "definition" : "Ermöglicht die Angabe global oder spezifisch geforderter HTTP Header in einem CapabilityStatement oder einer Resource-Interaktion.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -476,6 +491,7 @@
         "code" : "Extension",
         "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-header"]
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -489,11 +505,19 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
       "isModifier" : false,
-      "isSummary" : false
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "N/A"
+      },
+      {
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
     },
     {
       "id" : "CapabilityStatement.extension:responseInfo",
@@ -501,6 +525,9 @@
       "sliceName" : "responseInfo",
       "short" : "HTTP-Antwortinformationen",
       "definition" : "Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -512,6 +539,7 @@
         "code" : "Extension",
         "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"]
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -525,11 +553,19 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
       "isModifier" : false,
-      "isSummary" : false
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "N/A"
+      },
+      {
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
     },
     {
       "id" : "CapabilityStatement.extension:environment",
@@ -645,14 +681,6 @@
     {
       "id" : "CapabilityStatement.modifierExtension",
       "path" : "CapabilityStatement.modifierExtension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Extensions that cannot be ignored",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -993,7 +1021,6 @@
       "type" : [{
         "code" : "ContactDetail"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1005,10 +1032,6 @@
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "workflow",
         "map" : "Definition.contact"
       }]
@@ -1062,7 +1085,6 @@
       "type" : [{
         "code" : "UsageContext"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1074,10 +1096,6 @@
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "workflow",
         "map" : "Definition.useContext"
       }]
@@ -1098,7 +1116,6 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1116,25 +1133,9 @@
         }],
         "strength" : "extensible",
         "description" : "Countries and regions within which this artifact is targeted for use.",
-        "valueSet" : "http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1"
+        "valueSet" : "http://hl7.org/fhir/ValueSet/jurisdiction"
       },
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CD"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept rdfs:subClassOf dt:CD"
-      },
-      {
         "identity" : "workflow",
         "map" : "Definition.jurisdiction"
       }]
@@ -1183,7 +1184,6 @@
       "path" : "CapabilityStatement.copyright",
       "short" : "Use and/or publishing restrictions",
       "definition" : "A copyright statement relating to the capability statement and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the capability statement.",
-      "comment" : "Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/",
       "requirements" : "Consumers must be able to determine any legal restrictions on the use of the capability statement and/or its content.",
       "alias" : ["License",
       "Restrictions"],
@@ -1268,7 +1268,7 @@
       },
       "type" : [{
         "code" : "canonical",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/CapabilityStatement|4.0.1"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/CapabilityStatement"]
       }],
       "constraint" : [{
         "key" : "ele-1",
@@ -1296,7 +1296,7 @@
       },
       "type" : [{
         "code" : "canonical",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/CapabilityStatement|4.0.1"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/CapabilityStatement"]
       }],
       "constraint" : [{
         "key" : "ele-1",
@@ -1324,8 +1324,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "cpb-2"],
+      "condition" : ["cpb-2"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1335,11 +1334,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "CapabilityStatement.software.id",
@@ -1371,14 +1366,6 @@
     {
       "id" : "CapabilityStatement.software.extension",
       "path" : "CapabilityStatement.software.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -1466,7 +1453,6 @@
       "path" : "CapabilityStatement.software.name",
       "short" : "A name the software is known by",
       "definition" : "Name the software is known by.",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -1556,8 +1542,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "cpb-2",
+      "condition" : ["cpb-2",
       "cpb-15"],
       "constraint" : [{
         "key" : "ele-1",
@@ -1568,11 +1553,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "CapabilityStatement.implementation.id",
@@ -1604,14 +1585,6 @@
     {
       "id" : "CapabilityStatement.implementation.extension",
       "path" : "CapabilityStatement.implementation.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -1699,7 +1672,6 @@
       "path" : "CapabilityStatement.implementation.description",
       "short" : "Describes this specific instance",
       "definition" : "Information about the specific installation that this capability statement relates to.",
-      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -1752,7 +1724,6 @@
       "path" : "CapabilityStatement.implementation.custodian",
       "short" : "Organization that manages the data",
       "definition" : "The organization responsible for the management of the instance and oversight of the data on the server at the specified URL.",
-      "comment" : "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -1762,9 +1733,8 @@
       },
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Organization"]
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1772,25 +1742,9 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ref-1",
-        "severity" : "error",
-        "human" : "SHALL have a contained resource if a local reference is provided",
-        "expression" : "reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))",
-        "xpath" : "not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Reference"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "CapabilityStatement.fhirVersion",
@@ -1905,7 +1859,6 @@
       "path" : "CapabilityStatement.implementationGuide",
       "short" : "Implementation guides supported",
       "definition" : "A list of implementation guides that the server does (or should) support in their entirety.",
-      "comment" : "see [Canonical References](http://hl7.org/fhir/R4/references.html#canonical)",
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -1915,7 +1868,7 @@
       },
       "type" : [{
         "code" : "canonical",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/ImplementationGuide|4.0.1"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/ImplementationGuide"]
       }],
       "constraint" : [{
         "key" : "ele-1",
@@ -1944,30 +1897,25 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "cpb-1"],
+      "condition" : ["cpb-1"],
       "constraint" : [{
+        "key" : "cpb-9",
+        "severity" : "error",
+        "human" : "A given resource can only be described once per RESTful mode.",
+        "expression" : "resource.select(type).isDistinct()",
+        "xpath" : "count(f:resource)=count(distinct-values(f:resource/f:type/@value))",
+        "source" : "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
+      },
+      {
         "key" : "ele-1",
         "severity" : "error",
         "human" : "All FHIR elements must have a @value or children",
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "cpb-9",
-        "severity" : "error",
-        "human" : "A given resource can only be described once per RESTful mode.",
-        "expression" : "resource.select(type).isDistinct()",
-        "xpath" : "count(f:resource)=count(distinct-values(f:resource/f:type/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "CapabilityStatement.rest.id",
@@ -1999,14 +1947,6 @@
     {
       "id" : "CapabilityStatement.rest.extension",
       "path" : "CapabilityStatement.rest.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -2129,7 +2069,6 @@
       "path" : "CapabilityStatement.rest.documentation",
       "short" : "General description of implementation",
       "definition" : "Information about the system's restful capabilities that apply across all applications, such as security.",
-      "comment" : "Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -2166,7 +2105,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2176,11 +2114,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "CapabilityStatement.rest.security.id",
@@ -2212,14 +2146,6 @@
     {
       "id" : "CapabilityStatement.rest.security.extension",
       "path" : "CapabilityStatement.rest.security.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -2334,7 +2260,6 @@
       "path" : "CapabilityStatement.rest.security.service",
       "short" : "OAuth | SMART-on-FHIR | NTLM | Basic | Kerberos | Certificates",
       "definition" : "Types of security services that are supported/required by the system.",
-      "comment" : "Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.",
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -2345,7 +2270,6 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2363,31 +2287,14 @@
         }],
         "strength" : "extensible",
         "description" : "Types of security services used with FHIR.",
-        "valueSet" : "http://hl7.org/fhir/ValueSet/restful-security-service|4.0.1"
-      },
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CD"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept rdfs:subClassOf dt:CD"
-      }]
+        "valueSet" : "http://hl7.org/fhir/ValueSet/restful-security-service"
+      }
     },
     {
       "id" : "CapabilityStatement.rest.security.description",
       "path" : "CapabilityStatement.rest.security.description",
       "short" : "General description of how security works",
       "definition" : "General description of how security works.",
-      "comment" : "Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -2425,29 +2332,24 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
+        "key" : "cpb-12",
+        "severity" : "error",
+        "human" : "Search parameter names must be unique in the context of a resource.",
+        "expression" : "searchParam.select(name).isDistinct()",
+        "xpath" : "count(f:searchParam)=count(distinct-values(f:searchParam/f:name/@value))",
+        "source" : "https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"
+      },
+      {
         "key" : "ele-1",
         "severity" : "error",
         "human" : "All FHIR elements must have a @value or children",
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "cpb-12",
-        "severity" : "error",
-        "human" : "Search parameter names must be unique in the context of a resource.",
-        "expression" : "searchParam.select(name).isDistinct()",
-        "xpath" : "count(f:searchParam)=count(distinct-values(f:searchParam/f:name/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "CapabilityStatement.rest.resource.id",
@@ -2479,14 +2381,6 @@
     {
       "id" : "CapabilityStatement.rest.resource.extension",
       "path" : "CapabilityStatement.rest.resource.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -2619,7 +2513,7 @@
       },
       "type" : [{
         "code" : "canonical",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/StructureDefinition"]
       }],
       "constraint" : [{
         "key" : "ele-1",
@@ -2647,7 +2541,7 @@
       },
       "type" : [{
         "code" : "canonical",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/StructureDefinition"]
       }],
       "constraint" : [{
         "key" : "ele-1",
@@ -2665,7 +2559,6 @@
       "path" : "CapabilityStatement.rest.resource.documentation",
       "short" : "Additional information about the use of the resource type",
       "definition" : "Additional information about the resource type used by the system.",
-      "comment" : "Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -2703,7 +2596,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2713,10 +2605,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "CapabilityStatement.rest.resource.interaction.id",
@@ -2753,7 +2642,7 @@
           "type" : "value",
           "path" : "url"
         }],
-        "description" : "Extensions are always sliced by (at least) url",
+        "ordered" : false,
         "rules" : "open"
       },
       "short" : "Additional content defined by implementations",
@@ -2800,6 +2689,9 @@
       "sliceName" : "header",
       "short" : "HTTP Header",
       "definition" : "Ermöglicht die Angabe global oder spezifisch geforderter HTTP Header in einem CapabilityStatement oder einer Resource-Interaktion.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -2811,6 +2703,7 @@
         "code" : "Extension",
         "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-header"]
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2824,80 +2717,7 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "CapabilityStatement.rest.resource.interaction.extension:responseInfo",
-      "path" : "CapabilityStatement.rest.resource.interaction.extension",
-      "sliceName" : "responseInfo",
-      "short" : "HTTP-Antwortinformationen",
-      "definition" : "Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema.",
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "CapabilityStatement.rest.resource.interaction.extension:expectation",
-      "path" : "CapabilityStatement.rest.resource.interaction.extension",
-      "sliceName" : "expectation",
-      "short" : "SHALL | SHOULD | MAY |SHOULD-NOT",
-      "definition" : "Defines the level of expectation associated with a given system capability.",
-      "comment" : "If \"SHALL NOT\" is desired, use the \"prohibited\" modifier extension.  This extension should only be used with CapabilityStatements documenting requirements, not those documenting actual system capabilities.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation|4.0.1"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
       "isModifier" : false,
@@ -2909,9 +2729,105 @@
       {
         "identity" : "rim",
         "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "CapabilityStatement.rest.resource.interaction.extension:responseInfo",
+      "path" : "CapabilityStatement.rest.resource.interaction.extension",
+      "sliceName" : "responseInfo",
+      "short" : "HTTP-Antwortinformationen",
+      "definition" : "Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "CapabilityStatement.rest.resource.interaction.extension:expectation",
+      "path" : "CapabilityStatement.rest.resource.interaction.extension",
+      "sliceName" : "expectation",
+      "short" : "SHALL | SHOULD | MAY |SHOULD-NOT",
+      "definition" : "Defines the level of expectation associated with a given system capability.",
+      "comment" : "If \"SHALL NOT\" is desired, use the \"prohibited\" modifier extension.  This extension should only be used with CapabilityStatements documenting requirements, not those documenting actual system capabilities.",
+      "alias" : ["extensions",
+      "user content"],
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation|4.0.1"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
       },
       {
         "identity" : "v2",
+        "map" : "N/A"
+      },
+      {
+        "identity" : "rim",
         "map" : "N/A"
       }]
     },
@@ -2999,7 +2915,6 @@
       "path" : "CapabilityStatement.rest.resource.interaction.documentation",
       "short" : "Anything special about operation behavior",
       "definition" : "Guidance specific to the implementation of this operation, such as 'delete is a logical delete' or 'updates are only allowed with version id' or 'creates permitted from pre-authorized certificates only'.",
-      "comment" : "Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/",
       "requirements" : "REST allows a degree of variability in the implementation of RESTful solutions that is useful for exchange partners to be aware of.",
       "min" : 0,
       "max" : "1",
@@ -3343,7 +3258,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3353,10 +3267,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "CapabilityStatement.rest.resource.searchParam.id",
@@ -3388,14 +3299,6 @@
     {
       "id" : "CapabilityStatement.rest.resource.searchParam.extension",
       "path" : "CapabilityStatement.rest.resource.searchParam.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -3520,7 +3423,7 @@
       },
       "type" : [{
         "code" : "canonical",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/SearchParameter|4.0.1"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/SearchParameter"]
       }],
       "constraint" : [{
         "key" : "ele-1",
@@ -3574,7 +3477,6 @@
       "path" : "CapabilityStatement.rest.resource.searchParam.documentation",
       "short" : "Server-specific usage",
       "definition" : "This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.",
-      "comment" : "Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -3612,7 +3514,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3622,11 +3523,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "CapabilityStatement.rest.resource.operation.id",
@@ -3663,7 +3560,7 @@
           "type" : "value",
           "path" : "url"
         }],
-        "description" : "Extensions are always sliced by (at least) url",
+        "ordered" : false,
         "rules" : "open"
       },
       "short" : "Additional content defined by implementations",
@@ -3710,6 +3607,9 @@
       "sliceName" : "header",
       "short" : "HTTP Header",
       "definition" : "Ermöglicht die Angabe global oder spezifisch geforderter HTTP Header in einem CapabilityStatement oder einer Resource-Interaktion.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -3721,6 +3621,7 @@
         "code" : "Extension",
         "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-header"]
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3734,116 +3635,7 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "CapabilityStatement.rest.resource.operation.extension:responseInfo",
-      "path" : "CapabilityStatement.rest.resource.operation.extension",
-      "sliceName" : "responseInfo",
-      "short" : "HTTP-Antwortinformationen",
-      "definition" : "Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema.",
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "CapabilityStatement.rest.resource.operation.extension:method",
-      "path" : "CapabilityStatement.rest.resource.operation.extension",
-      "sliceName" : "method",
-      "short" : "HTTP Method for FHIR Operation",
-      "definition" : "Gibt an, ob eine FHIR Operation mit GET, POST oder beidem verwendet werden darf.",
-      "min" : 0,
-      "max" : "2",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-method"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "CapabilityStatement.rest.resource.operation.extension:expectation",
-      "path" : "CapabilityStatement.rest.resource.operation.extension",
-      "sliceName" : "expectation",
-      "short" : "SHALL | SHOULD | MAY |SHOULD-NOT",
-      "definition" : "Defines the level of expectation associated with a given system capability.",
-      "comment" : "If \"SHALL NOT\" is desired, use the \"prohibited\" modifier extension.  This extension should only be used with CapabilityStatements documenting requirements, not those documenting actual system capabilities.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation|4.0.1"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
       "isModifier" : false,
@@ -3855,9 +3647,149 @@
       {
         "identity" : "rim",
         "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "CapabilityStatement.rest.resource.operation.extension:responseInfo",
+      "path" : "CapabilityStatement.rest.resource.operation.extension",
+      "sliceName" : "responseInfo",
+      "short" : "HTTP-Antwortinformationen",
+      "definition" : "Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "CapabilityStatement.rest.resource.operation.extension:method",
+      "path" : "CapabilityStatement.rest.resource.operation.extension",
+      "sliceName" : "method",
+      "short" : "HTTP Method for FHIR Operation",
+      "definition" : "Gibt an, ob eine FHIR Operation mit GET, POST oder beidem verwendet werden darf.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
+      "min" : 0,
+      "max" : "2",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-method"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "CapabilityStatement.rest.resource.operation.extension:expectation",
+      "path" : "CapabilityStatement.rest.resource.operation.extension",
+      "sliceName" : "expectation",
+      "short" : "SHALL | SHOULD | MAY |SHOULD-NOT",
+      "definition" : "Defines the level of expectation associated with a given system capability.",
+      "comment" : "If \"SHALL NOT\" is desired, use the \"prohibited\" modifier extension.  This extension should only be used with CapabilityStatements documenting requirements, not those documenting actual system capabilities.",
+      "alias" : ["extensions",
+      "user content"],
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation|4.0.1"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
       },
       {
         "identity" : "v2",
+        "map" : "N/A"
+      },
+      {
+        "identity" : "rim",
         "map" : "N/A"
       }]
     },
@@ -3947,7 +3879,7 @@
       },
       "type" : [{
         "code" : "canonical",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationDefinition|4.0.1"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationDefinition"]
       }],
       "constraint" : [{
         "key" : "ele-1",
@@ -3965,7 +3897,6 @@
       "path" : "CapabilityStatement.rest.resource.operation.documentation",
       "short" : "Specific details about operation behavior",
       "definition" : "Documentation that describes anything special about the operation behavior, possibly detailing different behavior for system, type and instance-level invocation of the operation.",
-      "comment" : "Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -4002,7 +3933,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4012,10 +3942,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "CapabilityStatement.rest.interaction.id",
@@ -4047,14 +3974,6 @@
     {
       "id" : "CapabilityStatement.rest.interaction.extension",
       "path" : "CapabilityStatement.rest.interaction.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -4177,7 +4096,6 @@
       "path" : "CapabilityStatement.rest.interaction.documentation",
       "short" : "Anything special about operation behavior",
       "definition" : "Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.",
-      "comment" : "Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -4212,7 +4130,17 @@
         "min" : 0,
         "max" : "*"
       },
-      "contentReference" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement#CapabilityStatement.rest.resource.searchParam"
+      "contentReference" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement#CapabilityStatement.rest.resource.searchParam",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "CapabilityStatement.rest.operation",
@@ -4227,9 +4155,19 @@
         "min" : 0,
         "max" : "*"
       },
+      "contentReference" : "http://hl7.org/fhir/StructureDefinition/CapabilityStatement#CapabilityStatement.rest.resource.operation",
       "type" : [{
         "code" : "BackboneElement"
       }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
       "isSummary" : true
     },
     {
@@ -4267,7 +4205,7 @@
           "type" : "value",
           "path" : "url"
         }],
-        "description" : "Extensions are always sliced by (at least) url",
+        "ordered" : false,
         "rules" : "open"
       },
       "short" : "Additional content defined by implementations",
@@ -4314,6 +4252,9 @@
       "sliceName" : "header",
       "short" : "HTTP Header",
       "definition" : "Ermöglicht die Angabe global oder spezifisch geforderter HTTP Header in einem CapabilityStatement oder einer Resource-Interaktion.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -4325,6 +4266,7 @@
         "code" : "Extension",
         "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-header"]
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4338,116 +4280,7 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "CapabilityStatement.rest.operation.extension:responseInfo",
-      "path" : "CapabilityStatement.rest.operation.extension",
-      "sliceName" : "responseInfo",
-      "short" : "HTTP-Antwortinformationen",
-      "definition" : "Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema.",
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "CapabilityStatement.rest.operation.extension:method",
-      "path" : "CapabilityStatement.rest.operation.extension",
-      "sliceName" : "method",
-      "short" : "HTTP Method for FHIR Operation",
-      "definition" : "Gibt an, ob eine FHIR Operation mit GET, POST oder beidem verwendet werden darf.",
-      "min" : 0,
-      "max" : "2",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-method"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "CapabilityStatement.rest.operation.extension:expectation",
-      "path" : "CapabilityStatement.rest.operation.extension",
-      "sliceName" : "expectation",
-      "short" : "SHALL | SHOULD | MAY |SHOULD-NOT",
-      "definition" : "Defines the level of expectation associated with a given system capability.",
-      "comment" : "If \"SHALL NOT\" is desired, use the \"prohibited\" modifier extension.  This extension should only be used with CapabilityStatements documenting requirements, not those documenting actual system capabilities.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation|4.0.1"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
       "isModifier" : false,
@@ -4459,9 +4292,149 @@
       {
         "identity" : "rim",
         "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "CapabilityStatement.rest.operation.extension:responseInfo",
+      "path" : "CapabilityStatement.rest.operation.extension",
+      "sliceName" : "responseInfo",
+      "short" : "HTTP-Antwortinformationen",
+      "definition" : "Definiert Informationen zu HTTP-Antworten für FHIR-Interaktionen, inklusive Statuscode, Beschreibung, Beispiel und Response-Schema.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "CapabilityStatement.rest.operation.extension:method",
+      "path" : "CapabilityStatement.rest.operation.extension",
+      "sliceName" : "method",
+      "short" : "HTTP Method for FHIR Operation",
+      "definition" : "Gibt an, ob eine FHIR Operation mit GET, POST oder beidem verwendet werden darf.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
+      "min" : 0,
+      "max" : "2",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/extension-http-method"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "CapabilityStatement.rest.operation.extension:expectation",
+      "path" : "CapabilityStatement.rest.operation.extension",
+      "sliceName" : "expectation",
+      "short" : "SHALL | SHOULD | MAY |SHOULD-NOT",
+      "definition" : "Defines the level of expectation associated with a given system capability.",
+      "comment" : "If \"SHALL NOT\" is desired, use the \"prohibited\" modifier extension.  This extension should only be used with CapabilityStatements documenting requirements, not those documenting actual system capabilities.",
+      "alias" : ["extensions",
+      "user content"],
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation|4.0.1"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
       },
       {
         "identity" : "v2",
+        "map" : "N/A"
+      },
+      {
+        "identity" : "rim",
         "map" : "N/A"
       }]
     },
@@ -4551,7 +4524,7 @@
       },
       "type" : [{
         "code" : "canonical",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationDefinition|4.0.1"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationDefinition"]
       }],
       "constraint" : [{
         "key" : "ele-1",
@@ -4569,7 +4542,6 @@
       "path" : "CapabilityStatement.rest.operation.documentation",
       "short" : "Specific details about operation behavior",
       "definition" : "Documentation that describes anything special about the operation behavior, possibly detailing different behavior for system, type and instance-level invocation of the operation.",
-      "comment" : "Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -4606,7 +4578,7 @@
       },
       "type" : [{
         "code" : "canonical",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/CompartmentDefinition|4.0.1"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/CompartmentDefinition"]
       }],
       "constraint" : [{
         "key" : "ele-1",
@@ -4635,8 +4607,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "cpb-1"],
+      "condition" : ["cpb-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4646,11 +4617,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "CapabilityStatement.messaging.id",
@@ -4682,14 +4649,6 @@
     {
       "id" : "CapabilityStatement.messaging.extension",
       "path" : "CapabilityStatement.messaging.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -4788,7 +4747,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4798,10 +4756,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "CapabilityStatement.messaging.endpoint.id",
@@ -4833,14 +4788,6 @@
     {
       "id" : "CapabilityStatement.messaging.endpoint.extension",
       "path" : "CapabilityStatement.messaging.endpoint.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -4928,7 +4875,6 @@
       "path" : "CapabilityStatement.messaging.endpoint.protocol",
       "short" : "http | ftp | mllp +",
       "definition" : "A list of the messaging transport protocol(s) identifiers, supported by this endpoint.",
-      "comment" : "Codes may be defined very casually in enumerations or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -4939,7 +4885,6 @@
       "type" : [{
         "code" : "Coding"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4949,6 +4894,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
+      "isSummary" : false,
       "binding" : {
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
@@ -4956,24 +4902,8 @@
         }],
         "strength" : "extensible",
         "description" : "The protocol used for message transport.",
-        "valueSet" : "http://hl7.org/fhir/ValueSet/message-transport|4.0.1"
-      },
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CV"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding rdfs:subClassOf dt:CDCoding"
-      }]
+        "valueSet" : "http://hl7.org/fhir/ValueSet/message-transport"
+      }
     },
     {
       "id" : "CapabilityStatement.messaging.endpoint.address",
@@ -5033,7 +4963,6 @@
       "path" : "CapabilityStatement.messaging.documentation",
       "short" : "Messaging interface behavior details",
       "definition" : "Documentation about the system's messaging capabilities for this endpoint not otherwise documented by the capability statement.  For example, the process for becoming an authorized messaging exchange partner.",
-      "comment" : "Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -5071,7 +5000,6 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -5081,11 +5009,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "CapabilityStatement.messaging.supportedMessage.id",
@@ -5117,14 +5041,6 @@
     {
       "id" : "CapabilityStatement.messaging.supportedMessage.extension",
       "path" : "CapabilityStatement.messaging.supportedMessage.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -5247,7 +5163,6 @@
       "path" : "CapabilityStatement.messaging.supportedMessage.definition",
       "short" : "Message supported by this system",
       "definition" : "Points to a message definition that identifies the messaging event, message structure, allowed responses, etc.",
-      "comment" : "see [Canonical References](http://hl7.org/fhir/R4/references.html#canonical)",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -5257,7 +5172,7 @@
       },
       "type" : [{
         "code" : "canonical",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/MessageDefinition|4.0.1"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/MessageDefinition"]
       }],
       "constraint" : [{
         "key" : "ele-1",
@@ -5285,8 +5200,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
-      "condition" : ["ele-1",
-      "cpb-1"],
+      "condition" : ["cpb-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -5296,11 +5210,7 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
+      "isSummary" : true
     },
     {
       "id" : "CapabilityStatement.document.id",
@@ -5332,14 +5242,6 @@
     {
       "id" : "CapabilityStatement.document.extension",
       "path" : "CapabilityStatement.document.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -5462,7 +5364,6 @@
       "path" : "CapabilityStatement.document.documentation",
       "short" : "Description of document support",
       "definition" : "A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.",
-      "comment" : "Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -5499,7 +5400,7 @@
       },
       "type" : [{
         "code" : "canonical",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/StructureDefinition"]
       }],
       "constraint" : [{
         "key" : "ele-1",

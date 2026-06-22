@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"15"}
-    h3,h4,h5,h6{--heading-prefix:"15"}</style>
+    <style type="text/css">h2{--heading-prefix:"16"}
+    h3,h4,h5,h6{--heading-prefix:"16"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -149,10 +149,13 @@
         <a href="datamatrix-code-client.html">Datamatrix Code</a>
       </li>
       <li>
-        <a href="health-check.html">Health Check</a>
+        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
       </li>
       <li>
-        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
+        <a href="capability-statement-extensions.html">Konfigurationsabfrage</a>
+      </li>
+      <li>
+        <a href="health-check.html">Health Check</a>
       </li>
     </ul>
   </li>
@@ -319,8 +322,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <ol>
     <li>Prüfung zur Autorisierung</li>
     <li>Prüfung Pre-condition</li>
-    <li>falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen</li>
     <li>falls Eingangsartefakt signiert: Signaturprüfung</li>
+    <li>falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen</li>
     <li>Prüfung von Business-Rules</li>
     </ol>
 </requirement>
@@ -402,15 +405,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation auf den Endpunkt /metadata erlauben, in welcher er ein Capability Statement gemäß https://www.hl7.org/fhir/capabilitystatement.html veröffentlicht, welches die vom TI-Flow-Fachdienst verarbeiteten Ressourcen mit den zugehörigen http-Operationen der angebotenen REST-Schnittstelle auflistet: 
-    <ul>
-     <li>Task - GET-, POST-Operation, FHIR-Operations für die Workflow-Steuerung und Einsicht durch den Versicherten </li>
-     <li>MedicationDispense - GET-Operation für das Einsehen der Medikamentinformationen durch den Versicherten </li>
-     <li>Communication - GET-, POST, DELETE-Operation für das Senden, Empfangen und Löschen von Nachrichten </li>
-     <li>AuditEvent - GET-Operation für die Einsicht in Protokolleinträge durch den Versicherten </li>
-     <li>Device - GET-Operation mit statischen Informationen zur serverseitigen Signatur damit der Client eine Information über die FHIR-Kompatibilität zum Fachdienst erhält.</li>
-     </ul>
+     Der TI-Flow-Fachdienst MUSS über den Endpunkt `&#60;modul&#62;/metadata` das FHIR CapabilityStatement des TI-Flow-Fachdienst des jeweilgen Anwendungsmoduls zurückgeben.
 </requirement>
+
+<p><em>Hinweis</em>: Das Capability Statement bietet eine detaillierte Beschreibung der Fähigkeiten des TI-Flow-Fachdienst und ist entscheidend für das Verständnis der unterstützten FHIR-Funktionalitäten. Je Anwendungsmodul (bspw. Arzneimittel oder DiGA) wird ein eigenes CapabilityStatement bereitgestellt.</p>
 
 <h3 id="verordnungs-id">Verordnungs-ID</h3>
 
@@ -469,15 +467,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätzen einheitliche Vorgaben gelten. Laut FHIR Spezifikation wird für XML und JSON Datensätze das Character Encoding "UTF-8" vorgegeben. Byte Order Marks (BOM) werden nicht angeben.</p>
 
-<!-- A_28428  -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-359" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
-    <meta lockversion="false" />
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS beim Verarbeiten von PKCS#7 Enveloping-Daten die Anforderungen zur Verarbeitung von Datensätzen im TI-Flow-Fachdienst anwenden.
-</requirement>
-
 <!-- A_28427 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-360" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Forcieren von UTF-8 ohne BOM" version="1">
     <meta lockversion="false" />
@@ -509,6 +498,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </table> 
     abbrechen.
 </requirement>
+
+<p>Diese Anforderung zur Verarbeitung von Datensätzen ohne BOM gilt auch, wenn PKCS#7 Container deserialisiert werden.</p>
+
+<!-- A_28428  -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-359" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
+    <meta lockversion="false" />
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS beim Verarbeiten von PKCS#7 Enveloping-Daten die Anforderungen zur Verarbeitung von Datensätzen im TI-Flow-Fachdienst anwenden.
+</requirement>
+
+<p>Für die Erstellung von Datensätzen gelten für Clientsysteme folgende Anforderungen.</p>
 
 <!-- A_28429 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-361" title="Character Encoding für TI-Flow-Fachdienst" version="0">
@@ -711,7 +713,7 @@ Der ZETA-Guard übermittelt die Informationen zum Nutzer und das Clientsystem in
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:38+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 22, 2026 06:40+0000">2026-06-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

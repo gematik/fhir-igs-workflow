@@ -131,7 +131,7 @@ funkt. Eignung: Herstellererklärung
 
 funkt. Eignung: Test Produkt/FA
 
-funkt. Eignung: KonformitätsbestätigungDer TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der Versionsnummer gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen, zu dessen aktuell gültiger Profilversion sie mutmaßlich validieren.
+funkt. Eignung: KonformitätsbestätigungDer TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der zweistelligen Versionsnummer (major.minor) gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen, zu dessen aktuell gültiger Profilversion sie mutmaßlich validieren.
 ### Validierung von Extensions
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstellen, dass keine Extension vorhanden ist, die an einer nicht im FHIR-Profil spezifizierten Stelle verwendet wird. Sollte eine solche Extension gefunden werden, gilt der Datensatz als ungültig. In diesem Fall ist die Operation mit dem folgenden Fehler:

@@ -18,8 +18,8 @@ Im Rahmen von Operationaufrufen von Clientsystemen führt der TI-Flow-Fachdienst
 funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS die Prüfungen in der folgenden Reihenfolge durchführen:
 1. Prüfung zur Autorisierung
 1. Prüfung Pre-condition
-1. falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen
 1. falls Eingangsartefakt signiert: Signaturprüfung
+1. falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen
 1. Prüfung von Business-Rules
 
 * Prüfung: Prüfung zur Autorisierung
@@ -47,12 +47,8 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS in seinen Schnittstel
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS in seinen Schnittstellen einen von der Standardfestlegung abweichenden MimeType umsetzen, wenn der jeweilige Client eine entsprechende Anforderung in der Aufrufschnittstelle über den URL-Parameter _format=fhir+xml bzw. _format=fhir+json gemäß http://hl7.org/fhir/http.html#general oder mittels des Accept-Attributs im HTTP-Request-Header als application/fhir+xml bzw. application/fhir+json anfordert, damit Clientsysteme ein für sie leichter verarbeitbares Format in der Antwort erhalten können.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation auf den Endpunkt /metadata erlauben, in welcher er ein Capability Statement gemäß https://www.hl7.org/fhir/capabilitystatement.html veröffentlicht, welches die vom TI-Flow-Fachdienst verarbeiteten Ressourcen mit den zugehörigen http-Operationen der angebotenen REST-Schnittstelle auflistet:
-* Task - GET-, POST-Operation, FHIR-Operations für die Workflow-Steuerung und Einsicht durch den Versicherten 
-* MedicationDispense - GET-Operation für das Einsehen der Medikamentinformationen durch den Versicherten 
-* Communication - GET-, POST, DELETE-Operation für das Senden, Empfangen und Löschen von Nachrichten 
-* AuditEvent - GET-Operation für die Einsicht in Protokolleinträge durch den Versicherten 
-* Device - GET-Operation mit statischen Informationen zur serverseitigen Signatur damit der Client eine Information über die FHIR-Kompatibilität zum Fachdienst erhält.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS über den Endpunkt `<modul>/metadata` das FHIR CapabilityStatement des TI-Flow-Fachdienst des jeweilgen Anwendungsmoduls zurückgeben.
+**Hinweis**: Das Capability Statement bietet eine detaillierte Beschreibung der Fähigkeiten des TI-Flow-Fachdienst und ist entscheidend für das Verständnis der unterstützten FHIR-Funktionalitäten. Je Anwendungsmodul (bspw. Arzneimittel oder DiGA) wird ein eigenes CapabilityStatement bereitgestellt.
 
 ### Verordnungs-ID
 
@@ -74,8 +70,6 @@ Es gelten folgende Anforderungen und Vorgaben zur Verarbeitung und Interpretatio
 
 Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätzen einheitliche Vorgaben gelten. Laut FHIR Spezifikation wird für XML und JSON Datensätze das Character Encoding "UTF-8" vorgegeben. Byte Order Marks (BOM) werden nicht angeben.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Verarbeiten von PKCS#7 Enveloping-Daten die Anforderungen zur Verarbeitung von Datensätzen im TI-Flow-Fachdienst anwenden.
-
 funkt. Eignung: Test Produkt/FADer TI‑Flow‑Fachdienst MUSS eingehende Datensätze strikt als UTF‑8 ohne Byte Order Mark (BOM) decodieren und bei fehlgeschlagener Decodierung oder beim Vorhandensein eines BOM die Verarbeitung mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
@@ -88,6 +82,10 @@ funkt. Eignung: Test Produkt/FADer TI‑Flow‑Fachdienst MUSS eingehende Datens
   * 400 - Bad Request: -
 
 abbrechen.
+Diese Anforderung zur Verarbeitung von Datensätzen ohne BOM gilt auch, wenn PKCS#7 Container deserialisiert werden.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Verarbeiten von PKCS#7 Enveloping-Daten die Anforderungen zur Verarbeitung von Datensätzen im TI-Flow-Fachdienst anwenden.
+Für die Erstellung von Datensätzen gelten für Clientsysteme folgende Anforderungen.
 
 funkt. Eignung: Konformitätsbestätigung
 

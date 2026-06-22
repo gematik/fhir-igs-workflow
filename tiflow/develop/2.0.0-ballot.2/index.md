@@ -47,13 +47,23 @@ Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow
 
 | | |
 | :--- | :--- |
-| Modul IG | Diese Implementation Guides enthalten Inhalte zu einem Modul, bzw. Anwendung innerhalb des TI-Flow-Fachdienst. Diese werden über eine eigenen eigenen URL-Pfad adressiert und sind durch eine eigene Domäne und Akteure gekennzeichnet. Jede Workflow-Anwendung im TI-Flow-Fachdienst wird durch einen eigenen IG beschrieben, der auf Beschreibungen und Verhalten der Kernfunktionalitäten basiert. |
+| Modul IG | Diese Implementation Guides enthalten Inhalte zu einem Modul, bzw. Anwendung innerhalb des TI-Flow-Fachdienst. Diese werden über eine eigenen URL-Pfad adressiert und sind durch eine eigene Domäne und Akteure gekennzeichnet. Jede Workflow-Anwendung im TI-Flow-Fachdienst wird durch einen eigenen IG beschrieben, der auf Beschreibungen und Verhalten der Kernfunktionalitäten basiert. |
 | Funktions IG | Diese Implementation Guides enthalten Beschreibungen zu Endpunkten und Funktionalitäten, die als Bausteine wiederverwendet werden können und daher zentral beschrieben werden. Sie existieren nicht als eigene Anwendung in der TI-Flow-Fachdienst landschaft. |
 
 **Tabelle: **Beschreibung der IG Arten im TI-Flow-Fachdienst
 
 **Abbildung: **Übersicht der FHIR-IGs des TI-Flow-Fachdienst
 
+
+### Methodik
+
+Dieser IG beschreibt die grundlegenden, modulübergreifenden Kernfunktionalitäten des TI-Flow-Fachdienstes. Sobald eine Funktionalität oder ein Endpunkt von mehreren IGs der TI-Flow-Familie genutzt wird, werden die zugehörigen Anforderungen und Beschreibungen zentral in diesem IG dokumentiert. So werden Redundanzen in den einzelnen Modul-IGs vermieden.
+
+Ableitende IGs können weitere Anforderungen und Details zu einer Operation hinzufügen.
+
+Beispielsweise wird die $activate-Operation in allen Modul-IGs semantisch gleich verwendet und umfasst im Allgemeinen dieselben Prüfungsroutinen, etwa QES-Prüfung und FHIR-Validierung. Der Arzneimittel-IG nutzt diese Operation ebenfalls und erweitert sie um modulspezifische Prüfungen.
+
+Modulspezifische Operationen, wie die $dispense-Operation im Arzneimittel IG, wird in den Kernfunktionalitäten nicht beschrieben.
 
 ### Aufbau
 
@@ -112,7 +122,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.1.0"
+    "version" : "7.2.0"
   },
   {
     "id" : "hl7ext",
@@ -140,7 +150,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     "id" : "de_gematik_ti",
     "uri" : "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
     "packageId" : "de.gematik.ti",
-    "version" : "1.3.1"
+    "version" : "1.4.0-ballot.1"
   },
   {
     "id" : "hl7_fhir_uv_xver_r5_r4",
@@ -1724,6 +1734,15 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         }],
         "nameUrl" : "pki-zertifikatspruefung.html",
         "title" : "Zertifikatsprüfung",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "capability-statement-extensions.html"
+        }],
+        "nameUrl" : "capability-statement-extensions.html",
+        "title" : "Konfigurationsabfrage des TI-Flow-Fachdienst",
         "generation" : "markdown"
       },
       {

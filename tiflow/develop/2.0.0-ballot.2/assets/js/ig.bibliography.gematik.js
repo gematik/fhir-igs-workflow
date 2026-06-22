@@ -37,7 +37,7 @@ const literatureData = [
     
     {
         key: "gemIG_TIFlow_erezept",
-        link: "https://gemspec.gematik.de/ig/fhir/tiflow-erezept/1.0.0/index.html",
+        link: "https://gemspec.gematik.de/ig/fhir/tiflow-erezept/2.0.0-ballot.1",
         title: "TIFlow - Verordnungen für Arzneimittel",
         author: "gematik"
     }
