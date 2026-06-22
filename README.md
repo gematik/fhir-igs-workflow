@@ -11,6 +11,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | `2.0.0-ballot.2` | `TMD-3168-architekturbild-ti-flow-fachdienst-finalisieren` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/TMD-3168-architekturbild-ti-flow-fachdienst-finalisieren/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `TMD-3180-beschreibung-der-fqdn-und-pfadadressierung-der-anwendungsmodule` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/TMD-3180-beschreibung-der-fqdn-und-pfadadressierung-der-anwendungsmodule/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `architecture-image` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/architecture-image/2.0.0-ballot.2) |
+| `2.0.0-ballot.2` | `audit-event-service` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/audit-event-service/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/develop/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `ti-common-paging-sorting` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/ti-common-paging-sorting/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `ti-flow-system-diagram` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/ti-flow-system-diagram/2.0.0-ballot.2) |
