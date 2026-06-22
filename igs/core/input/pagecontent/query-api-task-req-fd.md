@@ -234,7 +234,7 @@ Ergänzung der stündlichen Abfrage des JWKS zu A_26449 - Beziehen der Schlüsse
 Der TI-Flow-Fachdienst prüft zur Umsetzung von A_27016-* das Signaturzertifikat des PoPP-Service wie folgt:
 
 <!-- A_28724 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-106" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Prüfung Signaturzertifikat PoPP-Service" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-106" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Prüfung Signaturzertifikat PoPP-Service" version="1">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
