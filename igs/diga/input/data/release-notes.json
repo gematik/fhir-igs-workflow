@@ -1,7 +1,7 @@
 {
     "releases": [
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "requirements": [
                 {
                     "title": "TI-Flow-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung",
@@ -14,7 +14,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-reject-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1,5 +1,28 @@\n-Der E-Rezept-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 162 HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle\n+Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 162 HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n  <ul>\n  <li>oid_kostentraeger</li>\n  </ul>\n- die Operation am Fachdienst aufrufen, damit die Verordnung nicht durch einen Unberechtigten zurückgewiesen werden kann.\n+ die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit die Verordnung nicht durch einen Unberechtigten zurückgewiesen werden kann.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung\n+TI-Flow-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "E-Rezept-FdV: TIFlow-DIGA - verpflichtende Anwendungsfälle",
@@ -27,7 +33,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "menu-technische-umsetzung-anwendungsfaelle.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1,11 +1,11 @@\n Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle\n  <ul>\n- <li>UC 3.1 – E-Rezepte durch Versicherten abrufen</li>\n- <li>UC 3.2 – E-Rezept durch Versicherten löschen</li>\n+ <li>UC 3.1 - E-Rezepte durch Versicherten abrufen</li>\n+ <li>UC 3.2 - E-Rezept durch Versicherten löschen</li>\n  <li>Kostenträger suchen</li>\n- <li>UC 3.3 – Nachricht durch Versicherten übermitteln</li>\n- <li>UC 3.4 – Nachricht durch Versicherten empfangen</li>\n- <li>UC 3.8 – Nachricht durch Versicherten löschen</li>\n+ <li>UC 3.3 - Nachricht durch Versicherten übermitteln</li>\n+ <li>UC 3.4 - Nachricht durch Versicherten empfangen</li>\n+ <li>UC 3.8 - Nachricht durch Versicherten löschen</li>\n  <li>UC 3.5 - Protokolldaten abrufen</li>\n  </ul>\n  umsetzen.",
+                            "title": "",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe",
@@ -40,7 +52,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-activate-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1,4 +1,4 @@\n-Der E-Rezept-Fachdienst MUSS die Aktivierung eines Tasks mit Flowtype 162 mit dem HTTP-Status-Code 400 abbrechen, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die der folgenden professionOID entspricht:\n+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die einer der folgenden professionOID entspricht:\n  <ul>\n  <li>oid_arzt</li>\n  <li>oid_zahnarzt</li>\n@@ -6,4 +6,27 @@\n  <li>oid_ps_psychotherapeut</li>\n  <li>oid_kuj_psychotherapeut</li>\n  </ul>\n- damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.\n+ die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>400 - Bad Request</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>-</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe\n+TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs",
@@ -66,7 +84,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-activate-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1,2 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der http-POST-Operation /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den \"Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI\" beschriebenen Prüfalgorithmus validieren.<br>\n- Der E-Rezept-Fachdienst MUSS bei einer fehlerhaften Prüfung mit einem Http-Fehler 400 (Bad Request) abbrechen, sowie die Fehlermeldung \"Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.\" in Form eines OperationOutcome ausliefern.\n+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den \"Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI\" beschriebenen Prüfalgorithmus validieren und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>400 - Bad Request</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_EREZEPT_PZN_INVALID</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.</td>\n+ </tr>\n+ </table> \n+ abbrechen.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest\n+TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type",
@@ -79,7 +103,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-activate-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, obCoverage.type.coding.code nicht mit dem Wert \"PKV\" belegt ist und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden.\n+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, dass Coverage.type.coding.code nicht mit dem Wert \"PKV\" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>400 - Bad Request</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_COVERAGE_TYPE_MISMATCH</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>-</td>\n+ </tr>\n+ </table> \n+ abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type\n+TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative IK",
@@ -92,7 +122,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-activate-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aktivieren eines Task des Flowtype Task.extension:flowType = 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, ob die Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist und in diesem Fall die Operation mit Http-Fehlercode 400 abbrechen, um sicherzustellen, dass dieser Workflow nicht für Verordnungen genutzt wird, die zu Lasten von Unfallkassen oder Berufsgenossenschaften gehen.\n+Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, ob die Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist und in diesem Fall die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>400 - Bad Request</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_ALTERNATIVE_IK_FORBIDDEN</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>-</td>\n+ </tr>\n+ </table> \n+ abbrechen, um sicherzustellen, dass dieser Workflow nicht für Verordnungen genutzt wird, die zu Lasten von Unfallkassen oder Berufsgenossenschaften gehen.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative IK\n+TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative IK",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung",
@@ -105,7 +141,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-accept-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1,5 +1,28 @@\n-Der E-Rezept-Fachdienst MUSS beim Abrufen eines Tasks für eine Verordnung mit Flowtype 162 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle\n+Der TI-Flow-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 162 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n  <ul>\n  <li>oid_kostentraeger</li>\n  </ul>\n- die Operation am Fachdienst aufrufen, damit die Verordnung nicht durch einen Unberechtigten abgerufen werden kann.\n+ die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit die Verordnung nicht durch einen Unberechtigten abgerufen werden kann.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung\n+TI-Flow-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Task erzeugen - Flowtype 162 - Ergänzung Performer-Typ für Einlöseinstitutstyp",
@@ -144,7 +186,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-close-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1,5 +1,28 @@\n-Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks für eine Verordnung mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#60; die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle\n+Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#60; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n  <ul>\n  <li>oid_kostentraeger</li>\n  </ul>\n- die Operation am Fachdienst aufrufen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.\n+ die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung\n+TI-Flow-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Versichertenprotokoll zu DiGA-Operationen",
@@ -170,7 +218,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-close-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks für ein E-Rezept mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#62; mit Flowtype 162 sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht. Andernfalls ist die Operation mit einem Fehler abzubrechen, und im OperationOutcome muss der Text \"Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen für digitale Gesundheitsanwendungen zulässig.\" zurückgegeben werden.\n+Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#62; sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht und anderenfalls die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>400 - Bad Request</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_MEDICATION_DISPENSE_INVALID</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen für digitale Gesundheitsanwendungen zulässig.</td>\n+ </tr>\n+ </table>\n+ abbrechen.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense\n+TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 162 - Rollenprüfung",
@@ -183,7 +237,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-abort-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1,4 +1,4 @@\n-Der E-Rezept-Fachdienst MUSS beim Löschen eines Tasks für eine Verordnung mit Flowtype 162 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die Rolle \"professionOID\" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle\n+Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks mit Flowtype 162 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n  <ul>\n  <li>oid_versicherter</li>\n  <li>oid_praxis_arzt</li>\n@@ -7,4 +7,27 @@\n  <li>oid_praxis_psychotherapeut</li>\n  <li>oid_institution-vorsorge-reha</li>\n  </ul>\n- die Operation am Fachdienst aufrufen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.\n+ die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 162 - Rollenprüfung\n+TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 162 - Rollenprüfung",
+                            "conformance": ""
+                        }
+                    }
                 }
             ]
         },
@@ -192,7 +252,7 @@
             "requirements": [
                 {
                     "title": "E-Rezept-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung",
-                    "key": "IG-PRE-TIFLOW-DIGA-1",
+                    "key": "IG-TIFLOW-DIGA-1",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -205,7 +265,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Kostenträger suchen - Telematik-ID im Verzeichnisdienst suchen",
-                    "key": "IG-PRE-TIFLOW-DIGA-10",
+                    "key": "IG-TIFLOW-DIGA-10",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -218,7 +278,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Kostenträger Suchen - Liste verfügbarer Kostenträger ermitteln",
-                    "key": "IG-PRE-TIFLOW-DIGA-11",
+                    "key": "IG-TIFLOW-DIGA-11",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -231,7 +291,7 @@
                 },
                 {
                     "title": "PS verordnende LEI: TIFlow-DIGA - verpflichtende Anwendungsfälle",
-                    "key": "IG-PRE-TIFLOW-DIGA-12",
+                    "key": "IG-TIFLOW-DIGA-12",
                     "actor": [
                         "PS_E-Rezept_verordnend"
                     ],
@@ -244,7 +304,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: TIFlow-DIGA - verpflichtende Anwendungsfälle",
-                    "key": "IG-PRE-TIFLOW-DIGA-13",
+                    "key": "IG-TIFLOW-DIGA-13",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -257,7 +317,7 @@
                 },
                 {
                     "title": "CS Kostenträger: TIFlow-DIGA - verpflichtende Anwendungsfälle",
-                    "key": "IG-PRE-TIFLOW-DIGA-14",
+                    "key": "IG-TIFLOW-DIGA-14",
                     "actor": [
                         "CS_E-Rezept_KTR"
                     ],
@@ -270,7 +330,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe",
-                    "key": "IG-PRE-TIFLOW-DIGA-15",
+                    "key": "IG-TIFLOW-DIGA-15",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -283,7 +343,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs",
-                    "key": "IG-PRE-TIFLOW-DIGA-16",
+                    "key": "IG-TIFLOW-DIGA-16",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -296,7 +356,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest",
-                    "key": "IG-PRE-TIFLOW-DIGA-17",
+                    "key": "IG-TIFLOW-DIGA-17",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -309,7 +369,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type",
-                    "key": "IG-PRE-TIFLOW-DIGA-18",
+                    "key": "IG-TIFLOW-DIGA-18",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -322,7 +382,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative IK",
-                    "key": "IG-PRE-TIFLOW-DIGA-19",
+                    "key": "IG-TIFLOW-DIGA-19",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -335,7 +395,7 @@
                 },
                 {
                     "title": "CS Kostenträger: Nachricht versenden - Flowtype 162 - Communication erstellen",
-                    "key": "IG-PRE-TIFLOW-DIGA-2",
+                    "key": "IG-TIFLOW-DIGA-2",
                     "actor": [
                         "CS_E-Rezept_KTR"
                     ],
@@ -348,7 +408,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter",
-                    "key": "IG-PRE-TIFLOW-DIGA-20",
+                    "key": "IG-TIFLOW-DIGA-20",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -361,7 +421,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung",
-                    "key": "IG-PRE-TIFLOW-DIGA-21",
+                    "key": "IG-TIFLOW-DIGA-21",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -374,7 +434,7 @@
                 },
                 {
                     "title": "PS verordnende LEI: keine elektronische Verordnung einer DiGA zu Lasten BG/UK",
-                    "key": "IG-PRE-TIFLOW-DIGA-22",
+                    "key": "IG-TIFLOW-DIGA-22",
                     "actor": [
                         "PS_E-Rezept_verordnend"
                     ],
@@ -387,7 +447,7 @@
                 },
                 {
                     "title": "E-Rezept: Anwendung des IG 'Verordnungen für Digitale Gesundheitsanwendungen (DiGA)' für Workflow 162",
-                    "key": "IG-PRE-TIFLOW-DIGA-23",
+                    "key": "IG-TIFLOW-DIGA-23",
                     "actor": [
                         "CS_E-Rezept_KTR",
                         "eRp_FD",
@@ -402,7 +462,7 @@
                 },
                 {
                     "title": "E-Rezept: Umsetzung des Moduls 'Verordnungen für Digitale Gesundheitsanwendungen (DiGA)'",
-                    "key": "IG-PRE-TIFLOW-DIGA-24",
+                    "key": "IG-TIFLOW-DIGA-24",
                     "actor": [
                         "CS_E-Rezept_KTR",
                         "eRp_FD",
@@ -417,7 +477,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Anzeige des Freischaltcodes",
-                    "key": "IG-PRE-TIFLOW-DIGA-25",
+                    "key": "IG-TIFLOW-DIGA-25",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -430,7 +490,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Supportinformationen für DiGA-App",
-                    "key": "IG-PRE-TIFLOW-DIGA-26",
+                    "key": "IG-TIFLOW-DIGA-26",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -443,7 +503,7 @@
                 },
                 {
                     "title": "CS Kostenträger: Dispensierinformationen - Flowtype 162 - MedicationDispense erstellen",
-                    "key": "IG-PRE-TIFLOW-DIGA-27",
+                    "key": "IG-TIFLOW-DIGA-27",
                     "actor": [
                         "CS_E-Rezept_KTR"
                     ],
@@ -456,7 +516,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung",
-                    "key": "IG-PRE-TIFLOW-DIGA-3",
+                    "key": "IG-TIFLOW-DIGA-3",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -469,7 +529,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense",
-                    "key": "IG-PRE-TIFLOW-DIGA-4",
+                    "key": "IG-TIFLOW-DIGA-4",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -482,7 +542,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: E-Rezept zuweisen - Flowtype 162 - Kostenträger auswählen",
-                    "key": "IG-PRE-TIFLOW-DIGA-5",
+                    "key": "IG-TIFLOW-DIGA-5",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -495,7 +555,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Verordnung zuweisen - Nachricht erstellen",
-                    "key": "IG-PRE-TIFLOW-DIGA-6",
+                    "key": "IG-TIFLOW-DIGA-6",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -508,7 +568,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 162 - Rollenprüfung",
-                    "key": "IG-PRE-TIFLOW-DIGA-7",
+                    "key": "IG-TIFLOW-DIGA-7",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -521,7 +581,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: optional: Kostenträger suchen",
-                    "key": "IG-PRE-TIFLOW-DIGA-8",
+                    "key": "IG-TIFLOW-DIGA-8",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -534,7 +594,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Kostenträger suchen - IKNR aus ACCESS_TOKEN beziehen",
-                    "key": "IG-PRE-TIFLOW-DIGA-9",
+                    "key": "IG-TIFLOW-DIGA-9",
                     "actor": [
                         "eRp_FdV"
                     ],

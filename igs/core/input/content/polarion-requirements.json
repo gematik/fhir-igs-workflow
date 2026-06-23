@@ -1,7 +1,7 @@
 {
     "document_info": {
         "id": "gemIG_TIFlow_core",
-        "title": "TIFlow - Kernfunktionalitäten",
+        "title": "Implementation Guide TIFlow - Kernfunktionalitäten",
         "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2",
         "version": "2.0.0-ballot.2",
         "date": "1779667200",
@@ -1999,7 +1999,7 @@
         {
             "key": "IG-TIFLOW-CORE-159",
             "title": "CS: HTTP-Header user-agent",
-            "version": 1,
+            "version": 0,
             "status": "RETIRED",
             "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle HTTP-Requests an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header user-agent gemäß [RFC7231] mit &lt;Produktname&gt;/&lt;Produktversion&gt; &lt;Herstellername&gt;/&lt;client_id&gt; mit \n <ul>\n <li>&lt;Produktname&gt; gemäß eigener Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\\-\\.]</li>\n <li>&lt;Produktversion&gt; gemäß Produktidentifikation</li>\n <li>&lt;Herstellername&gt; gemäß eigener Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\\-\\.] </li>\n <li>&lt;client_id&gt; gemäß Registrierung bei der gematik</li>\n </ul>\n des Clientsystems befüllen.",
             "conformance": "SHALL",
@@ -2070,7 +2070,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/kommunikation-dienste-ti.html#IG-TIFLOW-CORE-159-01"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/kommunikation-dienste-ti.html#IG-TIFLOW-CORE-159"
         },
         {
             "key": "IG-TIFLOW-CORE-16",
@@ -4185,9 +4185,9 @@
         {
             "key": "IG-TIFLOW-CORE-221",
             "title": "TI-Flow-Fachdienst - Task erzeugen - Generierung Rezept-ID",
-            "version": 0,
+            "version": 1,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Anlegen eines neuen Tasks eine Rezept-ID gemäß der Bildungsregel [gemSpec_DM_eRp#A_19217-*] generieren und als Identifier mit Namingsystem https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId dem Task hinzufügen und sicherstellen, dass diese Rezept-ID innerhalb von 11 Jahren nach ihrer Erzeugung nicht erneut vergeben wird, damit es innerhalb der Aufbewahrungsfrist der Abrechnungsdaten bei den Krankenkassen zu keinen Dubletten kommt.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Anlegen eines neuen Tasks eine Rezept-ID gemäß der Bildungsregel in [IG-TIFLOW-CORE-357] generieren und als Identifier mit Namingsystem https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId dem Task hinzufügen und sicherstellen, dass diese Rezept-ID innerhalb von 11 Jahren nach ihrer Erzeugung nicht erneut vergeben wird, damit es innerhalb der Aufbewahrungsfrist der Abrechnungsdaten bei den Krankenkassen zu keinen Dubletten kommt.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4204,7 +4204,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/op-create-req-fd.html#IG-TIFLOW-CORE-221"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/op-create-req-fd.html#IG-TIFLOW-CORE-221-01"
         },
         {
             "key": "IG-TIFLOW-CORE-222",
@@ -5614,9 +5614,9 @@
         {
             "key": "IG-TIFLOW-CORE-263",
             "title": "CS: Verständliche Fehlermeldung",
-            "version": 0,
+            "version": 1,
             "status": "ACTIVE",
-            "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS im Falle von Fehlern Fehlermeldungen bereitstellen, die es den Mitarbeitern der Leistungserbringerinstitution ermöglichen, die Ursache des Fehlers zu identifizieren und mögliche Gegenmaßnahmen zu ergreifen.",
+            "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS im Falle von Fehlern Fehlermeldungen bereitstellen, die es dem Nutzer ermöglichen, die Ursache des Fehlers zu identifizieren und mögliche Gegenmaßnahmen zu ergreifen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -5659,7 +5659,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/fehlerbehandlung-client.html#IG-TIFLOW-CORE-263"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/fehlerbehandlung-client.html#IG-TIFLOW-CORE-263-01"
         },
         {
             "key": "IG-TIFLOW-CORE-264",
@@ -5801,9 +5801,9 @@
         {
             "key": "IG-TIFLOW-CORE-267",
             "title": "CS: Exponential Backoff bei Verbindungsfehlern",
-            "version": 0,
+            "version": 1,
             "status": "ACTIVE",
-            "text": "Das Clientsystem des TI-Flow-Fachdienstes SOLL bei serverseitigen Fehlermeldungen, die auf eine Überlastung des Zielsystems schließen lassen (z.B. http-status 5xx, 429 - too many requests, etc.), erneute Verbindungsversuche nach dem Prinzips des Exponential Backoffs [ExpBack] durchführen.",
+            "text": "Das Clientsystem des TI-Flow-Fachdienstes SOLL bei serverseitigen Fehlermeldungen, die auf eine Überlastung des Zielsystems schließen lassen (z.B. http-status 5xx, 429 - too many requests, etc.), erneute Verbindungsversuche nach dem Prinzips des Exponential Backoffs durchführen.",
             "conformance": "SHOULD",
             "characteristics": [
                 {
@@ -5846,7 +5846,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/fehlerbehandlung-client.html#IG-TIFLOW-CORE-267"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/fehlerbehandlung-client.html#IG-TIFLOW-CORE-267-01"
         },
         {
             "key": "IG-TIFLOW-CORE-268",
@@ -8940,7 +8940,7 @@
             "key": "IG-TIFLOW-CORE-364",
             "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Betroffene Endpunkte",
             "version": 0,
-            "status": "ACTIVE",
+            "status": "RETIRED",
             "text": "Der TI-Flow-Fachdienst MUSS das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten auf folgende Endpunkte anwenden: Tabelle #: TAB_eRPFD_021 Endpunkte des TI-Flow-Fachdienst, die das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten bereitstellen müssen \n \n <table>\n<thead>\n<tr>\n<th>Endpunkt</th>\n<th>Client</th>\n<th>Inhalt der Response</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>GET /Task</td>\n<td>Versicherte, Abgebende LEI</td>\n<td>Liste von verfügbaren Tasks im TI-Flow-Fachdienst</td>\n</tr>\n<tr>\n<td>GET /Communication</td>\n<td>Versicherte, Abgebende LEI</td>\n<td>Liste von verfügbaren Communications</td>\n</tr>\n<tr>\n<td>GET /MedicationDispense</td>\n<td>Versicherte</td>\n<td>Liste von eingestellten MedicationDispenses von Verordnungen</td>\n</tr>\n<tr>\n<td>GET /ChargeItem</td>\n<td>Versicherte</td>\n<td>Liste von Abrechnungsinformationen von Verordnungen</td>\n</tr>\n<tr>\n<td>GET /AuditEvent</td>\n<td>Versicherte</td>\n<td>Liste von Protokolleinträgen des Versicherten</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Endpunkte des TI-Flow-Fachdienst, die das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten bereitstellen müssen</figcaption></div>",
             "conformance": "SHALL",
             "characteristics": [
@@ -8964,7 +8964,7 @@
             "key": "IG-TIFLOW-CORE-365",
             "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filter- und Sortierkriterien",
             "version": 0,
-            "status": "ACTIVE",
+            "status": "RETIRED",
             "text": "Der TI-Flow-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten den FHIR-Suchparameter \"_sort\" unterstützen und für die folgenden Ressourcen entsprechende Such- und Sortierkriterien bereitstellen:\n \n<table>\n<thead>\n<tr>\n<th>Endpunkt</th>\n<th>Suchkriterien</th>\n<th>Sortierbar</th>\n<th>Auszuwertendes Feld</th>\n<th>Datentyp</th>\n</tr>\n</thead>\n<tbody>\n\n<tr>\n<td rowspan=\"5\">GET /Task</td>\n<td>authored-on</td>\n<td>Ja (default)</td>\n<td>Task.authoredOn</td>\n<td>date</td>\n</tr>\n<tr>\n<td>status</td>\n<td>Nein</td>\n<td>Task.status</td>\n<td>token</td>\n</tr>\n<tr>\n<td>expiry-date</td>\n<td>Ja</td>\n<td>Task.extension:expiryDate.valueDate</td>\n<td>date</td>\n</tr>\n<tr>\n<td>accept-date</td>\n<td>Ja</td>\n<td>Task.extension:acceptDate.valueDate</td>\n<td>date</td>\n</tr>\n<tr>\n<td>modified</td>\n<td>Ja</td>\n<td>Task.lastModified</td>\n<td>date</td>\n</tr>\n\n<tr>\n<td rowspan=\"2\">GET /AuditEvent</td>\n<td>date</td>\n<td>Ja (default)</td>\n<td>AuditEvent.recorded</td>\n<td>date</td>\n</tr>\n<tr>\n<td>entity</td>\n<td>Nein</td>\n<td>AuditEvent.entity.what.identifier.value</td>\n<td>string</td>\n</tr>\n\n<tr>\n<td rowspan=\"4\">GET /Communication</td>\n<td>sent</td>\n<td>Ja (default)</td>\n<td>Communication.sent</td>\n<td>date</td>\n</tr>\n<tr>\n<td>received</td>\n<td>Ja</td>\n<td>Communication.received</td>\n<td>date</td>\n</tr>\n<tr>\n<td>recipient</td>\n<td>Nein</td>\n<td>Communication.recipient.identifier.value</td>\n<td>string</td>\n</tr>\n<tr>\n<td>sender</td>\n<td>Nein</td>\n<td>Communication.sender.identifier.value</td>\n<td>string</td>\n</tr>\n\n<tr>\n<td rowspan=\"3\">GET /MedicationDispense</td>\n<td>whenhandedover</td>\n<td>Ja (default)</td>\n<td>MedicationDispense.whenHandedOver</td>\n<td>date</td>\n</tr>\n<tr>\n<td>whenprepared</td>\n<td>Ja</td>\n<td>MedicationDispense.whenPrepared</td>\n<td>date</td>\n</tr>\n<tr>\n<td>performer</td>\n<td>Nein</td>\n<td>MedicationDispense.performer.actor.identifier.value</td>\n<td>string</td>\n</tr>\n\n<tr>\n<td rowspan=\"2\">GET /ChargeItem</td>\n<td>entered-date</td>\n<td>Ja (default)</td>\n<td>ChargeItem.enteredDate</td>\n<td>date</td>\n</tr>\n<tr>\n<td>_lastUpdated</td>\n<td></td>\n<td>ChargeItem.meta.lastUpdated</td>\n<td>date</td>\n</tr>\n\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Filter- und Sortierkriterien der Endpunkte für die Handhabung der Rückgabe von mehreren FHIR-Objekten</figcaption></div>",
             "conformance": "SHALL",
             "characteristics": [
@@ -8988,7 +8988,7 @@
             "key": "IG-TIFLOW-CORE-366",
             "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen",
             "version": 0,
-            "status": "ACTIVE",
+            "status": "RETIRED",
             "text": "Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierung nach mehreren Kriterien ermöglichen, indem entsprechend der Reihenfolge der angegebenen Kriterien sortiert wird.",
             "conformance": "SHALL",
             "characteristics": [
@@ -9012,7 +9012,7 @@
             "key": "IG-TIFLOW-CORE-367",
             "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen",
             "version": 0,
-            "status": "ACTIVE",
+            "status": "RETIRED",
             "text": "Der TI-Flow-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Ressourcen nach folgenden Kriterien aufsteigend sortieren, wenn der Client keine Sortierung im Request angefragt hat: \n \n <table>\n<thead>\n<tr>\n<th>Endpunkt</th>\n<th>Default Sortierparameter</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>GET /Task</td>\n<td>authored-on</td>\n</tr>\n<tr>\n<td>GET /Communication</td>\n<td>sent</td>\n</tr>\n<tr>\n<td>GET /MedicationDispense</td>\n<td>whenhandedover</td>\n</tr>\n<tr>\n<td>GET /ChargeItem</td>\n<td>entered-date</td>\n</tr>\n<tr>\n<td>GET /AuditEvent</td>\n<td>date</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Default Sortierparameter für die Handhabung der Rückgabe von mehreren FHIR-Objekten</figcaption></div>",
             "conformance": "SHALL",
             "characteristics": [
@@ -9036,7 +9036,7 @@
             "key": "IG-TIFLOW-CORE-368",
             "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortierreihenfolge der Einträge",
             "version": 0,
-            "status": "ACTIVE",
+            "status": "RETIRED",
             "text": "Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierreihenfolge umkehren, wenn der Client das Präfix \"-\" am Sortierkriterium angibt.",
             "conformance": "SHALL",
             "characteristics": [
@@ -9060,7 +9060,7 @@
             "key": "IG-TIFLOW-CORE-369",
             "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filteroperatoren für Datumsabfragen",
             "version": 0,
-            "status": "ACTIVE",
+            "status": "RETIRED",
             "text": "Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Filteroperatoren für Suchkriterien anbieten, deren Datentyp \"date\" ist: \n \n<table>\n<thead>\n<tr>\n<th>Operator</th>\n<th>Übersetzung</th>\n<th>Bedeutung</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>eq</td>\n<td>equals</td>\n<td>ist gleich (=)</td>\n</tr>\n<tr>\n<td>ne</td>\n<td>not equals</td>\n<td>ist nicht gleich (!=)</td>\n</tr>\n<tr>\n<td>gt</td>\n<td>greater than</td>\n<td>größer als (&gt;)</td>\n</tr>\n<tr>\n<td>lt</td>\n<td>less than</td>\n<td>kleiner als (&lt;)</td>\n</tr>\n<tr>\n<td>ge</td>\n<td>greater equals</td>\n<td>größer gleich (&gt;=)</td>\n</tr>\n<tr>\n<td>le</td>\n<td>less equals</td>\n<td>kleiner gleich (&lt;=)</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Filteroperatoren für Datumsabfragen</figcaption></div>",
             "conformance": "SHALL",
             "characteristics": [
@@ -9108,7 +9108,7 @@
             "key": "IG-TIFLOW-CORE-370",
             "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - URL-Parameter für Paginierung",
             "version": 0,
-            "status": "ACTIVE",
+            "status": "RETIRED",
             "text": "Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR ermöglichen und folgende URL-Parameter unterstützen: \n \n<table>\n<thead>\n<tr>\n<th>URL-Parameter</th>\n<th>Bedeutung und Funktion</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>_count</td>\n<td>Anzahl der Elemente (Bundle.entry) im Bundle. Maximum ist 50.</td>\n</tr>\n<tr>\n<td>__offset</td>\n<td>Nullbasierter Index der Ergebnismenge ab welchem die Elemente angezeigt werden. Default ist 0.</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Paginierungsparameter für die Handhabung der Rückgabe von mehreren FHIR-Objekten</figcaption></div>",
             "conformance": "SHALL",
             "characteristics": [
@@ -9132,7 +9132,7 @@
             "key": "IG-TIFLOW-CORE-371",
             "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Link Relations für Paginierung",
             "version": 0,
-            "status": "ACTIVE",
+            "status": "RETIRED",
             "text": "Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Link Relations unter Bundle.link generieren, sofern diese erzeugt werden können: \n \n<table>\n<thead>\n<tr>\n<th>URL-Parameter</th>\n<th>Bedeutung und Funktion</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>_count</td>\n<td>Anzahl der Elemente (Bundle.entry) im Bundle. Maximum ist 50.</td>\n</tr>\n<tr>\n<td>__offset</td>\n<td>Nullbasierter Index der Ergebnismenge ab welchem die Elemente angezeigt werden. Default ist 0.</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Link Relations für die Handhabung der Rückgabe von mehreren FHIR-Objekten</figcaption></div>",
             "conformance": "SHALL",
             "characteristics": [
@@ -9156,7 +9156,7 @@
             "key": "IG-TIFLOW-CORE-372",
             "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Paginierung",
             "version": 0,
-            "status": "ACTIVE",
+            "status": "RETIRED",
             "text": "Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR für folgende Endpunkte mit den jeweiligen Parametern unterstützen \n \n<table>\n<thead>\n<tr>\n<th>Endpunkt</th>\n<th>Paginierung</th>\n<th>Total-Count</th>\n<th>Link-Relations</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>GET /Task</td>\n<td>Ja</td>\n<td>Ja</td>\n<td>self, next, prev, first, last</td>\n</tr>\n<tr>\n<td>GET /Communication</td>\n<td>Ja</td>\n<td>Ja</td>\n<td>self, next, prev, first, last</td>\n</tr>\n<tr>\n<td>GET /MedicationDispense</td>\n<td>Nein</td>\n<td>immer \"0\"</td>\n<td>-</td>\n</tr>\n<tr>\n<td>GET /ChargeItem</td>\n<td>Ja</td>\n<td>Ja</td>\n<td>self, next, prev, first, last</td>\n</tr>\n<tr>\n<td>GET /AuditEvent</td>\n<td>Ja</td>\n<td>immer \"0\"</td>\n<td>self, next, first</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Endpunkte mit Paginierung</figcaption></div>",
             "conformance": "SHALL",
             "characteristics": [
@@ -9180,7 +9180,7 @@
             "key": "IG-TIFLOW-CORE-373",
             "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Erhalten von URL-Parametern",
             "version": 0,
-            "status": "ACTIVE",
+            "status": "RETIRED",
             "text": "Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten und Generierung von URLs der Link Relations die vom Client angegebenen Filter- und Sortierkriterien verwerten und erhalten.",
             "conformance": "SHALL",
             "characteristics": [
@@ -9779,9 +9779,9 @@
         {
             "key": "IG-TIFLOW-CORE-396",
             "title": "TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Verordnungsdaten",
-            "version": 0,
+            "version": 1,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS zur Bereitstellung von Verordnungsdaten an den ePA Medication Service die Operation [base]/$provide-prescription-erp des Medication Service aufrufen.",
+            "text": "Der TI-Flow-Fachdienst MUSS zur Bereitstellung von Verordnungsdaten an den ePA Medication Service die Operation `providePrescription_MedicationSvc` des Medication Service aufrufen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -9798,14 +9798,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-epa-ms.html#IG-TIFLOW-CORE-396"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-epa-ms.html#IG-TIFLOW-CORE-396-01"
         },
         {
             "key": "IG-TIFLOW-CORE-397",
             "title": "TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Verordnungsdaten",
-            "version": 0,
+            "version": 1,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS, um die Löschinformation für Verordnungsdaten an den ePA Medication Service zu übermitteln, die Operation [base]/$cancel-prescription-erp des Medication Service aufrufen.",
+            "text": "Der TI-Flow-Fachdienst MUSS, um die Löschinformation für Verordnungsdaten an den ePA Medication Service zu übermitteln, die Operation `cancelPrescription_MedicationSvc` des Medication Service aufrufen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -9822,14 +9822,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-epa-ms.html#IG-TIFLOW-CORE-397"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-epa-ms.html#IG-TIFLOW-CORE-397-01"
         },
         {
             "key": "IG-TIFLOW-CORE-398",
             "title": "TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Dispensierinformationen",
-            "version": 0,
+            "version": 1,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS zur Bereitstellung von Dispensierinformationen an den ePA Medication Service die Operation [base]/$provide-dispensation-erp des Medication Service mit rxDispensation.status gemäß dem bereitgestellten Status aufrufen.",
+            "text": "Der TI-Flow-Fachdienst MUSS zur Bereitstellung von Dispensierinformationen an den ePA Medication Service die Operation `provideDispensation_MedicationSvc` des Medication Service mit rxDispensation.status gemäß dem bereitgestellten Status aufrufen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -9846,14 +9846,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-epa-ms.html#IG-TIFLOW-CORE-398"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-epa-ms.html#IG-TIFLOW-CORE-398-01"
         },
         {
             "key": "IG-TIFLOW-CORE-399",
             "title": "TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Dispensierinformationen",
-            "version": 0,
+            "version": 1,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS, um die Löschinformation für Dispensierinformationen an den ePA Medication Service zu übermitteln, die Operation [base]/$cancel-dispensation-erp des Medication Service aufrufen.",
+            "text": "Der TI-Flow-Fachdienst MUSS, um die Löschinformation für Dispensierinformationen an den ePA Medication Service zu übermitteln, die Operation `cancelDispensation_MedicationSvc` des Medication Service aufrufen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -9870,7 +9870,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-epa-ms.html#IG-TIFLOW-CORE-399"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-epa-ms.html#IG-TIFLOW-CORE-399-01"
         },
         {
             "key": "IG-TIFLOW-CORE-4",
@@ -11124,6 +11124,30 @@
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-schnittstellen-generelle-prinzipien.html#IG-TIFLOW-CORE-438"
         },
         {
+            "key": "IG-TIFLOW-CORE-439",
+            "title": "TI-Flow-Fachdienst - Task erzeugen - Task-ID Nummernkreis",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Erzeugen des ersten Tasks aller Workflowtypen sicherstellen, dass der 12-stellige Zählerstand der Rezept-ID gleich 010.000.000.000 ist.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/op-create-req-fd.html#IG-TIFLOW-CORE-439"
+        },
+        {
             "key": "IG-TIFLOW-CORE-44",
             "title": "E-Rezept-FdV: E-Rezept löschen - Hinweis zu Daten in ePA",
             "version": 0,
@@ -11146,6 +11170,54 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/op-abort-req-fdv.html#IG-TIFLOW-CORE-44"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-440",
+            "title": "TI-Flow-Fachdienst - Task erzeugen - Task-ID sequentielle Zählung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Erzeugen eines neuen Tasks sicherstellen, dass die Rezept-ID je Workflowtyp sequentiell aufsteigend erzeugt wird.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/op-create-req-fd.html#IG-TIFLOW-CORE-440"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-441",
+            "title": "TI-Flow-Fachdienst - Verarbeitung von Suchparameter",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS die Suchparameter verarbeiten können, wie sie im CapabilityStatement festgelegt sind.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-schnittstellen-generelle-prinzipien.html#IG-TIFLOW-CORE-441"
         },
         {
             "key": "IG-TIFLOW-CORE-45",
