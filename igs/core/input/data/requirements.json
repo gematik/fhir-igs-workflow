@@ -3856,16 +3856,16 @@
                 "Herstellererklärung"
             ]
         },
-        "version": 1,
-        "release_status": "MODIFIED",
+        "version": 0,
+        "release_status": "STABLE",
         "status": "ACTIVE",
         "source": "input/pagecontent/fehlerbehandlung-client.md",
-        "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS im Falle von Fehlern bei einer Anfrage am TI-Flow-Fachdienst einen Retry und/oder Client-Failover nur gemäß der Fehlerbehandlung in [E-Rezept API Dokumentation](https://github.com/gematik/api-erp) durchführen.",
+        "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS im Falle von Fehlern bei einer Anfrage am TI-Flow-Fachdienst einen Retry und/oder Client-Failover nur gemäß der Fehlerbehandlung in [E-Rezept API Dokumentation] durchführen.",
         "conformance": "SHALL",
         "created": "2026-03-23T10:57:48.483335",
-        "modified": "2026-06-17T09:22:11.755430",
-        "date": "2026-06-17T09:22:11.755430",
-        "content_hash": "d11bcde798c2d23eb3d5a425e77fc09a31a158e4cddc1a734e9261ef96439e1c",
+        "modified": "2026-03-23T10:57:48.483336",
+        "date": "2026-03-23T13:33:32.819091",
+        "content_hash": "e516b8dba575ab44cec85d22f8d4523f585e42b90cc99b35855c04c8f7760243",
         "path": "fehlerbehandlung-client.html",
         "release": "1.0.0"
     },
@@ -6458,150 +6458,6 @@
         "release": "1.0.0"
     },
     {
-        "key": "IG-TIFLOW-CORE-364",
-        "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Betroffene Endpunkte",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "STABLE",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-paging.md",
-        "text": "Der TI-Flow-Fachdienst MUSS das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten auf folgende Endpunkte anwenden: Tabelle #: TAB_eRPFD_021 Endpunkte des TI-Flow-Fachdienst, die das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten bereitstellen müssen \n \n <table>\n<thead>\n<tr>\n<th>Endpunkt</th>\n<th>Client</th>\n<th>Inhalt der Response</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>GET /Task</td>\n<td>Versicherte, Abgebende LEI</td>\n<td>Liste von verfügbaren Tasks im TI-Flow-Fachdienst</td>\n</tr>\n<tr>\n<td>GET /Communication</td>\n<td>Versicherte, Abgebende LEI</td>\n<td>Liste von verfügbaren Communications</td>\n</tr>\n<tr>\n<td>GET /MedicationDispense</td>\n<td>Versicherte</td>\n<td>Liste von eingestellten MedicationDispenses von Verordnungen</td>\n</tr>\n<tr>\n<td>GET /ChargeItem</td>\n<td>Versicherte</td>\n<td>Liste von Abrechnungsinformationen von Verordnungen</td>\n</tr>\n<tr>\n<td>GET /AuditEvent</td>\n<td>Versicherte</td>\n<td>Liste von Protokolleinträgen des Versicherten</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Endpunkte des TI-Flow-Fachdienst, die das Konzept zur Handhabung der Rückgabe von mehreren FHIR-Objekten bereitstellen müssen</figcaption></div>",
-        "conformance": "SHALL",
-        "created": "2026-03-23T10:57:48.524225",
-        "modified": "2026-03-23T10:57:48.524226",
-        "date": "2026-03-23T13:47:26.520818",
-        "content_hash": "dcef8e7d07b85eb08393756346e79e06d6b43c299a4525ba941462246ec81a28",
-        "path": "menu-technische-umsetzung-paging.html",
-        "release": "1.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-365",
-        "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filter- und Sortierkriterien",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "STABLE",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-paging.md",
-        "text": "Der TI-Flow-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten den FHIR-Suchparameter \"_sort\" unterstützen und für die folgenden Ressourcen entsprechende Such- und Sortierkriterien bereitstellen:\n \n<table>\n<thead>\n<tr>\n<th>Endpunkt</th>\n<th>Suchkriterien</th>\n<th>Sortierbar</th>\n<th>Auszuwertendes Feld</th>\n<th>Datentyp</th>\n</tr>\n</thead>\n<tbody>\n\n<tr>\n<td rowspan=\"5\">GET /Task</td>\n<td>authored-on</td>\n<td>Ja (default)</td>\n<td>Task.authoredOn</td>\n<td>date</td>\n</tr>\n<tr>\n<td>status</td>\n<td>Nein</td>\n<td>Task.status</td>\n<td>token</td>\n</tr>\n<tr>\n<td>expiry-date</td>\n<td>Ja</td>\n<td>Task.extension:expiryDate.valueDate</td>\n<td>date</td>\n</tr>\n<tr>\n<td>accept-date</td>\n<td>Ja</td>\n<td>Task.extension:acceptDate.valueDate</td>\n<td>date</td>\n</tr>\n<tr>\n<td>modified</td>\n<td>Ja</td>\n<td>Task.lastModified</td>\n<td>date</td>\n</tr>\n\n<tr>\n<td rowspan=\"2\">GET /AuditEvent</td>\n<td>date</td>\n<td>Ja (default)</td>\n<td>AuditEvent.recorded</td>\n<td>date</td>\n</tr>\n<tr>\n<td>entity</td>\n<td>Nein</td>\n<td>AuditEvent.entity.what.identifier.value</td>\n<td>string</td>\n</tr>\n\n<tr>\n<td rowspan=\"4\">GET /Communication</td>\n<td>sent</td>\n<td>Ja (default)</td>\n<td>Communication.sent</td>\n<td>date</td>\n</tr>\n<tr>\n<td>received</td>\n<td>Ja</td>\n<td>Communication.received</td>\n<td>date</td>\n</tr>\n<tr>\n<td>recipient</td>\n<td>Nein</td>\n<td>Communication.recipient.identifier.value</td>\n<td>string</td>\n</tr>\n<tr>\n<td>sender</td>\n<td>Nein</td>\n<td>Communication.sender.identifier.value</td>\n<td>string</td>\n</tr>\n\n<tr>\n<td rowspan=\"3\">GET /MedicationDispense</td>\n<td>whenhandedover</td>\n<td>Ja (default)</td>\n<td>MedicationDispense.whenHandedOver</td>\n<td>date</td>\n</tr>\n<tr>\n<td>whenprepared</td>\n<td>Ja</td>\n<td>MedicationDispense.whenPrepared</td>\n<td>date</td>\n</tr>\n<tr>\n<td>performer</td>\n<td>Nein</td>\n<td>MedicationDispense.performer.actor.identifier.value</td>\n<td>string</td>\n</tr>\n\n<tr>\n<td rowspan=\"2\">GET /ChargeItem</td>\n<td>entered-date</td>\n<td>Ja (default)</td>\n<td>ChargeItem.enteredDate</td>\n<td>date</td>\n</tr>\n<tr>\n<td>_lastUpdated</td>\n<td></td>\n<td>ChargeItem.meta.lastUpdated</td>\n<td>date</td>\n</tr>\n\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Filter- und Sortierkriterien der Endpunkte für die Handhabung der Rückgabe von mehreren FHIR-Objekten</figcaption></div>",
-        "conformance": "SHALL",
-        "created": "2026-03-23T10:57:48.525652",
-        "modified": "2026-03-23T10:57:48.525653",
-        "date": "2026-03-23T13:47:26.522332",
-        "content_hash": "4737140a610b97379c6e8dfc85aaeb693d7be67278dd4205bdd697492cf6720f",
-        "path": "menu-technische-umsetzung-paging.html",
-        "release": "1.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-366",
-        "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "STABLE",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-paging.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierung nach mehreren Kriterien ermöglichen, indem entsprechend der Reihenfolge der angegebenen Kriterien sortiert wird.",
-        "conformance": "SHALL",
-        "created": "2026-03-23T10:57:48.526385",
-        "modified": "2026-03-23T10:57:48.526386",
-        "date": "2026-03-23T13:47:26.523069",
-        "content_hash": "10974b4def524dfa21bf2ac981cac2ac261a887ccaf1ac04c7e43a6b0a7884fb",
-        "path": "menu-technische-umsetzung-paging.html",
-        "release": "1.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-367",
-        "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortieren von Einträgen",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "STABLE",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-paging.md",
-        "text": "Der TI-Flow-Fachdienst MUSS für die Sortierung bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Ressourcen nach folgenden Kriterien aufsteigend sortieren, wenn der Client keine Sortierung im Request angefragt hat: \n \n <table>\n<thead>\n<tr>\n<th>Endpunkt</th>\n<th>Default Sortierparameter</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>GET /Task</td>\n<td>authored-on</td>\n</tr>\n<tr>\n<td>GET /Communication</td>\n<td>sent</td>\n</tr>\n<tr>\n<td>GET /MedicationDispense</td>\n<td>whenhandedover</td>\n</tr>\n<tr>\n<td>GET /ChargeItem</td>\n<td>entered-date</td>\n</tr>\n<tr>\n<td>GET /AuditEvent</td>\n<td>date</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Default Sortierparameter für die Handhabung der Rückgabe von mehreren FHIR-Objekten</figcaption></div>",
-        "conformance": "SHALL",
-        "created": "2026-03-23T10:57:48.527083",
-        "modified": "2026-03-23T10:57:48.527085",
-        "date": "2026-03-23T13:47:26.523484",
-        "content_hash": "4285ab8341d07f855e8b8776e10abdac4095500d0347f20abba83aea3ebe94f1",
-        "path": "menu-technische-umsetzung-paging.html",
-        "release": "1.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-368",
-        "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Sortierreihenfolge der Einträge",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "STABLE",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-paging.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Sortierreihenfolge umkehren, wenn der Client das Präfix \"-\" am Sortierkriterium angibt.",
-        "conformance": "SHALL",
-        "created": "2026-03-23T10:57:48.528016",
-        "modified": "2026-03-23T10:57:48.528032",
-        "date": "2026-03-23T13:47:26.523780",
-        "content_hash": "0bd3fcf6e73486c30586fc099d51ec7609b0d29ba5ab5cac62434c8a1c6c2e1b",
-        "path": "menu-technische-umsetzung-paging.html",
-        "release": "1.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-369",
-        "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Filteroperatoren für Datumsabfragen",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "STABLE",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-paging.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Filteroperatoren für Suchkriterien anbieten, deren Datentyp \"date\" ist: \n \n<table>\n<thead>\n<tr>\n<th>Operator</th>\n<th>Übersetzung</th>\n<th>Bedeutung</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>eq</td>\n<td>equals</td>\n<td>ist gleich (=)</td>\n</tr>\n<tr>\n<td>ne</td>\n<td>not equals</td>\n<td>ist nicht gleich (!=)</td>\n</tr>\n<tr>\n<td>gt</td>\n<td>greater than</td>\n<td>größer als (&gt;)</td>\n</tr>\n<tr>\n<td>lt</td>\n<td>less than</td>\n<td>kleiner als (&lt;)</td>\n</tr>\n<tr>\n<td>ge</td>\n<td>greater equals</td>\n<td>größer gleich (&gt;=)</td>\n</tr>\n<tr>\n<td>le</td>\n<td>less equals</td>\n<td>kleiner gleich (&lt;=)</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Filteroperatoren für Datumsabfragen</figcaption></div>",
-        "conformance": "SHALL",
-        "created": "2026-03-23T10:57:48.530327",
-        "modified": "2026-03-23T10:57:48.530331",
-        "date": "2026-03-23T13:47:26.524299",
-        "content_hash": "86807c11e2cf17e3b8cef38bd714993bbed8d1feee6a8389b254906a82d8c3df",
-        "path": "menu-technische-umsetzung-paging.html",
-        "release": "1.0.0"
-    },
-    {
         "key": "IG-TIFLOW-CORE-37",
         "title": "PS abgebende LEI: Recovery Secret - Statusrequest",
         "actor": [
@@ -6623,102 +6479,6 @@
         "date": "2026-05-15T12:58:30.053499",
         "content_hash": "8abe5121f778622cc4af0aea54c2d862de96e07cd6626228824f88ca38adc056",
         "path": "query-api-task-req-avs.html",
-        "release": "1.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-370",
-        "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - URL-Parameter für Paginierung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "STABLE",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-paging.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR ermöglichen und folgende URL-Parameter unterstützen: \n \n<table>\n<thead>\n<tr>\n<th>URL-Parameter</th>\n<th>Bedeutung und Funktion</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>_count</td>\n<td>Anzahl der Elemente (Bundle.entry) im Bundle. Maximum ist 50.</td>\n</tr>\n<tr>\n<td>__offset</td>\n<td>Nullbasierter Index der Ergebnismenge ab welchem die Elemente angezeigt werden. Default ist 0.</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Paginierungsparameter für die Handhabung der Rückgabe von mehreren FHIR-Objekten</figcaption></div>",
-        "conformance": "SHALL",
-        "created": "2026-03-23T10:57:48.531570",
-        "modified": "2026-03-23T10:57:48.531578",
-        "date": "2026-03-23T13:47:26.524807",
-        "content_hash": "2d39b0d40beb1001793ad9005abb4f6fa6c082b9e97f069c21ee7b16bd0ada47",
-        "path": "menu-technische-umsetzung-paging.html",
-        "release": "1.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-371",
-        "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Link Relations für Paginierung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "STABLE",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-paging.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten folgende Link Relations unter Bundle.link generieren, sofern diese erzeugt werden können: \n \n<table>\n<thead>\n<tr>\n<th>URL-Parameter</th>\n<th>Bedeutung und Funktion</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>_count</td>\n<td>Anzahl der Elemente (Bundle.entry) im Bundle. Maximum ist 50.</td>\n</tr>\n<tr>\n<td>__offset</td>\n<td>Nullbasierter Index der Ergebnismenge ab welchem die Elemente angezeigt werden. Default ist 0.</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Link Relations für die Handhabung der Rückgabe von mehreren FHIR-Objekten</figcaption></div>",
-        "conformance": "SHALL",
-        "created": "2026-03-23T10:57:48.533102",
-        "modified": "2026-03-23T10:57:48.533105",
-        "date": "2026-03-23T13:47:26.525211",
-        "content_hash": "57f75915e272f0031384a15bc6a40b16add21357375129c546d61bd6d8281caf",
-        "path": "menu-technische-umsetzung-paging.html",
-        "release": "1.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-372",
-        "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Paginierung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "STABLE",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-paging.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten die Paginierung nach FHIR für folgende Endpunkte mit den jeweiligen Parametern unterstützen \n \n<table>\n<thead>\n<tr>\n<th>Endpunkt</th>\n<th>Paginierung</th>\n<th>Total-Count</th>\n<th>Link-Relations</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>GET /Task</td>\n<td>Ja</td>\n<td>Ja</td>\n<td>self, next, prev, first, last</td>\n</tr>\n<tr>\n<td>GET /Communication</td>\n<td>Ja</td>\n<td>Ja</td>\n<td>self, next, prev, first, last</td>\n</tr>\n<tr>\n<td>GET /MedicationDispense</td>\n<td>Nein</td>\n<td>immer \"0\"</td>\n<td>-</td>\n</tr>\n<tr>\n<td>GET /ChargeItem</td>\n<td>Ja</td>\n<td>Ja</td>\n<td>self, next, prev, first, last</td>\n</tr>\n<tr>\n<td>GET /AuditEvent</td>\n<td>Ja</td>\n<td>immer \"0\"</td>\n<td>self, next, first</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Endpunkte mit Paginierung</figcaption></div>",
-        "conformance": "SHALL",
-        "created": "2026-03-23T10:57:48.535729",
-        "modified": "2026-03-23T10:57:48.535731",
-        "date": "2026-03-23T13:47:26.525830",
-        "content_hash": "ede26b65ca308b73d2ab3151078a52456524294d59c8e7de6a8f50e043842e9b",
-        "path": "menu-technische-umsetzung-paging.html",
-        "release": "1.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-373",
-        "title": "TI-Flow-Fachdienst - Handhabung der Rückgabe von mehreren FHIR-Objekten - Erhalten von URL-Parametern",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "STABLE",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-paging.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei der Handhabung der Rückgabe von mehreren FHIR-Objekten und Generierung von URLs der Link Relations die vom Client angegebenen Filter- und Sortierkriterien verwerten und erhalten.",
-        "conformance": "SHALL",
-        "created": "2026-03-23T10:57:48.536245",
-        "modified": "2026-03-23T10:57:48.536248",
-        "date": "2026-03-23T13:47:26.526179",
-        "content_hash": "4c153efc08332758a8581175a171f81b15042b381e83238865603c5f13c6c148",
-        "path": "menu-technische-umsetzung-paging.html",
         "release": "1.0.0"
     },
     {
@@ -8470,6 +8230,30 @@
         "modified": "2026-06-12T08:23:20.306439",
         "date": "2026-06-12T08:23:20.306441",
         "content_hash": "0f96153ab59420cc66ed98e505974490069be253b19eca32ab98096317793fe6",
+        "path": "menu-schnittstellen-generelle-prinzipien.html",
+        "release": "1.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CORE-439",
+        "title": "TI-Flow-Fachdienst - Verarbeitung von Suchparameter",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-schnittstellen-generelle-prinzipien.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Suchparameter verarbeiten können, wie sie im CapabilityStatement festgelegt sind.",
+        "conformance": "SHALL",
+        "created": "2026-06-16T08:51:12.823129",
+        "modified": "2026-06-16T08:51:12.823140",
+        "date": "2026-06-16T08:51:12.823144",
+        "content_hash": "e69fb7493a1053e3daeec965fc25e1d3c32499c75faf08e193a616974c3625a6",
         "path": "menu-schnittstellen-generelle-prinzipien.html",
         "release": "1.0.0"
     },
