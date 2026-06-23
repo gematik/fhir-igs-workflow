@@ -1,5 +1,18 @@
 ### Release Notes
 
-Für diese Entwurfsfassung sind noch keine versionierten Release-Notes-Einträge hinterlegt.
+### Version 2.0.0
 
-Sobald versionierte Änderungen freigegeben sind, werden sie in diesem Kapitel inklusive Requirement-Bezug dokumentiert.
+#### Anforderungen
+
+Neue Anforderungen wurden hinzugefügt, bestehende geändert und nicht mehr benötigte gelöscht. Die folgenden Release Notes geben einen detaillierten Überblick über alle Anpassungen.
+
+{% include release-notes.html version="2.0.0" diff_to="0.9.0" with_links=true %}
+
+
+### Version 0.9.0
+
+#### Anforderungen
+
+{% include release-notes.html version="0.9.0" with_links=false %}
+
+<br>
