@@ -143,6 +143,10 @@ Die Verordnungs-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks f�
      damit Tippfehler in der manuellen Erfassung erkannt werden können und die Verordnungs-ID über 11 Jahre eine eineindeutige Zuordnung zwischen allen Datenobjekten im Workflow erlaubt.
 </requirement>
 
+Für den Übergang der Anwendung E-Rezept vom E-Rezept-Fachdienst zum TI-Flow-Fachdienst muss es für ein ClientSystem möglich sein zu erkennen, auf welchem Fachdienst ein Task eingestellt wurde, ohne diesen vorher abzufragen.
+
+Der TI-Flow-Fachdienst erzeugt Tasks für jeden Workflow > `&#60;flowtype&#62;`.0**1**0.000.000.000.`&#60;prüfziffer&#62;`. Siehe hierzu auch die [Anforderungen des TI-Flow-Fachdienst für die $create-Operation](./op-create-req-fd.html).
+
 <!-- A_19218 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="Prüfung Verordnungs-ID" version="1">
     <meta lockversion="false"/>
@@ -275,10 +279,21 @@ Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzonen
     Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Verarbeitung von FHIR-Ressourcen der Anwendung E-Rezept sicherstellen, dass Datumsangaben ohne explizite Zeitzoneninformationen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) verarbeitet werden.
 </requirement>
 
+#### Filtern von FHIR-Objekten
+Clients erhalten die Möglichkeit die Rückgabe der Elemente im FHIR-Bundle durch Suchparameter zu filtern.
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-441" title="TI-Flow-Fachdienst - Verarbeitung von Suchparameter" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+      Der TI-Flow-Fachdienst MUSS die Suchparameter verarbeiten können, wie sie im CapabilityStatement festgelegt sind.
+</requirement>
+
 ### Identifikation des Nutzers
 
 Im Rahmen des Verbindungsaufbaus eines Clientsystems mit dem TI-Flow-Fachdienst authentisiert sich der Nutzer.
-Der ZETA-Guard übermittelt die Informationen zum Nutzer und das Clientsystem in Http-Headern im Request an den Resource Server (siehe [gemSpec_ZETA]#A_25669-*).
+Der ZETA-Guard übermittelt die Informationen zum Nutzer und das Clientsystem in Http-Headern im Request an den Resource Server (siehe [gemSpec_ZETA#A_25669-*]).
 
 Folgende Informationen sind im Header zeta-user-info enthalten. (siehe [zeta-user-info.yaml](https://raw.githubusercontent.com/gematik/zeta/refs/heads/main/src/schemas/zeta-user-info.yaml))
 

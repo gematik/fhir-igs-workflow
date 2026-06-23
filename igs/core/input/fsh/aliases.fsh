@@ -1,3 +1,5 @@
+Alias: $erp-base-url = https://tiflow.de
+
 // FHIR
 Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
