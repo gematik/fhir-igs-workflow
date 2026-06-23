@@ -41,7 +41,7 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
 * entity[patient].type.code = #Patient
 * entity[patient].type.system = "http://terminology.hl7.org/CodeSystem/audit-entity-type"
 * entity[patient].what.identifier 1..1 MS
-* entity[patient].what.identifier only IdentifierKvid10 or IdentifierTelematikId
+* entity[patient].what.identifier only IdentifierKvid10
 * entity[task].type.code = #Task
 * entity[task].type.system = "http://terminology.hl7.org/CodeSystem/audit-entity-type"
 * entity[task].what.identifier 1..1 MS
