@@ -1,7 +1,7 @@
 {
     "releases": [
         {
-            "version": "1.0.0",
+            "version": "2.0.0",
             "requirements": [
                 {
                     "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids",
@@ -14,7 +14,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-get-eu-prescriptions-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, nur Ressourcen eines Tasks bereitgestellt werden, die folgendes Kriterium erfüllen: Task.status = ready ODER (Task.status = in-progress UND Task.owner = Telematik-ID aus dem ACCESS_TOKEN).\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, nur Ressourcen eines Tasks bereitgestellt werden, die folgendes Kriterium erfüllen: Task.status = ready ODER (Task.status = in-progress UND Task.owner = zeta-user-info.identifier).",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids\n+TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen",
@@ -27,7 +33,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-get-eu-prescriptions-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions?_count=1 durch den NCPeH-FD sicherstellen, dass die Ressourcen der zuletzt ausgestellten einlösbaren Verordnung zurückgegeben werden und falls keine Verordnung vorliegt, mit dem HTTP-Statuscode 404 antworten.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions?_count=1 durch den NCPeH-FD sicherstellen, dass die Ressourcen der zuletzt ausgestellten einlösbaren Verordnung zurückgegeben werden und falls keine Verordnung vorliegt, mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>404 - Not Found</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>-</td>\n+ </tr>\n+ </table> \n+ antworten.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen\n+TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen",
@@ -40,7 +52,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-get-eu-prescriptions-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden und falls keine Verordnung vorliegt, mit dem HTTP-Statuscode 404 antworten.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden und falls keine Verordnung vorliegt, die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>404 - Not Found</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>-</td>\n+ </tr>\n+ </table> \n+ abbrechen.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen\n+TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids",
@@ -53,7 +71,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-get-eu-prescriptions-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden, deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, und falls keine Verordnung vorliegt, mit dem HTTP-Statuscode 404 antworten.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden, deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, und falls keine Verordnung vorliegt, die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>404 - Not Found</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>-</td>\n+ </tr>\n+ </table> \n+ abbrechen.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids\n+TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner",
@@ -66,7 +90,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-get-eu-prescriptions-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, für alle Tasks deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, die Telematik-ID aus dem ACCESS_TOKEN in Task.owner speichern.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, für alle Tasks deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, den zeta-user-info.identifier des Nutzers in Task.owner speichern.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner\n+TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters",
@@ -79,7 +109,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "query-api-task-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten auf die Ressource übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPEU_PR_PAR_PATCH_Task_Input prüfen und bei Nicht-Konformität den Aufruf mit dem http-Status-Code 400 ablehnen, damit nur FHIR-valide Ressourcen in den E-Rezept-Fachdienst akzeptiert werden.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten auf die Ressource übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPEU_PR_PAR_PATCH_Task_Input prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>400 - Bad Request</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>SVC_VALIDATION_FAILED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>FHIR Profile Validation Failed</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst akzeptiert werden.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters\n+TI-Flow-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte",
@@ -92,7 +128,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "query-api-task-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten prüfen, ob der adressierte Task in Task.extension:eu-isRedeemableByProperties.valueBoolean = true gesetzt ist und anderfalls mit dem HTTP-Fehlercode \"409 - Conflict\" und einer entsprechenden Fehlermeldung im OperationOutcome die Operation abbrechen.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten prüfen, ob der adressierte Task in Task.extension:eu-isRedeemableByProperties.valueBoolean = true gesetzt ist und anderfalls mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>409 - Conflict</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_XBORDER_NOT_ACTIVATED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>-</td>\n+ </tr>\n+ </table> \n+ abbrechen.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte\n+TI-Flow-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "E-Rezept-FdV: E-Rezept markieren",
@@ -105,7 +147,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "query-api-task-req-fdv.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1 @@\n-Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall umsetzt, den Anwendungsfall \"E-Rezept durch den Versicherten markieren\" gemäß TAB_FdVERP_029 umsetzen. Tabelle #: TAB_FdVERP_029 – E-Rezept markieren Name E-Rezept markieren Auslöser Aufruf des Anwendungsfalls in der Graphical User Interface (GUI) Akteur Versicherter Vorbedingung Der Nutzer hat eine oder mehrere Markierungen aus- oder abgewählt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Die Markierungen sind im E-Rezept-Fachdienst gespeichert. Standardablauf Task-ID bestimmen FHIR Ressource erstellen Daten im E-Rezept-Fachdienst speichern\n+Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall umsetzt, den Anwendungsfall \"E-Rezept durch den Versicherten markieren\" gemäß TAB_FdVERP_029 umsetzen. Tabelle #: TAB_FdVERP_029 - E-Rezept markieren Name E-Rezept markieren Auslöser Aufruf des Anwendungsfalls in der Graphical User Interface (GUI) Akteur Versicherter Vorbedingung Der Nutzer hat eine oder mehrere Markierungen aus- oder abgewählt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Die Markierungen sind im TI-Flow-Fachdienst gespeichert. Standardablauf Task-ID bestimmen FHIR Ressource erstellen Daten im TI-Flow-Fachdienst speichern",
+                            "title": "",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "E-Rezept-FdV: E-Rezept markieren - Speicherrequest",
@@ -118,7 +166,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "query-api-task-req-fdv.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,6 @@\n-Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" zum Speichern der Information im E-Rezept-Fachdienst die HTTP-Operation PATCH /Task/&lt;id&gt; mit: ACCESS_TOKEN im Authorization-Header, Prescription-ID in URL &lt;id&gt;, FHIR-Ressource im HTTP-Request-Body, ausführen.\n+Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /Task/&lt;id&gt; mit: \n+ <ul> \n+ <li>Prescription-ID in URL &lt;id&gt; </li>\n+ <li>FHIR-Ressource im HTTP-Request-Body </li>\n+ </ul>\n+ ausführen.",
+                            "title": "",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung",
@@ -131,7 +185,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "query-api-consent-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt `/Consent` mit `?category=EUDISPCONS` alle dem Versicherten zugeordneten Zugriffsberechtigungen anhand der KVNR des Versicherten im ACCESS_TOKEN im \"Authorization\"-Header des HTTP-Requests identifizieren und löschen.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt `/Consent` mit `?category=EUDISPCONS` alle dem Versicherten zugeordneten Zugriffsberechtigungen anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren und löschen.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung\n+TI-Flow-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest",
@@ -144,7 +204,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-revoke-eu-access-permission-req-fdv.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1,5 +1 @@\n-Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung löschen\" zum Löschen der Information auf dem E-Rezept-Fachdienst die HTTP-Operation DELETE /$revoke-eu-access-permission mit:\n- <ul>\n- <li>ACCESS_TOKEN im Authorization-Header</li>\n- </ul>\n- ausführen.\n+Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung löschen\" zum Löschen der Information auf dem TI-Flow-Fachdienst die HTTP-Operation DELETE /$revoke-eu-access-permission ausführen.",
+                            "title": "",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung",
@@ -157,7 +223,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-read-eu-access-permission-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,28 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n+ <ul>\n+ <li>oid_versicherter</li>\n+ </ul>\n+ die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung\n+TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Response",
@@ -170,7 +242,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-read-eu-access-permission-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission die KVNR des Versicherten im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und im Response falls vorhanden eine Ressource des Profils [GEM_ERP_PR_PAR_EU_Access_Authorization_Response] mit zur KVNR gespeicherte zeitlich gültige Zugriffsberechtigung übermitteln.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission den zeta-user-info.identifier des Nutzers (KVNR) bestimmen und im Response falls vorhanden eine Ressource des Profils [GEM_ERP_PR_PAR_EU_Access_Authorization_Response] mit zur KVNR gespeicherte zeitlich gültige Zugriffsberechtigung übermitteln.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Zugriffsberechtigung lesen - Response\n+TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Response",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Task schließen - EU - Rollenprüfung",
@@ -183,7 +261,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-eu-close-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,28 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close sicherstellen, dass ausschließlich Nutzer in der Rolle: oid_ncpeh, die Operation am Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader Authorization feststellen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n+ <ul>\n+ <li>oid_ncpeh</li>\n+ </ul>\n+ die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Task schließen - EU - Rollenprüfung\n+TI-Flow-Fachdienst - Task schließen - EU - Rollenprüfung",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Task schließen - EU - Schemaprüfung",
@@ -196,7 +280,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-eu-close-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen und im Fehlerfall die Operation mit HTTP-Fehlercode 400 abbrechen.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>400 - Bad Request</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>SVC_VALIDATION_FAILED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>FHIR Profile Validation Failed</td>\n+ </tr>\n+ </table> \n+ abbrechen.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Task schließen - EU - Schemaprüfung\n+TI-Flow-Fachdienst - Task schließen - EU - Schemaprüfung",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Rollenprüfung",
@@ -209,7 +299,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-get-eu-prescriptions-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,28 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions sicherstellen, dass ausschließlich Nutzer in der Rolle: oid_ncpeh, die Operation am Fachdienst aufrufen dürfen und die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader Authorization feststellen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n+ <ul>\n+ <li>oid_ncpeh </li>\n+ </ul>\n+ die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - eu-prescription abfragen - Rollenprüfung\n+TI-Flow-Fachdienst - eu-prescription abfragen - Rollenprüfung",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR",
@@ -222,7 +318,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-eu-close-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit nur Dispensierinformationen für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_CONSENT_MISSING</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>-</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit nur Dispensierinformationen für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR\n+TI-Flow-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung",
@@ -235,7 +337,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-eu-close-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im E-Rezept-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit nur Dispensierinformationen übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im TI-Flow-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_ACCESS_PERMISSION_INVALID</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>-</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit nur Dispensierinformationen übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung\n+TI-Flow-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Task schließen - EU - Statusprüfung",
@@ -248,7 +356,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-eu-close-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status = in-progress ist und bei Ungleichheit mit dem HTTP-Fehlercode 403 abbrechen.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status = in-progress ist und bei Ungleichheit die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Task has invalid status.</td>\n+ </tr>\n+ </table> \n+ abbrechen.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Task schließen - EU - Statusprüfung\n+TI-Flow-Fachdienst - Task schließen - EU - Statusprüfung",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "E-Rezept-FdV: Zugriffsberechtigung abrufen - Abfragerequest",
@@ -261,7 +375,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-read-eu-access-permission-req-fdv.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1,5 +1 @@\n-Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung abrufen\" zum Abrufen der Information vom E-Rezept-Fachdienst die HTTP-Operation GET /$read-eu-access-permission mit: \n- <ul>\n- <li>ACCESS_TOKEN im Authorization-Header</li>\n- </ul>\n- ausführen.\n+Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung abrufen\" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /$read-eu-access-permission ausführen.",
+                            "title": "",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Schemaprüfung",
@@ -274,7 +394,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-get-eu-prescriptions-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_GET_Prescription_EU_Input] prüfen und im Fehlerfall die Operation mit HTTP-Fehlercode 400 abbrechen.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_GET_Prescription_EU_Input] prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>400 - Bad Request</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>SVC_VALIDATION_FAILED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>FHIR Profile Validation Failed</td>\n+ </tr>\n+ </table> \n+ abbrechen.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - eu-prescription abfragen - Schemaprüfung\n+TI-Flow-Fachdienst - eu-prescription abfragen - Schemaprüfung",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am TI-Flow-Fachdienst speichern",
@@ -287,7 +413,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-grant-eu-access-permission-req-fdv.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1,6 +1,5 @@\n-Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung erteilen\" zum Speichern der Information am E-Rezept-Fachdienst die HTTP-Operation POST /$grant-eu-access-permission mit:\n+Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung erteilen\" zum Speichern der Information am TI-Flow-Fachdienst die HTTP-Operation POST /$grant-eu-access-permission mit:\n  <ul>\n- <li>ACCESS_TOKEN im Authorization-Header</li>\n  <li>Organization.extension:ncpehCountryEx.valueCodeableConcept.coding.code des vom Nutzer ausgewählten Landes in Parameters.parameter:countryCode</li>\n  <li>erzeugter Zugriffscode in Parameters.parameter:accessCode</li>\n  </ul>",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am E-Rezept-Fachdienst speichern\n+E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am TI-Flow-Fachdienst speichern",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung",
@@ -300,7 +432,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-revoke-eu-access-permission-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,28 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen, damit die Information zur Zugriffsberechtigung nicht durch Unberechtigte gelöscht werden kann.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n+ <ul>\n+ <li>oid_versicherter</li>\n+ </ul>\n+ die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit die Information zur Zugriffsberechtigung nicht durch Unberechtigte gelöscht werden kann.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung\n+TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Löschen",
@@ -313,7 +451,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-revoke-eu-access-permission-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission die KVNR des Versicherten im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und, falls vorhanden, zu dieser KVNR gespeicherte Zugriffsberechtigungen löschen.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission den zeta-user-info.identifier des Nutzers (KVNR) bestimmen und, falls vorhanden, zu dieser KVNR gespeicherte Zugriffsberechtigungen löschen.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Löschen\n+TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Löschen",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung",
@@ -326,7 +470,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-grant-eu-access-permission-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,28 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am E-Rezept-Fachdienst aufrufen dürfen, damit eine Zugriffsberechtigte nicht durch Unberechtigte erteilt werden kann.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n+ <ul>\n+ <li>oid_versicherter </li>\n+ </ul>\n+ die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit eine Zugriffsberechtigte nicht durch Unberechtigte erteilt werden kann.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung\n+TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR",
@@ -339,7 +489,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-grant-eu-access-permission-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die KVNR des Versicherten im ACCESS_TOKEN im HTTP-RequestHeader \"Authorization\" feststellen und sicherstellen, dass ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 und dem OperationOutcome \"Das Erstellen einer Zugriffsberechtigung ist erst zulässig, wenn eine Einwilligung durch den Nutzer zum Einlösen von E-Rezepten im europäischen Ausland erteilt wurde.\" abbrechen, damit nur Versicherte eine Zugriffsberechtigung schreiben, die eine Einwilligung erteilt haben.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission den zeta-user-info.identifier des Nutzers (KVNR) bestimmen und sicherstellen, dass ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_CONSENT_REQUIRED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Das Erstellen einer Zugriffsberechtigung ist erst zulässig, wenn eine Einwilligung durch den Nutzer zum Einlösen von E-Rezepten im europäischen Ausland erteilt wurde.</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit nur Versicherte eine Zugriffsberechtigung schreiben, die eine Einwilligung erteilt haben.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR\n+TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode",
@@ -352,7 +508,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-grant-eu-access-permission-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Ländercode (Parameters.parameter:countryCode) einem Land entspricht, welches die Anwendung ePrescription/eDispensation Szenario Land A unterstützt und bei fehlschlagender Prüfung die Operation mit dem HTTP-Fehlercode 409 und dem OperationOutcome \"Für das angefragte Land ist Einlösen von E-Rezepten nicht möglich.\" abbrechen, damit der Versicherte nur für zulässige europäische Länder eine Zugriffsberechtigung erteilt.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Ländercode (Parameters.parameter:countryCode) einem Land entspricht, welches die Anwendung ePrescription/eDispensation Szenario Land A unterstützt und bei fehlschlagender Prüfung die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>409 - Conflict</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_XBORDER_COUNTRY_CODE_INVALID</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Für das angefragte Land ist Einlösen von E-Rezepten nicht möglich.</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit der Versicherte nur für zulässige europäische Länder eine Zugriffsberechtigung erteilt.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode\n+TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode",
@@ -365,7 +527,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-grant-eu-access-permission-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Zugriffscode (Parameters.parameter:accessCode) das korrekte Format hat und bei fehlschlagender Prüfung die Operation mit dem HTTP-Fehlercode 400 und dem OperationOutcome \"Der übermittelte Zugriffscode ist nicht zulässig.\" abbrechen.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Zugriffscode (Parameters.parameter:accessCode) das korrekte Format hat und bei fehlschlagender Prüfung die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>400 - Bad Request</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_ACCESS_CODE_INVALID</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>Der übermittelte Zugriffscode ist nicht zulässig.</td>\n+ </tr>\n+ </table> \n+ abbrechen.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode\n+TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR",
@@ -378,7 +546,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-get-eu-prescriptions-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_CONSENT_REQUIRED</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>-</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR\n+TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR",
+                            "conformance": ""
+                        }
+                    }
                 },
                 {
                     "title": "TI-Flow-Fachdienst - Versichertenprotokoll zu DiGA-Operationen",
@@ -404,7 +578,13 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-get-eu-prescriptions-req-fd.html",
-                    "diff": {}
+                    "diff": {
+                        "0.9.0": {
+                            "text": "--- text.old\n+++ text.new\n@@ -1 +1,24 @@\n-Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im E-Rezept-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.\n+Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im TI-Flow-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n+ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n+ <tr>\n+ <th>HTTP-Code</th>\n+ <td>403 - Forbidden</td>\n+ </tr>\n+ <tr>\n+ <th>Severity</th>\n+ <td>error</td>\n+ </tr>\n+ <tr>\n+ <th>Code</th>\n+ <td>invalid</td>\n+ </tr>\n+ <tr>\n+ <th>Details Code</th>\n+ <td>TIFLOW_ACCESS_PERMISSION_INVALID</td>\n+ </tr>\n+ <tr>\n+ <th>Details Text</th>\n+ <td>-</td>\n+ </tr>\n+ </table> \n+ abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.",
+                            "title": "--- title.old\n+++ title.new\n@@ -1 +1 @@\n-E-Rezept-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung\n+TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung",
+                            "conformance": ""
+                        }
+                    }
                 }
             ]
         },
@@ -413,7 +593,7 @@
             "requirements": [
                 {
                     "title": "Format Zugriffscode",
-                    "key": "IG-PRE-TIFLOW-XBORDER-1",
+                    "key": "IG-TIFLOW-XBORDER-1",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -426,7 +606,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage aller einlösbaren Verordnungsinformationen",
-                    "key": "IG-PRE-TIFLOW-XBORDER-10",
+                    "key": "IG-TIFLOW-XBORDER-10",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -439,7 +619,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids",
-                    "key": "IG-PRE-TIFLOW-XBORDER-11",
+                    "key": "IG-TIFLOW-XBORDER-11",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -452,7 +632,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Schema des Response",
-                    "key": "IG-PRE-TIFLOW-XBORDER-12",
+                    "key": "IG-TIFLOW-XBORDER-12",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -465,7 +645,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen",
-                    "key": "IG-PRE-TIFLOW-XBORDER-13",
+                    "key": "IG-TIFLOW-XBORDER-13",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -478,7 +658,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen",
-                    "key": "IG-PRE-TIFLOW-XBORDER-14",
+                    "key": "IG-TIFLOW-XBORDER-14",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -491,7 +671,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids",
-                    "key": "IG-PRE-TIFLOW-XBORDER-15",
+                    "key": "IG-TIFLOW-XBORDER-15",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -504,7 +684,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Statuswechsel Task",
-                    "key": "IG-PRE-TIFLOW-XBORDER-16",
+                    "key": "IG-TIFLOW-XBORDER-16",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -517,7 +697,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Secret",
-                    "key": "IG-PRE-TIFLOW-XBORDER-17",
+                    "key": "IG-TIFLOW-XBORDER-17",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -530,7 +710,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner",
-                    "key": "IG-PRE-TIFLOW-XBORDER-18",
+                    "key": "IG-TIFLOW-XBORDER-18",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -543,7 +723,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen - Push Notification Versicherter",
-                    "key": "IG-PRE-TIFLOW-XBORDER-19",
+                    "key": "IG-TIFLOW-XBORDER-19",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -556,7 +736,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder",
-                    "key": "IG-PRE-TIFLOW-XBORDER-2",
+                    "key": "IG-TIFLOW-XBORDER-2",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -569,7 +749,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Push Notification Versicherter",
-                    "key": "IG-PRE-TIFLOW-XBORDER-20",
+                    "key": "IG-TIFLOW-XBORDER-20",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -582,7 +762,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters",
-                    "key": "IG-PRE-TIFLOW-XBORDER-21",
+                    "key": "IG-TIFLOW-XBORDER-21",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -595,7 +775,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte",
-                    "key": "IG-PRE-TIFLOW-XBORDER-22",
+                    "key": "IG-TIFLOW-XBORDER-22",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -608,7 +788,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst -Task markieren -Versicherter - Änderung Markierung Task Ressource",
-                    "key": "IG-PRE-TIFLOW-XBORDER-23",
+                    "key": "IG-TIFLOW-XBORDER-23",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -621,7 +801,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle",
-                    "key": "IG-PRE-TIFLOW-XBORDER-24",
+                    "key": "IG-TIFLOW-XBORDER-24",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -634,7 +814,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Zugriffsberechtigung anzeigen",
-                    "key": "IG-PRE-TIFLOW-XBORDER-25",
+                    "key": "IG-TIFLOW-XBORDER-25",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -647,7 +827,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren",
-                    "key": "IG-PRE-TIFLOW-XBORDER-26",
+                    "key": "IG-TIFLOW-XBORDER-26",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -660,7 +840,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren - Hinweis Belieferungsmöglichkeit",
-                    "key": "IG-PRE-TIFLOW-XBORDER-27",
+                    "key": "IG-TIFLOW-XBORDER-27",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -673,7 +853,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: optional: E-Rezept markieren",
-                    "key": "IG-PRE-TIFLOW-XBORDER-28",
+                    "key": "IG-TIFLOW-XBORDER-28",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -686,7 +866,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: E-Rezept markieren - E-Rezepte auswählen",
-                    "key": "IG-PRE-TIFLOW-XBORDER-29",
+                    "key": "IG-TIFLOW-XBORDER-29",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -699,7 +879,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder",
-                    "key": "IG-PRE-TIFLOW-XBORDER-3",
+                    "key": "IG-TIFLOW-XBORDER-3",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -712,7 +892,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: E-Rezept markieren",
-                    "key": "IG-PRE-TIFLOW-XBORDER-30",
+                    "key": "IG-TIFLOW-XBORDER-30",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -725,7 +905,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: E-Rezept markieren - FHIR Ressource erstellen",
-                    "key": "IG-PRE-TIFLOW-XBORDER-31",
+                    "key": "IG-TIFLOW-XBORDER-31",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -738,7 +918,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: E-Rezept markieren - Speicherrequest",
-                    "key": "IG-PRE-TIFLOW-XBORDER-32",
+                    "key": "IG-TIFLOW-XBORDER-32",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -751,7 +931,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung",
-                    "key": "IG-PRE-TIFLOW-XBORDER-33",
+                    "key": "IG-TIFLOW-XBORDER-33",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -764,7 +944,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest",
-                    "key": "IG-PRE-TIFLOW-XBORDER-34",
+                    "key": "IG-TIFLOW-XBORDER-34",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -777,7 +957,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Zugriffsberechtigung löschen - lokale Zugriffsberechtigung löschen",
-                    "key": "IG-PRE-TIFLOW-XBORDER-35",
+                    "key": "IG-TIFLOW-XBORDER-35",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -790,7 +970,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung",
-                    "key": "IG-PRE-TIFLOW-XBORDER-36",
+                    "key": "IG-TIFLOW-XBORDER-36",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -803,7 +983,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Zugriffsberechtigung lesen - Response",
-                    "key": "IG-PRE-TIFLOW-XBORDER-37",
+                    "key": "IG-TIFLOW-XBORDER-37",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -816,7 +996,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task schließen - EU - Rollenprüfung",
-                    "key": "IG-PRE-TIFLOW-XBORDER-38",
+                    "key": "IG-TIFLOW-XBORDER-38",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -829,7 +1009,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task schließen - EU - Schemaprüfung",
-                    "key": "IG-PRE-TIFLOW-XBORDER-39",
+                    "key": "IG-TIFLOW-XBORDER-39",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -842,7 +1022,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Rollenprüfung",
-                    "key": "IG-PRE-TIFLOW-XBORDER-4",
+                    "key": "IG-TIFLOW-XBORDER-4",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -855,7 +1035,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR",
-                    "key": "IG-PRE-TIFLOW-XBORDER-40",
+                    "key": "IG-TIFLOW-XBORDER-40",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -868,7 +1048,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung",
-                    "key": "IG-PRE-TIFLOW-XBORDER-41",
+                    "key": "IG-TIFLOW-XBORDER-41",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -881,7 +1061,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task schließen - EU - Statusprüfung",
-                    "key": "IG-PRE-TIFLOW-XBORDER-42",
+                    "key": "IG-TIFLOW-XBORDER-42",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -894,7 +1074,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task schließen - EU - Zeitstempel MedicationDispense",
-                    "key": "IG-PRE-TIFLOW-XBORDER-43",
+                    "key": "IG-TIFLOW-XBORDER-43",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -907,7 +1087,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task schließen - EU - Status beenden",
-                    "key": "IG-PRE-TIFLOW-XBORDER-44",
+                    "key": "IG-TIFLOW-XBORDER-44",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -920,7 +1100,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Task schließen - EU - Push Notification Versicherter",
-                    "key": "IG-PRE-TIFLOW-XBORDER-45",
+                    "key": "IG-TIFLOW-XBORDER-45",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -933,7 +1113,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Zugriffsberechtigung abrufen - Abfragerequest",
-                    "key": "IG-PRE-TIFLOW-XBORDER-46",
+                    "key": "IG-TIFLOW-XBORDER-46",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -946,7 +1126,7 @@
                 },
                 {
                     "title": "E-Rezept: Anwendung des IG 'EU Zugriff E-Rezept' für Einlösen von E-Rezepten im EU Ausland",
-                    "key": "IG-PRE-TIFLOW-XBORDER-47",
+                    "key": "IG-TIFLOW-XBORDER-47",
                     "actor": [
                         "NCPeH_ePeDA",
                         "eRp_FD"
@@ -960,7 +1140,7 @@
                 },
                 {
                     "title": "E-Rezept: Umsetzung des Moduls 'EU Zugriff E-Rezept'",
-                    "key": "IG-PRE-TIFLOW-XBORDER-48",
+                    "key": "IG-TIFLOW-XBORDER-48",
                     "actor": [
                         "NCPeH_ePeDA",
                         "eRp_FD"
@@ -974,7 +1154,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Zugriffsberechtigung - Liste zulässiger Länder",
-                    "key": "IG-PRE-TIFLOW-XBORDER-49",
+                    "key": "IG-TIFLOW-XBORDER-49",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -987,7 +1167,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Schemaprüfung",
-                    "key": "IG-PRE-TIFLOW-XBORDER-5",
+                    "key": "IG-TIFLOW-XBORDER-5",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -1000,7 +1180,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder",
-                    "key": "IG-PRE-TIFLOW-XBORDER-50",
+                    "key": "IG-TIFLOW-XBORDER-50",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -1013,7 +1193,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Zugriffsberechtigung - Land auswählen",
-                    "key": "IG-PRE-TIFLOW-XBORDER-51",
+                    "key": "IG-TIFLOW-XBORDER-51",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -1026,7 +1206,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Zugriffsberechtigung - Zugriffscode erzeugen",
-                    "key": "IG-PRE-TIFLOW-XBORDER-52",
+                    "key": "IG-TIFLOW-XBORDER-52",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -1039,7 +1219,7 @@
                 },
                 {
                     "title": "E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am E-Rezept-Fachdienst speichern",
-                    "key": "IG-PRE-TIFLOW-XBORDER-53",
+                    "key": "IG-TIFLOW-XBORDER-53",
                     "actor": [
                         "eRp_FdV"
                     ],
@@ -1052,7 +1232,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung",
-                    "key": "IG-PRE-TIFLOW-XBORDER-54",
+                    "key": "IG-TIFLOW-XBORDER-54",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -1065,7 +1245,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Zugriffsberechtigung löschen - Löschen",
-                    "key": "IG-PRE-TIFLOW-XBORDER-55",
+                    "key": "IG-TIFLOW-XBORDER-55",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -1078,7 +1258,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung",
-                    "key": "IG-PRE-TIFLOW-XBORDER-56",
+                    "key": "IG-TIFLOW-XBORDER-56",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -1091,7 +1271,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR",
-                    "key": "IG-PRE-TIFLOW-XBORDER-57",
+                    "key": "IG-TIFLOW-XBORDER-57",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -1104,7 +1284,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode",
-                    "key": "IG-PRE-TIFLOW-XBORDER-58",
+                    "key": "IG-TIFLOW-XBORDER-58",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -1117,7 +1297,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode",
-                    "key": "IG-PRE-TIFLOW-XBORDER-59",
+                    "key": "IG-TIFLOW-XBORDER-59",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -1130,7 +1310,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR",
-                    "key": "IG-PRE-TIFLOW-XBORDER-6",
+                    "key": "IG-TIFLOW-XBORDER-6",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -1143,7 +1323,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender Zugriffsberechtigung",
-                    "key": "IG-PRE-TIFLOW-XBORDER-60",
+                    "key": "IG-TIFLOW-XBORDER-60",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -1156,7 +1336,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung speichern",
-                    "key": "IG-PRE-TIFLOW-XBORDER-61",
+                    "key": "IG-TIFLOW-XBORDER-61",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -1169,7 +1349,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Zugriffsberechtigung schreiben - Response",
-                    "key": "IG-PRE-TIFLOW-XBORDER-62",
+                    "key": "IG-TIFLOW-XBORDER-62",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -1182,7 +1362,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - Zugriffsberechtigung - periodische Bereinigung",
-                    "key": "IG-PRE-TIFLOW-XBORDER-63",
+                    "key": "IG-TIFLOW-XBORDER-63",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -1195,7 +1375,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung",
-                    "key": "IG-PRE-TIFLOW-XBORDER-7",
+                    "key": "IG-TIFLOW-XBORDER-7",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -1208,7 +1388,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Filter einlösbarer E-Rezepte",
-                    "key": "IG-PRE-TIFLOW-XBORDER-8",
+                    "key": "IG-TIFLOW-XBORDER-8",
                     "actor": [
                         "eRp_FD"
                     ],
@@ -1221,7 +1401,7 @@
                 },
                 {
                     "title": "E-Rezept-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage der aktuellsten Verordnungsinformationen",
-                    "key": "IG-PRE-TIFLOW-XBORDER-9",
+                    "key": "IG-TIFLOW-XBORDER-9",
                     "actor": [
                         "eRp_FD"
                     ],
