@@ -13,14 +13,14 @@ Der Response beinhaltet ein Bundle mit einem searchset von AuditEvent Ressourcen
 
 <ul>
 <li>ID des Datenobjektes, auf das zugegriffen wurde (AuditEvent.entity.what) Das entspricht der Task-ID oder MedicationDispense-ID</li>
-<li>Rezept-ID (AuditEvent.entity.description)</li>
+<li>Verordnungs-ID (AuditEvent.entity.description)</li>
 <li>lesbarer Beschreibung in einfacher Sprache (AuditEvent.text)</li>
 <li>Name des Zugreifenden (AuditEvent.agent.who)</li>
 <li>Zeitpunkt des Zugriffs (AuditEvent.recorded)</li>
 <li>Ergebnis der aufgerufenen Operation (AuditEvent.outcome)</li>
 </ul>
 
-Das E-Rezept-FdV kann es dem Nutzer über einen Link in der Anzeige ermöglichen, die Details zum referenzierten E-Rezept anzuzeigen.
+Das E-Rezept-FdV kann es dem Nutzer über einen Link in der Anzeige ermöglichen, die Details zur referenzierten Verordnung anzuzeigen.
 
 - AuditEvent-Einträge enthalten personenbezogene Protokolldaten und sind entsprechend vertraulich zu behandeln.
 - `OperationOutcome` aus Query-Aufrufen ist im Client als konkrete Handlungsanweisung darzustellen.

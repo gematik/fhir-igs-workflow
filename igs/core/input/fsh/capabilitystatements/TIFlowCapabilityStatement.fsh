@@ -16,6 +16,8 @@ Usage: #definition
 * kind = #requirements
 * rest.mode = #server
 
+* extension[baseUrl].valueString = $erp-base-url
+
 //Header
 * insert Content-Type(true)
 * insert Authorization(true)
@@ -84,7 +86,7 @@ RuleSet: DeviceInteraction(expectation)
 // Protokollierung
 RuleSet: AuditEventInteraction(expectation)
 * insert CapSupportResource(AuditEvent, #SHALL)
-* insert CapSupportProfile(TIAuditEventRest, #SHALL)
+* insert CapSupportProfile(TIFlowAuditEventRest, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert AuditEventSearchTypeInteractionStatusCodes

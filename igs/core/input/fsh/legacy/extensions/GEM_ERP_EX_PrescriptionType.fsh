@@ -1,5 +1,5 @@
-Extension: TIFlowType
-Id: ti-flowtype
+Extension: GEM_ERP_EX_PrescriptionType
+Id: GEM-ERP-EX-PrescriptionType
 Title: "TI Flow Type"
 Description: "Definiert den Typ eines Workflows im TIFlow."
 * insert Meta
@@ -10,7 +10,7 @@ Description: "Definiert den Typ eines Workflows im TIFlow."
 * ^status = #active
 
 * value[x] only Coding
-* value[x] from TIFlowTypesVS (required)
+* value[x] from GEM_ERP_VS_FlowType (required)
   * system 1..1
   * code 1..1
 

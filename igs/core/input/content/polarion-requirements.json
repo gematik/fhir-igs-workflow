@@ -282,9 +282,9 @@
         {
             "key": "IG-TIFLOW-CORE-106",
             "title": "TI-Flow-Fachdienst - Prüfung PoPP-Token - Prüfung Signaturzertifikat PoPP-Service",
-            "version": 0,
+            "version": 1,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS das Signatur-Zertifikat des PoPP-Service für die Signatur des PoPP-Token gemäß [gemSpec_PKI#TUC_PKI_018] mit folgenden Parametern auf Gültigkeit prüfen:\n <table>\n <tr>\n <th>Parameter</th>\n <th></th>\n </tr>\n <tr>\n <td>Zertifikat</td>\n <td>Signaturzertifikat des PoPP-Service</td>\n </tr>\n <tr>\n <td>PolicyList</td>\n <td>oid_zd_sig</td>\n </tr>\n <tr>\n <td>intendedKeyUsage</td>\n <td>nonRepudiation</td>\n </tr>\n <tr>\n <td>intendedExtendedKeyUsage</td>\n <td>(leer)</td>\n </tr>\n <tr>\n <td>OCSP-Graceperiod</td>\n <td>60 Minuten</td>\n </tr>\n <tr>\n <td>Offline-Modus</td>\n <td>nein</td>\n </tr>\n <tr>\n <td>Prüfmodus</td>\n <td>OCSP</td>\n </tr>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_031 Parameter Prüfung Signaturzertifikat PoPP-Service</figcaption></div>\n\n Das Signaturzertifikat muss gemäß dem TUC als befunden werden und im Fehlerfall das Signaturzertifikat nicht zur Signaturprüfung der PoPP-Token verwenden, damit sichergestellt wird dass, ausschließlich PoPP-Token von einem vertrauenswürdigen PoPP-Service akzeptiert werden.",
+            "text": "Der TI-Flow-Fachdienst MUSS das Signatur-Zertifikat des PoPP-Service für die Signatur des PoPP-Token gemäß [gemSpec_PKI]#TUC_PKI_018 mit folgenden Parametern auf Gültigkeit prüfen:\n <table>\n <tr>\n <th>Parameter</th>\n <th></th>\n </tr>\n <tr>\n <td>Zertifikat</td>\n <td>Signaturzertifikat des PoPP-Service</td>\n </tr>\n <tr>\n <td>PolicyList</td>\n <td>oid_zd_sig</td>\n </tr>\n <tr>\n <td>intendedKeyUsage</td>\n <td>nonRepudiation</td>\n </tr>\n <tr>\n <td>intendedExtendedKeyUsage</td>\n <td>(leer)</td>\n </tr>\n <tr>\n <td>OCSP-Graceperiod</td>\n <td>60 Minuten</td>\n </tr>\n <tr>\n <td>Offline-Modus</td>\n <td>nein</td>\n </tr>\n <tr>\n <td>Prüfmodus</td>\n <td>OCSP</td>\n </tr>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_031 Parameter Prüfung Signaturzertifikat PoPP-Service</figcaption></div>\n\n Das Signaturzertifikat muss gemäß dem TUC als befunden werden und im Fehlerfall das Signaturzertifikat nicht zur Signaturprüfung der PoPP-Token verwenden, damit sichergestellt wird dass, ausschließlich PoPP-Token von einem vertrauenswürdigen PoPP-Service akzeptiert werden.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -301,7 +301,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-task-req-fd.html#IG-TIFLOW-CORE-106"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-task-req-fd.html#IG-TIFLOW-CORE-106-01"
         },
         {
             "key": "IG-TIFLOW-CORE-107",
@@ -1747,9 +1747,9 @@
         {
             "key": "IG-TIFLOW-CORE-155",
             "title": "CS: Lokalisierung TI-Flow-Fachdienst",
-            "version": 0,
+            "version": 1,
             "status": "ACTIVE",
-            "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS für die Kommunikation mit dem TI-Flow-Fachdienst die Endpunkte der Schnittstellen gemäß [gemSpec_FD_eRP#5.1 Servicelokalisierung] nutzen.",
+            "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS für die Kommunikation mit dem TI-Flow-Fachdienst die Endpunkte der Schnittstellen gemäß [gemSpec_FD_eRP]#5.1 Servicelokalisierung nutzen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -1805,7 +1805,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/kommunikation-dienste-ti.html#IG-TIFLOW-CORE-155"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/kommunikation-dienste-ti.html#IG-TIFLOW-CORE-155-01"
         },
         {
             "key": "IG-TIFLOW-CORE-156",
@@ -2000,7 +2000,7 @@
             "key": "IG-TIFLOW-CORE-159",
             "title": "CS: HTTP-Header user-agent",
             "version": 1,
-            "status": "ACTIVE",
+            "status": "RETIRED",
             "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle HTTP-Requests an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header user-agent gemäß [RFC7231] mit &lt;Produktname&gt;/&lt;Produktversion&gt; &lt;Herstellername&gt;/&lt;client_id&gt; mit \n <ul>\n <li>&lt;Produktname&gt; gemäß eigener Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\\-\\.]</li>\n <li>&lt;Produktversion&gt; gemäß Produktidentifikation</li>\n <li>&lt;Herstellername&gt; gemäß eigener Definition, Länge 1-20 Zeichen, Zeichenvorrat [0-9a-zA-Z\\-\\.] </li>\n <li>&lt;client_id&gt; gemäß Registrierung bei der gematik</li>\n </ul>\n des Clientsystems befüllen.",
             "conformance": "SHALL",
             "characteristics": [
@@ -2139,7 +2139,7 @@
             "key": "IG-TIFLOW-CORE-160",
             "title": "CS: HTTP-Header X-erp-user",
             "version": 0,
-            "status": "ACTIVE",
+            "status": "RETIRED",
             "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header \"X-erp-user\" mit dem Wert\n <ul>\n <li>\"l\" (kleines L) als PS eines Leistungserbringers</li>\n <li>\"k\" als CS eines Kostenträgers</li>\n <li>\"v\" als E-Rezept-FdV oder</li>\n <li>\"n\" als NCPeH-FD</li>\n </ul>\n einfügen.",
             "conformance": "SHALL",
             "characteristics": [
@@ -2215,7 +2215,7 @@
             "key": "IG-TIFLOW-CORE-161",
             "title": "CS: HTTP-Header X-erp-resource",
             "version": 0,
-            "status": "ACTIVE",
+            "status": "RETIRED",
             "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS in alle Anfragen an den TI-Flow-Fachdienst im äußeren HTTP-Request den HTTP-Header \"X-erp-resource\" mit dem Wert gemäß der angefragten Ressource im FHIR-Request einfügen.",
             "conformance": "SHALL",
             "characteristics": [
@@ -2767,7 +2767,7 @@
             "title": "TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA",
             "version": 1,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur des übergebenen QES-Datensatzes gemäß [gemSpec_PKI#TUC_PKI_030] mit folgenden Parametern auf Gültigkeit prüfen:\n <table>\n <tr>\n <th>Parameter</th>\n <th>Wert</th>\n </tr>\n <tr>\n <td>Zertifikat</td>\n <td>\n Signaturzertifikat des HBA (eingebettet in Signatur-Objekt des QES-Datensatzes):\n <ul>\n <li>C.HP.QES (oid_hba_qes = 1.2.276.0.76.4.72 gemäß gemSpec_OID)</li>\n </ul>\n </td>\n </tr>\n <tr>\n <td>Referenzzeitpunkt</td>\n <td>Zeitpunkt der QES-Erstellung gemäß signingTime im QES-Datensatz</td>\n </tr>\n <tr>\n <td>Offline-Modus</td>\n <td>nein</td>\n </tr>\n <tr>\n <td>OCSP-Response</td>\n <td>eingebettet in QES-Datensatz</td>\n </tr>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_006 Parameter Prüfung Signaturzertifikat QES des HBA</figcaption></div>\n\n <br>\n \n Der TI-Flow-Fachdienst MUSS, wenn keine OCSP-Response eingebettet oder die eingebettete OCSP Response nicht gültig ist, eine gecachte OCSP-Response verwenden, wenn die gecachte OCSP-Response nach den Signaturzeitpunkt erstellt wurde, oder eine OCSP-Response beim zugehörigen TSP anfragen.\n\n <br>\n\n Der TI-Flow-Fachdienst MUSS das Signaturzertifikat prüfen, für [mathematisch gültig UND zeitlich gültig UND online gültig ] befinden und andernfalls die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_CERTIFICATE_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table>\n abbrechen, damit sichergestellt wird, dass ausschließlich Verordnungen verwaltet werden, die von einer gültigen, nicht gesperrten Heilberufsidentität eines HBA signiert wurden.",
+            "text": "Der TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur des übergebenen QES-Datensatzes gemäß [gemSpec_PKI]#TUC_PKI_030 mit folgenden Parametern auf Gültigkeit prüfen:\n <table>\n <tr>\n <th>Parameter</th>\n <th>Wert</th>\n </tr>\n <tr>\n <td>Zertifikat</td>\n <td>\n Signaturzertifikat des HBA (eingebettet in Signatur-Objekt des QES-Datensatzes):\n <ul>\n <li>C.HP.QES (oid_hba_qes = 1.2.276.0.76.4.72 gemäß gemSpec_OID)</li>\n </ul>\n </td>\n </tr>\n <tr>\n <td>Referenzzeitpunkt</td>\n <td>Zeitpunkt der QES-Erstellung gemäß signingTime im QES-Datensatz</td>\n </tr>\n <tr>\n <td>Offline-Modus</td>\n <td>nein</td>\n </tr>\n <tr>\n <td>OCSP-Response</td>\n <td>eingebettet in QES-Datensatz</td>\n </tr>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_006 Parameter Prüfung Signaturzertifikat QES des HBA</figcaption></div>\n\n <br>\n \n Der TI-Flow-Fachdienst MUSS, wenn keine OCSP-Response eingebettet oder die eingebettete OCSP Response nicht gültig ist, eine gecachte OCSP-Response verwenden, wenn die gecachte OCSP-Response nach den Signaturzeitpunkt erstellt wurde, oder eine OCSP-Response beim zugehörigen TSP anfragen.\n\n <br>\n\n Der TI-Flow-Fachdienst MUSS das Signaturzertifikat prüfen, für [mathematisch gültig UND zeitlich gültig UND online gültig ] befinden und andernfalls die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_CERTIFICATE_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table>\n abbrechen, damit sichergestellt wird, dass ausschließlich Verordnungen verwaltet werden, die von einer gültigen, nicht gesperrten Heilberufsidentität eines HBA signiert wurden.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -6415,7 +6415,7 @@
             "title": "FHIR-Ressourcen Versionsangabe",
             "version": 1,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der Versionsnummer gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen, zu dessen aktuell gültiger Profilversion sie mutmaßlich validieren.",
+            "text": "Der TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der zweistelligen Versionsnummer (major.minor) gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen, zu dessen aktuell gültiger Profilversion sie mutmaßlich validieren.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -6949,9 +6949,9 @@
         {
             "key": "IG-TIFLOW-CORE-30",
             "title": "TI-Flow-Fachdienst - Inhalt Protokolleintrag",
-            "version": 0,
+            "version": 1,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS einen Protokolleintrag mit den folgenden Werten befüllen:\n\t<ul>\n <li>AuditEvent.text: Generierung eines HTML-&lt;div&gt;-Elements mit lesbarer Beschreibung in einfacher Sprache</li>\n <li>AuditEvent.type: Fester Wertrest gemäß [CodeSystem: Audit Event ID]</li>\n <li>AuditEvent.subtype: aus dem ValueSet [ValueSet http://hl7.org/fhir/ValueSet/auditevent-sub-type] gemäß [CodeSystem http://hl7.org/fhir/restful-interaction]:\n <ul>\n <li>create beim Hinzufügen/Speichern/Anlegen eines Datenobjekts mit Versichertenbezug (mit Ausnahme von AuditEvent- und Communication-Ressource)</li>\n <li>read beim lesenden Zugriff auf ein Datenobjekt mit Versichertenbezug</li>\n <li>update, wenn das Datenobjekt mit Versichertenbezug geändert/aktualisiert wird</li>\n <li>delete, wenn das Datenobjekt mit Versichertenbezug manuell oder automatisch gelöscht wird</li>\n </ul>\n </li>\n <li>AuditEvent.action: analog AuditEvent.subType (C, R, U, D) gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-action]</li>\n <li>AuditEvent.recorded: aktuelle Systemzeit des TI-Flow-Fachdienstes</li>\n <li>AuditEvent.outcome: Ergebnis der aufgerufenen Operation gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-outcome] (0 = Erfolg, 4 = Fehler auf Clientseite, 8 = Serverfehler)</li>\n <li>AuditEvent.agent.type: Fester Werthumanuser bzw. bei Übermittlung an ePA oder NCPeH-FDdataprocessor aus [CodeSystem: Security Role Type (Experimental)]</li>\n <li>AuditEvent.agent.name:Lesbarer Name aus ID_TOKEN des Zugreifenden, der die zu protokollierende Aktion getriggert hat, z.B. \"Praxis Dr. Müller, Bahnhofstr. 78\" oder Versicherter z.B. \"Max Mustermann\" bzw. bei Übermittlung an ePA \"TI-Flow-Fachdienst\"</li>\n <li>AuditEvent.agent.who: KVNR bzw. Telematik-ID des zugreifenden Nutzers aus ID_TOKEN, der diesen Protokolleintrag ausgelöst hat</li>\n <li>AuditEvent.agent.requestor: Fester Wert false, da keine Protokolleinträge von außen erzeugt werden</li>\n <li>AuditEvent.soure.site: Fester Wert TI-Flow-Fachdienst</li>\n <li>AuditEvent.soure.observer: Device-Informationen des TI-Flow-Fachdienstes (status, serialnumber=gemäß Release)</li>\n <li>AuditEvent.entity.what: Referenz auf das durch den Abruf betroffene Datenobjekt Task, ChargeItem, MedicationDispense, Consent oder Objekt der Zugriffsberechtigung</li>\n <li>AuditEvent.entity.name: Eintrag der KVNR des betroffenen Versicherten aus dem Identifier des protokollierten Datenobjekts (String)</li>\n <li>AuditEvent.entity.description: Rezept-ID als Identifier, wird übernommen aus MedicationDispense, ChargeItem oder Task bzw. Consent.category.coding.code bei Anlegen oder Löschen eines Consent bzw. countryCode bei Anlegen oder Löschen einer Zugriffsberechtigung</li>\n </ul>",
+            "text": "Der TI-Flow-Fachdienst MUSS einen Protokolleintrag mit den folgenden Werten befüllen:\n\t<ul>\n <li>AuditEvent.text: Generierung eines HTML-&lt;div&gt;-Elements mit lesbarer Beschreibung in einfacher Sprache</li>\n <li>AuditEvent.type: Fester Wertrest gemäß [CodeSystem: Audit Event ID]</li>\n <li>AuditEvent.subtype: aus dem ValueSet [ValueSet http://hl7.org/fhir/ValueSet/auditevent-sub-type] gemäß [CodeSystem http://hl7.org/fhir/restful-interaction]:\n <ul>\n <li>create beim Hinzufügen/Speichern/Anlegen eines Datenobjekts mit Versichertenbezug (mit Ausnahme von AuditEvent- und Communication-Ressource)</li>\n <li>read beim lesenden Zugriff auf ein Datenobjekt mit Versichertenbezug</li>\n <li>update, wenn das Datenobjekt mit Versichertenbezug geändert/aktualisiert wird</li>\n <li>delete, wenn das Datenobjekt mit Versichertenbezug manuell oder automatisch gelöscht wird</li>\n </ul>\n </li>\n <li>AuditEvent.action: analog AuditEvent.subType (C, R, U, D) gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-action]</li>\n <li>AuditEvent.recorded: aktuelle Systemzeit des TI-Flow-Fachdienstes</li>\n <li>AuditEvent.outcome: Ergebnis der aufgerufenen Operation gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-outcome] (0 = Erfolg, 4 = Fehler auf Clientseite, 8 = Serverfehler)</li>\n <li>AuditEvent.agent.type: Fester Wert humanuser bzw. bei Übermittlung an ePA oder NCPeH-FD dataprocessor aus [CodeSystem: Security Role Type (Experimental)]</li>\n <li>AuditEvent.agent.name: zeta-user-info.commonName bzw. bei Übermittlung an ePA \"TI-Flow-Fachdienst\"</li>\n <li>AuditEvent.agent.who: zeta-user-info.identifier</li>\n <li>AuditEvent.agent.requestor: Fester Wert false, da keine Protokolleinträge von außen erzeugt werden</li>\n <li>AuditEvent.soure.site: Fester Wert TI-Flow-Fachdienst</li>\n <li>AuditEvent.soure.observer: Device-Informationen des TI-Flow-Fachdienstes (status, serialnumber=gemäß Release)</li>\n <li>AuditEvent.entity.what: Referenz auf das durch den Abruf betroffene Datenobjekt Task, ChargeItem, MedicationDispense, Consent oder Objekt der Zugriffsberechtigung</li>\n <li>AuditEvent.entity.name: Eintrag der KVNR des betroffenen Versicherten aus dem Identifier des protokollierten Datenobjekts (String)</li>\n <li>AuditEvent.entity.description: Rezept-ID als Identifier, wird übernommen aus MedicationDispense, ChargeItem oder Task bzw. Consent.category.coding.code bei Anlegen oder Löschen eines Consent bzw. countryCode bei Anlegen oder Löschen einer Zugriffsberechtigung</li>\n </ul>",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -6968,7 +6968,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/audit-service.html#IG-TIFLOW-CORE-30"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/audit-service.html#IG-TIFLOW-CORE-30-01"
         },
         {
             "key": "IG-TIFLOW-CORE-300",
@@ -7084,9 +7084,9 @@
         {
             "key": "IG-TIFLOW-CORE-303",
             "title": "CS: Prüfung TI-Zertifikate",
-            "version": 0,
+            "version": 1,
             "status": "ACTIVE",
-            "text": "Das Primärsystem MUSS bei der Prüfung von X.509-Zertifikaten der TI den CertificateService des Konnektors mit der Operation VerifyCertificate gemäß [gemSpec_Kon#4.1.9.5.3] verwenden und dabei\n <ul>\n <li>das zu prüfende Zertifikat als Parameter X509Certificate verwenden</li>\n <li>die aktuelle Systemzeit als Parameter VerificationTime verwenden</li>\n </ul>\n Das Primärsystem MUSS bei Prüfung eines C.FD.ENC den Rückgabewert in RoleList gegen die erwartete Rollen-OID gemäß TAB_ILFERP_012 prüfen und bei Abweichungen die Benutzung des Zertifikats für einen Verbindungsaufbau zur VAU ablehnen.",
+            "text": "Das Primärsystem MUSS bei der Prüfung von X.509-Zertifikaten der TI den CertificateService des Konnektors mit der Operation VerifyCertificate gemäß [gemSpec_Kon]#4.1.9.5.3 verwenden und dabei\n <ul>\n <li>das zu prüfende Zertifikat als Parameter X509Certificate verwenden</li>\n <li>die aktuelle Systemzeit als Parameter VerificationTime verwenden</li>\n </ul>\n Das Primärsystem MUSS bei Prüfung eines C.FD.ENC den Rückgabewert in RoleList gegen die erwartete Rollen-OID gemäß TAB_ILFERP_012 prüfen und bei Abweichungen die Benutzung des Zertifikats für einen Verbindungsaufbau zur VAU ablehnen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -7142,7 +7142,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/pki-zertifikatspruefung.html#IG-TIFLOW-CORE-303"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/pki-zertifikatspruefung.html#IG-TIFLOW-CORE-303-01"
         },
         {
             "key": "IG-TIFLOW-CORE-304",
@@ -8569,7 +8569,7 @@
             "title": "TI-Flow-Fachdienst - RESTful API Capability Statement",
             "version": 1,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation auf den Endpunkt /metadata erlauben, in welcher er ein Capability Statement gemäß https://www.hl7.org/fhir/capabilitystatement.html veröffentlicht, welches die vom TI-Flow-Fachdienst verarbeiteten Ressourcen mit den zugehörigen http-Operationen der angebotenen REST-Schnittstelle auflistet: \n <ul>\n <li>Task - GET-, POST-Operation, FHIR-Operations für die Workflow-Steuerung und Einsicht durch den Versicherten </li>\n <li>MedicationDispense - GET-Operation für das Einsehen der Medikamentinformationen durch den Versicherten </li>\n <li>Communication - GET-, POST, DELETE-Operation für das Senden, Empfangen und Löschen von Nachrichten </li>\n <li>AuditEvent - GET-Operation für die Einsicht in Protokolleinträge durch den Versicherten </li>\n <li>Device - GET-Operation mit statischen Informationen zur serverseitigen Signatur damit der Client eine Information über die FHIR-Kompatibilität zum Fachdienst erhält.</li>\n </ul>",
+            "text": "Der TI-Flow-Fachdienst MUSS über den Endpunkt `&#60;modul&#62;/metadata` das FHIR CapabilityStatement des TI-Flow-Fachdienst des jeweilgen Anwendungsmoduls zurückgeben.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -10420,7 +10420,7 @@
             "title": "TI-Flow-Fachdienst - Reihenfolge Eingansprüfungen für Operationen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS die Prüfungen in der folgenden Reihenfolge durchführen:\n    <ol>\n    <li>Prüfung zur Autorisierung</li>\n    <li>Prüfung Pre-condition</li>\n    <li>falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen</li>\n    <li>falls Eingangsartefakt signiert: Signaturprüfung</li>\n    <li>Prüfung von Business-Rules</li>\n    </ol>",
+            "text": "Der TI-Flow-Fachdienst MUSS die Prüfungen in der folgenden Reihenfolge durchführen:\n <ol>\n <li>Prüfung zur Autorisierung</li>\n <li>Prüfung Pre-condition</li>\n <li>falls Eingangsartefakt signiert: Signaturprüfung</li>\n <li>falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen</li>\n <li>Prüfung von Business-Rules</li>\n </ol>",
             "conformance": "SHALL",
             "characteristics": [
                 {
