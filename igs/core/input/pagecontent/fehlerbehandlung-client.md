@@ -12,7 +12,7 @@ Tritt ein Fehler bei der Verarbeitung von Operationsaufrufen an einem Dienst der
     <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-        Das Clientsystem des TI-Flow-Fachdienstes MUSS im Falle von Fehlern Fehlermeldungen bereitstellen, die es ermöglichen, die Ursache des Fehlers zu identifizieren und mögliche Gegenmaßnahmen zu ergreifen.
+        Das Clientsystem des TI-Flow-Fachdienstes MUSS im Falle von Fehlern Fehlermeldungen bereitstellen, die es dem Nutzer ermöglichen, die Ursache des Fehlers zu identifizieren und mögliche Gegenmaßnahmen zu ergreifen.
 </requirement>
 
 Während der Auslösung von Anfragen durch einen Client können diverse Fehler auftreten. Bei einigen dieser Fehler ist eine erneute Anfrage (Retry) sinnvoll, für alle anderen Fälle soll kein Retry versucht werden. Um eine klare Leitlinie für die Fehlerbehandlung zu etablieren, wird auf die Webseite https://github.com/gematik/api-erp/blob/master/docs/erp_statuscodes.adoc verwiesen. Dort sind sämtliche Fehlercodes aufgeführt und für jeden einzelnen Code wird bewertet, ob ein erneuter Versuch der Anfrage (Retry) sowie ein Client-Failover empfohlen sind. Diese Bewertungen dienen als Orientierungshilfe für die Implementierung einer effektiven Fehlerbehandlungsstrategie, um die Robustheit und Zuverlässigkeit des Systems zu gewährleisten.

@@ -137,17 +137,3 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 </requirement>
 
 Das Primärsystem soll zur Vermittlung der Erreichbarkeit an den Endnutzer geeignete Informationen bereitstellen, um die Fehlerursache der Nichterreichbarkeit transparent darzustellen. Fehlerursachen für die Nichterreichbarkeit können beispielsweise sein: die Verbindung zum Konnektor, Verfügbarkeit der SMC-B, Verbindung zum VPN oder andere.
-
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-439" title="CS: einfacher Health-Check - Hinweis bei eingeschränkter Erreichbarkeit" version="0">
-    <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
-        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
-    </actor>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
-        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
-    </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
-        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
-    </actor>
-    Das Clientsystem des TI-Flow-Fachdienstes MUSS dem Anwender bei eingeschränkter Erreichbarkeit des TI-Flow-Fachdienst einen Hinweis mit möglichen Ursachen anzeigen.
-</requirement>
