@@ -308,6 +308,7 @@ policies:
       - { method: POST, path: "rx/Task/$accept" }
       - { method: POST, path: "rx/Task/{id}/$reject" }
       - { method: POST, path: "rx/Task/{id}/$close" }
+      - { method: POST, path: "rx/Task/{id}/$dispense" }
       - { method: POST, path: "rx/Task/{id}/$abort" }
       - { method: GET,  path: "rx/Task/" }
       - { method: GET,  path: "rx/Task/{id}" }
