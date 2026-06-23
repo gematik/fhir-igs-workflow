@@ -178,4 +178,3 @@ if (get_current_time() >= gespeicherte Zeit + 12h) { VAU-Zertifikat neu beziehen
 </li>
 </ol>
 
-Hinweis zum Fehlerhandling: Nur wenn der äußere Response der TI-Flow-Fachdienstes den Response-Code 200 liefert, enthält der payload eine mittels ASL-Protokoll verschlüsselte Response. Liefert der äußere Response eine Code >= 400, ist im ASL-Protokoll ein Fehler aufgetreten. Das PS muss nicht versuchen, den payload zu entschlüsseln.
