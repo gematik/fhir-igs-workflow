@@ -1,9 +1,7 @@
-Tritt ein Fehler bei der Verarbeitung von Operationsaufrufen an einem Dienst der TI (bspw. TI-Flow-Fachdienst) auf, dann antwortet der Dienst mit einer Fehlermeldung. Das Format und die verwendeten Fehlercodes sind in [Fehlercodes](./error-codes.html) beschrieben. Die API-Beschreibungen der Schnittstellen in den Anwendungsmodul- sowie Funktions-IGs enthalten die Fehlercodes für die Endpunkte.
-
-Weiterhin können Fehler in der lokalen Verarbeitung auftreten.
+Tritt ein Fehler bei der Verarbeitung von Operationsaufrufen an einem Dienst der TI (bspw. TI-Flow-Fachdienst) auf, dann antwortet der Dienst mit einer Fehlermeldung. Das Format und die verwendeten Fehlercodes sind in den Spezifikationen der Interfaces (bspw. [gemSpec_FD_eRp]) beschrieben. Weiterhin können Fehler in der lokalen Verarbeitung auftreten.
 
 <!-- A_20152 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-263" title="CS: Verständliche Fehlermeldung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-263" title="CS: Verständliche Fehlermeldung" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -14,7 +12,7 @@ Weiterhin können Fehler in der lokalen Verarbeitung auftreten.
     <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-        Das Clientsystem des TI-Flow-Fachdienstes MUSS im Falle von Fehlern Fehlermeldungen bereitstellen, die es den Mitarbeitern der Leistungserbringerinstitution ermöglichen, die Ursache des Fehlers zu identifizieren und mögliche Gegenmaßnahmen zu ergreifen.
+        Das Clientsystem des TI-Flow-Fachdienstes MUSS im Falle von Fehlern Fehlermeldungen bereitstellen, die es dem Nutzer ermöglichen, die Ursache des Fehlers zu identifizieren und mögliche Gegenmaßnahmen zu ergreifen.
 </requirement>
 
 Während der Auslösung von Anfragen durch einen Client können diverse Fehler auftreten. Bei einigen dieser Fehler ist eine erneute Anfrage (Retry) sinnvoll, für alle anderen Fälle soll kein Retry versucht werden. Um eine klare Leitlinie für die Fehlerbehandlung zu etablieren, sind unten auf dieser Seite weitere Informationen zu finden. 
@@ -91,7 +89,7 @@ Folgende Fehler können in allen Operationen ausgegeben werden. Im Folgenden sin
 </requirement>
 
 <!-- A_20884 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-CORE-267" title="CS: Exponential Backoff bei Verbindungsfehlern" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-CORE-267" title="CS: Exponential Backoff bei Verbindungsfehlern" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -102,5 +100,6 @@ Folgende Fehler können in allen Operationen ausgegeben werden. Im Folgenden sin
     <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das Clientsystem des TI-Flow-Fachdienstes SOLL bei serverseitigen Fehlermeldungen, die auf eine Überlastung des Zielsystems schließen lassen (z.B. http-status 5xx, 429 - too many requests, etc.), erneute Verbindungsversuche nach dem Prinzips des Exponential Backoffs [ExpBack] durchführen.
+    Das Clientsystem des TI-Flow-Fachdienstes SOLL bei serverseitigen Fehlermeldungen, die auf eine Überlastung des Zielsystems schließen lassen (z.B. http-status 5xx, 429 - too many requests, etc.), erneute Verbindungsversuche nach dem Prinzips des Exponential Backoffs durchführen.
 </requirement>
+

@@ -86,7 +86,7 @@ RuleSet: DeviceInteraction(expectation)
 // Protokollierung
 RuleSet: AuditEventInteraction(expectation)
 * insert CapSupportResource(AuditEvent, #SHALL)
-* insert CapSupportProfile(TIAuditEventRest, #SHALL)
+* insert CapSupportProfile(TIFlowAuditEventRest, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert AuditEventSearchTypeInteractionStatusCodes

@@ -13,8 +13,8 @@ Im Rahmen von Operationaufrufen von Clientsystemen führt der TI-Flow-Fachdienst
     <ol>
     <li>Prüfung zur Autorisierung</li>
     <li>Prüfung Pre-condition</li>
-    <li>falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen</li>
     <li>falls Eingangsartefakt signiert: Signaturprüfung</li>
+    <li>falls Eingangsparameter mit FHIR-Artefakten: FHIR-Validität prüfen</li>
     <li>Prüfung von Business-Rules</li>
     </ol>
 </requirement>
@@ -96,15 +96,10 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS an seinen Schnittstellen eine http-GET-Operation auf den Endpunkt /metadata erlauben, in welcher er ein Capability Statement gemäß https://www.hl7.org/fhir/capabilitystatement.html veröffentlicht, welches die vom TI-Flow-Fachdienst verarbeiteten Ressourcen mit den zugehörigen http-Operationen der angebotenen REST-Schnittstelle auflistet: 
-    <ul>
-     <li>Task - GET-, POST-Operation, FHIR-Operations für die Workflow-Steuerung und Einsicht durch den Versicherten </li>
-     <li>MedicationDispense - GET-Operation für das Einsehen der Medikamentinformationen durch den Versicherten </li>
-     <li>Communication - GET-, POST, DELETE-Operation für das Senden, Empfangen und Löschen von Nachrichten </li>
-     <li>AuditEvent - GET-Operation für die Einsicht in Protokolleinträge durch den Versicherten </li>
-     <li>Device - GET-Operation mit statischen Informationen zur serverseitigen Signatur damit der Client eine Information über die FHIR-Kompatibilität zum Fachdienst erhält.</li>
-     </ul>
+     Der TI-Flow-Fachdienst MUSS über den Endpunkt `&#60;modul&#62;/metadata` das FHIR CapabilityStatement des TI-Flow-Fachdienst des jeweilgen Anwendungsmoduls zurückgeben.
 </requirement>
+
+*Hinweis*: Das Capability Statement bietet eine detaillierte Beschreibung der Fähigkeiten des TI-Flow-Fachdienst und ist entscheidend für das Verständnis der unterstützten FHIR-Funktionalitäten. Je Anwendungsmodul (bspw. Arzneimittel oder DiGA) wird ein eigenes CapabilityStatement bereitgestellt.
 
 ### Verordnungs-ID
 
@@ -148,6 +143,10 @@ Die Verordnungs-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks f�
      damit Tippfehler in der manuellen Erfassung erkannt werden können und die Verordnungs-ID über 11 Jahre eine eineindeutige Zuordnung zwischen allen Datenobjekten im Workflow erlaubt.
 </requirement>
 
+Für den Übergang der Anwendung E-Rezept vom E-Rezept-Fachdienst zum TI-Flow-Fachdienst muss es für ein ClientSystem möglich sein zu erkennen, auf welchem Fachdienst ein Task eingestellt wurde, ohne diesen vorher abzufragen.
+
+Der TI-Flow-Fachdienst erzeugt Tasks für jeden Workflow > `&#60;flowtype&#62;`.0**1**0.000.000.000.`&#60;prüfziffer&#62;`. Siehe hierzu auch die [Anforderungen des TI-Flow-Fachdienst für die $create-Operation](./op-create-req-fd.html).
+
 <!-- A_19218 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="Prüfung Verordnungs-ID" version="1">
     <meta lockversion="false"/>
@@ -162,15 +161,6 @@ Die Verordnungs-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks f�
 Es gelten folgende Anforderungen und Vorgaben zur Verarbeitung und Interpretation von Zeichen- und Datensätzen im TI-Flow-Fachdienst.
 
 Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätzen einheitliche Vorgaben gelten. Laut FHIR Spezifikation wird für XML und JSON Datensätze das Character Encoding "UTF-8" vorgegeben. Byte Order Marks (BOM) werden nicht angeben.
-
-<!-- A_28428  -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-359" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS beim Verarbeiten von PKCS#7 Enveloping-Daten die Anforderungen zur Verarbeitung von Datensätzen im TI-Flow-Fachdienst anwenden.
-</requirement>
 
 <!-- A_28427 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-360" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Forcieren von UTF-8 ohne BOM" version="1">
@@ -203,6 +193,19 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
     </table> 
     abbrechen.
 </requirement>
+
+Diese Anforderung zur Verarbeitung von Datensätzen ohne BOM gilt auch, wenn PKCS#7 Container deserialisiert werden.
+
+<!-- A_28428  -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-359" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS beim Verarbeiten von PKCS#7 Enveloping-Daten die Anforderungen zur Verarbeitung von Datensätzen im TI-Flow-Fachdienst anwenden.
+</requirement>
+
+Für die Erstellung von Datensätzen gelten für Clientsysteme folgende Anforderungen.
 
 <!-- A_28429 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-361" title="Character Encoding für TI-Flow-Fachdienst" version="0">
@@ -279,7 +282,7 @@ Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzonen
 ### Identifikation des Nutzers
 
 Im Rahmen des Verbindungsaufbaus eines Clientsystems mit dem TI-Flow-Fachdienst authentisiert sich der Nutzer.
-Der ZETA Guard übermittelt die Informationen zum Nutzer und das Clientsystem in Http-Headern im Request an den Resource Server (siehe [gemSpec_ZETA#A_25669-*]).
+Der ZETA-Guard übermittelt die Informationen zum Nutzer und das Clientsystem in Http-Headern im Request an den Resource Server (siehe [gemSpec_ZETA#A_25669-*]).
 
 Folgende Informationen sind im Header zeta-user-info enthalten. (siehe [zeta-user-info.yaml](https://raw.githubusercontent.com/gematik/zeta/refs/heads/main/src/schemas/zeta-user-info.yaml))
 

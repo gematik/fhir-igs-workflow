@@ -40,7 +40,7 @@ Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow
 
 | Art des IG | Beschreibung |
 | --- | --- |
-| Modul IG | Diese Implementation Guides enthalten Inhalte zu einem Modul, bzw. Anwendung innerhalb des TI-Flow-Fachdienst. Diese werden über eine eigenen eigenen URL-Pfad adressiert und sind durch eine eigene Domäne und Akteure gekennzeichnet. Jede Workflow-Anwendung im TI-Flow-Fachdienst wird durch einen eigenen IG beschrieben, der auf Beschreibungen und Verhalten der Kernfunktionalitäten basiert. |
+| Modul IG | Diese Implementation Guides enthalten Inhalte zu einem Modul, bzw. Anwendung innerhalb des TI-Flow-Fachdienst. Diese werden über eine eigenen URL-Pfad adressiert und sind durch eine eigene Domäne und Akteure gekennzeichnet. Jede Workflow-Anwendung im TI-Flow-Fachdienst wird durch einen eigenen IG beschrieben, der auf Beschreibungen und Verhalten der Kernfunktionalitäten basiert. |
 | Funktions IG | Diese Implementation Guides enthalten Beschreibungen zu Endpunkten und Funktionalitäten, die als Bausteine wiederverwendet werden können und daher zentral beschrieben werden. Sie existieren nicht als eigene Anwendung in der TI-Flow-Fachdienst landschaft. |
 
 <div><figcaption><strong>Tabelle: </strong>Beschreibung der IG Arten im TI-Flow-Fachdienst</figcaption></div>
@@ -62,6 +62,17 @@ Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow
 </figure>
 
 <br>
+
+### Methodik
+
+Dieser IG beschreibt die grundlegenden, modulübergreifenden Kernfunktionalitäten des TI-Flow-Fachdienstes. Sobald eine Funktionalität oder ein Endpunkt von mehreren IGs der TI-Flow-Familie genutzt wird, werden die zugehörigen Anforderungen und Beschreibungen zentral in diesem IG dokumentiert. So werden Redundanzen in den einzelnen Modul-IGs vermieden.
+
+Ableitende IGs können weitere Anforderungen und Details zu einer Operation hinzufügen.
+
+Beispielsweise wird die $activate-Operation in allen Modul-IGs semantisch gleich verwendet und umfasst im Allgemeinen dieselben Prüfungsroutinen, etwa QES-Prüfung und FHIR-Validierung.
+Der Arzneimittel-IG nutzt diese Operation ebenfalls und erweitert sie um modulspezifische Prüfungen.
+
+Modulspezifische Operationen, wie die $dispense-Operation im Arzneimittel IG, wird in den Kernfunktionalitäten nicht beschrieben.
 
 ### Aufbau
 

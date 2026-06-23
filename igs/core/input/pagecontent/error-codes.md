@@ -23,6 +23,8 @@ Die Fehlermeldung beinhaltet bei fachlichen Fehlern einen VAU-verschlüsselten i
       an den Client zurückgeben, ohne Implementierungsdetails (z.B. kein Stacktrace) preiszugeben und dabei sicherstellen, dass personenbezogene oder medizinische Daten, falls für die qualifizierte Fehlerbeschreibung notwendig, ausschließlich in der VAU-verschlüsselten inneren http-Response übertragen werden.
 </requirement>
 
+*Hinweis zum Fehlerhandling*: Nur wenn der äußere Response der TI-Flow-Fachdienstes den Response-Code 200 liefert, enthält der payload eine mittels ASL-Protokoll verschlüsselte Response. Liefert der äußere Response eine Code >= 400, ist im ASL-Protokoll ein Fehler aufgetreten. Das PS muss nicht versuchen, den payload zu entschlüsseln.
+
 ### Fehlerstruktur bei FHIR-Schnittstellen
 
 Da der TI-Flow-Fachdienst FHIR als grundlegenedes Austauschformat für den überwiegenden Teil der API verwendet, werden alle FHIR-Schnittstellen im Fehlerfall mit einer [TIFlow-OperationOutcome](./StructureDefinition-tiflow-operation-outcome.html) quittiert:
@@ -213,7 +215,7 @@ FHIR definiert drei Ebenen auf denen Operationen ausgeführt werden können:
 |---|---|
 |System Level|[baseUrl]/$operation|
 |Type Level|[baseUrl]/Task/$operation|
-|Instance Level|[baseUrl]/Task/<id>/$operation|
+|Instance Level|[baseUrl]/Task/&#60;id&#62;/$operation|
 
 <div><figcaption><strong>Tabelle: </strong>Ebenen von FHIR Operationen</figcaption></div><br>
 
@@ -258,7 +260,7 @@ Hierfür gelten für die TIFlow-Anwendungen die folgenden Fehlercodes für Opera
 
 ### Struktur von Fehlern bei Nicht-FHIR APIs
 
-Der TI-Flow-Fachdienst bietet Schnittstellen, deren Austauschformat nicht nach FHIR modelliert wurde. Bspw. [Push-API: Pusher](./query-api-pushers.md). 
+Der TI-Flow-Fachdienst bietet Schnittstellen, deren Austauschformat nicht nach FHIR modelliert wurde. Bspw. [Push-API: Pusher](./query-api-pushers.html). 
 
 Diese Schnittstellen haben eine eigens definierte JSON Struktur von Fehlern, die in der jeweils referenzierten OpenAPI dokumentiert ist. Im Fehlerfall erhalten Clients eine HTTP Antwort mit HTTP Status Code und einem Response Body im Media Type <i>application/json</i>.
 

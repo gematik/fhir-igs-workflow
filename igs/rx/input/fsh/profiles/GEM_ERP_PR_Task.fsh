@@ -1,22 +1,32 @@
 Profile: GEM_ERP_PR_Task
-Parent: TIFlowTask
+Parent: TIFlowOrderTask
 Id: GEM-ERP-PR-Task
 Title: "Task für E-Rezept"
 Description: "Task für die Verwaltung des E-Rezept-Workflows"
 * insert LegacyMetaProfile(GEM_ERP_PR_Task)
 
+* extension ^slicing.discriminator.type = #value
+* extension ^slicing.discriminator.path = "url"
+* extension ^slicing.description = "Erweiterungen für die Aufgabe, die durch url unterschieden werden."
 * extension ^slicing.rules = #closed
+* extension ^slicing.ordered = false
 
-* extension contains GEM_ERP_EX_LastMedicationDispense named lastMedicationDispense 0..1 MS
-and TIFlowAcceptDate named acceptDate 0..1 MS
-and TIFlowExpiryDate named expiryDate 0..1 MS
+* extension contains GEM_ERP_EX_PrescriptionType named flowType 1..1 MS
+and GEM_ERP_EX_LastMedicationDispense named lastMedicationDispense 0..1 MS
+and GEM_ERP_EX_AcceptDate named acceptDate 0..1 MS
+and GEM_ERP_EX_ExpiryDate named expiryDate 0..1 MS
 and GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PROPERTIES named eu-isRedeemableByProperties 0..1 MS
 and GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PATIENT_AUTHORIZATION named eu-isRedeemableByPatientAuthorization 0..1 MS
+
+* identifier contains PrescriptionID 1..1 MS
+* identifier[PrescriptionID] only EPrescriptionId
+  * ^short = "E-Rezept-ID"
+  * ^definition = "Die E-Rezept-ID ist der Hauptidentifikator für die Task Ressource und den gesamten TIFlow Workflow. Dieser Identifikator wird vom TI-Flow-Fachdienst generiert und darf nicht manuell geändert werden."
 
 * for.identifier only IdentifierKvid10
 
 * performerType.coding 1..1
-* performerType.coding from TIFlowRxTaskOrganizationsVS (required)
+* performerType.coding from GEM_ERP_VS_OrganizationType (required)
 
 * input MS
   * ^slicing.discriminator.type = #value
@@ -57,7 +67,7 @@ and GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PATIENT_AUTHORIZATION named eu-isRedeemableBy
 
 // Receipt
 * output[receipt] 0..1 MS
-  * value[x] only Reference(TIFlowReceiptBundle)
+  * value[x] only Reference(GEM_ERP_PR_Bundle)
   * type.coding 1..1
   * type.coding from GEM_ERP_VS_DocumentType (required)
     * system 1..1

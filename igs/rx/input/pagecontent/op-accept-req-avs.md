@@ -39,7 +39,7 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
     auszuführen.
 </requirement>
 
-Für weitere Informationen siehe Operation "Qualifizierte Signatur des E-Rezepts prüfen" aus der API-Schnittstelle [E-Rezept API Dokumentation]. Implementierungshinweise zur Signaturprüfung für Primärsysteme sind in [gemILF_PS#4.4.2] beschrieben. Die Außenschnittstelle des Konnektors ist in [gemSpec_Kon#TIP1-A_5034-x Operation VerifyDocument (nonQES und QES)] beschrieben. 
+Für weitere Informationen siehe Operation "Qualifizierte Signatur des E-Rezepts prüfen" aus der API-Schnittstelle [E-Rezept API Dokumentation]. Implementierungshinweise zur Signaturprüfung für Primärsysteme sind in [gemILF_PS]#4.4.2 beschrieben. Die Außenschnittstelle des Konnektors ist in [gemSpec_Kon]#TIP1-A_5034-* Operation VerifyDocument (nonQES und QES) beschrieben. 
 
 Als Response liefert der Konnektor einen standardisierten Prüfbericht in einer VerificationReport-Struktur gemäß [OASIS-VR].
 

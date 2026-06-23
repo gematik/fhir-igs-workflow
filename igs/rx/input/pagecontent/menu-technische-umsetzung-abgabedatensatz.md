@@ -25,12 +25,12 @@ Für die Signatur des Abgabedatensatzes wird der Konnektor verwendet.
 </requirement>
 
 <!-- A_27050 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-3" title="PS abgebende LEI: Abgabedatensatz signieren - Gültigkeit SMC-B prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-3" title="PS abgebende LEI: Abgabedatensatz signieren - Gültigkeit SMC-B prüfen" version="1">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Das PS der abgebenden LEI MUSS beim Signieren eines Abgabedatensatzes mit einer non-QES vor dem Signieren prüfen, dass die für die nonQES verwendet SMC-B gültig ist.
+     Das PS der abgebenden LEI MUSS beim Signieren eines Abgabedatensatzes mit einer nonQES vor dem Signieren prüfen, dass die für die nonQES verwendet SMC-B gültig ist.
 </requirement>
 
-Hinweis: Die SMC-B ist gültig, wenn ein gültiger ACCESS_TOKEN für den Zugriff auf den TI-Flow-Fachdienst auf Basis dieser SMC-B vorliegt.
+Hinweis: Die SMC-B ist gültig, wenn eine Authentisierung für den Zugriff auf den TI-Flow-Fachdienst auf Basis dieser SMC-B erfolgreich war.
