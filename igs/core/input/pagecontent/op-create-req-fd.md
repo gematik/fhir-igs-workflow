@@ -97,7 +97,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Erzeugen eines neuen Tasks sicherstellen, dass der 12-stellige Zählerstand der Rezept-ID für alle Workflowtypen größer oder gleich 010.000.000.000 ist.
+     Der TI-Flow-Fachdienst MUSS beim Erzeugen des ersten Tasks aller Workflowtypen sicherstellen, dass der 12-stellige Zählerstand der Rezept-ID gleich 010.000.000.000 ist.
 </requirement>
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-440" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID sequentielle Zählung" version="0">
