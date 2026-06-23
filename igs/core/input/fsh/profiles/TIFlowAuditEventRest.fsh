@@ -1,12 +1,12 @@
 Profile: TIFlowAuditEventRest
 Parent: AuditEvent
-Id: tiflow-audit-event-rest
-Title: "TIFlow Audit Event Rest"
-Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf einen TIFLow Service"
+Id: audit-event-rest
+Title: "TI Audit Event Rest"
+Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf einen FHIR Data Service der Telematikinfrastruktur (TI)"
 * insert Meta
 // preserve the version of this resource
-// * ^version = "2.0.0"
-// * ^date = "2026-06-20"
+* ^version = "1.0.0"
+* ^date = "2026-06-01"
 * ^status = #active
 
 * type MS
@@ -29,3 +29,25 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
   * observer only Reference(Device)
   * observer.reference 1..1
 
+* entity 1..* MS
+* entity ^slicing.discriminator.type = #value
+* entity ^slicing.discriminator.path = "type"
+* entity ^slicing.rules = #open
+* entity ^slicing.ordered = false
+* entity contains 
+  patient 1..1 and
+  task 0..1 and
+  service 0..1
+* entity[patient].type.code = #Patient
+* entity[patient].type.system = "http://terminology.hl7.org/CodeSystem/audit-entity-type"
+* entity[patient].what.identifier 1..1 MS
+* entity[patient].what.identifier only IdentifierKvid10
+* entity[task].type.code = #Task
+* entity[task].type.system = "http://terminology.hl7.org/CodeSystem/audit-entity-type"
+* entity[task].what.identifier 1..1 MS
+* entity[task].what.identifier only EPrescriptionId
+* entity[service].type.code = #4 //Other
+* entity[service].type.system = "http://terminology.hl7.org/CodeSystem/audit-entity-type"
+* entity[service].name 1..1 MS
+  * ^short = "Name des FHIR Data Service"
+  * ^definition = "Der Name des FHIR Data Service, auf den zugegriffen wurde."  

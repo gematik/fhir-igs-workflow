@@ -614,6 +614,30 @@
             "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-close-req-fd.html#IG-TIFLOW-DIGA-3-01"
         },
         {
+            "key": "IG-TIFLOW-DIGA-30",
+            "title": "TI-Flow-Fachdienst - Versichertenprotokoll zu DiGA-Operationen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß \"TAB_DiGA_004 Versichertenprotokoll\" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/menu-technische-umsetzung-audit-service.html#IG-TIFLOW-DIGA-30"
+        },
+        {
             "key": "IG-TIFLOW-DIGA-4",
             "title": "TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense",
             "version": 1,
