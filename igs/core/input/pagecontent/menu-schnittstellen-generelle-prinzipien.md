@@ -282,7 +282,7 @@ Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzonen
 #### Filtern von FHIR-Objekten
 Clients erhalten die Möglichkeit die Rückgabe der Elemente im FHIR-Bundle durch Suchparameter zu filtern.
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-439" title="TI-Flow-Fachdienst - Verarbeitung von Suchparameter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-441" title="TI-Flow-Fachdienst - Verarbeitung von Suchparameter" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
