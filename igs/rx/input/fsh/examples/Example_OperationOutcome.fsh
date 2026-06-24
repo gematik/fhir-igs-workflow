@@ -45,3 +45,16 @@ Description: "Beispiel für ein OperationOutcome, das vom Fachdienst über die $
 * issue[0].details.coding.system = "https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs"
 * issue[0].details.coding.display = "Access role not allowed"
 * issue[0].details.text = "Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern"
+
+Instance: ExampleRxDispenseOperationOutcomeError
+InstanceOf: OperationOutcome
+Usage: #example
+Title: "Beispiel Operation Outcome für Rx $dispense Operation"
+Description: "Beispiel für ein OperationOutcome, das vom Fachdienst über die $dispense-Operation zurückgegeben werden könnte, wenn sich der Task nicht im Status in-progress befindet"
+* id = "ExampleRxDispenseOperationOutcomeError"
+* issue[0].severity = #error
+* issue[0].code = #invalid
+* issue[0].details.coding.code = #TIFLOW_TASK_STATUS_MISMATCH
+* issue[0].details.coding.system = "https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs"
+* issue[0].details.coding.display = "Task status mismatch"
+* issue[0].details.text = "Task has invalid status."
