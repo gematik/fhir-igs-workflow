@@ -5004,7 +5004,7 @@
        fhir:short [ fhir:v "The value that is unique" ] ;
        fhir:definition [ fhir:v "The portion of the identifier typically relevant to the user and which is unique within the context of the system." ] ;
        fhir:comment [ fhir:v "If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](http://hl7.org/fhir/R4/extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe." ] ;
-       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
          fhir:path [ fhir:v "Identifier.value" ] ;
@@ -5036,6 +5036,7 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
+       fhir:mustSupport [ fhir:v true ] ;
        fhir:isModifier [ fhir:v false ] ;
        fhir:isSummary [ fhir:v true ] ;
        fhir:mapping ( [
@@ -11035,10 +11036,12 @@
      ] [
        fhir:id [ fhir:v "AuditEvent.agent:server.who.identifier.value" ] ;
        fhir:path [ fhir:v "AuditEvent.agent.who.identifier.value" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:fixed [
          a fhir:string ;
          fhir:v "server"
-       ]
+       ] ;
+       fhir:mustSupport [ fhir:v true ]
      ] [
        fhir:id [ fhir:v "AuditEvent.agent:server.name" ] ;
        fhir:path [ fhir:v "AuditEvent.agent.name" ] ;

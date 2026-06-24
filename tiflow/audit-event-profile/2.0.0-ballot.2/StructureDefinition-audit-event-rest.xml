@@ -4561,7 +4561,7 @@
       <short value="The value that is unique"/>
       <definition value="The portion of the identifier typically relevant to the user and which is unique within the context of the system."/>
       <comment value="If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](http://hl7.org/fhir/R4/extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe."/>
-      <min value="0"/>
+      <min value="1"/>
       <max value="1"/>
       <base>
         <path value="Identifier.value"/>
@@ -4584,6 +4584,7 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
@@ -10093,7 +10094,9 @@
     </element>
     <element id="AuditEvent.agent:server.who.identifier.value">
       <path value="AuditEvent.agent.who.identifier.value"/>
+      <min value="1"/>
       <fixedString value="server"/>
+      <mustSupport value="true"/>
     </element>
     <element id="AuditEvent.agent:server.name">
       <path value="AuditEvent.agent.name"/>

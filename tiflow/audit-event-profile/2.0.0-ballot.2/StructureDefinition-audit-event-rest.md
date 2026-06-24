@@ -220,7 +220,9 @@ Other representations of profile: [CSV](StructureDefinition-audit-event-rest.csv
     {
       "id" : "AuditEvent.agent:server.who.identifier.value",
       "path" : "AuditEvent.agent.who.identifier.value",
-      "fixedString" : "server"
+      "min" : 1,
+      "fixedString" : "server",
+      "mustSupport" : true
     },
     {
       "id" : "AuditEvent.agent:server.name",
