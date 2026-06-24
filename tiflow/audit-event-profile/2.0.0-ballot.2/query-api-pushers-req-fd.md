@@ -1,0 +1,67 @@
+# Server-Anforderungen: Pushers-Query - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
+
+TIFlow - Kernfunktionalitäten
+
+Version 2.0.0-ballot.2 - draft 
+
+* [**Table of Contents**](toc.md)
+* [**Additional API**](menu-schnittstellen-additional-api.md)
+* [**Query API: Pushers**](query-api-pushers.md)
+* **Server-Anforderungen: Pushers-Query**
+
+## Server-Anforderungen: Pushers-Query
+
+Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den pusher-Endpunkt.
+
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Pushers mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem folgenden Fehler:
+
+* HTTP-Code: Error Code
+  * 405 - Method Not Allowed: methodNotAllowed
+* HTTP-Code: Error Details
+  * 405 - Method Not Allowed: Die verwendete HTTP-Methode ist für diese Ressource nicht zulässig
+
+abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS die API mit den Endpunkten GET /pushers und POST /pushers/set gemäß [OpenAPI_FD] bereitstellen.
+### GET /pushers
+
+Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-Instanzen abgefragt werden.
+
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /pushers die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
+* oid_versicherter
+die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+
+* HTTP-Code: Error Code
+  * 403 - Forbidden: invalidOid
+* HTTP-Code: Error Details
+  * 403 - Forbidden: -
+
+abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /pushers die dem Versicherten zugeordneten Pusher-Ressourcen anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren, damit ausschließlich Versicherte ihre eigenen App-Registrierungen einsehen können.
+### POST /pushers/set
+
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set das Payload gegen das Schema in [OpenAPI_FD] validieren und bei Abweichungen mit dem folgenden Fehler:
+
+* HTTP-Code: Error Code
+  * 400 - Bad Request: malformedRequest
+* HTTP-Code: Error Details
+  * 400 - Bad Request: Ungültiger http-Request
+
+abbrechen, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
+
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
+* oid_versicherter
+die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:
+
+* HTTP-Code: Error Code
+  * 403 - Forbidden: invalidOid
+* HTTP-Code: Error Details
+  * 403 - Forbidden: -
+
+abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
+
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set, wenn eine neue App-Registrierung angelegt wird, den aktuellen Zeitpunkt als Zeitstempel des Anlegens mit der App-Registrierung verknüpft speichern.
+

@@ -1,0 +1,150 @@
+# de.gematik.tiflow#2.0.0-ballot.2: Implementation Guide TIFlow - Kernfunktionalitäten
+
+## Pages
+
+* [Implementation Guide TI-Flow Kernfunktionaliten](index.md)
+* [AVS-Anforderungen $accept](op-accept-req-avs.md)
+* [Zertifikatsprüfung](pki-zertifikatspruefung.md)
+* [Server-Anforderungen: Pushers-Query](query-api-pushers-req-fd.md)
+* [Server-Anforderungen $close](op-close-req-fd.md)
+* [Fehlercodes](error-codes.md)
+* [Notifications für Clientsysteme](menu-technische-umsetzung-subscription.md)
+* [Query API: AuditEvent](query-api-auditevent.md)
+* [Server-Anforderungen: Channels-Query](query-api-channels-req-fd.md)
+* [Operation $reject (Task zurückweisen)](op-reject.md)
+* [KTR-Anforderungen $close](op-close-req-ktr.md)
+* [FdV-Anforderungen: AuditEvent-Query](query-api-auditevent-req-fdv.md)
+* [AVS-Anforderungen $reject](op-reject-req-avs.md)
+* [Release Notes](release-notes.md)
+* [Client-Anforderungen $create](op-create-req-pvs.md)
+* [Additional API](menu-schnittstellen-additional-api.md)
+* [Query API: MedicationDispense](query-api-medicationdispense.md)
+* [AVS-Anforderungen: Subscription](query-api-subscription-req-avs.md)
+* [Anforderungen zur Fehlerbehandlung](error-codes-req-fd.md)
+* [AVS-Anforderungen: Communication-Query](query-api-communication-req-avs.md)
+* [Datenschutz und Sicherheit](menu-schnittstellen-datenschutz-und-sicherheit.md)
+* [Server-Anforderungen: Device-Query](query-api-device-req-fd.md)
+* [FdV-Anforderungen: Communication-Query](query-api-communication-req-fdv.md)
+* [Operation API](menu-schnittstellen-operation-api.md)
+* [Server-Anforderungen $activate](op-activate-req-fd.md)
+* [Zugriffsprotokollierung](audit-service.md)
+* [Query API: Consent](query-api-consent.md)
+* [Server-Anforderungen $reject](op-reject-req-fd.md)
+* [Operation $close (Task schließen)](op-close.md)
+* [Löschfristen](ttl.md)
+* [FdV-Anforderungen: Pushers-Query](query-api-pushers-req-fdv.md)
+* [FHIR-Artefakte](artifacts.md)
+* [Technische Umsetzung - Systemüberblick](menu-technische-umsetzung-systemueberblick.md)
+* [FdV-Anforderungen: MedicationDispense-Query](query-api-medicationdispense-req-fdv.md)
+* [KTR-Anforderungen: Task-Query](query-api-task-req-ktr.md)
+* [Server-Anforderungen: Subscription](query-api-subscription-req-fd.md)
+* [Client-Anforderungen $activate](op-activate-req-pvs.md)
+* [AVS-Anforderungen $abort](op-abort-req-avs.md)
+* [Query API](menu-schnittstellen-query-api.md)
+* [Mapping alter Anforderungen auf FHIR-IG Anforderungen](requirement-mapping-0_9_0-to-2_0_0.md)
+* [Health Check](health-check.md)
+* [Operation $create (Task erzeugen)](op-create.md)
+* [Fehlerbehandlung Clientsysteme](fehlerbehandlung-client.md)
+* [Server-Anforderungen $accept](op-accept-req-fd.md)
+* [Server-Anforderungen $abort](op-abort-req-fd.md)
+* [FdV-Anforderungen: Task-Query](query-api-task-req-fdv.md)
+* [Query API: Device](query-api-device.md)
+* [Additional API: Subscription](query-api-subscription.md)
+* [Apache License](license.md)
+* [Server-Anforderungen: MedicationDispense-Query](query-api-medicationdispense-req-fd.md)
+* [FdV-Anforderungen $abort](op-abort-req-fdv.md)
+* [FdV-Anforderungen: Channels-Query](query-api-channels-req-fdv.md)
+* [Operation $abort (Task abbrechen)](op-abort.md)
+* [Query API: Task](query-api-task.md)
+* [AVS-Anforderungen: Task-Query](query-api-task-req-avs.md)
+* [Query API: Channels](query-api-channels.md)
+* [KTR-Anforderungen $accept](op-accept-req-ktr.md)
+* [Server-Anforderungen $create](op-create-req-fd.md)
+* [Generelle Prinzipien](menu-schnittstellen-generelle-prinzipien.md)
+* [Client-Anforderungen: Consent-Query](query-api-consent-req-fdv.md)
+* [Operation $activate (Task aktivieren)](op-activate.md)
+* [Server-Anforderungen: Communication-Query](query-api-communication-req-fd.md)
+* [FHIR-Ressource validieren](fhir-validate.md)
+* [Server-Anforderungen: AuditEvent-Query](query-api-auditevent-req-fd.md)
+* [Architekturmöglichkeiten TI-Flow-Fachdienst](architecture.md)
+* [Query API: Pushers](query-api-pushers.md)
+* [AVS-Anforderungen $close](op-close-req-avs.md)
+* [Server-Anforderungen: Task-Query](query-api-task-req-fd.md)
+* [Server-Anforderungen: Consent-Query](query-api-consent-req-fd.md)
+* [Query API: Communication](query-api-communication.md)
+* [KTR-Anforderungen: Communication-Query](query-api-communication-req-ktr.md)
+* [FdV-Anforderungen: Device-Query](query-api-device-req-fdv.md)
+* [PVS-Anforderungen $abort](op-abort-req-pvs.md)
+* [Operation $accept (Task akzeptieren)](op-accept.md)
+* [KTR-Anforderungen: Subscription](query-api-subscription-req-ktr.md)
+* [KTR-Anforderungen $reject](op-reject-req-ktr.md)
+* [Kommunikation zu Diensten der TI](kommunikation-dienste-ti.md)
+
+## Resources
+
+### CodeSystems
+
+* [CodeSystem des Verfügbarkeitsstatus](CodeSystem-GEM-ERP-CS-AvailabilityStatus.md)
+* [CodeSystem der Dokumententypen](CodeSystem-GEM-ERP-CS-DocumentType.md)
+* [CodeSystem der Flowtypes in TIFlow Anwendungen](CodeSystem-GEM-ERP-CS-FlowType.md)
+* [TIFLOW Operation Outcome Details CS](CodeSystem-tiflow-operation-outcome-details-cs.md)
+
+### ValueSets
+
+* [ValueSet der Verfügbarkeitsstatus-Codes](ValueSet-GEM-ERP-VS-AvailabilityStatus.md)
+* [ValueSet der Dokumenttyp-Codes](ValueSet-GEM-ERP-VS-DocumentType.md)
+* [ValueSet der Flowtypes in TIFlow Anwendungen](ValueSet-GEM-ERP-VS-FlowType.md)
+* [TIFLOW Operation Outcome Details VS](ValueSet-tiflow-operation-outcome-details-vs.md)
+* [TIFlow Order Task ValueSet](ValueSet-tiflow-order-task-status-vs.md)
+
+### Logicals
+
+* [TI Feature Definition](StructureDefinition-ti-feature-definition.md)
+* [Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel](StructureDefinition-ti-flow-feature-wf160.md)
+* [Feature: WF169 - Flowtype für Apothekenpflichtige Arzneimittel mit Steuerung durch den Leistungserbringer](StructureDefinition-ti-flow-feature-wf169.md)
+
+### Complex-type Profiles
+
+* [GEM_ERP_PR_Signature](StructureDefinition-GEM-ERP-PR-Signature.md)
+
+### Resource Profiles
+
+* [GEM ERP PR Binary](StructureDefinition-GEM-ERP-PR-Binary.md)
+* [TIFlow Receipt Bundle](StructureDefinition-GEM-ERP-PR-Bundle.md)
+* [GEM ERP PR Composition](StructureDefinition-GEM-ERP-PR-Composition.md)
+* [GEM ERP PR Device](StructureDefinition-GEM-ERP-PR-Device.md)
+* [GEM ERP PR Digest](StructureDefinition-GEM-ERP-PR-Digest.md)
+* [TI Audit Event Rest](StructureDefinition-audit-event-rest.md)
+* [Capability Statement Profil für den TI-Flow-Fachdienst](StructureDefinition-tiflow-capability-statement.md)
+* [Generische TIFlow Communication](StructureDefinition-tiflow-communication.md)
+* [Bundle der $accept Operation](StructureDefinition-tiflow-op-accept-bundle.md)
+* [TIFlow OperationOutcome](StructureDefinition-tiflow-operation-outcome.md)
+* [Task für TIFlow Verordnungen](StructureDefinition-tiflow-order-task.md)
+
+### Extensions
+
+* [TI Flow AcceptDate](StructureDefinition-GEM-ERP-EX-AcceptDate.md)
+* [TIFlow Beneficiary](StructureDefinition-GEM-ERP-EX-Beneficiary.md)
+* [TI Flow ExpiryDate](StructureDefinition-GEM-ERP-EX-ExpiryDate.md)
+* [TI Flow Type](StructureDefinition-GEM-ERP-EX-PrescriptionType.md)
+
+### CapabilityStatements
+
+* [CapabilityStatement für den TI-Flow-Fachdienst](CapabilityStatement-ti-flow-fachdienst-server.md)
+
+### ConceptMaps
+
+* [Telemetry Data Status Codes Concept Map](ConceptMap-TIFLOW-CM-TelemetryDataStatusCodes.md)
+
+### ImplementationGuides
+
+* [Implementation Guide TIFlow - Kernfunktionalitäten](index.md)
+
+### SearchParameters
+
+* [TaskAcceptDateSP](SearchParameter-TaskAcceptDateSP.md)
+* [TaskExpiryDateSP](SearchParameter-TaskExpiryDateSP.md)
+
+### Examples
+
+* [ExampleCapabilityStatementServerPU (CapabilityStatement)](CapabilityStatement-ExampleCapabilityStatementServerPU.md)
