@@ -34,7 +34,7 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
 * agent[server].type.coding.code = #dataprocessor
 * agent[server].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
 * agent[server].who.identifier 1..1 MS
-* agent[server].who.identifier only Identifier
+* agent[server].who.identifier.value 1..1 MS
 * agent[server].who.identifier.value = "server" (exactly)
 * agent[server].name 1..1 MS  
 
