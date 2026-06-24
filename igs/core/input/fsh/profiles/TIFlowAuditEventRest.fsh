@@ -19,10 +19,24 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
 * outcome MS
 
 * agent MS
-  * type 1..1 MS
-  * who.identifier 1..1 MS
-  * who.identifier only IdentifierTelematikId or IdentifierKvid10
-  * name MS
+* agent ^slicing.discriminator.type = #value
+* agent ^slicing.discriminator.path = "type"
+* agent ^slicing.rules = #closed
+* agent ^slicing.ordered = false
+* agent contains
+  human 0..1 and
+  server 0..1
+* agent[human].type.coding.code = #humanuser
+* agent[human].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
+* agent[human].who.identifier 1..1 MS
+* agent[human].who.identifier only IdentifierTelematikId or IdentifierKvid10
+* agent[human].name 1..1 MS
+* agent[server].type.coding.code = #dataprocessor
+* agent[server].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
+* agent[server].who.identifier 1..1 MS
+* agent[server].who.identifier only Identifier
+* agent[server].who.identifier.value = "server" (exactly)
+* agent[server].name 1..1 MS  
 
 * source MS
   * site 1..1 MS
