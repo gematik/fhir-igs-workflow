@@ -260,7 +260,7 @@ CapabilityStatement für den TI-Flow-Fachdienst
         "valueCode" : "SHALL"
       }],
       "type" : "AuditEvent",
-      "supportedProfile" : ["https://gematik.de/fhir/tiflow/StructureDefinition/audit-event-rest"],
+      "supportedProfile" : ["https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-audit-event-rest"],
       "_supportedProfile" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
