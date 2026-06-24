@@ -71,3 +71,16 @@ Description: "Beispiel für ein OperationOutcome, das vom Fachdienst über die $
 * issue[0].details.coding.system = "https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs"
 * issue[0].details.coding.display = "Access role not allowed"
 * issue[0].details.text = "Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern"
+
+Instance: ExampleRxRejectOperationOutcomeError
+InstanceOf: OperationOutcome
+Usage: #example
+Title: "Beispiel Operation Outcome für Rx $reject Operation"
+Description: "Beispiel für ein OperationOutcome, das vom Fachdienst über die $reject-Operation zurückgegeben werden könnte, wenn der aufrufende Nutzer nicht berechtigt ist, die Operation auszuführen"
+* id = "ExampleRxRejectOperationOutcomeError"
+* issue[0].severity = #error
+* issue[0].code = #invalid
+* issue[0].details.coding.code = #TIFLOW_AUTH_ROLE_NOT_ALLOWED
+* issue[0].details.coding.system = "https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs"
+* issue[0].details.coding.display = "Access role not allowed"
+* issue[0].details.text = "Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern"
