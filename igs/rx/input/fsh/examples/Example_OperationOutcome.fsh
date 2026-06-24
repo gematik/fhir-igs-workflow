@@ -6,7 +6,7 @@ Description: "Beispiel für ein OperationOutcome, das vom Fachdienst über die $
 * id = "ExampleRxCreateOperationOutcomeError"
 * issue[0].severity = #error
 * issue[0].code = #invalid
-* issue[0].details.coding.code = "SVC_VALIDATION_FAILED"
+* issue[0].details.coding.code = #SVC_VALIDATION_FAILED
 * issue[0].details.coding.system = "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes"
 
 Instance: ExampleRxActivateOperationOutcomeError
@@ -17,7 +17,7 @@ Description: "Beispiel für ein OperationOutcome, das vom Fachdienst über die $
 * id = "ExampleRxActivateOperationOutcomeError"
 * issue[0].severity = #error
 * issue[0].code = #invalid
-* issue[0].details.coding.code = "SVC_VALIDATION_FAILED"
+* issue[0].details.coding.code = #SVC_VALIDATION_FAILED
 * issue[0].details.coding.system = "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes"
 
 Instance: ExampleRxAbortOperationOutcomeError
@@ -28,7 +28,7 @@ Description: "Beispiel für ein OperationOutcome, das vom Fachdienst über die $
 * id = "ExampleRxAbortOperationOutcomeError"
 * issue[0].severity = #error
 * issue[0].code = #invalid
-* issue[0].details.coding.code = "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+* issue[0].details.coding.code = #TIFLOW_AUTH_ROLE_NOT_ALLOWED
 * issue[0].details.coding.system = "https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs"
 * issue[0].details.coding.display = "Access role not allowed"
 * issue[0].details.text = "Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern"
@@ -41,7 +41,7 @@ Description: "Beispiel für ein OperationOutcome, das vom Fachdienst über die $
 * id = "ExampleRxAcceptOperationOutcomeError"
 * issue[0].severity = #error
 * issue[0].code = #invalid
-* issue[0].details.coding.code = "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+* issue[0].details.coding.code = #TIFLOW_AUTH_ROLE_NOT_ALLOWED
 * issue[0].details.coding.system = "https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs"
 * issue[0].details.coding.display = "Access role not allowed"
 * issue[0].details.text = "Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern"
