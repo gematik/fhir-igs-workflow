@@ -45,7 +45,6 @@ Description: "Medikament zur Ausgabe des Rezepts"
   * coding[atc-de] 0..0
 
 * status 1..1
-* status = #completed
 * manufacturer 0..0
 
 * form
