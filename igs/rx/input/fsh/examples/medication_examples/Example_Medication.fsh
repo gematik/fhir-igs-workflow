@@ -12,7 +12,7 @@ Usage: #example
 
 // ChargenInformation
 * batch.lotNumber = "1234567890"
-
+* status = #active
 // normgroesse
 * extension[normSizeCode].url = "http://fhir.de/StructureDefinition/normgroesse"
 * extension[normSizeCode].valueCode = #N1
@@ -41,6 +41,7 @@ Usage: #inline
 
 // ChargenInformation
 * batch.lotNumber = "1234567890"
+* status = #active
 
 // normgroesse
 * extension[normSizeCode].url = "http://fhir.de/StructureDefinition/normgroesse"
@@ -63,7 +64,7 @@ Usage: #example
 
 // ChargenInformation
 * batch.lotNumber = "1234567890"
-
+* status = #active
 * code.coding[pzn].system = "http://fhir.de/CodeSystem/ifa/pzn"
 * code.coding[pzn].code = #06313728
 
@@ -74,6 +75,7 @@ Title: "Medikament ohne Stärke-Code"
 Description: "Beispiel für ein Medikament ohne System und Code für die Wirkstoffstärke"
 Usage: #example
 * code.text = "Infusion bestehend aus 85mg Doxorubicin aufgeloest zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionsloesung"
+* status = #active
 * form = http://standardterms.edqm.eu#11210000 "Solution for infusion"
 * ingredient[+]
   * itemCodeableConcept = http://fhir.de/CodeSystem/bfarm/atc|2025#L01DB01 "Doxorubicin"
@@ -91,6 +93,7 @@ Description: "Beispiel für ein Medikament ohne Code oder System für die Stärk
 Usage: #example
 * code.text = "Infusion bestehend aus 85mg Doxorubicin aufgeloest zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionsloesung"
 * form = http://standardterms.edqm.eu#11210000 "Solution for infusion"
+* status = #active
 * ingredient[+]
   * itemCodeableConcept = http://fhir.de/CodeSystem/bfarm/atc|2025#L01DB01 "Doxorubicin"
   * isActive = true

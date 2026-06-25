@@ -14,7 +14,7 @@ Usage: #example
 
 // Impfstoff
 * extension[isVaccine].valueBoolean = false
-
+* status = #active
 // normgroesse
 * code.text = "Hydrocortison-Dexpanthenol-Salbe"
 * form.coding[kbvDarreichungsform].system = "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"

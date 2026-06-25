@@ -5,7 +5,7 @@ Title: "Medication-Rezeptur-FD"
 Usage: #example
 * contained[+] = MedicationHydrocortison-FD
 * contained[+] = MedicationDexpanthenol-FD
-
+* status = #active
 // Extensions
 * extension[drugCategory].valueCoding = $epa-drug-categoy-cs#00
 * extension[manufacturingInstructions].valueString = "Bitte kühl zubereiten und lagern."
