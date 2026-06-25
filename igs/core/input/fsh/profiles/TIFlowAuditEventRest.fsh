@@ -27,20 +27,24 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
 * agent ^slicing.rules = #open
 * agent ^slicing.ordered = false
 * agent contains
-  human 0..1 and
-  server 0..1
-* agent[human].type.coding.code = #humanuser
-* agent[human].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
-* agent[human].who.identifier 1..1 MS
-* agent[human].who.identifier.value 1..1 MS
-* agent[human].who.identifier only IdentifierTelematikId or IdentifierKvid10
-* agent[server].type.coding.code = #dataprocessor
-* agent[server].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
-* agent[server].who.identifier 1..1 MS
-* agent[server].who.identifier.value 1..1 MS
-* agent[server].who.identifier.value = "server" (exactly)
-* agent[server].name 1..1 MS 
+  user 0..1 and
+  client 0..1 and
+  internal 0..1
+* agent[user].type.coding.code = #humanuser
+* agent[user].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
+* agent[user].who.identifier 1..1 MS
+* agent[user].who.identifier.value 1..1 MS
+* agent[user].who.identifier only IdentifierTelematikId or IdentifierKvid10
+* agent[client].type.coding.code = #humanuser
+* agent[client].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
+* agent[client].who.identifier 1..1 MS
+* agent[client].who.identifier.value 1..1 MS
+* agent[client].who.identifier only IdentifierTelematikId
+* agent[internal].type.coding.code = #dataprocessor
+* agent[internal].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
+* agent[internal].name 1..1 MS 
   * ^short = "Name des FHIR Data Service" 
+* agent[internal].name = "TI-Flow-Fachdienst"
 
 * source MS
   * site 1..1 MS
