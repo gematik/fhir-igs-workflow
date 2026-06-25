@@ -7,7 +7,7 @@ Usage: #example
 * contained[+] = MedicationDexpanthenol-FD
 
 // Extensions
-* extension[drugCategory].valueCoding = EPADrugCategoryCS#00
+* extension[drugCategory].valueCoding = $epa-drug-categoy-cs#00
 * extension[manufacturingInstructions].valueString = "Bitte kühl zubereiten und lagern."
 * extension[packaging].valueString = "Tube"
 * extension[isVaccine].valueBoolean = false
@@ -36,7 +36,7 @@ Usage: #example
 * ingredient[=].strength.denominator.unit = "g"
 
 Instance: MedicationHydrocortison-FD
-InstanceOf: EPAMedicationPZNIngredient
+InstanceOf: TIMedicationDgMP
 Usage: #inline
 * extension[type].valueCoding = $sct#781405001 "Medicinal product package (product)"
 * code
@@ -46,7 +46,7 @@ Usage: #inline
   * text = "Hydrocortison 1% Creme"
 
 Instance: MedicationDexpanthenol-FD
-InstanceOf: EPAMedicationPZNIngredient
+InstanceOf: TIMedicationDgMP
 Usage: #inline
 * extension[type].valueCoding = $sct#781405001 "Medicinal product package (product)"
 * code

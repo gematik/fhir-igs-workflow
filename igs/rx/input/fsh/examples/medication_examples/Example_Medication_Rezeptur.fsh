@@ -7,7 +7,7 @@ Usage: #example
 * contained[+] = MedicationHydrocortison
 * contained[+] = MedicationDexpanthenol
 // Arzneimittelkategorie
-* extension[drugCategory].valueCoding = EPADrugCategoryCS#00
+* extension[drugCategory].valueCoding = $epa-drug-categoy-cs#00
 
 //MedicationType
 * extension[type].valueCoding = $sct#1208954007 "Extemporaneous preparation (product)"
@@ -41,7 +41,7 @@ Usage: #example
 * ingredient[=].strength.denominator.code = #g
 
 Instance: MedicationHydrocortison
-InstanceOf: EPAMedicationPZNIngredient
+InstanceOf: TIMedicationDgMP
 Title: "Hydrocortison-Wirkstoff"
 Description: "Hydrocortison-Wirkstoff als Bestandteil einer Rezeptur"
 Usage: #inline
@@ -53,7 +53,7 @@ Usage: #inline
 * batch.lotNumber = "56498416854"
 
 Instance: MedicationDexpanthenol
-InstanceOf: EPAMedicationPZNIngredient
+InstanceOf: TIMedicationDgMP
 Title: "Dexpanthenol-Wirkstoff"
 Description: "Dexpanthenol-Wirkstoff als Bestandteil einer Rezeptur"
 Usage: #inline

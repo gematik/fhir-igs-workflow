@@ -26,3 +26,8 @@ Alias: $cs-oid-practitioner-role = urn:oid:2.16.840.1.113883.2.9.6.2.7
 Alias: $tiflow-core-oo-cs = https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs
 Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes
 Alias: $hl7-oo = http://terminology.hl7.org/CodeSystem/operation-outcome
+
+// TI Terminologies
+Alias: $profession-oid-vs = https://gematik.de/fhir/directory/ValueSet/OrganizationProfessionOIDTypeVS
+Alias: $epa-drug-categoy-cs = https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs
+Alias: $epa-role-of-healthcare-vs = https://gematik.de/fhir/terminology/ValueSet/epa-structural-role-of-healthcare-professional-vs

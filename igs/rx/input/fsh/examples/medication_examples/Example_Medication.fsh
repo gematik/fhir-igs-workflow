@@ -5,7 +5,7 @@ Title: "Beispiel-Medikament Sumatriptan"
 Description: "Beispiel für ein Sumatriptan-Medikament mit vollständigen Eigenschaften"
 Usage: #example
 // Arzneimittelkategorie
-* extension[drugCategory].valueCoding = EPADrugCategoryCS#00
+* extension[drugCategory].valueCoding = $epa-drug-categoy-cs#00
 
 // Impfstoff
 * extension[isVaccine].valueBoolean = false
@@ -34,7 +34,7 @@ Description: "Beispiel für ein Sumatriptan-Medikament mit spezifischer ID für 
 Usage: #inline
 * id = "30e0e53f-275c-46f5-9e59-04d55735dabb"
 // Arzneimittelkategorie
-* extension[drugCategory].valueCoding = EPADrugCategoryCS#00
+* extension[drugCategory].valueCoding = $epa-drug-categoy-cs#00
 
 // Impfstoff
 * extension[isVaccine].valueBoolean = false

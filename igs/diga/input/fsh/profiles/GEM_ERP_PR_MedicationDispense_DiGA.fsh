@@ -1,5 +1,5 @@
 Profile: GEM_ERP_PR_MedicationDispense_DiGA
-Parent: EPAMedicationDispense
+Parent: TIMedicationDispenseDgMP
 Id: GEM-ERP-PR-MedicationDispense-DiGA
 Title: "GEM ERP PR MedicationDispense DiGA"
 Description: "Dispensierung einer DiGA-Verordnung"
@@ -49,6 +49,20 @@ Description: "Dispensierung einer DiGA-Verordnung"
 
 * substitution 0..0
   * ^comment = "Laut Bundesamt für Soziale Sicherung ist der Ersatz für DiGAs nicht erlaubt."
+
+
+// Not applicable fields
+* partOf 0..0
+* statusReasonCodeableConcept 0..0
+* statusReasonReference 0..0
+* context 0..0
+* supportingInformation 0..0
+* location 0..0
+* type 0..0
+* daysSupply 0..0
+* destination 0..0
+* detectedIssue 0..0
+* eventHistory 0..0
 
 Invariant: workflow-abgabeDatumsFormat //TODO: rename
 Description: "Wert muss ein Datum in der Form: YYYY-MM-DD sein."

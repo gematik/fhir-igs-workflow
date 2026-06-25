@@ -1,5 +1,5 @@
 Profile: GEM_ERP_PR_Medication
-Parent: EPAMedication
+Parent: TIMedicationDgMP
 Id: GEM-ERP-PR-Medication
 Title: "GEM ERP PR Medication"
 Description: "Medikament zur Ausgabe des Rezepts"
@@ -20,8 +20,8 @@ Description: "Medikament zur Ausgabe des Rezepts"
 
 * ingredient MS
   * itemCodeableConcept ^short = "Komponente in codierter Form" // Diese Zeile ist notwendig, um den HAPI-Validator-Fehler zu vermeiden
+  * itemCodeableConcept.coding[atc-de] 0..0
   * itemReference MS
-  * itemReference only Reference(EPAMedicationPharmaceuticalProduct or EPAMedicationPZNIngredient)
   * itemReference ^type.aggregation = #contained
 
 * ingredient.extension[darreichungsform] MS
@@ -38,13 +38,16 @@ Description: "Medikament zur Ausgabe des Rezepts"
 * contained
   * ^short = "Enthaltene Medications"
   * ^definition = "Dieses Feld kann weitere Medication Ressourcen enthalten, die hier gelistet werden. Dies tritt z.B. bei Rezepturen auf."
-* identifier 
-  * ^short = "Business-Identifier der Medication"
-  * ^definition = "Dieses Feld bietet die Möglichkeit, für eine Medikation Business Identifier zu belegen."
-  * ^comment = "Gegenüber dem E-Rezept-Fachdienst wird dieser Wert nicht ausgewertet."
+
 * code
   * ^short = "Code der Medikation"
   * ^definition = "Ein Code (oder eine Gruppe von Codes), der dieses Medikament identifiziert, oder eine textuelle Beschreibung, falls kein Code verfügbar ist."
+  * coding[atc-de] 0..0
+
+* status 1..1
+* status = #completed
+* manufacturer 0..0
+
 * form
   * ^short = "Darreichungsform"
   * ^definition = "Beschreibt die Darreichungsform des Arzneimittels."
@@ -73,3 +76,11 @@ Description: "Medikament zur Ausgabe des Rezepts"
   * expirationDate
     * ^short = "Verfallsdatum"
     * ^definition = "Wann diese spezielle Charge des Produkts abläuft"
+
+// Removed fields and elements
+* extension[context]
+* extension[rxPrescriptionProcessIdentifier]
+* identifier 0..0
+  * ^short = "Business-Identifier der Medication"
+  * ^definition = "Dieses Feld bietet die Möglichkeit, für eine Medikation Business Identifier zu belegen."
+  * ^comment = "Gegenüber dem E-Rezept-Fachdienst wird dieser Wert nicht ausgewertet."
