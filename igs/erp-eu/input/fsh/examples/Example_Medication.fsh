@@ -4,7 +4,7 @@ InstanceOf: GEM_ERPEU_PR_Medication
 Title:   "Sample Medication Sumatripan"
 Usage: #example
 // Arzneimittelkategorie
-* extension[drugCategory].valueCoding = EPADrugCategoryCS#00
+* extension[drugCategory].valueCoding = $epa-drug-categoy-cs#00
 
 // Impfstoff
 * extension[isVaccine].valueBoolean = false
@@ -32,7 +32,7 @@ Title:   "Sample Medication Sumatripan"
 Usage: #inline
 * id = "30e0e53f-275c-46f5-9e59-04d55735dabb"
 // Arzneimittelkategorie
-* extension[drugCategory].valueCoding = EPADrugCategoryCS#00
+* extension[drugCategory].valueCoding = $epa-drug-categoy-cs#00
 
 // Impfstoff
 * extension[isVaccine].valueBoolean = false

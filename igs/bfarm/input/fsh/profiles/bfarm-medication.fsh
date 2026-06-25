@@ -1,5 +1,5 @@
 Profile: ERP_TPrescription_Medication
-Parent: EPAMedication
+Parent: TIMedicationDgMP
 Id: erp-tprescription-medication
 Title: "E-T-Rezept Medication"
 Description: "Medikationsprofil, welches Informationen zum verordneten oder abgegebenen Arzneimittel enthält."
