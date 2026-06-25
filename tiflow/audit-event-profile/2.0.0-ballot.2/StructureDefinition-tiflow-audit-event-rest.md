@@ -207,6 +207,12 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-audit-event-r
       "mustSupport" : true
     },
     {
+      "id" : "AuditEvent.agent:human.who.identifier.value",
+      "path" : "AuditEvent.agent.who.identifier.value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
       "id" : "AuditEvent.agent:server",
       "path" : "AuditEvent.agent",
       "sliceName" : "server",
