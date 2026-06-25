@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Client-Anforderungen: Consent-Query - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
+    <title>Data Matrix Code - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
-    <style type="text/css">h2{--heading-prefix:"18.6.2"}
-    h3,h4,h5,h6{--heading-prefix:"18.6.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"12"}
+    h3,h4,h5,h6{--heading-prefix:"12"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
 
@@ -255,15 +255,15 @@ Implementation Guide<br/> TIFlow - Kernfunktionalitäten
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="menu-schnittstellen-query-api.html"><b>Query API</b></a></li><li><a href="query-api-consent.html"><b>Query API: Consent</b></a></li><li><b>Client-Anforderungen: Consent-Query</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Data Matrix Code</b></li>
 
           <span style="float:right;">
 
-            <a href="query-api-consent-req-fd.html">&lt;vorherige</a> | 
+            <a href="health-check.html">&lt;vorherige</a> | 
 
             <a href="#bottom">unten</a>
 
-          | <a href="menu-schnittstellen-additional-api.html">nächste&gt;</a>
+          | <a href="fehlerbehandlung-client.html">nächste&gt;</a>
 
           </span>
 
@@ -285,7 +285,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>Client-Anforderungen: Consent-Query</h2>
+  <h2>Data Matrix Code</h2>
   
 
 
@@ -304,115 +304,195 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>Seiteninhalt:</p>
 
 <ul id="markdown-toc">
-  <li><a href="#einwilligung-erteilen" id="markdown-toc-einwilligung-erteilen">Einwilligung erteilen</a></li>
-  <li><a href="#einwilligungen-einsehen" id="markdown-toc-einwilligungen-einsehen">Einwilligungen einsehen</a></li>
-  <li><a href="#einwilligung-widerrufen" id="markdown-toc-einwilligung-widerrufen">Einwilligung widerrufen</a></li>
+  <li><a href="#2d-code-für-e-rezept-token" id="markdown-toc-2d-code-für-e-rezept-token">2D-Code für E-Rezept-Token</a></li>
+  <li><a href="#2d-code-anzeigen" id="markdown-toc-2d-code-anzeigen">2D-Code anzeigen</a></li>
+  <li><a href="#2d-code-einscannen" id="markdown-toc-2d-code-einscannen">2D-Code einscannen</a></li>
+  <li><a href="#2d-code-für-abrechnungsinformation-token" id="markdown-toc-2d-code-für-abrechnungsinformation-token">2D-Code für Abrechnungsinformation-Token</a></li>
 </ul>
 
 </div>
+<h3 id="2d-code-für-e-rezept-token">2D-Code für E-Rezept-Token</h3>
 
-<p>Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der <code class="language-plaintext highlighter-rouge">Consent</code>-Query-Endpunkte.</p>
+<p>Um ein E-Rezept beliefern zu können, muss die Apotheke das Wissen um die Referenz des steuernden Tasks und den AccessCode zum Nachweis der Berechtigung erlangen.
+Diese beiden Datenfelder, URL des Tasks und AccessCode, werden vom Versicherten zur Verfügung gestellt. Die Bereitstellung kann als E-Rezept-Nachricht über den TI-Flow-Fachdienst oder als 2D-Code erfolgen. Die Bereitstellung als 2D-Code erfolgt entweder über das Abscannen des Codes von einem Patientenausdruck oder vom Display des E-Rezept-FdV, welches den Code auf dem Display des Geräts des Versicherten anzeigt.</p>
 
-<h3 id="einwilligung-erteilen">Einwilligung erteilen</h3>
-
-  <!-- Ablaufdiagramm Anwendungsfall -->
-
-  <!-- A_22709-02 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext" version="0" key="IG-TIFLOW-CORE-287">
+  <!-- A_19554 -->
+<requirement conformance="SHALL" title="Datenstruktur Einlöseinformationen für E-Rezept" version="0" key="IG-TIFLOW-CORE-229">
     <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" den Text für die Einwilligung derart gestalten, dass dem Nutzer eine informierte Einwilligung möglich ist. Insbesondere MÜSSEN enthalten sein: der Verwendungszweck, die konkreten Informationen über die Art der erhobenen Daten, die Speicherdauer, Hinweis auf Freiwilligkeit, auf Widerrufsrecht, Hinweis auf die Folgen bei Verweigerung oder Widerruf.
-</requirement>
-
-  <!-- A_22163-02 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben" version="0" key="IG-TIFLOW-CORE-288">
-    <meta lockversion="false"/>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
-        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
-    </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" es dem Nutzer ermöglichen, die Einwilligung einzugeben.
-</requirement>
-
-  <!-- A_22165-01 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen" version="0" key="IG-TIFLOW-CORE-289">
-    <meta lockversion="false"/>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" eine Consent Ressource mit:
+    Das E-Rezept-FdV und das PS der verordnenden LEI MÜSSEN zum Erstellen eines E-Rezept-Token die ID auf einen Task zusammen mit dem AccessCode des Tasks aus den lokal verfügbaren Informationen einer Verordnung als URL in der Form:
     <ul>
-        <li>Versicherten-ID in Consent.patient.identifier</li>
-        <li>Einwilligungstyp in Consent.category.coding.code</li>
+    <li>2D-Code-Daten = "Task/" + Task.id + "/$accept?ac=" + AccessCode</li>
     </ul>
-    erstellen.
+    zusammenstellen, damit diese Zeichenkette als Referenz in einer E-Rezept-Nachricht oder in einem JSON-Array für die Generierung eines 2D-Codes verwendet werden kann.
 </requirement>
 
-  <!-- A_22166-01 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: Einwilligung erteilen - Speicherrequest" version="1" key="IG-TIFLOW-CORE-290">
+<p>Beispiel für E-Rezept-Einlöseinformationen (z.B. für Nutzung als Referenz in Communication-Ressource):<br/>
+"Task/160.000.000.000.123.76/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"</p>
+
+  <!-- A_19553-01 -->
+<requirement conformance="SHALL" title="Generierung 2D-Code als Sammlung" version="0" key="IG-TIFLOW-CORE-230">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation POST /Consent mit:
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das E-Rezept-FdV MUSS eine Sammlung von einer und bis zu drei E-Rezept-Referenzen als Array in JSON-Notation gemäß [JSON] der folgenden Form  
     <ul>
-        <li>Consent Ressource im HTTP-Request-Body</li>
+    <li>2D-Code-Daten = { "urls": [ "E-Rezept 1", "E-Rezept 2", "E-Rezept 3" ] }</li>
     </ul>
-    ausführen.
+    zusammenfassen, um daraus einen 2D-Code generieren zu können.
 </requirement>
 
-<h3 id="einwilligungen-einsehen">Einwilligungen einsehen</h3>
+<p>Beispiel für genau ein E-Rezept-Token (für die Codierung als 2D-Code):</p>
 
-  <!-- Ablaufdiagramm Anwendungsfall -->
+<p>{   "urls": [ "Task/160.000.000.000.123.76/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]}</p>
 
-  <!-- A_22168-02 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="1" key="IG-TIFLOW-CORE-291">
+<p>Beispiel für eine Sammlung von drei E-Rezept-Token (für die Codierung als 2D-Code):</p>
+
+<p>{ <br/>
+    "urls": ["Task/160.000.000.000.123.76/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea", 
+    "Task/160.123.456.789.123.58/$accept?ac=0936cfa582b447144b71ac89eb7bb83a77c67c99d4054f91ee3703acf5d6a629", 
+    "Task/160.000.346.211.638.15/$accept?ac=d3e6092ae3af14b5225e2ddbe5a4f59b3939a907d6fdd5ce6a760ca71f45d8e5" <br/>
+    ]
+}</p>
+
+<p>Der Datentyp der Task.id erlaubt bis zu 64 Zeichen zur Angabe einer ID des Tasks. Mit der zulässigen Maximallänge ergibt sich folgendes Beispiel, aus dem die maximale Datengröße für einen 2D-Datamatrix-Code ergibt (Umbrücke und Leerzeichen werden im Sinne der Datenkomprimierung entfernt).</p>
+
+<p>{"urls":["Task/1234567891011121314151617181920212223242526272829303132333435361/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea","Task/1234567891011121314151617181920212223242526272829303132333435362/$accept?ac=0936cfa582b447144b71ac89eb7bb83a77c67c99d4054f91ee3703acf5d6a629","Task/1234567891011121314151617181920212223242526272829303132333435363/$accept?ac=d3e6092ae3af14b5225e2ddbe5a4f59b3939a907d6fdd5ce6a760ca71f45d8e5"]}</p>
+
+  <!-- A_19543 -->
+<requirement conformance="SHALL" title="Generierung DataMatrix-Code" version="0" key="IG-TIFLOW-CORE-231">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligungsinformation abrufen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /Consent mit ausführen.
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das E-Rezept-FdV und das PS der verordnenden LEI MÜSSEN die Datenstruktur für 2D-Code-Daten in eine DataMatrix-Darstellung gemäß ISO/IEC 16022:2006 überführen können.
 </requirement>
 
-<p>In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwilligungstyp des Consent ist in Consent.category.coding.code angegeben. Die Werte können sich auf folgende Codesysteme beziehen: [GEM_ERPCHRG_CS_ConsentType], [GEM_ERPEU_CS_ConsentType].</p>
+<h3 id="2d-code-anzeigen">2D-Code anzeigen</h3>
 
-<h3 id="einwilligung-widerrufen">Einwilligung widerrufen</h3>
+<p>Der Nutzer eines E-Rezept-FdV kann die Zugriffs Rezeptinformationen als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um das/die E-Rezept/E-Rezepte direkt in der Apotheke einlösen zu können.</p>
 
-  <!-- Ablaufdiagramm Anwendungsfall -->
-
-  <!-- A_22169-02 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben" version="0" key="IG-TIFLOW-CORE-292">
+  <!-- A_21401-02 -->
+<requirement conformance="SHALL NOT" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - Flowtype 169 / 209 - Anzeige nicht zulässig" version="0" key="IG-TIFLOW-CORE-232">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" es dem Nutzer ermöglichen, den Widerruf zu erfassen.
+    Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" es dem Nutzer NICHT ermöglichen, einen E-Rezept-Token für ein E-Rezept mit dem Flowtype 169 oder 209 zu erstellen und anzuzeigen.
 </requirement>
 
-  <!-- A_22330-02 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: Einwilligung widerrufen - Bestätigung" version="0" key="IG-TIFLOW-CORE-293">
+<p>Ein 2D-Code kann bis zu 3 E-Rezept-Token beinhalten. Sollen mehr E-Rezept-Token übermittelt werden, können bspw. mehrere 2D-Codes erzeugt und angezeigt werden.</p>
+
+  <!-- A_24571 -->
+<requirement conformance="SHALL NOT" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - maximal 3 E-Rezept-Token in 2D-Code" version="0" key="IG-TIFLOW-CORE-233">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" vom Nutzer eine Bestätigung einholen, dass die Einwilligung widerrufen werden soll, somit ggf. korrespondierende Daten gelöscht werden und die Möglichkeit geben, das Widerrufen abzubrechen.
+    Das E-Rezept-FdV DARF NICHT im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" mehr als drei E-Rezept-Token in einem 2D-Code zusammenfassen.
 </requirement>
 
-  <!-- A_22171-01 -->
-<requirement conformance="SHALL" title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="1" key="IG-TIFLOW-CORE-294">
+  <!-- A_20181-01 -->
+<requirement conformance="SHALL NOT" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - personenbezogene Daten" version="0" key="IG-TIFLOW-CORE-234">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+    </actor>
+    Das E-Rezept-FdV DARF NICHT im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" personenbezogene Daten zusammen mit der Anzeige des 2D-Codes anzeigen.
+</requirement>
+
+<h3 id="2d-code-einscannen">2D-Code einscannen</h3>
+
+<p>Eine Alternative zur Übermittlung eines E-Rezept-Token oder eines Abrechnungsinformation-Token vom Versicherten mittels E-Rezept-Nachricht ist die persönliche Übergabe in der Apotheke vor Ort. Hierzu übergibt der Kunde (Versicherter oder Vertreter) dem Mitarbeiter der abgebenden LEI einen Patientenausdruck mit 2D-Code oder präsentiert einen 2D-Code auf dem Display seines mobilen Gerätes. Ebenso besteht die Möglichkeit, dass ein Versicherter den Patientenausdruck eines E-Rezept-Tokens an eine Versandapotheke sendet. Der 2D-Code wird eingescannt.</p>
+
+<p>Das PS der abgebenden LEI muss es dem Nutzer ermöglichen, einen 2D-Code für das Zuweisen von E-Rezepten oder zum Ändern einer Abrechnungsinformation einzuscannen.</p>
+
+  <!-- A_22078 -->
+<requirement conformance="SHALL" title="CS: 2D-Code scannen - Gescannte Inhalte prüfen" version="0" key="IG-TIFLOW-CORE-235">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das CS einer abgebenden Institution MUSS die gescannten Inhalte vor einer weiteren Verarbeitung validieren, um sich vor Schadsoftware zu schützen.
+</requirement>
+
+<p>Der 2D-Code für E-Rezept-Token enthält mindestens einen Token für ein E-Rezept und kann zu 3 Token zusammenfassen. Dies dient einer besseren Usability.</p>
+
+<p>Der 2D-Code für Abrechnungsinformation-Token enthält genau einen Token.</p>
+
+<p>Mit den Informationen aus einem E-Rezept-Token kann das E-Rezept vom TI-Flow-Fachdienst heruntergeladen werden. Mit der Information aus dem Abrechnungsinformation-Token kann die Abrechnungsinformation vom TI-Flow-Fachdienst heruntergeladen und der PKV-Abgabedatensatz einmalig auf dem TI-Flow-Fachdienst aktualisiert werden.</p>
+
+<p><b>Hinweis zu Mehrfachverordnung:</b>
+Wenn Datamatrix-Codes einer Mehrfachverordnung von einem Ausdruck eingescannt werden, dann dürfen die E-Rezept-Token der Teilverordnungen, welche noch nicht ihren Gültigkeitszeitraum erreicht haben, nicht automatisch im AVS gespeichert werden, da der Versicherte das Recht hat, für diese ggf. eine andere Apotheke für das Einlösen auszuwählen.</p>
+
+  <!-- A_22637 -->
+<requirement conformance="SHALL NOT" title="PS abgebende LEI: 2D-Code scannen - Mehrfachverordnung - Teilverordnungen nicht speichern" version="0" key="IG-TIFLOW-CORE-236">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das PS der abgebenden LEI DARF die E-Rezept-Token von Teilverordnungen einer Mehrfachverordnung, deren Einlösefrist noch nicht begonnen hat, NICHT automatisch speichern.
+</requirement>
+
+  <!-- A_23779 -->
+<requirement conformance="MAY" title="PS abgebende LEI: 2D-Code scannen - Mehrfachverordnung - Teilverordnungen speichern falls gewünscht" version="0" key="IG-TIFLOW-CORE-237">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das PS der abgebenden LEI KANN die E-Rezept-Token von Teilverordnungen einer Mehrfachverordnung, deren Einlösefrist noch nicht begonnen hat, speichern, wenn der Versicherte es wünscht.
+</requirement>
+
+<p>Die Apotheke stimmt mit dem Patienten ab, wie mit der Teilverordnung verfahren wird, bspw. telefonische Rücksprache mit dem Patienten, ob das Rezept beliefert werden soll oder automatische Belieferung bei Erreichen der Einlösefrist.</p>
+
+<h3 id="2d-code-für-abrechnungsinformation-token">2D-Code für Abrechnungsinformation-Token</h3>
+
+<p>Um auf Wunsch des Versicherten den PKV-Abgabedatensatz ändern zu können,  muss die Apotheke das Wissen um die Referenz des ChargeItem und den AccessCode zum Nachweis der Berechtigung erlangen. Diese Informationen werden vom Versicherten zur Verfügung gestellt. Die Bereitstellung kann als Nachricht über den TI-Flow-Fachdienst oder durch Abscannen als 2D-Code vom Display der E-Rezept-FdV erfolgen.</p>
+
+  <!-- A_22729 -->
+<requirement conformance="SHALL" title="Datenstruktur Zugriffsinformationen für Abrechnungsinformation" version="0" key="IG-TIFLOW-CORE-238">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" zum Löschen der Information im TI-Flow-Fachdienst die HTTP-Operation DELETE /Consent/?category=&lt;Einwilligungstyp&gt; mit:
-    <ul>
-        <li>Einwilligungstyp in ?category</li>
-    </ul>
-    ausführen.
+    Das E-Rezept-FdV MUSS zum Erstellen eines Token für die Zugriffsinformationen für eine Abrechnungsinformation die ID auf einen ChargeItem zusammen mit dem AccessCode zum Ändern aus den lokal verfügbaren Informationen einer Abrechnungsinformation als URL in der Form: 2D-Code-Daten = "ChargeItem/" + ChargeItem.id  + "?ac=" + AccessCode zusammenstellen, damit diese Zeichenkette als Referenz in einer E-Rezept-Nachricht oder für die Generierung eines 2D-Codes verwendet werden kann.
 </requirement>
 
-<p>Der Einwilligungstyp ist entsprechend dem Codesystem [GEM_ERPCHRG_CS_ConsentType] oder [GEM_ERPEU_CS_ConsentType] anzugeben.</p>
+<p>Beispiel für Abrechnungsinformation-Token: <br/>
+"ChargeItem/200.100.000.000.004.30?ac=0037c20b8e893b690f07d784fcfcf38c748454c08253a8b2c0499347576ca612"</p>
+
+  <!-- A_22730 -->
+<requirement conformance="SHALL" title="Generierung 2D-Code Abrechnungsinformation-Token" version="0" key="IG-TIFLOW-CORE-239">
+    <meta lockversion="false"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Das E-Rezept-FdV MUSS einen Abrechnungsinformation-Token in JSON-Notation gemäß [JSON] der folgenden Form 
+    <ul>
+    <li>2D-Code-Daten = { "urls": [ "Abrechnungsinformation" ] }</li>
+    </ul>
+    darstellen, um daraus einen 2D-Code generieren zu können.
+</requirement>
+
+<p>Beispiel für die Codierung als 2D-Code:
+{ 
+"urls": [ "ChargeItem/200.100.000.000.004.30?ac=0037c20b8e893b690f07d784fcfcf38c748454c08253a8b2c0499347576ca612" ]
+ }</p>
 
 
 
@@ -436,7 +516,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&nbsp;
 
-                <a href="query-api-consent-req-fd.html">&lt;vorherige</a>
+                <a href="health-check.html">&lt;vorherige</a>
 
               </td>
               <td style="text-align:center">
@@ -444,7 +524,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&nbsp;
 
-                <a href="menu-schnittstellen-additional-api.html">nächste&gt;</a>
+                <a href="fehlerbehandlung-client.html">nächste&gt;</a>
 
               </td>
             </tr>

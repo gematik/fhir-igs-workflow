@@ -1632,10 +1632,28 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "capability-statement-extensions.html"
+        }],
+        "nameUrl" : "capability-statement-extensions.html",
+        "title" : "Konfiguration des TI-Flow-Fachdienst",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "health-check.html"
         }],
         "nameUrl" : "health-check.html",
         "title" : "Health Check",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "datamatrix-code-client.html"
+        }],
+        "nameUrl" : "datamatrix-code-client.html",
+        "title" : "Data Matrix Code",
         "generation" : "markdown"
       },
       {

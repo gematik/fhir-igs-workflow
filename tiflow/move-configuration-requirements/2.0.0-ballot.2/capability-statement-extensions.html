@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Server-Anforderungen $close - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
+    <title>Konfiguration des TI-Flow-Fachdienst - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
-    <style type="text/css">h2{--heading-prefix:"17.5.1"}
-    h3,h4,h5,h6{--heading-prefix:"17.5.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"10"}
+    h3,h4,h5,h6{--heading-prefix:"10"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
 
@@ -255,15 +255,15 @@ Implementation Guide<br/> TIFlow - Kernfunktionalitäten
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="menu-schnittstellen-operation-api.html"><b>Operation API</b></a></li><li><a href="op-close.html"><b>Operation $close (Task schließen)</b></a></li><li><b>Server-Anforderungen $close</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Konfiguration des TI-Flow-Fachdienst</b></li>
 
           <span style="float:right;">
 
-            <a href="op-close.html">&lt;vorherige</a> | 
+            <a href="pki-zertifikatspruefung.html">&lt;vorherige</a> | 
 
             <a href="#bottom">unten</a>
 
-          | <a href="op-close-req-avs.html">nächste&gt;</a>
+          | <a href="health-check.html">nächste&gt;</a>
 
           </span>
 
@@ -285,7 +285,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>Server-Anforderungen $close</h2>
+  <h2>Konfiguration des TI-Flow-Fachdienst</h2>
   
 
 
@@ -300,19 +300,101 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p>  <!-- white space is critical inside of capture --></p>
-<div>
-  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#umgebungskennzeichnung" id="markdown-toc-umgebungskennzeichnung">Umgebungskennzeichnung</a></li>
+  <li><a href="#konfiguration-von-flowtypes" id="markdown-toc-konfiguration-von-flowtypes">Konfiguration von Flowtypes</a></li>
+</ul>
+
 </div>
+<p>Der TI-Flow-Fachdienst unterstützt verschiedene Workflows und wird kontinuierlich um neue Workflows ergänzt. Um Pilotierungsphasen zu begleiten und Umgebungen gezielt zu konfigurieren, steuert der TI-Flow-Fachdienst die Aktivierung von Flowtypes und Features sowie die aktive FHIR-Validierungskonfiguration per Deployment-Konfiguration. Dies ermöglicht es, Funktionalität bereits im Code auszuliefern, ohne sie in der entsprechenden Umgebung zu aktivieren.</p>
 
-<p>Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.</p>
+<p>Die jeweils aktive Konfiguration einer Instanz wird im CapabilityStatement ausgegeben, damit Clientsysteme die Konfiguration abrufen und ihr Verhalten entsprechend anpassen können. Das CapabilityStatement konformiert zum Profil <code class="language-plaintext highlighter-rouge">ti-flow-capability-statement</code> und trägt drei typenspezifische Extensions:</p>
 
-  <!-- A_19231-02 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Prüfung Secret" version="1" key="IG-TIFLOW-CORE-60">
+<table>
+  <thead>
+    <tr>
+      <th>Extension</th>
+      <th>Konfigurationsbereich</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ti-environment</code></td>
+      <td>Betriebsumgebung der Instanz</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ti-fhir-configuration</code></td>
+      <td>Aktive FHIR-Validierungskonfiguration</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ti-feature</code></td>
+      <td>Aktivierungsstatus einzelner Flowtypes und Features</td>
+    </tr>
+  </tbody>
+</table>
+
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Konfigurationsausgabe im CapabilityStatement" version="0" key="IG-TIFLOW-CORE-442">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close das im URL-Parameter "?secret=..." übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:    
+    Der TI-Flow-Fachdienst MUSS alle für Clientsysteme relevanten Konfigurationsparameter:
+
+    - die aktive Betriebsumgebung 
+    - den Status aller Flowtypes
+    - den Status aller Features
+    - sowie die aktive FHIR-Konfiguration
+
+    im CapabilityStatement ausgeben.
+</requirement>
+
+<h3 id="umgebungskennzeichnung">Umgebungskennzeichnung</h3>
+
+<p>Die Extension <code class="language-plaintext highlighter-rouge">ti-environment</code> kennzeichnet die Betriebsumgebung, für die das CapabilityStatement gilt. Damit wird transparent, ob die beschriebenen Fähigkeiten für eine Produktiv-, Referenz-, Test- oder Entwicklungsumgebung deklariert werden. Pro CapabilityStatement wird sie genau einmal gesetzt, damit Clients die deklarierte Funktionalität eindeutig einer Zielumgebung zuordnen können.</p>
+
+<h4 id="extension-ti-environment">Extension: ti-environment</h4>
+
+<p>Die Extension trägt einen einzelnen <code class="language-plaintext highlighter-rouge">valueCode</code> mit Required-Bindung an das entsprechende ValueSet, das Codes aus <code class="language-plaintext highlighter-rouge">TIEnvironmentsCS</code> enthält.</p>
+
+<p><strong>Beispiel:</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="konfiguration-von-flowtypes">Konfiguration von Flowtypes</h3>
+
+<p>Die Operationalisierung einzelner Flowtypes kann per Konfiguration gesteuert werden. Das Deaktivieren eines Flowtypes verhindert den Abruf neuer Task-IDs für den entsprechenden Flowtype über die <code class="language-plaintext highlighter-rouge">$create</code>-Operation. Bereits erzeugte Tasks mit einem deaktivierten Flowtype bleiben vollständig bearbeitbar, um die Versorgung sicherzustellen.</p>
+
+<p>Grundlage für die konfigurierbaren Parameter ist das <a href="./CodeSystem-GEM-ERP-CS-FlowType.html">CodeSystem der Flowtypes</a>. Mit der Definition neuer Flowtypes im CodeSystem erweitert sich die Menge der konfigurierbaren Parameter automatisch. Jeder Flowtype wird als <code class="language-plaintext highlighter-rouge">ti-feature</code>-Extension im CapabilityStatement ausgegeben.</p>
+
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Konfigurationsparameter je Flowtype" version="0" key="IG-TIFLOW-CORE-443">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS für jeden Wert aus dem FlowType-CodeSystem einen Konfigurationsparameter unterstützen, der die Operationalisierung des Flowtypes steuert, und den Aktivierungsstatus als `ti-feature`-Extension im CapabilityStatement ausgeben.
+</requirement>
+
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Konfigurationsparameter je Flowtype als valueCannonical" version="0" key="IG-TIFLOW-CORE-449">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS für die valueCannonical der `ti-feature`-Extension für Flowtypes den Cannonical `https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-<flowType>` je Flowtype angeben.
+&lt;/requirement&gt;
+
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Fehlerausgabe bei deaktiviertem Flowtype" version="0" key="IG-TIFLOW-CORE-444">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS bei dem Versuch, die `$create`-Operation für einen deaktivierten Flowtype aufzurufen, die Operation mit dem folgenden Fehler abbrechen:
     <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
         <tr>
             <th>HTTP-Code</th>
@@ -324,27 +406,78 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         </tr>
         <tr>
             <th>Code</th>
-            <td>invalid</td>
+            <td>forbidden</td>
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_SECRET_MISMATCH</td>
+            <td>TIFLOW_BLOCKED_FLOWTYPE</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>-</td>
+            <td></td>
         </tr>
     </table>
-    abbrechen, damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des Secrets erfolgt.
 </requirement>
 
-  <!-- A_19231-02 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Prüfung Status" version="1" key="IG-TIFLOW-CORE-61">
+#### Extension: ti-feature
+
+Die Extension `ti-feature` deklariert den Aktivierungsstatus eines einzelnen Flowtypes oder Features. Sie ist als Compound-Extension modelliert und wird für jeden Flowtype und jedes Feature als separate Instanz wiederholt.
+
+Sie besteht aus zwei Sub-Extensions:
+
+| Sub-Extension | Typ | Bedeutung |
+|---|---|---|
+| `definition` | `valueCanonical` | Kanonische URL der FeatureDefinition-Ressource, die den Flowtype oder das Feature eindeutig identifiziert |
+| `value` | `valueBoolean` | `true` = aktiv, `false` = inaktiv |
+
+**Beispiel:**
+
+```json
+{
+  "extension": [
+    {
+      "url": "definition",
+      "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160"
+    },
+    {
+      "url": "value",
+      "valueBoolean": true
+    }
+  ],
+  "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
+}
+```
+
+*Hinweis:* Für Flowtypes werden keine FeatureDefinitions spezifiziert. Diese werden automatisch durch den TI-Flow-Fachdienst gesetzt.
+
+### Konfiguration von Features
+
+Neben Flowtypes können auch Features konfiguriert werden, die sich nicht über einen Flowtype abbilden lassen. Features werden im jeweiligen FHIR-IG beschrieben und als `FeatureDefinition`-Ressource bereitgestellt. Sie müssen bei der Konzeption so abgekapselt werden, dass eine Deaktivierung technisch umsetzbar ist. Das Deaktivieren eines Features verhindert die Ausführung der zugehörigen Operationsaufrufe.
+
+Jedes Feature wird als `ti-feature`-Extension im CapabilityStatement ausgegeben.
+
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Konfigurationsparameter je Feature" version="0" key="IG-TIFLOW-CORE-445">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS für jedes im FHIR-IG beschriebene Feature als FeatureDefinition einen Konfigurationsparameter unterstützen, der die Verfügbarkeit des Features steuert, und den Aktivierungsstatus als `ti-feature`-Extension im CapabilityStatement ausgeben.
+</requirement>
+
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Umsetzung der Deaktivierung eines Features" version="0" key="IG-TIFLOW-CORE-450">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS für bei Deaktivierung eines im FHIR-IG beschriebenen Features alle zur Deaktivierung notwendigen featurespezifischen Vorgaben, die in der FeatureDefinition beschrieben sind umsetzen.
+</requirement>
+
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Fehlerausgabe bei deaktiviertem Feature" version="0" key="IG-TIFLOW-CORE-446">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "in-progress" ist, die Operation mit dem folgenden Fehler:
+    Der TI-Flow-Fachdienst MUSS bei dem Aufruf einer Operation durch ein Clientsystem, die ein deaktiviertes Feature betrifft, die Operation mit dem folgenden Fehler abbrechen:
     <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
         <tr>
             <th>HTTP-Code</th>
@@ -356,156 +489,125 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         </tr>
         <tr>
             <th>Code</th>
-            <td>invalid</td>
+            <td>forbidden</td>
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_TASK_STATUS_MISMATCH</td>
+            <td>TIFLOW_BLOCKED_FEATURE</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Task has invalid status.</td>
+            <td></td>
         </tr>
     </table>
-    abbrechen, damit der Workflow nur abgeschlossen werden kann, wenn sich die Verordnung in Belieferung befindet.
 </requirement>
 
-  <!-- A_19248-05 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="1" key="IG-TIFLOW-CORE-62">
+### FHIR-Konfiguration
+
+Der TI-Flow-Fachdienst verwendet für die FHIR-Validierung eine definierte Kombination aus FHIR-Packages (FHIR-Konfiguration). Da der TI-Flow-Fachdienst auch externe FHIR-Pakete unterstützt, die sich außerhalb des IG-Release-Zyklus ändern können, publiziert die gematik FHIR-Konfigurationen außerhalb des FHIR-IGs. In einer Instanz ist jeweils genau eine FHIR-Konfiguration aktiv.
+
+Zur Unterstützung von Testumgebungen existiert ein optionaler Konfigurationsparameter, der einen zeitlichen Versatz (Offset) des Referenzzeitpunkts für die FHIR-Validierung ermöglicht. Dieser Parameter darf ausschließlich in Test- und Referenzumgebungen gesetzt werden und erlaubt eine vorgelagerte FHIR-Validierung, ohne andere Systemkomponenten anpassen zu müssen.
+
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Konfigurationsparameter für FHIR-Konfiguration im CapabilityStatement" version="0" key="IG-TIFLOW-CORE-447">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close das im HTTP-Body des Requests enthaltene Parameters-Objekt gegen das Profil https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input prüfen, insbesondere bei der darin enthaltenen MedicationDispense:
-    <ul>
-        <li>die Korrektheit der Rezept-ID https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId als MedicationDispense.identifier,</li>
-        <li>die KVNR des Versicherten im referenzierten Task (Task.for) gegen KVNR in MedicationDispense.subject:identifier und</li>
-        <li>ob der zeta-user-info.identifier des Nutzers mit dem Wert in MedicationDispense.performer.actor:identifier übereinstimmt</li>
-    </ul>
-    und im Fehlerfall die Operation mit dem folgenden Fehler:
-    <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>400 - Bad Request</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>SVC_VALIDATION_FAILED</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>FHIR Profile Validation Failed</td>
-        </tr>
-    </table>
-    abbrechen.
+    Der TI-Flow-Fachdienst MUSS die aktive FHIR-Konfiguration als `ti-fhir-configuration`-Extension im CapabilityStatement ausgeben.
 </requirement>
 
-  <!-- A_28666 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - MedicationDispense speichern" version="1" key="IG-TIFLOW-CORE-63">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Offset für Referenzzeitpunkt der FHIR-Validierung" version="0" key="IG-TIFLOW-CORE-448">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close eine oder mehrere vom Client bereitgestellten MedicationDispenses, sowie die in MedicationDispense.medication referenzierten Medications, speichern.
+    Der TI-Flow-Fachdienst MUSS einen Konfigurationsparameter unterstützen, der einen zeitlichen Versatz (Offset) für den Referenzzeitpunkt der FHIR-Validierung umsetzt und die Validierung von FHIR-Instanzen entsprechend dem konfigurierten Offset durchsetzen.
 </requirement>
 
-  <!-- A_26337 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="1" key="IG-TIFLOW-CORE-64">
-    <meta lockversion="true"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern, wenn ein MedicationDispense Objekt im Aufruf übergeben wird.
-</requirement>
-
-  <!-- A_28411 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Telematik-ID der abgebenden LEI speichern" version="1" key="IG-TIFLOW-CORE-65">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Kein Offset in der Produktivumgebung" version="0" key="IG-TIFLOW-CORE-451">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close für den referenzierten Task den identifier des Nutzers (Telematik-ID) in Task.owner speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen können.
+    Der TI-Flow-Fachdienst MUSS sicherstellen, dass der Konfigurationsparameter für den Offset des Referenzzeitpunkts der FHIR-Validierung in der Instanz der Produktivumgebung immer 0 ist.
 </requirement>
 
-  <!-- A_28129 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Push Notification Versicherter" version="0" key="IG-TIFLOW-CORE-66">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.close" und den Versicherten mit der KVNR = Task.for initiieren.
-</requirement>
+#### Extension: ti-fhir-configuration
 
-  <!-- A_19232 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Status beenden" version="0" key="IG-TIFLOW-CORE-67">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS die zulässige Beendigung eines Tasks mittels /Task/&lt;id&gt;/$close-Operation im StatusTask.status = "completed" vollziehen, damit der Workflow für den Versicherten als beendet und die Verordnung somit als eingelöst dargestellt wird.
-</requirement>
+Die Extension `ti-fhir-configuration` deklariert das aktive Fachdienst-Konfigurationskennzeichen. Das zugrundeliegende CodeSystem verwendet das `#not-present`-Pattern, weil die konkrete Konzeptliste nicht im IG-Paket selbst gepflegt wird, sondern extern über den gematik-Releaseprozess versioniert bereitgestellt wird. Neue Codes werden ausschließlich durch gematik-Releaseartefakte eingeführt.
 
-  <!-- A_19233-06 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Quittung erstellen" version="0" key="IG-TIFLOW-CORE-68">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close ein Quittungsbundle gemäß des FHIR-Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle mit folgenden Informationen erstellen:
-    <ul>
-        <li>Telematik-ID der aufrufenden Apotheke als Beneficiary in die GEM_ERP_PR_Composition</li>
-        <li>Zeitstempel des Statuswechsel des Tasks "in-progress" in event.period.start</li>
-        <li>aktueller Zeitstempel in event.period.end</li>
-        <li>Identifier PrescriptionID des Task als identifier des Quittungs-Bundle</li>
-        <li>Device-Ressource mit Fachdienstinformationen als Autor der Signatur</li>
-        <li>Base64Binary-Ressource mit Binary.data = &lt;base64-codierter Hashwert aus der QES Signatur des dem Task zugrunde liegenden Verordnungsdatensatzes&gt; und contentTpe = "application/octet-stream"</li>
-    </ul>
-    und dieses Quittungs-Bundle mit der Signaturidentität des Fachdienstes ID.FD.OSIG gemäß [RFC5652] mit Profil CAdES-BES ([CAdES]) im Enveloping signieren.
-    In die Signatur wird die letzte OCSP-Antwort der regelmäßigen Statusprüfung des Signaturzertifikats C.FD.OSIG eingebettet.
-    Das Signatur-Ergebnis wird als dss:Base64Signature-Objekt in Bundle.signature eingebettet und dieses Quittungs-Bundle mit Referenz in Task.output mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 3 gespeichert sowie als Response des http-Requests an den Aufrufer zurückgeben, damit die abgebende LEI einen Nachweis über den ordnungsgemäßen Abschluss des E-Rezept-Workflows als Quittung erhält.
-</requirement>
-  <!-- ToDo: Afo trennen -->
+**Beispiel:**
 
-  <!-- A_22919 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="1" key="IG-TIFLOW-CORE-69">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS, falls keine OCSP-Response für das Signaturzertifikat der Quittung vorliegt bzw. die letzte vorliegende OCSP-Response älter als 24h ist, die Operation mit dem folgenden Fehler:
-    <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>503 - Service Unavailable</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>transient</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>TIFLOW_SIGNATURE_NO_OCSP_RESPONSE</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>-</td>
-        </tr>
-    </table>
-    abbrechen.
-</requirement>
+```json
+{
+  "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration",
+  "valueCode": "tiflow_2028_03"
+}
+```
 
+### Zusammengesetztes Beispiel
+
+Das folgende CapabilityStatement deklariert einen Produktivumgebungs-Endpunkt mit Konfiguration `tiflow_2028_03`, auf dem WF160 aktiv und WF169 inaktiv ist:
+
+```json
+{
+  "resourceType": "CapabilityStatement",
+  "id": "ExampleCapabilityStatementServerPU",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-capability-statement"
+    ]
+  },
+  "text": {
+    "status": "extensions"
+  },
+  "extension": [
+    {
+      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment",
+      "valueCode": "prod"
+    },
+    {
+      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration",
+      "valueCode": "tiflow_2028_03"
+    },
+    {
+      "extension": [
+        {
+          "url": "definition",
+          "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160"
+        },
+        {
+          "url": "value",
+          "valueBoolean": true
+        }
+      ],
+      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
+    },
+    {
+      "extension": [
+        {
+          "url": "definition",
+          "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-169"
+        },
+        {
+          "url": "value",
+          "valueBoolean": false
+        }
+      ],
+      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
+    }
+  ]
+}
+```
+
+| Extension | Wert | Bedeutung |
+|---|---|---|
+| `ti-environment` | `prod` | Produktivumgebung |
+| `ti-fhir-configuration` | `tiflow_2028_03` | Aktive FHIR-Konfiguration |
+| `ti-feature` (WF160) | `true` | Workflow 160 aktiv |
+| `ti-feature` (WF169) | `false` | Workflow 169 inaktiv |
+
+</flowType></requirement>
 
 
 
@@ -529,7 +631,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&nbsp;
 
-                <a href="op-close.html">&lt;vorherige</a>
+                <a href="pki-zertifikatspruefung.html">&lt;vorherige</a>
 
               </td>
               <td style="text-align:center">
@@ -537,7 +639,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&nbsp;
 
-                <a href="op-close-req-avs.html">nächste&gt;</a>
+                <a href="health-check.html">nächste&gt;</a>
 
               </td>
             </tr>
