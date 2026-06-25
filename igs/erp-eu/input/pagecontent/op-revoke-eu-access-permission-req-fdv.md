@@ -3,7 +3,7 @@ Diese Seite beschreibt Anforderungen für das E-Rezept-FdV zur Nutzung des `$rev
 Das E-Rezept-FdV MUSS es dem Nutzer im Anwendungsfall "Zugriffsberechtigung löschen" ermöglichen den Löschwunsch einzugeben.
 
 <!--A_27125 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-34" title="E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A34" title="E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -12,7 +12,7 @@ Das E-Rezept-FdV MUSS es dem Nutzer im Anwendungsfall "Zugriffsberechtigung lös
 </requirement>
 
 <!--A_27126 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-35" title="E-Rezept-FdV: Zugriffsberechtigung löschen - lokale Zugriffsberechtigung löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A35" title="E-Rezept-FdV: Zugriffsberechtigung löschen - lokale Zugriffsberechtigung löschen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

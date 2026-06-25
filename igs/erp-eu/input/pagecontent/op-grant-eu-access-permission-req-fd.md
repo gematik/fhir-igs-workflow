@@ -1,7 +1,7 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 <!-- A_27088 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-56" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A56" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -37,7 +37,7 @@
 </requirement>
 
 <!-- A_27089 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-57" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A57" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -69,7 +69,7 @@
 </requirement>
 
 <!-- A_27090 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-58" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A58" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -101,7 +101,7 @@
 </requirement>
 
 <!-- A_27091 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-59" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A59" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -133,7 +133,7 @@
 </requirement>
 
 <!-- A_27092 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-60" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender Zugriffsberechtigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A60" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender Zugriffsberechtigung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -142,7 +142,7 @@
 </requirement>
 
 <!-- A_27093 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-61" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A61" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung speichern" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -151,7 +151,7 @@
 </requirement>
 
 <!-- A_27094 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-62" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Response" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A62" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Response" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -165,7 +165,7 @@
 <!-- ToDo: Die Afo soll an einen geeigneten Ort verschoben werden. -->
 
 <!-- A_27083 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-63" title="TI-Flow-Fachdienst - Zugriffsberechtigung - periodische Bereinigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A63" title="TI-Flow-Fachdienst - Zugriffsberechtigung - periodische Bereinigung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
