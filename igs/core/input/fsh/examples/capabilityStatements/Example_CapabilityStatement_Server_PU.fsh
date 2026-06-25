@@ -20,8 +20,8 @@ Usage: #example
 * extension[environment].valueCode = #PU
 * extension[fhirConfiguration][+].valueCode = #tiflow_2028_0
 * extension[feature][+]
-  * extension[definition].valueCanonical = https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160
+  * extension[definition].valueCanonical = "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160"
   * extension[value].valueBoolean = true
 * extension[feature][+]
-  * extension[definition].valueCanonical = https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-169
+  * extension[definition].valueCanonical = "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-169"
   * extension[value].valueBoolean = false
