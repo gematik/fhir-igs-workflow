@@ -32,6 +32,7 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
 * agent[human].type.coding.code = #humanuser
 * agent[human].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
 * agent[human].who.identifier 1..1 MS
+* agent[human].who.identifier.value 1..1 MS
 * agent[human].who.identifier only IdentifierTelematikId or IdentifierKvid10
 * agent[server].type.coding.code = #dataprocessor
 * agent[server].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
