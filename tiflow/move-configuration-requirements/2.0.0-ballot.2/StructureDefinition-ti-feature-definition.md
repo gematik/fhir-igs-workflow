@@ -48,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-feature-definitio
   "name" : "TIFeatureDefinition",
   "title" : "TI Feature Definition",
   "status" : "draft",
-  "date" : "2026-06-25T08:46:54+00:00",
+  "date" : "2026-06-25T09:58:44+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

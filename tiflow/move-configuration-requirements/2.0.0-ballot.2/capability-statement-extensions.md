@@ -48,8 +48,7 @@ Grundlage für die konfigurierbaren Parameter ist das [CodeSystem der Flowtypes]
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS für jeden Wert aus dem FlowType-CodeSystem einen Konfigurationsparameter unterstützen, der die Operationalisierung des Flowtypes steuert, und den Aktivierungsstatus als `ti-feature`-Extension im CapabilityStatement ausgeben.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS für die valueCannonical der `ti-feature`-Extension für Flowtypes den Cannonical `https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-
-` je Flowtype angeben. </requirement>
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS für die valueCannonical der `ti-feature`-Extension für Flowtypes den Cannonical `https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-<flowtype>` je Flowtype angeben.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei dem Versuch, die `$create`-Operation für einen deaktivierten Flowtype aufzurufen, die Operation mit dem folgenden Fehler abbrechen:
 
@@ -62,7 +61,43 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei dem Versuch, die 
 * HTTP-Code: Details Text
   * 403 - Forbidden: 
 
-#### Extension: ti-feature Die Extension `ti-feature` deklariert den Aktivierungsstatus eines einzelnen Flowtypes oder Features. Sie ist als Compound-Extension modelliert und wird für jeden Flowtype und jedes Feature als separate Instanz wiederholt. Sie besteht aus zwei Sub-Extensions: | Sub-Extension | Typ | Bedeutung | |---|---|---| | `definition` | `valueCanonical` | Kanonische URL der FeatureDefinition-Ressource, die den Flowtype oder das Feature eindeutig identifiziert | | `value` | `valueBoolean` | `true` = aktiv, `false` = inaktiv | **Beispiel:** ```json { "extension": [ { "url": "definition", "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160" }, { "url": "value", "valueBoolean": true } ], "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature" } ``` *Hinweis:* Für Flowtypes werden keine FeatureDefinitions spezifiziert. Diese werden automatisch durch den TI-Flow-Fachdienst gesetzt. ### Konfiguration von Features Neben Flowtypes können auch Features konfiguriert werden, die sich nicht über einen Flowtype abbilden lassen. Features werden im jeweiligen FHIR-IG beschrieben und als `FeatureDefinition`-Ressource bereitgestellt. Sie müssen bei der Konzeption so abgekapselt werden, dass eine Deaktivierung technisch umsetzbar ist. Das Deaktivieren eines Features verhindert die Ausführung der zugehörigen Operationsaufrufe. Jedes Feature wird als `ti-feature`-Extension im CapabilityStatement ausgegeben.
+#### Extension: ti-feature
+
+Die Extension `ti-feature` deklariert den Aktivierungsstatus eines einzelnen Flowtypes oder Features. Sie ist als Compound-Extension modelliert und wird für jeden Flowtype und jedes Feature als separate Instanz wiederholt.
+
+Sie besteht aus zwei Sub-Extensions:
+
+| | | |
+| :--- | :--- | :--- |
+| `definition` | `valueCanonical` | Kanonische URL der FeatureDefinition-Ressource, die den Flowtype oder das Feature eindeutig identifiziert |
+| `value` | `valueBoolean` | `true`= aktiv,`false`= inaktiv |
+
+**Beispiel:**
+
+```
+{
+  "extension": [
+    {
+      "url": "definition",
+      "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160"
+    },
+    {
+      "url": "value",
+      "valueBoolean": true
+    }
+  ],
+  "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
+}
+
+```
+
+**Hinweis:** Für Flowtypes werden keine FeatureDefinitions spezifiziert. Diese werden automatisch durch den TI-Flow-Fachdienst gesetzt.
+
+### Konfiguration von Features
+
+Neben Flowtypes können auch Features konfiguriert werden, die sich nicht über einen Flowtype abbilden lassen. Features werden im jeweiligen FHIR-IG beschrieben und als `FeatureDefinition`-Ressource bereitgestellt. Sie müssen bei der Konzeption so abgekapselt werden, dass eine Deaktivierung technisch umsetzbar ist. Das Deaktivieren eines Features verhindert die Ausführung der zugehörigen Operationsaufrufe.
+
+Jedes Feature wird als `ti-feature`-Extension im CapabilityStatement ausgegeben.
 
 Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS für jedes im FHIR-IG beschriebene Feature als FeatureDefinition einen Konfigurationsparameter unterstützen, der die Verfügbarkeit des Features steuert, und den Aktivierungsstatus als `ti-feature`-Extension im CapabilityStatement ausgeben.
 
@@ -79,11 +114,91 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei dem Aufruf einer 
 * HTTP-Code: Details Text
   * 403 - Forbidden: 
 
-### FHIR-Konfiguration Der TI-Flow-Fachdienst verwendet für die FHIR-Validierung eine definierte Kombination aus FHIR-Packages (FHIR-Konfiguration). Da der TI-Flow-Fachdienst auch externe FHIR-Pakete unterstützt, die sich außerhalb des IG-Release-Zyklus ändern können, publiziert die gematik FHIR-Konfigurationen außerhalb des FHIR-IGs. In einer Instanz ist jeweils genau eine FHIR-Konfiguration aktiv. Zur Unterstützung von Testumgebungen existiert ein optionaler Konfigurationsparameter, der einen zeitlichen Versatz (Offset) des Referenzzeitpunkts für die FHIR-Validierung ermöglicht. Dieser Parameter darf ausschließlich in Test- und Referenzumgebungen gesetzt werden und erlaubt eine vorgelagerte FHIR-Validierung, ohne andere Systemkomponenten anpassen zu müssen.
+### FHIR-Konfiguration
+
+Der TI-Flow-Fachdienst verwendet für die FHIR-Validierung eine definierte Kombination aus FHIR-Packages (FHIR-Konfiguration). Da der TI-Flow-Fachdienst auch externe FHIR-Pakete unterstützt, die sich außerhalb des IG-Release-Zyklus ändern können, publiziert die gematik FHIR-Konfigurationen außerhalb des FHIR-IGs. In einer Instanz ist jeweils genau eine FHIR-Konfiguration aktiv.
+
+Zur Unterstützung von Testumgebungen existiert ein optionaler Konfigurationsparameter, der einen zeitlichen Versatz (Offset) des Referenzzeitpunkts für die FHIR-Validierung ermöglicht. Dieser Parameter darf ausschließlich in Test- und Referenzumgebungen gesetzt werden und erlaubt eine vorgelagerte FHIR-Validierung, ohne andere Systemkomponenten anpassen zu müssen.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS die aktive FHIR-Konfiguration als `ti-fhir-configuration`-Extension im CapabilityStatement ausgeben.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS einen Konfigurationsparameter unterstützen, der einen zeitlichen Versatz (Offset) für den Referenzzeitpunkt der FHIR-Validierung umsetzt und die Validierung von FHIR-Instanzen entsprechend dem konfigurierten Offset durchsetzen.
 
-Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS sicherstellen, dass der Konfigurationsparameter für den Offset des Referenzzeitpunkts der FHIR-Validierung in der Instanz der Produktivumgebung immer 0 ist.#### Extension: ti-fhir-configuration Die Extension `ti-fhir-configuration` deklariert das aktive Fachdienst-Konfigurationskennzeichen. Das zugrundeliegende CodeSystem verwendet das `#not-present`-Pattern, weil die konkrete Konzeptliste nicht im IG-Paket selbst gepflegt wird, sondern extern über den gematik-Releaseprozess versioniert bereitgestellt wird. Neue Codes werden ausschließlich durch gematik-Releaseartefakte eingeführt. **Beispiel:** ```json { "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration", "valueCode": "tiflow_2028_03" } ``` ### Zusammengesetztes Beispiel Das folgende CapabilityStatement deklariert einen Produktivumgebungs-Endpunkt mit Konfiguration `tiflow_2028_03`, auf dem WF160 aktiv und WF169 inaktiv ist: ```json { "resourceType": "CapabilityStatement", "id": "ExampleCapabilityStatementServerPU", "meta": { "profile": [ "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-capability-statement" ] }, "text": { "status": "extensions" }, "extension": [ { "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment", "valueCode": "prod" }, { "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration", "valueCode": "tiflow_2028_03" }, { "extension": [ { "url": "definition", "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160" }, { "url": "value", "valueBoolean": true } ], "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature" }, { "extension": [ { "url": "definition", "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-169" }, { "url": "value", "valueBoolean": false } ], "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature" } ] } ``` | Extension | Wert | Bedeutung | |---|---|---| | `ti-environment` | `prod` | Produktivumgebung | | `ti-fhir-configuration` | `tiflow_2028_03` | Aktive FHIR-Konfiguration | | `ti-feature` (WF160) | `true` | Workflow 160 aktiv | | `ti-feature` (WF169) | `false` | Workflow 169 inaktiv |
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS sicherstellen, dass der Konfigurationsparameter für den Offset des Referenzzeitpunkts der FHIR-Validierung in der Instanz der Produktivumgebung immer 0 ist.
+#### Extension: ti-fhir-configuration
+
+Die Extension `ti-fhir-configuration` deklariert das aktive Fachdienst-Konfigurationskennzeichen. Das zugrundeliegende CodeSystem verwendet das `#not-present`-Pattern, weil die konkrete Konzeptliste nicht im IG-Paket selbst gepflegt wird, sondern extern über den gematik-Releaseprozess versioniert bereitgestellt wird. Neue Codes werden ausschließlich durch gematik-Releaseartefakte eingeführt.
+
+**Beispiel:**
+
+```
+{
+  "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration",
+  "valueCode": "tiflow_2028_03"
+}
+
+```
+
+### Zusammengesetztes Beispiel
+
+Das folgende CapabilityStatement deklariert einen Produktivumgebungs-Endpunkt mit Konfiguration `tiflow_2028_03`, auf dem WF160 aktiv und WF169 inaktiv ist:
+
+```
+{
+  "resourceType": "CapabilityStatement",
+  "id": "ExampleCapabilityStatementServerPU",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-capability-statement"
+    ]
+  },
+  "text": {
+    "status": "extensions"
+  },
+  "extension": [
+    {
+      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment",
+      "valueCode": "prod"
+    },
+    {
+      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration",
+      "valueCode": "tiflow_2028_03"
+    },
+    {
+      "extension": [
+        {
+          "url": "definition",
+          "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160"
+        },
+        {
+          "url": "value",
+          "valueBoolean": true
+        }
+      ],
+      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
+    },
+    {
+      "extension": [
+        {
+          "url": "definition",
+          "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-169"
+        },
+        {
+          "url": "value",
+          "valueBoolean": false
+        }
+      ],
+      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
+    }
+  ]
+}
+
+```
+
+| | | |
+| :--- | :--- | :--- |
+| `ti-environment` | `prod` | Produktivumgebung |
+| `ti-fhir-configuration` | `tiflow_2028_03` | Aktive FHIR-Konfiguration |
+| `ti-feature`(WF160) | `true` | Workflow 160 aktiv |
+| `ti-feature`(WF169) | `false` | Workflow 169 inaktiv |
 

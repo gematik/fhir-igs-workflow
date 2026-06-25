@@ -306,6 +306,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#umgebungskennzeichnung" id="markdown-toc-umgebungskennzeichnung">Umgebungskennzeichnung</a></li>
   <li><a href="#konfiguration-von-flowtypes" id="markdown-toc-konfiguration-von-flowtypes">Konfiguration von Flowtypes</a></li>
+  <li><a href="#konfiguration-von-features" id="markdown-toc-konfiguration-von-features">Konfiguration von Features</a></li>
+  <li><a href="#fhir-konfiguration" id="markdown-toc-fhir-konfiguration">FHIR-Konfiguration</a></li>
+  <li><a href="#zusammengesetztes-beispiel" id="markdown-toc-zusammengesetztes-beispiel">Zusammengesetztes Beispiel</a></li>
 </ul>
 
 </div>
@@ -386,8 +389,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS für die valueCannonical der `ti-feature`-Extension für Flowtypes den Cannonical `https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-<flowType>` je Flowtype angeben.
-&lt;/requirement&gt;
+    Der TI-Flow-Fachdienst MUSS für die valueCannonical der `ti-feature`-Extension für Flowtypes den Cannonical `https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-&lt;flowtype&gt;` je Flowtype angeben.
+</requirement>
 
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Fehlerausgabe bei deaktiviertem Flowtype" version="0" key="IG-TIFLOW-CORE-444">
     <meta lockversion="false"/>
@@ -419,42 +422,58 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </table>
 </requirement>
 
-#### Extension: ti-feature
+<h4 id="extension-ti-feature">Extension: ti-feature</h4>
 
-Die Extension `ti-feature` deklariert den Aktivierungsstatus eines einzelnen Flowtypes oder Features. Sie ist als Compound-Extension modelliert und wird für jeden Flowtype und jedes Feature als separate Instanz wiederholt.
+<p>Die Extension <code class="language-plaintext highlighter-rouge">ti-feature</code> deklariert den Aktivierungsstatus eines einzelnen Flowtypes oder Features. Sie ist als Compound-Extension modelliert und wird für jeden Flowtype und jedes Feature als separate Instanz wiederholt.</p>
 
-Sie besteht aus zwei Sub-Extensions:
+<p>Sie besteht aus zwei Sub-Extensions:</p>
 
-| Sub-Extension | Typ | Bedeutung |
-|---|---|---|
-| `definition` | `valueCanonical` | Kanonische URL der FeatureDefinition-Ressource, die den Flowtype oder das Feature eindeutig identifiziert |
-| `value` | `valueBoolean` | `true` = aktiv, `false` = inaktiv |
+<table>
+  <thead>
+    <tr>
+      <th>Sub-Extension</th>
+      <th>Typ</th>
+      <th>Bedeutung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">definition</code></td>
+      <td><code class="language-plaintext highlighter-rouge">valueCanonical</code></td>
+      <td>Kanonische URL der FeatureDefinition-Ressource, die den Flowtype oder das Feature eindeutig identifiziert</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">valueBoolean</code></td>
+      <td><code class="language-plaintext highlighter-rouge">true</code> = aktiv, <code class="language-plaintext highlighter-rouge">false</code> = inaktiv</td>
+    </tr>
+  </tbody>
+</table>
 
-**Beispiel:**
+<p><strong>Beispiel:</strong></p>
 
-```json
-{
-  "extension": [
-    {
-      "url": "definition",
-      "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160"
-    },
-    {
-      "url": "value",
-      "valueBoolean": true
-    }
-  ],
-  "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
-}
-```
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"definition"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"valueCanonical"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"valueBoolean"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
-*Hinweis:* Für Flowtypes werden keine FeatureDefinitions spezifiziert. Diese werden automatisch durch den TI-Flow-Fachdienst gesetzt.
+<p><em>Hinweis:</em> Für Flowtypes werden keine FeatureDefinitions spezifiziert. Diese werden automatisch durch den TI-Flow-Fachdienst gesetzt.</p>
 
-### Konfiguration von Features
+<h3 id="konfiguration-von-features">Konfiguration von Features</h3>
 
-Neben Flowtypes können auch Features konfiguriert werden, die sich nicht über einen Flowtype abbilden lassen. Features werden im jeweiligen FHIR-IG beschrieben und als `FeatureDefinition`-Ressource bereitgestellt. Sie müssen bei der Konzeption so abgekapselt werden, dass eine Deaktivierung technisch umsetzbar ist. Das Deaktivieren eines Features verhindert die Ausführung der zugehörigen Operationsaufrufe.
+<p>Neben Flowtypes können auch Features konfiguriert werden, die sich nicht über einen Flowtype abbilden lassen. Features werden im jeweiligen FHIR-IG beschrieben und als <code class="language-plaintext highlighter-rouge">FeatureDefinition</code>-Ressource bereitgestellt. Sie müssen bei der Konzeption so abgekapselt werden, dass eine Deaktivierung technisch umsetzbar ist. Das Deaktivieren eines Features verhindert die Ausführung der zugehörigen Operationsaufrufe.</p>
 
-Jedes Feature wird als `ti-feature`-Extension im CapabilityStatement ausgegeben.
+<p>Jedes Feature wird als <code class="language-plaintext highlighter-rouge">ti-feature</code>-Extension im CapabilityStatement ausgegeben.</p>
 
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Konfigurationsparameter je Feature" version="0" key="IG-TIFLOW-CORE-445">
     <meta lockversion="false"/>
@@ -502,11 +521,11 @@ Jedes Feature wird als `ti-feature`-Extension im CapabilityStatement ausgegeben.
     </table>
 </requirement>
 
-### FHIR-Konfiguration
+<h3 id="fhir-konfiguration">FHIR-Konfiguration</h3>
 
-Der TI-Flow-Fachdienst verwendet für die FHIR-Validierung eine definierte Kombination aus FHIR-Packages (FHIR-Konfiguration). Da der TI-Flow-Fachdienst auch externe FHIR-Pakete unterstützt, die sich außerhalb des IG-Release-Zyklus ändern können, publiziert die gematik FHIR-Konfigurationen außerhalb des FHIR-IGs. In einer Instanz ist jeweils genau eine FHIR-Konfiguration aktiv.
+<p>Der TI-Flow-Fachdienst verwendet für die FHIR-Validierung eine definierte Kombination aus FHIR-Packages (FHIR-Konfiguration). Da der TI-Flow-Fachdienst auch externe FHIR-Pakete unterstützt, die sich außerhalb des IG-Release-Zyklus ändern können, publiziert die gematik FHIR-Konfigurationen außerhalb des FHIR-IGs. In einer Instanz ist jeweils genau eine FHIR-Konfiguration aktiv.</p>
 
-Zur Unterstützung von Testumgebungen existiert ein optionaler Konfigurationsparameter, der einen zeitlichen Versatz (Offset) des Referenzzeitpunkts für die FHIR-Validierung ermöglicht. Dieser Parameter darf ausschließlich in Test- und Referenzumgebungen gesetzt werden und erlaubt eine vorgelagerte FHIR-Validierung, ohne andere Systemkomponenten anpassen zu müssen.
+<p>Zur Unterstützung von Testumgebungen existiert ein optionaler Konfigurationsparameter, der einen zeitlichen Versatz (Offset) des Referenzzeitpunkts für die FHIR-Validierung ermöglicht. Dieser Parameter darf ausschließlich in Test- und Referenzumgebungen gesetzt werden und erlaubt eine vorgelagerte FHIR-Validierung, ohne andere Systemkomponenten anpassen zu müssen.</p>
 
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Konfigurationsparameter für FHIR-Konfiguration im CapabilityStatement" version="0" key="IG-TIFLOW-CORE-447">
     <meta lockversion="false"/>
@@ -532,82 +551,104 @@ Zur Unterstützung von Testumgebungen existiert ein optionaler Konfigurationspar
     Der TI-Flow-Fachdienst MUSS sicherstellen, dass der Konfigurationsparameter für den Offset des Referenzzeitpunkts der FHIR-Validierung in der Instanz der Produktivumgebung immer 0 ist.
 </requirement>
 
-#### Extension: ti-fhir-configuration
+<h4 id="extension-ti-fhir-configuration">Extension: ti-fhir-configuration</h4>
 
-Die Extension `ti-fhir-configuration` deklariert das aktive Fachdienst-Konfigurationskennzeichen. Das zugrundeliegende CodeSystem verwendet das `#not-present`-Pattern, weil die konkrete Konzeptliste nicht im IG-Paket selbst gepflegt wird, sondern extern über den gematik-Releaseprozess versioniert bereitgestellt wird. Neue Codes werden ausschließlich durch gematik-Releaseartefakte eingeführt.
+<p>Die Extension <code class="language-plaintext highlighter-rouge">ti-fhir-configuration</code> deklariert das aktive Fachdienst-Konfigurationskennzeichen. Das zugrundeliegende CodeSystem verwendet das <code class="language-plaintext highlighter-rouge">#not-present</code>-Pattern, weil die konkrete Konzeptliste nicht im IG-Paket selbst gepflegt wird, sondern extern über den gematik-Releaseprozess versioniert bereitgestellt wird. Neue Codes werden ausschließlich durch gematik-Releaseartefakte eingeführt.</p>
 
-**Beispiel:**
+<p><strong>Beispiel:</strong></p>
 
-```json
-{
-  "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration",
-  "valueCode": "tiflow_2028_03"
-}
-```
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tiflow_2028_03"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
-### Zusammengesetztes Beispiel
+<h3 id="zusammengesetztes-beispiel">Zusammengesetztes Beispiel</h3>
 
-Das folgende CapabilityStatement deklariert einen Produktivumgebungs-Endpunkt mit Konfiguration `tiflow_2028_03`, auf dem WF160 aktiv und WF169 inaktiv ist:
+<p>Das folgende CapabilityStatement deklariert einen Produktivumgebungs-Endpunkt mit Konfiguration <code class="language-plaintext highlighter-rouge">tiflow_2028_03</code>, auf dem WF160 aktiv und WF169 inaktiv ist:</p>
 
-```json
-{
-  "resourceType": "CapabilityStatement",
-  "id": "ExampleCapabilityStatementServerPU",
-  "meta": {
-    "profile": [
-      "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-capability-statement"
-    ]
-  },
-  "text": {
-    "status": "extensions"
-  },
-  "extension": [
-    {
-      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment",
-      "valueCode": "prod"
-    },
-    {
-      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration",
-      "valueCode": "tiflow_2028_03"
-    },
-    {
-      "extension": [
-        {
-          "url": "definition",
-          "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160"
-        },
-        {
-          "url": "value",
-          "valueBoolean": true
-        }
-      ],
-      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
-    },
-    {
-      "extension": [
-        {
-          "url": "definition",
-          "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-169"
-        },
-        {
-          "url": "value",
-          "valueBoolean": false
-        }
-      ],
-      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
-    }
-  ]
-}
-```
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CapabilityStatement"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExampleCapabilityStatementServerPU"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-capability-statement"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extensions"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tiflow_2028_03"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"definition"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"valueCanonical"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"valueBoolean"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"definition"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"valueCanonical"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-169"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"valueBoolean"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
-| Extension | Wert | Bedeutung |
-|---|---|---|
-| `ti-environment` | `prod` | Produktivumgebung |
-| `ti-fhir-configuration` | `tiflow_2028_03` | Aktive FHIR-Konfiguration |
-| `ti-feature` (WF160) | `true` | Workflow 160 aktiv |
-| `ti-feature` (WF169) | `false` | Workflow 169 inaktiv |
+<table>
+  <thead>
+    <tr>
+      <th>Extension</th>
+      <th>Wert</th>
+      <th>Bedeutung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ti-environment</code></td>
+      <td><code class="language-plaintext highlighter-rouge">prod</code></td>
+      <td>Produktivumgebung</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ti-fhir-configuration</code></td>
+      <td><code class="language-plaintext highlighter-rouge">tiflow_2028_03</code></td>
+      <td>Aktive FHIR-Konfiguration</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ti-feature</code> (WF160)</td>
+      <td><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td>Workflow 160 aktiv</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ti-feature</code> (WF169)</td>
+      <td><code class="language-plaintext highlighter-rouge">false</code></td>
+      <td>Workflow 169 inaktiv</td>
+    </tr>
+  </tbody>
+</table>
 
-</flowType></requirement>
 
 
 
@@ -649,7 +690,7 @@ Das folgende CapabilityStatement deklariert einen Produktivumgebungs-Endpunkt mi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jun 25, 2026 08:46+0000">2026-06-25</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jun 25, 2026 09:58+0000">2026-06-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
