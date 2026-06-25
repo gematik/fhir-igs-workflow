@@ -17,7 +17,7 @@ Usage: #example
 * rest.mode = #server
 * implementation.description = "example"
 
-* extension[environment].valueCode = #PU
+* extension[environment].valueCode = #prod
 * extension[fhirConfiguration][+].valueCode = #tiflow_2028_0
 * extension[feature][+]
   * extension[definition].valueCanonical = Canonical(TIFlowFeatureWF160)

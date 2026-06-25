@@ -60,7 +60,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 </requirement>
 
 <!-- A_22378 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A167" title="TI-Flow-Fachdienst - Subscription Service - Verbot Profilbildung" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A167" title="TI-Flow-Fachdienst - Subscription Service - Verbot Profilbildung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

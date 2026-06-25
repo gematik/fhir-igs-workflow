@@ -1,4 +1,3 @@
-### Nutzung ZETA durch Clientsystme 
 
 Zur Umsetzung der ZETA Architektur müssen Clientsysteme folgende Anforderungen erfüllen.
 

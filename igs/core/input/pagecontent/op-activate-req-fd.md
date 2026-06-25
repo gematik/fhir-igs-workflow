@@ -326,7 +326,10 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A179" title="TI-Flow-Fachdienst - Task aktivieren - Mimetype Signatur" version="0">
     <meta lockversion="false"/>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und, wenn dieser ungleich "text/plain; charset=utf-8" ist, die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+    </actor>
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>400 - Bad Request</td>
