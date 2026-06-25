@@ -128,11 +128,13 @@ funkt. Eignung: Herstellererklärung
 funkt. Eignung: Herstellererklärung
 
 funkt. Eignung: HerstellererklärungClientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Verarbeitung von FHIR-Ressourcen der Anwendung E-Rezept sicherstellen, dass Datumsangaben ohne explizite Zeitzoneninformationen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) verarbeitet werden.
-#### Filtern von FHIR-Objekten
+#### Filtern und Sortieren von FHIR-Objekten
 
-Clients erhalten die Möglichkeit die Rückgabe der Elemente im FHIR-Bundle durch Suchparameter zu filtern.
+Clients erhalten die Möglichkeit, die Rückgabe der Elemente im FHIR-Bundle durch Suchparameter zu filtern und mithilfe von Sortierparameter zu sortieren.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS die Suchparameter verarbeiten können, wie sie im CapabilityStatement festgelegt sind.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS die Sortierparameter verarbeiten können, wie sie im CapabilityStatement festgelegt sind.
 ### Identifikation des Nutzers
 
 Im Rahmen des Verbindungsaufbaus eines Clientsystems mit dem TI-Flow-Fachdienst authentisiert sich der Nutzer. Der ZETA-Guard übermittelt die Informationen zum Nutzer und das Clientsystem in Http-Headern im Request an den Resource Server (siehe [gemSpec_ZETA#A_25669-*]).

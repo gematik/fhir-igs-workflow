@@ -156,29 +156,47 @@ Other representations of profile: [CSV](StructureDefinition-audit-event-rest.csv
           "path" : "type"
         }],
         "ordered" : false,
-        "rules" : "closed"
+        "rules" : "open"
       },
       "mustSupport" : true
     },
     {
-      "id" : "AuditEvent.agent:human",
+      "id" : "AuditEvent.agent.type",
+      "path" : "AuditEvent.agent.type",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.agent.type.coding.system",
+      "path" : "AuditEvent.agent.type.coding.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.agent.type.coding.code",
+      "path" : "AuditEvent.agent.type.coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.agent:user",
       "path" : "AuditEvent.agent",
-      "sliceName" : "human",
+      "sliceName" : "user",
       "min" : 0,
       "max" : "1"
     },
     {
-      "id" : "AuditEvent.agent:human.type.coding.system",
+      "id" : "AuditEvent.agent:user.type.coding.system",
       "path" : "AuditEvent.agent.type.coding.system",
       "patternUri" : "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
     },
     {
-      "id" : "AuditEvent.agent:human.type.coding.code",
+      "id" : "AuditEvent.agent:user.type.coding.code",
       "path" : "AuditEvent.agent.type.coding.code",
       "patternCode" : "humanuser"
     },
     {
-      "id" : "AuditEvent.agent:human.who.identifier",
+      "id" : "AuditEvent.agent:user.who.identifier",
       "path" : "AuditEvent.agent.who.identifier",
       "min" : 1,
       "type" : [{
@@ -189,45 +207,75 @@ Other representations of profile: [CSV](StructureDefinition-audit-event-rest.csv
       "mustSupport" : true
     },
     {
-      "id" : "AuditEvent.agent:human.name",
-      "path" : "AuditEvent.agent.name",
+      "id" : "AuditEvent.agent:user.who.identifier.value",
+      "path" : "AuditEvent.agent.who.identifier.value",
       "min" : 1,
       "mustSupport" : true
     },
     {
-      "id" : "AuditEvent.agent:server",
+      "id" : "AuditEvent.agent:client",
       "path" : "AuditEvent.agent",
-      "sliceName" : "server",
+      "sliceName" : "client",
       "min" : 0,
       "max" : "1"
     },
     {
-      "id" : "AuditEvent.agent:server.type.coding.system",
+      "id" : "AuditEvent.agent:client.type",
+      "path" : "AuditEvent.agent.type",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://gematik.de/fhir/tiflow/ValueSet/tiflow-audit-event-agent-type-vs"
+      }
+    },
+    {
+      "id" : "AuditEvent.agent:client.type.coding.system",
+      "path" : "AuditEvent.agent.type.coding.system",
+      "patternUri" : "http://dicom.nema.org/resources/ontology/DCM|01"
+    },
+    {
+      "id" : "AuditEvent.agent:client.type.coding.code",
+      "path" : "AuditEvent.agent.type.coding.code",
+      "patternCode" : "110150"
+    },
+    {
+      "id" : "AuditEvent.agent:client.who.identifier",
+      "path" : "AuditEvent.agent.who.identifier",
+      "min" : 1,
+      "type" : [{
+        "code" : "Identifier",
+        "profile" : ["http://fhir.de/StructureDefinition/identifier-telematik-id"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.agent:client.who.identifier.value",
+      "path" : "AuditEvent.agent.who.identifier.value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.agent:internal",
+      "path" : "AuditEvent.agent",
+      "sliceName" : "internal",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "AuditEvent.agent:internal.type.coding.system",
       "path" : "AuditEvent.agent.type.coding.system",
       "patternUri" : "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
     },
     {
-      "id" : "AuditEvent.agent:server.type.coding.code",
+      "id" : "AuditEvent.agent:internal.type.coding.code",
       "path" : "AuditEvent.agent.type.coding.code",
       "patternCode" : "dataprocessor"
     },
     {
-      "id" : "AuditEvent.agent:server.who.identifier",
-      "path" : "AuditEvent.agent.who.identifier",
-      "min" : 1,
-      "mustSupport" : true
-    },
-    {
-      "id" : "AuditEvent.agent:server.who.identifier.value",
-      "path" : "AuditEvent.agent.who.identifier.value",
-      "min" : 1,
-      "fixedString" : "server",
-      "mustSupport" : true
-    },
-    {
-      "id" : "AuditEvent.agent:server.name",
+      "id" : "AuditEvent.agent:internal.name",
       "path" : "AuditEvent.agent.name",
+      "short" : "Name des FHIR Data Service",
       "min" : 1,
+      "patternString" : "TI-Flow-Fachdienst",
       "mustSupport" : true
     },
     {
@@ -265,6 +313,24 @@ Other representations of profile: [CSV](StructureDefinition-audit-event-rest.csv
         "ordered" : false,
         "rules" : "open"
       },
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.entity.type",
+      "path" : "AuditEvent.entity.type",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.entity.type.system",
+      "path" : "AuditEvent.entity.type.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.entity.type.code",
+      "path" : "AuditEvent.entity.type.code",
       "min" : 1,
       "mustSupport" : true
     },

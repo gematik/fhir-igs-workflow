@@ -75,8 +75,6 @@ Das **Capability** **Statement** beschreibt die Anforderungen und Fähigkeiten, 
 
 | | |
 | :--- | :--- |
-| [ TI-Flow Audit Event ](StructureDefinition-tiflow-audit-event-rest.md) | Das AuditEvent-Profil für die Protokollierung des Zugriffs auf einen FHIR Data Service der Telematikinfrastruktur (TI) |
-| [ Capability Statement Profil für den TI-Flow-Fachdienst ](StructureDefinition-tiflow-capability-statement.md) | Dieses Profil beschreibt die Fähigkeiten des TI-Flow-Fachdienst. |
 | [ Generische TIFlow Communication ](StructureDefinition-tiflow-communication.md) | Generische TIFlow Workflow-Communication |
 | [ Bundle der $accept Operation ](StructureDefinition-tiflow-op-accept-bundle.md) | Antwort des TI-Flow-Fachdienst auf die $accept-Operation |
 | [ Task für TIFlow Verordnungen ](StructureDefinition-tiflow-order-task.md) | Task für die Verwaltung von Workflows der TIFlow Verordnungen |

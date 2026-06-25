@@ -590,8 +590,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Verarbeitung von FHIR-Ressourcen der Anwendung E-Rezept sicherstellen, dass Datumsangaben ohne explizite Zeitzoneninformationen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) verarbeitet werden.
 </requirement>
 
-<h4 id="filtern-von-fhir-objekten">Filtern von FHIR-Objekten</h4>
-<p>Clients erhalten die Möglichkeit die Rückgabe der Elemente im FHIR-Bundle durch Suchparameter zu filtern.</p>
+<h4 id="filtern-und-sortieren-von-fhir-objekten">Filtern und Sortieren von FHIR-Objekten</h4>
+<p>Clients erhalten die Möglichkeit, die Rückgabe der Elemente im FHIR-Bundle durch Suchparameter zu filtern und mithilfe von Sortierparameter zu sortieren.</p>
 
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Verarbeitung von Suchparameter" version="0" key="IG-TIFLOW-CORE-441">
     <meta lockversion="false"/>
@@ -599,6 +599,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
       Der TI-Flow-Fachdienst MUSS die Suchparameter verarbeiten können, wie sie im CapabilityStatement festgelegt sind.
+</requirement>
+
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Verarbeitung von Sortierparameter" version="0" key="IG-TIFLOW-CORE-442">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+      Der TI-Flow-Fachdienst MUSS die Sortierparameter verarbeiten können, wie sie im CapabilityStatement festgelegt sind.
 </requirement>
 
 <h3 id="identifikation-des-nutzers">Identifikation des Nutzers</h3>
@@ -731,7 +739,7 @@ Der ZETA-Guard übermittelt die Informationen zum Nutzer und das Clientsystem in
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jun 25, 2026 09:36+0000">2026-06-25</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jun 25, 2026 15:23+0000">2026-06-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

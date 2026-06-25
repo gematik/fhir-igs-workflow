@@ -27,7 +27,7 @@ Version 2.0.0-ballot.2 - draft
   "resourceType" : "CapabilityStatement",
   "id" : "ExampleCapabilityStatementServerPU",
   "meta" : {
-    "profile" : ["https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-capability-statement"]
+    "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"]
   },
   "extension" : [{
     "url" : "https://gematik.de/fhir/ti/StructureDefinition/ti-environment",
@@ -35,7 +35,7 @@ Version 2.0.0-ballot.2 - draft
   },
   {
     "url" : "https://gematik.de/fhir/ti/StructureDefinition/ti-fhir-configuration",
-    "valueCode" : "tiflow_2028_03"
+    "valueCode" : "tiflow_2028_0"
   },
   {
     "extension" : [{
