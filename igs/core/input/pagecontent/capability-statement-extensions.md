@@ -1,6 +1,6 @@
 Der TI-Flow-Fachdienst unterstützt verschiedene Workflows und wird kontinuierlich um neue Workflows ergänzt. Um Pilotierungsphasen zu begleiten und Umgebungen gezielt zu konfigurieren, steuert der TI-Flow-Fachdienst die Aktivierung von Flowtypes und Features sowie die aktive FHIR-Validierungskonfiguration per Deployment-Konfiguration. Dies ermöglicht es, Funktionalität bereits im Code auszuliefern, ohne sie in der entsprechenden Umgebung zu aktivieren.
 
-Die jeweils aktive Konfiguration einer Instanz wird im CapabilityStatement ausgegeben, damit Clientsysteme die Konfiguration abrufen und ihr Verhalten entsprechend anpassen können. Das CapabilityStatement konformiert zum Profil `ti-flow-capability-statement` und trägt drei typenspezifische Extensions:
+Die jeweils aktive Konfiguration einer Instanz wird im CapabilityStatement ausgegeben, damit Clientsysteme die Konfiguration abrufen und ihr Verhalten entsprechend anpassen können. Das CapabilityStatement ist konform zum Profil `ti-flow-capability-statement` und trägt drei typenspezifische Extensions:
 
 | Extension | Konfigurationsbereich |
 |---|---|
@@ -13,12 +13,15 @@ Die jeweils aktive Konfiguration einer Instanz wird im CapabilityStatement ausge
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS alle für Clientsysteme relevanten Konfigurationsparameter:
 
-    - die aktive Betriebsumgebung 
-    - den Status aller Flowtypes
-    - den Status aller Features
-    - sowie die aktive FHIR-Konfiguration
+    Der TI-Flow-Fachdienst MUSS alle für Clientsysteme relevanten Konfigurationsparameter:
+    
+    <ul>
+        <li>die aktive Betriebsumgebung</li>
+        <li>den Status aller Flowtypes</li>
+        <li>den Status aller Features</li>
+        <li>sowie die aktive FHIR-Konfiguration</li>
+    </ul>
 
     im CapabilityStatement ausgeben.
 </requirement>
