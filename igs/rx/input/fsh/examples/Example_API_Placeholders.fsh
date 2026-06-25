@@ -1,5 +1,3 @@
-// TODO: Validate and replace placeholder examples used by gematik-api blocks in pagecontent.
-
 Instance: ExampleRxOperationRequestParameters
 InstanceOf: Parameters
 Usage: #example
