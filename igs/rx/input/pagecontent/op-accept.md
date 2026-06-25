@@ -27,8 +27,14 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$accept` gesendet.
 		</pre>
 	</div>
 	<div id="Response-Examples">
+		<div data-name="Erfolg (200) application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleRxAcceptOutputParameters JSON %}
+		</div>
 		<div data-name="Erfolg (200) application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleRxAcceptOutputParameters XML %}
+		</div>
+		<div data-name="Fehler (403) application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleRxAcceptOperationOutcomeError JSON %}
 		</div>
 		<div data-name="Fehler (403) application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleRxAcceptOperationOutcomeError XML %}

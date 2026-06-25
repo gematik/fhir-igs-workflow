@@ -32,7 +32,10 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 		<!-- TODO: Request example for $abort (no body; accessCode and secret via headers) -->
 	</div>
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+		<div data-name="Fehler - Response ohne Rechte application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleRxAbortOperationOutcomeError JSON %}
+		</div>
+		<div data-name="Fehler - Response ohne Rechte application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleRxAbortOperationOutcomeError XML %}
 		</div>
 	</div>
