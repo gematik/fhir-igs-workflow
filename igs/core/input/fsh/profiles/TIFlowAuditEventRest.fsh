@@ -19,9 +19,12 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
 * outcome MS
 
 * agent MS
+* agent.type 1..1 MS
+* agent.type.coding.code 1..1 MS
+* agent.type.coding.system 1..1 MS
 * agent ^slicing.discriminator.type = #value
 * agent ^slicing.discriminator.path = "type"
-* agent ^slicing.rules = #closed
+* agent ^slicing.rules = #open
 * agent ^slicing.ordered = false
 * agent contains
   human 0..1 and
@@ -30,13 +33,13 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
 * agent[human].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
 * agent[human].who.identifier 1..1 MS
 * agent[human].who.identifier only IdentifierTelematikId or IdentifierKvid10
-* agent[human].name 1..1 MS
 * agent[server].type.coding.code = #dataprocessor
 * agent[server].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
 * agent[server].who.identifier 1..1 MS
 * agent[server].who.identifier.value 1..1 MS
 * agent[server].who.identifier.value = "server" (exactly)
-* agent[server].name 1..1 MS  
+* agent[server].name 1..1 MS 
+  * ^short = "Name des FHIR Data Service" 
 
 * source MS
   * site 1..1 MS
@@ -44,6 +47,9 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
   * observer.reference 1..1
 
 * entity 1..* MS
+* entity.type 1..1 MS
+* entity.type.code 1..1 MS
+* entity.type.system 1..1 MS
 * entity ^slicing.discriminator.type = #value
 * entity ^slicing.discriminator.path = "type"
 * entity ^slicing.rules = #open
