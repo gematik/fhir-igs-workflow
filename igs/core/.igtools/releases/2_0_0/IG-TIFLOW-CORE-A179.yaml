@@ -1,24 +1,24 @@
-actor: []
+actor:
+- TI-Flow_FD
 conformance: SHALL
 content_hash: 6ca65159e95fdbbf89f679e39b62df5d24610bb848fbebc1fa1dcbcfb8f05ba5
 created: '2026-06-25T11:30:11.243219'
-date: '2026-06-25T11:30:11.243221'
+date: '2026-06-25T15:03:07.792890'
 key: IG-TIFLOW-CORE-A179
 modified: '2026-06-25T11:30:11.243220'
 release_status: NEW
 source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
-test_procedures: {}
+test_procedures:
+  TI-Flow_FD:
+  - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
   \ über /Task/&#60;id&#62;/$activate die Angabe zum Mimetype des signierten Dokumentes\
   \ prüfen und, wenn dieser ungleich \"text/plain; charset=utf-8\" ist, die Operation\
-  \ mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px\
-  \ solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
-  \            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n         \
-  \   <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n\
-  \            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n      \
-  \  <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_SIGNATURE_INVALID</td>\n\
-  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n\
-  \        </tr>\n    </table> \n    abbrechen."
+  \ mit dem folgenden Fehler:\n \n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad\
+  \ Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_SIGNATURE_INVALID</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task aktivieren - Mimetype Signatur
 version: 0
