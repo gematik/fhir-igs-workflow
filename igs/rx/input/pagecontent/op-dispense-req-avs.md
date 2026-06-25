@@ -13,7 +13,7 @@ Dieser Anwendungsfall kann so lange wiederholt werden, so lange sich der Task zu
 Das PS der abgebenden LEI erzeugt die Dispensierinformationen nach den Vorgaben aus [Erstellen von Dispensierinformationen](./menu-technische-umsetzung-dispensierinformationen.html).
 
 <!-- A_26346-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-107" title="PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformation übermitteln" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A107" title="PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformation übermitteln" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

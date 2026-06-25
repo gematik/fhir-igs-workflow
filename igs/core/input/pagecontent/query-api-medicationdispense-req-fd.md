@@ -2,7 +2,7 @@
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Device-Query-Endpunkt.
 
 <!-- A_19400 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-130" title="TI-Flow-Fachdienst - MedicationDispense - unzulässige Operationen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A130" title="TI-Flow-Fachdienst - MedicationDispense - unzulässige Operationen" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
    	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -13,7 +13,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 ### GET /MedicationDispense
 
 <!-- A_19405-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-131" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A131" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -49,7 +49,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
  <!-- A_19406-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-132" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Filter MedicationDispense auf KVNR des Versicherten" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A132" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Filter MedicationDispense auf KVNR des Versicherten" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
    	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -58,7 +58,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_26527 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-133" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense und Medication" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A133" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Referenzierung MedicationDispense und Medication" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -67,7 +67,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22070-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-134" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Rückgabe mehrerer MedicationDispenses" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A134" title="TI-Flow-Fachdienst - MedicationDispense abrufen - Rückgabe mehrerer MedicationDispenses" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

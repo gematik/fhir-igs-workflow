@@ -24,7 +24,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 ### Festlegungen zum Verfahren mit Health-Checks
 
 <!-- A_23214 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-240" title="CS: Health-Check - Datensparsamkeit" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A240" title="CS: Health-Check - Datensparsamkeit" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -39,7 +39,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 </requirement>
 
 <!-- A_23215 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-241" title="CS: Health-Check - keine Health-Checks mit Fehlerrückgabe" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A241" title="CS: Health-Check - keine Health-Checks mit Fehlerrückgabe" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -54,7 +54,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 </requirement>
 
 <!-- A_23223 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-242" title="CS: erweiterter Health-Check" version="1">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-A242" title="CS: erweiterter Health-Check" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -69,7 +69,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 </requirement>
 
 <!-- A_23217 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-243" title="CS: erweiterter Health-Check - keine periodische Durchführung" version="1">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A243" title="CS: erweiterter Health-Check - keine periodische Durchführung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -84,7 +84,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 </requirement>
 
 <!-- A_23216 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-244" title="CS: erweiterter Health-Check - keine anderen Endpunkte zulässig" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A244" title="CS: erweiterter Health-Check - keine anderen Endpunkte zulässig" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -99,7 +99,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 </requirement>
 
 <!-- A_23219 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-245" title="CS: einfacher Health-Check" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-A245" title="CS: einfacher Health-Check" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -122,7 +122,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <b>Ausnahme bei parallel durchgeführten, fachlichen Aufrufen:</b> Das Primärsystem DARF KEINEN Health-Check durchführen, wenn innerhalb der festgelegten Idle-Periode ein regulärer Aufruf an einem beliebigen Endpunkt des TI-Flow-Fachdienstes mit erhaltener Antwort durchgeführt wurde. Die Antwort des TI-Flow-Fachdienstes MUSS die festgelegte Idle-Periode von Beginn starten lassen.
 
 <!-- A_23218 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-246" title="CS: einfacher Health-Check - keine anderen Endpunkte zulässig" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A246" title="CS: einfacher Health-Check - keine anderen Endpunkte zulässig" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

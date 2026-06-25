@@ -1,7 +1,7 @@
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Communication-Endpunkt.
 
 <!-- A_19401 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-316" title="TI-Flow-Fachdienst - Communication - unzulässige Operationen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A316" title="TI-Flow-Fachdienst - Communication - unzulässige Operationen" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -11,7 +11,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- ToDo Hendre: Fehlercode (Detailed code) einfügen Http Fehler 405 -->
 
 <!-- A_19446-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-317" title="TI-Flow-Fachdienst - Communication - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A317" title="TI-Flow-Fachdienst - Communication - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -54,7 +54,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 
 <!-- A_19520-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-318" title="TI-Flow-Fachdienst - Nachrichten abrufen - für Empfänger filtern" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A318" title="TI-Flow-Fachdienst - Nachrichten abrufen - für Empfänger filtern" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -63,7 +63,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_19521 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-319" title="TI-Flow-Fachdienst - Nachrichten abrufen - als abgerufen markieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A319" title="TI-Flow-Fachdienst - Nachrichten abrufen - als abgerufen markieren" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -74,7 +74,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 ### POST /Communication
 
 <!-- A_19447-06 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-320" title="TI-Flow-Fachdienst - Nachricht einstellen - Schemaprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A320" title="TI-Flow-Fachdienst - Nachricht einstellen - Schemaprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -142,7 +142,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- ToDo: DiGA und rx trennen -->
 
 <!-- A_23878-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-321" title="TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload GEM_ERP_PR_Communication_DispReq" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A321" title="TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload GEM_ERP_PR_Communication_DispReq" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -175,7 +175,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 <!-- ToDo Hendre: sieht unser Konzept diese aussagekräftige Fehlermeldung vor? Warum entspricht diese nicht dem Details Text ? -->
 
 <!-- A_23879-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-322" title="TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_Reply" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A322" title="TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_Reply" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -207,7 +207,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_19448-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-323" title="TI-Flow-Fachdienst - Nachricht einstellen - Absender und Sendedatum" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A323" title="TI-Flow-Fachdienst - Nachricht einstellen - Absender und Sendedatum" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -216,7 +216,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_20231-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-327" title="TI-Flow-Fachdienst - Nachricht einstellen - Ausschluss Nachrichten an Empfänger gleich Absender" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A327" title="TI-Flow-Fachdienst - Nachricht einstellen - Ausschluss Nachrichten an Empfänger gleich Absender" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -248,7 +248,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_19450-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-328" title="TI-Flow-Fachdienst - Nachricht einstellen - Schadcodeprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A328" title="TI-Flow-Fachdienst - Nachricht einstellen - Schadcodeprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -286,7 +286,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_20885-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-329" title="TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Versichertenbezug" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A329" title="TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Versichertenbezug" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -318,7 +318,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_27767-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-330" title="TI-Flow-Fachdienst - Nachricht einstellen - Prüfung des Empfängers" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A330" title="TI-Flow-Fachdienst - Nachricht einstellen - Prüfung des Empfängers" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -366,7 +366,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_21371-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-331" title="TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Existenz Task" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A331" title="TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Existenz Task" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -398,7 +398,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_26320 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-332" title="TI-Flow-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Status Task" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A332" title="TI-Flow-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Status Task" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -430,7 +430,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_26321 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-333" title="TI-Flow-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Ende Gültigkeit Task" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A333" title="TI-Flow-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Ende Gültigkeit Task" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -462,7 +462,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_26327 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-334" title="TI-Flow-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Beginn Gültigkeit Task" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A334" title="TI-Flow-Fachdienst - Nachricht einstellen - Dispense Request - Prüfung Beginn Gültigkeit Task" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -495,7 +495,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 
 <!-- A_22367-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-335" title="TI-Flow-Fachdienst - Nachricht einstellen - Notification Apotheke" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A335" title="TI-Flow-Fachdienst - Nachricht einstellen - Notification Apotheke" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -504,7 +504,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_28132 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-336" title="TI-Flow-Fachdienst - Nachricht einstellen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A336" title="TI-Flow-Fachdienst - Nachricht einstellen - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -519,7 +519,7 @@ Mit der HTTP-Operation DELETE kann ein Nutzer eine verschickte Kommunikationsnac
 
 
 <!-- A_20258 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-337" title="TI-Flow-Fachdienst - Nachricht löschen - Absender-ID" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A337" title="TI-Flow-Fachdienst - Nachricht löschen - Absender-ID" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

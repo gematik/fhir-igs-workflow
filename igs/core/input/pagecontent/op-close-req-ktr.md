@@ -1,7 +1,7 @@
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$close`.
 
 <!-- A_27840 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-342" title="CS Kostenträger: Quittung abrufen - Abschluss des Workflows durchführen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A342" title="CS Kostenträger: Quittung abrufen - Abschluss des Workflows durchführen" version="0">
     <meta lockversion="false"/>
     <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -12,7 +12,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 Die Erstellung der MedicationDispense erfolgt modulspezifisch.
 
 <!-- A_19289-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-343" title="CS Kostenträger: Quittung abrufen - Statusrequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A343" title="CS Kostenträger: Quittung abrufen - Statusrequest" version="0">
     <meta lockversion="false"/>
     <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

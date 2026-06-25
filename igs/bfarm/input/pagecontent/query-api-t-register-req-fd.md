@@ -7,7 +7,7 @@ Der TI-Flow-Fachdienst nutzt den OAuth 2.0 Client Credentials Flow nach [OAuth 2
 Über einen organisatorischen Prozess müssen Client Credentials beim BfArM angefragt werden, welche zur Authentifizierung des TI-Flow-Fachdienst ggü. dem BfArM Webdienst genutzt werden.
 
 <!-- A_27819 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-1" title="Anbieter TI-Flow-Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A1" title="Anbieter TI-Flow-Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -25,7 +25,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 </figure>
 
 <!-- A_27820 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-2" title="TI-Flow-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A2" title="TI-Flow-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -34,7 +34,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 </requirement>
 
 <!-- A_27821 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-3" title="TI-Flow-Fachdienst - BfArM - Beziehen des AccessTokens" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A3" title="TI-Flow-Fachdienst - BfArM - Beziehen des AccessTokens" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -58,7 +58,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 </requirement>
 
 <!-- A_27822 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-4" title="TI-Flow-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A4" title="TI-Flow-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -74,7 +74,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 ### Lokalisierung
 
 <!-- A_27882 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-5" title="TI-Flow-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A5" title="TI-Flow-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -85,7 +85,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 Der Defaultwert für den Parameter ist  `https://webapps-public.bfarm.de`.
 
 <!-- A_27817 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-6" title="TI-Flow-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A6" title="TI-Flow-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -98,7 +98,7 @@ Der Defaultwert für den Parameter ist  `https://webapps-public.bfarm.de`.
 Nach Abschluss eines Workflows 166 durch Aufrufen der $close Operation erstellt der TI-Flow-Fachdienst den digitalen Durchschlag für den Vorgang des E-T-Rezeptes. Die fachlichen Informationen hierzu sind im Dokument [gemF_eRp_T-Rezept] dokumentiert.
 
 <!-- A_27823 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-7" title="TI-Flow-Fachdienst - BfArM - Flowtype 166" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A7" title="TI-Flow-Fachdienst - BfArM - Flowtype 166" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -107,7 +107,7 @@ Nach Abschluss eines Workflows 166 durch Aufrufen der $close Operation erstellt 
 </requirement>
 
 <!-- A_27824 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-8" title="TI-Flow-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A8" title="TI-Flow-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -120,7 +120,7 @@ Der digitale Durchschlag zum T-Rezept ist ein Artefakt, welches Informationen zu
 Als Datengrundlage für diesen Durchschlag dient der Verordnungsdatensatz samt QES, der Dispensierdatensatz, der Task der Verordnung und Daten der Apotheke aus dem FHIR-VZD. Als Kriterium für die Suche nach Apothekendaten im FHIR-VZD wird die Telematik-ID der Apotheke genutzt.
 
 <!-- A_27825 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-9" title="TI-Flow-Fachdienst - BfArM - Suche nach Apothekendaten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A9" title="TI-Flow-Fachdienst - BfArM - Suche nach Apothekendaten" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -153,7 +153,7 @@ Als Antwort erhält der TI-Flow-Fachdienst mit dieser Anfrage genau drei Ressour
 Anschließend erstellt der TI-Flow-Fachdienst den digitalen Durchschlag für den BfArM Webdienst. Dieser basiert auf einem definierten FHIR-Profil.
 
 <!-- A_27826-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-10" title="TI-Flow-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A10" title="TI-Flow-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -162,7 +162,7 @@ Anschließend erstellt der TI-Flow-Fachdienst den digitalen Durchschlag für den
 </requirement>
 
 <!-- A_27827 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-11" title="TI-Flow-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A11" title="TI-Flow-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -214,7 +214,7 @@ Anschließend erstellt der TI-Flow-Fachdienst den digitalen Durchschlag für den
 </requirement>
 
 <!-- A_27828 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-12" title="TI-Flow-Fachdienst - BfArM - Übertragen des digitalen Durchschlags" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A12" title="TI-Flow-Fachdienst - BfArM - Übertragen des digitalen Durchschlags" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -260,7 +260,7 @@ Bei der Suche nach Apothekendaten basierend auf der Telematik-lD besteht die Mö
 4. Sollte der übermittelte Datensatz durch das BfArM untersucht werden müssen, erfolgt eine bilaterale Abstimmung zwischen gematik und BfArM zur Klärung des Sachverhalts.
 
 <!-- A_28979 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-17" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - kein VZD Eintrag für die Apotheke" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A17" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - kein VZD Eintrag für die Apotheke" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -276,7 +276,7 @@ Bei der Suche nach Apothekendaten basierend auf der Telematik-lD besteht die Mö
 Dieses Vorgehen stellt sicher, dass die Übertragung an das T-Register nicht aufgrund eines fehlenden FHIR-VZD-Eintrags blockiert wird und gleichzeitig die Nachvollziehbarkeit über die Telematik-ID gewährleistet bleibt.
 
 <!-- A_27830 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-13" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A13" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -285,7 +285,7 @@ Dieses Vorgehen stellt sicher, dass die Übertragung an das T-Register nicht auf
 </requirement>
 
 <!-- A_27831 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-14" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A14" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

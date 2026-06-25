@@ -23,7 +23,7 @@ Die Operation $accept wird als HTTP POST auf /Task/&#60;id&#62;/$accept ausgefü
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-tiflow-diga-accept-op.json %}
+			{% include OperationDefinition-TIFLOW-DIGA-accept-op.json %}
 		</pre>
 	</div>
 	<div id="Response-Examples">

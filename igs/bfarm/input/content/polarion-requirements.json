@@ -10,7 +10,7 @@
     },
     "requirements": [
         {
-            "key": "IG-TIFLOW-BFARM-1",
+            "key": "IG-TIFLOW-BFARM-A1",
             "title": "Anbieter TI-Flow-Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst",
             "version": 0,
             "status": "ACTIVE",
@@ -31,10 +31,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-1"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A1"
         },
         {
-            "key": "IG-TIFLOW-BFARM-10",
+            "key": "IG-TIFLOW-BFARM-A10",
             "title": "TI-Flow-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept",
             "version": 0,
             "status": "ACTIVE",
@@ -55,14 +55,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-10"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A10"
         },
         {
-            "key": "IG-TIFLOW-BFARM-11",
+            "key": "IG-TIFLOW-BFARM-A11",
             "title": "TI-Flow-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS den Anwendungsfall \"Übertragen des digitalen Durchschlags\" gemäß Tabelle TAB_eRPFD_029 ausführen. \n <table>\n <tr>\n <th>Name</th>\n <td>Übertragen des digitalen Durchschlags</td>\n </tr>\n <tr>\n <th>Auslöser</th>\n <td>Abschluss eines E-Rezept Workflows mit Flowtype 166 via Aufruf der $close-Operation</td>\n </tr>\n <tr>\n <th>Akteur</th>\n <td>TI-Flow-Fachdienst</td>\n </tr>\n <tr>\n <th>Vorbedingung</th>\n <td>\n <ul>\n <li>Dem TI-Flow-Fachdienst liegen Client Credentials des BfArM zur Authentifizierung vor</li>\n <li>Verordnungsdaten, Dispensierinformationen und Informationen aus dem FHIR-VZD liegen vor</li>\n <li>Ein gültiger AccessToken für den Zugriff auf den BfArM Webdienst liegt vor</li>\n </ul>\n </td>\n </tr>\n <tr>\n <th>Nachbedingung</th>\n <td>Am BfArM Webdienst wurde der digitale Durchschlag E-T-Rezept erfolgreich übertragen.</td>\n </tr>\n <tr>\n <th>Standardablauf</th>\n <td>\n <ol>\n <li>Prüfen, ob ein gültiger AccessToken vorliegt.</li>\n <li>Falls nicht: Client Credentials an den Token-Endpunkt übertragen.</li>\n <li>AccessToken speichern.</li>\n <li>Erzeugen des digitalen Durchschlags E-T-Rezept.</li>\n <li>Auftrag zur Übertragung des digitalen Durchschlags E-T-Rezept in einer Warteschlange einstellen.</li>\n <li>Aufruf des Endpunktes <code>/ords/rezepte/t-rezept/v1</code>.</li>\n <li>Nach erfolgreicher Übertragung: Löschen des Auftrags aus der Warteschlange.</li>\n </ol>\n </td>\n </tr>\n </table>\n <div><figcaption><strong>Tabelle: </strong>title</figcaption></div>",
+            "text": "Der TI-Flow-Fachdienst MUSS den Anwendungsfall \"Übertragen des digitalen Durchschlags\" gemäß Tabelle TAB_eRPFD_029 ausführen. \n    <table>\n    <tr>\n      <th>Name</th>\n      <td>Übertragen des digitalen Durchschlags</td>\n    </tr>\n    <tr>\n      <th>Auslöser</th>\n      <td>Abschluss eines E-Rezept Workflows mit Flowtype 166 via Aufruf der $close-Operation</td>\n    </tr>\n    <tr>\n      <th>Akteur</th>\n      <td>TI-Flow-Fachdienst</td>\n    </tr>\n    <tr>\n      <th>Vorbedingung</th>\n      <td>\n        <ul>\n          <li>Dem TI-Flow-Fachdienst liegen Client Credentials des BfArM zur Authentifizierung vor</li>\n          <li>Verordnungsdaten, Dispensierinformationen und Informationen aus dem FHIR-VZD liegen vor</li>\n          <li>Ein gültiger AccessToken für den Zugriff auf den BfArM Webdienst liegt vor</li>\n        </ul>\n      </td>\n    </tr>\n    <tr>\n      <th>Nachbedingung</th>\n      <td>Am BfArM Webdienst wurde der digitale Durchschlag E-T-Rezept erfolgreich übertragen.</td>\n    </tr>\n    <tr>\n      <th>Standardablauf</th>\n      <td>\n        <ol>\n          <li>Prüfen, ob ein gültiger AccessToken vorliegt.</li>\n          <li>Falls nicht: Client Credentials an den Token-Endpunkt übertragen.</li>\n          <li>AccessToken speichern.</li>\n          <li>Erzeugen des digitalen Durchschlags E-T-Rezept.</li>\n          <li>Auftrag zur Übertragung des digitalen Durchschlags E-T-Rezept in einer Warteschlange einstellen.</li>\n          <li>Aufruf des Endpunktes <code>/ords/rezepte/t-rezept/v1</code>.</li>\n          <li>Nach erfolgreicher Übertragung: Löschen des Auftrags aus der Warteschlange.</li>\n        </ol>\n      </td>\n    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>title</figcaption></div>",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -79,14 +79,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-11"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A11"
         },
         {
-            "key": "IG-TIFLOW-BFARM-12",
+            "key": "IG-TIFLOW-BFARM-A12",
             "title": "TI-Flow-Fachdienst - BfArM - Übertragen des digitalen Durchschlags",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS für das Übertragen eines digitalen Durchschlags den BfArM Webdienst RESTful wie folgt aufrufen: \n <table>\n <tr>\n <th>HTTP-Parameter</th>\n <th>Wert</th>\n </tr>\n <tr>\n <td>Methode</td>\n <td>POST</td>\n </tr>\n <tr>\n <td>Endpunkt</td>\n <td>/ords/rezepte/t-rezept/v1</td>\n </tr>\n <tr>\n <td>Header</td>\n <td>\n <ul>\n <li>Authorization: Bearer &lt;AccessToken&gt;</li>\n <li>Content-Type: application/fhir+json</li>\n <li>X-Request-ID: &lt;random-uuid&gt;</li>\n </ul>\n </td>\n </tr>\n <tr>\n <td>Body</td>\n <td>&lt;digitaler Durchschlag E-T-Rezept&gt;</td>\n </tr>\n </table>",
+            "text": "Der TI-Flow-Fachdienst MUSS für das Übertragen eines digitalen Durchschlags den BfArM Webdienst RESTful wie folgt aufrufen: \n     <table>\n      <tr>\n        <th>HTTP-Parameter</th>\n        <th>Wert</th>\n      </tr>\n      <tr>\n        <td>Methode</td>\n        <td>POST</td>\n      </tr>\n      <tr>\n        <td>Endpunkt</td>\n        <td>/ords/rezepte/t-rezept/v1</td>\n      </tr>\n      <tr>\n        <td>Header</td>\n        <td>\n          <ul>\n            <li>Authorization: Bearer &lt;AccessToken&gt;</li>\n            <li>Content-Type: application/fhir+json</li>\n            <li>X-Request-ID: &lt;random-uuid&gt;</li>\n          </ul>\n        </td>\n      </tr>\n      <tr>\n        <td>Body</td>\n        <td>&lt;digitaler Durchschlag E-T-Rezept&gt;</td>\n      </tr>\n    </table>",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -103,10 +103,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-12"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A12"
         },
         {
-            "key": "IG-TIFLOW-BFARM-13",
+            "key": "IG-TIFLOW-BFARM-A13",
             "title": "TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs",
             "version": 0,
             "status": "ACTIVE",
@@ -127,10 +127,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-13"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A13"
         },
         {
-            "key": "IG-TIFLOW-BFARM-14",
+            "key": "IG-TIFLOW-BFARM-A14",
             "title": "TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler",
             "version": 0,
             "status": "ACTIVE",
@@ -151,10 +151,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-14"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A14"
         },
         {
-            "key": "IG-TIFLOW-BFARM-15",
+            "key": "IG-TIFLOW-BFARM-A15",
             "title": "E-Rezept: Anwendung des IG 'Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst' für Übertragung von Daten vom TI-Flow-Fachdienst an den BfArM Webdienst",
             "version": 0,
             "status": "ACTIVE",
@@ -175,10 +175,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/index.html#IG-TIFLOW-BFARM-15"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/index.html#IG-TIFLOW-BFARM-A15"
         },
         {
-            "key": "IG-TIFLOW-BFARM-16",
+            "key": "IG-TIFLOW-BFARM-A16",
             "title": "E-Rezept: Umsetzung des Moduls 'Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst'",
             "version": 0,
             "status": "ACTIVE",
@@ -199,14 +199,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/index.html#IG-TIFLOW-BFARM-16"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/index.html#IG-TIFLOW-BFARM-A16"
         },
         {
-            "key": "IG-TIFLOW-BFARM-17",
+            "key": "IG-TIFLOW-BFARM-A17",
             "title": "TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - kein VZD Eintrag für die Apotheke",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept, wenn die Daten der abgebenden Apotheke nicht aus dem Verzeichnisdienst ermittelt werden können,\n <ul>\n <li>die Telematik-ID der Apotheke aus den Dispensierinformationen und</li>\n <li>den Wert für zeta-user-info.commonName aus Nutzerinformationen bzw. falls zeta-user-info.commonName = NULL den Wert \"unbekannt\" als Name der Apotheke</li>\n </ul>\n in den digitalen Durchschlag übernehmen.",
+            "text": "Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept, wenn die Daten der abgebenden Apotheke nicht aus dem Verzeichnisdienst ermittelt werden können,\n    <ul>\n      <li>die Telematik-ID der Apotheke aus den Dispensierinformationen und</li>\n      <li>den Wert für zeta-user-info.commonName aus Nutzerinformationen bzw. falls zeta-user-info.commonName = NULL den Wert \"unbekannt\" als Name der Apotheke</li>\n    </ul>\n    in den digitalen Durchschlag übernehmen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -223,10 +223,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-17"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A17"
         },
         {
-            "key": "IG-TIFLOW-BFARM-2",
+            "key": "IG-TIFLOW-BFARM-A2",
             "title": "TI-Flow-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken",
             "version": 0,
             "status": "ACTIVE",
@@ -247,14 +247,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-2"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A2"
         },
         {
-            "key": "IG-TIFLOW-BFARM-3",
+            "key": "IG-TIFLOW-BFARM-A3",
             "title": "TI-Flow-Fachdienst - BfArM - Beziehen des AccessTokens",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS zum Beziehen eines AccessTokens den Endpunkt /ords/rezepte/oauth/token am BfArM Webdienst mit folgenden Parametern aufrufen: \n <table>\n <tr>\n <th>HTTP-Methode </th>\n <td>POST</td>\n </tr>\n <tr> \n <th>HTTP-Header </th>\n <td>Content-Type: application/x-www-form-urlencoded Authorization: Basic &lt;base64(client_id:client_secret)&gt; </td>\n </tr>\n <tr>\n <th>HTTP-Body </th>\n <td>Form-Parameter: grant_type=client_credential</td>\n </tr>\n </table>\n , um einen AccessToken für den Zugriff auf den BfArM Webdienst zu beziehen.",
+            "text": "Der TI-Flow-Fachdienst MUSS zum Beziehen eines AccessTokens den Endpunkt /ords/rezepte/oauth/token am BfArM Webdienst mit folgenden Parametern aufrufen: \n    <table>\n      <tr>\n        <th>HTTP-Methode </th>\n        <td>POST</td>\n      </tr>\n      <tr> \n        <th>HTTP-Header </th>\n        <td>Content-Type: application/x-www-form-urlencoded Authorization: Basic &lt;base64(client_id:client_secret)&gt; </td>\n      </tr>\n      <tr>\n        <th>HTTP-Body </th>\n        <td>Form-Parameter: grant_type=client_credential</td>\n      </tr>\n    </table>\n    , um einen AccessToken für den Zugriff auf den BfArM Webdienst zu beziehen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -271,14 +271,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-3-01"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A3"
         },
         {
-            "key": "IG-TIFLOW-BFARM-4",
+            "key": "IG-TIFLOW-BFARM-A4",
             "title": "TI-Flow-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS für den Zugriff auf den BfArM Webdienst einen AccessToken für die Authentifizierung im HTTP-Header wie folgt angeben: \n <ul>\n <li>Authorization: Bearer &lt;AccessToken vom Token Endpunkt&gt; </li>\n </ul>\n , um auf die Endpunkte des BfArM Webdienstes zugreifen zu können.",
+            "text": "Der TI-Flow-Fachdienst MUSS für den Zugriff auf den BfArM Webdienst einen AccessToken für die Authentifizierung im HTTP-Header wie folgt angeben: \n    <ul>\n    <li>Authorization: Bearer &lt;AccessToken vom Token Endpunkt&gt; </li>\n    </ul>\n    , um auf die Endpunkte des BfArM Webdienstes zugreifen zu können.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -295,10 +295,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-4"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A4"
         },
         {
-            "key": "IG-TIFLOW-BFARM-5",
+            "key": "IG-TIFLOW-BFARM-A5",
             "title": "TI-Flow-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain",
             "version": 0,
             "status": "ACTIVE",
@@ -319,10 +319,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-5"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A5"
         },
         {
-            "key": "IG-TIFLOW-BFARM-6",
+            "key": "IG-TIFLOW-BFARM-A6",
             "title": "TI-Flow-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes",
             "version": 0,
             "status": "ACTIVE",
@@ -343,10 +343,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-6"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A6"
         },
         {
-            "key": "IG-TIFLOW-BFARM-7",
+            "key": "IG-TIFLOW-BFARM-A7",
             "title": "TI-Flow-Fachdienst - BfArM - Flowtype 166",
             "version": 0,
             "status": "ACTIVE",
@@ -367,10 +367,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-7"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A7"
         },
         {
-            "key": "IG-TIFLOW-BFARM-8",
+            "key": "IG-TIFLOW-BFARM-A8",
             "title": "TI-Flow-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung",
             "version": 0,
             "status": "ACTIVE",
@@ -391,14 +391,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-8"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A8"
         },
         {
-            "key": "IG-TIFLOW-BFARM-9",
+            "key": "IG-TIFLOW-BFARM-A9",
             "title": "TI-Flow-Fachdienst - BfArM - Suche nach Apothekendaten",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept die Daten der abgebenden Apotheke aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird: \n <ul>\n <li>Abfrage der Ressource \"HealthcareService\", </li>\n <li>HealthcareServices, deren Organisation aktiv sind, </li>\n <li>HealthcareServices, deren origin tag = ldap ist, </li>\n <li>HealthcareServices, deren Organisation als Identifier die Telematik-ID trägt, die im Dispensierdatensatz angegeben wurde, </li>\n <li>Einbeziehen der Organisation in das Rückgabeergebnis, </li>\n <li>Einbeziehen der Location in das Rückgabeergebnis</li>\n </ul>",
+            "text": "Der TI-Flow-Fachdienst MUSS für das Bereitstellen eines digitalen Durchschlags für ein E-T-Rezept die Daten der abgebenden Apotheke aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird: \n     <ul>\n     <li>Abfrage der Ressource \"HealthcareService\", </li>\n     <li>HealthcareServices, deren Organisation aktiv sind, </li>\n     <li>HealthcareServices, deren origin tag = ldap ist, </li>\n     <li>HealthcareServices, deren Organisation als Identifier die Telematik-ID trägt, die im Dispensierdatensatz angegeben wurde, </li>\n     <li>Einbeziehen der Organisation in das Rückgabeergebnis, </li>\n     <li>Einbeziehen der Location in das Rückgabeergebnis</li>\n     </ul>",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -415,7 +415,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-9"
+            "link": "https://gematik.de/fhir/tiflow-bfarm/2.0.0-ballot.2/query-api-t-register-req-fd.html#IG-TIFLOW-BFARM-A9"
         }
     ]
 }

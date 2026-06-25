@@ -4,7 +4,7 @@ Zur Umsetzung der ZETA Architektur müssen Clientsysteme folgende Anforderungen 
 
 <!-- ToDo: ZETA Stufe 2 wird zusätzlich FdV betrachten. Hier sind nach Finalisierung der Stufe 2 entsprechend zu reviewn und zu ergänzen. -->
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-434" title="CS: ZETA Client" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A434" title="CS: ZETA Client" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -23,7 +23,7 @@ Zur Umsetzung der ZETA Architektur müssen Clientsysteme folgende Anforderungen 
 
 <!-- ToDo: link auflösen, Dokument ist noch nicht veröffentlicht. ZETA plant , es später bereitzustellen. -->
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-435" title="CS: ZETA Client - Kommunikation mit Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A435" title="CS: ZETA Client - Kommunikation mit Fachdienst" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -42,7 +42,7 @@ Zur Umsetzung der ZETA Architektur müssen Clientsysteme folgende Anforderungen 
 
 Hinweis: Der Zeta-Client beinhaltet zwingend zu nutzende Kommunikationsfunktionen wie TLS, ZETA/ASL-Kanal und weitere (siehe [gemSpec_ZETA])
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-436" title="CS: ZETA Client - Authentisierung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A436" title="CS: ZETA Client - Authentisierung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -59,7 +59,7 @@ Hinweis: Der Zeta-Client beinhaltet zwingend zu nutzende Kommunikationsfunktione
     Das Clientsystem des TI-Flow-Fachdienstes MUSS zur Authentisierung der Institution das Verfahren mittels SM(C)-B signiertem Client Assertion JWT und DPoP gemäß [RFC7523] und [RFC9449] verwenden.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-437" title="CS: ZETA Client - ZETA/ASL-Kanal" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A437" title="CS: ZETA Client - ZETA/ASL-Kanal" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

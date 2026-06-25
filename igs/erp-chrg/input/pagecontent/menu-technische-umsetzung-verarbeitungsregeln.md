@@ -31,7 +31,7 @@ Die Authentisierung des Nutzers am TI-Flow-Fachdienst erfolgt über den ZETA Gua
 Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um es direkt in der Apotheke vorzuzeigen und die Apotheke damit zu berechtigen, die Abrechnungsinformation vom TI-Flow-Fachdienst abzurufen und den PKV-Abgabedatensatz einmalig zu ändern.
 
 <!--A_24577-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG-3" title="E-Rezept-FdV: optional: 2D-Code Abrechnungsinformation anzeigen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A3" title="E-Rezept-FdV: optional: 2D-Code Abrechnungsinformation anzeigen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -40,7 +40,7 @@ Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code
 </requirement>
 
 <!--A_22726-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-4" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A4" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -49,7 +49,7 @@ Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code
 </requirement>
 
 <!--A_22727-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-5" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A5" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -60,7 +60,7 @@ Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code
 Für die Beschreibung der Struktur des Abrechnungsinformation-Token siehe [gemSpec_DM_eRp].
 
 <!--A_22728-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-6" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A6" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -72,7 +72,7 @@ Für die Beschreibung der Struktur des Abrechnungsinformation-Token siehe [gemSp
 Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus dem E-Rezept-FdV exportieren, um es zur Abrechnung einzureichen oder zu archivieren.
 
 <!--A_24555-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG-7" title="E-Rezept-FdV: optional: Abrechnungsinformation exportieren" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A7" title="E-Rezept-FdV: optional: Abrechnungsinformation exportieren" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -81,7 +81,7 @@ Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus de
 </requirement>
 
 <!--A_22184-02-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-8" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF/A erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A8" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF/A erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -97,7 +97,7 @@ Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus de
 Für die Visualisierung der Abrechnungsinformation für PKV-Versicherte ist die zwischen DAV und PKV-Verband vereinbarte Technische Anlage zu den PKV-Abgabedaten und dem dortigen Kapitel 6 Ausdruck für den Privatversicherten sowie dem Unterkapitel 6.2 Spezifikation des Ausdrucks für den Versicherten [Empfehlung](http://www.abda.de/themen/e-health/datenauschtausch-pkv) zu beachten. Zur Umsetzungsunterstützung siehe auch [hier](https://github.com/DAV-ABDA/eRezept-Beispiele/tree/main/PKV). 
 
 <!--A_22185-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-9" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF teilen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A9" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF teilen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

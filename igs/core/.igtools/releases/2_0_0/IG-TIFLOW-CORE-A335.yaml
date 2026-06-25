@@ -1,0 +1,22 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 3f75182ae2d72bcc8eaad4d6f95d770994fd147fefc5b21b7aaff3a1a27c9389
+created: '2026-06-25T11:30:11.292865'
+date: '2026-06-25T11:30:11.292867'
+key: IG-TIFLOW-CORE-A335
+modified: '2026-06-25T11:30:11.292866'
+release_status: NEW
+source: input/pagecontent/query-api-communication-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: 'Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht des Profils "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq"
+  oder "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq"
+  zur Versicherter-zu-Apotheken-Kommunikation über die http-Operation POST auf den
+  Endpunkt /Communication prüfen, ob für die Telematik-ID des Empfängers Subscriptions
+  registriert sind und für Registrierungen über den Subscription Service eine Notification
+  (ping : subscription-id) senden.'
+title: TI-Flow-Fachdienst - Nachricht einstellen - Notification Apotheke
+version: 0

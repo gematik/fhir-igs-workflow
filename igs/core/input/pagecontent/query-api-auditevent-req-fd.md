@@ -3,7 +3,7 @@
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für die AuditEvent-Query-Endpunkte.
 
 <!-- A_19402 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-135" title="TI-Flow-Fachdienst - unzulässige Operationen AuditEvent" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A135" title="TI-Flow-Fachdienst - unzulässige Operationen AuditEvent" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -14,7 +14,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 ### GET /AuditEvent
 
 <!-- A_19395 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-136" title="TI-Flow-Fachdienst - AuditEvent lesen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A136" title="TI-Flow-Fachdienst - AuditEvent lesen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -50,7 +50,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_19396 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-137" title="TI-Flow-Fachdienst - AuditEvent lesen - Filter KVNR" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A137" title="TI-Flow-Fachdienst - AuditEvent lesen - Filter KVNR" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -59,7 +59,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_19397 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-138" title="TI-Flow-Fachdienst - AuditEvent lesen - Rückgabe im Bundle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A138" title="TI-Flow-Fachdienst - AuditEvent lesen - Rückgabe im Bundle" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

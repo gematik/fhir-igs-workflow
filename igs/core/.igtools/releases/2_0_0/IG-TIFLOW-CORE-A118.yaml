@@ -1,0 +1,25 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: e5abbcb505f056f05f103141fea1f8be683afd6b0091c64576d9636e06c0c5bd
+created: '2026-06-25T11:30:11.221391'
+date: '2026-06-25T11:30:11.221393'
+key: IG-TIFLOW-CORE-A118
+modified: '2026-06-25T11:30:11.221392'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  Task mittels "/Task/&lt;id&gt;?secret=..." durch eine abgebende Institution den
+  Task, sofern er den Status "completed" hat, um das referenzierte, serverseitig signierte
+  Quittungs-Bundle aus Task.output mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType
+  = 3 als search.include im Ergebnis-Bundle ergänzen und die Ergebnismenge Task +
+  Quittungs-Bundle an den Abgebenden zurückgeben, damit ein Abgebender, der ein konkretes
+  E-Rezept beliefert hat, bei Bedarf genau dieses belieferte E-Rezept inkl. der Quittung
+  erneut abrufen kann.
+title: TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Rückgabe Task inkl.
+  Bundle im Bundle
+version: 0
