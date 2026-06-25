@@ -1,0 +1,29 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 98d1b0163490bf459074a9ad1757ebcf006ef8626005b8ca149031dad7853ba9
+created: '2026-06-25T11:43:04.349973'
+date: '2026-06-25T11:43:04.349975'
+key: IG-TIFLOW-ERP-A77
+modified: '2026-06-25T11:43:04.349975'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 160, 169,\
+  \ 200 oder 209 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen,\
+  \ dass im Bundle eine MedicationRequest-Ressource und eine Medication mit Medication.extension:Arzneimittelkategorie\
+  \ = 00 enthalten ist, und andernfalls die Operation mit dem folgenden Fehler:\n\
+  \      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400\
+  \ - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n\
+  \            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n\
+  \            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details\
+  \ Code</th>\n            <td>TIFLOW_FLOWTYPE_MISMATCH</td>\n        </tr>\n    \
+  \    <tr>\n            <th>Details Text</th>\n            <td>Für diesen Workflowtypen\
+  \ sind nur Arzneimittelverordnungen zulässig</td>\n        </tr>\n    </table> \n\
+  \    abbrechen."
+title: TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung Arzneimittelverordnung
+version: 0

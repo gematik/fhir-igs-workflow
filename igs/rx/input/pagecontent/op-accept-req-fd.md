@@ -7,7 +7,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 ### Modulspezifische Anforderungen
 
 <!-- A_19166-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-104" title="TI-Flow-Fachdienst - Task akzeptieren - Flowtype 160/166/169/200/209 - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A104" title="TI-Flow-Fachdienst - Task akzeptieren - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -44,7 +44,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22635-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-105" title="TI-Flow-Fachdienst - Task akzeptieren - Mehrfachverordnung - Beginn Einlösefrist prüfen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A105" title="TI-Flow-Fachdienst - Task akzeptieren - Mehrfachverordnung - Beginn Einlösefrist prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -77,7 +77,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_22110-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-106" title="TI-Flow-Fachdienst - Task akzeptieren - Coverage PKV - Einwilligung Abrechnungsinformation ermitteln" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A106" title="TI-Flow-Fachdienst - Task akzeptieren - Coverage PKV - Einwilligung Abrechnungsinformation ermitteln" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
