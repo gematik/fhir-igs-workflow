@@ -25,7 +25,7 @@ Die Operation $activate wird als HTTP POST auf /Task/&#60;id&#62;/$activate ausg
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-tiflow-diga-activate-op.json %}
+			{% include OperationDefinition-TIFLOW-DIGA-Aactivate-op.json %}
 		</pre>
 	</div>
 	<div id="Request-Examples">
