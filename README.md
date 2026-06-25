@@ -14,6 +14,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | `2.0.0-ballot.2` | `audit-event-profile` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/audit-event-profile/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `audit-event-service` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/audit-event-service/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/develop/2.0.0-ballot.2) |
+| `2.0.0-ballot.2` | `move-configuration-requirements` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/move-configuration-requirements/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `ti-common-paging-sorting` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/ti-common-paging-sorting/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `ti-flow-system-diagram` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/ti-flow-system-diagram/2.0.0-ballot.2) |
 | `2.0.0-ballot.1` | `TMD-3186-vorbereiten-unterlagen-fuer-vorabveroeffentlichung-28-05-2026` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/TMD-3186-vorbereiten-unterlagen-fuer-vorabveroeffentlichung-28-05-2026/2.0.0-ballot.1) |
