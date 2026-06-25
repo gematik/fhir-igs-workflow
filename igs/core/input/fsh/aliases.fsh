@@ -4,6 +4,7 @@ Alias: $erp-base-url = https://tiflow.de
 Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
 Alias: $hl7-task-status-cs = http://hl7.org/fhir/task-status
+Alias: $fhir-validate-op =  http://hl7.org/fhir/OperationDefinition/Resource-validate
 
 // KBV
 Alias: $KBV_EX_ERP_Medication_Category = https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category
