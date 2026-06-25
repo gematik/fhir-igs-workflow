@@ -1,7 +1,7 @@
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den TI-Flow-Fachdienst für die Operation `$create`.
 
 <!-- A_19018-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-217" title="TI-Flow-Fachdienst - Task erzeugen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A217" title="TI-Flow-Fachdienst - Task erzeugen - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -41,7 +41,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19257-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-218" title="TI-Flow-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A218" title="TI-Flow-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -73,7 +73,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19112 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-219" title="TI-Flow-Fachdienst - Task erzeugen - Parametrierung Task für Workflow-Typ" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A219" title="TI-Flow-Fachdienst - Task erzeugen - Parametrierung Task für Workflow-Typ" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -84,15 +84,15 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 
 <!-- A_19019-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-221" title="TI-Flow-Fachdienst - Task erzeugen - Generierung Rezept-ID" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A221" title="TI-Flow-Fachdienst - Task erzeugen - Generierung Rezept-ID" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Anlegen eines neuen Tasks eine Rezept-ID gemäß der Bildungsregel in [IG-TIFLOW-CORE-357] generieren und als Identifier mit Namingsystem https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId dem Task hinzufügen und sicherstellen, dass diese Rezept-ID innerhalb von 11 Jahren nach ihrer Erzeugung nicht erneut vergeben wird, damit es innerhalb der Aufbewahrungsfrist der Abrechnungsdaten bei den Krankenkassen zu keinen Dubletten kommt.
+    Der TI-Flow-Fachdienst MUSS beim Anlegen eines neuen Tasks eine Rezept-ID gemäß der Bildungsregel in [IG-TIFLOW-CORE-A357] generieren und als Identifier mit Namingsystem https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId dem Task hinzufügen und sicherstellen, dass diese Rezept-ID innerhalb von 11 Jahren nach ihrer Erzeugung nicht erneut vergeben wird, damit es innerhalb der Aufbewahrungsfrist der Abrechnungsdaten bei den Krankenkassen zu keinen Dubletten kommt.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-439" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID Nummernkreis" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A439" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID Nummernkreis" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -100,7 +100,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
      Der TI-Flow-Fachdienst MUSS beim Erzeugen des ersten Tasks aller Workflowtypen sicherstellen, dass der 12-stellige Zählerstand der Rezept-ID gleich 010.000.000.000 ist.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-440" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID sequentielle Zählung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A440" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID sequentielle Zählung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -109,7 +109,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_23227 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-222" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID=Rezept-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A222" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID=Rezept-ID" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -118,7 +118,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19021-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-223" title="TI-Flow-Fachdienst - Task erzeugen - Generierung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A223" title="TI-Flow-Fachdienst - Task erzeugen - Generierung AccessCode" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -127,7 +127,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19114 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-224" title="TI-Flow-Fachdienst - Task erzeugen - Status draft" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A224" title="TI-Flow-Fachdienst - Task erzeugen - Status draft" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

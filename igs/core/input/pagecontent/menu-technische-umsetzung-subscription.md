@@ -1,7 +1,7 @@
 Der Subscription Service wird außerhalb der VAU betrieben.
 
 <!-- A_22368 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-163" title="TI-Flow-Fachdienst - Subscription Service - Webschnittstelle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A163" title="TI-Flow-Fachdienst - Subscription Service - Webschnittstelle" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -10,7 +10,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 </requirement>
 
 <!-- A_22369 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-164" title="TI-Flow-Fachdienst - Subscription Service - Prüfung Bearer-Token" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A164" title="TI-Flow-Fachdienst - Subscription Service - Prüfung Bearer-Token" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -42,7 +42,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 </requirement>
 
 <!-- A_22370 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-165" title="TI-Flow-Fachdienst - Subscription Service - Upgrade" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A165" title="TI-Flow-Fachdienst - Subscription Service - Upgrade" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -51,7 +51,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 </requirement>
 
 <!-- A_22371 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-166" title="TI-Flow-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A166" title="TI-Flow-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -60,7 +60,7 @@ Der Subscription Service wird außerhalb der VAU betrieben.
 </requirement>
 
 <!-- A_22378 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-167" title="TI-Flow-Fachdienst - Subscription Service - Verbot Profilbildung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A167" title="TI-Flow-Fachdienst - Subscription Service - Verbot Profilbildung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

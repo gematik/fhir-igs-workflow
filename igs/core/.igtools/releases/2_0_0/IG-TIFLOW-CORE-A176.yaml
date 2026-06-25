@@ -1,0 +1,30 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 1e14c889cda07e6161c8c1d59db591f4ad3dd73b28bd38d6da25fd40b6055eaf
+created: '2026-06-25T11:30:11.240716'
+date: '2026-06-25T11:30:11.240718'
+key: IG-TIFLOW-CORE-A176
+modified: '2026-06-25T11:30:11.240718'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$activate den im Aufrufparameter übergebenen FHIR-Operationsparameter\
+  \ des QES-Datensatzes als PKCS#7-Datei einer Enveloping CAdES-Signatur entgegennehmen\
+  \ und verarbeiten und bei Fehlen oder ungültiger ASN.1 Datenstruktur die Operation\
+  \ mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px\
+  \ solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
+  \            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n         \
+  \   <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n\
+  \            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n      \
+  \  <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR\
+  \ Profile validation failed.</td>\n        </tr>\n    </table> \n    abbrechen,\
+  \ damit kein Schadcode und keine \"fachfremden\" Daten in den TI-Flow-Fachdienst\
+  \ hochgeladen werden."
+title: TI-Flow-Fachdienst - Task aktivieren - Schemavalidierung
+version: 0

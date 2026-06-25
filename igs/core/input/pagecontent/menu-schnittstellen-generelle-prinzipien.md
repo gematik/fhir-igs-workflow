@@ -4,7 +4,7 @@ In diesem Abschnitt werden allgemeingültige Funktionsmerkmale des TI-Flow-Fachd
 
 Im Rahmen von Operationaufrufen von Clientsystemen führt der TI-Flow-Fachdienst verschiedene Prüfungen durch, bevor der Zugriff auf die Daten erfolgt.
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-418" title="TI-Flow-Fachdienst - Reihenfolge Eingansprüfungen für Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A418" title="TI-Flow-Fachdienst - Reihenfolge Eingansprüfungen für Operationen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -55,7 +55,7 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
 ### RESTful API
 
 <!-- A_19536 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-352" title="TI-Flow-Fachdienst - RESTful API" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A352" title="TI-Flow-Fachdienst - RESTful API" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -64,7 +64,7 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
 </requirement>
 
 <!-- A_19537 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-353" title="TI-Flow-Fachdienst - RESTful API MimeType fhir+xml" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A353" title="TI-Flow-Fachdienst - RESTful API MimeType fhir+xml" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -73,7 +73,7 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
 </requirement>
 
 <!-- A_19538 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-354" title="TI-Flow-Fachdienst - RESTful API MimeType fhir+json" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A354" title="TI-Flow-Fachdienst - RESTful API MimeType fhir+json" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -82,7 +82,7 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
 </requirement>
 
 <!-- A_19539 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-355" title="TI-Flow-Fachdienst - RESTful API MimeType Aufrufparameter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A355" title="TI-Flow-Fachdienst - RESTful API MimeType Aufrufparameter" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -91,7 +91,7 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
 </requirement>
 
 <!-- A_20171 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-356" title="TI-Flow-Fachdienst - RESTful API Capability Statement" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A356" title="TI-Flow-Fachdienst - RESTful API Capability Statement" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -106,7 +106,7 @@ Die konkret durchzuführenden Prüfungen sind als Anforderung für jede Operatio
 Die Verordnungs-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für den Workflow der Verordnung erstellt.
 
 <!-- A_19217-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-357" title="Aufbau Verordnungs-ID" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A357" title="Aufbau Verordnungs-ID" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -148,7 +148,7 @@ Für den Übergang der Anwendung E-Rezept vom E-Rezept-Fachdienst zum TI-Flow-Fa
 Der TI-Flow-Fachdienst erzeugt Tasks für jeden Workflow > `&#60;flowtype&#62;`.0**1**0.000.000.000.`&#60;prüfziffer&#62;`. Siehe hierzu auch die [Anforderungen des TI-Flow-Fachdienst für die $create-Operation](./op-create-req-fd.html).
 
 <!-- A_19218 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="Prüfung Verordnungs-ID" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A358" title="Prüfung Verordnungs-ID" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -163,7 +163,7 @@ Es gelten folgende Anforderungen und Vorgaben zur Verarbeitung und Interpretatio
 Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätzen einheitliche Vorgaben gelten. Laut FHIR Spezifikation wird für XML und JSON Datensätze das Character Encoding "UTF-8" vorgegeben. Byte Order Marks (BOM) werden nicht angeben.
 
 <!-- A_28427 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-360" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Forcieren von UTF-8 ohne BOM" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A360" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Forcieren von UTF-8 ohne BOM" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -197,7 +197,7 @@ Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätze
 Diese Anforderung zur Verarbeitung von Datensätzen ohne BOM gilt auch, wenn PKCS#7 Container deserialisiert werden.
 
 <!-- A_28428  -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-359" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A359" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -208,7 +208,7 @@ Diese Anforderung zur Verarbeitung von Datensätzen ohne BOM gilt auch, wenn PKC
 Für die Erstellung von Datensätzen gelten für Clientsysteme folgende Anforderungen.
 
 <!-- A_28429 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-361" title="Character Encoding für TI-Flow-Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A361" title="Character Encoding für TI-Flow-Fachdienst" version="0">
     <meta lockversion="false"/>
             <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -229,7 +229,7 @@ Für die Erstellung von Datensätzen gelten für Clientsysteme folgende Anforder
 </requirement>
 
 <!-- A_28430 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-362" title="Verbot Angabe von BOM für TI-Flow-Fachdienst" version="1">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A362" title="Verbot Angabe von BOM für TI-Flow-Fachdienst" version="0">
     <meta lockversion="false"/>
         <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -259,7 +259,7 @@ In der Verarbeitung der FHIR-Ressourcen ist es wichtig, dass Datums- und Zeitang
 Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzoneninformation im Datum enthalten ist. Diese Zeitangaben sollen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) interpretiert werden. Diese Regelung stellt sicher, dass alle beteiligten Systeme einheitlich und korrekt mit Datums- und Zeitangaben umgehen, unabhängig davon, ob die Angaben in der Vergangenheit oder Gegenwart liegen.
 
 <!-- A_27660 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-363" title="CS: Verarbeitung von Datumsangaben ohne Zeitzoneninformation" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A363" title="CS: Verarbeitung von Datumsangaben ohne Zeitzoneninformation" version="0">
     <meta lockversion="false"/>
         <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -282,7 +282,7 @@ Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzonen
 #### Filtern und Sortieren von FHIR-Objekten
 Clients erhalten die Möglichkeit, die Rückgabe der Elemente im FHIR-Bundle durch Suchparameter zu filtern und mithilfe von Sortierparameter zu sortieren.
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-441" title="TI-Flow-Fachdienst - Verarbeitung von Suchparameter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A441" title="TI-Flow-Fachdienst - Verarbeitung von Suchparameter" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -290,7 +290,7 @@ Clients erhalten die Möglichkeit, die Rückgabe der Elemente im FHIR-Bundle dur
       Der TI-Flow-Fachdienst MUSS die Suchparameter verarbeiten können, wie sie im CapabilityStatement festgelegt sind.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-442" title="TI-Flow-Fachdienst - Verarbeitung von Sortierparameter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A442" title="TI-Flow-Fachdienst - Verarbeitung von Sortierparameter" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -338,7 +338,7 @@ Folgende Informationen sind im Header zeta-user-info enthalten. (siehe [zeta-use
 <!-- A_19390-01 -->
 <!-- A_19391-01 -->
 <!-- A_19392-01 --> 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-433" title="TI-Flow-Fachdienst - Nutzerinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A433" title="TI-Flow-Fachdienst - Nutzerinformationen" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -379,7 +379,7 @@ Folgende Informationen sind im Header zeta-client-data enthalten. (siehe [client
 </table>
 <div><figcaption><strong>Tabelle: </strong>Attribute zeta-client-data</figcaption></div>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-438" title="TI-Flow-Fachdienst - Clientsystem-Informationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A438" title="TI-Flow-Fachdienst - Clientsystem-Informationen" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

@@ -8,7 +8,7 @@ Die jeweils aktive Konfiguration einer Instanz wird im CapabilityStatement ausge
 | `ti-fhir-configuration` | Aktive FHIR-Validierungskonfiguration |
 | `ti-feature` | Aktivierungsstatus einzelner Flowtypes und Features |
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-442" title="TI-Flow-Fachdienst - Konfigurationsausgabe im CapabilityStatement" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A452" title="TI-Flow-Fachdienst - Konfigurationsausgabe im CapabilityStatement" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -49,7 +49,7 @@ Die Operationalisierung einzelner Flowtypes kann per Konfiguration gesteuert wer
 
 Grundlage für die konfigurierbaren Parameter ist das [CodeSystem der Flowtypes](./CodeSystem-GEM-ERP-CS-FlowType.html). Mit der Definition neuer Flowtypes im CodeSystem erweitert sich die Menge der konfigurierbaren Parameter automatisch. Jeder Flowtype wird als `ti-feature`-Extension im CapabilityStatement ausgegeben.
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-443" title="TI-Flow-Fachdienst - Konfigurationsparameter je Flowtype" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A443" title="TI-Flow-Fachdienst - Konfigurationsparameter je Flowtype" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -57,7 +57,7 @@ Grundlage für die konfigurierbaren Parameter ist das [CodeSystem der Flowtypes]
     Der TI-Flow-Fachdienst MUSS für jeden Wert aus dem FlowType-CodeSystem einen Konfigurationsparameter unterstützen, der die Operationalisierung des Flowtypes steuert, und den Aktivierungsstatus als `ti-feature`-Extension im CapabilityStatement ausgeben.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-449" title="TI-Flow-Fachdienst - Konfigurationsparameter je Flowtype als valueCannonical" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A449" title="TI-Flow-Fachdienst - Konfigurationsparameter je Flowtype als valueCannonical" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -65,7 +65,7 @@ Grundlage für die konfigurierbaren Parameter ist das [CodeSystem der Flowtypes]
     Der TI-Flow-Fachdienst MUSS für die valueCannonical der `ti-feature`-Extension für Flowtypes den Cannonical `https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-&#60;flowtype&#62;` je Flowtype angeben.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-444" title="TI-Flow-Fachdienst - Fehlerausgabe bei deaktiviertem Flowtype" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A444" title="TI-Flow-Fachdienst - Fehlerausgabe bei deaktiviertem Flowtype" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -133,7 +133,7 @@ Neben Flowtypes können auch Features konfiguriert werden, die sich nicht über 
 
 Jedes Feature wird als `ti-feature`-Extension im CapabilityStatement ausgegeben.
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-445" title="TI-Flow-Fachdienst - Konfigurationsparameter je Feature" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A445" title="TI-Flow-Fachdienst - Konfigurationsparameter je Feature" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -141,7 +141,7 @@ Jedes Feature wird als `ti-feature`-Extension im CapabilityStatement ausgegeben.
     Der TI-Flow-Fachdienst MUSS für jedes im FHIR-IG beschriebene Feature als FeatureDefinition einen Konfigurationsparameter unterstützen, der die Verfügbarkeit des Features steuert, und den Aktivierungsstatus als `ti-feature`-Extension im CapabilityStatement ausgeben.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-450" title="TI-Flow-Fachdienst - Umsetzung der Deaktivierung eines Features" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A450" title="TI-Flow-Fachdienst - Umsetzung der Deaktivierung eines Features" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -149,7 +149,7 @@ Jedes Feature wird als `ti-feature`-Extension im CapabilityStatement ausgegeben.
     Der TI-Flow-Fachdienst MUSS für bei Deaktivierung eines im FHIR-IG beschriebenen Features alle zur Deaktivierung notwendigen featurespezifischen Vorgaben, die in der FeatureDefinition beschrieben sind umsetzen.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-446" title="TI-Flow-Fachdienst - Fehlerausgabe bei deaktiviertem Feature" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A446" title="TI-Flow-Fachdienst - Fehlerausgabe bei deaktiviertem Feature" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -185,7 +185,7 @@ Der TI-Flow-Fachdienst verwendet für die FHIR-Validierung eine definierte Kombi
 
 Zur Unterstützung von Testumgebungen existiert ein optionaler Konfigurationsparameter, der einen zeitlichen Versatz (Offset) des Referenzzeitpunkts für die FHIR-Validierung ermöglicht. Dieser Parameter darf ausschließlich in Test- und Referenzumgebungen gesetzt werden und erlaubt eine vorgelagerte FHIR-Validierung, ohne andere Systemkomponenten anpassen zu müssen.
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-447" title="TI-Flow-Fachdienst - Konfigurationsparameter für FHIR-Konfiguration im CapabilityStatement" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A447" title="TI-Flow-Fachdienst - Konfigurationsparameter für FHIR-Konfiguration im CapabilityStatement" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -193,7 +193,7 @@ Zur Unterstützung von Testumgebungen existiert ein optionaler Konfigurationspar
     Der TI-Flow-Fachdienst MUSS die aktive FHIR-Konfiguration als `ti-fhir-configuration`-Extension im CapabilityStatement ausgeben.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-448" title="TI-Flow-Fachdienst - Offset für Referenzzeitpunkt der FHIR-Validierung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A448" title="TI-Flow-Fachdienst - Offset für Referenzzeitpunkt der FHIR-Validierung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -201,7 +201,7 @@ Zur Unterstützung von Testumgebungen existiert ein optionaler Konfigurationspar
     Der TI-Flow-Fachdienst MUSS einen Konfigurationsparameter unterstützen, der einen zeitlichen Versatz (Offset) für den Referenzzeitpunkt der FHIR-Validierung umsetzt und die Validierung von FHIR-Instanzen entsprechend dem konfigurierten Offset durchsetzen.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-451" title="TI-Flow-Fachdienst - Kein Offset in der Produktivumgebung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A451" title="TI-Flow-Fachdienst - Kein Offset in der Produktivumgebung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>

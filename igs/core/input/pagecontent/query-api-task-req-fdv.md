@@ -3,7 +3,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-
 ### Liste der Verordnungen des Nutzers abrufen
 
 <!-- A_19347-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-197" title="E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A197" title="E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -12,7 +12,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-
 </requirement>
 
 <!-- A_19348-01 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-198" title="E-Rezept-FdV: E-Rezept abrufen - E-Rezepte lokal speichern" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-A198" title="E-Rezept-FdV: E-Rezept abrufen - E-Rezepte lokal speichern" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -25,7 +25,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-
 Der Aufruf wird genutzt, wenn die Informationen zu einer spezifischen Verordnung vom TI-Flow-Fachdienst heruntergeladen werden sollen, bspw. um zu prüfen, ob sich der Status geändert hat. Dafür muss die Task-ID dieser Verordnung im E-Rezept-FdV bekannt sein.
 
 <!-- A_19350-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-199" title="E-Rezept-FdV: E-Rezepte abrufen - Spezifisches E-Rezept herunterladen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A199" title="E-Rezept-FdV: E-Rezepte abrufen - Spezifisches E-Rezept herunterladen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
