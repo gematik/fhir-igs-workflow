@@ -35,8 +35,9 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
 * agent[user].who.identifier 1..1 MS
 * agent[user].who.identifier.value 1..1 MS
 * agent[user].who.identifier only IdentifierTelematikId or IdentifierKvid10
-* agent[client].type.coding.code = #humanuser
-* agent[client].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
+* agent[client].type from TIFLOWAuditEventAgentTypeVS (required)
+* agent[client].type.coding.code = #110150 // Application
+* agent[client].type.coding.system = $dcm
 * agent[client].who.identifier 1..1 MS
 * agent[client].who.identifier.value 1..1 MS
 * agent[client].who.identifier only IdentifierTelematikId
