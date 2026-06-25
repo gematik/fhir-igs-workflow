@@ -1,4 +1,4 @@
-# TI Audit Event Rest - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# TI-Flow Audit Event - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
 
 Implementation Guide
 
@@ -8,9 +8,9 @@ Version 2.0.0-ballot.2 - draft
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
-* **TI Audit Event Rest**
+* **TI-Flow Audit Event**
 
-## Resource Profile: TI Audit Event Rest 
+## Resource Profile: TI-Flow Audit Event 
 
 | | |
 | :--- | :--- |
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-audit-event-r
   "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-audit-event-rest",
   "version" : "2.0.0-ballot.2",
   "name" : "TIFlowAuditEventRest",
-  "title" : "TI Audit Event Rest",
+  "title" : "TI-Flow Audit Event",
   "status" : "active",
   "experimental" : false,
   "date" : "2026-06-01",
@@ -156,8 +156,26 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-audit-event-r
           "path" : "type"
         }],
         "ordered" : false,
-        "rules" : "closed"
+        "rules" : "open"
       },
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.agent.type",
+      "path" : "AuditEvent.agent.type",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.agent.type.coding.system",
+      "path" : "AuditEvent.agent.type.coding.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.agent.type.coding.code",
+      "path" : "AuditEvent.agent.type.coding.code",
+      "min" : 1,
       "mustSupport" : true
     },
     {
@@ -186,12 +204,6 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-audit-event-r
         "profile" : ["http://fhir.de/StructureDefinition/identifier-telematik-id",
         "http://fhir.de/StructureDefinition/identifier-kvid-10"]
       }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "AuditEvent.agent:human.name",
-      "path" : "AuditEvent.agent.name",
-      "min" : 1,
       "mustSupport" : true
     },
     {
@@ -227,6 +239,7 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-audit-event-r
     {
       "id" : "AuditEvent.agent:server.name",
       "path" : "AuditEvent.agent.name",
+      "short" : "Name des FHIR Data Service",
       "min" : 1,
       "mustSupport" : true
     },
@@ -265,6 +278,24 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-audit-event-r
         "ordered" : false,
         "rules" : "open"
       },
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.entity.type",
+      "path" : "AuditEvent.entity.type",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.entity.type.system",
+      "path" : "AuditEvent.entity.type.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.entity.type.code",
+      "path" : "AuditEvent.entity.type.code",
       "min" : 1,
       "mustSupport" : true
     },
