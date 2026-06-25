@@ -13,14 +13,23 @@ Die jeweils aktive Konfiguration einer Instanz wird im CapabilityStatement ausge
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS alle für Clientsysteme relevanten Konfigurationsparameter – die aktive Betriebsumgebung, den Status aller Flowtypes, den Status aller Features sowie die aktive FHIR-Konfiguration – im CapabilityStatement ausgeben.
+    Der TI-Flow-Fachdienst MUSS alle für Clientsysteme relevanten Konfigurationsparameter:
+
+    - die aktive Betriebsumgebung 
+    - den Status aller Flowtypes
+    - den Status aller Features
+    - sowie die aktive FHIR-Konfiguration
+
+    im CapabilityStatement ausgeben.
 </requirement>
 
 ### Umgebungskennzeichnung
 
-Die Extension `ti-environment` kennzeichnet die Betriebsumgebung, für die das CapabilityStatement gilt. Damit wird transparent, ob die beschriebenen Fähigkeiten für eine Produktiv-, Referenz-, Test- oder Entwicklungsumgebung deklariert werden.
+Die Extension `ti-environment` kennzeichnet die Betriebsumgebung, für die das CapabilityStatement gilt. Damit wird transparent, ob die beschriebenen Fähigkeiten für eine Produktiv-, Referenz-, Test- oder Entwicklungsumgebung deklariert werden. Pro CapabilityStatement wird sie genau einmal gesetzt, damit Clients die deklarierte Funktionalität eindeutig einer Zielumgebung zuordnen können.
 
-Die Extension trägt einen einzelnen `valueCode` mit Required-Bindung an das entsprechende ValueSet, das Codes aus `TIEnvironmentsCS` enthält. Pro CapabilityStatement wird sie genau einmal gesetzt, damit Clients die deklarierte Funktionalität eindeutig einer Zielumgebung zuordnen können.
+#### Extension: ti-environment
+
+Die Extension trägt einen einzelnen `valueCode` mit Required-Bindung an das entsprechende ValueSet, das Codes aus `TIEnvironmentsCS` enthält.
 
 **Beispiel:**
 
@@ -35,14 +44,22 @@ Die Extension trägt einen einzelnen `valueCode` mit Required-Bindung an das ent
 
 Die Operationalisierung einzelner Flowtypes kann per Konfiguration gesteuert werden. Das Deaktivieren eines Flowtypes verhindert den Abruf neuer Task-IDs für den entsprechenden Flowtype über die `$create`-Operation. Bereits erzeugte Tasks mit einem deaktivierten Flowtype bleiben vollständig bearbeitbar, um die Versorgung sicherzustellen.
 
-Grundlage für die konfigurierbaren Parameter ist das CodeSystem der Flowtypes. Mit der Definition neuer Flowtypes im CodeSystem erweitert sich die Menge der konfigurierbaren Parameter automatisch. Jeder Flowtype wird als `ti-feature`-Extension im CapabilityStatement ausgegeben (siehe [Extension: ti-feature](#extension-ti-feature)).
+Grundlage für die konfigurierbaren Parameter ist das [CodeSystem der Flowtypes](./CodeSystem-GEM-ERP-CS-FlowType.html). Mit der Definition neuer Flowtypes im CodeSystem erweitert sich die Menge der konfigurierbaren Parameter automatisch. Jeder Flowtype wird als `ti-feature`-Extension im CapabilityStatement ausgegeben.
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-443" title="TI-Flow-Fachdienst - Konfigurationsparameter je Flowtype" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS für jeden Wert aus dem FlowType-CodeSystem einen Konfigurationsparameter unterstützen, der die Operationalisierung des Flowtypes steuert, und den Aktivierungsstatus als `ti-feature`-Extension im CapabilityStatement ausgeben.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-449" title="TI-Flow-Fachdienst - Konfigurationsparameter je Flowtype als valueCannonical" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS für die valueCannonical der `ti-feature`-Extension für Flowtypes den Cannonical `https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-<flowType>` je Flowtype angeben.
 </requirement>
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-444" title="TI-Flow-Fachdienst - Fehlerausgabe bei deaktiviertem Flowtype" version="0">
@@ -75,18 +92,57 @@ Grundlage für die konfigurierbaren Parameter ist das CodeSystem der Flowtypes. 
     </table>
 </requirement>
 
+#### Extension: ti-feature
+
+Die Extension `ti-feature` deklariert den Aktivierungsstatus eines einzelnen Flowtypes oder Features. Sie ist als Compound-Extension modelliert und wird für jeden Flowtype und jedes Feature als separate Instanz wiederholt.
+
+Sie besteht aus zwei Sub-Extensions:
+
+| Sub-Extension | Typ | Bedeutung |
+|---|---|---|
+| `definition` | `valueCanonical` | Kanonische URL der FeatureDefinition-Ressource, die den Flowtype oder das Feature eindeutig identifiziert |
+| `value` | `valueBoolean` | `true` = aktiv, `false` = inaktiv |
+
+**Beispiel:**
+
+```json
+{
+  "extension": [
+    {
+      "url": "definition",
+      "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160"
+    },
+    {
+      "url": "value",
+      "valueBoolean": true
+    }
+  ],
+  "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
+}
+```
+
+*Hinweis:* Für Flowtypes werden keine FeatureDefinitions spezifiziert. Diese werden automatisch durch den TI-Flow-Fachdienst gesetzt.
+
 ### Konfiguration von Features
 
 Neben Flowtypes können auch Features konfiguriert werden, die sich nicht über einen Flowtype abbilden lassen. Features werden im jeweiligen FHIR-IG beschrieben und als `FeatureDefinition`-Ressource bereitgestellt. Sie müssen bei der Konzeption so abgekapselt werden, dass eine Deaktivierung technisch umsetzbar ist. Das Deaktivieren eines Features verhindert die Ausführung der zugehörigen Operationsaufrufe.
 
-Jedes Feature wird als `ti-feature`-Extension im CapabilityStatement ausgegeben (siehe [Extension: ti-feature](#extension-ti-feature)).
+Jedes Feature wird als `ti-feature`-Extension im CapabilityStatement ausgegeben.
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-445" title="TI-Flow-Fachdienst - Konfigurationsparameter je Feature" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS für jedes im FHIR-IG beschriebene Feature einen Konfigurationsparameter unterstützen, der die Verfügbarkeit des Features steuert, und den Aktivierungsstatus als `ti-feature`-Extension im CapabilityStatement ausgeben.
+    Der TI-Flow-Fachdienst MUSS für jedes im FHIR-IG beschriebene Feature als FeatureDefinition einen Konfigurationsparameter unterstützen, der die Verfügbarkeit des Features steuert, und den Aktivierungsstatus als `ti-feature`-Extension im CapabilityStatement ausgeben.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-450" title="TI-Flow-Fachdienst - Umsetzung der Deaktivierung eines Features" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS für bei Deaktivierung eines im FHIR-IG beschriebenen Features alle zur Deaktivierung notwendigen featurespezifischen Vorgaben, die in der FeatureDefinition beschrieben sind umsetzen.
 </requirement>
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-446" title="TI-Flow-Fachdienst - Fehlerausgabe bei deaktiviertem Feature" version="0">
@@ -119,35 +175,6 @@ Jedes Feature wird als `ti-feature`-Extension im CapabilityStatement ausgegeben 
     </table>
 </requirement>
 
-### Extension: ti-feature
-
-Die Extension `ti-feature` deklariert den Aktivierungsstatus eines einzelnen Flowtypes oder Features. Sie ist als Compound-Extension modelliert und wird für jeden Flowtype und jedes Feature als separate Instanz wiederholt.
-
-Sie besteht aus zwei Sub-Extensions:
-
-| Sub-Extension | Typ | Bedeutung |
-|---|---|---|
-| `definition` | `valueCanonical` | Kanonische URL der FeatureDefinition-Ressource, die den Flowtype oder das Feature eindeutig identifiziert |
-| `value` | `valueBoolean` | `true` = aktiv, `false` = inaktiv |
-
-**Beispiel:**
-
-```json
-{
-  "extension": [
-    {
-      "url": "definition",
-      "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160"
-    },
-    {
-      "url": "value",
-      "valueBoolean": true
-    }
-  ],
-  "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
-}
-```
-
 ### FHIR-Konfiguration
 
 Der TI-Flow-Fachdienst verwendet für die FHIR-Validierung eine definierte Kombination aus FHIR-Packages (FHIR-Konfiguration). Da der TI-Flow-Fachdienst auch externe FHIR-Pakete unterstützt, die sich außerhalb des IG-Release-Zyklus ändern können, publiziert die gematik FHIR-Konfigurationen außerhalb des FHIR-IGs. In einer Instanz ist jeweils genau eine FHIR-Konfiguration aktiv.
@@ -168,6 +195,14 @@ Zur Unterstützung von Testumgebungen existiert ein optionaler Konfigurationspar
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS einen Konfigurationsparameter unterstützen, der einen zeitlichen Versatz (Offset) für den Referenzzeitpunkt der FHIR-Validierung umsetzt und die Validierung von FHIR-Instanzen entsprechend dem konfigurierten Offset durchsetzen.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-451" title="TI-Flow-Fachdienst - Kein Offset in der Produktivumgebung" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS sicherstellen, dass der Konfigurationsparameter für den Offset des Referenzzeitpunkts der FHIR-Validierung in der Instanz der Produktivumgebung immer 0 ist.
 </requirement>
 
 #### Extension: ti-fhir-configuration
@@ -202,7 +237,7 @@ Das folgende CapabilityStatement deklariert einen Produktivumgebungs-Endpunkt mi
   "extension": [
     {
       "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment",
-      "valueCode": "PU"
+      "valueCode": "prod"
     },
     {
       "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration",
@@ -212,7 +247,7 @@ Das folgende CapabilityStatement deklariert einen Produktivumgebungs-Endpunkt mi
       "extension": [
         {
           "url": "definition",
-          "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160"
+          "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160"
         },
         {
           "url": "value",
@@ -225,7 +260,7 @@ Das folgende CapabilityStatement deklariert einen Produktivumgebungs-Endpunkt mi
       "extension": [
         {
           "url": "definition",
-          "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf169"
+          "valueCanonical": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-169"
         },
         {
           "url": "value",
@@ -240,7 +275,7 @@ Das folgende CapabilityStatement deklariert einen Produktivumgebungs-Endpunkt mi
 
 | Extension | Wert | Bedeutung |
 |---|---|---|
-| `ti-environment` | `PU` | Produktivumgebung |
+| `ti-environment` | `prod` | Produktivumgebung |
 | `ti-fhir-configuration` | `tiflow_2028_03` | Aktive FHIR-Konfiguration |
 | `ti-feature` (WF160) | `true` | Workflow 160 aktiv |
 | `ti-feature` (WF169) | `false` | Workflow 169 inaktiv |
