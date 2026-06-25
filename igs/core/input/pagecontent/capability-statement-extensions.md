@@ -59,7 +59,7 @@ Grundlage für die konfigurierbaren Parameter ist das [CodeSystem der Flowtypes]
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS für die valueCannonical der `ti-feature`-Extension für Flowtypes den Cannonical `https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-<flowType>` je Flowtype angeben.
+    Der TI-Flow-Fachdienst MUSS für die valueCannonical der `ti-feature`-Extension für Flowtypes den Cannonical `https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-&#60;flowtype&#62;` je Flowtype angeben.
 </requirement>
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-444" title="TI-Flow-Fachdienst - Fehlerausgabe bei deaktiviertem Flowtype" version="0">
@@ -91,6 +91,7 @@ Grundlage für die konfigurierbaren Parameter ist das [CodeSystem der Flowtypes]
         </tr>
     </table>
 </requirement>
+
 
 #### Extension: ti-feature
 
