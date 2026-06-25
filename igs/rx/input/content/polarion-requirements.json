@@ -10,102 +10,6 @@
     },
     "requirements": [
         {
-            "key": "IG-TIFLOW-CORE-194",
-            "title": "TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_ERP_Medication_PZN gespeicherten Wert für code.coding:pznCode.code gemäß den \"Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI\" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_EREZEPT_PZN_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.</td>\n        </tr>\n    </table> \n    abbrechen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-CORE-194"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-195",
-            "title": "TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_ERP_Medication_Compounding gespeicherten Wert für ingredient.item[x]:itemCodeableConcept.coding:pznCode.code gemäß den \"Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI\" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_EREZEPT_PZN_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.</td>\n        </tr>\n    </table> \n    abbrechen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-CORE-195"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-196",
-            "title": "TI-Flow-Fachdienst - Task aktivieren - Längenprüfung PZN",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate, wenn die PZN einer übergebenen PZN-Verordnung in KBV_PR_ERP_Medication_PZN.code.coding.code nicht 8-stellig ist, die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_EREZEPT_PZN_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Länge PZN unzulässig (muss 8-stellig sein)</td>\n        </tr>\n    </table> \n    abbrechen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-CORE-196"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-36",
-            "title": "TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS einen Aufruf der folgenden Endpunkte, für jeden betroffene E-Rezept abhängig von Ergebnis des Operationsaufrufes gemäß Tab_TIFlowFD_020 im Zugriffsprotokoll des Versicherten protokollieren:\n  <table>\n    <tr>\n      <th>Endpunkt</th>\n      <th>Ergebnis der Operation</th>\n      <th>Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$provide-prescription-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Verordnung wurde in die Patientenakte übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Verordnung konnte nicht in die Patientenakte übertragen werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$provide-dispensation-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$cancel-prescription-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Löschinformation zum E-Rezept wurde in die Patientenakte übermittelt.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Löschinformation zum E-Rezept konnte nicht in die Patientenakte übermittelt werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$cancel-dispensation-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Löschinformation für die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Löschinformation für die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>\n    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>Tab_TIFlowFD_020 Versichertenprotokoll für ePA Medication Service</figcaption></div>",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/menu-technische-umsetzung-audit-service.html#IG-TIFLOW-CORE-36"
-        },
-        {
             "key": "IG-TIFLOW-ERP-A1",
             "title": "PS abgebende LEI: Abgabedatensatz mit QES: OCSP Response einbetten",
             "version": 0,
@@ -3352,6 +3256,30 @@
             "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/menu-technische-umsetzung-audit-service.html#IG-TIFLOW-ERP-A218"
         },
         {
+            "key": "IG-TIFLOW-ERP-A219",
+            "title": "TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_ERP_Medication_PZN gespeicherten Wert für code.coding:pznCode.code gemäß den \"Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI\" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_EREZEPT_PZN_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-ERP-A219"
+        },
+        {
             "key": "IG-TIFLOW-ERP-A22",
             "title": "TI-Flow-Fachdienst - Task schließen - Daten ePA Medication Service bereitstellen (Dispensierinformationen)",
             "version": 0,
@@ -3374,6 +3302,78 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-close-req-fd.html#IG-TIFLOW-ERP-A22"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A220",
+            "title": "TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_ERP_Medication_Compounding gespeicherten Wert für ingredient.item[x]:itemCodeableConcept.coding:pznCode.code gemäß den \"Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI\" beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_EREZEPT_PZN_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-ERP-A220"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A221",
+            "title": "TI-Flow-Fachdienst - Task aktivieren - Längenprüfung PZN",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate, wenn die PZN einer übergebenen PZN-Verordnung in KBV_PR_ERP_Medication_PZN.code.coding.code nicht 8-stellig ist, die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_EREZEPT_PZN_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Länge PZN unzulässig (muss 8-stellig sein)</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-ERP-A221"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A222",
+            "title": "TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS einen Aufruf der folgenden Endpunkte, für jeden betroffene E-Rezept abhängig von Ergebnis des Operationsaufrufes gemäß Tab_TIFlowFD_020 im Zugriffsprotokoll des Versicherten protokollieren:\n  <table>\n    <tr>\n      <th>Endpunkt</th>\n      <th>Ergebnis der Operation</th>\n      <th>Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$provide-prescription-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Verordnung wurde in die Patientenakte übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Verordnung konnte nicht in die Patientenakte übertragen werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$provide-dispensation-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$cancel-prescription-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Löschinformation zum E-Rezept wurde in die Patientenakte übermittelt.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Löschinformation zum E-Rezept konnte nicht in die Patientenakte übermittelt werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$cancel-dispensation-erp</td>\n      <td>erfolgreich</td>\n      <td>Die Löschinformation für die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht übermittelbar</td>\n      <td>Die Löschinformation für die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>\n    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>Tab_TIFlowFD_020 Versichertenprotokoll für ePA Medication Service</figcaption></div>",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/menu-technische-umsetzung-audit-service.html#IG-TIFLOW-ERP-A222"
         },
         {
             "key": "IG-TIFLOW-ERP-A23",
