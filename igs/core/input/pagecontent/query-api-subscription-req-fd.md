@@ -93,8 +93,10 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS das Pseudonym mittels eines 128-Bit-AES-CMAC-Schlüssels erstellen und hexadezimal kodieren (32 Byte lang) (vgl gemSpec_Krypt#A_20163).
+     Der TI-Flow-Fachdienst MUSS das Pseudonym mittels eines 128-Bit-AES-CMAC-Schlüssels erstellen und hexadezimal kodieren (32 Byte lang).
 </requirement>
+
+*Hinweis*: Vergleichend kann [gemSpec_Krypt]#A_20163 betrachtet werden.
 
 <!-- A_22383-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A349" title="TI-Flow-Fachdienst - Generierungsschlüssel - Pseudonym der Telematik-ID" version="0">
