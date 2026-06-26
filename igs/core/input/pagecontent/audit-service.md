@@ -11,8 +11,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
   </actor>
   Der TI-Flow-Fachdienst MUSS einen Protokolleintrag mit den folgenden Werten befüllen:
 	<ul>
-    <li>AuditEvent.text: Generierung eines HTML-&lt;div&gt;-Elements mit lesbarer Beschreibung in einfacher Sprache</li>
-    <li>AuditEvent.type: Fester Wertrest gemäß [CodeSystem: Audit Event ID]</li>
+    <li>AuditEvent.type: Fester Wert rest gemäß [CodeSystem: Audit Event ID]</li>
     <li>AuditEvent.subtype: aus dem ValueSet [ValueSet http://hl7.org/fhir/ValueSet/auditevent-sub-type] gemäß [CodeSystem http://hl7.org/fhir/restful-interaction]:
     <ul>
       <li>create beim Hinzufügen/Speichern/Anlegen eines Datenobjekts mit Versichertenbezug (mit Ausnahme von AuditEvent- und Communication-Ressource)</li>
@@ -24,15 +23,22 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
     <li>AuditEvent.action: analog AuditEvent.subType (C, R, U, D) gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-action]</li>
     <li>AuditEvent.recorded: aktuelle Systemzeit des TI-Flow-Fachdienstes</li>
     <li>AuditEvent.outcome: Ergebnis der aufgerufenen Operation gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-outcome] (0 = Erfolg, 4 = Fehler auf Clientseite, 8 = Serverfehler)</li>
-    <li>AuditEvent.agent.type: Fester Wert humanuser bzw. bei Übermittlung an ePA oder NCPeH-FD dataprocessor aus [CodeSystem: Security Role Type (Experimental)]</li>
-    <li>AuditEvent.agent.name: zeta-user-info.commonName bzw. bei Übermittlung an ePA "TI-Flow-Fachdienst"</li>
-    <li>AuditEvent.agent.who: zeta-user-info.identifier</li>
-    <li>AuditEvent.agent.requestor: Fester Wert false, da keine Protokolleinträge von außen erzeugt werden</li>
-    <li>AuditEvent.soure.site: Fester Wert TI-Flow-Fachdienst</li>
-    <li>AuditEvent.soure.observer: Device-Informationen des TI-Flow-Fachdienstes (status, serialnumber=gemäß Release)</li>
-    <li>AuditEvent.entity.what: Referenz auf das durch den Abruf betroffene Datenobjekt Task, ChargeItem, MedicationDispense, Consent oder Objekt der Zugriffsberechtigung</li>
-    <li>AuditEvent.entity.name: Eintrag der KVNR des betroffenen Versicherten aus dem Identifier des protokollierten Datenobjekts (String)</li>
-    <li>AuditEvent.entity.description: Task-ID als Identifier, wird übernommen aus MedicationDispense, ChargeItem oder Task bzw. Consent.category.coding.code bei Anlegen oder Löschen eines Consent bzw. countryCode bei Anlegen oder Löschen einer Zugriffsberechtigung</li>
+    <li>AuditEvent.agent: Slicing in die Einträge user, client und internal mit jeweils gesetztem AuditEvent.agent.type.coding.system und AuditEvent.agent.type.coding.code</li>
+    <li>AuditEvent.agent[user].type: Fester Wert humanuser aus [CodeSystem: Security Role Type]</li>
+    <li>AuditEvent.agent[user].who.identifier: aus zeta-user-info.identifier befüllt (IdentifierTelematikId oder IdentifierKvid10)</li>
+    <li>AuditEvent.agent[client].type: den festen Code 110150 (Application) aus $dcm und entsprecht dem ValueSet TIFLOWAuditEventAgentTypeVS</li>
+    <li>AuditEvent.agent[client].who.identifier: aus zeta-user-info.identifier befüllt (IdentifierTelematikId) </li>
+    <li>AuditEvent.agent[internal].type: Fester Wert dataprocessor aus [CodeSystem: Security Role Type]</li>
+    <li>AuditEvent.agent[internal].name: Fester Wert "TI-Flow-Fachdienst"</li>
+    <li>AuditEvent.source.site: Fester Wert TI-Flow-Fachdienst</li>
+    <li>AuditEvent.source.observer: Device-Informationen des TI-Flow-Fachdienstes (status, serialnumber=gemäß Release)</li>
+    <li>AuditEvent.entity: mindestens ein Eintrag, Slicing in patient (1..1), task (0..1) und service (0..1)</li>
+    <li>AuditEvent.entity[patient].type: Fester Wert Patient gemäß [CodeSystem http://terminology.hl7.org/CodeSystem/audit-entity-type]</li>
+    <li>AuditEvent.entity[patient].what.identifier: als IdentifierKvid10 (KVNR) befüllt</li>
+    <li>AuditEvent.entity[task].type: Fester Wert Task gemäß [CodeSystem http://terminology.hl7.org/CodeSystem/audit-entity-type]</li>
+    <li>AuditEvent.entity[task].what.identifier: sofern vorhanden als EPrescriptionId</li>
+    <li>AuditEvent.entity[service].type: Fester Wert Other (Code 4) gemäß [CodeSystem http://terminology.hl7.org/CodeSystem/audit-entity-type]</li>
+    <li>AuditEvent.entity[service].name: sofern vorhanden Name des aufgerufenen FHIR Data Service</li>
   </ul>
 </requirement>
 
