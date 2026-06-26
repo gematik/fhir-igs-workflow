@@ -29,7 +29,21 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 		</pre>
 	</div>
 	<div id="Request-Examples">
-		<!-- TODO: Request example for $abort (no body; accessCode and secret via headers) -->
+		<div data-name="Beispiel - $abort Request mit AccessCode Header und Secretals URL-Parameter" data-type="HTTP" data-render="ig-Fragment">
+			<pre>
+				POST [base]/rx/fhir/Task/4711/$abort?secret=3fa85f64-5717-4562-b3fc-2c963f66afa6
+				Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE2MzQifQ.eyJpc3MiOiJodHRwczovL2lkcC50aS1leGFtcGxlLmRlIiwic3ViIjoiMTEyMjMzNDQ1NSIsImF1ZCI6InRpZmxvdy1mYWNoZGllbnN0IiwicHJvZmVzc2lvbk9JRCI6Im9pZF9wcmF4aXNfYXJ6dCIsIm9yZ2FuaXphdGlvbklEIjoiMS4yLjI3Ni4wLjcyLjAuNzYuNC4xMjM0NTYiLCJleHAiOjE4MDAwMDAwMDAsImlhdCI6MTcwMDAwMDAwMH0.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+				X-AccessCode: 5f8d0d55-9c3a-4a2f-bf2f-123456789abc
+			</pre>
+    	</div>
+		<div data-name="Beispiel - $abort Request mit AccessCode und Secret im Header" data-type="HTTP" data-render="ig-Fragment">
+        	<pre>
+			POST [base]/rx/fhir/Task/4711/$abort
+			Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE2MzQifQ.eyJpc3MiOiJodHRwczovL2lkcC50aS1leGFtcGxlLmRlIiwic3ViIjoiMTEyMjMzNDQ1NSIsImF1ZCI6InRpZmxvdy1mYWNoZGllbnN0IiwicHJvZmVzc2lvbk9JRCI6Im9pZF9wcmF4aXNfYXJ6dCIsIm9yZ2FuaXphdGlvbklEIjoiMS4yLjI3Ni4wLjcyLjAuNzYuNC4xMjM0NTYiLCJleHAiOjE4MDAwMDAwMDAsImlhdCI6MTcwMDAwMDAwMH0.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+			X-AccessCode: 5f8d0d55-9c3a-4a2f-bf2f-123456789abc
+			X-Secret: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+			</pre>
+		</div>
 	</div>
 	<div id="Response-Examples">
 		<div data-name="Fehler - Response ohne Rechte application/fhir+json" data-type="JSON" data-render="ig-Fragment">
