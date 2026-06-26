@@ -50,9 +50,22 @@ Die für die Nachricht zu verwendende Communication-Ressource wird modul- und an
 
 Mit diesem Anwendungsfall kann ein Kostenträger von ihm versendete Nachrichten an einen Versicherten auf dem Fachdienst löschen.
 
-Das CS Kostenträger MUSS es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem Fachdienst auszuwählen.
 
-Das CS Kostenträger MUSS vom Nutzer eine Bestätigung einholen, dass die ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A453" title="CS Kostenträger: Nachricht löschen - Nachricht auswählen" version="0">
+  <meta lockversion="false"/>
+  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+  </actor>
+  Das CS Kostenträger MUSS es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem Fachdienst auszuwählen.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A454" title="CS Kostenträger: Nachricht löschen - Bestätigung einholen" version="0">
+  <meta lockversion="false"/>
+  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+  </actor>
+  Das CS Kostenträger MUSS vom Nutzer eine Bestätigung einholen, dass die ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.
+</requirement>
 
 <!-- A_21489 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A54" title="CS Kostenträger: Nachricht löschen - Löschrequest" version="0">
