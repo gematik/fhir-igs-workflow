@@ -6,6 +6,15 @@ Usage: #example
 * parameter[+].name = "workflowType"
 * parameter[=].valueCoding = GEM_ERP_CS_FlowType#160
 
+// TODO / Question: ungenutztes Parameter Profil statt Operation Outcome?
+Instance: ExampleCreateOperationOutputError
+InstanceOf: TIFlowDiGACreateOperationOutput
+Title: "Beispiel für Create-Operation Fehlerantwort"
+Description: "Beispiel für eine Fehlerantwort bei der Create-Operation mit FHIR-Validierungsfehlern"
+Usage: #example
+* parameter[+].name = "return"
+* parameter[=].resource = ExampleAcceptResponseBundle
+
 Instance: ExampleOperationCreateError
 InstanceOf: OperationOutcome
 Title: "Beispiel für Create-Operation Fehlerantwort"
