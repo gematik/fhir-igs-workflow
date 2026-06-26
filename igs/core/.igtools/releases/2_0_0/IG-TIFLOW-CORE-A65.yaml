@@ -1,0 +1,20 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: df868e29da9911e54437bb13f4c1b4fab31d9d1f9ed80e07c2db755ba84cd77a
+created: '2026-06-25T11:30:11.212673'
+date: '2026-06-25T11:30:11.212675'
+key: IG-TIFLOW-CORE-A65
+modified: '2026-06-25T11:30:11.212675'
+release_status: NEW
+source: input/pagecontent/op-close-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close
+  für den referenzierten Task den identifier des Nutzers (Telematik-ID) in Task.owner
+  speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen
+  Datensatz nur durch Berechtigte erfolgen können.
+title: TI-Flow-Fachdienst - Task schließen - Telematik-ID der abgebenden LEI speichern
+version: 0

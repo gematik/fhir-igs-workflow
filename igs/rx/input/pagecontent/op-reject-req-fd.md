@@ -7,7 +7,7 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
 ### Modulspezifische Anforderungen
 
 <!-- A_19170-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-13" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A13" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -44,7 +44,7 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
 </requirement>
 
 <!-- A_24286-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-14" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Dispensierinformationen löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A14" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Dispensierinformationen löschen" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -58,7 +58,7 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
 </requirement>
 
 <!-- A_25926 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-15" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A15" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

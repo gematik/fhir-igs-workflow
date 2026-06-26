@@ -31,8 +31,6 @@ StructureDefinition/ti-feature-definition,
 ### Funktions Definition
 
 {% capture features %}
-StructureDefinition/ti-flow-feature-wf160,
-StructureDefinition/ti-flow-feature-wf169,
 {% endcapture %}
 {% include artifacts-table-generator.html render=features%}
 <div><figcaption><strong>Tabelle:</strong> Funktions Definition</figcaption></div>

@@ -1,7 +1,7 @@
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den TI-Flow-Fachdienst für die Operation `$activate`.
 
 <!-- A_19022-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-173" title="TI-Flow-Fachdienst - Task aktivieren - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A173" title="TI-Flow-Fachdienst - Task aktivieren - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -41,7 +41,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19024-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-174" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung AccessCode" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A174" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung AccessCode" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -73,7 +73,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19024-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-175" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Status" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A175" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Status" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -106,7 +106,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 
 <!-- A_19020 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-176" title="TI-Flow-Fachdienst - Task aktivieren - Schemavalidierung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A176" title="TI-Flow-Fachdienst - Task aktivieren - Schemavalidierung" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -138,7 +138,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_20159-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-177" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A177" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -207,7 +207,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- ToDo: Ist die Fehlermeldung umfassend genug? Was passiert wenn TUC_PKI_030 fehlschlägt? -->
 
 <!-- A_20159-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-408" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA - fehlender OCSP-Response" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A408" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA - fehlender OCSP-Response" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -239,7 +239,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_20159-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-411" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA - OCSP-Response einbetten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A411" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA - OCSP-Response einbetten" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -248,7 +248,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19025-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-178" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung QES prüfen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A178" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung QES prüfen" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -280,7 +280,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19025-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-409" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung FHIR Validierung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A409" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung FHIR Validierung" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -313,7 +313,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- ToDo: Muss in der Afo das FHIR-Schema vorgegeben werden oder ergibt sich das aus dem FHIR-Datensatz oder muss es zusätzlich noch mit dem WF-Type abgeglichen werden? -->
 
 <!-- A_19025-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-410" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A410" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung speichern" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -323,10 +323,13 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 <!-- Diese Afo wurde nicht zugewiesen, da die Konnektoren sich nicht so verhalten. -->
 <!-- A_23172 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-179" title="TI-Flow-Fachdienst - Task aktivieren - Mimetype Signatur" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A179" title="TI-Flow-Fachdienst - Task aktivieren - Mimetype Signatur" version="0">
     <meta lockversion="false"/>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und, wenn dieser ungleich "text/plain; charset=utf-8" ist, die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+    </actor>
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
             <td>400 - Bad Request</td>
@@ -352,7 +355,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_21370 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-180" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Rezept-ID in Task gegen Verordnungsdatensatz" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A180" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Rezept-ID in Task gegen Verordnungsdatensatz" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -385,7 +388,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- ToDo: Abrenzung Fehlercode zu folgender Afo ? -->
 
 <!-- A_21370 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-412" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Präfix Rezept-ID gegen Flowtype" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A412" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Präfix Rezept-ID gegen Flowtype" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -417,7 +420,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_23936-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-181" title="TI-Flow-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A181" title="TI-Flow-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -449,7 +452,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_22487 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-182" title="TI-Flow-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A182" title="TI-Flow-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -481,7 +484,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19127-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-183" title="TI-Flow-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A183" title="TI-Flow-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -490,7 +493,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_28126 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-184" title="TI-Flow-Fachdienst - Task aktivieren - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A184" title="TI-Flow-Fachdienst - Task aktivieren - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -499,7 +502,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19128 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-185" title="TI-Flow-Fachdienst - Task aktivieren - Status ready" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A185" title="TI-Flow-Fachdienst - Task aktivieren - Status ready" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -509,7 +512,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- ToDo: Afo unter Beachtung von A_19029-06 trennen -->
 
 <!-- A_19029-06 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-186" title="TI-Flow-Fachdienst - Task aktivieren - Serversignatur" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A186" title="TI-Flow-Fachdienst - Task aktivieren - Serversignatur" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -531,7 +534,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 ### Verifizieren von Prüfziffern
 
 <!-- A_23888 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-187" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A187" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -563,7 +566,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
 <!-- A_24030 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-188" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage - AlternativeID" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A188" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage - AlternativeID" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -595,7 +598,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
 <!-- A_23890-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-189" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung KVNR im Profil KBV_PR_FOR_Patient" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A189" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung KVNR im Profil KBV_PR_FOR_Patient" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -627,7 +630,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
 <!-- A_23891-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-190" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR im Profil KBV_PR_FOR_Practitioner" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A190" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR im Profil KBV_PR_FOR_Practitioner" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -678,7 +681,7 @@ Hinweis: Folgende weitere Pseudoarztnummern werden genutzt. Sie sind Prüfziffer
 Hinweis: Im Rahmen der ambulanten spezialfachärztlichen Versorgung (ASV) nach § 116b SGB V wird gemäß der ASV-Vereinbarung von Krankenhausärzten die sog. Fachgruppennummer statt der LANR verwendet. Die Fachgruppennummer wird ein einem separaten Element hinterlegt. In diesem Fall muss keine ANR angegeben werden.
 
 <!-- A_24031 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-191" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration bei Auffälligkeiten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A191" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration bei Auffälligkeiten" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -687,7 +690,7 @@ Hinweis: Im Rahmen der ambulanten spezialfachärztlichen Versorgung (ASV) nach �
 </requirement>
 
 <!-- A_24032 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-192" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Fehler" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A192" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Fehler" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -719,7 +722,7 @@ Hinweis: Im Rahmen der ambulanten spezialfachärztlichen Versorgung (ASV) nach �
 </requirement>
 
 <!-- A_24033 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-193" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Warning" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A193" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Warning" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

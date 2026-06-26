@@ -1,0 +1,29 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 8e968277b64d2d6adc1a8eda8c313f2b228b38581a40300e6045554730fb3ffb
+created: '2026-06-25T11:30:11.251968'
+date: '2026-06-25T11:30:11.251970'
+key: IG-TIFLOW-CORE-A205
+modified: '2026-06-25T11:30:11.251969'
+release_status: NEW
+source: input/pagecontent/query-api-consent-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt\
+  \ /Consent sicherstellen, dass noch keine Consent Ressource für den zeta-user-info.identifier\
+  \ des Nutzers (KVNR) und Consent.category.coding.code = &lt;Einwilligungstyp&gt;\
+  \ aus URL-Parameter category gespeichert ist und im Fehlerfall die Operation mit\
+  \ dem folgenden Fehler:\n  <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n    <tr>\n        <th>HTTP-Code</th>\n        <td>409\
+  \ - Conflict</td>\n    </tr>\n    <tr>\n        <th>Severity</th>\n        <td>error</td>\n\
+  \    </tr>\n    <tr>\n        <th>Code</th>\n        <td>invalid</td>\n    </tr>\n\
+  \    <tr>\n        <th>Details Code</th>\n        <td>TIFLOW_CONSENT_ALREADY_EXISTS</td>\n\
+  \    </tr>\n    <tr>\n        <th>Details Text</th>\n        <td>-</td>\n    </tr>\n\
+  \  </table> \n  abbrechen, um maximal eine Einwilligung für den Versicherten für\
+  \ jeden Einwilligungstypen zu speichern."
+title: TI-Flow-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und
+  Einwilligungstyp
+version: 0

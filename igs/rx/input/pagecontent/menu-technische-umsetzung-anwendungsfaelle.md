@@ -7,7 +7,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 #### PS verordnende LEI
 
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-71" title="PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A71" title="PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -27,7 +27,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 #### E-Rezept-FdV 
 
 <!-- A_19443 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-72" title="E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A72" title="E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -46,7 +46,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 #### PS abgebende LEI
 
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-73" title="PS abgebende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A73" title="PS abgebende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -68,7 +68,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
     umsetzen.
 </requirement>
 
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-74" title="PS abgebende LEI: TIFlow-RX - empfohlene Anwendungsfälle" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A74" title="PS abgebende LEI: TIFlow-RX - empfohlene Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

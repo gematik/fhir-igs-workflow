@@ -1,0 +1,21 @@
+actor:
+- PS_E-Rezept_verordnend
+conformance: SHALL
+content_hash: b9219cbbb29d1ffd3e1cf9e3f89e62dd50e6b17ab47b90e70376906ba91e538b
+created: '2026-06-25T11:30:11.234366'
+date: '2026-06-25T11:30:11.234369'
+key: IG-TIFLOW-CORE-A150
+modified: '2026-06-25T11:30:11.234368'
+release_status: NEW
+source: input/pagecontent/op-activate-req-pvs.md
+status: ACTIVE
+test_procedures:
+  PS_E-Rezept_verordnend:
+  - Konformitätsbestätigung
+text: "Das PS der verordnenden LEI MUSS im Anwendungsfall \"E-Rezept durch Verordnenden\
+  \ einstellen\" für das E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$activate\
+  \ mit\n  <ul>\n    <li>Task-ID in URL &lt;id&gt; </li>\n    <li>AccessCode in X-AccessCode\
+  \ - Header oder URL-Parameter ?ac=</li>\n    <li>QES signiertes E-Rezept-Bundle\
+  \ im HTTP-Request-Body des Aufrufs als data</li>\n  </ul>\n  ausführen."
+title: 'PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren'
+version: 0

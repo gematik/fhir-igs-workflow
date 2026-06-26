@@ -10,11 +10,11 @@
     },
     "requirements": [
         {
-            "key": "IG-TIFLOW-DIGA-1",
+            "key": "IG-TIFLOW-DIGA-A1",
             "title": "TI-Flow-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 162 HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_kostentraeger</li>\n </ul>\n die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abbrechen, damit die Verordnung nicht durch einen Unberechtigten zurückgewiesen werden kann.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 162 HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n  <ul>\n    <li>oid_kostentraeger</li>\n  </ul>\n  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit die Verordnung nicht durch einen Unberechtigten zurückgewiesen werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -31,10 +31,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-reject-req-fd.html#IG-TIFLOW-DIGA-1-01"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-reject-req-fd.html#IG-TIFLOW-DIGA-A1"
         },
         {
-            "key": "IG-TIFLOW-DIGA-10",
+            "key": "IG-TIFLOW-DIGA-A10",
             "title": "E-Rezept-FdV: Kostenträger suchen - Telematik-ID im Verzeichnisdienst suchen",
             "version": 0,
             "status": "ACTIVE",
@@ -55,10 +55,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/api-add-fhirvzd.html#IG-TIFLOW-DIGA-10"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/api-add-fhirvzd.html#IG-TIFLOW-DIGA-A10"
         },
         {
-            "key": "IG-TIFLOW-DIGA-11",
+            "key": "IG-TIFLOW-DIGA-A11",
             "title": "E-Rezept-FdV: Kostenträger Suchen - Liste verfügbarer Kostenträger ermitteln",
             "version": 0,
             "status": "ACTIVE",
@@ -79,10 +79,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/api-add-fhirvzd.html#IG-TIFLOW-DIGA-11"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/api-add-fhirvzd.html#IG-TIFLOW-DIGA-A11"
         },
         {
-            "key": "IG-TIFLOW-DIGA-12",
+            "key": "IG-TIFLOW-DIGA-A12",
             "title": "PS verordnende LEI: TIFlow-DIGA - verpflichtende Anwendungsfälle",
             "version": 0,
             "status": "ACTIVE",
@@ -103,14 +103,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-DIGA-12"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-DIGA-A12"
         },
         {
-            "key": "IG-TIFLOW-DIGA-13",
+            "key": "IG-TIFLOW-DIGA-A13",
             "title": "E-Rezept-FdV: TIFlow-DIGA - verpflichtende Anwendungsfälle",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle\n <ul>\n <li>UC 3.1 - E-Rezepte durch Versicherten abrufen</li>\n <li>UC 3.2 - E-Rezept durch Versicherten löschen</li>\n <li>Kostenträger suchen</li>\n <li>UC 3.3 - Nachricht durch Versicherten übermitteln</li>\n <li>UC 3.4 - Nachricht durch Versicherten empfangen</li>\n <li>UC 3.8 - Nachricht durch Versicherten löschen</li>\n <li>UC 3.5 - Protokolldaten abrufen</li>\n </ul>\n umsetzen.",
+            "text": "Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle\n    <ul>\n        <li>UC 3.1 - E-Rezepte durch Versicherten abrufen</li>\n        <li>UC 3.2 - E-Rezept durch Versicherten löschen</li>\n        <li>Kostenträger suchen</li>\n        <li>UC 3.3 - Nachricht durch Versicherten übermitteln</li>\n        <li>UC 3.4 - Nachricht durch Versicherten empfangen</li>\n        <li>UC 3.8 - Nachricht durch Versicherten löschen</li>\n        <li>UC 3.5 - Protokolldaten abrufen</li>\n    </ul>\n    umsetzen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -127,10 +127,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-DIGA-13-01"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-DIGA-A13"
         },
         {
-            "key": "IG-TIFLOW-DIGA-14",
+            "key": "IG-TIFLOW-DIGA-A14",
             "title": "CS Kostenträger: TIFlow-DIGA - verpflichtende Anwendungsfälle",
             "version": 0,
             "status": "ACTIVE",
@@ -151,14 +151,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-DIGA-14"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-DIGA-A14"
         },
         {
-            "key": "IG-TIFLOW-DIGA-15",
+            "key": "IG-TIFLOW-DIGA-A15",
             "title": "TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die einer der folgenden professionOID entspricht:\n <ul>\n <li>oid_arzt</li>\n <li>oid_zahnarzt</li>\n <li>oid_psychotherapeut</li>\n <li>oid_ps_psychotherapeut</li>\n <li>oid_kuj_psychotherapeut</li>\n </ul>\n die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die einer der folgenden professionOID entspricht:\n  <ul>\n    <li>oid_arzt</li>\n    <li>oid_zahnarzt</li>\n    <li>oid_psychotherapeut</li>\n    <li>oid_ps_psychotherapeut</li>\n    <li>oid_kuj_psychotherapeut</li>\n  </ul>\n  die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -175,38 +175,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-DIGA-15-01"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-DIGA-A15"
         },
         {
-            "key": "IG-TIFLOW-DIGA-16",
-            "title": "TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Verordnung von DiGAs",
-            "version": 1,
-            "status": "RETIRED",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aktivieren eines Tasks mit Flowtype 162 mittels $activate prüfen, dass im Bundle eine <i>DeviceRequest</i>-Ressource und in der <i>Composition.type.coding.code=e16D</i> enthalten ist. Der TI-Flow-Fachdienst MUSS andernfalls mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_FLOWTYPE_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Für diesen Workflowtypen sind nur Verordnungen für Digitale Gesundheitsanwendungen zulässig</td>\n </tr>\n </table> \n abbrechen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-DIGA-16-01"
-        },
-        {
-            "key": "IG-TIFLOW-DIGA-17",
+            "key": "IG-TIFLOW-DIGA-A17",
             "title": "TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den \"Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI\" beschriebenen Prüfalgorithmus validieren und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_EREZEPT_PZN_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.</td>\n </tr>\n </table> \n abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den im FHIR Profil KBV_PR_EVDGA_HealthAppRequest gespeicherten Wert für .code[x]:codeCodeableConcept.coding.code gemäß den \"Technischen Hinweisen zur PZN-Codierung - Prüfziffernberechnungen der PZN, PPN und Basic UDI-DI\" beschriebenen Prüfalgorithmus validieren und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_EREZEPT_PZN_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Ungültige PZN: Die übergebene Pharmazentralnummer entspricht nicht den vorgeschriebenen Prüfziffer-Validierungsregeln.</td>\n        </tr>\n    </table> \n    abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -223,14 +199,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-DIGA-17-01"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-DIGA-A17"
         },
         {
-            "key": "IG-TIFLOW-DIGA-18",
+            "key": "IG-TIFLOW-DIGA-A18",
             "title": "TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, dass Coverage.type.coding.code nicht mit dem Wert \"PKV\" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_COVERAGE_TYPE_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, dass Coverage.type.coding.code nicht mit dem Wert \"PKV\" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_COVERAGE_TYPE_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -247,14 +223,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-DIGA-18-01"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-DIGA-A18"
         },
         {
-            "key": "IG-TIFLOW-DIGA-19",
+            "key": "IG-TIFLOW-DIGA-A19",
             "title": "TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Alternative IK",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, ob die Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist und in diesem Fall die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_ALTERNATIVE_IK_FORBIDDEN</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, um sicherzustellen, dass dieser Workflow nicht für Verordnungen genutzt wird, die zu Lasten von Unfallkassen oder Berufsgenossenschaften gehen.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, ob die Extension Coverage.payor.identifier.extension:alternativeID vorhanden ist und in diesem Fall die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_ALTERNATIVE_IK_FORBIDDEN</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, um sicherzustellen, dass dieser Workflow nicht für Verordnungen genutzt wird, die zu Lasten von Unfallkassen oder Berufsgenossenschaften gehen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -271,10 +247,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-DIGA-19-01"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-DIGA-A19"
         },
         {
-            "key": "IG-TIFLOW-DIGA-2",
+            "key": "IG-TIFLOW-DIGA-A2",
             "title": "CS Kostenträger: Nachricht versenden - Flowtype 162 - Communication erstellen",
             "version": 0,
             "status": "ACTIVE",
@@ -295,14 +271,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/query-api-communication-req-ktr.html#IG-TIFLOW-DIGA-2"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/query-api-communication-req-ktr.html#IG-TIFLOW-DIGA-A2"
         },
         {
-            "key": "IG-TIFLOW-DIGA-20",
+            "key": "IG-TIFLOW-DIGA-A20",
             "title": "TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.<br>\n\n <table>\n <tr> \n <th>Feld in Task</th>\n <th>Feldbelegung</th>\n </tr>\n <tr> \n <td>Task.performerType.coding.system</td>\n <td>\"https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType\"</td>\n </tr>\n <tr> \n <td>Task.performerType.coding.code</td>\n <td>\"1.2.276.0.76.4.59\"</td>\n </tr>\n <tr> \n <td>Task.performerType.coding.diplay</td>\n <td>\"Kostenträger\"</td>\n </tr>\n <tr> \n <td>Task.PrescriptionType.valueCoding.display</td>\n <td>\"Flowtype für Digitale Gesundheitsanwendungen\"</td>\n </tr>\n <tr> \n <td>Task.ExpiryDate</td>\n <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>\n </tr>\n <tr> \n <td>Task.AcceptDate</td>\n <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>\n </tr>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_005 Prozessparameter Flowtype 162</figcaption></div>",
+            "text": "Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.<br>\n\n  <table>\n    <tr> \n      <th>Feld in Task</th>\n      <th>Feldbelegung</th>\n    </tr>\n    <tr> \n      <td>Task.performerType.coding.system</td>\n      <td>\"https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType\"</td>\n    </tr>\n    <tr> \n      <td>Task.performerType.coding.code</td>\n      <td>\"1.2.276.0.76.4.59\"</td>\n    </tr>\n    <tr> \n      <td>Task.performerType.coding.diplay</td>\n      <td>\"Kostenträger\"</td>\n    </tr>\n    <tr> \n      <td>Task.PrescriptionType.valueCoding.display</td>\n      <td>\"Flowtype für Digitale Gesundheitsanwendungen\"</td>\n    </tr>\n    <tr> \n      <td>Task.ExpiryDate</td>\n      <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>\n    </tr>\n    <tr> \n      <td>Task.AcceptDate</td>\n      <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>\n    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_005 Prozessparameter Flowtype 162</figcaption></div>",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -319,14 +295,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-DIGA-20"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-DIGA-A20"
         },
         {
-            "key": "IG-TIFLOW-DIGA-21",
+            "key": "IG-TIFLOW-DIGA-A21",
             "title": "TI-Flow-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 162 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_kostentraeger</li>\n </ul>\n die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abbrechen, damit die Verordnung nicht durch einen Unberechtigten abgerufen werden kann.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 162 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n  <ul>\n    <li>oid_kostentraeger</li>\n  </ul>\n  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit die Verordnung nicht durch einen Unberechtigten abgerufen werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -343,10 +319,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-accept-req-fd.html#IG-TIFLOW-DIGA-21-01"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-accept-req-fd.html#IG-TIFLOW-DIGA-A21"
         },
         {
-            "key": "IG-TIFLOW-DIGA-22",
+            "key": "IG-TIFLOW-DIGA-A22",
             "title": "PS verordnende LEI: keine elektronische Verordnung einer DiGA zu Lasten BG/UK",
             "version": 0,
             "status": "ACTIVE",
@@ -367,10 +343,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-create-req-pvs.html#IG-TIFLOW-DIGA-22"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-create-req-pvs.html#IG-TIFLOW-DIGA-A22"
         },
         {
-            "key": "IG-TIFLOW-DIGA-23",
+            "key": "IG-TIFLOW-DIGA-A23",
             "title": "E-Rezept: Anwendung des IG 'Verordnungen für Digitale Gesundheitsanwendungen (DiGA)' für Workflow 162",
             "version": 0,
             "status": "ACTIVE",
@@ -417,10 +393,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/index.html#IG-TIFLOW-DIGA-23"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/index.html#IG-TIFLOW-DIGA-A23"
         },
         {
-            "key": "IG-TIFLOW-DIGA-24",
+            "key": "IG-TIFLOW-DIGA-A24",
             "title": "E-Rezept: Umsetzung des Moduls 'Verordnungen für Digitale Gesundheitsanwendungen (DiGA)'",
             "version": 0,
             "status": "ACTIVE",
@@ -467,10 +443,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/index.html#IG-TIFLOW-DIGA-24"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/index.html#IG-TIFLOW-DIGA-A24"
         },
         {
-            "key": "IG-TIFLOW-DIGA-25",
+            "key": "IG-TIFLOW-DIGA-A25",
             "title": "E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Anzeige des Freischaltcodes",
             "version": 0,
             "status": "ACTIVE",
@@ -491,10 +467,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/query-api-medicationdispense-req-fdv.html#IG-TIFLOW-DIGA-25"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/query-api-medicationdispense-req-fdv.html#IG-TIFLOW-DIGA-A25"
         },
         {
-            "key": "IG-TIFLOW-DIGA-26",
+            "key": "IG-TIFLOW-DIGA-A26",
             "title": "E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Supportinformationen für DiGA-App",
             "version": 0,
             "status": "ACTIVE",
@@ -515,10 +491,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/query-api-medicationdispense-req-fdv.html#IG-TIFLOW-DIGA-26"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/query-api-medicationdispense-req-fdv.html#IG-TIFLOW-DIGA-A26"
         },
         {
-            "key": "IG-TIFLOW-DIGA-27",
+            "key": "IG-TIFLOW-DIGA-A27",
             "title": "CS Kostenträger: Dispensierinformationen - Flowtype 162 - MedicationDispense erstellen",
             "version": 0,
             "status": "ACTIVE",
@@ -539,10 +515,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-close-req-ktr.html#IG-TIFLOW-DIGA-27"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-close-req-ktr.html#IG-TIFLOW-DIGA-A27"
         },
         {
-            "key": "IG-TIFLOW-DIGA-28",
+            "key": "IG-TIFLOW-DIGA-A28",
             "title": "TI-Flow-Fachdienst - Task erzeugen - Flowtype 162 - Ergänzung Performer-Typ für Einlöseinstitutstyp",
             "version": 0,
             "status": "ACTIVE",
@@ -563,10 +539,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-create-req-fd.html#IG-TIFLOW-DIGA-28"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-create-req-fd.html#IG-TIFLOW-DIGA-A28"
         },
         {
-            "key": "IG-TIFLOW-DIGA-29",
+            "key": "IG-TIFLOW-DIGA-A29",
             "title": "PS verordnende LEI: E-Rezept einstellen - Flowtype 162 - Patientenausdruck",
             "version": 0,
             "status": "ACTIVE",
@@ -587,14 +563,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-activate-req-pvs.html#IG-TIFLOW-DIGA-29"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-activate-req-pvs.html#IG-TIFLOW-DIGA-A29"
         },
         {
-            "key": "IG-TIFLOW-DIGA-3",
+            "key": "IG-TIFLOW-DIGA-A3",
             "title": "TI-Flow-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#60; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_kostentraeger</li>\n </ul>\n die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abbrechen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#60; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n  <ul>\n    <li>oid_kostentraeger</li>\n  </ul>\n  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -611,10 +587,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-close-req-fd.html#IG-TIFLOW-DIGA-3-01"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-close-req-fd.html#IG-TIFLOW-DIGA-A3"
         },
         {
-            "key": "IG-TIFLOW-DIGA-30",
+            "key": "IG-TIFLOW-DIGA-A30",
             "title": "TI-Flow-Fachdienst - Versichertenprotokoll zu DiGA-Operationen",
             "version": 0,
             "status": "ACTIVE",
@@ -635,14 +611,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/menu-technische-umsetzung-audit-service.html#IG-TIFLOW-DIGA-30"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/menu-technische-umsetzung-audit-service.html#IG-TIFLOW-DIGA-A30"
         },
         {
-            "key": "IG-TIFLOW-DIGA-4",
+            "key": "IG-TIFLOW-DIGA-A4",
             "title": "TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#62; sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht und anderenfalls die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_MEDICATION_DISPENSE_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen für digitale Gesundheitsanwendungen zulässig.</td>\n </tr>\n </table>\n abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#62; sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht und anderenfalls die Operation mit dem folgenden Fehler:\n  <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_MEDICATION_DISPENSE_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen für digitale Gesundheitsanwendungen zulässig.</td>\n        </tr>\n    </table>\n    abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -659,10 +635,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-close-req-fd.html#IG-TIFLOW-DIGA-4-01"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-close-req-fd.html#IG-TIFLOW-DIGA-A4"
         },
         {
-            "key": "IG-TIFLOW-DIGA-5",
+            "key": "IG-TIFLOW-DIGA-A5",
             "title": "E-Rezept-FdV: E-Rezept zuweisen - Flowtype 162 - Kostenträger auswählen",
             "version": 0,
             "status": "ACTIVE",
@@ -683,14 +659,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/query-api-communication-req-fdv.html#IG-TIFLOW-DIGA-5"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/query-api-communication-req-fdv.html#IG-TIFLOW-DIGA-A5"
         },
         {
-            "key": "IG-TIFLOW-DIGA-6",
+            "key": "IG-TIFLOW-DIGA-A6",
             "title": "E-Rezept-FdV: Verordnung zuweisen - Nachricht erstellen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq mit \n <ul>\n <li>Telematik-ID der ausgewählten abgebenden LEI in recipient</li>\n <li>E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als \"/Task/&lt;id&gt;/$accept?ac=...\" </li>\n </ul>\n erstellen.",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq mit  \n    <ul>\n      <li>Telematik-ID der ausgewählten abgebenden LEI in recipient</li>\n      <li>E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als \"/Task/&lt;id&gt;/$accept?ac=...\" </li>\n    </ul>\n    erstellen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -707,14 +683,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/query-api-communication-req-fdv.html#IG-TIFLOW-DIGA-6"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/query-api-communication-req-fdv.html#IG-TIFLOW-DIGA-A6"
         },
         {
-            "key": "IG-TIFLOW-DIGA-7",
+            "key": "IG-TIFLOW-DIGA-A7",
             "title": "TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 162 - Rollenprüfung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks mit Flowtype 162 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_versicherter</li>\n <li>oid_praxis_arzt</li>\n <li>oid_zahnarztpraxis</li>\n <li>oid_krankenhaus</li>\n <li>oid_praxis_psychotherapeut</li>\n <li>oid_institution-vorsorge-reha</li>\n </ul>\n die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks mit Flowtype 162 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n  <ul>\n    <li>oid_versicherter</li>\n    <li>oid_praxis_arzt</li>\n    <li>oid_zahnarztpraxis</li>\n    <li>oid_krankenhaus</li>\n    <li>oid_praxis_psychotherapeut</li>\n    <li>oid_institution-vorsorge-reha</li>\n  </ul>\n  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -731,10 +707,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-abort-req-fd.html#IG-TIFLOW-DIGA-7-01"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/op-abort-req-fd.html#IG-TIFLOW-DIGA-A7"
         },
         {
-            "key": "IG-TIFLOW-DIGA-8",
+            "key": "IG-TIFLOW-DIGA-A8",
             "title": "E-Rezept-FdV: optional: Kostenträger suchen",
             "version": 0,
             "status": "ACTIVE",
@@ -755,10 +731,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/api-add-fhirvzd.html#IG-TIFLOW-DIGA-8"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/api-add-fhirvzd.html#IG-TIFLOW-DIGA-A8"
         },
         {
-            "key": "IG-TIFLOW-DIGA-9",
+            "key": "IG-TIFLOW-DIGA-A9",
             "title": "E-Rezept-FdV: Kostenträger suchen - IKNR aus ACCESS_TOKEN beziehen",
             "version": 0,
             "status": "ACTIVE",
@@ -779,7 +755,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/api-add-fhirvzd.html#IG-TIFLOW-DIGA-9"
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/api-add-fhirvzd.html#IG-TIFLOW-DIGA-A9"
         }
     ]
 }

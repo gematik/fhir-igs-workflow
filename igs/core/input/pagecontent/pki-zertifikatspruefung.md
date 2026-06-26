@@ -44,7 +44,7 @@ Clientsysteme verwenden bei den in TAB_ILFERP_012 dargestellten Aktivitäten Zer
 Es gelten folgende übergreifende Festlegungen für die Prüfung aktiv durch ein Clientsystem genutzter Zertifikate.
 
 <!-- A_20769-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-302" title="CS: verpflichtende Zertifikatsprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A302" title="CS: verpflichtende Zertifikatsprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -68,7 +68,7 @@ Es gelten folgende übergreifende Festlegungen für die Prüfung aktiv durch ein
 
 
 <!-- A_20764 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-303" title="CS: Prüfung TI-Zertifikate" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A303" title="CS: Prüfung TI-Zertifikate" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -95,7 +95,7 @@ Es gelten folgende übergreifende Festlegungen für die Prüfung aktiv durch ein
 Folgende Vorgaben gelten für die Prüfung von Internet-Zertifikaten.
 
 <!-- A_20091-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-304" title="CS: Prüfung der Zertifikate für TLS-Verbindung zu TI-Flow-Fachdienst" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A304" title="CS: Prüfung der Zertifikate für TLS-Verbindung zu TI-Flow-Fachdienst" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -115,4 +115,4 @@ Folgende Vorgaben gelten für die Prüfung von Internet-Zertifikaten.
 
 Es wird empfohlen für Internetzertifikate kein "Certificate Pinning" umzusetzen, da das die betribliche Stabilität beeinträchtigen kann.
 
-Hinweis: Der erste Teil von IG-TIFLOW-CORE-304-* ist gleichbedeutend damit, dass das CA-Zertifikat im Zertifikats-Truststore eines aktuellen Webbrowsers ist.
+Hinweis: Der erste Teil von IG-TIFLOW-CORE-A304-* ist gleichbedeutend damit, dass das CA-Zertifikat im Zertifikats-Truststore eines aktuellen Webbrowsers ist.
