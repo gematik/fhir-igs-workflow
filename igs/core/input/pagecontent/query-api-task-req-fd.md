@@ -388,7 +388,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_KVNR_MISMATCH</td>
+            <td>SVC_IDENTITY_MISMATCH</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -636,7 +636,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_KVNR_MISMATCH</td>
+            <td>SVC_IDENTITY_MISMATCH</td>
         </tr>
         <tr>
             <th>Details Text</th>
