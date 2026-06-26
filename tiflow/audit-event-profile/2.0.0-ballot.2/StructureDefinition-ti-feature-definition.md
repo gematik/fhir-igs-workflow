@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - draft
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-06-25 | *Computable Name*:TIFeatureDefinition |
+| Draft as of 2026-06-26 | *Computable Name*:TIFeatureDefinition |
 | **Copyright/Legal**: gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -48,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-feature-definitio
   "name" : "TIFeatureDefinition",
   "title" : "TI Feature Definition",
   "status" : "draft",
-  "date" : "2026-06-25T15:23:55+00:00",
+  "date" : "2026-06-26T06:54:57+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

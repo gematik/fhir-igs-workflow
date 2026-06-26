@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,58 +7,75 @@
 
 <https://gematik.de/fhir/tiflow/ValueSet/tiflow-order-task-status-vs> a fhir:ValueSet ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "tiflow-order-task-status-vs"] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "extensions" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet tiflow-order-task-status-vs</b></p><a name=\"tiflow-order-task-status-vs\"> </a><a name=\"hctiflow-order-task-status-vs\"> </a><ul><li>Include these codes as defined in <a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html\"><code>http://hl7.org/fhir/task-status</code></a><span title=\"Version is explicitly stated to be 4.0.1\"> version ?4.0.1</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-draft\">draft</a></td><td style=\"color: #cccccc\">Draft</td><td>The task is not yet ready to be acted upon.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-ready\">ready</a></td><td style=\"color: #cccccc\">Ready</td><td>The task is ready to be performed, but no action has yet been taken.  Used in place of requested/received/accepted/rejected when request assignment and acceptance is a given.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-on-hold\">on-hold</a></td><td style=\"color: #cccccc\">On Hold</td><td>The task has been started but work has been paused.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-in-progress\">in-progress</a></td><td style=\"color: #cccccc\">In Progress</td><td>The task has been started but is not yet complete.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-completed\">completed</a></td><td style=\"color: #cccccc\">Completed</td><td>The task has been completed.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-cancelled\">cancelled</a></td><td style=\"color: #cccccc\">Cancelled</td><td>The task was not completed.</td></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow/ValueSet/tiflow-order-task-status-vs"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
-  fhir:name [ fhir:v "TIFlowOrderTaskStatusVS"] ; # 
-  fhir:title [ fhir:v "TIFlow Order Task ValueSet"] ; # 
-  fhir:status [ fhir:v "draft"] ; # 
-  fhir:experimental [ fhir:v false] ; # 
-  fhir:date [ fhir:v "2028-04-01"^^xsd:date] ; # 
-  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
-  fhir:contact ( [
-     fhir:name [ fhir:v "gematik GmbH" ] ;
-     fhir:telecom ( [
-       fhir:system [ fhir:v "url" ] ;
-       fhir:value [ fhir:v "https://gematik.de" ]
-     ] [
-       fhir:system [ fhir:v "email" ] ;
-       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
-     ] )
-  ] ) ; # 
-  fhir:description [ fhir:v "TIFlow Order Task ValueSet"] ; # 
-  fhir:jurisdiction ( [
-     fhir:coding ( [
-       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "DE" ] ;
-       fhir:display [ fhir:v "Germany" ]
-     ] )
-  ] ) ; # 
-  fhir:immutable [ fhir:v false] ; # 
-  fhir:copyright [ fhir:v "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."] ; # 
-  fhir:compose [
-     fhir:include ( [
-       fhir:system [ fhir:v "http://hl7.org/fhir/task-status"^^xsd:anyURI ] ;
-       fhir:version [ fhir:v "4.0.1" ] ;
-       fhir:concept ( [
-         fhir:code [ fhir:v "draft" ]
-       ] [
-         fhir:code [ fhir:v "ready" ]
-       ] [
-         fhir:code [ fhir:v "on-hold" ]
-       ] [
-         fhir:code [ fhir:v "in-progress" ]
-       ] [
-         fhir:code [ fhir:v "completed" ]
-       ] [
-         fhir:code [ fhir:v "cancelled" ]
-       ] )
-     ] )
-  ] . # 
+  fhir:Resource.id [ fhir:value "tiflow-order-task-status-vs"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet tiflow-order-task-status-vs</b></p><a name=\"tiflow-order-task-status-vs\"> </a><a name=\"hctiflow-order-task-status-vs\"> </a><ul><li>Include these codes as defined in <a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html\"><code>http://hl7.org/fhir/task-status</code></a><span title=\"Version is explicitly stated to be 4.0.1\"> version ?4.0.1</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-draft\">draft</a></td><td style=\"color: #cccccc\">Draft</td><td>The task is not yet ready to be acted upon.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-ready\">ready</a></td><td style=\"color: #cccccc\">Ready</td><td>The task is ready to be performed, but no action has yet been taken.  Used in place of requested/received/accepted/rejected when request assignment and acceptance is a given.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-on-hold\">on-hold</a></td><td style=\"color: #cccccc\">On Hold</td><td>The task has been started but work has been paused.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-in-progress\">in-progress</a></td><td style=\"color: #cccccc\">In Progress</td><td>The task has been started but is not yet complete.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-completed\">completed</a></td><td style=\"color: #cccccc\">Completed</td><td>The task has been completed.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-cancelled\">cancelled</a></td><td style=\"color: #cccccc\">Cancelled</td><td>The task was not completed.</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://gematik.de/fhir/tiflow/ValueSet/tiflow-order-task-status-vs"] ;
+  fhir:ValueSet.version [ fhir:value "2.0.0-ballot.2"] ;
+  fhir:ValueSet.name [ fhir:value "TIFlowOrderTaskStatusVS"] ;
+  fhir:ValueSet.title [ fhir:value "TIFlow Order Task ValueSet"] ;
+  fhir:ValueSet.status [ fhir:value "draft"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2028-04-01"^^xsd:date] ;
+  fhir:ValueSet.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "erp-umsetzung@gematik.de" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "TIFlow Order Task ValueSet"] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:ValueSet.immutable [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.copyright [ fhir:value "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://hl7.org/fhir/task-status" ] ;
+       fhir:ValueSet.compose.include.version [ fhir:value "4.0.1" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "draft" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ready" ]
+       ], [
+         fhir:index 2 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "on-hold" ]
+       ], [
+         fhir:index 3 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "in-progress" ]
+       ], [
+         fhir:index 4 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "completed" ]
+       ], [
+         fhir:index 5 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "cancelled" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/ValueSet/tiflow-order-task-status-vs.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

@@ -348,371 +348,691 @@ Implementation Guide<br/> TIFlow - Kernfunktionalitäten
   <pre style="white-space: pre; overflow: hidden" class="rdf" data-fhir="generated">
 @prefix fhir: &lt;http://hl7.org/fhir/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 # - resource -------------------------------------------------------------------
 
- a fhir:ConceptMap ;
+&lt;http://hl7.org/fhir/ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes&gt; a fhir:ConceptMap ;
   <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
-  <a href="http://hl7.org/fhir/R4/resource.html#ConceptMap.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> "TIFLOW-CM-TelemetryDataStatusCodes"] ; # 
-  <a href="http://hl7.org/fhir/R4/domainresource.html#ConceptMap.text">fhir:text</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "generated" ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">fhir:div</a> [ <a href="http://hl7.org/fhir/R4/narrative.html#xhtml">fhir:v</a> "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: ConceptMap TIFLOW-CM-TelemetryDataStatusCodes&lt;/b&gt;&lt;/p&gt;&lt;a name=\"TIFLOW-CM-TelemetryDataStatusCodes\"&gt; &lt;/a&gt;&lt;a name=\"hcTIFLOW-CM-TelemetryDataStatusCodes\"&gt; &lt;/a&gt;&lt;p&gt;This mapping does not specify any particular context of use.&lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Group 1 &lt;/b&gt;Mapping from &lt;code&gt;https://gematik.de/fhir/erp/CodeSystem/tiflow-operation-outcome-details-cs&lt;/code&gt; to &lt;code&gt;ti-flow-telemetriedaten-statuscodes&lt;/code&gt;&lt;/p&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_OCSP_BACKEND_ERROR&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79001&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_ACCESSCODE_MISMATCH&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79200&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_ACCESS_CODE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79201&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_ACCESS_PERMISSION_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79202&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_ALTERNATIVE_IK_FORBIDDEN&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79203&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_AUTH_NOT_OWNER&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79204&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_AUTH_ROLE_NOT_ALLOWED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79205&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_BOM_DETECTED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79206&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CERTIFICATE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79207&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_COMMUNICATION_PAYLOAD_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79208&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CONSENT_ALREADY_EXISTS&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79209&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CONSENT_CATEGORY_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79210&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CONSENT_CATEGORY_REQUIRED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79211&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CONSENT_MISSING&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79212&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CONSENT_REQUIRED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79213&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_COVERAGE_TYPE_MISMATCH&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79214&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_FLOWTYPE_MISMATCH&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79215&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_IKNR_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79216&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_INSURANT_NOT_ELIGIBLE&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79217&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_KVNR_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79218&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_KVNR_MISMATCH&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79219&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_LANR_ZANR_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79220&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_MEDICATION_DISPENSE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79221&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_MEDICATION_DISPENSE_MISSING&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79222&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_MESSAGE_TO_SELF&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79223&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_META_PROFILE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79224&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_MVO_NOT_VALID_YET&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79225&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_RECIPIENT_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79226&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_RESOURCE_FULLURL_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79227&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_SECRET_MISMATCH&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79228&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79229&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_SIGNATURE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79230&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79231&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_SIGNATURE_NO_OCSP_RESPONSE&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79232&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_TASK_DELETED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79233&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_TASK_EXPIRED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79234&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_TASK_ID_REQUIRED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79235&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_TASK_NOT_FOUND&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79236&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_TASK_REQUIRED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79237&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_TASK_STATUS_MISMATCH&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79238&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_POPP_TOKEN_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79273&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_INTERNAL_ERROR&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79274&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_TIMEOUT&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79275&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Group 2 &lt;/b&gt;Mapping from &lt;code&gt;https://gematik.de/fhir/erp/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs&lt;/code&gt; to &lt;code&gt;ti-flow-telemetriedaten-statuscodes&lt;/code&gt;&lt;/p&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79239&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79240&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79241&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CHARGEITEM_ID_REQUIRED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79242&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CHARGEITEM_NOT_FOUND&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79243&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Group 3 &lt;/b&gt;Mapping from &lt;code&gt;https://gematik.de/fhir/erp/CodeSystem/tiflow-xborder-operation-outcome-details-cs&lt;/code&gt; to &lt;code&gt;ti-flow-telemetriedaten-statuscodes&lt;/code&gt;&lt;/p&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_XBORDER_COUNTRY_CODE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79244&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_XBORDER_NOT_ACTIVATED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79245&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79246&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Group 4 &lt;/b&gt;Mapping from &lt;code&gt;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&lt;/code&gt; to &lt;code&gt;ti-flow-telemetriedaten-statuscodes&lt;/code&gt;&lt;/p&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79247&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_MVO_ENDDATE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79248&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79249&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_MVO_ID_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79250&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_MVO_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79251&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_MVO_NOT_VALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79252&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_MVO_STARTDATE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79253&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_PZN_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79254&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Group 5 &lt;/b&gt;Mapping from &lt;code&gt;json-fehlercodes&lt;/code&gt; to &lt;code&gt;ti-flow-telemetriedaten-statuscodes&lt;/code&gt;&lt;/p&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;invalidOid&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79262&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;methodNotAllowed&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79263&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;malformedRequest&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79264&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Group 6 &lt;/b&gt;Mapping from &lt;a href=\"https://gematik.de/fhir/ti/1.4.0-ballot.1/CodeSystem-operation-outcome-details-codes.html\"&gt;TI Operation Outcome Details CodeSystem&lt;/a&gt; to &lt;code&gt;ti-flow-telemetriedaten-statuscodes&lt;/code&gt;&lt;/p&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SVC_IDENTITY_MISMATCH (Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR))&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79255&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SVC_INVALID_ACCESS_TOKEN (Invalid access token provided)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79256&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SVC_TELEMATIKID_TEMPORARILY_BLOCKED (The specified Telematik-ID is temporarily blocked)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79257&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SVC_VALIDATION_FAILED (FHIR Profile Validation Failed)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79258&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Group 7 &lt;/b&gt;Mapping from &lt;a href=\"http://terminology.hl7.org/7.2.0/CodeSystem-operation-outcome.html\"&gt;Operation Outcome Codes&lt;/a&gt; to &lt;code&gt;ti-flow-telemetriedaten-statuscodes&lt;/code&gt;&lt;/p&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_RESOURCE_ID_FAIL (unable to allocate resource id)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79259&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_RESOURCE_ID_MISMATCH (Resource Id Mismatch)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79260&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_RESOURCE_ID_MISSING (Resource Id Missing)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79261&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_BAD_FORMAT (Bad Syntax: \"%s\" must be a %s')&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79265&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_BAD_SYNTAX (Bad Syntax in %s)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79266&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_DELETED (This resource has been deleted)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79267&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_PARAM_UNKNOWN (Parameter \"%s\" not understood)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79269&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_UNKNOWN_OPERATION (unknown FHIR http operation)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79271&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_UNKNOWN_TYPE (Resource Type \"%s\" not recognised)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79272&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"^^rdf:XMLLiteral ]
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "https://gematik.de/fhir/tiflow/ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes"^^xsd:anyURI] ; # 
-  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.version">fhir:version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> "2.0.0-ballot.2"] ; # 
-  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.title">fhir:title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> "Telemetry Data Status Codes Concept Map"] ; # 
-  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "draft"] ; # 
-  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.experimental">fhir:experimental</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> false] ; # 
-  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> "2026-05-04"^^xsd:date] ; # 
-  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.publisher">fhir:publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> "gematik GmbH"] ; # 
-  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.contact">fhir:contact</a> ( [
-<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> "gematik GmbH" ] ;
-    ( <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">fhir:telecom</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "url" ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> "https://gematik.de" ]     ] [
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "email" ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> "erp-umsetzung@gematik.de" ]     ] )
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.description">fhir:description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:v</a> "Maps operation outcome codes to the telemetry data status codes"] ; # 
-  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.jurisdiction">fhir:jurisdiction</a> ( [
-    ( <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:coding</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "DE" ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> "Germany" ]     ] )
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.copyright">fhir:copyright</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:v</a> "gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.html), Version 2.0."] ; # 
-  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group">fhir:group</a> ( [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.source">fhir:source</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "https://gematik.de/fhir/erp/CodeSystem/tiflow-operation-outcome-details-cs"^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.target">fhir:target</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "ti-flow-telemetriedaten-statuscodes"^^xsd:anyURI ] ;
-    ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element">fhir:element</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_OCSP_BACKEND_ERROR" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79001" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_ACCESSCODE_MISMATCH" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79200" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_ACCESS_CODE_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79201" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_ACCESS_PERMISSION_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79202" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_ALTERNATIVE_IK_FORBIDDEN" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79203" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_AUTH_NOT_OWNER" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79204" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_AUTH_ROLE_NOT_ALLOWED" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79205" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_BOM_DETECTED" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79206" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_CERTIFICATE_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79207" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_COMMUNICATION_PAYLOAD_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79208" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_CONSENT_ALREADY_EXISTS" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79209" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_CONSENT_CATEGORY_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79210" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_CONSENT_CATEGORY_REQUIRED" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79211" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_CONSENT_MISSING" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79212" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_CONSENT_REQUIRED" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79213" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_COVERAGE_TYPE_MISMATCH" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79214" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_FLOWTYPE_MISMATCH" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79215" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_IKNR_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79216" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_INSURANT_NOT_ELIGIBLE" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79217" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_KVNR_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79218" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_KVNR_MISMATCH" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79219" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_LANR_ZANR_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79220" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_MEDICATION_DISPENSE_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79221" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_MEDICATION_DISPENSE_MISSING" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79222" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_MESSAGE_TO_SELF" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79223" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_META_PROFILE_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79224" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_MVO_NOT_VALID_YET" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79225" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_RECIPIENT_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79226" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_RESOURCE_FULLURL_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79227" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_SECRET_MISMATCH" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79228" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79229" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_SIGNATURE_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79230" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79231" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_SIGNATURE_NO_OCSP_RESPONSE" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79232" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_TASK_DELETED" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79233" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_TASK_EXPIRED" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79234" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_TASK_ID_REQUIRED" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79235" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_TASK_NOT_FOUND" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79236" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_TASK_REQUIRED" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79237" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_TASK_STATUS_MISMATCH" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79238" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_POPP_TOKEN_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79273" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_INTERNAL_ERROR" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79274" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_TIMEOUT" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79275" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] )
-  ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.source">fhir:source</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "https://gematik.de/fhir/erp/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs"^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.target">fhir:target</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "ti-flow-telemetriedaten-statuscodes"^^xsd:anyURI ] ;
-    ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element">fhir:element</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79239" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79240" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79241" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_CHARGEITEM_ID_REQUIRED" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79242" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_CHARGEITEM_NOT_FOUND" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79243" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] )
-  ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.source">fhir:source</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "https://gematik.de/fhir/erp/CodeSystem/tiflow-xborder-operation-outcome-details-cs"^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.target">fhir:target</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "ti-flow-telemetriedaten-statuscodes"^^xsd:anyURI ] ;
-    ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element">fhir:element</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_XBORDER_COUNTRY_CODE_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79244" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_XBORDER_NOT_ACTIVATED" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79245" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79246" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] )
-  ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.source">fhir:source</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs"^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.target">fhir:target</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "ti-flow-telemetriedaten-statuscodes"^^xsd:anyURI ] ;
-    ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element">fhir:element</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79247" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_EREZEPT_MVO_ENDDATE_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79248" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79249" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_EREZEPT_MVO_ID_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79250" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_EREZEPT_MVO_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79251" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_EREZEPT_MVO_NOT_VALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79252" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_EREZEPT_MVO_STARTDATE_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79253" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "TIFLOW_EREZEPT_PZN_INVALID" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79254" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] )
-  ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.source">fhir:source</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "json-fehlercodes"^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.target">fhir:target</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "ti-flow-telemetriedaten-statuscodes"^^xsd:anyURI ] ;
-    ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element">fhir:element</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "invalidOid" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79262" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "methodNotAllowed" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79263" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "malformedRequest" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79264" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] )
-  ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.source">fhir:source</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes"^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.target">fhir:target</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "ti-flow-telemetriedaten-statuscodes"^^xsd:anyURI ] ;
-    ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element">fhir:element</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "SVC_IDENTITY_MISMATCH" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79255" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "SVC_INVALID_ACCESS_TOKEN" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79256" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "SVC_TELEMATIKID_TEMPORARILY_BLOCKED" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79257" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "SVC_VALIDATION_FAILED" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79258" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] )
-  ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.source">fhir:source</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "http://terminology.hl7.org/CodeSystem/operation-outcome"^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.target">fhir:target</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> "ti-flow-telemetriedaten-statuscodes"^^xsd:anyURI ] ;
-    ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element">fhir:element</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "MSG_RESOURCE_ID_FAIL" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79259" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "MSG_RESOURCE_ID_MISMATCH" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79260" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "MSG_RESOURCE_ID_MISSING" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79261" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "MSG_BAD_FORMAT" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79265" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "MSG_BAD_SYNTAX" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79266" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "MSG_DELETED" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79267" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "MSG_PARAM_UNKNOWN" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79269" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "MSG_UNKNOWN_OPERATION" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79271" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "MSG_UNKNOWN_TYPE" ] ;
-      ( <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:target</a> [
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "79272" ] ;
-<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> "equivalent" ]       ] )     ] )
-  ] ) . # 
+  <a href="http://hl7.org/fhir/R4/resource.html#ConceptMap.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> "TIFLOW-CM-TelemetryDataStatusCodes"] ;
+  <a href="http://hl7.org/fhir/R4/domainresource.html#ConceptMap.text">fhir:DomainResource.text</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "generated" ] ;
+     fhir:Narrative.div "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: ConceptMap TIFLOW-CM-TelemetryDataStatusCodes&lt;/b&gt;&lt;/p&gt;&lt;a name=\"TIFLOW-CM-TelemetryDataStatusCodes\"&gt; &lt;/a&gt;&lt;a name=\"hcTIFLOW-CM-TelemetryDataStatusCodes\"&gt; &lt;/a&gt;&lt;p&gt;This mapping does not specify any particular context of use.&lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Group 1 &lt;/b&gt;Mapping from &lt;code&gt;https://gematik.de/fhir/erp/CodeSystem/tiflow-operation-outcome-details-cs&lt;/code&gt; to &lt;code&gt;ti-flow-telemetriedaten-statuscodes&lt;/code&gt;&lt;/p&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_OCSP_BACKEND_ERROR&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79001&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_ACCESSCODE_MISMATCH&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79200&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_ACCESS_CODE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79201&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_ACCESS_PERMISSION_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79202&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_ALTERNATIVE_IK_FORBIDDEN&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79203&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_AUTH_NOT_OWNER&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79204&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_AUTH_ROLE_NOT_ALLOWED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79205&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_BOM_DETECTED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79206&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CERTIFICATE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79207&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_COMMUNICATION_PAYLOAD_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79208&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CONSENT_ALREADY_EXISTS&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79209&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CONSENT_CATEGORY_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79210&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CONSENT_CATEGORY_REQUIRED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79211&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CONSENT_MISSING&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79212&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CONSENT_REQUIRED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79213&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_COVERAGE_TYPE_MISMATCH&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79214&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_FLOWTYPE_MISMATCH&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79215&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_IKNR_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79216&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_INSURANT_NOT_ELIGIBLE&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79217&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_KVNR_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79218&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_KVNR_MISMATCH&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79219&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_LANR_ZANR_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79220&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_MEDICATION_DISPENSE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79221&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_MEDICATION_DISPENSE_MISSING&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79222&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_MESSAGE_TO_SELF&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79223&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_META_PROFILE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79224&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_MVO_NOT_VALID_YET&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79225&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_RECIPIENT_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79226&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_RESOURCE_FULLURL_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79227&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_SECRET_MISMATCH&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79228&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79229&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_SIGNATURE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79230&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79231&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_SIGNATURE_NO_OCSP_RESPONSE&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79232&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_TASK_DELETED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79233&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_TASK_EXPIRED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79234&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_TASK_ID_REQUIRED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79235&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_TASK_NOT_FOUND&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79236&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_TASK_REQUIRED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79237&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_TASK_STATUS_MISMATCH&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79238&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_POPP_TOKEN_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79273&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_INTERNAL_ERROR&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79274&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_TIMEOUT&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79275&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Group 2 &lt;/b&gt;Mapping from &lt;code&gt;https://gematik.de/fhir/erp/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs&lt;/code&gt; to &lt;code&gt;ti-flow-telemetriedaten-statuscodes&lt;/code&gt;&lt;/p&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79239&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79240&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79241&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CHARGEITEM_ID_REQUIRED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79242&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_CHARGEITEM_NOT_FOUND&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79243&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Group 3 &lt;/b&gt;Mapping from &lt;code&gt;https://gematik.de/fhir/erp/CodeSystem/tiflow-xborder-operation-outcome-details-cs&lt;/code&gt; to &lt;code&gt;ti-flow-telemetriedaten-statuscodes&lt;/code&gt;&lt;/p&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_XBORDER_COUNTRY_CODE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79244&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_XBORDER_NOT_ACTIVATED&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79245&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79246&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Group 4 &lt;/b&gt;Mapping from &lt;code&gt;https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs&lt;/code&gt; to &lt;code&gt;ti-flow-telemetriedaten-statuscodes&lt;/code&gt;&lt;/p&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79247&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_MVO_ENDDATE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79248&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79249&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_MVO_ID_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79250&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_MVO_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79251&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_MVO_NOT_VALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79252&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_MVO_STARTDATE_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79253&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;TIFLOW_EREZEPT_PZN_INVALID&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79254&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Group 5 &lt;/b&gt;Mapping from &lt;code&gt;json-fehlercodes&lt;/code&gt; to &lt;code&gt;ti-flow-telemetriedaten-statuscodes&lt;/code&gt;&lt;/p&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;invalidOid&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79262&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;methodNotAllowed&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79263&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;malformedRequest&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79264&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Group 6 &lt;/b&gt;Mapping from &lt;a href=\"https://gematik.de/fhir/ti/1.4.0-ballot.1/CodeSystem-operation-outcome-details-codes.html\"&gt;TI Operation Outcome Details CodeSystem&lt;/a&gt; to &lt;code&gt;ti-flow-telemetriedaten-statuscodes&lt;/code&gt;&lt;/p&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SVC_IDENTITY_MISMATCH (Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR))&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79255&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SVC_INVALID_ACCESS_TOKEN (Invalid access token provided)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79256&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SVC_TELEMATIKID_TEMPORARILY_BLOCKED (The specified Telematik-ID is temporarily blocked)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79257&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SVC_VALIDATION_FAILED (FHIR Profile Validation Failed)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79258&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Group 7 &lt;/b&gt;Mapping from &lt;a href=\"http://terminology.hl7.org/7.2.0/CodeSystem-operation-outcome.html\"&gt;Operation Outcome Codes&lt;/a&gt; to &lt;code&gt;ti-flow-telemetriedaten-statuscodes&lt;/code&gt;&lt;/p&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_RESOURCE_ID_FAIL (unable to allocate resource id)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79259&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_RESOURCE_ID_MISMATCH (Resource Id Mismatch)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79260&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_RESOURCE_ID_MISSING (Resource Id Missing)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79261&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_BAD_FORMAT (Bad Syntax: \"%s\" must be a %s')&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79265&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_BAD_SYNTAX (Bad Syntax in %s)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79266&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_DELETED (This resource has been deleted)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79267&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_PARAM_UNKNOWN (Parameter \"%s\" not understood)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79269&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_UNKNOWN_OPERATION (unknown FHIR http operation)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79271&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MSG_UNKNOWN_TYPE (Resource Type \"%s\" not recognised)&lt;/td&gt;&lt;td&gt;&lt;a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\"&gt;is equivalent to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;79272&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+  ] ;
+  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.url">fhir:ConceptMap.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "https://gematik.de/fhir/tiflow/ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes"] ;
+  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.version">fhir:ConceptMap.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> "2.0.0-ballot.2"] ;
+  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.title">fhir:ConceptMap.title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> "Telemetry Data Status Codes Concept Map"] ;
+  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.status">fhir:ConceptMap.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "draft"] ;
+  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.experimental">fhir:ConceptMap.experimental</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> "false"^^xsd:boolean] ;
+  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.date">fhir:ConceptMap.date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> "2026-05-04"^^xsd:date] ;
+  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.publisher">fhir:ConceptMap.publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> "gematik GmbH"] ;
+  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.contact">fhir:ConceptMap.contact</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">fhir:ContactDetail.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> "gematik GmbH" ] ;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">fhir:ContactDetail.telecom</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:ContactPoint.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "url" ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:ContactPoint.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> "https://gematik.de" ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:ContactPoint.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "email" ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:ContactPoint.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> "erp-umsetzung@gematik.de" ]
+     ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.description">fhir:ConceptMap.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:value</a> "Maps operation outcome codes to the telemetry data status codes"] ;
+  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.jurisdiction">fhir:ConceptMap.jurisdiction</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "urn:iso:std:iso:3166" ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "DE" ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> "Germany" ]
+     ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.copyright">fhir:ConceptMap.copyright</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:value</a> "gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.html), Version 2.0."] ;
+  <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group">fhir:ConceptMap.group</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.source">fhir:ConceptMap.group.source</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "https://gematik.de/fhir/erp/CodeSystem/tiflow-operation-outcome-details-cs" ] ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.target">fhir:ConceptMap.group.target</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "ti-flow-telemetriedaten-statuscodes" ] ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element">fhir:ConceptMap.group.element</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_OCSP_BACKEND_ERROR" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79001" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_ACCESSCODE_MISMATCH" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79200" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_ACCESS_CODE_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79201" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 3 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_ACCESS_PERMISSION_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79202" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 4 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_ALTERNATIVE_IK_FORBIDDEN" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79203" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 5 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_AUTH_NOT_OWNER" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79204" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 6 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_AUTH_ROLE_NOT_ALLOWED" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79205" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 7 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_BOM_DETECTED" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79206" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 8 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_CERTIFICATE_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79207" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 9 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_COMMUNICATION_PAYLOAD_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79208" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 10 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_CONSENT_ALREADY_EXISTS" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79209" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 11 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_CONSENT_CATEGORY_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79210" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 12 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_CONSENT_CATEGORY_REQUIRED" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79211" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 13 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_CONSENT_MISSING" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79212" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 14 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_CONSENT_REQUIRED" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79213" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 15 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_COVERAGE_TYPE_MISMATCH" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79214" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 16 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_FLOWTYPE_MISMATCH" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79215" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 17 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_IKNR_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79216" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 18 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_INSURANT_NOT_ELIGIBLE" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79217" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 19 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_KVNR_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79218" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 20 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_KVNR_MISMATCH" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79219" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 21 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_LANR_ZANR_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79220" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 22 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_MEDICATION_DISPENSE_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79221" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 23 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_MEDICATION_DISPENSE_MISSING" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79222" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 24 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_MESSAGE_TO_SELF" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79223" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 25 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_META_PROFILE_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79224" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 26 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_MVO_NOT_VALID_YET" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79225" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 27 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_RECIPIENT_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79226" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 28 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_RESOURCE_FULLURL_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79227" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 29 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_SECRET_MISMATCH" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79228" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 30 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79229" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 31 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_SIGNATURE_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79230" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 32 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79231" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 33 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_SIGNATURE_NO_OCSP_RESPONSE" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79232" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 34 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_TASK_DELETED" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79233" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 35 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_TASK_EXPIRED" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79234" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 36 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_TASK_ID_REQUIRED" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79235" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 37 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_TASK_NOT_FOUND" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79236" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 38 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_TASK_REQUIRED" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79237" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 39 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_TASK_STATUS_MISMATCH" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79238" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 40 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_POPP_TOKEN_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79273" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 41 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_INTERNAL_ERROR" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79274" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 42 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_TIMEOUT" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79275" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.source">fhir:ConceptMap.group.source</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "https://gematik.de/fhir/erp/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs" ] ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.target">fhir:ConceptMap.group.target</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "ti-flow-telemetriedaten-statuscodes" ] ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element">fhir:ConceptMap.group.element</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79239" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79240" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79241" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 3 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_CHARGEITEM_ID_REQUIRED" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79242" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 4 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_CHARGEITEM_NOT_FOUND" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79243" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2 ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.source">fhir:ConceptMap.group.source</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "https://gematik.de/fhir/erp/CodeSystem/tiflow-xborder-operation-outcome-details-cs" ] ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.target">fhir:ConceptMap.group.target</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "ti-flow-telemetriedaten-statuscodes" ] ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element">fhir:ConceptMap.group.element</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_XBORDER_COUNTRY_CODE_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79244" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_XBORDER_NOT_ACTIVATED" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79245" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79246" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 3 ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.source">fhir:ConceptMap.group.source</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs" ] ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.target">fhir:ConceptMap.group.target</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "ti-flow-telemetriedaten-statuscodes" ] ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element">fhir:ConceptMap.group.element</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79247" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_EREZEPT_MVO_ENDDATE_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79248" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79249" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 3 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_EREZEPT_MVO_ID_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79250" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 4 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_EREZEPT_MVO_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79251" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 5 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_EREZEPT_MVO_NOT_VALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79252" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 6 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_EREZEPT_MVO_STARTDATE_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79253" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 7 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "TIFLOW_EREZEPT_PZN_INVALID" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79254" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 4 ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.source">fhir:ConceptMap.group.source</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "json-fehlercodes" ] ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.target">fhir:ConceptMap.group.target</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "ti-flow-telemetriedaten-statuscodes" ] ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element">fhir:ConceptMap.group.element</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "invalidOid" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79262" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "methodNotAllowed" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79263" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "malformedRequest" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79264" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 5 ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.source">fhir:ConceptMap.group.source</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes" ] ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.target">fhir:ConceptMap.group.target</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "ti-flow-telemetriedaten-statuscodes" ] ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element">fhir:ConceptMap.group.element</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "SVC_IDENTITY_MISMATCH" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79255" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "SVC_INVALID_ACCESS_TOKEN" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79256" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "SVC_TELEMATIKID_TEMPORARILY_BLOCKED" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79257" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 3 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "SVC_VALIDATION_FAILED" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79258" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 6 ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.source">fhir:ConceptMap.group.source</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "http://terminology.hl7.org/CodeSystem/operation-outcome" ] ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.target">fhir:ConceptMap.group.target</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> "ti-flow-telemetriedaten-statuscodes" ] ;
+     <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element">fhir:ConceptMap.group.element</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "MSG_RESOURCE_ID_FAIL" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79259" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "MSG_RESOURCE_ID_MISMATCH" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79260" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "MSG_RESOURCE_ID_MISSING" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79261" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 3 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "MSG_BAD_FORMAT" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79265" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 4 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "MSG_BAD_SYNTAX" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79266" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 5 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "MSG_DELETED" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79267" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 6 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "MSG_PARAM_UNKNOWN" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79269" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 7 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "MSG_UNKNOWN_OPERATION" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79271" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 8 ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.code">fhir:ConceptMap.group.element.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "MSG_UNKNOWN_TYPE" ] ;
+       <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target">fhir:ConceptMap.group.element.target</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.code">fhir:ConceptMap.group.element.target.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "79272" ] ;
+         <a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.group.element.target.equivalence">fhir:ConceptMap.group.element.target.equivalence</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> "equivalent" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes.ttl&gt; a owl:Ontology ;
+  owl:imports fhir:fhir.ttl ;
+  owl:versionIRI &lt;http://build.fhir.org/ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes.ttl&gt; .
 
 </pre>
 
@@ -761,7 +1081,7 @@ Implementation Guide<br/> TIFlow - Kernfunktionalitäten
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Thu, Jun 25, 2026 15:23+0000">2026-06-25</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 06:54+0000">2026-06-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
