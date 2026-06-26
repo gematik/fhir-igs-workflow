@@ -28,18 +28,18 @@ Der Client sendet eine FHIR-Subscription-Ressource über die ZETA-gesicherte FHI
   </div>
   <div id="Request-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Subscription/example-create-subscription-request JSON %}
+      {% fragment Subscription/erp-notification-avs-01-request-PostSubscriptionPseudo JSON %}
     </div>
     <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment Subscription/example-create-subscription-request XML %}
+      {% fragment Subscription/erp-notification-avs-01-request-PostSubscriptionPseudo XML %}
     </div>
   </div>
   <div id="Response-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Subscription/example-create-subscription-response JSON %}
+      {% fragment Subscription/erp-notification-avs-02-response-PostSubscriptionPseudo JSON %}
     </div>
     <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment Subscription/example-create-subscription-response XML %}
+      {% fragment Subscription/erp-notification-avs-02-response-PostSubscriptionPseudo XML %}
     </div>
   </div>
 </div>
