@@ -6,6 +6,13 @@ Description: "Ein MedicationDispense für die Ausgabe von Pomalidomid mit einer 
 * medicationReference = Reference(ExampleMedication2-Pomalidomid-T)
 * quantity.value = 10
 * quantity.unit = "Tablette"
+// * extension[renderedDosageInstruction].valueMarkdown = "1-1-1-1 nach Bedarf"
+// * extension[generatedDosageInstructionsMeta]
+//   * url = $generatedMeta
+//   * extension[+].url = "algorithmVersion"
+//   * extension[=].valueString = "1.0.0"
+//   * extension[+].url = "language"
+//   * extension[=].valueCode = #de-DE
 * dosageInstruction[+].text = "1-1-1-1 nach Bedarf"
 * whenHandedOver = "2026-04-02"
 * performer.actor.identifier.value = "3-07.2.1234560000.10.789"
