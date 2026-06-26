@@ -29,7 +29,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 		</pre>
 	</div>
 	<div id="Request-Examples">
-		<div data-name="Beispiel - $abort Request mit AccessCode Header und Secretals URL-Parameter" data-type="HTTP" data-render="ig-Fragment">
+		<div data-name="Beispiel - $abort Request mit AccessCode Header und Secret als URL-Parameter" data-type="HTTP" data-render="ig-Fragment">
 			<pre>
 				POST [base]/rx/fhir/Task/4711/$abort?secret=3fa85f64-5717-4562-b3fc-2c963f66afa6
 				Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE2MzQifQ.eyJpc3MiOiJodHRwczovL2lkcC50aS1leGFtcGxlLmRlIiwic3ViIjoiMTEyMjMzNDQ1NSIsImF1ZCI6InRpZmxvdy1mYWNoZGllbnN0IiwicHJvZmVzc2lvbk9JRCI6Im9pZF9wcmF4aXNfYXJ6dCIsIm9yZ2FuaXphdGlvbklEIjoiMS4yLjI3Ni4wLjcyLjAuNzYuNC4xMjM0NTYiLCJleHAiOjE4MDAwMDAwMDAsImlhdCI6MTcwMDAwMDAwMH0.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
