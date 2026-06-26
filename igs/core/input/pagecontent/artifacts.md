@@ -10,7 +10,7 @@ ValueSet/tiflow-order-task-status-vs
 {% include artifacts-table-generator.html render=valuesets %}
 <div><figcaption><strong>Tabelle:</strong> Value Sets</figcaption></div>
 
-{% comment %}
+
 ### Terminologien: Code Systems
 
 {% capture codesystems %}
@@ -18,7 +18,7 @@ CodeSystem/tiflow-operation-outcome-details-cs,
 {% endcapture %}
 {% include artifacts-table-generator.html render=codesystems %}
 <div><figcaption><strong>Tabelle:</strong> Code Systems</figcaption></div>
-{% endcomment %}
+
 
 ### Logical Models
 
