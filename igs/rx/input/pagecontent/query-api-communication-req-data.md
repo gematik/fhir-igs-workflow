@@ -324,3 +324,35 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
     <td>Übermittlung eines Hinweises zum zu zahlenden Betrags</td>
   </tr>
 </table>
+
+<!-- A_23879-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A322" title="TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_Reply" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in "Tabelle: Nachricht als Apotheke an einen Versicherten schicken" überprüfen und bei negativem Prüfergebnis, die Operation mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    <tr>
+        <th>HTTP-Code</th>
+        <td>400 - Bad Request</td>
+    </tr>
+    <tr>
+        <th>Severity</th>
+        <td>error</td>
+    </tr>
+    <tr>
+        <th>Code</th>
+        <td>invalid</td>
+    </tr>
+    <tr>
+        <th>Details Code</th>
+        <td>SVC_VALIDATION_FAILED</td>
+    </tr>
+    <tr>
+        <th>Details Text</th>
+        <td>FHIR Profile Validation Failed</td>
+    </tr>
+    </table> 
+    abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.
+</requirement>
