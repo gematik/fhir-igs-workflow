@@ -9,7 +9,7 @@ Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `Cons
 #### DELETE /Consent (Einwilligung widerrufen)
 
 <!-- A_22157 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-43" title="TI-Flow-Fachdienst - Consent löschen - Löschen der bestehenden Abrechnungsinformationen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A43" title="TI-Flow-Fachdienst - Consent löschen - Löschen der bestehenden Abrechnungsinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>

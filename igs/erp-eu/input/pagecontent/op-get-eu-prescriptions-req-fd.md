@@ -1,7 +1,7 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 <!-- A_27059 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-4" title="TI-Flow-Fachdienst - eu-prescription abfragen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A4" title="TI-Flow-Fachdienst - eu-prescription abfragen - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -37,7 +37,7 @@
 </requirement>
 
 <!-- A_27060 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-5" title="TI-Flow-Fachdienst - eu-prescription abfragen - Schemaprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A5" title="TI-Flow-Fachdienst - eu-prescription abfragen - Schemaprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -69,7 +69,7 @@
 </requirement>
 
 <!-- A_27061 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-6" title="TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A6" title="TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -101,7 +101,7 @@
 </requirement>
 
 <!-- A_27062 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-7" title="TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A7" title="TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -133,7 +133,7 @@
 </requirement>
 
 <!-- A_27063-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-8" title="TI-Flow-Fachdienst - eu-prescription abfragen - Filter einlösbarer E-Rezepte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A8" title="TI-Flow-Fachdienst - eu-prescription abfragen - Filter einlösbarer E-Rezepte" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -142,7 +142,7 @@
 </requirement>
 
 <!-- A_27587 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-9" title="TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage der aktuellsten Verordnungsinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A9" title="TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage der aktuellsten Verordnungsinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -151,7 +151,7 @@
 </requirement>
 
 <!-- A_27588 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-10" title="TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage aller einlösbaren Verordnungsinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A10" title="TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage aller einlösbaren Verordnungsinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -160,7 +160,7 @@
 </requirement>
 
 <!-- A_27589 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-11" title="TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A11" title="TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -169,7 +169,7 @@
 </requirement>
 
 <!-- A_27064 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-12" title="TI-Flow-Fachdienst - eu-prescription abfragen - Schema des Response" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A12" title="TI-Flow-Fachdienst - eu-prescription abfragen - Schema des Response" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -178,7 +178,7 @@
 </requirement>
 
 <!-- A_27065 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-13" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A13" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -210,7 +210,7 @@
 </requirement>
 
 <!-- A_27066 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-14" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A14" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -242,7 +242,7 @@
 </requirement>
 
 <!-- A_27067 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-15" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A15" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -274,7 +274,7 @@
 </requirement>
 
 <!-- A_27580 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-16" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Statuswechsel Task" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A16" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Statuswechsel Task" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -283,7 +283,7 @@
 </requirement>
 
 <!-- A_27581 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-17" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A17" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Secret" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -292,7 +292,7 @@
 </requirement>
 
 <!-- A_27582 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-18" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A18" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -301,7 +301,7 @@
 </requirement>
 
 <!-- A_28204 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-19" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A19" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -310,7 +310,7 @@
 </requirement>
 
 <!-- A_28205 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-20" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A20" title="TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

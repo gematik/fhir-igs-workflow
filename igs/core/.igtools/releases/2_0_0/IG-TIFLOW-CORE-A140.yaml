@@ -1,0 +1,30 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 00d1316b24eba2c786609b62dee072f5503651dee5fbc61aa1c3ae13cbccd228
+created: '2026-06-25T11:30:11.231391'
+date: '2026-06-25T11:30:11.231394'
+key: IG-TIFLOW-CORE-A140
+modified: '2026-06-25T11:30:11.231393'
+release_status: NEW
+source: input/pagecontent/op-abort-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts durch einen Nutzer\
+  \ mit zeta-user-info.professionOID = oid_versicherter den zeta-user-info.identifier\
+  \ mit der in Task.for hinterlegte KVNR des begünstigten Patienten vergleichen und\
+  \ bei Missmatch den Aufruf mit dem folgenden Fehler:\n      <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n\
+  \            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n\
+  \        <tr>\n            <th>Severity</th>\n            <td>error</td>\n     \
+  \   </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_IDENTITY_MISMATCH</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Identity\
+  \ mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID\
+  \ / KVNR)</td>\n        </tr>\n    </table> \n    abweisen, damit ausschließlich\
+  \ der begünstigte Versicherte als Berechtigter ohne Kenntnis des AccessCodes ein\
+  \ E-Rezept löscht."
+title: TI-Flow-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR
+version: 0

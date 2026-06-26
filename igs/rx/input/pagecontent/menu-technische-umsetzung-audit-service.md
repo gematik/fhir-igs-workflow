@@ -2,7 +2,7 @@
 
 Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Weitere Details sind in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/audit-service.html) zu finden, und unten sind die modulspezifischen Anforderungen.
 
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-218" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Rx-Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A218" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Rx-Operationen" version="0">
     <meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -84,7 +84,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 Der TI-Flow-Fachdienst protokolliert das erfolgreiche Übermitteln von Daten für jedes E-Rezept an den Medication Service im Zugriffsprotokoll des Versicherten. Für Übermittlungsversuche, welche nicht erfolgreich durchgeführt werden konnten und für die die Übermittlung erneut versucht wird, wird kein Eintrag im Zugriffsprotokoll angelegt.
 
 <!-- A_25962 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-36" title="TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A222" title="TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll" version="0">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

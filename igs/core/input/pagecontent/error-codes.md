@@ -7,7 +7,7 @@ Der TI-Flow-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Clie
 Die Fehlermeldung beinhaltet bei fachlichen Fehlern einen VAU-verschlüsselten inneren http-Response. In diesem inneren Response werden ggf. ausschliesslich personenbezogene oder medizinische Daten an den aufrufenden Client übermittelt, welche bereits im VAU-verschlüsselten inneren http-Request, welcher zum Fehler führte, enthalten waren. Das kann bspw. bei Fehlern bei der Prüfung der FHIR Konformität von Datensätzen auftreten.
 
 <!-- A_22103 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-432" title="TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A432" title="TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>

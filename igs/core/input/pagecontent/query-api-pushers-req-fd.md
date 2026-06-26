@@ -1,7 +1,7 @@
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den pusher-Endpunkt.
 
 <!-- A_28114 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-268" title="TI-Flow-Fachdienst - unzulässige Operationen Pushers" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A268" title="TI-Flow-Fachdienst - unzulässige Operationen Pushers" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -25,7 +25,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_28111 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-269" title="TI-Flow-Fachdienst - Push Notifications - Pushers - OpenApi_Notification_Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A269" title="TI-Flow-Fachdienst - Push Notifications - Pushers - OpenApi_Notification_Fachdienst" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -38,7 +38,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-Instanzen abgefragt werden.
 
 <!-- A_28113 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-270" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A270" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -66,7 +66,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 </requirement>
 
 <!-- A_28530 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-271" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Filter auf KVNR des Versicherten" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A271" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Filter auf KVNR des Versicherten" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -76,7 +76,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 
 ### POST /pushers/set
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-431" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Schemavalidierung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A431" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Schemavalidierung" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -100,7 +100,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 </requirement>
 
 <!-- A_28112 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-272" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A272" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Rollenprüfung" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -128,7 +128,7 @@ Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-In
 </requirement>
 
 <!-- A_28674 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-419" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Zeitstempel ändern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A419" title="TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Zeitstempel ändern" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

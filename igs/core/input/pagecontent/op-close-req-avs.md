@@ -1,7 +1,7 @@
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$close`.
 
 <!-- A_27840 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-295" title="PS abgebende LEI: Quittung abrufen - Abschluss des Workflows durchführen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A295" title="PS abgebende LEI: Quittung abrufen - Abschluss des Workflows durchführen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -13,7 +13,7 @@ Die Erstellung der MedicationDispense erfolgt Flowtype-spezifisch.
 
 
 <!-- A_19289-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-296" title="PS abgebende LEI: Quittung abrufen - Statusrequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A296" title="PS abgebende LEI: Quittung abrufen - Statusrequest" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -36,7 +36,7 @@ Der TI-Flow-Fachdienst prüft regelmäßig den Status seines Signaturzertifikats
 Die Quittung wird als PKCS#7-Datei erstellt. Die quittierten Daten sind innerhalb der PKCS#7-Datei enthalten.
 
 <!-- A_20766 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-297" title="PS abgebende LEI: Quittung abrufen - Quittungssignatur prüfen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-A297" title="PS abgebende LEI: Quittung abrufen - Quittungssignatur prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -58,7 +58,7 @@ Als Response liefert der Konnektor einen standardisierten Prüfbericht in einer 
 Eine Apotheke schließt nach Belieferung eines E-Rezepts den Vorgang mittels $close-Aufruf entsprechend vertraglicher Vorgaben bis zum Ende des folgenden Werktags ab. Der Abschluss des Vorgangs mittels $close-Operation kann einzeln oder auch als Stapelverarbeitung durchgeführt werden. Bei einer Stapelverarbeitung ruft das AVS hintereinander die $close-Operation für jedes E-Rezept auf. Um Lastspitzen am TI-Flow-Fachdienst zu vermeiden, gelten folgende Anforderungen für die Stapelverarbeitung.
 
 <!-- A_25219 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-298" title="PS abgebende LEI: Quittung abrufen - Stapelverarbeitung" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-A298" title="PS abgebende LEI: Quittung abrufen - Stapelverarbeitung" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -69,7 +69,7 @@ Eine Apotheke schließt nach Belieferung eines E-Rezepts den Vorgang mittels $cl
 Falls ein AVS diese Aufrufe im Stapel verarbeitet, soll der Startzeitpunkt für die Aufrufe der $close-Operation am TI-Flow-Fachdienst zufällig verteilt sein, um die betriebliche Stabilität des TI-Flow-Fachdienstes zu gewährleisten.
 
 <!-- A_25220 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-299" title="PS abgebende LEI: Quittung abrufen - Stapelverarbeitung - Startzeitpunkt" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A299" title="PS abgebende LEI: Quittung abrufen - Stapelverarbeitung - Startzeitpunkt" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -78,7 +78,7 @@ Falls ein AVS diese Aufrufe im Stapel verarbeitet, soll der Startzeitpunkt für 
 </requirement>
 
 <!-- A_25221 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-300" title="PS abgebende LEI: Quittung abrufen - Stapelverarbeitung - Wartezeit zwischen Aufrufen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A300" title="PS abgebende LEI: Quittung abrufen - Stapelverarbeitung - Wartezeit zwischen Aufrufen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

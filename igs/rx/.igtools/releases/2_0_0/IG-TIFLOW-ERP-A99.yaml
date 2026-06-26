@@ -1,0 +1,29 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 4a6280e59e5fa12ba5903f85f7c64d7d950c37b9fd041277e610c0fd75d3ecc9
+created: '2026-06-25T11:43:04.360468'
+date: '2026-06-25T11:43:04.360470'
+key: IG-TIFLOW-ERP-A99
+modified: '2026-06-25T11:43:04.360469'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
+  \ (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true)\
+  \ gekennzeichnet ist und der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)\
+  \ nicht angegeben ist, die Operation mit dem folgenden Fehler:\n      <table id=\"\
+  error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n  \
+  \      <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n\
+  \        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n\
+  \        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_EREZEPT_MVO_STARTDATE_INVALID</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n\
+  \        </tr>\n    </table> \n    abbrechen, weil die Information des Beginns der\
+  \ Einlösefrist notwendig ist, um den Gültigkeitszeitraum zu ermitteln."
+title: TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht
+version: 0

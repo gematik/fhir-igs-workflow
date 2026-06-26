@@ -1,0 +1,26 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 5234995ae7603acda70d9efc7e4386ff00005075806fa8cc4d1afb54b3b0b41c
+created: '2026-06-25T11:30:11.205207'
+date: '2026-06-25T11:30:11.205209'
+key: IG-TIFLOW-CORE-A422
+modified: '2026-06-25T11:30:11.205209'
+release_status: NEW
+source: input/pagecontent/error-codes-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS für den Fall, dass ein Request in einen Timeout\
+  \ läuft die Anfrage mit folgenden Fehler:\n      <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n         \
+  \   <th>HTTP-Code</th>\n            <td>408 - Request Timeout</td>\n        </tr>\n\
+  \        <tr>\n            <th>Severity</th>\n            <td>error</td>\n     \
+  \   </tr>\n        <tr>\n            <th>Code</th>\n            <td>timeout</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_TIMEOUT</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>The\
+  \ request timed out.</td>\n        </tr>\n      </table>\n      abbrechen, damit\
+  \ Clients über Timeouts informiert werden und entsprechend reagieren können."
+title: TI-Flow-Fachdienst - Fehlerbehandlung - HTTP-Timeoutfehler
+version: 0

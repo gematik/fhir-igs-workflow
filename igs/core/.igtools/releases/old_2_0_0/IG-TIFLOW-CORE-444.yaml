@@ -1,0 +1,26 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: f0bd5781fb801fb9124a96cbddfd7eda49ad42933d480881e6c82fce6fb26ad6
+created: '2026-06-23T16:31:37.114772'
+date: '2026-06-23T16:31:37.114775'
+key: IG-TIFLOW-CORE-444
+modified: '2026-06-23T16:31:37.114774'
+release_status: NEW
+source: input/pagecontent/capability-statement-extensions.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS bei dem Versuch, die `$create`-Operation für einen\
+  \ deaktivierten Flowtype aufzurufen, die Operation mit dem folgenden Fehler abbrechen:\n\
+  \    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403\
+  \ - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n\
+  \            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n\
+  \            <td>forbidden</td>\n        </tr>\n        <tr>\n            <th>Details\
+  \ Code</th>\n            <td>TIFLOW_BLOCKED_FLOWTYPE</td>\n        </tr>\n     \
+  \   <tr>\n            <th>Details Text</th>\n            <td></td>\n        </tr>\n\
+  \    </table>"
+title: TI-Flow-Fachdienst - Fehlerausgabe bei deaktiviertem Flowtype
+version: 0

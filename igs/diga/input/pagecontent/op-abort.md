@@ -28,7 +28,7 @@ Die Operation $abort wird als HTTP POST auf /Task/<id>/$abort ausgeführt.
 	</div>
   <div id="OperationDefinition">
     <pre>
-      {% include OperationDefinition-tiflow-diga-abort-op.json %}
+      {% include OperationDefinition-TIFLOW-DIGA-abort-op.json %}
     </pre>
   </div>
 	<div id="Response-Examples">

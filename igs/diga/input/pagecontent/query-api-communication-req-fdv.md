@@ -11,7 +11,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 ##### Verordnung zuweisen
 
 <!-- A_26007 -->
-<requirement conformance="MAY" key="IG-TIFLOW-DIGA-5" title="E-Rezept-FdV: E-Rezept zuweisen - Flowtype 162 - Kostenträger auswählen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-DIGA-A5" title="E-Rezept-FdV: E-Rezept zuweisen - Flowtype 162 - Kostenträger auswählen" version="0">
   <meta lockversion="false"/>
   <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -24,7 +24,7 @@ Die Auswahl kann mit dem Anwendungsfall "Kostenträger suchen" erfolgen.
 Beim Zuweisen einer DiGA-Verordnung ist keine freie Textnachricht vorgesehen, um eine maschinelle Verarbeitung zur Bereitstellung des Freischaltcodes zu ermöglichen.
 
 <!-- A_19201-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-6" title="E-Rezept-FdV: Verordnung zuweisen - Nachricht erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A6" title="E-Rezept-FdV: Verordnung zuweisen - Nachricht erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

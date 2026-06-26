@@ -10,7 +10,7 @@ Usage: #example
 * ingredient.strength.numerator.system = "http://unitsofmeasure.org"
 * ingredient.strength.numerator.code = #ml
 * ingredient.strength.denominator.value = 1
-
+* status = #active
 * code.coding[pzn] = $cs-pzn#08585997
 * code.text = "Prospan® Hustensaft 100ml N1"
 

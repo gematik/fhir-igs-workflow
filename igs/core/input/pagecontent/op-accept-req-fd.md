@@ -3,7 +3,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19149-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-247" title="TI-Flow-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich gelöscht" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A247" title="TI-Flow-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich gelöscht" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -35,7 +35,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19167-04 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-248" title="TI-Flow-Fachdienst - Task akzeptieren - Prüfung AccessCode" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A248" title="TI-Flow-Fachdienst - Task akzeptieren - Prüfung AccessCode" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -69,7 +69,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 <!-- ToDo: lässt sich feststellen, wie die AVS den Aufruf nutzen? Wäre es legitim den HTTP-Header abzukündigen? -->
 
 <!-- A_19168-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-249" title="TI-Flow-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A249" title="TI-Flow-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -107,7 +107,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings in einem Array übermittelt.
 
 <!-- A_23539-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-250" title="TI-Flow-Fachdienst - Task akzeptieren - Ende Einlösefrist prüfen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A250" title="TI-Flow-Fachdienst - Task akzeptieren - Ende Einlösefrist prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -140,7 +140,7 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
 </requirement>
 
 <!-- A_19169-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-251" title="TI-Flow-Fachdienst - Task akzeptieren - Generierung Secret, Statuswechsel in Abgabe und Rückgabewert" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A251" title="TI-Flow-Fachdienst - Task akzeptieren - Generierung Secret, Statuswechsel in Abgabe und Rückgabewert" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -149,7 +149,7 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
 </requirement>
 
 <!-- A_24174-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-252" title="TI-Flow-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden Institution speichern" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A252" title="TI-Flow-Fachdienst - Task akzeptieren - Telematik-ID der abgebenden Institution speichern" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -162,7 +162,7 @@ Die Telematik-ID ist im Task wie folgt zu hinterlegen:
 - Task.owner.identifier.value= $Telematik-ID der Apotheke gemäß https://simplifier.net/basisprofil-de-r4/identifiertelematikid
 
 <!-- A_28127 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-253" title="TI-Flow-Fachdienst - Task akzeptieren - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A253" title="TI-Flow-Fachdienst - Task akzeptieren - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

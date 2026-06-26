@@ -10,7 +10,7 @@
     },
     "requirements": [
         {
-            "key": "IG-TIFLOW-XBORDER-1",
+            "key": "IG-TIFLOW-XBORDER-A1",
             "title": "Format Zugriffscode",
             "version": 0,
             "status": "ACTIVE",
@@ -31,10 +31,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/menu-technische-umsetzung-konzept.html#IG-TIFLOW-XBORDER-1"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/menu-technische-umsetzung-konzept.html#IG-TIFLOW-XBORDER-A1"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-10",
+            "key": "IG-TIFLOW-XBORDER-A10",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage aller einlösbaren Verordnungsinformationen",
             "version": 0,
             "status": "ACTIVE",
@@ -55,12 +55,12 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-10"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A10"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-11",
+            "key": "IG-TIFLOW-XBORDER-A11",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
             "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, nur Ressourcen eines Tasks bereitgestellt werden, die folgendes Kriterium erfüllen: Task.status = ready ODER (Task.status = in-progress UND Task.owner = zeta-user-info.identifier).",
             "conformance": "SHALL",
@@ -79,10 +79,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-11-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A11"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-12",
+            "key": "IG-TIFLOW-XBORDER-A12",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Schema des Response",
             "version": 0,
             "status": "ACTIVE",
@@ -103,14 +103,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-12"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A12"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-13",
+            "key": "IG-TIFLOW-XBORDER-A13",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions?_count=1 durch den NCPeH-FD sicherstellen, dass die Ressourcen der zuletzt ausgestellten einlösbaren Verordnung zurückgegeben werden und falls keine Verordnung vorliegt, mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>404 - Not Found</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n antworten.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions?_count=1 durch den NCPeH-FD sicherstellen, dass die Ressourcen der zuletzt ausgestellten einlösbaren Verordnung zurückgegeben werden und falls keine Verordnung vorliegt, mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>404 - Not Found</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    antworten.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -127,14 +127,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-13-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A13"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-14",
+            "key": "IG-TIFLOW-XBORDER-A14",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden und falls keine Verordnung vorliegt, die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>404 - Not Found</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden und falls keine Verordnung vorliegt, die Operation mit dem folgenden Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>404 - Not Found</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -151,14 +151,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-14-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A14"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-15",
+            "key": "IG-TIFLOW-XBORDER-A15",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden, deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, und falls keine Verordnung vorliegt, die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>404 - Not Found</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden, deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, und falls keine Verordnung vorliegt, die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>404 - Not Found</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -175,10 +175,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-15-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A15"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-16",
+            "key": "IG-TIFLOW-XBORDER-A16",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Statuswechsel Task",
             "version": 0,
             "status": "ACTIVE",
@@ -199,10 +199,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-16"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A16"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-17",
+            "key": "IG-TIFLOW-XBORDER-A17",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Secret",
             "version": 0,
             "status": "ACTIVE",
@@ -223,12 +223,12 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-17"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A17"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-18",
+            "key": "IG-TIFLOW-XBORDER-A18",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
             "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, für alle Tasks deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, den zeta-user-info.identifier des Nutzers in Task.owner speichern.",
             "conformance": "SHALL",
@@ -247,10 +247,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-18-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A18"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-19",
+            "key": "IG-TIFLOW-XBORDER-A19",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen - Push Notification Versicherter",
             "version": 0,
             "status": "ACTIVE",
@@ -271,10 +271,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-19"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A19"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-2",
+            "key": "IG-TIFLOW-XBORDER-A2",
             "title": "TI-Flow-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder",
             "version": 0,
             "status": "ACTIVE",
@@ -295,10 +295,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/menu-technische-umsetzung-konzept.html#IG-TIFLOW-XBORDER-2"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/menu-technische-umsetzung-konzept.html#IG-TIFLOW-XBORDER-A2"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-20",
+            "key": "IG-TIFLOW-XBORDER-A20",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Push Notification Versicherter",
             "version": 0,
             "status": "ACTIVE",
@@ -319,14 +319,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-20"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A20"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-21",
+            "key": "IG-TIFLOW-XBORDER-A21",
             "title": "TI-Flow-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten auf die Ressource übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPEU_PR_PAR_PATCH_Task_Input prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst akzeptiert werden.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten auf die Ressource übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPEU_PR_PAR_PATCH_Task_Input prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst akzeptiert werden.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -343,14 +343,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fd.html#IG-TIFLOW-XBORDER-21-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fd.html#IG-TIFLOW-XBORDER-A21"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-22",
+            "key": "IG-TIFLOW-XBORDER-A22",
             "title": "TI-Flow-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten prüfen, ob der adressierte Task in Task.extension:eu-isRedeemableByProperties.valueBoolean = true gesetzt ist und anderfalls mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>409 - Conflict</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_XBORDER_NOT_ACTIVATED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten prüfen, ob der adressierte Task in Task.extension:eu-isRedeemableByProperties.valueBoolean = true gesetzt ist und anderfalls mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>409 - Conflict</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_XBORDER_NOT_ACTIVATED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -367,10 +367,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fd.html#IG-TIFLOW-XBORDER-22-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fd.html#IG-TIFLOW-XBORDER-A22"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-23",
+            "key": "IG-TIFLOW-XBORDER-A23",
             "title": "TI-Flow-Fachdienst -Task markieren -Versicherter - Änderung Markierung Task Ressource",
             "version": 0,
             "status": "ACTIVE",
@@ -391,10 +391,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fd.html#IG-TIFLOW-XBORDER-23"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fd.html#IG-TIFLOW-XBORDER-A23"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-24",
+            "key": "IG-TIFLOW-XBORDER-A24",
             "title": "E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle",
             "version": 0,
             "status": "ACTIVE",
@@ -415,10 +415,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-XBORDER-24"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-XBORDER-A24"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-25",
+            "key": "IG-TIFLOW-XBORDER-A25",
             "title": "E-Rezept-FdV: Zugriffsberechtigung anzeigen",
             "version": 0,
             "status": "ACTIVE",
@@ -439,10 +439,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-XBORDER-25"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-XBORDER-A25"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-26",
+            "key": "IG-TIFLOW-XBORDER-A26",
             "title": "E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren",
             "version": 0,
             "status": "ACTIVE",
@@ -463,10 +463,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-XBORDER-26"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-XBORDER-A26"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-27",
+            "key": "IG-TIFLOW-XBORDER-A27",
             "title": "E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren - Hinweis Belieferungsmöglichkeit",
             "version": 0,
             "status": "ACTIVE",
@@ -487,10 +487,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-XBORDER-27"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-XBORDER-A27"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-28",
+            "key": "IG-TIFLOW-XBORDER-A28",
             "title": "E-Rezept-FdV: optional: E-Rezept markieren",
             "version": 0,
             "status": "ACTIVE",
@@ -511,10 +511,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-XBORDER-28"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-XBORDER-A28"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-29",
+            "key": "IG-TIFLOW-XBORDER-A29",
             "title": "E-Rezept-FdV: E-Rezept markieren - E-Rezepte auswählen",
             "version": 0,
             "status": "ACTIVE",
@@ -535,10 +535,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-XBORDER-29"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-XBORDER-A29"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-3",
+            "key": "IG-TIFLOW-XBORDER-A3",
             "title": "TI-Flow-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder",
             "version": 0,
             "status": "ACTIVE",
@@ -559,12 +559,12 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/menu-technische-umsetzung-konzept.html#IG-TIFLOW-XBORDER-3"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/menu-technische-umsetzung-konzept.html#IG-TIFLOW-XBORDER-A3"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-30",
+            "key": "IG-TIFLOW-XBORDER-A30",
             "title": "E-Rezept-FdV: E-Rezept markieren",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
             "text": "Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall umsetzt, den Anwendungsfall \"E-Rezept durch den Versicherten markieren\" gemäß TAB_FdVERP_029 umsetzen. Tabelle #: TAB_FdVERP_029 - E-Rezept markieren Name E-Rezept markieren Auslöser Aufruf des Anwendungsfalls in der Graphical User Interface (GUI) Akteur Versicherter Vorbedingung Der Nutzer hat eine oder mehrere Markierungen aus- oder abgewählt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Die Markierungen sind im TI-Flow-Fachdienst gespeichert. Standardablauf Task-ID bestimmen FHIR Ressource erstellen Daten im TI-Flow-Fachdienst speichern",
             "conformance": "SHALL",
@@ -583,10 +583,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-XBORDER-30-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-XBORDER-A30"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-31",
+            "key": "IG-TIFLOW-XBORDER-A31",
             "title": "E-Rezept-FdV: E-Rezept markieren - FHIR Ressource erstellen",
             "version": 0,
             "status": "ACTIVE",
@@ -607,14 +607,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-XBORDER-31"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-XBORDER-A31"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-32",
+            "key": "IG-TIFLOW-XBORDER-A32",
             "title": "E-Rezept-FdV: E-Rezept markieren - Speicherrequest",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /Task/&lt;id&gt; mit: \n <ul> \n <li>Prescription-ID in URL &lt;id&gt; </li>\n <li>FHIR-Ressource im HTTP-Request-Body </li>\n </ul>\n ausführen.",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /Task/&lt;id&gt; mit: \n    <ul> \n        <li>Prescription-ID in URL &lt;id&gt; </li>\n        <li>FHIR-Ressource im HTTP-Request-Body </li>\n    </ul>\n    ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -631,12 +631,12 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-XBORDER-32-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-XBORDER-A32"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-33",
+            "key": "IG-TIFLOW-XBORDER-A33",
             "title": "TI-Flow-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
             "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt `/Consent` mit `?category=EUDISPCONS` alle dem Versicherten zugeordneten Zugriffsberechtigungen anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren und löschen.",
             "conformance": "SHALL",
@@ -655,12 +655,12 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-consent-req-fd.html#IG-TIFLOW-XBORDER-33-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/query-api-consent-req-fd.html#IG-TIFLOW-XBORDER-A33"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-34",
+            "key": "IG-TIFLOW-XBORDER-A34",
             "title": "E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
             "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung löschen\" zum Löschen der Information auf dem TI-Flow-Fachdienst die HTTP-Operation DELETE /$revoke-eu-access-permission ausführen.",
             "conformance": "SHALL",
@@ -679,10 +679,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-revoke-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-34-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-revoke-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-A34"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-35",
+            "key": "IG-TIFLOW-XBORDER-A35",
             "title": "E-Rezept-FdV: Zugriffsberechtigung löschen - lokale Zugriffsberechtigung löschen",
             "version": 0,
             "status": "ACTIVE",
@@ -703,14 +703,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-revoke-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-35"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-revoke-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-A35"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-36",
+            "key": "IG-TIFLOW-XBORDER-A36",
             "title": "TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abbrechen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n     <ul>\n     <li>oid_versicherter</li>\n     </ul>\n     die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -727,12 +727,12 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-read-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-36-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-read-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-A36"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-37",
+            "key": "IG-TIFLOW-XBORDER-A37",
             "title": "TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Response",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
             "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission den zeta-user-info.identifier des Nutzers (KVNR) bestimmen und im Response falls vorhanden eine Ressource des Profils [GEM_ERP_PR_PAR_EU_Access_Authorization_Response] mit zur KVNR gespeicherte zeitlich gültige Zugriffsberechtigung übermitteln.",
             "conformance": "SHALL",
@@ -751,14 +751,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-read-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-37-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-read-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-A37"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-38",
+            "key": "IG-TIFLOW-XBORDER-A38",
             "title": "TI-Flow-Fachdienst - Task schließen - EU - Rollenprüfung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_ncpeh</li>\n </ul>\n die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abbrechen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n     <ul>\n     <li>oid_ncpeh</li>\n     </ul>\n     die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -775,14 +775,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-38-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-A38"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-39",
+            "key": "IG-TIFLOW-XBORDER-A39",
             "title": "TI-Flow-Fachdienst - Task schließen - EU - Schemaprüfung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -799,14 +799,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-39-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-A39"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-4",
+            "key": "IG-TIFLOW-XBORDER-A4",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Rollenprüfung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_ncpeh </li>\n </ul>\n die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abbrechen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n     <ul>\n     <li>oid_ncpeh </li>\n     </ul>\n     die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -823,14 +823,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-4-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A4"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-40",
+            "key": "IG-TIFLOW-XBORDER-A40",
             "title": "TI-Flow-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_CONSENT_MISSING</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit nur Dispensierinformationen für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CONSENT_MISSING</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur Dispensierinformationen für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -847,14 +847,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-40-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-A40"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-41",
+            "key": "IG-TIFLOW-XBORDER-A41",
             "title": "TI-Flow-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im TI-Flow-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_ACCESS_PERMISSION_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit nur Dispensierinformationen übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im TI-Flow-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_ACCESS_PERMISSION_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur Dispensierinformationen übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -871,14 +871,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-41-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-A41"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-42",
+            "key": "IG-TIFLOW-XBORDER-A42",
             "title": "TI-Flow-Fachdienst - Task schließen - EU - Statusprüfung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status = in-progress ist und bei Ungleichheit die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Task has invalid status.</td>\n </tr>\n </table> \n abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status = in-progress ist und bei Ungleichheit die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Task has invalid status.</td>\n        </tr>\n    </table> \n    abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -895,10 +895,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-42-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-A42"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-43",
+            "key": "IG-TIFLOW-XBORDER-A43",
             "title": "TI-Flow-Fachdienst - Task schließen - EU - Zeitstempel MedicationDispense",
             "version": 0,
             "status": "ACTIVE",
@@ -919,10 +919,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-43"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-A43"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-44",
+            "key": "IG-TIFLOW-XBORDER-A44",
             "title": "TI-Flow-Fachdienst - Task schließen - EU - Status beenden",
             "version": 0,
             "status": "ACTIVE",
@@ -943,10 +943,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-44"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-A44"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-45",
+            "key": "IG-TIFLOW-XBORDER-A45",
             "title": "TI-Flow-Fachdienst - Task schließen - EU - Push Notification Versicherter",
             "version": 0,
             "status": "ACTIVE",
@@ -967,12 +967,12 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-45"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-XBORDER-A45"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-46",
+            "key": "IG-TIFLOW-XBORDER-A46",
             "title": "E-Rezept-FdV: Zugriffsberechtigung abrufen - Abfragerequest",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
             "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung abrufen\" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /$read-eu-access-permission ausführen.",
             "conformance": "SHALL",
@@ -991,10 +991,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-read-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-46-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-read-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-A46"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-47",
+            "key": "IG-TIFLOW-XBORDER-A47",
             "title": "E-Rezept: Anwendung des IG 'EU Zugriff E-Rezept' für Einlösen von E-Rezepten im EU Ausland",
             "version": 0,
             "status": "ACTIVE",
@@ -1028,10 +1028,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/index.html#IG-TIFLOW-XBORDER-47"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/index.html#IG-TIFLOW-XBORDER-A47"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-48",
+            "key": "IG-TIFLOW-XBORDER-A48",
             "title": "E-Rezept: Umsetzung des Moduls 'EU Zugriff E-Rezept'",
             "version": 0,
             "status": "ACTIVE",
@@ -1065,10 +1065,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/index.html#IG-TIFLOW-XBORDER-48"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/index.html#IG-TIFLOW-XBORDER-A48"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-49",
+            "key": "IG-TIFLOW-XBORDER-A49",
             "title": "E-Rezept-FdV: Zugriffsberechtigung - Liste zulässiger Länder",
             "version": 0,
             "status": "ACTIVE",
@@ -1089,14 +1089,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-49"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-A49"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-5",
+            "key": "IG-TIFLOW-XBORDER-A5",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Schemaprüfung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_GET_Prescription_EU_Input] prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_GET_Prescription_EU_Input] prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -1113,10 +1113,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-5-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A5"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-50",
+            "key": "IG-TIFLOW-XBORDER-A50",
             "title": "E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder",
             "version": 0,
             "status": "ACTIVE",
@@ -1137,10 +1137,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-50"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-A50"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-51",
+            "key": "IG-TIFLOW-XBORDER-A51",
             "title": "E-Rezept-FdV: Zugriffsberechtigung - Land auswählen",
             "version": 0,
             "status": "ACTIVE",
@@ -1161,10 +1161,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-51"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-A51"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-52",
+            "key": "IG-TIFLOW-XBORDER-A52",
             "title": "E-Rezept-FdV: Zugriffsberechtigung - Zugriffscode erzeugen",
             "version": 0,
             "status": "ACTIVE",
@@ -1185,14 +1185,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-52"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-A52"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-53",
+            "key": "IG-TIFLOW-XBORDER-A53",
             "title": "E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am TI-Flow-Fachdienst speichern",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung erteilen\" zum Speichern der Information am TI-Flow-Fachdienst die HTTP-Operation POST /$grant-eu-access-permission mit:\n <ul>\n <li>Organization.extension:ncpehCountryEx.valueCodeableConcept.coding.code des vom Nutzer ausgewählten Landes in Parameters.parameter:countryCode</li>\n <li>erzeugter Zugriffscode in Parameters.parameter:accessCode</li>\n </ul>\n ausführen.",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung erteilen\" zum Speichern der Information am TI-Flow-Fachdienst die HTTP-Operation POST /$grant-eu-access-permission mit:\n    <ul>\n        <li>Organization.extension:ncpehCountryEx.valueCodeableConcept.coding.code des vom Nutzer ausgewählten Landes in Parameters.parameter:countryCode</li>\n        <li>erzeugter Zugriffscode in Parameters.parameter:accessCode</li>\n    </ul>\n    ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -1209,14 +1209,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-53-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-XBORDER-A53"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-54",
+            "key": "IG-TIFLOW-XBORDER-A54",
             "title": "TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abbrechen, damit die Information zur Zugriffsberechtigung nicht durch Unberechtigte gelöscht werden kann.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n    <ul>\n    <li>oid_versicherter</li>\n    </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit die Information zur Zugriffsberechtigung nicht durch Unberechtigte gelöscht werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -1233,12 +1233,12 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-revoke-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-54-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-revoke-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-A54"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-55",
+            "key": "IG-TIFLOW-XBORDER-A55",
             "title": "TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Löschen",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
             "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission den zeta-user-info.identifier des Nutzers (KVNR) bestimmen und, falls vorhanden, zu dieser KVNR gespeicherte Zugriffsberechtigungen löschen.",
             "conformance": "SHALL",
@@ -1257,14 +1257,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-revoke-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-55-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-revoke-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-A55"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-56",
+            "key": "IG-TIFLOW-XBORDER-A56",
             "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter </li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n </tr>\n </table> \n abbrechen, damit eine Zugriffsberechtigte nicht durch Unberechtigte erteilt werden kann.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n     <ul>\n     <li>oid_versicherter </li>\n     </ul>\n     die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit eine Zugriffsberechtigte nicht durch Unberechtigte erteilt werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -1281,14 +1281,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-56-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-A56"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-57",
+            "key": "IG-TIFLOW-XBORDER-A57",
             "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission den zeta-user-info.identifier des Nutzers (KVNR) bestimmen und sicherstellen, dass ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_CONSENT_REQUIRED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Das Erstellen einer Zugriffsberechtigung ist erst zulässig, wenn eine Einwilligung durch den Nutzer zum Einlösen von E-Rezepten im europäischen Ausland erteilt wurde.</td>\n </tr>\n </table> \n abbrechen, damit nur Versicherte eine Zugriffsberechtigung schreiben, die eine Einwilligung erteilt haben.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission den zeta-user-info.identifier des Nutzers (KVNR) bestimmen und sicherstellen, dass ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CONSENT_REQUIRED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Das Erstellen einer Zugriffsberechtigung ist erst zulässig, wenn eine Einwilligung durch den Nutzer zum Einlösen von E-Rezepten im europäischen Ausland erteilt wurde.</td>\n        </tr>\n    </table> \n    abbrechen, damit nur Versicherte eine Zugriffsberechtigung schreiben, die eine Einwilligung erteilt haben.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -1305,14 +1305,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-57-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-A57"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-58",
+            "key": "IG-TIFLOW-XBORDER-A58",
             "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Ländercode (Parameters.parameter:countryCode) einem Land entspricht, welches die Anwendung ePrescription/eDispensation Szenario Land A unterstützt und bei fehlschlagender Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>409 - Conflict</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_XBORDER_COUNTRY_CODE_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Für das angefragte Land ist Einlösen von E-Rezepten nicht möglich.</td>\n </tr>\n </table> \n abbrechen, damit der Versicherte nur für zulässige europäische Länder eine Zugriffsberechtigung erteilt.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Ländercode (Parameters.parameter:countryCode) einem Land entspricht, welches die Anwendung ePrescription/eDispensation Szenario Land A unterstützt und bei fehlschlagender Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>409 - Conflict</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_XBORDER_COUNTRY_CODE_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Für das angefragte Land ist Einlösen von E-Rezepten nicht möglich.</td>\n        </tr>\n    </table> \n    abbrechen, damit der Versicherte nur für zulässige europäische Länder eine Zugriffsberechtigung erteilt.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -1329,14 +1329,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-58-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-A58"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-59",
+            "key": "IG-TIFLOW-XBORDER-A59",
             "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Zugriffscode (Parameters.parameter:accessCode) das korrekte Format hat und bei fehlschlagender Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_ACCESS_CODE_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Der übermittelte Zugriffscode ist nicht zulässig.</td>\n </tr>\n </table> \n abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Zugriffscode (Parameters.parameter:accessCode) das korrekte Format hat und bei fehlschlagender Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_ACCESS_CODE_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der übermittelte Zugriffscode ist nicht zulässig.</td>\n        </tr>\n    </table> \n    abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -1353,14 +1353,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-59-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-A59"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-6",
+            "key": "IG-TIFLOW-XBORDER-A6",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_CONSENT_REQUIRED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CONSENT_REQUIRED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -1377,10 +1377,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-6-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A6"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-60",
+            "key": "IG-TIFLOW-XBORDER-A60",
             "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender Zugriffsberechtigung",
             "version": 0,
             "status": "ACTIVE",
@@ -1401,10 +1401,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-60"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-A60"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-61",
+            "key": "IG-TIFLOW-XBORDER-A61",
             "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung speichern",
             "version": 0,
             "status": "ACTIVE",
@@ -1425,10 +1425,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-61"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-A61"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-62",
+            "key": "IG-TIFLOW-XBORDER-A62",
             "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Response",
             "version": 0,
             "status": "ACTIVE",
@@ -1449,10 +1449,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-62"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-A62"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-63",
+            "key": "IG-TIFLOW-XBORDER-A63",
             "title": "TI-Flow-Fachdienst - Zugriffsberechtigung - periodische Bereinigung",
             "version": 0,
             "status": "ACTIVE",
@@ -1473,10 +1473,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-63"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-XBORDER-A63"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-64",
+            "key": "IG-TIFLOW-XBORDER-A64",
             "title": "TI-Flow-Fachdienst - Versichertenprotokoll zu DiGA-Operationen",
             "version": 0,
             "status": "ACTIVE",
@@ -1497,14 +1497,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/menu-technische-umsetzung-audit-service.html#IG-TIFLOW-XBORDER-64"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/menu-technische-umsetzung-audit-service.html#IG-TIFLOW-XBORDER-A64"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-7",
+            "key": "IG-TIFLOW-XBORDER-A7",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung",
-            "version": 1,
+            "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im TI-Flow-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_ACCESS_PERMISSION_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im TI-Flow-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_ACCESS_PERMISSION_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -1521,10 +1521,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-7-01"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A7"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-8",
+            "key": "IG-TIFLOW-XBORDER-A8",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Filter einlösbarer E-Rezepte",
             "version": 0,
             "status": "ACTIVE",
@@ -1545,10 +1545,10 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-8"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A8"
         },
         {
-            "key": "IG-TIFLOW-XBORDER-9",
+            "key": "IG-TIFLOW-XBORDER-A9",
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage der aktuellsten Verordnungsinformationen",
             "version": 0,
             "status": "ACTIVE",
@@ -1569,7 +1569,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-9"
+            "link": "https://gematik.de/fhir/tiflow-xborder/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-XBORDER-A9"
         }
     ]
 }
