@@ -49,6 +49,7 @@ Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-
 Alias: $sct = http://snomed.info/sct
 Alias: $cs-ucum = http://unitsofmeasure.org
 Alias: $hl7-oo = http://terminology.hl7.org/CodeSystem/operation-outcome
+Alias: $dcm = http://dicom.nema.org/resources/ontology/DCM|01
 
 // R5 Backport
 Alias: $medicationDispense-renderedDosageInstruction-r5 = http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction
