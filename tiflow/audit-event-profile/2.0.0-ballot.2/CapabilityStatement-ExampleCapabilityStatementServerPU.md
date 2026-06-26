@@ -31,7 +31,7 @@ Version 2.0.0-ballot.2 - draft
   },
   "extension" : [{
     "url" : "https://gematik.de/fhir/ti/StructureDefinition/ti-environment",
-    "valueCode" : "PU"
+    "valueCode" : "prod"
   },
   {
     "url" : "https://gematik.de/fhir/ti/StructureDefinition/ti-fhir-configuration",

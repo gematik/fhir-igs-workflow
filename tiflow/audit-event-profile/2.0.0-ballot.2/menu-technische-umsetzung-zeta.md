@@ -1,22 +1,35 @@
+# Technische Umsetzung - Zero Trust Access (ZETA) - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
+
+TIFlow - Kernfunktionalitäten
+
+Version 2.0.0-ballot.2 - draft 
+
+* [**Table of Contents**](toc.md)
+* **Technische Umsetzung - Zero Trust Access (ZETA)**
+
+## Technische Umsetzung - Zero Trust Access (ZETA)
+
 Der TI-Flow-Fachdienst ist ein Dienst im Internet. Jeder Zugriff auf den Resource Server läuft über einen **ZETA Guard**, der aus zwei Komponenten besteht:
 
-- **PDP (Policy Decision Point)** – der Authorization Server. Er stellt Access Tokens (AT) und Refresh Tokens (RT) aus. Er enthält die Policy Engine (OPA), die entscheidet, welche Scopes ein Client bekommen darf.
-- **PEP (Policy Enforcement Point)** – der HTTP-Proxy vor dem Resource Server. Er prüft bei **jedem** eingehenden Request das AT auf Gültigkeit, Audience und Scope.
+* **PDP (Policy Decision Point)** – der Authorization Server. Er stellt Access Tokens (AT) und Refresh Tokens (RT) aus. Er enthält die Policy Engine (OPA), die entscheidet, welche Scopes ein Client bekommen darf.
+* **PEP (Policy Enforcement Point)** – der HTTP-Proxy vor dem Resource Server. Er prüft bei **jedem** eingehenden Request das AT auf Gültigkeit, Audience und Scope.
 
 Für Entwickler sind zwei Protokollphasen klar zu unterscheiden:
 
-1. **Token-Ausstellung (PDP)** – Client fragt beim Authorization Server ein AT an (`POST /token`)
-2. **Ressourcenzugriff (PEP)** – Client nutzt das AT für einen API-Call; der HTTP-Proxy prüft es vor jeder Weiterleitung
+1. **Token-Ausstellung (PDP)**– Client fragt beim Authorization Server ein AT an (`POST /token`)
+1. **Ressourcenzugriff (PEP)**– Client nutzt das AT für einen API-Call; der HTTP-Proxy prüft es vor jeder Weiterleitung
 
----
+-------
 
-### Phase 1 – Token-Ausstellung (`POST /token`)
+### Phase 1 – Token-Ausstellung (POST /token)
 
 #### Voraussetzung: Client-Registrierung (DCR)
 
 Bevor ein Client Tokens anfragen kann, muss er einmalig pro ZETA Guard-Instanz registriert werden. Die Registrierung liefert eine `client_id`.
 
-```http
+```
 POST /register
 Content-Type: application/json
 
@@ -26,11 +39,12 @@ Content-Type: application/json
   "token_endpoint_auth_method": "private_key_jwt",
   "jwks": { ... }   // Client Instance Public Key
 }
+
 ```
 
 Die `client_id` wird anschließend in allen `client_assertion`-JWTs als `iss` und `sub` verwendet.
 
----
+-------
 
 #### Option A – Neues Token (Token Exchange mit SM(C)-B-Attestierung)
 
@@ -38,19 +52,23 @@ Wird für neue Sessions verwendet, wenn noch kein gültiges Refresh Token vorlie
 
 **Ablauf:**
 
-1. ZETA Client holt eine Einmal-Nonce vom PDP: `GET /nonce`
-2. ZETA Client berechnet den Attestierungsnachweis:
-   ```
-   attestation_challenge = SHA-256( SHA-256(Client_Instance_Public_Key_JWK) ‖ nonce )
-   ```
-3. TPM erzeugt ein Quote über `attestation_challenge`, signiert mit dem TPM Attestation Key
-4. ZETA Client erstellt den `subject_token` – ein JWT, das vom Konnektor mit der SM(C)-B signiert wird und die `professionOID` der Institution enthält
-5. ZETA Client erstellt die `client_assertion` – ein JWT, signiert mit dem Client Instance Key, das die TPM-Attestierung enthält
-6. ZETA Client erstellt einen DPoP-Proof-JWT (gebunden an den Token-Endpoint und die Nonce)
+1. ZETA Client holt eine Einmal-Nonce vom PDP:`GET /nonce`
+1. ZETA Client berechnet den Attestierungsnachweis:
+
+```
+attestation_challenge = SHA-256( SHA-256(Client_Instance_Public_Key_JWK) ‖ nonce )
+
+```
+
+
+1. TPM erzeugt ein Quote über`attestation_challenge`, signiert mit dem TPM Attestation Key
+1. ZETA Client erstellt den`subject_token`– ein JWT, das vom Konnektor mit der SM(C)-B signiert wird und die`professionOID`der Institution enthält
+1. ZETA Client erstellt die`client_assertion`– ein JWT, signiert mit dem Client Instance Key, das die TPM-Attestierung enthält
+1. ZETA Client erstellt einen DPoP-Proof-JWT (gebunden an den Token-Endpoint und die Nonce)
 
 **Token Request:**
 
-```http
+```
 POST /token
 Content-Type: application/x-www-form-urlencoded
 DPoP: <dpop-proof-jwt>
@@ -61,11 +79,12 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Atoken-exchange
 &client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
 &client_assertion=<client-assertion-jwt>
 &scope=tif-rx-task-prescribe%20tif-diga-task-prescribe
+
 ```
 
 **`client_assertion`-JWT Payload (Pfad A – mit TPM-Attestierung):**
 
-```json
+```
 {
   "iss": "<client_id>",
   "sub": "<client_id>",
@@ -77,15 +96,16 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Atoken-exchange
     "client_statement_format": "client-statement"
   }
 }
+
 ```
 
----
+-------
 
 #### Option B – Token-Verlängerung (Refresh Token)
 
 Sobald ein Refresh Token vorhanden ist, kann damit ohne erneute SM(C)-B-Interaktion ein neues AT geholt werden. Das RT ist 12 Stunden gültig – innerhalb dieses Zeitraums ist keine Neuattestation nötig.
 
-```http
+```
 POST /token
 Content-Type: application/x-www-form-urlencoded
 DPoP: <dpop-proof-jwt>
@@ -95,26 +115,27 @@ grant_type=refresh_token
 &client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
 &client_assertion=<client-assertion-jwt-ohne-attestierung>
 &scope=tif-rx-task-prescribe%20tif-diga-task-prescribe
+
 ```
 
 > **Hinweis:** Der `scope`-Parameter im Refresh-Request darf nur Scopes enthalten, die bereits im ursprünglichen AT enthalten waren.
 
----
+-------
 
 #### Was der PDP prüft (Policy Engine)
 
 Die Policy Engine prüft bei jedem `/token`-Request vier Bedingungen – alle müssen erfüllt sein:
 
-| Prüfung | Quelle | Bedingung |
-|---|---|---|
-| **Berufsgruppe / Institution** | `professionOID` aus dem `subject_token` | Muss in den erlaubten `roles` des angefragten Scopes stehen |
-| **Client-Zulassung** | `product_id` + `product_version` aus dem ZETA-Client | Muss in der gematik-Zulassungsliste registriert sein |
-| **Scopes** | `scope`-Parameter im Request | Alle angefragten Scopes müssen für die `professionOID` erlaubt sein |
+| | | |
+| :--- | :--- | :--- |
+| **Berufsgruppe / Institution** | `professionOID`aus dem`subject_token` | Muss in den erlaubten`roles`des angefragten Scopes stehen |
+| **Client-Zulassung** | `product_id`+`product_version`aus dem ZETA-Client | Muss in der gematik-Zulassungsliste registriert sein |
+| **Scopes** | `scope`-Parameter im Request | Alle angefragten Scopes müssen für die`professionOID`erlaubt sein |
 | **Audience** | `resource`-Parameter (oder aus Scope abgeleitet) | Muss zu einem erlaubten Resource Server des Scopes passen |
 
 Schlägt eine Prüfung fehl, liefert der PDP einen Fehler mit konkretem Grund (z.B. `"User profession is not allowed"`, `"One or more requested scopes are not allowed"`).
 
----
+-------
 
 #### Empfehlung: Alle benötigten Scopes in einem Request anfragen
 
@@ -122,38 +143,41 @@ Schlägt eine Prüfung fehl, liefert der PDP einen Fehler mit konkretem Grund (z
 
 Begründung:
 
-- Das AT ist nur 5 Minuten gültig, das RT aber 12 Stunden. Innerhalb der Session werden ATs per Pfad B (Refresh) verlängert – ohne erneute SM(C)-B-Interaktion und ohne Attestierung.
-- Wenn ein Client nachträglich einen weiteren Scope benötigt, der nicht im ursprünglichen AT enthalten ist, muss er eine **vollständige neue Session** (Pfad A mit TPM-Attestierung) starten.
-- Mehrere separate Token Requests für verschiedene Scopes erzeugen unnötigen Traffic und erhöhen die Latenz.
+* Das AT ist nur 5 Minuten gültig, das RT aber 12 Stunden. Innerhalb der Session werden ATs per Pfad B (Refresh) verlängert – ohne erneute SM(C)-B-Interaktion und ohne Attestierung.
+* Wenn ein Client nachträglich einen weiteren Scope benötigt, der nicht im ursprünglichen AT enthalten ist, muss er eine **vollständige neue Session** (Pfad A mit TPM-Attestierung) starten.
+* Mehrere separate Token Requests für verschiedene Scopes erzeugen unnötigen Traffic und erhöhen die Latenz.
 
 **Typische Scope-Kombination für eine Arztpraxis (PVS):**
 
 ```
 scope=tif-rx-task-prescribe tif-diga-task-prescribe
+
 ```
 
 **Typische Scope-Kombination für eine Apotheke:**
 
 ```
 scope=tif-rx-task-dispense tif-rx-communication tif-rx-chargeitem-provide tif-rx-subscription
+
 ```
 
 **Typische Scope-Kombination für eine FdV (Versicherter):**
 
 ```
 scope=tif-rx-task-manage tif-rx-communication tif-rx-chargeitem-manage tif-rx-consent-manage tif-rx-eu-access-manage tif-rx-audit tif-rx-notification tif-diga-task-manage tif-diga-communication tif-diga-audit
+
 ```
 
----
+-------
 
 #### Token-Gültigkeitsdauer (TTL)
 
-| Token | TTL |
-|---|---|
+| | |
+| :--- | :--- |
 | Access Token (AT) | 300 Sekunden (5 Minuten) |
 | Refresh Token (RT) | 43.200 Sekunden (12 Stunden) |
 
----
+-------
 
 ### Phase 2 – Ressourcenzugriff über den PEP
 
@@ -161,21 +185,22 @@ Der PEP ist ein HTTP-Proxy, der vor dem TI-Flow-Fachdienst Resource Server sitzt
 
 **Request-Format:**
 
-```http
+```
 GET /rx/Task
 Authorization: DPoP <access-token>
 DPoP: <dpop-proof-jwt>
+
 ```
 
 #### Was der PEP prüft
 
 Der PEP prüft bei jedem Request folgende Bedingungen (gemäß §A_25668 gemSpec_ZETA):
 
-1. **AT-Signatur** – das AT muss vom bekannten Authorization Server signiert sein
-2. **Ablaufzeit** – `exp`-Claim des AT muss in der Zukunft liegen
-3. **Audience** – der `aud`-Claim im AT muss zur URL des aufgerufenen Resource Backends passen
-4. **Scope** – der `scope`-Claim im AT muss die angefragte HTTP-Methode + Pfad-Kombination abdecken
-5. **DPoP-Bindung** – der DPoP-Proof muss gültig sein und zum `cnf`-Claim im AT passen (Proof of Possession)
+1. **AT-Signatur**– das AT muss vom bekannten Authorization Server signiert sein
+1. **Ablaufzeit**–`exp`-Claim des AT muss in der Zukunft liegen
+1. **Audience**– der`aud`-Claim im AT muss zur URL des aufgerufenen Resource Backends passen
+1. **Scope**– der`scope`-Claim im AT muss die angefragte HTTP-Methode + Pfad-Kombination abdecken
+1. **DPoP-Bindung**– der DPoP-Proof muss gültig sein und zum`cnf`-Claim im AT passen (Proof of Possession)
 
 Alle fünf Prüfungen müssen bestanden werden. Schlägt eine fehl, wird der Request mit `401 Unauthorized` abgewiesen.
 
@@ -183,105 +208,75 @@ Alle fünf Prüfungen müssen bestanden werden. Schlägt eine fehl, wird der Req
 
 Fehlt im AT ein benötigter Scope oder passt die Audience nicht zur aufgerufenen URL, signalisiert der PEP einen Step-up (§A_28525):
 
-```http
+```
 HTTP/1.1 401 Unauthorized
 WWW-Authenticate: Bearer error="insufficient_scope",
                   scope="tif-rx-task-prescribe",
                   resource="<resource-url>"
+
 ```
 
 Der Client muss daraufhin beim PDP ein neues AT mit dem fehlenden Scope anfragen. Falls der Scope noch nie im bisherigen AT enthalten war, ist Pfad A (neue Session mit Attestierung) erforderlich.
 
----
+-------
 
 ### Scopes nach Akteur – Übersicht
 
-<table>
-  <thead>
-    <tr>
-      <th>Akteur</th>
-      <th>OID-Referenz</th>
-      <th>OID</th>
-      <th>Erlaubte Scopes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Betriebsstätte Arzt</td>
-      <td><code>oid_praxis_arzt</code></td>
-      <td><code>1.2.276.0.76.4.50</code></td>
-      <td><ul><li><code>tif-rx-task-prescribe</code></li><li><code>tif-diga-task-prescribe</code></li></ul></td>
-    </tr>
-    <tr>
-      <td>Zahnarztpraxis</td>
-      <td><code>oid_zahnarztpraxis</code></td>
-      <td><code>1.2.276.0.76.4.51</code></td>
-      <td><ul><li><code>tif-rx-task-prescribe</code></li><li><code>tif-diga-task-prescribe</code></li></ul></td>
-    </tr>
-    <tr>
-      <td>Betriebsstätte Psychotherapeut</td>
-      <td><code>oid_praxis_psychotherapeut</code></td>
-      <td><code>1.2.276.0.76.4.52</code></td>
-      <td><ul><li><code>tif-rx-task-prescribe</code></li><li><code>tif-diga-task-prescribe</code></li></ul></td>
-    </tr>
-    <tr>
-      <td>Krankenhaus</td>
-      <td><code>oid_krankenhaus</code></td>
-      <td><code>1.2.276.0.76.4.53</code></td>
-      <td><ul><li><code>tif-rx-task-prescribe</code></li><li><code>tif-diga-task-prescribe</code></li></ul></td>
-    </tr>
-    <tr>
-      <td>Institution Vorsorge / Reha</td>
-      <td><code>oid_institution-vorsorge-reha</code></td>
-      <td><code>1.2.276.0.76.4.257</code></td>
-      <td><ul><li><code>tif-rx-task-prescribe</code></li><li><code>tif-diga-task-prescribe</code></li></ul></td>
-    </tr>
-    <tr>
-      <td>Öffentliche Apotheke</td>
-      <td><code>oid_oeffentliche_apotheke</code></td>
-      <td><code>1.2.276.0.76.4.54</code></td>
-      <td><ul><li><code>tif-rx-task-dispense</code></li><li><code>tif-rx-communication</code></li><li><code>tif-rx-chargeitem-provide</code></li><li><code>tif-rx-subscription</code></li></ul></td>
-    </tr>
-    <tr>
-      <td>Krankenhausapotheke</td>
-      <td><code>oid_krankenhausapotheke</code></td>
-      <td><code>1.2.276.0.76.4.55</code></td>
-      <td><ul><li><code>tif-rx-task-dispense</code></li><li><code>tif-rx-communication</code></li><li><code>tif-rx-chargeitem-provide</code></li><li><code>tif-rx-subscription</code></li></ul></td>
-    </tr>
-    <tr>
-      <td>Kostenträger</td>
-      <td><code>oid_kostentraeger</code></td>
-      <td><code>1.2.276.0.76.4.59</code></td>
-      <td><ul><li><code>tif-diga-task-dispense</code></li><li><code>tif-diga-communication</code></li><li><code>tif-diga-subscription</code></li></ul></td>
-    </tr>
-    <tr>
-      <td>Versicherter (FdV)</td>
-      <td><code>oid_versicherter</code></td>
-      <td><code>1.2.276.0.76.4.49</code></td>
-      <td><ul><li><code>tif-rx-task-manage</code></li><li><code>tif-rx-communication</code></li><li><code>tif-rx-chargeitem-manage</code></li><li><code>tif-rx-consent-manage</code></li><li><code>tif-rx-eu-access-manage</code></li><li><code>tif-rx-audit</code></li><li><code>tif-rx-notification</code></li><li><code>tif-diga-task-manage</code></li><li><code>tif-diga-communication</code></li><li><code>tif-diga-audit</code></li></ul></td>
-    </tr>
-    <tr>
-      <td>NCPeH-Fachdienst</td>
-      <td><code>oid_ncpeh</code></td>
-      <td><code>1.2.276.0.76.4.292</code></td>
-      <td><ul><li><code>tif-rx-task-ePeDA</code></li></ul></td>
-    </tr>
-    <tr>
-      <td>Betriebsstätte gematik</td>
-      <td><code>oid_bs_gematik</code></td>
-      <td><code>1.2.276.0.76.4.58</code></td>
-      <td><ul><li><code>tif-rx-task-probe</code></li><li><code>tif-diga-task-probe</code></li></ul></td>
-    </tr>
-  </tbody>
-</table>
+| | | | |
+| :--- | :--- | :--- | :--- |
+| Betriebsstätte Arzt | `oid_praxis_arzt` | `1.2.276.0.76.4.50` | * `tif-rx-task-prescribe`
+* `tif-diga-task-prescribe`
+ |
+| Zahnarztpraxis | `oid_zahnarztpraxis` | `1.2.276.0.76.4.51` | * `tif-rx-task-prescribe`
+* `tif-diga-task-prescribe`
+ |
+| Betriebsstätte Psychotherapeut | `oid_praxis_psychotherapeut` | `1.2.276.0.76.4.52` | * `tif-rx-task-prescribe`
+* `tif-diga-task-prescribe`
+ |
+| Krankenhaus | `oid_krankenhaus` | `1.2.276.0.76.4.53` | * `tif-rx-task-prescribe`
+* `tif-diga-task-prescribe`
+ |
+| Institution Vorsorge / Reha | `oid_institution-vorsorge-reha` | `1.2.276.0.76.4.257` | * `tif-rx-task-prescribe`
+* `tif-diga-task-prescribe`
+ |
+| Öffentliche Apotheke | `oid_oeffentliche_apotheke` | `1.2.276.0.76.4.54` | * `tif-rx-task-dispense`
+* `tif-rx-communication`
+* `tif-rx-chargeitem-provide`
+* `tif-rx-subscription`
+ |
+| Krankenhausapotheke | `oid_krankenhausapotheke` | `1.2.276.0.76.4.55` | * `tif-rx-task-dispense`
+* `tif-rx-communication`
+* `tif-rx-chargeitem-provide`
+* `tif-rx-subscription`
+ |
+| Kostenträger | `oid_kostentraeger` | `1.2.276.0.76.4.59` | * `tif-diga-task-dispense`
+* `tif-diga-communication`
+* `tif-diga-subscription`
+ |
+| Versicherter (FdV) | `oid_versicherter` | `1.2.276.0.76.4.49` | * `tif-rx-task-manage`
+* `tif-rx-communication`
+* `tif-rx-chargeitem-manage`
+* `tif-rx-consent-manage`
+* `tif-rx-eu-access-manage`
+* `tif-rx-audit`
+* `tif-rx-notification`
+* `tif-diga-task-manage`
+* `tif-diga-communication`
+* `tif-diga-audit`
+ |
+| NCPeH-Fachdienst | `oid_ncpeh` | `1.2.276.0.76.4.292` | * `tif-rx-task-ePeDA`
+ |
+| Betriebsstätte gematik | `oid_bs_gematik` | `1.2.276.0.76.4.58` | * `tif-rx-task-probe`
+* `tif-diga-task-probe`
+ |
 
----
+-------
 
 ### Referenzen
 
 #### Vollständige Policy-Definition
 
-```yaml
+```
 policies:
 
   # ── Arzneimittel ─────────────────────────────────────────────────────────────
@@ -484,11 +479,12 @@ policies:
       - { oid: "1.2.276.0.76.4.58", description: "oid_bs_gematik" }
     rules:
       - { method: POST, path: "diga/Task/$create" }
+
 ```
 
 #### Vollständige Scope-Liste (token-config)
 
-```json
+```
 {
   "access_token_ttl": 300,
   "refresh_token_ttl": 43200,
@@ -515,9 +511,11 @@ policies:
     "tif-diga-task-probe"
   ]
 }
+
 ```
 
 #### Weiterführende Referenzen
 
-- [gemSpec_ZETA] – Spezifikation des Zero Trust Access-Mechanismus
-- [Nutzung ZETA-Client durch Clientsysteme](./zeta-client.html)
+* [gemSpec_ZETA] – Spezifikation des Zero Trust Access-Mechanismus
+* [Nutzung ZETA-Client durch Clientsysteme](./zeta-client.md)
+

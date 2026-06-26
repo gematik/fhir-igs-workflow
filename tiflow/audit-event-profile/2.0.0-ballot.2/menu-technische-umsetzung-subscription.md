@@ -1,4 +1,4 @@
-# Notifications für Clientsysteme - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# Technische Umsetzung - Notifications für Clientsysteme - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
 
 Implementation Guide
 
@@ -7,9 +7,9 @@ TIFlow - Kernfunktionalitäten
 Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
-* **Notifications für Clientsysteme**
+* **Technische Umsetzung - Notifications für Clientsysteme**
 
-## Notifications für Clientsysteme
+## Technische Umsetzung - Notifications für Clientsysteme
 
 Der Subscription Service wird außerhalb der VAU betrieben.
 

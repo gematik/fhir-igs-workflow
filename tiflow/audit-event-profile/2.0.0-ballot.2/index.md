@@ -1620,10 +1620,28 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "capability-statement-extensions.html"
+        }],
+        "nameUrl" : "capability-statement-extensions.html",
+        "title" : "Konfiguration des TI-Flow-Fachdienst",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "health-check.html"
         }],
         "nameUrl" : "health-check.html",
         "title" : "Health Check",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "datamatrix-code-client.html"
+        }],
+        "nameUrl" : "datamatrix-code-client.html",
+        "title" : "Data Matrix Code",
         "generation" : "markdown"
       },
       {
@@ -1656,10 +1674,46 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-technische-umsetzung-zeta.html"
+        }],
+        "nameUrl" : "menu-technische-umsetzung-zeta.html",
+        "title" : "Technische Umsetzung - Zero Trust Access (ZETA)",
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "zeta-client.html"
+          }],
+          "nameUrl" : "zeta-client.html",
+          "title" : "Nutzung ZETA durch Clientsystme",
+          "generation" : "markdown"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-technische-umsetzung-epa-ms.html"
+        }],
+        "nameUrl" : "menu-technische-umsetzung-epa-ms.html",
+        "title" : "Technische Umsetzung - ePA Medication Service",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-technische-umsetzung-push.html"
+        }],
+        "nameUrl" : "menu-technische-umsetzung-push.html",
+        "title" : "Technische Umsetzung - Push Notification",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "menu-technische-umsetzung-subscription.html"
         }],
         "nameUrl" : "menu-technische-umsetzung-subscription.html",
-        "title" : "Notifications für Clientsysteme",
+        "title" : "Technische Umsetzung - Notifications für Clientsysteme",
         "generation" : "markdown"
       },
       {
@@ -2218,6 +2272,15 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         }],
         "nameUrl" : "license.html",
         "title" : "Apache License",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "requirements.html"
+        }],
+        "nameUrl" : "requirements.html",
+        "title" : "Anforderungslisten",
         "generation" : "markdown"
       }]
     },

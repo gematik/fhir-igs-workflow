@@ -359,6 +359,20 @@ Maps operation outcome codes to the telemetry data status codes
         "code" : "79275",
         "equivalence" : "equivalent"
       }]
+    },
+    {
+      "code" : "TIFLOW_BLOCKED_FEATURE",
+      "target" : [{
+        "code" : "79268",
+        "equivalence" : "equivalent"
+      }]
+    },
+    {
+      "code" : "TIFLOW_BLOCKED_FLOWTYPE",
+      "target" : [{
+        "code" : "79270",
+        "equivalence" : "equivalent"
+      }]
     }]
   },
   {

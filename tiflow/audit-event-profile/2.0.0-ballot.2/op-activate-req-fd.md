@@ -147,6 +147,8 @@ Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Zugriff au
 
 Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und, wenn dieser ungleich "text/plain; charset=utf-8" ist, die Operation mit dem folgenden Fehler:
 
+Sich.techn. Eignung: Produktgutachten
+
 * HTTP-Code: Severity
   * 400 - Bad Request: error
 * HTTP-Code: Code
