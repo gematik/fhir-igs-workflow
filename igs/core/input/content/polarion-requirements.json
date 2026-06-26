@@ -4282,7 +4282,7 @@
             "title": "TI-Flow-Fachdienst - Push Notifications - Pushers - OpenApi_Notification_Fachdienst",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS die API mit den Endpunkten GET /pushers und POST /pushers/set gemäß [OpenAPI_FD] bereitstellen.",
+            "text": "Der TI-Flow-Fachdienst MUSS die API mit den Endpunkten GET /pushers und POST /pushers/set gemäß [OpenAPI_PUSH_FD] bereitstellen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -5818,7 +5818,7 @@
             "title": "TI-Flow-Fachdienst - Nachrichten abrufen - als abgerufen markieren",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Abrufen von Nachrichten über die http-Operation GET auf den Endpunkt /Communication bzw. beim Abruf einer einzelnen Nachricht über /Communication/&lt;id&gt; den Wert des Attributs Communication.received = &lt;aktuelle Systemzeit&gt setzen, wenn dieser Wert zum Zeitpunkt des Abrufs der Nachrichten NULL ist, damit Nutzer eine Filtermöglicheit auf \"neue Nachrichten\" haben.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Abrufen von Nachrichten über die http-Operation GET auf den Endpunkt /Communication bzw. beim Abruf einer einzelnen Nachricht über /Communication/&lt;id&gt; den Wert des Attributs Communication.received = &lt;aktuelle Systemzeit&gt; setzen, wenn dieser Wert zum Zeitpunkt des Abrufs der Nachrichten NULL ist, damit Nutzer eine Filtermöglicheit auf \"neue Nachrichten\" haben.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -7270,7 +7270,7 @@
             "title": "TI-Flow-Fachdienst - ePA - Lokalisierung des ePA-Aktensysteme",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS zur Lokalisierung der ePA-Aktensysteme die durch die im DNS für die übergreifende ePA-Domäne epa4all.de eingestellten Informationen aufrufen.",
+            "text": "Der TI-Flow-Fachdienst MUSS alle Instanzen der ePA-Domäne `epa4all.de` zur Lokalisierung der ePA-Aktensysteme Informationen aufrufen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -8590,7 +8590,7 @@
             "title": "TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Schemavalidierung",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set das Payload gegen das Schema in [OpenAPI_FD] validieren und bei Abweichungen mit dem folgenden Fehler:\n      <table id=\"error-code-json\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Error Code</th>\n            <td>malformedRequest</td>\n        </tr>\n        <tr>\n            <th>Error Details</th>\n            <td>Ungültiger http-Request</td>\n        </tr>\n    </table> \n    abbrechen, damit kein Schadcode und keine \"fachfremden\" Daten in den TI-Flow-Fachdienst hochgeladen werden.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set das Payload gegen das Schema in [OpenAPI_PUSH_FD] validieren und bei Abweichungen mit dem folgenden Fehler:\n <table id=\"error-code-json\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Error Code</th>\n <td>malformedRequest</td>\n </tr>\n <tr>\n <th>Error Details</th>\n <td>Ungültiger http-Request</td>\n </tr>\n </table> \n abbrechen, damit kein Schadcode und keine \"fachfremden\" Daten in den TI-Flow-Fachdienst hochgeladen werden.",
             "conformance": "SHALL",
             "characteristics": [
                 {
