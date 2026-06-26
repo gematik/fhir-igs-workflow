@@ -1,4 +1,4 @@
-Instance: RejectOperation
+Instance: TIFlowRXOPReject
 InstanceOf: OperationDefinition
 Usage: #definition
 Title: "E-Rezept zurückgeben"
@@ -6,7 +6,7 @@ Description: "Lehnt die Ausgabe eines E-Rezepts ab. Die Aufgabe wird in einen ak
 * insert OperationResource(Task, true, false, false, true)
 * code = #reject
 * id = "tiflow-rx-reject-op"
-* name = "TIFlow-RX-OP-Reject"
+* name = "TIFlowRXOPReject"
 
 // in
 * parameter[+]

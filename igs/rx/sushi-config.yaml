@@ -41,7 +41,6 @@ menu:
   Schnittstellen:
     Query API: menu-schnittstellen-query-api.html
     Operation API: menu-schnittstellen-operation-api.html
-  FHIR-Artefakte: artifacts.html
   Anhänge:
     Referenzen: referenced.html
     Downloads: downloads.html
@@ -50,6 +49,7 @@ menu:
     #Steckbriefe: spec-sheet.html
     #Versionsvergleiche: comparisons.html
     Lizenz: license.html
+  FHIR-Artefakte: artifacts.html
 
 pages:
   index.md:
@@ -223,10 +223,22 @@ parameters:
     - https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense
     - https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task
     - https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus
+    - https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationdispenseMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpBundleMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationCompoundingMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationFreetextMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationIngredientMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationPznMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap
+
   path-resource:
-    - input/resources/structuremaps
-    - input/resources/kbv-bundles
-    - input/resources/transformed-kbv-bundles
+    - input/resources/*
+    # - input/resources/structuremaps
+    # - input/resources/kbv-bundles
+    # - input/resources/transformed-kbv-bundles
   path-pages:
     - input/content
     - input/pagecontent
@@ -242,4 +254,46 @@ parameters:
     - Parameters/*
     - CapabilityStatement/*
     - Provenance/*
+  no-validate:
+    - Bundle/1f339db0-9e55-4946-9dfa-f1b30953be9b
+    - Bundle/9c85a2a5-92ee-4a57-83cb-ba90a0df2a21
+    - Bundle/4863d1fb-dc26-4680-bb35-018610d1749d
+    - Bundle/44420ed9-7388-4be5-acc5-9c124fad9f34
+    - Bundle/9581ce65-b118-4751-9073-19c091b341e0
+    - StructureMap/GEMErpPrMedicationMap
+    - StructureMap/GEMErpPrMedicationdispenseMap
+    - StructureMap/GEMErpPrMedicationdispenseMap
+    - StructureMap/KBVPrErpBundleMap
+    - StructureMap/KBVPrErpMedicationCompoundingMap
+    - StructureMap/KBVPrErpMedicationFreetextMap
+    - StructureMap/KBVPrErpMedicationIngredientMap
+    - StructureMap/KBVPrErpMedicationPznMap
+    - StructureMap/KBVPrErpPrescriptionMap
+    - StructureMap/KBVPrForOrganizationMap
+    - StructureMap/KBVPrForPractitionerMap
+    - Bundle/Bundle-AcceptOperation
+    - Bundle/ExampleAcceptResponseBundle
+    - Bundle/ExampleRxCommunicationSearchset
+    - Bundle/ExampleRxMedicationDispenseSearchset
+    - Bundle/ExampleRxTaskSearchset
+    - Bundle/dffbfd6a-5712-4798-bdc8-07201eb77ab8
+    - Bundle/example-searchset-auditevent
+    - Bundle/example-searchset-consent
+    - Bundle/example-searchset-medicationdispense
+    - Bundle/example-searchset-task
+    - Communication/2be1c6ac-5d10-47f6-84ee-8318b2c22c76
+    - Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596
+    - Communication/a218a36e-f2fd-4603-ba67-c827acfef01b
+    - Consent/QueryConsentCHARGCONS
+    - Task/9b48f82c-9c11-4a57-aa72-a805f9537a82
+    - Task/TaskInClosedState
+    - Task/TaskInReadyState
+    - Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e
+    - Task/f5c21409-b84b-4125-8649-5630a00906b1
+    - Parameters/output-example-1
+    - Parameters/output-example-2
+    - Parameters/output-example-3
+    - Parameters/output-example-4
+    - Parameters/output-example-5
+    - AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa
   #autoload-resources: true

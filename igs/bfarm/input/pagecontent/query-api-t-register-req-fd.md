@@ -28,7 +28,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 <requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A2" title="TI-Flow-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS vor dem Zugriff auf den BfArM Webdienst prüfen, ob der zuletzt bezogene AccessToken noch gültig ist und im Falle der Ungültigkeit einen neuen AccessToken über den /ords/rezepte/oauth/token Endpunkt am BfArM Webdienst beziehen.
 </requirement>

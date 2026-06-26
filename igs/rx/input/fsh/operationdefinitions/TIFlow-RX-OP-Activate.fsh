@@ -1,4 +1,4 @@
-Instance: TIFlow-RX-OP-Activate
+Instance: TIFlowRXOPActivate
 InstanceOf: OperationDefinition
 Usage: #definition
 Title: "E-Rezept aktivieren"
@@ -6,7 +6,23 @@ Description: "Diese Operation aktiviert die erstellte Aufgabe für das Rezept. D
 * insert OperationResource(Task, true, false, false, true)
 * code = #activate
 * id = "tiflow-rx-activate-op"
-* name = "TIFlow-RX-OP-Activate"
+* name = "TIFlowRXOPActivate"
 
 * inputProfile = Canonical(GEM_ERP_PR_PAR_ActivateOperation_Input)
 * outputProfile = Canonical(GEM_ERP_PR_PAR_ActivateOperation_Output)
+
+// in
+* parameter[+]
+  * name = #ePrescription
+  * use = #in
+  * min = 1
+  * max = "1"
+  * type = #Binary
+
+// out
+* parameter[+]
+  * name = #return
+  * use = #out
+  * min = 1
+  * max = "1"
+  * type = #Task

@@ -139,7 +139,7 @@ Die Anforderungen zum Prüfen des PoPP-Token sind im Kapitel "HTTP-Operation GET
       abbrechen.
 </requirement>
 
-Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung von A_23399-* im Rahmen des Änderungsmanagement für Spezifikationen.
+Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung der obigen Anforderung im Rahmen des Änderungsmanagement für Spezifikationen.
 
 <!-- A_22431-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A100" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - PoPP - PoPP - Filter KVNR" version="0">
