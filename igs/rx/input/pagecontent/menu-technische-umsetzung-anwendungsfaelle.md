@@ -138,6 +138,26 @@ Jede Teilverordnung einer Mehrfachverordnung wird im TI-Flow-Fachdienst mit eine
 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
+<!-- 169 - E-Rezept erzeugen -->
+{% assign use_case = use_cases | where: "title", "E-Rezept für Workflow 169 durch Verordnenden erzeugen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- 169 - E-Rezept übermitteln -->
+{% assign use_case = use_cases | where: "title", "E-Rezept-Token an Apotheker übermitteln" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
 #### Versicherter
 
 <!-- UC 3.1 - E-Rezepte durch Versicherten abrufen -->
@@ -182,6 +202,16 @@ Jede Teilverordnung einer Mehrfachverordnung wird im TI-Flow-Fachdienst mit eine
 
 <!-- UC 3.8 - Nachricht durch Versicherten löschen -->
 {% assign use_case = use_cases | where: "title", "UC 3.8 - Nachricht durch Versicherten löschen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- UC 3.9 - Dispensierinformationen durch Versicherten abrufen -->
+{% assign use_case = use_cases | where: "title", "UC 3.9 - Dispensierinformationen durch Versicherten abrufen" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
 ##### {{ use_case.title }}

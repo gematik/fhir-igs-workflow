@@ -620,7 +620,7 @@ def structuremap_to_markdown(json_data):
     )
 
     mappings = extract_relevant_rules(
-        group['rule'],
+        group.get('rule', []),
         keep_copy_rows=is_bundle_to_parameters,
         skip_create_docs=is_bundle_to_parameters,
     )
