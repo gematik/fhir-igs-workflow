@@ -1559,14 +1559,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-subscription.html#IG-TIFLOW-CORE-A163"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-subscription-req-fd.html#IG-TIFLOW-CORE-A163"
         },
         {
             "key": "IG-TIFLOW-CORE-A164",
             "title": "TI-Flow-Fachdienst - Subscription Service - Prüfung Bearer-Token",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS an der Webschnittstelle des Subscription Service beim Verbindungsaufbau prüfen, dass der Client einen zeitlich und kryptographisch gültigen Bearer-Token der Schnittstelle GET /Subscription übermittelt und bei nicht-erfolgreicher Prüfung die Verbindung mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_INVALID_ACCESS_TOKEN</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Invalid access token provided</td>\n        </tr>\n    </table>\n    ablehnen.",
+            "text": "Der TI-Flow-Fachdienst MUSS an der Webschnittstelle des Subscription Service beim Verbindungsaufbau prüfen, dass der Client einen zeitlich und kryptographisch gültigen Bearer-Token der Schnittstelle POST /Subscription übermittelt und bei nicht-erfolgreicher Prüfung die Verbindung mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_INVALID_ACCESS_TOKEN</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Invalid access token provided</td>\n </tr>\n </table>\n ablehnen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -1583,14 +1583,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-subscription.html#IG-TIFLOW-CORE-A164"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-subscription-req-fd.html#IG-TIFLOW-CORE-A164"
         },
         {
             "key": "IG-TIFLOW-CORE-A165",
             "title": "TI-Flow-Fachdienst - Subscription Service - Upgrade",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS an der Webschnittstelle des Subscription Service beim Verbindungsaufbau ein Upgrade durchführen.",
+            "text": "Der TI-Flow-Fachdienst MUSS an der Webschnittstelle des Subscription Service auf einen WebSocket-Upgrade-Request eines berechtigten Clients mit dem HTTP-Statuscode 101 Switching Protocols antworten.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -1607,7 +1607,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-subscription.html#IG-TIFLOW-CORE-A165"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-subscription-req-fd.html#IG-TIFLOW-CORE-A165"
         },
         {
             "key": "IG-TIFLOW-CORE-A166",
@@ -1631,7 +1631,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-subscription.html#IG-TIFLOW-CORE-A166"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-subscription-req-fd.html#IG-TIFLOW-CORE-A166"
         },
         {
             "key": "IG-TIFLOW-CORE-A167",
@@ -1655,7 +1655,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-subscription.html#IG-TIFLOW-CORE-A167"
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-subscription-req-fd.html#IG-TIFLOW-CORE-A167"
         },
         {
             "key": "IG-TIFLOW-CORE-A168",
@@ -1920,30 +1920,6 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-CORE-A178"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A179",
-            "title": "TI-Flow-Fachdienst - Task aktivieren - Mimetype Signatur",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und, wenn dieser ungleich \"text/plain; charset=utf-8\" ist, die Operation mit dem folgenden Fehler:\n \n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_SIGNATURE_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT27",
-                            "name": "Sich.techn. Eignung: Produktgutachten"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/op-activate-req-fd.html#IG-TIFLOW-CORE-A179"
         },
         {
             "key": "IG-TIFLOW-CORE-A180",
@@ -5910,30 +5886,6 @@
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-communication-req-fd.html#IG-TIFLOW-CORE-A321"
         },
         {
-            "key": "IG-TIFLOW-CORE-A322",
-            "title": "TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_Reply",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in \"Tabelle: Nachricht als Apotheke an einen Versicherten schicken\" überprüfen und bei negativem Prüfergebnis, die Operation mit dem folgenden Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n    <tr>\n        <th>HTTP-Code</th>\n        <td>400 - Bad Request</td>\n    </tr>\n    <tr>\n        <th>Severity</th>\n        <td>error</td>\n    </tr>\n    <tr>\n        <th>Code</th>\n        <td>invalid</td>\n    </tr>\n    <tr>\n        <th>Details Code</th>\n        <td>SVC_VALIDATION_FAILED</td>\n    </tr>\n    <tr>\n        <th>Details Text</th>\n        <td>FHIR Profile Validation Failed</td>\n    </tr>\n    </table> \n    abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-communication-req-fd.html#IG-TIFLOW-CORE-A322"
-        },
-        {
             "key": "IG-TIFLOW-CORE-A323",
             "title": "TI-Flow-Fachdienst - Nachricht einstellen - Absender und Sendedatum",
             "version": 0,
@@ -6490,7 +6442,7 @@
             "title": "TI-Flow-Fachdienst - Subscription registrieren - Pseudonym der Telematik-ID",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS das Pseudonym innerhalb der VAU mittels eines 128-Bit-AES-CMAC-Schlüssels erstellen und hexadezimal kodieren (32 Byte lang) (vgl gemSpec_Krypt#A_20163).",
+            "text": "Der TI-Flow-Fachdienst MUSS das Pseudonym mittels eines 128-Bit-AES-CMAC-Schlüssels erstellen und hexadezimal kodieren (32 Byte lang).",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -7078,7 +7030,7 @@
             "title": "E-Rezept-FdV: Push Notifications - Instanz registrieren - OpenAPI",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall \"Push Notifications\" umsetzt, für die Registrierung und Verwaltung der FdV-Instanzen am TI-Flow-Fachdienst die Operationen gemäß [OpenAPI_FD] verwenden.",
+            "text": "Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall \"Push Notifications\" umsetzt, für die Registrierung und Verwaltung der FdV-Instanzen am TI-Flow-Fachdienst die Operationen gemäß [OpenAPI_PUSH_FD] verwenden.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -7270,7 +7222,7 @@
             "title": "TI-Flow-Fachdienst - ePA - Lokalisierung des ePA-Aktensysteme",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS alle Instanzen der ePA-Domäne `epa4all.de` zur Lokalisierung der ePA-Aktensysteme Informationen aufrufen.",
+            "text": "Der TI-Flow-Fachdienst MUSS in der Lage sein, alle Instanzen der ePA-Aktensysteme unterhalb der Domäne `epa4all.de` zur Lokalisierung zu adressieren.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -9316,6 +9268,102 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/capability-statement-extensions.html#IG-TIFLOW-CORE-A452"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A453",
+            "title": "CS Kostenträger: Nachricht löschen - Nachricht auswählen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das CS Kostenträger MUSS es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem Fachdienst auszuwählen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "CS_E-Rezept_KTR",
+                        "id": "productType136",
+                        "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-communication-req-ktr.html#IG-TIFLOW-CORE-A453"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A454",
+            "title": "CS Kostenträger: Nachricht löschen - Bestätigung einholen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das CS Kostenträger MUSS vom Nutzer eine Bestätigung einholen, dass die ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "CS_E-Rezept_KTR",
+                        "id": "productType136",
+                        "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-communication-req-ktr.html#IG-TIFLOW-CORE-A454"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A455",
+            "title": "PS abgebende LEI: Nachricht löschen - Löschrequest",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem Fachdienst auszuwählen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "PS_E-Rezept_abgebend",
+                        "id": "productType98",
+                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-communication-req-avs.html#IG-TIFLOW-CORE-A455"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A456",
+            "title": "PS abgebende LEI: Nachricht löschen - Löschrequest",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass die ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "PS_E-Rezept_abgebend",
+                        "id": "productType98",
+                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-communication-req-avs.html#IG-TIFLOW-CORE-A456"
         },
         {
             "key": "IG-TIFLOW-CORE-A46",
