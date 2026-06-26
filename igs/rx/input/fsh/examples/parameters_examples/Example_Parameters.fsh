@@ -16,4 +16,4 @@ Description: "Beispiel für Eingabeparameter der Activate-Operation"
 * id = "ExampleRxActivateOperationRequestParameters"
 * parameter[+].name = "ePrescription"
 * parameter[=].valueAttachment.contentType = #application/pkcs7-mime
-* parameter[=].valueAttachment.data = "JVBERi0xLjUNJeLjz9MNCjEw"
+* parameter[=].valueAttachment.data = "c29tZSBkYXRh"
