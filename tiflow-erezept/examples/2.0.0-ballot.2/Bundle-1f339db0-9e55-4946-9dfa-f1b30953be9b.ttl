@@ -1,0 +1,504 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Bundle/1f339db0-9e55-4946-9dfa-f1b30953be9b> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "1f339db0-9e55-4946-9dfa-f1b30953be9b"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle|1.3" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle|1.3>
+     ]
+  ] ;
+  fhir:Bundle.identifier [
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+     fhir:Identifier.value [ fhir:value "160.100.000.000.037.28" ]
+  ] ;
+  fhir:Bundle.type [ fhir:value "document"] ;
+  fhir:Bundle.timestamp [ fhir:value "2024-05-20T08:30:00+00:00"^^xsd:dateTime] ;
+  fhir:Bundle.entry [
+     fhir:index 0 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "http://pvs.praxis.local/fhir/Composition/88c4029f-dfab-415a-b6de-64fd1a4058e6" ] ;
+     fhir:Bundle.entry.resource <http://pvs.praxis.local/fhir/Composition/88c4029f-dfab-415a-b6de-64fd1a4058e6>
+  ], [
+     fhir:index 1 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "http://pvs.praxis.local/fhir/MedicationRequest/43c2b7ae-ad11-4387-910a-e6b7a3c38d4f" ] ;
+     fhir:Bundle.entry.resource <http://pvs.praxis.local/fhir/MedicationRequest/43c2b7ae-ad11-4387-910a-e6b7a3c38d4f>
+  ], [
+     fhir:index 2 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "http://pvs.praxis.local/fhir/Medication/5ff1bd22-ce14-484e-be56-d2ba4adeac31" ] ;
+     fhir:Bundle.entry.resource <http://pvs.praxis.local/fhir/Medication/5ff1bd22-ce14-484e-be56-d2ba4adeac31>
+  ], [
+     fhir:index 3 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "http://pvs.praxis.local/fhir/Patient/93866fdc-3e50-4902-a7e9-891b54737b5e" ] ;
+     fhir:Bundle.entry.resource <http://pvs.praxis.local/fhir/Patient/93866fdc-3e50-4902-a7e9-891b54737b5e>
+  ], [
+     fhir:index 4 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "http://pvs.praxis.local/fhir/Practitioner/d6f3b55d-3095-4655-96dc-da3bec21271c" ] ;
+     fhir:Bundle.entry.resource <http://pvs.praxis.local/fhir/Practitioner/d6f3b55d-3095-4655-96dc-da3bec21271c>
+  ], [
+     fhir:index 5 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "http://pvs.praxis.local/fhir/Organization/2a555cd3-0543-483c-88b3-f68647620962" ] ;
+     fhir:Bundle.entry.resource <http://pvs.praxis.local/fhir/Organization/2a555cd3-0543-483c-88b3-f68647620962>
+  ], [
+     fhir:index 6 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "http://pvs.praxis.local/fhir/Coverage/1b89236c-ab14-4e92-937e-5af0b59d0cd4" ] ;
+     fhir:Bundle.entry.resource <http://pvs.praxis.local/fhir/Coverage/1b89236c-ab14-4e92-937e-5af0b59d0cd4>
+  ] .
+
+<http://pvs.praxis.local/fhir/Composition/88c4029f-dfab-415a-b6de-64fd1a4058e6> a fhir:Composition ;
+  fhir:Resource.id [ fhir:value "88c4029f-dfab-415a-b6de-64fd1a4058e6"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Composition|1.3" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Composition|1.3>
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis" ] ;
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN" ] ;
+       fhir:Coding.code [ fhir:value "00" ]
+     ]
+  ] ;
+  fhir:Composition.status [ fhir:value "final"] ;
+  fhir:Composition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_FORMULAR_ART" ] ;
+       fhir:Coding.code [ fhir:value "e16A" ]
+     ]
+  ] ;
+  fhir:Composition.subject [
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/Patient/93866fdc-3e50-4902-a7e9-891b54737b5e> ;
+     fhir:Reference.reference [ fhir:value "Patient/93866fdc-3e50-4902-a7e9-891b54737b5e" ]
+  ] ;
+  fhir:Composition.date [ fhir:value "2024-05-20T08:00:00Z"^^xsd:dateTime] ;
+  fhir:Composition.author [
+     fhir:index 0 ;
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/Practitioner/d6f3b55d-3095-4655-96dc-da3bec21271c> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/d6f3b55d-3095-4655-96dc-da3bec21271c" ] ;
+     fhir:Reference.type [ fhir:value "Practitioner" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Reference.type [ fhir:value "Device" ] ;
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer" ] ;
+       fhir:Identifier.value [ fhir:value "Y/400/2107/36/999" ]
+     ]
+  ] ;
+  fhir:Composition.title [ fhir:value "elektronische Arzneimittelverordnung"] ;
+  fhir:Composition.custodian [
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/Organization/2a555cd3-0543-483c-88b3-f68647620962> ;
+     fhir:Reference.reference [ fhir:value "Organization/2a555cd3-0543-483c-88b3-f68647620962" ]
+  ] ;
+  fhir:Composition.section [
+     fhir:index 0 ;
+     fhir:Composition.section.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Section_Type" ] ;
+         fhir:Coding.code [ fhir:value "Prescription" ]
+       ]
+     ] ;
+     fhir:Composition.section.entry [
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/tiflow-erezept/MedicationRequest/43c2b7ae-ad11-4387-910a-e6b7a3c38d4f> ;
+       fhir:Reference.reference [ fhir:value "MedicationRequest/43c2b7ae-ad11-4387-910a-e6b7a3c38d4f" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Composition.section.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Section_Type" ] ;
+         fhir:Coding.code [ fhir:value "Coverage" ]
+       ]
+     ] ;
+     fhir:Composition.section.entry [
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/tiflow-erezept/Coverage/1b89236c-ab14-4e92-937e-5af0b59d0cd4> ;
+       fhir:Reference.reference [ fhir:value "Coverage/1b89236c-ab14-4e92-937e-5af0b59d0cd4" ]
+     ]
+  ] .
+
+<http://pvs.praxis.local/fhir/MedicationRequest/43c2b7ae-ad11-4387-910a-e6b7a3c38d4f> a fhir:MedicationRequest ;
+  fhir:Resource.id [ fhir:value "43c2b7ae-ad11-4387-910a-e6b7a3c38d4f"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription|1.3" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Prescription|1.3>
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment" ] ;
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_StatusCoPayment" ] ;
+       fhir:Coding.code [ fhir:value "0" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee" ] ;
+     fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_SER" ] ;
+     fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 3 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "Kennzeichen" ] ;
+       fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+     ] ;
+     fhir:Extension.url [ fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Multiple_Prescription" ]
+  ] ;
+  fhir:MedicationRequest.status [ fhir:value "active"] ;
+  fhir:MedicationRequest.intent [ fhir:value "order"] ;
+  fhir:MedicationRequest.medicationReference [
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/Medication/5ff1bd22-ce14-484e-be56-d2ba4adeac31> ;
+     fhir:Reference.reference [ fhir:value "Medication/5ff1bd22-ce14-484e-be56-d2ba4adeac31" ]
+  ] ;
+  fhir:MedicationRequest.subject [
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/Patient/93866fdc-3e50-4902-a7e9-891b54737b5e> ;
+     fhir:Reference.reference [ fhir:value "Patient/93866fdc-3e50-4902-a7e9-891b54737b5e" ]
+  ] ;
+  fhir:MedicationRequest.authoredOn [ fhir:value "2024-05-20"^^xsd:date] ;
+  fhir:MedicationRequest.requester [
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/Practitioner/d6f3b55d-3095-4655-96dc-da3bec21271c> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/d6f3b55d-3095-4655-96dc-da3bec21271c" ]
+  ] ;
+  fhir:MedicationRequest.insurance [
+     fhir:index 0 ;
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/Coverage/1b89236c-ab14-4e92-937e-5af0b59d0cd4> ;
+     fhir:Reference.reference [ fhir:value "Coverage/1b89236c-ab14-4e92-937e-5af0b59d0cd4" ]
+  ] ;
+  fhir:MedicationRequest.dispenseRequest [
+     fhir:MedicationRequest.dispenseRequest.quantity [
+       fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "Packung" ]
+     ]
+  ] ;
+  fhir:MedicationRequest.substitution [
+     fhir:MedicationRequest.substitution.allowedBoolean [ fhir:value "true"^^xsd:boolean ]
+  ] .
+
+<http://pvs.praxis.local/fhir/Medication/5ff1bd22-ce14-484e-be56-d2ba4adeac31> a fhir:Medication ;
+  fhir:Resource.id [ fhir:value "5ff1bd22-ce14-484e-be56-d2ba4adeac31"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.3" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN|1.3>
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type" ] ;
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a sct:763158003 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000274103/version/20240515" ] ;
+         fhir:Coding.code [ fhir:value "763158003" ] ;
+         fhir:Coding.display [ fhir:value "Medicinal product (product)" ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category" ] ;
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category" ] ;
+       fhir:Coding.code [ fhir:value "00" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine" ] ;
+     fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 3 ;
+     fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/normgroesse" ] ;
+     fhir:Extension.valueCode [ fhir:value "N1" ]
+  ] ;
+  fhir:Medication.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/ifa/pzn" ] ;
+       fhir:Coding.code [ fhir:value "07765007" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "NEUPRO 8MG/24H PFT 7 ST" ]
+  ] ;
+  fhir:Medication.form [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM" ] ;
+       fhir:Coding.code [ fhir:value "PFT" ]
+     ]
+  ] ;
+  fhir:Medication.ingredient [
+     fhir:index 0 ;
+     fhir:Medication.ingredient.itemCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Rotigotin" ]
+     ] ;
+     fhir:Medication.ingredient.strength [
+       fhir:Ratio.numerator [
+         fhir:Quantity.value [ fhir:value "8"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "mg/24 h" ]
+       ] ;
+       fhir:Ratio.denominator [
+         fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "Stück" ]
+       ]
+     ]
+  ] .
+
+<http://pvs.praxis.local/fhir/Patient/93866fdc-3e50-4902-a7e9-891b54737b5e> a fhir:Patient ;
+  fhir:Resource.id [ fhir:value "93866fdc-3e50-4902-a7e9-891b54737b5e"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2>
+     ]
+  ] ;
+  fhir:Patient.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/identifier-type-de-basis" ] ;
+         fhir:Coding.code [ fhir:value "KVZ10" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+     fhir:Identifier.value [ fhir:value "K220635158" ]
+  ] ;
+  fhir:Patient.name [
+     fhir:index 0 ;
+     fhir:HumanName.use [ fhir:value "official" ] ;
+     fhir:HumanName.family [
+       fhir:value "Königsstein" ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/humanname-own-name" ] ;
+         fhir:Extension.valueString [ fhir:value "Königsstein" ]
+       ]
+     ] ;
+     fhir:HumanName.given [
+       fhir:value "Ludger" ;
+       fhir:index 0
+     ]
+  ] ;
+  fhir:Patient.birthDate [ fhir:value "1935-06-22"^^xsd:date] ;
+  fhir:Patient.address [
+     fhir:index 0 ;
+     fhir:Address.type [ fhir:value "both" ] ;
+     fhir:Address.line [
+       fhir:value "Blumenweg" ;
+       fhir:index 0 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName" ] ;
+         fhir:Extension.valueString [ fhir:value "Blumenweg" ]
+       ]
+     ] ;
+     fhir:Address.city [ fhir:value "Esens" ] ;
+     fhir:Address.postalCode [ fhir:value "26427" ] ;
+     fhir:Address.country [ fhir:value "D" ]
+  ] .
+
+<http://pvs.praxis.local/fhir/Practitioner/d6f3b55d-3095-4655-96dc-da3bec21271c> a fhir:Practitioner ;
+  fhir:Resource.id [ fhir:value "d6f3b55d-3095-4655-96dc-da3bec21271c"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner|1.2" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner|1.2>
+     ]
+  ] ;
+  fhir:Practitioner.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "LANR" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR" ] ;
+     fhir:Identifier.value [ fhir:value "754236701" ]
+  ] ;
+  fhir:Practitioner.name [
+     fhir:index 0 ;
+     fhir:HumanName.use [ fhir:value "official" ] ;
+     fhir:HumanName.family [
+       fhir:value "Schulz" ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/humanname-own-name" ] ;
+         fhir:Extension.valueString [ fhir:value "Schulz" ]
+       ]
+     ] ;
+     fhir:HumanName.given [
+       fhir:value "Ben" ;
+       fhir:index 0
+     ]
+  ] ;
+  fhir:Practitioner.qualification [
+     fhir:index 0 ;
+     fhir:Practitioner.qualification.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type" ] ;
+         fhir:Coding.code [ fhir:value "00" ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Practitioner.qualification.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung" ] ;
+         fhir:Coding.code [ fhir:value "Berufsbezeichnung" ]
+       ] ;
+       fhir:CodeableConcept.text [ fhir:value "Facharzt für Allgemeinmedizin" ]
+     ]
+  ] .
+
+<http://pvs.praxis.local/fhir/Organization/2a555cd3-0543-483c-88b3-f68647620962> a fhir:Organization ;
+  fhir:Resource.id [ fhir:value "2a555cd3-0543-483c-88b3-f68647620962"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.2" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.2>
+     ]
+  ] ;
+  fhir:Organization.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "BSNR" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR" ] ;
+     fhir:Identifier.value [ fhir:value "724444400" ]
+  ] ;
+  fhir:Organization.name [ fhir:value "Hausarztpraxis"] ;
+  fhir:Organization.telecom [
+     fhir:index 0 ;
+     fhir:ContactPoint.system [ fhir:value "phone" ] ;
+     fhir:ContactPoint.value [ fhir:value "030321654987" ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactPoint.system [ fhir:value "email" ] ;
+     fhir:ContactPoint.value [ fhir:value "hausarztpraxis@e-mail.de" ]
+  ] ;
+  fhir:Organization.address [
+     fhir:index 0 ;
+     fhir:Address.type [ fhir:value "both" ] ;
+     fhir:Address.line [
+       fhir:value "Herbert-Lewin-Platz 2" ;
+       fhir:index 0 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber" ] ;
+         fhir:Extension.valueString [ fhir:value "2" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName" ] ;
+         fhir:Extension.valueString [ fhir:value "Herbert-Lewin-Platz" ]
+       ]
+     ], [
+       fhir:value "Erdgeschoss" ;
+       fhir:index 1 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator" ] ;
+         fhir:Extension.valueString [ fhir:value "Erdgeschoss" ]
+       ]
+     ] ;
+     fhir:Address.city [ fhir:value "Berlin" ] ;
+     fhir:Address.postalCode [ fhir:value "10623" ] ;
+     fhir:Address.country [ fhir:value "D" ]
+  ] .
+
+<http://pvs.praxis.local/fhir/Coverage/1b89236c-ab14-4e92-937e-5af0b59d0cd4> a fhir:Coverage ;
+  fhir:Resource.id [ fhir:value "1b89236c-ab14-4e92-937e-5af0b59d0cd4"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage|1.2" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage|1.2>
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe" ] ;
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE" ] ;
+       fhir:Coding.code [ fhir:value "00" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen" ] ;
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DMP" ] ;
+       fhir:Coding.code [ fhir:value "05" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/gkv/wop" ] ;
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP" ] ;
+       fhir:Coding.code [ fhir:value "17" ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/gkv/versichertenart" ] ;
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS" ] ;
+       fhir:Coding.code [ fhir:value "5" ]
+     ]
+  ] ;
+  fhir:Coverage.status [ fhir:value "active"] ;
+  fhir:Coverage.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/versicherungsart-de-basis" ] ;
+       fhir:Coding.code [ fhir:value "GKV" ]
+     ]
+  ] ;
+  fhir:Coverage.beneficiary [
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/Patient/93866fdc-3e50-4902-a7e9-891b54737b5e> ;
+     fhir:Reference.reference [ fhir:value "Patient/93866fdc-3e50-4902-a7e9-891b54737b5e" ]
+  ] ;
+  fhir:Coverage.payor [
+     fhir:index 0 ;
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/arge-ik/iknr" ] ;
+       fhir:Identifier.value [ fhir:value "109719018" ]
+     ] ;
+     fhir:Reference.display [ fhir:value "AOK Nordost" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Bundle/1f339db0-9e55-4946-9dfa-f1b30953be9b.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

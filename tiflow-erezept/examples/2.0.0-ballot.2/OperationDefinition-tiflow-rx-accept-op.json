@@ -1,0 +1,50 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "tiflow-rx-accept-op",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition tiflow-rx-accept-op</b></p><a name=\"tiflow-rx-accept-op\"> </a><a name=\"hctiflow-rx-accept-op\"> </a><p>URL: [base]/Task/[id]/$accept</p><p>Output parameters Profile:<a href=\"StructureDefinition-GEM-ERP-PR-PAR-Accept-Operation-Output.html\">GEM ERP PR AcceptOperation Output</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>ac</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>Der Secret-Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-accept-op",
+  "version" : "2.0.0-ballot.2",
+  "name" : "TIFlow-RX-OP-Accept",
+  "title" : "E-Rezept abrufen",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2028-04-01",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "affectsState" : true,
+  "code" : "accept",
+  "resource" : ["Task"],
+  "system" : false,
+  "type" : false,
+  "instance" : true,
+  "outputProfile" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Accept-Operation-Output",
+  "parameter" : [{
+    "name" : "ac",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der Secret-Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen.",
+    "type" : "string"
+  }]
+}

@@ -1,0 +1,233 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160> a fhir:StructureDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ti-flow-feature-wf160"] ;
+  fhir:StructureDefinition.url [ fhir:value "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160"] ;
+  fhir:StructureDefinition.version [ fhir:value "2.0.0-ballot.2"] ;
+  fhir:StructureDefinition.name [ fhir:value "TIFlowFeatureWF160"] ;
+  fhir:StructureDefinition.title [ fhir:value "Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel"] ;
+  fhir:StructureDefinition.status [ fhir:value "active"] ;
+  fhir:StructureDefinition.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:StructureDefinition.date [ fhir:value "2028-04-01"^^xsd:date] ;
+  fhir:StructureDefinition.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:StructureDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "erp-umsetzung@gematik.de" ]
+     ]
+  ] ;
+  fhir:StructureDefinition.description [ fhir:value "Featurebeschreibung für die Verordnung von Apothekenpflichtigen Arzneimitteln"] ;
+  fhir:StructureDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:StructureDefinition.copyright [ fhir:value "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."] ;
+  fhir:StructureDefinition.fhirVersion [ fhir:value "4.0.1"] ;
+  fhir:StructureDefinition.kind [ fhir:value "logical"] ;
+  fhir:StructureDefinition.abstract [ fhir:value "false"^^xsd:boolean] ;
+  fhir:StructureDefinition.type [ fhir:value "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160"] ;
+  fhir:StructureDefinition.baseDefinition [
+     fhir:value "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition" ;
+     fhir:link <https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition>
+  ] ;
+  fhir:StructureDefinition.derivation [ fhir:value "specialization"] ;
+  fhir:StructureDefinition.snapshot [
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version" ] ;
+       fhir:Extension.valueString [ fhir:value "2.0.0-ballot.2" ]
+     ] ;
+     fhir:StructureDefinition.snapshot.element [
+       fhir:index 0 ;
+       fhir:Element.id [ fhir:value "ti-flow-feature-wf160" ] ;
+       fhir:ElementDefinition.path [ fhir:value "ti-flow-feature-wf160" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Featurebeschreibung für die Verordnung von Apothekenpflichtigen Arzneimitteln" ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "*" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "Base" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ] ;
+       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.id [ fhir:value "ti-flow-feature-wf160.url" ] ;
+       fhir:ElementDefinition.path [ fhir:value "ti-flow-feature-wf160.url" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Canonical-URL des Features" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Canonical-URL des Features" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "ti-feature-definition.url" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "uri" ]
+       ] ;
+       fhir:ElementDefinition.patternUri [ fhir:value "https://gematik.de/fhir/tiflow/FeatureDefinition/WF160" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.id [ fhir:value "ti-flow-feature-wf160.name" ] ;
+       fhir:ElementDefinition.path [ fhir:value "ti-flow-feature-wf160.name" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Maschinell verarbeitbarer Name" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Maschinell verarbeitbarer Name" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "ti-feature-definition.name" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "string" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:Element.id [ fhir:value "ti-flow-feature-wf160.title" ] ;
+       fhir:ElementDefinition.path [ fhir:value "ti-flow-feature-wf160.title" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Menschenlesbarer Titel" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Menschenlesbarer Titel" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "ti-feature-definition.title" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "string" ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.id [ fhir:value "ti-flow-feature-wf160.status" ] ;
+       fhir:ElementDefinition.path [ fhir:value "ti-flow-feature-wf160.status" ] ;
+       fhir:ElementDefinition.short [ fhir:value "draft | active | retired" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "draft | active | retired" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "ti-feature-definition.status" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ]
+       ] ;
+       fhir:ElementDefinition.patternCode [ fhir:value "active" ]
+     ], [
+       fhir:index 5 ;
+       fhir:Element.id [ fhir:value "ti-flow-feature-wf160.description" ] ;
+       fhir:ElementDefinition.path [ fhir:value "ti-flow-feature-wf160.description" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Fachliche Beschreibung" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Fachliche Beschreibung" ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "ti-feature-definition.description" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "markdown" ]
+       ] ;
+       fhir:ElementDefinition.patternMarkdown [ fhir:value "Dieses Feature deklariert, ob der TI-Flow-Fachdienst den `Flowtype für Apothekenpflichtige Arzneimittel` unterstützt und aktuell aktiv ist.\n\n**Wert `true`**: Der Flowtype ist aktiviert, alle Operationen und Abfragen nach Spezifikation sind erlaubt und dürfen durchgeführt werden.\n\n**Wert `false`**: Die Operation $create gestattet keine Erstellung von Tasks des betreffenden Flowtypes\nAlle FHIR-Operationen auf dem RessourceType \"Task\" des betreffenden Flowtypes werden mit dem entsprechendem Fehler abgebrochen\nAlle FHIR-Operationen auf System Ebene, durch eine andere oid als \"oid_versicherter\", die Informationen zu einem Task des betreffenden Flowtypes herausgeben oder manipulieren werden mit entsprechendem Fehler abgebrochen\nDer Aufruf GET /Task auf Tasks des betreffenden Flowtypes durch eine andere oid als \"oid_versicherter\" wird mit entsprechendem Fehler abgebrochen" ]
+     ], [
+       fhir:index 6 ;
+       fhir:Element.id [ fhir:value "ti-flow-feature-wf160.valueType" ] ;
+       fhir:ElementDefinition.path [ fhir:value "ti-flow-feature-wf160.valueType" ] ;
+       fhir:ElementDefinition.short [ fhir:value "boolean | code | Coding — Typ des value-Felds" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "boolean | code | Coding — Typ des value-Felds" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "ti-feature-definition.valueType" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ]
+       ] ;
+       fhir:ElementDefinition.patternCode [ fhir:value "boolean" ]
+     ], [
+       fhir:index 7 ;
+       fhir:Element.id [ fhir:value "ti-flow-feature-wf160.context" ] ;
+       fhir:ElementDefinition.path [ fhir:value "ti-flow-feature-wf160.context" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Element-Kontexte im CapabilityStatement" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Element-Kontexte im CapabilityStatement" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "*" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "ti-feature-definition.context" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "uri" ]
+       ]
+     ]
+  ] ;
+  fhir:StructureDefinition.differential [
+     fhir:StructureDefinition.differential.element [
+       fhir:index 0 ;
+       fhir:Element.id [ fhir:value "ti-flow-feature-wf160" ] ;
+       fhir:ElementDefinition.path [ fhir:value "ti-flow-feature-wf160" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Featurebeschreibung für die Verordnung von Apothekenpflichtigen Arzneimitteln" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.id [ fhir:value "ti-flow-feature-wf160.url" ] ;
+       fhir:ElementDefinition.path [ fhir:value "ti-flow-feature-wf160.url" ] ;
+       fhir:ElementDefinition.patternUri [ fhir:value "https://gematik.de/fhir/tiflow/FeatureDefinition/WF160" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.id [ fhir:value "ti-flow-feature-wf160.status" ] ;
+       fhir:ElementDefinition.path [ fhir:value "ti-flow-feature-wf160.status" ] ;
+       fhir:ElementDefinition.patternCode [ fhir:value "active" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Element.id [ fhir:value "ti-flow-feature-wf160.description" ] ;
+       fhir:ElementDefinition.path [ fhir:value "ti-flow-feature-wf160.description" ] ;
+       fhir:ElementDefinition.patternMarkdown [ fhir:value "Dieses Feature deklariert, ob der TI-Flow-Fachdienst den `Flowtype für Apothekenpflichtige Arzneimittel` unterstützt und aktuell aktiv ist.\n\n**Wert `true`**: Der Flowtype ist aktiviert, alle Operationen und Abfragen nach Spezifikation sind erlaubt und dürfen durchgeführt werden.\n\n**Wert `false`**: Die Operation $create gestattet keine Erstellung von Tasks des betreffenden Flowtypes\nAlle FHIR-Operationen auf dem RessourceType \"Task\" des betreffenden Flowtypes werden mit dem entsprechendem Fehler abgebrochen\nAlle FHIR-Operationen auf System Ebene, durch eine andere oid als \"oid_versicherter\", die Informationen zu einem Task des betreffenden Flowtypes herausgeben oder manipulieren werden mit entsprechendem Fehler abgebrochen\nDer Aufruf GET /Task auf Tasks des betreffenden Flowtypes durch eine andere oid als \"oid_versicherter\" wird mit entsprechendem Fehler abgebrochen" ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.id [ fhir:value "ti-flow-feature-wf160.valueType" ] ;
+       fhir:ElementDefinition.path [ fhir:value "ti-flow-feature-wf160.valueType" ] ;
+       fhir:ElementDefinition.patternCode [ fhir:value "boolean" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

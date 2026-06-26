@@ -1,0 +1,26 @@
+# KTR-Anforderungen $close - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
+
+TIFlow - Kernfunktionalitäten
+
+Version 2.0.0-ballot.2 - draft 
+
+* [**Table of Contents**](toc.md)
+* [**Operation API**](menu-schnittstellen-operation-api.md)
+* [**Operation $close (Task schließen)**](op-close.md)
+* **KTR-Anforderungen $close**
+
+## KTR-Anforderungen $close
+
+Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$close`.
+
+funkt. Eignung: HerstellererklärungDas Clientsystem Kostenträger MUSS den Anwendungsfall "Quittung abrufen" für Verordnungen, welche abschließend verarbeitet wurden, ausführen, um den Workflow am TI-Flow-Fachdienst abzuschließen.
+Die Erstellung der MedicationDispense erfolgt modulspezifisch.
+
+funkt. Eignung: HerstellererklärungDas Clientsystem Kostenträger MUSS im Anwendungsfall "Quittung abrufen" für zum Abschliessen des Workflows für die Verordnung die HTTP-Operation POST /Task/<id>/$close mit
+* Task-ID in URL <id>
+* Geheimnis in URL-Parameter ?secret=
+* GEM_ERP_PR_PAR_CloseOperation_Input-Objekt
+ausführen.
+

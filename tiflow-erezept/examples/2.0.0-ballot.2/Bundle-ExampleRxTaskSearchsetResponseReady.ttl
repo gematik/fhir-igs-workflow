@@ -1,0 +1,119 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Bundle/ExampleRxTaskSearchsetResponseReady> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleRxTaskSearchsetResponseReady"] ;
+  fhir:Bundle.type [ fhir:value "searchset"] ;
+  fhir:Bundle.total [ fhir:value "1"^^xsd:nonNegativeInteger] ;
+  fhir:Bundle.link [
+     fhir:index 0 ;
+     fhir:Bundle.link.relation [ fhir:value "self" ] ;
+     fhir:Bundle.link.url [ fhir:value "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task?status=ready" ]
+  ] ;
+  fhir:Bundle.entry [
+     fhir:index 0 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/TaskInReadyState" ] ;
+     fhir:Bundle.entry.resource <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/TaskInReadyState> ;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
+  ] .
+
+<https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/TaskInReadyState> a fhir:Task ;
+  fhir:Resource.id [ fhir:value "TaskInReadyState"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task|2.0" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task|2.0>
+     ] ;
+     fhir:Meta.tag [
+       fhir:index 0 ;
+       fhir:Coding.display [ fhir:value "Task in READY state activated by (Z)PVS/KIS via $activate operation" ]
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType" ] ;
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType" ] ;
+       fhir:Coding.code [ fhir:value "160" ] ;
+       fhir:Coding.display [ fhir:value "Flowtype für Apothekenpflichtige Arzneimittel" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AcceptDate" ] ;
+     fhir:Extension.valueDate [ fhir:value "2028-10-01"^^xsd:date ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_ExpiryDate" ] ;
+     fhir:Extension.valueDate [ fhir:value "2028-10-01"^^xsd:date ]
+  ] ;
+  fhir:Task.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+     fhir:Identifier.value [ fhir:value "160.000.033.491.280.78" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode" ] ;
+     fhir:Identifier.value [ fhir:value "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]
+  ] ;
+  fhir:Task.status [ fhir:value "ready"] ;
+  fhir:Task.intent [ fhir:value "order"] ;
+  fhir:Task.for [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "X123456789" ]
+     ]
+  ] ;
+  fhir:Task.authoredOn [ fhir:value "2028-10-01T15:29:00+00:00"^^xsd:dateTime] ;
+  fhir:Task.lastModified [ fhir:value "2028-10-01T16:44:00.434+00:00"^^xsd:dateTime] ;
+  fhir:Task.performerType [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OrganizationType" ] ;
+       fhir:Coding.code [ fhir:value "urn:oid:1.2.276.0.76.4.54" ] ;
+       fhir:Coding.display [ fhir:value "Öffentliche Apotheke" ]
+     ]
+  ] ;
+  fhir:Task.input [
+     fhir:index 0 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType" ] ;
+         fhir:Coding.code [ fhir:value "1" ] ;
+         fhir:Coding.display [ fhir:value "Health Care Provider Prescription" ]
+       ]
+     ] ;
+     fhir:Task.input.valueReference [
+       fhir:Reference.reference [ fhir:value "281a985c-f25b-4aae-91a6-41ad744080b0" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType" ] ;
+         fhir:Coding.code [ fhir:value "2" ] ;
+         fhir:Coding.display [ fhir:value "Patient Confirmation" ]
+       ]
+     ] ;
+     fhir:Task.input.valueReference [
+       fhir:Reference.reference [ fhir:value "f8c2298f-7c00-4a68-af29-8a2862d55d43" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Bundle/ExampleRxTaskSearchsetResponseReady.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

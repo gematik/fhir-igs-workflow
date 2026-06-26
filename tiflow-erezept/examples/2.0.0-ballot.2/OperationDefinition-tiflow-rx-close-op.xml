@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="tiflow-rx-close-op"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition tiflow-rx-close-op</b></p><a name="tiflow-rx-close-op"> </a><a name="hctiflow-rx-close-op"> </a><p>URL: [base]/Task/[id]/$close</p><p>Input parameters Profile:<a href="StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.html">GEM ERP PR CloseOperation Input</a></p><p>Output parameters Profile:<a href="StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Output.html">GEM ERP PR CloseOperation Output</a></p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr></table></div>
+  </text>
+  <url value="https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-close-op"/>
+  <version value="2.0.0-ballot.2"/>
+  <name value="TIFlow-RX-OP-Close"/>
+  <title value="E-Rezept Abgabe vollziehen"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2028-04-01"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="true"/>
+  <code value="close"/>
+  <resource value="Task"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <inputProfile value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input"/>
+  <outputProfile value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Output"/>
+</OperationDefinition>

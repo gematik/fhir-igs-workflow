@@ -1,0 +1,50 @@
+{
+  "codeSystems" : [{
+    "url" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_VS_DocumentType",
+    "version" : "2.0.0-ballot.2",
+    "status" : "active",
+    "name" : "GEM_ERP_VS_DocumentType",
+    "title" : "ValueSet der Dokumenttyp-Codes",
+    "description" : "Art der Dokumente je nach Empfänger.",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERP-PR-Task.html" : "Task für E-Rezept"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus",
+    "version" : "2.0.0-ballot.2",
+    "status" : "active",
+    "name" : "GEM_ERP_VS_OrganizationType",
+    "title" : "Bearbeiter eines E-Rezeptes",
+    "description" : "ValueSet der Organisationstyp-Codes eines Performers für den RX Task",
+    "systems" : ["https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERP-PR-Task.html" : "Task für E-Rezept",
+    "StructureDefinition-GEM-ERP-EX-AvailabilityState.html" : "GEM ERP EX AvailabilityState"
+  },
+  {
+    "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FlowType",
+    "version" : "2.0.0-ballot.2",
+    "status" : "active",
+    "name" : "GEM_ERP_VS_FlowType",
+    "title" : "ValueSet der Flowtypes in TIFlow Anwendungen",
+    "description" : "Zeigt die verschiedenen Typen der TI Workflows entsprechend der Verordnungsformulare.",
+    "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERP-PR-PAR-Create-Operation-Input.html" : "GEM ERP PR CreateOperation Input"
+  },
+  {
+    "url" : "https://gematik.de/fhir/tiflow-erezept/ValueSet/tiflow-erezept-operation-outcome-details-vs",
+    "version" : "2.0.0-ballot.2",
+    "status" : "active",
+    "name" : "TIFLOWEREZEPTOperationOutcomeDetailsVS",
+    "title" : "TIFLOW EREZEPT Operation Outcome Details VS",
+    "description" : "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können",
+    "systems" : ["https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs",
+    "https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs",
+    "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes"]
+  }]
+}
