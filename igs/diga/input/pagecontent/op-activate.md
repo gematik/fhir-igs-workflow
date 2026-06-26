@@ -38,10 +38,10 @@ Die Operation $activate wird als HTTP POST auf /Task/&#60;id&#62;/$activate ausg
 	</div>
 	<div id="Response-Examples">
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationActivateError JSON %}
+			{% fragment OperationOutcome/ExampleOperationActivateInvalidRoleError JSON %}
 		</div>
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationActivateError XML %}
+			{% fragment OperationOutcome/ExampleOperationActivateInvalidRoleError XML %}
 		</div>
 	</div>
 </div>

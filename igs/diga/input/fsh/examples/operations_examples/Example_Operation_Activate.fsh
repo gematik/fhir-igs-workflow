@@ -13,6 +13,15 @@ Usage: #example
 * parameter[+].name = "ePrescription"
 * parameter[=].resource = PrescriptionBinary
 
+Instance: ExampleOperationActivateInvalidRoleError
+InstanceOf: OperationOutcome
+Title: "Error 400 - QES nicht durch berechtigte Berufsgruppe; Example Activate operation error response"
+Usage: #example
+* issue[+]
+  * severity = #error
+  * code = #invalid
+  * details.coding.code = #TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE
+
 Instance: ExampleOperationActivateError
 InstanceOf: OperationOutcome
 Title: "Example Activate operation error response"
