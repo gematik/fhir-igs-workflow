@@ -1,4 +1,6 @@
-# FD-Anforderungen $activate - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# FD-Anforderungen $activate - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -75,7 +77,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Zugriff auf eine
 
 abbrechen, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
 
-Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur des übergebenen QES-Datensatzes gemäß [gemSpec_PKI#TUC_PKI_030] mit folgenden Parametern auf Gültigkeit prüfen:
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur des übergebenen QES-Datensatzes gemäß [gemSpec_PKI]#TUC_PKI_030 mit folgenden Parametern auf Gültigkeit prüfen:
 
 * Parameter: Zertifikat
   * Wert: Signaturzertifikat des HBA (eingebettet in Signatur-Objekt des QES-Datensatzes):* C.HP.QES (oid_hba_qes = 1.2.276.0.76.4.72 gemäß gemSpec_OID)
@@ -148,6 +150,8 @@ abbrechen.
 Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate den Datensatz als PKCS#7-Datei speichern und in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 über eine interne, eindeutige UUID referenzieren, damit der nachfolgende Workflow auf Basis vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
 
 Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und, wenn dieser ungleich "text/plain; charset=utf-8" ist, die Operation mit dem folgenden Fehler:
+
+Sich.techn. Eignung: Produktgutachten
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error

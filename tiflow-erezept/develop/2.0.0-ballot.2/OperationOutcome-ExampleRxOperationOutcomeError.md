@@ -1,4 +1,6 @@
-# Example error response for Rx operations - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Example error response for Rx operations - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

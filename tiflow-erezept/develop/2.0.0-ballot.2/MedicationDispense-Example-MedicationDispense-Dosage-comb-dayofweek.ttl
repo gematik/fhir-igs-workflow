@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,80 +7,95 @@
 
 <https://gematik.de/fhir/tiflow-erezept/MedicationDispense/Example-MedicationDispense-Dosage-comb-dayofweek> a fhir:MedicationDispense ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "Example-MedicationDispense-Dosage-comb-dayofweek"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0"^^xsd:anyURI ;
+  fhir:Resource.id [ fhir:value "Example-MedicationDispense-Dosage-comb-dayofweek"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0" ;
+       fhir:index 0 ;
        fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0>
-     ] )
-  ] ; # 
-  fhir:extension ( [
-     fhir:url [ fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction"^^xsd:anyURI ] ;
-     fhir:value [
-       a fhir:markdown ;
-       fhir:v "montags 1-0-1-0, freitags 1-0-1-0 Stück"
      ]
-  ] [
-     fhir:extension ( [
-       fhir:url [ fhir:v "algorithmVersion"^^xsd:anyURI ] ;
-       fhir:value [
-         a fhir:string ;
-         fhir:v "1.0.0"
-       ]
-     ] [
-       fhir:url [ fhir:v "language"^^xsd:anyURI ] ;
-       fhir:value [
-         a fhir:code ;
-         fhir:v "de-DE"
-       ]
-     ] ) ;
-     fhir:url [ fhir:v "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta"^^xsd:anyURI ]
-  ] ) ; # 
-  fhir:identifier ( [
-     fhir:system [ fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "160.000.033.491.280.78" ]
-  ] ) ; # 
-  fhir:status [ fhir:v "completed"] ; # 
-  fhir:medication [
-     a fhir:Reference ;
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction" ] ;
+     fhir:Extension.valueMarkdown [ fhir:value "montags 1-0-1-0, freitags 1-0-1-0 Stück" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "algorithmVersion" ] ;
+       fhir:Extension.valueString [ fhir:value "1.0.0" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "language" ] ;
+       fhir:Extension.valueCode [ fhir:value "de-DE" ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta" ]
+  ] ;
+  fhir:MedicationDispense.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+     fhir:Identifier.value [ fhir:value "160.000.033.491.280.78" ]
+  ] ;
+  fhir:MedicationDispense.status [ fhir:value "completed"] ;
+  fhir:MedicationDispense.medicationReference [
      fhir:link <https://gematik.de/fhir/tiflow-erezept/Medication/SumatripanMedication> ;
-     fhir:reference [ fhir:v "Medication/SumatripanMedication" ]
-  ] ; # 
-  fhir:subject [
-     fhir:identifier [
-       fhir:system [ fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "X123456789" ]
+     fhir:Reference.reference [ fhir:value "Medication/SumatripanMedication" ]
+  ] ;
+  fhir:MedicationDispense.subject [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "X123456789" ]
      ]
-  ] ; # 
-  fhir:performer ( [
-     fhir:actor [
-       fhir:identifier [
-         fhir:system [ fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "3-SMC-B-Testkarte-883110000095957" ]
+  ] ;
+  fhir:MedicationDispense.performer [
+     fhir:index 0 ;
+     fhir:MedicationDispense.performer.actor [
+       fhir:Reference.identifier [
+         fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+         fhir:Identifier.value [ fhir:value "3-SMC-B-Testkarte-883110000095957" ]
        ]
      ]
-  ] ) ; # 
-  fhir:whenHandedOver [ fhir:v "2028-10-01"^^xsd:date] ; # 
-  fhir:dosageInstruction ( [
-     fhir:timing [
-       fhir:repeat [
-         fhir:frequency [ fhir:v "4"^^xsd:positiveInteger ] ;
-         fhir:period [ fhir:v "1"^^xsd:decimal ] ;
-         fhir:periodUnit [ fhir:v "wk" ] ;
-         fhir:dayOfWeek ( [ fhir:v "mon" ] [ fhir:v "fri" ] ) ;
-         fhir:when ( [ fhir:v "MORN" ] [ fhir:v "EVE" ] )
+  ] ;
+  fhir:MedicationDispense.whenHandedOver [ fhir:value "2028-10-01"^^xsd:date] ;
+  fhir:MedicationDispense.dosageInstruction [
+     fhir:index 0 ;
+     fhir:Dosage.timing [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.frequency [ fhir:value "4"^^xsd:positiveInteger ] ;
+         fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ] ;
+         fhir:Timing.repeat.periodUnit [ fhir:value "wk" ] ;
+         fhir:Timing.repeat.dayOfWeek [
+           fhir:value "mon" ;
+           fhir:index 0
+         ], [
+           fhir:value "fri" ;
+           fhir:index 1
+         ] ;
+         fhir:Timing.repeat.when [
+           fhir:value "MORN" ;
+           fhir:index 0
+         ], [
+           fhir:value "EVE" ;
+           fhir:index 1
+         ]
        ]
      ] ;
-     fhir:doseAndRate ( [
-       fhir:dose [
-         a fhir:Quantity ;
-         fhir:value [ fhir:v "1"^^xsd:decimal ] ;
-         fhir:unit [ fhir:v "Stück" ] ;
-         fhir:system [ fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "1" ]
+     fhir:Dosage.doseAndRate [
+       fhir:index 0 ;
+       fhir:Dosage.doseAndRate.doseQuantity [
+         fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "Stück" ] ;
+         fhir:Quantity.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT" ] ;
+         fhir:Quantity.code [ fhir:value "1" ]
        ]
-     ] )
-  ] ) . # 
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/MedicationDispense/Example-MedicationDispense-Dosage-comb-dayofweek.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

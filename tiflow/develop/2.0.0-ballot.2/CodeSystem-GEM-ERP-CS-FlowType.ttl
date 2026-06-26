@@ -1,0 +1,86 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/CodeSystem/GEM-ERP-CS-FlowType> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "GEM-ERP-CS-FlowType"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem GEM-ERP-CS-FlowType</b></p><a name=\"GEM-ERP-CS-FlowType\"> </a><a name=\"hcGEM-ERP-CS-FlowType\"> </a><p>This case-sensitive code system <code>https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">160<a name=\"GEM-ERP-CS-FlowType-160\"> </a></td><td>Flowtype für Apothekenpflichtige Arzneimittel</td></tr><tr><td style=\"white-space:nowrap\">162<a name=\"GEM-ERP-CS-FlowType-162\"> </a></td><td>Flowtype für Digitale Gesundheitsanwendungen</td></tr><tr><td style=\"white-space:nowrap\">165<a name=\"GEM-ERP-CS-FlowType-165\"> </a></td><td>Flowtype für Betäubungsmittel</td></tr><tr><td style=\"white-space:nowrap\">166<a name=\"GEM-ERP-CS-FlowType-166\"> </a></td><td>Flowtype für Arzneimittel nach § 3a AMVV</td></tr><tr><td style=\"white-space:nowrap\">169<a name=\"GEM-ERP-CS-FlowType-169\"> </a></td><td>Flowtype zur Workflow-Steuerung durch Leistungserbringer</td></tr><tr><td style=\"white-space:nowrap\">200<a name=\"GEM-ERP-CS-FlowType-200\"> </a></td><td>Flowtype für Apothekenpflichtige Arzneimittel (PKV)</td></tr><tr><td style=\"white-space:nowrap\">209<a name=\"GEM-ERP-CS-FlowType-209\"> </a></td><td>Flowtype zur Workflow-Steuerung durch Leistungserbringer (PKV)</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"] ;
+  fhir:CodeSystem.version [ fhir:value "2.0.0-ballot.2"] ;
+  fhir:CodeSystem.name [ fhir:value "GEM_ERP_CS_FlowType"] ;
+  fhir:CodeSystem.title [ fhir:value "CodeSystem der Flowtypes in TIFlow Anwendungen"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2028-04-01"^^xsd:date] ;
+  fhir:CodeSystem.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:CodeSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "erp-umsetzung@gematik.de" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Zeigt die verschiedenen Typen der TI Workflows entsprechend der Verordnungsformulare.\n\nWICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheken wie z.B. Pharmazeutische Dienstleistungen!"] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:CodeSystem.copyright [ fhir:value "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "7"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "160" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Flowtype für Apothekenpflichtige Arzneimittel" ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "162" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Flowtype für Digitale Gesundheitsanwendungen" ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "165" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Flowtype für Betäubungsmittel" ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "166" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Flowtype für Arzneimittel nach § 3a AMVV" ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.concept.code [ fhir:value "169" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Flowtype zur Workflow-Steuerung durch Leistungserbringer" ]
+  ], [
+     fhir:index 5 ;
+     fhir:CodeSystem.concept.code [ fhir:value "200" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Flowtype für Apothekenpflichtige Arzneimittel (PKV)" ]
+  ], [
+     fhir:index 6 ;
+     fhir:CodeSystem.concept.code [ fhir:value "209" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Flowtype zur Workflow-Steuerung durch Leistungserbringer (PKV)" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/CodeSystem/GEM-ERP-CS-FlowType.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,4 +1,6 @@
-# Antwort-Nachricht der Apotheke an den Patienten - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Antwort-Nachricht der Apotheke an den Patienten - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

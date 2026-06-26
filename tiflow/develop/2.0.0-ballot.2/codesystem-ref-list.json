@@ -1,5 +1,17 @@
 {
   "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/task-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "TaskStatus",
+    "title" : "TaskStatus",
+    "description" : "The current status of the task.",
+    "oids" : ["2.16.840.1.113883.4.642.4.791"],
+    "uses" : {
+    },
+    "ValueSet-tiflow-order-task-status-vs.html" : "TIFlow Order Task ValueSet"
+  },
+  {
     "url" : "http://terminology.hl7.org/CodeSystem/operation-outcome",
     "version" : "4.0.0",
     "status" : "active",
@@ -38,12 +50,12 @@
     "url" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType",
     "version" : "2.0.0-ballot.2",
     "status" : "active",
-    "name" : "TIFlowTypesCS",
+    "name" : "GEM_ERP_CS_FlowType",
     "title" : "CodeSystem der Flowtypes in TIFlow Anwendungen",
     "description" : "Zeigt die verschiedenen Typen der TI Workflows entsprechend der Verordnungsformulare.\n\nWICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheken wie z.B. Pharmazeutische Dienstleistungen!",
     "uses" : {
     },
-    "ValueSet-ti-flowtypes-vs.html" : "ValueSet der Flowtypes in TIFlow Anwendungen"
+    "ValueSet-GEM-ERP-VS-FlowType.html" : "ValueSet der Flowtypes in TIFlow Anwendungen"
   },
   {
     "url" : "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes",
@@ -56,28 +68,6 @@
     },
     "ValueSet-tiflow-operation-outcome-details-vs.html" : "TIFLOW Operation Outcome Details VS",
     "ConceptMap-TIFLOW-CM-TelemetryDataStatusCodes.html" : "Telemetry Data Status Codes Concept Map"
-  },
-  {
-    "url" : "https://gematik.de/fhir/tiflow/CodeSystem/ti-environment-codes",
-    "version" : "2.0.0-ballot.2",
-    "status" : "active",
-    "name" : "TIEnvironmentsCS",
-    "title" : "TI Environments CodeSystem",
-    "description" : "Dieses CodeSystem definiert standardisierte Umgebungskennzeichen für CapabilityStatements des TI-Flow-Fachdienstes. Es erlaubt die eindeutige Kennzeichnung, ob die beschriebene Fähigkeit für Produktions-, Referenz-, Test- oder Entwicklungsumgebung gilt.",
-    "uses" : {
-    },
-    "ValueSet-ti-environment-vs.html" : "TI Environments ValueSet"
-  },
-  {
-    "url" : "https://gematik.de/fhir/tiflow/CodeSystem/ti-fhir-configuration-cs",
-    "version" : "2.0.0-ballot.2",
-    "status" : "active",
-    "name" : "TIFHIRConfigurationCS",
-    "title" : "TIFHIR Configuration CS",
-    "description" : "Dieses CodeSystem beschreibt die FHIR-Konfigurationen eines FHIR-Data Service der TI. Die konkrete Konzeptliste wird extern im gematik-Releaseprozess als Release-Artefakt verwaltet und versioniert; dieser IG referenziert diese Konzepte nur über das Canonical.",
-    "uses" : {
-    },
-    "ValueSet-ti-fhir-configuration-vs.html" : "TI FHIR Configuration ValueSet"
   },
   {
     "url" : "https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs",

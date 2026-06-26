@@ -1,4 +1,6 @@
-# KBVPrErpMedicationPznMap - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# KBVPrErpMedicationPznMap - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

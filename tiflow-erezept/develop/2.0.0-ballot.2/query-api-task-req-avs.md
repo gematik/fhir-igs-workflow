@@ -1,4 +1,6 @@
-# AVS-Anforderungen: Task-Query - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# AVS-Anforderungen: Task-Query - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -42,7 +44,7 @@ Mit diesem Anwendungsfall kann die abgebende LEI die Zugriffsinformationen zu al
 funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" einen PoPP-Token vom PoPP-Service abrufen.
 Für die Umsetzung siehe [spec-ilf-popp-client](https://github.com/gematik/spec-ilf-popp-client/tree/main).
 
-Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (s. gemSpec_PoPP_Service#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den TI-Flow-Fachdienst weiter.
+Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compact Serialization Format (siehe [gemSpec_PoPP_Service]#A_26432). Das PS gibt den PoPP-Token im gleichen Format an den TI-Flow-Fachdienst weiter.
 
 funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" die HTTP-Operation GET /Task mit
 * PoPP-Token in HTTP-Header X-PoPP-Token

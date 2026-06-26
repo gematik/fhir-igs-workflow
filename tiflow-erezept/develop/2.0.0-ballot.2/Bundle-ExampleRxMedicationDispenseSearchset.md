@@ -1,4 +1,6 @@
-# MedicationDispense searchset response for Rx - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# MedicationDispense searchset response for Rx - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

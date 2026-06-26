@@ -1,8 +1,10 @@
-# GEM ERP PR Device - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# GEM ERP PR Device - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -21,8 +23,8 @@ Statische Informationen auf dem TI-Flow-Fachdienst
 
 **Usages:**
 
-* Use this Profile: [TIFlow Receipt Bundle](StructureDefinition-tiflow-receipt-bundle.md)
-* Refer to this Profile: [GEM_ERP_PR_Signature](StructureDefinition-GEM-ERP-PR-Signature.md) and [GEM ERP PR Composition](StructureDefinition-tiflow-receipt-composition.md)
+* Use this Profile: [TIFlow Receipt Bundle](StructureDefinition-GEM-ERP-PR-Bundle.md)
+* Refer to this Profile: [GEM ERP PR Composition](StructureDefinition-GEM-ERP-PR-Composition.md) and [GEM_ERP_PR_Signature](StructureDefinition-GEM-ERP-PR-Signature.md)
 * CapabilityStatements using this Profile: [CapabilityStatement für den TI-Flow-Fachdienst](CapabilityStatement-ti-flow-fachdienst-server.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow|current/StructureDefinition/StructureDefinition-GEM-ERP-PR-Device.json)
@@ -94,10 +96,6 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Device.cs
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "Device",
-      "path" : "Device"
-    },
-    {
       "id" : "Device.status",
       "path" : "Device.status",
       "min" : 1

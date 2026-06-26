@@ -1,8 +1,10 @@
-# Generelle Prinzipien - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# Generelle Prinzipien - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * **Generelle Prinzipien**
@@ -62,6 +64,9 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS Verordnungs-IDs erzeu
 | bbb.bbb.bbb.bbb | fortlaufende Nummer | nummerisch, 12-stellig |
 | cc | Prüfnummer Verfahren gemäß [ISO 7064] | nummerisch |
 damit Tippfehler in der manuellen Erfassung erkannt werden können und die Verordnungs-ID über 11 Jahre eine eineindeutige Zuordnung zwischen allen Datenobjekten im Workflow erlaubt.
+Für den Übergang der Anwendung E-Rezept vom E-Rezept-Fachdienst zum TI-Flow-Fachdienst muss es für ein ClientSystem möglich sein zu erkennen, auf welchem Fachdienst ein Task eingestellt wurde, ohne diesen vorher abzufragen.
+
+Der TI-Flow-Fachdienst erzeugt Tasks für jeden Workflow > `&#60;flowtype&#62;`.0**1**0.000.000.000.`&#60;prüfziffer&#62;`. Siehe hierzu auch die [Anforderungen des TI-Flow-Fachdienst für die $create-Operation](./op-create-req-fd.md).
 
 funkt. Eignung: Test Produkt/FAAlle Produkttypen, die eine Verordnungs-ID aus externen Systemen einlesen oder von Benutzern entgegen nehmen, MÜSSEN die Verordnungs-ID gegen ihre Prüfziffer nach dem Modulo-97-Verfahren gemäß [ISO 7064] prüfen und bei Ungültigkeit die Weiterverarbeitung verhindern, damit Benutzerfehleingaben vor der Verarbeitung erkannt werden.
 ### Verarbeitung von Datensätzen
@@ -123,6 +128,13 @@ funkt. Eignung: Herstellererklärung
 funkt. Eignung: Herstellererklärung
 
 funkt. Eignung: HerstellererklärungClientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Verarbeitung von FHIR-Ressourcen der Anwendung E-Rezept sicherstellen, dass Datumsangaben ohne explizite Zeitzoneninformationen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) verarbeitet werden.
+#### Filtern und Sortieren von FHIR-Objekten
+
+Clients erhalten die Möglichkeit, die Rückgabe der Elemente im FHIR-Bundle durch Suchparameter zu filtern und mithilfe von Sortierparameter zu sortieren.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS die Suchparameter verarbeiten können, wie sie im CapabilityStatement festgelegt sind.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS die Sortierparameter verarbeiten können, wie sie im CapabilityStatement festgelegt sind.
 ### Identifikation des Nutzers
 
 Im Rahmen des Verbindungsaufbaus eines Clientsystems mit dem TI-Flow-Fachdienst authentisiert sich der Nutzer. Der ZETA-Guard übermittelt die Informationen zum Nutzer und das Clientsystem in Http-Headern im Request an den Resource Server (siehe [gemSpec_ZETA#A_25669-*]).

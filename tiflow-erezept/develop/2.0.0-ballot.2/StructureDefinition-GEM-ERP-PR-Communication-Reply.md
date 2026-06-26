@@ -1,4 +1,6 @@
-# GEM ERP PR Communication Reply - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# GEM ERP PR Communication Reply - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -99,8 +101,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
     {
       "id" : "Communication.meta",
       "path" : "Communication.meta",
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     },
     {
       "id" : "Communication.meta.profile",

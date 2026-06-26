@@ -1,4 +1,6 @@
-# GEM ERP PR Communication DispReq - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# GEM ERP PR Communication DispReq - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -89,7 +91,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
   "kind" : "resource",
   "abstract" : false,
   "type" : "Communication",
-  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Communication",
+  "baseDefinition" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-Communication",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -106,8 +108,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
     {
       "id" : "Communication.meta",
       "path" : "Communication.meta",
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     },
     {
       "id" : "Communication.meta.profile",
@@ -163,8 +164,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
       "id" : "Communication.recipient",
       "path" : "Communication.recipient",
       "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
+      "max" : "1"
     },
     {
       "id" : "Communication.recipient.identifier",
@@ -189,8 +189,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
     {
       "id" : "Communication.payload",
       "path" : "Communication.payload",
-      "max" : "1",
-      "mustSupport" : true
+      "max" : "1"
     },
     {
       "id" : "Communication.payload.content[x]",

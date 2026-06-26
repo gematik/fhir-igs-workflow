@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>GEM ERP PR Digest - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
+    <title>GEM ERP PR Digest - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,9 +41,9 @@
         background-size: 100% auto;
         height: 280px;
         background-color: #2a6496;
-        background: url('./e-rezept-img.png') no-repeat;
-        background-position: 650px -150px;
-        background-size: 45% auto;
+        background: url('./tiflow-bg.png') no-repeat;
+        background-position: 580px -20px;
+        background-size: 49% auto;
     }
     .bubble-link {
         display: none;
@@ -82,8 +82,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"23.12"}
-    h3,h4,h5,h6{--heading-prefix:"23.12"}</style>
+    <style type="text/css">h2{--heading-prefix:"23.11"}
+    h3,h4,h5,h6{--heading-prefix:"23.11"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -120,9 +120,6 @@
   <li>
     <a href="index.html">Start</a>
   </li>
-  <li>
-    <a href="toc.html">Inhaltsverzeichnis</a>
-  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Grundlagen
       <b class="caret"></b>
@@ -132,19 +129,25 @@
         <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
+        <a href="architecture.html">Architekturmöglichkeiten TI-Flow-Fachdienst</a>
+      </li>
+      <li>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
         <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
       </li>
       <li>
-        <a href="ttl.html">Löschfristen</a>
-      </li>
-      <li>
         <a href="error-codes.html">Fehlercodes</a>
       </li>
       <li>
-        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
+      </li>
+      <li>
+        <a href="ttl.html">Löschfristen</a>
       </li>
       <li>
         <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
@@ -153,13 +156,10 @@
         <a href="datamatrix-code-client.html">Datamatrix Code</a>
       </li>
       <li>
-        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
-      </li>
-      <li>
-        <a href="capability-statement-extensions.html">Konfigurationsabfrage</a>
-      </li>
-      <li>
         <a href="health-check.html">Health Check</a>
+      </li>
+      <li>
+        <a href="capability-statement-extensions.html">Ausgabe Konfiguration</a>
       </li>
     </ul>
   </li>
@@ -169,6 +169,9 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+      </li>
+      <li>
         <a href="menu-technische-umsetzung-zeta.html">Zero Trust Access (ZETA)</a>
       </li>
       <li>
@@ -176,9 +179,6 @@
       </li>
       <li>
         <a href="menu-technische-umsetzung-push.html">Push Notification</a>
-      </li>
-      <li>
-        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-subscription.html">Subscrition</a>
@@ -191,21 +191,18 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-schnittstellen-query-api.html">Query API</a>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
       </li>
       <li>
-        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
       </li>
       <li>
         <a href="menu-schnittstellen-additional-api.html">Additional API</a>
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -213,9 +210,18 @@
         <a href="requirement-mapping-0_9_0-to-2_0_0.html">Anforderungsmapping</a>
       </li>
       <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="requirements.html">Anforderungslisten</a>
+      </li>
+      <li>
         <a href="license.html">Lizenz</a>
       </li>
     </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -233,10 +239,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Kernfunktionalitäten
+Implementation Guide<br /> TIFlow - Kernfunktionalitäten
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - draft
                 
                 
             </span>
@@ -405,7 +411,7 @@ TIFlow - Kernfunktionalitäten
 
 <p><b>Usages:</b></p>
 <ul>
- <li>Use this Profile: <a href="StructureDefinition-tiflow-receipt-bundle.html">TIFlow Receipt Bundle</a></li>
+ <li>Use this Profile: <a href="StructureDefinition-GEM-ERP-PR-Bundle.html">TIFlow Receipt Bundle</a></li>
 </ul>
 <p>You can also check for <a href="https://packages2.fhir.org/xig/resource/de.gematik.tiflow|current/StructureDefinition/StructureDefinition-GEM-ERP-PR-Digest.json">usages in the FHIR IG Statistics</a></p>
 
@@ -477,7 +483,7 @@ TIFlow - Kernfunktionalitäten
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">base64Binary</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The actual content</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 06577ff7-95fd-4972-878d-072b05777639
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6acc5dd4-d21d-48d8-a1a4-1625450518e1
 document.getElementById('cbGEM-ERP-PR-DigestK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('GEM-ERP-PR-DigestK'), 'binding', document.getElementById('cbGEM-ERP-PR-DigestK-binding').checked, document.getElementById('ppGEM-ERP-PR-DigestK'));
 document.getElementById('cbGEM-ERP-PR-DigestK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -576,9 +582,9 @@ filterDesc(document.getElementById('GEM-ERP-PR-DigestK'), 'obligation', document
           <table border="0" fhir="generated-heirarchy" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;" id="GEM-ERP-PR-DigestD" data-fhir="generated-heirarchy"><tr fhir="generated-heirarchy" style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top" data-fhir="generated-heirarchy"><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a no-external="true" href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element" data-no-external="true">Name</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a no-external="true" href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Information about the use of the element" data-no-external="true">Flags</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a no-external="true" href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Minimum and Maximum # of times the element can appear in the instance" data-no-external="true">Card.</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px; width: 100px" class="hierarchy"><a no-external="true" href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Reference to the type of the element" data-no-external="true">Type</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a no-external="true" href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Additional information about the element" data-no-external="true">Description &amp; Constraints</a>&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: normal">Filter: <input size="10" name="filter" style="border: 1px #F0F0F0 solid; background-color: rgb(254, 254, 231);" onInput="filterTree(document.getElementById('GEM-ERP-PR-DigestD'), event.target.value)" type="text"/> <img onClick="showPanel(event.target, document.getElementById('GEM-ERP-PR-DigestD'), document.getElementById('ppGEM-ERP-PR-DigestD'))" src="tree-filter.png" alt="Filters"/><div style="display: none; position: fixed; opacity : 1.0; background-color: rgb(254, 254, 231); border: 1px solid #ccc; padding: 10px; boxShadow: 0 2px 5px rgba(0,0,0,0.2); zIndex: 1000; borderRadius: 4px" id="ppGEM-ERP-PR-DigestD">Bindings <input onClick="filterDesc(document.getElementById('GEM-ERP-PR-DigestD'), 'binding',event.target.checked, document.getElementById('ppGEM-ERP-PR-DigestD'))" size="1" name="binding" checked="true" id="cbGEM-ERP-PR-DigestD-binding" type="checkbox"/><br/>Constraints <input onClick="filterDesc(document.getElementById('GEM-ERP-PR-DigestD'), 'constraint',event.target.checked, document.getElementById('ppGEM-ERP-PR-DigestD'))" size="1" name="constraint" checked="true" id="cbGEM-ERP-PR-DigestD-constraint" type="checkbox"/><br/>Obligations <input onClick="filterDesc(document.getElementById('GEM-ERP-PR-DigestD'), 'obligation',event.target.checked, document.getElementById('ppGEM-ERP-PR-DigestD'))" size="1" name="obligation" checked="true" id="cbGEM-ERP-PR-DigestD-obligation" type="checkbox"/><br/></div></span><span style="float: right"><a no-external="true" href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format" data-no-external="true"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" onLoad="fhirTableInit(this)" style="background-color: inherit"/></a></span></th></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="a" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_resource.png" alt="." style="background-color: white; background-color: inherit" title="Resource" class="hierarchy"/> <a no-external="true" href="StructureDefinition-GEM-ERP-PR-Digest-definitions.html#Binary" data-no-external="true">Binary</a><a name="Binary"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/binary.html">Binary</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Pure binary content defined by a format other than FHIR</span></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-GEM-ERP-PR-Digest-definitions.html#Binary.contentType" data-no-external="true">contentType</a><a name="Binary.contentType"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
@@ -589,7 +595,7 @@ filterDesc(document.getElementById('GEM-ERP-PR-DigestK'), 'obligation', document
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..<span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">base64Binary</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">The actual content</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 06577ff7-95fd-4972-878d-072b05777639
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6acc5dd4-d21d-48d8-a1a4-1625450518e1
 document.getElementById('cbGEM-ERP-PR-DigestD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('GEM-ERP-PR-DigestD'), 'binding', document.getElementById('cbGEM-ERP-PR-DigestD-binding').checked, document.getElementById('ppGEM-ERP-PR-DigestD'));
 document.getElementById('cbGEM-ERP-PR-DigestD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -646,16 +652,16 @@ filterDesc(document.getElementById('GEM-ERP-PR-DigestD'), 'obligation', document
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">MimeType of the binary content<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://hl7.org/fhir/R4/valueset-mimetypes.html" title="http://hl7.org/fhir/ValueSet/mimetypes" class="binding">Mime Types</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set." class="binding">required</a><span title="null" class="binding">)</span><span title="null" class="binding">: </span><span title="null" class="binding">The mime type of an attachment. Any valid mime type is allowed.</span><br/><span style="font-weight:bold">Fixed Value: </span><span style="color: darkgreen">application/octet-stream</span></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="af" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: white; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a no-external="true" href="StructureDefinition-GEM-ERP-PR-Digest-definitions.html#Binary.securityContext" title="This element identifies another resource that can be used as a proxy of the security sensitivity to use when deciding and enforcing access control rules for the Binary resource. Given that the Binary resource contains very few elements that can be used to determine the sensitivity of the data and relationships to individuals, the referenced resource stands in as a proxy equivalent for this purpose. This referenced resource may be related to the Binary (e.g. Media, DocumentReference), or may be some non-related Resource purely as a security proxy. E.g. to identify that the binary resource relates to a patient, and access should only be granted to applications that have access to the patient." data-no-external="true">securityContext</a><a name="s-Binary.securityContext"> </a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span><a style="padding-left: 3px; padding-right: 3px; border: 1px maroon solid; font-weight: bold; color: #301212; background-color: #fdf4f4;; padding-left: 3px; padding-right: 3px; border: 1px maroon solid; font-weight: bold; color: #301212; background-color: #fdf4f4;" href="http://hl7.org/fhir/R4/conformance-rules.html#constraints" title="This element has or is affected by constraints ( ref-1 )">C</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/resource.html">Resource</a>)</td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Identifies another resource to use as proxy when enforcing access control</td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Identifies another resource to use as proxy when enforcing access control<br class="constraint"/><span title="null" class="constraint">Constraints: </span><span style="font-weight:bold" title="SHALL have a contained resource if a local reference is provided" class="constraint">ref-1</span></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="ag" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a no-external="true" href="StructureDefinition-GEM-ERP-PR-Digest-definitions.html#Binary.data" title="The actual content, base64 encoded." data-no-external="true">data</a><a name="s-Binary.data"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">base64Binary</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The actual content</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 06577ff7-95fd-4972-878d-072b05777639
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6acc5dd4-d21d-48d8-a1a4-1625450518e1
 document.getElementById('cbGEM-ERP-PR-DigestS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('GEM-ERP-PR-DigestS'), 'binding', document.getElementById('cbGEM-ERP-PR-DigestS-binding').checked, document.getElementById('ppGEM-ERP-PR-DigestS'));
 document.getElementById('cbGEM-ERP-PR-DigestS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -754,6 +760,15 @@ filterDesc(document.getElementById('GEM-ERP-PR-DigestS'), 'obligation', document
       <code>hasValue() or (children().count() &gt; id.count())</code>
     </td>
   </tr>
+  <tr>
+    <td>ref-1</td>
+    <td>error</td>
+    <td>Binary.securityContext</td>
+    <td>SHALL have a contained resource if a local reference is provided</td>
+    <td>
+      <code>reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))</code>
+    </td>
+  </tr>
 </table>
 
           
@@ -785,7 +800,7 @@ filterDesc(document.getElementById('GEM-ERP-PR-DigestS'), 'obligation', document
     "<a href="StructureDefinition-GEM-ERP-PR-Digest.html#Binary.implicitRules" title="A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc (this element modifies the meaning of other elements)" class="dict"><span style="text-decoration: underline">implicitRules</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#uri">uri</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: navy; opacity: 0.8">A set of rules under which this content was created</span>
     "<a href="StructureDefinition-GEM-ERP-PR-Digest.html#Binary.language" title="The base language in which the resource is written" class="dict"><span style="text-decoration: underline">language</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: navy; opacity: 0.8"><a href="http://hl7.org/fhir/R4/null.html" style="color: navy">Language of the resource content</a></span>
     "<a href="StructureDefinition-GEM-ERP-PR-Digest.html#Binary.contentType" title="MimeType of the binary content represented as a standard MimeType (BCP 13)" class="dict"><span style="text-decoration: underline">contentType</span></a>" : "application/octet-stream", <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span>
-    "<a href="StructureDefinition-GEM-ERP-PR-Digest.html#Binary.securityContext" title="This element identifies another resource that can be used as a proxy of the security sensitivity to use when deciding and enforcing access control rules for the Binary resource. Given that the Binary resource contains very few elements that can be used to determine the sensitivity of the data and relationships to individuals, the referenced resource stands in as a proxy equivalent for this purpose. This referenced resource may be related to the Binary (e.g. Media, DocumentReference), or may be some non-related Resource purely as a security proxy. E.g. to identify that the binary resource relates to a patient, and access should only be granted to applications that have access to the patient" class="dict"><span style="text-decoration: underline">securityContext</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(Resource|4.0.1)}, <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: navy; opacity: 0.8">Identifies another resource to use as proxy when enforcing access control</span>
+    "<a href="StructureDefinition-GEM-ERP-PR-Digest.html#Binary.securityContext" title="This element identifies another resource that can be used as a proxy of the security sensitivity to use when deciding and enforcing access control rules for the Binary resource. Given that the Binary resource contains very few elements that can be used to determine the sensitivity of the data and relationships to individuals, the referenced resource stands in as a proxy equivalent for this purpose. This referenced resource may be related to the Binary (e.g. Media, DocumentReference), or may be some non-related Resource purely as a security proxy. E.g. to identify that the binary resource relates to a patient, and access should only be granted to applications that have access to the patient" class="dict"><span style="text-decoration: underline">securityContext</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(Resource|4.0.1)}, <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children; ref-1: SHALL have a contained resource if a local reference is provided"><b>C?</b></span> <span style="color: navy; opacity: 0.8">Identifies another resource to use as proxy when enforcing access control</span>
     "<a href="StructureDefinition-GEM-ERP-PR-Digest.html#Binary.data" title="The actual content, base64 encoded" class="dict"><span style="text-decoration: underline">data</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">base64Binary</a></span>&gt;" <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">The actual content</span>
   }
 
@@ -848,7 +863,7 @@ Summary
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">base64Binary</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The actual content</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 06577ff7-95fd-4972-878d-072b05777639
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6acc5dd4-d21d-48d8-a1a4-1625450518e1
 document.getElementById('cbGEM-ERP-PR-DigestKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('GEM-ERP-PR-DigestKA'), 'binding', document.getElementById('cbGEM-ERP-PR-DigestKA-binding').checked, document.getElementById('ppGEM-ERP-PR-DigestKA'));
 document.getElementById('cbGEM-ERP-PR-DigestKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -947,9 +962,9 @@ filterDesc(document.getElementById('GEM-ERP-PR-DigestKA'), 'obligation', documen
           <table border="0" fhir="generated-heirarchy" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;" id="GEM-ERP-PR-DigestDA" data-fhir="generated-heirarchy"><tr fhir="generated-heirarchy" style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top" data-fhir="generated-heirarchy"><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a no-external="true" href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element" data-no-external="true">Name</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a no-external="true" href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Information about the use of the element" data-no-external="true">Flags</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a no-external="true" href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Minimum and Maximum # of times the element can appear in the instance" data-no-external="true">Card.</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px; width: 100px" class="hierarchy"><a no-external="true" href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Reference to the type of the element" data-no-external="true">Type</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a no-external="true" href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Additional information about the element" data-no-external="true">Description &amp; Constraints</a>&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: normal">Filter: <input size="10" name="filter" style="border: 1px #F0F0F0 solid; background-color: rgb(254, 254, 231);" onInput="filterTree(document.getElementById('GEM-ERP-PR-DigestDA'), event.target.value)" type="text"/> <img onClick="showPanel(event.target, document.getElementById('GEM-ERP-PR-DigestDA'), document.getElementById('ppGEM-ERP-PR-DigestDA'))" src="tree-filter.png" alt="Filters"/><div style="display: none; position: fixed; opacity : 1.0; background-color: rgb(254, 254, 231); border: 1px solid #ccc; padding: 10px; boxShadow: 0 2px 5px rgba(0,0,0,0.2); zIndex: 1000; borderRadius: 4px" id="ppGEM-ERP-PR-DigestDA">Bindings <input onClick="filterDesc(document.getElementById('GEM-ERP-PR-DigestDA'), 'binding',event.target.checked, document.getElementById('ppGEM-ERP-PR-DigestDA'))" size="1" name="binding" checked="true" id="cbGEM-ERP-PR-DigestDA-binding" type="checkbox"/><br/>Constraints <input onClick="filterDesc(document.getElementById('GEM-ERP-PR-DigestDA'), 'constraint',event.target.checked, document.getElementById('ppGEM-ERP-PR-DigestDA'))" size="1" name="constraint" checked="true" id="cbGEM-ERP-PR-DigestDA-constraint" type="checkbox"/><br/>Obligations <input onClick="filterDesc(document.getElementById('GEM-ERP-PR-DigestDA'), 'obligation',event.target.checked, document.getElementById('ppGEM-ERP-PR-DigestDA'))" size="1" name="obligation" checked="true" id="cbGEM-ERP-PR-DigestDA-obligation" type="checkbox"/><br/></div></span><span style="float: right"><a no-external="true" href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format" data-no-external="true"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" onLoad="fhirTableInit(this)" style="background-color: inherit"/></a></span></th></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="a" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_resource.png" alt="." style="background-color: white; background-color: inherit" title="Resource" class="hierarchy"/> <a no-external="true" href="StructureDefinition-GEM-ERP-PR-Digest-definitions.html#Binary" data-no-external="true">Binary</a><a name="a-Binary"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/binary.html">Binary</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Pure binary content defined by a format other than FHIR</span></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-GEM-ERP-PR-Digest-definitions.html#Binary.contentType" data-no-external="true">contentType</a><a name="a-Binary.contentType"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
@@ -960,7 +975,7 @@ filterDesc(document.getElementById('GEM-ERP-PR-DigestKA'), 'obligation', documen
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..<span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">base64Binary</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">The actual content</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 06577ff7-95fd-4972-878d-072b05777639
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6acc5dd4-d21d-48d8-a1a4-1625450518e1
 document.getElementById('cbGEM-ERP-PR-DigestDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('GEM-ERP-PR-DigestDA'), 'binding', document.getElementById('cbGEM-ERP-PR-DigestDA-binding').checked, document.getElementById('ppGEM-ERP-PR-DigestDA'));
 document.getElementById('cbGEM-ERP-PR-DigestDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1016,16 +1031,16 @@ filterDesc(document.getElementById('GEM-ERP-PR-DigestDA'), 'obligation', documen
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">MimeType of the binary content<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://hl7.org/fhir/R4/valueset-mimetypes.html" title="http://hl7.org/fhir/ValueSet/mimetypes" class="binding">Mime Types</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set." class="binding">required</a><span title="null" class="binding">)</span><span title="null" class="binding">: </span><span title="null" class="binding">The mime type of an attachment. Any valid mime type is allowed.</span><br/><span style="font-weight:bold">Fixed Value: </span><span style="color: darkgreen">application/octet-stream</span></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="af" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: white; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a no-external="true" href="StructureDefinition-GEM-ERP-PR-Digest-definitions.html#Binary.securityContext" title="This element identifies another resource that can be used as a proxy of the security sensitivity to use when deciding and enforcing access control rules for the Binary resource. Given that the Binary resource contains very few elements that can be used to determine the sensitivity of the data and relationships to individuals, the referenced resource stands in as a proxy equivalent for this purpose. This referenced resource may be related to the Binary (e.g. Media, DocumentReference), or may be some non-related Resource purely as a security proxy. E.g. to identify that the binary resource relates to a patient, and access should only be granted to applications that have access to the patient." data-no-external="true">securityContext</a><a name="sa-Binary.securityContext"> </a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span><a style="padding-left: 3px; padding-right: 3px; border: 1px maroon solid; font-weight: bold; color: #301212; background-color: #fdf4f4;; padding-left: 3px; padding-right: 3px; border: 1px maroon solid; font-weight: bold; color: #301212; background-color: #fdf4f4;" href="http://hl7.org/fhir/R4/conformance-rules.html#constraints" title="This element has or is affected by constraints ( ref-1 )">C</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/resource.html">Resource</a>)</td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Identifies another resource to use as proxy when enforcing access control</td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Identifies another resource to use as proxy when enforcing access control<br class="constraint"/><span title="null" class="constraint">Constraints: </span><span style="font-weight:bold" title="SHALL have a contained resource if a local reference is provided" class="constraint">ref-1</span></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="ag" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a no-external="true" href="StructureDefinition-GEM-ERP-PR-Digest-definitions.html#Binary.data" title="The actual content, base64 encoded." data-no-external="true">data</a><a name="sa-Binary.data"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">base64Binary</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The actual content</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 06577ff7-95fd-4972-878d-072b05777639
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6acc5dd4-d21d-48d8-a1a4-1625450518e1
 document.getElementById('cbGEM-ERP-PR-DigestSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('GEM-ERP-PR-DigestSA'), 'binding', document.getElementById('cbGEM-ERP-PR-DigestSA-binding').checked, document.getElementById('ppGEM-ERP-PR-DigestSA'));
 document.getElementById('cbGEM-ERP-PR-DigestSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1124,6 +1139,15 @@ filterDesc(document.getElementById('GEM-ERP-PR-DigestSA'), 'obligation', documen
       <code>hasValue() or (children().count() &gt; id.count())</code>
     </td>
   </tr>
+  <tr>
+    <td>ref-1</td>
+    <td>error</td>
+    <td>Binary.securityContext</td>
+    <td>SHALL have a contained resource if a local reference is provided</td>
+    <td>
+      <code>reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))</code>
+    </td>
+  </tr>
 </table>
 
           
@@ -1155,7 +1179,7 @@ filterDesc(document.getElementById('GEM-ERP-PR-DigestSA'), 'obligation', documen
     "<a href="StructureDefinition-GEM-ERP-PR-Digest.html#Binary.implicitRules" title="A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc (this element modifies the meaning of other elements)" class="dict"><span style="text-decoration: underline">implicitRules</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#uri">uri</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: navy; opacity: 0.8">A set of rules under which this content was created</span>
     "<a href="StructureDefinition-GEM-ERP-PR-Digest.html#Binary.language" title="The base language in which the resource is written" class="dict"><span style="text-decoration: underline">language</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: navy; opacity: 0.8"><a href="http://hl7.org/fhir/R4/null.html" style="color: navy">Language of the resource content</a></span>
     "<a href="StructureDefinition-GEM-ERP-PR-Digest.html#Binary.contentType" title="MimeType of the binary content represented as a standard MimeType (BCP 13)" class="dict"><span style="text-decoration: underline">contentType</span></a>" : "application/octet-stream", <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span>
-    "<a href="StructureDefinition-GEM-ERP-PR-Digest.html#Binary.securityContext" title="This element identifies another resource that can be used as a proxy of the security sensitivity to use when deciding and enforcing access control rules for the Binary resource. Given that the Binary resource contains very few elements that can be used to determine the sensitivity of the data and relationships to individuals, the referenced resource stands in as a proxy equivalent for this purpose. This referenced resource may be related to the Binary (e.g. Media, DocumentReference), or may be some non-related Resource purely as a security proxy. E.g. to identify that the binary resource relates to a patient, and access should only be granted to applications that have access to the patient" class="dict"><span style="text-decoration: underline">securityContext</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(Resource|4.0.1)}, <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: navy; opacity: 0.8">Identifies another resource to use as proxy when enforcing access control</span>
+    "<a href="StructureDefinition-GEM-ERP-PR-Digest.html#Binary.securityContext" title="This element identifies another resource that can be used as a proxy of the security sensitivity to use when deciding and enforcing access control rules for the Binary resource. Given that the Binary resource contains very few elements that can be used to determine the sensitivity of the data and relationships to individuals, the referenced resource stands in as a proxy equivalent for this purpose. This referenced resource may be related to the Binary (e.g. Media, DocumentReference), or may be some non-related Resource purely as a security proxy. E.g. to identify that the binary resource relates to a patient, and access should only be granted to applications that have access to the patient" class="dict"><span style="text-decoration: underline">securityContext</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(Resource|4.0.1)}, <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children; ref-1: SHALL have a contained resource if a local reference is provided"><b>C?</b></span> <span style="color: navy; opacity: 0.8">Identifies another resource to use as proxy when enforcing access control</span>
     "<a href="StructureDefinition-GEM-ERP-PR-Digest.html#Binary.data" title="The actual content, base64 encoded" class="dict"><span style="text-decoration: underline">data</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">base64Binary</a></span>&gt;" <span style="color: Gray">//</span> <span style="color: brown" title="ele-1: All FHIR elements must have a @value or children"><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">The actual content</span>
   }
 
@@ -1239,7 +1263,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 22, 2026 06:40+0000">2026-06-22</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 09:04+0000">2026-06-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

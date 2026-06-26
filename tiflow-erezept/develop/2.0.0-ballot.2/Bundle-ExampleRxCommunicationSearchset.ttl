@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,31 +7,36 @@
 
 <https://gematik.de/fhir/tiflow-erezept/Bundle/ExampleRxCommunicationSearchset> a fhir:Bundle ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "ExampleRxCommunicationSearchset"] ; # 
-  fhir:type [ fhir:v "searchset"] ; # 
-  fhir:total [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
-  fhir:link ( [
-     fhir:relation [ fhir:v "self" ] ;
-     fhir:url [ fhir:v "https://erp-ref.example.org/Communication?received=NULL"^^xsd:anyURI ]
-  ] ) ; # 
-  fhir:entry ( [
-     fhir:fullUrl [ fhir:v "https://erp-ref.example.org/Communication/ExampleRxCommunicationDispReq"^^xsd:anyURI ] ;
-     fhir:resource ( <https://erp-ref.example.org/Communication/ExampleRxCommunicationDispReq> ) ;
-     fhir:search [
-       fhir:mode [ fhir:v "match" ]
+  fhir:Resource.id [ fhir:value "ExampleRxCommunicationSearchset"] ;
+  fhir:Bundle.type [ fhir:value "searchset"] ;
+  fhir:Bundle.total [ fhir:value "1"^^xsd:nonNegativeInteger] ;
+  fhir:Bundle.link [
+     fhir:index 0 ;
+     fhir:Bundle.link.relation [ fhir:value "self" ] ;
+     fhir:Bundle.link.url [ fhir:value "https://erp-ref.example.org/Communication?received=NULL" ]
+  ] ;
+  fhir:Bundle.entry [
+     fhir:index 0 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://erp-ref.example.org/Communication/ExampleRxCommunicationDispReq" ] ;
+     fhir:Bundle.entry.resource <https://erp-ref.example.org/Communication/ExampleRxCommunicationDispReq> ;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
      ]
-  ] ) . # 
+  ] .
 
 <https://erp-ref.example.org/Communication/ExampleRxCommunicationDispReq> a fhir:Communication ;
-  fhir:id [ fhir:v "ExampleRxCommunicationDispReq"] ; # 
-  fhir:status [ fhir:v "unknown"] ; # 
-  fhir:sent [ fhir:v "2026-03-20T10:15:00+01:00"^^xsd:dateTime] ; # 
-  fhir:payload ( [
-     fhir:content [
-       a fhir:string ;
-       fhir:v "Bitte Rezept in Filiale bereitstellen"
-     ]
-  ] ) . # 
+  fhir:Resource.id [ fhir:value "ExampleRxCommunicationDispReq"] ;
+  fhir:Communication.status [ fhir:value "unknown"] ;
+  fhir:Communication.sent [ fhir:value "2026-03-20T10:15:00+01:00"^^xsd:dateTime] ;
+  fhir:Communication.payload [
+     fhir:index 0 ;
+     fhir:Communication.payload.contentString [ fhir:value "Bitte Rezept in Filiale bereitstellen" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Bundle/ExampleRxCommunicationSearchset.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

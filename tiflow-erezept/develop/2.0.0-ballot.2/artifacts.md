@@ -1,4 +1,6 @@
-# FHIR-Artefakte - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# FHIR-Artefakte - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -22,8 +24,8 @@ Die folgenden Value Sets sind für die FHIR-Data-Service-Funktionalitäten festg
 
 | | |
 | :--- | :--- |
+| [ Bearbeiter eines E-Rezeptes ](ValueSet-GEM-ERP-VS-OrganizationType.md) | ValueSet der Organisationstyp-Codes eines Performers für den RX Task |
 | [ TIFLOW EREZEPT Operation Outcome Details VS ](ValueSet-tiflow-erezept-operation-outcome-details-vs.md) | E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können |
-| [ Bearbeiter eines E-Rezeptes ](ValueSet-tiflow-rx-task-organizations-vs.md) | ValueSet der Organisationstyp-Codes eines Performers für den RX Task |
 
 ### Terminologien: Code Systems
 

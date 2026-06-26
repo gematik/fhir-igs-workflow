@@ -1,7 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
-@prefix loinc: <https://loinc.org/rdf/> .
+@prefix loinc: <http://loinc.org/rdf#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -9,49 +8,60 @@
 
 <https://gematik.de/fhir/tiflow-erezept/Bundle/example-searchset-consent> a fhir:Bundle ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "example-searchset-consent"] ; # 
-  fhir:type [ fhir:v "searchset"] ; # 
-  fhir:total [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
-  fhir:link ( [
-     fhir:relation [ fhir:v "self" ] ;
-     fhir:url [ fhir:v "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent?category=CHARGCONS"^^xsd:anyURI ]
-  ] ) ; # 
-  fhir:entry ( [
-     fhir:fullUrl [ fhir:v "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent/QueryConsentCHARGCONS"^^xsd:anyURI ] ;
-     fhir:resource ( <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent/QueryConsentCHARGCONS> )
-  ] ) . # 
+  fhir:Resource.id [ fhir:value "example-searchset-consent"] ;
+  fhir:Bundle.type [ fhir:value "searchset"] ;
+  fhir:Bundle.total [ fhir:value "1"^^xsd:nonNegativeInteger] ;
+  fhir:Bundle.link [
+     fhir:index 0 ;
+     fhir:Bundle.link.relation [ fhir:value "self" ] ;
+     fhir:Bundle.link.url [ fhir:value "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent?category=CHARGCONS" ]
+  ] ;
+  fhir:Bundle.entry [
+     fhir:index 0 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent/QueryConsentCHARGCONS" ] ;
+     fhir:Bundle.entry.resource <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent/QueryConsentCHARGCONS>
+  ] .
 
 <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent/QueryConsentCHARGCONS> a fhir:Consent ;
-  fhir:id [ fhir:v "QueryConsentCHARGCONS"] ; # 
-  fhir:status [ fhir:v "active"] ; # 
-  fhir:scope [
-     fhir:coding ( [
-       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/consentscope"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "patient-privacy" ] ;
-       fhir:display [ fhir:v "Privacy Consent" ]
-     ] )
-  ] ; # 
-  fhir:category ( [
-     fhir:coding ( [
-       a loinc:59284-0 ;
-       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "59284-0" ] ;
-       fhir:display [ fhir:v "Consent Document" ]
-     ] )
-  ] ) ; # 
-  fhir:patient [
-     fhir:identifier [
-       fhir:system [ fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "X123456789" ]
+  fhir:Resource.id [ fhir:value "QueryConsentCHARGCONS"] ;
+  fhir:Consent.status [ fhir:value "active"] ;
+  fhir:Consent.scope [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/consentscope" ] ;
+       fhir:Coding.code [ fhir:value "patient-privacy" ] ;
+       fhir:Coding.display [ fhir:value "Privacy Consent" ]
      ]
-  ] ; # 
-  fhir:dateTime [ fhir:v "2025-01-15T10:15:00+01:00"^^xsd:dateTime] ; # 
-  fhir:policyRule [
-     fhir:coding ( [
-       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "OPTIN" ]
-     ] )
-  ] . # 
+  ] ;
+  fhir:Consent.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a loinc:59284-0 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "59284-0" ] ;
+       fhir:Coding.display [ fhir:value "Consent Document" ]
+     ]
+  ] ;
+  fhir:Consent.patient [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "X123456789" ]
+     ]
+  ] ;
+  fhir:Consent.dateTime [ fhir:value "2025-01-15T10:15:00+01:00"^^xsd:dateTime] ;
+  fhir:Consent.policyRule [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ] ;
+       fhir:Coding.code [ fhir:value "OPTIN" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Bundle/example-searchset-consent.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

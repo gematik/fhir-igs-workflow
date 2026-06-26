@@ -38,78 +38,6 @@
         "string",
         "boolean"
       ]
-    },
-    {
-      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment",
-      "title": "TI Environment",
-      "types": [
-        "code"
-      ]
-    },
-    {
-      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature",
-      "title": "TI Feature",
-      "types": [
-        "canonical",
-        "boolean",
-        "base64Binary",
-        "boolean",
-        "canonical",
-        "code",
-        "date",
-        "dateTime",
-        "decimal",
-        "id",
-        "instant",
-        "integer",
-        "markdown",
-        "oid",
-        "positiveInt",
-        "string",
-        "time",
-        "unsignedInt",
-        "uri",
-        "url",
-        "uuid",
-        "Address",
-        "Age",
-        "Annotation",
-        "Attachment",
-        "CodeableConcept",
-        "Coding",
-        "ContactPoint",
-        "Count",
-        "Distance",
-        "Duration",
-        "HumanName",
-        "Identifier",
-        "Money",
-        "Period",
-        "Quantity",
-        "Range",
-        "Ratio",
-        "Reference",
-        "SampledData",
-        "Signature",
-        "Timing",
-        "ContactDetail",
-        "Contributor",
-        "DataRequirement",
-        "Expression",
-        "ParameterDefinition",
-        "RelatedArtifact",
-        "TriggerDefinition",
-        "UsageContext",
-        "Dosage",
-        "Meta"
-      ]
-    },
-    {
-      "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration",
-      "title": "TI FHIR Configuration",
-      "types": [
-        "code"
-      ]
     }
   ],
   "profiles": {
@@ -143,22 +71,22 @@
         "title": "TI Audit Event Rest"
       }
     ],
-    "CapabilityStatement": [
+    "Communication": [
       {
-        "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-capability-statement",
-        "title": "Capability Statement Profil für den TI-Flow-Fachdienst"
-      }
-    ],
-    "Task": [
-      {
-        "url": "https://gematik.de/fhir/tiflow/StructureDefinition/ti-task",
-        "title": "Task für TIFlow Anwendungen"
+        "url": "https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-communication",
+        "title": "Generische TIFlow Communication"
       }
     ],
     "OperationOutcome": [
       {
         "url": "https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-operation-outcome",
         "title": "TIFlow OperationOutcome"
+      }
+    ],
+    "Task": [
+      {
+        "url": "https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-order-task",
+        "title": "Task für TIFlow Verordnungen"
       }
     ]
   },
@@ -168,11 +96,6 @@
       "CapabilityStatement.rest.resource.interaction",
       "CapabilityStatement.rest.resource.searchParam",
       "CapabilityStatement.rest.resource.supportedProfile"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation|4.0.1": [
-      "CapabilityStatement.rest.operation",
-      "CapabilityStatement.rest.resource.interaction",
-      "CapabilityStatement.rest.resource.operation"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
@@ -217,35 +140,22 @@
     "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_Beneficiary": [
       "Composition"
     ],
-    "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType": [
-      "Task"
-    ],
     "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url": [
       "CapabilityStatement"
     ],
     "https://gematik.de/fhir/ti/StructureDefinition/extension-http-header": [
-      "CapabilityStatement",
-      "CapabilityStatement.rest.operation",
-      "CapabilityStatement.rest.resource.interaction",
-      "CapabilityStatement.rest.resource.operation"
-    ],
-    "https://gematik.de/fhir/ti/StructureDefinition/extension-http-method": [
-      "CapabilityStatement.rest.operation",
-      "CapabilityStatement.rest.resource.operation"
+      "CapabilityStatement"
     ],
     "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info": [
-      "CapabilityStatement",
-      "CapabilityStatement.rest.operation",
-      "CapabilityStatement.rest.resource.interaction",
-      "CapabilityStatement.rest.resource.operation"
+      "CapabilityStatement.rest.resource.interaction"
     ],
-    "https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment": [
+    "https://gematik.de/fhir/ti/StructureDefinition/ti-environment": [
       "CapabilityStatement"
     ],
-    "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature": [
+    "https://gematik.de/fhir/ti/StructureDefinition/ti-feature": [
       "CapabilityStatement"
     ],
-    "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration": [
+    "https://gematik.de/fhir/ti/StructureDefinition/ti-fhir-configuration": [
       "CapabilityStatement"
     ]
   }

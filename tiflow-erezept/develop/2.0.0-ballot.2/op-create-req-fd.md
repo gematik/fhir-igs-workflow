@@ -1,4 +1,6 @@
-# FD-Anforderungen $create - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# FD-Anforderungen $create - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -51,7 +53,11 @@ abbrechen, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fac
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation den Parameter workflowType (Rezepttyp) aus dem HTTP-Body des POST-Requests entnehmen, als Attribut Task.extension:flowType des zu erstellenden Tasks verwenden und bei Fehlen bzw. Nicht-Konformität des Parameters den Request als unzulässig abweisen, damit auf Basis dieser Parameter ausschließlich gültige Workflows gestartet werden können und dem Versicherten bei Einsicht des Tasks der Weg in entweder eine Apotheke oder ein Sanitätshaus oder eine andere zuständige Einrichtung gewiesen werden kann.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Anlegen eines neuen Tasks eine Rezept-ID gemäß der Bildungsregel [gemSpec_DM_eRp#A_19217-*] generieren und als Identifier mit Namingsystem https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId dem Task hinzufügen und sicherstellen, dass diese Rezept-ID innerhalb von 11 Jahren nach ihrer Erzeugung nicht erneut vergeben wird, damit es innerhalb der Aufbewahrungsfrist der Abrechnungsdaten bei den Krankenkassen zu keinen Dubletten kommt.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Anlegen eines neuen Tasks eine Rezept-ID gemäß der Bildungsregel in [IG-TIFLOW-CORE-A357] generieren und als Identifier mit Namingsystem https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId dem Task hinzufügen und sicherstellen, dass diese Rezept-ID innerhalb von 11 Jahren nach ihrer Erzeugung nicht erneut vergeben wird, damit es innerhalb der Aufbewahrungsfrist der Abrechnungsdaten bei den Krankenkassen zu keinen Dubletten kommt.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Erzeugen des ersten Tasks aller Workflowtypen sicherstellen, dass der 12-stellige Zählerstand der Rezept-ID gleich 010.000.000.000 ist.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Erzeugen eines neuen Tasks sicherstellen, dass die Rezept-ID je Workflowtyp sequentiell aufsteigend erzeugt wird.
 
 funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS beim Erzeugen eines neuen Tasks die Rezept-ID, welche mit Task an das verordnende Primärsystem übermittelt wird, als Task-ID verwenden.
 

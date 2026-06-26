@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FD-Anforderungen $create - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2</title>
+    <title>FD-Anforderungen $create - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -161,6 +161,9 @@
       <li>
         <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -214,7 +217,7 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Verordnungen für Arzneimittel
+Implementation Guide<br /> TIFlow - Verordnungen für Arzneimittel
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
             <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
@@ -295,7 +298,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den TI-Flow-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$create</code>.</p>
 
 <!-- A_19018-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-217" title="TI-Flow-Fachdienst - Task erzeugen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A217" title="TI-Flow-Fachdienst - Task erzeugen - Rollenprüfung" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -335,7 +338,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19257-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-218" title="TI-Flow-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A218" title="TI-Flow-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -367,7 +370,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19112 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-219" title="TI-Flow-Fachdienst - Task erzeugen - Parametrierung Task für Workflow-Typ" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A219" title="TI-Flow-Fachdienst - Task erzeugen - Parametrierung Task für Workflow-Typ" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -377,16 +380,32 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- ToDo : Fehler ergänzen -->
 
 <!-- A_19019-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-221" title="TI-Flow-Fachdienst - Task erzeugen - Generierung Rezept-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A221" title="TI-Flow-Fachdienst - Task erzeugen - Generierung Rezept-ID" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Anlegen eines neuen Tasks eine Rezept-ID gemäß der Bildungsregel [gemSpec_DM_eRp#A_19217-*] generieren und als Identifier mit Namingsystem https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId dem Task hinzufügen und sicherstellen, dass diese Rezept-ID innerhalb von 11 Jahren nach ihrer Erzeugung nicht erneut vergeben wird, damit es innerhalb der Aufbewahrungsfrist der Abrechnungsdaten bei den Krankenkassen zu keinen Dubletten kommt.
+    Der TI-Flow-Fachdienst MUSS beim Anlegen eines neuen Tasks eine Rezept-ID gemäß der Bildungsregel in [IG-TIFLOW-CORE-A357] generieren und als Identifier mit Namingsystem https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId dem Task hinzufügen und sicherstellen, dass diese Rezept-ID innerhalb von 11 Jahren nach ihrer Erzeugung nicht erneut vergeben wird, damit es innerhalb der Aufbewahrungsfrist der Abrechnungsdaten bei den Krankenkassen zu keinen Dubletten kommt.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A439" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID Nummernkreis" version="0">
+    <meta lockversion="false" />
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS beim Erzeugen des ersten Tasks aller Workflowtypen sicherstellen, dass der 12-stellige Zählerstand der Rezept-ID gleich 010.000.000.000 ist.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A440" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID sequentielle Zählung" version="0">
+    <meta lockversion="false" />
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS beim Erzeugen eines neuen Tasks sicherstellen, dass die Rezept-ID je Workflowtyp sequentiell aufsteigend erzeugt wird.
 </requirement>
 
 <!-- A_23227 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-222" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID=Rezept-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A222" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID=Rezept-ID" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -395,7 +414,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19021-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-223" title="TI-Flow-Fachdienst - Task erzeugen - Generierung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A223" title="TI-Flow-Fachdienst - Task erzeugen - Generierung AccessCode" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -404,7 +423,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19114 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-224" title="TI-Flow-Fachdienst - Task erzeugen - Status draft" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A224" title="TI-Flow-Fachdienst - Task erzeugen - Status draft" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -415,7 +434,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
 <!-- A_19214 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-217" title="TI-Flow-Fachdienst - Task erzeugen - Flowtype 160/166/169/200/209 - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A217" title="TI-Flow-Fachdienst - Task erzeugen - Flowtype 160/166/169/200/209 - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -466,7 +485,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:58+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 09:08+0000">2026-06-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

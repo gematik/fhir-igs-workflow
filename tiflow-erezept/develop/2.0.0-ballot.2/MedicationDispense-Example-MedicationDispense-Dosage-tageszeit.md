@@ -1,4 +1,6 @@
-# Beispiel Medikamentenabgabe mit Dosierung nach 4er Schema - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Beispiel Medikamentenabgabe mit Dosierung nach 4er Schema - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

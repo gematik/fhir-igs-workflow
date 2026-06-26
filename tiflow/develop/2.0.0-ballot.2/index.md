@@ -1,8 +1,10 @@
-# Implementation Guide TI-Flow Kernfunktionaliten - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# Implementation Guide TI-Flow Kernfunktionaliten - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * **Implementation Guide TI-Flow Kernfunktionaliten**
@@ -13,6 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/ImplementationGuide/de.gematik.tiflow | *Version*:2.0.0-ballot.2 |
 | Draft as of 2026-05-25 | *Computable Name*:gemIG_TIFlow_core |
+| **Copyright/Legal**: gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
 Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den TI-Flow-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet werden.
 
@@ -89,7 +92,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
   "url" : "https://gematik.de/fhir/tiflow/ImplementationGuide/de.gematik.tiflow",
   "version" : "2.0.0-ballot.2",
   "name" : "gemIG_TIFlow_core",
-  "title" : "TIFlow - Kernfunktionalitäten",
+  "title" : "Implementation Guide TIFlow - Kernfunktionalitäten",
   "status" : "draft",
   "date" : "2026-05-25",
   "publisher" : "gematik GmbH",
@@ -111,6 +114,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       "display" : "Germany"
     }]
   }],
+  "copyright" : "gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.html), Version 2.0.",
   "packageId" : "de.gematik.tiflow",
   "license" : "Apache-2.0",
   "fhirVersion" : ["4.0.1"],
@@ -141,22 +145,10 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     "version" : "1.5.4"
   },
   {
-    "id" : "de_gematik_terminology",
-    "uri" : "https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology",
-    "packageId" : "de.gematik.terminology",
-    "version" : "1.0.9"
-  },
-  {
     "id" : "de_gematik_ti",
     "uri" : "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
     "packageId" : "de.gematik.ti",
     "version" : "1.4.0-ballot.1"
-  },
-  {
-    "id" : "hl7_fhir_uv_xver_r5_r4",
-    "uri" : "http://hl7.org/fhir/uv/xver/ImplementationGuide/hl7.fhir.uv.xver-r5.r4",
-    "packageId" : "hl7.fhir.uv.xver-r5.r4",
-    "version" : "0.1.0"
   }],
   "definition" : {
     "extension" : [{
@@ -177,7 +169,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "draft"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -189,6 +181,182 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "url" : "value",
         "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_AvailabilityStatus"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_VS_DocumentType"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AcceptDate"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_Beneficiary"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_ExpiryDate"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Binary"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Composition"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Device"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Digest"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Signature"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FlowType"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -665,7 +833,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "draft"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -677,6 +845,182 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "url" : "value",
         "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_AvailabilityStatus"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_VS_DocumentType"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AcceptDate"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_Beneficiary"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_ExpiryDate"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Binary"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Composition"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Device"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Digest"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Signature"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FlowType"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1146,18 +1490,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ti-flow-capability-statement"
-      },
-      "name" : "Capability Statement Profil für den TI-Flow-Fachdienst",
-      "description" : "Dieses Profil beschreibt die Fähigkeiten des TI-Flow-Fachdienst.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CapabilityStatement"
       }],
       "reference" : {
@@ -1185,7 +1517,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         "valueString" : "CodeSystem"
       }],
       "reference" : {
-        "reference" : "CodeSystem/ti-flowtypes-codes"
+        "reference" : "CodeSystem/GEM-ERP-CS-FlowType"
       },
       "name" : "CodeSystem der Flowtypes in TIFlow Anwendungen",
       "description" : "Zeigt die verschiedenen Typen der TI Workflows entsprechend der Verordnungsformulare.\n\nWICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheken wie z.B. Pharmazeutische Dienstleistungen!",
@@ -1213,7 +1545,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       },
       "name" : "Example CapabilityStatement Server PU - RX",
       "description" : "Example capability statement for productive environment with common features enabled.",
-      "exampleCanonical" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-capability-statement"
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -1257,7 +1589,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/tiflow-receipt-composition"
+        "reference" : "StructureDefinition/GEM-ERP-PR-Composition"
       },
       "name" : "GEM ERP PR Composition",
       "description" : "Composition für die Quittung für die Einlösung eines E-Rezepts",
@@ -1305,10 +1637,22 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/ti-task"
+        "reference" : "StructureDefinition/tiflow-communication"
       },
-      "name" : "Task für TIFlow Anwendungen",
-      "description" : "Task für die Verwaltung von Workflows der TIFlow Anwendungen",
+      "name" : "Generische TIFlow Communication",
+      "description" : "Generische TIFlow Workflow-Communication",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tiflow-order-task"
+      },
+      "name" : "Task für TIFlow Verordnungen",
+      "description" : "Task für die Verwaltung von Workflows der TIFlow Verordnungen",
       "exampleBoolean" : false
     },
     {
@@ -1362,54 +1706,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ti-environment"
-      },
-      "name" : "TI Environment",
-      "description" : "Diese Extension kennzeichnet die Zielumgebung eines konkreten CapabilityStatements (z. B. Produktiv-, Referenz-, Test- oder Entwicklungsumgebung). Die Information hilft Clients, deklarierte Fähigkeiten im richtigen betrieblichen Kontext zu interpretieren.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/ti-environment-codes"
-      },
-      "name" : "TI Environments CodeSystem",
-      "description" : "Dieses CodeSystem definiert standardisierte Umgebungskennzeichen für CapabilityStatements des TI-Flow-Fachdienstes. Es erlaubt die eindeutige Kennzeichnung, ob die beschriebene Fähigkeit für Produktions-, Referenz-, Test- oder Entwicklungsumgebung gilt.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/ti-environment-vs"
-      },
-      "name" : "TI Environments ValueSet",
-      "description" : "Dieses ValueSet enthält alle zulässigen Umgebungskennzeichen für CapabilityStatements des TI-Flow-Fachdienstes und wird für die verpflichtende Kennzeichnung der Zielumgebung verwendet.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ti-feature"
-      },
-      "name" : "TI Feature",
-      "description" : "Deklariert ein einzelnes Feature eines Fachdienst-Deployments. \nDas Teilfeld `definition` verweist per Canonical auf den Feature-Bezeichner \n(analog zum HL7 Application Feature Framework, `hl7.fhir.uv.application-feature`);\n`value` beschreibt den aktuellen Zustand des Features am betrachteten Endpoint.\n\nKompatibilitätshinweis: Diese Extension spiegelt bewusst die Sub-Extension-Namen\n`definition` und `value` des HL7-Frameworks wider, um eine spätere Migration oder\nProfilierung ohne Breaking Change zu ermöglichen.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
@@ -1425,31 +1721,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/ti-fhir-configuration"
-      },
-      "name" : "TI FHIR Configuration",
-      "description" : "Diese Extension deklariert eine konkrete Konfigurationsausprägung eines FHIR-Data Service in der TI auf CapabilityStatement-Ebene. Die Konfiguration wird als Code transportiert. Die Bedeutung und Konstellation einer FHIR-Konfiguration ist aus externen Quellen der Releaseplanung zu entnehmen.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/ti-fhir-configuration-vs"
-      },
-      "name" : "TI FHIR Configuration ValueSet",
-      "description" : "Dieses ValueSet bildet den zulässigen Wertebereich für die FHIR-Konfiguration eines FHIR-Data Service der TI ab.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/tiflow-accept-date"
+        "reference" : "StructureDefinition/GEM-ERP-EX-AcceptDate"
       },
       "name" : "TI Flow AcceptDate",
       "description" : "Diese Extension sollte in der Task-Ressource verwendet werden. Sie speichert das Datum, bis zu dem eine Krankenkasse die Verschreibung akzeptiert und bezahlt.",
@@ -1458,22 +1730,10 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:complex-type"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/tiflow-access-code"
-      },
-      "name" : "TI Flow AccessCode",
-      "description" : "Der AccessCode ist ein generiertes Geheimnis, das Zugriff auf eine Ressource gewährt, z. B. Task.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/tiflow-expiry-date"
+        "reference" : "StructureDefinition/GEM-ERP-EX-ExpiryDate"
       },
       "name" : "TI Flow ExpiryDate",
       "description" : "Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt das Ablaufdatum des Rezepts an.",
@@ -1482,22 +1742,10 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:complex-type"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/tiflow-secret"
-      },
-      "name" : "TI Flow Secret",
-      "description" : "Das Secret ist ein generiertes Geheimnis, das Zugriff auf eine TIFlow Verordnung gewährt, z. B. Task.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/ti-flowtype"
+        "reference" : "StructureDefinition/GEM-ERP-EX-PrescriptionType"
       },
       "name" : "TI Flow Type",
       "description" : "Definiert den Typ eines Workflows im TIFlow.",
@@ -1506,22 +1754,10 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/ti-fhir-configuration-cs"
-      },
-      "name" : "TIFHIR Configuration CS",
-      "description" : "Dieses CodeSystem beschreibt die FHIR-Konfigurationen eines FHIR-Data Service der TI. Die konkrete Konzeptliste wird extern im gematik-Releaseprozess als Release-Artefakt verwaltet und versioniert; dieser IG referenziert diese Konzepte nur über das Canonical.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/tiflow-beneficiary"
+        "reference" : "StructureDefinition/GEM-ERP-EX-Beneficiary"
       },
       "name" : "TIFlow Beneficiary",
       "description" : "Der Begünstigte (z. B. Apotheke) der Quittung eines TIFlow Vorgangs, der erstellt wird, wenn der Workflow abgeschlossen ist.",
@@ -1566,10 +1802,22 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/tiflow-order-task-status-vs"
+      },
+      "name" : "TIFlow Order Task ValueSet",
+      "description" : "TIFlow Order Task ValueSet",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/tiflow-receipt-bundle"
+        "reference" : "StructureDefinition/GEM-ERP-PR-Bundle"
       },
       "name" : "TIFlow Receipt Bundle",
       "description" : "Dokumentenbündel für Quittung",
@@ -1593,7 +1841,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/ti-flowtypes-vs"
+        "reference" : "ValueSet/GEM-ERP-VS-FlowType"
       },
       "name" : "ValueSet der Flowtypes in TIFlow Anwendungen",
       "description" : "Zeigt die verschiedenen Typen der TI Workflows entsprechend der Verordnungsformulare.",
@@ -1631,6 +1879,24 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-schnittstellen-generelle-prinzipien.html"
+        }],
+        "nameUrl" : "menu-schnittstellen-generelle-prinzipien.html",
+        "title" : "Generelle Prinzipien",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "architecture.html"
+        }],
+        "nameUrl" : "architecture.html",
+        "title" : "Architekturmöglichkeiten TI-Flow-Fachdienst",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "audit-service.html"
         }],
         "nameUrl" : "audit-service.html",
@@ -1653,42 +1919,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         }],
         "nameUrl" : "ttl.html",
         "title" : "Löschfristen",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-technische-umsetzung-zeta.html"
-        }],
-        "nameUrl" : "menu-technische-umsetzung-zeta.html",
-        "title" : "Zero Trust Access (ZETA)",
-        "generation" : "markdown",
-        "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "zeta-client.html"
-          }],
-          "nameUrl" : "zeta-client.html",
-          "title" : "Nutzung ZETA durch Clientsystme",
-          "generation" : "markdown"
-        }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-technische-umsetzung-epa-ms.html"
-        }],
-        "nameUrl" : "menu-technische-umsetzung-epa-ms.html",
-        "title" : "ePA MedicationService",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-technische-umsetzung-push.html"
-        }],
-        "nameUrl" : "menu-technische-umsetzung-push.html",
-        "title" : "Push Notification senden",
         "generation" : "markdown"
       },
       {
@@ -1721,15 +1951,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "datamatrix-code-client.html"
-        }],
-        "nameUrl" : "datamatrix-code-client.html",
-        "title" : "Datamatrix Code",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "pki-zertifikatspruefung.html"
         }],
         "nameUrl" : "pki-zertifikatspruefung.html",
@@ -1742,7 +1963,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
           "valueUrl" : "capability-statement-extensions.html"
         }],
         "nameUrl" : "capability-statement-extensions.html",
-        "title" : "Konfigurationsabfrage des TI-Flow-Fachdienst",
+        "title" : "Konfiguration des TI-Flow-Fachdienst",
         "generation" : "markdown"
       },
       {
@@ -1752,6 +1973,15 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
         }],
         "nameUrl" : "health-check.html",
         "title" : "Health Check",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "datamatrix-code-client.html"
+        }],
+        "nameUrl" : "datamatrix-code-client.html",
+        "title" : "Data Matrix Code",
         "generation" : "markdown"
       },
       {
@@ -1775,15 +2005,6 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-schnittstellen-generelle-prinzipien.html"
-        }],
-        "nameUrl" : "menu-schnittstellen-generelle-prinzipien.html",
-        "title" : "Generelle Prinzipien",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "menu-technische-umsetzung-systemueberblick.html"
         }],
         "nameUrl" : "menu-technische-umsetzung-systemueberblick.html",
@@ -1793,10 +2014,37 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "menu-technische-umsetzung-paging.html"
+          "valueUrl" : "menu-technische-umsetzung-zeta.html"
         }],
-        "nameUrl" : "menu-technische-umsetzung-paging.html",
-        "title" : "Handhabung der Rückgabe von mehreren FHIR-Objekten",
+        "nameUrl" : "menu-technische-umsetzung-zeta.html",
+        "title" : "Technische Umsetzung - Zero Trust Access (ZETA)",
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "zeta-client.html"
+          }],
+          "nameUrl" : "zeta-client.html",
+          "title" : "Nutzung ZETA durch Clientsystme",
+          "generation" : "markdown"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-technische-umsetzung-epa-ms.html"
+        }],
+        "nameUrl" : "menu-technische-umsetzung-epa-ms.html",
+        "title" : "Technische Umsetzung - ePA Medication Service",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "menu-technische-umsetzung-push.html"
+        }],
+        "nameUrl" : "menu-technische-umsetzung-push.html",
+        "title" : "Technische Umsetzung - Push Notification",
         "generation" : "markdown"
       },
       {
@@ -1805,7 +2053,7 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
           "valueUrl" : "menu-technische-umsetzung-subscription.html"
         }],
         "nameUrl" : "menu-technische-umsetzung-subscription.html",
-        "title" : "Notifications für Clientsysteme",
+        "title" : "Technische Umsetzung - Notifications für Clientsysteme",
         "generation" : "markdown"
       },
       {
@@ -2351,10 +2599,28 @@ Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifisch
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "release-notes.html"
+        }],
+        "nameUrl" : "release-notes.html",
+        "title" : "Release Notes",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "license.html"
         }],
         "nameUrl" : "license.html",
         "title" : "Apache License",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "requirements.html"
+        }],
+        "nameUrl" : "requirements.html",
+        "title" : "Anforderungslisten",
         "generation" : "markdown"
       }]
     },

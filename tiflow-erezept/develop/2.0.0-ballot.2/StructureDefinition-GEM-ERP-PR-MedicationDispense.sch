@@ -3,7 +3,7 @@
   <sch:ns prefix="f" uri="http://hl7.org/fhir"/>
   <sch:ns prefix="h" uri="http://www.w3.org/1999/xhtml"/>
   <!-- 
-    This file contains just the constraints for the profile EPAMedicationDispense
+    This file contains just the constraints for the profile TIMedicationDispenseDgMP
     It includes the base constraints for the resource as well.
     Because of the way that schematrons and containment work, 
     you may need to use this schematron fragment to build a, 
@@ -16,39 +16,36 @@
       <sch:assert test="count(f:extension[@url = 'https://gematik.de/fhir/epa-medication/StructureDefinition/rx-prescription-process-identifier-extension']) &lt;= 1">extension with URL = 'https://gematik.de/fhir/epa-medication/StructureDefinition/rx-prescription-process-identifier-extension': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta']) &lt;= 1">extension with URL = 'http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta': maximum cardinality of 'extension' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:title>f:MedicationDispense/f:extension/f:value[x] 1</sch:title>
-    <sch:rule context="f:MedicationDispense/f:extension/f:value[x]">
-      <sch:assert test="count(f:system) &gt;= 1">system: minimum cardinality of 'system' is 1</sch:assert>
-      <sch:assert test="count(f:value) &gt;= 1">value: minimum cardinality of 'value' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:title>f:MedicationDispense/f:extension</sch:title>
-    <sch:rule context="f:MedicationDispense/f:extension">
-      <sch:assert test="count(f:value[x]) &gt;= 1">value[x]: minimum cardinality of 'value[x]' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'language']) &gt;= 1">extension with URL = 'language': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'language']) &lt;= 1">extension with URL = 'language': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'algorithmVersion']) &gt;= 1">extension with URL = 'algorithmVersion': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'algorithmVersion']) &lt;= 1">extension with URL = 'algorithmVersion': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:value[x]) &lt;= 0">value[x]: maximum cardinality of 'value[x]' is 0</sch:assert>
+      <sch:assert test="count(f:partOf) &lt;= 0">partOf: maximum cardinality of 'partOf' is 0</sch:assert>
+      <sch:assert test="count(f:statusReason[x]) &lt;= 0">statusReason[x]: maximum cardinality of 'statusReason[x]' is 0</sch:assert>
+      <sch:assert test="count(f:context) &lt;= 0">context: maximum cardinality of 'context' is 0</sch:assert>
+      <sch:assert test="count(f:supportingInformation) &lt;= 0">supportingInformation: maximum cardinality of 'supportingInformation' is 0</sch:assert>
+      <sch:assert test="count(f:location) &lt;= 0">location: maximum cardinality of 'location' is 0</sch:assert>
+      <sch:assert test="count(f:type) &lt;= 0">type: maximum cardinality of 'type' is 0</sch:assert>
+      <sch:assert test="count(f:quantity) &lt;= 0">quantity: maximum cardinality of 'quantity' is 0</sch:assert>
+      <sch:assert test="count(f:daysSupply) &lt;= 0">daysSupply: maximum cardinality of 'daysSupply' is 0</sch:assert>
+      <sch:assert test="count(f:destination) &lt;= 0">destination: maximum cardinality of 'destination' is 0</sch:assert>
+      <sch:assert test="count(f:detectedIssue) &lt;= 0">detectedIssue: maximum cardinality of 'detectedIssue' is 0</sch:assert>
+      <sch:assert test="count(f:eventHistory) &lt;= 0">eventHistory: maximum cardinality of 'eventHistory' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:title>f:MedicationDispense/f:performer/f:actor</sch:title>
     <sch:rule context="f:MedicationDispense/f:performer/f:actor">
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:reference) &lt;= 1">reference: maximum cardinality of 'reference' is 1</sch:assert>
+      <sch:assert test="count(f:type) &lt;= 1">type: maximum cardinality of 'type' is 1</sch:assert>
       <sch:assert test="count(f:identifier) &gt;= 1">identifier: minimum cardinality of 'identifier' is 1</sch:assert>
+      <sch:assert test="count(f:identifier) &lt;= 1">identifier: maximum cardinality of 'identifier' is 1</sch:assert>
+      <sch:assert test="count(f:display) &lt;= 1">display: maximum cardinality of 'display' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:title>f:MedicationDispense/f:dosageInstruction/f:doseAndRate/f:dose[x] 1</sch:title>
-    <sch:rule context="f:MedicationDispense/f:dosageInstruction/f:doseAndRate/f:dose[x]">
-      <sch:assert test="count(f:comparator) &lt;= 0">comparator: maximum cardinality of 'comparator' is 0</sch:assert>
-      <sch:assert test="count(f:unit) &gt;= 1">unit: minimum cardinality of 'unit' is 1</sch:assert>
-      <sch:assert test="count(f:system) &gt;= 1">system: minimum cardinality of 'system' is 1</sch:assert>
-      <sch:assert test="count(f:code) &gt;= 1">code: minimum cardinality of 'code' is 1</sch:assert>
+    <sch:title>f:MedicationDispense/f:substitution</sch:title>
+    <sch:rule context="f:MedicationDispense/f:substitution">
+      <sch:assert test="count(f:type) &lt;= 0">type: maximum cardinality of 'type' is 0</sch:assert>
+      <sch:assert test="count(f:reason) &lt;= 0">reason: maximum cardinality of 'reason' is 0</sch:assert>
+      <sch:assert test="count(f:responsibleParty) &lt;= 0">responsibleParty: maximum cardinality of 'responsibleParty' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

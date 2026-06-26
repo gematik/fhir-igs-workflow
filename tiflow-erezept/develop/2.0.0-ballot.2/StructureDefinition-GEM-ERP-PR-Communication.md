@@ -1,4 +1,6 @@
-# GEM ERP PR Communication - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# GEM ERP PR Communication - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -21,7 +23,7 @@ Generische Workflow-Communication
 
 **Usages:**
 
-* Derived from this Profile: [GEM ERP PR Communication Reply](StructureDefinition-GEM-ERP-PR-Communication-Reply.md)
+* Derived from this Profile: [GEM ERP PR Communication DispReq](StructureDefinition-GEM-ERP-PR-Communication-DispReq.md) and [GEM ERP PR Communication Reply](StructureDefinition-GEM-ERP-PR-Communication-Reply.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow.erezept|current/StructureDefinition/StructureDefinition-GEM-ERP-PR-Communication.json)
 
@@ -88,7 +90,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
   "kind" : "resource",
   "abstract" : true,
   "type" : "Communication",
-  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Communication",
+  "baseDefinition" : "https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-communication",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -138,13 +140,6 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
       "max" : "0"
     },
     {
-      "id" : "Communication.status",
-      "path" : "Communication.status",
-      "comment" : "Muss standardmäßig laut FHIR Core Specification angegeben werden, wird jedoch während des Lebenszyklus der Ressource nicht verändert.",
-      "fixedCode" : "unknown",
-      "mustSupport" : true
-    },
-    {
       "id" : "Communication.statusReason",
       "path" : "Communication.statusReason",
       "max" : "0"
@@ -185,35 +180,6 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
       "max" : "0"
     },
     {
-      "id" : "Communication.sent",
-      "path" : "Communication.sent",
-      "short" : "Der Zeitpunkt, zu dem diese Kommunikation gesendet wurde.",
-      "comment" : "Wird vom E-Rezept-Server gesetzt. Ein Client hat diesen Wert daher immer verfügbar.",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Communication.received",
-      "path" : "Communication.received",
-      "short" : "Der Zeitpunkt, zu dem diese Kommunikation empfangen wurde.",
-      "comment" : "Wird vom E-Rezept-Server gesetzt. Ein Client hat diesen Wert daher immer verfügbar.",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Communication.recipient",
-      "path" : "Communication.recipient",
-      "short" : "Die Entität (z. B. Person, Organisation), die Ziel der Kommunikation war.",
-      "comment" : "Muss vom Absender der Kommunikation gesetzt werden, um das Ziel festzulegen.",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Communication.sender",
-      "path" : "Communication.sender",
-      "short" : "Die Entität (z. B. Person, Organisation), die Quelle der Kommunikation war.",
-      "definition" : "Nachrichtenabsender — wird vom E-Rezept-Server unter Verwendung der AuthN-Credential des Clients gesetzt.\r\nDie Entität (z. B. Person, Organisation), die Quelle der Kommunikation war.",
-      "comment" : "Wird vom E-Rezept-Server unter Verwendung der AuthN-Credential des Clients gesetzt.",
-      "mustSupport" : true
-    },
-    {
       "id" : "Communication.reasonCode",
       "path" : "Communication.reasonCode",
       "max" : "0"
@@ -222,17 +188,6 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Communica
       "id" : "Communication.reasonReference",
       "path" : "Communication.reasonReference",
       "max" : "0"
-    },
-    {
-      "id" : "Communication.payload",
-      "path" : "Communication.payload",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Communication.payload.content[x]",
-      "path" : "Communication.payload.content[x]",
-      "short" : "Der tatsächliche Inhalt der Nachricht",
-      "comment" : "Dieser Inhalt muss ein JSON gemäß gemSpec_DM_eRp sein."
     },
     {
       "id" : "Communication.note",

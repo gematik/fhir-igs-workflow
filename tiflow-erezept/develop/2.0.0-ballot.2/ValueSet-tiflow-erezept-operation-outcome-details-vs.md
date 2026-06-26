@@ -1,4 +1,6 @@
-# TIFLOW EREZEPT Operation Outcome Details VS - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# TIFLOW EREZEPT Operation Outcome Details VS - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -200,7 +202,6 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
     },
     {
       "system" : "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes",
-      "version" : "1.3.0",
       "concept" : [{
         "code" : "SVC_VALIDATION_FAILED",
         "display" : "FHIR Profile Validation Failed"

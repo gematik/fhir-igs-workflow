@@ -1,8 +1,10 @@
-# ValueSet der Dokumenttyp-Codes - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# ValueSet der Dokumenttyp-Codes - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -21,7 +23,7 @@ Art der Dokumente je nach Empfänger.
 
  **References** 
 
-* [GEM ERP PR Composition](StructureDefinition-tiflow-receipt-composition.md)
+* [GEM ERP PR Composition](StructureDefinition-GEM-ERP-PR-Composition.md)
 
 ### Logical Definition (CLD)
 

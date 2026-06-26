@@ -1,4 +1,6 @@
-# Validierung von Dosierungsinformationen - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Validierung von Dosierungsinformationen - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -18,11 +20,11 @@ Client Systeme, die Dosierinformationen an den TI-Flow-Fachdienst übertragen, k
 
 ### Umsetzung für Clients
 
-Client Systeme, die strukturierte Dosierinformationen schreiben, müssen neben dieser eine textuelle Repräsentation erzeugen und in der Instanz angeben. Fehlende Angaben der textuellen Repräsentation, sowie dessen Metadaten, werden vom E-RezeptFachdienst als invalide abgewiesen.
+Client Systeme, die strukturierte Dosierinformationen schreiben, müssen neben dieser eine textuelle Repräsentation erzeugen und in der Instanz angeben. Fehlende Angaben der textuellen Repräsentation, sowie dessen Metadaten, werden vom TI-Flow-Fachdienst als invalide abgewiesen.
 
 Client Systeme, die strukturierte Dosierinformationen lesen, müssen in der Lage sein, mindestens die textuelle Repräsentation, die in jedem Fall im E-Rezept-Kontext vorhanden ist, anzuzeigen. Darüber hinaus können lesende Clients auch Logik auf den Dosierinformationen aufbauen und dem Nutzer darauf aufbauende Funktionalitäten bereitstellen (bspw. Erinnerungen zur Einnahme von Medikamenten).
 
-Im Verordnungsdatensatz und der Dispensierinformation für ein Arzneimittel können Angaben zur Dosierung gemacht werden. Im dgMP Kontext gibt es hierfür einen übergreifenden FHIR-Implementation Guide [Medication IG] der HL7 Deutschland, die entsprechende Vorgaben dazu macht.
+Im Verordnungsdatensatz und der Dispensierinformation für ein Arzneimittel können Angaben zur Dosierung gemacht werden. Im dgMP Kontext gibt es hierfür einen übergreifenden FHIR-Implementation Guide [Medication IG DE] der HL7 Deutschland, die entsprechende Vorgaben dazu macht.
 
 Hierzu muss u.a. für jede Angabe der Dosierung eine gerenderte textuelle Darstellung nach [dgMP-DosageTextgenerierungSkript] erzeugt und im Datensatz angegeben werden.
 

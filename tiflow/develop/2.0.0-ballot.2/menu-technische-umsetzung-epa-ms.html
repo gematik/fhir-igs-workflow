@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ePA MedicationService - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
+    <title>Technische Umsetzung - ePA Medication Service - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -37,9 +37,9 @@
         background-size: 100% auto;
         height: 280px;
         background-color: #2a6496;
-        background: url('./e-rezept-img.png') no-repeat;
-        background-position: 650px -150px;
-        background-size: 45% auto;
+        background: url('./tiflow-bg.png') no-repeat;
+        background-position: 580px -20px;
+        background-size: 49% auto;
     }
     .bubble-link {
         display: none;
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"6"}
-    h3,h4,h5,h6{--heading-prefix:"6"}</style>
+    <style type="text/css">h2{--heading-prefix:"17"}
+    h3,h4,h5,h6{--heading-prefix:"17"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -116,9 +116,6 @@
   <li>
     <a href="index.html">Start</a>
   </li>
-  <li>
-    <a href="toc.html">Inhaltsverzeichnis</a>
-  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Grundlagen
       <b class="caret"></b>
@@ -128,19 +125,25 @@
         <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
+        <a href="architecture.html">Architekturmöglichkeiten TI-Flow-Fachdienst</a>
+      </li>
+      <li>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
         <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
       </li>
       <li>
-        <a href="ttl.html">Löschfristen</a>
-      </li>
-      <li>
         <a href="error-codes.html">Fehlercodes</a>
       </li>
       <li>
-        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
+      </li>
+      <li>
+        <a href="ttl.html">Löschfristen</a>
       </li>
       <li>
         <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
@@ -149,13 +152,10 @@
         <a href="datamatrix-code-client.html">Datamatrix Code</a>
       </li>
       <li>
-        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
-      </li>
-      <li>
-        <a href="capability-statement-extensions.html">Konfigurationsabfrage</a>
-      </li>
-      <li>
         <a href="health-check.html">Health Check</a>
+      </li>
+      <li>
+        <a href="capability-statement-extensions.html">Ausgabe Konfiguration</a>
       </li>
     </ul>
   </li>
@@ -165,6 +165,9 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+      </li>
+      <li>
         <a href="menu-technische-umsetzung-zeta.html">Zero Trust Access (ZETA)</a>
       </li>
       <li>
@@ -172,9 +175,6 @@
       </li>
       <li>
         <a href="menu-technische-umsetzung-push.html">Push Notification</a>
-      </li>
-      <li>
-        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-subscription.html">Subscrition</a>
@@ -187,21 +187,18 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-schnittstellen-query-api.html">Query API</a>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
       </li>
       <li>
-        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
       </li>
       <li>
         <a href="menu-schnittstellen-additional-api.html">Additional API</a>
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -209,9 +206,18 @@
         <a href="requirement-mapping-0_9_0-to-2_0_0.html">Anforderungsmapping</a>
       </li>
       <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="requirements.html">Anforderungslisten</a>
+      </li>
+      <li>
         <a href="license.html">Lizenz</a>
       </li>
     </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -229,10 +235,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Kernfunktionalitäten
+Implementation Guide<br /> TIFlow - Kernfunktionalitäten
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - draft
                 
                 
             </span>
@@ -249,7 +255,7 @@ TIFlow - Kernfunktionalitäten
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>ePA MedicationService</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Technische Umsetzung - ePA Medication Service</b></li>
 
           <span style="float:right;">
 
@@ -279,7 +285,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   
-  <h2>ePA MedicationService</h2>
+  <h2>Technische Umsetzung - ePA Medication Service</h2>
   
 
 
@@ -320,7 +326,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der ePA-Aktensystem nutzt sein C.FD.TLS-S Zertifikat für den TLS-Verbindungsaufbau. Der TI-Flow-Fachdienst prüft beim Verbindungsaufbau das Server-Zertifikat des ePA-Aktensystems entsprechend der Vorgaben von [gemSpec_PKI].</p>
 
 <!-- A_25971 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-376" title="TI-Flow-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems auf Gültigkeit prüfen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A376" title="TI-Flow-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems auf Gültigkeit prüfen" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -389,7 +395,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 <p>Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat enthaltene Rolle (Admission) zurück. Diese muss geprüft werden.</p>
 
 <!-- A_25972 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-377" title="TI-Flow-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems Rolle prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A377" title="TI-Flow-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems Rolle prüfen" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -399,7 +405,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 
 <h4 id="vau-protokoll">VAU-Protokoll</h4>
 
-<p>Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermittelten Daten mit dem VAU-Protokoll gesichert. Es gelten die Vorgaben aus [gemSpec_Krypt#7 VAU-Protokoll für ePA für alle].</p>
+<p>Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermittelten Daten mit dem VAU-Protokoll gesichert. Es gelten die Vorgaben aus [gemSpec_Krypt]#VAU-Protokoll für ePA für alle.</p>
 
 <figure>
 	<div class="gem-ig-img-container" style="--box-width: 800px; margin-bottom: 30px;">
@@ -408,10 +414,10 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 	<figcaption><strong>Abbildung: </strong>Transport durch die TI</figcaption>
 </figure>
 
-<p>Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Bearer-Token. Für die Signatur wird das AUT-Zertifikat der E-Rezept-VAU verwendet. Siehe [gemSpec_Krypt]#7.4 Authentisierung des E-Rezept-FD als ePA-Client und [gemSpec_Aktensystem_ePAfueralle]#3.16.3 Anforderungen an den Authorization Service für die Authentisierung des TI-Flow-Fachdienstes.</p>
+<p>Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Bearer-Token. Für die Signatur wird das AUT-Zertifikat der E-Rezept-VAU verwendet. Siehe [gemSpec_Krypt]#Authentisierung des E-Rezept-FD als ePA-Client und [gemSpec_Aktensystem_ePAfueralle]#3.16.3 Anforderungen an den Authorization Service für die Authentisierung des TI-Flow-Fachdienstes.</p>
 
 <!-- A_26066 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-378" title="TI-Flow-Fachdienst - ePA - JWT Bearer-Token Claims" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A378" title="TI-Flow-Fachdienst - ePA - JWT Bearer-Token Claims" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -420,7 +426,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 </requirement>
 
 <!-- A_25935 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-379" title="TI-Flow-Fachdienst - ePA - JWT Bearer-Token Signatur" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A379" title="TI-Flow-Fachdienst - ePA - JWT Bearer-Token Signatur" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -429,7 +435,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 </requirement>
 
 <!-- A_25936 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-380" title="TI-Flow-Fachdienst - ePA - Festlegung der ClientID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A380" title="TI-Flow-Fachdienst - ePA - Festlegung der ClientID" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -440,7 +446,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 <h3 id="epa-aktensysteme-ermitteln">ePA-Aktensysteme ermitteln</h3>
 
 <!-- A_25937 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-381" title="TI-Flow-Fachdienst - ePA - Lokalisierung des ePA-Aktensysteme" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A381" title="TI-Flow-Fachdienst - ePA - Lokalisierung des ePA-Aktensysteme" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -451,7 +457,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 <p>Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktensystem - Registrierung an übergreifender ePA-Domäne". Die Informationen zu jedem ePA-Aktensystem enthalten den Endpunkt für den Authorization Service [I_Authorization_Service], Medication Service [I_Medication_Service] und Information Service [I_Information_Service].</p>
 
 <!-- A_25938 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-382" title="TI-Flow-Fachdienst - ePA - Aktualisierung Cache ePA-Aktensysteme" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A382" title="TI-Flow-Fachdienst - ePA - Aktualisierung Cache ePA-Aktensysteme" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -462,7 +468,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 <h3 id="epa-aktensystem-für-kvnr-ermitteln">ePA-Aktensystem für KVNR ermitteln</h3>
 
 <!-- A_25939 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-383" title="TI-Flow-Fachdienst - ePA - ePA-Aktensystem für KVNR ermitteln" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A383" title="TI-Flow-Fachdienst - ePA - ePA-Aktensystem für KVNR ermitteln" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -471,7 +477,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 </requirement>
 
 <!-- A_25940 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-384" title="TI-Flow-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A384" title="TI-Flow-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -480,7 +486,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 </requirement>
 
 <!-- A_25941 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-385" title="TI-Flow-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem - Statuscode 404" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A385" title="TI-Flow-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem - Statuscode 404" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -489,7 +495,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 </requirement>
 
 <!-- A_25942 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-386" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Information Service - Fehler im Information Service" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A386" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Information Service - Fehler im Information Service" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -498,7 +504,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 </requirement>
 
 <!-- A_25943 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-387" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Information Service - Struktureller Fehler" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A387" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Information Service - Struktureller Fehler" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -509,7 +515,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 <h3 id="übermittlung-an-den-medication-service">Übermittlung an den Medication Service</h3>
 
 <!-- A_25944-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-388" title="TI-Flow-Fachdienst - ePA - Flowtype 160/166/169/200/209" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A388" title="TI-Flow-Fachdienst - ePA - Flowtype 160/166/169/200/209" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -518,7 +524,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 </requirement>
 
 <!-- A_25945 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-389" title="TI-Flow-Fachdienst - ePA - asynchrone Bereitstellung und Übermittlung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A389" title="TI-Flow-Fachdienst - ePA - asynchrone Bereitstellung und Übermittlung" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -529,7 +535,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 <h4 id="mappingregeln">Mappingregeln</h4>
 
 <!-- A_25946 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-390" title="TI-Flow-Fachdienst - ePA - Mapping" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A390" title="TI-Flow-Fachdienst - ePA - Mapping" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -674,7 +680,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </requirement>
 
 <!-- A_25947 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-391" title="TI-Flow-Fachdienst - ePA - provide-dispensation-erp - Organisation-Ressource" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A391" title="TI-Flow-Fachdienst - ePA - provide-dispensation-erp - Organisation-Ressource" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -683,7 +689,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </requirement>
 
 <!-- A_25948 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-392" title="TI-Flow-Fachdienst - ePA - Mapping - Übernahme von Werten zwischen Profilen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A392" title="TI-Flow-Fachdienst - ePA - Mapping - Übernahme von Werten zwischen Profilen" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -692,7 +698,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </requirement>
 
 <!-- A_25949 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-393" title="TI-Flow-Fachdienst - ePA - Mapping - Handhabung von Extensions" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A393" title="TI-Flow-Fachdienst - ePA - Mapping - Handhabung von Extensions" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -715,7 +721,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </figure>
 
 <!-- A_25950 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-394" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Nichtauffinden in allen ePA-Aktensystemen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A394" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Nichtauffinden in allen ePA-Aktensystemen" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -728,7 +734,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 <p>Vor jedem Übermitteln prüft der TI-Flow-Fachdienst, ob der Versicherte in das Einstellen von Verordnungsdaten und Dispensierinformationen durch den TI-Flow-Fachdienst eingewilligt hat.</p>
 
 <!-- A_25951-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-395" title="TI-Flow-Fachdienst - ePA - Prüfung des Widerspruchs vor Übermittlung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A395" title="TI-Flow-Fachdienst - ePA - Prüfung des Widerspruchs vor Übermittlung" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -746,7 +752,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 <!-- ToDo Link [gemIG_ePA_Medication] --></p>
 
 <!-- A_28691 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-420" title="TI-Flow-Fachdienst - ePA - Übermittlung - Spezifikation der Schnittstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A420" title="TI-Flow-Fachdienst - ePA - Übermittlung - Spezifikation der Schnittstellen" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -755,43 +761,43 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </requirement>
 
 <!-- A_25952 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-396" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Verordnungsdaten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A396" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Verordnungsdaten" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS zur Bereitstellung von Verordnungsdaten an den ePA Medication Service die Operation [base]/$provide-prescription-erp des Medication Service aufrufen.
+     Der TI-Flow-Fachdienst MUSS zur Bereitstellung von Verordnungsdaten an den ePA Medication Service die Operation `providePrescription_MedicationSvc` des Medication Service aufrufen.
 </requirement>
 
 <!-- A_25953 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-397" title="TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Verordnungsdaten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A397" title="TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Verordnungsdaten" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS, um die Löschinformation für Verordnungsdaten an den ePA Medication Service zu übermitteln, die Operation [base]/$cancel-prescription-erp des Medication Service aufrufen.
+     Der TI-Flow-Fachdienst MUSS, um die Löschinformation für Verordnungsdaten an den ePA Medication Service zu übermitteln, die Operation `cancelPrescription_MedicationSvc` des Medication Service aufrufen.
 </requirement>
 
 <!-- A_25954-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-398" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Dispensierinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A398" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Dispensierinformationen" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS zur Bereitstellung von Dispensierinformationen an den ePA Medication Service die Operation [base]/$provide-dispensation-erp des Medication Service mit rxDispensation.status gemäß dem bereitgestellten Status aufrufen.
+     Der TI-Flow-Fachdienst MUSS zur Bereitstellung von Dispensierinformationen an den ePA Medication Service die Operation `provideDispensation_MedicationSvc` des Medication Service mit rxDispensation.status gemäß dem bereitgestellten Status aufrufen.
 </requirement>
 
 <!-- A_25955 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-399" title="TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Dispensierinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A399" title="TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Dispensierinformationen" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS, um die Löschinformation für Dispensierinformationen an den ePA Medication Service zu übermitteln, die Operation [base]/$cancel-dispensation-erp des Medication Service aufrufen.
+     Der TI-Flow-Fachdienst MUSS, um die Löschinformation für Dispensierinformationen an den ePA Medication Service zu übermitteln, die Operation `cancelDispensation_MedicationSvc` des Medication Service aufrufen.
 </requirement>
 
 <!-- A_25956 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-400" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bündelung von Übermittlungsaufträgen nach KVNR" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-A400" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bündelung von Übermittlungsaufträgen nach KVNR" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -824,7 +830,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </figure>
 
 <!-- A_25957 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-401" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Aktenkonto-Umzug" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A401" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Aktenkonto-Umzug" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -842,7 +848,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </figure>
 
 <!-- A_25958 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-402" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A402" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -851,7 +857,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </requirement>
 
 <!-- A_25959 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-403" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Probleme bei der Entschlüsselung durch den Medication Service" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A403" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Probleme bei der Entschlüsselung durch den Medication Service" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -860,7 +866,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </requirement>
 
 <!-- A_25960 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-404" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Probleme bei der Entschlüsselung durch den TI-Flow-Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A404" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Probleme bei der Entschlüsselung durch den TI-Flow-Fachdienst" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -869,7 +875,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </requirement>
 
 <!-- A_25961 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-405" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Nichtverfügbarkeit des Medication Service" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A405" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Nichtverfügbarkeit des Medication Service" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -918,7 +924,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 22, 2026 06:40+0000">2026-06-22</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 09:04+0000">2026-06-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

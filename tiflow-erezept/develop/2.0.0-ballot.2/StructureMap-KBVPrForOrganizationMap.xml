@@ -9,7 +9,7 @@
 </span><span style="color: navy">// </span><span style="color: green">Auto-generated StructureMap for KBV_PR_FOR_Organization|1.3.0 -&gt; OrganizationDirectory|1.0.0</span>
 
 <b>uses</b><span style="color: navy"> &quot;</span>https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization<span style="color: navy">&quot; </span><b>alias </b>KBVPRFOROrganization <b>as </b><b>source</b>
-<b>uses</b><span style="color: navy"> &quot;</span><a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.2&amp;canonical=https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory" title="Organization in gematik Directory">https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory</a><span style="color: navy">&quot; </span><b>alias </b>OrganizationDirectory <b>as </b><b>target</b>
+<b>uses</b><span style="color: navy"> &quot;</span>https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory<span style="color: navy">&quot; </span><b>alias </b>OrganizationDirectory <b>as </b><b>target</b>
 
 <span style="color: navy">// </span><span style="color: green">Mapping generated for KBV_PR_FOR_Organization|1.3.0 -&gt; OrganizationDirectory|1.0.0</span>
 <b>group </b>KBVPrForOrganizationMap<span style="color: navy">(</span><b>source</b> <span style="color: maroon">KBVPRFOROrganization</span><span style="color: navy"> : </span>KBVPRFOROrganization, <b>target</b> <span style="color: maroon">OrganizationDirectory</span><span style="color: navy"> : </span>OrganizationDirectory<span style="color: navy">)</span><b> &lt;&lt;types&gt;&gt;</b><span style="color: navy"> {
@@ -303,13 +303,13 @@
 </span>      srcKBVPRFOROrganizationIdentifierTelematikIdc7227e62.value<span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryIdentifierTelematikIdfbd99394.value <i>&quot;OrganizationIdentifierTelematikIdValue69222509&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.value</span>
     <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdValue69222509&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;OrganizationIdentifierTelematikIdValue69222509&quot;</i><span style="color: navy">;</span>
-  KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierTelematikidd2cf7b80</span><span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikidc36ffe12</span> <i>&quot;OrganizationIdentifierTelematikidd2cf7b80&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Manual action required | Telematik-ID wird aus idNummer → aus dem ACCESS_TOKEN der Anfrage bezogen | Quelle: Organization.identifier:TelematikID</span>
+  KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationIdentifierTelematikidd2cf7b80</span><span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.identifier<b> as </b><span style="color: maroon">tgtOrganizationDirectoryIdentifierTelematikidc36ffe12</span> <i>&quot;OrganizationIdentifierTelematikidd2cf7b80&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Manual action required | Telematik-ID wird aus idNummer → aus zeta-user-info.identifier der Anfrage bezogen | Quelle: Organization.identifier:TelematikID</span>
   KBVPRFOROrganization.meta<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationMeta25dbc5a5</span><span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.meta = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Meta'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">tgtOrganizationDirectoryMetacbe6e64f</span><b> then</b><span style="color: navy"> {
 </span>    srcKBVPRFOROrganizationMeta25dbc5a5<b> as </b><span style="color: maroon">srcOrganizationMetaProfile4d6334ac</span><span style="color: navy"><b> -&gt; </b></span>tgtOrganizationDirectoryMetacbe6e64f.profile = <span style="color: blue">'https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory'</span><b> as </b><span style="color: maroon">tgtOrganizationMetaProfile4d6334ac</span> <i>&quot;OrganizationMetaProfile4d6334ac&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Fixed value 'https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory'</span>
   <span style="color: navy">}</span> <i>&quot;OrganizationMeta89bf012b&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
-  KBVPRFOROrganization.name<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.name <i>&quot;OrganizationName61d5a4f1&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Manual action required | organizationName → aus dem ACCESS_TOKEN der Anfrage beziehen | Quelle: Organization.name</span>
+  KBVPRFOROrganization.name<span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.name <i>&quot;OrganizationName61d5a4f1&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Manual action required | organizationName → aus zeta-user-info.commonName der Anfrage beziehen | Quelle: Organization.name</span>
   KBVPRFOROrganization.telecom<b> as </b><span style="color: maroon">srcKBVPRFOROrganizationTelecomca093d46</span><span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.telecom = <span style="color: maroon">srcKBVPRFOROrganizationTelecomca093d46</span><b> as </b><span style="color: maroon">tgtOrganizationDirectoryTelecom22bcd8ec</span> <i>&quot;OrganizationTelecomb3f55102&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Automatic copy</span>
-  KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationTypeProfession6b535de2</span><span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryTypeProfessionf2d05bbb</span> <i>&quot;OrganizationTypeProfession6b535de2&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Manual action required | professionOID → aus dem ACCESS_TOKEN der Anfrage | Quelle: Organization.type:profession</span>
+  KBVPRFOROrganization<b> as </b><span style="color: maroon">manualsrcOrganizationTypeProfession6b535de2</span><span style="color: navy"><b> -&gt; </b></span>OrganizationDirectory.type<b> as </b><span style="color: maroon">tgtOrganizationDirectoryTypeProfessionf2d05bbb</span> <i>&quot;OrganizationTypeProfession6b535de2&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Manual action required | professionOID → aus zeta-user-info.professionOID der Anfrage | Quelle: Organization.type:profession</span>
 <span style="color: navy">}
 
 </span></pre></div>
@@ -2353,7 +2353,7 @@
         <element value="identifier"/>
         <variable value="tgtOrganizationDirectoryIdentifierTelematikidc36ffe12"/>
       </target>
-      <documentation value="Manual action required | Telematik-ID wird aus idNummer → aus dem ACCESS_TOKEN der Anfrage bezogen | Quelle: Organization.identifier:TelematikID"/>
+      <documentation value="Manual action required | Telematik-ID wird aus idNummer → aus zeta-user-info.identifier der Anfrage bezogen | Quelle: Organization.identifier:TelematikID"/>
     </rule>
     <rule>
       <name value="OrganizationMeta89bf012b"/>
@@ -2405,7 +2405,7 @@
         <element value="name"/>
         <variable value="tgtOrganizationDirectoryName0e007323"/>
       </target>
-      <documentation value="Manual action required | organizationName → aus dem ACCESS_TOKEN der Anfrage beziehen | Quelle: Organization.name"/>
+      <documentation value="Manual action required | organizationName → aus zeta-user-info.commonName der Anfrage beziehen | Quelle: Organization.name"/>
     </rule>
     <rule>
       <name value="OrganizationTelecomb3f55102"/>
@@ -2438,7 +2438,7 @@
         <element value="type"/>
         <variable value="tgtOrganizationDirectoryTypeProfessionf2d05bbb"/>
       </target>
-      <documentation value="Manual action required | professionOID → aus dem ACCESS_TOKEN der Anfrage | Quelle: Organization.type:profession"/>
+      <documentation value="Manual action required | professionOID → aus zeta-user-info.professionOID der Anfrage | Quelle: Organization.type:profession"/>
     </rule>
   </group>
 </StructureMap>

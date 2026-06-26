@@ -1,4 +1,6 @@
-# Beispiel Close-Parameter für Kombipackung - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Beispiel Close-Parameter für Kombipackung - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -68,7 +70,7 @@ Version 2.0.0-ballot.2 - ci-build
           "resourceType" : "Medication",
           "id" : "Augentropfen",
           "meta" : {
-            "profile" : ["https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pharmaceutical-product"]
+            "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/ti-medication-dgmp"]
           },
           "extension" : [{
             "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension",
@@ -107,7 +109,7 @@ Version 2.0.0-ballot.2 - ci-build
           "resourceType" : "Medication",
           "id" : "NasenSpray",
           "meta" : {
-            "profile" : ["https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pharmaceutical-product"]
+            "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/ti-medication-dgmp"]
           },
           "extension" : [{
             "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension",

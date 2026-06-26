@@ -1,4 +1,6 @@
-# Erstellen von Dispensierinformationen - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Erstellen von Dispensierinformationen - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

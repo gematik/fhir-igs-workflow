@@ -3,7 +3,7 @@
   <sch:ns prefix="f" uri="http://hl7.org/fhir"/>
   <sch:ns prefix="h" uri="http://www.w3.org/1999/xhtml"/>
   <!-- 
-    This file contains just the constraints for the profile EPAMedication
+    This file contains just the constraints for the profile TIMedicationDgMP
     It includes the base constraints for the resource as well.
     Because of the way that schematrons and containment work, 
     you may need to use this schematron fragment to build a, 
@@ -13,6 +13,7 @@
     <sch:title>f:Medication</sch:title>
     <sch:rule context="f:Medication">
       <sch:assert test="count(f:meta) &gt;= 1">meta: minimum cardinality of 'meta' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://gematik.de/fhir/epa-medication/StructureDefinition/context-extension']) &lt;= 1">extension with URL = 'https://gematik.de/fhir/epa-medication/StructureDefinition/context-extension': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://gematik.de/fhir/epa-medication/StructureDefinition/rx-prescription-process-identifier-extension']) &lt;= 1">extension with URL = 'https://gematik.de/fhir/epa-medication/StructureDefinition/rx-prescription-process-identifier-extension': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension']) &lt;= 1">extension with URL = 'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension']) &lt;= 1">extension with URL = 'https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension': maximum cardinality of 'extension' is 1</sch:assert>
@@ -20,12 +21,20 @@
       <sch:assert test="count(f:extension[@url = 'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-formulation-packaging-extension']) &lt;= 1">extension with URL = 'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-formulation-packaging-extension': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-manufacturing-instructions-extension']) &lt;= 1">extension with URL = 'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-manufacturing-instructions-extension': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension']) &lt;= 1">extension with URL = 'https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:status) &gt;= 1">status: minimum cardinality of 'status' is 1</sch:assert>
+      <sch:assert test="count(f:manufacturer) &lt;= 0">manufacturer: maximum cardinality of 'manufacturer' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:title>f:Medication/f:code/f:coding</sch:title>
     <sch:rule context="f:Medication/f:code/f:coding">
       <sch:assert test="count(f:version) &gt;= 1">version: minimum cardinality of 'version' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:Medication/f:form</sch:title>
+    <sch:rule context="f:Medication/f:form">
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

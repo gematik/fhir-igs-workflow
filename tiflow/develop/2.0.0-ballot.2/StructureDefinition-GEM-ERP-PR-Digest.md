@@ -1,8 +1,10 @@
-# GEM ERP PR Digest - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# GEM ERP PR Digest - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -21,7 +23,7 @@ QES-Digest in Binary
 
 **Usages:**
 
-* Use this Profile: [TIFlow Receipt Bundle](StructureDefinition-tiflow-receipt-bundle.md)
+* Use this Profile: [TIFlow Receipt Bundle](StructureDefinition-GEM-ERP-PR-Bundle.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow|current/StructureDefinition/StructureDefinition-GEM-ERP-PR-Digest.json)
 
@@ -82,10 +84,6 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Digest.cs
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "Binary",
-      "path" : "Binary"
-    },
-    {
       "id" : "Binary.contentType",
       "path" : "Binary.contentType",
       "fixedCode" : "application/octet-stream"

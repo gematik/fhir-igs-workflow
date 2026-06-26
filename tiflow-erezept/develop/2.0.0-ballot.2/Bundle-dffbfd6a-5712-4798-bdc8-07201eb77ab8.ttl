@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,118 +7,140 @@
 
 <https://gematik.de/fhir/tiflow-erezept/Bundle/dffbfd6a-5712-4798-bdc8-07201eb77ab8> a fhir:Bundle ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "dffbfd6a-5712-4798-bdc8-07201eb77ab8"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle"^^xsd:anyURI ;
+  fhir:Resource.id [ fhir:value "dffbfd6a-5712-4798-bdc8-07201eb77ab8"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle" ;
+       fhir:index 0 ;
        fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle>
-     ] ) ;
-     fhir:tag ( [
-       fhir:display [ fhir:v "Receipt Bundle 'Quittung' for completed dispensation of a prescription" ]
-     ] )
-  ] ; # 
-  fhir:identifier [
-     fhir:system [ fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "160.000.033.491.280.78" ]
-  ] ; # 
-  fhir:type [ fhir:v "document"] ; # 
-  fhir:timestamp [ fhir:v "2028-10-01T15:29:00+00:00"^^xsd:dateTime] ; # 
-  fhir:entry ( [
-     fhir:fullUrl [ fhir:v "urn:uuid:c624cf47-e235-4624-af71-0a09dc9254dc"^^xsd:anyURI ] ;
-     fhir:resource ( <urn:uuid:c624cf47-e235-4624-af71-0a09dc9254dc> )
-  ] [
-     fhir:fullUrl [ fhir:v "urn:uuid:1413b38d-81a6-432a-a801-98d7307a422b"^^xsd:anyURI ] ;
-     fhir:resource ( <urn:uuid:1413b38d-81a6-432a-a801-98d7307a422b> )
-  ] [
-     fhir:fullUrl [ fhir:v "urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652"^^xsd:anyURI ] ;
-     fhir:resource ( <urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652> )
-  ] ) ; # 
-  fhir:signature [
-     fhir:type ( [
-       fhir:system [ fhir:v "urn:iso-astm:E1762-95:2013"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "1.2.840.10065.1.12.1.1" ]
-     ] ) ;
-     fhir:when [ fhir:v "2028-10-01T15:29:00+00:00"^^xsd:dateTime ] ;
-     fhir:who [
-       fhir:reference [ fhir:v "urn:uuid:1413b38d-81a6-432a-a801-98d7307a422b" ]
      ] ;
-     fhir:sigFormat [ fhir:v "application/pkcs7-mime" ] ;
-     fhir:data [ fhir:v "dGhpcyBibG9iIGlzIHNuaXBwZWQ="^^xsd:base64Binary ]
-  ] . # 
+     fhir:Meta.tag [
+       fhir:index 0 ;
+       fhir:Coding.display [ fhir:value "Receipt Bundle 'Quittung' for completed dispensation of a prescription" ]
+     ]
+  ] ;
+  fhir:Bundle.identifier [
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+     fhir:Identifier.value [ fhir:value "160.000.033.491.280.78" ]
+  ] ;
+  fhir:Bundle.type [ fhir:value "document"] ;
+  fhir:Bundle.timestamp [ fhir:value "2028-10-01T15:29:00+00:00"^^xsd:dateTime] ;
+  fhir:Bundle.entry [
+     fhir:index 0 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:c624cf47-e235-4624-af71-0a09dc9254dc" ] ;
+     fhir:Bundle.entry.resource <urn:uuid:c624cf47-e235-4624-af71-0a09dc9254dc>
+  ], [
+     fhir:index 1 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:1413b38d-81a6-432a-a801-98d7307a422b" ] ;
+     fhir:Bundle.entry.resource <urn:uuid:1413b38d-81a6-432a-a801-98d7307a422b>
+  ], [
+     fhir:index 2 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652" ] ;
+     fhir:Bundle.entry.resource <urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652>
+  ] ;
+  fhir:Bundle.signature [
+     fhir:Signature.type [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso-astm:E1762-95:2013" ] ;
+       fhir:Coding.code [ fhir:value "1.2.840.10065.1.12.1.1" ]
+     ] ;
+     fhir:Signature.when [ fhir:value "2028-10-01T15:29:00+00:00"^^xsd:dateTime ] ;
+     fhir:Signature.who [
+       fhir:Reference.reference [ fhir:value "urn:uuid:1413b38d-81a6-432a-a801-98d7307a422b" ]
+     ] ;
+     fhir:Signature.sigFormat [ fhir:value "application/pkcs7-mime" ] ;
+     fhir:Signature.data [ fhir:value "dGhpcyBibG9iIGlzIHNuaXBwZWQ="^^xsd:base64Binary ]
+  ] .
 
 <urn:uuid:c624cf47-e235-4624-af71-0a09dc9254dc> a fhir:Composition ;
-  fhir:id [ fhir:v "c624cf47-e235-4624-af71-0a09dc9254dc"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Composition"^^xsd:anyURI ;
+  fhir:Resource.id [ fhir:value "c624cf47-e235-4624-af71-0a09dc9254dc"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Composition" ;
+       fhir:index 0 ;
        fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Composition>
-     ] )
-  ] ; # 
-  fhir:extension ( [
-     fhir:url [ fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_Beneficiary"^^xsd:anyURI ] ;
-     fhir:value [
-       a fhir:Identifier ;
-       fhir:system [ fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "3-SMC-B-Testkarte-883110000129070" ]
      ]
-  ] ) ; # 
-  fhir:status [ fhir:v "final"] ; # 
-  fhir:type [
-     fhir:coding ( [
-       fhir:system [ fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "3" ] ;
-       fhir:display [ fhir:v "Receipt" ]
-     ] )
-  ] ; # 
-  fhir:date [ fhir:v "2028-10-01T15:29:00+00:00"^^xsd:dateTime] ; # 
-  fhir:author ( [
-     fhir:reference [ fhir:v "urn:uuid:1413b38d-81a6-432a-a801-98d7307a422b" ]
-  ] ) ; # 
-  fhir:title [ fhir:v "Quittung"] ; # 
-  fhir:event ( [
-     fhir:period [
-       fhir:start [ fhir:v "2028-10-01T15:29:00+00:00"^^xsd:dateTime ] ;
-       fhir:end [ fhir:v "2028-10-01T15:29:00+00:00"^^xsd:dateTime ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_Beneficiary" ] ;
+     fhir:Extension.valueIdentifier [
+       fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+       fhir:Identifier.value [ fhir:value "3-SMC-B-Testkarte-883110000129070" ]
      ]
-  ] ) ; # 
-  fhir:section ( [
-     fhir:entry ( [
-       fhir:reference [ fhir:v "urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652" ]
-     ] )
-  ] ) . # 
+  ] ;
+  fhir:Composition.status [ fhir:value "final"] ;
+  fhir:Composition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType" ] ;
+       fhir:Coding.code [ fhir:value "3" ] ;
+       fhir:Coding.display [ fhir:value "Receipt" ]
+     ]
+  ] ;
+  fhir:Composition.date [ fhir:value "2028-10-01T15:29:00+00:00"^^xsd:dateTime] ;
+  fhir:Composition.author [
+     fhir:index 0 ;
+     fhir:Reference.reference [ fhir:value "urn:uuid:1413b38d-81a6-432a-a801-98d7307a422b" ]
+  ] ;
+  fhir:Composition.title [ fhir:value "Quittung"] ;
+  fhir:Composition.event [
+     fhir:index 0 ;
+     fhir:Composition.event.period [
+       fhir:Period.start [ fhir:value "2028-10-01T15:29:00+00:00"^^xsd:dateTime ] ;
+       fhir:Period.end [ fhir:value "2028-10-01T15:29:00+00:00"^^xsd:dateTime ]
+     ]
+  ] ;
+  fhir:Composition.section [
+     fhir:index 0 ;
+     fhir:Composition.section.entry [
+       fhir:index 0 ;
+       fhir:Reference.reference [ fhir:value "urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652" ]
+     ]
+  ] .
 
 <urn:uuid:1413b38d-81a6-432a-a801-98d7307a422b> a fhir:Device ;
-  fhir:id [ fhir:v "ReceiptBundleDevice"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Device"^^xsd:anyURI ;
+  fhir:Resource.id [ fhir:value "ReceiptBundleDevice"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Device" ;
+       fhir:index 0 ;
        fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Device>
-     ] )
-  ] ; # 
-  fhir:status [ fhir:v "active"] ; # 
-  fhir:serialNumber [ fhir:v "1.14.0"] ; # 
-  fhir:deviceName ( [
-     fhir:name [ fhir:v "TI-Flow-Fachdienst" ] ;
-     fhir:type [ fhir:v "user-friendly-name" ]
-  ] ) ; # 
-  fhir:version ( [
-     fhir:value [ fhir:v "1.14.0" ]
-  ] ) ; # 
-  fhir:contact ( [
-     fhir:system [ fhir:v "email" ] ;
-     fhir:value [ fhir:v "betrieb@gematik.de" ]
-  ] ) . # 
+     ]
+  ] ;
+  fhir:Device.status [ fhir:value "active"] ;
+  fhir:Device.serialNumber [ fhir:value "1.14.0"] ;
+  fhir:Device.deviceName [
+     fhir:index 0 ;
+     fhir:Device.deviceName.name [ fhir:value "TI-Flow-Fachdienst" ] ;
+     fhir:Device.deviceName.type [ fhir:value "user-friendly-name" ]
+  ] ;
+  fhir:Device.version [
+     fhir:index 0 ;
+     fhir:Device.version.value [ fhir:value "1.14.0" ]
+  ] ;
+  fhir:Device.contact [
+     fhir:index 0 ;
+     fhir:ContactPoint.system [ fhir:value "email" ] ;
+     fhir:ContactPoint.value [ fhir:value "betrieb@gematik.de" ]
+  ] .
 
 <urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652> a fhir:Binary ;
-  fhir:id [ fhir:v "b939a82a-9c23-4b6d-a139-f468d1b9d652"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Digest"^^xsd:anyURI ;
+  fhir:Resource.id [ fhir:value "b939a82a-9c23-4b6d-a139-f468d1b9d652"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Digest" ;
+       fhir:index 0 ;
        fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Digest>
-     ] )
-  ] ; # 
-  fhir:contentType [ fhir:v "application/octet-stream"] ; # 
-  fhir:data [ fhir:v "tJg8c5ZtdhzEEhJ0ZpAsUVFx5dKuYgQFs5oKgthi17M="^^xsd:base64Binary] . # 
+     ]
+  ] ;
+  fhir:Binary.contentType [ fhir:value "application/octet-stream"] ;
+  fhir:Binary.data [ fhir:value "tJg8c5ZtdhzEEhJ0ZpAsUVFx5dKuYgQFs5oKgthi17M="^^xsd:base64Binary] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Bundle/dffbfd6a-5712-4798-bdc8-07201eb77ab8.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

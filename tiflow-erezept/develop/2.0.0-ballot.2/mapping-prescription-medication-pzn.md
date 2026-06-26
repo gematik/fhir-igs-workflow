@@ -1,4 +1,6 @@
-# Mapping einer PZN Medikation - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Mapping einer PZN Medikation - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

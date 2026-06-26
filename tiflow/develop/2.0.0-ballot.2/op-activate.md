@@ -1,8 +1,10 @@
-# Operation $activate (Task aktivieren) - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# Operation $activate (Task aktivieren) - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**Operation API**](menu-schnittstellen-operation-api.md)

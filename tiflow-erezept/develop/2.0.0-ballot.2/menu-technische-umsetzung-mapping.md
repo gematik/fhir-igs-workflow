@@ -1,4 +1,6 @@
-# Vorgaben zum Mapping von FHIR-Instanzen - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Vorgaben zum Mapping von FHIR-Instanzen - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

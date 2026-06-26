@@ -1,4 +1,6 @@
-# Mapping von Verordnungsdaten - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Mapping von Verordnungsdaten - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -47,7 +49,7 @@ Einige Daten müssen zusätzlich durch Transformationsregeln angepasst oder erg�
 #### Organization für provide Prescription
 
 * ID: Beschreibung
-  * `F_006b`: Bei provide Prescription ist die Organization aus der KBV_PR_FOR_Organization zu mappen.Der Transformator muss sicherstellen, dass bei Organization.identifier mindestens die TelematikID der Organisation enthalten, die auch im ACCESS_TOKEN der Anfrage angegeben ist. Dazu muss nach der A_25946 die TelematikId bei "identifier:TelematikID" durch die idNummer aus dem ACCESS_TOKEN des verwendeten Operationsaufrufes ersetzt werden bzw. erzeugt werden, wenn diese nicht vorhanden ist.Folgende Operationen sind zusätzlich zum Mapping der StructureMaps durchzuführen:Organization.identifier:TelematikID idNummer → aus dem ACCESS_TOKEN der AnfrageOrganization.name organizationName → aus dem ACCESS_TOKEN der AnfrageOrganization.type:profession professionOID → aus dem ACCESS_TOKEN der Anfrage
+  * `F_006b`: Bei provide Prescription ist die Organization aus der KBV_PR_FOR_Organization zu mappen.Der Transformator muss sicherstellen, dass bei Organization.identifier mindestens die TelematikID der Organisation enthalten, die auch in zeta-user-info der Anfrage angegeben ist. Dazu muss nach der A_25946 die TelematikId bei "identifier:TelematikID" durch die idNummer aus der zeta-user-info des verwendeten Operationsaufrufes ersetzt werden bzw. erzeugt werden, wenn diese nicht vorhanden ist.Folgende Operationen sind zusätzlich zum Mapping der StructureMaps durchzuführen:Organization.identifier:TelematikID idNummer → aus zeta-user-info der AnfrageOrganization.name organizationName → aus zeta-user-info der AnfrageOrganization.type:profession professionOID → aus zeta-user-info der Anfrage
 * ID: Profile
   * `F_006b`: * [OrganizationDirectory](https://simplifier.net/vzd-fhir-directory/organizationdirectorystrict)
 

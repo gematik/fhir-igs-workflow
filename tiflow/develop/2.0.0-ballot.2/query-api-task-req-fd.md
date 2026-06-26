@@ -1,8 +1,10 @@
-# Server-Anforderungen: Task-Query - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# Server-Anforderungen: Task-Query - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**Query API**](menu-schnittstellen-query-api.md)
@@ -84,7 +86,7 @@ Diese Operation führt nicht zu einer Statusänderung bei den zurück gelieferte
 
 Wenn der TI-Flow-Fachdienst in einem Aufruf einen PoPP-Token empfängt muss geprüft werden, dass der Token vom PoPP-Service ausgestellt wurde. Hierzu wird die Signatur des PoPP-Tokens geprüft.
 
-Der TI-Flow-Fachdienst setzt gemäß [gemSpec_PoPP_Service] in der Rolle PoPP-Verifier folgende Prüfschritte via TI-PKI um (siehe [gemSpec_PoPP_Service#5.1.2 PoPP-Token Prüfung], A_27015):
+Der TI-Flow-Fachdienst setzt gemäß [gemSpec_PoPP_Service] in der Rolle PoPP-Verifier folgende Prüfschritte via TI-PKI um (siehe [gemSpec_PoPP_Service]#5.1.2 PoPP-Token Prüfung, A_27015):
 
 * Prüfschritt: Beziehen der URL für den PoPP-Service
   * Anforderung: A_27358
@@ -115,7 +117,7 @@ Ergänzung der stündlichen Abfrage des JWKS zu A_26449 - Beziehen der Schlüsse
 funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS stündlich die JWK-Set des PoPP-Service [RFC7517] über dem im Entity Statement metadata.oauth_resource.signed_jwks_uri angegeben URL abrufen und die öffentlichen Schlüssel zur Verifikation der PoPP-Token verwenden.
 Der TI-Flow-Fachdienst prüft zur Umsetzung von A_27016-* das Signaturzertifikat des PoPP-Service wie folgt:
 
-Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS das Signatur-Zertifikat des PoPP-Service für die Signatur des PoPP-Token gemäß [gemSpec_PKI#TUC_PKI_018] mit folgenden Parametern auf Gültigkeit prüfen:
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS das Signatur-Zertifikat des PoPP-Service für die Signatur des PoPP-Token gemäß [gemSpec_PKI]#TUC_PKI_018 mit folgenden Parametern auf Gültigkeit prüfen:
 
 * Parameter: Zertifikat
   * : Signaturzertifikat des PoPP-Service

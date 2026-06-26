@@ -1,8 +1,10 @@
-# Bundle der $accept Operation - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# Bundle der $accept Operation - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -131,7 +133,7 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-op-accept-bun
       "path" : "Bundle.entry.resource",
       "type" : [{
         "code" : "Task",
-        "profile" : ["https://gematik.de/fhir/tiflow/StructureDefinition/ti-task"]
+        "profile" : ["https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-order-task"]
       }]
     },
     {
@@ -140,14 +142,6 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-op-accept-bun
       "sliceName" : "binary",
       "min" : 1,
       "max" : "1"
-    },
-    {
-      "id" : "Bundle.entry:binary.resource",
-      "path" : "Bundle.entry.resource",
-      "type" : [{
-        "code" : "Binary",
-        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Binary"]
-      }]
     }]
   }
 }

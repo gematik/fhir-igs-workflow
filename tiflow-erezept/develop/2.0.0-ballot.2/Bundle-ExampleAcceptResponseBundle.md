@@ -1,4 +1,6 @@
-# Beispielantwort fuer die $accept-Operation - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Beispielantwort fuer die $accept-Operation - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

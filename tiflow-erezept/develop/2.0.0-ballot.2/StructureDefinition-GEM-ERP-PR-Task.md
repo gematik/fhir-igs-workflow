@@ -1,4 +1,6 @@
-# Task für E-Rezept - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Task für E-Rezept - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -96,14 +98,13 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Task.csv)
   "kind" : "resource",
   "abstract" : false,
   "type" : "Task",
-  "baseDefinition" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-task",
+  "baseDefinition" : "https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-order-task",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
       "id" : "Task.meta",
       "path" : "Task.meta",
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     },
     {
       "id" : "Task.meta.profile",
@@ -141,7 +142,20 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Task.csv)
         "description" : "Erweiterungen für die Aufgabe, die durch url unterschieden werden.",
         "ordered" : false,
         "rules" : "closed"
-      }
+      },
+      "min" : 1
+    },
+    {
+      "id" : "Task.extension:flowType",
+      "path" : "Task.extension",
+      "sliceName" : "flowType",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType"]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Task.extension:lastMedicationDispense",
@@ -204,6 +218,25 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Task.csv)
       "mustSupport" : true
     },
     {
+      "id" : "Task.identifier",
+      "path" : "Task.identifier",
+      "min" : 1
+    },
+    {
+      "id" : "Task.identifier:PrescriptionID",
+      "path" : "Task.identifier",
+      "sliceName" : "PrescriptionID",
+      "short" : "E-Rezept-ID",
+      "definition" : "Die E-Rezept-ID ist der Hauptidentifikator für die Task Ressource und den gesamten TIFlow Workflow. Dieser Identifikator wird vom TI-Flow-Fachdienst generiert und darf nicht manuell geändert werden.",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Identifier",
+        "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/e-prescription-id"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "Task.for.identifier",
       "path" : "Task.for.identifier",
       "type" : [{
@@ -218,7 +251,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Task.csv)
       "max" : "1",
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://gematik.de/fhir/tiflow-erezept/ValueSet/tiflow-rx-task-organizations-vs"
+        "valueSet" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus"
       }
     },
     {
@@ -232,8 +265,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Task.csv)
         "rules" : "closed"
       },
       "short" : "Input Bundle",
-      "definition" : "Referenz auf Eingabe und Ergebnis des E-Rezeptes während des Prozesses",
-      "mustSupport" : true
+      "definition" : "Referenz auf Eingabe und Ergebnis des E-Rezeptes während des Prozesses"
     },
     {
       "id" : "Task.input:ePrescription",
@@ -323,8 +355,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Task.csv)
         "rules" : "closed"
       },
       "short" : "Output Bundle",
-      "definition" : "Referenz auf das Bundle, das die Quittung darstellt.",
-      "mustSupport" : true
+      "definition" : "Referenz auf das Bundle, das die Quittung darstellt."
     },
     {
       "id" : "Task.output:receipt",

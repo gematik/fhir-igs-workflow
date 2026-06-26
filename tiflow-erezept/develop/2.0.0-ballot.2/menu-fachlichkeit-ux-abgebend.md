@@ -1,4 +1,6 @@
-# Best practice UX Primärsysteme für abgebende LEIs - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Best practice UX Primärsysteme für abgebende LEIs - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -171,7 +173,7 @@ Hierbei sollen Fehlermeldungen so aufbereitet werden, sodass der Nutzer versteht
 Solch eine Nicht-Erreichbarkeit kann durch einen Ausfall der TI- Dienste oder der lokalen TI-Komponenten der Apotheken (HBA, SMB-C, Konnektor, etc.) auftreten. In diesem Fall können E-Rezepte nicht vom TI-Flow-Fachdienst abgerufen und eingelöst werden. Diese Information ist präsent darzustellen. Der Arbeitsfluss und insbesondere die Funktionalität für das Einlösen von Muster-16 Verordnungen dürfen in diesem Fall nicht blockiert werden.
 
 funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI SOLL im Falle der Nicht-Erreichbarkeit von zentralen Diensten der TI automatisch versuchen eine Fehlerbehebung durchzuführen.
-Für das Umschwenken auf eine andere Instanz des TI-Flow-Fachdienstes siehe [gemSpec_ILF_PS_eRp#4.2 Namensauflösung].
+Für das Umschwenken auf eine andere Instanz des TI-Flow-Fachdienstes siehe [gemILF_PS_eRp#4.2 Namensauflösung].
 
 funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI SOLL in dem Fall, dass die für die Anwendung E-Rezept notwendigen zentralen Dienste der TI nicht erreichbar sind, den Nutzer darüber benachrichtigen.
 

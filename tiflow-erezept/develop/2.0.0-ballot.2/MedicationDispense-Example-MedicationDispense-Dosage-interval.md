@@ -1,4 +1,6 @@
-# Beispiel Medikamentenabgabe mit Dosierung nach Interval - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Beispiel Medikamentenabgabe mit Dosierung nach Interval - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

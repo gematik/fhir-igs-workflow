@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Generelle Prinzipien - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
+    <title>Generelle Prinzipien - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -37,9 +37,9 @@
         background-size: 100% auto;
         height: 280px;
         background-color: #2a6496;
-        background: url('./e-rezept-img.png') no-repeat;
-        background-position: 650px -150px;
-        background-size: 45% auto;
+        background: url('./tiflow-bg.png') no-repeat;
+        background-position: 580px -20px;
+        background-size: 49% auto;
     }
     .bubble-link {
         display: none;
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"16"}
-    h3,h4,h5,h6{--heading-prefix:"16"}</style>
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -116,9 +116,6 @@
   <li>
     <a href="index.html">Start</a>
   </li>
-  <li>
-    <a href="toc.html">Inhaltsverzeichnis</a>
-  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Grundlagen
       <b class="caret"></b>
@@ -128,19 +125,25 @@
         <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
+        <a href="architecture.html">Architekturmöglichkeiten TI-Flow-Fachdienst</a>
+      </li>
+      <li>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
         <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
       </li>
       <li>
-        <a href="ttl.html">Löschfristen</a>
-      </li>
-      <li>
         <a href="error-codes.html">Fehlercodes</a>
       </li>
       <li>
-        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
+      </li>
+      <li>
+        <a href="ttl.html">Löschfristen</a>
       </li>
       <li>
         <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
@@ -149,13 +152,10 @@
         <a href="datamatrix-code-client.html">Datamatrix Code</a>
       </li>
       <li>
-        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
-      </li>
-      <li>
-        <a href="capability-statement-extensions.html">Konfigurationsabfrage</a>
-      </li>
-      <li>
         <a href="health-check.html">Health Check</a>
+      </li>
+      <li>
+        <a href="capability-statement-extensions.html">Ausgabe Konfiguration</a>
       </li>
     </ul>
   </li>
@@ -165,6 +165,9 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+      </li>
+      <li>
         <a href="menu-technische-umsetzung-zeta.html">Zero Trust Access (ZETA)</a>
       </li>
       <li>
@@ -172,9 +175,6 @@
       </li>
       <li>
         <a href="menu-technische-umsetzung-push.html">Push Notification</a>
-      </li>
-      <li>
-        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-subscription.html">Subscrition</a>
@@ -187,21 +187,18 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-schnittstellen-query-api.html">Query API</a>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
       </li>
       <li>
-        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
       </li>
       <li>
         <a href="menu-schnittstellen-additional-api.html">Additional API</a>
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -209,9 +206,18 @@
         <a href="requirement-mapping-0_9_0-to-2_0_0.html">Anforderungsmapping</a>
       </li>
       <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="requirements.html">Anforderungslisten</a>
+      </li>
+      <li>
         <a href="license.html">Lizenz</a>
       </li>
     </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -229,10 +235,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Kernfunktionalitäten
+Implementation Guide<br /> TIFlow - Kernfunktionalitäten
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - draft
                 
                 
             </span>
@@ -253,11 +259,11 @@ TIFlow - Kernfunktionalitäten
 
           <span style="float:right;">
 
-            <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">&lt;vorherige</a> | 
+            <a href="index.html">&lt;vorherige</a> | 
 
             <a href="#bottom">unten</a>
 
-          | <a href="menu-technische-umsetzung-systemueberblick.html">nächste&gt;</a>
+          | <a href="architecture.html">nächste&gt;</a>
 
           </span>
 
@@ -313,7 +319,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Im Rahmen von Operationaufrufen von Clientsystemen führt der TI-Flow-Fachdienst verschiedene Prüfungen durch, bevor der Zugriff auf die Daten erfolgt.</p>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-418" title="TI-Flow-Fachdienst - Reihenfolge Eingansprüfungen für Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A418" title="TI-Flow-Fachdienst - Reihenfolge Eingansprüfungen für Operationen" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -364,7 +370,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="restful-api">RESTful API</h3>
 
 <!-- A_19536 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-352" title="TI-Flow-Fachdienst - RESTful API" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A352" title="TI-Flow-Fachdienst - RESTful API" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -373,7 +379,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19537 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-353" title="TI-Flow-Fachdienst - RESTful API MimeType fhir+xml" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A353" title="TI-Flow-Fachdienst - RESTful API MimeType fhir+xml" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -382,7 +388,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19538 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-354" title="TI-Flow-Fachdienst - RESTful API MimeType fhir+json" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A354" title="TI-Flow-Fachdienst - RESTful API MimeType fhir+json" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -391,7 +397,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19539 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-355" title="TI-Flow-Fachdienst - RESTful API MimeType Aufrufparameter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A355" title="TI-Flow-Fachdienst - RESTful API MimeType Aufrufparameter" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -400,7 +406,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_20171 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-356" title="TI-Flow-Fachdienst - RESTful API Capability Statement" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A356" title="TI-Flow-Fachdienst - RESTful API Capability Statement" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -415,7 +421,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Verordnungs-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks für den Workflow der Verordnung erstellt.</p>
 
 <!-- A_19217-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-357" title="Aufbau Verordnungs-ID" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A357" title="Aufbau Verordnungs-ID" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -452,8 +458,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
      damit Tippfehler in der manuellen Erfassung erkannt werden können und die Verordnungs-ID über 11 Jahre eine eineindeutige Zuordnung zwischen allen Datenobjekten im Workflow erlaubt.
 </requirement>
 
+<p>Für den Übergang der Anwendung E-Rezept vom E-Rezept-Fachdienst zum TI-Flow-Fachdienst muss es für ein ClientSystem möglich sein zu erkennen, auf welchem Fachdienst ein Task eingestellt wurde, ohne diesen vorher abzufragen.</p>
+
+<p>Der TI-Flow-Fachdienst erzeugt Tasks für jeden Workflow &gt; <code class="language-plaintext highlighter-rouge">&amp;#60;flowtype&amp;#62;</code>.0<strong>1</strong>0.000.000.000.<code class="language-plaintext highlighter-rouge">&amp;#60;prüfziffer&amp;#62;</code>. Siehe hierzu auch die <a href="./op-create-req-fd.html">Anforderungen des TI-Flow-Fachdienst für die $create-Operation</a>.</p>
+
 <!-- A_19218 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-358" title="Prüfung Verordnungs-ID" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A358" title="Prüfung Verordnungs-ID" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -468,7 +478,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Für die Kommunikation und die Interoperabilität müssen bezüglich Datensätzen einheitliche Vorgaben gelten. Laut FHIR Spezifikation wird für XML und JSON Datensätze das Character Encoding "UTF-8" vorgegeben. Byte Order Marks (BOM) werden nicht angeben.</p>
 
 <!-- A_28427 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-360" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Forcieren von UTF-8 ohne BOM" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A360" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Forcieren von UTF-8 ohne BOM" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -502,7 +512,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Anforderung zur Verarbeitung von Datensätzen ohne BOM gilt auch, wenn PKCS#7 Container deserialisiert werden.</p>
 
 <!-- A_28428  -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-359" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A359" title="TI-Flow-Fachdienst - Verarbeitung von Datensätzen - Deserialisierung von PKCS#7 Enveloping-Daten" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -513,7 +523,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Für die Erstellung von Datensätzen gelten für Clientsysteme folgende Anforderungen.</p>
 
 <!-- A_28429 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-361" title="Character Encoding für TI-Flow-Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A361" title="Character Encoding für TI-Flow-Fachdienst" version="0">
     <meta lockversion="false" />
             <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -534,7 +544,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_28430 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-362" title="Verbot Angabe von BOM für TI-Flow-Fachdienst" version="1">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A362" title="Verbot Angabe von BOM für TI-Flow-Fachdienst" version="0">
     <meta lockversion="false" />
         <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -563,7 +573,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzoneninformation im Datum enthalten ist. Diese Zeitangaben sollen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) interpretiert werden. Diese Regelung stellt sicher, dass alle beteiligten Systeme einheitlich und korrekt mit Datums- und Zeitangaben umgehen, unabhängig davon, ob die Angaben in der Vergangenheit oder Gegenwart liegen.</p>
 
 <!-- A_27660 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-363" title="CS: Verarbeitung von Datumsangaben ohne Zeitzoneninformation" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A363" title="CS: Verarbeitung von Datumsangaben ohne Zeitzoneninformation" version="0">
     <meta lockversion="false" />
         <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -581,6 +591,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Verarbeitung von FHIR-Ressourcen der Anwendung E-Rezept sicherstellen, dass Datumsangaben ohne explizite Zeitzoneninformationen gemäß der zum jeweiligen Datum gültigen deutschen Zeit (CET/CEST) verarbeitet werden.
+</requirement>
+
+<h4 id="filtern-und-sortieren-von-fhir-objekten">Filtern und Sortieren von FHIR-Objekten</h4>
+<p>Clients erhalten die Möglichkeit, die Rückgabe der Elemente im FHIR-Bundle durch Suchparameter zu filtern und mithilfe von Sortierparameter zu sortieren.</p>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A441" title="TI-Flow-Fachdienst - Verarbeitung von Suchparameter" version="0">
+    <meta lockversion="false" />
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+      Der TI-Flow-Fachdienst MUSS die Suchparameter verarbeiten können, wie sie im CapabilityStatement festgelegt sind.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A442" title="TI-Flow-Fachdienst - Verarbeitung von Sortierparameter" version="0">
+    <meta lockversion="false" />
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+      Der TI-Flow-Fachdienst MUSS die Sortierparameter verarbeiten können, wie sie im CapabilityStatement festgelegt sind.
 </requirement>
 
 <h3 id="identifikation-des-nutzers">Identifikation des Nutzers</h3>
@@ -622,7 +651,7 @@ Der ZETA-Guard übermittelt die Informationen zum Nutzer und das Clientsystem in
 <!-- A_19390-01 -->
 <!-- A_19391-01 -->
 <!-- A_19392-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-433" title="TI-Flow-Fachdienst - Nutzerinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A433" title="TI-Flow-Fachdienst - Nutzerinformationen" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -663,7 +692,7 @@ Der ZETA-Guard übermittelt die Informationen zum Nutzer und das Clientsystem in
 </table>
 <div><figcaption><strong>Tabelle: </strong>Attribute zeta-client-data</figcaption></div>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-438" title="TI-Flow-Fachdienst - Clientsystem-Informationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A438" title="TI-Flow-Fachdienst - Clientsystem-Informationen" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -695,7 +724,7 @@ Der ZETA-Guard übermittelt die Informationen zum Nutzer und das Clientsystem in
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="menu-schnittstellen-datenschutz-und-sicherheit.html">&lt;vorherige</a>
+                <a href="index.html">&lt;vorherige</a>
 
               </td>
               <td style="text-align:center">
@@ -703,7 +732,7 @@ Der ZETA-Guard übermittelt die Informationen zum Nutzer und das Clientsystem in
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="menu-technische-umsetzung-systemueberblick.html">nächste&gt;</a>
+                <a href="architecture.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -713,7 +742,7 @@ Der ZETA-Guard übermittelt die Informationen zum Nutzer und das Clientsystem in
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 22, 2026 06:40+0000">2026-06-22</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 09:04+0000">2026-06-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,4 +1,6 @@
-# AVS-Anforderungen $accept - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# AVS-Anforderungen $accept - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -36,7 +38,7 @@ funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI KANN im Anwendungs
 * Header "SOAPAction: \"http://ws.gematik.de/conn/SignatureService/v7.4#VerifyDocument\"" 
 * PKCS#7-Datei in SignatureObject
 auszuführen.
-Für weitere Informationen siehe Operation "Qualifizierte Signatur des E-Rezepts prüfen" aus der API-Schnittstelle [E-Rezept API Dokumentation]. Implementierungshinweise zur Signaturprüfung für Primärsysteme sind in [gemILF_PS#4.4.2] beschrieben. Die Außenschnittstelle des Konnektors ist in [gemSpec_Kon#TIP1-A_5034-x Operation VerifyDocument (nonQES und QES)] beschrieben.
+Für weitere Informationen siehe Operation "Qualifizierte Signatur des E-Rezepts prüfen" aus der API-Schnittstelle [E-Rezept API Dokumentation]. Implementierungshinweise zur Signaturprüfung für Primärsysteme sind in [gemILF_PS]#4.4.2 beschrieben. Die Außenschnittstelle des Konnektors ist in [gemSpec_Kon]#TIP1-A_5034-* Operation VerifyDocument (nonQES und QES) beschrieben.
 
 Als Response liefert der Konnektor einen standardisierten Prüfbericht in einer VerificationReport-Struktur gemäß [OASIS-VR].
 

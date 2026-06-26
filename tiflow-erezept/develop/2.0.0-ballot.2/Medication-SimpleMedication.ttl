@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,22 +7,30 @@
 
 <https://gematik.de/fhir/tiflow-erezept/Medication/SimpleMedication> a fhir:Medication ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "SimpleMedication"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0"^^xsd:anyURI ;
+  fhir:Resource.id [ fhir:value "SimpleMedication"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0" ;
+       fhir:index 0 ;
        fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0>
-     ] )
-  ] ; # 
-  fhir:code [
-     fhir:coding ( [
-       fhir:system [ fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "06313728" ]
-     ] )
-  ] ; # 
-  fhir:batch [
-     fhir:lotNumber [ fhir:v "1234567890" ]
-  ] . # 
+     ]
+  ] ;
+  fhir:Medication.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/ifa/pzn" ] ;
+       fhir:Coding.code [ fhir:value "06313728" ]
+     ]
+  ] ;
+  fhir:Medication.status [ fhir:value "active"] ;
+  fhir:Medication.batch [
+     fhir:Medication.batch.lotNumber [ fhir:value "1234567890" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Medication/SimpleMedication.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Server-Anforderungen: Consent-Query - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
+    <title>Server-Anforderungen: Consent-Query - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -37,9 +37,9 @@
         background-size: 100% auto;
         height: 280px;
         background-color: #2a6496;
-        background: url('./e-rezept-img.png') no-repeat;
-        background-position: 650px -150px;
-        background-size: 45% auto;
+        background: url('./tiflow-bg.png') no-repeat;
+        background-position: 580px -20px;
+        background-size: 49% auto;
     }
     .bubble-link {
         display: none;
@@ -116,9 +116,6 @@
   <li>
     <a href="index.html">Start</a>
   </li>
-  <li>
-    <a href="toc.html">Inhaltsverzeichnis</a>
-  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Grundlagen
       <b class="caret"></b>
@@ -128,19 +125,25 @@
         <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
+        <a href="architecture.html">Architekturmöglichkeiten TI-Flow-Fachdienst</a>
+      </li>
+      <li>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
         <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
       </li>
       <li>
-        <a href="ttl.html">Löschfristen</a>
-      </li>
-      <li>
         <a href="error-codes.html">Fehlercodes</a>
       </li>
       <li>
-        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
+      </li>
+      <li>
+        <a href="ttl.html">Löschfristen</a>
       </li>
       <li>
         <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
@@ -149,13 +152,10 @@
         <a href="datamatrix-code-client.html">Datamatrix Code</a>
       </li>
       <li>
-        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
-      </li>
-      <li>
-        <a href="capability-statement-extensions.html">Konfigurationsabfrage</a>
-      </li>
-      <li>
         <a href="health-check.html">Health Check</a>
+      </li>
+      <li>
+        <a href="capability-statement-extensions.html">Ausgabe Konfiguration</a>
       </li>
     </ul>
   </li>
@@ -165,6 +165,9 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+      </li>
+      <li>
         <a href="menu-technische-umsetzung-zeta.html">Zero Trust Access (ZETA)</a>
       </li>
       <li>
@@ -172,9 +175,6 @@
       </li>
       <li>
         <a href="menu-technische-umsetzung-push.html">Push Notification</a>
-      </li>
-      <li>
-        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-subscription.html">Subscrition</a>
@@ -187,21 +187,18 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-schnittstellen-query-api.html">Query API</a>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
       </li>
       <li>
-        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
       </li>
       <li>
         <a href="menu-schnittstellen-additional-api.html">Additional API</a>
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -209,9 +206,18 @@
         <a href="requirement-mapping-0_9_0-to-2_0_0.html">Anforderungsmapping</a>
       </li>
       <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="requirements.html">Anforderungslisten</a>
+      </li>
+      <li>
         <a href="license.html">Lizenz</a>
       </li>
     </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -229,10 +235,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Kernfunktionalitäten
+Implementation Guide<br /> TIFlow - Kernfunktionalitäten
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - draft
                 
                 
             </span>
@@ -307,7 +313,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Consent-Endpunkt.</p>
 
 <!-- A_22153 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-201" title="TI-Flow-Fachdienst - Consent - unzulässige Operationen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A201" title="TI-Flow-Fachdienst - Consent - unzulässige Operationen" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -327,7 +333,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="post-consent">POST /Consent</h3>
 
 <!-- A_22161 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-202" title="TI-Flow-Fachdienst - Consent schreiben - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A202" title="TI-Flow-Fachdienst - Consent schreiben - Rollenprüfung" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -363,7 +369,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22289 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-203" title="TI-Flow-Fachdienst - Consent schreiben - Prüfung KVNR" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A203" title="TI-Flow-Fachdienst - Consent schreiben - Prüfung KVNR" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -395,7 +401,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22351 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-204" title="TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A204" title="TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -427,7 +433,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22162-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-205" title="TI-Flow-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und Einwilligungstyp" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A205" title="TI-Flow-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und Einwilligungstyp" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -459,7 +465,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27143 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-206" title="TI-Flow-Fachdienst - Consent schreiben - Zeitstempel setzen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A206" title="TI-Flow-Fachdienst - Consent schreiben - Zeitstempel setzen" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -468,7 +474,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22350 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-207" title="TI-Flow-Fachdienst - Consent schreiben - Persistieren" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A207" title="TI-Flow-Fachdienst - Consent schreiben - Persistieren" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -477,7 +483,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27143 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-208" title="TI-Flow-Fachdienst - Consent schreiben - Persistieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A208" title="TI-Flow-Fachdienst - Consent schreiben - Persistieren" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -488,7 +494,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="get-consent">GET /Consent</h3>
 
 <!-- A_22159 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-209" title="TI-Flow-Fachdienst - Consent lesen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A209" title="TI-Flow-Fachdienst - Consent lesen - Rollenprüfung" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -524,7 +530,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22160 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-210" title="TI-Flow-Fachdienst - Consent lesen - Filter KVNR" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A210" title="TI-Flow-Fachdienst - Consent lesen - Filter KVNR" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -535,7 +541,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="delete-consent">DELETE /Consent</h3>
 
 <!-- A_22154 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-211" title="TI-Flow-Fachdienst - Consent löschen - alles Löschen verbieten" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A211" title="TI-Flow-Fachdienst - Consent löschen - alles Löschen verbieten" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -567,7 +573,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22155 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-212" title="TI-Flow-Fachdienst - Consent löschen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A212" title="TI-Flow-Fachdienst - Consent löschen - Rollenprüfung" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -603,7 +609,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22874-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-213" title="TI-Flow-Fachdienst - Consent löschen - Prüfung category" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A213" title="TI-Flow-Fachdienst - Consent löschen - Prüfung category" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -643,7 +649,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- ToDo: A_27131 -> EU IG --></p>
 
 <!-- A_22158 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-214" title="TI-Flow-Fachdienst - Consent löschen - Ressource löschen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A214" title="TI-Flow-Fachdienst - Consent löschen - Ressource löschen" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -692,7 +698,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 22, 2026 06:40+0000">2026-06-22</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 09:04+0000">2026-06-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

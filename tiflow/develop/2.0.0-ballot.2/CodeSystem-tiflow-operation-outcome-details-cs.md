@@ -1,8 +1,10 @@
-# TIFLOW Operation Outcome Details CS - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# TIFLOW Operation Outcome Details CS - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -61,7 +63,7 @@ Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werde
   "copyright" : "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0.",
   "caseSensitive" : true,
   "content" : "complete",
-  "count" : 43,
+  "count" : 45,
   "concept" : [{
     "code" : "TIFLOW_SECRET_MISMATCH",
     "display" : "Task secret mismatch",
@@ -447,6 +449,24 @@ Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werde
     "designation" : [{
       "language" : "de-DE",
       "value" : "Server Fehler"
+    }]
+  },
+  {
+    "code" : "TIFLOW_BLOCKED_FLOWTYPE",
+    "display" : "FlowType Blocked",
+    "definition" : "The Flowtype may not be used in the TI-Flow-Fachdienst.",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Gesperrter Flowtype"
+    }]
+  },
+  {
+    "code" : "TIFLOW_BLOCKED_FEATURE",
+    "display" : "Blocked Feature",
+    "definition" : "The functionality for a feature is blocked in the TI-Flow-Fachdienst.",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Gesperrtes Feature"
     }]
   }]
 }

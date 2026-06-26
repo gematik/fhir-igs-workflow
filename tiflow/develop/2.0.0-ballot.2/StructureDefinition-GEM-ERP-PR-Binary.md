@@ -1,8 +1,10 @@
-# GEM ERP PR Binary - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# GEM ERP PR Binary - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -21,7 +23,7 @@ PKCS7 signiertes Bundle im enveloping style
 
 **Usages:**
 
-* Use this Profile: [Bundle der $accept Operation](StructureDefinition-tiflow-op-accept-bundle.md)
+* This Profile is not used by any profiles in this Specification
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow|current/StructureDefinition/StructureDefinition-GEM-ERP-PR-Binary.json)
 

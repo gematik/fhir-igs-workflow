@@ -49,11 +49,11 @@
   <kind value="resource"/>
   <abstract value="true"/>
   <type value="Communication"/>
-  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Communication"/>
+  <baseDefinition value="https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-communication"/>
   <derivation value="constraint"/>
   <snapshot>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version">
-      <valueString value="4.0.1"/>
+      <valueString value="2.0.0-ballot.2"/>
     </extension>
     <element id="Communication">
       <path value="Communication"/>
@@ -72,7 +72,7 @@
         <human value="If the resource is contained in another resource, it SHALL NOT contain nested Resources"/>
         <expression value="contained.contained.empty()"/>
         <xpath value="not(parent::f:contained and f:contained)"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Communication"/>
       </constraint>
       <constraint>
         <key value="dom-3"/>
@@ -80,7 +80,7 @@
         <human value="If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource"/>
         <expression value="contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()"/>
         <xpath value="not(exists(for $id in f:contained/*/f:id/@value return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Communication"/>
       </constraint>
       <constraint>
         <key value="dom-4"/>
@@ -88,7 +88,7 @@
         <human value="If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated"/>
         <expression value="contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()"/>
         <xpath value="not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Communication"/>
       </constraint>
       <constraint>
         <key value="dom-5"/>
@@ -96,7 +96,7 @@
         <human value="If a resource is contained in another resource, it SHALL NOT have a security label"/>
         <expression value="contained.meta.security.empty()"/>
         <xpath value="not(exists(f:contained/*/f:meta/f:security))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Communication"/>
       </constraint>
       <constraint>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice">
@@ -110,7 +110,7 @@
         <human value="A resource should have narrative for robust management"/>
         <expression value="text.`div`.exists()"/>
         <xpath value="exists(f:text/h:div)"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Communication"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
@@ -166,8 +166,291 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="true"/>
+    </element>
+    <element id="Communication.meta.id">
+      <path value="Communication.meta.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="Communication.meta.extension">
+      <path value="Communication.meta.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="Communication.meta.versionId">
+      <path value="Communication.meta.versionId"/>
+      <short value="Version specific identifier"/>
+      <definition value="The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted."/>
+      <comment value="The server assigns this value, and ignores what the client specifies, except in the case that the server is imposing version integrity on updates/deletes."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Meta.versionId"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="id"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+    </element>
+    <element id="Communication.meta.lastUpdated">
+      <path value="Communication.meta.lastUpdated"/>
+      <short value="When the resource version last changed"/>
+      <definition value="When the resource last changed - e.g. when the version changed."/>
+      <comment value="This value is always populated except when the resource is first being created. The server / resource manager sets this value; what a client provides is irrelevant. This is equivalent to the HTTP Last-Modified and SHOULD have the same value on a [read](http://hl7.org/fhir/R4/http.html#read) interaction."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Meta.lastUpdated"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="instant"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+    </element>
+    <element id="Communication.meta.source">
+      <path value="Communication.meta.source"/>
+      <short value="Identifies where the resource comes from"/>
+      <definition value="A uri that identifies the source system of the resource. This provides a minimal amount of [Provenance](http://hl7.org/fhir/R4/provenance.html#) information that can be used to track or differentiate the source of information in the resource. The source may identify another FHIR server, document, message, database, etc."/>
+      <comment value="In the provenance resource, this corresponds to Provenance.entity.what[x]. The exact use of the source (and the implied Provenance.entity.role) is left to implementer discretion. Only one nominated source is allowed; for additional provenance details, a full Provenance resource should be used. &#xA;&#xA;This element can be used to indicate where the current master source of a resource that has a canonical URL if the resource is no longer hosted at the canonical URL."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Meta.source"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="uri"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+    </element>
+    <element id="Communication.meta.profile">
+      <path value="Communication.meta.profile"/>
+      <short value="Profiles this resource claims to conform to"/>
+      <definition value="A list of profiles (references to [StructureDefinition](http://hl7.org/fhir/R4/structuredefinition.html#) resources) that this resource claims to conform to. The URL is a reference to [StructureDefinition.url](http://hl7.org/fhir/R4/structuredefinition-definitions.html#StructureDefinition.url)."/>
+      <comment value="It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Meta.profile"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="canonical"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+    </element>
+    <element id="Communication.meta.security">
+      <path value="Communication.meta.security"/>
+      <short value="Security Labels applied to this resource"/>
+      <definition value="Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure."/>
+      <comment value="The security labels can be updated without changing the stated version of the resource. The list of security labels is a set. Uniqueness is based the system/code, and version and display are ignored."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Meta.security"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Coding"/>
+      </type>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="SecurityLabels"/>
+        </extension>
+        <strength value="extensible"/>
+        <description value="Security Labels from the Healthcare Privacy and Security Classification System."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/security-labels|4.0.1"/>
+      </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CV"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:Coding rdfs:subClassOf dt:CDCoding"/>
+      </mapping>
+    </element>
+    <element id="Communication.meta.tag">
+      <path value="Communication.meta.tag"/>
+      <short value="Tags applied to this resource"/>
+      <definition value="Tags applied to this resource. Tags are intended to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource."/>
+      <comment value="The tags can be updated without changing the stated version of the resource. The list of tags is a set. Uniqueness is based the system/code, and version and display are ignored."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Meta.tag"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Coding"/>
+      </type>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="Tags"/>
+        </extension>
+        <strength value="example"/>
+        <description value="Codes that represent various types of tags, commonly workflow-related; e.g. &quot;Needs review by Dr. Jones&quot;."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/common-tags|4.0.1"/>
+      </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CV"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:Coding rdfs:subClassOf dt:CDCoding"/>
+      </mapping>
     </element>
     <element id="Communication.implicitRules">
       <path value="Communication.implicitRules"/>
@@ -294,6 +577,14 @@
     </element>
     <element id="Communication.extension">
       <path value="Communication.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
       <short value="Additional content defined by implementations"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
@@ -334,6 +625,14 @@
     </element>
     <element id="Communication.modifierExtension">
       <path value="Communication.modifierExtension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
       <short value="Extensions that cannot be ignored"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
@@ -390,6 +689,7 @@
       <type>
         <code value="Identifier"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -400,6 +700,22 @@
       </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CX / EI (occasionally, more often EI maps to a resource id or a URL)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]"/>
+      </mapping>
+      <mapping>
+        <identity value="servd"/>
+        <map value="Identifier"/>
+      </mapping>
       <mapping>
         <identity value="workflow"/>
         <map value="Event.identifier"/>
@@ -413,6 +729,7 @@
       <path value="Communication.instantiatesCanonical"/>
       <short value="Instantiates FHIR protocol or definition"/>
       <definition value="The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Communication."/>
+      <comment value="see [Canonical References](http://hl7.org/fhir/R4/references.html#canonical)"/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -499,6 +816,7 @@
         <targetProfile value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"/>
         <aggregation value="referenced"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -507,9 +825,25 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <constraint>
+        <key value="ref-1"/>
+        <severity value="error"/>
+        <human value="SHALL have a contained resource if a local reference is provided"/>
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
+        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Reference"/>
+      </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+      </mapping>
       <mapping>
         <identity value="workflow"/>
         <map value="Event.basedOn"/>
@@ -673,6 +1007,7 @@
       <type>
         <code value="Identifier"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -683,6 +1018,22 @@
       </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CX / EI (occasionally, more often EI maps to a resource id or a URL)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]"/>
+      </mapping>
+      <mapping>
+        <identity value="servd"/>
+        <map value="Identifier"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".identifier"/>
@@ -725,6 +1076,7 @@
       <path value="Communication.partOf"/>
       <short value="Part of this action"/>
       <definition value="Part of this action."/>
+      <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository."/>
       <alias value="container"/>
       <min value="0"/>
       <max value="0"/>
@@ -737,6 +1089,7 @@
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource|4.0.1"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -745,8 +1098,24 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <constraint>
+        <key value="ref-1"/>
+        <severity value="error"/>
+        <human value="SHALL have a contained resource if a local reference is provided"/>
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
+        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Reference"/>
+      </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+      </mapping>
       <mapping>
         <identity value="workflow"/>
         <map value="Event.partOf"/>
@@ -756,6 +1125,7 @@
       <path value="Communication.inResponseTo"/>
       <short value="Reply to"/>
       <definition value="Prior communication that this communication is in response to."/>
+      <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository."/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -767,6 +1137,7 @@
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Communication|4.0.1"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -775,8 +1146,23 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <constraint>
+        <key value="ref-1"/>
+        <severity value="error"/>
+        <human value="SHALL have a contained resource if a local reference is provided"/>
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
+        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Reference"/>
+      </constraint>
       <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+      </mapping>
     </element>
     <element id="Communication.status">
       <path value="Communication.status"/>
@@ -840,6 +1226,7 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -858,6 +1245,22 @@
         <description value="Codes for the reason why a communication did not happen."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/communication-not-done-reason|4.0.1"/>
       </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+      </mapping>
       <mapping>
         <identity value="workflow"/>
         <map value="Event.statusReason"/>
@@ -878,6 +1281,7 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -887,7 +1291,6 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <isModifier value="false"/>
-      <isSummary value="false"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="CommunicationCategory"/>
@@ -896,6 +1299,22 @@
         <description value="Codes for general categories of communications such as alerts, instructions, etc."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/communication-category|4.0.1"/>
       </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+      </mapping>
       <mapping>
         <identity value="w5"/>
         <map value="FiveWs.class"/>
@@ -944,6 +1363,7 @@
       <path value="Communication.medium"/>
       <short value="A channel of communication"/>
       <definition value="A channel that was used for this communication (e.g. email, fax)."/>
+      <comment value="Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination."/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -954,6 +1374,7 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -963,7 +1384,6 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <isModifier value="false"/>
-      <isSummary value="false"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="CommunicationMedium"/>
@@ -972,11 +1392,28 @@
         <description value="Codes for communication mediums such as phone, fax, email, in person, etc."/>
         <valueSet value="http://terminology.hl7.org/ValueSet/v3-ParticipationMode"/>
       </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+      </mapping>
     </element>
     <element id="Communication.subject">
       <path value="Communication.subject"/>
       <short value="Focus of message"/>
       <definition value="The patient or group that was the focus of this communication."/>
+      <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository."/>
       <alias value="patient"/>
       <min value="0"/>
       <max value="0"/>
@@ -990,6 +1427,7 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group|4.0.1"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -998,8 +1436,24 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <constraint>
+        <key value="ref-1"/>
+        <severity value="error"/>
+        <human value="SHALL have a contained resource if a local reference is provided"/>
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
+        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Reference"/>
+      </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+      </mapping>
       <mapping>
         <identity value="workflow"/>
         <map value="Event.subject"/>
@@ -1028,6 +1482,7 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1037,7 +1492,6 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <isModifier value="false"/>
-      <isSummary value="false"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="CommunicationTopic"/>
@@ -1046,6 +1500,22 @@
         <description value="Codes describing the purpose or content of the communication."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/communication-topic|4.0.1"/>
       </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+      </mapping>
       <mapping>
         <identity value="w5"/>
         <map value="FiveWs.context"/>
@@ -1067,6 +1537,7 @@
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource|4.0.1"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1075,8 +1546,23 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <constraint>
+        <key value="ref-1"/>
+        <severity value="error"/>
+        <human value="SHALL have a contained resource if a local reference is provided"/>
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
+        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Reference"/>
+      </constraint>
       <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+      </mapping>
       <mapping>
         <identity value="w5"/>
         <map value="FiveWs.context"/>
@@ -1098,6 +1584,7 @@
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1106,8 +1593,24 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <constraint>
+        <key value="ref-1"/>
+        <severity value="error"/>
+        <human value="SHALL have a contained resource if a local reference is provided"/>
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
+        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Reference"/>
+      </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+      </mapping>
       <mapping>
         <identity value="workflow"/>
         <map value="Event.context"/>
@@ -1121,7 +1624,7 @@
       <path value="Communication.sent"/>
       <short value="Der Zeitpunkt, zu dem diese Kommunikation gesendet wurde."/>
       <definition value="The time when this communication was sent."/>
-      <comment value="Wird vom E-Rezept-Server gesetzt. Ein Client hat diesen Wert daher immer verfügbar."/>
+      <comment value="Wird vom TIFlow-Server gesetzt. Ein Client hat diesen Wert daher immer verfügbar."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1156,7 +1659,7 @@
       <path value="Communication.received"/>
       <short value="Der Zeitpunkt, zu dem diese Kommunikation empfangen wurde."/>
       <definition value="The time when this communication arrived at the destination."/>
-      <comment value="Wird vom E-Rezept-Server gesetzt. Ein Client hat diesen Wert daher immer verfügbar."/>
+      <comment value="Wird vom TIFlow-Server gesetzt. Ein Client hat diesen Wert daher immer verfügbar."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1211,6 +1714,7 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/CareTeam|4.0.1"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/HealthcareService|4.0.1"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1219,9 +1723,24 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <constraint>
+        <key value="ref-1"/>
+        <severity value="error"/>
+        <human value="SHALL have a contained resource if a local reference is provided"/>
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
+        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Reference"/>
+      </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+      </mapping>
       <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
@@ -1234,8 +1753,8 @@
     <element id="Communication.sender">
       <path value="Communication.sender"/>
       <short value="Die Entität (z. B. Person, Organisation), die Quelle der Kommunikation war."/>
-      <definition value="Nachrichtenabsender — wird vom E-Rezept-Server unter Verwendung der AuthN-Credential des Clients gesetzt.&#xD;&#xA;Die Entität (z. B. Person, Organisation), die Quelle der Kommunikation war."/>
-      <comment value="Wird vom E-Rezept-Server unter Verwendung der AuthN-Credential des Clients gesetzt."/>
+      <definition value="Nachrichtenabsender — wird vom TIFlow-Server gesetzt.&#xD;&#xA;Die Entität (z. B. Person, Organisation), die Quelle der Kommunikation war."/>
+      <comment value="Wird vom TIFlow-Server gesetzt."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1253,6 +1772,7 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/HealthcareService|4.0.1"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1261,9 +1781,24 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <constraint>
+        <key value="ref-1"/>
+        <severity value="error"/>
+        <human value="SHALL have a contained resource if a local reference is provided"/>
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
+        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Reference"/>
+      </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+      </mapping>
       <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
@@ -1288,6 +1823,7 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1307,6 +1843,22 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/clinical-findings|4.0.1"/>
       </binding>
       <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.reasonCode"/>
       </mapping>
@@ -1323,6 +1875,7 @@
       <path value="Communication.reasonReference"/>
       <short value="Why was communication done?"/>
       <definition value="Indicates another resource whose existence justifies this communication."/>
+      <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository."/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -1337,6 +1890,7 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/DiagnosticReport|4.0.1"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1345,8 +1899,24 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <constraint>
+        <key value="ref-1"/>
+        <severity value="error"/>
+        <human value="SHALL have a contained resource if a local reference is provided"/>
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
+        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Reference"/>
+      </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+      </mapping>
       <mapping>
         <identity value="workflow"/>
         <map value="Event.reasonReference"/>
@@ -1374,6 +1944,7 @@
       <type>
         <code value="BackboneElement"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1384,7 +1955,10 @@
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
     </element>
     <element id="Communication.payload.id">
       <path value="Communication.payload.id"/>
@@ -1413,6 +1987,14 @@
     </element>
     <element id="Communication.payload.extension">
       <path value="Communication.payload.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
       <short value="Additional content defined by implementations"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
@@ -1498,7 +2080,7 @@
       <path value="Communication.payload.content[x]"/>
       <short value="Der tatsächliche Inhalt der Nachricht"/>
       <definition value="A communicated content (or for multi-part communications, one portion of the communication)."/>
-      <comment value="Dieser Inhalt muss ein JSON gemäß gemSpec_DM_eRp sein."/>
+      <comment value="Der tatsächliche Inhalt der Nachricht"/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -1516,6 +2098,7 @@
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource|4.0.1"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1525,12 +2108,16 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
     </element>
     <element id="Communication.note">
       <path value="Communication.note"/>
       <short value="Comments made about the communication"/>
       <definition value="Additional notes or commentary about the communication by the sender, receiver or other interested parties."/>
+      <comment value="For systems that do not have structured annotations, they can simply communicate a single annotation with no author or time.  This element may need to be included in narrative because of the potential for modifying information.  *Annotations SHOULD NOT* be used to communicate &quot;modifying&quot; information that could be computable. (This is a SHOULD because enforcing user behavior is nearly impossible)."/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -1541,6 +2128,7 @@
       <type>
         <code value="Annotation"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1550,7 +2138,18 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="N/A"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="Act"/>
+      </mapping>
       <mapping>
         <identity value="workflow"/>
         <map value="Event.note"/>
@@ -1597,12 +2196,6 @@
       <path value="Communication.inResponseTo"/>
       <max value="0"/>
     </element>
-    <element id="Communication.status">
-      <path value="Communication.status"/>
-      <comment value="Muss standardmäßig laut FHIR Core Specification angegeben werden, wird jedoch während des Lebenszyklus der Ressource nicht verändert."/>
-      <fixedCode value="unknown"/>
-      <mustSupport value="true"/>
-    </element>
     <element id="Communication.statusReason">
       <path value="Communication.statusReason"/>
       <max value="0"/>
@@ -1635,31 +2228,6 @@
       <path value="Communication.encounter"/>
       <max value="0"/>
     </element>
-    <element id="Communication.sent">
-      <path value="Communication.sent"/>
-      <short value="Der Zeitpunkt, zu dem diese Kommunikation gesendet wurde."/>
-      <comment value="Wird vom E-Rezept-Server gesetzt. Ein Client hat diesen Wert daher immer verfügbar."/>
-      <mustSupport value="true"/>
-    </element>
-    <element id="Communication.received">
-      <path value="Communication.received"/>
-      <short value="Der Zeitpunkt, zu dem diese Kommunikation empfangen wurde."/>
-      <comment value="Wird vom E-Rezept-Server gesetzt. Ein Client hat diesen Wert daher immer verfügbar."/>
-      <mustSupport value="true"/>
-    </element>
-    <element id="Communication.recipient">
-      <path value="Communication.recipient"/>
-      <short value="Die Entität (z. B. Person, Organisation), die Ziel der Kommunikation war."/>
-      <comment value="Muss vom Absender der Kommunikation gesetzt werden, um das Ziel festzulegen."/>
-      <mustSupport value="true"/>
-    </element>
-    <element id="Communication.sender">
-      <path value="Communication.sender"/>
-      <short value="Die Entität (z. B. Person, Organisation), die Quelle der Kommunikation war."/>
-      <definition value="Nachrichtenabsender — wird vom E-Rezept-Server unter Verwendung der AuthN-Credential des Clients gesetzt.&#xD;&#xA;Die Entität (z. B. Person, Organisation), die Quelle der Kommunikation war."/>
-      <comment value="Wird vom E-Rezept-Server unter Verwendung der AuthN-Credential des Clients gesetzt."/>
-      <mustSupport value="true"/>
-    </element>
     <element id="Communication.reasonCode">
       <path value="Communication.reasonCode"/>
       <max value="0"/>
@@ -1667,15 +2235,6 @@
     <element id="Communication.reasonReference">
       <path value="Communication.reasonReference"/>
       <max value="0"/>
-    </element>
-    <element id="Communication.payload">
-      <path value="Communication.payload"/>
-      <mustSupport value="true"/>
-    </element>
-    <element id="Communication.payload.content[x]">
-      <path value="Communication.payload.content[x]"/>
-      <short value="Der tatsächliche Inhalt der Nachricht"/>
-      <comment value="Dieser Inhalt muss ein JSON gemäß gemSpec_DM_eRp sein."/>
     </element>
     <element id="Communication.note">
       <path value="Communication.note"/>

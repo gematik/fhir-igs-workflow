@@ -1,4 +1,6 @@
-# GEM ERP PR Bundle OP Accept - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# GEM ERP PR Bundle OP Accept - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -143,6 +145,19 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Bundle-OP
       "type" : [{
         "code" : "Task",
         "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"]
+      }]
+    },
+    {
+      "id" : "Bundle.entry:binary",
+      "path" : "Bundle.entry",
+      "sliceName" : "binary"
+    },
+    {
+      "id" : "Bundle.entry:binary.resource",
+      "path" : "Bundle.entry.resource",
+      "type" : [{
+        "code" : "Binary",
+        "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Binary"]
       }]
     }]
   }

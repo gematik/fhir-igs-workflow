@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,51 +7,65 @@
 
 <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-reject-op> a fhir:OperationDefinition ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "tiflow-rx-reject-op"] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition tiflow-rx-reject-op</b></p><a name=\"tiflow-rx-reject-op\"> </a><a name=\"hctiflow-rx-reject-op\"> </a><p>URL: [base]/Task/[id]/$reject</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>secret</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf den Task als URL-Parameter ?secret ermöglicht.</p>\n</div></td></tr></table></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-reject-op"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
-  fhir:name [ fhir:v "TIFlow-RX-OP-Reject"] ; # 
-  fhir:title [ fhir:v "E-Rezept zurückgeben"] ; # 
-  fhir:status [ fhir:v "active"] ; # 
-  fhir:kind [ fhir:v "operation"] ; # 
-  fhir:date [ fhir:v "2028-04-01"^^xsd:date] ; # 
-  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
-  fhir:contact ( [
-     fhir:name [ fhir:v "gematik GmbH" ] ;
-     fhir:telecom ( [
-       fhir:system [ fhir:v "url" ] ;
-       fhir:value [ fhir:v "https://gematik.de" ]
-     ] [
-       fhir:system [ fhir:v "email" ] ;
-       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
-     ] )
-  ] ) ; # 
-  fhir:description [ fhir:v "Lehnt die Ausgabe eines E-Rezepts ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Apotheker zugänglich oder kann vom Patienten gelöscht werden."] ; # 
-  fhir:jurisdiction ( [
-     fhir:coding ( [
-       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "DE" ] ;
-       fhir:display [ fhir:v "Germany" ]
-     ] )
-  ] ) ; # 
-  fhir:affectsState [ fhir:v true] ; # 
-  fhir:code [ fhir:v "reject"] ; # 
-  fhir:resource ( [ fhir:v "Task"] ) ; # 
-  fhir:system [ fhir:v false] ; # 
-  fhir:type [ fhir:v false] ; # 
-  fhir:instance [ fhir:v true] ; # 
-  fhir:parameter ( [
-     fhir:name [ fhir:v "secret" ] ;
-     fhir:use [ fhir:v "in" ] ;
-     fhir:min [ fhir:v 1 ] ;
-     fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf den Task als URL-Parameter ?secret ermöglicht." ] ;
-     fhir:type [ fhir:v "string" ]
-  ] ) . # 
+  fhir:Resource.id [ fhir:value "tiflow-rx-reject-op"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition tiflow-rx-reject-op</b></p><a name=\"tiflow-rx-reject-op\"> </a><a name=\"hctiflow-rx-reject-op\"> </a><p>URL: [base]/Task/[id]/$reject</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>secret</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf den Task als URL-Parameter ?secret ermöglicht.</p>\n</div></td></tr></table></div>"
+  ] ;
+  fhir:OperationDefinition.url [ fhir:value "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-reject-op"] ;
+  fhir:OperationDefinition.version [ fhir:value "2.0.0-ballot.2"] ;
+  fhir:OperationDefinition.name [ fhir:value "TIFlow-RX-OP-Reject"] ;
+  fhir:OperationDefinition.title [ fhir:value "E-Rezept zurückgeben"] ;
+  fhir:OperationDefinition.status [ fhir:value "active"] ;
+  fhir:OperationDefinition.kind [ fhir:value "operation"] ;
+  fhir:OperationDefinition.date [ fhir:value "2028-04-01"^^xsd:date] ;
+  fhir:OperationDefinition.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:OperationDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "erp-umsetzung@gematik.de" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.description [ fhir:value "Lehnt die Ausgabe eines E-Rezepts ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Apotheker zugänglich oder kann vom Patienten gelöscht werden."] ;
+  fhir:OperationDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.affectsState [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.code [ fhir:value "reject"] ;
+  fhir:OperationDefinition.resource [
+     fhir:value "Task" ;
+     fhir:index 0
+  ] ;
+  fhir:OperationDefinition.system [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.type [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.instance [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.parameter [
+     fhir:index 0 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "secret" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Der secret Parameter, der einer Apotheke den exklusiven Zugriff auf den Task als URL-Parameter ?secret ermöglicht." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "string" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-reject-op.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

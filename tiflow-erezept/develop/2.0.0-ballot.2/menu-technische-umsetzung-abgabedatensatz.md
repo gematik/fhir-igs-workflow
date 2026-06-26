@@ -1,4 +1,6 @@
-# Abgabedatensatz signieren - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Abgabedatensatz signieren - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -22,6 +24,6 @@ funkt. Eignung: Test Produkt/FADas PS der abgebenden LEI MUSS beim Signieren des
 
 funkt. Eignung: Test Produkt/FADas PS der abgebenden LEI MUSS die Signatur des Abgabedatensatzes mittels Einzelsignatur, Stapelsignatur und Komfortsignatur unterstützen.
 
-funkt. Eignung: Test Produkt/FADas PS der abgebenden LEI MUSS beim Signieren eines Abgabedatensatzes mit einer non-QES vor dem Signieren prüfen, dass die für die nonQES verwendet SMC-B gültig ist.
-Hinweis: Die SMC-B ist gültig, wenn ein gültiger ACCESS_TOKEN für den Zugriff auf den TI-Flow-Fachdienst auf Basis dieser SMC-B vorliegt.
+funkt. Eignung: Test Produkt/FADas PS der abgebenden LEI MUSS beim Signieren eines Abgabedatensatzes mit einer nonQES vor dem Signieren prüfen, dass die für die nonQES verwendet SMC-B gültig ist.
+Hinweis: Die SMC-B ist gültig, wenn eine Authentisierung für den Zugriff auf den TI-Flow-Fachdienst auf Basis dieser SMC-B erfolgreich war.
 

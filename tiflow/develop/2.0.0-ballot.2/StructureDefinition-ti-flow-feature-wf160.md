@@ -1,8 +1,10 @@
-# Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)

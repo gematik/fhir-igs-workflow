@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>E-Rezept-spezifische KIM-Messages - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2</title>
+    <title>E-Rezept-spezifische KIM-Messages - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -161,6 +161,9 @@
       <li>
         <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -214,7 +217,7 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Verordnungen für Arzneimittel
+Implementation Guide<br /> TIFlow - Verordnungen für Arzneimittel
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
             <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
@@ -291,7 +294,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Rezepts, bspw. Rückfragen durch die Apotheke.</p>
 
 <!-- A_21870 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-110" title="E-Rezept - X-KIM-Dienstkennung - Zuweisung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A110" title="E-Rezept - X-KIM-Dienstkennung - Zuweisung" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -300,7 +303,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_21871 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-111" title="E-Rezept - X-KIM-Dienstkennung - Kommunikation" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A111" title="E-Rezept - X-KIM-Dienstkennung - Kommunikation" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -309,7 +312,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_21873 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-112" title="E-Rezept - Struktur Zuweisungs-Message" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A112" title="E-Rezept - Struktur Zuweisungs-Message" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -318,7 +321,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_21874 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-113" title="E-Rezept - Zuweisungs-Message - CRLF" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A113" title="E-Rezept - Zuweisungs-Message - CRLF" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -327,7 +330,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_21875 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-114" title="E-Rezept - Struktur Kommunikation-Message" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A114" title="E-Rezept - Struktur Kommunikation-Message" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -378,7 +381,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:58+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 09:08+0000">2026-06-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,13 +1,15 @@
-# ePA MedicationService - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# Technische Umsetzung - ePA Medication Service - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
-* **ePA MedicationService**
+* **Technische Umsetzung - ePA Medication Service**
 
-## ePA MedicationService
+## Technische Umsetzung - ePA Medication Service
 
 ### Kommunikation mit ePA-Aktensystem
 
@@ -44,10 +46,10 @@ Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat ent
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS prüfen, dass die im Zertifikat enthaltene Rolle (Admission) gleich oid_epa_dvw ist und im Fehlerfall den Aufbau der HTTPS-Verbindung abbrechen.
 #### VAU-Protokoll
 
-Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermittelten Daten mit dem VAU-Protokoll gesichert. Es gelten die Vorgaben aus [gemSpec_Krypt#7 VAU-Protokoll für ePA für alle].
+Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermittelten Daten mit dem VAU-Protokoll gesichert. Es gelten die Vorgaben aus [gemSpec_Krypt]#VAU-Protokoll für ePA für alle.
 
 **Abbildung: **Transport durch die TI
-Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Bearer-Token. Für die Signatur wird das AUT-Zertifikat der E-Rezept-VAU verwendet. Siehe [gemSpec_Krypt]#7.4 Authentisierung des E-Rezept-FD als ePA-Client und [gemSpec_Aktensystem_ePAfueralle]#3.16.3 Anforderungen an den Authorization Service für die Authentisierung des TI-Flow-Fachdienstes.
+Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Bearer-Token. Für die Signatur wird das AUT-Zertifikat der E-Rezept-VAU verwendet. Siehe [gemSpec_Krypt]#Authentisierung des E-Rezept-FD als ePA-Client und [gemSpec_Aktensystem_ePAfueralle]#3.16.3 Anforderungen an den Authorization Service für die Authentisierung des TI-Flow-Fachdienstes.
 
 Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS für die Authentisierung gegenüber dem ePA-Aktensystem ein JWT Baerer-Token gemäß A_25165-* erstellen.
 
@@ -139,13 +141,13 @@ Für die Kommunikation mit dem Medication Service wurde [gemIG_ePA_Medication] d
 
 funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS bei der Übermittlung von Daten an den Medication Service die Schnittstellen nach [gemIG_ePA_Medication] verwenden.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS zur Bereitstellung von Verordnungsdaten an den ePA Medication Service die Operation [base]/$provide-prescription-erp des Medication Service aufrufen.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS zur Bereitstellung von Verordnungsdaten an den ePA Medication Service die Operation `providePrescription_MedicationSvc` des Medication Service aufrufen.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS, um die Löschinformation für Verordnungsdaten an den ePA Medication Service zu übermitteln, die Operation [base]/$cancel-prescription-erp des Medication Service aufrufen.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS, um die Löschinformation für Verordnungsdaten an den ePA Medication Service zu übermitteln, die Operation `cancelPrescription_MedicationSvc` des Medication Service aufrufen.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS zur Bereitstellung von Dispensierinformationen an den ePA Medication Service die Operation [base]/$provide-dispensation-erp des Medication Service mit rxDispensation.status gemäß dem bereitgestellten Status aufrufen.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS zur Bereitstellung von Dispensierinformationen an den ePA Medication Service die Operation `provideDispensation_MedicationSvc` des Medication Service mit rxDispensation.status gemäß dem bereitgestellten Status aufrufen.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS, um die Löschinformation für Dispensierinformationen an den ePA Medication Service zu übermitteln, die Operation [base]/$cancel-dispensation-erp des Medication Service aufrufen.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS, um die Löschinformation für Dispensierinformationen an den ePA Medication Service zu übermitteln, die Operation `cancelDispensation_MedicationSvc` des Medication Service aufrufen.
 
 funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst KANN für die Übermittlung von Verordnungsdaten und Dispensierinformationen an den ePA Medication Service mehrere Instanzen von MedicationRequest oder mehrere Instanzen von MedicationDispense einer KVNR in einem einzigen Operationsaufruf bündeln.
 #### Entschlüsseln

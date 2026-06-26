@@ -1,4 +1,6 @@
-# GEM ERP PR Medication - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# GEM ERP PR Medication - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -94,7 +96,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
   "kind" : "resource",
   "abstract" : false,
   "type" : "Medication",
-  "baseDefinition" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication",
+  "baseDefinition" : "https://gematik.de/fhir/ti/StructureDefinition/ti-medication-dgmp",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -135,20 +137,50 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
       "id" : "Medication.contained",
       "path" : "Medication.contained",
       "short" : "Enthaltene Medications",
-      "definition" : "Dieses Feld kann weitere Medication Ressourcen enthalten, die hier gelistet werden. Dies tritt z.B. bei Rezepturen auf."
+      "definition" : "Dieses Feld kann weitere Medication Ressourcen enthalten, die hier gelistet werden. Dies tritt z.B. bei Rezepturen auf.",
+      "mustSupport" : true
     },
     {
       "id" : "Medication.identifier",
       "path" : "Medication.identifier",
       "short" : "Business-Identifier der Medication",
       "definition" : "Dieses Feld bietet die Möglichkeit, für eine Medikation Business Identifier zu belegen.",
-      "comment" : "Gegenüber dem E-Rezept-Fachdienst wird dieser Wert nicht ausgewertet."
+      "comment" : "Gegenüber dem E-Rezept-Fachdienst wird dieser Wert nicht ausgewertet.",
+      "max" : "0"
+    },
+    {
+      "id" : "Medication.identifier:EPAMedicationUniqueIdentifier",
+      "path" : "Medication.identifier",
+      "sliceName" : "EPAMedicationUniqueIdentifier",
+      "max" : "0"
+    },
+    {
+      "id" : "Medication.identifier:RxOriginatorProcessIdentifier",
+      "path" : "Medication.identifier",
+      "sliceName" : "RxOriginatorProcessIdentifier",
+      "max" : "0"
     },
     {
       "id" : "Medication.code",
       "path" : "Medication.code",
       "short" : "Code der Medikation",
       "definition" : "Ein Code (oder eine Gruppe von Codes), der dieses Medikament identifiziert, oder eine textuelle Beschreibung, falls kein Code verfügbar ist."
+    },
+    {
+      "id" : "Medication.code.coding:atc-de",
+      "path" : "Medication.code.coding",
+      "sliceName" : "atc-de",
+      "max" : "0"
+    },
+    {
+      "id" : "Medication.status",
+      "path" : "Medication.status",
+      "min" : 1
+    },
+    {
+      "id" : "Medication.manufacturer",
+      "path" : "Medication.manufacturer",
+      "max" : "0"
     },
     {
       "id" : "Medication.form",
@@ -173,7 +205,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
       "path" : "Medication.ingredient.extension",
       "sliceName" : "darreichungsform",
       "short" : "Darreichungsform",
-      "definition" : "Angabe der Darreichungsform eines Wirkstoffes als string"
+      "definition" : "Angabe der Darreichungsform eines Wirkstoffes als string",
+      "mustSupport" : true
     },
     {
       "id" : "Medication.ingredient.item[x]:itemCodeableConcept",
@@ -186,6 +219,12 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
       }]
     },
     {
+      "id" : "Medication.ingredient.item[x]:itemCodeableConcept.coding:atc-de",
+      "path" : "Medication.ingredient.item[x].coding",
+      "sliceName" : "atc-de",
+      "max" : "0"
+    },
+    {
       "id" : "Medication.ingredient.item[x]:itemReference",
       "path" : "Medication.ingredient.item[x]",
       "sliceName" : "itemReference",
@@ -194,8 +233,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
       "comment" : "Wird in diesem Profil ausschließlich dafür genutzt, um für Rezepturen und Kombipackungen die Einzelbestandteile unter `.contained` anzugeben",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pharmaceutical-product",
-        "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pzn-ingredient"],
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Medication"],
         "aggregation" : ["contained"]
       }]
     },
@@ -223,7 +261,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
       "id" : "Medication.batch.lotNumber",
       "path" : "Medication.batch.lotNumber",
       "short" : "Chargennummer",
-      "definition" : "Die zugewiesene Chargennummer einer Charge des angegebenen Produkts."
+      "definition" : "Die zugewiesene Chargennummer einer Charge des angegebenen Produkts.",
+      "mustSupport" : true
     },
     {
       "id" : "Medication.batch.expirationDate",

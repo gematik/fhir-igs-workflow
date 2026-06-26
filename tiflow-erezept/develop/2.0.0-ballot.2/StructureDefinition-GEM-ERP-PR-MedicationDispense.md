@@ -1,4 +1,6 @@
-# GEM ERP PR MedicationDispense - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# GEM ERP PR MedicationDispense - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -99,7 +101,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
   "kind" : "resource",
   "abstract" : false,
   "type" : "MedicationDispense",
-  "baseDefinition" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-dispense",
+  "baseDefinition" : "https://gematik.de/fhir/ti/StructureDefinition/ti-medication-dispense-dgmp",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -164,10 +166,20 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
       }
     },
     {
+      "id" : "MedicationDispense.partOf",
+      "path" : "MedicationDispense.partOf",
+      "max" : "0"
+    },
+    {
       "id" : "MedicationDispense.status",
       "path" : "MedicationDispense.status",
       "short" : "completed",
       "fixedCode" : "completed"
+    },
+    {
+      "id" : "MedicationDispense.statusReason[x]",
+      "path" : "MedicationDispense.statusReason[x]",
+      "max" : "0"
     },
     {
       "id" : "MedicationDispense.medication[x]",
@@ -179,6 +191,16 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
       }]
     },
     {
+      "id" : "MedicationDispense.context",
+      "path" : "MedicationDispense.context",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.supportingInformation",
+      "path" : "MedicationDispense.supportingInformation",
+      "max" : "0"
+    },
+    {
       "id" : "MedicationDispense.performer.actor.identifier",
       "path" : "MedicationDispense.performer.actor.identifier",
       "min" : 1,
@@ -186,6 +208,26 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
         "code" : "Identifier",
         "profile" : ["http://fhir.de/StructureDefinition/identifier-telematik-id"]
       }]
+    },
+    {
+      "id" : "MedicationDispense.location",
+      "path" : "MedicationDispense.location",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.type",
+      "path" : "MedicationDispense.type",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.quantity",
+      "path" : "MedicationDispense.quantity",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.daysSupply",
+      "path" : "MedicationDispense.daysSupply",
+      "max" : "0"
     },
     {
       "id" : "MedicationDispense.whenPrepared",
@@ -209,6 +251,46 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
         "expression" : "toString().length()=10",
         "source" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
       }]
+    },
+    {
+      "id" : "MedicationDispense.destination",
+      "path" : "MedicationDispense.destination",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.note",
+      "path" : "MedicationDispense.note",
+      "short" : "Abgabehinweise"
+    },
+    {
+      "id" : "MedicationDispense.substitution.wasSubstituted",
+      "path" : "MedicationDispense.substitution.wasSubstituted",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.substitution.type",
+      "path" : "MedicationDispense.substitution.type",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.substitution.reason",
+      "path" : "MedicationDispense.substitution.reason",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.substitution.responsibleParty",
+      "path" : "MedicationDispense.substitution.responsibleParty",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.detectedIssue",
+      "path" : "MedicationDispense.detectedIssue",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.eventHistory",
+      "path" : "MedicationDispense.eventHistory",
+      "max" : "0"
     }]
   }
 }

@@ -1,13 +1,15 @@
-# Zero Trust Access (ZETA) - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# Technische Umsetzung - Zero Trust Access (ZETA) - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
-* **Zero Trust Access (ZETA)**
+* **Technische Umsetzung - Zero Trust Access (ZETA)**
 
-## Zero Trust Access (ZETA)
+## Technische Umsetzung - Zero Trust Access (ZETA)
 
 Der TI-Flow-Fachdienst ist ein Dienst im Internet. Jeder Zugriff auf den Resource Server läuft über einen **ZETA Guard**, der aus zwei Komponenten besteht:
 
@@ -301,6 +303,7 @@ policies:
       - { method: POST, path: "rx/Task/$accept" }
       - { method: POST, path: "rx/Task/{id}/$reject" }
       - { method: POST, path: "rx/Task/{id}/$close" }
+      - { method: POST, path: "rx/Task/{id}/$dispense" }
       - { method: POST, path: "rx/Task/{id}/$abort" }
       - { method: GET,  path: "rx/Task/" }
       - { method: GET,  path: "rx/Task/{id}" }

@@ -23,7 +23,7 @@
     "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType"],
     "uses" : {
     },
-    "StructureDefinition-tiflow-receipt-composition.html" : "GEM ERP PR Composition"
+    "StructureDefinition-GEM-ERP-PR-Composition.html" : "GEM ERP PR Composition"
   },
   {
     "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus",
@@ -38,34 +38,13 @@
     "url" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FlowType",
     "version" : "2.0.0-ballot.2",
     "status" : "active",
-    "name" : "TIFlowTypesVS",
+    "name" : "GEM_ERP_VS_FlowType",
     "title" : "ValueSet der Flowtypes in TIFlow Anwendungen",
     "description" : "Zeigt die verschiedenen Typen der TI Workflows entsprechend der Verordnungsformulare.",
     "systems" : ["https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"],
     "uses" : {
     },
-    "StructureDefinition-ti-flowtype.html" : "TI Flow Type"
-  },
-  {
-    "url" : "https://gematik.de/fhir/tiflow/ValueSet/ti-environment-vs",
-    "version" : "2.0.0-ballot.2",
-    "status" : "active",
-    "name" : "TIEnvironmentsVS",
-    "title" : "TI Environments ValueSet",
-    "description" : "Dieses ValueSet enthält alle zulässigen Umgebungskennzeichen für CapabilityStatements des TI-Flow-Fachdienstes und wird für die verpflichtende Kennzeichnung der Zielumgebung verwendet.",
-    "systems" : ["https://gematik.de/fhir/tiflow/CodeSystem/ti-environment-codes"],
-    "uses" : {
-    },
-    "StructureDefinition-ti-environment.html" : "TI Environment"
-  },
-  {
-    "url" : "https://gematik.de/fhir/tiflow/ValueSet/ti-fhir-configuration-vs",
-    "version" : "2.0.0-ballot.2",
-    "status" : "active",
-    "name" : "TIFHIRConfigurationVS",
-    "title" : "TI FHIR Configuration ValueSet",
-    "description" : "Dieses ValueSet bildet den zulässigen Wertebereich für die FHIR-Konfiguration eines FHIR-Data Service der TI ab.",
-    "systems" : ["https://gematik.de/fhir/tiflow/CodeSystem/ti-fhir-configuration-cs"]
+    "StructureDefinition-GEM-ERP-EX-PrescriptionType.html" : "TI Flow Type"
   },
   {
     "url" : "https://gematik.de/fhir/tiflow/ValueSet/tiflow-operation-outcome-details-vs",
@@ -80,5 +59,17 @@
     "uses" : {
     },
     "StructureDefinition-tiflow-operation-outcome.html" : "TIFlow OperationOutcome"
+  },
+  {
+    "url" : "https://gematik.de/fhir/tiflow/ValueSet/tiflow-order-task-status-vs",
+    "version" : "2.0.0-ballot.2",
+    "status" : "draft",
+    "name" : "TIFlowOrderTaskStatusVS",
+    "title" : "TIFlow Order Task ValueSet",
+    "description" : "TIFlow Order Task ValueSet",
+    "systems" : ["http://hl7.org/fhir/task-status"],
+    "uses" : {
+    },
+    "StructureDefinition-tiflow-order-task.html" : "Task für TIFlow Verordnungen"
   }]
 }

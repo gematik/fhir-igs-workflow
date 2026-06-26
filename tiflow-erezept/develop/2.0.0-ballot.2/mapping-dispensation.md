@@ -1,4 +1,6 @@
-# Mapping von Dispensierinformationen - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Mapping von Dispensierinformationen - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -43,7 +45,7 @@ Einige Daten müssen zusätzlich durch Transformationsregeln angepasst oder erg�
 #### Organization für provide Dispensation
 
 * ID: Beschreibung
-  * `F_006a`: Bei provide Dispensation ist die Organization neu zu erstellen, mit den Daten aus dem ACCESS_TOKEN.Siehe A_25947 - E-Rezept-Fachdienst - ePA - provide-dispensation-erp - Organisation-RessourceOrganization.identifier:TelematikID idNummer → aus dem ACCESS_TOKEN der Anfrage Organization.name organizationName → aus dem ACCESS_TOKEN der Anfrage Organization.type:profession professionOID → aus dem ACCESS_TOKEN der Anfrage
+  * `F_006a`: Bei provide Dispensation ist die Organization neu zu erstellen, mit den Daten aus zeta-user-info.Siehe A_25947 - E-Rezept-Fachdienst - ePA - provide-dispensation-erp - Organisation-RessourceOrganization.identifier:TelematikID idNummer → aus zeta-user-info der Anfrage Organization.name organizationName → aus zeta-user-info der Anfrage Organization.type:profession professionOID → aus zeta-user-info der Anfrage
 * ID: Profile
   * `F_006a`: * [OrganizationDirectory](https://simplifier.net/vzd-fhir-directory/organizationdirectorystrict)
 

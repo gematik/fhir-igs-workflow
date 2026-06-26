@@ -1,13 +1,15 @@
-# Datamatrix Code - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# Data Matrix Code - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
-* **Datamatrix Code**
+* **Data Matrix Code**
 
-## Datamatrix Code
+## Data Matrix Code
 
 ### 2D-Code für E-Rezept-Token
 
@@ -66,7 +68,7 @@ Der 2D-Code für E-Rezept-Token enthält mindestens einen Token für ein E-Rezep
 
 Der 2D-Code für Abrechnungsinformation-Token enthält genau einen Token.
 
-Für den Aufbau des 2D-Codes und Struktur des E-Rezept-Token bzw. Abrechnungsinformation-Token siehe [gemSpec_DM_eRp].Mit den Informationen aus einem E-Rezept-Token kann das E-Rezept vom TI-Flow-Fachdienst heruntergeladen werden.Mit der Information aus dem Abrechnungsinformation-Token kann die Abrechnungsinformation vom TI-Flow-Fachdienst heruntergeladen und der PKV-Abgabedatensatz einmalig auf dem TI-Flow-Fachdienst aktualisiert werden.
+Mit den Informationen aus einem E-Rezept-Token kann das E-Rezept vom TI-Flow-Fachdienst heruntergeladen werden. Mit der Information aus dem Abrechnungsinformation-Token kann die Abrechnungsinformation vom TI-Flow-Fachdienst heruntergeladen und der PKV-Abgabedatensatz einmalig auf dem TI-Flow-Fachdienst aktualisiert werden.
 
 **Hinweis zu Mehrfachverordnung:** Wenn Datamatrix-Codes einer Mehrfachverordnung von einem Ausdruck eingescannt werden, dann dürfen die E-Rezept-Token der Teilverordnungen, welche noch nicht ihren Gültigkeitszeitraum erreicht haben, nicht automatisch im AVS gespeichert werden, da der Versicherte das Recht hat, für diese ggf. eine andere Apotheke für das Einlösen auszuwählen.
 

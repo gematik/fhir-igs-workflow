@@ -1,8 +1,10 @@
-# Fehlercodes - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# Fehlercodes - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * **Fehlercodes**
@@ -22,6 +24,8 @@ Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS im Fehlerfall (
 * im der inneren http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail` bei non FHIR-Schnittstellen
 * falls keine innere ASL-Response existiert, in einem "äußeren" http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail`
 an den Client zurückgeben, ohne Implementierungsdetails (z.B. kein Stacktrace) preiszugeben und dabei sicherstellen, dass personenbezogene oder medizinische Daten, falls für die qualifizierte Fehlerbeschreibung notwendig, ausschließlich in der VAU-verschlüsselten inneren http-Response übertragen werden.
+**Hinweis zum Fehlerhandling**: Nur wenn der äußere Response der TI-Flow-Fachdienstes den Response-Code 200 liefert, enthält der payload eine mittels ASL-Protokoll verschlüsselte Response. Liefert der äußere Response eine Code >= 400, ist im ASL-Protokoll ein Fehler aufgetreten. Das PS muss nicht versuchen, den payload zu entschlüsseln.
+
 ### Fehlerstruktur bei FHIR-Schnittstellen
 
 Da der TI-Flow-Fachdienst FHIR als grundlegenedes Austauschformat für den überwiegenden Teil der API verwendet, werden alle FHIR-Schnittstellen im Fehlerfall mit einer [TIFlow-OperationOutcome](./StructureDefinition-tiflow-operation-outcome.md) quittiert:

@@ -1,8 +1,10 @@
-# TI Feature Definition - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# TI Feature Definition - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,8 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-06-22 | *Computable Name*:TIFeatureDefinition |
+| Draft as of 2026-06-26 | *Computable Name*:TIFeatureDefinition |
+| **Copyright/Legal**: gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
 Logical Model zur Beschreibung eines aktivierbaren Features. 
@@ -45,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-feature-definitio
   "name" : "TIFeatureDefinition",
   "title" : "TI Feature Definition",
   "status" : "draft",
-  "date" : "2026-06-22T06:40:20+00:00",
+  "date" : "2026-06-26T09:04:41+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -66,6 +69,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-feature-definitio
       "display" : "Germany"
     }]
   }],
+  "copyright" : "gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.html), Version 2.0.",
   "fhirVersion" : "4.0.1",
   "kind" : "logical",
   "abstract" : false,

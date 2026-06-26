@@ -1,4 +1,6 @@
-# FD-Anforderungen $reject - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# FD-Anforderungen $reject - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

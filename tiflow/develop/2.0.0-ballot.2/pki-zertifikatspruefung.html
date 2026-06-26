@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Zertifikatsprüfung - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
+    <title>Zertifikatsprüfung - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -37,9 +37,9 @@
         background-size: 100% auto;
         height: 280px;
         background-color: #2a6496;
-        background: url('./e-rezept-img.png') no-repeat;
-        background-position: 650px -150px;
-        background-size: 45% auto;
+        background: url('./tiflow-bg.png') no-repeat;
+        background-position: 580px -20px;
+        background-size: 49% auto;
     }
     .bubble-link {
         display: none;
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"11"}
-    h3,h4,h5,h6{--heading-prefix:"11"}</style>
+    <style type="text/css">h2{--heading-prefix:"9"}
+    h3,h4,h5,h6{--heading-prefix:"9"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -116,9 +116,6 @@
   <li>
     <a href="index.html">Start</a>
   </li>
-  <li>
-    <a href="toc.html">Inhaltsverzeichnis</a>
-  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Grundlagen
       <b class="caret"></b>
@@ -128,19 +125,25 @@
         <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
+        <a href="architecture.html">Architekturmöglichkeiten TI-Flow-Fachdienst</a>
+      </li>
+      <li>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
         <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
       </li>
       <li>
-        <a href="ttl.html">Löschfristen</a>
-      </li>
-      <li>
         <a href="error-codes.html">Fehlercodes</a>
       </li>
       <li>
-        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
+      </li>
+      <li>
+        <a href="ttl.html">Löschfristen</a>
       </li>
       <li>
         <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
@@ -149,13 +152,10 @@
         <a href="datamatrix-code-client.html">Datamatrix Code</a>
       </li>
       <li>
-        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
-      </li>
-      <li>
-        <a href="capability-statement-extensions.html">Konfigurationsabfrage</a>
-      </li>
-      <li>
         <a href="health-check.html">Health Check</a>
+      </li>
+      <li>
+        <a href="capability-statement-extensions.html">Ausgabe Konfiguration</a>
       </li>
     </ul>
   </li>
@@ -165,6 +165,9 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+      </li>
+      <li>
         <a href="menu-technische-umsetzung-zeta.html">Zero Trust Access (ZETA)</a>
       </li>
       <li>
@@ -172,9 +175,6 @@
       </li>
       <li>
         <a href="menu-technische-umsetzung-push.html">Push Notification</a>
-      </li>
-      <li>
-        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-subscription.html">Subscrition</a>
@@ -187,21 +187,18 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-schnittstellen-query-api.html">Query API</a>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
       </li>
       <li>
-        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
       </li>
       <li>
         <a href="menu-schnittstellen-additional-api.html">Additional API</a>
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -209,9 +206,18 @@
         <a href="requirement-mapping-0_9_0-to-2_0_0.html">Anforderungsmapping</a>
       </li>
       <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="requirements.html">Anforderungslisten</a>
+      </li>
+      <li>
         <a href="license.html">Lizenz</a>
       </li>
     </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -229,10 +235,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Kernfunktionalitäten
+Implementation Guide<br /> TIFlow - Kernfunktionalitäten
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - draft
                 
                 
             </span>
@@ -253,7 +259,7 @@ TIFlow - Kernfunktionalitäten
 
           <span style="float:right;">
 
-            <a href="datamatrix-code-client.html">&lt;vorherige</a> | 
+            <a href="kommunikation-dienste-ti.html">&lt;vorherige</a> | 
 
             <a href="#bottom">unten</a>
 
@@ -343,7 +349,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Es gelten folgende übergreifende Festlegungen für die Prüfung aktiv durch ein Clientsystem genutzter Zertifikate.</p>
 
 <!-- A_20769-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-302" title="CS: verpflichtende Zertifikatsprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A302" title="CS: verpflichtende Zertifikatsprüfung" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -361,12 +367,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 	Das Clientsystem des TI-Flow-Fachdienst MUSS alle öffentlichen Schlüssel, die es verwenden will, auf eine positiv verlaufene Zertifikatsprüfung zurückführen können.
 </requirement>
 
-<p>"Ein Zertifikat aktiv verwenden" bedeutet im Sinne von A_20769, dass ein Clientsystem einen dort aufgeführten öffentlichen Schlüssel innerhalb einer kryptografischen Operation (Signaturprüfung, Verschlüsselung, Signaturprüfung von öffentlichen (EC)DH-Schlüsseln etc.) nutzt. Erhält ein Clientsystem bspw. einen ACCESS_TOKEN, in dem Signaturen und Zertifikate enthalten sind, und behandelt es diesen Token als opakes Datenobjekt, ohne die Zertifikate darin gesondert zu betrachten, dann verwendet das Primärsystem diese Zertifikate im Sinne von A_20769 passiv.</p>
+<p>"Ein Zertifikat aktiv verwenden" im Kontext der Anforderung bedeutet, dass ein Clientsystem einen dort aufgeführten öffentlichen Schlüssel innerhalb einer kryptografischen Operation (Signaturprüfung, Verschlüsselung, Signaturprüfung von öffentlichen (EC)DH-Schlüsseln etc.) nutzt. Erhält ein Clientsystem bspw. einen ACCESS_TOKEN, in dem Signaturen und Zertifikate enthalten sind, und behandelt es diesen Token als opakes Datenobjekt, ohne die Zertifikate darin gesondert zu betrachten, dann verwendet das Primärsystem diese Zertifikate im Sinne der Anforderung passiv.</p>
 
 <h4 id="zertifikatsprüfung-von-zertifikaten-der-ti">Zertifikatsprüfung von Zertifikaten der TI</h4>
 
 <!-- A_20764 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-303" title="CS: Prüfung TI-Zertifikate" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A303" title="CS: Prüfung TI-Zertifikate" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -380,7 +386,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <actor name="Anb_NCPeH_FD" description="Anbieter eines NCPeH-Fachdienstes">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
-    Das Primärsystem MUSS bei der Prüfung von X.509-Zertifikaten der TI den CertificateService des Konnektors mit der Operation VerifyCertificate gemäß [gemSpec_Kon#4.1.9.5.3] verwenden und dabei
+    Das Primärsystem MUSS bei der Prüfung von X.509-Zertifikaten der TI den CertificateService des Konnektors mit der Operation VerifyCertificate gemäß [gemSpec_Kon]#4.1.9.5.3 verwenden und dabei
     <ul>
     <li>das zu prüfende Zertifikat als Parameter X509Certificate verwenden</li>
     <li>die aktuelle Systemzeit als Parameter VerificationTime verwenden</li>
@@ -393,7 +399,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Folgende Vorgaben gelten für die Prüfung von Internet-Zertifikaten.</p>
 
 <!-- A_20091-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-304" title="CS: Prüfung der Zertifikate für TLS-Verbindung zu TI-Flow-Fachdienst" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A304" title="CS: Prüfung der Zertifikate für TLS-Verbindung zu TI-Flow-Fachdienst" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -411,7 +417,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     Das Clientsystem des TI-Flow-Fachdienst MUSS die zeitliche Gültigkeit des Zertifikats prüfen und falls diese Prüfung negativ ausfällt, das Zertifikat als "ungültig" bewerten.
 </requirement>
 
-<p>Hinweis: Der erste Teil von IG-TIFLOW-CORE-304-* ist gleichbedeutend damit, dass das CA-Zertifikat im Zertifikats-Truststore eines aktuellen Webbrowsers ist.</p>
+<p>Es wird empfohlen für Internetzertifikate kein "Certificate Pinning" umzusetzen, da das die betribliche Stabilität beeinträchtigen kann.</p>
+
+<p>Hinweis: Der erste Teil von IG-TIFLOW-CORE-A304-* ist gleichbedeutend damit, dass das CA-Zertifikat im Zertifikats-Truststore eines aktuellen Webbrowsers ist.</p>
 
 
 
@@ -435,7 +443,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="datamatrix-code-client.html">&lt;vorherige</a>
+                <a href="kommunikation-dienste-ti.html">&lt;vorherige</a>
 
               </td>
               <td style="text-align:center">
@@ -453,7 +461,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 22, 2026 06:40+0000">2026-06-22</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 09:04+0000">2026-06-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

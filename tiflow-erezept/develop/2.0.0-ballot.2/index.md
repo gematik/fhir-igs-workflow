@@ -1,4 +1,6 @@
-# Implementation Guide TI-Flow-Fachdienst - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Implementation Guide TI-Flow-Fachdienst - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -62,15 +64,6 @@ Für einen Überblick über die Inhalte und die Struktur dieses Implementation G
 
 
 
-
-
-
-
-
-
-
-
-
 ### Kontakt und Feedback
 
 Für Fragen und Feedback wenden Sie sich bitte an [erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de).
@@ -92,7 +85,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "url" : "https://gematik.de/fhir/tiflow-erezept/ImplementationGuide/de.gematik.tiflow.erezept",
   "version" : "2.0.0-ballot.2",
   "name" : "gemIG_TIFlow_erezept",
-  "title" : "TIFlow - Verordnungen für Arzneimittel",
+  "title" : "Implementation Guide TIFlow - Verordnungen für Arzneimittel",
   "status" : "draft",
   "date" : "2026-05-25",
   "publisher" : "gematik GmbH",
@@ -125,7 +118,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.1.0"
+    "version" : "7.2.0"
   },
   {
     "id" : "hl7ext",
@@ -144,34 +137,16 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     "version" : "1.5.4"
   },
   {
-    "id" : "de_gematik_epa_medication",
-    "uri" : "https://gematik.de/fhir/epa-medication/ImplementationGuide/de.gematik.epa.medication",
-    "packageId" : "de.gematik.epa.medication",
-    "version" : "1.3.2"
-  },
-  {
-    "id" : "de_gematik_terminology",
-    "uri" : "https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology",
-    "packageId" : "de.gematik.terminology",
-    "version" : "1.0.9"
-  },
-  {
     "id" : "de_gematik_ti",
     "uri" : "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
     "packageId" : "de.gematik.ti",
-    "version" : "1.3.1"
+    "version" : "1.4.0-ballot.1"
   },
   {
     "id" : "de_gematik_tiflow",
     "uri" : "https://gematik.de/fhir/tiflow/ImplementationGuide/de.gematik.tiflow",
     "packageId" : "de.gematik.tiflow",
     "version" : "2.0.0-ballot.2"
-  },
-  {
-    "id" : "hl7_fhir_uv_xver_r5_r4",
-    "uri" : "http://hl7.org/fhir/uv/xver/ImplementationGuide/hl7.fhir.uv.xver-r5.r4",
-    "packageId" : "hl7.fhir.uv.xver-r5.r4",
-    "version" : "0.1.0"
   }],
   "definition" : {
     "extension" : [{
@@ -1105,7 +1080,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/tiflow-rx-task-organizations-vs"
+        "reference" : "ValueSet/GEM-ERP-VS-OrganizationType"
       },
       "name" : "Bearbeiter eines E-Rezeptes",
       "description" : "ValueSet der Organisationstyp-Codes eines Performers für den RX Task",
@@ -2501,6 +2476,15 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             "title" : "Beispiel für eine Transformation einer Verordnung mit absoluter Referenzierung",
             "generation" : "markdown"
           }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "menu-technische-umsetzung-audit-service.html"
+          }],
+          "nameUrl" : "menu-technische-umsetzung-audit-service.html",
+          "title" : "Zugriffsprotokollierung mit AuditEvent",
+          "generation" : "markdown"
         }]
       },
       {

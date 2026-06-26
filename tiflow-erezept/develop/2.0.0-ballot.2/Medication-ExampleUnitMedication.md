@@ -1,4 +1,6 @@
-# Beispiel-Medikament mit Einheiten - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Beispiel-Medikament mit Einheiten - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -28,6 +30,7 @@ Version 2.0.0-ballot.2 - ci-build
     }],
     "text" : "Prospan® Hustensaft 100ml N1"
   },
+  "status" : "active",
   "amount" : {
     "numerator" : {
       "value" : 1,

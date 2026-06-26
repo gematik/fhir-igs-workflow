@@ -1,4 +1,6 @@
-# Best practice UX Primärsysteme für verordnende LEIs - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Best practice UX Primärsysteme für verordnende LEIs - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -25,7 +27,7 @@ Der Nutzer des Systems soll in jedem Verordnungsvorgang für Arzneimittel die M�
 funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, in jedem Verordnungsvorgang für Arzneimittel, in denen ein E-Rezept zulässig ist, ein E-Rezept zu erstellen.
 #### Ladevorgänge im Hintergrund
 
-Das Primärsystem soll bei Ladevorgängen zum Anlegen, Speichern und Verarbeiten eines E-Rezepts dem Nutzer das Weiterarbeiten im System erlauben. Insbesondere Signaturen sollen gemäß[gemILF_PS#A_23502 - Signaturerstellung im Hintergrund] im Hintergrund verarbeitet werden. Dem Nutzer werden nur bei Fehlermeldungen auffällige und für den Nutzer verständliche Hinweise angezeigt. Erfolgsmeldungen können so in die Benutzeroberfläche integriert werden, dass sie keine Interaktion des Nutzers verlangen und den Nutzer nicht im weiteren Arbeitsprozess stören.
+Das Primärsystem soll bei Ladevorgängen zum Anlegen, Speichern und Verarbeiten eines E-Rezepts dem Nutzer das Weiterarbeiten im System erlauben. Insbesondere Signaturen sollen gemäß [gemILF_PS]#A_23502 - Signaturerstellung im Hintergrund im Hintergrund verarbeitet werden. Dem Nutzer werden nur bei Fehlermeldungen auffällige und für den Nutzer verständliche Hinweise angezeigt. Erfolgsmeldungen können so in die Benutzeroberfläche integriert werden, dass sie keine Interaktion des Nutzers verlangen und den Nutzer nicht im weiteren Arbeitsprozess stören.
 
 funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL die Verarbeitung von Daten und Kommunikation mit den Komponenten der TI im Hintergrund vornehmen und dem Nutzer parallel die Arbeit im Primärsystem ermöglichen, sofern keine Abhängigkeit zur Verarbeitung besteht.
 
@@ -84,7 +86,7 @@ Das PS kann dem Nutzer in diesem Arbeitsschritt auch eine Liste der häufig vers
 
 
 funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL dem Nutzer nach der Auswahl des Verordnungsinhalts die Möglichkeit geben, weitere Details (z.B. Anzahl der Packungen) der aktuellen als E-Rezept dargestellten Verordnung hinzuzufügen. Es SOLL den Nutzer darauf hinweisen, dass mit der Bestätigung dieser Auswahl die Verordnung erfolgen soll und der erste Schritt zur Signatur ausgelöst wird. Dieser Hinweis muss durch den Nutzer nicht bestätigt werden.
-Hinweis: Um den Nutzer hinreichend auf den folgenden Signaturschritt (nach [gemILF_PS#A_19138- PS: Auslösen der Komfortsignatur bei Nachnutzung der Primärsystem-Authentisierung]) hinzuweisen, muss z.B. bei der Verwendung einer Schaltfläche diese deutlich machen, dass
+Hinweis: Um den Nutzer hinreichend auf den folgenden Signaturschritt (nach [gemILF_PS]#A_19138 - PS: Auslösen der Komfortsignatur bei Nachnutzung der Primärsystem-Authentisierung) hinzuweisen, muss z.B. bei der Verwendung einer Schaltfläche diese deutlich machen, dass
 
 1. eine Verordnung erzeugt werden wird. Dies kann erreicht werden durch eine passende Benennung z.B. mit "Verordnen", "Dem Rezept hinzufügen".
 1. im nächsten Schritt die Signatur erfolgen kann. Dies kann erreicht werden, durch eine passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" oder durch die Verwendung eines Signatur-Icons.
@@ -225,10 +227,10 @@ funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL es dem Nutz
 funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, die grafische Ansicht von Rezepten aus der Aufgabenliste heraus anzuzeigen.
 #### Sammelbearbeitung der Aufgaben (Signieren)
 
-Wie in[gemILF_PS#A_23503 - Bündeln von Signaturen zur Stapelsignatur] beschrieben, muss der Arzt Signaturen bündeln und als Sammelbearbeitung abarbeiten können. Dies gilt auch für das Signieren von E-Rezepten.
+Wie in [gemILF_PS]#A_23503 - Bündeln von Signaturen zur Stapelsignatur beschrieben, muss der Arzt Signaturen bündeln und als Sammelbearbeitung abarbeiten können. Dies gilt auch für das Signieren von E-Rezepten.
 
 funkt. Eignung: HerstellererklärungDas PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, über eine Mehrfachauswahl von Einträgen in der Aufgabenliste diese für die Signatur auszuwählen.
-Mit der Auswahl bestätigt der Nutzer, dass die Verordnung erfolgen soll und dass im nächsten Schritt die Signatur ausgelöst wird. (erster Klick im Sinne von [gemILF_PS#A_19138- PS: Auslösen der Komfortsignatur bei Nachnutzung der Primärsystem-Authentisierung]). Hinweis: Wie im optimalen Klickpfad beschrieben, ist es wichtig, bei der Bereitstellung von Verordnungen zur Signatur die Schaltflächen klar und eindeutig zu benennen/kennzuzeichnen, um zusätzliche Bestätigungen durch den Nutzer zu vermeiden und den Signaturprozess reibungslos zu gestalten.
+Mit der Auswahl bestätigt der Nutzer, dass die Verordnung erfolgen soll und dass im nächsten Schritt die Signatur ausgelöst wird. (erster Klick im Sinne von [gemILF_PS]#A_19138- PS: Auslösen der Komfortsignatur bei Nachnutzung der Primärsystem-Authentisierung). Hinweis: Wie im optimalen Klickpfad beschrieben, ist es wichtig, bei der Bereitstellung von Verordnungen zur Signatur die Schaltflächen klar und eindeutig zu benennen/kennzuzeichnen, um zusätzliche Bestätigungen durch den Nutzer zu vermeiden und den Signaturprozess reibungslos zu gestalten.
 
 ### Nachbereitung
 

@@ -1,8 +1,10 @@
-# Example CapabilityStatement Server PU - RX - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# Example CapabilityStatement Server PU - RX - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -14,6 +16,7 @@ Version 2.0.0-ballot.2 - ci-build
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/CapabilityStatement/ExampleCapabilityStatementServerPU | *Version*:2.0.0-ballot.2 |
 | Active as of 2026-03-16 | *Computable Name*: |
+| **Copyright/Legal**: gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
 
 
@@ -24,15 +27,15 @@ Version 2.0.0-ballot.2 - ci-build
   "resourceType" : "CapabilityStatement",
   "id" : "ExampleCapabilityStatementServerPU",
   "meta" : {
-    "profile" : ["https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-capability-statement"]
+    "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"]
   },
   "extension" : [{
-    "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-environment",
-    "valueCode" : "PU"
+    "url" : "https://gematik.de/fhir/ti/StructureDefinition/ti-environment",
+    "valueCode" : "prod"
   },
   {
-    "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-fhir-configuration",
-    "valueCode" : "tiflow_2028_03"
+    "url" : "https://gematik.de/fhir/ti/StructureDefinition/ti-fhir-configuration",
+    "valueCode" : "tiflow_2028_0"
   },
   {
     "extension" : [{
@@ -43,7 +46,7 @@ Version 2.0.0-ballot.2 - ci-build
       "url" : "value",
       "valueBoolean" : true
     }],
-    "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
+    "url" : "https://gematik.de/fhir/ti/StructureDefinition/ti-feature"
   },
   {
     "extension" : [{
@@ -54,7 +57,7 @@ Version 2.0.0-ballot.2 - ci-build
       "url" : "value",
       "valueBoolean" : false
     }],
-    "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature"
+    "url" : "https://gematik.de/fhir/ti/StructureDefinition/ti-feature"
   }],
   "url" : "https://gematik.de/fhir/tiflow/CapabilityStatement/ExampleCapabilityStatementServerPU",
   "version" : "2.0.0-ballot.2",
@@ -79,6 +82,7 @@ Version 2.0.0-ballot.2 - ci-build
       "display" : "Germany"
     }]
   }],
+  "copyright" : "gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.html), Version 2.0.",
   "kind" : "instance",
   "implementation" : {
     "description" : "example"

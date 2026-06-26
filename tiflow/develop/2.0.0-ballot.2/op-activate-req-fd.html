@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Server-Anforderungen $activate - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
+    <title>Server-Anforderungen $activate - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -37,9 +37,9 @@
         background-size: 100% auto;
         height: 280px;
         background-color: #2a6496;
-        background: url('./e-rezept-img.png') no-repeat;
-        background-position: 650px -150px;
-        background-size: 45% auto;
+        background: url('./tiflow-bg.png') no-repeat;
+        background-position: 580px -20px;
+        background-size: 49% auto;
     }
     .bubble-link {
         display: none;
@@ -116,9 +116,6 @@
   <li>
     <a href="index.html">Start</a>
   </li>
-  <li>
-    <a href="toc.html">Inhaltsverzeichnis</a>
-  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Grundlagen
       <b class="caret"></b>
@@ -128,19 +125,25 @@
         <a href="menu-schnittstellen-generelle-prinzipien.html">Generelle Prinzipien</a>
       </li>
       <li>
+        <a href="architecture.html">Architekturmöglichkeiten TI-Flow-Fachdienst</a>
+      </li>
+      <li>
+        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+      </li>
+      <li>
         <a href="audit-service.html">Zugriffsprotokollierung</a>
       </li>
       <li>
         <a href="fhir-validate.html">FHIR-Validierung</a>
       </li>
       <li>
-        <a href="ttl.html">Löschfristen</a>
-      </li>
-      <li>
         <a href="error-codes.html">Fehlercodes</a>
       </li>
       <li>
-        <a href="kommunikation-dienste-ti.html">Kommunikation zu Diensten der TI</a>
+        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
+      </li>
+      <li>
+        <a href="ttl.html">Löschfristen</a>
       </li>
       <li>
         <a href="pki-zertifikatspruefung.html">PKI Zertifikatsprüfung</a>
@@ -149,13 +152,10 @@
         <a href="datamatrix-code-client.html">Datamatrix Code</a>
       </li>
       <li>
-        <a href="fehlerbehandlung-client.html">Fehlerbehandlung Clientsysteme</a>
-      </li>
-      <li>
-        <a href="capability-statement-extensions.html">Konfigurationsabfrage</a>
-      </li>
-      <li>
         <a href="health-check.html">Health Check</a>
+      </li>
+      <li>
+        <a href="capability-statement-extensions.html">Ausgabe Konfiguration</a>
       </li>
     </ul>
   </li>
@@ -165,6 +165,9 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="menu-technische-umsetzung-systemueberblick.html">Systemüberblick</a>
+      </li>
+      <li>
         <a href="menu-technische-umsetzung-zeta.html">Zero Trust Access (ZETA)</a>
       </li>
       <li>
@@ -172,9 +175,6 @@
       </li>
       <li>
         <a href="menu-technische-umsetzung-push.html">Push Notification</a>
-      </li>
-      <li>
-        <a href="menu-technische-umsetzung-paging.html">Paginierung</a>
       </li>
       <li>
         <a href="menu-technische-umsetzung-subscription.html">Subscrition</a>
@@ -187,21 +187,18 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="menu-schnittstellen-query-api.html">Query API</a>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
       </li>
       <li>
-        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
       </li>
       <li>
         <a href="menu-schnittstellen-additional-api.html">Additional API</a>
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -209,9 +206,18 @@
         <a href="requirement-mapping-0_9_0-to-2_0_0.html">Anforderungsmapping</a>
       </li>
       <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="requirements.html">Anforderungslisten</a>
+      </li>
+      <li>
         <a href="license.html">Lizenz</a>
       </li>
     </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
   </li>
 </ul>
             </div>    <!-- /.nav-collapse -->
@@ -229,10 +235,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Kernfunktionalitäten
+Implementation Guide<br/> TIFlow - Kernfunktionalitäten
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - draft
                 
                 
             </span>
@@ -300,7 +306,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den TI-Flow-Fachdienst für die Operation <code class="language-plaintext highlighter-rouge">$activate</code>.</p>
 
   <!-- A_19022-01 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Rollenprüfung" version="1" key="IG-TIFLOW-CORE-173">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Rollenprüfung" version="0" key="IG-TIFLOW-CORE-A173">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -340,7 +346,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19024-03 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung AccessCode" version="1" key="IG-TIFLOW-CORE-174">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung AccessCode" version="0" key="IG-TIFLOW-CORE-A174">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -372,7 +378,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19024-03 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Status" version="1" key="IG-TIFLOW-CORE-175">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Status" version="0" key="IG-TIFLOW-CORE-A175">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -404,7 +410,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19020 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Schemavalidierung" version="1" key="IG-TIFLOW-CORE-176">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Schemavalidierung" version="0" key="IG-TIFLOW-CORE-A176">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -436,12 +442,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_20159-04 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA" version="1" key="IG-TIFLOW-CORE-177">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA" version="0" key="IG-TIFLOW-CORE-A177">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   </actor>
-    Der TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur des übergebenen QES-Datensatzes gemäß [gemSpec_PKI#TUC_PKI_030] mit folgenden Parametern auf Gültigkeit prüfen:
+    Der TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur des übergebenen QES-Datensatzes gemäß [gemSpec_PKI]#TUC_PKI_030 mit folgenden Parametern auf Gültigkeit prüfen:
     <table>
         <tr>
             <th>Parameter</th>
@@ -505,7 +511,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- ToDo: Ist die Fehlermeldung umfassend genug? Was passiert wenn TUC_PKI_030 fehlschlägt? -->
 
   <!-- A_20159-04 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA - fehlender OCSP-Response" version="0" key="IG-TIFLOW-CORE-408">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA - fehlender OCSP-Response" version="0" key="IG-TIFLOW-CORE-A408">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -537,7 +543,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_20159-04 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA - OCSP-Response einbetten" version="0" key="IG-TIFLOW-CORE-411">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA - OCSP-Response einbetten" version="0" key="IG-TIFLOW-CORE-A411">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -546,7 +552,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19025-03 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung QES prüfen" version="1" key="IG-TIFLOW-CORE-178">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung QES prüfen" version="0" key="IG-TIFLOW-CORE-A178">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -578,7 +584,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19025-03 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung FHIR Validierung" version="0" key="IG-TIFLOW-CORE-409">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung FHIR Validierung" version="0" key="IG-TIFLOW-CORE-A409">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -611,7 +617,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- ToDo: Muss in der Afo das FHIR-Schema vorgegeben werden oder ergibt sich das aus dem FHIR-Datensatz oder muss es zusätzlich noch mit dem WF-Type abgeglichen werden? -->
 
   <!-- A_19025-03 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung speichern" version="0" key="IG-TIFLOW-CORE-410">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung speichern" version="0" key="IG-TIFLOW-CORE-A410">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -621,10 +627,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
   <!-- Diese Afo wurde nicht zugewiesen, da die Konnektoren sich nicht so verhalten. -->
   <!-- A_23172 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mimetype Signatur" version="1" key="IG-TIFLOW-CORE-179">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Mimetype Signatur" version="0" key="IG-TIFLOW-CORE-A179">
     <meta lockversion="false"/>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und, wenn dieser ungleich "text/plain; charset=utf-8" ist, die Operation mit dem folgenden Fehler:
-      <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+    </actor>
+    <table style="border: 1px solid black; border-collapse: collapse;" id="error-code">
         <tr>
             <th>HTTP-Code</th>
             <td>400 - Bad Request</td>
@@ -650,7 +659,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_21370 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Rezept-ID in Task gegen Verordnungsdatensatz" version="1" key="IG-TIFLOW-CORE-180">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Rezept-ID in Task gegen Verordnungsdatensatz" version="0" key="IG-TIFLOW-CORE-A180">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -683,7 +692,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- ToDo: Abrenzung Fehlercode zu folgender Afo ? -->
 
   <!-- A_21370 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Präfix Rezept-ID gegen Flowtype" version="0" key="IG-TIFLOW-CORE-412">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Präfix Rezept-ID gegen Flowtype" version="0" key="IG-TIFLOW-CORE-A412">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -715,7 +724,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_23936-01 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten" version="1" key="IG-TIFLOW-CORE-181">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten" version="0" key="IG-TIFLOW-CORE-A181">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -747,7 +756,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_22487 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum" version="1" key="IG-TIFLOW-CORE-182">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum" version="0" key="IG-TIFLOW-CORE-A182">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -779,7 +788,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19127-03 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID" version="1" key="IG-TIFLOW-CORE-183">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Übernahme der Versicherten-ID" version="0" key="IG-TIFLOW-CORE-A183">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -788,7 +797,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_28126 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Push Notification Versicherter" version="0" key="IG-TIFLOW-CORE-184">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Push Notification Versicherter" version="0" key="IG-TIFLOW-CORE-A184">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -797,7 +806,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_19128 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Status ready" version="0" key="IG-TIFLOW-CORE-185">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Status ready" version="0" key="IG-TIFLOW-CORE-A185">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -807,7 +816,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- ToDo: Afo unter Beachtung von A_19029-06 trennen -->
 
   <!-- A_19029-06 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Serversignatur" version="1" key="IG-TIFLOW-CORE-186">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Serversignatur" version="0" key="IG-TIFLOW-CORE-A186">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -829,7 +838,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 <h3 id="verifizieren-von-prüfziffern">Verifizieren von Prüfziffern</h3>
 
   <!-- A_23888 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage" version="1" key="IG-TIFLOW-CORE-187">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage" version="0" key="IG-TIFLOW-CORE-A187">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -861,7 +870,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_24030 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage - AlternativeID" version="1" key="IG-TIFLOW-CORE-188">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der IK Nummer im Profil KBV_PR_FOR_Coverage - AlternativeID" version="0" key="IG-TIFLOW-CORE-A188">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -893,7 +902,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_23890-01 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung KVNR im Profil KBV_PR_FOR_Patient" version="1" key="IG-TIFLOW-CORE-189">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung KVNR im Profil KBV_PR_FOR_Patient" version="0" key="IG-TIFLOW-CORE-A189">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -925,7 +934,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_23891-01 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR im Profil KBV_PR_FOR_Practitioner" version="1" key="IG-TIFLOW-CORE-190">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR im Profil KBV_PR_FOR_Practitioner" version="0" key="IG-TIFLOW-CORE-A190">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -976,7 +985,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 <p>Hinweis: Im Rahmen der ambulanten spezialfachärztlichen Versorgung (ASV) nach &sect; 116b SGB V wird gemäß der ASV-Vereinbarung von Krankenhausärzten die sog. Fachgruppennummer statt der LANR verwendet. Die Fachgruppennummer wird ein einem separaten Element hinterlegt. In diesem Fall muss keine ANR angegeben werden.</p>
 
   <!-- A_24031 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration bei Auffälligkeiten" version="0" key="IG-TIFLOW-CORE-191">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration bei Auffälligkeiten" version="0" key="IG-TIFLOW-CORE-A191">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -985,7 +994,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_24032 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Fehler" version="1" key="IG-TIFLOW-CORE-192">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Fehler" version="0" key="IG-TIFLOW-CORE-A192">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -1017,7 +1026,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 </requirement>
 
   <!-- A_24033 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Warning" version="0" key="IG-TIFLOW-CORE-193">
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR - Konfiguration Warning" version="0" key="IG-TIFLOW-CORE-A193">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -1072,7 +1081,7 @@ Die Signatur soll als JSON Web Signature [JWS] detached erstellt werden, dements
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 22, 2026 06:40+0000">2026-06-22</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 09:04+0000">2026-06-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

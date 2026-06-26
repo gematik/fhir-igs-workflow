@@ -1,8 +1,10 @@
-# TI Audit Event Rest - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# TI Audit Event Rest - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/audit-event-rest | *Version*:2.0.0-ballot.2 |
-| Active as of 2026-06-01 | *Computable Name*:TIAuditEventRest |
+| Active as of 2026-06-01 | *Computable Name*:TIFlowAuditEventRest |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -44,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-audit-event-rest.csv
   "id" : "audit-event-rest",
   "url" : "https://gematik.de/fhir/tiflow/StructureDefinition/audit-event-rest",
   "version" : "2.0.0-ballot.2",
-  "name" : "TIAuditEventRest",
+  "name" : "TIFlowAuditEventRest",
   "title" : "TI Audit Event Rest",
   "status" : "active",
   "experimental" : false,
@@ -195,6 +197,99 @@ Other representations of profile: [CSV](StructureDefinition-audit-event-rest.csv
       "id" : "AuditEvent.source.observer.reference",
       "path" : "AuditEvent.source.observer.reference",
       "min" : 1
+    },
+    {
+      "id" : "AuditEvent.entity",
+      "path" : "AuditEvent.entity",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "type"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.entity:patient",
+      "path" : "AuditEvent.entity",
+      "sliceName" : "patient",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "AuditEvent.entity:patient.what.identifier",
+      "path" : "AuditEvent.entity.what.identifier",
+      "min" : 1,
+      "type" : [{
+        "code" : "Identifier",
+        "profile" : ["http://fhir.de/StructureDefinition/identifier-kvid-10"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.entity:patient.type.system",
+      "path" : "AuditEvent.entity.type.system",
+      "patternUri" : "http://terminology.hl7.org/CodeSystem/audit-entity-type"
+    },
+    {
+      "id" : "AuditEvent.entity:patient.type.code",
+      "path" : "AuditEvent.entity.type.code",
+      "patternCode" : "Patient"
+    },
+    {
+      "id" : "AuditEvent.entity:task",
+      "path" : "AuditEvent.entity",
+      "sliceName" : "task",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "AuditEvent.entity:task.what.identifier",
+      "path" : "AuditEvent.entity.what.identifier",
+      "min" : 1,
+      "type" : [{
+        "code" : "Identifier",
+        "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/e-prescription-id"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.entity:task.type.system",
+      "path" : "AuditEvent.entity.type.system",
+      "patternUri" : "http://terminology.hl7.org/CodeSystem/audit-entity-type"
+    },
+    {
+      "id" : "AuditEvent.entity:task.type.code",
+      "path" : "AuditEvent.entity.type.code",
+      "patternCode" : "Task"
+    },
+    {
+      "id" : "AuditEvent.entity:service",
+      "path" : "AuditEvent.entity",
+      "sliceName" : "service",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "AuditEvent.entity:service.type.system",
+      "path" : "AuditEvent.entity.type.system",
+      "patternUri" : "http://terminology.hl7.org/CodeSystem/audit-entity-type"
+    },
+    {
+      "id" : "AuditEvent.entity:service.type.code",
+      "path" : "AuditEvent.entity.type.code",
+      "patternCode" : "4"
+    },
+    {
+      "id" : "AuditEvent.entity:service.name",
+      "path" : "AuditEvent.entity.name",
+      "short" : "Name des FHIR Data Service",
+      "definition" : "Der Name des FHIR Data Service, auf den zugegriffen wurde.",
+      "min" : 1,
+      "mustSupport" : true
     }]
   }
 }

@@ -1,8 +1,10 @@
-# AVS-Anforderungen $close - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# AVS-Anforderungen $close - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**Operation API**](menu-schnittstellen-operation-api.md)
@@ -33,7 +35,7 @@ funkt. Eignung: HerstellererklärungDas PS der abgebenden LEI KANN im Anwendungs
 * Header "SOAPAction: \"http://ws.gematik.de/conn/SignatureService/v7.4#VerifyDocument\""
 * PKCS#7-Datei in SignatureObject
 ausführen.
-Implementierungshinweise zur Signaturprüfung für Primärsysteme sind in [gemILF_PS#4.4.2] beschrieben. Die Außenschnittstelle des Konnektors ist in [gemSpec_Kon#TIP1-A_5034-x Operation VerifyDocument (nonQES und QES)] beschrieben.
+Implementierungshinweise zur Signaturprüfung für Primärsysteme sind in [gemILF_PS]#4.4.2 beschrieben. Die Außenschnittstelle des Konnektors ist in [gemSpec_Kon]#TIP1-A_5034-* Operation VerifyDocument (nonQES und QES) beschrieben.
 
 Als Response liefert der Konnektor einen standardisierten Prüfbericht in einer VerificationReport-Struktur gemäß [OASIS-VR].
 

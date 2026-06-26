@@ -1,4 +1,6 @@
-# Medikament ohne Stärke-Code - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Medikament ohne Stärke-Code - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -24,6 +26,7 @@ Version 2.0.0-ballot.2 - ci-build
   "code" : {
     "text" : "Infusion bestehend aus 85mg Doxorubicin aufgeloest zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionsloesung"
   },
+  "status" : "active",
   "form" : {
     "coding" : [{
       "system" : "http://standardterms.edqm.eu",

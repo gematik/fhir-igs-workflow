@@ -1,8 +1,10 @@
-# Telemetry Data Status Codes Concept Map - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# Telemetry Data Status Codes Concept Map - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -14,6 +16,7 @@ Version 2.0.0-ballot.2 - ci-build
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/ConceptMap/TIFLOW-CM-TelemetryDataStatusCodes | *Version*:2.0.0-ballot.2 |
 | Draft as of 2026-05-04 | *Computable Name*: |
+| **Copyright/Legal**: gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
 Maps operation outcome codes to the telemetry data status codes 
@@ -52,6 +55,7 @@ Maps operation outcome codes to the telemetry data status codes
       "display" : "Germany"
     }]
   }],
+  "copyright" : "gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.html), Version 2.0.",
   "group" : [{
     "source" : "https://gematik.de/fhir/erp/CodeSystem/tiflow-operation-outcome-details-cs",
     "target" : "ti-flow-telemetriedaten-statuscodes",
@@ -353,6 +357,20 @@ Maps operation outcome codes to the telemetry data status codes
       "code" : "TIFLOW_TIMEOUT",
       "target" : [{
         "code" : "79275",
+        "equivalence" : "equivalent"
+      }]
+    },
+    {
+      "code" : "TIFLOW_BLOCKED_FEATURE",
+      "target" : [{
+        "code" : "79268",
+        "equivalence" : "equivalent"
+      }]
+    },
+    {
+      "code" : "TIFLOW_BLOCKED_FLOWTYPE",
+      "target" : [{
+        "code" : "79270",
         "equivalence" : "equivalent"
       }]
     }]

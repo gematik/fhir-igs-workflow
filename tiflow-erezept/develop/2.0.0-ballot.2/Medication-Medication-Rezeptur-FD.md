@@ -1,4 +1,6 @@
-# Medication-Rezeptur-FD - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Medication-Rezeptur-FD - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -25,7 +27,7 @@ Version 2.0.0-ballot.2 - ci-build
     "resourceType" : "Medication",
     "id" : "MedicationHydrocortison-FD",
     "meta" : {
-      "profile" : ["https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pzn-ingredient"]
+      "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/ti-medication-dgmp"]
     },
     "extension" : [{
       "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension",
@@ -48,7 +50,7 @@ Version 2.0.0-ballot.2 - ci-build
     "resourceType" : "Medication",
     "id" : "MedicationDexpanthenol-FD",
     "meta" : {
-      "profile" : ["https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-pzn-ingredient"]
+      "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/ti-medication-dgmp"]
     },
     "extension" : [{
       "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension",
@@ -97,6 +99,7 @@ Version 2.0.0-ballot.2 - ci-build
   "code" : {
     "text" : "Hydrocortison-Dexpanthenol-Salbe"
   },
+  "status" : "active",
   "form" : {
     "text" : "Salbe"
   },

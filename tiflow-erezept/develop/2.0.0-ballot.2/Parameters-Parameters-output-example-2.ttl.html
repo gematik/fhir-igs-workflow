@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>null - TTL Representation - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2</title>
+    <title>null - TTL Representation - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -163,6 +163,9 @@
       <li>
         <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -216,7 +219,7 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Verordnungen für Arzneimittel
+Implementation Guide<br /> TIFlow - Verordnungen für Arzneimittel
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
             <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
@@ -317,165 +320,238 @@ TIFlow - Verordnungen für Arzneimittel
   <pre class="rdf" data-fhir="generated" style="white-space: pre; overflow: hidden"><code class="language-turtle">
 @prefix fhir: &lt;http://hl7.org/fhir/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 # - resource -------------------------------------------------------------------
 
- a fhir:Parameters ;
+&lt;http://hl7.org/fhir/Parameters/Parameters-output-example-2&gt; a fhir:Parameters ;
   <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
-  <a href="http://hl7.org/fhir/R4/resource.html#Parameters.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;Parameters-output-example-2&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">fhir:parameter</a> ( [
-<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;rxPrescription&quot; ] ;
-    ( <a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.part">fhir:part</a> [
-<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;authoredOn&quot; ] ;
-<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">a</a> fhir:dateTime ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2024-05-20&quot;^^xsd:date       ]     ] [
-<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;medication&quot; ] ;
-      ( <a href="http://hl7.org/fhir/R4/medication.html#Medication">fhir:Parameters.parameter.resource</a> [
-<a href="http://hl7.org/fhir/R4/medication.html">a</a> fhir:Medication ;
-<a href="http://hl7.org/fhir/R4/resource.html#Medication.meta">fhir:meta</a> [
-          ( <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:profile</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication&gt;           ] )         ] ;
-        ( <a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">fhir:extension</a> [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding">a</a> fhir:Coding ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;00&quot; ]           ]         ] [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#boolean">a</a> fhir:boolean ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> false           ]         ] ) ;
-<a href="http://hl7.org/fhir/R4/medication.html#Medication.code">fhir:code</a> [
-          ( <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:coding</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;wirkstoff&quot; ]           ] )         ] ;
-<a href="http://hl7.org/fhir/R4/medication.html#Medication.form">fhir:form</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Tabletten&quot; ]         ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;medicationRequest&quot; ] ;
-      ( <a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest">fhir:Parameters.parameter.resource</a> [
-<a href="http://hl7.org/fhir/R4/medicationrequest.html">a</a> fhir:MedicationRequest ;
-<a href="http://hl7.org/fhir/R4/resource.html#MedicationRequest.meta">fhir:meta</a> [
-          ( <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:profile</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request&gt;           ] )         ] ;
-        ( <a href="http://hl7.org/fhir/R4/domainresource.html#MedicationRequest.extension">fhir:extension</a> [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://gematik.de/fhir/epa-medication/StructureDefinition/indicator-ser-extension&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#boolean">a</a> fhir:boolean ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> false           ]         ] [
-          ( <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">fhir:extension</a> [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;indicator&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#boolean">a</a> fhir:boolean ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> false             ]           ] ) ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://gematik.de/fhir/epa-medication/StructureDefinition/multiple-prescription-extension&quot;^^xsd:anyURI ]         ] ) ;
-<a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;active&quot; ] ;
-<a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.intent">fhir:intent</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;order&quot; ] ;
-<a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.medication_x_">fhir:medication</a> [
-<a href="http://hl7.org/fhir/R4/references.html#Reference">a</a> fhir:Reference ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Medication/86fa62c7-06a0-418e-ba26-e99baa053c07&quot; ]         ] ;
-<a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.authoredOn">fhir:authoredOn</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2024-05-20&quot;^^xsd:date ] ;
-<a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.requester">fhir:requester</a> [
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Practitioner/bc329f24-3d65-4286-bf06-b54dd6cad655&quot; ]         ] ;
-        ( <a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.note">fhir:note</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Annotation#Annotation.text">fhir:text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:v</a> &quot;Bitte längliche Tabletten, da Patient Probleme mit dem Schlucken von runden hat.&quot; ]         ] ) ;
-        ( <a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.dosageInstruction">fhir:dosageInstruction</a> [
-          ( <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Dosage.extension">fhir:extension</a> [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#boolean">a</a> fhir:boolean ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> true             ]           ] ) ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Dosage#Dosage.text">fhir:text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;1-0-0-0&quot; ]         ] ) ;
-<a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.dispenseRequest">fhir:dispenseRequest</a> [
-<a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.dispenseRequest.quantity">fhir:quantity</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">fhir:v</a> &quot;1&quot;^^xsd:decimal ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.unit">fhir:unit</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Packung&quot; ]           ]         ]       ] )     ] [
-<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;organization&quot; ] ;
-      ( <a href="http://hl7.org/fhir/R4/organization.html#Organization">fhir:Parameters.parameter.resource</a> [
-<a href="http://hl7.org/fhir/R4/organization.html">a</a> fhir:Organization ;
-<a href="http://hl7.org/fhir/R4/resource.html#Organization.meta">fhir:meta</a> [
-          ( <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:profile</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory&gt;           ] )         ] ;
-        ( <a href="http://hl7.org/fhir/R4/organization.html#Organization.telecom">fhir:telecom</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;phone&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;0301234567&quot; ]         ] [
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;fax&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;030123456789&quot; ]         ] [
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;email&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;mvz@e-mail.de&quot; ]         ] ) ;
-        ( <a href="http://hl7.org/fhir/R4/organization.html#Organization.address">fhir:address</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;both&quot; ] ;
-          ( <a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.line">fhir:line</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Herbert-Lewin-Platz 2&quot; ;
-            ( <a href="http://hl7.org/fhir/R4/datatypes.html#Element#string.extension">fhir:extension</a> [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">a</a> fhir:string ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;2&quot;               ]             ] [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">a</a> fhir:string ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Herbert-Lewin-Platz&quot;               ]             ] )           ] ) ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.city">fhir:city</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Berlin&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.postalCode">fhir:postalCode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;10623&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.country">fhir:country</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;D&quot; ]         ] [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;both&quot; ] ;
-          ( <a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.line">fhir:line</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Herbert-Lewin-Platz 2&quot; ;
-            ( <a href="http://hl7.org/fhir/R4/datatypes.html#Element#string.extension">fhir:extension</a> [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">a</a> fhir:string ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;2&quot;               ]             ] [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">a</a> fhir:string ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Herbert-Lewin-Platz&quot;               ]             ] )           ] ) ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.city">fhir:city</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Berlin&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.postalCode">fhir:postalCode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;10623&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.country">fhir:country</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;D&quot; ]         ] )       ] )     ] [
-<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;practitioner&quot; ] ;
-      ( <a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">fhir:Parameters.parameter.resource</a> [
-<a href="http://hl7.org/fhir/R4/practitioner.html">a</a> fhir:Practitioner ;
-<a href="http://hl7.org/fhir/R4/resource.html#Practitioner.meta">fhir:meta</a> [
-          ( <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:profile</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory&gt;           ] )         ] ;
-        ( <a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.name">fhir:name</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.use">fhir:use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;official&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">fhir:family</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Freiherr von Müller&quot; ;
-            ( <a href="http://hl7.org/fhir/R4/datatypes.html#Element#string.extension">fhir:extension</a> [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://hl7.org/fhir/StructureDefinition/humanname-own-prefix&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">a</a> fhir:string ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;von&quot;               ]             ] [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://fhir.de/StructureDefinition/humanname-namenszusatz&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">a</a> fhir:string ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Freiherr&quot;               ]             ] [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://hl7.org/fhir/StructureDefinition/humanname-own-name&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">a</a> fhir:string ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Müller&quot;               ]             ] )           ] ;
-          ( <a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.given">fhir:given</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Paul&quot; ] ) ;
-          ( <a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.prefix">fhir:prefix</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Dr. med.&quot; ;
-            ( <a href="http://hl7.org/fhir/R4/datatypes.html#Element#string.extension">fhir:extension</a> [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#code">a</a> fhir:code ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;AC&quot;               ]             ] )           ] )         ] )       ] )     ] [
-<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;prescriptionId&quot; ] ;
-<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">a</a> fhir:string ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;160.100.000.000.019.82&quot;       ]     ] )
-  ] ) . # 
+  <a href="http://hl7.org/fhir/R4/resource.html#Parameters.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;Parameters-output-example-2&quot;] ;
+  <a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">fhir:Parameters.parameter</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">fhir:Parameters.parameter.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;rxPrescription&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.part">fhir:Parameters.parameter.part</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">fhir:Parameters.parameter.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;authoredOn&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value_x_">fhir:Parameters.parameter.valueDateTime</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2024-05-20&quot;^^xsd:date ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+       <a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">fhir:Parameters.parameter.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;medication&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/medication.html#Medication">fhir:Parameters.parameter.resource</a> [
+         <a href="http://hl7.org/fhir/R4/medication.html">a</a> fhir:Medication ;
+         <a href="http://hl7.org/fhir/R4/resource.html#Medication.meta">fhir:Resource.meta</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:Meta.profile</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication&gt;
+           ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">fhir:DomainResource.extension</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueCoding</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;00&quot; ]
+           ]
+         ], [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+           <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueBoolean</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/medication.html#Medication.code">fhir:Medication.code</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Type&quot; ] ;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;wirkstoff&quot; ]
+           ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/medication.html#Medication.form">fhir:Medication.form</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:CodeableConcept.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Tabletten&quot; ]
+         ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2 ;
+       <a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">fhir:Parameters.parameter.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;medicationRequest&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest">fhir:Parameters.parameter.resource</a> [
+         <a href="http://hl7.org/fhir/R4/medicationrequest.html">a</a> fhir:MedicationRequest ;
+         <a href="http://hl7.org/fhir/R4/resource.html#MedicationRequest.meta">fhir:Resource.meta</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:Meta.profile</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request&gt;
+           ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/domainresource.html#MedicationRequest.extension">fhir:DomainResource.extension</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;https://gematik.de/fhir/epa-medication/StructureDefinition/indicator-ser-extension&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueBoolean</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean ]
+         ], [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">fhir:Element.extension</a> [
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+             <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;indicator&quot; ] ;
+             <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueBoolean</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean ]
+           ] ;
+           <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;https://gematik.de/fhir/epa-medication/StructureDefinition/multiple-prescription-extension&quot; ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.status">fhir:MedicationRequest.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;active&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.intent">fhir:MedicationRequest.intent</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;order&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.medication_x_">fhir:MedicationRequest.medicationReference</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/Medication/86fa62c7-06a0-418e-ba26-e99baa053c07&gt; ;
+           <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Medication/86fa62c7-06a0-418e-ba26-e99baa053c07&quot; ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.authoredOn">fhir:MedicationRequest.authoredOn</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2024-05-20&quot;^^xsd:date ] ;
+         <a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.requester">fhir:MedicationRequest.requester</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/Practitioner/bc329f24-3d65-4286-bf06-b54dd6cad655&gt; ;
+           <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Practitioner/bc329f24-3d65-4286-bf06-b54dd6cad655&quot; ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.note">fhir:MedicationRequest.note</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Annotation#Annotation.text">fhir:Annotation.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:value</a> &quot;Bitte längliche Tabletten, da Patient Probleme mit dem Schlucken von runden hat.&quot; ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.dosageInstruction">fhir:MedicationRequest.dosageInstruction</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Element#Dosage.extension">fhir:Element.extension</a> [
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+             <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag&quot; ] ;
+             <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueBoolean</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;true&quot;^^xsd:boolean ]
+           ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Dosage#Dosage.text">fhir:Dosage.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1-0-0-0&quot; ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.dispenseRequest">fhir:MedicationRequest.dispenseRequest</a> [
+           <a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.dispenseRequest.quantity">fhir:MedicationRequest.dispenseRequest.quantity</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">fhir:Quantity.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">fhir:value</a> &quot;1&quot;^^xsd:decimal ] ;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.unit">fhir:Quantity.unit</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Packung&quot; ]
+           ]
+         ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 3 ;
+       <a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">fhir:Parameters.parameter.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;organization&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/organization.html#Organization">fhir:Parameters.parameter.resource</a> [
+         <a href="http://hl7.org/fhir/R4/organization.html">a</a> fhir:Organization ;
+         <a href="http://hl7.org/fhir/R4/resource.html#Organization.meta">fhir:Resource.meta</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:Meta.profile</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory&gt;
+           ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/organization.html#Organization.telecom">fhir:Organization.telecom</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:ContactPoint.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;phone&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:ContactPoint.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;0301234567&quot; ]
+         ], [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:ContactPoint.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;fax&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:ContactPoint.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;030123456789&quot; ]
+         ], [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2 ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:ContactPoint.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;email&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:ContactPoint.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;mvz@e-mail.de&quot; ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/organization.html#Organization.address">fhir:Organization.address</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.type">fhir:Address.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;both&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.line">fhir:Address.line</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Herbert-Lewin-Platz 2&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#Element#string.extension">fhir:Element.extension</a> [
+               <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber&quot; ] ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueString</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2&quot; ]
+             ], [
+               <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName&quot; ] ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueString</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Herbert-Lewin-Platz&quot; ]
+             ]
+           ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.city">fhir:Address.city</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Berlin&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.postalCode">fhir:Address.postalCode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;10623&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.country">fhir:Address.country</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;D&quot; ]
+         ], [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.type">fhir:Address.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;both&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.line">fhir:Address.line</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Herbert-Lewin-Platz 2&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#Element#string.extension">fhir:Element.extension</a> [
+               <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber&quot; ] ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueString</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2&quot; ]
+             ], [
+               <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName&quot; ] ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueString</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Herbert-Lewin-Platz&quot; ]
+             ]
+           ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.city">fhir:Address.city</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Berlin&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.postalCode">fhir:Address.postalCode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;10623&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.country">fhir:Address.country</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;D&quot; ]
+         ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 4 ;
+       <a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">fhir:Parameters.parameter.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;practitioner&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">fhir:Parameters.parameter.resource</a> [
+         <a href="http://hl7.org/fhir/R4/practitioner.html">a</a> fhir:Practitioner ;
+         <a href="http://hl7.org/fhir/R4/resource.html#Practitioner.meta">fhir:Resource.meta</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:Meta.profile</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory&gt;
+           ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.name">fhir:Practitioner.name</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.use">fhir:HumanName.use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;official&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">fhir:HumanName.family</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Freiherr von Müller&quot; ;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#Element#string.extension">fhir:Element.extension</a> [
+               <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/StructureDefinition/humanname-own-prefix&quot; ] ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueString</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;von&quot; ]
+             ], [
+               <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://fhir.de/StructureDefinition/humanname-namenszusatz&quot; ] ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueString</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Freiherr&quot; ]
+             ], [
+               <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2 ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/StructureDefinition/humanname-own-name&quot; ] ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueString</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Müller&quot; ]
+             ]
+           ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.given">fhir:HumanName.given</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Paul&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0
+           ] ;
+           <a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.prefix">fhir:HumanName.prefix</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Dr. med.&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#Element#string.extension">fhir:Element.extension</a> [
+               <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier&quot; ] ;
+               <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueCode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;AC&quot; ]
+             ]
+           ]
+         ]
+       ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 5 ;
+       <a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">fhir:Parameters.parameter.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;prescriptionId&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value_x_">fhir:Parameters.parameter.valueString</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;160.100.000.000.019.82&quot; ]
+     ]
+  ] .
+
+&lt;http://hl7.org/fhir/Medication/86fa62c7-06a0-418e-ba26-e99baa053c07&gt; a fhir:Medication .
+
+&lt;http://hl7.org/fhir/Practitioner/bc329f24-3d65-4286-bf06-b54dd6cad655&gt; a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/Parameters/Parameters-output-example-2.ttl&gt; a owl:Ontology ;
+  owl:imports fhir:fhir.ttl ;
+  owl:versionIRI &lt;http://build.fhir.org/Parameters/Parameters-output-example-2.ttl&gt; .
 
 </code></pre>
 
@@ -524,7 +600,7 @@ TIFlow - Verordnungen für Arzneimittel
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:58+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 09:08+0000">2026-06-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

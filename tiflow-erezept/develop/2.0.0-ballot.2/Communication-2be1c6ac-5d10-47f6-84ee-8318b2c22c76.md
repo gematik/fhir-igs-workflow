@@ -1,4 +1,6 @@
-# DiGA-Zuweisung des Patienten an die Krankenkasse - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# DiGA-Zuweisung des Patienten an die Krankenkasse - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -14,7 +16,7 @@ Profile: [GEM ERP PR Communication DispReq](StructureDefinition-GEM-ERP-PR-Commu
 
 Tags: , 
 
-**TI Flow Type**: [CodeSystem der Flowtypes in TIFlow Anwendungen: 162](https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-ti-flowtypes-codes.html#ti-flowtypes-codes-162) (Flowtype für Digitale Gesundheitsanwendungen)
+**TI Flow Type**: [CodeSystem der Flowtypes in TIFlow Anwendungen: 162](https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-GEM-ERP-CS-FlowType.html#GEM-ERP-CS-FlowType-162) (Flowtype für Digitale Gesundheitsanwendungen)
 
 **basedOn**: [Task/162.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea](https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.org/packages/de.basisprofil.r4/Task/162.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea)
 

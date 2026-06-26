@@ -1,4 +1,6 @@
-# FdV-Anforderungen: Communication-Query - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# FdV-Anforderungen: Communication-Query - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -78,7 +80,7 @@ erstellen.
 
 Die Anfrage zur Suche von Apotheken, richtet sich an das FHIR-Directory des Verzeichnisdienstes der TI (FHIR-VZD TI).
 
-Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory#Versicherter sucht Einträge im FHIR-Directory] beschrieben.
+Der Ablauf der Authentisierung und Suche ist in [gemSpec_VZD_FHIR_Directory]#Versicherter sucht Einträge im FHIR-Directory beschrieben.
 
 Für weitere Informationen siehe Anwendungsfall "Suche nach Apotheken im FHIR VZD" aus der API-Schnittstelle [E-Rezept API Dokumentation].
 

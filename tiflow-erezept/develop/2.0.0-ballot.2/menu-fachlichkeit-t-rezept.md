@@ -1,4 +1,6 @@
-# Verordnung von E-T-Rezepten - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Verordnung von E-T-Rezepten - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

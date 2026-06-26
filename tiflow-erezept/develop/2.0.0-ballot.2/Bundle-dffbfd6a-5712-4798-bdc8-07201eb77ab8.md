@@ -1,4 +1,6 @@
-# Quittungs-Bundle für abgeschlossene Rezeptabgabe - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Quittungs-Bundle für abgeschlossene Rezeptabgabe - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

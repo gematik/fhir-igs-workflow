@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Best practice UX Primärsysteme für verordnende LEIs - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2</title>
+    <title>Best practice UX Primärsysteme für verordnende LEIs - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -161,6 +161,9 @@
       <li>
         <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -214,7 +217,7 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Verordnungen für Arzneimittel
+Implementation Guide<br/> TIFlow - Verordnungen für Arzneimittel
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
             <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
@@ -312,7 +315,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der Nutzer des Systems soll in jedem Verordnungsvorgang für Arzneimittel die Möglichkeit haben, ein E-Rezept ausstellen zu können.</p>
 
   <!-- A_23560 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - E-Rezept im Verordnungsvorgang erstellen" version="0" key="IG-TIFLOW-ERP-153">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - E-Rezept im Verordnungsvorgang erstellen" version="0" key="IG-TIFLOW-ERP-A153">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -322,10 +325,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="ladevorgänge-im-hintergrund">Ladevorgänge im Hintergrund</h4>
 
-<p>Das Primärsystem soll bei Ladevorgängen zum Anlegen, Speichern und Verarbeiten eines E-Rezepts dem Nutzer das Weiterarbeiten im System erlauben. Insbesondere Signaturen sollen gemäß[gemILF_PS#A_23502 - Signaturerstellung im Hintergrund] im Hintergrund verarbeitet werden. Dem Nutzer werden nur bei Fehlermeldungen auffällige und für den Nutzer verständliche Hinweise angezeigt. Erfolgsmeldungen können so in die Benutzeroberfläche integriert werden, dass sie keine Interaktion des Nutzers verlangen und den Nutzer nicht im weiteren Arbeitsprozess stören.</p>
+<p>Das Primärsystem soll bei Ladevorgängen zum Anlegen, Speichern und Verarbeiten eines E-Rezepts dem Nutzer das Weiterarbeiten im System erlauben. Insbesondere Signaturen sollen gemäß [gemILF_PS]#A_23502 - Signaturerstellung im Hintergrund im Hintergrund verarbeitet werden. Dem Nutzer werden nur bei Fehlermeldungen auffällige und für den Nutzer verständliche Hinweise angezeigt. Erfolgsmeldungen können so in die Benutzeroberfläche integriert werden, dass sie keine Interaktion des Nutzers verlangen und den Nutzer nicht im weiteren Arbeitsprozess stören.</p>
 
   <!-- A_23561 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Verarbeitungsvorgänge im Hintergrund" version="0" key="IG-TIFLOW-ERP-154">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Verarbeitungsvorgänge im Hintergrund" version="0" key="IG-TIFLOW-ERP-A154">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -334,7 +337,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_23562 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Ergebnismeldung von Verarbeitungsvorgängen im Hintergrund" version="0" key="IG-TIFLOW-ERP-155">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Ergebnismeldung von Verarbeitungsvorgängen im Hintergrund" version="0" key="IG-TIFLOW-ERP-A155">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -349,7 +352,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>In den Einstellungen des Primärsystems kann das E-Rezept übergreifend oder für einzelne Patienten als Default eingestellt werden. Das E-Rezept ist dann bei jedem Verordnungsvorgang (bei dem E-Rezept zulässig ist) voreingestellt. Der Nutzer spart sich einen zusätzlichen Klick, um von Muster 16 auf E-Rezept zu wechseln.</p>
 
   <!-- A_23563 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Konfigurationsparameter E-Rezept" version="0" key="IG-TIFLOW-ERP-156">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Konfigurationsparameter E-Rezept" version="0" key="IG-TIFLOW-ERP-A156">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -362,7 +365,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>eines E-Rezeptes Um Rezepte schnell erstellen zu können, soll es möglich sein, in den Einstellungen bestimmte Parameter und Verhalten von neu erstellten E-Rezepten zu setzen. In den Einstellungen des Primärsystems kann für das E-Rezept je Patient der Einlöseweg als Default eingestellt werden (Patientenausdruck, E-Rezept-App oder eGK). Wenn der Ausdruck konfiguriert wurde, wird dann standardmäßig bei jedem E-Rezept automatisch der Patientenausdruck gedruckt. Der Nutzer spart sich in dem Fall einen zusätzlichen Klick bei jedem E-Rezept. Weitere Konfigurationsparameter und Übernahme von hinterlegten Stammdaten können den Verordnungsprozess beschleunigen.</p>
 
   <!-- A_23564 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Defaulteinstellung E-Rezept-Ausdruck" version="0" key="IG-TIFLOW-ERP-157">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Defaulteinstellung E-Rezept-Ausdruck" version="0" key="IG-TIFLOW-ERP-A157">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -373,7 +376,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Das Primärsystem soll für die Einführung des patienten-individuellen Konfigurationsparameter einen Defaultwert anbieten.Die initiale Wert der Einstellung kann auf Basis der letztmaligen oder ersten Ausstellung eines E-Rezeptes für den Versicherten gesetzt werden.</p>
 
   <!-- A_23565 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Stammdaten für Arzt und Einrichtung übernehmen" version="1" key="IG-TIFLOW-ERP-158">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Stammdaten für Arzt und Einrichtung übernehmen" version="0" key="IG-TIFLOW-ERP-A158">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -386,7 +389,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="optimaler-klickpfad">Optimaler Klickpfad</h4>
 
   <!-- A_23566 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad" version="1" key="IG-TIFLOW-ERP-159">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad" version="0" key="IG-TIFLOW-ERP-A159">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -449,7 +452,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_23567 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Erzeugung einer neuen Verordnung" version="0" key="IG-TIFLOW-ERP-160">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Erzeugung einer neuen Verordnung" version="0" key="IG-TIFLOW-ERP-A160">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -467,7 +470,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p><br/></p>
 
   <!-- A_23568 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Vorbelegung bekannter Informationen" version="0" key="IG-TIFLOW-ERP-161">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Vorbelegung bekannter Informationen" version="0" key="IG-TIFLOW-ERP-A161">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -476,7 +479,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
   <!-- A_23569 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Suche nach gewünschtem Präparat" version="0" key="IG-TIFLOW-ERP-162">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Suche nach gewünschtem Präparat" version="0" key="IG-TIFLOW-ERP-A162">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -496,7 +499,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p><br/></p>
 
   <!-- A_23570 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Auswahl und Anpassung des Verordnungsinhalts und Signaturvorbereitung" version="0" key="IG-TIFLOW-ERP-163">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Auswahl und Anpassung des Verordnungsinhalts und Signaturvorbereitung" version="0" key="IG-TIFLOW-ERP-A163">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -504,7 +507,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
      Das PS der verordnenden LEI SOLL dem Nutzer nach der Auswahl des Verordnungsinhalts die Möglichkeit geben, weitere Details (z.B. Anzahl der Packungen) der aktuellen als E-Rezept dargestellten Verordnung hinzuzufügen. Es SOLL den Nutzer darauf hinweisen, dass mit der Bestätigung dieser Auswahl die Verordnung erfolgen soll und der erste Schritt zur Signatur ausgelöst wird. Dieser Hinweis muss durch den Nutzer nicht bestätigt werden.
 </requirement>
 
-<p>Hinweis: Um den Nutzer hinreichend auf den folgenden Signaturschritt (nach [gemILF_PS#A_19138- PS: Auslösen der Komfortsignatur bei Nachnutzung der Primärsystem-Authentisierung]) hinzuweisen, muss z.B. bei der Verwendung einer Schaltfläche diese deutlich machen, dass</p>
+<p>Hinweis: Um den Nutzer hinreichend auf den folgenden Signaturschritt (nach [gemILF_PS]#A_19138 - PS: Auslösen der Komfortsignatur bei Nachnutzung der Primärsystem-Authentisierung) hinzuweisen, muss z.B. bei der Verwendung einer Schaltfläche diese deutlich machen, dass</p>
 <ol>
   <li>eine Verordnung erzeugt werden wird. Dies kann erreicht werden durch eine
 passende Benennung z.B. mit  "Verordnen", "Dem Rezept hinzufügen".</li>
@@ -522,7 +525,7 @@ passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" o
 <p><br/></p>
 
   <!-- A_23571 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Vorbereitung mehrerer Verordnungen zum späteren Signieren" version="0" key="IG-TIFLOW-ERP-164">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Vorbereitung mehrerer Verordnungen zum späteren Signieren" version="0" key="IG-TIFLOW-ERP-A164">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -533,7 +536,7 @@ passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" o
 <p>Hinweis: Im Gegensatz zur Aufgabenliste handelt es sich bei dieser Liste um eine patientenspezifische Sammlung von zu signierenden Rezepten.</p>
 
   <!-- A_23572 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Signieren aller vorbereiteten Verordnungen auf einmal" version="0" key="IG-TIFLOW-ERP-165">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Signieren aller vorbereiteten Verordnungen auf einmal" version="0" key="IG-TIFLOW-ERP-A165">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -553,7 +556,7 @@ passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" o
 <p><br/></p>
 
   <!-- A_23573 -->
-<requirement conformance="SHALL" title="PS verordnende LEI: UX - Optimaler Klickpfad - Hintergrund-Signaturprozess und Fehleranzeigen" version="0" key="IG-TIFLOW-ERP-166">
+<requirement conformance="SHALL" title="PS verordnende LEI: UX - Optimaler Klickpfad - Hintergrund-Signaturprozess und Fehleranzeigen" version="0" key="IG-TIFLOW-ERP-A166">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -562,7 +565,7 @@ passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" o
 </requirement>
 
   <!-- A_23574 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Hinweistext bei erfolgreichem Signieren" version="0" key="IG-TIFLOW-ERP-167">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Hinweistext bei erfolgreichem Signieren" version="0" key="IG-TIFLOW-ERP-A167">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -571,7 +574,7 @@ passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" o
 </requirement>
 
   <!-- A_23575 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Automatischer Ausdruck bei entsprechender Konfiguration" version="0" key="IG-TIFLOW-ERP-168">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Optimaler Klickpfad - Automatischer Ausdruck bei entsprechender Konfiguration" version="0" key="IG-TIFLOW-ERP-A168">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -584,7 +587,7 @@ passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" o
 <p>Derzeit können nicht alle Verordnungsinhalte, die per Muster 16 zu verschreiben sind, als E-Rezept abgebildet werden. Der Nutzer soll hier nicht überlegen müssen, was er per E- Rezept verschreiben kann und was nicht. In der Benutzerführung soll der Nutzer informiert werden, ob eine Verordnung als E-Rezept erstellt werden kann oder nicht. Um zu vermeiden, dass der Nutzer etwas über die Freitextverordnung verschreibt, was derzeit nicht als E-Rezept zulässig ist, soll der Nutzer bei einer Freitextverordnung darüber in Kenntnis gesetzt werden, was derzeit als E-Rezept verordnet werden darf. Ein aktueller Stand der verfügbaren Features (Umfang der Anwendung E-Rezept) ist auf der gematik/api-erp Seite auf GitHub zu finden.</p>
 
   <!-- A_23576 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Anwendbarkeit E-Rezept" version="1" key="IG-TIFLOW-ERP-169">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Anwendbarkeit E-Rezept" version="0" key="IG-TIFLOW-ERP-A169">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -595,7 +598,7 @@ passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" o
 <p>Freitextverordnungen sollen nur verwendet werden, wenn das Erstellen einer strukturierten Verordnung für PZN, Wirkstoff oder Rezepturen nicht möglich ist.</p>
 
   <!-- A_23577 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Hinweis bei Freitextverordnungen" version="1" key="IG-TIFLOW-ERP-170">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Hinweis bei Freitextverordnungen" version="0" key="IG-TIFLOW-ERP-A170">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -610,7 +613,7 @@ passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" o
 <p>Um weiterführende Informationen zu einer Verordnung zu notieren (z.B. die Diagnose als Hinweis für den Apotheker), soll der Arzt das Feld im Verordnungsdatensatz "Abgabehinweis für Apotheken" nutzen. Dieses Feld muss dem Arzt im Verordnungsprozess angezeigt werden, so dass er es wahrnimmt und in Situationen, in denen er eigentlich etwas handschriftlich auf dem Muster 16 notiert hätte, nutzt.</p>
 
   <!-- A_23578 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Abgabehinweise für den Apotheker" version="0" key="IG-TIFLOW-ERP-171">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Abgabehinweise für den Apotheker" version="0" key="IG-TIFLOW-ERP-A171">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -623,7 +626,7 @@ passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" o
 <p>Beim Erstellen einer Verordnung kann es zu einer Abweichung zwischen dem die Verordnung Erstellenden und dem die Verordnung Signierenden kommen. Dies ist nach der &sect;2 AMVV in Absatz (1) Satz 1 nicht zulässig.Es ist verpflichtend, dass der im Verordnungsdatensatz in author referenzierte Practitioner mit dem im Signaturzertifikat der QES angegebenen Person übereinstimmt.</p>
 
   <!-- A_23579 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: E-Rezept erstellen - author Practitioner gemäß signierendem HBA" version="0" key="IG-TIFLOW-ERP-172">
+<requirement conformance="SHOULD" title="PS verordnende LEI: E-Rezept erstellen - author Practitioner gemäß signierendem HBA" version="0" key="IG-TIFLOW-ERP-A172">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -641,7 +644,7 @@ passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" o
 </ul>
 
   <!-- A_23580 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Vertretungssituation - Möglichkeit zur Entscheidung über Vertretungsfall" version="0" key="IG-TIFLOW-ERP-173">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Vertretungssituation - Möglichkeit zur Entscheidung über Vertretungsfall" version="0" key="IG-TIFLOW-ERP-A173">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -649,7 +652,7 @@ passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" o
      Das PS der verordnenden LEI SOLL es ermöglichen für ein Nutzerprofil eine Vertretungssituation für einen Zeitraum zu hinterlegen. Folgende Konfigurationen sind zulässig: Kollegiale Vertretung (nach <span class="fhir-conformance"> 20 Musterberufsordnung) Persönliche Vertretung (nach </span><span class="fhir-conformance"> 20 Musterberufsordnung) Persönliche Vertretung (nach </span></requirement>
 
   <!-- A_23581 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Vertretungssituation - Signatur eines E-Rezeptes" version="0" key="IG-TIFLOW-ERP-174">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Vertretungssituation - Signatur eines E-Rezeptes" version="0" key="IG-TIFLOW-ERP-A174">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -658,7 +661,7 @@ passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" o
 </requirement>
 
   <!-- A_23622 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Vertretungssituation - Kollegiale Vertretung" version="0" key="IG-TIFLOW-ERP-175">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Vertretungssituation - Kollegiale Vertretung" version="0" key="IG-TIFLOW-ERP-A175">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -669,7 +672,7 @@ passende Benennung z.B. mit "[Verordnung/Arzneimittel]zur Signatur auswählen" o
 <p>Der ausstellende (signierende) Arzt wird in KBV_PR_ERP_Composition Composition.author angegeben.</p>
 
   <!-- A_23582 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Vertretungssituation - Persönliche Vertretung" version="0" key="IG-TIFLOW-ERP-176">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Vertretungssituation - Persönliche Vertretung" version="0" key="IG-TIFLOW-ERP-A176">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -690,7 +693,7 @@ Composition.attester.party hinterlegt.</li>
 <p>Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Weiterbildungsassistent" findet keine Anwendung in ZPVS. EinWeiterbildungsassistent ist berechtigt, E-Rezepte auszustellen, solange die ordnungsgemäße Überwachung und Anleitung durch eine Vertragsärztin oder einen Vertragsarzt gewährleistet ist.</p>
 
   <!-- A_23583 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Weiterbildungsassistent - Möglichkeit zur Entscheidung über Weiterbildungsassistent" version="1" key="IG-TIFLOW-ERP-177">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Weiterbildungsassistent - Möglichkeit zur Entscheidung über Weiterbildungsassistent" version="0" key="IG-TIFLOW-ERP-A177">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -699,7 +702,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_23584 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Weiterbildungsassistent - Konfiguration ausbildende Person" version="1" key="IG-TIFLOW-ERP-178">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Weiterbildungsassistent - Konfiguration ausbildende Person" version="0" key="IG-TIFLOW-ERP-A178">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -710,7 +713,7 @@ Composition.attester.party hinterlegt.</li>
 <p>Die für den Weiterbildungsassistenten und die ausbildende Person anzugebenden Daten sind in [KBV_ITA_VGEX_Technische_Anlage_ERP] festgelegt.</p>
 
   <!-- A_23585 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Weiterbildungsassistent - E-Rezept erstellen" version="1" key="IG-TIFLOW-ERP-179">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Weiterbildungsassistent - E-Rezept erstellen" version="0" key="IG-TIFLOW-ERP-A179">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -725,7 +728,7 @@ Composition.attester.party hinterlegt.</li>
 <p>Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um den Anwender dabei zu unterstützen, die gesetzlichen Vorgaben einzuhalten und eine Verordnung erfolgreich im TI-Flow-Fachdienst einzustellen.</p>
 
   <!-- A_27837 -->
-<requirement conformance="SHALL" title="PS verordnende LEI: UX - E-T-Rezept - Hinweis T-Rezept" version="1" key="IG-TIFLOW-ERP-180">
+<requirement conformance="SHALL" title="PS verordnende LEI: UX - E-T-Rezept - Hinweis T-Rezept" version="0" key="IG-TIFLOW-ERP-A180">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -734,7 +737,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_27861 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - E-T-Rezept - Automatische Berechnung der Reichdauer" version="1" key="IG-TIFLOW-ERP-181">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - E-T-Rezept - Automatische Berechnung der Reichdauer" version="0" key="IG-TIFLOW-ERP-A181">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -743,7 +746,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_27838 -->
-<requirement conformance="SHALL" title="PS verordnende LEI: UX - E-T-Rezept - Manuelle Eingabe der Reichdauer" version="1" key="IG-TIFLOW-ERP-182">
+<requirement conformance="SHALL" title="PS verordnende LEI: UX - E-T-Rezept - Manuelle Eingabe der Reichdauer" version="0" key="IG-TIFLOW-ERP-A182">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -752,7 +755,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_27839 -->
-<requirement conformance="SHALL" title="PS verordnende LEI: UX - E-T-Rezept - Warnung Reichdauer" version="1" key="IG-TIFLOW-ERP-183">
+<requirement conformance="SHALL" title="PS verordnende LEI: UX - E-T-Rezept - Warnung Reichdauer" version="0" key="IG-TIFLOW-ERP-A183">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -772,7 +775,7 @@ Composition.attester.party hinterlegt.</li>
 <p><br/></p>
 
   <!-- A_23588 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Mehrfachverordnungen als Option" version="0" key="IG-TIFLOW-ERP-184">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Mehrfachverordnungen als Option" version="0" key="IG-TIFLOW-ERP-A184">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -781,7 +784,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_23589 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - MVO - Generierung von Mehrfachverordnungen" version="0" key="IG-TIFLOW-ERP-185">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - MVO - Generierung von Mehrfachverordnungen" version="0" key="IG-TIFLOW-ERP-A185">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -790,7 +793,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_23590 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - MVO- Automatische Befüllung von Teilverordnungen" version="0" key="IG-TIFLOW-ERP-186">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - MVO- Automatische Befüllung von Teilverordnungen" version="0" key="IG-TIFLOW-ERP-A186">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -799,7 +802,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_23591 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - MVO - Auswahl der Anzahl von Teilverordnungen" version="0" key="IG-TIFLOW-ERP-187">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - MVO - Auswahl der Anzahl von Teilverordnungen" version="0" key="IG-TIFLOW-ERP-A187">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -808,7 +811,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_23592 -->
-<requirement conformance="SHALL" title="PS verordnende LEI: UX - MVO - Unterstützung bei Einlösefristen" version="0" key="IG-TIFLOW-ERP-188">
+<requirement conformance="SHALL" title="PS verordnende LEI: UX - MVO - Unterstützung bei Einlösefristen" version="0" key="IG-TIFLOW-ERP-A188">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -817,7 +820,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_23593 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - MVO - Löschen von zusammengehörenden Teilverordnungen" version="0" key="IG-TIFLOW-ERP-189">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - MVO - Löschen von zusammengehörenden Teilverordnungen" version="0" key="IG-TIFLOW-ERP-A189">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -826,7 +829,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_23594 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - MVO - Signieren von Teilverordnungen" version="0" key="IG-TIFLOW-ERP-190">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - MVO - Signieren von Teilverordnungen" version="0" key="IG-TIFLOW-ERP-A190">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -835,7 +838,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_23639 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - MVO - Vorbereitung durch MFA" version="0" key="IG-TIFLOW-ERP-191">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - MVO - Vorbereitung durch MFA" version="0" key="IG-TIFLOW-ERP-A191">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -850,7 +853,7 @@ Composition.attester.party hinterlegt.</li>
 <p>Ein Arzt arbeitet in seinem Arbeitsablauf verschiedene Signaturaufgaben (bspw. für die Elektronische Arbeitsunfähigkeitsbescheinigung oder das E-Rezept) ab. Diese sollen ihm im Primärsystem an einer zentralen Stelle (im Folgenden als "Aufgabenliste" bezeichnet) angezeigt werden, sodass die Aufgaben einfach zu finden und zu bearbeiten sind. Diese Aufgabenliste soll sortier- und filterbar sein. In Gemeinschaftspraxis, wo bspw. mehrere Ärzte gemeinsam Patienten behandeln, soll es möglich sein die Rezepte anderer Kollegen einzusehen und zu signieren.</p>
 
   <!-- A_23595 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Aufgabenliste" version="1" key="IG-TIFLOW-ERP-192">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Aufgabenliste" version="0" key="IG-TIFLOW-ERP-A192">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -870,7 +873,7 @@ Composition.attester.party hinterlegt.</li>
 <p><br/></p>
 
   <!-- A_23596 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Aufgabenliste - Filtern und Sortieren" version="1" key="IG-TIFLOW-ERP-193">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Aufgabenliste - Filtern und Sortieren" version="0" key="IG-TIFLOW-ERP-A193">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -883,7 +886,7 @@ Composition.attester.party hinterlegt.</li>
 <p>Für einen effizienten Arbeitsablauf soll ein MFA E-Rezepte anlegen, ausfüllen und anschließend dem Arzt zum Signieren vorlegen können. Hierbei soll der behandelnde Arzt über die Patientenakte automatisch ausgewählt werden, um das Rezept in der Aufgabenliste einem Arzt zuordnen zu können (siehe auch Kap. 1.2.2 Default Konfiguration und Vorbelegung für die Erstellung eines E-Rezeptes). Das System muss verhindern,  dass ein Rezept von einer Person ohne persönlichen HBA signiert werden kann. Das bedeutet insbesondere, dass aus dem Benutzeraccount einer MFA nicht auf die Komfortsignatur des Arztes zugegriffen werden kann. Es darf lediglich gespeichert werden, um es dem Arzt dann zum Signieren zu übergeben.</p>
 
   <!-- A_23586 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Anlegen eines E-Rezeptes durch MFA" version="1" key="IG-TIFLOW-ERP-194">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Anlegen eines E-Rezeptes durch MFA" version="0" key="IG-TIFLOW-ERP-A194">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -892,7 +895,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_23587 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Keine Signatur von Nutzern ohne HBA" version="1" key="IG-TIFLOW-ERP-195">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Keine Signatur von Nutzern ohne HBA" version="0" key="IG-TIFLOW-ERP-A195">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -905,7 +908,7 @@ Composition.attester.party hinterlegt.</li>
 <p>Um eine zeitnahe Bearbeitung von Signaturaufgaben des Arztes zu ermöglichen, soll der Arzt auf diese in Form einer Benachrichtigung hingewiesen werden. So können noch nicht signierte und vorbereitete E-Rezepte schneller signiert werden. Das System kann den Arzt in verschiedenen Formen bspw. Pushnachrichten oder Statusfeld über die Anzahl der offenen Aufgaben benachrichtigen.</p>
 
   <!-- A_23597 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Aufgabenliste - Benachrichtigungen für neue Aufgaben" version="1" key="IG-TIFLOW-ERP-196">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Aufgabenliste - Benachrichtigungen für neue Aufgaben" version="0" key="IG-TIFLOW-ERP-A196">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -918,7 +921,7 @@ Composition.attester.party hinterlegt.</li>
 <p>Der Verordnende hat die Möglichkeit die in der Aufgabenliste vorbereiteten Verordnungen vor dem Signieren zu prüfen. Er soll aus der Aufgabenliste heraus einzelne Einträge bearbeiten können. Er soll aus der Aufgabenliste heraus die Informationen des Patienten, für den das E-Rezept ausgestellt werden soll, einsehen können, falls er für die Prüfung weitere Informationen zum Patienten benötigt.</p>
 
   <!-- A_23599 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Aufgabenliste - Bearbeiten einzelner Einträge" version="1" key="IG-TIFLOW-ERP-197">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Aufgabenliste - Bearbeiten einzelner Einträge" version="0" key="IG-TIFLOW-ERP-A197">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -927,7 +930,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_23600 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Aufgabenliste - Zugriff auf Patientendaten" version="1" key="IG-TIFLOW-ERP-198">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Aufgabenliste - Zugriff auf Patientendaten" version="0" key="IG-TIFLOW-ERP-A198">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -936,7 +939,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_23601 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Aufgabenliste - Grafische Anzeige E-Rezepte" version="1" key="IG-TIFLOW-ERP-199">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Aufgabenliste - Grafische Anzeige E-Rezepte" version="0" key="IG-TIFLOW-ERP-A199">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -946,10 +949,10 @@ Composition.attester.party hinterlegt.</li>
 
 <h4 id="sammelbearbeitung-der-aufgaben-signieren">Sammelbearbeitung der Aufgaben (Signieren)</h4>
 
-<p>Wie in[gemILF_PS#A_23503 - Bündeln von Signaturen zur Stapelsignatur] beschrieben, muss der Arzt Signaturen bündeln und als Sammelbearbeitung abarbeiten können. Dies gilt auch für das Signieren von E-Rezepten.</p>
+<p>Wie in [gemILF_PS]#A_23503 - Bündeln von Signaturen zur Stapelsignatur beschrieben, muss der Arzt Signaturen bündeln und als Sammelbearbeitung abarbeiten können. Dies gilt auch für das Signieren von E-Rezepten.</p>
 
   <!-- A_23598 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Aufgabenliste - Mehrfachauswahl zur Signatur" version="1" key="IG-TIFLOW-ERP-200">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Aufgabenliste - Mehrfachauswahl zur Signatur" version="0" key="IG-TIFLOW-ERP-A200">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -957,7 +960,7 @@ Composition.attester.party hinterlegt.</li>
      Das PS der verordnenden LEI SOLL es dem Nutzer ermöglichen, über eine Mehrfachauswahl von Einträgen in der Aufgabenliste diese für die Signatur auszuwählen.
 </requirement>
 
-<p>Mit der Auswahl bestätigt der Nutzer, dass die Verordnung erfolgen soll und dass im nächsten Schritt die Signatur ausgelöst wird. (erster Klick im Sinne von [gemILF_PS#A_19138- PS: Auslösen der Komfortsignatur bei Nachnutzung der Primärsystem-Authentisierung]). Hinweis: Wie im optimalen Klickpfad beschrieben, ist es wichtig, bei der Bereitstellung von Verordnungen zur Signatur die Schaltflächen klar und eindeutig zu benennen/kennzuzeichnen, um zusätzliche Bestätigungen durch den Nutzer zu vermeiden und den Signaturprozess reibungslos zu gestalten.</p>
+<p>Mit der Auswahl bestätigt der Nutzer, dass die Verordnung erfolgen soll und dass im nächsten Schritt die Signatur ausgelöst wird. (erster Klick im Sinne von [gemILF_PS]#A_19138- PS: Auslösen der Komfortsignatur bei Nachnutzung der Primärsystem-Authentisierung). Hinweis: Wie im optimalen Klickpfad beschrieben, ist es wichtig, bei der Bereitstellung von Verordnungen zur Signatur die Schaltflächen klar und eindeutig zu benennen/kennzuzeichnen, um zusätzliche Bestätigungen durch den Nutzer zu vermeiden und den Signaturprozess reibungslos zu gestalten.</p>
 
 <h3 id="nachbereitung">Nachbereitung</h3>
 
@@ -966,7 +969,7 @@ Composition.attester.party hinterlegt.</li>
 <p>Folgerezeptes In den Fällen, wo der Patient nicht in der Praxis anwesend ist, wenn der Arzt ein E-Rezept ausstellt (z.B. Folgerezepte oder Rezepte, die telefonisch bestellt wurden), möchte der Arzt den Patienten automatisch darüber in Kenntnis setzen, dass ein E-Rezept ausgestellt wurde und damit zum Einlösen in der Apotheke bereit steht. Somit kann der Patient dann das E-Rezept mit der App oder der eGK einlösen.</p>
 
   <!-- A_23602 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: Benachrichtigungssystem - Information über Rezeptausstellung" version="0" key="IG-TIFLOW-ERP-201">
+<requirement conformance="SHOULD" title="PS verordnende LEI: Benachrichtigungssystem - Information über Rezeptausstellung" version="0" key="IG-TIFLOW-ERP-A201">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -975,7 +978,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_23603 -->
-<requirement conformance="SHALL NOT" title="PS verordnende LEI: Benachrichtigungssystem - Schützenswerte Informationen" version="0" key="IG-TIFLOW-ERP-202">
+<requirement conformance="SHALL NOT" title="PS verordnende LEI: Benachrichtigungssystem - Schützenswerte Informationen" version="0" key="IG-TIFLOW-ERP-A202">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -992,7 +995,7 @@ Composition.attester.party hinterlegt.</li>
 <p>Wenn es technisch nicht möglich ist ein E-Rezept auszustellen (Ausfall einer der relevanten Komponenten), wird automatisch ein Muster 16 mit dem Verordnungsinhalt ausgewählt. Dem Nutzer wird ein Hinweis eingeblendet, dass es aktuell nicht möglich ist, ein E-Rezept auszustellen. Um festzustellen, ob relevante Komponenten der TI nicht erreichbar sind, kann ein einfacher Healthcheck (https://github.com/gematik/api-erp/blob/master/docs/erp_ps_probing.adoc#einfacher-health-check )  genutzt werden. Es sollte ebenfalls auf ein Muster 16 zurückgegriffen werden, wenn beim Erstellen eines Rezeptes in der Kommunikation mit den Diensten der TI ein Fehler auftritt.</p>
 
   <!-- A_23604 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Verhalten bei Ausfall von TI Komponenten des E-Rezepts" version="0" key="IG-TIFLOW-ERP-203">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Verhalten bei Ausfall von TI Komponenten des E-Rezepts" version="0" key="IG-TIFLOW-ERP-A203">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -1007,7 +1010,7 @@ Composition.attester.party hinterlegt.</li>
 <p>Im Arbeitsablauf des Nutzers können Fehler in der Erstellung und Verarbeitung eines E- Rezeptes auftreten. Da vom Nutzer kein technisches Vorwissen erwartet werden darf, sind Fehlermeldungen so anzugeben, dass dieser nach Möglichkeit darauf reagieren kann. Hierbei sollen Fehlermeldungen so aufbereitet werden, dass der Nutzer versteht, welches System im Prozess den Fehler verursacht hat. Außerdem sollen bei technischen Fehlern diese sprachlich aufbereitet werden, so dass der Nutzer den Inhalt des Fehlers verstehen kann.</p>
 
   <!-- A_23605 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Verständliche Fehlermeldungen - technische Fehler" version="0" key="IG-TIFLOW-ERP-204">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Verständliche Fehlermeldungen - technische Fehler" version="0" key="IG-TIFLOW-ERP-A204">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -1016,7 +1019,7 @@ Composition.attester.party hinterlegt.</li>
 </requirement>
 
   <!-- A_23606 -->
-<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Verständliche Fehlermeldungen - Handlungsempfehlung" version="0" key="IG-TIFLOW-ERP-205">
+<requirement conformance="SHOULD" title="PS verordnende LEI: UX - Verständliche Fehlermeldungen - Handlungsempfehlung" version="0" key="IG-TIFLOW-ERP-A205">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -1035,7 +1038,7 @@ Composition.attester.party hinterlegt.</li>
 </ul>
 
   <!-- A_23607-01 -->
-<requirement conformance="SHALL" title="PS verordnende LEI: UX - Fehlerbenachrichtigung bei Löschversuch eines E-Rezepts" version="0" key="IG-TIFLOW-ERP-206">
+<requirement conformance="SHALL" title="PS verordnende LEI: UX - Fehlerbenachrichtigung bei Löschversuch eines E-Rezepts" version="0" key="IG-TIFLOW-ERP-A206">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -1084,7 +1087,7 @@ Composition.attester.party hinterlegt.</li>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:58+0000">2026-06-15</span>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 09:08+0000">2026-06-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

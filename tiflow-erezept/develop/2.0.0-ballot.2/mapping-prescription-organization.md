@@ -1,4 +1,6 @@
-# Mapping der Organization für Verordnungsdaten - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Mapping der Organization für Verordnungsdaten - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -66,10 +68,10 @@ Die folgende Tabelle stellt generell das Mapping der beiden Profile gegenüber:
 | `KBVPRFOROrganization` | `OrganizationDirectory.identifier.type.text` | Nicht Übertragen | Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID.type | Quelle: Organization.identifier:Telematik-ID.type.text |
 | `KBVPRFOROrganization.identifier.use` | `OrganizationDirectory.identifier.use` | Nicht Übertragen | Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.use |
 | `KBVPRFOROrganization.identifier.value` | `OrganizationDirectory.identifier.value` | Nicht Übertragen | Feld wird nicht gemappt | Inherited from Organization.identifier:Telematik-ID | Quelle: Organization.identifier:Telematik-ID.value |
-| `KBVPRFOROrganization` | `OrganizationDirectory.identifier` | Manuell | Telematik-ID wird aus idNummer → aus dem ACCESS_TOKEN der Anfrage bezogen | Quelle: Organization.identifier:TelematikID |
+| `KBVPRFOROrganization` | `OrganizationDirectory.identifier` | Manuell | Telematik-ID wird aus idNummer → aus zeta-user-info.identifier der Anfrage bezogen | Quelle: Organization.identifier:TelematikID |
 | `KBVPRFOROrganization.meta` | `OrganizationDirectory.meta.profile` | Fester Wert | setzt festen Wert:`https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory` |
-| `KBVPRFOROrganization.name` | `OrganizationDirectory.name` | Manuell | organizationName → aus dem ACCESS_TOKEN der Anfrage beziehen | Quelle: Organization.name |
-| `KBVPRFOROrganization` | `OrganizationDirectory.type` | Manuell | professionOID → aus dem ACCESS_TOKEN der Anfrage | Quelle: Organization.type:profession |
+| `KBVPRFOROrganization.name` | `OrganizationDirectory.name` | Manuell | organizationName → aus zeta-user-info.commonName der Anfrage beziehen | Quelle: Organization.name |
+| `KBVPRFOROrganization` | `OrganizationDirectory.type` | Manuell | professionOID → aus zeta-user-info.professionOID der Anfrage | Quelle: Organization.type:profession |
 
 ### Extensions
 
@@ -91,7 +93,7 @@ Folgende zusätzliche Anmerkungen und Regeln sind für das Mapping zu umzusetzen
 #### Organization für provide Prescription
 
 * ID: Beschreibung
-  * `F_006b`: Bei provide Prescription ist die Organization aus der KBV_PR_FOR_Organization zu mappen.Der Transformator muss sicherstellen, dass bei Organization.identifier mindestens die TelematikID der Organisation enthalten, die auch im ACCESS_TOKEN der Anfrage angegeben ist. Dazu muss nach der A_25946 die TelematikId bei "identifier:TelematikID" durch die idNummer aus dem ACCESS_TOKEN des verwendeten Operationsaufrufes ersetzt werden bzw. erzeugt werden, wenn diese nicht vorhanden ist.Folgende Operationen sind zusätzlich zum Mapping der StructureMaps durchzuführen:Organization.identifier:TelematikID idNummer → aus dem ACCESS_TOKEN der AnfrageOrganization.name organizationName → aus dem ACCESS_TOKEN der AnfrageOrganization.type:profession professionOID → aus dem ACCESS_TOKEN der Anfrage
+  * `F_006b`: Bei provide Prescription ist die Organization aus der KBV_PR_FOR_Organization zu mappen.Der Transformator muss sicherstellen, dass bei Organization.identifier mindestens die TelematikID der Organisation enthalten, die auch in zeta-user-info der Anfrage angegeben ist. Dazu muss nach der A_25946 die TelematikId bei "identifier:TelematikID" durch die idNummer aus der zeta-user-info des verwendeten Operationsaufrufes ersetzt werden bzw. erzeugt werden, wenn diese nicht vorhanden ist.Folgende Operationen sind zusätzlich zum Mapping der StructureMaps durchzuführen:Organization.identifier:TelematikID idNummer → aus zeta-user-info der AnfrageOrganization.name organizationName → aus zeta-user-info der AnfrageOrganization.type:profession professionOID → aus zeta-user-info der Anfrage
 * ID: Profile
   * `F_006b`: * [OrganizationDirectory](https://simplifier.net/vzd-fhir-directory/organizationdirectorystrict)
 

@@ -1,8 +1,10 @@
-# GEM_ERP_PR_Signature - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# GEM_ERP_PR_Signature - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -21,7 +23,7 @@ Profil für die Signatur von Bundles im E-Rezept-Kontext
 
 **Usages:**
 
-* Use this DataType Profile: [TIFlow Receipt Bundle](StructureDefinition-tiflow-receipt-bundle.md)
+* Use this DataType Profile: [TIFlow Receipt Bundle](StructureDefinition-GEM-ERP-PR-Bundle.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow|current/StructureDefinition/StructureDefinition-GEM-ERP-PR-Signature.json)
 
@@ -82,10 +84,6 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Signature
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "Signature",
-      "path" : "Signature"
-    },
-    {
       "id" : "Signature.type",
       "path" : "Signature.type",
       "slicing" : {

@@ -1,4 +1,6 @@
-# Example Dispense Parameters - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Example Dispense Parameters - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -86,6 +88,7 @@ Version 2.0.0-ballot.2 - ci-build
           }],
           "text" : "Sumatriptan-1a Pharma 100 mg Tabletten"
         },
+        "status" : "active",
         "form" : {
           "coding" : [{
             "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",

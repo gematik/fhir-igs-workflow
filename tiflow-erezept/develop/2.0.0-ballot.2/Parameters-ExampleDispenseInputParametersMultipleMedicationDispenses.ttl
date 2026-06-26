@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,179 +7,196 @@
 
 <https://gematik.de/fhir/tiflow-erezept/Parameters/ExampleDispenseInputParametersMultipleMedicationDispenses> a fhir:Parameters ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "ExampleDispenseInputParametersMultipleMedicationDispenses"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input"^^xsd:anyURI ;
+  fhir:Resource.id [ fhir:value "ExampleDispenseInputParametersMultipleMedicationDispenses"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input" ;
+       fhir:index 0 ;
        fhir:link <https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input>
-     ] )
-  ] ; # 
-  fhir:parameter ( [
-     fhir:name [ fhir:v "rxDispensation" ] ;
-     fhir:part ( [
-       fhir:name [ fhir:v "medicationDispense" ] ;
-       fhir:Parameters.parameter.resource ( [
+     ]
+  ] ;
+  fhir:Parameters.parameter [
+     fhir:index 0 ;
+     fhir:Parameters.parameter.name [ fhir:value "rxDispensation" ] ;
+     fhir:Parameters.parameter.part [
+       fhir:index 0 ;
+       fhir:Parameters.parameter.name [ fhir:value "medicationDispense" ] ;
+       fhir:Parameters.parameter.resource [
          a fhir:MedicationDispense ;
-         fhir:id [ fhir:v "Example-MedicationDispense" ] ;
-         fhir:meta [
-           fhir:profile ( [
-             fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0"^^xsd:anyURI ;
+         fhir:Resource.id [ fhir:value "Example-MedicationDispense" ] ;
+         fhir:Resource.meta [
+           fhir:Meta.profile [
+             fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0" ;
+             fhir:index 0 ;
              fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0>
-           ] )
+           ]
          ] ;
-         fhir:identifier ( [
-           fhir:system [ fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "160.000.033.491.280.78" ]
-         ] ) ;
-         fhir:status [ fhir:v "completed" ] ;
-         fhir:medication [
-           a fhir:Reference ;
+         fhir:MedicationDispense.identifier [
+           fhir:index 0 ;
+           fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+           fhir:Identifier.value [ fhir:value "160.000.033.491.280.78" ]
+         ] ;
+         fhir:MedicationDispense.status [ fhir:value "completed" ] ;
+         fhir:MedicationDispense.medicationReference [
            fhir:link <https://gematik.de/fhir/tiflow-erezept/Medication/SumatripanMedication> ;
-           fhir:reference [ fhir:v "Medication/SumatripanMedication" ]
+           fhir:Reference.reference [ fhir:value "Medication/SumatripanMedication" ]
          ] ;
-         fhir:subject [
-           fhir:identifier [
-             fhir:system [ fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "X123456789" ]
+         fhir:MedicationDispense.subject [
+           fhir:Reference.identifier [
+             fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+             fhir:Identifier.value [ fhir:value "X123456789" ]
            ]
          ] ;
-         fhir:performer ( [
-           fhir:actor [
-             fhir:identifier [
-               fhir:system [ fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ] ;
-               fhir:value [ fhir:v "3-SMC-B-Testkarte-883110000095957" ]
+         fhir:MedicationDispense.performer [
+           fhir:index 0 ;
+           fhir:MedicationDispense.performer.actor [
+             fhir:Reference.identifier [
+               fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+               fhir:Identifier.value [ fhir:value "3-SMC-B-Testkarte-883110000095957" ]
              ]
            ]
-         ] ) ;
-         fhir:whenHandedOver [ fhir:v "2028-10-01"^^xsd:date ]
-       ] )
-     ] [
-       fhir:name [ fhir:v "medication" ] ;
-       fhir:Parameters.parameter.resource ( [
+         ] ;
+         fhir:MedicationDispense.whenHandedOver [ fhir:value "2028-10-01"^^xsd:date ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Parameters.parameter.name [ fhir:value "medication" ] ;
+       fhir:Parameters.parameter.resource [
          a fhir:Medication ;
-         fhir:id [ fhir:v "SumatripanMedication" ] ;
-         fhir:meta [
-           fhir:profile ( [
-             fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0"^^xsd:anyURI ;
+         fhir:Resource.id [ fhir:value "SumatripanMedication" ] ;
+         fhir:Resource.meta [
+           fhir:Meta.profile [
+             fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0" ;
+             fhir:index 0 ;
              fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0>
-           ] )
-         ] ;
-         fhir:extension ( [
-           fhir:url [ fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension"^^xsd:anyURI ] ;
-           fhir:value [
-             a fhir:Coding ;
-             fhir:system [ fhir:v "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs"^^xsd:anyURI ] ;
-             fhir:code [ fhir:v "00" ]
            ]
-         ] [
-           fhir:url [ fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension"^^xsd:anyURI ] ;
-           fhir:value [
-             a fhir:boolean ;
-             fhir:v false
-           ]
-         ] [
-           fhir:url [ fhir:v "http://fhir.de/StructureDefinition/normgroesse"^^xsd:anyURI ] ;
-           fhir:value [
-             a fhir:code ;
-             fhir:v "N1"
-           ]
-         ] ) ;
-         fhir:code [
-           fhir:coding ( [
-             fhir:system [ fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ] ;
-             fhir:code [ fhir:v "06313728" ]
-           ] ) ;
-           fhir:text [ fhir:v "Sumatriptan-1a Pharma 100 mg Tabletten" ]
          ] ;
-         fhir:form [
-           fhir:coding ( [
-             fhir:system [ fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"^^xsd:anyURI ] ;
-             fhir:code [ fhir:v "TAB" ]
-           ] )
+         fhir:DomainResource.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension" ] ;
+           fhir:Extension.valueCoding [
+             fhir:Coding.system [ fhir:value "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs" ] ;
+             fhir:Coding.code [ fhir:value "00" ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension" ] ;
+           fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/normgroesse" ] ;
+           fhir:Extension.valueCode [ fhir:value "N1" ]
          ] ;
-         fhir:amount [
-           fhir:numerator [
-             fhir:extension ( [
-               fhir:url [ fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension"^^xsd:anyURI ] ;
-               fhir:value [
-                 a fhir:string ;
-                 fhir:v "20"
-               ]
-             ] ) ;
-             fhir:value [ fhir:v "20"^^xsd:decimal ] ;
-             fhir:unit [ fhir:v "St" ]
+         fhir:Medication.code [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/ifa/pzn" ] ;
+             fhir:Coding.code [ fhir:value "06313728" ]
            ] ;
-           fhir:denominator [
-             fhir:value [ fhir:v "1"^^xsd:decimal ]
+           fhir:CodeableConcept.text [ fhir:value "Sumatriptan-1a Pharma 100 mg Tabletten" ]
+         ] ;
+         fhir:Medication.status [ fhir:value "active" ] ;
+         fhir:Medication.form [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM" ] ;
+             fhir:Coding.code [ fhir:value "TAB" ]
            ]
          ] ;
-         fhir:batch [
-           fhir:lotNumber [ fhir:v "1234567890" ]
+         fhir:Medication.amount [
+           fhir:Ratio.numerator [
+             fhir:Element.extension [
+               fhir:index 0 ;
+               fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension" ] ;
+               fhir:Extension.valueString [ fhir:value "20" ]
+             ] ;
+             fhir:Quantity.value [ fhir:value "20"^^xsd:decimal ] ;
+             fhir:Quantity.unit [ fhir:value "St" ]
+           ] ;
+           fhir:Ratio.denominator [
+             fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ]
+           ]
+         ] ;
+         fhir:Medication.batch [
+           fhir:Medication.batch.lotNumber [ fhir:value "1234567890" ]
          ]
-       ] )
-     ] )
-  ] [
-     fhir:name [ fhir:v "rxDispensation" ] ;
-     fhir:part ( [
-       fhir:name [ fhir:v "medicationDispense" ] ;
-       fhir:Parameters.parameter.resource ( [
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Parameters.parameter.name [ fhir:value "rxDispensation" ] ;
+     fhir:Parameters.parameter.part [
+       fhir:index 0 ;
+       fhir:Parameters.parameter.name [ fhir:value "medicationDispense" ] ;
+       fhir:Parameters.parameter.resource [
          a fhir:MedicationDispense ;
-         fhir:id [ fhir:v "Example-MedicationDispense-2" ] ;
-         fhir:meta [
-           fhir:profile ( [
-             fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0"^^xsd:anyURI ;
+         fhir:Resource.id [ fhir:value "Example-MedicationDispense-2" ] ;
+         fhir:Resource.meta [
+           fhir:Meta.profile [
+             fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0" ;
+             fhir:index 0 ;
              fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0>
-           ] )
-         ] ;
-         fhir:identifier ( [
-           fhir:system [ fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "160.000.033.491.280.78" ]
-         ] ) ;
-         fhir:status [ fhir:v "completed" ] ;
-         fhir:medication [
-           a fhir:Reference ;
-           fhir:link <https://gematik.de/fhir/tiflow-erezept/Medication/SimpleMedication> ;
-           fhir:reference [ fhir:v "Medication/SimpleMedication" ]
-         ] ;
-         fhir:subject [
-           fhir:identifier [
-             fhir:system [ fhir:v "http://fhir.de/sid/gkv/kvid-10"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "X123456789" ]
            ]
          ] ;
-         fhir:performer ( [
-           fhir:actor [
-             fhir:identifier [
-               fhir:system [ fhir:v "https://gematik.de/fhir/sid/telematik-id"^^xsd:anyURI ] ;
-               fhir:value [ fhir:v "3-SMC-B-Testkarte-883110000095957" ]
+         fhir:MedicationDispense.identifier [
+           fhir:index 0 ;
+           fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+           fhir:Identifier.value [ fhir:value "160.000.033.491.280.78" ]
+         ] ;
+         fhir:MedicationDispense.status [ fhir:value "completed" ] ;
+         fhir:MedicationDispense.medicationReference [
+           fhir:link <https://gematik.de/fhir/tiflow-erezept/Medication/SimpleMedication> ;
+           fhir:Reference.reference [ fhir:value "Medication/SimpleMedication" ]
+         ] ;
+         fhir:MedicationDispense.subject [
+           fhir:Reference.identifier [
+             fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+             fhir:Identifier.value [ fhir:value "X123456789" ]
+           ]
+         ] ;
+         fhir:MedicationDispense.performer [
+           fhir:index 0 ;
+           fhir:MedicationDispense.performer.actor [
+             fhir:Reference.identifier [
+               fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+               fhir:Identifier.value [ fhir:value "3-SMC-B-Testkarte-883110000095957" ]
              ]
            ]
-         ] ) ;
-         fhir:whenHandedOver [ fhir:v "2028-10-01"^^xsd:date ]
-       ] )
-     ] [
-       fhir:name [ fhir:v "medication" ] ;
-       fhir:Parameters.parameter.resource ( [
+         ] ;
+         fhir:MedicationDispense.whenHandedOver [ fhir:value "2028-10-01"^^xsd:date ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Parameters.parameter.name [ fhir:value "medication" ] ;
+       fhir:Parameters.parameter.resource [
          a fhir:Medication ;
-         fhir:id [ fhir:v "SimpleMedication" ] ;
-         fhir:meta [
-           fhir:profile ( [
-             fhir:v "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0"^^xsd:anyURI ;
+         fhir:Resource.id [ fhir:value "SimpleMedication" ] ;
+         fhir:Resource.meta [
+           fhir:Meta.profile [
+             fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0" ;
+             fhir:index 0 ;
              fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0>
-           ] )
+           ]
          ] ;
-         fhir:code [
-           fhir:coding ( [
-             fhir:system [ fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ] ;
-             fhir:code [ fhir:v "06313728" ]
-           ] )
+         fhir:Medication.code [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/ifa/pzn" ] ;
+             fhir:Coding.code [ fhir:value "06313728" ]
+           ]
          ] ;
-         fhir:batch [
-           fhir:lotNumber [ fhir:v "1234567890" ]
+         fhir:Medication.status [ fhir:value "active" ] ;
+         fhir:Medication.batch [
+           fhir:Medication.batch.lotNumber [ fhir:value "1234567890" ]
          ]
-       ] )
-     ] )
-  ] ) . # 
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Parameters/ExampleDispenseInputParametersMultipleMedicationDispenses.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

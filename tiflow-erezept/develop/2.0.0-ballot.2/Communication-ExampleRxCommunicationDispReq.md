@@ -1,4 +1,6 @@
-# Rx Communication request example - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# Rx Communication request example - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

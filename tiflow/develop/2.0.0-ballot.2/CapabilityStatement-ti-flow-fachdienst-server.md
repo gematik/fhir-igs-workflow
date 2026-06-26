@@ -1,8 +1,10 @@
-# CapabilityStatement für den TI-Flow-Fachdienst - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# CapabilityStatement für den TI-Flow-Fachdienst - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -14,6 +16,7 @@ Version 2.0.0-ballot.2 - ci-build
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/CapabilityStatement/ti-flow-fachdienst-server | *Version*:2.0.0-ballot.2 |
 | Active as of 2028-04-01 | *Computable Name*:TIFlowFachdienstServer |
+| **Copyright/Legal**: gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
 CapabilityStatement für den TI-Flow-Fachdienst 
@@ -30,6 +33,10 @@ CapabilityStatement für den TI-Flow-Fachdienst
     "profile" : ["https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"]
   },
   "extension" : [{
+    "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url",
+    "valueString" : "https://tiflow.de"
+  },
+  {
     "extension" : [{
       "url" : "name",
       "valueString" : "content-type"
@@ -93,6 +100,7 @@ CapabilityStatement für den TI-Flow-Fachdienst
       "display" : "Germany"
     }]
   }],
+  "copyright" : "gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.html), Version 2.0.",
   "kind" : "requirements",
   "fhirVersion" : "4.0.1",
   "format" : ["application/fhir+json", "application/fhir+xml"],

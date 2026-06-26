@@ -1,4 +1,6 @@
-# E-Rezept-spezifische KIM-Messages - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# E-Rezept-spezifische KIM-Messages - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 

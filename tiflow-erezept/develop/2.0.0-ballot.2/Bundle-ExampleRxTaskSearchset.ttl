@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,26 +7,33 @@
 
 <https://gematik.de/fhir/tiflow-erezept/Bundle/ExampleRxTaskSearchset> a fhir:Bundle ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "ExampleRxTaskSearchset"] ; # 
-  fhir:type [ fhir:v "searchset"] ; # 
-  fhir:total [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
-  fhir:link ( [
-     fhir:relation [ fhir:v "self" ] ;
-     fhir:url [ fhir:v "https://erp-ref.example.org/Task?status=ready&_count=1"^^xsd:anyURI ]
-  ] ) ; # 
-  fhir:entry ( [
-     fhir:fullUrl [ fhir:v "https://erp-ref.example.org/Task/ExampleRxTaskInReadyState"^^xsd:anyURI ] ;
-     fhir:resource ( <https://erp-ref.example.org/Task/ExampleRxTaskInReadyState> ) ;
-     fhir:search [
-       fhir:mode [ fhir:v "match" ]
+  fhir:Resource.id [ fhir:value "ExampleRxTaskSearchset"] ;
+  fhir:Bundle.type [ fhir:value "searchset"] ;
+  fhir:Bundle.total [ fhir:value "1"^^xsd:nonNegativeInteger] ;
+  fhir:Bundle.link [
+     fhir:index 0 ;
+     fhir:Bundle.link.relation [ fhir:value "self" ] ;
+     fhir:Bundle.link.url [ fhir:value "https://erp-ref.example.org/Task?status=ready&_count=1" ]
+  ] ;
+  fhir:Bundle.entry [
+     fhir:index 0 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://erp-ref.example.org/Task/ExampleRxTaskInReadyState" ] ;
+     fhir:Bundle.entry.resource <https://erp-ref.example.org/Task/ExampleRxTaskInReadyState> ;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
      ]
-  ] ) . # 
+  ] .
 
 <https://erp-ref.example.org/Task/ExampleRxTaskInReadyState> a fhir:Task ;
-  fhir:id [ fhir:v "ExampleRxTaskInReadyState"] ; # 
-  fhir:status [ fhir:v "ready"] ; # 
-  fhir:intent [ fhir:v "order"] ; # 
-  fhir:authoredOn [ fhir:v "2026-03-20"^^xsd:date] . # 
+  fhir:Resource.id [ fhir:value "ExampleRxTaskInReadyState"] ;
+  fhir:Task.status [ fhir:value "ready"] ;
+  fhir:Task.intent [ fhir:value "order"] ;
+  fhir:Task.authoredOn [ fhir:value "2026-03-20"^^xsd:date] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Bundle/ExampleRxTaskSearchset.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,106 +7,132 @@
 
 <https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs> a fhir:CodeSystem ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "tiflow-erezept-operation-outcome-details-cs"] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem tiflow-erezept-operation-outcome-details-cs</b></p><a name=\"tiflow-erezept-operation-outcome-details-cs\"> </a><a name=\"hctiflow-erezept-operation-outcome-details-cs\"> </a><p>This case-sensitive code system <code>https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (Deutschland) (German (Germany), de)</b></td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_PZN_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_PZN_INVALID\"> </a></td><td>PZN invalid</td><td>The provided PZN is invalid or not permitted in the current processing context</td><td>PZN ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN\"> </a></td><td>Drug category forbidden</td><td>The prescription contains a forbidden medication category, for example BTM</td><td>Arzneimittelkategorie nicht zulässig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID\"> </a></td><td>MVO flow type invalid</td><td>A multiple prescription is not allowed for the addressed flow type</td><td>MVO-Flowtyp ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_INVALID\"> </a></td><td>MVO invalid</td><td>The multiple prescription metadata is inconsistent or violates MVO constraints</td><td>Mehrfachverordnung ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_STARTDATE_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_STARTDATE_INVALID\"> </a></td><td>MVO start date invalid</td><td>The start date of the multiple prescription redemption period is missing or invalid</td><td>MVO-Startdatum ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_ENDDATE_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_ENDDATE_INVALID\"> </a></td><td>MVO end date invalid</td><td>The end date of the multiple prescription redemption period is invalid</td><td>MVO-Enddatum ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_ID_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_ID_INVALID\"> </a></td><td>MVO id invalid</td><td>The multiple prescription id does not match the required identifier schema</td><td>MVO-ID ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_NOT_VALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_NOT_VALID\"> </a></td><td>MVO not valid yet</td><td>The multiple prescription part is not redeemable yet because its redemption period has not started</td><td>Teilverordnung noch nicht einlösbar</td></tr></table></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:url [ fhir:v "https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "2.0.0-ballot.2"] ; # 
-  fhir:name [ fhir:v "TIFLOWEREZEPTOperationOutcomeDetailsCS"] ; # 
-  fhir:title [ fhir:v "TIFLOW EREZEPT Operation Outcome Details CS"] ; # 
-  fhir:status [ fhir:v "active"] ; # 
-  fhir:experimental [ fhir:v false] ; # 
-  fhir:date [ fhir:v "2028-04-01"^^xsd:date] ; # 
-  fhir:publisher [ fhir:v "gematik GmbH"] ; # 
-  fhir:contact ( [
-     fhir:name [ fhir:v "gematik GmbH" ] ;
-     fhir:telecom ( [
-       fhir:system [ fhir:v "url" ] ;
-       fhir:value [ fhir:v "https://gematik.de" ]
-     ] [
-       fhir:system [ fhir:v "email" ] ;
-       fhir:value [ fhir:v "erp-umsetzung@gematik.de" ]
-     ] )
-  ] ) ; # 
-  fhir:description [ fhir:v "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"] ; # 
-  fhir:jurisdiction ( [
-     fhir:coding ( [
-       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "DE" ] ;
-       fhir:display [ fhir:v "Germany" ]
-     ] )
-  ] ) ; # 
-  fhir:copyright [ fhir:v "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."] ; # 
-  fhir:caseSensitive [ fhir:v true] ; # 
-  fhir:content [ fhir:v "complete"] ; # 
-  fhir:count [ fhir:v "8"^^xsd:nonNegativeInteger] ; # 
-  fhir:concept ( [
-     fhir:code [ fhir:v "TIFLOW_EREZEPT_PZN_INVALID" ] ;
-     fhir:display [ fhir:v "PZN invalid" ] ;
-     fhir:definition [ fhir:v "The provided PZN is invalid or not permitted in the current processing context" ] ;
-     fhir:designation ( [
-       fhir:language [ fhir:v "de-DE" ] ;
-       fhir:value [ fhir:v "PZN ungültig" ]
-     ] )
-  ] [
-     fhir:code [ fhir:v "TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN" ] ;
-     fhir:display [ fhir:v "Drug category forbidden" ] ;
-     fhir:definition [ fhir:v "The prescription contains a forbidden medication category, for example BTM" ] ;
-     fhir:designation ( [
-       fhir:language [ fhir:v "de-DE" ] ;
-       fhir:value [ fhir:v "Arzneimittelkategorie nicht zulässig" ]
-     ] )
-  ] [
-     fhir:code [ fhir:v "TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID" ] ;
-     fhir:display [ fhir:v "MVO flow type invalid" ] ;
-     fhir:definition [ fhir:v "A multiple prescription is not allowed for the addressed flow type" ] ;
-     fhir:designation ( [
-       fhir:language [ fhir:v "de-DE" ] ;
-       fhir:value [ fhir:v "MVO-Flowtyp ungültig" ]
-     ] )
-  ] [
-     fhir:code [ fhir:v "TIFLOW_EREZEPT_MVO_INVALID" ] ;
-     fhir:display [ fhir:v "MVO invalid" ] ;
-     fhir:definition [ fhir:v "The multiple prescription metadata is inconsistent or violates MVO constraints" ] ;
-     fhir:designation ( [
-       fhir:language [ fhir:v "de-DE" ] ;
-       fhir:value [ fhir:v "Mehrfachverordnung ungültig" ]
-     ] )
-  ] [
-     fhir:code [ fhir:v "TIFLOW_EREZEPT_MVO_STARTDATE_INVALID" ] ;
-     fhir:display [ fhir:v "MVO start date invalid" ] ;
-     fhir:definition [ fhir:v "The start date of the multiple prescription redemption period is missing or invalid" ] ;
-     fhir:designation ( [
-       fhir:language [ fhir:v "de-DE" ] ;
-       fhir:value [ fhir:v "MVO-Startdatum ungültig" ]
-     ] )
-  ] [
-     fhir:code [ fhir:v "TIFLOW_EREZEPT_MVO_ENDDATE_INVALID" ] ;
-     fhir:display [ fhir:v "MVO end date invalid" ] ;
-     fhir:definition [ fhir:v "The end date of the multiple prescription redemption period is invalid" ] ;
-     fhir:designation ( [
-       fhir:language [ fhir:v "de-DE" ] ;
-       fhir:value [ fhir:v "MVO-Enddatum ungültig" ]
-     ] )
-  ] [
-     fhir:code [ fhir:v "TIFLOW_EREZEPT_MVO_ID_INVALID" ] ;
-     fhir:display [ fhir:v "MVO id invalid" ] ;
-     fhir:definition [ fhir:v "The multiple prescription id does not match the required identifier schema" ] ;
-     fhir:designation ( [
-       fhir:language [ fhir:v "de-DE" ] ;
-       fhir:value [ fhir:v "MVO-ID ungültig" ]
-     ] )
-  ] [
-     fhir:code [ fhir:v "TIFLOW_EREZEPT_MVO_NOT_VALID" ] ;
-     fhir:display [ fhir:v "MVO not valid yet" ] ;
-     fhir:definition [ fhir:v "The multiple prescription part is not redeemable yet because its redemption period has not started" ] ;
-     fhir:designation ( [
-       fhir:language [ fhir:v "de-DE" ] ;
-       fhir:value [ fhir:v "Teilverordnung noch nicht einlösbar" ]
-     ] )
-  ] ) . # 
+  fhir:Resource.id [ fhir:value "tiflow-erezept-operation-outcome-details-cs"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem tiflow-erezept-operation-outcome-details-cs</b></p><a name=\"tiflow-erezept-operation-outcome-details-cs\"> </a><a name=\"hctiflow-erezept-operation-outcome-details-cs\"> </a><p>This case-sensitive code system <code>https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deutsch (Deutschland) (German (Germany), de)</b></td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_PZN_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_PZN_INVALID\"> </a></td><td>PZN invalid</td><td>The provided PZN is invalid or not permitted in the current processing context</td><td>PZN ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN\"> </a></td><td>Drug category forbidden</td><td>The prescription contains a forbidden medication category, for example BTM</td><td>Arzneimittelkategorie nicht zulässig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID\"> </a></td><td>MVO flow type invalid</td><td>A multiple prescription is not allowed for the addressed flow type</td><td>MVO-Flowtyp ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_INVALID\"> </a></td><td>MVO invalid</td><td>The multiple prescription metadata is inconsistent or violates MVO constraints</td><td>Mehrfachverordnung ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_STARTDATE_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_STARTDATE_INVALID\"> </a></td><td>MVO start date invalid</td><td>The start date of the multiple prescription redemption period is missing or invalid</td><td>MVO-Startdatum ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_ENDDATE_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_ENDDATE_INVALID\"> </a></td><td>MVO end date invalid</td><td>The end date of the multiple prescription redemption period is invalid</td><td>MVO-Enddatum ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_ID_INVALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_ID_INVALID\"> </a></td><td>MVO id invalid</td><td>The multiple prescription id does not match the required identifier schema</td><td>MVO-ID ungültig</td></tr><tr><td style=\"white-space:nowrap\">TIFLOW_EREZEPT_MVO_NOT_VALID<a name=\"tiflow-erezept-operation-outcome-details-cs-TIFLOW_EREZEPT_MVO_NOT_VALID\"> </a></td><td>MVO not valid yet</td><td>The multiple prescription part is not redeemable yet because its redemption period has not started</td><td>Teilverordnung noch nicht einlösbar</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs"] ;
+  fhir:CodeSystem.version [ fhir:value "2.0.0-ballot.2"] ;
+  fhir:CodeSystem.name [ fhir:value "TIFLOWEREZEPTOperationOutcomeDetailsCS"] ;
+  fhir:CodeSystem.title [ fhir:value "TIFLOW EREZEPT Operation Outcome Details CS"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2028-04-01"^^xsd:date] ;
+  fhir:CodeSystem.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:CodeSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "erp-umsetzung@gematik.de" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:CodeSystem.copyright [ fhir:value "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "8"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "TIFLOW_EREZEPT_PZN_INVALID" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "PZN invalid" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The provided PZN is invalid or not permitted in the current processing context" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de-DE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "PZN ungültig" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "TIFLOW_EREZEPT_DRUG_CATEGORY_FORBIDDEN" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Drug category forbidden" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The prescription contains a forbidden medication category, for example BTM" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de-DE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Arzneimittelkategorie nicht zulässig" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "TIFLOW_EREZEPT_MVO_FLOWTYPE_INVALID" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "MVO flow type invalid" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "A multiple prescription is not allowed for the addressed flow type" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de-DE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "MVO-Flowtyp ungültig" ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "TIFLOW_EREZEPT_MVO_INVALID" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "MVO invalid" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The multiple prescription metadata is inconsistent or violates MVO constraints" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de-DE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Mehrfachverordnung ungültig" ]
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.concept.code [ fhir:value "TIFLOW_EREZEPT_MVO_STARTDATE_INVALID" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "MVO start date invalid" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The start date of the multiple prescription redemption period is missing or invalid" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de-DE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "MVO-Startdatum ungültig" ]
+     ]
+  ], [
+     fhir:index 5 ;
+     fhir:CodeSystem.concept.code [ fhir:value "TIFLOW_EREZEPT_MVO_ENDDATE_INVALID" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "MVO end date invalid" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The end date of the multiple prescription redemption period is invalid" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de-DE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "MVO-Enddatum ungültig" ]
+     ]
+  ], [
+     fhir:index 6 ;
+     fhir:CodeSystem.concept.code [ fhir:value "TIFLOW_EREZEPT_MVO_ID_INVALID" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "MVO id invalid" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The multiple prescription id does not match the required identifier schema" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de-DE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "MVO-ID ungültig" ]
+     ]
+  ], [
+     fhir:index 7 ;
+     fhir:CodeSystem.concept.code [ fhir:value "TIFLOW_EREZEPT_MVO_NOT_VALID" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "MVO not valid yet" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The multiple prescription part is not redeemable yet because its redemption period has not started" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de-DE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Teilverordnung noch nicht einlösbar" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

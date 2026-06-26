@@ -1,16 +1,16 @@
-# Nutzung ZETA durch Clientsystme - TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+# Nutzung ZETA durch Clientsystme - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - draft 
 
 * [**Table of Contents**](toc.md)
-* [**Zero Trust Access (ZETA)**](menu-technische-umsetzung-zeta.md)
+* [**Technische Umsetzung - Zero Trust Access (ZETA)**](menu-technische-umsetzung-zeta.md)
 * **Nutzung ZETA durch Clientsystme**
 
 ## Nutzung ZETA durch Clientsystme
-
-### Nutzung ZETA durch Clientsystme
 
 Zur Umsetzung der ZETA Architektur müssen Clientsysteme folgende Anforderungen erfüllen.
 

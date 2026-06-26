@@ -1,4 +1,6 @@
-# GEM ERP PR AuditEvent - TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+# GEM ERP PR AuditEvent - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
@@ -149,9 +151,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-AuditEven
     {
       "id" : "AuditEvent.entity",
       "path" : "AuditEvent.entity",
-      "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
+      "max" : "1"
     },
     {
       "id" : "AuditEvent.entity.what",
@@ -170,6 +170,61 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-AuditEven
       "path" : "AuditEvent.entity.description",
       "short" : "E-Rezept-ID",
       "definition" : "E-Rezept-ID soll eine Beziehung zu den Versicherungsunternehmensdaten haben, wenn der Task bereits gelöscht wurde",
+      "min" : 1
+    },
+    {
+      "id" : "AuditEvent.entity:patient",
+      "path" : "AuditEvent.entity",
+      "sliceName" : "patient"
+    },
+    {
+      "id" : "AuditEvent.entity:patient.what",
+      "path" : "AuditEvent.entity.what",
+      "min" : 1
+    },
+    {
+      "id" : "AuditEvent.entity:patient.name",
+      "path" : "AuditEvent.entity.name",
+      "min" : 1
+    },
+    {
+      "id" : "AuditEvent.entity:patient.description",
+      "path" : "AuditEvent.entity.description",
+      "min" : 1
+    },
+    {
+      "id" : "AuditEvent.entity:task",
+      "path" : "AuditEvent.entity",
+      "sliceName" : "task"
+    },
+    {
+      "id" : "AuditEvent.entity:task.what",
+      "path" : "AuditEvent.entity.what",
+      "min" : 1
+    },
+    {
+      "id" : "AuditEvent.entity:task.name",
+      "path" : "AuditEvent.entity.name",
+      "min" : 1
+    },
+    {
+      "id" : "AuditEvent.entity:task.description",
+      "path" : "AuditEvent.entity.description",
+      "min" : 1
+    },
+    {
+      "id" : "AuditEvent.entity:service",
+      "path" : "AuditEvent.entity",
+      "sliceName" : "service"
+    },
+    {
+      "id" : "AuditEvent.entity:service.what",
+      "path" : "AuditEvent.entity.what",
+      "min" : 1
+    },
+    {
+      "id" : "AuditEvent.entity:service.description",
+      "path" : "AuditEvent.entity.description",
       "min" : 1
     }]
   }
