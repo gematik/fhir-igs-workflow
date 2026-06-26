@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 35f2ad8551a48b0cf94b266f62559e567775837eadb175297e0b23c03fb9ef5a
+content_hash: 525c62f599179ed56eca7b7c68804167691d01bbd84672ce72ee9f912f11692c
 created: '2026-06-25T11:30:11.197548'
-date: '2026-06-25T11:30:11.197557'
+date: '2026-06-26T14:33:50.715280'
 key: IG-TIFLOW-CORE-A30
-modified: '2026-06-25T11:30:11.197555'
+modified: '2026-06-26T14:33:50.715280'
 release_status: NEW
 source: input/pagecontent/audit-service.md
 status: ACTIVE
@@ -13,35 +13,42 @@ test_procedures:
   TI-Flow_FD:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS einen Protokolleintrag mit den folgenden Werten\
-  \ befüllen:\n\t<ul>\n    <li>AuditEvent.text: Generierung eines HTML-&lt;div&gt;-Elements\
-  \ mit lesbarer Beschreibung in einfacher Sprache</li>\n    <li>AuditEvent.type:\
-  \ Fester Wertrest gemäß [CodeSystem: Audit Event ID]</li>\n    <li>AuditEvent.subtype:\
-  \ aus dem ValueSet [ValueSet http://hl7.org/fhir/ValueSet/auditevent-sub-type] gemäß\
-  \ [CodeSystem http://hl7.org/fhir/restful-interaction]:\n    <ul>\n      <li>create\
+  \ befüllen:\n<table>\n <thead>\n <tr>\n <th>Element in AuditEvent</th>\n <th>Befüllung</th>\n\
+  \ </tr>\n </thead>\n <tbody>\n <tr>\n <td>AuditEvent.text</td>\n <td>Generierung\
+  \ eines HTML-<code>&lt;div&gt;</code>-Elements mit lesbarer Beschreibung in einfacher\
+  \ Sprache</td>\n </tr>\n <tr>\n <td>AuditEvent.type</td>\n <td>Fester Wert gemäß\
+  \ [CodeSystem: Audit Event ID]</td>\n </tr>\n <tr>\n <td>AuditEvent.subtype</td>\n\
+  \ <td>Aus dem ValueSet [ValueSet http://hl7.org/fhir/ValueSet/auditevent-sub-type]\
+  \ gemäß [CodeSystem http://hl7.org/fhir/restful-interaction]:\n <ul>\n <li><code>create</code>\
   \ beim Hinzufügen/Speichern/Anlegen eines Datenobjekts mit Versichertenbezug (mit\
-  \ Ausnahme von AuditEvent- und Communication-Ressource)</li>\n      <li>read beim\
-  \ lesenden Zugriff auf ein Datenobjekt mit Versichertenbezug</li>\n      <li>update,\
-  \ wenn das Datenobjekt mit Versichertenbezug geändert/aktualisiert wird</li>\n \
-  \     <li>delete, wenn das Datenobjekt mit Versichertenbezug manuell oder automatisch\
-  \ gelöscht wird</li>\n    </ul>\n    </li>\n    <li>AuditEvent.action: analog AuditEvent.subType\
-  \ (C, R, U, D) gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-action]</li>\n\
-  \    <li>AuditEvent.recorded: aktuelle Systemzeit des TI-Flow-Fachdienstes</li>\n\
-  \    <li>AuditEvent.outcome: Ergebnis der aufgerufenen Operation gemäß [ValueSet\
-  \ http://hl7.org/fhir/ValueSet/audit-event-outcome] (0 = Erfolg, 4 = Fehler auf\
-  \ Clientseite, 8 = Serverfehler)</li>\n    <li>AuditEvent.agent.type: Fester Wert\
-  \ humanuser bzw. bei Übermittlung an ePA oder NCPeH-FD dataprocessor aus [CodeSystem:\
-  \ Security Role Type (Experimental)]</li>\n    <li>AuditEvent.agent.name: zeta-user-info.commonName\
-  \ bzw. bei Übermittlung an ePA \"TI-Flow-Fachdienst\"</li>\n    <li>AuditEvent.agent.who:\
-  \ zeta-user-info.identifier</li>\n    <li>AuditEvent.agent.requestor: Fester Wert\
-  \ false, da keine Protokolleinträge von außen erzeugt werden</li>\n    <li>AuditEvent.soure.site:\
-  \ Fester Wert TI-Flow-Fachdienst</li>\n    <li>AuditEvent.soure.observer: Device-Informationen\
-  \ des TI-Flow-Fachdienstes (status, serialnumber=gemäß Release)</li>\n    <li>AuditEvent.entity.what:\
-  \ Referenz auf das durch den Abruf betroffene Datenobjekt Task, ChargeItem, MedicationDispense,\
-  \ Consent oder Objekt der Zugriffsberechtigung</li>\n    <li>AuditEvent.entity.name:\
-  \ Eintrag der KVNR des betroffenen Versicherten aus dem Identifier des protokollierten\
-  \ Datenobjekts (String)</li>\n    <li>AuditEvent.entity.description: Task-ID als\
-  \ Identifier, wird übernommen aus MedicationDispense, ChargeItem oder Task bzw.\
-  \ Consent.category.coding.code bei Anlegen oder Löschen eines Consent bzw. countryCode\
-  \ bei Anlegen oder Löschen einer Zugriffsberechtigung</li>\n  </ul>"
+  \ Ausnahme von AuditEvent- und Communication-Ressource)</li>\n <li><code>read</code>\
+  \ beim lesenden Zugriff auf ein Datenobjekt mit Versichertenbezug</li>\n <li><code>update</code>,\
+  \ wenn das Datenobjekt mit Versichertenbezug geändert/aktualisiert wird</li>\n <li><code>delete</code>,\
+  \ wenn das Datenobjekt mit Versichertenbezug manuell oder automatisch gelöscht wird</li>\n\
+  \ </ul>\n </td>\n </tr>\n <tr>\n <td>AuditEvent.action</td>\n <td>Analog AuditEvent.subType\
+  \ (C, R, U, D) gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-action]</td>\n\
+  \ </tr>\n <tr>\n <td>AuditEvent.recorded</td>\n <td>Aktuelle Systemzeit des TI-Flow-Fachdienstes</td>\n\
+  \ </tr>\n <tr>\n <td>AuditEvent.outcome</td>\n <td>Ergebnis der aufgerufenen Operation\
+  \ gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-outcome] (<code>0</code>\
+  \ = Erfolg, <code>4</code> = Fehler auf Clientseite, <code>8</code> = Serverfehler)</td>\n\
+  \ </tr>\n <tr>\n <td>AuditEvent.agent.type</td>\n <td>Fester Wert <code>humanuser</code>\
+  \ bzw. bei Übermittlung an ePA oder NCPeH-FD <code>dataprocessor</code> aus [CodeSystem:\
+  \ Security Role Type (Experimental)]</td>\n </tr>\n <tr>\n <td>AuditEvent.agent.name</td>\n\
+  \ <td><code>zeta-user-info.commonName</code> bzw. bei Übermittlung an ePA <code>\"\
+  TI-Flow-Fachdienst\"</code></td>\n </tr>\n <tr>\n <td>AuditEvent.agent.who</td>\n\
+  \ <td><code>zeta-user-info.identifier</code></td>\n </tr>\n <tr>\n <td>AuditEvent.agent.requestor</td>\n\
+  \ <td>Fester Wert <code>false</code>, da keine Protokolleinträge von außen erzeugt\
+  \ werden</td>\n </tr>\n <tr>\n <td>AuditEvent.source.site</td>\n <td>Fester Wert\
+  \ <code>TI-Flow-Fachdienst</code></td>\n </tr>\n <tr>\n <td>AuditEvent.source.observer</td>\n\
+  \ <td>Device-Informationen des TI-Flow-Fachdienstes (<code>status</code>, <code>serialnumber</code>\
+  \ = gemäß Release)</td>\n </tr>\n <tr>\n <td>AuditEvent.entity.what</td>\n <td>Referenz\
+  \ auf das durch den Abruf betroffene Datenobjekt Task, ChargeItem, MedicationDispense,\
+  \ Consent oder Objekt der Zugriffsberechtigung</td>\n </tr>\n <tr>\n <td>AuditEvent.entity.name</td>\n\
+  \ <td>Eintrag der KVNR des betroffenen Versicherten aus dem Identifier des protokollierten\
+  \ Datenobjekts (String)</td>\n </tr>\n <tr>\n <td>AuditEvent.entity.description</td>\n\
+  \ <td>Task-ID als Identifier, wird übernommen aus MedicationDispense, ChargeItem\
+  \ oder Task bzw. <code>Consent.category.coding.code</code> bei Anlegen oder Löschen\
+  \ eines Consent bzw. <code>countryCode</code> bei Anlegen oder Löschen einer Zugriffsberechtigung</td>\n\
+  \ </tr>\n </tbody>\n</table>"
 title: TI-Flow-Fachdienst - Inhalt Protokolleintrag
 version: 0

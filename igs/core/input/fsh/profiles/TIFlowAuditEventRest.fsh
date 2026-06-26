@@ -19,10 +19,33 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
 * outcome MS
 
 * agent MS
-  * type 1..1 MS
-  * who.identifier 1..1 MS
-  * who.identifier only IdentifierTelematikId or IdentifierKvid10
-  * name MS
+* agent.type 1..1 MS
+* agent.type.coding.code 1..1 MS
+* agent.type.coding.system 1..1 MS
+* agent ^slicing.discriminator.type = #value
+* agent ^slicing.discriminator.path = "type"
+* agent ^slicing.rules = #open
+* agent ^slicing.ordered = false
+* agent contains
+  user 0..1 and
+  client 0..1 and
+  internal 0..1
+* agent[user].type.coding.code = #humanuser
+* agent[user].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
+* agent[user].who.identifier 1..1 MS
+* agent[user].who.identifier.value 1..1 MS
+* agent[user].who.identifier only IdentifierTelematikId or IdentifierKvid10
+* agent[client].type from TIFLOWAuditEventAgentTypeVS (required)
+* agent[client].type.coding.code = #110150 // Application
+* agent[client].type.coding.system = $dcm
+* agent[client].who.identifier 1..1 MS
+* agent[client].who.identifier.value 1..1 MS
+* agent[client].who.identifier only IdentifierTelematikId
+* agent[internal].type.coding.code = #dataprocessor
+* agent[internal].type.coding.system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
+* agent[internal].name 1..1 MS 
+  * ^short = "Name des FHIR Data Service" 
+* agent[internal].name = "TI-Flow-Fachdienst"
 
 * source MS
   * site 1..1 MS
@@ -30,6 +53,9 @@ Description: "Das AuditEvent-Profil für die Protokollierung des Zugriffs auf ei
   * observer.reference 1..1
 
 * entity 1..* MS
+* entity.type 1..1 MS
+* entity.type.code 1..1 MS
+* entity.type.system 1..1 MS
 * entity ^slicing.discriminator.type = #value
 * entity ^slicing.discriminator.path = "type"
 * entity ^slicing.rules = #open
