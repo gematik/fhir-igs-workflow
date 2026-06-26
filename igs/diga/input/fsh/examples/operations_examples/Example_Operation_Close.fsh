@@ -33,3 +33,13 @@ Usage: #example
     MedicationDispense.status: error: value must match fixed value: "completed" (but is "closed") 
     (from profile: https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2);
     """
+Instance: ExampleOperationCloseProfileError
+InstanceOf: OperationOutcome
+Title: "Fehler 400 - Beispiel für Close-Operation Fehlerantwort bei  Profilprüfung MedicationDispense"
+Description: "Beispiel für eine Fehlerantwort bei der Close-Operation mit Profilprüfung MedicationDispense"
+Usage: #example
+* issue[+]
+  * severity = #error
+  * code = #invalid
+  * details.coding.code = #TIFLOW_MEDICATION_DISPENSE_INVALID
+  * details.text = "Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen für digitale Gesundheitsanwendungen zulässig."

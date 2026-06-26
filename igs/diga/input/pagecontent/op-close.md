@@ -32,9 +32,11 @@ Die Operation $close wird als HTTP POST auf /Task/&#60;id&#62;/$close ausgeführ
 		</div>
 	</div>
 	<div id="Response-Examples">
-		<!-- TODO: Replace with operation-specific response examples for $close. -->
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
+		<div data-name="Fehler 400 - Beispiel für Close-Operation Fehlerantwort application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationCloseProfileError JSON %}
+		</div>
+		<div data-name="Fehler 400 - Beispiel für Close-Operation Fehlerantwort application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationCloseProfileError XML %}
 		</div>
 	</div>
 </div>
