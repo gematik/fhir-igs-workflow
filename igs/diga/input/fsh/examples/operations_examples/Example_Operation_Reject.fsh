@@ -16,5 +16,5 @@ Usage: #example
 * issue[+]
   * severity = #error
   * code = #invalid
-  * details-coding.code = #TIFLOW_AUTH_ROLE_NOT_ALLOWED
+  * details.coding.code = #TIFLOW_AUTH_ROLE_NOT_ALLOWED
   * details.text = "	Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern"
