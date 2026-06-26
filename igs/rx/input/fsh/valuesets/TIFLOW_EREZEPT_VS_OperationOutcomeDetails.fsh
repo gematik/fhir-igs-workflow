@@ -16,7 +16,6 @@ Description: "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den Operat
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_AUTH_NOT_OWNER "Authenticated actor is not owner"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_ACCESSCODE_MISMATCH "Access code mismatch"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_TASK_ID_REQUIRED "Task id required"
-* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_KVNR_MISMATCH "KVNR mismatch"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE "Signature issuing role invalid"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_FLOWTYPE_MISMATCH "Flow type mismatch"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_COVERAGE_TYPE_MISMATCH "Coverage type mismatch"

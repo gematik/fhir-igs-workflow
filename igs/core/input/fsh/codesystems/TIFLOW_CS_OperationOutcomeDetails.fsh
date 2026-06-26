@@ -64,9 +64,6 @@ Description: "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details a
 * #TIFLOW_TASK_ID_REQUIRED "Task id required" "The operation requires a task id in the request"
   * ^designation.language = #de-DE
   * ^designation.value = "Task-ID erforderlich"
-* #TIFLOW_KVNR_MISMATCH "KVNR mismatch" "The KVNR in the request does not match the KVNR assigned to the task context"
-  * ^designation.language = #de-DE
-  * ^designation.value = "KVNR stimmt nicht überein"
 * #TIFLOW_SIGNATURE_INVALID "Signature invalid" "The digital signature is invalid or cannot be verified"
   * ^designation.language = #de-DE
   * ^designation.value = "Signatur ungültig"
