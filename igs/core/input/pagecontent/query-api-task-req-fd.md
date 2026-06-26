@@ -384,15 +384,15 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
         </tr>
         <tr>
             <th>Code</th>
-            <td>???</td>
+            <td>invalid</td>
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>???</td>
+            <td>TIFLOW_KVNR_MISMATCH</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>???</td>
+            <td>-</td>
         </tr>
     </table> 
   abbrechen, damit ausschließlich der begünstigte Versicherte den Task abrufen kann.
