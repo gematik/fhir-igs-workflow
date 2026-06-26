@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
   setTimeout(function() {
     const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6, .requirement p.heading");
 
+    const style = document.createElement('style');
+    style.textContent = '.requirement:hover .bubble-link { display: inline; } .bubble-link::after { display: none !important; content: none !important; }';
+    document.head.appendChild(style);
+
     headings.forEach(function(heading) {
       const link = document.createElement('a');
       link.className = "bubble-link";
@@ -21,9 +25,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
       link.addEventListener('click', function(event) {
         event.preventDefault();
-        const currentUrl = window.location.href;
+        const baseUrl = window.location.href.split('#')[0];
+
+        let anchor = '';
+        const requirementDiv = heading.closest('.requirement');
+        if (requirementDiv && requirementDiv.id) {
+          anchor = '#' + requirementDiv.id;
+        } else {
+          const anchorEl = heading.querySelector('a.anchorjs-link');
+          if (anchorEl) {
+            anchor = anchorEl.getAttribute('href') || '';
+          } else if (heading.id) {
+            anchor = '#' + heading.id;
+          }
+        }
+
         const url = new URL(newIssueGithubLink);
-        url.searchParams.set(linkParameter, currentUrl);
+        url.searchParams.set(linkParameter, baseUrl + anchor);
         if (igTagValue) {
           url.searchParams.set(igTagParameter, igTagValue);
         }

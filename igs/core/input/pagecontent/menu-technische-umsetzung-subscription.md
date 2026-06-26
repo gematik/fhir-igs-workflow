@@ -1,71 +1,27 @@
-Der Subscription Service wird außerhalb der VAU betrieben.
+Die Umsetzung der Subscription-Schnittstelle des TI-Flow-Fachdienstes folgt den Vorgaben des [FHIR-Standards](https://www.hl7.org/fhir/subscription.html#2.46.7.2).
 
-<!-- A_22368 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A163" title="TI-Flow-Fachdienst - Subscription Service - Webschnittstelle" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS eine Webschnittstelle anbieten, welche Websocket-Verbindungen mit einer Dauer von bis zu 12 h unterstützt.
-</requirement>
+Ein Client registriert zunächst eine Subscription über die ZETA-gesicherte FHIR-API des TI-Flow-Fachdienstes. Der TI-Flow-Fachdienst stellt dabei einen kurzlebigen Bearer-Token aus, mit dem der Client anschließend eine WebSocket-Verbindung zum Subscription-Endpunkt aufbaut. Über diese Verbindung erhält der Client je neu vorliegender Ressource ein `ping` als Trigger für den Abruf der Daten über die reguläre FHIR-Schnittstelle. Über die WebSocket-Verbindung selbst werden keine fachlichen Daten übertragen.
 
-<!-- A_22369 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A164" title="TI-Flow-Fachdienst - Subscription Service - Prüfung Bearer-Token" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS an der Webschnittstelle des Subscription Service beim Verbindungsaufbau prüfen, dass der Client einen zeitlich und kryptographisch gültigen Bearer-Token der Schnittstelle GET /Subscription übermittelt und bei nicht-erfolgreicher Prüfung die Verbindung mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>SVC_INVALID_ACCESS_TOKEN</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>Invalid access token provided</td>
-        </tr>
-    </table>
-    ablehnen.
-</requirement>
+Der Subscription-Service ist eine eigenständige Cloud-Komponente des TI-Flow-Fachdienstes, die **nicht** über ZETA abgesichert ist: Der WebSocket-Upgrade-Request wird direkt TLS-verschlüsselt an den Subscription-Endpunkt übertragen und durch den vom TI-Flow-Fachdienst ausgestellten Bearer-Token authentisiert. Damit entfällt die Notwendigkeit, WebSocket-Verbindungen durch die ZETA-Infrastruktur zu führen.
 
-<!-- A_22370 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A165" title="TI-Flow-Fachdienst - Subscription Service - Upgrade" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS an der Webschnittstelle des Subscription Service beim Verbindungsaufbau ein Upgrade durchführen.
-</requirement>
+### Ablauf zum Verbindungsaufbau
 
-<!-- A_22371 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A166" title="TI-Flow-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS an der Webschnittstelle des Subscription Service sicherstellen, dass Verbindungen nach Überschreiten des Timestamp Ablauf der Subscription geschlossen werden.
-</requirement>
+Der Aufbau der WebSocket-Verbindung erfolgt in drei Schritten:
 
-<!-- A_22378 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A167" title="TI-Flow-Fachdienst - Subscription Service - Verbot Profilbildung" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst DARF in der Verbindung zum Subscription Service anfallende Metadaten (Client-IP-Adresse, etc.) NICHT für eine unbefugte Profilbildung der verbundenen Clients verwenden.
-</requirement>
+1. **Subscription registrieren** – ZETA-gesicherter POST /Subscription an den TI-Flow-Fachdienst; dieser stellt einen Bearer-Token für den Subscription-Endpunkt aus
+2. **WebSocket-Verbindung aufbauen** – TLS-verschlüsselter Upgrade-Request an den Subscription-Endpunkt mit dem FD-ausgestellten Bearer-Token
+3. **Subscription binden** – Übermittlung der `Subscription.id` über die offene Verbindung; ab dann empfängt der Client bei jeder neu vorliegenden Ressource ein `ping` als Trigger für den Abruf über die FHIR-Schnittstelle
 
-Hinweis: Eine Verwendung zur Sicherung der Schnittstelle (DDoS-Schutz, Fehleranalyse in sehr eingeschränktem Maß) ist zulässig (im Sinne einer befugten Profilbildung).
+Request/Response-Beispiele und das vollständige Protokoll (bind/bound/ping) sind unter [Subscription-Schnittstelle](./query-api-subscription.html) beschrieben.
+
+### Wichtige Hinweise zur Implementierung
+
+*Achtung:* Jede eingehende Ressource führt zu einem `ping`, ggf. im Millisekundenbereich, wenn viele Ressourcen an einen Empfänger gerichtet werden. In Abhängigkeit von der Implementierung kann dieses Verhalten zu einer Überlastung des Clients führen, wenn bspw. jedes einzelne `ping` unmittelbar einen Abruf auslöst. Im Zweifel ist eine kurze Wartezeit sinnvoll, bevor ein Abruf gestartet wird. Zwischenzeitlich eingegangene Ressourcen gehen dabei nicht verloren, da sie beim nächsten Abruf gesammelt heruntergeladen werden können.
+
+*Achtung:* Wird die WebSocket-Verbindung aufgrund eines Fehlers unerwartet terminiert, MUSS der Client eine zufällig gewählte Pause zwischen 5 und 60 Sekunden warten, bevor eine neue WebSocket-Verbindung aufgebaut wird.
+
+*Hinweis:* Je Telematik-ID ist nur eine WebSocket-Verbindung gleichzeitig möglich.
+
+*Hinweis:* Die WebSocket-Verbindung wird nach 12h automatisch geschlossen. Der Client muss anschließend eine neue Subscription registrieren (ab Schritt 1).
+
+*Hinweis:* Eine Verwendung anfallender Verbindungsmetadaten zur Sicherung der Schnittstelle (DDoS-Schutz, Fehleranalyse in sehr eingeschränktem Maß) ist zulässig. Eine darüber hinausgehende Profilbildung der verbundenen Clients ist nicht zulässig.
