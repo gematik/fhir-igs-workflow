@@ -137,7 +137,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS an der Webschnittstelle des Subscription Service beim Verbindungsaufbau ein Upgrade durchführen.
+     Der TI-Flow-Fachdienst MUSS an der Webschnittstelle des Subscription Service auf einen WebSocket-Upgrade-Request eines berechtigten Clients mit dem HTTP-Statuscode 101 Switching Protocols antworten.
 </requirement>
 
 <!-- A_22369 -->
