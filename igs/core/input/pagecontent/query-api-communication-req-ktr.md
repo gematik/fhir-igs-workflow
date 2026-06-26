@@ -56,7 +56,7 @@ Mit diesem Anwendungsfall kann ein Kostenträger von ihm versendete Nachrichten 
   <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
-  Das CS Kostenträger MUSS es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem Fachdienst auszuwählen.
+  Das Clientsystem Kostenträger MUSS es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem Fachdienst auszuwählen.
 </requirement>
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A454" title="CS Kostenträger: Nachricht löschen - Bestätigung einholen" version="0">
@@ -64,7 +64,7 @@ Mit diesem Anwendungsfall kann ein Kostenträger von ihm versendete Nachrichten 
   <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
-  Das CS Kostenträger MUSS vom Nutzer eine Bestätigung einholen, dass die ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.
+  Das Clientsystem Kostenträger MUSS vom Nutzer eine Bestätigung einholen, dass die ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.
 </requirement>
 
 <!-- A_21489 -->
@@ -82,6 +82,6 @@ Mit diesem Anwendungsfall kann ein Kostenträger von ihm versendete Nachrichten 
 
 Der Fachdienst prüft anhand der Telematik-ID aus den Nutzerinformationen (zeta-user-info), ob der Kostenträger der Absender der zu löschenden Nachricht ist.
 
-Das CS Kostenträger KANN im Anwendungsfall "Nachricht durch Abgebenden löschen" dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
+Das Clientsystem Kostenträger KANN im Anwendungsfall "Nachricht durch Abgebenden löschen" dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
 
 Hinweis: Nachrichten an Versicherte sind immer an den Workflow der referenzierten Verordnung gebunden. Wenn ein Workflow, bspw. durch den Versicherten oder aufgrund von durch den Fachdienst durchgesetzte Löschfristen, auf dem Fachdienst gelöscht wird, dann werden auch alle zugehörigen Nachrichten gelöscht.
