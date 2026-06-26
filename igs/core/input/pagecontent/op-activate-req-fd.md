@@ -321,36 +321,6 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den Datensatz als PKCS#7-Datei  speichern und in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 über eine interne, eindeutige UUID referenzieren, damit der nachfolgende Workflow auf Basis vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
 </requirement>
 
-<!-- Diese Afo wurde nicht zugewiesen, da die Konnektoren sich nicht so verhalten. -->
-<!-- A_23172 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A179" title="TI-Flow-Fachdienst - Task aktivieren - Mimetype Signatur" version="0">
-    <meta lockversion="false"/>
-    Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und, wenn dieser ungleich "text/plain; charset=utf-8" ist, die Operation mit dem folgenden Fehler:
-    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>400 - Bad Request</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>TIFLOW_SIGNATURE_INVALID</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>-</td>
-        </tr>
-    </table> 
-    abbrechen.
-</requirement>
-
 <!-- A_21370 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A180" title="TI-Flow-Fachdienst - Task aktivieren - Prüfung Rezept-ID in Task gegen Verordnungsdatensatz" version="0">
     <meta lockversion="false"/>
