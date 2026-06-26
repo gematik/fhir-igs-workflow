@@ -29,14 +29,19 @@ Die Operation $activate wird als HTTP POST auf /Task/&#60;id&#62;/$activate ausg
 		</pre>
 	</div>
 	<div id="Request-Examples">
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleOperationActivateParametersInput JSON %}
+		</div>
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleDiGAOperationRequestParameters XML %}
+			{% fragment Parameters/ExampleOperationActivateParametersInput XML %}
 		</div>
 	</div>
 	<div id="Response-Examples">
-		<!-- TODO: Replace with operation-specific response examples for $activate. -->
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationActivateError JSON %}
+		</div>
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
+			{% fragment OperationOutcome/ExampleOperationActivateError XML %}
 		</div>
 	</div>
 </div>
