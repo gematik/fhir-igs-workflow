@@ -15,7 +15,7 @@ Usage: #example
   * severity = #error
   * code = #forbidden
   * details.coding.code = #BLOCKED_FLOWTYPE
-  * details.text = The Flowtype may not be used in the TI-Flow-Fachdienst"
+  * details.text = "The Flowtype may not be used in the TI-Flow-Fachdienst"
 
 Instance: ExampleOperationCreateError
 InstanceOf: OperationOutcome
