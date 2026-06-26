@@ -10,6 +10,30 @@
     },
     "requirements": [
         {
+            "key": "IG-TIFLOW-CORE-A322",
+            "title": "TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_Reply",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in \"Tabelle: Nachricht als Apotheke an einen Versicherten schicken\" überprüfen und bei negativem Prüfergebnis, die Operation mit dem folgenden Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n    <tr>\n        <th>HTTP-Code</th>\n        <td>400 - Bad Request</td>\n    </tr>\n    <tr>\n        <th>Severity</th>\n        <td>error</td>\n    </tr>\n    <tr>\n        <th>Code</th>\n        <td>invalid</td>\n    </tr>\n    <tr>\n        <th>Details Code</th>\n        <td>SVC_VALIDATION_FAILED</td>\n    </tr>\n    <tr>\n        <th>Details Text</th>\n        <td>FHIR Profile Validation Failed</td>\n    </tr>\n    </table> \n    abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-communication-req-data.html#IG-TIFLOW-CORE-A322"
+        },
+        {
             "key": "IG-TIFLOW-ERP-A1",
             "title": "PS abgebende LEI: Abgabedatensatz mit QES: OCSP Response einbetten",
             "version": 0,
