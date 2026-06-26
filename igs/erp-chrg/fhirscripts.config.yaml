@@ -13,6 +13,7 @@ build:
   pipeline:
     - shell: ../../scripts/install-ig-packages.sh ./fhir-ig-installer.conf
     - shell: ./scripts/pre-build.sh
+    - shell: ./scripts/generate-heading-links-js.sh
     - requirements
     - shell: reqtools polarion ./input/content
     - sushi
