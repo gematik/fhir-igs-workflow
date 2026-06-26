@@ -83,6 +83,10 @@ Modulspezifische Operationen, wie die $dispense-Operation im Arzneimittel IG, wi
 - [Zugriffsprotokollierung](./audit-service.html)
 - [Löschfristen](./ttl.html)
 
+### Abhängigkeiten
+
+{% include dependency-table.xhtml %}
+
 ## Bezug zu weiteren IGs
 
 Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifische Details werden in den jeweiligen IGs dokumentiert.

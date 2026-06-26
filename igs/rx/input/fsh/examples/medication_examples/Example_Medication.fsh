@@ -76,7 +76,7 @@ Description: "Beispiel für ein Medikament ohne System und Code für die Wirksto
 Usage: #example
 * code.text = "Infusion bestehend aus 85mg Doxorubicin aufgeloest zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionsloesung"
 * status = #active
-* form = http://standardterms.edqm.eu#11210000 "Solution for infusion"
+* form.text = "Solution for infusion"
 * ingredient[+]
   * itemCodeableConcept = http://fhir.de/CodeSystem/bfarm/atc|2025#L01DB01 "Doxorubicin"
   * isActive = true
@@ -92,7 +92,7 @@ Title: "Medikament ohne Stärke-Numerator"
 Description: "Beispiel für ein Medikament ohne Code oder System für die Stärkenangabe im Numerator"
 Usage: #example
 * code.text = "Infusion bestehend aus 85mg Doxorubicin aufgeloest zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionsloesung"
-* form = http://standardterms.edqm.eu#11210000 "Solution for infusion"
+* form.text = "Solution for infusion"
 * status = #active
 * ingredient[+]
   * itemCodeableConcept = http://fhir.de/CodeSystem/bfarm/atc|2025#L01DB01 "Doxorubicin"
