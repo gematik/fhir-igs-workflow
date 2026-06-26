@@ -11,7 +11,7 @@ Die Fachanwendung E-Rezept ermöglicht eine Übermittlung von ärztlichen und za
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 754px; margin-bottom: 30px;">
-        <img src="./uebersicht-erezept.jpeg" alt="Übersicht E-Rezept" style="width: 100%;">
+        <img src="./uebersicht-erezept.png" alt="Übersicht E-Rezept" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Übersicht E-Rezept</figcaption>
 </figure>
