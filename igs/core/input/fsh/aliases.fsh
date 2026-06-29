@@ -1,4 +1,4 @@
-Alias: $erp-base-url = https://tiflow.de
+Alias: $erp-base-url = https://tiflow.de/fhir/v1
 
 // FHIR
 Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
