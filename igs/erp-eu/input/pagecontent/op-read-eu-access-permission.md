@@ -23,15 +23,18 @@ Die Nachricht wird als HTTP `GET` an `/$read-eu-access-permission` gesendet.
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-Read-EU-Access-Permission.json %}
+			{% include OperationDefinition-ReadEUAccessPermission.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
 		<!-- TODO: Verify if a request body example is required for $read-eu-access-permission. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/Example-EU-PermissionRequest XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/Example-EU-PermissionResponse XML %}
@@ -40,6 +43,7 @@ Die Nachricht wird als HTTP `GET` an `/$read-eu-access-permission` gesendet.
 			{% fragment OperationOutcome/ExampleERPEUOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 

@@ -39,6 +39,7 @@ Der Aufruf erfolgt als http-POST-Operation. Der Server prüft die Nachricht auf 
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596 JSON %}
@@ -47,6 +48,7 @@ Der Aufruf erfolgt als http-POST-Operation. Der Server prüft die Nachricht auf 
 			{% fragment Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596 XML %}
 		</div>
 	</div>
+-->
 </div>
 
 #### Abrufen von Communications
@@ -63,6 +65,7 @@ Als Apotheke oder Kostenträger möchten wir alle Nachrichten des Monats April 2
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleRxCommunicationSearchset JSON %}
@@ -71,6 +74,7 @@ Als Apotheke oder Kostenträger möchten wir alle Nachrichten des Monats April 2
 			{% fragment Bundle/ExampleRxCommunicationSearchset XML %}
 		</div>
 	</div>
+-->
 </div>
 
 ### Instance API
@@ -88,12 +92,14 @@ Um spezifische Details zu einer einzelnen _Communciation_ mittels der RESTful AP
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
 		<!-- TODO: Add a dedicated Communication read example for RX. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleRxCommunicationSearchset XML %}
 		</div>
 	</div>
+-->
 </div>
 
 #### Löschen von Communications

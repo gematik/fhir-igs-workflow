@@ -38,11 +38,13 @@ Der TI-Flow-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle 
 	<div id="Formats">
 			<div data-value="application/json"></div>
 	</div>
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/json" data-type="JSON">
 			{% include channels-list-response-example.json %}
 		</div>
 	</div>
+-->
 	<div id="Responses">
 		<div data-code="200" data-error-code="" data-response-type="application/json">Successful operation</div>
 		<div data-code="400" data-error-code="badRequest" data-response-type="application/fhir+json">Bad Request</div>
@@ -67,11 +69,13 @@ Der TI-Flow-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle 
 	<div id="Formats">
 			<div data-value="application/json"></div>
 	</div>
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/json" data-type="JSON">
 			{% include channels-list-response-example.json %}
 		</div>
 	</div>
+-->
 	<div id="Responses">
 		<div data-code="200" data-error-code="" data-response-type="application/json">Successful operation</div>
 		<div data-code="400" data-error-code="badRequest" data-response-type="application/fhir+json">Bad Request</div>
@@ -96,16 +100,20 @@ Der TI-Flow-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle 
 	<div id="Formats">
 			<div data-value="application/json"></div>
 	</div>
+<!--
 	<div id="Request-Examples">
 		<div data-name="application/json" data-type="JSON">
 			{% include channels-set-request-example.json %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/json" data-type="JSON">
 			{% include empty-object-response-example.json %}
 		</div>
 	</div>
+-->
 	<div id="Responses">
 		<div data-code="200" data-error-code="" data-response-type="application/json">Successful operation</div>
 		<div data-code="400" data-error-code="badRequest" data-response-type="application/fhir+json">Bad Request</div>
