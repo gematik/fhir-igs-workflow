@@ -105,3 +105,77 @@ Description: "Beispiel fuer eine erfolgreiche Subscription-Anlage"
 * channel.type = #rest-hook
 * channel.endpoint = "https://apotheke.example.org/erp/notification"
 * channel.payload = #application/fhir+json
+
+Instance: ExampleRxTaskSearchsetResponse
+InstanceOf: Bundle
+Usage: #example
+Title: "Antwortbundle für GET /Task (Rx)"
+Description: "Beispiel für eine Task-Suchantwort des TI-Flow-Fachdienstes mit Tasks in verschiedenen Workflow-Zuständen (draft, ready, in-progress, completed)"
+* id = "ExampleRxTaskSearchsetResponse"
+* type = #searchset
+* total = 6
+* link[+].relation = "self"
+* link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task"
+* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/b12eb5f7-91ce-4887-93c7-800454601377"
+* entry[=].resource = TaskInCreatedState
+* entry[=].search.mode = #match
+* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/TaskInReadyState"
+* entry[=].resource = TaskInReadyState
+* entry[=].search.mode = #match
+* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e"
+* entry[=].resource = TaskIn-ProgressState
+* entry[=].search.mode = #match
+* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/9b48f82c-9c11-4a57-aa72-a805f9537a82"
+* entry[=].resource = TaskIn-ProgressState-Dispensed
+* entry[=].search.mode = #match
+* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/f5c21409-b84b-4125-8649-5630a00906b1"
+* entry[=].resource = TaskIn-ProgressState-Dispensed-Multiple-MedicationDispenses
+* entry[=].search.mode = #match
+* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/TaskInClosedState"
+* entry[=].resource = TaskInClosedState
+* entry[=].search.mode = #match
+
+Instance: ExampleRxTaskSearchsetResponseReady
+InstanceOf: Bundle
+Usage: #example
+Title: "Antwortbundle für GET /Task?status=ready (Rx)"
+Description: "Beispiel für eine gefilterte Task-Suchantwort des TI-Flow-Fachdienstes mit einem einlösbaren E-Rezept im Status ready"
+* id = "ExampleRxTaskSearchsetResponseReady"
+* type = #searchset
+* total = 1
+* link[+].relation = "self"
+* link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task?status=ready"
+* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/TaskInReadyState"
+* entry[=].resource = TaskInReadyState
+* entry[=].search.mode = #match
+
+Instance: ExampleRxCommunicationSearchsetResponse
+InstanceOf: Bundle
+Usage: #example
+Title: "Antwortbundle für GET /Communication (Rx)"
+Description: "Beispiel für eine Communication-Suchantwort mit einer Dispensieranfrage des Versicherten und der zugehörigen Antwort der Apotheke"
+* id = "ExampleRxCommunicationSearchsetResponse"
+* type = #searchset
+* total = 2
+* link[+].relation = "self"
+* link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication"
+* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication/a218a36e-f2fd-4603-ba67-c827acfef01b"
+* entry[=].resource = Communication_DispenseRequest
+* entry[=].search.mode = #match
+* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596"
+* entry[=].resource = Communication_Reply_Pharmacy
+* entry[=].search.mode = #match
+
+Instance: ExampleRxMedicationDispenseSearchsetResponse
+InstanceOf: Bundle
+Usage: #example
+Title: "Antwortbundle für GET /MedicationDispense (Rx)"
+Description: "Beispiel für eine MedicationDispense-Suchantwort mit einer abgeschlossenen Arzneimittelabgabe"
+* id = "ExampleRxMedicationDispenseSearchsetResponse"
+* type = #searchset
+* total = 1
+* link[+].relation = "self"
+* link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/MedicationDispense?whenhandedover=ge2025-01-01"
+* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/MedicationDispense/Example-MedicationDispense"
+* entry[=].resource = Example-MedicationDispense
+* entry[=].search.mode = #match

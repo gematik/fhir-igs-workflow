@@ -31,15 +31,17 @@ Die Operation $create wird als HTTP POST auf /Task/$create ausgeführt.
 		</pre>
 	</div>
 	<div id="Request-Examples">
-		<!-- TODO: Replace with operation-specific request examples for $create. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleDiGAOperationRequestParameters XML %}
+			{% fragment Parameters/OperationCreateParametersInputExample XML %}
+		</div>
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/OperationCreateParametersInputExample XML %}
 		</div>
 	</div>
 	<div id="Response-Examples">
 		<!-- TODO: Replace with operation-specific response examples for $create. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
+			{% fragment OperationOutcome/ExampleOperationCreateError XML %}
 		</div>
 	</div>
 </div>

@@ -6,6 +6,17 @@ Usage: #example
 * parameter[+].name = "workflowType"
 * parameter[=].valueCoding = GEM_ERP_CS_FlowType#160
 
+Instance: ExampleCreateOperationOutputError
+InstanceOf: OperationOutcome
+Title: "Fehler 403 - Beispiel für Create-Operation Fehlerantwort"
+Description: "Beispiel für eine Fehlerantwort bei der Create-Operation mit FHIR-Validierungsfehlern"
+Usage: #example
+* issue[+]
+  * severity = #error
+  * code = #forbidden
+  * details.coding.code = #BLOCKED_FLOWTYPE
+  * details.text = "The Flowtype may not be used in the TI-Flow-Fachdienst"
+
 Instance: ExampleOperationCreateError
 InstanceOf: OperationOutcome
 Title: "Beispiel für Create-Operation Fehlerantwort"

@@ -61,6 +61,15 @@ Title: "Example Close Parameters"
     * name = "medication"
     * resource = Medication-Rezeptur
 
+Instance: ExampleRxCloseOutputParameters
+InstanceOf: GEM_ERP_PR_PAR_CloseOperation_Output
+Usage: #example
+Title: "Beispiel Erfolgsantwort der Rx $close Operation"
+Description: "Beispiel für die erfolgreiche Antwort (HTTP 200) der $close-Operation: ein Parameters-Resource, dessen return-Parameter das signierte Quittungs-Bundle der abgeschlossenen E-Rezept-Abgabe enthält"
+* id = "ExampleRxCloseOutputParameters"
+* parameter[return].name = "return"
+* parameter[return].resource = ReceiptBundleQuittung
+
 /*
 Instance: INVALID-ExampleCloseInputParametersWithoutMedication
 InstanceOf: GEM_ERP_PR_PAR_CloseOperation_Input

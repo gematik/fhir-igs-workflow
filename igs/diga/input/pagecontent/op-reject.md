@@ -30,12 +30,21 @@ Die Operation $reject wird als HTTP POST auf /Task/&#60;id&#62;/$reject ausgefü
 		</pre>
 	</div>
 	<div id="Request-Examples">
-		<!-- TODO: Request example for $reject (no body; accessCode and secret via headers) -->
+		<div data-name="Beispiel - $abort Request mit AccessCode und Secret im Header" data-type="HTTP" data-render="ig-Fragment">
+					<pre>
+					POST [base]/rx/fhir/Task/4711/$reject
+					Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE2MzQifQ.eyJpc3MiOiJodHRwczovL2lkcC50aS1leGFtcGxlLmRlIiwic3ViIjoiMTEyMjMzNDQ1NSIsImF1ZCI6InRpZmxvdy1mYWNoZGllbnN0IiwicHJvZmVzc2lvbk9JRCI6Im9pZF9wcmF4aXNfYXJ6dCIsIm9yZ2FuaXphdGlvbklEIjoiMS4yLjI3Ni4wLjcyLjAuNzYuNC4xMjM0NTYiLCJleHAiOjE4MDAwMDAwMDAsImlhdCI6MTcwMDAwMDAwMH0.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+					X-AccessCode: 5f8d0d55-9c3a-4a2f-bf2f-123456789abc
+					X-Secret: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+					</pre>
+				</div>
 	</div>
 	<div id="Response-Examples">
-		<!-- TODO: Replace with operation-specific response examples for $reject. -->
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
+		<div data-name="Fehler 403 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationRejectRolleError JSON %}
+		</div>
+		<div data-name="Fehler 403 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationRejectRolleError XML %}
 		</div>
 	</div>
 </div>
