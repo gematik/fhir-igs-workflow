@@ -1,0 +1,50 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/Organization/ExampleOrganization-T> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleOrganization-T"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-organization" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-organization>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization ExampleOrganization-T</b></p><a name=\"ExampleOrganization-T\"> </a><a name=\"hcExampleOrganization-T\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-erp-tprescription-organization.html\">E-T-Rezept Organization</a></p></div><p><b>identifier</b>: <code>https://gematik.de/fhir/sid/telematik-id</code>/3-Test-APO000053</p><p><b>name</b>: Stadt-Apotheke</p><p><b>telecom</b>: <a href=\"tel:+499876543210\">+49 987 6543210</a></p><p><b>address</b>: Hauptstraße 10 Beispielstadt 54321 DE </p></div>"
+  ] ;
+  fhir:Organization.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+     fhir:Identifier.value [ fhir:value "3-Test-APO000053" ]
+  ] ;
+  fhir:Organization.name [ fhir:value "Stadt-Apotheke"] ;
+  fhir:Organization.telecom [
+     fhir:index 0 ;
+     fhir:ContactPoint.system [ fhir:value "phone" ] ;
+     fhir:ContactPoint.value [ fhir:value "+49 987 6543210" ]
+  ] ;
+  fhir:Organization.address [
+     fhir:index 0 ;
+     fhir:Address.line [
+       fhir:value "Hauptstraße 10" ;
+       fhir:index 0
+     ] ;
+     fhir:Address.city [ fhir:value "Beispielstadt" ] ;
+     fhir:Address.postalCode [ fhir:value "54321" ] ;
+     fhir:Address.country [ fhir:value "DE" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/Organization/ExampleOrganization-T.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

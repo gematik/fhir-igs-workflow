@@ -1,0 +1,753 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedicationRequest> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ERPTPrescriptionStructureMapMedicationRequest"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap ERPTPrescriptionStructureMapMedicationRequest</b></p><a name=\"ERPTPrescriptionStructureMapMedicationRequest\"> </a><a name=\"hcERPTPrescriptionStructureMapMedicationRequest\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedicationRequest<span style=\"color: navy\">\" = \"</span>ERPTPrescriptionStructureMapMedicationRequest<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Mapping-Anweisungen zur Transformation von KBV MedicationRequest zu BfArM T-Prescription MedicationRequest</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/medicationrequest.html\" title=\"MedicationRequest\">http://hl7.org/fhir/StructureDefinition/MedicationRequest</a><span style=\"color: navy\">\" </span><b>alias </b>kbvMedicationRequest <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/medicationrequest.html\" title=\"MedicationRequest\">http://hl7.org/fhir/StructureDefinition/MedicationRequest</a><span style=\"color: navy\">\" </span><b>alias </b>bfarmMedicationRequest <b>as </b><b>target</b>#xD;\n#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Mapping-Anweisungen zur Transformation von KBV MedicationRequest zu BfArM T-Prescription MedicationRequest</span>#xD;\n<b>group </b>ERPTPrescriptionStructureMapMedicationRequest<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">kbvMedicationRequest</span><span style=\"color: navy\"> : </span>kbvMedicationRequest, <b>target</b> <span style=\"color: maroon\">bfarmMedicationRequest</span><span style=\"color: navy\"> : </span>bfarmMedicationRequest<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  kbvMedicationRequest.status<b> as </b><span style=\"color: maroon\">srcStatus</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedicationRequest.status = <span style=\"color: blue\">'completed'</span> <i>\"medicationRequestStatus\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Setzt den Status auf 'completed' für den digitalen Durchschlag (Verschreibung ist bereits abgeschlossen)</span>#xD;\n  kbvMedicationRequest.intent<span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedicationRequest.intent = <span style=\"color: blue\">'order'</span> <i>\"medicationRequestIntent\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Setzt den Intent auf 'order' entsprechend der BfArM-Spezifikation für T-Prescription</span>#xD;\n  kbvMedicationRequest.extension<b> as </b><span style=\"color: maroon\">extVar</span><b> where </b>url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Teratogenic'<span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedicationRequest.extension<b> as </b><span style=\"color: maroon\">tgtExtVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    extVar<b> as </b><span style=\"color: maroon\">extMatchVar</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtExtVar.url = <span style=\"color: blue\">'https://gematik.de/fhir/epa-medication/StructureDefinition/teratogenic-extension'</span> <i>\"copyTPrescriptionExtensionUrl\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Kopiert teratogene Extensions für T-Rezept Kennzeichnung</span>#xD;\n    extVar.extension<b> as </b><span style=\"color: maroon\">offLabelVar</span><b> where </b>url='Off-Label'<span style=\"color: navy\"><b> -&gt; </b></span> tgtExtVar.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtOffLabelExt</span><span style=\"color: navy\">, </span> tgtOffLabelExt.url = <span style=\"color: blue\">'off-label'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      offLabelVar.value<b> as </b><span style=\"color: maroon\">offLabelValue</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtOffLabelExt.value = <span style=\"color: maroon\">offLabelValue</span> <i>\"mapOffLabelValue\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt den Off-Label Booleschen Wert</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"mapOffLabelExtension\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt Off-Label Extension</span>#xD;\n    extVar.extension<b> as </b><span style=\"color: maroon\">gebaerfaehigeFrauVar</span><b> where </b>url='GebaerfaehigeFrau'<span style=\"color: navy\"><b> -&gt; </b></span> tgtExtVar.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtGebaerfaehigeFrauExt</span><span style=\"color: navy\">, </span> tgtGebaerfaehigeFrauExt.url = <span style=\"color: blue\">'childbearing-potential'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      gebaerfaehigeFrauVar.value<b> as </b><span style=\"color: maroon\">gebaerfaehigeFrauValue</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtGebaerfaehigeFrauExt.value = <span style=\"color: maroon\">gebaerfaehigeFrauValue</span> <i>\"mapGebaerfaehigeFrauValue\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt den Booleschen Wert für childbearing-potential</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"mapGebaerfaehigeFrauExtension\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt GebaerfaehigeFrau Extension zu childbearing-potential</span>#xD;\n    extVar.extension<b> as </b><span style=\"color: maroon\">sicherheitsVar</span><b> where </b>url='EinhaltungSicherheitsmassnahmen'<span style=\"color: navy\"><b> -&gt; </b></span> tgtExtVar.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtSicherheitsExt</span><span style=\"color: navy\">, </span> tgtSicherheitsExt.url = <span style=\"color: blue\">'security-compliance'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      sicherheitsVar.value<b> as </b><span style=\"color: maroon\">sicherheitsValue</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtSicherheitsExt.value = <span style=\"color: maroon\">sicherheitsValue</span> <i>\"mapEinhaltungSicherheitsmassnahmenValue\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt den Booleschen Wert für security-compliance</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"mapEinhaltungSicherheitsmassnahmenExtension\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt EinhaltungSicherheitsmassnahmen Extension zu security-compliance</span>#xD;\n    extVar.extension<b> as </b><span style=\"color: maroon\">infoMatVar</span><b> where </b>url='AushaendigungInformationsmaterialien'<span style=\"color: navy\"><b> -&gt; </b></span> tgtExtVar.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtInfoMatExt</span><span style=\"color: navy\">, </span> tgtInfoMatExt.url = <span style=\"color: blue\">'hand-out-information-material'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      infoMatVar.value<b> as </b><span style=\"color: maroon\">infoMatValue</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtInfoMatExt.value = <span style=\"color: maroon\">infoMatValue</span> <i>\"mapAushaendigungInformationsmaterialienValue\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt den Booleschen Wert für hand-out-information-material</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"mapAushaendigungInformationsmaterialienExtension\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt AushaendigungInformationsmaterialien Extension zu hand-out-information-material</span>#xD;\n    extVar.extension<b> as </b><span style=\"color: maroon\">sachkenntnisVar</span><b> where </b>url='ErklaerungSachkenntnis'<span style=\"color: navy\"><b> -&gt; </b></span> tgtExtVar.extension = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Extension'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtSachkenntnisExt</span><span style=\"color: navy\">, </span> tgtSachkenntnisExt.url = <span style=\"color: blue\">'declaration-of-expertise'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      sachkenntnisVar.value<b> as </b><span style=\"color: maroon\">sachkenntnisValue</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtSachkenntnisExt.value = <span style=\"color: maroon\">sachkenntnisValue</span> <i>\"mapErklaerungSachkenntnisValue\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt den Booleschen Wert für declaration-of-expertise</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"mapErklaerungSachkenntnisExtension\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt ErklaerungSachkenntnis Extension zu declaration-of-expertise</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"medicationRequestExt\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt T-Rezept spezifische Extensions vom KBV- zum BfArM-Format</span>#xD;\n  kbvMedicationRequest.extension<b> as </b><span style=\"color: maroon\">extDosageMetaVar</span><b> where </b>url='http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta'<span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedicationRequest.extension = <span style=\"color: maroon\">extDosageMetaVar</span> <i>\"medicationRequestExt\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Kopiert Dosage Metadata Extension</span>#xD;\n  kbvMedicationRequest.extension<b> as </b><span style=\"color: maroon\">extDosageRenderedVar</span><b> where </b>url='http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction'<span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedicationRequest.extension = <span style=\"color: maroon\">extDosageRenderedVar</span> <i>\"medicationRequestExt\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Kopiert RenderedDosageText</span>#xD;\n  kbvMedicationRequest.subject<b> as </b><span style=\"color: maroon\">srcSubject</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedicationRequest.subject<b> as </b><span style=\"color: maroon\">tgtSubject</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    kbvMedicationRequest.subject<b> as </b><span style=\"color: maroon\">srcSubject</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtSubject.identifier<b> as </b><span style=\"color: maroon\">tgtSubjectIdentifier</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      kbvMedicationRequest.subject<b> as </b><span style=\"color: maroon\">srcSubject</span><span style=\"color: navy\"><b> -&gt; </b></span> tgtSubjectIdentifier.system<b> as </b><span style=\"color: maroon\">tgtSubjectIdentifierSystem</span><span style=\"color: navy\">, </span> tgtSubjectIdentifier.value<b> as </b><span style=\"color: maroon\">tgtSubjectIdentifierValue</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        kbvMedicationRequest.subject<b> as </b><span style=\"color: maroon\">srcSubject</span><span style=\"color: navy\"><b> -&gt; </b></span> tgtSubjectIdentifierSystem.extension<b> as </b><span style=\"color: maroon\">tgtSubjectIdentifierSystemEx</span><span style=\"color: navy\">, </span> tgtSubjectIdentifierValue.extension<b> as </b><span style=\"color: maroon\">tgtSubjectIdentifierValueEx</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          kbvMedicationRequest.subject<b> as </b><span style=\"color: maroon\">srcSubject</span><span style=\"color: navy\"><b> -&gt; </b></span> tgtSubjectIdentifierSystemEx.url = <span style=\"color: blue\">'http://hl7.org/fhir/StructureDefinition/data-absent-reason'</span><span style=\"color: navy\">, </span> tgtSubjectIdentifierSystemEx.value = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'not-permitted'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'code'</span><span style=\"color: navy\">)</span> <i>\"medicationRequestsubjectIdentifierSystemExtension\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Setzt data-absent-reason auf 'not-permitted' um Patientendaten zu anonymisieren</span>#xD;\n          kbvMedicationRequest.subject<b> as </b><span style=\"color: maroon\">srcSubject</span><span style=\"color: navy\"><b> -&gt; </b></span> tgtSubjectIdentifierValueEx.url = <span style=\"color: blue\">'http://hl7.org/fhir/StructureDefinition/data-absent-reason'</span><span style=\"color: navy\">, </span> tgtSubjectIdentifierValueEx.value = <b>cast</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'not-permitted'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'code'</span><span style=\"color: navy\">)</span> <i>\"medicationRequestsubjectIdentifierValueExtension\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Setzt data-absent-reason auf 'not-permitted' um Patientendaten zu anonymisieren</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"medicationRequestsubjectIdentifierSystem\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Erstellt data-absent-reason Extension für Subject Identifier</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"medicationRequestsubjectIdentifierExtension\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Erstellt data-absent-reason Extension für Subject Identifier</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"medicationRequestsubjectIdentifier\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"medicationRequestsubject\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Entfernt Patientenbezug durch data-absent-reason Extension für Datenschutz im digitalen Durchschlag</span>#xD;\n  kbvMedicationRequest.authoredOn<b> as </b><span style=\"color: maroon\">srcAuthoredOnVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedicationRequest.authoredOn = <span style=\"color: maroon\">srcAuthoredOnVar</span> <i>\"medicationRequestAuthoredOn\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt das Verschreibungsdatum unverändert vom KBV MedicationRequest</span>#xD;\n  kbvMedicationRequest.dosageInstruction<b> as </b><span style=\"color: maroon\">srcDosageInstructionVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedicationRequest.dosageInstruction = <span style=\"color: maroon\">srcDosageInstructionVar</span> <i>\"medicationRequestDosageInstruction\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Kopiert die Dosierungsanweisungen vollständig für den digitalen Durchschlag</span>#xD;\n  kbvMedicationRequest.dispenseRequest<b> as </b><span style=\"color: maroon\">srcDispenseRequestVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedicationRequest.dispenseRequest = <span style=\"color: maroon\">srcDispenseRequestVar</span> <i>\"medicationRequestDispenseRequest\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Übernimmt Abgabeanweisungen (Menge, Wiederholungen) aus der ursprünglichen Verschreibung</span>#xD;\n  kbvMedicationRequest.medication<b> as </b><span style=\"color: maroon\">medicationVar</span><span style=\"color: navy\"><b> -&gt; </b></span>bfarmMedicationRequest.medication = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Reference'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtMedicationReference</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    medicationVar.reference<b> as </b><span style=\"color: maroon\">medicationReferenceValue</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      medicationReferenceValue<b> as </b><span style=\"color: maroon\">currentMedicationReferenceValue</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtMedicationReference.reference = <span style=\"color: navy\">(</span>iif(%currentMedicationReferenceValue.startsWith('urn:uuid:'), %currentMedicationReferenceValue, 'urn:uuid:' &amp; %currentMedicationReferenceValue.replaceMatches('.*[:/]', ''))<span style=\"color: navy\">)</span> <i>\"normalizeMedicationReferenceTransformation\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"normalizeMedicationReference\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"medicationReference\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Transformiert die Medication-Referenz zu urn:uuid Format</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"
+  ] ;
+  fhir:StructureMap.url [ fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedicationRequest"] ;
+  fhir:StructureMap.version [ fhir:value "2.0.0-ballot.2"] ;
+  fhir:StructureMap.name [ fhir:value "ERPTPrescriptionStructureMapMedicationRequest"] ;
+  fhir:StructureMap.title [ fhir:value "E-T-Rezept Structure Map for MedicationRequest"] ;
+  fhir:StructureMap.status [ fhir:value "draft"] ;
+  fhir:StructureMap.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:StructureMap.date [ fhir:value "2026-06-30"^^xsd:date] ;
+  fhir:StructureMap.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:StructureMap.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "erp-umsetzung@gematik.de" ]
+     ]
+  ] ;
+  fhir:StructureMap.description [ fhir:value "Mapping-Anweisungen zur Transformation von KBV MedicationRequest zu BfArM T-Prescription MedicationRequest"] ;
+  fhir:StructureMap.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:StructureMap.structure [
+     fhir:index 0 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/MedicationRequest>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "source" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "kbvMedicationRequest" ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/MedicationRequest>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "target" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "bfarmMedicationRequest" ]
+  ] ;
+  fhir:StructureMap.group [
+     fhir:index 0 ;
+     fhir:StructureMap.group.name [ fhir:value "ERPTPrescriptionStructureMapMedicationRequest" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.documentation [ fhir:value "Mapping-Anweisungen zur Transformation von KBV MedicationRequest zu BfArM T-Prescription MedicationRequest" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "kbvMedicationRequest" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "kbvMedicationRequest" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "bfarmMedicationRequest" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "bfarmMedicationRequest" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "medicationRequestStatus" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcStatus" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bfarmMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "completed" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Setzt den Status auf 'completed' für den digitalen Durchschlag (Verschreibung ist bereits abgeschlossen)" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "medicationRequestIntent" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "intent" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bfarmMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "intent" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "order" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Setzt den Intent auf 'order' entsprechend der BfArM-Spezifikation für T-Prescription" ]
+     ], [
+       fhir:index 2 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "medicationRequestExt" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "extension" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "extVar" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Teratogenic'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bfarmMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "extension" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtExtVar" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "copyTPrescriptionExtensionUrl" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "extVar" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "extMatchVar" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtExtVar" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "url" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/teratogenic-extension" ]
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Kopiert teratogene Extensions für T-Rezept Kennzeichnung" ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "mapOffLabelExtension" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "extVar" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "extension" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "offLabelVar" ] ;
+           fhir:StructureMap.group.rule.source.condition [ fhir:value "url='Off-Label'" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtExtVar" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "extension" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtOffLabelExt" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Extension" ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtOffLabelExt" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "url" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "off-label" ]
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "mapOffLabelValue" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "offLabelVar" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "value" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "offLabelValue" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "tgtOffLabelExt" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "offLabelValue" ]
+             ]
+           ] ;
+           fhir:StructureMap.group.rule.documentation [ fhir:value "Übernimmt den Off-Label Booleschen Wert" ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Mappt Off-Label Extension" ]
+       ], [
+         fhir:index 2 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "mapGebaerfaehigeFrauExtension" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "extVar" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "extension" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "gebaerfaehigeFrauVar" ] ;
+           fhir:StructureMap.group.rule.source.condition [ fhir:value "url='GebaerfaehigeFrau'" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtExtVar" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "extension" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtGebaerfaehigeFrauExt" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Extension" ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtGebaerfaehigeFrauExt" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "url" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "childbearing-potential" ]
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "mapGebaerfaehigeFrauValue" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "gebaerfaehigeFrauVar" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "value" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "gebaerfaehigeFrauValue" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "tgtGebaerfaehigeFrauExt" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "gebaerfaehigeFrauValue" ]
+             ]
+           ] ;
+           fhir:StructureMap.group.rule.documentation [ fhir:value "Übernimmt den Booleschen Wert für childbearing-potential" ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Mappt GebaerfaehigeFrau Extension zu childbearing-potential" ]
+       ], [
+         fhir:index 3 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "mapEinhaltungSicherheitsmassnahmenExtension" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "extVar" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "extension" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "sicherheitsVar" ] ;
+           fhir:StructureMap.group.rule.source.condition [ fhir:value "url='EinhaltungSicherheitsmassnahmen'" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtExtVar" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "extension" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtSicherheitsExt" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Extension" ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtSicherheitsExt" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "url" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "security-compliance" ]
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "mapEinhaltungSicherheitsmassnahmenValue" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "sicherheitsVar" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "value" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "sicherheitsValue" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "tgtSicherheitsExt" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "sicherheitsValue" ]
+             ]
+           ] ;
+           fhir:StructureMap.group.rule.documentation [ fhir:value "Übernimmt den Booleschen Wert für security-compliance" ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Mappt EinhaltungSicherheitsmassnahmen Extension zu security-compliance" ]
+       ], [
+         fhir:index 4 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "mapAushaendigungInformationsmaterialienExtension" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "extVar" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "extension" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "infoMatVar" ] ;
+           fhir:StructureMap.group.rule.source.condition [ fhir:value "url='AushaendigungInformationsmaterialien'" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtExtVar" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "extension" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtInfoMatExt" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Extension" ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtInfoMatExt" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "url" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "hand-out-information-material" ]
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "mapAushaendigungInformationsmaterialienValue" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "infoMatVar" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "value" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "infoMatValue" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "tgtInfoMatExt" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "infoMatValue" ]
+             ]
+           ] ;
+           fhir:StructureMap.group.rule.documentation [ fhir:value "Übernimmt den Booleschen Wert für hand-out-information-material" ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Mappt AushaendigungInformationsmaterialien Extension zu hand-out-information-material" ]
+       ], [
+         fhir:index 5 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "mapErklaerungSachkenntnisExtension" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "extVar" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "extension" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "sachkenntnisVar" ] ;
+           fhir:StructureMap.group.rule.source.condition [ fhir:value "url='ErklaerungSachkenntnis'" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtExtVar" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "extension" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtSachkenntnisExt" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Extension" ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtSachkenntnisExt" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "url" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "declaration-of-expertise" ]
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "mapErklaerungSachkenntnisValue" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "sachkenntnisVar" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "value" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "sachkenntnisValue" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "tgtSachkenntnisExt" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "sachkenntnisValue" ]
+             ]
+           ] ;
+           fhir:StructureMap.group.rule.documentation [ fhir:value "Übernimmt den Booleschen Wert für declaration-of-expertise" ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Mappt ErklaerungSachkenntnis Extension zu declaration-of-expertise" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Mappt T-Rezept spezifische Extensions vom KBV- zum BfArM-Format" ]
+     ], [
+       fhir:index 3 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "medicationRequestExt" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "extension" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "extDosageMetaVar" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "url='http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bfarmMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "extension" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "extDosageMetaVar" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Kopiert Dosage Metadata Extension" ]
+     ], [
+       fhir:index 4 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "medicationRequestExt" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "extension" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "extDosageRenderedVar" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "url='http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bfarmMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "extension" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "extDosageRenderedVar" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Kopiert RenderedDosageText" ]
+     ], [
+       fhir:index 5 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "medicationRequestsubject" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "subject" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcSubject" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bfarmMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "subject" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtSubject" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "medicationRequestsubjectIdentifier" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "subject" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "srcSubject" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtSubject" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "identifier" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtSubjectIdentifier" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "medicationRequestsubjectIdentifierExtension" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "subject" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "srcSubject" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "tgtSubjectIdentifier" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtSubjectIdentifierSystem" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "tgtSubjectIdentifier" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+             fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtSubjectIdentifierValue" ]
+           ] ;
+           fhir:StructureMap.group.rule.rule [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.name [ fhir:value "medicationRequestsubjectIdentifierSystem" ] ;
+             fhir:StructureMap.group.rule.source [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+               fhir:StructureMap.group.rule.source.element [ fhir:value "subject" ] ;
+               fhir:StructureMap.group.rule.source.variable [ fhir:value "srcSubject" ]
+             ] ;
+             fhir:StructureMap.group.rule.target [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "tgtSubjectIdentifierSystem" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "extension" ] ;
+               fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtSubjectIdentifierSystemEx" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "tgtSubjectIdentifierValue" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "extension" ] ;
+               fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtSubjectIdentifierValueEx" ]
+             ] ;
+             fhir:StructureMap.group.rule.rule [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.name [ fhir:value "medicationRequestsubjectIdentifierSystemExtension" ] ;
+               fhir:StructureMap.group.rule.source [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+                 fhir:StructureMap.group.rule.source.element [ fhir:value "subject" ] ;
+                 fhir:StructureMap.group.rule.source.variable [ fhir:value "srcSubject" ]
+               ] ;
+               fhir:StructureMap.group.rule.target [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.context [ fhir:value "tgtSubjectIdentifierSystemEx" ] ;
+                 fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+                 fhir:StructureMap.group.rule.target.element [ fhir:value "url" ] ;
+                 fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+                 fhir:StructureMap.group.rule.target.parameter [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "http://hl7.org/fhir/StructureDefinition/data-absent-reason" ]
+                 ]
+               ], [
+                 fhir:index 1 ;
+                 fhir:StructureMap.group.rule.target.context [ fhir:value "tgtSubjectIdentifierSystemEx" ] ;
+                 fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+                 fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+                 fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+                 fhir:StructureMap.group.rule.target.parameter [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "not-permitted" ]
+                 ], [
+                   fhir:index 1 ;
+                   fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "code" ]
+                 ]
+               ] ;
+               fhir:StructureMap.group.rule.documentation [ fhir:value "Setzt data-absent-reason auf 'not-permitted' um Patientendaten zu anonymisieren" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.name [ fhir:value "medicationRequestsubjectIdentifierValueExtension" ] ;
+               fhir:StructureMap.group.rule.source [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+                 fhir:StructureMap.group.rule.source.element [ fhir:value "subject" ] ;
+                 fhir:StructureMap.group.rule.source.variable [ fhir:value "srcSubject" ]
+               ] ;
+               fhir:StructureMap.group.rule.target [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.context [ fhir:value "tgtSubjectIdentifierValueEx" ] ;
+                 fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+                 fhir:StructureMap.group.rule.target.element [ fhir:value "url" ] ;
+                 fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+                 fhir:StructureMap.group.rule.target.parameter [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "http://hl7.org/fhir/StructureDefinition/data-absent-reason" ]
+                 ]
+               ], [
+                 fhir:index 1 ;
+                 fhir:StructureMap.group.rule.target.context [ fhir:value "tgtSubjectIdentifierValueEx" ] ;
+                 fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+                 fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+                 fhir:StructureMap.group.rule.target.transform [ fhir:value "cast" ] ;
+                 fhir:StructureMap.group.rule.target.parameter [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "not-permitted" ]
+                 ], [
+                   fhir:index 1 ;
+                   fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "code" ]
+                 ]
+               ] ;
+               fhir:StructureMap.group.rule.documentation [ fhir:value "Setzt data-absent-reason auf 'not-permitted' um Patientendaten zu anonymisieren" ]
+             ] ;
+             fhir:StructureMap.group.rule.documentation [ fhir:value "Erstellt data-absent-reason Extension für Subject Identifier" ]
+           ] ;
+           fhir:StructureMap.group.rule.documentation [ fhir:value "Erstellt data-absent-reason Extension für Subject Identifier" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Entfernt Patientenbezug durch data-absent-reason Extension für Datenschutz im digitalen Durchschlag" ]
+     ], [
+       fhir:index 6 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "medicationRequestAuthoredOn" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "authoredOn" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcAuthoredOnVar" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bfarmMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "authoredOn" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "srcAuthoredOnVar" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Übernimmt das Verschreibungsdatum unverändert vom KBV MedicationRequest" ]
+     ], [
+       fhir:index 7 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "medicationRequestDosageInstruction" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "dosageInstruction" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcDosageInstructionVar" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bfarmMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "dosageInstruction" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "srcDosageInstructionVar" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Kopiert die Dosierungsanweisungen vollständig für den digitalen Durchschlag" ]
+     ], [
+       fhir:index 8 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "medicationRequestDispenseRequest" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "dispenseRequest" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcDispenseRequestVar" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bfarmMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "dispenseRequest" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "srcDispenseRequestVar" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Übernimmt Abgabeanweisungen (Menge, Wiederholungen) aus der ursprünglichen Verschreibung" ]
+     ], [
+       fhir:index 9 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "medicationReference" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "kbvMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "medication" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "medicationVar" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "bfarmMedicationRequest" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "medication" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtMedicationReference" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Reference" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "normalizeMedicationReference" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "medicationVar" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "reference" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "medicationReferenceValue" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "normalizeMedicationReferenceTransformation" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "medicationReferenceValue" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "currentMedicationReferenceValue" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "tgtMedicationReference" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "reference" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "evaluate" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "iif(%currentMedicationReferenceValue.startsWith('urn:uuid:'), %currentMedicationReferenceValue, 'urn:uuid:' & %currentMedicationReferenceValue.replaceMatches('.*[:/]', ''))" ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Transformiert die Medication-Referenz zu urn:uuid Format" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedicationRequest.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

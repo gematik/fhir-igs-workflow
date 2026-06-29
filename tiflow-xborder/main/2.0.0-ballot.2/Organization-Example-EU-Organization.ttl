@@ -1,0 +1,57 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-xborder/Organization/Example-EU-Organization> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "Example-EU-Organization"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Organization" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Organization>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization Example-EU-Organization</b></p><a name=\"Example-EU-Organization\"> </a><a name=\"hcExample-EU-Organization\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERPEU-PR-Organization.html\">Organization Information Received from the EU</a></p></div><p><b>identifier</b>: 1234567890, EU-136ad69f</p><p><b>type</b>: <span title=\"Codes:{https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID 1.2.276.0.76.4.54}\">Öffentliche Apotheke</span></p><p><b>name</b>: Pharmacia de Santa Maria</p><p><b>address</b>: Rua da Alegria, 123 Lisbon Estremadura 1234-567 Portugal </p></div>"
+  ] ;
+  fhir:Organization.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.value [ fhir:value "1234567890" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Identifier.value [ fhir:value "EU-136ad69f" ]
+  ] ;
+  fhir:Organization.type [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID" ] ;
+       fhir:Coding.code [ fhir:value "1.2.276.0.76.4.54" ] ;
+       fhir:Coding.display [ fhir:value "Öffentliche Apotheke" ]
+     ]
+  ] ;
+  fhir:Organization.name [ fhir:value "Pharmacia de Santa Maria"] ;
+  fhir:Organization.address [
+     fhir:index 0 ;
+     fhir:Address.line [
+       fhir:value "Rua da Alegria, 123" ;
+       fhir:index 0
+     ] ;
+     fhir:Address.city [ fhir:value "Lisbon" ] ;
+     fhir:Address.state [ fhir:value "Estremadura" ] ;
+     fhir:Address.postalCode [ fhir:value "1234-567" ] ;
+     fhir:Address.country [ fhir:value "Portugal" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-xborder/Organization/Example-EU-Organization.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

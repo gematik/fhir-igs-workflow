@@ -1,0 +1,86 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-xborder/Bundle/ExampleGetConsent> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleGetConsent"] ;
+  fhir:Bundle.type [ fhir:value "searchset"] ;
+  fhir:Bundle.timestamp [ fhir:value "2025-10-01T12:03:23Z"^^xsd:dateTime] ;
+  fhir:Bundle.total [ fhir:value "1"^^xsd:nonNegativeInteger] ;
+  fhir:Bundle.link [
+     fhir:index 0 ;
+     fhir:Bundle.link.relation [ fhir:value "self" ] ;
+     fhir:Bundle.link.url [ fhir:value "https://erp-dev.zentral.erp.splitdns.ti-dienste.de/Consent?category=EUDISPCONS" ]
+  ] ;
+  fhir:Bundle.entry [
+     fhir:index 0 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://erp-dev.zentral.erp.splitdns.ti-dienste.de/Consent/f97a0772-c99f-4159-90c6-2a41c7d96779" ] ;
+     fhir:Bundle.entry.resource <https://erp-dev.zentral.erp.splitdns.ti-dienste.de/Consent/f97a0772-c99f-4159-90c6-2a41c7d96779> ;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
+  ] .
+
+<https://erp-dev.zentral.erp.splitdns.ti-dienste.de/Consent/f97a0772-c99f-4159-90c6-2a41c7d96779> a fhir:Consent ;
+  fhir:Resource.id [ fhir:value "f97a0772-c99f-4159-90c6-2a41c7d96779"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Consent" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Consent>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Consent_f97a0772-c99f-4159-90c6-2a41c7d96779\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Consent f97a0772-c99f-4159-90c6-2a41c7d96779</b></p><a name=\"f97a0772-c99f-4159-90c6-2a41c7d96779\"> </a><a name=\"hcf97a0772-c99f-4159-90c6-2a41c7d96779\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERPEU-PR-Consent.html\">Consent for ePrescriptions</a></p></div><h2>Participants</h2><table class=\"grid\"><tr><td><b>Role</b></td><td><b>Details</b></td></tr><tr><td title=\"Who the consent applies to\">Patient</td><td>Identifier: NamingSystemKVID/X123456789</td></tr></table><p>This consent is made under the regulation <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode OPTIN}\">opt-in</span> .</p><p>The subject has given their consent.</p></div>"
+  ] ;
+  fhir:Consent.status [ fhir:value "active"] ;
+  fhir:Consent.scope [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/consentscope" ] ;
+       fhir:Coding.code [ fhir:value "patient-privacy" ] ;
+       fhir:Coding.display [ fhir:value "Privacy Consent" ]
+     ]
+  ] ;
+  fhir:Consent.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/tiflow-xborder/CodeSystem/GEM-ERPEU-CS-ConsentType" ] ;
+       fhir:Coding.code [ fhir:value "EUDISPCONS" ] ;
+       fhir:Coding.display [ fhir:value "Consent for redeeming e-prescriptions in EU countries" ]
+     ]
+  ] ;
+  fhir:Consent.patient [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "X123456789" ] ;
+       fhir:Identifier.assigner [
+         fhir:Reference.identifier [
+           fhir:Identifier.system [ fhir:value "http://fhir.de/sid/arge-ik/iknr" ] ;
+           fhir:Identifier.value [ fhir:value "987655435" ]
+         ]
+       ]
+     ]
+  ] ;
+  fhir:Consent.dateTime [ fhir:value "2025-10-01T12:03:23Z"^^xsd:dateTime] ;
+  fhir:Consent.policyRule [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ] ;
+       fhir:Coding.code [ fhir:value "OPTIN" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-xborder/Bundle/ExampleGetConsent.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

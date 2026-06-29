@@ -1,0 +1,40 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "EUCloseOperation",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition EUCloseOperation</b></p><a name=\"EUCloseOperation\"> </a><a name=\"hcEUCloseOperation\"> </a><p>URL: [base]/Task/[id]/$eu-close</p><p>Input parameters Profile:<a href=\"StructureDefinition-GEM-ERPEU-PR-PAR-Close-Operation-Input.html\">GEM ERP PR EU CloseOperation Input</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr></table></div>"
+  },
+  "url" : "https://gematik.de/fhir/tiflow-xborder/OperationDefinition/EUCloseOperation",
+  "version" : "2.0.0-ballot.2",
+  "name" : "EUCloseOperation",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2026-06-30",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "The operation $close finishes the e-prescription workflow and creates a receipt. The Output of this operation is a signed Bundle, to be used for further financial processing. The status of the Task then changes into #completed",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "code" : "eu-close",
+  "resource" : ["Task"],
+  "system" : false,
+  "type" : false,
+  "instance" : true,
+  "inputProfile" : "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-Close-Operation-Input"
+}

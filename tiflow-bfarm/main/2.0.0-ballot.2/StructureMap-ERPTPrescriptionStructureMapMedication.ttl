@@ -1,0 +1,259 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedication> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ERPTPrescriptionStructureMapMedication"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap ERPTPrescriptionStructureMapMedication</b></p><a name=\"ERPTPrescriptionStructureMapMedication\"> </a><a name=\"hcERPTPrescriptionStructureMapMedication\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedication<span style=\"color: navy\">\" = \"</span>ERPTPrescriptionStructureMapMedication<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf dem KBV/gematik Profil</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/medication.html\" title=\"Medication\">http://hl7.org/fhir/StructureDefinition/Medication</a><span style=\"color: navy\">\" </span><b>alias </b>srcMedication <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/medication.html\" title=\"Medication\">http://hl7.org/fhir/StructureDefinition/Medication</a><span style=\"color: navy\">\" </span><b>alias </b>tgtMedication <b>as </b><b>target</b>#xD;\n#xD;\n<b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-ERPTPrescriptionStructureMapGEMMedication.html\" title=\"E-T-Rezept Structure Map for Medication\">https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapGEMMedication</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-ERPTPrescriptionStructureMapKBVCompoundingMedication.html\" title=\"E-T-Rezept Structure Map for KBV Compounding Medication\">https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVCompoundingMedication</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-ERPTPrescriptionStructureMapKBVPZNMedication.html\" title=\"E-T-Rezept Structure Map for KBV PZN Medication\">https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVPZNMedication</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-ERPTPrescriptionStructureMapKBVFreeTextMedication.html\" title=\"E-T-Rezept Structure Map for KBV FreeText Medication\">https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-ERPTPrescriptionStructureMapKBVIngredientMedication.html\" title=\"E-T-Rezept Structure Map for KBV Ingredient Medication\">https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVIngredientMedication</a><span style=\"color: navy\">\"#xD;\n</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf dem KBV/gematik Profil</span>#xD;\n<b>group </b>ERPTPrescriptionStructureMapMedication<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">srcMedication</span><span style=\"color: navy\"> : </span>srcMedication, <b>target</b> <span style=\"color: maroon\">tgtMedication</span><span style=\"color: navy\"> : </span>tgtMedication<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  srcMedication<b> as </b><span style=\"color: maroon\">srcPZN</span><b> where </b>meta.profile.contains('KBV_PR_ERP_Medication_PZN')<b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcPZN<b> then </b>ERPTPrescriptionStructureMapKBVPZNMedication<span style=\"color: navy\">(</span><span style=\"color: maroon\">srcMedication</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgtMedication</span><span style=\"color: navy\">)</span> <i>\"mapPZN\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Führt die Transformation für PZN-Medikamente durch (Fertigarzneimittel mit Pharmazentralnummer)</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"decideOnMedicationPZN\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Erkennt PZN-basierte Medikamente und leitet an spezialisiertes PZN-Mapping weiter</span>#xD;\n  srcMedication<b> as </b><span style=\"color: maroon\">srcFreeText</span><b> where </b>meta.profile.contains('KBV_PR_ERP_Medication_FreeText')<b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcFreeText<b> then </b>ERPTPrescriptionStructureMapKBVFreeTextMedication<span style=\"color: navy\">(</span><span style=\"color: maroon\">srcMedication</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgtMedication</span><span style=\"color: navy\">)</span> <i>\"mapFreeText\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Führt die Transformation für Freitext-Medikamente durch (nicht standardisierte Arzneimittelangaben)</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"decideOnMedicationFreeText\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Erkennt Freitext-Medikamente und leitet an spezialisiertes FreeText-Mapping weiter</span>#xD;\n  srcMedication<b> as </b><span style=\"color: maroon\">srcIngredient</span><b> where </b>meta.profile.contains('KBV_PR_ERP_Medication_Ingredient')<b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcIngredient<b> then </b>ERPTPrescriptionStructureMapKBVIngredientMedication<span style=\"color: navy\">(</span><span style=\"color: maroon\">srcMedication</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgtMedication</span><span style=\"color: navy\">)</span> <i>\"mapIngredient\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Führt die Transformation für wirkstoffbasierte Medikamente durch (Rezeptur nach Wirkstoffen)</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"decideOnMedicationIngredient\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Erkennt wirkstoffbasierte Medikamente und leitet an spezialisiertes Ingredient-Mapping weiter</span>#xD;\n  srcMedication<b> as </b><span style=\"color: maroon\">srcCompounding</span><b> where </b>meta.profile.contains('KBV_PR_ERP_Medication_Compounding')<b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcCompounding<b> then </b>ERPTPrescriptionStructureMapKBVCompoundingMedication<span style=\"color: navy\">(</span><span style=\"color: maroon\">srcMedication</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgtMedication</span><span style=\"color: navy\">)</span> <i>\"mapCompounding\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Führt die Transformation für Rezeptur-Medikamente durch (individuell hergestellte Arzneimittel)</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"decideOnMedicationCompounding\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Erkennt Rezeptur-Medikamente und leitet an spezialisiertes Compounding-Mapping weiter</span>#xD;\n  srcMedication<b> as </b><span style=\"color: maroon\">srcGemMed</span><b> where </b>meta.profile.contains('GEM_ERP_PR_Medication')<b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcGemMed<b> then </b>ERPTPrescriptionStructureMapGEMMedication<span style=\"color: navy\">(</span><span style=\"color: maroon\">srcMedication</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgtMedication</span><span style=\"color: navy\">)</span> <i>\"mapGemMed\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Führt die Transformation für gematik-Medikamente durch (abgegebene Arzneimittel aus der Apotheke)</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"decideOnMedicationGematik\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Erkennt gematik-Medikamente und leitet an spezialisiertes gematik-Mapping weiter</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"
+  ] ;
+  fhir:StructureMap.url [ fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedication"] ;
+  fhir:StructureMap.version [ fhir:value "2.0.0-ballot.2"] ;
+  fhir:StructureMap.name [ fhir:value "ERPTPrescriptionStructureMapMedication"] ;
+  fhir:StructureMap.title [ fhir:value "E-T-Rezept Structure Map for Medication"] ;
+  fhir:StructureMap.status [ fhir:value "draft"] ;
+  fhir:StructureMap.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:StructureMap.date [ fhir:value "2026-06-30"^^xsd:date] ;
+  fhir:StructureMap.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:StructureMap.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "erp-umsetzung@gematik.de" ]
+     ]
+  ] ;
+  fhir:StructureMap.description [ fhir:value "Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf dem KBV/gematik Profil"] ;
+  fhir:StructureMap.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:StructureMap.structure [
+     fhir:index 0 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/Medication" ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Medication>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "source" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "srcMedication" ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/Medication" ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Medication>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "target" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "tgtMedication" ]
+  ] ;
+  fhir:StructureMap.import [
+     fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapGEMMedication" ;
+     fhir:index 0 ;
+     fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapGEMMedication>
+  ], [
+     fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVCompoundingMedication" ;
+     fhir:index 1 ;
+     fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVCompoundingMedication>
+  ], [
+     fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVPZNMedication" ;
+     fhir:index 2 ;
+     fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVPZNMedication>
+  ], [
+     fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication" ;
+     fhir:index 3 ;
+     fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication>
+  ], [
+     fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVIngredientMedication" ;
+     fhir:index 4 ;
+     fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVIngredientMedication>
+  ] ;
+  fhir:StructureMap.group [
+     fhir:index 0 ;
+     fhir:StructureMap.group.name [ fhir:value "ERPTPrescriptionStructureMapMedication" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.documentation [ fhir:value "Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf dem KBV/gematik Profil" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "srcMedication" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "srcMedication" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "tgtMedication" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "tgtMedication" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "decideOnMedicationPZN" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "srcMedication" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcPZN" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "meta.profile.contains('KBV_PR_ERP_Medication_PZN')" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "mapPZN" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "srcPZN" ]
+         ] ;
+         fhir:StructureMap.group.rule.dependent [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.dependent.name [ fhir:value "ERPTPrescriptionStructureMapKBVPZNMedication" ] ;
+           fhir:StructureMap.group.rule.dependent.variable [
+             fhir:value "srcMedication" ;
+             fhir:index 0
+           ], [
+             fhir:value "tgtMedication" ;
+             fhir:index 1
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Führt die Transformation für PZN-Medikamente durch (Fertigarzneimittel mit Pharmazentralnummer)" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Erkennt PZN-basierte Medikamente und leitet an spezialisiertes PZN-Mapping weiter" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "decideOnMedicationFreeText" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "srcMedication" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcFreeText" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "meta.profile.contains('KBV_PR_ERP_Medication_FreeText')" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "mapFreeText" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "srcFreeText" ]
+         ] ;
+         fhir:StructureMap.group.rule.dependent [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.dependent.name [ fhir:value "ERPTPrescriptionStructureMapKBVFreeTextMedication" ] ;
+           fhir:StructureMap.group.rule.dependent.variable [
+             fhir:value "srcMedication" ;
+             fhir:index 0
+           ], [
+             fhir:value "tgtMedication" ;
+             fhir:index 1
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Führt die Transformation für Freitext-Medikamente durch (nicht standardisierte Arzneimittelangaben)" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Erkennt Freitext-Medikamente und leitet an spezialisiertes FreeText-Mapping weiter" ]
+     ], [
+       fhir:index 2 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "decideOnMedicationIngredient" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "srcMedication" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcIngredient" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "meta.profile.contains('KBV_PR_ERP_Medication_Ingredient')" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "mapIngredient" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "srcIngredient" ]
+         ] ;
+         fhir:StructureMap.group.rule.dependent [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.dependent.name [ fhir:value "ERPTPrescriptionStructureMapKBVIngredientMedication" ] ;
+           fhir:StructureMap.group.rule.dependent.variable [
+             fhir:value "srcMedication" ;
+             fhir:index 0
+           ], [
+             fhir:value "tgtMedication" ;
+             fhir:index 1
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Führt die Transformation für wirkstoffbasierte Medikamente durch (Rezeptur nach Wirkstoffen)" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Erkennt wirkstoffbasierte Medikamente und leitet an spezialisiertes Ingredient-Mapping weiter" ]
+     ], [
+       fhir:index 3 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "decideOnMedicationCompounding" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "srcMedication" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcCompounding" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "meta.profile.contains('KBV_PR_ERP_Medication_Compounding')" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "mapCompounding" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "srcCompounding" ]
+         ] ;
+         fhir:StructureMap.group.rule.dependent [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.dependent.name [ fhir:value "ERPTPrescriptionStructureMapKBVCompoundingMedication" ] ;
+           fhir:StructureMap.group.rule.dependent.variable [
+             fhir:value "srcMedication" ;
+             fhir:index 0
+           ], [
+             fhir:value "tgtMedication" ;
+             fhir:index 1
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Führt die Transformation für Rezeptur-Medikamente durch (individuell hergestellte Arzneimittel)" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Erkennt Rezeptur-Medikamente und leitet an spezialisiertes Compounding-Mapping weiter" ]
+     ], [
+       fhir:index 4 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "decideOnMedicationGematik" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "srcMedication" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcGemMed" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "meta.profile.contains('GEM_ERP_PR_Medication')" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "mapGemMed" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "srcGemMed" ]
+         ] ;
+         fhir:StructureMap.group.rule.dependent [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.dependent.name [ fhir:value "ERPTPrescriptionStructureMapGEMMedication" ] ;
+           fhir:StructureMap.group.rule.dependent.variable [
+             fhir:value "srcMedication" ;
+             fhir:index 0
+           ], [
+             fhir:value "tgtMedication" ;
+             fhir:index 1
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Führt die Transformation für gematik-Medikamente durch (abgegebene Arzneimittel aus der Apotheke)" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Erkennt gematik-Medikamente und leitet an spezialisiertes gematik-Mapping weiter" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedication.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

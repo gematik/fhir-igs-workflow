@@ -1,0 +1,5960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Release Notes - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/ig.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.gematik.min.js"> </script>
+<link href="assets/css/edge-dark.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.api.doc.gematik.min.js"> </script>
+<link href="assets/css/ig.req.gematik.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/ig.req.gematik.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/ig.bibliography.gematik.js"> </script>
+
+<style>
+    .gem-ig-headline-container {
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        background-size: 100% auto;
+        height: 280px;
+        background-color: #2a6496;
+        background: url('./e-rezept-img.png') no-repeat;
+        background-position: 650px -150px;
+        background-size: 45% auto;
+    }
+    .bubble-link {
+        display: none;
+        transition: opacity 0.2s;
+        }
+
+        h1:hover .bubble-link,
+        h2:hover .bubble-link,
+        h3:hover .bubble-link,
+        h4:hover .bubble-link,
+        h5:hover .bubble-link,
+        h6:hover .bubble-link {
+        display: inline;
+        }
+</style>
+
+<script type="text/javascript" src="assets/js/heading-links.js"> </script>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"9"}
+    h3,h4,h5,h6{--heading-prefix:"9"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <a id="gem-ig-logo" no-external="true" href="./index.html">
+        <img height="50" alt="Home" src="assets/images/gem-logo.png"/>
+    </a>
+</div>
+
+
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Fachlichkeit
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-fachlichkeit-e-rezept.html">Arzneimittel</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-t-rezept.html">Teratogene Arzneimittel</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-mvo.html">Mehrfachverordnungen</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-wf-le.html">Workflow-Steuerung durch LE</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-ux-verordnend.html">UX verordnend</a>
+      </li>
+      <li>
+        <a href="menu-fachlichkeit-ux-abgebend.html">UX abgebend</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technische Umsetzung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-technische-umsetzung-anwendungsfaelle.html">Technische Anwendungsfälle</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-dosierung.html">Strukturierte Dosierungen</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-dispensierinformationen.html">Dispensierinformationen</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Schnittstellen
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="menu-schnittstellen-query-api.html">Query API</a>
+      </li>
+      <li>
+        <a href="menu-schnittstellen-operation-api.html">Operation API</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="referenced.html">Referenzen</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="release-notes.html">Release Notes</a>
+      </li>
+      <li>
+        <a href="license.html">Lizenz</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+
+    <div class="segment"> 
+      <div class="container">
+        
+
+<div class="gem-ig-headline-container"> 
+    <div id="gem-ig-headline" class="col-lg-10 col-md-12">
+        <div class="gem-ig-headline-title">
+            
+Implementation Guide<br /> TIFlow - Verordnungen für Arzneimittel
+        </div>
+        <div id="ig-status" class="gem-ig-headline-subtitle">
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
+                
+                
+            </span>
+            
+
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Release Notes</b></li>
+
+          <span style="float:right;">
+
+            <a href="downloads.html">&lt;vorherige</a> | 
+
+            <a href="#bottom">unten</a>
+
+          | <a href="license.html">nächste&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  
+  <h2>Release Notes</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#release-notes" id="markdown-toc-release-notes">Release Notes</a></li>
+  <li><a href="#version-200" id="markdown-toc-version-200">Version 2.0.0</a></li>
+</ul>
+
+</div>
+<h3 id="release-notes">Release Notes</h3>
+
+<h3 id="version-200">Version 2.0.0</h3>
+
+<h4 id="anforderungen">Anforderungen</h4>
+
+<p>Neue Anforderungen wurden hinzugefügt, bestehende geändert und nicht mehr benötigte gelöscht. Die folgenden Release Notes geben einen detaillierten Überblick über alle Anpassungen.</p>
+
+<table class="no-stripe release-notes" id="release-table-2-0-0">
+    <tr id="row-toggle-all-2-0-0" style="display: none;">
+        <td colspan="99" style="text-align: right; border: none; padding-bottom: 10px;">
+            <button id="btn-toggle-all-2-0-0" class="btn btn-outline-primary btn-sm" style="font-size: 0.75em; padding: 2px 6px; color: black;">
+                &#128269; Alle Details umschalten
+            </button>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-abgabedatensatz.html" data-anchor="IG-TIFLOW-ERP-A1">
+                    IG-TIFLOW-ERP-A1
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Abgabedatensatz mit QES: OCSP Response einbetten
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-task-req-avs.html" data-anchor="IG-TIFLOW-ERP-A10">
+                    IG-TIFLOW-ERP-A10
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - PoPP-Token abrufen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A100">
+                    IG-TIFLOW-ERP-A100
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Startdatum nicht vor Ausstellungsdatum
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A101">
+                    IG-TIFLOW-ERP-A101
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Endedatum nicht vor Startdatum
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A102">
+                    IG-TIFLOW-ERP-A102
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Schema ID
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-task-req-fdv.html" data-anchor="IG-TIFLOW-ERP-A103">
+                    IG-TIFLOW-ERP-A103
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept-FdV: Flowtype 166 - Hinweis auf Workflow-Besonderheit
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-accept-req-fd.html" data-anchor="IG-TIFLOW-ERP-A104">
+                    IG-TIFLOW-ERP-A104
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task akzeptieren - Flowtype 160/166/169/200/209 - Rollenprüfung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-accept-req-fd.html" data-anchor="IG-TIFLOW-ERP-A105">
+                    IG-TIFLOW-ERP-A105
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task akzeptieren - Mehrfachverordnung - Beginn Einlösefrist prüfen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-accept-req-fd.html" data-anchor="IG-TIFLOW-ERP-A106">
+                    IG-TIFLOW-ERP-A106
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task akzeptieren - Coverage PKV - Einwilligung Abrechnungsinformation ermitteln
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-dispense-req-avs.html" data-anchor="IG-TIFLOW-ERP-A107">
+                    IG-TIFLOW-ERP-A107
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Dispensierinformationen bereitstellen - Dispensierinformation übermitteln
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-accept-req-avs.html" data-anchor="IG-TIFLOW-ERP-A108">
+                    IG-TIFLOW-ERP-A108
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Übernahme Rezeptinformationen in Warenwirtschaftssystem
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-accept-req-avs.html" data-anchor="IG-TIFLOW-ERP-A109">
+                    IG-TIFLOW-ERP-A109
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: E-Rezept abrufen - QES prüfen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-task-req-avs.html" data-anchor="IG-TIFLOW-ERP-A11">
+                    IG-TIFLOW-ERP-A11
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - E-Rezepte abrufen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-kim.html" data-anchor="IG-TIFLOW-ERP-A110">
+                    IG-TIFLOW-ERP-A110
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept - X-KIM-Dienstkennung - Zuweisung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-kim.html" data-anchor="IG-TIFLOW-ERP-A111">
+                    IG-TIFLOW-ERP-A111
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept - X-KIM-Dienstkennung - Kommunikation
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-kim.html" data-anchor="IG-TIFLOW-ERP-A112">
+                    IG-TIFLOW-ERP-A112
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept - Struktur Zuweisungs-Message
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-kim.html" data-anchor="IG-TIFLOW-ERP-A113">
+                    IG-TIFLOW-ERP-A113
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept - Zuweisungs-Message - CRLF
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-kim.html" data-anchor="IG-TIFLOW-ERP-A114">
+                    IG-TIFLOW-ERP-A114
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept - Struktur Kommunikation-Message
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./index.html" data-anchor="IG-TIFLOW-ERP-A115">
+                    IG-TIFLOW-ERP-A115
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept: Anwendung des IG 'E-Rezept für Arzneimittel' für Workflows 160, 166, 169, 200 und 209
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./index.html" data-anchor="IG-TIFLOW-ERP-A116">
+                    IG-TIFLOW-ERP-A116
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept: Umsetzung des Moduls 'E-Rezept für Arzneimittel'
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A117">
+                    IG-TIFLOW-ERP-A117
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Zuweisung - Hinweis
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A118">
+                    IG-TIFLOW-ERP-A118
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Zuweisung - Übernahme E-Rezept aus Nachricht in einen Vorgang
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A119">
+                    IG-TIFLOW-ERP-A119
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Nachrichtenkonfiguration
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-task-req-avs.html" data-anchor="IG-TIFLOW-ERP-A12">
+                    IG-TIFLOW-ERP-A12
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: E-Rezepte von Versicherten abrufen - nicht belieferte E-Rezepte zurückgeben
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A120">
+                    IG-TIFLOW-ERP-A120
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Komposition einer Nachricht an einen Kunden mit Textvorlagen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A121">
+                    IG-TIFLOW-ERP-A121
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Nachrichtenkonfiguration - automatischer Versand der Empfangsbestätigung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A122">
+                    IG-TIFLOW-ERP-A122
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Zuweisung - Empfangsbestätigung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A123">
+                    IG-TIFLOW-ERP-A123
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Zuweisung - Abholbenachrichtigung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A124">
+                    IG-TIFLOW-ERP-A124
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Zuweisung  - Nachricht bei Nicht-Verfügbarkeit eines Medikaments
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A125">
+                    IG-TIFLOW-ERP-A125
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Zuweisung - Nachrichten an Sender
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A126">
+                    IG-TIFLOW-ERP-A126
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Zuweisung - Nachrichten an Sender - ohne Medienbruch
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A127">
+                    IG-TIFLOW-ERP-A127
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Zuweisung - Nachrichten eines Vorgangs
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A128">
+                    IG-TIFLOW-ERP-A128
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Fristen eines Rezeptes - Anzeigen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A129">
+                    IG-TIFLOW-ERP-A129
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Fristen eines Rezeptes - Hinweis bei überschrittener Frist
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-reject-req-fd.html" data-anchor="IG-TIFLOW-ERP-A13">
+                    IG-TIFLOW-ERP-A13
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A130">
+                    IG-TIFLOW-ERP-A130
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Fristen eines Rezeptes - Überschreiten der Belieferungsfrist
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A131">
+                    IG-TIFLOW-ERP-A131
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Fristen eines Rezeptes - Überschreiten der Einlösefrist
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A132">
+                    IG-TIFLOW-ERP-A132
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Suche nach Vorgang mittels E-Rezept-Token
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A133">
+                    IG-TIFLOW-ERP-A133
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Freitextverordnung - Arzneimittelsuche
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A134">
+                    IG-TIFLOW-ERP-A134
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Freitextverordnung - Hinweis zur manuellen Prüfung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A135">
+                    IG-TIFLOW-ERP-A135
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Prüfung mittels ABDA-Referenzvalidators
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A136">
+                    IG-TIFLOW-ERP-A136
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Zuordnung eines E-Rezepts zu einem bestehenden Vorgang
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A137">
+                    IG-TIFLOW-ERP-A137
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Weiterleitung eines E-Rezepts
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A138">
+                    IG-TIFLOW-ERP-A138
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Empfang eines weitergeleiteten eines E-Rezepts
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A139">
+                    IG-TIFLOW-ERP-A139
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Bedienung T-Rezept - Hinweis T-Rezept
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-reject-req-fd.html" data-anchor="IG-TIFLOW-ERP-A14">
+                    IG-TIFLOW-ERP-A14
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Dispensierinformationen löschen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A140">
+                    IG-TIFLOW-ERP-A140
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Bedienung T-Rezept - Hinweis T-Rezept Belieferungsoption
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A141">
+                    IG-TIFLOW-ERP-A141
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Quittung automatisch abrufen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A142">
+                    IG-TIFLOW-ERP-A142
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Workflow von E-Rezepten abschließen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A143">
+                    IG-TIFLOW-ERP-A143
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Abgabedatensatz signieren - QES Signatur in notwendigen Fällen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A144">
+                    IG-TIFLOW-ERP-A144
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Abgabedatensatz signieren - QES Signatur
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A145">
+                    IG-TIFLOW-ERP-A145
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Abrechnungsstatusliste für E-Rezepte
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A146">
+                    IG-TIFLOW-ERP-A146
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Abrechnungsstatusliste für E-Rezepte - Hinweisen zu Abrechnungsfehlern
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A147">
+                    IG-TIFLOW-ERP-A147
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Abrechnungsstatusliste für E-Rezepte - Verweis zur Korrektur
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A148">
+                    IG-TIFLOW-ERP-A148
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Nicht-Erreichbarkeit des TI-Flow-Fachdienstes - Automatische Behebung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A149">
+                    IG-TIFLOW-ERP-A149
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des TI-Flow-Fachdienstes
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-reject-req-fd.html" data-anchor="IG-TIFLOW-ERP-A15">
+                    IG-TIFLOW-ERP-A15
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A150">
+                    IG-TIFLOW-ERP-A150
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des TI-Flow-Fachdienstes - Operabilität des AVS
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A151">
+                    IG-TIFLOW-ERP-A151
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Verständliche Fehlermeldungen - technische Fehler
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-abgebend.html" data-anchor="IG-TIFLOW-ERP-A152">
+                    IG-TIFLOW-ERP-A152
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: UX - Verständliche Fehlermeldungen - Handlungsempfehlung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A153">
+                    IG-TIFLOW-ERP-A153
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - E-Rezept im Verordnungsvorgang erstellen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A154">
+                    IG-TIFLOW-ERP-A154
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Verarbeitungsvorgänge im Hintergrund
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A155">
+                    IG-TIFLOW-ERP-A155
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Ergebnismeldung von Verarbeitungsvorgängen im Hintergrund
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A156">
+                    IG-TIFLOW-ERP-A156
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Konfigurationsparameter E-Rezept
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A157">
+                    IG-TIFLOW-ERP-A157
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Defaulteinstellung E-Rezept-Ausdruck
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A158">
+                    IG-TIFLOW-ERP-A158
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Stammdaten für Arzt und Einrichtung übernehmen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A159">
+                    IG-TIFLOW-ERP-A159
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Optimaler Klickpfad
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-abort-req-fdv.html" data-anchor="IG-TIFLOW-ERP-A16">
+                    IG-TIFLOW-ERP-A16
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept-FdV: E-Rezept löschen - Flowtype 169 / 209 - nur wenn beliefert
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A160">
+                    IG-TIFLOW-ERP-A160
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Optimaler Klickpfad - Erzeugung einer neuen Verordnung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A161">
+                    IG-TIFLOW-ERP-A161
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Optimaler Klickpfad - Vorbelegung bekannter Informationen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A162">
+                    IG-TIFLOW-ERP-A162
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Optimaler Klickpfad - Suche nach gewünschtem Präparat
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A163">
+                    IG-TIFLOW-ERP-A163
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Optimaler Klickpfad - Auswahl und Anpassung des Verordnungsinhalts und Signaturvorbereitung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A164">
+                    IG-TIFLOW-ERP-A164
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Optimaler Klickpfad - Vorbereitung mehrerer Verordnungen zum späteren Signieren
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A165">
+                    IG-TIFLOW-ERP-A165
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Optimaler Klickpfad - Signieren aller vorbereiteten Verordnungen auf einmal
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A166">
+                    IG-TIFLOW-ERP-A166
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Optimaler Klickpfad - Hintergrund-Signaturprozess und Fehleranzeigen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A167">
+                    IG-TIFLOW-ERP-A167
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Optimaler Klickpfad - Hinweistext bei erfolgreichem Signieren
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A168">
+                    IG-TIFLOW-ERP-A168
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Optimaler Klickpfad - Automatischer Ausdruck bei entsprechender Konfiguration
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A169">
+                    IG-TIFLOW-ERP-A169
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Anwendbarkeit E-Rezept
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-close-req-fd.html" data-anchor="IG-TIFLOW-ERP-A17">
+                    IG-TIFLOW-ERP-A17
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Rollenprüfung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A170">
+                    IG-TIFLOW-ERP-A170
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Hinweis bei Freitextverordnungen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A171">
+                    IG-TIFLOW-ERP-A171
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Abgabehinweise für den Apotheker
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A172">
+                    IG-TIFLOW-ERP-A172
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: E-Rezept erstellen - author Practitioner gemäß signierendem HBA
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A173">
+                    IG-TIFLOW-ERP-A173
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Vertretungssituation - Möglichkeit zur Entscheidung über Vertretungsfall
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A174">
+                    IG-TIFLOW-ERP-A174
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Vertretungssituation - Signatur eines E-Rezeptes
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A175">
+                    IG-TIFLOW-ERP-A175
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Vertretungssituation - Kollegiale Vertretung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A176">
+                    IG-TIFLOW-ERP-A176
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Vertretungssituation - Persönliche Vertretung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A177">
+                    IG-TIFLOW-ERP-A177
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Weiterbildungsassistent - Möglichkeit zur Entscheidung über Weiterbildungsassistent
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A178">
+                    IG-TIFLOW-ERP-A178
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Weiterbildungsassistent - Konfiguration ausbildende Person
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A179">
+                    IG-TIFLOW-ERP-A179
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Weiterbildungsassistent - E-Rezept erstellen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-close-req-fd.html" data-anchor="IG-TIFLOW-ERP-A18">
+                    IG-TIFLOW-ERP-A18
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task schließen - Flowtype 160/166/169/200/209 - Profilprüfung MedicationDispense
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A180">
+                    IG-TIFLOW-ERP-A180
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - E-T-Rezept - Hinweis T-Rezept
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A181">
+                    IG-TIFLOW-ERP-A181
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - E-T-Rezept - Automatische Berechnung der Reichdauer
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A182">
+                    IG-TIFLOW-ERP-A182
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - E-T-Rezept - Manuelle Eingabe der Reichdauer
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A183">
+                    IG-TIFLOW-ERP-A183
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - E-T-Rezept - Warnung Reichdauer
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A184">
+                    IG-TIFLOW-ERP-A184
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Mehrfachverordnungen als Option
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A185">
+                    IG-TIFLOW-ERP-A185
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - MVO - Generierung von Mehrfachverordnungen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A186">
+                    IG-TIFLOW-ERP-A186
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - MVO- Automatische Befüllung von Teilverordnungen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A187">
+                    IG-TIFLOW-ERP-A187
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - MVO - Auswahl der Anzahl von Teilverordnungen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A188">
+                    IG-TIFLOW-ERP-A188
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - MVO - Unterstützung bei Einlösefristen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A189">
+                    IG-TIFLOW-ERP-A189
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - MVO - Löschen von zusammengehörenden Teilverordnungen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-close-req-fd.html" data-anchor="IG-TIFLOW-ERP-A19">
+                    IG-TIFLOW-ERP-A19
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task schließen - Aufruf ohne MedicationDispense
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A190">
+                    IG-TIFLOW-ERP-A190
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - MVO - Signieren von Teilverordnungen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A191">
+                    IG-TIFLOW-ERP-A191
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - MVO - Vorbereitung durch MFA
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A192">
+                    IG-TIFLOW-ERP-A192
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Aufgabenliste
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A193">
+                    IG-TIFLOW-ERP-A193
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Aufgabenliste - Filtern und Sortieren
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A194">
+                    IG-TIFLOW-ERP-A194
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Anlegen eines E-Rezeptes durch MFA
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A195">
+                    IG-TIFLOW-ERP-A195
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Keine Signatur von Nutzern ohne HBA
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A196">
+                    IG-TIFLOW-ERP-A196
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Aufgabenliste - Benachrichtigungen für neue Aufgaben
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A197">
+                    IG-TIFLOW-ERP-A197
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Aufgabenliste - Bearbeiten einzelner Einträge
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A198">
+                    IG-TIFLOW-ERP-A198
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Aufgabenliste - Zugriff auf Patientendaten
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A199">
+                    IG-TIFLOW-ERP-A199
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Aufgabenliste - Grafische Anzeige E-Rezepte
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-abgabedatensatz.html" data-anchor="IG-TIFLOW-ERP-A2">
+                    IG-TIFLOW-ERP-A2
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Abgabedatensatz signieren - Signaturverfahren
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-close-req-fd.html" data-anchor="IG-TIFLOW-ERP-A20">
+                    IG-TIFLOW-ERP-A20
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task schließen - Überschreiben vorheriger MedicationDispenses
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A200">
+                    IG-TIFLOW-ERP-A200
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Aufgabenliste - Mehrfachauswahl zur Signatur
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A201">
+                    IG-TIFLOW-ERP-A201
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: Benachrichtigungssystem - Information über Rezeptausstellung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A202">
+                    IG-TIFLOW-ERP-A202
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: Benachrichtigungssystem - Schützenswerte Informationen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A203">
+                    IG-TIFLOW-ERP-A203
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Verhalten bei Ausfall von TI Komponenten des E-Rezepts
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A204">
+                    IG-TIFLOW-ERP-A204
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Verständliche Fehlermeldungen - technische Fehler
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A205">
+                    IG-TIFLOW-ERP-A205
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Verständliche Fehlermeldungen - Handlungsempfehlung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-fachlichkeit-ux-verordnend.html" data-anchor="IG-TIFLOW-ERP-A206">
+                    IG-TIFLOW-ERP-A206
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: UX - Fehlerbenachrichtigung bei Löschversuch eines E-Rezepts
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-dispensierinformationen.html" data-anchor="IG-TIFLOW-ERP-A207">
+                    IG-TIFLOW-ERP-A207
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - MedicationDispense erstellen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-dispensierinformationen.html" data-anchor="IG-TIFLOW-ERP-A208">
+                    IG-TIFLOW-ERP-A208
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Bereitstellen von Dosierinformationen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-dispensierinformationen.html" data-anchor="IG-TIFLOW-ERP-A209">
+                    IG-TIFLOW-ERP-A209
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Mehrere MedicationDispense
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-dispensierinformationen.html" data-anchor="IG-TIFLOW-ERP-A210">
+                    IG-TIFLOW-ERP-A210
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Profilversion bei mehreren MedicationDispenses
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-dispensierinformationen.html" data-anchor="IG-TIFLOW-ERP-A211">
+                    IG-TIFLOW-ERP-A211
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Fertigarzneimittel: Chargeninfo
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-dispensierinformationen.html" data-anchor="IG-TIFLOW-ERP-A212">
+                    IG-TIFLOW-ERP-A212
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Fertigarzneimittel: Wirkstoff, Wirkstärke und Handelsname
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-dispensierinformationen.html" data-anchor="IG-TIFLOW-ERP-A213">
+                    IG-TIFLOW-ERP-A213
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI:  Dispensierinformationen - Flowtype 160/166/169/200/209 - Rezeptur: Wirkstoff, Wirkstärke
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-dispensierinformationen.html" data-anchor="IG-TIFLOW-ERP-A214">
+                    IG-TIFLOW-ERP-A214
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Dosieranweisung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-dispensierinformationen.html" data-anchor="IG-TIFLOW-ERP-A215">
+                    IG-TIFLOW-ERP-A215
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Dosierangaben Freitext
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-dispensierinformationen.html" data-anchor="IG-TIFLOW-ERP-A216">
+                    IG-TIFLOW-ERP-A216
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Substitutionskennzeichen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-create-req-fd.html" data-anchor="IG-TIFLOW-ERP-A217">
+                    IG-TIFLOW-ERP-A217
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task erzeugen - Flowtype 160/166/169/200/209 - Ergänzung Performer-Typ für Einlöseinstitutstyp
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-audit-service.html" data-anchor="IG-TIFLOW-ERP-A218">
+                    IG-TIFLOW-ERP-A218
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Versichertenprotokoll zu Rx-Operationen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A219">
+                    IG-TIFLOW-ERP-A219
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-close-req-fd.html" data-anchor="IG-TIFLOW-ERP-A22">
+                    IG-TIFLOW-ERP-A22
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task schließen - Daten ePA Medication Service bereitstellen (Dispensierinformationen)
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A220">
+                    IG-TIFLOW-ERP-A220
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A221">
+                    IG-TIFLOW-ERP-A221
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Längenprüfung PZN
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-audit-service.html" data-anchor="IG-TIFLOW-ERP-A222">
+                    IG-TIFLOW-ERP-A222
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-data.html" data-anchor="IG-TIFLOW-ERP-A223">
+                    IG-TIFLOW-ERP-A223
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_Reply
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-close-req-fd.html" data-anchor="IG-TIFLOW-ERP-A23">
+                    IG-TIFLOW-ERP-A23
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task schließen - T-Rezept Daten an BfArM Webdienst bereitstellen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-fdv.html" data-anchor="IG-TIFLOW-ERP-A24">
+                    IG-TIFLOW-ERP-A24
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept-FdV: Anfrage Belieferung - Flowtype 162 / 169 / 209 - Anfrage nicht zulässig
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-fdv.html" data-anchor="IG-TIFLOW-ERP-A25">
+                    IG-TIFLOW-ERP-A25
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-fdv.html" data-anchor="IG-TIFLOW-ERP-A26">
+                    IG-TIFLOW-ERP-A26
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept-FdV: E-Rezept zuweisen- Flowtype 166 - Zuweisen als Versand nicht zulässig
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-fdv.html" data-anchor="IG-TIFLOW-ERP-A27">
+                    IG-TIFLOW-ERP-A27
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept-FdV: E-Rezept zuweisen - Beginn Gültigkeit prüfen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-fdv.html" data-anchor="IG-TIFLOW-ERP-A28">
+                    IG-TIFLOW-ERP-A28
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept-FdV: E-Rezept zuweisen - Textnachricht ohne Link
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-abgabedatensatz.html" data-anchor="IG-TIFLOW-ERP-A3">
+                    IG-TIFLOW-ERP-A3
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Abgabedatensatz signieren - Gültigkeit SMC-B prüfen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-fdv.html" data-anchor="IG-TIFLOW-ERP-A30">
+                    IG-TIFLOW-ERP-A30
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept-FdV: E-Rezept zuweisen - Zuweisen - Payload
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-fdv.html" data-anchor="IG-TIFLOW-ERP-A31">
+                    IG-TIFLOW-ERP-A31
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept-FdV: E-Rezept zuweisen - Auf Nachricht antworten - Payload
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-fdv.html" data-anchor="IG-TIFLOW-ERP-A32">
+                    IG-TIFLOW-ERP-A32
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept-FdV: E-Rezept zuweisen - Nachricht erstellen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-fdv.html" data-anchor="IG-TIFLOW-ERP-A33">
+                    IG-TIFLOW-ERP-A33
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept-FdV: Apotheke suchen - Filter Öffentliche Apotheke
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-task-req-fd.html" data-anchor="IG-TIFLOW-ERP-A34">
+                    IG-TIFLOW-ERP-A34
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Liste Task abrufen - Flowtype 169 / 209 - Versicherter keine Einlöseinformationen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-task-req-fd.html" data-anchor="IG-TIFLOW-ERP-A35">
+                    IG-TIFLOW-ERP-A35
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task abrufen - Flowtype 169/209 - Nicht verfügbar bei KVNR-Mismatch
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-dispense-req-fd.html" data-anchor="IG-TIFLOW-ERP-A36">
+                    IG-TIFLOW-ERP-A36
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung Abgebender stellt Dispensierinformationen bereit
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-dispense-req-fd.html" data-anchor="IG-TIFLOW-ERP-A37">
+                    IG-TIFLOW-ERP-A37
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Secret
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-dispense-req-fd.html" data-anchor="IG-TIFLOW-ERP-A38">
+                    IG-TIFLOW-ERP-A38
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-dispense-req-fd.html" data-anchor="IG-TIFLOW-ERP-A39">
+                    IG-TIFLOW-ERP-A39
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Schemaprüfung MedicationDispense
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-dispense-req-fd.html" data-anchor="IG-TIFLOW-ERP-A40">
+                    IG-TIFLOW-ERP-A40
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Überschreiben vorheriger MedicationDispenses
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-dispense-req-fd.html" data-anchor="IG-TIFLOW-ERP-A41">
+                    IG-TIFLOW-ERP-A41
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - MedicationDispense speichern
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-dispense-req-fd.html" data-anchor="IG-TIFLOW-ERP-A43">
+                    IG-TIFLOW-ERP-A43
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Daten Medikationsliste bereitstellen (Dispensierinformationen)
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-dispense-req-fd.html" data-anchor="IG-TIFLOW-ERP-A44">
+                    IG-TIFLOW-ERP-A44
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Zeitstempel MedicationDispense
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-dispense-req-fd.html" data-anchor="IG-TIFLOW-ERP-A45">
+                    IG-TIFLOW-ERP-A45
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Telematik-ID der abgebenden LEI speichern
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-dispense-req-fd.html" data-anchor="IG-TIFLOW-ERP-A46">
+                    IG-TIFLOW-ERP-A46
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Push Notification Versicherter
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-dispense-req-fd.html" data-anchor="IG-TIFLOW-ERP-A47">
+                    IG-TIFLOW-ERP-A47
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Keine Statusänderung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-abort-req-fd.html" data-anchor="IG-TIFLOW-ERP-A48">
+                    IG-TIFLOW-ERP-A48
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 160/166/169/200/209 - Rollenprüfung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-abort-req-fd.html" data-anchor="IG-TIFLOW-ERP-A49">
+                    IG-TIFLOW-ERP-A49
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung in-progress
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-abort-req-fd.html" data-anchor="IG-TIFLOW-ERP-A50">
+                    IG-TIFLOW-ERP-A50
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung ungleich in-progress
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-abort-req-fd.html" data-anchor="IG-TIFLOW-ERP-A51">
+                    IG-TIFLOW-ERP-A51
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - E-Rezept löschen - Apotheke - Prüfung Secret
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-abort-req-fd.html" data-anchor="IG-TIFLOW-ERP-A52">
+                    IG-TIFLOW-ERP-A52
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 169 / 209 - Versicherter - Statusprüfung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-abort-req-fd.html" data-anchor="IG-TIFLOW-ERP-A53">
+                    IG-TIFLOW-ERP-A53
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Leistungserbringerinstitution
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-abort-req-fd.html" data-anchor="IG-TIFLOW-ERP-A54">
+                    IG-TIFLOW-ERP-A54
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - E-Rezept löschen - Löschinformation ePA Medication Service bereitstellen (Verordnungsdatensatz) - Versicherter
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-avs.html" data-anchor="IG-TIFLOW-ERP-A55">
+                    IG-TIFLOW-ERP-A55
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Nachricht versenden - Externe URL ausschließlich für Einlösung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-avs.html" data-anchor="IG-TIFLOW-ERP-A56">
+                    IG-TIFLOW-ERP-A56
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Nachricht erstellen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-avs.html" data-anchor="IG-TIFLOW-ERP-A57">
+                    IG-TIFLOW-ERP-A57
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Communication Ressource erstellen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-pvs.html" data-anchor="IG-TIFLOW-ERP-A58">
+                    IG-TIFLOW-ERP-A58
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: E-Rezept erstellen - Flowtype 160/166/169/200/209 - Bereitstellen von Dosierinformationen
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-pvs.html" data-anchor="IG-TIFLOW-ERP-A59">
+                    IG-TIFLOW-ERP-A59
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: E-Rezept erstellen - Flowtype 200/209 - KVNR als Identifier
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-pvs.html" data-anchor="IG-TIFLOW-ERP-A60">
+                    IG-TIFLOW-ERP-A60
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: E-Rezept erstellen - Flowtype 200/209 - Versicherungstyp PKV
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-pvs.html" data-anchor="IG-TIFLOW-ERP-A61">
+                    IG-TIFLOW-ERP-A61
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: E-Rezept erstellen - Mehrfachverordnung - Beginn Einlösefrist
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-pvs.html" data-anchor="IG-TIFLOW-ERP-A62">
+                    IG-TIFLOW-ERP-A62
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - zulässige Signatur Arzt
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-pvs.html" data-anchor="IG-TIFLOW-ERP-A63">
+                    IG-TIFLOW-ERP-A63
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - Reichdauer nach Vorgaben
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-pvs.html" data-anchor="IG-TIFLOW-ERP-A64">
+                    IG-TIFLOW-ERP-A64
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - Bestätigungen nach §3a Abs. 2, 5 AMVV
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-pvs.html" data-anchor="IG-TIFLOW-ERP-A65">
+                    IG-TIFLOW-ERP-A65
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: E-Rezept erstellen - Flowtype 169/209 - kein Patientenausdruck
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-pvs.html" data-anchor="IG-TIFLOW-ERP-A66">
+                    IG-TIFLOW-ERP-A66
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: Übergabe E-Rezept-Token an Apotheke
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-pvs.html" data-anchor="IG-TIFLOW-ERP-A67">
+                    IG-TIFLOW-ERP-A67
+                </a>
+            
+        </td>
+        <td>
+            PS: Schutz des E-Rezept-Tokens bei Übertragung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-pvs.html" data-anchor="IG-TIFLOW-ERP-A68">
+                    IG-TIFLOW-ERP-A68
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: Herstellende Apotheke für Übermittlungsverfahren
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-data.html" data-anchor="IG-TIFLOW-ERP-A69">
+                    IG-TIFLOW-ERP-A69
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept-FdV: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-communication-req-data.html" data-anchor="IG-TIFLOW-ERP-A70">
+                    IG-TIFLOW-ERP-A70
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: Nachrichtenaustausch - Nachricht durch Abgebenden übermitteln - Datenstruktur Nachricht
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-anwendungsfaelle.html" data-anchor="IG-TIFLOW-ERP-A71">
+                    IG-TIFLOW-ERP-A71
+                </a>
+            
+        </td>
+        <td>
+            PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-anwendungsfaelle.html" data-anchor="IG-TIFLOW-ERP-A72">
+                    IG-TIFLOW-ERP-A72
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-anwendungsfaelle.html" data-anchor="IG-TIFLOW-ERP-A73">
+                    IG-TIFLOW-ERP-A73
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: TIFlow-RX - verpflichtende Anwendungsfälle
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./menu-technische-umsetzung-anwendungsfaelle.html" data-anchor="IG-TIFLOW-ERP-A74">
+                    IG-TIFLOW-ERP-A74
+                </a>
+            
+        </td>
+        <td>
+            PS abgebende LEI: TIFlow-RX - empfohlene Anwendungsfälle
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A75">
+                    IG-TIFLOW-ERP-A75
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - QES durch berechtigte Berufsgruppe
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A76">
+                    IG-TIFLOW-ERP-A76
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - QES durch berechtigte Berufsgruppe
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A77">
+                    IG-TIFLOW-ERP-A77
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung Arzneimittelverordnung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A78">
+                    IG-TIFLOW-ERP-A78
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - Prüfung Arzneimittelverordnung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A79">
+                    IG-TIFLOW-ERP-A79
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/166/169/200/209 - Prüfung Coverage Type
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A80">
+                    IG-TIFLOW-ERP-A80
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169 - Prüfung Coverage Type
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A81">
+                    IG-TIFLOW-ERP-A81
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Flowtype 200/209 - Prüfung Coverage Type
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A82">
+                    IG-TIFLOW-ERP-A82
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Ausschluss Betäubungsmittel
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A83">
+                    IG-TIFLOW-ERP-A83
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Bestimmung der Einlösbarkeit im EU-Ausland
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A84">
+                    IG-TIFLOW-ERP-A84
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Daten ePA Medication Service bereitstellen (Verordnungsdatensatz)
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A85">
+                    IG-TIFLOW-ERP-A85
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Flowtype 160 - Prozessparameter
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A86">
+                    IG-TIFLOW-ERP-A86
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Flowtype 166 - Prozessparameter
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A87">
+                    IG-TIFLOW-ERP-A87
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Flowtype 169 - Prozessparameter
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A88">
+                    IG-TIFLOW-ERP-A88
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Flowtype 200 - Prozessparameter
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A89">
+                    IG-TIFLOW-ERP-A89
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Flowtype 209 - Prozessparameter
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A90">
+                    IG-TIFLOW-ERP-A90
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Entlassparameter - Prozessparameter
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A91">
+                    IG-TIFLOW-ERP-A91
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A92">
+                    IG-TIFLOW-ERP-A92
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator-Denominator kleiner 5
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A93">
+                    IG-TIFLOW-ERP-A93
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator größer 0
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A94">
+                    IG-TIFLOW-ERP-A94
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Denominator größer 1
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A95">
+                    IG-TIFLOW-ERP-A95
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Numerator kleiner / gleich Denominator
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A96">
+                    IG-TIFLOW-ERP-A96
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Unzulässige Angaben
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A97">
+                    IG-TIFLOW-ERP-A97
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - kein Entlassrezept
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A98">
+                    IG-TIFLOW-ERP-A98
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./op-activate-req-fd.html" data-anchor="IG-TIFLOW-ERP-A99">
+                    IG-TIFLOW-ERP-A99
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Beginn Einlösefrist-Pflicht
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+</table>
+
+<div class="legend">
+    Legende:
+    <span><strong>NEU</strong> = Hinzugefügt</span> |
+    <span><strong>ÄND</strong> = Geändert</span> |
+    <span><strong>VERS</strong> = Verschoben</span> |
+    <span><strong>DEL</strong> = Entfernt</span>
+</div>
+
+<p><br /></p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="downloads.html">&lt;vorherige</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">oben</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="license.html">nächste&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 29, 2026 14:44+0000">2026-06-29</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

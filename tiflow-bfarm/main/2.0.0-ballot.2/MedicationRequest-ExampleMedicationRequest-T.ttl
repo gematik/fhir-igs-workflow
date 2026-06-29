@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/MedicationRequest/ExampleMedicationRequest-T> a fhir:MedicationRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleMedicationRequest-T"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-medication-request" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-medication-request>
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction" ] ;
+     fhir:Extension.valueMarkdown [ fhir:value "1-1-1-1 nach Bedarf" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "algorithmVersion" ] ;
+       fhir:Extension.valueString [ fhir:value "1.0.0" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "language" ] ;
+       fhir:Extension.valueCode [ fhir:value "de-DE" ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta" ]
+  ], [
+     fhir:index 2 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "off-label" ] ;
+       fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "childbearing-potential" ] ;
+       fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "security-compliance" ] ;
+       fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "hand-out-information-material" ] ;
+       fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 4 ;
+       fhir:Extension.url [ fhir:value "declaration-of-expertise" ] ;
+       fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+     ] ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/teratogenic-extension" ]
+  ] ;
+  fhir:MedicationRequest.status [ fhir:value "completed"] ;
+  fhir:MedicationRequest.intent [ fhir:value "order"] ;
+  fhir:MedicationRequest.medicationReference [
+     fhir:link <https://gematik.de/fhir/tiflow-bfarm/Medication/ExampleMedication1-Pomalidomid-T> ;
+     fhir:Reference.reference [ fhir:value "Medication/ExampleMedication1-Pomalidomid-T" ]
+  ] ;
+  fhir:MedicationRequest.subject [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/data-absent-reason" ] ;
+           fhir:Extension.valueCode [ fhir:value "not-permitted" ]
+         ]
+       ]
+     ]
+  ] ;
+  fhir:MedicationRequest.authoredOn [ fhir:value "2026-04-01"^^xsd:date] ;
+  fhir:MedicationRequest.dosageInstruction [
+     fhir:index 0 ;
+     fhir:Dosage.text [ fhir:value "1-1-1-1 nach Bedarf" ]
+  ] ;
+  fhir:MedicationRequest.dispenseRequest [
+     fhir:MedicationRequest.dispenseRequest.quantity [
+       fhir:Quantity.value [ fhir:value "10"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "Tablette" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/MedicationRequest/ExampleMedicationRequest-T.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

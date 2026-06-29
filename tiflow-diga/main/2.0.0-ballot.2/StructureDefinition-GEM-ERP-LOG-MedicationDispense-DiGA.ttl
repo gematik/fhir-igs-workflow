@@ -1,0 +1,935 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-LOG-MedicationDispense-DiGA> a fhir:StructureDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA"] ;
+  fhir:StructureDefinition.url [ fhir:value "https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-LOG-MedicationDispense-DiGA"] ;
+  fhir:StructureDefinition.version [ fhir:value "2.0.0-ballot.2"] ;
+  fhir:StructureDefinition.name [ fhir:value "GEM_ERP_LOG_MedicationDispense_DiGA"] ;
+  fhir:StructureDefinition.title [ fhir:value "Logical DiGA Medication Dispense"] ;
+  fhir:StructureDefinition.status [ fhir:value "active"] ;
+  fhir:StructureDefinition.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-06-30"^^xsd:date] ;
+  fhir:StructureDefinition.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:StructureDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "erp-umsetzung@gematik.de" ]
+     ]
+  ] ;
+  fhir:StructureDefinition.description [ fhir:value "Fachliches Modell zur Beschreibung der Informationen, die bei $close in der MedicationDispense-Ressource für DiGAs übermittelt werden."] ;
+  fhir:StructureDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:StructureDefinition.copyright [ fhir:value "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."] ;
+  fhir:StructureDefinition.fhirVersion [ fhir:value "4.0.1"] ;
+  fhir:StructureDefinition.mapping [
+     fhir:index 0 ;
+     fhir:StructureDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+     fhir:StructureDefinition.mapping.uri [ fhir:value "GEM_ERP_PR_MedicationDispense_DiGA" ] ;
+     fhir:StructureDefinition.mapping.name [ fhir:value "Mapping für MedicationDispense DiGA" ] ;
+     fhir:StructureDefinition.mapping.comment [ fhir:value "This mapping maps the logical units of the DiGA MedicationDispense to the profile" ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureDefinition.mapping.identity [ fhir:value "rim" ] ;
+     fhir:StructureDefinition.mapping.uri [ fhir:value "http://hl7.org/v3" ] ;
+     fhir:StructureDefinition.mapping.name [ fhir:value "RIM Mapping" ]
+  ] ;
+  fhir:StructureDefinition.kind [ fhir:value "logical"] ;
+  fhir:StructureDefinition.abstract [ fhir:value "false"^^xsd:boolean] ;
+  fhir:StructureDefinition.type [ fhir:value "https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-LOG-MedicationDispense-DiGA"] ;
+  fhir:StructureDefinition.baseDefinition [
+     fhir:value "http://hl7.org/fhir/StructureDefinition/Element" ;
+     fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+  ] ;
+  fhir:StructureDefinition.derivation [ fhir:value "specialization"] ;
+  fhir:StructureDefinition.snapshot [
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version" ] ;
+       fhir:Extension.valueString [ fhir:value "4.0.1" ]
+     ] ;
+     fhir:StructureDefinition.snapshot.element [
+       fhir:index 0 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Logical DiGA Medication Dispense" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Fachliches Modell zur Beschreibung der Informationen, die bei $close in der MedicationDispense-Ressource für DiGAs übermittelt werden." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "*" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "Element" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ] ;
+       fhir:ElementDefinition.condition [
+         fhir:value "ele-1" ;
+         fhir:index 0
+       ] ;
+       fhir:ElementDefinition.constraint [
+         fhir:index 0 ;
+         fhir:ElementDefinition.constraint.key [ fhir:value "ele-1" ] ;
+         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ] ;
+         fhir:ElementDefinition.constraint.human [ fhir:value "All FHIR elements must have a @value or children" ] ;
+         fhir:ElementDefinition.constraint.expression [ fhir:value "hasValue() or (children().count() > id.count())" ] ;
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "@value|f:*|h:div" ] ;
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Element" ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+         ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "GEM_ERP_PR_MedicationDispense_DiGA" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.id" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.id" ] ;
+       fhir:ElementDefinition.representation [
+         fhir:value "xmlAttr" ;
+         fhir:index 0
+       ] ;
+       fhir:ElementDefinition.short [ fhir:value "Unique id for inter-element referencing" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "Element.id" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type" ] ;
+           fhir:Extension.valueUrl [ fhir:value "string" ]
+         ] ;
+         fhir:ElementDefinition.type.code [ fhir:value "http://hl7.org/fhirpath/System.String" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.extension" ] ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status" ] ;
+         fhir:Extension.valueCode [ fhir:value "normative" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version" ] ;
+         fhir:Extension.valueCode [ fhir:value "4.0.0" ]
+       ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.extension" ] ;
+       fhir:ElementDefinition.slicing [
+         fhir:ElementDefinition.slicing.discriminator [
+           fhir:index 0 ;
+           fhir:ElementDefinition.slicing.discriminator.type [ fhir:value "value" ] ;
+           fhir:ElementDefinition.slicing.discriminator.path [ fhir:value "url" ]
+         ] ;
+         fhir:ElementDefinition.slicing.description [ fhir:value "Extensions are always sliced by (at least) url" ] ;
+         fhir:ElementDefinition.slicing.rules [ fhir:value "open" ]
+       ] ;
+       fhir:ElementDefinition.short [ fhir:value "Additional content defined by implementations" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
+       fhir:ElementDefinition.comment [ fhir:value "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:ElementDefinition.alias [
+         fhir:value "extensions" ;
+         fhir:index 0
+       ], [
+         fhir:value "user content" ;
+         fhir:index 1
+       ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "*" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "Element.extension" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Extension" ]
+       ] ;
+       fhir:ElementDefinition.condition [
+         fhir:value "ele-1" ;
+         fhir:index 0
+       ] ;
+       fhir:ElementDefinition.constraint [
+         fhir:index 0 ;
+         fhir:ElementDefinition.constraint.key [ fhir:value "ele-1" ] ;
+         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ] ;
+         fhir:ElementDefinition.constraint.human [ fhir:value "All FHIR elements must have a @value or children" ] ;
+         fhir:ElementDefinition.constraint.expression [ fhir:value "hasValue() or (children().count() > id.count())" ] ;
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "@value|f:*|h:div" ] ;
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Element" ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:ElementDefinition.constraint.key [ fhir:value "ext-1" ] ;
+         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ] ;
+         fhir:ElementDefinition.constraint.human [ fhir:value "Must have either extensions or value[x], not both" ] ;
+         fhir:ElementDefinition.constraint.expression [ fhir:value "extension.exists() != value.exists()" ] ;
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Extension" ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
+         ]
+       ] ;
+       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "N/A" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.prescriptionId" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.prescriptionId" ] ;
+       fhir:ElementDefinition.short [ fhir:value "ID des E-Rezepts" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "ID des E-Rezepts" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.prescriptionId" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "string" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "identifier[prescriptionID].value" ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.status" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.status" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Status fixedValue: #completed" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Status fixedValue: #completed" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.status" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "status" ]
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.patientKVNR" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.patientKVNR" ] ;
+       fhir:ElementDefinition.short [ fhir:value "KVNR des Patienten" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "KVNR des Patienten" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.patientKVNR" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "string" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "subject.identifier.value" ]
+       ]
+     ], [
+       fhir:index 6 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabeAbgebendeInstutition" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabeAbgebendeInstutition" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Telematik-ID der abgebenden Institution" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Telematik-ID der abgebenden Institution" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabeAbgebendeInstutition" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "performer.actor.identifier.value" ]
+       ]
+     ], [
+       fhir:index 7 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.freischaltCode" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.freischaltCode" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Freischaltcode für die DiGA" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Optional, da die Kasse die Bereitstellung eines Freischaltcodes ablehnen kann." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.freischaltCode" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "string" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "extension[redeemCode].valueString" ]
+       ]
+     ], [
+       fhir:index 8 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.deepLink" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.deepLink" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Universeller Deep Link, der vom DiGA Hersteller bereitgestellt wird" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Universeller Deep Link, der vom DiGA Hersteller bereitgestellt wird" ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.deepLink" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "string" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "extension[deepLink].valueUrl" ]
+       ]
+     ], [
+       fhir:index 9 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Angaben zur DiGA. Zwingend anzugeben, wenn ein Freischaltcode bereitgestellt wird." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Angaben zur DiGA. Zwingend anzugeben, wenn ein Freischaltcode bereitgestellt wird." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
+       ] ;
+       fhir:ElementDefinition.constraint [
+         fhir:index 0 ;
+         fhir:ElementDefinition.constraint.key [ fhir:value "ele-1" ] ;
+         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ] ;
+         fhir:ElementDefinition.constraint.human [ fhir:value "All FHIR elements must have a @value or children" ] ;
+         fhir:ElementDefinition.constraint.expression [ fhir:value "hasValue() or (children().count() > id.count())" ] ;
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "@value|f:*|h:div" ] ;
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Element" ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+         ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "medicationReference" ]
+       ]
+     ], [
+       fhir:index 10 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.id" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.id" ] ;
+       fhir:ElementDefinition.representation [
+         fhir:value "xmlAttr" ;
+         fhir:index 0
+       ] ;
+       fhir:ElementDefinition.short [ fhir:value "Unique id for inter-element referencing" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "Element.id" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type" ] ;
+           fhir:Extension.valueUrl [ fhir:value "string" ]
+         ] ;
+         fhir:ElementDefinition.type.code [ fhir:value "http://hl7.org/fhirpath/System.String" ]
+       ] ;
+       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
+       ]
+     ], [
+       fhir:index 11 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.extension" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.extension" ] ;
+       fhir:ElementDefinition.slicing [
+         fhir:ElementDefinition.slicing.discriminator [
+           fhir:index 0 ;
+           fhir:ElementDefinition.slicing.discriminator.type [ fhir:value "value" ] ;
+           fhir:ElementDefinition.slicing.discriminator.path [ fhir:value "url" ]
+         ] ;
+         fhir:ElementDefinition.slicing.description [ fhir:value "Extensions are always sliced by (at least) url" ] ;
+         fhir:ElementDefinition.slicing.rules [ fhir:value "open" ]
+       ] ;
+       fhir:ElementDefinition.short [ fhir:value "Additional content defined by implementations" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
+       fhir:ElementDefinition.comment [ fhir:value "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:ElementDefinition.alias [
+         fhir:value "extensions" ;
+         fhir:index 0
+       ], [
+         fhir:value "user content" ;
+         fhir:index 1
+       ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "*" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "Element.extension" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Extension" ]
+       ] ;
+       fhir:ElementDefinition.constraint [
+         fhir:index 0 ;
+         fhir:ElementDefinition.constraint.key [ fhir:value "ele-1" ] ;
+         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ] ;
+         fhir:ElementDefinition.constraint.human [ fhir:value "All FHIR elements must have a @value or children" ] ;
+         fhir:ElementDefinition.constraint.expression [ fhir:value "hasValue() or (children().count() > id.count())" ] ;
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "@value|f:*|h:div" ] ;
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Element" ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:ElementDefinition.constraint.key [ fhir:value "ext-1" ] ;
+         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ] ;
+         fhir:ElementDefinition.constraint.human [ fhir:value "Must have either extensions or value[x], not both" ] ;
+         fhir:ElementDefinition.constraint.expression [ fhir:value "extension.exists() != value.exists()" ] ;
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Extension" ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
+         ]
+       ] ;
+       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
+       ]
+     ], [
+       fhir:index 12 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.modifierExtension" ] ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status" ] ;
+         fhir:Extension.valueCode [ fhir:value "normative" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version" ] ;
+         fhir:Extension.valueCode [ fhir:value "4.0.0" ]
+       ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.modifierExtension" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Extensions that cannot be ignored even if unrecognized" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)." ] ;
+       fhir:ElementDefinition.comment [ fhir:value "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
+       fhir:ElementDefinition.requirements [ fhir:value "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension)." ] ;
+       fhir:ElementDefinition.alias [
+         fhir:value "extensions" ;
+         fhir:index 0
+       ], [
+         fhir:value "user content" ;
+         fhir:index 1
+       ], [
+         fhir:value "modifiers" ;
+         fhir:index 2
+       ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "*" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BackboneElement.modifierExtension" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Extension" ]
+       ] ;
+       fhir:ElementDefinition.condition [
+         fhir:value "ele-1" ;
+         fhir:index 0
+       ] ;
+       fhir:ElementDefinition.constraint [
+         fhir:index 0 ;
+         fhir:ElementDefinition.constraint.key [ fhir:value "ele-1" ] ;
+         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ] ;
+         fhir:ElementDefinition.constraint.human [ fhir:value "All FHIR elements must have a @value or children" ] ;
+         fhir:ElementDefinition.constraint.expression [ fhir:value "hasValue() or (children().count() > id.count())" ] ;
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "@value|f:*|h:div" ] ;
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Element" ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:ElementDefinition.constraint.key [ fhir:value "ext-1" ] ;
+         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ] ;
+         fhir:ElementDefinition.constraint.human [ fhir:value "Must have either extensions or value[x], not both" ] ;
+         fhir:ElementDefinition.constraint.expression [ fhir:value "extension.exists() != value.exists()" ] ;
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Extension" ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
+         ]
+       ] ;
+       fhir:ElementDefinition.isModifier [ fhir:value "true"^^xsd:boolean ] ;
+       fhir:ElementDefinition.isModifierReason [ fhir:value "Modifier extensions are expected to modify the meaning or interpretation of the element that contains them" ] ;
+       fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "N/A" ]
+       ]
+     ], [
+       fhir:index 13 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.name" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.name" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Name der DiGA-Verordnungseinheit" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Name der DiGA-Verordnungseinheit" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.name" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "string" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "medicationReference.display" ]
+       ]
+     ], [
+       fhir:index 14 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.pzn" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.pzn" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Pharmazentralnummer als eindeutige Identifikationsnummer zu einer Verordnungseinheit einer digitalen Gesundheitsanwendung (PZN)." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Pharmazentralnummer als eindeutige Identifikationsnummer zu einer Verordnungseinheit einer digitalen Gesundheitsanwendung (PZN)." ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.pzn" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "string" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "medicationReference.identifier.value" ]
+       ]
+     ], [
+       fhir:index 15 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.dataAbsentReason" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.dataAbsentReason" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Wird angegeben, wenn kein Freischaltcode bereitgestellt wird. fixedValue: #unknown" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Wird angegeben, wenn kein Freischaltcode bereitgestellt wird. fixedValue: #unknown" ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.dataAbsentReason" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "medicationReference.extension[data-absent-reason].valueCode" ]
+       ]
+     ], [
+       fhir:index 16 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.datum" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.datum" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Abgabedatum im Format YYYY-MM-DD" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Abgabedatum im Format YYYY-MM-DD" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.datum" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "whenHandedOver" ]
+       ]
+     ], [
+       fhir:index 17 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.note" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.note" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Wenn der Workflow abgeschlossen wird, ohne dass ein Freischaltcode bereitgestellt wird, muss dieser Wert angegeben werden." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Wenn der Workflow abgeschlossen wird, ohne dass ein Freischaltcode bereitgestellt wird, muss dieser Wert angegeben werden." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.note" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Annotation" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "note" ]
+       ]
+     ], [
+       fhir:index 18 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.substitution" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.substitution" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Substitution darf lt. BAS nicht erfolgen." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Substitution darf lt. BAS nicht erfolgen." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "0" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.substitution" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "0" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "substitution" ]
+       ]
+     ]
+  ] ;
+  fhir:StructureDefinition.differential [
+     fhir:StructureDefinition.differential.element [
+       fhir:index 0 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Logical DiGA Medication Dispense" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Fachliches Modell zur Beschreibung der Informationen, die bei $close in der MedicationDispense-Ressource für DiGAs übermittelt werden." ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "GEM_ERP_PR_MedicationDispense_DiGA" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.prescriptionId" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.prescriptionId" ] ;
+       fhir:ElementDefinition.short [ fhir:value "ID des E-Rezepts" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "ID des E-Rezepts" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "string" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "identifier[prescriptionID].value" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.status" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.status" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Status fixedValue: #completed" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Status fixedValue: #completed" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "status" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.patientKVNR" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.patientKVNR" ] ;
+       fhir:ElementDefinition.short [ fhir:value "KVNR des Patienten" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "KVNR des Patienten" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "string" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "subject.identifier.value" ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabeAbgebendeInstutition" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabeAbgebendeInstutition" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Telematik-ID der abgebenden Institution" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Telematik-ID der abgebenden Institution" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "performer.actor.identifier.value" ]
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.freischaltCode" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.freischaltCode" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Freischaltcode für die DiGA" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Optional, da die Kasse die Bereitstellung eines Freischaltcodes ablehnen kann." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "string" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "extension[redeemCode].valueString" ]
+       ]
+     ], [
+       fhir:index 6 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.deepLink" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.deepLink" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Universeller Deep Link, der vom DiGA Hersteller bereitgestellt wird" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Universeller Deep Link, der vom DiGA Hersteller bereitgestellt wird" ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "string" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "extension[deepLink].valueUrl" ]
+       ]
+     ], [
+       fhir:index 7 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Angaben zur DiGA. Zwingend anzugeben, wenn ein Freischaltcode bereitgestellt wird." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Angaben zur DiGA. Zwingend anzugeben, wenn ein Freischaltcode bereitgestellt wird." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "medicationReference" ]
+       ]
+     ], [
+       fhir:index 8 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.name" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.name" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Name der DiGA-Verordnungseinheit" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Name der DiGA-Verordnungseinheit" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "string" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "medicationReference.display" ]
+       ]
+     ], [
+       fhir:index 9 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.pzn" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.pzn" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Pharmazentralnummer als eindeutige Identifikationsnummer zu einer Verordnungseinheit einer digitalen Gesundheitsanwendung (PZN)." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Pharmazentralnummer als eindeutige Identifikationsnummer zu einer Verordnungseinheit einer digitalen Gesundheitsanwendung (PZN)." ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "string" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "medicationReference.identifier.value" ]
+       ]
+     ], [
+       fhir:index 10 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.dataAbsentReason" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.dataAbsentReason" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Wird angegeben, wenn kein Freischaltcode bereitgestellt wird. fixedValue: #unknown" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Wird angegeben, wenn kein Freischaltcode bereitgestellt wird. fixedValue: #unknown" ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "medicationReference.extension[data-absent-reason].valueCode" ]
+       ]
+     ], [
+       fhir:index 11 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.datum" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.datum" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Abgabedatum im Format YYYY-MM-DD" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Abgabedatum im Format YYYY-MM-DD" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "whenHandedOver" ]
+       ]
+     ], [
+       fhir:index 12 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.note" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.note" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Wenn der Workflow abgeschlossen wird, ohne dass ein Freischaltcode bereitgestellt wird, muss dieser Wert angegeben werden." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Wenn der Workflow abgeschlossen wird, ohne dass ein Freischaltcode bereitgestellt wird, muss dieser Wert angegeben werden." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Annotation" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "note" ]
+       ]
+     ], [
+       fhir:index 13 ;
+       fhir:Element.id [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.substitution" ] ;
+       fhir:ElementDefinition.path [ fhir:value "GEM-ERP-LOG-MedicationDispense-DiGA.substitution" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Substitution darf lt. BAS nicht erfolgen." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Substitution darf lt. BAS nicht erfolgen." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "0" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "GEM-ERP-MAP-MedicationDispense-DiGA" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "substitution" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-LOG-MedicationDispense-DiGA.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

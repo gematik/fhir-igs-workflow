@@ -1,0 +1,288 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/StructureMap/KBVPrForPractitionerMap> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "KBVPrForPractitionerMap"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap KBVPrForPractitionerMap</b></p><a name=\"KBVPrForPractitionerMap\"> </a><a name=\"hcKBVPrForPractitionerMap\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap<span style=\"color: navy\">\" = \"</span>KBVPrForPractitionerMap<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Auto-generated StructureMap for KBV_PR_FOR_Practitioner|1.3.0 -&gt; PractitionerDirectory|1.0.0</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span>https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner<span style=\"color: navy\">\" </span><b>alias </b>KBVPRFORPractitioner <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span>https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory<span style=\"color: navy\">\" </span><b>alias </b>PractitionerDirectory <b>as </b><b>target</b>#xD;\n#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Mapping generated for KBV_PR_FOR_Practitioner|1.3.0 -&gt; PractitionerDirectory|1.0.0</span>#xD;\n<b>group </b>KBVPrForPractitionerMap<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">KBVPRFORPractitioner</span><span style=\"color: navy\"> : </span>KBVPRFORPractitioner, <b>target</b> <span style=\"color: maroon\">PractitionerDirectory</span><span style=\"color: navy\"> : </span>PractitionerDirectory<span style=\"color: navy\">)</span><b> &lt;&lt;types&gt;&gt;</b><span style=\"color: navy\"> {#xD;\n</span>  KBVPRFORPractitioner.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFORPractitionerIdentifierd46d78b7</span><b> where </b>(use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR') != true and (use = 'official' and system = 'http://fhir.de/sid/kzbv/zahnarztnummer') != true<span style=\"color: navy\"><b> -&gt; </b></span>PractitionerDirectory.identifier = <span style=\"color: maroon\">srcKBVPRFORPractitionerIdentifierd46d78b7</span><b> as </b><span style=\"color: maroon\">tgtPractitionerDirectoryIdentifierbcb1f07a</span> <i>\"PractitionerIdentifierdd7a4a22\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Automatic copy</span>#xD;\n  KBVPRFORPractitioner.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFORPractitionerIdentifierAnr3c836155</span><b> where </b>use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR'<span style=\"color: navy\"><b> -&gt; </b></span>PractitionerDirectory.identifier = <span style=\"color: maroon\">srcKBVPRFORPractitionerIdentifierAnr3c836155</span><b> as </b><span style=\"color: maroon\">tgtPractitionerDirectoryIdentifierLanrc79324c3</span> <i>\"PractitionerIdentifierAnr071fb4ee\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'Practitioner.identifier:LANR'</span>#xD;\n  KBVPRFORPractitioner.identifier<b> as </b><span style=\"color: maroon\">srcKBVPRFORPractitionerIdentifierTelematikId908b03d1</span><b> where </b>system = 'https://gematik.de/fhir/sid/telematik-id'<span style=\"color: navy\"><b> -&gt; </b></span>PractitionerDirectory.identifier = <span style=\"color: maroon\">srcKBVPRFORPractitionerIdentifierTelematikId908b03d1</span><b> as </b><span style=\"color: maroon\">tgtPractitionerDirectoryIdentifierTelematikid34e15dac</span> <i>\"PractitionerIdentifierTelematikId649b0852\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Copied to 'Practitioner.identifier:TelematikID'</span>#xD;\n  KBVPRFORPractitioner.meta<b> as </b><span style=\"color: maroon\">srcKBVPRFORPractitionerMeta0287aadd</span><span style=\"color: navy\"><b> -&gt; </b></span>PractitionerDirectory.meta = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Meta'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtPractitionerDirectoryMeta2975339a</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcKBVPRFORPractitionerMeta0287aadd<b> as </b><span style=\"color: maroon\">srcPractitionerMetaProfile969fe928</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtPractitionerDirectoryMeta2975339a.profile = <span style=\"color: blue\">'https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory'</span><b> as </b><span style=\"color: maroon\">tgtPractitionerMetaProfile969fe928</span> <i>\"PractitionerMetaProfile969fe928\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Fixed value 'https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory'</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"PractitionerMeta472c1c84\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Automatic copy</span>#xD;\n  KBVPRFORPractitioner.name<b> as </b><span style=\"color: maroon\">srcKBVPRFORPractitionerNamef7e47166</span><span style=\"color: navy\"><b> -&gt; </b></span>PractitionerDirectory.name = <span style=\"color: maroon\">srcKBVPRFORPractitionerNamef7e47166</span><b> as </b><span style=\"color: maroon\">tgtPractitionerDirectoryName0e536837</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcKBVPRFORPractitionerNamef7e47166<b> as </b><span style=\"color: maroon\">manualsrcPractitionerNameText82d0e3bd</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtPractitionerDirectoryName0e536837<b> as </b><span style=\"color: maroon\">manualtgtPractitionerNameText82d0e3bd</span> <i>\"PractitionerNameText82d0e3bd\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Manual action required | Zum Erzeugen von name.text siehe Transformationsregel F_011 | Quelle: Practitioner.name.text</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"PractitionerName9470411e\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Automatic copy</span>#xD;\n  KBVPRFORPractitioner.qualification<span style=\"color: navy\"><b> -&gt; </b></span>PractitionerDirectory.qualification <i>\"PractitionerQualificationAsvFachgruppennummer7aa26f1b\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Quelle: Practitioner.qualification:ASV-Fachgruppennummer</span>#xD;\n  KBVPRFORPractitioner.qualification<span style=\"color: navy\"><b> -&gt; </b></span>PractitionerDirectory.qualification <i>\"PractitionerQualificationBerufsbezeichnung7f1bb5ba\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Quelle: Practitioner.qualification:Berufsbezeichnung</span>#xD;\n  KBVPRFORPractitioner.qualification<span style=\"color: navy\"><b> -&gt; </b></span>PractitionerDirectory.qualification <i>\"PractitionerQualificationTyp5a2d4c78\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Feld wird nicht gemappt | Quelle: Practitioner.qualification:Typ</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"
+  ] ;
+  fhir:StructureMap.url [ fhir:value "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap"] ;
+  fhir:StructureMap.version [ fhir:value "2.0.0-ballot.2"] ;
+  fhir:StructureMap.name [ fhir:value "KBVPrForPractitionerMap"] ;
+  fhir:StructureMap.status [ fhir:value "active"] ;
+  fhir:StructureMap.date [ fhir:value "2026-02-02"^^xsd:date] ;
+  fhir:StructureMap.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:StructureMap.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "erp-umsetzung@gematik.de" ]
+     ]
+  ] ;
+  fhir:StructureMap.description [ fhir:value "Auto-generated StructureMap for KBV_PR_FOR_Practitioner|1.3.0 -> PractitionerDirectory|1.0.0"] ;
+  fhir:StructureMap.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:StructureMap.structure [
+     fhir:index 0 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner" ;
+       fhir:link <https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "source" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "KBVPRFORPractitioner" ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory" ;
+       fhir:link <https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "target" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "PractitionerDirectory" ]
+  ] ;
+  fhir:StructureMap.group [
+     fhir:index 0 ;
+     fhir:StructureMap.group.name [ fhir:value "KBVPrForPractitionerMap" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "types" ] ;
+     fhir:StructureMap.group.documentation [ fhir:value "Mapping generated for KBV_PR_FOR_Practitioner|1.3.0 -> PractitionerDirectory|1.0.0" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "KBVPRFORPractitioner" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "KBVPRFORPractitioner" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "PractitionerDirectory" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "PractitionerDirectory" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "PractitionerIdentifierdd7a4a22" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "KBVPRFORPractitioner" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "identifier" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcKBVPRFORPractitionerIdentifierd46d78b7" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "(use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR') != true and (use = 'official' and system = 'http://fhir.de/sid/kzbv/zahnarztnummer') != true" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "PractitionerDirectory" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "identifier" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtPractitionerDirectoryIdentifierbcb1f07a" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "srcKBVPRFORPractitionerIdentifierd46d78b7" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Automatic copy" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "PractitionerIdentifierAnr071fb4ee" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "KBVPRFORPractitioner" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "identifier" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcKBVPRFORPractitionerIdentifierAnr3c836155" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "use = 'official' and system = 'https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "PractitionerDirectory" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "identifier" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtPractitionerDirectoryIdentifierLanrc79324c3" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "srcKBVPRFORPractitionerIdentifierAnr3c836155" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Copied to 'Practitioner.identifier:LANR'" ]
+     ], [
+       fhir:index 2 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "PractitionerIdentifierTelematikId649b0852" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "KBVPRFORPractitioner" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "identifier" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcKBVPRFORPractitionerIdentifierTelematikId908b03d1" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "system = 'https://gematik.de/fhir/sid/telematik-id'" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "PractitionerDirectory" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "identifier" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtPractitionerDirectoryIdentifierTelematikid34e15dac" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "srcKBVPRFORPractitionerIdentifierTelematikId908b03d1" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Copied to 'Practitioner.identifier:TelematikID'" ]
+     ], [
+       fhir:index 3 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "PractitionerMeta472c1c84" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "KBVPRFORPractitioner" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "meta" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcKBVPRFORPractitionerMeta0287aadd" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "PractitionerDirectory" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "meta" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtPractitionerDirectoryMeta2975339a" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Meta" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "PractitionerMetaProfile969fe928" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "srcKBVPRFORPractitionerMeta0287aadd" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "srcPractitionerMetaProfile969fe928" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtPractitionerDirectoryMeta2975339a" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "profile" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtPractitionerMetaProfile969fe928" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory" ]
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Fixed value 'https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory'" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Automatic copy" ]
+     ], [
+       fhir:index 4 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "PractitionerName9470411e" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "KBVPRFORPractitioner" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "name" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcKBVPRFORPractitionerNamef7e47166" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "PractitionerDirectory" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "name" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtPractitionerDirectoryName0e536837" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "srcKBVPRFORPractitionerNamef7e47166" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "PractitionerNameText82d0e3bd" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "srcKBVPRFORPractitionerNamef7e47166" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "manualsrcPractitionerNameText82d0e3bd" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtPractitionerDirectoryName0e536837" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "manualtgtPractitionerNameText82d0e3bd" ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Manual action required | Zum Erzeugen von name.text siehe Transformationsregel F_011 | Quelle: Practitioner.name.text" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Automatic copy" ]
+     ], [
+       fhir:index 5 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "PractitionerQualificationAsvFachgruppennummer7aa26f1b" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "KBVPRFORPractitioner" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "qualification" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcKBVPRFORPractitionerQualificationAsvFachgruppennummerb1380ba4" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "PractitionerDirectory" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "qualification" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtPractitionerDirectoryQualificationAsvFachgruppennummer4a060b7" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Feld wird nicht gemappt | Quelle: Practitioner.qualification:ASV-Fachgruppennummer" ]
+     ], [
+       fhir:index 6 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "PractitionerQualificationBerufsbezeichnung7f1bb5ba" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "KBVPRFORPractitioner" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "qualification" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcKBVPRFORPractitionerQualificationBerufsbezeichnung73ee1d30" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "PractitionerDirectory" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "qualification" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtPractitionerDirectoryQualificationBerufsbezeichnunge66b35f5" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Feld wird nicht gemappt | Quelle: Practitioner.qualification:Berufsbezeichnung" ]
+     ], [
+       fhir:index 7 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "PractitionerQualificationTyp5a2d4c78" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "KBVPRFORPractitioner" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "qualification" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcKBVPRFORPractitionerQualificationTypb285cc3e" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "PractitionerDirectory" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "qualification" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtPractitionerDirectoryQualificationTypcf13b062" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Feld wird nicht gemappt | Quelle: Practitioner.qualification:Typ" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/StructureMap/KBVPrForPractitionerMap.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

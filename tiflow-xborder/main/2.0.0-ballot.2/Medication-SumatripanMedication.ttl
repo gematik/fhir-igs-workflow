@@ -1,0 +1,77 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-xborder/Medication/SumatripanMedication> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "SumatripanMedication"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Medication" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Medication>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Medication SumatripanMedication</b></p><a name=\"SumatripanMedication\"> </a><a name=\"hcSumatripanMedication\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERPEU-PR-Medication.html\">EU-Medication</a></p></div><p><b>DrugCategoryExtension</b>: epa-drug-category-cs: 00 (00)</p><p><b>MedicationIsVaccineExtension</b>: false</p><p><b>ExtensionNormgroesseDeBasis</b>: N1</p><p><b>code</b>: <span title=\"Codes:{http://fhir.de/CodeSystem/ifa/pzn 06313728}\">Sumatriptan-1a Pharma 100 mg Tabletten</span></p><p><b>form</b>: <span title=\"Codes:{https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM TAB}\">TAB</span></p><p><b>amount</b>: 20 St/1</p><h3>Batches</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>LotNumber</b></td></tr><tr><td style=\"display: none\">*</td><td>1234567890</td></tr></table></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension" ] ;
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs" ] ;
+       fhir:Coding.code [ fhir:value "00" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension" ] ;
+     fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/normgroesse" ] ;
+     fhir:Extension.valueCode [ fhir:value "N1" ]
+  ] ;
+  fhir:Medication.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/ifa/pzn" ] ;
+       fhir:Coding.code [ fhir:value "06313728" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Sumatriptan-1a Pharma 100 mg Tabletten" ]
+  ] ;
+  fhir:Medication.form [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM" ] ;
+       fhir:Coding.code [ fhir:value "TAB" ]
+     ]
+  ] ;
+  fhir:Medication.amount [
+     fhir:Ratio.numerator [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension" ] ;
+         fhir:Extension.valueString [ fhir:value "20" ]
+       ] ;
+       fhir:Quantity.value [ fhir:value "20"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "St" ]
+     ] ;
+     fhir:Ratio.denominator [
+       fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ]
+     ]
+  ] ;
+  fhir:Medication.batch [
+     fhir:Medication.batch.lotNumber [ fhir:value "1234567890" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-xborder/Medication/SumatripanMedication.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

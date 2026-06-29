@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="GEM-ERP-LOG-MedicationDispense-DiGA"/>
+  <url value="https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-LOG-MedicationDispense-DiGA"/>
+  <version value="2.0.0-ballot.2"/>
+  <name value="GEM_ERP_LOG_MedicationDispense_DiGA"/>
+  <title value="Logical DiGA Medication Dispense"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-06-30"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Fachliches Modell zur Beschreibung der Informationen, die bei $close in der MedicationDispense-Ressource für DiGAs übermittelt werden."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."/>
+  <fhirVersion value="4.0.1"/>
+  <mapping>
+    <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+    <uri value="GEM_ERP_PR_MedicationDispense_DiGA"/>
+    <name value="Mapping für MedicationDispense DiGA"/>
+    <comment value="This mapping maps the logical units of the DiGA MedicationDispense to the profile"/>
+  </mapping>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM Mapping"/>
+  </mapping>
+  <kind value="logical"/>
+  <abstract value="false"/>
+  <type value="https://gematik.de/fhir/tiflow-diga/StructureDefinition/GEM-ERP-LOG-MedicationDispense-DiGA"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Element"/>
+  <derivation value="specialization"/>
+  <snapshot>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version">
+      <valueString value="4.0.1"/>
+    </extension>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA"/>
+      <short value="Logical DiGA Medication Dispense"/>
+      <definition value="Fachliches Modell zur Beschreibung der Informationen, die bei $close in der MedicationDispense-Ressource für DiGAs übermittelt werden."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="GEM_ERP_PR_MedicationDispense_DiGA"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.id">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.extension">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.prescriptionId">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.prescriptionId"/>
+      <short value="ID des E-Rezepts"/>
+      <definition value="ID des E-Rezepts"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="GEM-ERP-LOG-MedicationDispense-DiGA.prescriptionId"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="identifier[prescriptionID].value"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.status">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.status"/>
+      <short value="Status fixedValue: #completed"/>
+      <definition value="Status fixedValue: #completed"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="GEM-ERP-LOG-MedicationDispense-DiGA.status"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="status"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.patientKVNR">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.patientKVNR"/>
+      <short value="KVNR des Patienten"/>
+      <definition value="KVNR des Patienten"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="GEM-ERP-LOG-MedicationDispense-DiGA.patientKVNR"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="subject.identifier.value"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.angabeAbgebendeInstutition">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabeAbgebendeInstutition"/>
+      <short value="Telematik-ID der abgebenden Institution"/>
+      <definition value="Telematik-ID der abgebenden Institution"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabeAbgebendeInstutition"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="performer.actor.identifier.value"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.freischaltCode">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.freischaltCode"/>
+      <short value="Freischaltcode für die DiGA"/>
+      <definition value="Optional, da die Kasse die Bereitstellung eines Freischaltcodes ablehnen kann."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="GEM-ERP-LOG-MedicationDispense-DiGA.freischaltCode"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="extension[redeemCode].valueString"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.deepLink">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.deepLink"/>
+      <short value="Universeller Deep Link, der vom DiGA Hersteller bereitgestellt wird"/>
+      <definition value="Universeller Deep Link, der vom DiGA Hersteller bereitgestellt wird"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="GEM-ERP-LOG-MedicationDispense-DiGA.deepLink"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="extension[deepLink].valueUrl"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA"/>
+      <short value="Angaben zur DiGA. Zwingend anzugeben, wenn ein Freischaltcode bereitgestellt wird."/>
+      <definition value="Angaben zur DiGA. Zwingend anzugeben, wenn ein Freischaltcode bereitgestellt wird."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="medicationReference"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.id">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.extension">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.modifierExtension">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.modifierExtension"/>
+      <short value="Extensions that cannot be ignored even if unrecognized"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension)."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <alias value="modifiers"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BackboneElement.modifierExtension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="true"/>
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.name">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.name"/>
+      <short value="Name der DiGA-Verordnungseinheit"/>
+      <definition value="Name der DiGA-Verordnungseinheit"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.name"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="medicationReference.display"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.pzn">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.pzn"/>
+      <short value="Pharmazentralnummer als eindeutige Identifikationsnummer zu einer Verordnungseinheit einer digitalen Gesundheitsanwendung (PZN)."/>
+      <definition value="Pharmazentralnummer als eindeutige Identifikationsnummer zu einer Verordnungseinheit einer digitalen Gesundheitsanwendung (PZN)."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.pzn"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="medicationReference.identifier.value"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.dataAbsentReason">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.dataAbsentReason"/>
+      <short value="Wird angegeben, wenn kein Freischaltcode bereitgestellt wird. fixedValue: #unknown"/>
+      <definition value="Wird angegeben, wenn kein Freischaltcode bereitgestellt wird. fixedValue: #unknown"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.dataAbsentReason"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="medicationReference.extension[data-absent-reason].valueCode"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.datum">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.datum"/>
+      <short value="Abgabedatum im Format YYYY-MM-DD"/>
+      <definition value="Abgabedatum im Format YYYY-MM-DD"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="GEM-ERP-LOG-MedicationDispense-DiGA.datum"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="dateTime"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="whenHandedOver"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.note">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.note"/>
+      <short value="Wenn der Workflow abgeschlossen wird, ohne dass ein Freischaltcode bereitgestellt wird, muss dieser Wert angegeben werden."/>
+      <definition value="Wenn der Workflow abgeschlossen wird, ohne dass ein Freischaltcode bereitgestellt wird, muss dieser Wert angegeben werden."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="GEM-ERP-LOG-MedicationDispense-DiGA.note"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Annotation"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="note"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.substitution">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.substitution"/>
+      <short value="Substitution darf lt. BAS nicht erfolgen."/>
+      <definition value="Substitution darf lt. BAS nicht erfolgen."/>
+      <min value="0"/>
+      <max value="0"/>
+      <base>
+        <path value="GEM-ERP-LOG-MedicationDispense-DiGA.substitution"/>
+        <min value="0"/>
+        <max value="0"/>
+      </base>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="substitution"/>
+      </mapping>
+    </element>
+  </snapshot>
+  <differential>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA"/>
+      <short value="Logical DiGA Medication Dispense"/>
+      <definition value="Fachliches Modell zur Beschreibung der Informationen, die bei $close in der MedicationDispense-Ressource für DiGAs übermittelt werden."/>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="GEM_ERP_PR_MedicationDispense_DiGA"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.prescriptionId">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.prescriptionId"/>
+      <short value="ID des E-Rezepts"/>
+      <definition value="ID des E-Rezepts"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="identifier[prescriptionID].value"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.status">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.status"/>
+      <short value="Status fixedValue: #completed"/>
+      <definition value="Status fixedValue: #completed"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="status"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.patientKVNR">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.patientKVNR"/>
+      <short value="KVNR des Patienten"/>
+      <definition value="KVNR des Patienten"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="subject.identifier.value"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.angabeAbgebendeInstutition">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabeAbgebendeInstutition"/>
+      <short value="Telematik-ID der abgebenden Institution"/>
+      <definition value="Telematik-ID der abgebenden Institution"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="performer.actor.identifier.value"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.freischaltCode">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.freischaltCode"/>
+      <short value="Freischaltcode für die DiGA"/>
+      <definition value="Optional, da die Kasse die Bereitstellung eines Freischaltcodes ablehnen kann."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="extension[redeemCode].valueString"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.deepLink">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.deepLink"/>
+      <short value="Universeller Deep Link, der vom DiGA Hersteller bereitgestellt wird"/>
+      <definition value="Universeller Deep Link, der vom DiGA Hersteller bereitgestellt wird"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="extension[deepLink].valueUrl"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA"/>
+      <short value="Angaben zur DiGA. Zwingend anzugeben, wenn ein Freischaltcode bereitgestellt wird."/>
+      <definition value="Angaben zur DiGA. Zwingend anzugeben, wenn ein Freischaltcode bereitgestellt wird."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="medicationReference"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.name">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.name"/>
+      <short value="Name der DiGA-Verordnungseinheit"/>
+      <definition value="Name der DiGA-Verordnungseinheit"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="medicationReference.display"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.pzn">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.pzn"/>
+      <short value="Pharmazentralnummer als eindeutige Identifikationsnummer zu einer Verordnungseinheit einer digitalen Gesundheitsanwendung (PZN)."/>
+      <definition value="Pharmazentralnummer als eindeutige Identifikationsnummer zu einer Verordnungseinheit einer digitalen Gesundheitsanwendung (PZN)."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="medicationReference.identifier.value"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.dataAbsentReason">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.angabenZurDiGA.dataAbsentReason"/>
+      <short value="Wird angegeben, wenn kein Freischaltcode bereitgestellt wird. fixedValue: #unknown"/>
+      <definition value="Wird angegeben, wenn kein Freischaltcode bereitgestellt wird. fixedValue: #unknown"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="medicationReference.extension[data-absent-reason].valueCode"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.datum">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.datum"/>
+      <short value="Abgabedatum im Format YYYY-MM-DD"/>
+      <definition value="Abgabedatum im Format YYYY-MM-DD"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="dateTime"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="whenHandedOver"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.note">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.note"/>
+      <short value="Wenn der Workflow abgeschlossen wird, ohne dass ein Freischaltcode bereitgestellt wird, muss dieser Wert angegeben werden."/>
+      <definition value="Wenn der Workflow abgeschlossen wird, ohne dass ein Freischaltcode bereitgestellt wird, muss dieser Wert angegeben werden."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Annotation"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="note"/>
+      </mapping>
+    </element>
+    <element id="GEM-ERP-LOG-MedicationDispense-DiGA.substitution">
+      <path value="GEM-ERP-LOG-MedicationDispense-DiGA.substitution"/>
+      <short value="Substitution darf lt. BAS nicht erfolgen."/>
+      <definition value="Substitution darf lt. BAS nicht erfolgen."/>
+      <min value="0"/>
+      <max value="0"/>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+      <mapping>
+        <identity value="GEM-ERP-MAP-MedicationDispense-DiGA"/>
+        <map value="substitution"/>
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>

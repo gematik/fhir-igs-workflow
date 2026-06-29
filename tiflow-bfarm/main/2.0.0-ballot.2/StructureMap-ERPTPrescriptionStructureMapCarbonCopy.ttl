@@ -1,0 +1,701 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ERPTPrescriptionStructureMapCarbonCopy"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap ERPTPrescriptionStructureMapCarbonCopy</b></p><a name=\"ERPTPrescriptionStructureMapCarbonCopy\"> </a><a name=\"hcERPTPrescriptionStructureMapCarbonCopy\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy<span style=\"color: navy\">\" = \"</span>ERPTPrescriptionStructureMapCarbonCopy<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./menu-technische-umsetzung-mapping.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden.</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/bundle.html\" title=\"Bundle\">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style=\"color: navy\">\" </span><b>alias </b>bundle <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"StructureDefinition-erp-tprescription-carbon-copy.html\" title=\"Digitaler Durchschlag T-Rezept\">https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-carbon-copy</a><span style=\"color: navy\">\" </span><b>alias </b>erpTCarbonCopy <b>as </b><b>target</b>#xD;\n#xD;\n<b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-ERPTPrescriptionStructureMapMedicationDispense.html\" title=\"E-T-Rezept Structure Map for MedicationDispense\">https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedicationDispense</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-ERPTPrescriptionStructureMapMedicationRequest.html\" title=\"E-T-Rezept Structure Map for MedicationRequest\">https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedicationRequest</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-ERPTPrescriptionStructureMapOrganization.html\" title=\"E-T-Rezept Structure Map for Organization\">https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapOrganization</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-ERPTPrescriptionStructureMapTask.html\" title=\"E-T-Rezept Structure Map for Task\">https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapTask</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-ERPTPrescriptionStructureMapMedication.html\" title=\"E-T-Rezept Structure Map for Medication\">https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedication</a><span style=\"color: navy\">\"#xD;\n</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">Mapping des digitalen Durchschlags T-Rezept aus einem E-Rezept Bundle in das BfArM CarbonCopy Format</span>#xD;\n<b>group </b>erpTPrescriptionCarbonCopy<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">bundle</span><span style=\"color: navy\"> : </span>bundle, <b>target</b> <span style=\"color: maroon\">erpTCarbonCopy</span><span style=\"color: navy\"> : </span>erpTCarbonCopy<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  bundle<span style=\"color: navy\"><b> -&gt; </b></span>erpTCarbonCopy.meta<b> as </b><span style=\"color: maroon\">erpTCarbonCopyMeta</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    bundle<span style=\"color: navy\"><b> -&gt; </b></span>erpTCarbonCopyMeta.profile = <span style=\"color: blue\">'https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.1'</span> <i>\"tgtMetaProfile\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Setzt das meta.profile des digitalen Durchschlags T-Rezept</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"tgtMeta\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Setzt die Metadaten für den digitalen Durchschlag</span>#xD;\n  bundle<span style=\"color: navy\"><b> -&gt; </b></span> erpTCarbonCopy.parameter<b> as </b><span style=\"color: maroon\">tgtRxPrescription</span><span style=\"color: navy\">, </span> tgtRxPrescription.part<b> as </b><span style=\"color: maroon\">tgtRxPrescriptionPartId</span><span style=\"color: navy\">, </span> tgtRxPrescription.part<b> as </b><span style=\"color: maroon\">tgtRxPrescriptionPartMR</span><span style=\"color: navy\">, </span> tgtRxPrescription.part<b> as </b><span style=\"color: maroon\">tgtRxPrescriptionPartMed</span><span style=\"color: navy\">, </span> tgtRxPrescription.name = <span style=\"color: blue\">'rxPrescription'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    bundle.entry<b> as </b><span style=\"color: maroon\">srcEntryVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcEntryVar.resource<b> as </b><span style=\"color: maroon\">srcEntryResourceVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        srcEntryVar.resource<span style=\"color: navy\"> : </span>Task<b> as </b><span style=\"color: maroon\">srcEntryTaskVar</span><b> where </b>ofType(Task)<span style=\"color: navy\"><b> -&gt; </b></span> tgtRxPrescriptionPartId.name = <span style=\"color: blue\">'prescriptionId'</span><span style=\"color: navy\">, </span> tgtRxPrescriptionPartId.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Identifier'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">newIdentifier</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcEntryTaskVar<b> then </b>ERPTPrescriptionStructureMapTask<span style=\"color: navy\">(</span><span style=\"color: maroon\">srcEntryTaskVar</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">newIdentifier</span><span style=\"color: navy\">)</span> <i>\"parameterrXPrescriptionPartIdentifier\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Mappt Task-Informationen auf Identifier für die Rezept-ID</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"parameterrXPrescriptionPart\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Extrahiert die E-Rezept-ID aus dem Task und erstellt den prescriptionId Parameter</span>#xD;\n        srcEntryVar.resource<span style=\"color: navy\"> : </span>MedicationRequest<b> as </b><span style=\"color: maroon\">srcEntryBundleMRVar</span><b> where </b>ofType(MedicationRequest)<span style=\"color: navy\"><b> -&gt; </b></span>tgtRxPrescriptionPartMR.name = <span style=\"color: blue\">'medicationRequest'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcEntryBundleMRVar<span style=\"color: navy\"><b> -&gt; </b></span>tgtRxPrescriptionPartMR.resource = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'MedicationRequest'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">newMedicationRequest</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>            srcEntryBundleMRVar<b> then </b>ERPTPrescriptionStructureMapMedicationRequest<span style=\"color: navy\">(</span><span style=\"color: maroon\">srcEntryBundleMRVar</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">newMedicationRequest</span><span style=\"color: navy\">)</span> <i>\"entryMedicationRequestPartResourceSet\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Führt die detaillierte MedicationRequest-Transformation durch</span>#xD;\n          <span style=\"color: navy\">}</span> <i>\"entryMedicationRequestPart\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Transformiert KBV-MedicationRequest in BfArM MedicationRequest Format</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"entryMedicationRequest\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Erstellt den medicationRequest Parameter für Verschreibungsdetails</span>#xD;\n        srcEntryVar<b> as </b><span style=\"color: maroon\">srcMedicationRequestId</span><b> where </b>resource.ofType(MedicationRequest)<span style=\"color: navy\"><b> -&gt; </b></span>tgtRxPrescriptionPartMed.name = <span style=\"color: blue\">'medication'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          bundle.entry<b> as </b><span style=\"color: maroon\">srcEntryVar2</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>            srcEntryVar2<b> as </b><span style=\"color: maroon\">srcEntryBundleMRMedIdVar</span><b> where </b>resource.ofType(Medication).where(id=%srcMedicationRequestId.resource.medication.reference.replace('urn:uuid:', '').split('/').last())<span style=\"color: navy\"><b> -&gt; </b></span>tgtRxPrescriptionPartMed.resource = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Medication'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">newMedicationPrescriptionMedication</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>              srcEntryBundleMRMedIdVar.resource<span style=\"color: navy\"> : </span>Medication<b> as </b><span style=\"color: maroon\">srcEntryBundleMRMedIdVarRes</span><b> then </b>ERPTPrescriptionStructureMapMedication<span style=\"color: navy\">(</span><span style=\"color: maroon\">srcEntryBundleMRMedIdVarRes</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">newMedicationPrescriptionMedication</span><span style=\"color: navy\">)</span> <i>\"entryMedicationPrescriptionMedicationPartResourceSet\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Führt die detaillierte Medication-Transformation für das verschriebene Arzneimittel durch</span>#xD;\n            <span style=\"color: navy\">}</span> <i>\"entryMedicationPrescriptionMedicationPart\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Findet die vom MedicationRequest referenzierte Medication und transformiert sie in BfArM Format</span>#xD;\n          <span style=\"color: navy\">}</span> <i>\"prepMedication\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Bereitet die Suche nach der referenzierten Medication vor</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"entryMedicationRequestMedication\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Erstellt den medication Parameter für das verschriebene Arzneimittel</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"rxPrescriptionParameter\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Extrahiert relevante Ressourcen für die Verschreibung</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"bundleEntries\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Verarbeitet alle Einträge des Quell-Bundles für Verschreibungsinformationen</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"rxPrescriptionRule\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Erstellt den rxPrescription Parameter mit allen Verschreibungsinformationen</span>#xD;\n  bundle<span style=\"color: navy\"><b> -&gt; </b></span> erpTCarbonCopy.parameter<b> as </b><span style=\"color: maroon\">tgtRxDispensation</span><span style=\"color: navy\">, </span> tgtRxDispensation.part<b> as </b><span style=\"color: maroon\">tgtRxDispensationPartOrg</span><span style=\"color: navy\">, </span> tgtRxDispensation.name = <span style=\"color: blue\">'rxDispensation'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    bundle.entry<b> as </b><span style=\"color: maroon\">srcEntryVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      srcEntryVar.resource<b> as </b><span style=\"color: maroon\">srcEntryResourceVar</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        srcEntryVar.resource<span style=\"color: navy\"> : </span>Bundle<b> as </b><span style=\"color: maroon\">srcEntryBundleOrgVar</span><b> where </b>ofType(Bundle).where(entry.first().fullUrl.contains('fhir-directory'))<span style=\"color: navy\"><b> -&gt; </b></span>tgtRxDispensationPartOrg.name = <span style=\"color: blue\">'dispenseOrganization'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcEntryBundleOrgVar<span style=\"color: navy\"><b> -&gt; </b></span>tgtRxDispensationPartOrg.resource = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Organization'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">newOrganization</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>            srcEntryBundleOrgVar<b> then </b>ERPTPrescriptionStructureMapOrganization<span style=\"color: navy\">(</span><span style=\"color: maroon\">srcEntryBundleOrgVar</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">newOrganization</span><span style=\"color: navy\">)</span> <i>\"entryOrganizationPartResourceSet\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Führt die detaillierte Organization-Transformation durch</span>#xD;\n          <span style=\"color: navy\">}</span> <i>\"entryOrganizationPart\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Transformiert VZD SearchSet in BfArM Organization Format für die abgebende Apotheke</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"entryVZDSearchSet\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Identifiziert VZD SearchSet Bundle für Apothekeninformationen</span>#xD;\n        srcEntryVar.resource<span style=\"color: navy\"> : </span>MedicationDispense<b> as </b><span style=\"color: maroon\">srcEntryBundleMDVar</span><b> where </b>ofType(MedicationDispense)<span style=\"color: navy\"><b> -&gt; </b></span>tgtRxDispensation.part<b> as </b><span style=\"color: maroon\">tgtDispenseInformationPart</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>          srcEntryBundleMDVar<span style=\"color: navy\"><b> -&gt; </b></span> tgtDispenseInformationPart.name = <span style=\"color: blue\">'dispenseInformation'</span><span style=\"color: navy\">, </span> tgtDispenseInformationPart.part<b> as </b><span style=\"color: maroon\">tgtDispenseInformationMedDispPart</span><span style=\"color: navy\">, </span> tgtDispenseInformationPart.part<b> as </b><span style=\"color: maroon\">tgtDispenseInformationMedicationPart</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>            srcEntryBundleMDVar<span style=\"color: navy\"><b> -&gt; </b></span> tgtDispenseInformationMedDispPart.name = <span style=\"color: blue\">'medicationDispense'</span><span style=\"color: navy\">, </span> tgtDispenseInformationMedDispPart.resource = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'MedicationDispense'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">newMedicationDispense</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>              srcEntryBundleMDVar<b> then </b>ERPTPrescriptionStructureMapMedicationDispense<span style=\"color: navy\">(</span><span style=\"color: maroon\">srcEntryBundleMDVar</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">newMedicationDispense</span><span style=\"color: navy\">)</span> <i>\"entryMedicationDispensePartResourceSet\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Führt die detaillierte MedicationDispense-Transformation durch</span>#xD;\n            <span style=\"color: navy\">}</span> <i>\"entryDispenseInformationMedicationDispense\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Transformiert gematik MedicationDispense in BfArM MedicationDispense Format</span>#xD;\n            srcEntryBundleMDVar<span style=\"color: navy\"><b> -&gt; </b></span>tgtDispenseInformationMedicationPart.name = <span style=\"color: blue\">'medication'</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>              bundle.entry<b> as </b><span style=\"color: maroon\">srcEntryVarDisp</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>                srcEntryVarDisp<b> as </b><span style=\"color: maroon\">srcEntryBundleMDMedIdVar</span><b> where </b>resource.ofType(Medication).where(id=%srcEntryBundleMDVar.medicationReference.reference.replace('urn:uuid:', '').split('/').last())<span style=\"color: navy\"><b> -&gt; </b></span>tgtDispenseInformationMedicationPart.resource = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Medication'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">newMedicationDispensationMedication</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>                  srcEntryBundleMDMedIdVar.resource<span style=\"color: navy\"> : </span>Medication<b> as </b><span style=\"color: maroon\">srcEntryBundleMDMedIdVarRes</span><b> then </b>ERPTPrescriptionStructureMapMedication<span style=\"color: navy\">(</span><span style=\"color: maroon\">srcEntryBundleMDMedIdVarRes</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">newMedicationDispensationMedication</span><span style=\"color: navy\">)</span> <i>\"entryMedicationDispensationMedicationPartResourceSet\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Führt die detaillierte Medication-Transformation für das abgegebene Arzneimittel durch</span>#xD;\n                <span style=\"color: navy\">}</span> <i>\"entryDispenseMedicationPart\"</i><span style=\"color: navy\">;</span>#xD;\n              <span style=\"color: navy\">}</span> <i>\"prepDispenseMedication\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Bereitet die Suche nach der referenzierten Medication im Bundle vor</span>#xD;\n            <span style=\"color: navy\">}</span> <i>\"entryDispenseInformationMedication\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Findet die vom MedicationDispense referenzierte Medication und transformiert sie in BfArM Format</span>#xD;\n          <span style=\"color: navy\">}</span> <i>\"entryDispenseInformation\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Bündelt MedicationDispense und zugehörige Medication unter dispenseInformation</span>#xD;\n        <span style=\"color: navy\">}</span> <i>\"entryMedicationDispense\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Erstellt eine dispenseInformation Part pro abgegebener MedicationDispense</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"rxDispensationParameter\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Extrahiert relevante Ressourcen für die Abgabe</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"bundleEntries\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Verarbeitet alle Einträge des Quell-Bundles für Abgabeinformationen</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"MedicationDispenseFromBundle\"</i><span style=\"color: navy\">;</span> <span style=\"color: navy\">// </span><span style=\"color: green\">Erstellt den rxDispensation Parameter mit allen Abgabeinformationen</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"
+  ] ;
+  fhir:StructureMap.url [ fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy"] ;
+  fhir:StructureMap.version [ fhir:value "2.0.0-ballot.2"] ;
+  fhir:StructureMap.name [ fhir:value "ERPTPrescriptionStructureMapCarbonCopy"] ;
+  fhir:StructureMap.title [ fhir:value "E-T-Rezept Structure Map for CarbonCopy"] ;
+  fhir:StructureMap.status [ fhir:value "draft"] ;
+  fhir:StructureMap.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:StructureMap.date [ fhir:value "2026-06-30"^^xsd:date] ;
+  fhir:StructureMap.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:StructureMap.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "erp-umsetzung@gematik.de" ]
+     ]
+  ] ;
+  fhir:StructureMap.description [ fhir:value "Diese Ressource beschreibt das Mapping und führt die Mappings aller Teilressourcen zusammen. Weitere Informationen und Beschreibungen zum Mapping können auf der Seite [Mapping des digitalen Durchschlag E-T-Rezept](./menu-technische-umsetzung-mapping.html#mapping-des-digitalen-durchschlags-e-t-rezept) eingesehen werden."] ;
+  fhir:StructureMap.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:StructureMap.structure [
+     fhir:index 0 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/Bundle" ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Bundle>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "source" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "bundle" ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-carbon-copy" ;
+       fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-carbon-copy>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "target" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "erpTCarbonCopy" ]
+  ] ;
+  fhir:StructureMap.import [
+     fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedicationDispense" ;
+     fhir:index 0 ;
+     fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedicationDispense>
+  ], [
+     fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedicationRequest" ;
+     fhir:index 1 ;
+     fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedicationRequest>
+  ], [
+     fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapOrganization" ;
+     fhir:index 2 ;
+     fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapOrganization>
+  ], [
+     fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapTask" ;
+     fhir:index 3 ;
+     fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapTask>
+  ], [
+     fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedication" ;
+     fhir:index 4 ;
+     fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedication>
+  ] ;
+  fhir:StructureMap.group [
+     fhir:index 0 ;
+     fhir:StructureMap.group.name [ fhir:value "erpTPrescriptionCarbonCopy" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.documentation [ fhir:value "Mapping des digitalen Durchschlags T-Rezept aus einem E-Rezept Bundle in das BfArM CarbonCopy Format" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "bundle" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "bundle" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "erpTCarbonCopy" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "erpTCarbonCopy" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "tgtMeta" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "bundle" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "erpTCarbonCopy" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "meta" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "erpTCarbonCopyMeta" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "tgtMetaProfile" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "bundle" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "erpTCarbonCopyMeta" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "profile" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.1" ]
+           ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Setzt das meta.profile des digitalen Durchschlags T-Rezept" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Setzt die Metadaten für den digitalen Durchschlag" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "rxPrescriptionRule" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "bundle" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "erpTCarbonCopy" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "parameter" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtRxPrescription" ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxPrescription" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "part" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtRxPrescriptionPartId" ]
+       ], [
+         fhir:index 2 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxPrescription" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "part" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtRxPrescriptionPartMR" ]
+       ], [
+         fhir:index 3 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxPrescription" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "part" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtRxPrescriptionPartMed" ]
+       ], [
+         fhir:index 4 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxPrescription" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "name" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "rxPrescription" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "bundleEntries" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "bundle" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "entry" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "srcEntryVar" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "rxPrescriptionParameter" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryVar" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "resource" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "srcEntryResourceVar" ]
+           ] ;
+           fhir:StructureMap.group.rule.rule [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.name [ fhir:value "parameterrXPrescriptionPart" ] ;
+             fhir:StructureMap.group.rule.source [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryVar" ] ;
+               fhir:StructureMap.group.rule.source.type [ fhir:value "Task" ] ;
+               fhir:StructureMap.group.rule.source.element [ fhir:value "resource" ] ;
+               fhir:StructureMap.group.rule.source.variable [ fhir:value "srcEntryTaskVar" ] ;
+               fhir:StructureMap.group.rule.source.condition [ fhir:value "ofType(Task)" ]
+             ] ;
+             fhir:StructureMap.group.rule.target [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxPrescriptionPartId" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "name" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "prescriptionId" ]
+               ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxPrescriptionPartId" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+               fhir:StructureMap.group.rule.target.variable [ fhir:value "newIdentifier" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Identifier" ]
+               ]
+             ] ;
+             fhir:StructureMap.group.rule.rule [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.name [ fhir:value "parameterrXPrescriptionPartIdentifier" ] ;
+               fhir:StructureMap.group.rule.source [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryTaskVar" ]
+               ] ;
+               fhir:StructureMap.group.rule.dependent [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.dependent.name [ fhir:value "ERPTPrescriptionStructureMapTask" ] ;
+                 fhir:StructureMap.group.rule.dependent.variable [
+                   fhir:value "srcEntryTaskVar" ;
+                   fhir:index 0
+                 ], [
+                   fhir:value "newIdentifier" ;
+                   fhir:index 1
+                 ]
+               ] ;
+               fhir:StructureMap.group.rule.documentation [ fhir:value "Mappt Task-Informationen auf Identifier für die Rezept-ID" ]
+             ] ;
+             fhir:StructureMap.group.rule.documentation [ fhir:value "Extrahiert die E-Rezept-ID aus dem Task und erstellt den prescriptionId Parameter" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.name [ fhir:value "entryMedicationRequest" ] ;
+             fhir:StructureMap.group.rule.source [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryVar" ] ;
+               fhir:StructureMap.group.rule.source.type [ fhir:value "MedicationRequest" ] ;
+               fhir:StructureMap.group.rule.source.element [ fhir:value "resource" ] ;
+               fhir:StructureMap.group.rule.source.variable [ fhir:value "srcEntryBundleMRVar" ] ;
+               fhir:StructureMap.group.rule.source.condition [ fhir:value "ofType(MedicationRequest)" ]
+             ] ;
+             fhir:StructureMap.group.rule.target [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxPrescriptionPartMR" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "name" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "medicationRequest" ]
+               ]
+             ] ;
+             fhir:StructureMap.group.rule.rule [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.name [ fhir:value "entryMedicationRequestPart" ] ;
+               fhir:StructureMap.group.rule.source [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryBundleMRVar" ]
+               ] ;
+               fhir:StructureMap.group.rule.target [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxPrescriptionPartMR" ] ;
+                 fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+                 fhir:StructureMap.group.rule.target.element [ fhir:value "resource" ] ;
+                 fhir:StructureMap.group.rule.target.variable [ fhir:value "newMedicationRequest" ] ;
+                 fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+                 fhir:StructureMap.group.rule.target.parameter [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "MedicationRequest" ]
+                 ]
+               ] ;
+               fhir:StructureMap.group.rule.rule [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.name [ fhir:value "entryMedicationRequestPartResourceSet" ] ;
+                 fhir:StructureMap.group.rule.source [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryBundleMRVar" ]
+                 ] ;
+                 fhir:StructureMap.group.rule.dependent [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.dependent.name [ fhir:value "ERPTPrescriptionStructureMapMedicationRequest" ] ;
+                   fhir:StructureMap.group.rule.dependent.variable [
+                     fhir:value "srcEntryBundleMRVar" ;
+                     fhir:index 0
+                   ], [
+                     fhir:value "newMedicationRequest" ;
+                     fhir:index 1
+                   ]
+                 ] ;
+                 fhir:StructureMap.group.rule.documentation [ fhir:value "Führt die detaillierte MedicationRequest-Transformation durch" ]
+               ] ;
+               fhir:StructureMap.group.rule.documentation [ fhir:value "Transformiert KBV-MedicationRequest in BfArM MedicationRequest Format" ]
+             ] ;
+             fhir:StructureMap.group.rule.documentation [ fhir:value "Erstellt den medicationRequest Parameter für Verschreibungsdetails" ]
+           ], [
+             fhir:index 2 ;
+             fhir:StructureMap.group.rule.name [ fhir:value "entryMedicationRequestMedication" ] ;
+             fhir:StructureMap.group.rule.source [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryVar" ] ;
+               fhir:StructureMap.group.rule.source.variable [ fhir:value "srcMedicationRequestId" ] ;
+               fhir:StructureMap.group.rule.source.condition [ fhir:value "resource.ofType(MedicationRequest)" ]
+             ] ;
+             fhir:StructureMap.group.rule.target [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxPrescriptionPartMed" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "name" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "medication" ]
+               ]
+             ] ;
+             fhir:StructureMap.group.rule.rule [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.name [ fhir:value "prepMedication" ] ;
+               fhir:StructureMap.group.rule.source [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.source.context [ fhir:value "bundle" ] ;
+                 fhir:StructureMap.group.rule.source.element [ fhir:value "entry" ] ;
+                 fhir:StructureMap.group.rule.source.variable [ fhir:value "srcEntryVar2" ]
+               ] ;
+               fhir:StructureMap.group.rule.rule [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.name [ fhir:value "entryMedicationPrescriptionMedicationPart" ] ;
+                 fhir:StructureMap.group.rule.source [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryVar2" ] ;
+                   fhir:StructureMap.group.rule.source.variable [ fhir:value "srcEntryBundleMRMedIdVar" ] ;
+                   fhir:StructureMap.group.rule.source.condition [ fhir:value "resource.ofType(Medication).where(id=%srcMedicationRequestId.resource.medication.reference.replace('urn:uuid:', '').split('/').last())" ]
+                 ] ;
+                 fhir:StructureMap.group.rule.target [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxPrescriptionPartMed" ] ;
+                   fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+                   fhir:StructureMap.group.rule.target.element [ fhir:value "resource" ] ;
+                   fhir:StructureMap.group.rule.target.variable [ fhir:value "newMedicationPrescriptionMedication" ] ;
+                   fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+                   fhir:StructureMap.group.rule.target.parameter [
+                     fhir:index 0 ;
+                     fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Medication" ]
+                   ]
+                 ] ;
+                 fhir:StructureMap.group.rule.rule [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.name [ fhir:value "entryMedicationPrescriptionMedicationPartResourceSet" ] ;
+                   fhir:StructureMap.group.rule.source [
+                     fhir:index 0 ;
+                     fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryBundleMRMedIdVar" ] ;
+                     fhir:StructureMap.group.rule.source.type [ fhir:value "Medication" ] ;
+                     fhir:StructureMap.group.rule.source.element [ fhir:value "resource" ] ;
+                     fhir:StructureMap.group.rule.source.variable [ fhir:value "srcEntryBundleMRMedIdVarRes" ]
+                   ] ;
+                   fhir:StructureMap.group.rule.dependent [
+                     fhir:index 0 ;
+                     fhir:StructureMap.group.rule.dependent.name [ fhir:value "ERPTPrescriptionStructureMapMedication" ] ;
+                     fhir:StructureMap.group.rule.dependent.variable [
+                       fhir:value "srcEntryBundleMRMedIdVarRes" ;
+                       fhir:index 0
+                     ], [
+                       fhir:value "newMedicationPrescriptionMedication" ;
+                       fhir:index 1
+                     ]
+                   ] ;
+                   fhir:StructureMap.group.rule.documentation [ fhir:value "Führt die detaillierte Medication-Transformation für das verschriebene Arzneimittel durch" ]
+                 ] ;
+                 fhir:StructureMap.group.rule.documentation [ fhir:value "Findet die vom MedicationRequest referenzierte Medication und transformiert sie in BfArM Format" ]
+               ] ;
+               fhir:StructureMap.group.rule.documentation [ fhir:value "Bereitet die Suche nach der referenzierten Medication vor" ]
+             ] ;
+             fhir:StructureMap.group.rule.documentation [ fhir:value "Erstellt den medication Parameter für das verschriebene Arzneimittel" ]
+           ] ;
+           fhir:StructureMap.group.rule.documentation [ fhir:value "Extrahiert relevante Ressourcen für die Verschreibung" ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Verarbeitet alle Einträge des Quell-Bundles für Verschreibungsinformationen" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Erstellt den rxPrescription Parameter mit allen Verschreibungsinformationen" ]
+     ], [
+       fhir:index 2 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "MedicationDispenseFromBundle" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "bundle" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "erpTCarbonCopy" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "parameter" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtRxDispensation" ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxDispensation" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "part" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtRxDispensationPartOrg" ]
+       ], [
+         fhir:index 2 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxDispensation" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "name" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "rxDispensation" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "bundleEntries" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "bundle" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "entry" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "srcEntryVar" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "rxDispensationParameter" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryVar" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "resource" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "srcEntryResourceVar" ]
+           ] ;
+           fhir:StructureMap.group.rule.rule [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.name [ fhir:value "entryVZDSearchSet" ] ;
+             fhir:StructureMap.group.rule.source [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryVar" ] ;
+               fhir:StructureMap.group.rule.source.type [ fhir:value "Bundle" ] ;
+               fhir:StructureMap.group.rule.source.element [ fhir:value "resource" ] ;
+               fhir:StructureMap.group.rule.source.variable [ fhir:value "srcEntryBundleOrgVar" ] ;
+               fhir:StructureMap.group.rule.source.condition [ fhir:value "ofType(Bundle).where(entry.first().fullUrl.contains('fhir-directory'))" ]
+             ] ;
+             fhir:StructureMap.group.rule.target [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxDispensationPartOrg" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "name" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "dispenseOrganization" ]
+               ]
+             ] ;
+             fhir:StructureMap.group.rule.rule [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.name [ fhir:value "entryOrganizationPart" ] ;
+               fhir:StructureMap.group.rule.source [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryBundleOrgVar" ]
+               ] ;
+               fhir:StructureMap.group.rule.target [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxDispensationPartOrg" ] ;
+                 fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+                 fhir:StructureMap.group.rule.target.element [ fhir:value "resource" ] ;
+                 fhir:StructureMap.group.rule.target.variable [ fhir:value "newOrganization" ] ;
+                 fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+                 fhir:StructureMap.group.rule.target.parameter [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Organization" ]
+                 ]
+               ] ;
+               fhir:StructureMap.group.rule.rule [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.name [ fhir:value "entryOrganizationPartResourceSet" ] ;
+                 fhir:StructureMap.group.rule.source [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryBundleOrgVar" ]
+                 ] ;
+                 fhir:StructureMap.group.rule.dependent [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.dependent.name [ fhir:value "ERPTPrescriptionStructureMapOrganization" ] ;
+                   fhir:StructureMap.group.rule.dependent.variable [
+                     fhir:value "srcEntryBundleOrgVar" ;
+                     fhir:index 0
+                   ], [
+                     fhir:value "newOrganization" ;
+                     fhir:index 1
+                   ]
+                 ] ;
+                 fhir:StructureMap.group.rule.documentation [ fhir:value "Führt die detaillierte Organization-Transformation durch" ]
+               ] ;
+               fhir:StructureMap.group.rule.documentation [ fhir:value "Transformiert VZD SearchSet in BfArM Organization Format für die abgebende Apotheke" ]
+             ] ;
+             fhir:StructureMap.group.rule.documentation [ fhir:value "Identifiziert VZD SearchSet Bundle für Apothekeninformationen" ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.name [ fhir:value "entryMedicationDispense" ] ;
+             fhir:StructureMap.group.rule.source [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryVar" ] ;
+               fhir:StructureMap.group.rule.source.type [ fhir:value "MedicationDispense" ] ;
+               fhir:StructureMap.group.rule.source.element [ fhir:value "resource" ] ;
+               fhir:StructureMap.group.rule.source.variable [ fhir:value "srcEntryBundleMDVar" ] ;
+               fhir:StructureMap.group.rule.source.condition [ fhir:value "ofType(MedicationDispense)" ]
+             ] ;
+             fhir:StructureMap.group.rule.target [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "tgtRxDispensation" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "part" ] ;
+               fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtDispenseInformationPart" ]
+             ] ;
+             fhir:StructureMap.group.rule.rule [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.name [ fhir:value "entryDispenseInformation" ] ;
+               fhir:StructureMap.group.rule.source [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryBundleMDVar" ]
+               ] ;
+               fhir:StructureMap.group.rule.target [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.context [ fhir:value "tgtDispenseInformationPart" ] ;
+                 fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+                 fhir:StructureMap.group.rule.target.element [ fhir:value "name" ] ;
+                 fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+                 fhir:StructureMap.group.rule.target.parameter [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "dispenseInformation" ]
+                 ]
+               ], [
+                 fhir:index 1 ;
+                 fhir:StructureMap.group.rule.target.context [ fhir:value "tgtDispenseInformationPart" ] ;
+                 fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+                 fhir:StructureMap.group.rule.target.element [ fhir:value "part" ] ;
+                 fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtDispenseInformationMedDispPart" ]
+               ], [
+                 fhir:index 2 ;
+                 fhir:StructureMap.group.rule.target.context [ fhir:value "tgtDispenseInformationPart" ] ;
+                 fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+                 fhir:StructureMap.group.rule.target.element [ fhir:value "part" ] ;
+                 fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtDispenseInformationMedicationPart" ]
+               ] ;
+               fhir:StructureMap.group.rule.rule [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.name [ fhir:value "entryDispenseInformationMedicationDispense" ] ;
+                 fhir:StructureMap.group.rule.source [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryBundleMDVar" ]
+                 ] ;
+                 fhir:StructureMap.group.rule.target [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.target.context [ fhir:value "tgtDispenseInformationMedDispPart" ] ;
+                   fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+                   fhir:StructureMap.group.rule.target.element [ fhir:value "name" ] ;
+                   fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+                   fhir:StructureMap.group.rule.target.parameter [
+                     fhir:index 0 ;
+                     fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "medicationDispense" ]
+                   ]
+                 ], [
+                   fhir:index 1 ;
+                   fhir:StructureMap.group.rule.target.context [ fhir:value "tgtDispenseInformationMedDispPart" ] ;
+                   fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+                   fhir:StructureMap.group.rule.target.element [ fhir:value "resource" ] ;
+                   fhir:StructureMap.group.rule.target.variable [ fhir:value "newMedicationDispense" ] ;
+                   fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+                   fhir:StructureMap.group.rule.target.parameter [
+                     fhir:index 0 ;
+                     fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "MedicationDispense" ]
+                   ]
+                 ] ;
+                 fhir:StructureMap.group.rule.rule [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.name [ fhir:value "entryMedicationDispensePartResourceSet" ] ;
+                   fhir:StructureMap.group.rule.source [
+                     fhir:index 0 ;
+                     fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryBundleMDVar" ]
+                   ] ;
+                   fhir:StructureMap.group.rule.dependent [
+                     fhir:index 0 ;
+                     fhir:StructureMap.group.rule.dependent.name [ fhir:value "ERPTPrescriptionStructureMapMedicationDispense" ] ;
+                     fhir:StructureMap.group.rule.dependent.variable [
+                       fhir:value "srcEntryBundleMDVar" ;
+                       fhir:index 0
+                     ], [
+                       fhir:value "newMedicationDispense" ;
+                       fhir:index 1
+                     ]
+                   ] ;
+                   fhir:StructureMap.group.rule.documentation [ fhir:value "Führt die detaillierte MedicationDispense-Transformation durch" ]
+                 ] ;
+                 fhir:StructureMap.group.rule.documentation [ fhir:value "Transformiert gematik MedicationDispense in BfArM MedicationDispense Format" ]
+               ], [
+                 fhir:index 1 ;
+                 fhir:StructureMap.group.rule.name [ fhir:value "entryDispenseInformationMedication" ] ;
+                 fhir:StructureMap.group.rule.source [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryBundleMDVar" ]
+                 ] ;
+                 fhir:StructureMap.group.rule.target [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.target.context [ fhir:value "tgtDispenseInformationMedicationPart" ] ;
+                   fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+                   fhir:StructureMap.group.rule.target.element [ fhir:value "name" ] ;
+                   fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+                   fhir:StructureMap.group.rule.target.parameter [
+                     fhir:index 0 ;
+                     fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "medication" ]
+                   ]
+                 ] ;
+                 fhir:StructureMap.group.rule.rule [
+                   fhir:index 0 ;
+                   fhir:StructureMap.group.rule.name [ fhir:value "prepDispenseMedication" ] ;
+                   fhir:StructureMap.group.rule.source [
+                     fhir:index 0 ;
+                     fhir:StructureMap.group.rule.source.context [ fhir:value "bundle" ] ;
+                     fhir:StructureMap.group.rule.source.element [ fhir:value "entry" ] ;
+                     fhir:StructureMap.group.rule.source.variable [ fhir:value "srcEntryVarDisp" ]
+                   ] ;
+                   fhir:StructureMap.group.rule.rule [
+                     fhir:index 0 ;
+                     fhir:StructureMap.group.rule.name [ fhir:value "entryDispenseMedicationPart" ] ;
+                     fhir:StructureMap.group.rule.source [
+                       fhir:index 0 ;
+                       fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryVarDisp" ] ;
+                       fhir:StructureMap.group.rule.source.variable [ fhir:value "srcEntryBundleMDMedIdVar" ] ;
+                       fhir:StructureMap.group.rule.source.condition [ fhir:value "resource.ofType(Medication).where(id=%srcEntryBundleMDVar.medicationReference.reference.replace('urn:uuid:', '').split('/').last())" ]
+                     ] ;
+                     fhir:StructureMap.group.rule.target [
+                       fhir:index 0 ;
+                       fhir:StructureMap.group.rule.target.context [ fhir:value "tgtDispenseInformationMedicationPart" ] ;
+                       fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+                       fhir:StructureMap.group.rule.target.element [ fhir:value "resource" ] ;
+                       fhir:StructureMap.group.rule.target.variable [ fhir:value "newMedicationDispensationMedication" ] ;
+                       fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+                       fhir:StructureMap.group.rule.target.parameter [
+                         fhir:index 0 ;
+                         fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Medication" ]
+                       ]
+                     ] ;
+                     fhir:StructureMap.group.rule.rule [
+                       fhir:index 0 ;
+                       fhir:StructureMap.group.rule.name [ fhir:value "entryMedicationDispensationMedicationPartResourceSet" ] ;
+                       fhir:StructureMap.group.rule.source [
+                         fhir:index 0 ;
+                         fhir:StructureMap.group.rule.source.context [ fhir:value "srcEntryBundleMDMedIdVar" ] ;
+                         fhir:StructureMap.group.rule.source.type [ fhir:value "Medication" ] ;
+                         fhir:StructureMap.group.rule.source.element [ fhir:value "resource" ] ;
+                         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcEntryBundleMDMedIdVarRes" ]
+                       ] ;
+                       fhir:StructureMap.group.rule.dependent [
+                         fhir:index 0 ;
+                         fhir:StructureMap.group.rule.dependent.name [ fhir:value "ERPTPrescriptionStructureMapMedication" ] ;
+                         fhir:StructureMap.group.rule.dependent.variable [
+                           fhir:value "srcEntryBundleMDMedIdVarRes" ;
+                           fhir:index 0
+                         ], [
+                           fhir:value "newMedicationDispensationMedication" ;
+                           fhir:index 1
+                         ]
+                       ] ;
+                       fhir:StructureMap.group.rule.documentation [ fhir:value "Führt die detaillierte Medication-Transformation für das abgegebene Arzneimittel durch" ]
+                     ]
+                   ] ;
+                   fhir:StructureMap.group.rule.documentation [ fhir:value "Bereitet die Suche nach der referenzierten Medication im Bundle vor" ]
+                 ] ;
+                 fhir:StructureMap.group.rule.documentation [ fhir:value "Findet die vom MedicationDispense referenzierte Medication und transformiert sie in BfArM Format" ]
+               ] ;
+               fhir:StructureMap.group.rule.documentation [ fhir:value "Bündelt MedicationDispense und zugehörige Medication unter dispenseInformation" ]
+             ] ;
+             fhir:StructureMap.group.rule.documentation [ fhir:value "Erstellt eine dispenseInformation Part pro abgegebener MedicationDispense" ]
+           ] ;
+           fhir:StructureMap.group.rule.documentation [ fhir:value "Extrahiert relevante Ressourcen für die Abgabe" ]
+         ] ;
+         fhir:StructureMap.group.rule.documentation [ fhir:value "Verarbeitet alle Einträge des Quell-Bundles für Abgabeinformationen" ]
+       ] ;
+       fhir:StructureMap.group.rule.documentation [ fhir:value "Erstellt den rxDispensation Parameter mit allen Abgabeinformationen" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

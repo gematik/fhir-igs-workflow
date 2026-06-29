@@ -1,0 +1,80 @@
+# CodeSystem of NCPeH Request Types - Implementation Guide TIFlow - Grenzüberschreitender Datenaustausch v2.0.0-ballot.2
+
+Implementation Guide
+
+TIFlow - Grenzüberschreitender Datenaustausch
+
+Version 2.0.0-ballot.2 - ballot 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **CodeSystem of NCPeH Request Types**
+
+## CodeSystem: CodeSystem of NCPeH Request Types 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/tiflow-xborder/CodeSystem/GEM-ERPEU-CS-RequestType | *Version*:2.0.0-ballot.2 |
+| Draft as of 2026-06-30 | *Computable Name*:GEM_ERPEU_CS_RequestType |
+| **Copyright/Legal**: gematik GmbH | |
+
+ 
+Type of Request from NCPeH 
+
+ This Code system is referenced in the content logical definition of the following value sets: 
+
+* [GEM_ERPEU_VS_RequestType](ValueSet-GEM-ERPEU-VS-RequestType.md)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CodeSystem",
+  "id" : "GEM-ERPEU-CS-RequestType",
+  "url" : "https://gematik.de/fhir/tiflow-xborder/CodeSystem/GEM-ERPEU-CS-RequestType",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_CS_RequestType",
+  "title" : "CodeSystem of NCPeH Request Types",
+  "status" : "draft",
+  "date" : "2026-06-30",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Type of Request from NCPeH",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "copyright" : "gematik GmbH",
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 3,
+  "concept" : [{
+    "code" : "demographics",
+    "display" : "Abruf demographischer Daten"
+  },
+  {
+    "code" : "e-prescriptions-list",
+    "display" : "Abruf der E-Rezepte Liste"
+  },
+  {
+    "code" : "e-prescriptions-retrieval",
+    "display" : "Abruf eines E-Rezeptes"
+  }]
+}
+
+```

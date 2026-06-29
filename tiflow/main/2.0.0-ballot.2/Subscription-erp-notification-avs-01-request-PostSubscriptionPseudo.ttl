@@ -1,0 +1,28 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/Subscription/erp-notification-avs-01-request-PostSubscriptionPseudo> a fhir:Subscription ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "erp-notification-avs-01-request-PostSubscriptionPseudo"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Subscription erp-notification-avs-01-request-PostSubscriptionPseudo</b></p><a name=\"erp-notification-avs-01-request-PostSubscriptionPseudo\"> </a><a name=\"hcerp-notification-avs-01-request-PostSubscriptionPseudo\"> </a><p><b>status</b>: Requested</p><p><b>reason</b>: Communication notifications</p><p><b>criteria</b>: Communication?received=null&amp;recipient=3-abc-12345678</p><h3>Channels</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Websocket</td></tr></table></div>"
+  ] ;
+  fhir:Subscription.status [ fhir:value "requested"] ;
+  fhir:Subscription.reason [ fhir:value "Communication notifications"] ;
+  fhir:Subscription.criteria [ fhir:value "Communication?received=null&recipient=3-abc-12345678"] ;
+  fhir:Subscription.channel [
+     fhir:Subscription.channel.type [ fhir:value "websocket" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/Subscription/erp-notification-avs-01-request-PostSubscriptionPseudo.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

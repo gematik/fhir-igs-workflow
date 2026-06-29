@@ -1,0 +1,1 @@
+Die Werte für die Codes aus `TIFHIRConfigurationCS` für die Extension zur FHIR-Konfiguration werden in [RUAAS](https://wiki.gematik.de/display/RUAAS/E-Rezept@RU) definiert.

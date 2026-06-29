@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="ExampleRxMedicationDispenseSearchset"/>
+  <type value="searchset"/>
+  <total value="1"/>
+  <link>
+    <relation value="self"/>
+    <url value="https://erp-ref.example.org/MedicationDispense?whenhandedover=ge2026-03-01"/>
+  </link>
+  <entry>
+    <fullUrl value="https://erp-ref.example.org/MedicationDispense/ExampleRxMedicationDispense"/>
+    <resource>
+      <MedicationDispense>
+        <id value="ExampleRxMedicationDispense"/>
+        <status value="completed"/>
+        <medicationCodeableConcept>
+          <text value="Sumatriptan 50 mg"/>
+        </medicationCodeableConcept>
+        <subject>
+          <identifier>
+            <system value="http://fhir.de/sid/gkv/kvid-10"/>
+            <value value="X123456789"/>
+          </identifier>
+        </subject>
+        <whenHandedOver value="2026-03-20T11:10:00+01:00"/>
+      </MedicationDispense>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+</Bundle>

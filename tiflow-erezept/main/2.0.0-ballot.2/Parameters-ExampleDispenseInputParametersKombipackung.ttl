@@ -1,0 +1,224 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Parameters/ExampleDispenseInputParametersKombipackung> a fhir:Parameters ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleDispenseInputParametersKombipackung"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input>
+     ]
+  ] ;
+  fhir:Parameters.parameter [
+     fhir:index 0 ;
+     fhir:Parameters.parameter.name [ fhir:value "rxDispensation" ] ;
+     fhir:Parameters.parameter.part [
+       fhir:index 0 ;
+       fhir:Parameters.parameter.name [ fhir:value "medicationDispense" ] ;
+       fhir:Parameters.parameter.resource [
+         a fhir:MedicationDispense ;
+         fhir:Resource.id [ fhir:value "Example-MedicationDispense-Kombipackung" ] ;
+         fhir:Resource.meta [
+           fhir:Meta.profile [
+             fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0" ;
+             fhir:index 0 ;
+             fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0>
+           ]
+         ] ;
+         fhir:MedicationDispense.identifier [
+           fhir:index 0 ;
+           fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+           fhir:Identifier.value [ fhir:value "160.000.033.491.280.78" ]
+         ] ;
+         fhir:MedicationDispense.status [ fhir:value "completed" ] ;
+         fhir:MedicationDispense.medicationReference [
+           fhir:link <https://gematik.de/fhir/tiflow-erezept/Medication/Medication-Kombipackung> ;
+           fhir:Reference.reference [ fhir:value "Medication/Medication-Kombipackung" ]
+         ] ;
+         fhir:MedicationDispense.subject [
+           fhir:Reference.identifier [
+             fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+             fhir:Identifier.value [ fhir:value "X123456789" ]
+           ]
+         ] ;
+         fhir:MedicationDispense.performer [
+           fhir:index 0 ;
+           fhir:MedicationDispense.performer.actor [
+             fhir:Reference.identifier [
+               fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+               fhir:Identifier.value [ fhir:value "3-SMC-B-Testkarte-883110000095957" ]
+             ]
+           ]
+         ] ;
+         fhir:MedicationDispense.whenHandedOver [ fhir:value "2028-10-01"^^xsd:date ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Parameters.parameter.name [ fhir:value "medication" ] ;
+       fhir:Parameters.parameter.resource [
+         a fhir:Medication ;
+         fhir:Resource.id [ fhir:value "Medication-Kombipackung" ] ;
+         fhir:Resource.meta [
+           fhir:Meta.profile [
+             fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0" ;
+             fhir:index 0 ;
+             fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0>
+           ]
+         ] ;
+         fhir:DomainResource.contained [
+           a fhir:Medication ;
+           fhir:index 0 ;
+           fhir:Resource.id [ fhir:value "Augentropfen" ] ;
+           fhir:Resource.meta [
+             fhir:Meta.profile [
+               fhir:value "https://gematik.de/fhir/ti/StructureDefinition/ti-medication-dgmp" ;
+               fhir:index 0 ;
+               fhir:link <https://gematik.de/fhir/ti/StructureDefinition/ti-medication-dgmp>
+             ]
+           ] ;
+           fhir:DomainResource.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension" ] ;
+             fhir:Extension.valueCoding [
+               a sct:373873005 ;
+               fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+               fhir:Coding.code [ fhir:value "373873005" ] ;
+               fhir:Coding.display [ fhir:value "Pharmaceutical / biologic product (product)" ]
+             ]
+           ] ;
+           fhir:Medication.ingredient [
+             fhir:index 0 ;
+             fhir:Medication.ingredient.itemCodeableConcept [
+               fhir:CodeableConcept.coding [
+                 fhir:index 0 ;
+                 fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/bfarm/atc" ] ;
+                 fhir:Coding.version [ fhir:value "1.4.0" ] ;
+                 fhir:Coding.code [ fhir:value "R01AC01" ] ;
+                 fhir:Coding.display [ fhir:value "Natriumcromoglicat" ]
+               ]
+             ] ;
+             fhir:Medication.ingredient.strength [
+               fhir:Ratio.numerator [
+                 fhir:Quantity.value [ fhir:value "20"^^xsd:decimal ] ;
+                 fhir:Quantity.unit [ fhir:value "mg" ] ;
+                 fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+                 fhir:Quantity.code [ fhir:value "mg" ]
+               ] ;
+               fhir:Ratio.denominator [
+                 fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+                 fhir:Quantity.unit [ fhir:value "ml" ] ;
+                 fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+                 fhir:Quantity.code [ fhir:value "ml" ]
+               ]
+             ]
+           ]
+         ], [
+           a fhir:Medication ;
+           fhir:index 1 ;
+           fhir:Resource.id [ fhir:value "NasenSpray" ] ;
+           fhir:Resource.meta [
+             fhir:Meta.profile [
+               fhir:value "https://gematik.de/fhir/ti/StructureDefinition/ti-medication-dgmp" ;
+               fhir:index 0 ;
+               fhir:link <https://gematik.de/fhir/ti/StructureDefinition/ti-medication-dgmp>
+             ]
+           ] ;
+           fhir:DomainResource.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-type-extension" ] ;
+             fhir:Extension.valueCoding [
+               a sct:373873005 ;
+               fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+               fhir:Coding.code [ fhir:value "373873005" ] ;
+               fhir:Coding.display [ fhir:value "Pharmaceutical / biologic product (product)" ]
+             ]
+           ] ;
+           fhir:Medication.ingredient [
+             fhir:index 0 ;
+             fhir:Medication.ingredient.itemCodeableConcept [
+               fhir:CodeableConcept.coding [
+                 fhir:index 0 ;
+                 fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/bfarm/atc" ] ;
+                 fhir:Coding.version [ fhir:value "1.4.0" ] ;
+                 fhir:Coding.code [ fhir:value "R01AC01" ] ;
+                 fhir:Coding.display [ fhir:value "Natriumcromoglicat" ]
+               ]
+             ] ;
+             fhir:Medication.ingredient.strength [
+               fhir:Ratio.numerator [
+                 fhir:Quantity.value [ fhir:value "2.8"^^xsd:decimal ] ;
+                 fhir:Quantity.unit [ fhir:value "mg" ] ;
+                 fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+                 fhir:Quantity.code [ fhir:value "mg" ]
+               ] ;
+               fhir:Ratio.denominator [
+                 fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+                 fhir:Quantity.unit [ fhir:value "Sprühstoß" ] ;
+                 fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+                 fhir:Quantity.code [ fhir:value "1" ]
+               ]
+             ]
+           ]
+         ] ;
+         fhir:DomainResource.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension" ] ;
+           fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension" ] ;
+           fhir:Extension.valueCoding [
+             fhir:Coding.system [ fhir:value "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs" ] ;
+             fhir:Coding.code [ fhir:value "00" ] ;
+             fhir:Coding.display [ fhir:value "Arzneimittel oder in die Arzneimittelversorgung nach § 31 SGB V einbezogenes Produkt" ]
+           ]
+         ] ;
+         fhir:Medication.code [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/ifa/pzn" ] ;
+             fhir:Coding.code [ fhir:value "1746517" ] ;
+             fhir:Coding.display [ fhir:value "CROMO-RATIOPHARM Kombipackung" ]
+           ]
+         ] ;
+         fhir:Medication.status [ fhir:value "active" ] ;
+         fhir:Medication.form [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM" ] ;
+             fhir:Coding.code [ fhir:value "KPG" ]
+           ] ;
+           fhir:CodeableConcept.text [ fhir:value "Kombipackung" ]
+         ] ;
+         fhir:Medication.ingredient [
+           fhir:index 0 ;
+           fhir:Medication.ingredient.itemReference [
+             fhir:Reference.reference [ fhir:value "#NasenSpray" ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:Medication.ingredient.itemReference [
+             fhir:Reference.reference [ fhir:value "#Augentropfen" ]
+           ]
+         ] ;
+         fhir:Medication.batch [
+           fhir:Medication.batch.lotNumber [ fhir:value "56498416854" ]
+         ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Parameters/ExampleDispenseInputParametersKombipackung.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

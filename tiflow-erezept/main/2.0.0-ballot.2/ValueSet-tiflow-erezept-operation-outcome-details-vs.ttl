@@ -1,0 +1,189 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/ValueSet/tiflow-erezept-operation-outcome-details-vs> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "tiflow-erezept-operation-outcome-details-vs"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet tiflow-erezept-operation-outcome-details-vs</b></p><a name=\"tiflow-erezept-operation-outcome-details-vs\"> </a><a name=\"hctiflow-erezept-operation-outcome-details-vs\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-tiflow-erezept-operation-outcome-details-cs.html\"><code>https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?2.0.0-ballot.2</span></li><li>Include these codes as defined in <a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html\"><code>https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs</code></a><span title=\"Version is not explicitly stated, which means it is fixed to 2.0.0-ballot.2, the version found through the package references\"> version ?2.0.0-ballot.2</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_AUTH_ROLE_NOT_ALLOWED\">TIFLOW_AUTH_ROLE_NOT_ALLOWED</a></td><td>Access role not allowed</td><td>The authenticated actor role is not permitted to execute this operation</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SECRET_MISMATCH\">TIFLOW_SECRET_MISMATCH</a></td><td>Task secret mismatch</td><td>The provided task secret does not match the secret stored for the task</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_STATUS_MISMATCH\">TIFLOW_TASK_STATUS_MISMATCH</a></td><td>Task status mismatch</td><td>The task is in a status that does not allow execution of this operation</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_MEDICATION_DISPENSE_INVALID\">TIFLOW_MEDICATION_DISPENSE_INVALID</a></td><td>MedicationDispense invalid</td><td>The provided MedicationDispense resource is invalid for this operation</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_MEDICATION_DISPENSE_MISSING\">TIFLOW_MEDICATION_DISPENSE_MISSING</a></td><td>MedicationDispense missing</td><td>A required MedicationDispense resource is missing for this operation</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_NO_OCSP_RESPONSE\">TIFLOW_SIGNATURE_NO_OCSP_RESPONSE</a></td><td>No OCSP response for signature</td><td>Certificate revocation status could not be determined because no OCSP response was available</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_AUTH_NOT_OWNER\">TIFLOW_AUTH_NOT_OWNER</a></td><td>Authenticated actor is not owner</td><td>The authenticated actor is not the owner of the addressed task</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_ACCESSCODE_MISMATCH\">TIFLOW_ACCESSCODE_MISMATCH</a></td><td>Access code mismatch</td><td>The provided access code does not match the access code assigned to the task</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_ID_REQUIRED\">TIFLOW_TASK_ID_REQUIRED</a></td><td>Task id required</td><td>The operation requires a task id in the request</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE\">TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</a></td><td>Signature issuing role invalid</td><td>The signature was created by an actor role that is not allowed for the signed artifact</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_FLOWTYPE_MISMATCH\">TIFLOW_FLOWTYPE_MISMATCH</a></td><td>Flow type mismatch</td><td>The task flow type does not match the expected flow for this operation</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_COVERAGE_TYPE_MISMATCH\">TIFLOW_COVERAGE_TYPE_MISMATCH</a></td><td>Coverage type mismatch</td><td>The coverage type does not match the expected coverage context</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_CERTIFICATE_INVALID\">TIFLOW_CERTIFICATE_INVALID</a></td><td>Certificate invalid</td><td>The certificate used for authentication or signature validation is invalid</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_OCSP_BACKEND_ERROR\">TIFLOW_OCSP_BACKEND_ERROR</a></td><td>Invalid OCSP response</td><td>Failed to retrieve the OCSP response for the certificate of the signature</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_INVALID\">TIFLOW_SIGNATURE_INVALID</a></td><td>Signature invalid</td><td>The digital signature is invalid or cannot be verified</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_KVNR_INVALID\">TIFLOW_KVNR_INVALID</a></td><td>KVNR invalid</td><td>The provided KVNR is invalid or does not conform to the expected format</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH\">TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH</a></td><td>Signature authoredOn mismatch</td><td>The authoredOn timestamp does not match the signed content</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_IKNR_INVALID\">TIFLOW_IKNR_INVALID</a></td><td>IKNR invalid</td><td>The provided IKNR is invalid or not accepted in this context</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_LANR_ZANR_INVALID\">TIFLOW_LANR_ZANR_INVALID</a></td><td>LANR or ZANR invalid</td><td>The provided LANR or ZANR is invalid or not accepted for this operation</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_DELETED\">TIFLOW_TASK_DELETED</a></td><td>Task deleted</td><td>The task was already cancelled or deleted and can no longer be processed</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_EXPIRED\">TIFLOW_TASK_EXPIRED</a></td><td>Task expired</td><td>The task cannot be processed because its redemption period has expired</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_MESSAGE_TO_SELF\">TIFLOW_MESSAGE_TO_SELF</a></td><td>Message to self not allowed</td><td>A communication message addressed to the sender itself is not permitted</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_COMMUNICATION_PAYLOAD_INVALID\">TIFLOW_COMMUNICATION_PAYLOAD_INVALID</a></td><td>Communication payload invalid</td><td>The communication payload is syntactically or semantically invalid</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_INSURANT_NOT_ELIGIBLE\">TIFLOW_INSURANT_NOT_ELIGIBLE</a></td><td>Insurant not eligible</td><td>The insurant does not meet the eligibility constraints for this communication flow</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_RECIPIENT_INVALID\">TIFLOW_RECIPIENT_INVALID</a></td><td>Recipient invalid</td><td>The specified recipient is invalid for the requested communication</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_TASK_NOT_FOUND\">TIFLOW_TASK_NOT_FOUND</a></td><td>Task not found</td><td>The referenced task does not exist</td></tr><tr><td><a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-tiflow-operation-outcome-details-cs.html#tiflow-operation-outcome-details-cs-TIFLOW_MVO_NOT_VALID_YET\">TIFLOW_MVO_NOT_VALID_YET</a></td><td>MVO not valid yet</td><td>The multi-prescription is not yet valid at the current point in time</td></tr></table></li><li>Include these codes as defined in <a href=\"https://gematik.de/fhir/ti/1.4.0-ballot.1/CodeSystem-operation-outcome-details-codes.html\"><code>https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes</code></a><span title=\"Version is not explicitly stated, which means it is fixed to 1.3.0, the version found through the package references\"> version ?1.3.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://gematik.de/fhir/ti/1.4.0-ballot.1/CodeSystem-operation-outcome-details-codes.html#operation-outcome-details-codes-SVC_VALIDATION_FAILED\">SVC_VALIDATION_FAILED</a></td><td>FHIR Profile Validation Failed</td></tr><tr><td><a href=\"https://gematik.de/fhir/ti/1.4.0-ballot.1/CodeSystem-operation-outcome-details-codes.html#operation-outcome-details-codes-SVC_IDENTITY_MISMATCH\">SVC_IDENTITY_MISMATCH</a></td><td>Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)</td></tr><tr><td><a href=\"https://gematik.de/fhir/ti/1.4.0-ballot.1/CodeSystem-operation-outcome-details-codes.html#operation-outcome-details-codes-SVC_TELEMATIKID_TEMPORARILY_BLOCKED\">SVC_TELEMATIKID_TEMPORARILY_BLOCKED</a></td><td>The specified Telematik-ID is temporarily blocked</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://gematik.de/fhir/tiflow-erezept/ValueSet/tiflow-erezept-operation-outcome-details-vs"] ;
+  fhir:ValueSet.version [ fhir:value "2.0.0-ballot.2"] ;
+  fhir:ValueSet.name [ fhir:value "TIFLOWEREZEPTOperationOutcomeDetailsVS"] ;
+  fhir:ValueSet.title [ fhir:value "TIFLOW EREZEPT Operation Outcome Details VS"] ;
+  fhir:ValueSet.status [ fhir:value "active"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-06-30"^^xsd:date] ;
+  fhir:ValueSet.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "erp-umsetzung@gematik.de" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:ValueSet.immutable [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.copyright [ fhir:value "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_AUTH_ROLE_NOT_ALLOWED" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Access role not allowed" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_SECRET_MISMATCH" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Task secret mismatch" ]
+       ], [
+         fhir:index 2 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_TASK_STATUS_MISMATCH" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Task status mismatch" ]
+       ], [
+         fhir:index 3 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_MEDICATION_DISPENSE_INVALID" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "MedicationDispense invalid" ]
+       ], [
+         fhir:index 4 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_MEDICATION_DISPENSE_MISSING" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "MedicationDispense missing" ]
+       ], [
+         fhir:index 5 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_SIGNATURE_NO_OCSP_RESPONSE" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "No OCSP response for signature" ]
+       ], [
+         fhir:index 6 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_AUTH_NOT_OWNER" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Authenticated actor is not owner" ]
+       ], [
+         fhir:index 7 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_ACCESSCODE_MISMATCH" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Access code mismatch" ]
+       ], [
+         fhir:index 8 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_TASK_ID_REQUIRED" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Task id required" ]
+       ], [
+         fhir:index 9 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Signature issuing role invalid" ]
+       ], [
+         fhir:index 10 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_FLOWTYPE_MISMATCH" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Flow type mismatch" ]
+       ], [
+         fhir:index 11 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_COVERAGE_TYPE_MISMATCH" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Coverage type mismatch" ]
+       ], [
+         fhir:index 12 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_CERTIFICATE_INVALID" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Certificate invalid" ]
+       ], [
+         fhir:index 13 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_OCSP_BACKEND_ERROR" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Invalid OCSP response" ]
+       ], [
+         fhir:index 14 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_SIGNATURE_INVALID" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Signature invalid" ]
+       ], [
+         fhir:index 15 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_KVNR_INVALID" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "KVNR invalid" ]
+       ], [
+         fhir:index 16 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Signature authoredOn mismatch" ]
+       ], [
+         fhir:index 17 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_IKNR_INVALID" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "IKNR invalid" ]
+       ], [
+         fhir:index 18 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_LANR_ZANR_INVALID" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "LANR or ZANR invalid" ]
+       ], [
+         fhir:index 19 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_TASK_DELETED" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Task deleted" ]
+       ], [
+         fhir:index 20 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_TASK_EXPIRED" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Task expired" ]
+       ], [
+         fhir:index 21 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_MESSAGE_TO_SELF" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Message to self not allowed" ]
+       ], [
+         fhir:index 22 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_COMMUNICATION_PAYLOAD_INVALID" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Communication payload invalid" ]
+       ], [
+         fhir:index 23 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_INSURANT_NOT_ELIGIBLE" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Insurant not eligible" ]
+       ], [
+         fhir:index 24 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_RECIPIENT_INVALID" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Recipient invalid" ]
+       ], [
+         fhir:index 25 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_TASK_NOT_FOUND" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Task not found" ]
+       ], [
+         fhir:index 26 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TIFLOW_MVO_NOT_VALID_YET" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "MVO not valid yet" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "SVC_VALIDATION_FAILED" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "FHIR Profile Validation Failed" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "SVC_IDENTITY_MISMATCH" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)" ]
+       ], [
+         fhir:index 2 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "SVC_TELEMATIKID_TEMPORARILY_BLOCKED" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "The specified Telematik-ID is temporarily blocked" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/ValueSet/tiflow-erezept-operation-outcome-details-vs.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

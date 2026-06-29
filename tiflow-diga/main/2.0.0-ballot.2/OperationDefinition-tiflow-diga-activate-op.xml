@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="tiflow-diga-activate-op"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition tiflow-diga-activate-op</b></p><a name="tiflow-diga-activate-op"> </a><a name="hctiflow-diga-activate-op"> </a><p>URL: [base]/Task/[id]/$activate</p><p>Input parameters Profile:<a href="StructureDefinition-ti-flow-di-ga-activate-operation-input.html">TIFlow DiGA Activate Operation Input</a></p><p>Output parameters Profile:<a href="StructureDefinition-ti-flow-di-ga-activate-operation-output.html">TIFlow DiGA Activate Operation Output</a></p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/task.html">Task</a></td><td/><td/></tr></table></div>
+  </text>
+  <url value="https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-activate-op"/>
+  <version value="2.0.0-ballot.2"/>
+  <name value="TIFlow-DIGA-OP-Activate"/>
+  <title value="E-Rezept aktivieren"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2026-06-30"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der TI-Flow-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="true"/>
+  <code value="activate"/>
+  <resource value="Task"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <inputProfile value="https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-activate-operation-input"/>
+  <outputProfile value="https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-activate-operation-output"/>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <type value="Task"/>
+  </parameter>
+</OperationDefinition>

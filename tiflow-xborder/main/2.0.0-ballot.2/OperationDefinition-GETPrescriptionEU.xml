@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="GETPrescriptionEU"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition GETPrescriptionEU</b></p><a name="GETPrescriptionEU"> </a><a name="hcGETPrescriptionEU"> </a><p>URL: [base]/$get-eu-prescriptions</p><p>Input parameters Profile:<a href="StructureDefinition-GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input.html">GEM ERPEU PR PAR GET Prescription Input</a></p><p>Output parameters Profile:<a href="StructureDefinition-gem-erpeu-pr-par-get-prescription-output.html">GEM ERPEU PR PAR GET Prescription Output</a></p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td><div><p>Depending on the requesttype this operation returns a Bundle containing eRezept KBV_PR_ERP_Bundle Prescription-Bundles.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="https://gematik.de/fhir/tiflow-xborder/OperationDefinition/GETPrescriptionEU"/>
+  <version value="2.0.0-ballot.2"/>
+  <name value="GETPrescriptionEU"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2026-06-30"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="The Operation gets Presciption Information from the ERP System for usage in the e-prescription workflow for EU countries"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="false"/>
+  <code value="get-eu-prescriptions"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <inputProfile value="https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input"/>
+  <outputProfile value="https://gematik.de/fhir/tiflow-xborder/StructureDefinition/gem-erpeu-pr-par-get-prescription-output"/>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Depending on the requesttype this operation returns a Bundle containing eRezept KBV_PR_ERP_Bundle Prescription-Bundles."/>
+    <type value="Bundle"/>
+  </parameter>
+</OperationDefinition>

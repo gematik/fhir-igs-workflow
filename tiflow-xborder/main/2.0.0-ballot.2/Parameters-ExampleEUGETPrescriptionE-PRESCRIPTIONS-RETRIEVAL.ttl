@@ -1,0 +1,110 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-xborder/Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-RETRIEVAL> a fhir:Parameters ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleEUGETPrescriptionE-PRESCRIPTIONS-RETRIEVAL"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input>
+     ]
+  ] ;
+  fhir:Parameters.parameter [
+     fhir:index 0 ;
+     fhir:Parameters.parameter.name [ fhir:value "requestData" ] ;
+     fhir:Parameters.parameter.part [
+       fhir:index 0 ;
+       fhir:Parameters.parameter.name [ fhir:value "requesttype" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "https://gematik.de/fhir/tiflow-xborder/CodeSystem/GEM-ERPEU-CS-RequestType" ] ;
+         fhir:Coding.code [ fhir:value "e-prescriptions-retrieval" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Parameters.parameter.name [ fhir:value "kvnr" ] ;
+       fhir:Parameters.parameter.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+         fhir:Identifier.value [ fhir:value "X123456789" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Parameters.parameter.name [ fhir:value "accessCode" ] ;
+       fhir:Parameters.parameter.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_EU_AccessCode" ] ;
+         fhir:Identifier.value [ fhir:value "123456" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:Parameters.parameter.name [ fhir:value "countryCode" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+         fhir:Coding.code [ fhir:value "BE" ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:Parameters.parameter.name [ fhir:value "practitionerName" ] ;
+       fhir:Parameters.parameter.valueString [ fhir:value "Sanches" ]
+     ], [
+       fhir:index 5 ;
+       fhir:Parameters.parameter.name [ fhir:value "practitionerRole" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "urn:oid:2.16.840.1.113883.2.9.6.2.7" ] ;
+         fhir:Coding.code [ fhir:value "2262" ] ;
+         fhir:Coding.display [ fhir:value "Pharmacists" ]
+       ]
+     ], [
+       fhir:index 6 ;
+       fhir:Parameters.parameter.name [ fhir:value "pointOfCare" ] ;
+       fhir:Parameters.parameter.valueString [ fhir:value "Super Pharmacia" ]
+     ], [
+       fhir:index 7 ;
+       fhir:Parameters.parameter.name [ fhir:value "healthcare-facility-type" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID" ] ;
+         fhir:Coding.code [ fhir:value "1.2.276.0.76.4.54" ] ;
+         fhir:Coding.display [ fhir:value "Öffentliche Apotheke" ]
+       ]
+     ], [
+       fhir:index 8 ;
+       fhir:Parameters.parameter.name [ fhir:value "prescription-id" ] ;
+       fhir:Parameters.parameter.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+         fhir:Identifier.value [ fhir:value "160.000.000.000.000.01" ]
+       ]
+     ], [
+       fhir:index 9 ;
+       fhir:Parameters.parameter.name [ fhir:value "prescription-id" ] ;
+       fhir:Parameters.parameter.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+         fhir:Identifier.value [ fhir:value "160.000.000.000.000.02" ]
+       ]
+     ], [
+       fhir:index 10 ;
+       fhir:Parameters.parameter.name [ fhir:value "prescription-id" ] ;
+       fhir:Parameters.parameter.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+         fhir:Identifier.value [ fhir:value "160.000.000.000.000.03" ]
+       ]
+     ], [
+       fhir:index 11 ;
+       fhir:Parameters.parameter.name [ fhir:value "prescription-id" ] ;
+       fhir:Parameters.parameter.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+         fhir:Identifier.value [ fhir:value "160.000.000.000.000.04" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-xborder/Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-RETRIEVAL.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

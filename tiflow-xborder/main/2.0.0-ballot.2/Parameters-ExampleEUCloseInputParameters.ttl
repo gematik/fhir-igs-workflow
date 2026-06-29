@@ -1,0 +1,274 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-xborder/Parameters/ExampleEUCloseInputParameters> a fhir:Parameters ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleEUCloseInputParameters"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-Close-Operation-Input" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PAR-Close-Operation-Input>
+     ]
+  ] ;
+  fhir:Parameters.parameter [
+     fhir:index 0 ;
+     fhir:Parameters.parameter.name [ fhir:value "rxDispensation" ] ;
+     fhir:Parameters.parameter.part [
+       fhir:index 0 ;
+       fhir:Parameters.parameter.name [ fhir:value "medicationDispense" ] ;
+       fhir:Parameters.parameter.resource [
+         a fhir:MedicationDispense ;
+         fhir:Resource.id [ fhir:value "Example-MedicationDispense-EU" ] ;
+         fhir:Resource.meta [
+           fhir:Meta.profile [
+             fhir:value "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-MedicationDispense" ;
+             fhir:index 0 ;
+             fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-MedicationDispense>
+           ]
+         ] ;
+         fhir:MedicationDispense.identifier [
+           fhir:index 0 ;
+           fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+           fhir:Identifier.value [ fhir:value "160.000.033.491.280.78" ]
+         ] ;
+         fhir:MedicationDispense.status [ fhir:value "completed" ] ;
+         fhir:MedicationDispense.medicationReference [
+           fhir:link <https://gematik.de/fhir/tiflow-xborder/Medication/SumatripanMedication> ;
+           fhir:Reference.reference [ fhir:value "Medication/SumatripanMedication" ]
+         ] ;
+         fhir:MedicationDispense.subject [
+           fhir:Reference.identifier [
+             fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+             fhir:Identifier.value [ fhir:value "X123456789" ]
+           ]
+         ] ;
+         fhir:MedicationDispense.performer [
+           fhir:index 0 ;
+           fhir:MedicationDispense.performer.actor [
+             fhir:link <https://gematik.de/fhir/tiflow-xborder/PractitionerRole/Example-EU-PractitionerRole> ;
+             fhir:Reference.reference [ fhir:value "PractitionerRole/Example-EU-PractitionerRole" ]
+           ]
+         ] ;
+         fhir:MedicationDispense.quantity [
+           fhir:Quantity.value [ fhir:value "2"^^xsd:decimal ] ;
+           fhir:Quantity.unit [ fhir:value "pkg" ]
+         ] ;
+         fhir:MedicationDispense.whenHandedOver [ fhir:value "2026-10-01"^^xsd:date ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Parameters.parameter.name [ fhir:value "medication" ] ;
+       fhir:Parameters.parameter.resource [
+         a fhir:Medication ;
+         fhir:Resource.id [ fhir:value "SumatripanMedication" ] ;
+         fhir:Resource.meta [
+           fhir:Meta.profile [
+             fhir:value "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Medication" ;
+             fhir:index 0 ;
+             fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Medication>
+           ]
+         ] ;
+         fhir:DomainResource.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension" ] ;
+           fhir:Extension.valueCoding [
+             fhir:Coding.system [ fhir:value "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs" ] ;
+             fhir:Coding.code [ fhir:value "00" ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension" ] ;
+           fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/normgroesse" ] ;
+           fhir:Extension.valueCode [ fhir:value "N1" ]
+         ] ;
+         fhir:Medication.code [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/ifa/pzn" ] ;
+             fhir:Coding.code [ fhir:value "06313728" ]
+           ] ;
+           fhir:CodeableConcept.text [ fhir:value "Sumatriptan-1a Pharma 100 mg Tabletten" ]
+         ] ;
+         fhir:Medication.form [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM" ] ;
+             fhir:Coding.code [ fhir:value "TAB" ]
+           ]
+         ] ;
+         fhir:Medication.amount [
+           fhir:Ratio.numerator [
+             fhir:Element.extension [
+               fhir:index 0 ;
+               fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension" ] ;
+               fhir:Extension.valueString [ fhir:value "20" ]
+             ] ;
+             fhir:Quantity.value [ fhir:value "20"^^xsd:decimal ] ;
+             fhir:Quantity.unit [ fhir:value "St" ]
+           ] ;
+           fhir:Ratio.denominator [
+             fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ]
+           ]
+         ] ;
+         fhir:Medication.batch [
+           fhir:Medication.batch.lotNumber [ fhir:value "1234567890" ]
+         ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Parameters.parameter.name [ fhir:value "requestData" ] ;
+     fhir:Parameters.parameter.part [
+       fhir:index 0 ;
+       fhir:Parameters.parameter.name [ fhir:value "kvnr" ] ;
+       fhir:Parameters.parameter.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+         fhir:Identifier.value [ fhir:value "X123456789" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Parameters.parameter.name [ fhir:value "accessCode" ] ;
+       fhir:Parameters.parameter.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_EU_AccessCode" ] ;
+         fhir:Identifier.value [ fhir:value "ABC123" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Parameters.parameter.name [ fhir:value "countryCode" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+         fhir:Coding.code [ fhir:value "BE" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:Parameters.parameter.name [ fhir:value "practitionerName" ] ;
+       fhir:Parameters.parameter.valueString [ fhir:value "Sanches" ]
+     ], [
+       fhir:index 4 ;
+       fhir:Parameters.parameter.name [ fhir:value "practitionerRole" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "urn:oid:2.16.840.1.113883.2.9.6.2.7" ] ;
+         fhir:Coding.code [ fhir:value "2262" ] ;
+         fhir:Coding.display [ fhir:value "Pharmacists" ]
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:Parameters.parameter.name [ fhir:value "pointOfCare" ] ;
+       fhir:Parameters.parameter.valueString [ fhir:value "Super Pharmacia" ]
+     ], [
+       fhir:index 6 ;
+       fhir:Parameters.parameter.name [ fhir:value "healthcare-facility-type" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID" ] ;
+         fhir:Coding.code [ fhir:value "1.2.276.0.76.4.54" ] ;
+         fhir:Coding.display [ fhir:value "Öffentliche Apotheke" ]
+       ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Parameters.parameter.name [ fhir:value "practitionerData" ] ;
+     fhir:Parameters.parameter.resource [
+       a fhir:Practitioner ;
+       fhir:Resource.id [ fhir:value "Example-EU-Practitioner" ] ;
+       fhir:Resource.meta [
+         fhir:Meta.profile [
+           fhir:value "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Practitioner" ;
+           fhir:index 0 ;
+           fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Practitioner>
+         ]
+       ] ;
+       fhir:Practitioner.identifier [
+         fhir:index 0 ;
+         fhir:Identifier.value [ fhir:value "EU-1234567890" ]
+       ] ;
+       fhir:Practitioner.name [
+         fhir:index 0 ;
+         fhir:HumanName.text [ fhir:value "Pedro Sanches" ] ;
+         fhir:HumanName.family [ fhir:value "Sanches" ] ;
+         fhir:HumanName.given [
+           fhir:value "Pedro" ;
+           fhir:index 0
+         ]
+       ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:Parameters.parameter.name [ fhir:value "organizationData" ] ;
+     fhir:Parameters.parameter.resource [
+       a fhir:Organization ;
+       fhir:Resource.id [ fhir:value "Example-EU-Organization" ] ;
+       fhir:Resource.meta [
+         fhir:Meta.profile [
+           fhir:value "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Organization" ;
+           fhir:index 0 ;
+           fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-Organization>
+         ]
+       ] ;
+       fhir:Organization.identifier [
+         fhir:index 0 ;
+         fhir:Identifier.value [ fhir:value "1234567890" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Identifier.value [ fhir:value "EU-136ad69f" ]
+       ] ;
+       fhir:Organization.type [
+         fhir:index 0 ;
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID" ] ;
+           fhir:Coding.code [ fhir:value "1.2.276.0.76.4.54" ] ;
+           fhir:Coding.display [ fhir:value "Öffentliche Apotheke" ]
+         ]
+       ] ;
+       fhir:Organization.name [ fhir:value "Pharmacia de Santa Maria" ] ;
+       fhir:Organization.address [
+         fhir:index 0 ;
+         fhir:Address.line [
+           fhir:value "Rua da Alegria, 123" ;
+           fhir:index 0
+         ] ;
+         fhir:Address.city [ fhir:value "Lisbon" ] ;
+         fhir:Address.state [ fhir:value "Estremadura" ] ;
+         fhir:Address.postalCode [ fhir:value "1234-567" ] ;
+         fhir:Address.country [ fhir:value "Portugal" ]
+       ]
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:Parameters.parameter.name [ fhir:value "practitionerRoleData" ] ;
+     fhir:Parameters.parameter.resource [
+       a fhir:PractitionerRole ;
+       fhir:Resource.id [ fhir:value "Example-EU-PractitionerRole" ] ;
+       fhir:Resource.meta [
+         fhir:Meta.profile [
+           fhir:value "https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PractitionerRole" ;
+           fhir:index 0 ;
+           fhir:link <https://gematik.de/fhir/tiflow-xborder/StructureDefinition/GEM-ERPEU-PR-PractitionerRole>
+         ]
+       ] ;
+       fhir:PractitionerRole.practitioner [
+         fhir:link <https://gematik.de/fhir/tiflow-xborder/Practitioner/Example-EU-Practitioner> ;
+         fhir:Reference.reference [ fhir:value "Practitioner/Example-EU-Practitioner" ]
+       ] ;
+       fhir:PractitionerRole.organization [
+         fhir:link <https://gematik.de/fhir/tiflow-xborder/Organization/Example-EU-Organization> ;
+         fhir:Reference.reference [ fhir:value "Organization/Example-EU-Organization" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-xborder/Parameters/ExampleEUCloseInputParameters.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
