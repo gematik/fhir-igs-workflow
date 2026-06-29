@@ -13,6 +13,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | `2.0.0-ballot.2` | `architecture-image` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/architecture-image/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `audit-event-profile` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/audit-event-profile/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `audit-event-service` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/audit-event-service/2.0.0-ballot.2) |
+| `2.0.0-ballot.2` | `bugfix-api-div` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/bugfix-api-div/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/develop/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `examples` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/examples/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `move-configuration-requirements` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/move-configuration-requirements/2.0.0-ballot.2) |
@@ -57,6 +58,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 
 | Version | Branch | Link |
 |---------|--------|------|
+| `2.0.0-ballot.2` | `bugfix-api-div` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/bugfix-api-div/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/develop/2.0.0-ballot.2) |
 | `2.0.0-ballot.1` | `fix-build-stuff` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/fix-build-stuff/2.0.0-ballot.1) |
 | `1.0.0-draft` | `TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration/1.0.0-draft) |
