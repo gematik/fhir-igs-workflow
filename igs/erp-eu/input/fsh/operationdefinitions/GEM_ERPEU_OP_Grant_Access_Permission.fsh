@@ -13,21 +13,21 @@ Usage: #definition
 * outputProfile = Canonical(GEM_ERPEU_PR_PAR_Access_Authorization_Response)
 
 // in
-* parameter[+]
-  * name = #countryCode
-  * use = #in
-  * min = 1
-  * max = "1"
-  * documentation = "The country for which the patient wants to grant access."
-  * type = #Coding
+// * parameter[+]
+//   * name = #countryCode
+//   * use = #in
+//   * min = 1
+//   * max = "1"
+//   * documentation = "The country for which the patient wants to grant access."
+//   * type = #Coding
 
-* parameter[+]
-  * name = #accessCode
-  * use = #in
-  * min = 1
-  * max = "1"
-  * documentation = "The access code for that country."
-  * type = #Identifier
+// * parameter[+]
+//   * name = #accessCode
+//   * use = #in
+//   * min = 1
+//   * max = "1"
+//   * documentation = "The access code for that country."
+//   * type = #Identifier
 
 
 // out
