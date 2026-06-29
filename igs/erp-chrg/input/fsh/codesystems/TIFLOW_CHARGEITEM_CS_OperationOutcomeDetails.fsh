@@ -2,6 +2,8 @@ CodeSystem: TIFLOWChargeItemOperationOutcomeDetailsCS
 Id: tiflow-chargeitem-operation-outcome-details-cs
 Title: "TIFLOW ChargeItem Operation Outcome Details CS"
 Description: "Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"
+* ^caseSensitive = true
+* ^experimental = false
 * #TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV "Coverage not PKV" "The referenced prescription coverage type is not PKV and therefore not valid for ChargeItem processing"
   * ^designation.language = #de-DE
   * ^designation.value = "Kostenträgertyp nicht PKV"
