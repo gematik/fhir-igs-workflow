@@ -1,4 +1,4 @@
-Diese Seite beschreibt Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der `MedicationDispense`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der `MedicationDispense`-Query-Endpunkte.
 
 ### Anforderungen aus der Core Spezifikation
 

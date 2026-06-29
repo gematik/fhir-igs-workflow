@@ -7,12 +7,12 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 ### Modulspezifische Anforderungen
 
 <!-- A_19026-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-DIGA-7" title="E-Rezept-Fachdienst - E-Rezept löschen - Flowtype 162 - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A7" title="TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 162 - Rollenprüfung" version="0">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
-    <testProcedure id="Produktgutachten"/>
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Löschen eines Tasks für eine Verordnung mit Flowtype 162 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Institutionen in der Rolle
+  Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks mit Flowtype 162 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
   <ul>
     <li>oid_versicherter</li>
     <li>oid_praxis_arzt</li>
@@ -21,5 +21,28 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
     <li>oid_praxis_psychotherapeut</li>
     <li>oid_institution-vorsorge-reha</li>
   </ul>
-  die Operation am Fachdienst aufrufen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
+  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+        </tr>
+    </table> 
+    abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
 </requirement>

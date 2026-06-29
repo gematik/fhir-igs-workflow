@@ -7,28 +7,28 @@ Das Szenario umfasst die Versorgung gesetzlich (GKV) und privat (PKV) Versichert
 
 ### Epic
 
-Die Fachanwendung E-Rezept ermöglicht eine Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel in elektronischer Form. Sie setzt sich aus den folgenden dargestellten Bestandteilen zusammen:
+Die Fachanwendung E-Rezept ermöglicht eine Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel in elektronischer Form. Sie setzt sich aus den folgenden dargestellten Bestandteilen zusammen:
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 754px; margin-bottom: 30px;">
-        <img src="./uebersicht_architekur_erp_eu.jpeg" alt="Übersicht E-Rezept" style="width: 100%;">
+        <img src="./uebersicht-erezept.png" alt="Übersicht E-Rezept" style="width: 100%;">
     </div>
     <figcaption><strong>Abbildung: </strong>Übersicht E-Rezept</figcaption>
 </figure>
 
-Der verordnende Leistungserbringer erstellt für einen Versicherten ein E-Rezept, welches auf dem zentralen E-Rezept-Fachdienst abgelegt wird. Der Standardfall sieht vor, dass der Versicherte seine E-Rezepte mit dem E-Rezept-Frontend des Versicherten auf seinem technischen Gerät verwaltet. Mit dem E-Rezept-Frontend des Versicherten kann der Versicherte einen E-Rezept-Token generieren, der eine Apotheke für den Zugriff auf ein konkretes E-Rezept im E-Rezept-Fachdienst berechtigt. Der Versicherte übermittelt den E-Rezept-Token elektronisch an eine Apotheke oder legt ihn in Form eines 2D-Codes in einer Apotheke vor. Die elektronische Übertragung des E-Rezept-Tokens an eine Apotheke erfolgt über den E-Rezept-Fachdienst.
+Der verordnende Leistungserbringer erstellt für einen Versicherten ein E-Rezept, welches auf dem zentralen TI-Flow-Fachdienst abgelegt wird. Der Standardfall sieht vor, dass der Versicherte seine E-Rezepte mit dem E-Rezept-Frontend des Versicherten auf seinem technischen Gerät verwaltet. Mit dem E-Rezept-Frontend des Versicherten kann der Versicherte einen E-Rezept-Token generieren, der eine Apotheke für den Zugriff auf ein konkretes E-Rezept im TI-Flow-Fachdienst berechtigt. Der Versicherte übermittelt den E-Rezept-Token elektronisch an eine Apotheke oder legt ihn in Form eines 2D-Codes in einer Apotheke vor. Die elektronische Übertragung des E-Rezept-Tokens an eine Apotheke erfolgt über den TI-Flow-Fachdienst.
 
 Für Versicherte, welche kein E-Rezept-Frontend des Versicherten nutzen, erstellt der verordnende Leistungserbringer den E-Rezept-Token und übergibt ihn in Form eines 2D-Code auf einem Ausdruck dem Versicherten. Der Ausdruck kann in einer Apotheke vorgelegt werden.
 
-Durch die Übergabe eines E-Rezept-Token an eine andere Person kann diese als Vertreter das E-Rezept in einer Apotheke einlösen.
+Durch die Übergabe der Gesundheitskarte oder eines Patientenausdrucks an eine andere Person kann diese als Vertreter das E-Rezept in einer Apotheke einlösen.
 
-Der Versicherte hat die Hoheit über das E-Rezept, da jeglicher Zugriff auf ein konkretes Rezept im E-Rezept-Fachdienst entweder nur dem Versicherten, dem das E-Rezept verordnet wurde, oder einer Apotheke oder einem Vertreter nach Vorlage eines im E-Rezept-Token enthaltenen AccessCodes gestattet ist. Der E-Rezept-Token realisiert ein Besitzmodell, d.h. wer im Besitz des E-Rezept-Tokens und damit des AccessCodes ist, kann damit die Dispensierung in einer Apotheke veranlassen.
+Der Versicherte hat die Hoheit über das E-Rezept, da jeglicher Zugriff auf ein konkretes Rezept im TI-Flow-Fachdienst entweder nur dem Versicherten, dem das E-Rezept verordnet wurde, oder einer Apotheke gestattet ist. Der E-Rezept-Token realisiert ein Besitzmodell, d.h. wer im Besitz des E-Rezept-Tokens und damit des AccessCodes ist, kann damit die Dispensierung in einer Apotheke veranlassen.
 
-Mit der Übergabe bzw. dem Einlesen des E-Rezept-Tokens an einen/durch einen Apotheker erfolgt die Aufforderung zur Dispensierung. Der Apotheker lädt das E-Rezept vom zentralen E-Rezept-Fachdienst und verarbeitet es. Zugriffe auf den E-Rezept-Fachdienst werden im E-Rezept-Fachdienst protokolliert und sind durch den jeweils betroffenen Versicherten einsehbar.
+Mit der Übergabe bzw. dem Einlesen des E-Rezept-Tokens an einen/durch einen Apotheker erfolgt die Aufforderung zur Dispensierung. Der Apotheker lädt das E-Rezept vom zentralen TI-Flow-Fachdienst und verarbeitet es. Zugriffe auf den TI-Flow-Fachdienst werden im TI-Flow-Fachdienst protokolliert und sind durch den jeweils betroffenen Versicherten einsehbar.
 
 Die dezentrale E-Rezept-Fachlogik wird im Primärsystem der verordnenden und abgebenden Leistungserbringerinstitutionen, sowie im E-Rezept-Frontend des Versicherten (E-Rezept-FdV) umgesetzt. Alle Client-Systeme nutzen Dienste der zentralen TI-Plattform, wobei die Primärsysteme der Leistungserbringer zusätzlich auf Funktionalitäten des Konnektors zurückgreifen.
 
-In der TI gibt es genau einen Anbieter für den E-Rezept-Fachdienst und einen Anbieter für das E-Rezept-Frontend des Versicherten.
+In der TI gibt es genau einen Anbieter für den TI-Flow-Fachdienst und einen Anbieter für das E-Rezept-Frontend des Versicherten.
 
 Das E-Rezept-Frontend des Versicherten muss diskriminierungsfrei, werbefrei und unabhängig sein.
 
@@ -65,7 +65,7 @@ Mit diesem Anwendungsfall kann der Nutzer die lokal in seinem E-Rezept-FdV gespe
 
 ### Verordnung apothekenpflichtiger Arzneimittel (GKV/PKV)
 
-Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/KIS) den Verordnungsdatensatz, signiert diesen qualifiziert und stellt das E-Rezept im E-Rezept-Fachdienst bereit.
+Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/ZPVS/KIS) den Verordnungsdatensatz, signiert diesen qualifiziert und stellt das E-Rezept im TI-Flow-Fachdienst bereit.
 
 #### Fachlicher Ablauf
 
@@ -79,13 +79,13 @@ Ein verordnender Leistungserbringer erstellt im Primärsystem (PVS/KIS) den Vero
 - Für PKV-Versicherte können zusätzliche Schritte zur Bereitstellung PKV-relevanter Versichertendaten erforderlich sein (z. B. Online Check-in).
 - Beide Gruppen durchlaufen für apothekenpflichtige Arzneimittel den regulären Einlöseprozess in der öffentlichen Apotheke.
 
-**Beteiligte Systeme:** PVS/KIS, E-Rezept-Fachdienst
+**Beteiligte Systeme:** PVS/ZPVS/KIS, TI-Flow-Fachdienst
 
 **Technische Anwendungsfälle**
 
 {% assign scenario_use_cases = "UC_2_1_E_Rezepte_erzeugen, E_Rezept_qualifiziert_signieren, UC_2_3_E_Rezept_einstellen, UC_2_5_E_Rezept_durch_Verordnenden_loeschen" | split: ", " %}
 
-{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Verordnung apothekenpflichtiger Arzneimittel (160/200)</i>" %}
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Verordnung apothekenpflichtiger Arzneimittel</i>" %}
 
 ### Belieferung in der Apotheke (GKV/PKV)
 
@@ -105,31 +105,104 @@ Nach Übergabe von Task-ID und AccessCode (z. B. 2D-Code oder Nachricht) ruft di
 
 ### Anwendungsfälle
 
-**Beteiligte Systeme:** AVS, E-Rezept-Fachdienst
+**Beteiligte Systeme:** AVS, TI-Flow-Fachdienst
 
 **Technische Anwendungsfälle**
 
 {% assign scenario_use_cases = "UC_4_1_E_Rezept_durch_Abgebenden_abrufen, UC_4_2_E_Rezept_durch_Abgebenden_zurueckgeben, UC_4_3_E_Rezept_durch_Abgebenden_loeschen, UC_4_4_Quittung_abrufen, UC_4_5_Abgabedatensatz_signieren, UC_4_8_Quittung_erneut_abrufen, UC_4_16_Dispensierinformationen_bereitstellen" | split: ", " %}
 
-{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Belieferung apothekenpflichtiger Arzneimittel (160/200)</i>" %}
+{% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Belieferung apothekenpflichtiger Arzneimittel</i>" %}
 
 ### Verwalten von E-Rezepten durch Versicherten
 
-Versicherte verwalten ihre E-Rezepte in der E-Rezept-App, sehen Zugriffsprotokolle ein und laden bei Bedarf zusätzliche Informationen zum ausgegebenen Medikament herunter. Wird auf einen Papierausdruck verzichtet, erfolgt die Einlösung über die App: Aus den heruntergeladenen Daten wird ein 2D-Code (DataMatrix) erzeugt, der in der Apotheke gescannt wird und damit die Adresse sowie Zugriffsberechtigung zum E-Rezept bereitstellt. Vertreter können E-Rezepte ebenfalls einsehen oder herunterladen, sofern ihnen der AccessCode bekannt ist.
+Versicherte verwalten ihre E-Rezepte in der E-Rezept-App, sehen Zugriffsprotokolle ein und laden bei Bedarf zusätzliche Informationen zum ausgegebenen Medikament herunter. Wird auf einen Papierausdruck verzichtet, erfolgt die Einlösung über die App: Aus den heruntergeladenen Daten wird ein 2D-Code (DataMatrix) erzeugt, der in der Apotheke gescannt wird und damit die Adresse sowie Zugriffsberechtigung zum E-Rezept bereitstellt.
 
 #### Fachlicher Ablauf
 
 1. Der Versicherte ruft seine E-Rezepte im FdV ab und sieht Status sowie Detailinformationen ein.
 2. Optional erstellt die E-Rezept-App einen 2D-Code zur Einlösung und stellt ihn zur Verfügung.
 3. Der Versicherte kann zusätzliche Informationen (z. B. Dispensierinformationen) abrufen.
-4. Bei Bedarf löscht der Versicherte ein E-Rezept; Vertreter handeln analog mit bekanntem AccessCode.
+4. Bei Bedarf löscht der Versicherte ein E-Rezept.
 
 ### Anwendungsfälle
 
-**Beteiligte Systeme:** PVS/KIS, AVS, E-Rezept-FdV , E-Rezept-Fachdienst
+**Beteiligte Systeme:** PVS/ZPVS/KIS, AVS, E-Rezept-FdV , TI-Flow-Fachdienst
 
 #### Technische Anwendungsfälle der Verordnung
 
 {% assign scenario_use_cases = "UC_3_1_E_Rezepte_durch_Versicherten_abrufen, UC_3_2_E_Rezept_durch_Versicherten_loeschen, UC_3_9_Dispensierinformationen_durch_Versicherten_abrufen" | split: ", " %}
 
 {% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zu Anwendungsfall <i>Verwalten von E-Rezepten durch Versicherten</i>" %}
+
+### Workflow Status und Statusübergänge
+In diesem Abschnitt werden die möglichen Status eines Workflows für E-Rezepte und die zulässigen Statuswechsel beschrieben.
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
+        <img src="./arzneimittelverordnung-statusmodell.png" alt="Statusmodell" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Workflow Status und Statusübergänge - Flowtyps für Arzneimittel</figcaption>
+</figure>
+
+<br>
+
+<table>
+    <tr>
+        <th>Status des Workflows</th>
+        <th>Beschreibung und mögliche Statusübergänge</th>
+    </tr>
+    <tr>
+        <td>draft</td>
+        <td>
+            <ul>
+            <li>Mit dem Abruf einer Rezept-ID durch eine verordnende LEI wird ein Workflow im Fachdienst (Task Ressource) mit dem Status "draft" erstellt.</li>
+            <li>Wenn die verordnende LEI die Verordnung in den erstellten Workflow hinzufügt, dann wechselt der Workflow in den Status "ready".</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>ready</td>
+        <td>
+            <ul>
+            <li>Das E-Rezept wurde von der verordnenden LEI in den Fachdienst eingestellt.</li>
+            <li>Das E-Rezept kann vom Versicherten abgerufen werden</li>
+            <li>Der Versicherte oder die verordnende LEI können das E-Rezept als gelöscht markieren. Der Workflow wechselt in den Status "cancelled".</li>
+            <li>Der Abruf des E-Rezepts durch eine Apotheke ändert den Status des Workflows auf "in-progress". In diesem Status ist der Zugriff durch andere Apotheken gesperrt.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>in-progress</td>
+        <td>
+            <ul>
+            <li>Das E-Rezept wurde von einer Apotheke abgerufen.</li>
+            <li>Der Zugriff auf das E-Rezept durch andere Apotheken oder die verordnende LEI ist gesperrt. Ebenso darf der Versicherte das E-Rezept in diesem Status nicht löschen.</li>
+            <li>Das E-Rezept kann durch die Apotheke zurückgewiesen werden. Der Workflows wechselt zurück in den Status "ready".</li>
+            <li>Das E-Rezept kann durch die Apotheke gelöscht werden. Der Workflows wechselt zurück in den Status "cancelled".</li>
+            <li>Der Apotheke kann nach der Belieferung des E-Rezepts die Informationen zur Dispensierung an den Fachdienst übermitteln. Der Workflows wechselt zurück in den Status "completed"</li>
+            <li>Das E-Rezept kann vom Versicherten abgerufen werden.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>completed</td>
+        <td>
+            <ul>
+            <li>Der Workflow wurde von der Apotheke abgeschlosen.</li>
+            <li>Die bereitgestellten Diespensierinformationen können vom Versicherten abgerufen werden.</li>
+            <li>Der Versicherte kann das E-Rezept als gelöscht markieren. Der Workflow wechselt in den Status "cancelled".</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>cancelled</td>
+        <td>
+            <ul>
+            <li>Die personenbezogenen und medizinischen Daten wurden aus dem Task gelöscht.</li>
+            <li>Die Akteure können nicht auf den Task zugreifen.</li>
+            <li>Hinweis: Das eigentliche physische Löschen des Datensatzes erfolgt automatisch durch den Fachdienst nach einer Löschfrist.</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+<div><figcaption><strong>Tabelle: </strong>Workflow Status und Statusübergänge - Flowtyps für Arzneimittel</figcaption></div>

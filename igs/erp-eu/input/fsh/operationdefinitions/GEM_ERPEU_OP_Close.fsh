@@ -1,7 +1,7 @@
 Instance: EUCloseOperation
 InstanceOf: OperationDefinition
 Usage: #definition
-* insert Operation(EUClose)
+* insert Operation(EUCloseOperation)
 * description = "The operation $close finishes the e-prescription workflow and creates a receipt. The Output of this operation is a signed Bundle, to be used for further financial processing. The status of the Task then changes into #completed"
 * code = #eu-close
 * system = false

@@ -7,10 +7,10 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 #### PS verordnende LEI
 
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-71" title="PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A71" title="PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von E-Rezepten für Arzneimittel die Anwendungsfälle
 
@@ -27,19 +27,18 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 #### E-Rezept-FdV 
 
 <!-- A_19443 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-72" title="E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A72" title="E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneimittel die Anwendungsfälle
     <ul>
-        <li>UC 3.1 – E-Rezepte durch Versicherten abrufen</li>
-        <li>UC 3.6 – E-Rezept durch Vertreter abrufen</li>
-        <li>UC 3.2 – E-Rezept durch Versicherten löschen</li>
-        <li>UC 3.3 – Nachricht durch Versicherten übermitteln</li>
-        <li>UC 3.4 – Nachricht durch Versicherten empfangen</li>
-        <li>UC 3.8 – Nachricht durch Versicherten löschen</li>
+        <li>UC 3.1 - E-Rezepte durch Versicherten abrufen</li>
+        <li>UC 3.2 - E-Rezept durch Versicherten löschen</li>
+        <li>UC 3.3 - Nachricht durch Versicherten übermitteln</li>
+        <li>UC 3.4 - Nachricht durch Versicherten empfangen</li>
+        <li>UC 3.8 - Nachricht durch Versicherten löschen</li>
         <li>UC 3.5 - Protokolldaten abrufen</li>
     </ul>
     umsetzen.
@@ -47,10 +46,10 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 #### PS abgebende LEI
 
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-73" title="PS abgebende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A73" title="PS abgebende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das PS der abgebenden LEI MUSS für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel die Anwendungsfälle
     <ul>
@@ -69,10 +68,10 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
     umsetzen.
 </requirement>
 
-<requirement conformance="SHOULD" key="IG-PRE-TIFLOW-ERP-74" title="PS abgebende LEI: TIFlow-RX - empfohlene Anwendungsfälle" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A74" title="PS abgebende LEI: TIFlow-RX - empfohlene Anwendungsfälle" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das PS der abgebenden LEI SOLL für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel den Anwendungsfall
     <ul>
@@ -104,8 +103,6 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 {% include use-case-details-table.html use_case=use_case roles=roles %}
 
-- Die QES-Erstellung erfolgt im Primärsystem (HBA/Konnektor) vor dem Aufruf von `$activate`.
-
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- UC 2.3 - E-Rezept einstellen -->
@@ -129,10 +126,30 @@ Zusätzlich werden u.a. die Informationen
 - Ende der Gültigkeit (`MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end`) 
 angegeben.
 
-Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit einem eigenen Workflow (Task) verwaltet. Dies ermöglicht den Versicherten und den Apotheken eine separate Verarbeitung jedes E-Rezepts einer Mehrfachverordnung.
+Jede Teilverordnung einer Mehrfachverordnung wird im TI-Flow-Fachdienst mit einem eigenen Workflow (Task) verwaltet. Dies ermöglicht den Versicherten und den Apotheken eine separate Verarbeitung jedes E-Rezepts einer Mehrfachverordnung.
 
 <!-- UC 2.5 - E-Rezept durch Verordnenden löschen -->
 {% assign use_case = use_cases | where: "title", "UC 2.5 - E-Rezept durch Verordnenden löschen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- 169 - E-Rezept erzeugen -->
+{% assign use_case = use_cases | where: "title", "E-Rezept für Workflow 169 durch Verordnenden erzeugen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
+<!-- 169 - E-Rezept übermitteln -->
+{% assign use_case = use_cases | where: "title", "E-Rezept-Token an Apotheker übermitteln" | first %}
 
 <a id="{{ use_case.anchor }}"></a>
 ##### {{ use_case.title }}
@@ -193,6 +210,16 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
 
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
+<!-- UC 3.9 - Dispensierinformationen durch Versicherten abrufen -->
+{% assign use_case = use_cases | where: "title", "UC 3.9 - Dispensierinformationen durch Versicherten abrufen" | first %}
+
+<a id="{{ use_case.anchor }}"></a>
+##### {{ use_case.title }}
+
+{% include use-case-details-table.html use_case=use_case roles=roles %}
+
+{% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
+
 #### Apotheke
 
 <!-- UC 4.6 - Nachrichten durch Abgebenden empfangen -->
@@ -227,7 +254,7 @@ Jede Teilverordnung einer Mehrfachverordnung wird im E-Rezept-Fachdienst mit ein
 
 <b>Technische Aspekte für die Mehrfachverordnung (MVO)</b>
 
-Wenn ein AVS eine Teilverordnung abruft, deren Einlösezeitraum noch nicht erreicht ist, dann liefert der E-Rezept-Fachdienst einen Fehler 403. Im OperationOutcome der Fehlermeldung liefert der E-Rezept-Fachdienst das Datum des Beginns der Einlösefrist.
+Wenn ein AVS eine Teilverordnung abruft, deren Einlösezeitraum noch nicht erreicht ist, dann liefert der TI-Flow-Fachdienst einen Fehler 403. Im OperationOutcome der Fehlermeldung liefert der TI-Flow-Fachdienst das Datum des Beginns der Einlösefrist.
 
 Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des E-Rezepts sind innerhalb der PKCS#7-Datei enthalten und müssen für die Weiterverarbeitung extrahiert werden.
 

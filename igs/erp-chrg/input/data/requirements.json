@@ -1,0 +1,2394 @@
+[
+    {
+        "key": "IG-TIFLOW-CHRG-A1",
+        "title": "E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-communication-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation-Token einer Apotheke übermitteln\" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq mit \n    <ul>\n        <li>Telematik-ID der ausgewählten abgebenden LEI in recipient</li>\n        <li>Textnachricht in payload contentString</li>\n        <li>E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als \"/ChargeItem/&#60;id&#62;?ac=...\"</li>\n    </ul> \n    erstellen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.921844",
+        "modified": "2026-06-25T13:00:23.921850",
+        "date": "2026-06-25T13:00:23.921852",
+        "content_hash": "b614c893236f3400e9b340643590e8dfbebbaa32e13391712c0a3ef6f25778a4",
+        "path": "query-api-communication-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A10",
+        "title": "E-Rezept-FdV: optional: Liste Abrechnungsinformationen abrufen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
+        "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Liste Abrechnungsinformationen abrufen\" umsetzen.",
+        "conformance": "MAY",
+        "created": "2026-06-25T13:00:23.924079",
+        "modified": "2026-06-25T13:00:23.924081",
+        "date": "2026-06-25T13:00:23.924082",
+        "content_hash": "0be057ca4f39f3b67066ecac7bb4f1bfd3af16d64537b2d31f4bc3b8c3169b7f",
+        "path": "query-api-chargeitem-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A11",
+        "title": "E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Liste Abrechnungsinformationen abfragen\" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem ausführen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.924218",
+        "modified": "2026-06-25T13:00:23.924219",
+        "date": "2026-06-25T13:00:23.924220",
+        "content_hash": "99c4de6d2e907437a79a5c29060fd4022066291f33285aa7a3174f5cf1f42975",
+        "path": "query-api-chargeitem-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A12",
+        "title": "E-Rezept-FdV: optional: Abrechnungsinformation abrufen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
+        "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Abrechnungsinformation durch den Versicherten abrufen\" umsetzen.",
+        "conformance": "MAY",
+        "created": "2026-06-25T13:00:23.924348",
+        "modified": "2026-06-25T13:00:23.924349",
+        "date": "2026-06-25T13:00:23.924350",
+        "content_hash": "de764a67a396942a545c14bf7049cc70a0af8b3ec5867a429a08f838ad5a55c8",
+        "path": "query-api-chargeitem-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A13",
+        "title": "E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation abfragen\" zum Abrufen der Information zu einem einzelnen Datensatz vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem/&#60;id&#62;/ mit \n      <ul>\n        <li>Prescription-ID in URL &#60;id&#62;</li>\n      </ul>\n      ausführen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.924519",
+        "modified": "2026-06-25T13:00:23.924521",
+        "date": "2026-06-25T13:00:23.924521",
+        "content_hash": "5c18d19b5c605b50a8e5bea7d26ea09a1402c220e826c84ffaf66cd7d7eb82ce",
+        "path": "query-api-chargeitem-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A14",
+        "title": "E-Rezept-FdV: optional: Abrechnungsinformation markieren",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
+        "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Abrechnungsinformation markieren\" umsetzen.",
+        "conformance": "MAY",
+        "created": "2026-06-25T13:00:23.924665",
+        "modified": "2026-06-25T13:00:23.924667",
+        "date": "2026-06-25T13:00:23.924667",
+        "content_hash": "597f7231f91cb6eb88e961716698b9a5699860867ea7295873f260bea2ad8685",
+        "path": "query-api-chargeitem-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A15",
+        "title": "E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation markieren\" es dem Nutzer ermöglichen, eine oder mehrere der folgenden Inhalte als Markierung für eine Abrechnungsinformation zu wählen oder abzuwählen:\n      <ul>\n        <li>zur Abrechnung bei Krankenversicherung eingereicht (extention \"insuranceProvider\")</li>\n        <li>zur Abrechnung bei der Beihilfe eingereicht (extention \"subsity\")</li>\n        <li>zur Einreichung beim Finanzamt verwendet (extention \"taxOffice\")</li>\n      </ul>",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.924843",
+        "modified": "2026-06-25T13:00:23.924844",
+        "date": "2026-06-25T13:00:23.924845",
+        "content_hash": "5dbb9c727324c18a7c32ba05f58fffa180dce8a80326a43a522312b38eeb76a2",
+        "path": "query-api-chargeitem-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A16",
+        "title": "E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation markieren\" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /ChargeItem/&#60;id&#62; mit \n        <ul>\n            <li>Prescription-ID in URL &#60;id&#62;</li>\n        </ul>\n      für jede zu ändernde Markierung\n        <ul>\n            <li>\"add\" in type</li>\n            <li>zu ändernde Markierung in path</li>\n            <li>geänderter Wert in value</li>\n        </ul>\n      ausführen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.925077",
+        "modified": "2026-06-25T13:00:23.925078",
+        "date": "2026-06-25T13:00:23.925079",
+        "content_hash": "2c1a25badfaa07af9f40d3d4fc26a9b22699618b9675f45b05b523c4a8d4fffd",
+        "path": "query-api-chargeitem-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A17",
+        "title": "E-Rezept-FdV: optional: Abrechnungsinformation löschen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
+        "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Abrechnungsinformation löschen\" umsetzen.",
+        "conformance": "MAY",
+        "created": "2026-06-25T13:00:23.925241",
+        "modified": "2026-06-25T13:00:23.925242",
+        "date": "2026-06-25T13:00:23.925243",
+        "content_hash": "a5d1a794bf8d56baf8917235402e73c060a558eb4500d07aba2bc33a1d12790e",
+        "path": "query-api-chargeitem-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A18",
+        "title": "E-Rezept-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" es dem Nutzer ermöglichen, eine Abrechnungsinformationen zum Löschen auszuwählen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.925427",
+        "modified": "2026-06-25T13:00:23.925428",
+        "date": "2026-06-25T13:00:23.925429",
+        "content_hash": "ae57ec0c9e4df122c3e8d55213ca6b2b254b2164f87ea082ed906249b5e58ba1",
+        "path": "query-api-chargeitem-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A19",
+        "title": "E-Rezept-FdV: Abrechnungsinformation löschen - Bestätigung",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" vom Nutzer eine Bestätigung einholen, dass die selektierte Abrechnungsinformation gelöscht werden soll und die Möglichkeit geben, das Löschen abzubrechen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.925561",
+        "modified": "2026-06-25T13:00:23.925562",
+        "date": "2026-06-25T13:00:23.925563",
+        "content_hash": "6f8a9957ea0cda003df9e51155525eba40de18d9a6c0d9e77fa6b78ba7b21d82",
+        "path": "query-api-chargeitem-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A2",
+        "title": "E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf TI-Flow-Fachdienst einstellen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-communication-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation-Token einer Apotheke übermitteln\" zum Einstellen der Nachricht die HTTP-Operation POST /Communication  mit\n    <ul>\n        <li>Communication Ressource in HTTP-Request-Body</li>\n    </ul>\n    ausführen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.922351",
+        "modified": "2026-06-25T13:00:23.922354",
+        "date": "2026-06-25T13:00:23.922355",
+        "content_hash": "19f2d2992b6d9cfafc52e75b57c7b5efba886da5768c93ccba84ada8eca08094",
+        "path": "query-api-communication-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A20",
+        "title": "E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" die HTTP-Operation DELETE /ChargeItem/&#60;id&#62; des TI-Flow-Fachdienstes mit\n      <ul>\n        <li>Prescription-ID in URL &#60;id&#62;</li>\n      </ul>\n      ausführen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.925725",
+        "modified": "2026-06-25T13:00:23.925726",
+        "date": "2026-06-25T13:00:23.925727",
+        "content_hash": "762868be118b6ecd52019a6bbc7435d28252056640c8e3d5ca7dbed92136761a",
+        "path": "query-api-chargeitem-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A21",
+        "title": "E-Rezept-FdV: Hinweis automatisches Löschen Abrechnungsinformationen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
+        "text": "Das E-Rezept-FdV KANN, wenn es das Management von Abrechnungsinformationen unterstützt, den Nutzer vor Erreichen der Aufbewahrungsfrist der Abrechnungsinformation einen Hinweis zum automatischen Löschen geben, um dem Nutzer die Möglichkeit zu geben, falls gewünscht die Daten herunterzuladen und zu archivieren.",
+        "conformance": "MAY",
+        "created": "2026-06-25T13:00:23.925866",
+        "modified": "2026-06-25T13:00:23.925867",
+        "date": "2026-06-25T13:00:23.925868",
+        "content_hash": "6ab8cfc5f521552e1b571390835a3d0a44a2ae9c634088a70a62191fc0d7ed89",
+        "path": "query-api-chargeitem-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A22",
+        "title": "PS abgebende LEI: Abrechnungsinformation bereitstellen - Einwilligung muss vorliegen",
+        "actor": [
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "PS_E-Rezept_abgebend": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-avs.md",
+        "text": "Das PS der abgebenden LEI DARF NICHT Abrechnungsinformation auf dem TI-Flow-Fachdienst bereitstellen, wenn ihm nicht zuvor die Information über die Einwilligung des Versicherten vom TI-Flow-Fachdienst übertragen wurde.",
+        "conformance": "SHALL NOT",
+        "created": "2026-06-25T13:00:23.926167",
+        "modified": "2026-06-25T13:00:23.926169",
+        "date": "2026-06-25T13:00:23.926169",
+        "content_hash": "af7e3c55edc98faba9c656616b52ccd81a6c00e2d84069875477e9eb6c4e023b",
+        "path": "query-api-chargeitem-req-avs.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A23",
+        "title": "PS abgebende LEI: Abrechnungsinformation bereitstellen - E-Rezept auswählen",
+        "actor": [
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "PS_E-Rezept_abgebend": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-avs.md",
+        "text": "Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept auszuwählen, zu dem die Abrechnungsinformation auf dem TI-Flow-Fachdienst bereitgestellt werden soll.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.926304",
+        "modified": "2026-06-25T13:00:23.926305",
+        "date": "2026-06-25T13:00:23.926306",
+        "content_hash": "0d4e883b18dc3afde61e29a135a1b0946b651ab3df039cdd76784b66872bf315",
+        "path": "query-api-chargeitem-req-avs.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A24",
+        "title": "PS abgebende LEI: Abrechnungsinformation bereitstellen - PKV-Abgabedatensatz erstellen",
+        "actor": [
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "PS_E-Rezept_abgebend": [
+                "Konformitätsbestätigung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-avs.md",
+        "text": "Das PS der abgebenden LEI MUSS im Anwendungsfall \"Abrechnungsinformation bereitstellen\" eine FHIR-Ressource des PKV-Abgabedatensatzes mit den Informationen zur Abrechnung des abgegebenen Medikaments erstellen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.926440",
+        "modified": "2026-06-25T13:00:23.926441",
+        "date": "2026-06-25T13:00:23.926442",
+        "content_hash": "50de6c5f254b85807a955108c5804e296ef05e5d672148e62708dc19e4444083",
+        "path": "query-api-chargeitem-req-avs.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A25",
+        "title": "PS abgebende LEI: Abrechnungsinformation bereitstellen - ChargeItem erstellen",
+        "actor": [
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "PS_E-Rezept_abgebend": [
+                "Konformitätsbestätigung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-avs.md",
+        "text": "Das PS der abgebenden LEI MUSS im Anwendungsfall \"Abrechnungsinformation bereitstellen\" eine FHIR-Ressource ChargeItem erstellen und den PKV-Abgabedatensatzes als contained Ressource einfügen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.926580",
+        "modified": "2026-06-25T13:00:23.926581",
+        "date": "2026-06-25T13:00:23.926582",
+        "content_hash": "3cbbc55bcc98f914331cdc164801b9ff3701c63bdcaac1ff11d86e2158f3946e",
+        "path": "query-api-chargeitem-req-avs.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A26",
+        "title": "PS abgebende LEI: Abrechnungsinformation bereitstellen - Speicherrequest",
+        "actor": [
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "PS_E-Rezept_abgebend": [
+                "Konformitätsbestätigung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-avs.md",
+        "text": "Das PS der abgebenden LEI MUSS im Anwendungsfall \"Abrechnungsinformation bereitstellen\" die HTTP-Operation POST /ChargeItem/ des TI-Flow-Fachdienstes mit\n      <ul>\n        <li>Task-ID als URL-Parameter ?task=</li>\n        <li>Geheimnis in URL-Parameter ?secret=</li>\n        <li>ChargeItem im HTTP-Request-Body des Aufrufs als data</li>\n      </ul>\n      ausführen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.926757",
+        "modified": "2026-06-25T13:00:23.926758",
+        "date": "2026-06-25T13:00:23.926759",
+        "content_hash": "8092c99d85f0ab5b6b57b6707201ec8f1d7162c3ca0dde898688a38775f5daf5",
+        "path": "query-api-chargeitem-req-avs.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A27",
+        "title": "PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz zum Ändern auswählen",
+        "actor": [
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "PS_E-Rezept_abgebend": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-avs.md",
+        "text": "Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, die Abrechnungsinformation zu einem E-Rezept zum Ändern auf dem TI-Flow-Fachdienst auszuwählen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.926909",
+        "modified": "2026-06-25T13:00:23.926910",
+        "date": "2026-06-25T13:00:23.926911",
+        "content_hash": "799f792d06bdb96f1a9e84886b5b90484daffc303c2b25352c56741633ca806d",
+        "path": "query-api-chargeitem-req-avs.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A28",
+        "title": "PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz erstellen",
+        "actor": [
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "PS_E-Rezept_abgebend": [
+                "Konformitätsbestätigung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-avs.md",
+        "text": "Das PS der abgebenden LEI MUSS im Anwendungsfall \"PKV-Abgabedatensatz ändern\" eine FHIR-Ressource des PKV-Abgabedatensatzes mit den Informationen zur Abrechnung des abgegebenen Medikaments erstellen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.927055",
+        "modified": "2026-06-25T13:00:23.927056",
+        "date": "2026-06-25T13:00:23.927057",
+        "content_hash": "bf841eedee730e8153701ecce0fd13517864432e03334f6c92cf27f310f365b1",
+        "path": "query-api-chargeitem-req-avs.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A29",
+        "title": "PS abgebende LEI: PKV-Abgabedatensatz ändern - ChargeItem erstellen",
+        "actor": [
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "PS_E-Rezept_abgebend": [
+                "Konformitätsbestätigung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-avs.md",
+        "text": "Das PS der abgebenden LEI MUSS im Anwendungsfall \"PKV-Abgabedatensatz ändern\" eine FHIR-Ressource ChargeItem erstellen und den PKV-Abgabedatensatzes als contained Ressource einfügen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.927189",
+        "modified": "2026-06-25T13:00:23.927190",
+        "date": "2026-06-25T13:00:23.927190",
+        "content_hash": "6b22efb1cdc8e69356f522e94237cd8426926211a587304053b6c0a54b601a5b",
+        "path": "query-api-chargeitem-req-avs.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A3",
+        "title": "E-Rezept-FdV: optional: 2D-Code Abrechnungsinformation anzeigen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-verarbeitungsregeln.md",
+        "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" umsetzen.",
+        "conformance": "MAY",
+        "created": "2026-06-25T13:00:23.922721",
+        "modified": "2026-06-25T13:00:23.922724",
+        "date": "2026-06-25T13:00:23.922725",
+        "content_hash": "7dc2cac2e0ee16a3ac95dd596c46657755fa4b3e6ec3f3ab232a0b75e2211ecb",
+        "path": "menu-technische-umsetzung-verarbeitungsregeln.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A30",
+        "title": "PS abgebende LEI: PKV-Abgabedatensatz ändern - Speicherrequest",
+        "actor": [
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "PS_E-Rezept_abgebend": [
+                "Konformitätsbestätigung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-avs.md",
+        "text": "Das PS abgebende LEI MUSS im Anwendungsfall \"PKV-Abgabedatensatz ändern\" die HTTP-Operation PUT /ChargeItem/&#60;id&#62;/ des TI-Flow-Fachdienstes mit\n      <ul>\n        <li>Prescription-ID in URL &#60;id&#62;</li>\n        <li>AccessCode in URL-Parameter ?ac=</li>\n        <li>ChargeItem im HTTP-Request-Body des Aufrufs als data</li>\n      </ul>\n      ausführen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.927386",
+        "modified": "2026-06-25T13:00:23.927388",
+        "date": "2026-06-25T13:00:23.927388",
+        "content_hash": "c90898e2858587bc53bd67c3482f25739f6c7bba0c7be11517958933f8dc5d37",
+        "path": "query-api-chargeitem-req-avs.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A31",
+        "title": "PS abgebende LEI: Abrechnungsinformation abrufen - Leserequest",
+        "actor": [
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "PS_E-Rezept_abgebend": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-avs.md",
+        "text": "Das PS abgebende LEI MUSS im Anwendungsfall \"Abrechnungsinformation abrufen\" die HTTP-Operation GET /ChargeItem/&#60;id&#62; des TI-Flow-Fachdienstes mit\n      <ul>\n        <li>Prescription-ID in URL &#60;id&#62;</li>\n        <li>AccessCode in URL-Parameter ?ac=</li>\n      </ul>\n      ausführen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.927589",
+        "modified": "2026-06-25T13:00:23.927590",
+        "date": "2026-06-25T13:00:23.927591",
+        "content_hash": "e1f88c126b058c9df681d1cd9cce698035d3e21814c8bf4facdcfb15d5bae70d",
+        "path": "query-api-chargeitem-req-avs.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A32",
+        "title": "PS abgebende LEI: Nachricht versenden - Apotheke  - Abrechnungsinformation - Communication Ressource erstellen",
+        "actor": [
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "PS_E-Rezept_abgebend": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-communication-req-avs.md",
+        "text": "Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall \"Nachricht an Versicherten versenden\" bezüglich dem Änderungswunsch einer Abrechnungsinformation eine Communication Ressource mit dem Profil GEM_ERPCHRG_PR_Communication_ChargChangeReply erstellen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.927944",
+        "modified": "2026-06-25T13:00:23.927945",
+        "date": "2026-06-25T13:00:23.927946",
+        "content_hash": "e12153f2c70c81b791d6a02a2c8c676ce909b065a86bf83c0b3003d1237d495c",
+        "path": "query-api-communication-req-avs.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A33",
+        "title": "E-Rezept-FdV: TIFlow-CHRG - verpflichtende Anwendungsfälle",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md",
+        "text": "Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle\n    <ul>\n        <li>UC 3.14 - Einwilligung durch Versicherten erteilen</li>\n        <li>UC 3.15 - Einwilligung durch Versicherten widerrufen</li>\n        <li>UC 3.13 - Einwilligungen durch Versicherten einsehen</li>\n        <li>UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen</li>\n        <li>Abrechnungsinformationen durch den Versicherten weitergeben</li>\n        <li>UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren</li>\n        <li>UC 3.11 - Abrechnungsinformationen durch den Versicherten löschen</li>\n        <li>Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes</li>\n    </ul>\n    umsetzen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.928527",
+        "modified": "2026-06-25T13:00:23.928530",
+        "date": "2026-06-25T13:00:23.928531",
+        "content_hash": "6c1060c5f566063fdddaef9eda909e78d66730cee8e8b51eb5a7820d8a80a933",
+        "path": "menu-technische-umsetzung-anwendungsfaelle.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A34",
+        "title": "PS abgebende LEI: TIFlow-CHRG - verpflichtende Anwendungsfälle",
+        "actor": [
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "PS_E-Rezept_abgebend": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md",
+        "text": "Das PS der abgebenden LEI MUSS für die Umsetzung der Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle\n    <ul>\n        <li>UC 4.5 - Abgabedatensatz durch Abgebenden signieren</li>\n        <li>UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen</li>\n        <li>UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen</li>\n        <li>UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern</li>\n    </ul>\n    umsetzen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.928776",
+        "modified": "2026-06-25T13:00:23.928777",
+        "date": "2026-06-25T13:00:23.928778",
+        "content_hash": "40d95da37ad153a740c84dd7f235cd39f37018e98d3d3a00c8438609aa56dcb2",
+        "path": "menu-technische-umsetzung-anwendungsfaelle.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A35",
+        "title": "Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
+        "text": "Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Einwilligung in die Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte möglich ist.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.929099",
+        "modified": "2026-06-25T13:00:23.929101",
+        "date": "2026-06-25T13:00:23.929102",
+        "content_hash": "14d95d4fca0b2fe94b1d0b78dbdd1e0c99242e76e230476329fb9e218dc9f3cb",
+        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A36",
+        "title": "Verarbeitung von Abrechnungsinformationen nur nach Einwilligung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
+        "text": "Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte erfolgt, die hierfür eingewilligt haben.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.929239",
+        "modified": "2026-06-25T13:00:23.929240",
+        "date": "2026-06-25T13:00:23.929241",
+        "content_hash": "82a6a43cdbd3ca40f34a4b67fa64d37c172f41fa52b7d7d44a4bc58e59d448e1",
+        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A37",
+        "title": "Verarbeitung von Abrechnungsinformationen im TI-Flow-Fachdienst nur nach Einwilligung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
+        "text": "Der TI-Flow-Fachdienst DARF NICHT Abrechnungsinformationen verarbeiten, wenn keine Einwilligung des PKV-Versicherten erfolgt ist.",
+        "conformance": "SHALL NOT",
+        "created": "2026-06-25T13:00:23.929373",
+        "modified": "2026-06-25T13:00:23.929374",
+        "date": "2026-06-25T13:00:23.929375",
+        "content_hash": "c9a8bc54db5047192bee477253f719bcf2e12c72a8e1329eec9bc78e789dc60e",
+        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A38",
+        "title": "Nichtabstreitbarkeit der Einwilligung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
+        "text": "Die Fachanwendung E-Rezept MUSS sicherstellen, dass die technische Umsetzung der Einwilligung im E-Rezept-FdV und des Vermerkens dieser im TI-Flow-Fachdienst so zuverlässig ist, dass der Vermerk im TI-Flow-Fachdienst als nicht abstreitbar angesehen werden kann.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.929507",
+        "modified": "2026-06-25T13:00:23.929508",
+        "date": "2026-06-25T13:00:23.929509",
+        "content_hash": "46daf529a4bd26ba03c594a215c77887e68999edabd0793578174681ca9195e9",
+        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A39",
+        "title": "Löschen von Abrechnungsinformationen nach zehn Jahren",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
+        "text": "Der TI-Flow-Fachdienst MUSS Abrechnungsinformationen zu einem E-Rezept nach zehn Jahren löschen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.929639",
+        "modified": "2026-06-25T13:00:23.929640",
+        "date": "2026-06-25T13:00:23.929641",
+        "content_hash": "1f33b72f0fe3082c52def1bdff501b5bb17084d68f63ffe6af3ce01b1fe7dfa5",
+        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A4",
+        "title": "E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-verarbeitungsregeln.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" es dem Nutzer ermöglichen, ein E-Rezept für die Anzeige des 2D-Code der Abrechnungsinformation auszuwählen, um einer Apotheke das Einscannen zu ermöglichen und sie somit für das Ändern des PKV-Abgabedatensatzes zu berechtigen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.922935",
+        "modified": "2026-06-25T13:00:23.922937",
+        "date": "2026-06-25T13:00:23.922938",
+        "content_hash": "d0df99865af03dc04f8e7d01126f15d697a789d029b8a93c119930cf40492089",
+        "path": "menu-technische-umsetzung-verarbeitungsregeln.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A40",
+        "title": "Information über Möglichkeit des Speicherns der Abrechnungsinformationen nur für konkretes E-Rezept",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
+        "text": "Der TI-Flow-Fachdienst MUSS sicherstellen, dass abgebende Leistungserbringer die Information über die Möglichkeit des Speicherns der Abrechnungsinformationen im TI-Flow-Fachdienst nur im Kontext eines konkreten E-Rezepts erhalten.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.929772",
+        "modified": "2026-06-25T13:00:23.929773",
+        "date": "2026-06-25T13:00:23.929774",
+        "content_hash": "c87ca37a72b851b1adc4391189eadb8020d061da3440366596c526c1e1ba19d4",
+        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A41",
+        "title": "Schutz der Abrechnungsinformationen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Abrechnungsinformationen während der Verarbeitung (inkl. Transport und Speichern) vor unberechtigter Einsichtnahme oder Manipulation schützen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.929901",
+        "modified": "2026-06-25T13:00:23.929903",
+        "date": "2026-06-25T13:00:23.929903",
+        "content_hash": "f49df7a6f25fbee022c946a605071b9ca1fc9f97c187686414b42bf451ca63f1",
+        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A42",
+        "title": "Protokollierung der Einwilligung bzw. des Widerrufs",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Einwilligung in das Speichern der Abrechnungsinformationen und deren Widerruf - inkl. Zeitpunkt der Aktion - für den Versicherten protokollieren.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.930051",
+        "modified": "2026-06-25T13:00:23.930052",
+        "date": "2026-06-25T13:00:23.930053",
+        "content_hash": "9231d9c69dbaaa2a2e7b7bedf7af8de0144abdee2036399658577969ff2a3702",
+        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A43",
+        "title": "TI-Flow-Fachdienst - Consent löschen - Löschen der bestehenden Abrechnungsinformationen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-consent-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent mit ?category=CHARGCONS alle dem Versicherten zugeordneten ChargeItem-Ressourcen (ChargeItem.subject.identifier) anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren und löschen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.930477",
+        "modified": "2026-06-25T13:00:23.930479",
+        "date": "2026-06-25T13:00:23.930480",
+        "content_hash": "175b5526cc73054b6e5703ccea08a184c81e72aacf928e5e731100e9104aa921",
+        "path": "query-api-consent-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A44",
+        "title": "TI-Flow-Fachdienst - ChargeItem - unzulässige Operationen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels der HTTP-Operationen HEAD unterbinden, damit keine unzulässigen Operationen auf die Informationen zu Abrechnungsinformationen ausgeführt werden können.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.930811",
+        "modified": "2026-06-25T13:00:23.930813",
+        "date": "2026-06-25T13:00:23.930813",
+        "content_hash": "96d18d6ec52a29933475260b2065229525ba0432446484977e4af93a3a6c0504",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A45",
+        "title": "TI-Flow-Fachdienst - Signaturzertifikat SMC-B prüfen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS ein Signatur-Zertifikat einer nonQES-Signatur eine Leistungserbringerinstitution gemäß [gemSpec_PKI]#TUC_PKI_018 mit folgenden Parametern auf Gültigkeit prüfen: Tabelle # : TAB_eRPFD_013 Parameter Prüfung Signaturzertifikat SMC-B Parameter Zertifikat Signaturzertifikat aus nonQES PolicyList oid_smc_b_osig intendedKeyUsage nonRepudiation intendedExtendedKeyUsage (leer) OCSP-Graceperiod 12 Stunden Offline-Modus nein Prüfmodus OCSP Der TI-Flow-Fachdienst darf die OCSP-Response für die Abfrage des Zertifikatsstatus für 12 Stunden zwischenspeichern.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.930950",
+        "modified": "2026-06-25T13:00:23.930951",
+        "date": "2026-06-25T13:00:23.930952",
+        "content_hash": "e8c8bfe081cefda96719c26b344f68bb23f700117eba758734dff76e55066d80",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A46",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Rollenprüfung Versicherter",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /ChargeItem die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n    <ul>\n    <li>oid_versicherter</li>\n    </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.931336",
+        "modified": "2026-06-25T13:00:23.931338",
+        "date": "2026-06-25T13:00:23.931338",
+        "content_hash": "0f76573605b16948bb1681a428a5232c30ae1d898219c541a538b955748fbcfb",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A47",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Versicherter - Filter KVNR",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /ChargeItem durch einen Versicherten, den Versicherten anhand zeta-user-info.identifier der Nutzerinformation identifizieren und die ChargeItems danach filtern, damit der Versicherte nur Abrechnungsinformationen abruft, bei denen er der Begünstigte ist.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.931541",
+        "modified": "2026-06-25T13:00:23.931542",
+        "date": "2026-06-25T13:00:23.931543",
+        "content_hash": "f7e5c9e0c16d54143f2a49e2cf1327e9f31bbf27eb83cb4acedead5c9efbe866",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A48",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Suchkriterien",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS das Eingrenzen einer Suchanfrage auf /ChargeItem über die URL-Parameter gemäß https://www.hl7.org/fhir/chargeitem.html#search mindestens für die Attribute ChargeItem.enteredDate und ChargeItem.meta.__lastUpdated erlauben, damit Versicherte und Apotheken eine Suche nach neuen Abrechnungsinformationseinträgen durchführen können.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.931673",
+        "modified": "2026-06-25T13:00:23.931674",
+        "date": "2026-06-25T13:00:23.931675",
+        "content_hash": "0ac65d4879d5b2686b24fa0ee9ed6e20e5825f54dc8b2c24a2c0ae34171e8b5c",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A49",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Response",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /ChargeItem eine Liste von ChargeItem Ressourcen ohne die in supportingInformation referenzierten Datensätze entsprechend der Filterung und Suchkriterien übermitteln.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.931805",
+        "modified": "2026-06-25T13:00:23.931806",
+        "date": "2026-06-25T13:00:23.931807",
+        "content_hash": "7cb72c77ac8f4fd853122cf5b3fc6397d09e1de8ee922a1f1423867446dc619a",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A5",
+        "title": "E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-verarbeitungsregeln.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" für das ausgewählte E-Rezept den Abrechnungsinformation-Token erstellen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.923107",
+        "modified": "2026-06-25T13:00:23.923109",
+        "date": "2026-06-25T13:00:23.923110",
+        "content_hash": "2c1ec2281c1e262eb3f816400dca26ec2113c9d8536ca8e3b89cb06a94ca8a3e",
+        "path": "menu-technische-umsetzung-verarbeitungsregeln.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A50",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Rollenprüfung Versicherter oder Apotheker",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der der Rollen \n    <ul>\n        <li>oid_versicherter</li>\n        <li>oid_oeffentliche_apotheke</li>\n        <li>oid_krankenhausapotheke</li> \n    </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.932161",
+        "modified": "2026-06-25T13:00:23.932162",
+        "date": "2026-06-25T13:00:23.932163",
+        "content_hash": "235c3dcfe4fbab9fab6b3de90e2de5aa065acfa8bbbcf0e8c34e487e08b217e4",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A51",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Versicherter - Prüfung KVNR",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten, den Versicherten anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren, diese gegen die in ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_IDENTITY_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)</td>\n        </tr>\n    </table> \n    abweisen, damit ausschließlich der begünstigte Versicherte eine Abrechnungsinformation abrufen kann.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.932551",
+        "modified": "2026-06-25T13:00:23.932552",
+        "date": "2026-06-25T13:00:23.932552",
+        "content_hash": "e64ba124cef36ffb0606ce20ac3e9da02ae8d95bdf4dfa102d14ad60149b6392",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A52",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Apotheke - Prüfung Telematik-ID",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende Leistungserbringerinstitution, die LEI anhand des zeta-user-info.identifier des Nutzers (Telematik-ID) identifizieren, diese gegen die in ChargeItem.enterer.identifier hinterlegte Telematik-ID der einstellenden LEI prüfen und bei Ungleichheit den Aufruf mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_IDENTITY_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)</td>\n        </tr>\n    </table> \n    abweisen, damit ausschließlich die LEI eine Abrechnungsinformation abrufen kann, welche die Abrechnungsinformation bereitgestellt hat.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.932971",
+        "modified": "2026-06-25T13:00:23.932972",
+        "date": "2026-06-25T13:00:23.932973",
+        "content_hash": "dde51822331ca46e0b45e2d6aeb71fd100cdfdd2c146b499aa16db4fb8638b7b",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A53",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Apotheke - Prüfung AccessCode",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkreten über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende Leistungserbringerinstitution, den im URL-Parameter \"?ac=...\" übertragenen AccessCode gegen den im referenzierten ChargeItem gespeicherten AccessCode ChargeItem.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_ACCESSCODE_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.933354",
+        "modified": "2026-06-25T13:00:23.933355",
+        "date": "2026-06-25T13:00:23.933356",
+        "content_hash": "9132cfb5404c1dc9692d1d2abd2699b493dfb06aeb1ad68d9534fe8da54d7951",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A54",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Versicherte - Signieren",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /ChargeItem/&#60;id&#62; durch einen Versicherten zusätzlich zum ChargeItem die folgenden Datensätze im JSON-Format in einem Responsebundle zurück liefern und dafür in jedem Aufruf den Verordnungsdatensatz, den PKV-Abgabedatensatz und die Quittung im XML-Format mit der Signaturidentität des TI-Flow-Fachdienstes gemäß RFC5652 im Profil CAdES-BES (Enveloping) signieren und in jede Fachdienstsignatur die letzte OCSP-Antwort der Statusprüfung des Signaturzertifikats C.FD.OSIG einbetten, damit der Versicherte die Daten für die Abrechnung an Kostenträger weiterleiten kann.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.933559",
+        "modified": "2026-06-25T13:00:23.933560",
+        "date": "2026-06-25T13:00:23.933561",
+        "content_hash": "7f5eb869e8aca0d8461bd0b4c5821d3046b969988f10f74017080e4231c629f0",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A55",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Apotheke - kein AccessCode und Quittung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst DARF beim Aufruf der Operation GET /ChargeItem/&#60;id&#62; durch eine abgebende Leistungserbringerinstitution das in ChargeItem.supportingInformation referenzierte Element ChargeItem.supportingInformation:receiptBundle und den Identifier ChargeItem.identifier:AccessCode NICHT in den Response übernehmen, sodass die abgebende LEI nur den Verordnungsdatensatz und durch sie änderbaren PKV-Abgabedatensatz erhält.",
+        "conformance": "SHALL NOT",
+        "created": "2026-06-25T13:00:23.933702",
+        "modified": "2026-06-25T13:00:23.933703",
+        "date": "2026-06-25T13:00:23.933704",
+        "content_hash": "51e159b426d6fdd8089c6940185d15e357a252e89b8716a36eba47b7c7d31309",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A56",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Rollenprüfung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen \n    <ul>\n        <li>oid_oeffentliche_apotheke</li>\n        <li>oid_krankenhausapotheke</li>\n    </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte eingestellt werden kann.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.934039",
+        "modified": "2026-06-25T13:00:23.934040",
+        "date": "2026-06-25T13:00:23.934041",
+        "content_hash": "288cefa6ba3f5025dc1d0155b74351c78fa8f07ff2e79e2fcd0d208b96c46a72",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A57",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Prüfung Parameter Task",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem sicherstellen, dass ein URL-Parameter \"task=...\" übermittelt wurde und bei Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_TASK_REQUIRED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.934433",
+        "modified": "2026-06-25T13:00:23.934434",
+        "date": "2026-06-25T13:00:23.934435",
+        "content_hash": "3ddf633f5f9dfca1a5670c4d83c9129103d837841c9735ca81c265ee085c962f",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A58",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Prüfung Existenz Task",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem sicherstellen, dass zu der im URL-Parameter \"task=...\" übertragene Task-ID eine Task-Ressource mit dem Status Task.status = completed existiert und bei fehlgeschlagener Prüfung mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>409 - Conflict</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_TASK_NOT_FOUND</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur eine Abrechnungsinformation für E-Rezepte mit dem Status \"quittiert\" angelegt wird.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.935096",
+        "modified": "2026-06-25T13:00:23.935098",
+        "date": "2026-06-25T13:00:23.935099",
+        "content_hash": "7e7527cfc6df859aa012e9213a631268099329eae038a3dd7b3f98ef983e9fe1",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A59",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Prüfung Secret Task",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem das im URL-Parameter \"secret=...\" übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_NS_Secret prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_SECRET_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit der Zugriff auf diesen Datensatz nur durch die berechtigten Apotheke in Kenntnis des Secrets erfolgt.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.935461",
+        "modified": "2026-06-25T13:00:23.935462",
+        "date": "2026-06-25T13:00:23.935463",
+        "content_hash": "8ef6c12a88bac0215192e48ad663824bcde8f3e9bf9860cadaab5fb956d0ca90",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A6",
+        "title": "E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-verarbeitungsregeln.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" mit dem erstellten Abrechnungsinformation-Token einen 2D-Code erstellen und auf dem Display des Endgerätes anzeigen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.923273",
+        "modified": "2026-06-25T13:00:23.923275",
+        "date": "2026-06-25T13:00:23.923275",
+        "content_hash": "443b4feb9dc76d46d598c7be3c8bb7dbd02a77fa0527dfb88f71a914dfa53f84",
+        "path": "menu-technische-umsetzung-verarbeitungsregeln.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A60",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Prüfung Flowtype Task",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem sicherstellen, dass der zum Task zugehörige Verordnungsdatensatz unter Coverage.type.coding.code den Wert \"PKV\" enthält und bei fehlgeschlagener Prüfung mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CHARGEITEM_COVERAGE_NOT_PKV</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur eine Abrechnungsinformation für E-Rezepte mit zulässigen Kostenträger angelegt wird.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.935814",
+        "modified": "2026-06-25T13:00:23.935815",
+        "date": "2026-06-25T13:00:23.935816",
+        "content_hash": "f305c4479ee746b707e41d9e93238c819268d7b28a06886bf4c203ccb33e3ee2",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A61",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Prüfung Einwilligung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem sicherstellen, dass zu der in ChargeItem.subject.identifier übermittelten KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = CHARGCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CONSENT_REQUIRED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur eine Abrechnungsinformation für Versicherte gespeichert wird, die eine Einwilligung erteilt haben.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.936172",
+        "modified": "2026-06-25T13:00:23.936173",
+        "date": "2026-06-25T13:00:23.936174",
+        "content_hash": "bbb1817489bfd7c9ab8f12298b881e6050e36f4e51e97987e0ad09662f1fbca7",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A62",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - ChargeItem-ID=Rezept-ID",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem die Rezept-ID, welche über den URL-Parameter task übergeben wird, als ChargeItem-ID (ChargeItem.id) verwenden.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.936369",
+        "modified": "2026-06-25T13:00:23.936370",
+        "date": "2026-06-25T13:00:23.936371",
+        "content_hash": "6965619058e141daaf00f3a72cd72dfaca53a95f0e7cdfe27ed67cecd74353f2",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A63",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - FHIR-Validierung ChargeItem",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeItem übertragene ChargeItem-Ressource gegen das FHIR-Profil ChargeItem prüfen und \n    <ul>\n    <li>die Korrektheit der Rezept-ID (GEM_ERP_PR_PrescriptionId) im referenzierten Task als ChargeItem.identifier, </li>\n    <li>die Korrektheit der Versicherten-ID des Versicherten im referenzierten Task (Task.for) gegen ChargeItem.subject.identifier </li>\n    <li>und die Korrektheit der Telematik-ID der Apotheke gemäß Nutzerinformation (zeta-user-info.identifier) mit dem Wert in ChargeItem.enterer.identifier</li>\n    </ul>\n    prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.936739",
+        "modified": "2026-06-25T13:00:23.936740",
+        "date": "2026-06-25T13:00:23.936741",
+        "content_hash": "2acdddc839de7ad628b2d403729517136fa608a6b06389c8adf718ab8e10eaf9",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A64",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - PKV-Abgabedatensatz übernehmen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem den im containedBinary übermittelten PKV-Abgabedatensatz herauslösen und entfernen, die Ressource zur ChargeItem-Ressource speichern und in ChargeItem.supportingInformation:dispenseItem die Referenz hinzufügen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.936948",
+        "modified": "2026-06-25T13:00:23.936950",
+        "date": "2026-06-25T13:00:23.936950",
+        "content_hash": "bdea6f3af6d9a8bbb7695426cba59aa3008339fd5e21b0db4a18eb5e12df1cd0",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A65",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - FHIR-Validierung PKV-Abgabedatensatz",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeItem übertragene PKV-Abgabedatensatz-Ressource gegen das FHIR-Profil DAV-PKV-PR-ERP-AbgabedatenBundle prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.937252",
+        "modified": "2026-06-25T13:00:23.937253",
+        "date": "2026-06-25T13:00:23.937254",
+        "content_hash": "e2407198807531a1cc79ce3fe38ad8d47f4b21b79777b438b4883a3643574b83",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A66",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Signaturprüfung PKV-Abgabedatensatz",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem die Signatur des PKV-Abgabedatensatzes gemäß ETSI_QES prüfen und bei fehlender oder nicht gültiger Signatur die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, um ausschließlich authentische Daten zu verwalten.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.937609",
+        "modified": "2026-06-25T13:00:23.937611",
+        "date": "2026-06-25T13:00:23.937611",
+        "content_hash": "86b09a790bc84f510857ec9f655d5e3414df6d547525611d831620e96952afd4",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A67",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Prüfung Signaturzertifikat PKV-Abgabedatensatz",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem das Signaturzertifikats des PKV-Abgabedatensatzes prüfen. Das Signaturzertifikat muss anhand der Zertifikatsprüfung für [mathematisch gültig UND zeitlich gültig UND online gültig] befunden werden und bei fehlerhafter Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table>\n    abbrechen, um ausschließlich authentische Daten zu verwalten.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.937966",
+        "modified": "2026-06-25T13:00:23.937967",
+        "date": "2026-06-25T13:00:23.937968",
+        "content_hash": "c5c581ee7fb2295d5653a6645a62b9dfdf99bd853657ca6c53c9d8cf281f21c3",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A68",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Verordnungsdatensatz übernehmen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem das E-Rezept-Bundle vom Profil KBV_PR_ERP_Bundle ohne die Signatur zur im URL-Parameter \"task=...\" übertragenen Task-ID identifizieren und zur ChargeItem-Ressource mit dem Identifier PrescriptionID speichern und in ChargeItem.supportingInformation:prescriptionItem die Referenz hinzufügen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.938583",
+        "modified": "2026-06-25T13:00:23.938584",
+        "date": "2026-06-25T13:00:23.938585",
+        "content_hash": "1a462733857b205f657732e486ce152ac22e0130c134c75c8ec1b923a8d25e6a",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A69",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Quittung übernehmen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem das Quittung-Bundle vom Profil GEM_ERP_PR_Bundle ohne die Signatur zur im URL-Parameter \"task=...\" übertragenen Task-ID identifizieren und zur ChargeItem-Ressource mit dem Identifier PrescriptionID speichern und in ChargeItem.supportingInformation:receipt die Referenz hinzufügen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.938715",
+        "modified": "2026-06-25T13:00:23.938716",
+        "date": "2026-06-25T13:00:23.938716",
+        "content_hash": "62752a6bcb0112c03d42cc569ab3dde651eb1f3aa1cd05e5e1e9aca6669ef29f",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A7",
+        "title": "E-Rezept-FdV: optional: Abrechnungsinformation exportieren",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-verarbeitungsregeln.md",
+        "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Abrechnungsinformation exportieren\" umsetzen.",
+        "conformance": "MAY",
+        "created": "2026-06-25T13:00:23.923404",
+        "modified": "2026-06-25T13:00:23.923406",
+        "date": "2026-06-25T13:00:23.923406",
+        "content_hash": "3b1337cf5367e44930fdf32e654f9e97ff43e99fa77e5d6ca771c835226cf950",
+        "path": "menu-technische-umsetzung-verarbeitungsregeln.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A70",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Generierung AccessCode",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem eine 256-Bit-Zufallszahl mit einer Mindestentropie von 120 Bit erzeugen, hexadezimal kodieren ([0-9a-f]{64}) und diese im zu speichernden ChargeItem als externe ID in ChargeItem.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode hinzufügen, damit nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.938854",
+        "modified": "2026-06-25T13:00:23.938855",
+        "date": "2026-06-25T13:00:23.938856",
+        "content_hash": "9edfba12b0af32840e5fea90a5b4670afc4a1519e510c66497dda248a50ee691",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A71",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - ChargeItem befüllen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Erzeugen eines ChargeItem mittels HTTP-POST-Operation die folgenden Elemente schreiben: \n    <ul>\n        <li>ChargeItem.enteredDate (aktueller Zeitstempel).</li>\n    </ul>",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.939013",
+        "modified": "2026-06-25T13:00:23.939014",
+        "date": "2026-06-25T13:00:23.939015",
+        "content_hash": "7f9622fd383504164db70f3b96b93e8bd5592766aa605a911c175715c1321a5a",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A72",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - kein AccessCode und Quittung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst DARF beim Aufruf der HTTP-POST-Operation auf den Endpunkt /ChargeItem das in \"ChargeItem.supportingInformation\" referenzierte Element \"https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle\" und den Identifier ChargeItem.identifier:AccessCode NICHT in den Response übernehmen, sodass die abgebende LEI nicht die Quittung und AccessCode erhält.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.939152",
+        "modified": "2026-06-25T13:00:23.939153",
+        "date": "2026-06-25T13:00:23.939153",
+        "content_hash": "6c76f28e5f07de0e85e1f7c48a8f787bf459c4b024bba926f90ff1da6e32b117",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A73",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Push Notification Versicherter",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /ChargeItem bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.chargeitem.create\" und den Versicherten mit der KVNR = ChargeItem.subject initiieren.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.939280",
+        "modified": "2026-06-25T13:00:23.939281",
+        "date": "2026-06-25T13:00:23.939282",
+        "content_hash": "d549fa62663cd4148e6c23cfa07c97aecbdb5b7ff1b40fa95f0db1616ab24191",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A74",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern (PATCH) - alles Ändern verbieten",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation PATCH auf den Endpunkt /ChargeItem ohne Angabe einer &#60;id&#62; für eine konkrete Ressource die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>405 - Method Not Allowed</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CHARGEITEM_ID_REQUIRED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, um das Ändern mehrerer Ressourcen über einen Request zu verhindern.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.939580",
+        "modified": "2026-06-25T13:00:23.939581",
+        "date": "2026-06-25T13:00:23.939582",
+        "content_hash": "690973b93a841cf420e85786071dc173541d24a8078802bd248ea301aff6ae9e",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A75",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern (PATCH) - Rollenprüfung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PATCH-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n    <ul>\n    <li>oid_versicherter</li>\n  </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte aktualisiert werden kann.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.939965",
+        "modified": "2026-06-25T13:00:23.939966",
+        "date": "2026-06-25T13:00:23.939967",
+        "content_hash": "abc62013421607dba5df1129a3799ccc2315ed52a6fc12a367d63a8ea3d0ad64",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A76",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern (PATCH) - Versicherter - Prüfung KVNR",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten, den Versicherten anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren, diese gegen die im gespeicherten Datensatz in ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_IDENTITY_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)</td>\n        </tr>\n    </table> \n    abbrechen, damit ausschließlich der begünstigte Versicherte eine Abrechnungsinformation ändert.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.940392",
+        "modified": "2026-06-25T13:00:23.940393",
+        "date": "2026-06-25T13:00:23.940394",
+        "content_hash": "3a95a2d0756b349ab1dd239d393e998a9dbdd0bf7f9220a95d5de82e873cae73",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A77",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern (PATCH) - FHIR-Validierung Parameters",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die in der HTTP-PATCH-Operation auf die Ressource Chargeltem übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.940750",
+        "modified": "2026-06-25T13:00:23.940751",
+        "date": "2026-06-25T13:00:23.940752",
+        "content_hash": "a8eb6fe9623fe3ada49ec74e0acb3ff2136833b85d155e8d38de8e5108ffbf09",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A78",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern - Rollenprüfung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen \n    <ul>\n        <li>oid_oeffentliche_apotheke</li>\n        <li>oid_krankenhausapotheke</li>\n    </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte aktualisiert werden kann.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.941152",
+        "modified": "2026-06-25T13:00:23.941153",
+        "date": "2026-06-25T13:00:23.941154",
+        "content_hash": "e9f29d16080b02850bbf43c0a1c9a35bd8f0b3176309d694e247da991985e717",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A79",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern - Prüfung Einwilligung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource sicherstellen, dass zu der in ChargeItem.subject.identifier übermittelten KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = CHARGCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CONSENT_REQUIRED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur eine Abrechnungsinformation für Versicherte gespeichert wird, die eine Einwilligung erteilt haben.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.941532",
+        "modified": "2026-06-25T13:00:23.941533",
+        "date": "2026-06-25T13:00:23.941534",
+        "content_hash": "e877c7379c3bb2b21bf35103025b2e7a9d41783821a3fe0e02d98b4af3d45845",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A8",
+        "title": "E-Rezept-FdV: Abrechnungsinformation exportieren - PDF/A erstellen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-verarbeitungsregeln.md",
+        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation exportieren\" auf Basis der vom TI-Flow-Fachdienst zu einer Prescription-ID heruntergeladenen ChargeItem, Verordnungsdatensatz, PKV-Abgabedatensatz und Quittung Ressourcen\n      <ul>\n        <li>einen Ausdruck erstellen,</li>\n        <li>für den Ausdruck ein PDF gemäß PDF/A-3-Standard (ISO 19005-3) erstellen,</li>\n        <li>in das Dokument den signierten Verordnungsdatensatz (&#60;Prescription-ID&#62;_verordnung.p7s), den signierten PKV-Abgabedatensatz (&#60;Prescription-ID&#62;_abgabedaten.p7s) und den signierten Quittung Datensatz (&#60;Prescription-ID&#62;_quittung.p7s) gemäß PDF/A-3 einbetten.</li>\n      </ul>",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.923611",
+        "modified": "2026-06-25T13:00:23.923613",
+        "date": "2026-06-25T13:00:23.923614",
+        "content_hash": "7159cc5ecf19e64d7b7c2ca254635ec2de2ac02d0201559019306c33ae60e899",
+        "path": "menu-technische-umsetzung-verarbeitungsregeln.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A80",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - Prüfung Telematik-ID",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende Leistungserbringerinstitution (Apotheke), diese anhand des zeta-user-info.identifier des Nutzers (Telematik-ID) identifizieren, diese gegen die im gespeicherten Datensatz in ChargeItem.enterer.identifier hinterlegte Telematik-ID prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_IDENTITY_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)</td>\n        </tr>\n    </table> \n    abbrechen, damit ausschließlich die Apotheke, welche die Abrechnungsinformation bereitgestellt hat, diese ändert.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.941896",
+        "modified": "2026-06-25T13:00:23.941897",
+        "date": "2026-06-25T13:00:23.941898",
+        "content_hash": "98f07e002f56ec2a65be2f123a8ff768d311bc0b24ccac879d8acae7c6980fab",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A81",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - Prüfung AccessCode",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende Leistungserbringerinstitution (Apotheke) den im URL-Parameter \"?ac=...\" übertragenen AccessCode gegen den im referenzierten ChargeItem gespeicherten AccessCodeChargeItem.identifier:AccessCode als https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AccessCode prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_ACCESSCODE_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.942316",
+        "modified": "2026-06-25T13:00:23.942317",
+        "date": "2026-06-25T13:00:23.942318",
+        "content_hash": "1dbca31f779dc9e4a65c173c11c31513c6f2285f602d035ac15bdacddf0cff66",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A82",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - PKV-Abgabedatensatz übernehmen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI den im containedBinary übermittelten PKV-Abgabedatensatz herauslösen und entfernen, die Ressource zur ChargeItem-Ressource speichern und in ChargeItem.supportingInformation:dispenseItem die Referenz hinzufügen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.942524",
+        "modified": "2026-06-25T13:00:23.942525",
+        "date": "2026-06-25T13:00:23.942526",
+        "content_hash": "d6a6bf8a1b5fa0b6a0ad3e30355cdf0a2da08997f17e6dfcee325bd8eadcd1a1",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A83",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - FHIR-Validierung PKV-Abgabedatensatz",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI die im HTTP-PUT-Operation auf die Ressource ChargeItem übertragene PKV-Abgabedatensatz-Ressource gegen das FHIR-Profil PKV-Abgabedatensatz prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.942827",
+        "modified": "2026-06-25T13:00:23.942828",
+        "date": "2026-06-25T13:00:23.942829",
+        "content_hash": "7df6eab4c672af2babf7e7dd193858acc326f7efdee4805be09c504a2b2f79e2",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A84",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - Signaturprüfung PKV-Abgabedatensatz",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI die Signatur des PKV-Abgabedatensatzes gemäß ETSI_QES prüfen und bei fehlender oder nicht gültiger Signatur die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, um ausschließlich authentische Daten zu verwalten.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.943204",
+        "modified": "2026-06-25T13:00:23.943205",
+        "date": "2026-06-25T13:00:23.943206",
+        "content_hash": "c0829d39d7eddf49e8207a4139ac3bce23c6685dbcaf2617a5b6ca1ab6094680",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A85",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - Prüfung Signaturzertifikat PKV-Abgabedatensatz",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI, das Signaturzertifikats des PKV-Abgabedatensatzes prüfen, das Signaturzertifikat anhand der Zertifikatsprüfung für [mathematisch gültig UND zeitlich gültig UND online gültig] befinden und anderenfalls die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CHARGEITEM_DISPENSE_CERTIFICATE_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Das Signaturzertifikat ist abgelaufen bzw. gesperrt.</td>\n        </tr>\n    </table>\n    abbrechen, um ausschließlich authentische Daten zu verwalten.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.943581",
+        "modified": "2026-06-25T13:00:23.943582",
+        "date": "2026-06-25T13:00:23.943583",
+        "content_hash": "e482c6e258e346b33199a7458c42db27da18f319d0fbfd7e0c4dcb92d643ae8b",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A86",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern - FHIR-Validierung ChargeItem",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die im HTTP-PUT-Operation auf die Ressource ChargeItem übertragene ChargeItem-Ressource gegen das FHIR-Profil ChargeItem prüfen, auf die Zulässigkeit der änderbaren Felder prüfen: \n<ul>\n    <li>abgebende LEI: darf nur PKV-Abgabedatensatz ändern </li>\n</ul>\nund bei fehlerhafter Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen, damit kein Schadcode und keine fachfremden Daten in den TI-Flow-Fachdienst hochgeladen werden.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.944380",
+        "modified": "2026-06-25T13:00:23.944381",
+        "date": "2026-06-25T13:00:23.944382",
+        "content_hash": "fdad84500875aac3c55b7e1ecd2d8314de6c87ad239c8a478fe404aba0408092",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A87",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - Generierung AccessCode",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI eine 256-Bit-Zufallszahl mit einer Mindestentropie von 120 Bit erzeugen, hexadezimal kodieren ([0-9a-f]{64}) und diese im zu speichernden ChargeItem als externe ID in ChargeItem.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode überschreiben, damit nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.944597",
+        "modified": "2026-06-25T13:00:23.944599",
+        "date": "2026-06-25T13:00:23.944599",
+        "content_hash": "5e092ff44e9f8be3372aa14605436c3769cd3bdaac2089cc7ef5ceace01e7285",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A88",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - kein AccessCode und Quittung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst DARF beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI das in \"ChargeItem.supportingInformation\" referenzierte Element \"https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle\" und den Identifier ChargeItem.identifier:AccessCode NICHT in den Response übernehmen, sodass die abgebende LEI nicht die Quittung und AccessCode erhält.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.944745",
+        "modified": "2026-06-25T13:00:23.944746",
+        "date": "2026-06-25T13:00:23.944747",
+        "content_hash": "05a6bda08b71261417e472f36f8ab4763cd121977f535c10f1e04c476eb86b39",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A89",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern - Push Notification Versicherter",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.chargeitem.update\" und den Versicherten mit der KVNR = ChargeItem.subject initiieren.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.944893",
+        "modified": "2026-06-25T13:00:23.944895",
+        "date": "2026-06-25T13:00:23.944895",
+        "content_hash": "9d2ed55df2eaa9e6dbdd091626f9adbfc340abbf0bbf55291fa453404a0d9117",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A9",
+        "title": "E-Rezept-FdV: Abrechnungsinformation exportieren - PDF teilen",
+        "actor": [
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "eRp_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-verarbeitungsregeln.md",
+        "text": "Das E-Rezept-FdV MUSS es dem Nutzer im Anwendungsfall \"Abrechnungsinformation exportieren\" ermöglichen, das erstellte PDF mit anderen Apps zu teilen, um den Versicherten die Möglichkeit zu geben, seine Abrechnungsinformation an Krankenversicherungen oder andere Institutionen zur Abrechnung zu übermitteln.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.923772",
+        "modified": "2026-06-25T13:00:23.923774",
+        "date": "2026-06-25T13:00:23.923774",
+        "content_hash": "b0fc57360a97c6ec85914db822ceac9db66bd03f3db9e8e849bac39daa589262",
+        "path": "menu-technische-umsetzung-verarbeitungsregeln.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A90",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation löschen - alles Löschen verbieten",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS den Aufruf der Operation DELETE /ChargeItem ohne Angabe einer konkreten über &#60;id&#62; adressierte ChargeItem Ressource die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>405 - Method Not Allowed</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CHARGEITEM_ID_REQUIRED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, um das Löschen mehrerer Ressourcen über einen Request zu verhindern.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.945229",
+        "modified": "2026-06-25T13:00:23.945230",
+        "date": "2026-06-25T13:00:23.945231",
+        "content_hash": "a0d5210492a00a937a78e3076b20d6c895c6afaf481344f33e79b5e51fd12223",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A91",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation löschen - Rollenprüfung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n    <ul>\n        <li>oid_versicherter</li>\n    </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte gelöscht werden kann.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.945664",
+        "modified": "2026-06-25T13:00:23.945665",
+        "date": "2026-06-25T13:00:23.945666",
+        "content_hash": "af424024dcaccc9c8e66a45a906ba79d043fc72ccb8a14ab8fd3c72b9596dc3f",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A92",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation löschen - Prüfung KVNR",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch einen Versicherten, den Versicherten anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren, diese gegen die in ChargeItem.subject.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_IDENTITY_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)</td>\n        </tr>\n    </table> \n    abbrechen, damit ausschließlich der begünstigte Versicherte eine Abrechnungsinformation löscht.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.946073",
+        "modified": "2026-06-25T13:00:23.946074",
+        "date": "2026-06-25T13:00:23.946075",
+        "content_hash": "7e920edcf8460c94086b3e1f6112474c637a7fa371715852c6bca3501cbb7e4b",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A93",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation löschen - zu löschende Ressourcen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Löschen einer ChargeItem-Ressource auch \n    <ul>\n        <li>die in ChargeItem.supportingInformation referenzierten Ressourcen des Verordnungsdatensatzes, des PKV-Abgabedatensatzes und der Quittung,</li>\n        <li>alle Communication mit Communication.basedOn = ChargeItem.id</li>\n    </ul>\n    löschen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.946302",
+        "modified": "2026-06-25T13:00:23.946303",
+        "date": "2026-06-25T13:00:23.946303",
+        "content_hash": "2a2eddd0b1fd6d3b21c2def54efb52b4db04345c65440617c3d304fb738e06a8",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A94",
+        "title": "E-Rezept: Anwendung des IG 'Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte' für die Verwaltung von Abrechnungsinformationen",
+        "actor": [
+            "PS_E-Rezept_abgebend",
+            "TI-Flow_FD",
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "PS_E-Rezept_abgebend": [
+                "Herstellererklärung"
+            ],
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ],
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/index.md",
+        "text": "Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Verwaltung von Abrechnungsinformationen zu Arzneimitteln den Implementation Guide \"Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte\" umsetzen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.946833",
+        "modified": "2026-06-25T13:00:23.946834",
+        "date": "2026-06-25T13:00:23.946835",
+        "content_hash": "f05d6d790212bcc37926ee7f5f11f5729bfd27e8e1b863485a1c94ea5e9a2fb9",
+        "path": "index.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A95",
+        "title": "E-Rezept: Umsetzung des Moduls 'Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte'",
+        "actor": [
+            "PS_E-Rezept_abgebend",
+            "TI-Flow_FD",
+            "eRp_FdV"
+        ],
+        "test_procedures": {
+            "PS_E-Rezept_abgebend": [
+                "Herstellererklärung"
+            ],
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ],
+            "eRp_FdV": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/index.md",
+        "text": "Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides \"Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte\" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.947085",
+        "modified": "2026-06-25T13:00:23.947086",
+        "date": "2026-06-25T13:00:23.947087",
+        "content_hash": "e180055bfcce0e6e282c2d2d48214d23100efe6a2591d7f31ad90afc94828a19",
+        "path": "index.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A96",
+        "title": "TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Existenz ChargeItem",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-communication-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht der Profile GEM_ERPCHRG_PR_Communication_ChargChangeReq oder GEM_ERPCHRG_PR_Communication_ChargChangeReply über die HTTP-Operation POST auf den Endpunkt /Communication prüfen und, wenn Communication.basedOn eine nicht existierende ChargeItem Ressource referenziert, mit dem folgenden Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CHARGEITEM_NOT_FOUND</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, um Spam und nicht-rezeptbezogene Kommunikation zu verhindern.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.948275",
+        "modified": "2026-06-25T13:00:23.948276",
+        "date": "2026-06-25T13:00:23.948277",
+        "content_hash": "97cc9eff4c365f9847e6c3c0087004b9cb0fb7f0d7cbc6abef81c600c9f92e3a",
+        "path": "query-api-communication-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A97",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Prüfung Signaturzertifikat PKV-Abgabedatensatz",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem das Signaturzertifikats des PKV-Abgabedatensatzes prüfen und, wenn die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>512 - OCSP Backend Error</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>transient</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_OCSP_BACKEND_ERROR</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.938391",
+        "modified": "2026-06-25T13:00:23.938392",
+        "date": "2026-06-25T13:00:23.938393",
+        "content_hash": "3794c1a23616114898ef2db93396f9a01134d7cc7da2a43facb960f4bbc7326b",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A98",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - Prüfung Signaturzertifikat PKV-Abgabedatensatz",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI, das Signaturzertifikats des PKV-Abgabedatensatzes prüfen und, wenn die Abfrage des OCSP-Response für das Signaturzertifikat fehlschlägt, die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>512 - OCSP Backend Error</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>transient</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_OCSP_BACKEND_ERROR</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.944002",
+        "modified": "2026-06-25T13:00:23.944003",
+        "date": "2026-06-25T13:00:23.944004",
+        "content_hash": "161bc7d1e0e90061172db3e1dd650876c5f70a65a1dd845b9a0d8f107af0b0ee",
+        "path": "query-api-chargeitem-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A99",
+        "title": "TI-Flow-Fachdienst - Versichertenprotokoll zu DiGA-Operationen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-audit-service.md",
+        "text": "Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß \"TAB_Chrg_004 Versichertenprotokoll\" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.",
+        "conformance": "SHALL",
+        "created": "2026-06-25T13:00:23.947691",
+        "modified": "2026-06-25T13:00:23.947692",
+        "date": "2026-06-25T13:00:23.947693",
+        "content_hash": "b1c2361dbf3e93e2495e36c0679afe745afe75411d84695e9d4248a98205ec01",
+        "path": "menu-technische-umsetzung-audit-service.html",
+        "release": "2.0.0"
+    }
+]

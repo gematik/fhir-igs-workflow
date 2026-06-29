@@ -5,14 +5,14 @@ Title: "Beispiel-Medikament Sumatriptan"
 Description: "Beispiel für ein Sumatriptan-Medikament mit vollständigen Eigenschaften"
 Usage: #example
 // Arzneimittelkategorie
-* extension[drugCategory].valueCoding = EPADrugCategoryCS#00
+* extension[drugCategory].valueCoding = $epa-drug-categoy-cs#00
 
 // Impfstoff
 * extension[isVaccine].valueBoolean = false
 
 // ChargenInformation
 * batch.lotNumber = "1234567890"
-
+* status = #active
 // normgroesse
 * extension[normSizeCode].url = "http://fhir.de/StructureDefinition/normgroesse"
 * extension[normSizeCode].valueCode = #N1
@@ -34,13 +34,14 @@ Description: "Beispiel für ein Sumatriptan-Medikament mit spezifischer ID für 
 Usage: #inline
 * id = "30e0e53f-275c-46f5-9e59-04d55735dabb"
 // Arzneimittelkategorie
-* extension[drugCategory].valueCoding = EPADrugCategoryCS#00
+* extension[drugCategory].valueCoding = $epa-drug-categoy-cs#00
 
 // Impfstoff
 * extension[isVaccine].valueBoolean = false
 
 // ChargenInformation
 * batch.lotNumber = "1234567890"
+* status = #active
 
 // normgroesse
 * extension[normSizeCode].url = "http://fhir.de/StructureDefinition/normgroesse"
@@ -63,7 +64,7 @@ Usage: #example
 
 // ChargenInformation
 * batch.lotNumber = "1234567890"
-
+* status = #active
 * code.coding[pzn].system = "http://fhir.de/CodeSystem/ifa/pzn"
 * code.coding[pzn].code = #06313728
 
@@ -74,7 +75,8 @@ Title: "Medikament ohne Stärke-Code"
 Description: "Beispiel für ein Medikament ohne System und Code für die Wirkstoffstärke"
 Usage: #example
 * code.text = "Infusion bestehend aus 85mg Doxorubicin aufgeloest zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionsloesung"
-* form = http://standardterms.edqm.eu#11210000 "Solution for infusion"
+* status = #active
+* form.text = "Solution for infusion"
 * ingredient[+]
   * itemCodeableConcept = http://fhir.de/CodeSystem/bfarm/atc|2025#L01DB01 "Doxorubicin"
   * isActive = true
@@ -90,7 +92,8 @@ Title: "Medikament ohne Stärke-Numerator"
 Description: "Beispiel für ein Medikament ohne Code oder System für die Stärkenangabe im Numerator"
 Usage: #example
 * code.text = "Infusion bestehend aus 85mg Doxorubicin aufgeloest zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionsloesung"
-* form = http://standardterms.edqm.eu#11210000 "Solution for infusion"
+* form.text = "Solution for infusion"
+* status = #active
 * ingredient[+]
   * itemCodeableConcept = http://fhir.de/CodeSystem/bfarm/atc|2025#L01DB01 "Doxorubicin"
   * isActive = true

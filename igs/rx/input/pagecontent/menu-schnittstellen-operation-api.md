@@ -1,4 +1,4 @@
-Die folgenden Operation APIs stellt der E-Rezept-Fachdienst dem _Primärsystem eRP_ sowie dem _E-Rezept-Fachdienst_ zur Verfügung.
+Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem _Primärsystem eRP_ sowie dem _TI-Flow-Fachdienst_ zur Verfügung.
 
 ### E-Rezepte bereitstellen
 

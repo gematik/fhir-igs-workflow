@@ -1,0 +1,28 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: a6ed79c4c167540c03d2addf92cd6e617e3c8bcc6b60ca92c2d8613c36701cde
+created: '2026-03-23T10:57:49.809804'
+date: '2026-05-15T12:58:35.145521'
+key: IG-TIFLOW-ERP-101
+modified: '2026-05-15T12:58:35.145521'
+release_status: MODIFIED
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
+  \ (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true)\
+  \ gekennzeichnet, ein Endedatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.end)\
+  \ angegeben ist und das Endedatum vor dem Startdatum (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)\
+  \ liegt, die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_EREZEPT_MVO_ENDDATE_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>-</td>\n </tr>\n </table> \n abbrechen."
+title: TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - Endedatum nicht
+  vor Startdatum
+version: 1

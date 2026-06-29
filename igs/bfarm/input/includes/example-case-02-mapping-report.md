@@ -6,13 +6,7 @@
 **Anwendungsfall:** Verschreibung und Abgabe eines Wirkstoff-Medikaments (Lenalidomid) und nachfolgender Transformation in einen digitalen Durchschlag.
 
 **Beispiel-Artefakte:**
-- **Quell-Dateien:**
-  - [`example-case-02-KBV_Bundle.xml`](test-examples/example-case-02-KBV_Bundle.xml)
-  - [`example-case-02-MedicationDispense_Parameters.xml`](test-examples/example-case-02-MedicationDispense_Parameters.xml)
-  - [`example-case-02-Task.xml`](test-examples/example-case-02-Task.xml)
-  - [`example-case-02-VZDSearchSet.xml`](test-examples/example-case-02-VZDSearchSet.xml)
-- **Mapping Bundle (generiert):** [`example-case-02-mapping-bundle.json`](test-examples/example-case-02-mapping-bundle.json)
-- **Digitaler Durchschlag (Ergebnis):** [`example-case-02-digitaler-durchschlag.json`](test-examples/example-case-02-digitaler-durchschlag.json)
+- **Digitaler Durchschlag (Ergebnis):** [`Parameters-example-case-02-digitaler-durchschlag.json`](test-examples/Parameters-example-case-02-digitaler-durchschlag.json)
 
 
 ## Resource Mapping Details

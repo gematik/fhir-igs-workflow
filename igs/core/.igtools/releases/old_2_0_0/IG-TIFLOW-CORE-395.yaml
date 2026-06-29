@@ -1,0 +1,20 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: c6d75e7159763832b67919c52a0ec5cd71325404af992ef8a2982802987391a7
+created: '2026-03-23T10:57:48.550186'
+date: '2026-03-23T13:47:26.531772'
+key: IG-TIFLOW-CORE-395
+modified: '2026-03-23T10:57:48.550187'
+release_status: STABLE
+source: input/pagecontent/menu-technische-umsetzung-epa-ms.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst MUSS vor jedem Übermitteln von Informationen zu Verordnungsdaten
+  oder Dispensierinformationen an den ePA Medication Service den Endpunkt /information/api/v1/ehr/consentdecisions
+  des Information Service aufrufen, prüfen, ob für die Funktion "erp-submission" der
+  Wert "permit" vorliegt und die Übermittlung final abbrechen, wenn die Prüfung fehlschlägt.
+title: TI-Flow-Fachdienst - ePA - Prüfung des Widerspruchs vor Übermittlung
+version: 0

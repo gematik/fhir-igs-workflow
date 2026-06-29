@@ -8,10 +8,10 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios "Abrechnun
 #### E-Rezept-FdV 
 
 <!-- A_19443 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-33" title="E-Rezept-FdV: TIFlow-CHRG - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A33" title="E-Rezept-FdV: TIFlow-CHRG - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle
     <ul>
@@ -29,10 +29,10 @@ Diese Seite beschreibt die technischen Anwendungsfälle des Szenarios "Abrechnun
 
 #### PS abgebende LEI
 
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CHRG-34" title="PS abgebende LEI: TIFlow-CHRG - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A34" title="PS abgebende LEI: TIFlow-CHRG - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das PS der abgebenden LEI MUSS für die Umsetzung der Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle
     <ul>

@@ -2,9 +2,13 @@ Alias: $identifier-telematik-id = https://gematik.de/fhir/sid/telematik-id
 Alias: $identifier-kvid-10 = http://fhir.de/sid/gkv/kvid-10
 Alias: $identifier-iknr = http://fhir.de/sid/arge-ik/iknr
 
+Alias: $tiflow-core-oo-cs = https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs
+Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes
+Alias: $hl7-oo = http://terminology.hl7.org/CodeSystem/operation-outcome
+
 Alias: $DAV-PKV-PR-ERP-AbgabedatenBundle = http://fhir.abda.de/eRezeptAbgabedaten/StructureDefinition/DAV-PKV-PR-ERP-AbgabedatenBundle
 
-Alias: $GEM_ERPCHRG_EX_MarkingFlag_URL = https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_EX_MarkingFlag
+Alias: $GEM_ERPCHRG_EX_MarkingFlag_URL = https://gematik.de/fhir/tiflow-chargeitem/StructureDefinition/GEM_ERPCHRG_EX_MarkingFlag
 Alias: $GEM_ERP_PR_Bundle = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle
 Alias: $GEM_ERP_NS_AccessCode = https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode
 Alias: $GEM_ERP_NS_PrescriptionId = https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId
@@ -14,5 +18,6 @@ Alias: $cs-consent-scope = http://terminology.hl7.org/CodeSystem/consentscope
 
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
 Alias: $cap-erp-fd = https://gematik.de/fhir/workflow/core/CapabilityStatement/erp-fachdienst-server
-Alias: $erp-base-url = erp.zentral.erp.splitdns.ti-dienste.de
+
+Alias: $erp-base-url = https://tiflow.de/rx/fhir/v1
 Alias: $erp-task = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task

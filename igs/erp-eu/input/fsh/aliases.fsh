@@ -1,3 +1,6 @@
+Alias: $erp-base-url = https://tiflow.de/rx/fhir/v1
+Alias: $erp-task = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task
+
 Alias: $cs-iso-3166 = urn:iso:std:iso:3166
 Alias: $cs-consent-scope = http://terminology.hl7.org/CodeSystem/consentscope
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
@@ -19,3 +22,12 @@ Alias: $sid-identifier-rx-originator-process = https://gematik.de/fhir/epa-medic
 Alias: $sid-identifier-dispensation = https://gematik.de/fhir/epa-medication/sid/dispensation-identifier
 Alias: $cs-drug-category = https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs
 Alias: $cs-oid-practitioner-role = urn:oid:2.16.840.1.113883.2.9.6.2.7
+
+Alias: $tiflow-core-oo-cs = https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs
+Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes
+Alias: $hl7-oo = http://terminology.hl7.org/CodeSystem/operation-outcome
+
+// TI Terminologies
+Alias: $profession-oid-vs = https://gematik.de/fhir/directory/ValueSet/OrganizationProfessionOIDTypeVS
+Alias: $epa-drug-categoy-cs = https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs
+Alias: $epa-role-of-healthcare-vs = https://gematik.de/fhir/terminology/ValueSet/epa-structural-role-of-healthcare-professional-vs

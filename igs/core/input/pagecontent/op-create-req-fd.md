@@ -1,12 +1,12 @@
-Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den E-Rezept-Fachdienst für die Operation `$create`.
+Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an den TI-Flow-Fachdienst für die Operation `$create`.
 
 <!-- A_19018-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-217" title="E-Rezept-Fachdienst - Task erzeugen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A217" title="TI-Flow-Fachdienst - Task erzeugen - Rollenprüfung" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produktgutachten"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation die Rolle "professionOID" des Aufrufenden im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich verordnende Leistungserbringer in der Rolle
+    Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
     <ul>
         <li>oid_praxis_arzt</li>
         <li>oid_zahnarztpraxis</li>
@@ -14,69 +14,123 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
         <li>oid_krankenhaus</li>
         <li>oid_institution-vorsorge-reha</li>
     </ul> 
-    die Operation im Fachdienst aufrufen dürfen, damit E-Rezepte nicht durch zur Verordnung Unberechtigte eingestellt werden können.
+    die Operation im Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+        </tr>
+    </table> 
+    abbrechen, damit Workflows nicht durch zur Verordnung Unberechtigte erstellt werden können.
 </requirement>
 
 <!-- A_19257-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-218" title="E-Rezept-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A218" title="TI-Flow-Fachdienst - Task erzeugen - Schemavalidierung Rezept anlegen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS die im Body der HTTP-POST-Operation auf die Ressource Task übertragenen Parameter gegen das Schema http://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition prüfen und bei Nicht-Konformität das Anlegen der Ressource im Fachdienst mit dem http-Status-Code 400 beantworten, damit kein Schadcode und keine "fachfremden" Daten in den E-Rezept-Fachdienst hochgeladen werden.
+    Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation die im Body der HTTP-POST-Operation auf die Ressource Task übertragenen Parameter gegen das Schema http://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_VALIDATION_FAILED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>FHIR Profile Validation Failed</td>
+        </tr>
+    </table> 
+    abbrechen, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
 </requirement>
 
 <!-- A_19112 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-219" title="E-Rezept-Fachdienst - Task erzeugen - Parametrierung Task für Workflow-Typ" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A219" title="TI-Flow-Fachdienst - Task erzeugen - Parametrierung Task für Workflow-Typ" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation den Parameter workflowType (Rezepttyp) aus dem HTTP-Body des POST-Requests entnehmen, als Attribut Task.extension:flowType des zu erstellenden Tasks verwenden und bei Fehlen bzw. Nicht-Konformität des Parameters den Request als unzulässig abweisen, damit auf Basis dieser Parameter ausschließlich gültige Workflows gestartet werden können und dem Versicherten bei Einsicht des Tasks der Weg in entweder eine Apotheke oder ein Sanitätshaus oder eine andere zuständige Einrichtung gewiesen werden kann.
+    Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation den Parameter workflowType (Rezepttyp) aus dem HTTP-Body des POST-Requests entnehmen, als Attribut Task.extension:flowType des zu erstellenden Tasks verwenden und bei Fehlen bzw. Nicht-Konformität des Parameters den Request als unzulässig abweisen, damit auf Basis dieser Parameter ausschließlich gültige Workflows gestartet werden können und dem Versicherten bei Einsicht des Tasks der Weg in entweder eine Apotheke oder ein Sanitätshaus oder eine andere zuständige Einrichtung gewiesen werden kann.
 </requirement>
+<!-- ToDo : Fehler ergänzen -->
 
-<!-- A_19214 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-220" title="E-Rezept-Fachdienst - Task erzeugen - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
-    </actor>
-    Der E-Rezept-Fachdienst MUSS beim Erzeugen eines Tasks das Feld Task.performerType aus dem übergebenen, gültigen Parameter Task.extension:flowType gemäß der Prozessparameter [gemSpec_DM_eRp#A_19445-*] übernehmen.
-</requirement>
-<!-- ToDo: Achtung, die Afo wurde zwichenzeitlich aufgeteilt. Muss neu ggf WF-spezifisch formuliert werden. Warum wird diese Eigenschaft nicht beim activate gesetzt?  -->
 
 <!-- A_19019-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-221" title="E-Rezept-Fachdienst - Task erzeugen - Generierung Rezept-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A221" title="TI-Flow-Fachdienst - Task erzeugen - Generierung Rezept-ID" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Anlegen eines neuen Tasks eine Rezept-ID gemäß der Bildungsregel [gemSpec_DM_eRp#A_19217-*] generieren und als Identifier mit Namingsystem https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId dem Task hinzufügen und sicherstellen, dass diese Rezept-ID innerhalb von 11 Jahren nach ihrer Erzeugung nicht erneut vergeben wird, damit es innerhalb der Aufbewahrungsfrist der Abrechnungsdaten bei den Krankenkassen zu keinen Dubletten kommt.
+    Der TI-Flow-Fachdienst MUSS beim Anlegen eines neuen Tasks eine Rezept-ID gemäß der Bildungsregel in [IG-TIFLOW-CORE-A357] generieren und als Identifier mit Namingsystem https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId dem Task hinzufügen und sicherstellen, dass diese Rezept-ID innerhalb von 11 Jahren nach ihrer Erzeugung nicht erneut vergeben wird, damit es innerhalb der Aufbewahrungsfrist der Abrechnungsdaten bei den Krankenkassen zu keinen Dubletten kommt.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A439" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID Nummernkreis" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS beim Erzeugen des ersten Tasks aller Workflowtypen sicherstellen, dass der 12-stellige Zählerstand der Rezept-ID gleich 010.000.000.000 ist.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A440" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID sequentielle Zählung" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS beim Erzeugen eines neuen Tasks sicherstellen, dass die Rezept-ID je Workflowtyp sequentiell aufsteigend erzeugt wird.
 </requirement>
 
 <!-- A_23227 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-222" title="E-Rezept-Fachdienst - Task erzeugen - Task-ID=Rezept-ID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A222" title="TI-Flow-Fachdienst - Task erzeugen - Task-ID=Rezept-ID" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Erzeugen eines neuen Tasks die Rezept-ID, welche mit Task an das verordnende Primärsystem übermittelt wird, als Task-ID verwenden.
+    Der TI-Flow-Fachdienst MUSS beim Erzeugen eines neuen Tasks die Rezept-ID, welche mit Task an das verordnende Primärsystem übermittelt wird, als Task-ID verwenden.
 </requirement>
 
 <!-- A_19021-02 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-223" title="E-Rezept-Fachdienst - Task erzeugen - Generierung AccessCode" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A223" title="TI-Flow-Fachdienst - Task erzeugen - Generierung AccessCode" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produktgutachten"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation eine 256 Bit Zufallszahl mit einer Mindestentropie von 120 Bit erzeugen, hexadezimal kodieren ([0-9a-f]{64}) und diese im zu speichernden Task als externe ID in Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode hinzufügen, damit nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.
+    Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation eine 256 Bit Zufallszahl mit einer Mindestentropie von 120 Bit erzeugen, hexadezimal kodieren ([0-9a-f]{64}) und diese im zu speichernden Task als externe ID in Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode hinzufügen, damit nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte in Kenntnis des AccessCodes erfolgen.
 </requirement>
 
 <!-- A_19114 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-224" title="E-Rezept-Fachdienst - Task erzeugen - Status draft" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A224" title="TI-Flow-Fachdienst - Task erzeugen - Status draft" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS die zulässige Anlage eines Tasks mittels HTTP-POST/$create-Operation im Status Task.status = draft vollziehen und beim erfolgreichen Abschluss der Operation die angelegte Ressource Task im HTTP-Body der HTTP-Response zurückgeben, damit die verordnende Leistungserbringerinstitution die generierte Rezept-ID für die QES verwenden kann.
+    Der TI-Flow-Fachdienst MUSS die zulässige Anlage eines Tasks mittels HTTP-POST/$create-Operation im Status Task.status = draft vollziehen und beim erfolgreichen Abschluss der Operation die angelegte Ressource Task im HTTP-Body der HTTP-Response zurückgeben, damit die verordnende Leistungserbringerinstitution die generierte Rezept-ID für die QES verwenden kann.
 </requirement>

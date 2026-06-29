@@ -1,10 +1,10 @@
-Diese Seite beschreibt die Schnittstellen für den Datentransfer zwischen dem E-Rezept-Fachdienst und dem BfArM Webdienst.
+Diese Seite beschreibt die Schnittstellen für den Datentransfer zwischen dem TI-Flow-Fachdienst und dem BfArM Webdienst.
 
-### Schnittstellen des E-Rezept-Fachdienst
+### Schnittstellen des TI-Flow-Fachdienst
 
-Im aktuellen Stand des IGs stellt der E-Rezept-Fachdienst keine Schnittstellen für den Datenaustausch bereit.
+Im aktuellen Stand des IGs stellt der TI-Flow-Fachdienst keine Schnittstellen für den Datenaustausch bereit.
 
-Für den Datenaustausch mit dem BfArM muss der E-Rezept-Fachdienst die folgenden Anforderungen erfüllen:
+Für den Datenaustausch mit dem BfArM muss der TI-Flow-Fachdienst die folgenden Anforderungen erfüllen:
 
 - [Server-Anforderungen zur Übertragung an die T-Register Schnittstellen](./query-api-t-register-req-fd.html)
 

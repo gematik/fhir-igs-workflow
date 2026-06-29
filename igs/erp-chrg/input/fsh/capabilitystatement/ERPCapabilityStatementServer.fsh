@@ -1,9 +1,9 @@
-Instance: ERPFachdienstServerErpChrg
+Instance: TIFlowChrgFachdienstServer
 InstanceOf: TICapabilityStatement
 Usage: #definition
-* insert MetaInstance(ERPFachdienstServerChrg)
+* insert Meta-Instance
 
-* id = "erp-fachdienst-server-erpchrg"
+* id = "ti-flow-fachdienst-server-erpchrg"
 * title = "ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst"
 * description = "CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)"
 * contact
@@ -21,31 +21,24 @@ Usage: #definition
 * imports[=].extension[0].url = $capabilitystatement-expectation
 * imports[=].extension[0].valueCode = #SHALL
 
-* insert TaskInteraction(#SHALL)
 * insert ChargeItemInteraction(#SHALL)
 * insert ConsentInteraction(#SHALL)
 * insert CommunicationInteraction(#SHALL)
-
-RuleSet: TaskInteraction(expectation)
-* insert CapSupportResource(Task, #SHALL)
-* insert CapSupportProfileUrl($erp-task, #SHALL)
-
-* insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
-* insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
 
 RuleSet: ChargeItemInteraction(expectation)
 * insert CapSupportResource(ChargeItem, #SHALL)
 * insert CapSupportProfile(GEM_ERPCHRG_PR_ChargeItem, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert ChargeItemSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert ChargeItemReadInteractionStatusCodes
 
-* insert CapSupportResourceSearchParam(_lastUpdated, http://hl7.org/fhir/SearchParameter/Resource-lastUpdated, #date, {expectation}, "Resource.meta.lastUpdated")
-* insert CapSupportResourceSearchParam(identifier, http://hl7.org/fhir/SearchParameter/ChargeItem-enteredDate, #token, {expectation}, "ChargeItem.identifier")
+* insert CapSupportResourceSearchParam(_lastUpdated, http://hl7.org/fhir/SearchParameter/Resource-lastUpdated, #date, {expectation}, "Resource.meta.lastUpdated - Unterstützt die Suche nach dem zuletzt aktualisierten Datum")
+* insert CapSupportResourceSearchParam(entered-date, http://hl7.org/fhir/SearchParameter/ChargeItem-entered-date, #date, {expectation}, "ChargeItem.enteredDate - Unterstützt die Suche nach dem Eingangsdatum; default sort if _sort is not provided")
+* insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Unterstützt das Sortieren nach unterstützten ChargeItem-Suchkriterien")
+* insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50")
+* insert CapSupportResourceSearchParamNoDefinition(__offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
 
 RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportResource(Communication, #SHALL)
@@ -53,16 +46,17 @@ RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportProfile(GEM_ERPCHRG_PR_Communication_ChargChangeReply, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert CommunicationSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert CommunicationReadInteractionStatusCodes
 
 RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResource(Consent, #SHALL)
 * insert CapSupportProfile(GEM_ERPCHRG_PR_Consent, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
-* insert SearchTypeInteractionStatusCodes
+* insert ConsentSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
-* insert ReadInteractionStatusCodes
+* insert ConsentReadInteractionStatusCodes
 
+* insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")

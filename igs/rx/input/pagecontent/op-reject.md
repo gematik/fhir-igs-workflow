@@ -6,14 +6,35 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$reject` gesendet.
 
 ### Anforderungen an Schnittstelle
 
-- [Ergänzende Server-Anforderungen zu `$reject`](./op-reject-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Ergänzende Server-Anforderungen zu `$reject`](./op-reject-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 
 ### API Beschreibung
 
-Die API-Beschreibung für den Aufruf der Operation findet sich auf:
-- [API-ERP: E-Rezept zurückweisen](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-zur%C3%BCckweisen)
+<div class="gematik-api"
+	data-api-type="FHIROperation"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-invoke-level="instance"
+	data-api-operation-id="rejectOperation">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
+		</pre>
+	</div>
+	<div id="OperationDefinition">
+		<pre>
+			{% include OperationDefinition-tiflow-rx-reject-op.json %}
+		</pre>
+	</div>
+<!--
+	<div id="Response-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
+		</div>
+	</div>
+-->
+</div>
 
-### Hinweis
+### Hinweise
 
 - `reject` und direktes erneutes `accept` sollen nicht als Übergabemechanismus zwischen Apotheken verwendet werden.
 - Diese Folge erzeugt für Versicherte schwer nachvollziehbare Protokollierung/Notifications.

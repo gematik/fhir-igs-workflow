@@ -180,7 +180,6 @@ def write_overview(mapping_files: List[Path], mapping_dir: Path) -> None:
     lines = [
         "## Provide Prescription Mapping Tables",
         "",
-        f"Automatisch generiert am {_dt.date.today():%Y-%m-%d}.",
         "",
         "Die folgenden Seiten beschreiben das Mapping von KBV Bundles zu Provide Parameters.",
         "",

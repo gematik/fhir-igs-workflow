@@ -8,13 +8,17 @@ Checks:
   - SOLL -> SHOULD
     - KANN -> MAY
 - actor name against beginning of requirement text:
-    - Der E-Rezept-Fachdienst -> eRp_FD
   - Das E-Rezept-FdV -> eRp_FdV
+    - Der TI-Flow-Fachdienst -> TI-Flow_FD
+    - TI-Flow-Fachdienst -> TI-Flow_FD
+    - Anbieter TI-Flow-Fachdienst -> Anb_TI-Flow_FD
   - Das PS der abgebenden LEI -> PS_E-Rezept_abgebend
   - Das PS der verordnenden LEI -> PS_E-Rezept_verordnend
   - Das Clientsystem Kostenträger -> CS_E-Rezept_KTR
-  - Anbieter E-Rezept-Fachdienst -> Anb_eRp_FD
 - reports unknown actor names
+- normalizes legacy actor aliases:
+    - TI_Flow_FD -> TI-Flow_FD
+    - Anb_TI_Flow_FD -> Anb_TI-Flow_FD
 - canonicalizes alias subject phrase:
     - Das CS Kostenträger -> Das Clientsystem Kostenträger
 
@@ -52,21 +56,29 @@ GENERIC_LEADING_SUBJECTS: Set[str] = {
 
 
 KNOWN_ACTORS: Set[str] = {
-    "eRp_FD",
     "eRp_FdV",
+    "TI-Flow_FD",
     "NCPeH_ePeDA",
     "Anb_NCPeH_FD",
     "PS_E-Rezept_abgebend",
     "PS_E-Rezept_verordnend",
     "CS_E-Rezept_KTR",
-    "Anb_eRp_FD",
+    "Anb_TI-Flow_FD",
+}
+
+
+LEGACY_ACTOR_ALIASES: Dict[str, str] = {
+    "TI_Flow_FD": "TI-Flow_FD",
+    "Anb_TI_Flow_FD": "Anb_TI-Flow_FD",
 }
 
 
 # Ordered by priority and specificity.
 SUBJECT_RULES: List[Tuple[str, str, str]] = [
-    ("Der E-Rezept-Fachdienst", "eRp_FD", "Der E-Rezept-Fachdienst"),
     ("Das E-Rezept-FdV", "eRp_FdV", "Das E-Rezept-FdV"),
+    ("Der TI-Flow-Fachdienst", "TI-Flow_FD", "Der TI-Flow-Fachdienst"),
+    ("TI-Flow-Fachdienst", "TI-Flow_FD", "Der TI-Flow-Fachdienst"),
+    ("Anbieter TI-Flow-Fachdienst", "Anb_TI-Flow_FD", "Anbieter TI-Flow-Fachdienst"),
     ("Der NCPeH-FD", "NCPeH_ePeDA", "Der NCPeH-FD"),
     ("Anbieter des NCPeH-FD", "Anb_NCPeH_FD", "Anbieter des NCPeH-FD"),
     ("Das PS der abgebenden LEI", "PS_E-Rezept_abgebend", "Das PS der abgebenden LEI"),
@@ -75,18 +87,17 @@ SUBJECT_RULES: List[Tuple[str, str, str]] = [
     ("Das Clientsystem Kostentraeger", "CS_E-Rezept_KTR", "Das Clientsystem Kostenträger"),
     ("Das CS Kostenträger", "CS_E-Rezept_KTR", "Das Clientsystem Kostenträger"),
     ("Das CS Kostentraeger", "CS_E-Rezept_KTR", "Das Clientsystem Kostenträger"),
-    ("Anbieter E-Rezept-Fachdienst", "Anb_eRp_FD", "Anbieter E-Rezept-Fachdienst"),
 ]
 
 ACTOR_CANONICAL_SUBJECT: Dict[str, str] = {
-    "eRp_FD": "Der E-Rezept-Fachdienst",
     "eRp_FdV": "Das E-Rezept-FdV",
+    "TI-Flow_FD": "Der TI-Flow-Fachdienst",
     "NCPeH_ePeDA": "Der NCPeH-FD",
     "Anb_NCPeH_FD": "Anbieter des NCPeH-FD",
     "PS_E-Rezept_abgebend": "Das PS der abgebenden LEI",
     "PS_E-Rezept_verordnend": "Das PS der verordnenden LEI",
     "CS_E-Rezept_KTR": "Das Clientsystem Kostenträger",
-    "Anb_eRp_FD": "Anbieter E-Rezept-Fachdienst",
+    "Anb_TI-Flow_FD": "Anbieter TI-Flow-Fachdienst",
 }
 
 
@@ -171,28 +182,60 @@ def line_for_offset(content: str, offset: int) -> int:
     return content.count("\n", 0, offset) + 1
 
 
+def resolve_target_path(path: Path) -> Path:
+    """Resolve a possibly relative target path against cwd and repo root."""
+    if path.exists():
+        return path
+
+    repo_root = Path(__file__).resolve().parents[2]
+    repo_relative = repo_root / path
+    if repo_relative.exists():
+        return repo_relative
+
+    return path
+
+
+def display_path(path: Path) -> str:
+    """Return a compact display path, preferably relative to repo root or cwd."""
+    try:
+        return str(path.resolve().relative_to(Path.cwd().resolve()))
+    except ValueError:
+        pass
+
+    repo_root = Path(__file__).resolve().parents[2]
+    try:
+        return str(path.resolve().relative_to(repo_root.resolve()))
+    except ValueError:
+        return str(path)
+
+
 def iter_target_files(targets: Sequence[str]) -> Iterable[Path]:
     if not targets:
         targets = ["igs/*/input/pagecontent"]
 
     seen: Set[Path] = set()
+    repo_root = Path(__file__).resolve().parents[2]
+
     for target in targets:
         path = Path(target)
 
         if any(ch in target for ch in "*?[]"):
-            for matched in Path(".").glob(target):
-                if matched.is_file() and matched.suffix.lower() == ".md":
-                    resolved = matched.resolve()
-                    if resolved not in seen:
-                        seen.add(resolved)
-                        yield matched
-                elif matched.is_dir():
-                    for md_file in matched.rglob("*.md"):
-                        resolved = md_file.resolve()
+            for base in (Path("."), repo_root):
+                for matched in base.glob(target):
+                    if matched.is_file() and matched.suffix.lower() == ".md":
+                        resolved = matched.resolve()
                         if resolved not in seen:
                             seen.add(resolved)
-                            yield md_file
+                            yield matched
+                    elif matched.is_dir():
+                        for md_file in matched.rglob("*.md"):
+                            resolved = md_file.resolve()
+                            if resolved not in seen:
+                                seen.add(resolved)
+                                yield md_file
             continue
+
+        path = resolve_target_path(path)
 
         if path.is_file() and path.suffix.lower() == ".md":
             resolved = path.resolve()
@@ -256,19 +299,41 @@ def check_file(file_path: Path, fix: bool) -> CheckResult:
         line = line_for_offset(content, start)
 
         actor_matches = list(ACTOR_RE.finditer(body))
-        actor_names = [m.group(1) for m in actor_matches]
+        actor_names: List[str] = []
 
         for m in actor_matches:
             actor_name = m.group(1)
-            if actor_name not in KNOWN_ACTORS:
-                unknown_actors.add(actor_name)
+            canonical_actor_name = LEGACY_ACTOR_ALIASES.get(actor_name, actor_name)
+            actor_names.append(canonical_actor_name)
+
+            if actor_name != canonical_actor_name:
                 findings.append(
                     Finding(
                         file_path=file_path,
                         line=line_for_offset(content, start + m.start()),
                         aid=aid,
                         key=key,
-                        message=f"unknown actor in tag: '{actor_name}'",
+                        message=(
+                            "legacy actor alias in tag: "
+                            f"'{actor_name}' -> '{canonical_actor_name}'"
+                        ),
+                    )
+                )
+                if fix:
+                    new_block = new_block.replace(
+                        f'name="{actor_name}"',
+                        f'name="{canonical_actor_name}"',
+                    )
+
+            if canonical_actor_name not in KNOWN_ACTORS:
+                unknown_actors.add(canonical_actor_name)
+                findings.append(
+                    Finding(
+                        file_path=file_path,
+                        line=line_for_offset(content, start + m.start()),
+                        aid=aid,
+                        key=key,
+                        message=f"unknown actor in tag: '{canonical_actor_name}'",
                     )
                 )
 
@@ -396,7 +461,7 @@ def main() -> int:
     files = list(iter_target_files(args.targets))
     if not files:
         print("No markdown files found for the given targets.")
-        return 1
+        return 2
 
     all_findings: List[Finding] = []
     all_unknown_actors: Set[str] = set()
@@ -409,26 +474,10 @@ def main() -> int:
         if result.changed:
             changed_files += 1
 
-    report_lines: List[str] = []
-
-    for finding in all_findings:
-        report_lines.append(
-            (
-                f"[ISSUE] {finding.file_path}:{finding.line} {finding.aid} "
-                f"{finding.key}: {finding.message}"
-            )
-        )
-
-    if all_unknown_actors:
-        for actor in sorted(all_unknown_actors):
-            report_lines.append(f"[UNKNOWN_ACTOR] unbekannten actor '{actor}' gefunden")
-
-    report_lines.append(
+    summary_line = (
         f"Checked {len(files)} file(s), found {len(all_findings)} issue(s), "
         f"unknown actors: {len(all_unknown_actors)}, changed files: {changed_files}."
     )
-
-    report_text = "\n".join(report_lines) + "\n"
 
     csv_path = Path(args.output_csv)
     csv_path.parent.mkdir(parents=True, exist_ok=True)
@@ -471,7 +520,25 @@ def main() -> int:
             ]
         )
 
-    print(report_text, end="")
+    print("Quality check report")
+    print(summary_line)
+
+    if all_findings:
+        print("\nIssues")
+        for idx, finding in enumerate(all_findings, start=1):
+            print(
+                f"{idx}. {display_path(finding.file_path)}:{finding.line} "
+                f"[{finding.aid} | {finding.key}]"
+            )
+            print(f"   -> {finding.message}")
+    else:
+        print("\nNo issues found.")
+
+    if all_unknown_actors:
+        print("\nUnknown actors")
+        for actor in sorted(all_unknown_actors):
+            print(f"- {actor}")
+
     print(f"CSV report written to: {csv_path}")
 
     # Non-zero when issues remain (also in --fix mode, to force review).

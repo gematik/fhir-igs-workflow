@@ -3,17 +3,12 @@ title Einwilligung zum Speichern der Abrechnungsinformationen durch den Versiche
 
 actor "Versicherter" as V
 participant "Frontend des\nVersicherten" as FE
-participant "E-Rezept-Fachdienst" as FD
-participant "Identity Provider" as IDP
+participant "TI-Flow-Fachdienst" as FD
 
 V -> FE: Einwilligung erteilen()
 activate FE
 
-opt kein gültiger AuthN-Token
-  ref over FE, IDP: UC 5.1 - AuthN-Token durch Versicherten anfordern
-end
-
-FE -> FD: POST /Consent(AuthN-Token)
+FE -> FD: POST /Consent()
 activate FD
 
 FD -> FD: Einwilligung speichern()

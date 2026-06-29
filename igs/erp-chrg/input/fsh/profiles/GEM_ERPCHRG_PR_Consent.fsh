@@ -1,7 +1,7 @@
 Profile: GEM_ERPCHRG_PR_Consent
 Parent: Consent
 Id: GEM-ERPCHRG-PR-Consent
-* insert MetaProfile(GEM_ERPCHRG_PR_Consent)
+* insert LegacyMeta(StructureDefinition, GEM_ERPCHRG_PR_Consent)
 
 * status = #active (exactly)
 * scope.coding 1..1 MS

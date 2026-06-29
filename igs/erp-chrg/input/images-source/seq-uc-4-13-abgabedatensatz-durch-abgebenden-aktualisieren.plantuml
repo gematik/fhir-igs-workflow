@@ -4,8 +4,7 @@ title PKV-Abgabedatensatz durch Abgebenden ändern
 actor "Mitarbeiter LEI" as MA
 participant "Primärsystem\nabgebende LEI" as PS
 participant "Konnektor" as K
-participant "E-Rezept-Fachdienst" as FD
-participant "Identity Provider" as IDP
+participant "TI-Flow-Fachdienst" as FD
 
 MA -> PS: Abrechnungsinformationen ändern()
 activate PS
@@ -17,11 +16,7 @@ activate K
 K --> PS: PKV-Abgabedatensatz-Signatur
 deactivate K
 
-opt kein gültiger AuthN-Token
-  ref over PS, IDP: UC 5.2 - AuthN-Token durch LEI anfordern
-end
-
-PS -> FD: PUT /ChargeItem/{PrescriptionID}(AuthN-Token,\nAccessCode zum Ändern, PKV-Abgabedatensatz)
+PS -> FD: PUT /ChargeItem/{PrescriptionID}(AccessCode zum Ändern, PKV-Abgabedatensatz)
 activate FD
 
 FD -> FD: AccessCode zum Ändern prüfen()

@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+export PATH="$HOME/.local/bin:$PATH"
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+usage() {
+  echo "Usage: $0 <command> [args ...]"
+  echo "Example: $0 sushi"
+  echo "Example: $0 igtools process"
+  echo ""
+  echo "Runs the command in every IG directory under $ROOT_DIR/igs."
+}
+
+if [[ $# -eq 0 ]]; then
+  usage >&2
+  exit 1
+fi
+
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+  usage
+  exit 0
+fi
+
+shopt -s nullglob
+ig_configs=("$ROOT_DIR"/igs/*/ig.ini)
+shopt -u nullglob
+
+if [[ ${#ig_configs[@]} -eq 0 ]]; then
+  echo "No IGs found under $ROOT_DIR/igs (expected igs/<name>/ig.ini)." >&2
+  exit 1
+fi
+
+failures=0
+
+for ig_ini in "${ig_configs[@]}"; do
+  ig_dir="$(dirname "$ig_ini")"
+  ig_name="$(basename "$ig_dir")"
+
+  echo "=== Running '$*' in igs/$ig_name ==="
+  if (cd "$ig_dir" && "$@"); then
+    echo "OK: igs/$ig_name"
+  else
+    echo "FAILED: igs/$ig_name" >&2
+    failures=$((failures + 1))
+  fi
+  echo
+done
+
+if [[ $failures -gt 0 ]]; then
+  echo "Completed with $failures failure(s)." >&2
+  exit 1
+fi
+
+echo "Completed successfully for ${#ig_configs[@]} IG(s)."

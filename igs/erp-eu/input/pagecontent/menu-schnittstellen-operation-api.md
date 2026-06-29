@@ -1,4 +1,4 @@
-Die folgenden Operation APIs stellt der E-Rezept-Fachdienst dem _E-Rezept-FdV_ sowie dem _NCPeH_ zur Verfügung.
+Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem _E-Rezept-FdV_ sowie dem _NCPeH_ zur Verfügung.
 
 ### Verwaltung der Zugriffsberechtigung durch den Versicherten
 
@@ -8,4 +8,5 @@ Die folgenden Operation APIs stellt der E-Rezept-Fachdienst dem _E-Rezept-FdV_ s
 
 ### Belieferung durch eine Apotheke im europäischen Ausland
 
+- NCPeH: [Operation API: Interaktion NCPeH - Abrufen](./op-get-eu-prescriptions.html)
 - NCPeH: [Operation API: Interaktion NCPeH - Abgeben](./op-eu-close.html)

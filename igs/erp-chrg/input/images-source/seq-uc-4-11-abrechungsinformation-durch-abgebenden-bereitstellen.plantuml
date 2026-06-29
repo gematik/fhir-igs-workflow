@@ -4,8 +4,7 @@ title Abrechnungsinformation durch Abgebenden bereitstellen
 actor "Mitarbeiter LEI" as MA
 participant "Primärsystem\nabgebende LEI" as PS
 participant "Konnektor" as K
-participant "E-Rezept-Fachdienst" as FD
-participant "Identity Provider" as IDP
+participant "TI-Flow-Fachdienst" as FD
 
 MA -> MA: E-Rezept dispensieren()
 
@@ -20,11 +19,7 @@ activate K
 K --> PS: PKV-Abgabedatensatz-Signatur
 deactivate K
 
-opt kein gültiger AuthN-Token
-  ref over PS, IDP: UC 5.2 - AuthN-Token durch LEI anfordern
-end
-
-PS -> FD: POST /ChargeItem(AuthN-Token, Task-ID,\nGeheimnis, PKV-Abgabedatensatz)
+PS -> FD: POST /ChargeItem(Task-ID,\nGeheimnis, PKV-Abgabedatensatz)
 activate FD
 
 FD -> FD: Einwilligung des Versicherten prüfen()

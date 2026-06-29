@@ -1,41 +1,68 @@
-<!--> FD-Anforderungen: Query API AuditEvent -->
+<!-- FD-Anforderungen: Query API AuditEvent -->
 
-Diese Seite enthält die normativen Anforderungen an den E-Rezept-Fachdienst für die AuditEvent-Query-Endpunkte.
+Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für die AuditEvent-Query-Endpunkte.
 
 <!-- A_19402 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-135" title="E-Rezept-Fachdienst - unzulässige Operationen AuditEvent" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A135" title="TI-Flow-Fachdienst - unzulässige Operationen AuditEvent" version="0">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
-    <testProcedure id="Produktgutachten"/>
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS alle Zugriffe auf die Ressource AuditEvent mittels der HTTP-Operationen PUT, PATCH, HEAD, DELETE und POST unterbinden, damit keine unzulässigen Operationen auf den Protokolldaten ausgeführt werden können.
+  Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource AuditEvent mittels der HTTP-Operationen PUT, PATCH, HEAD, DELETE und POST unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen werden können.
 </requirement>
 
 ### GET /AuditEvent
 
 <!-- A_19395 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-136" title="E-Rezept-Fachdienst - AuditEvent lesen - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A136" title="TI-Flow-Fachdienst - AuditEvent lesen - Rollenprüfung" version="0">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
-    <testProcedure id="Produktgutachten"/>
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /AuditEvent und auf einen konkreten über &lt;id&gt; adressierten /AuditEvent/&lt;id&gt; sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am Fachdienst aufrufen dürfen und die Rolle "professionOID" des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen, damit Protokolleinträge nicht durch Unberechtigte ausgelesen werden können.
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /AuditEvent und auf einen konkreten über &lt;id&gt; adressierten /AuditEvent/&lt;id&gt; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
+  <ul>
+      <li>oid_versicherter</li>
+  </ul> 
+  die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+        </tr>
+    </table> 
+    abbrechen, damit Protokolleinträge nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
 <!-- A_19396 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-137" title="E-Rezept-Fachdienst - AuditEvent lesen - Filter KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A137" title="TI-Flow-Fachdienst - AuditEvent lesen - Filter KVNR" version="0">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
-    <testProcedure id="Produktgutachten"/>
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /AuditEvent die dem Versicherten zugeordneten AuditEvent-Ressourcen anhand der KVNR des Versicherten im ACCESS_TOKEN im "Authorization"-Header des HTTP-Requests identifizieren, die in AuditEvent.entity.name die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen Protokolleinträge einsehen können.
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /AuditEvent die dem Versicherten zugeordneten AuditEvent-Ressourcen anhand des identifier des Nutzers (KVNR) identifizieren, die in AuditEvent.entity.name die entsprechende KVNR des begünstigten Patienten referenziert haben, damit ausschließlich Versicherte ihre eigenen Protokolleinträge einsehen können.
 </requirement>
 
 <!-- A_19397 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-138" title="E-Rezept-Fachdienst - AuditEvent lesen - Rückgabe im Bundle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A138" title="TI-Flow-Fachdienst - AuditEvent lesen - Rückgabe im Bundle" version="0">
   <meta lockversion="false"/>
-  <actor name="eRp_FD">
-    <testProcedure id="Produkttest"/>
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /AuditEvent die Ergebnisliste der AuditEvent-Ressourcen bei mehr als einem Eintrag als Ergebnis-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine vollständige Einsicht in das Zugriffsprotokoll erhält.
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /AuditEvent die Ergebnisliste der AuditEvent-Ressourcen bei mehr als einem Eintrag als Ergebnis-Bundle an den Aufrufer zurückgeben, damit der Versicherte eine vollständige Einsicht in das Zugriffsprotokoll erhält.
 </requirement>

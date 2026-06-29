@@ -1,0 +1,33 @@
+actor:
+- Anb_NCPeH_FD
+- CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
+conformance: SHALL
+content_hash: 245d3a2a5f8545ec91092cadce26d70418eb67e9dc7011cce8464022149a6f2a
+created: '2026-03-23T10:57:48.500856'
+date: '2026-05-15T12:58:30.140375'
+key: IG-TIFLOW-CORE-304
+modified: '2026-05-15T12:58:30.140375'
+release_status: MODIFIED
+source: input/pagecontent/pki-zertifikatspruefung.md
+status: ACTIVE
+test_procedures:
+  Anb_NCPeH_FD:
+  - Produktgutachten
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: "Das Clientsystem des TI-Flow-Fachdienst MUSS für die Prüfung eines Zertifikats\
+  \ für den TLS-Verbindungsaufbau zum TI-Flow-Fachdienst das Zertifikat auf ein CA-Zertifikat\
+  \ einer CA, die die \"CA/Browser Forum Baseline Requirements for the Issuance and\
+  \ Management of Publicly-Trusted Certificates\" [Baseline Requirements for TLS Server\
+  \ Certificates] erfüllt, kryptographisch (Signaturprüfung) zurückführen können.\
+  \ Ansonsten MUSS es das Zertifikat als \"ungültig\" bewerten. \n Das Clientsystem\
+  \ des TI-Flow-Fachdienst MUSS die zeitliche Gültigkeit des Zertifikats prüfen und\
+  \ falls diese Prüfung negativ ausfällt, das Zertifikat als \"ungültig\" bewerten."
+title: 'CS: Prüfung der Zertifikate für TLS-Verbindung zu TI-Flow-Fachdienst'
+version: 1

@@ -1,50 +1,92 @@
-Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den
-E-Rezept-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und
-Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet
-werden.
+Dieser IG beschreibt die zentralen, IG-übergreifenden Anforderungen an den TI-Flow-Fachdienst. Er fasst grundlegende Sicherheits-, Protokollierungs- und Validierungsvorgaben zusammen, die in allen nachgelagerten IGs wiederverwendet werden.
 
-## Zweck und Geltungsbereich
+### Systemübersicht
 
-Der Core-IG fokussiert auf die technische Basisschicht des Fachdienstes:
+Der TI-Flow-Fachdienst ist ein zentraler Ressourcenserver der Telematikinfrastruktur, der anwendungsübergreifende Workflows auf Basis des FHIR-Standards über eine RESTful API verwaltet.
 
-- Zugriffs- und Systemprotokollierung (AuditEvent)
-- Datenschutz und Sicherheit, insbesondere Anforderungen an die VAU
+Jeder Workflow wird über eine eindeutige Ressourcen-ID (Task-ID) adressiert und durchläuft ein definiertes Statusmodell. Der Fachdienst steuert die Statusübergänge und stellt sicher, dass nur zulässige, durch Nutzer initiierte Übergänge ausgeführt werden.
+
+Alle Zugriffe auf einen Workflow werden für den zugeordneten Versicherten protokolliert. Die Datenhaltung erfolgt ausschließlich im Rahmen der gesetzlich zulässigen Speicherdauer.
+
+Nach außen bietet der TI-Flow-Fachdienst seine Schnittstellen im Internet an und setzt für die Authentisierung und Autorisierung von Clientsystemen Zero Trust Access (ZETA) Mechanismen um. Ergänzend unterstützt er die asynchrone Übermittlung von Daten an Drittsysteme, etwa den ePA Medication Service.
+
+Die Vertraulichkeit und Integrität der verarbeiteten Daten gewährleistet der Fachdienst durch das Konzept der vertrauenswürdigen Ausführungsumgebung (VAU). Diese sichert eine durchgängige Verschlüsselung der Verordnungen und zugehörigen Daten – während des Transports, der Verarbeitung und der persistierten Speicherung – durch eine Kombination kryptographischer Verfahren. Die VAU wird dabei nicht vom TI-Flow-Fachdienst selbst implementiert, sondern durch seinen Betrieb auf einem TI-Flow-Cluster, das als Healthcare Confidential Computing (HCC) Plattform dient und auch weiteren TI-Anwendungen zur Verfügung steht.
+
+<figure>
+    <div class="gem-ig-img-container" style="--box-width: 800px; margin-bottom: 30px;">
+        <img src="./systemueberblick_TI-Flow-Fachdienst.drawio.png" alt="Systemüberblick TI-Flow-Fachdienst" style="width: 100%;">
+    </div>
+    <figcaption><strong>Abbildung: </strong>Systemüberblick TI-Flow-Fachdienst</figcaption>
+</figure>
+
+
+**Hinweis:** Die Anbindung des TI-Flow-Fachdienst an die ePA Aktensysteme erfolgt bis zu deren Unterstütztung von ZETA auf Basis der aktuellen Lösung.
+
+<br> 
+
+### Zweck und Geltungsbereich
+
+Um die Funktionalität des TI-Flow-Fachdienst verständlich und adressatengerecht zu beschreiben wurden mehrere FHIR-Implementation Guides angelegt.
+
+Dieser "IG TIFlow Kernfunktionalitäten" fokussiert auf die technische Basisschicht und Kernfunktionalitäten des Fachdienstes und beschreibt mehrfach verwendete Funktionalitäten sowie übergreifendes Verhalten:
+
+- Verbindungsaufbau der Clientsysteme zum TI-Flow-Fachdienst
 - Validierung von FHIR-Ressourcen und Bundles
-- Löschfristen und automatisches Löschen
 - Modulübergreifende Operationen auf Task ($create, $activate, $abort, ...)
+- Zugriffs- und Systemprotokollierung (AuditEvent)
+- Löschfristen und automatisches Löschen
 
+Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow Landschaft weiterverwendet:
 
-### Anforderungen zur Umsetzung des IGs
+| Art des IG | Beschreibung |
+| --- | --- |
+| Modul IG | Diese Implementation Guides enthalten Inhalte zu einem Modul, bzw. Anwendung innerhalb des TI-Flow-Fachdienst. Diese werden über eine eigenen URL-Pfad adressiert und sind durch eine eigene Domäne und Akteure gekennzeichnet. Jede Workflow-Anwendung im TI-Flow-Fachdienst wird durch einen eigenen IG beschrieben, der auf Beschreibungen und Verhalten der Kernfunktionalitäten basiert. |
+| Funktions IG | Diese Implementation Guides enthalten Beschreibungen zu Endpunkten und Funktionalitäten, die als Bausteine wiederverwendet werden können und daher zentral beschrieben werden. Sie existieren nicht als eigene Anwendung in der TI-Flow-Fachdienst landschaft. |
 
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-261" title="E-Rezept-Fachdienst: Anwendung des IG 'E-Rezept-Workflow Core'" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Herstellererklärung"/>
-    </actor>
-    Der E-Rezept-Fachdienst MUSS den Implementation Guide "E-Rezept-Workflow Core" umsetzen.
-</requirement>
+<div><figcaption><strong>Tabelle: </strong>Beschreibung der IG Arten im TI-Flow-Fachdienst</figcaption></div>
 
-<!-- A_20745-01, A_19299-02, A_19298-01, A_22483-01, A_19324-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-262" title="E-Rezept-Fachdienst: Umsetzung 'Implementation Guide E-Rezept-Workflow Core'" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Herstellererklärung"/>
-    </actor>
-    Der E-Rezept-Fachdienst MUSS zur Umsetzung des Implementation Guides "E-Rezept-Workflow Core" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind.
-</requirement>
+<br>
 
-## Aufbau
+<figure>
+    <div class="gem-ig-svg-container" style="--box-width: 500px; margin-bottom: 30px;">
+        <object
+            data="./ig-landscape.svg"
+            type="image/svg+xml"
+            aria-label="Übersicht der FHIR-IGs des TI-Flow-Fachdienst"
+            style="width: 100%;"
+            >
+            <img src="./ig-landscape.svg" alt="Übersicht der FHIR-IGs des TI-Flow-Fachdienst" style="width: 100%;">
+            </object>
+    </div>
+    <figcaption><strong>Abbildung: </strong>Übersicht der FHIR-IGs des TI-Flow-Fachdienst</figcaption>
+</figure>
 
-- [Zugriffsprotokollierung](./audit-service.html)
-- [Datenschutz und Sicherheit](./data-security.html)
-- [FHIR-Validierung](./fhir-validate.html)
-- [Löschfristen](./ttl.html)
-- [Verbindungsaufbau Clientsysteme (über IDP-Dienst)](./verbindungsaufbau-client.html)
-- [Query API (modulübergreifend)](./query-api.html)
-- [Operation API (modulübergreifend)](./operation-api.html)
+<br>
+
+### Methodik
+
+Dieser IG beschreibt die grundlegenden, modulübergreifenden Kernfunktionalitäten des TI-Flow-Fachdienstes. Sobald eine Funktionalität oder ein Endpunkt von mehreren IGs der TI-Flow-Familie genutzt wird, werden die zugehörigen Anforderungen und Beschreibungen zentral in diesem IG dokumentiert. So werden Redundanzen in den einzelnen Modul-IGs vermieden.
+
+Ableitende IGs können weitere Anforderungen und Details zu einer Operation hinzufügen.
+
+Beispielsweise wird die $activate-Operation in allen Modul-IGs semantisch gleich verwendet und umfasst im Allgemeinen dieselben Prüfungsroutinen, etwa QES-Prüfung und FHIR-Validierung.
+Der Arzneimittel-IG nutzt diese Operation ebenfalls und erweitert sie um modulspezifische Prüfungen.
+
+Modulspezifische Operationen, wie die $dispense-Operation im Arzneimittel IG, wird in den Kernfunktionalitäten nicht beschrieben.
+
+### Aufbau
+
 - [FHIR-Artefakte](./artifacts.html)
+- [FHIR-Validierung](./fhir-validate.html)
+- [Query API (modulübergreifend)](./menu-schnittstellen-query-api.html)
+- [Operation API (modulübergreifend)](./menu-schnittstellen-operation-api.html)
+- [Zugriffsprotokollierung](./audit-service.html)
+- [Löschfristen](./ttl.html)
+
+### Abhängigkeiten
+
+{% include dependency-table.xhtml %}
 
 ## Bezug zu weiteren IGs
 
-Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und
-prozessspezifische Details werden in den jeweiligen IGs dokumentiert.
+Dieser IG enthält nur die gemeinsamen Vorgaben. Fachliche und prozessspezifische Details werden in den jeweiligen IGs dokumentiert.

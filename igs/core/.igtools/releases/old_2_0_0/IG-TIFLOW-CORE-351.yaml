@@ -1,0 +1,28 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: f9fd2e35c758edb9253c2ed6de266c4ff0196097f537fea0213406d5e6823fc8
+created: '2026-03-23T10:57:48.514748'
+date: '2026-05-21T07:13:04.381046'
+key: IG-TIFLOW-CORE-351
+modified: '2026-05-21T07:13:04.381046'
+release_status: MODIFIED
+source: input/pagecontent/query-api-subscription-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf die /Subscription\
+  \ Ressource durch eine abgebende Institution, diese anhand des zeta-user-info.identifier\
+  \ des Nutzers (Telematik-ID) identifizieren, diese gegen die in der Ressource im\
+  \ Element criteria Attribut receipient hinterlegte Telematik-ID prüfen und bei Ungleichheit\
+  \ die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403\
+  \ - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>SVC_IDENTITY_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Identity\
+  \ mismatch: Access token does not match FHIR data (Telematik-ID)</td>\n </tr>\n\
+  \ </table> \n abbrechen, damit eine abgebende Institution ausschließlich für sich\
+  \ selbst eine Subscription registrieren kann."
+title: TI-Flow-Fachdienst - Subscription registrieren - Prüfung Telematik-ID
+version: 1

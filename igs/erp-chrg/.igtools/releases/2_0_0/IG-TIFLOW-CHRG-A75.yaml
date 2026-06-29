@@ -1,0 +1,30 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: abc62013421607dba5df1129a3799ccc2315ed52a6fc12a367d63a8ea3d0ad64
+created: '2026-06-25T13:00:23.939965'
+date: '2026-06-25T13:00:23.939967'
+key: IG-TIFLOW-CHRG-A75
+modified: '2026-06-25T13:00:23.939966'
+release_status: NEW
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produktgutachten
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PATCH-Operation auf eine konkrete\
+  \ über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID\
+  \ des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\
+  \ \n    <ul>\n    <li>oid_versicherter</li>\n  </ul>\n    die Operation am TI-Flow-Fachdienst\
+  \ aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n     \
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n\
+  \        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n\
+  \        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der\
+  \ Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n    \
+  \    </tr>\n    </table> \n    abbrechen, damit eine Abrechnungsinformation nicht\
+  \ durch Unberechtigte aktualisiert werden kann."
+title: TI-Flow-Fachdienst - Abrechnungsinformation ändern (PATCH) - Rollenprüfung
+version: 0

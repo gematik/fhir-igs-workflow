@@ -1,0 +1,22 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 2e0bcf0a0f5347ee4582bf7eb241e639acab8c5812abadf880898d882cc7a8bf
+created: '2026-03-23T10:57:49.562120'
+date: '2026-05-21T07:13:06.990605'
+key: IG-TIFLOW-XBORDER-11
+modified: '2026-05-21T07:13:06.990605'
+release_status: MODIFIED
+source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: 'Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
+  /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id
+  nicht leer ist, nur Ressourcen eines Tasks bereitgestellt werden, die folgendes
+  Kriterium erfüllen: Task.status = ready ODER (Task.status = in-progress UND Task.owner
+  = zeta-user-info.identifier).'
+title: TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach
+  Liste Rezept-Ids
+version: 1

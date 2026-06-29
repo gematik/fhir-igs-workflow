@@ -9,16 +9,16 @@ Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource ChargeItem w
 |Akteur|HTTP-Methode|Ergebnis der Anfrage|
 |---|---|---|
 |Versicherter|GET|Abrechnungsinformationen als Liste abrufen|
-|Versicherter|GET /<id>|Spezifische Abrechnungsinformationen abrufen|
-|Apotheke|GET /<id>?ac=|Spezifische Abrechnungsinformationen abrufen|
+|Versicherter|GET /&#60;id&#62;|Spezifische Abrechnungsinformationen abrufen|
+|Apotheke|GET /&#60;id&#62;?ac=|Spezifische Abrechnungsinformationen abrufen|
 |Apotheke|POST|Abrechnungsinformation bereitstellen|
-|Versicherter|PATCH /<id>|Abrechnungsinformation markieren|
-|Apotheke|PUT /<id>|Abrechnungsinformation aktualisieren|
-|Versicherter|DELETE /<id>|Abrechnungsinformation löschen|
+|Versicherter|PATCH /&#60;id&#62;|Abrechnungsinformation markieren|
+|Apotheke|PUT /&#60;id&#62;|Abrechnungsinformation aktualisieren|
+|Versicherter|DELETE /&#60;id&#62;|Abrechnungsinformation löschen|
 
 ### Anforderungen an Schnittstelle
 
-- [Server-Anforderungen zu ChargeItem](./query-api-chargeitem-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [Server-Anforderungen zu ChargeItem](./query-api-chargeitem-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [FdV-Anforderungen zu ChargeItem](./query-api-chargeitem-req-fdv.html): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
 - [AVS-Anforderungen zu ChargeItem](./query-api-chargeitem-req-avs.html): Anforderungen an ein AVS zur Nutzung der Schnittstelle.
 
@@ -27,4 +27,22 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 
 ### API Beschreibung
 
-- [API-ERP: PKV-Abrechnungsinformationen](https://github.com/gematik/api-erp/blob/master/docs/erp_chargeItem.adoc)
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="ChargeItem"
+	data-api-fhir-interaction="search-type">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>
+<!--
+	<div id="Response-Examples">
+		<!-- TODO: Replace placeholder searchset with a representative ChargeItem query example. -->
+		<!--
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleERPCHRGChargeItemSearchset XML %}
+		</div>
+	</div>
+-->
+</div>

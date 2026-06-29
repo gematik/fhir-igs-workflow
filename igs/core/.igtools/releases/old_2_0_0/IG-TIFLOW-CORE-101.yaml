@@ -1,0 +1,24 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 18237d0459e8ac462b89fcd1870189083248d0da9cec83aa283146c7f452ac65
+created: '2026-03-23T10:57:48.446216'
+date: '2026-04-13T07:00:25.453629'
+deleted: '2026-04-13T07:00:25.453628'
+key: IG-TIFLOW-CORE-101
+modified: '2026-03-23T10:57:48.446218'
+release_status: DELETED
+source: input/pagecontent/query-api-task-req-fd.md
+status: RETIRED
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS die Prüfung des VSDM Prüfungsnachweises wie folgt\
+  \ umsetzen: \n <ol type =\"1\">\n <li>die Prüfziffer aus dem Prüfungsnachweis extrahieren</li>\n\
+  \ <li>Falls eine Prüfziffer im Prüfungsnachweis enthalten ist:\n <ol type=\"a\"\
+  >\n <li>HMAC-Schlüssel auf Basis Kennung des Betreibers (Feld 4) und Version des\
+  \ Hash-Schlüssels (Feld 5) ermitteln</li>\n <li>HMAC über Felder 1-5 der übermittelten\
+  \ Prüfziffer berechnen</li>\n <li>Berechneten HMAC mit dem in der Prüfziffer übermittelten\
+  \ HMAC auf Gleichheit prüfen</li>\n </ol>\n </li>\n </ol>"
+title: TI-Flow-Fachdienst - Prüfung Prüfziffer
+version: 0

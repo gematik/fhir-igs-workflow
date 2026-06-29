@@ -1,14 +1,15 @@
-canonical: https://gematik.de/fhir/tiflow/diga
+canonical: https://gematik.de/fhir/tiflow-diga
 fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
 id: de.gematik.tiflow.diga
 name: gemIG_TIFlow_diga
-title: "TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)"
+title: Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 status: draft # draft | active | retired | unknown
-version: 0.9.0
-date: 2026-03-26
+version: 2.0.0-ballot.2
+# version: 0.9.0
+date: 2026-06-30
 copyrightYear: 2026+
-releaseLabel: ci-build # ci-build, ballot, release
+releaseLabel: ballot # ci-build, ballot, release
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: gematik GmbH
@@ -17,11 +18,12 @@ publisher:
 
 dependencies:
   de.basisprofil.r4: 1.5.4
-  de.gematik.epa.medication: 1.3.0
-  de.gematik.ti: 1.2.0
+  de.gematik.ti: 1.4.0-ballot.1
+  de.gematik.tiflow: 2.0.0-ballot.2
 
 menu:
   Start: index.html
+  Inhaltsverzeichnis: toc.html
   Fachlichkeit:
     Digitale Gesundheitsanwendungen: menu-fachlichkeit-diga.html
   Technische Umsetzung:
@@ -29,16 +31,17 @@ menu:
     Technische Anwendungsfälle: menu-technische-umsetzung-anwendungsfaelle.html
     Verarbeitungsregeln: menu-technische-umsetzung-verarbeitungsregeln.html
     Datenschutz und Informationssicherheit: menu-datenschutz-und-sicherheit.html
+    Zugriffsprotokollierung: menu-technische-umsetzung-audit-service.html
   Schnittstellen:
     Generelle Prinzipien: menu-schnittstellen-generelle-prinzipien.html
     Query API: query-api.html
     Operation API: operation-api.html
     Additional APIs: menu-schnittstellen-additional-api.html
-  Anhänge:
+  Über:
     Referenzen: referenced.html
     Downloads: downloads.html
     Release Notes: release-notes.html
-    Steckbriefe: spec-sheet.html
+    #Steckbriefe: spec-sheet.html
     Lizenz: license.html
   FHIR-Artefakte: artifacts.html
 
@@ -53,6 +56,8 @@ pages:
       title: "Technische Anwendungsfälle"
     menu-technische-umsetzung-verarbeitungsregeln.md:
       title: "Verarbeitungsregeln"
+    menu-technische-umsetzung-audit-service.md:
+      title: "Zugriffsprotokollierung mit AuditEvent"
   menu-schnittstellen-generelle-prinzipien.md:
     title: "Generelle Prinzipien"
   menu-datenschutz-und-sicherheit.md:
@@ -86,37 +91,37 @@ pages:
     op-create.md:
       title: "Operation: $create"
       op-create-req-fd.md:
-        title: "Anforderungen an den E-Rezept-Fachdienst für die $create-Operation"
+        title: "Anforderungen an den TI-Flow-Fachdienst für die $create-Operation"
       op-create-req-pvs.md:
         title: "Anforderungen an den verordnende Primärsystem für die $create-Operation"
     op-activate.md:
       title: "Operation: $activate"
       op-activate-req-fd.md:
-        title: "Anforderungen an den E-Rezept-Fachdienst für die $activate-Operation"
+        title: "Anforderungen an den TI-Flow-Fachdienst für die $activate-Operation"
       op-activate-req-pvs.md:
         title: "Anforderungen an den verordnende Primärsystem für die $activate-Operation"
     op-accept.md:
       title: "Operation: $accept"
       op-accept-req-fd.md:
-        title: "Anforderungen an den E-Rezept-Fachdienst für die $accept-Operation"
+        title: "Anforderungen an den TI-Flow-Fachdienst für die $accept-Operation"
       op-accept-req-ktr.md:
         title: "Anforderungen an das Clientsystem des Kostenträger für die $accept-Operation"
     op-reject.md:
       title: "Operation: $reject"
       op-reject-req-fd.md:
-        title: "Anforderungen an den E-Rezept-Fachdienst für die $reject-Operation"
+        title: "Anforderungen an den TI-Flow-Fachdienst für die $reject-Operation"
       op-reject-req-ktr.md:
         title: "Anforderungen an das Clientsystem des Kostenträger für die $reject-Operation"
     op-close.md:
       title: "Operation: $close"
       op-close-req-fd.md:
-        title: "Anforderungen an den E-Rezept-Fachdienst für die $close-Operation"
+        title: "Anforderungen an den TI-Flow-Fachdienst für die $close-Operation"
       op-close-req-ktr.md:
         title: "Anforderungen an das Clientsystem des Kostenträger für die $close-Operation"
     op-abort.md:
       title: "Operation: $abort"
       op-abort-req-fd.md:
-        title: "Anforderungen an den E-Rezept-Fachdienst für die $abort-Operation"
+        title: "Anforderungen an den TI-Flow-Fachdienst für die $abort-Operation"
       op-abort-req-fdv.md:
         title: "Anforderungen an das E-Rezept-FdV für die $abort-Operation"
       op-abort-req-pvs.md:
@@ -138,6 +143,23 @@ pages:
 
 parameters:
   shownav: true
+  special-url:
+    - https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_DeepLink
+    - https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_RedeemCode
+    - https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA
+    - https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA
   path-pages:
     - input/pagecontent
     - input/content
+  no-narrative:
+    # "StructureDefinition/*" doesn't seem to work anymore
+    - StructureDefinition/*
+    - Bundle/*
+    - OperationOutcome/*
+    - Medication/*
+    - MedicationRequest/*
+    - MedicationDispense/*
+    - Parameters/*
+    - CapabilityStatement/*
+    - Provenance/*
+    - Task/*

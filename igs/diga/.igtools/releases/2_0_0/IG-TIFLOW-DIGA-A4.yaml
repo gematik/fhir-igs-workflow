@@ -1,0 +1,29 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: ad9d1ff3819b3525850220c376754fe427b8619969af2319b3407c76f9bce06f
+created: '2026-06-25T12:48:11.230709'
+date: '2026-06-25T12:48:11.230711'
+key: IG-TIFLOW-DIGA-A4
+modified: '2026-06-25T12:48:11.230711'
+release_status: NEW
+source: input/pagecontent/op-close-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels\
+  \ HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#62;\
+  \ sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt\
+  \ dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht und anderenfalls die\
+  \ Operation mit dem folgenden Fehler:\n  <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
+  \            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n         \
+  \   <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n\
+  \            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n      \
+  \  <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_MEDICATION_DISPENSE_INVALID</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Unzulässige\
+  \ Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen für digitale\
+  \ Gesundheitsanwendungen zulässig.</td>\n        </tr>\n    </table>\n    abbrechen."
+title: TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense
+version: 0

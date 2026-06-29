@@ -1,15 +1,15 @@
-canonical: https://gematik.de/fhir/tiflow/xborder
+canonical: https://gematik.de/fhir/tiflow-xborder
 fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
-version: 0.9.0
 id: de.gematik.tiflow.xborder
 name: gemIG_TIFlow_xborder
-title: "TIFlow - Grenzüberschreitender Datenaustausch"
+title: Implementation Guide TIFlow - Grenzüberschreitender Datenaustausch
 description: Dieser IG beschreibt Datenmodelle und Anwendungsfälle für den grenzüberschreitenden Datenaustausch der TIFlow Anwendungden mit dem NCPeH Deutschland
 status: draft # draft | active | retired | unknown
+version: 2.0.0-ballot.2
+date: 2026-06-30
 copyrightYear: 2026+
-date: 2026-03-26
-releaseLabel: ci-build # ci-build, ballot, release
+releaseLabel: ballot # ci-build, ballot, release
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: gematik GmbH
@@ -18,19 +18,19 @@ publisher:
 
 dependencies:
   de.basisprofil.r4: 1.5.4
-  de.gematik.fhir.directory: 1.0.0
-  de.gematik.epa.medication: 1.3.0
-  de.gematik.terminology: 1.0.8
-  de.gematik.ti: 1.2.0
+  de.gematik.ti: 1.4.0-ballot.1
+  de.gematik.tiflow: 2.0.0-ballot.2
 
 menu:
   Start: index.html
+  Inhaltsverzeichnis: toc.html
   Fachlichkeit:
     Szenario EU: menu-fachlichkeit-szenario-eu.html
   Technische Umsetzung:
     Technisches Konzept: menu-technische-umsetzung-konzept.html
     Technische Anwendungsfälle: menu-technische-umsetzung-anwendungsfaelle.html
     Datenschutz und Sicherheit: menu-technische-umsetzung-datenschutz-und-sicherheit.html
+    Zugriffsprotokollierung: menu-technische-umsetzung-audit-service.html
   Schnittstellen:
     Query API: menu-schnittstellen-query-api.html
     Operation API: menu-schnittstellen-operation-api.html
@@ -39,7 +39,7 @@ menu:
     Referenzen: referenced.html
     Downloads: downloads.html
     Release Notes: release-notes.html
-    Steckbriefe: spec-sheet.html
+    #Steckbriefe: spec-sheet.html
     Lizenz: license.html
 
 pages:
@@ -53,6 +53,8 @@ pages:
       title: "Technische Umsetzung - Technische Anwendungsfälle"
     menu-technische-umsetzung-datenschutz-und-sicherheit.md:
       title: "Schnittstellen - Datenschutz und Sicherheit"
+    menu-technische-umsetzung-audit-service.md:
+      title: "Zugriffsprotokollierung mit AuditEvent"
   menu-schnittstellen-query-api.md:
     title: "Schnittstellen - Query API"
     query-api-consent.md:
@@ -64,7 +66,7 @@ pages:
     query-api-task.md:
       title: "Query API: Task"
       query-api-task-req-fdv.md:
-        title: "E-Rezept-FdV Anforderungen: Task"
+        title: "Client Anforderungen: Task"
       query-api-task-req-fd.md:
         title: "Server Anforderungen: Task"
   menu-schnittstellen-operation-api.md:
@@ -117,3 +119,5 @@ parameters:
   path-pages:
     - input/pagecontent
     - input/content
+  no-validate:
+    - StructureDefinition/logical-eu-dispense-data

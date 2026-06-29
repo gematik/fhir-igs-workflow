@@ -1,0 +1,27 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 743567231ea0c653b32c1ed9df3ab1e49f846abfb32261ba5a0f34f4d1a03e3c
+created: '2026-03-23T10:57:49.809351'
+date: '2026-05-15T12:58:35.143835'
+key: IG-TIFLOW-ERP-98
+modified: '2026-05-15T12:58:35.143835'
+release_status: MODIFIED
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate prüfen und, wenn die Verordnung als Mehrfachverordnung\
+  \ (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true)\
+  \ und als Ersatzverordnung ( code=\"10\" oder \"11\" oder \"17\" in Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis\
+  \ in Bundle.Composition.extention:rechtsgrundlage) gekennzeichnet ist, die Operation\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad\
+  \ Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_EREZEPT_MVO_INVALID</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
+  \ weil für Ersatzverordnungen keine Mehrfachverordnungen zulässig sind."
+title: TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - keine Ersatzverordnung
+version: 1

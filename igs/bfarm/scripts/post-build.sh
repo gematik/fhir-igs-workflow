@@ -1,0 +1,137 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/../../.." && pwd)"
+
+
+resolve_hapi_validator_jar() {
+	local -a candidates=()
+
+	if [[ -n "${HAPI_VALIDATOR_JAR:-}" ]]; then
+		candidates+=("$HAPI_VALIDATOR_JAR")
+	fi
+
+	candidates+=(
+		"$ROOT_DIR/input-cache/current_hapi_validator.jar"
+		"$HOME/dev/validators/current_hapi_validator.jar"
+	)
+
+	local candidate
+	for candidate in "${candidates[@]}"; do
+		if [[ -n "$candidate" && -f "$candidate" ]]; then
+			echo "$candidate"
+			return 0
+		fi
+	done
+
+	return 1
+}
+
+resolve_mapping_bundle_source() {
+	local -a candidates=(
+		"./fsh-generated/resources/Bundle-Mapping-Bundle.json"
+		"./fsh-generated/resources/example-case-04-mapping-bundle.json"
+	)
+
+	local candidate
+	for candidate in "${candidates[@]}"; do
+		if [[ -f "$candidate" ]]; then
+			echo "$candidate"
+			return 0
+		fi
+	done
+
+	local first_generated
+	first_generated="$(find ./fsh-generated/resources -maxdepth 1 -type f -name '*-mapping-bundle.json' | sort | head -n 1)"
+	if [[ -n "$first_generated" ]]; then
+		echo "$first_generated"
+		return 0
+	fi
+
+	return 1
+}
+
+# Run scripts that need artifacts from IG Publisher
+./tests/run-all-tests.sh
+./scripts/fml_table.sh
+
+# Run Transformation of Mapping Bundle
+HAPI_VALIDATOR_JAR_PATH="$(resolve_hapi_validator_jar || true)"
+
+if [[ -z "$HAPI_VALIDATOR_JAR_PATH" ]]; then
+	echo "❌ Error: HAPI validator not found." >&2
+	echo "Looked in:" >&2
+	echo "  - HAPI_VALIDATOR_JAR env var" >&2
+	echo "  - $ROOT_DIR/input-cache/current_hapi_validator.jar" >&2
+	echo "  - $HOME/dev/validators/current_hapi_validator.jar" >&2
+	echo >&2
+	echo "Set HAPI_VALIDATOR_JAR to your validator_cli.jar path or place the jar in one of the locations above." >&2
+	echo "Download from: https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar" >&2
+	exit 1
+fi
+
+MAPPING_BUNDLE_SOURCE="$(resolve_mapping_bundle_source || true)"
+
+if [[ -z "$MAPPING_BUNDLE_SOURCE" ]]; then
+	echo "❌ Error: No mapping bundle source file found for StructureMap transform." >&2
+	echo "Looked in:" >&2
+	echo "  - ./fsh-generated/resources/Bundle-Mapping-Bundle.json" >&2
+	echo "  - ./fsh-generated/resources/example-case-04-mapping-bundle.json" >&2
+	echo "  - ./fsh-generated/resources/*-mapping-bundle.json" >&2
+	exit 1
+fi
+
+TRANSFORM_MAP_URL="https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy"
+TRANSFORM_OUTPUT="./input/content/Bundle-erp-t-prescription-carbon-copy-actual.json"
+
+# Create a temporary directory with mapping artifacts only (excluding examples).
+# The validator loads all JSON files from -ig directories; keep it lean to avoid
+# type-casting issues from example bundles while still including required profiles.
+TEMP_IG_DIR=$(mktemp -d)
+trap "rm -rf '$TEMP_IG_DIR'" EXIT
+
+for sm_file in ./fsh-generated/resources/StructureMap-*.json; do
+	cp "$sm_file" "$TEMP_IG_DIR/"
+done
+
+for sd_file in ./fsh-generated/resources/StructureDefinition-*.json; do
+	cp "$sd_file" "$TEMP_IG_DIR/"
+done
+
+# Try modern 'transform URL input' syntax first (HAPI 6.8+).
+# Fall back to legacy 'input -transform URL' syntax for older validators (HAPI 6.5.x).
+# Note: always use the temp IG dir to avoid loading example bundles.
+set +e
+java -jar "$HAPI_VALIDATOR_JAR_PATH" \
+	transform "$TRANSFORM_MAP_URL" \
+	"$MAPPING_BUNDLE_SOURCE" \
+	-version 4.0.1 \
+	-output "$TRANSFORM_OUTPUT" \
+	-ig "$TEMP_IG_DIR" \
+	-ig de.gematik.erezept-workflow.r4 \
+	-ig kbv.ita.erp \
+	-ig de.gematik.ti#1.1.0
+transform_rc=$?
+set -e
+
+if [[ $transform_rc -ne 0 ]]; then
+	echo "⚠️ Modern transform syntax failed (exit $transform_rc). Retrying with legacy -transform syntax..." >&2
+	set +e
+	java -jar "$HAPI_VALIDATOR_JAR_PATH" \
+		"$MAPPING_BUNDLE_SOURCE" \
+		-transform "$TRANSFORM_MAP_URL" \
+		-version 4.0.1 \
+		-output "$TRANSFORM_OUTPUT" \
+		-ig "$TEMP_IG_DIR" \
+		-ig de.gematik.erezept-workflow.r4 \
+		-ig kbv.ita.erp \
+		-ig de.gematik.ti#1.1.0
+	transform_rc=$?
+	set -e
+fi
+
+if [[ $transform_rc -ne 0 ]]; then
+	echo "❌ Transform command failed with exit code $transform_rc." >&2
+	exit 1
+fi

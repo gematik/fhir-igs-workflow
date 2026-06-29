@@ -1,11 +1,11 @@
 @startuml
-title UC Abgabe von E-Rezepten im europäischen Ausland
+title UC 4.22 - Abgabe von E-Rezepten im europäischen Ausland
 
 autonumber "<b>[0]"
 actor Versicherte as Ver
 actor "LE-EU" as LEEU
 participant "eHDSI / NCPeH-FD\nDeutschland" as NCP
-participant "E-Rezept-Fachdienst" as FD
+participant "TI-Flow-Fachdienst" as FD
 
 opt "Zugriffscode zeitlich ungültig"
   Ver -> LEEU : neuen Zugriffscode übergeben
@@ -19,7 +19,7 @@ NCP -> NCP : Prüfung Permission bzw. Rolle
 NCP -> NCP : Transformierung und Transkodierung
 
 loop für jeden eDispensation Dokument (CDA)
-  NCP -> FD : POST /Task/Rezepte-ID/$eu-close\n{AuthN-Token, KVNR, Zugriffscode,\nMedicationDispense, laendercode,\npractitionerName, practitionerRole,\npointOfCare, healthcare-facility-type}
+  NCP -> FD : POST /Task/Rezepte-ID/$eu-close\n{KVNR, Zugriffscode,\nMedicationDispense, laendercode,\npractitionerName, practitionerRole,\npointOfCare, healthcare-facility-type}
 
   FD -> FD : Prüfung Einwilligung für KVNR
   FD -> FD : Prüfung Zugriffscode für KVNR\n(KVNR, Zugriffscode, laendercode,\naktueller Zeitpunkt)

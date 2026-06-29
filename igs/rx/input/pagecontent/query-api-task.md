@@ -8,14 +8,13 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 |---|---|---|
 |Versicherter|GET|Liste von Task abrufen|
 |Versicherter|GET /&#60;id&#62;|Spezifischen Task abrufen|
-|Apotheke|GET ?hcv=|E-Rezepte von Versicherten abrufen (VSDM)|
 |Apotheke|GET X-PoPP-Token|E-Rezepte von Versicherten abrufen (PoPP)|
 |Apotheke|GET /&#60;id&#62;?ac=|Recovery Secret|
 |Apotheke|GET /&#60;id&#62;?secret=|Quittung erneut abrufen|
 
 ### Anforderungen an Schnittstelle
 
-- [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.html): Anforderungen an den E-Rezept-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [FdV-Anforderungen für Task-Query](./query-api-task-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 - [AVS-Anforderungen für Task-Query](./query-api-task-req-avs.html): Anforderungen an das AVS zur Nutzung der Schnittstelle.
 
@@ -25,8 +24,24 @@ Anfragen an die <i>Task</i>-Ressource können über die RESTful API mittels HTTP
 
 #### API Beschreibung
 
-- [API-ERP: Alle E-Rezepte ansehen](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#alle-e-rezepte-ansehen)
-- [API-ERP: E-Rezept erneut abrufen abgebend](https://github.com/gematik/api-erp/blob/master/docs/erp_abrufen.adoc#e-rezept-erneut-abrufen)
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-interaction="search-type">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
+		</pre>
+	</div>
+<!--
+	<div id="Response-Examples">
+		<!-- TODO: Replace placeholder searchset with a representative task query example. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleRxTaskSearchset XML %}
+		</div>
+	</div>
+-->
+</div>
 
 ### Instance API
 
@@ -34,4 +49,21 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 
 #### API Beschreibung
 
-- [API-ERP: Ein einzelnes E-Rezept abrufen und in der Apotheke einlösen](https://github.com/gematik/api-erp/blob/master/docs/erp_versicherte.adoc#ein-einzelnes-e-rezept-abrufen-und-in-der-apotheke-einl%C3%B6sen)
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-interaction="read">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
+		</pre>
+	</div>
+<!--
+	<div id="Response-Examples">
+		<!-- TODO: Add a dedicated Task read example for RX. -->
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleRxTaskSearchset XML %}
+		</div>
+	</div>
+-->
+</div>

@@ -1,19 +1,19 @@
 @startuml
-title UC Liste ausgewählter E-Rezepte eines Versicherten abrufen
+title UC 4.21 - Liste ausgewählter E-Rezepte eines Versicherten abrufen
 
 autonumber "<b>[0]"
 actor Versicherte as Ver
 actor "LE-EU" as LEEU
 participant "eHDSI / NCPeH-FD\nDeutschland" as NCP
-participant "E-Rezept-Fachdienst" as FD
+participant "TI-Flow-Fachdienst" as FD
 
-Ver -> LEEU : Abstimmung zu einzulösenden E-Rezepten
+Ver -> LEEU : Abstimmung zu\neinzulösenden E-Rezepten
 LEEU -> NCP : Abfrage Liste ausgewählter E-Rezepte
 
 NCP -> NCP : Prüfung Behandlungsverhältnis\nLE-EU und Versicherter
 NCP -> NCP : Prüfung Permission bzw. Rolle
 
-NCP -> FD : POST /$get-eu-prescriptions\n{AuthN-Token, KVNR, Zugriffscode,\nListe von Task-IDs, laendercode,\npractitionerName, practitionerRole,\npointOfCare, healthcare-facility-type,\nrequesttype}
+NCP -> FD : POST /$get-eu-prescriptions\n{KVNR, Zugriffscode,\nListe von Task-IDs, laendercode,\npractitionerName, practitionerRole,\npointOfCare, healthcare-facility-type,\nrequesttype}
 
 FD -> FD : Prüfung Einwilligung für KVNR
 FD -> FD : Prüfung Zugriffscode für KVNR\n(KVNR, Zugriffscode, laendercode,\naktueller Zeitpunkt)

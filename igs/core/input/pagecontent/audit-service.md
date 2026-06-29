@@ -1,48 +1,101 @@
 
 ### Zugriffsprotokoll für den Versicherten
 
-Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Diese Zugriffsprotokolle sind unabhängig vom Systemprotokoll und stehen ausschließlich dem Versicherten zur Wahrnehmung seiner Betroffenenrechte zur Einsicht zur Verfügung.
+Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Diese Zugriffsprotokolle sind unabhängig vom Systemprotokoll und stehen ausschließlich dem Versicherten zur Wahrnehmung seiner Betroffenenrechte zur Einsicht zur Verfügung.
 
 <!-- A_19296-04 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-30" title="E-Rezept-Fachdienst - Inhalt Protokolleintrag" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A30" title="TI-Flow-Fachdienst - Inhalt Protokolleintrag" version="0">
 	<meta lockversion="false"/>
-	<actor name="eRp_FD">
-    	<testProcedure id="Produkttest"/>
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   </actor>
-  Der E-Rezept-Fachdienst MUSS einen Protokolleintrag mit den folgenden Werten befüllen:
-	<ul>
-    <li>AuditEvent.text: Generierung eines HTML-&lt;div&gt;-Elements mit lesbarer Beschreibung in einfacher Sprache</li>
-    <li>AuditEvent.type: Fester Wertrest gemäß [CodeSystem: Audit Event ID]</li>
-    <li>AuditEvent.subtype: aus dem ValueSet [ValueSet http://hl7.org/fhir/ValueSet/auditevent-sub-type] gemäß [CodeSystem http://hl7.org/fhir/restful-interaction]:
-    <ul>
-      <li>create beim Hinzufügen/Speichern/Anlegen eines Datenobjekts mit Versichertenbezug (mit Ausnahme von AuditEvent- und Communication-Ressource)</li>
-      <li>read beim lesenden Zugriff auf ein Datenobjekt mit Versichertenbezug</li>
-      <li>update, wenn das Datenobjekt mit Versichertenbezug geändert/aktualisiert wird</li>
-      <li>delete, wenn das Datenobjekt mit Versichertenbezug manuell oder automatisch gelöscht wird</li>
-    </ul>
-    </li>
-    <li>AuditEvent.action: analog AuditEvent.subType (C, R, U, D) gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-action]</li>
-    <li>AuditEvent.recorded: aktuelle Systemzeit des E-Rezept-Fachdienstes</li>
-    <li>AuditEvent.outcome: Ergebnis der aufgerufenen Operation gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-outcome] (0 = Erfolg, 4 = Fehler auf Clientseite, 8 = Serverfehler)</li>
-    <li>AuditEvent.agent.type: Fester Werthumanuser bzw. bei Übermittlung an ePA oder NCPeH-FDdataprocessor aus [CodeSystem: Security Role Type (Experimental)]</li>
-    <li>AuditEvent.agent.name:Lesbarer Name aus ID_TOKEN des Zugreifenden, der die zu protokollierende Aktion getriggert hat, z.B. "Praxis Dr. Müller, Bahnhofstr. 78" oder Versicherter z.B. "Max Mustermann" bzw. bei Übermittlung an ePA "E-Rezept-Fachdienst"</li>
-    <li>AuditEvent.agent.who: KVNR bzw. Telematik-ID des zugreifenden Nutzers aus ID_TOKEN, der diesen Protokolleintrag ausgelöst hat</li>
-    <li>AuditEvent.agent.requestor: Fester Wert false, da keine Protokolleinträge von außen erzeugt werden</li>
-    <li>AuditEvent.soure.site: Fester Wert E-Rezept-Fachdienst</li>
-    <li>AuditEvent.soure.observer: Device-Informationen des E-Rezept-Fachdienstes (status, serialnumber=gemäß Release)</li>
-    <li>AuditEvent.entity.what: Referenz auf das durch den Abruf betroffene Datenobjekt Task, ChargeItem, MedicationDispense, Consent oder Objekt der Zugriffsberechtigung</li>
-    <li>AuditEvent.entity.name: Eintrag der KVNR des betroffenen Versicherten aus dem Identifier des protokollierten Datenobjekts (String)</li>
-    <li>AuditEvent.entity.description: Rezept-ID als Identifier, wird übernommen aus MedicationDispense, ChargeItem oder Task bzw. Consent.category.coding.code bei Anlegen oder Löschen eines Consent bzw. countryCode bei Anlegen oder Löschen einer Zugriffsberechtigung</li>
-  </ul>
+  Der TI-Flow-Fachdienst MUSS einen Protokolleintrag mit den folgenden Werten befüllen:
+<table>
+  <thead>
+    <tr>
+      <th>Element in AuditEvent</th>
+      <th>Befüllung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AuditEvent.text</td>
+      <td>Generierung eines HTML-<code>&lt;div&gt;</code>-Elements mit lesbarer Beschreibung in einfacher Sprache</td>
+    </tr>
+    <tr>
+      <td>AuditEvent.type</td>
+      <td>Fester Wert gemäß [CodeSystem: Audit Event ID]</td>
+    </tr>
+    <tr>
+      <td>AuditEvent.subtype</td>
+      <td>Aus dem ValueSet [ValueSet http://hl7.org/fhir/ValueSet/auditevent-sub-type] gemäß [CodeSystem http://hl7.org/fhir/restful-interaction]:
+        <ul>
+          <li><code>create</code> beim Hinzufügen/Speichern/Anlegen eines Datenobjekts mit Versichertenbezug (mit Ausnahme von AuditEvent- und Communication-Ressource)</li>
+          <li><code>read</code> beim lesenden Zugriff auf ein Datenobjekt mit Versichertenbezug</li>
+          <li><code>update</code>, wenn das Datenobjekt mit Versichertenbezug geändert/aktualisiert wird</li>
+          <li><code>delete</code>, wenn das Datenobjekt mit Versichertenbezug manuell oder automatisch gelöscht wird</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>AuditEvent.action</td>
+      <td>Analog AuditEvent.subType (C, R, U, D) gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-action]</td>
+    </tr>
+    <tr>
+      <td>AuditEvent.recorded</td>
+      <td>Aktuelle Systemzeit des TI-Flow-Fachdienstes</td>
+    </tr>
+    <tr>
+      <td>AuditEvent.outcome</td>
+      <td>Ergebnis der aufgerufenen Operation gemäß [ValueSet http://hl7.org/fhir/ValueSet/audit-event-outcome] (<code>0</code> = Erfolg, <code>4</code> = Fehler auf Clientseite, <code>8</code> = Serverfehler)</td>
+    </tr>
+    <tr>
+      <td>AuditEvent.agent.type</td>
+      <td>Fester Wert <code>humanuser</code> bzw. bei Übermittlung an ePA oder NCPeH-FD <code>dataprocessor</code> aus [CodeSystem: Security Role Type (Experimental)]</td>
+    </tr>
+    <tr>
+      <td>AuditEvent.agent.name</td>
+      <td><code>zeta-user-info.commonName</code> bzw. bei Übermittlung an ePA <code>"TI-Flow-Fachdienst"</code></td>
+    </tr>
+    <tr>
+      <td>AuditEvent.agent.who</td>
+      <td><code>zeta-user-info.identifier</code></td>
+    </tr>
+    <tr>
+      <td>AuditEvent.agent.requestor</td>
+      <td>Fester Wert <code>false</code>, da keine Protokolleinträge von außen erzeugt werden</td>
+    </tr>
+    <tr>
+      <td>AuditEvent.source.site</td>
+      <td>Fester Wert <code>TI-Flow-Fachdienst</code></td>
+    </tr>
+    <tr>
+      <td>AuditEvent.source.observer</td>
+      <td>Device-Informationen des TI-Flow-Fachdienstes (<code>status</code>, <code>serialnumber</code> = gemäß Release)</td>
+    </tr>
+    <tr>
+      <td>AuditEvent.entity.what</td>
+      <td>Referenz auf das durch den Abruf betroffene Datenobjekt Task, ChargeItem, MedicationDispense, Consent oder Objekt der Zugriffsberechtigung</td>
+    </tr>
+    <tr>
+      <td>AuditEvent.entity.name</td>
+      <td>Eintrag der KVNR des betroffenen Versicherten aus dem Identifier des protokollierten Datenobjekts (String)</td>
+    </tr>
+    <tr>
+      <td>AuditEvent.entity.description</td>
+      <td>Task-ID als Identifier, wird übernommen aus MedicationDispense, ChargeItem oder Task bzw. <code>Consent.category.coding.code</code> bei Anlegen oder Löschen eines Consent bzw. <code>countryCode</code> bei Anlegen oder Löschen einer Zugriffsberechtigung</td>
+    </tr>
+  </tbody>
+</table>
 </requirement>
 
 <!-- A_19284-14 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-31" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A31" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Operationen" version="0">
 	<meta lockversion="false"/>
-	<actor name="eRp_FD">
-    	<testProcedure id="Produkttest"/>
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der E-Rezept-Fachdienst MUSS jeden Aufruf von Operationen gemäß "TAB_eRPFD_004 Versichertenprotokoll" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+	Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß "TAB_TIFlowFD_004 Versichertenprotokoll" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
 </requirement>
 
 <table>
@@ -50,139 +103,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
     <th>Operation</th>
     <th>Rolle des zugreifenden Nutzers</th>
     <th>Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>
-  </tr>
-  <tr>
-    <td>http GET /Task/&#60;id&#62;</td>
-    <td>Versicherter/Vertreter</td>
-    <td>Versicherter/Vertreter hat das E-Rezept heruntergeladen</td>
-  </tr>
-  <tr>
-    <td>http GET /Task/&#60;id&#62;?secret</td>
-    <td>Apotheke/Kostenträger</td>
-    <td>Apotheke/Kostenträger hat die E-Rezept-Quittung heruntergeladen</td>
-  </tr>
-  <tr>
-    <td>http GET /Task</td>
-    <td>Apotheke (VSDM)</td>
-    <td>
-        <ul>
-            <li>im Erfolgsfall beim passenden AcceptPN3VSDMxx=false: Apotheke hat mit Ihrer eGK die Liste der offenen E-Rezepte abgerufen.</li>
-            <li>im Erfolgsfall bei PN3 und passende AcceptPN3VSDMxx=true: Apotheke hat mit Ihrer eGK die Liste der offenen E-Rezepte abgerufen. (Offline-Check wurde akzeptiert)</li>
-            <li>im Fehlerfall PN3 und passende AcceptPN3VSDMxx=false:  Apotheke konnte aufgrund eines Fehlerfalls nicht die Liste der offenen E-Rezepte mit Ihrer eGK abgerufen. (Offline-Check wurde nicht akzeptiert)</li>
-            <li>im sonstigen Fehlerfall: Apotheke konnte aufgrund eines Fehlerfalls nicht die Liste der offenen E-Rezepte mit Ihrer eGK abrufen.</li>
-        </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>http GET /Task</td>
-    <td>Apotheke (PoPP)</td>
-    <td>Die Apotheke hat die Liste der einlösbaren E-Rezepte abgerufen durch Autorisierung mittels &#60;PoPP-Anwendungsfall&#62;.</td>
-  </tr>
-  <tr>
-    <td>http GET /Task</td>
-    <td>Kostenträger</td>
-    <td>Krankenkasse hat die Liste der einlösbaren Verordnungen (DiGA-Verordnungen) abgerufen.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$activate</td>
-    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut</td>
-    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut hat das E-Rezept bereitgestellt.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$accept</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat das E-Rezept heruntergeladen</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$accept</td>
-    <td>Kostenträger</td>
-    <td>Krankenkasse hat die Verordnung heruntergeladen</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$reject</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat das E-Rezept zurückgegeben.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$reject</td>
-    <td>Kostenträger</td>
-    <td>Krankenkasse hat die Verordnung zurückgegeben.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$dispense</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat das E-Rezept beliefert.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$close</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat das E-Rezept abgeschlossen.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$close</td>
-    <td>Kostenträger</td>
-    <td>Krankenkasse hat die Verordnung abgeschlossen.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$abort</td>
-    <td>Versicherter/Vertreter</td>
-    <td>Versicherter/Vertreter hat das E-Rezept gelöscht.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$abort</td>
-    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut</td>
-    <td>Arztpraxis/Zahnarztpraxis/Krankenhaus/Psychotherapeut hat das E-Rezept gelöscht.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$abort</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat das E-Rezept gelöscht.</td>
-  </tr>
-  <tr>
-    <td>http POST /Task/&#60;id&#62;/$eu-close</td>
-    <td>NCPeH-FD</td>
-    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihr E-Rezept eingelöst.</td>
-  </tr>
-  <tr>
-    <td>http PATCH /Task/&#60;id&#62;</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat Markierung zu Einlösung im EU Ausland gespeichert</td>
-  </tr>
-  <tr>
-    <td>http GET /MedicationDispense</td>
-    <td>Versicherter/Vertreter</td>
-    <td>Versicherter/Vertreter hat Medikament-Informationen heruntergeladen.</td>
-  </tr>
-  <tr>
-    <td>http DELETE /ChargeItem/&#60;id&#62;</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat Abrechnungsinformation gelöscht</td>
-  </tr>
-  <tr>
-    <td>http GET /ChargeItem/&#60;id&#62;</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat Abrechnungsinformation gelesen</td>
-  </tr>
-  <tr>
-    <td>http GET /ChargeItem/&#60;id&#62;</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat Abrechnungsinformation gelesen</td>
-  </tr>
-  <tr>
-    <td>http POST /ChargeItem</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat Abrechnungsinformation bereitgestellt</td>
-  </tr>
-  <tr>
-    <td>http PATCH /ChargeItem/&#60;id&#62;</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat Markierung zu Abrechnungsinformation gespeichert</td>
-  </tr>
-  <tr>
-    <td>http PUT /ChargeItem/&#60;id&#62;</td>
-    <td>Apotheke</td>
-    <td>Apotheke hat Abrechnungsinformation geändert</td>
-  </tr>
+  </tr>  
   <tr>
     <td>http POST /Consent</td>
     <td>Versicherter</td>
@@ -192,32 +113,7 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
     <td>http DELETE /Consent</td>
     <td>Versicherter</td>
     <td>Versicherter hat Einwilligung für "Beschreibung für Consent.category.coding.code" widerrufen.</td>
-  </tr>
-  <tr>
-    <td>http POST /$grant-eu-access-permission</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat eine Zugriffsberechtigung zum Einlösen von E-Rezepten für das Land "Land B" erteilt.</td>
-  </tr>
-  <tr>
-    <td>http DELETE /$revoke-eu-access-permission</td>
-    <td>Versicherter</td>
-    <td>Versicherter hat die Zugriffsberechtigung zum Einlösen von E-Rezepten für das Land "Land B" widerrufen.</td>
-  </tr>
-  <tr>
-    <td>POST /$get-eu-prescriptions<br>Parameters.parameter:requestData.part:requesttype = demographics</td>
-    <td>NCPeH-FD</td>
-    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre Patientendaten abgerufen.</td>
-  </tr>
-  <tr>
-    <td>POST /$get-eu-prescriptions<br>Parameters.parameter:requestData.part:requesttype = e-prescriptions-list</td>
-    <td>NCPeH-FD</td>
-    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre ausgwählten und einlösbaren E-Rezepte abgerufen.</td>
-  </tr>
-  <tr>
-    <td>POST /$get-eu-prescriptions<br>Parameters.parameter:requestData.part:requesttype = e-prescriptions-retrieval</td>
-    <td>NCPeH-FD</td>
-    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre einzulösenden E-Rezepte abgerufen.</td>
-  </tr>
+  </tr>  
   <tr>
     <td>http POST /pushers/set</td>
     <td>Versicherter</td>
@@ -228,29 +124,28 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
         </ul>
     </td>
   </tr>
-  <tr>
 </table>
-<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004 Versichertenprotokoll</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>TAB_TIFlowFD_004 Versichertenprotokoll</figcaption></div>
 
 <table>
-<tr>
-<th>Wert in proofMethod</th>
-<th>Wert für &#60;PoPP-Anwendungsfall&#62;</th>
-</tr>
-<tr>
-<td>ehc-practitioner-*</td>
-<td>eGK in der Apotheke</td>
-</tr>
+  <tr>
+    <th>Wert in proofMethod</th>
+    <th>Wert für &#60;PoPP-Anwendungsfall&#62;</th>
+  </tr>
+  <tr>
+    <td>ehc-practitioner-*</td>
+    <td>eGK in der Apotheke</td>
+  </tr>
 </table>
-<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll PoPP Anwendungsfall</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>TAB_TIFlowFD_004c Versichertenprotokoll PoPP Anwendungsfall</figcaption></div>
 
 <!-- A_19284-14 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-32" title="E-Rezept-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A32" title="TI-Flow-Fachdienst - Versichertenprotokoll zu automatischen Löschen" version="0">
 	<meta lockversion="false"/>
-	<actor name="eRp_FD">
-    	<testProcedure id="Produkttest"/>
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der E-Rezept-Fachdienst MUSS beim automatischen Löschen nach Erreichen einer Löschfrist gemäß "TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+	Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Erreichen einer Löschfrist gemäß "TAB_TIFlowFD_004a Versichertenprotokoll nach automatischen Löschen" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
 </requirement>
 
 <table>
@@ -261,34 +156,34 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
   </tr>
   <tr>
     <td>Ressource Task</td>
-    <td>E-Rezept-Fachdienst</td>
+    <td>TI-Flow-Fachdienst</td>
     <td>Veraltete E-Rezepte vom Fachdienst automatisch gelöscht.</td>
   </tr>
   <tr>
     <td>Ressource MedicationDispense</td>
-    <td>E-Rezept-Fachdienst</td>
+    <td>TI-Flow-Fachdienst</td>
     <td>Veraltete Medikament-Informationen vom Fachdienst automatisch gelöscht.</td>
   </tr>
   <tr>
     <td>Ressource Communication</td>
-    <td>E-Rezept-Fachdienst</td>
+    <td>TI-Flow-Fachdienst</td>
     <td>Veraltete Nachricht vom Fachdienst automatisch gelöscht.</td>
   </tr>
   <tr>
     <td>Ressource ChargeItem</td>
-    <td>E-Rezept-Fachdienst</td>
+    <td>TI-Flow-Fachdienst</td>
     <td>Veraltete Abrechnungsinformation vom Fachdienst automatisch gelöscht.</td>
   </tr>
 </table>
-<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004a Versichertenprotokoll nach automatischen Löschen</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>TAB_TIFlowFD_004a Versichertenprotokoll nach automatischen Löschen</figcaption></div>
 
 <!-- A_19284-14 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-33" title="E-Rezept-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A33" title="TI-Flow-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung" version="0">
 	<meta lockversion="false"/>
-	<actor name="eRp_FD">
-    <testProcedure id="Produkttest"/>
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   </actor>
-	Der E-Rezept-Fachdienst MUSS beim automatischen Löschen nach Fehlerbehandlung gemäß "TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+	Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Fehlerbehandlung gemäß "TAB_TIFlowFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
 </requirement>
 
 <table>
@@ -299,94 +194,26 @@ Der E-Rezept-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen all
   </tr>
   <tr>
     <td>Ressource Pusher</td>
-    <td>E-Rezept-Fachdienst</td>
+    <td>TI-Flow-Fachdienst</td>
     <td>Fachdienst hat das Gerät "device_display_name" für Push-Nachrichten deregistriert.</td>
   </tr>
 </table>
-<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>TAB_TIFlowFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung</figcaption></div>
 
 <!-- A_19302 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-34" title="E-Rezept-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A34" title="TI-Flow-Fachdienst - Protokolleintrag Versichertenprotokoll leicht verständlich" version="0">
 	<meta lockversion="false"/>
-	<actor name="eRp_FD">
-    <testProcedure id="Produkttest"/>
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   </actor>
-	Der E-Rezept-Fachdienst MUSS in jedem zu tätigenden Eintrag des Protokolls für Versicherte einen lesbaren Text in einfacher Sprache (deutsch und englisch) erzeugen, der mindestens den Namen des Zugreifenden, die auslösende Operation und das Ergebnis der Operation umfasst, damit Versicherte ohne technisches Vorwissen den Inhalt des Zugriffsprotokolls verstehen können.
+	Der TI-Flow-Fachdienst MUSS in jedem zu tätigenden Eintrag des Protokolls für Versicherte einen lesbaren Text in einfacher Sprache (deutsch und englisch) erzeugen, der mindestens den Namen des Zugreifenden, die auslösende Operation und das Ergebnis der Operation umfasst, damit Versicherte ohne technisches Vorwissen den Inhalt des Zugriffsprotokolls verstehen können.
 </requirement>
 
 <!-- A_22217 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-35" title="E-Rezept-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A35" title="TI-Flow-Fachdienst - Protokollierung - keine Angabe zu organizationName" version="0">
 	<meta lockversion="false"/>
-	<actor name="eRp_FD">
-    	<testProcedure id="Produkttest"/>
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der E-Rezept-Fachdienst MUSS, wenn im ACCESS_TOKEN die Angabe zur "organizationName" mit NULL gefüllt ist, in der Protokollierung als agentname "unbekannt" verwenden.
+	Der TI-Flow-Fachdienst MUSS, wenn in den Nutzerinformationen zeta-user-info.commonName = NULL ist, in der Protokollierung als AuditEvent.agent.name "unbekannt" verwenden.
 </requirement>
-
-#### Zugriffsprotokollierung für Übermittlung für ePA Medication Service
-
-Der E-Rezept-Fachdienst protokolliert das erfolgreiche Übermitteln von Daten für jedes E-Rezept an den Medication Service im Zugriffsprotokoll des Versicherten. Für Übermittlungsversuche, welche nicht erfolgreich durchgeführt werden konnten und für die die Übermittlung erneut versucht wird, wird kein Eintrag im Zugriffsprotokoll angelegt.
-
-<!-- A_25962 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-36" title="E-Rezept-Fachdienst - ePA - Medication Service - Versichertenprotokoll" version="0">
-	<meta lockversion="false"/>
-	<actor name="eRp_FD">
-    <testProcedure id="Produkttest"/>
-  </actor>
-	Der E-Rezept-Fachdienst MUSS einen Aufruf der folgenden Endpunkte, für jeden betroffene E-Rezept abhängig von Ergebnis des Operationsaufrufes gemäß Tab_eRPFD_020 im Zugriffsprotokoll des Versicherten protokollieren:
-  <table>
-    <tr>
-      <th>Endpunkt</th>
-      <th>Ergebnis der Operation</th>
-      <th>Beschreibung (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>
-    </tr>
-    <tr>
-      <td>/epa/medication/api/{version}/fhir/$provide-prescription-erp</td>
-      <td>erfolgreich</td>
-      <td>Die Verordnung wurde in die Patientenakte übertragen.</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>final nicht übermittelbar</td>
-      <td>Die Verordnung konnte nicht in die Patientenakte übertragen werden.</td>
-    </tr>
-    <tr>
-      <td>/epa/medication/api/{version}/fhir/$provide-dispensation-erp</td>
-      <td>erfolgreich</td>
-      <td>Die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>final nicht übermittelbar</td>
-      <td>Die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>
-    </tr>
-    <tr>
-      <td>/epa/medication/api/{version}/fhir/$cancel-prescription-erp</td>
-      <td>erfolgreich</td>
-      <td>Die Löschinformation zum E-Rezept wurde in die Patientenakte übermittelt.</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>final nicht übermittelbar</td>
-      <td>Die Löschinformation zum E-Rezept konnte nicht in die Patientenakte übermittelt werden.</td>
-    </tr>
-    <tr>
-      <td>/epa/medication/api/{version}/fhir/$cancel-dispensation-erp</td>
-      <td>erfolgreich</td>
-      <td>Die Löschinformation für die Medikamentenabgabe wurde in die Patientenakte übertragen.</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>final nicht übermittelbar</td>
-      <td>Die Löschinformation für die Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>
-    </tr>
-  </table>
-  <div><figcaption><strong>Tabelle: </strong>Tab_eRPFD_020 Versichertenprotokoll für ePA Medication Service</figcaption></div>
-
-</requirement>
-
-Das Ergebnis "final nicht übermittelbar" bedeutet, dass die Übermittlung auch nach den definierten Wiederholversuchen nicht erfolgreich durchgeführt werden konnte.
-
-Für Übermittlungsversuche, welche nicht erfolgreich durchgeführt werden konnten und für die die Übermittlung erneut versucht werden soll, wird kein Eintrag im Zugriffsprotokoll angelegt.
-
-Wenn ein Versicherter dem Einstellen von Verordnungsdaten und Dispensierinformationen durch den E-Rezept-Fachdienst widersprochen hat, wird keine Übermittlung von Daten gestartet (siehe A_25951-*). In dem Fall wird kein Eintrag im Zugriffsprotokoll angelegt.

@@ -1,0 +1,40 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: f5aa93df5ffeccdb976a5044289b8b305b6c56dd5c7f609003ea2395ae7a7a0e
+created: '2026-06-25T11:30:11.288282'
+date: '2026-06-25T11:30:11.288284'
+key: IG-TIFLOW-CORE-A320
+modified: '2026-06-25T11:30:11.288283'
+release_status: NEW
+source: input/pagecontent/query-api-communication-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation\
+  \ POST auf den Endpunkt /Communication die im http-Request-Body übergebene Communications-Ressource\
+  \ gegen das aus der Kommunikationsbeziehung ableitbare, zulässige Schema gemäß TAB_eRPFD_008\
+  \ prüfen und den Aufruf bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n\
+  \    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n    <tr>\n        <th>HTTP-Code</th>\n        <td>400 - Bad Request</td>\n\
+  \    </tr>\n    <tr>\n        <th>Severity</th>\n        <td>error</td>\n    </tr>\n\
+  \    <tr>\n        <th>Code</th>\n        <td>invalid</td>\n    </tr>\n    <tr>\n\
+  \        <th>Details Code</th>\n        <td>SVC_VALIDATION_FAILED</td>\n    </tr>\n\
+  \    <tr>\n        <th>Details Text</th>\n        <td>FHIR Profile Validation Failed</td>\n\
+  \    </tr>\n    </table> \n    abbrechen, damit ausschließlich konforme E-Rezept-Nachrichten\
+  \ ausgetauscht werden.\n    <table>\n    <tr> \n\t\t<th>sender</th>\n\t\t<th>recipient</th>\n\
+  \        <th>zusätzliche Bedingung</th>\n        <th>Schema</th>\n\t</tr>\n\t<tr>\
+  \ \n\t\t<td>KVNR</td>\n\t\t<td>Telematik-ID</td>\n        <td>Communication.basedOn\
+  \ referenziert Task</td>\n        <td>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq</td>\n\
+  \t</tr>\n    <tr> \n\t\t<td>Telematik-ID</td>\n\t\t<td>KVNR</td>\n        <td>Communication.basedOn\
+  \ referenziert Task</td>\n        <td>\n            https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply\
+  \ <br> https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA\
+  \ \n        </td>\n\t</tr>\n    <tr> \n\t\t<td>KVNR</td>\n\t\t<td>Telematik-ID</td>\n\
+  \        <td>Communication.basedOn referenziert ChargeItam</td>\n        <td>https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq</td>\n\
+  \t</tr>\n    <tr> \n\t\t<td>Telematik-ID</td>\n\t\t<td>KVNR</td>\n        <td>Communication.basedOn\
+  \ referenziert ChargeItam</td>\n        <td>https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReqReply</td>\n\
+  \t</tr>\n    </table>\n    <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_008\
+  \ Nachrichtentyp zu Kommunikationsbeziehung</figcaption></div>"
+title: TI-Flow-Fachdienst - Nachricht einstellen - Schemaprüfung
+version: 0

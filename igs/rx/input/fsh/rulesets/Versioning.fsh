@@ -1,18 +1,48 @@
 Alias: $version = 2.0.0
 
+RuleSet: MetaDate(element)
+* {element} = "2026-06-30"
+
 RuleSet: MetaStatus(element)
-* {element} = #draft
+* {element} = #active
+
 RuleSet: MetaVersion(element)
 * {element} = $version
-RuleSet: MetaDate(element)
-* {element} = "2025-12-15"
+
 RuleSet: Gematik(element)
 * {element} = "gematik GmbH"
+
 RuleSet: MetaCopyright(element)
 * {element} = "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."
+
 RuleSet: MetaContact
 * ^contact.telecom.system = #url
 * ^contact.telecom.value = "https://www.gematik.de"
+
+RuleSet: LegacyMeta(type, name)
+* ^url = "https://gematik.de/fhir/erp/{type}/{name}"
+* insert Meta
+
+RuleSet: LegacyMetaProfile(name)
+* insert LegacyMeta(StructureDefinition, {name})
+* meta 1..1 MS
+* meta.profile 1..1 MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "$this"
+  * ^slicing.rules = #closed
+  * ^slicing.description = "Slicing für meta profile"
+  * ^slicing.ordered = false
+
+* meta.profile contains workflowProfile 1..1 MS
+
+* insert PackageMetaProfileExactly(StructureDefinition/{name})
+
+
+RuleSet: LegacyValueSet(name)
+* ^url = "https://gematik.de/fhir/erp/ValueSet/{name}"
+* insert Meta-VS
+
+
 
 RuleSet: Meta
 * insert MetaVersion(^version)
@@ -40,18 +70,27 @@ RuleSet: Meta-Instance
 * insert Gematik(publisher)
 * insert MetaDate(date)
 
-//TODO !!!EDIT input/data/constants.yml for current ePA Medication IG!!!
+RuleSet: Meta-With-Versioning
+* insert Meta
+* meta MS
+  * versionId MS
+  * lastUpdated MS
+
+// Dates for Examples
 
 // Dates for Examples (Date of actual release)
 RuleSet: Date(field)
-* {field} = "2026-07-01"
+* {field} = "2028-10-01"
 
 RuleSet: DateTime(field)
-* {field} = "2026-07-01T15:29:00+00:00"
+* {field} = "2028-10-01T15:29:00+00:00"
 
 RuleSet: DateTimeStamp(field)
-* {field} = "2026-07-01T15:29:00.434+00:00"
+* {field} = "2028-10-01T15:29:00.434+00:00"
 
 RuleSet: DateTimeStampPlus1Hr(field)
-* {field} = "2026-07-01T16:44:00.434+00:00"
+* {field} = "2028-10-01T16:44:00.434+00:00"
 
+// Rules to set meta.profile in profiles and instances
+RuleSet: PackageMetaProfileExactly(profile)
+* meta.profile[workflowProfile] = "https://gematik.de/fhir/erp/{profile}|2.0" (exactly)

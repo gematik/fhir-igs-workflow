@@ -2,90 +2,159 @@
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19231-02 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-60" title="E-Rezept-Fachdienst - Task schließen - Prüfung Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A60" title="TI-Flow-Fachdienst - Task schließen - Prüfung Secret" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close das im URL-Parameter "?secret=..." übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem HTTP-Fehlercode 403 abbrechen, damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des Secrets erfolgt.
+    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close das im URL-Parameter "?secret=..." übertragene Secret gegen das im referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_Secret prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem folgenden Fehler:    
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_SECRET_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table>
+    abbrechen, damit der Zugriff auf diesen Datensatz nur durch den Berechtigten in Kenntnis des Secrets erfolgt.
 </requirement>
 
 <!-- A_19231-02 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-61" title="E-Rezept-Fachdienst - Task schließen - Prüfung Status" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A61" title="TI-Flow-Fachdienst - Task schließen - Prüfung Status" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close den im referenzierten Task gespeicherten Status Task.status prüfen und mit dem Fehler 412 abbrechen, wenn Task.status ungleich "in-progress" ist, damit der Workflow nur abgeschlossen werden kann, wenn sich die Verordnung in Belieferung befindet.
+    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close den im referenzierten Task gespeicherten Status Task.status prüfen und, wenn Task.status ungleich "in-progress" ist, die Operation mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_TASK_STATUS_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Task has invalid status.</td>
+        </tr>
+    </table>
+    abbrechen, damit der Workflow nur abgeschlossen werden kann, wenn sich die Verordnung in Belieferung befindet.
 </requirement>
 
 <!-- A_19248-05 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-62" title="E-Rezept-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A62" title="TI-Flow-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close das im HTTP-Body des Requests enthaltene Parameters-Objekt gegen das Profil https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input prüfen, insbesondere bei der darin enthaltenen MedicationDispense:
+    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close das im HTTP-Body des Requests enthaltene Parameters-Objekt gegen das Profil https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_CloseOperation_Input prüfen, insbesondere bei der darin enthaltenen MedicationDispense:
     <ul>
         <li>die Korrektheit der Rezept-ID https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId als MedicationDispense.identifier,</li>
         <li>die KVNR des Versicherten im referenzierten Task (Task.for) gegen KVNR in MedicationDispense.subject:identifier und</li>
-        <li>ob die Telematik-ID der Apotheke gemäß ACCESS_TOKEN mit dem Wert in MedicationDispense.performer.actor:identifier übereinstimmt</li>
+        <li>ob der zeta-user-info.identifier des Nutzers mit dem Wert in MedicationDispense.performer.actor:identifier übereinstimmt</li>
     </ul>
-    und im Fehlerfall die Operation mit Http-Fehlercode 400 abbrechen.
+    und im Fehlerfall die Operation mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_VALIDATION_FAILED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>FHIR Profile Validation Failed</td>
+        </tr>
+    </table>
+    abbrechen.
 </requirement>
 
-<!-- A_27051 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-63" title="E-Rezept-Fachdienst - Task schließen - MedicationDispense speichern" version="0">
+<!-- A_28666 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A63" title="TI-Flow-Fachdienst - Task schließen - MedicationDispense speichern" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close die Referenz auf den aufgerufenen Task Task/&lt;id&gt; als MedicationDispense.supportingInformation übernehmen und die MedicationDispense, sowie die in MedicationDispense.medication referenzierte Medication, speichern.
+    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close eine oder mehrere vom Client bereitgestellten MedicationDispenses, sowie die in MedicationDispense.medication referenzierten Medications, speichern.
 </requirement>
 
 <!-- A_26337 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-64" title="E-Rezept-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="0">
-    <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A64" title="TI-Flow-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="0">
+    <meta lockversion="true"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern, wenn ein MedicationDispense Objekt im Aufruf übergeben wird.
+    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close den Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format "YYYY-MM-DDThh:mm:ss+zz:zz" (FHIR-instant) anlegen und speichern, wenn ein MedicationDispense Objekt im Aufruf übergeben wird.
 </requirement>
 
 <!-- A_28411 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-65" title="E-Rezept-Fachdienst - Task schließen - Telematik-ID der abgebenden LEI speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A65" title="TI-Flow-Fachdienst - Task schließen - Telematik-ID der abgebenden LEI speichern" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close für den referenzierten Task die Telematik-ID aus dem ACCESS_TOKEN in Task.owner speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen können.
+    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close für den referenzierten Task den identifier des Nutzers (Telematik-ID) in Task.owner speichern, damit sichergestellt werden kann, dass nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte erfolgen können.
 </requirement>
 
 <!-- A_28129 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-66" title="E-Rezept-Fachdienst - Task schließen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A66" title="TI-Flow-Fachdienst - Task schließen - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.close" und den Versicherten mit der KVNR = Task.for initiieren.
+    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.close" und den Versicherten mit der KVNR = Task.for initiieren.
 </requirement>
 
 <!-- A_19232 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-67" title="E-Rezept-Fachdienst - Task schließen - Status beenden" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A67" title="TI-Flow-Fachdienst - Task schließen - Status beenden" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS die zulässige Beendigung eines Tasks mittels /Task/&lt;id&gt;/$close-Operation im StatusTask.status = "completed" vollziehen, damit der Workflow für den Versicherten als beendet und die Verordnung somit als eingelöst dargestellt wird.
+    Der TI-Flow-Fachdienst MUSS die zulässige Beendigung eines Tasks mittels /Task/&lt;id&gt;/$close-Operation im StatusTask.status = "completed" vollziehen, damit der Workflow für den Versicherten als beendet und die Verordnung somit als eingelöst dargestellt wird.
 </requirement>
 
 <!-- A_19233-06 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-68" title="E-Rezept-Fachdienst - Task schließen - Quittung erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A68" title="TI-Flow-Fachdienst - Task schließen - Quittung erstellen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close ein Quittungsbundle gemäß des FHIR-Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle mit folgenden Informationen erstellen:
+    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels /Task/&lt;id&gt;/$close ein Quittungsbundle gemäß des FHIR-Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle mit folgenden Informationen erstellen:
     <ul>
         <li>Telematik-ID der aufrufenden Apotheke als Beneficiary in die GEM_ERP_PR_Composition</li>
         <li>Zeitstempel des Statuswechsel des Tasks "in-progress" in event.period.start</li>
@@ -98,12 +167,37 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     In die Signatur wird die letzte OCSP-Antwort der regelmäßigen Statusprüfung des Signaturzertifikats C.FD.OSIG eingebettet.
     Das Signatur-Ergebnis wird als dss:Base64Signature-Objekt in Bundle.signature eingebettet und dieses Quittungs-Bundle mit Referenz in Task.output mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 3 gespeichert sowie als Response des http-Requests an den Aufrufer zurückgeben, damit die abgebende LEI einen Nachweis über den ordnungsgemäßen Abschluss des E-Rezept-Workflows als Quittung erhält.
 </requirement>
+<!-- ToDo: Afo trennen -->
+
 
 <!-- A_22919 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-CORE-69" title="E-Rezept-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A69" title="TI-Flow-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst MUSS, falls keine OCSP-Response für das Signaturzertifikat der Quittung vorliegt bzw. die letzte vorliegende OCSP-Response älter als 24h ist, die Operation mit dem Fehler 503 abbrechen.
+    Der TI-Flow-Fachdienst MUSS, falls keine OCSP-Response für das Signaturzertifikat der Quittung vorliegt bzw. die letzte vorliegende OCSP-Response älter als 24h ist, die Operation mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>503 - Service Unavailable</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>transient</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_SIGNATURE_NO_OCSP_RESPONSE</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table>
+    abbrechen.
 </requirement>

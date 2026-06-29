@@ -1,20 +1,20 @@
 Diese Seite beschreibt Anforderungen an das Datenmodell für den payload der `Communication`-Ressource.
 
-#### E-Rezept einer Apotheke zuweisen
+#### E-Rezept einer Apotheke zuweisen
 
 <!-- A_23876-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-69" title="E-Rezept-FdV: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A69" title="E-Rezept-FdV: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-     Der E-Rezept-Fachdienst, das E-Rezept-FdV und das PS der abgebenden LEI MÜSSEN für den Anwendungsfall "E-Rezept einer Apotheke zuweisen" Nachrichten mit der Datenstruktur gemäß der Tabelle in der contentString-Eigenschaft des GEM_ERP_PR_Communication_DispReq-Profils unterstützen. 
+     Der TI-Flow-Fachdienst, das E-Rezept-FdV und das PS der abgebenden LEI MÜSSEN für den Anwendungsfall "E-Rezept einer Apotheke zuweisen" Nachrichten mit der Datenstruktur gemäß der Tabelle in der contentString-Eigenschaft des GEM_ERP_PR_Communication_DispReq-Profils unterstützen. 
      
     <table>
   <thead>
@@ -107,7 +107,7 @@ Diese Seite beschreibt Anforderungen an das Datenmodell für den payload der `Co
     <tr>
       <td>phone</td>
       <td>Falls communicationType = order: ja<br>Ansonsten: nein</td>
-      <td>Telefonnummer. E-164 Format, jedoch anstelle des „+" mit „00" / rein nummerisch.</td>
+      <td>Telefonnummer. E-164 Format, jedoch anstelle des "+" mit "00" / rein nummerisch.</td>
       <td>32 Stellen</td>
       <td>004916094858168</td>
     </tr>
@@ -149,21 +149,21 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
 </table>
 
 
-#### Nachricht durch Abgebenden übermitteln
+#### Nachricht durch Abgebenden übermitteln
 
-<!-- A_23877-01 -->
-<requirement conformance="SHALL" key="IG-PRE-TIFLOW-ERP-70" title="PS abgebende LEI: Nachrichtenaustausch - Nachricht durch Abgebenden übermitteln - Datenstruktur Nachricht" version="0">
+<!-- A_23877-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A70" title="PS abgebende LEI: Nachrichtenaustausch - Nachricht durch Abgebenden übermitteln - Datenstruktur Nachricht" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FD">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Der E-Rezept-Fachdienst, das E-Rezept-FdV und das PS der abgebenden LEI MÜSSEN für den Anwendungsfall "Nachricht durch Abgebenden übermitteln" Nachrichten mit der folgenden Datenstruktur in der contentString-Eigenschaft des GEM_ERP_PR_Communication_Reply unterstützen.
+    Der TI-Flow-Fachdienst, das E-Rezept-FdV und das PS der abgebenden LEI MÜSSEN für den Anwendungsfall "Nachricht durch Abgebenden übermitteln" Nachrichten mit der folgenden Datenstruktur in der contentString-Eigenschaft des GEM_ERP_PR_Communication_Reply unterstützen.
      
   <table>
   <thead>
@@ -201,7 +201,7 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
       <td>url</td>
       <td>Falls communicationType = link: ja<br>Ansonsten: verboten</td>
       <td>Einbettung einer externen URL ausschließlich für das Einlösen von E-Rezepten in einer externen Bestellplattform.</td>
-      <td>500 Stellen, URL gemäß RFC3986</td>
+      <td>500 Stellen, HTTPS-URL gemäß RFC3986</td>
       <td>https://www.meine-apotheke.de/pickup/59b52340-7a6a-430d-99ea-45a8e5cd03f6</td>
     </tr>
     <tr>
@@ -238,7 +238,7 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
     <tr>
       <td>inTransportETA</td>
       <td>Falls communicationType = deliveryStatus: nein<br>Ansonsten: verboten</td>
-      <td>Erwartete Ankunft Zeitfenster von – bis</td>
+      <td>Erwartete Ankunft Zeitfenster von - bis</td>
       <td>TIMESTAMP-TIMESTAMP</td>
       <td><pre>{
   "from": 1735736400,
@@ -270,14 +270,14 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
 ]</pre></td>
     </tr>
     <tr>
-      <td>pickUpCodeHR</td>
+      <td>pickupCodeHR</td>
       <td>Falls communicationType = pickupCodeHR und supplyOptionsType = onPremise: ja<br>Ansonsten: verboten</td>
       <td>Menschenlesbarer Abholcode</td>
       <td>1-8 Stellen</td>
       <td>12315615</td>
     </tr>
     <tr>
-      <td>pickUpCodeDMC</td>
+      <td>pickupCodeDMC</td>
       <td>Falls communicationType = pickupCodeDMC und supplyOptionsType = onPremise: ja<br>Ansonsten: verboten</td>
       <td>Maschinenlesbarer Abholcode (Data-Matrix-Code gemäß ISO/IEC 16022:2006)</td>
       <td>8-2000 Stellen</td>
@@ -324,3 +324,35 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
     <td>Übermittlung eines Hinweises zum zu zahlenden Betrags</td>
   </tr>
 </table>
+
+<!-- A_23879-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A223" title="TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload  GEM_ERP_PR_Communication_Reply" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in "Tabelle: Nachricht als Apotheke an einen Versicherten schicken" überprüfen und bei negativem Prüfergebnis, die Operation mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    <tr>
+        <th>HTTP-Code</th>
+        <td>400 - Bad Request</td>
+    </tr>
+    <tr>
+        <th>Severity</th>
+        <td>error</td>
+    </tr>
+    <tr>
+        <th>Code</th>
+        <td>invalid</td>
+    </tr>
+    <tr>
+        <th>Details Code</th>
+        <td>SVC_VALIDATION_FAILED</td>
+    </tr>
+    <tr>
+        <th>Details Text</th>
+        <td>FHIR Profile Validation Failed</td>
+    </tr>
+    </table> 
+    abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.
+</requirement>

@@ -1,0 +1,28 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 8c1a6277b1aef5821a14f64e1da255d6c5b3a9e391f417dfcbeddc527653db94
+created: '2026-03-23T10:57:49.782377'
+date: '2026-05-08T15:01:57.860036'
+key: IG-TIFLOW-ERP-19
+modified: '2026-05-08T15:01:57.860036'
+release_status: MODIFIED
+source: input/pagecontent/op-close-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels POST /Task/&lt;id&gt;/$close\
+  \ erlauben, dass der Aufruf ohne Übergabe einer MedicationDispense im Request Body\
+  \ stattfindet. Der TI-Flow-Fachdienst MUSS in dem Fall sicherstellen, dass eine\
+  \ MedicationDispense für diesen Task existiert. <br>\n Der TI-Flow-Fachdienst MUSS,\
+  \ falls keine MedicationDispense zum dazugehörigen Task existiert, die Operation\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_MEDICATION_DISPENSE_MISSING</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Abschluss des Workflows konnte nicht\
+  \ durchgeführt werden. Dispensierinformationen wurden nicht bereitgestellt.</td>\n\
+  \ </tr>\n </table>\n abbrechen."
+title: TI-Flow-Fachdienst - Task schließen - Aufruf ohne MedicationDispense
+version: 1

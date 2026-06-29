@@ -1,0 +1,22 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL NOT
+content_hash: 51e159b426d6fdd8089c6940185d15e357a252e89b8716a36eba47b7c7d31309
+created: '2026-03-23T10:57:49.324352'
+date: '2026-05-21T07:13:06.198703'
+key: IG-TIFLOW-CHRG-55
+modified: '2026-05-21T07:13:06.198703'
+release_status: MODIFIED
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst DARF beim Aufruf der Operation GET /ChargeItem/&#60;id&#62;
+  durch eine abgebende Leistungserbringerinstitution das in ChargeItem.supportingInformation
+  referenzierte Element ChargeItem.supportingInformation:receiptBundle und den Identifier
+  ChargeItem.identifier:AccessCode NICHT in den Response übernehmen, sodass die abgebende
+  LEI nur den Verordnungsdatensatz und durch sie änderbaren PKV-Abgabedatensatz erhält.
+title: TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Apotheke - kein AccessCode
+  und Quittung
+version: 1

@@ -1,0 +1,42 @@
+Profile: GEM_ERP_PR_PAR_DispenseOperation_Input
+Parent: Parameters
+Id: GEM-ERP-PR-PAR-Dispense-Operation-Input
+Title: "GEM ERP PR DispenseOperation Input"
+Description: "Dieses Profil definiert die Parameter für die Abgabe eines Medikaments von AVS an den TI-Flow-Fachdienst. Dies kann für die $dispense-Operation verwendet werden."
+* insert Meta
+
+* parameter 1..*
+
+* parameter ^slicing.discriminator.type = #pattern
+* parameter ^slicing.discriminator.path = "name"
+* parameter ^slicing.rules = #closed
+
+* parameter contains rxDispensation 1..* MS
+
+* parameter[rxDispensation]
+  * name MS
+  * name = "rxDispensation"
+  * value[x] 0..0
+  * resource 0..0
+  * obeys workflow-parameters-close-dispense-medication-references
+  * part MS
+    * ^slicing.discriminator.type = #pattern
+    * ^slicing.discriminator.path = "name"
+    * ^slicing.rules = #closed
+  * part contains
+    medicationDispense 1..1 MS and
+    medication 1..1 MS
+  * part[medicationDispense]
+    * name MS
+    * name = "medicationDispense"
+    * value[x] 0..0
+    * resource 1..1
+    * resource only MedicationDispense
+    * part 0..0
+  * part[medication]
+    * name MS
+    * name = "medication"
+    * value[x] 0..0
+    * resource 1..1
+    * resource only Medication
+    * part 0..0

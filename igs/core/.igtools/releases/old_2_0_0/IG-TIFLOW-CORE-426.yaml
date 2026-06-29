@@ -1,0 +1,26 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 4c6bc724cd209cbde03500f5eefebfe4a2716a7de7ec8f2cf6c11ad17f340d51
+created: '2026-05-08T12:49:46.759462'
+date: '2026-05-08T12:49:46.759464'
+key: IG-TIFLOW-CORE-426
+modified: '2026-05-08T12:49:46.759463'
+release_status: NEW
+source: input/pagecontent/error-codes-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS im Falle, dass auf eine gelöschte Ressource zugegriffen\
+  \ wird, die Anfrage mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n         \
+  \   <th>HTTP-Code</th>\n            <td>410 - Gone</td>\n        </tr>\n       \
+  \ <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n\
+  \        <tr>\n            <th>Code</th>\n            <td>not-found</td>\n     \
+  \   </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>MSG_DELETED</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Resource\
+  \ was deleted</td>\n        </tr>\n      </table>\n      abbrechen, damit Clients\
+  \ erkennen können, dass eine Ressource dauerhaft gelöscht wurde."
+title: TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_DELETED
+version: 0

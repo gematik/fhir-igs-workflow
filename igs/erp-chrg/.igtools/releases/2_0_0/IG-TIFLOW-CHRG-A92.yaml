@@ -1,0 +1,31 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 7e920edcf8460c94086b3e1f6112474c637a7fa371715852c6bca3501cbb7e4b
+created: '2026-06-25T13:00:23.946073'
+date: '2026-06-25T13:00:23.946075'
+key: IG-TIFLOW-CHRG-A92
+modified: '2026-06-25T13:00:23.946074'
+release_status: NEW
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produktgutachten
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine\
+  \ konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch\
+  \ einen Versicherten, den Versicherten anhand des zeta-user-info.identifier des\
+  \ Nutzers (KVNR) identifizieren, diese gegen die in ChargeItem.subject.identifier\
+  \ hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die\
+  \ Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
+  \            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n           \
+  \ <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n \
+  \           <th>Code</th>\n            <td>invalid</td>\n        </tr>\n       \
+  \ <tr>\n            <th>Details Code</th>\n            <td>SVC_IDENTITY_MISMATCH</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Identity\
+  \ mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID\
+  \ / KVNR)</td>\n        </tr>\n    </table> \n    abbrechen, damit ausschließlich\
+  \ der begünstigte Versicherte eine Abrechnungsinformation löscht."
+title: TI-Flow-Fachdienst - Abrechnungsinformation löschen - Prüfung KVNR
+version: 0

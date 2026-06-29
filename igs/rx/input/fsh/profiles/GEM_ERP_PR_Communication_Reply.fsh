@@ -3,8 +3,7 @@ Parent: GEM_ERP_PR_Communication
 Id: GEM-ERP-PR-Communication-Reply
 Title: "GEM ERP PR Communication Reply"
 Description: "Antwort vom Leistungserbringer an den Patienten"
-* insert Meta
-
+* insert LegacyMetaProfile(GEM_ERP_PR_Communication_Reply)
 * recipient 1..1
   * identifier 1..1
   * identifier only IdentifierKvid10

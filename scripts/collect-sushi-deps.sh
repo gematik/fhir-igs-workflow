@@ -20,9 +20,11 @@ fi
 
 all_deps_file="$(mktemp)"
 installed_deps_file="$(mktemp)"
+installable_deps_file="$(mktemp)"
+skipped_deps_file="$(mktemp)"
 
 cleanup() {
-  rm -f "$all_deps_file" "$installed_deps_file"
+  rm -f "$all_deps_file" "$installed_deps_file" "$installable_deps_file" "$skipped_deps_file"
 }
 trap cleanup EXIT
 
@@ -31,6 +33,21 @@ for cfg in "${sushi_files[@]}"; do
 done
 
 sort -u -o "$all_deps_file" "$all_deps_file"
+
+: > "$installable_deps_file"
+: > "$skipped_deps_file"
+while IFS= read -r line; do
+  [[ -z "$line" ]] && continue
+  ver="${line#* }"
+  if [[ "$ver" == "dev" || "$ver" == "current" ]]; then
+    echo "$line" >> "$skipped_deps_file"
+  else
+    echo "$line" >> "$installable_deps_file"
+  fi
+done < "$all_deps_file"
+
+sort -u -o "$installable_deps_file" "$installable_deps_file"
+sort -u -o "$skipped_deps_file" "$skipped_deps_file"
 
 package_cache_dir="${FHIR_PACKAGE_CACHE_DIR:-$HOME/.fhir/packages}"
 if [[ ! -d "$package_cache_dir" ]]; then
@@ -52,8 +69,9 @@ fi
 
 sort -u -o "$installed_deps_file" "$installed_deps_file"
 
-installed_list=$(comm -12 "$all_deps_file" "$installed_deps_file" || true)
-missing_list=$(comm -23 "$all_deps_file" "$installed_deps_file" || true)
+installed_list=$(comm -12 "$installable_deps_file" "$installed_deps_file" || true)
+missing_list=$(comm -23 "$installable_deps_file" "$installed_deps_file" || true)
+skipped_list=$(cat "$skipped_deps_file")
 
 install_mode="${INSTALL_SUSHI_DEPS:-prompt}"
 if [[ -n "${CI:-}" || ! -t 0 ]]; then
@@ -83,6 +101,11 @@ echo
 
 echo "To install (from sushi-config.yaml):"
 format_list "$missing_list"
+
+echo
+
+echo "Skipped local refs (resolved by local builds, not fhir install):"
+format_list "$skipped_list"
 
 if [[ -n "$missing_list" ]]; then
   echo

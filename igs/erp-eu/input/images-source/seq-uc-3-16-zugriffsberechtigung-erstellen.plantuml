@@ -1,21 +1,16 @@
 @startuml
-title Zugriffsberechtigung durch Versicherten erstellen
+title UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen
 
 autonumber "<b>[0]"
 actor "LE-EU" as LEEU
 actor Versicherte as Ver
 participant "E-Rezept-FdV" as FdV
-participant "E-Rezept-Fachdienst" as FD
-participant "Identity Provider" as IDP
+participant "TI-Flow-Fachdienst" as FD
 
 FdV -> Ver : mögliche Länder anzeigen
 Ver -> FdV : Land auswählen
 Ver -> FdV : Zugriffscode anfordern
 FdV -> FdV : zufälligen Zugriffscode erzeugen
-
-opt kein gültiger AuthN-Token
-  ref over FdV, IDP: AuthN-Token anfordern
-end
 
 FdV -> FD : Zugriffscode und Ländercode übermitteln
 FD -> FD : Einwilligung prüfen
