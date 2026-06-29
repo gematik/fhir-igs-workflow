@@ -59,7 +59,6 @@ StructureDefinition/GEM-ERPEU-PR-AccessCode,
 {% endcapture %}
 {% include artifacts-table-generator.html render=datatypes %}
 <div><figcaption><strong>Tabelle:</strong> Datentypen</figcaption></div>
-{% endcomment %}
 
 ### Ressourcenprofile
 
@@ -79,7 +78,6 @@ StructureDefinition/GEM-ERPEU-PR-Organization
 
 {% include artefacts-structuredef-table-generator.html type="Extension"%}
 <div><figcaption><strong>Tabelle:</strong> Extension Definitions</figcaption></div>
-{% endcomment %}
 
 ### Beispielinstanzen
 

@@ -23,7 +23,7 @@ Die Nachricht wird als HTTP `POST` an `/$grant-eu-access-permission` gesendet.
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-Grant-EU-Access-Permission.json %}
+			{% include OperationDefinition-GrantEUAccessPermission.json %}
 		</pre>
 	</div>
 	<div id="Request-Examples">

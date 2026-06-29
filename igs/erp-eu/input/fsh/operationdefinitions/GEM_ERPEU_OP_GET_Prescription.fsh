@@ -1,7 +1,7 @@
-Instance: GET-Prescription-EU
+Instance: GETPrescriptionEU
 InstanceOf: OperationDefinition
 Usage: #definition
-* insert Operation(GET-Prescription-EU)
+* insert Operation(GETPrescriptionEU)
 * description = "The Operation gets Presciption Information from the ERP System for usage in the e-prescription workflow for EU countries"
 * code = #get-eu-prescriptions
 * affectsState = false

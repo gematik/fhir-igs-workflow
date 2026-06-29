@@ -23,7 +23,7 @@ Die Nachricht wird als HTTP `GET` an `/$read-eu-access-permission` gesendet.
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-Read-EU-Access-Permission.json %}
+			{% include OperationDefinition-ReadEUAccessPermission.json %}
 		</pre>
 	</div>
 	<div id="Request-Examples">
