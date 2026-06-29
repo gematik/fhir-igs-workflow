@@ -18,35 +18,39 @@ Description: "This profile defines the parameters for changing Information for t
   * name = "markingFlag"
   * resource 0..0
   * value[x] 0..0
-  * part MS
-    * ^slicing.discriminator.type = #pattern
-    * ^slicing.discriminator.path = "name"
-    * ^slicing.rules = #closed
-  * part contains
+
+* parameter[markingFlag].part MS
+* parameter[markingFlag].part ^slicing.discriminator.type = #pattern
+* parameter[markingFlag].part ^slicing.discriminator.path = "name"
+* parameter[markingFlag].part ^slicing.rules = #closed
+* parameter[markingFlag].part contains
     insuranceProvider 0..1 and
     subsidy 0..1 and
     taxOffice 0..1
-  * part[insuranceProvider]
-    * name MS
-    * name = "insuranceProvider"
-    * value[x] 1..1
-    * value[x] only boolean
-    * resource 0..0
-    * part 0..0
-  * part[subsidy]
-    * name MS
-    * name = "subsidy"
-    * value[x] 1..1
-    * value[x] only boolean
-    * resource 0..0
-    * part 0..0
-  * part[taxOffice]
-    * name MS
-    * name = "taxOffice"
-    * value[x] 1..1
-    * value[x] only boolean
-    * resource 0..0
-    * part 0..0
+
+* parameter[markingFlag].part[insuranceProvider] MS
+* parameter[markingFlag].part[insuranceProvider].name MS
+* parameter[markingFlag].part[insuranceProvider].name = "insuranceProvider"
+* parameter[markingFlag].part[insuranceProvider].value[x] 1..1
+* parameter[markingFlag].part[insuranceProvider].value[x] only boolean
+* parameter[markingFlag].part[insuranceProvider].resource 0..0
+* parameter[markingFlag].part[insuranceProvider].part 0..0
+
+* parameter[markingFlag].part[subsidy] MS
+* parameter[markingFlag].part[subsidy].name MS
+* parameter[markingFlag].part[subsidy].name = "subsidy"
+* parameter[markingFlag].part[subsidy].value[x] 1..1
+* parameter[markingFlag].part[subsidy].value[x] only boolean
+* parameter[markingFlag].part[subsidy].resource 0..0
+* parameter[markingFlag].part[subsidy].part 0..0
+
+* parameter[markingFlag].part[taxOffice] MS
+* parameter[markingFlag].part[taxOffice].name MS
+* parameter[markingFlag].part[taxOffice].name = "taxOffice"
+* parameter[markingFlag].part[taxOffice].value[x] 1..1
+* parameter[markingFlag].part[taxOffice].value[x] only boolean
+* parameter[markingFlag].part[taxOffice].resource 0..0
+* parameter[markingFlag].part[taxOffice].part 0..0
 
 Invariant: erpcharge-parameters-patch-chargeitem-part
 Description: "At least one Part must be present."

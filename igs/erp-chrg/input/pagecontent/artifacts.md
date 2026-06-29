@@ -44,7 +44,6 @@ StructureDefinition/GEM-ERPCHRG-PR-PAR-Patch-ChargeItem-Input
 {% include artifacts-table-generator.html render=profiles %}
 <div><figcaption><strong>Tabelle:</strong> Ressourcenprofile</figcaption></div>
 
-{% comment %}
 ### Datentypen
 
 {% capture datatypes %}
