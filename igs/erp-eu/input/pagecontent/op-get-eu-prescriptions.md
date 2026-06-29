@@ -26,17 +26,21 @@ Die Nachricht wird als HTTP `POST` an `/$get-eu-prescriptions` gesendet.
 			{% include OperationDefinition-GET-Prescription-EU.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-RETRIEVAL XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
 		<!-- TODO: Add operation-specific success response for $get-eu-prescriptions. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleERPEUOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 

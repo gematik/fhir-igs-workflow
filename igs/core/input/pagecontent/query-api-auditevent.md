@@ -20,6 +20,7 @@ Die AuditEvent-Query wird über HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
       {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
     </pre>
   </div>
+<!--
   <div id="Response-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
       {% fragment Bundle/example-searchset-auditevent JSON %}
@@ -28,6 +29,7 @@ Die AuditEvent-Query wird über HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
       {% fragment Bundle/example-searchset-auditevent XML %}
     </div>
   </div>
+-->
 </div>
 
 

@@ -31,9 +31,11 @@ Die Operation $abort wird als HTTP POST auf /Task/<id>/$abort ausgeführt.
       {% include OperationDefinition-TIFLOW-DIGA-abort-op.json %}
     </pre>
   </div>
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
