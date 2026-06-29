@@ -23,7 +23,7 @@ Die Nachricht wird als HTTP `POST` an `/$get-eu-prescriptions` gesendet.
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-GET-Prescription-EU.json %}
+			{% include OperationDefinition-GETPrescriptionEU.json %}
 		</pre>
 	</div>
 	<div id="Request-Examples">
