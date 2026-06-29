@@ -11,13 +11,13 @@ Description: "Diese Operation aktiviert die erstellte Aufgabe für das Rezept. D
 * inputProfile = Canonical(GEM_ERP_PR_PAR_ActivateOperation_Input)
 * outputProfile = Canonical(GEM_ERP_PR_PAR_ActivateOperation_Output)
 
-// in
-* parameter[+]
-  * name = #ePrescription
-  * use = #in
-  * min = 1
-  * max = "1"
-  * type = #Binary
+// // in
+// * parameter[+]
+//   * name = #ePrescription
+//   * use = #in
+//   * min = 1
+//   * max = "1"
+//   * type = #Binary
 
 // out
 * parameter[+]

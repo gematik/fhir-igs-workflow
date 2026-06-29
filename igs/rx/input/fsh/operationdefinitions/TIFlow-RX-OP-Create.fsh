@@ -13,12 +13,12 @@ Description: "Diese Operation erstellt eine Aufgabe für die Verschreibung eines
 
 
 // in
-* parameter[+]
-  * name = #workflowType
-  * use = #in
-  * min = 1
-  * max = "1"
-  * type = #Coding
+// * parameter[+]
+//   * name = #workflowType
+//   * use = #in
+//   * min = 1
+//   * max = "1"
+//   * type = #Coding
 
 // out
 * parameter[+]
