@@ -35,7 +35,6 @@ Die Nachricht wird als HTTP `POST` an `/$get-eu-prescriptions` gesendet.
 -->
 <!--
 	<div id="Response-Examples">
-		<!-- TODO: Add operation-specific success response for $get-eu-prescriptions. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleERPEUOperationOutcomeError XML %}
 		</div>

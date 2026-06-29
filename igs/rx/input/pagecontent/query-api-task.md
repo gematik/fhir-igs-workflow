@@ -35,7 +35,6 @@ Anfragen an die <i>Task</i>-Ressource können über die RESTful API mittels HTTP
 	</div>
 <!--
 	<div id="Response-Examples">
-		<!-- TODO: Replace placeholder searchset with a representative task query example. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleRxTaskSearchset XML %}
 		</div>
@@ -60,7 +59,6 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 	</div>
 <!--
 	<div id="Response-Examples">
-		<!-- TODO: Add a dedicated Task read example for RX. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleRxTaskSearchset XML %}
 		</div>

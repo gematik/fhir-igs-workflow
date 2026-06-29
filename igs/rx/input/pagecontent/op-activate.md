@@ -28,7 +28,6 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet.
 	</div>
 <!--
 	<div id="Request-Examples">
-		<!-- TODO: Replace with operation-specific request examples for $activate. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleRxOperationRequestParameters XML %}
 		</div>
@@ -36,7 +35,6 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet.
 -->
 <!--
 	<div id="Response-Examples">
-		<!-- TODO: Replace with operation-specific response examples for $activate. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
 		</div>

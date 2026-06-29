@@ -22,8 +22,6 @@ Für die Verwaltung der Einwilligung zum Speichern der Abrechnungsinformationen 
 	</div>
 <!--
 	<div id="Response-Examples">
-		<!-- TODO: Replace placeholder searchset with a representative Consent query example for ERP-CHRG. -->
-		<!--
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleERPCHRGConsentSearchset XML %}
 		</div>

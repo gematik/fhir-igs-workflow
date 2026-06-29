@@ -39,7 +39,6 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 	</div>
 <!--
 	<div id="Request-Examples">
-		<!-- TODO: Replace with a representative Communication create request for DiGA. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3 XML %}
 		</div>
@@ -47,7 +46,6 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 -->
 <!--
 	<div id="Response-Examples">
-		<!-- TODO: Add a dedicated create response example if needed. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
 		</div>
@@ -71,7 +69,6 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 	</div>
 <!--
 	<div id="Response-Examples">
-		<!-- TODO: Replace placeholder searchset with a representative Communication query example for DiGA. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleDiGACommunicationSearchset XML %}
 		</div>

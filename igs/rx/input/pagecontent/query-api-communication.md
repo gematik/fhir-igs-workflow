@@ -94,7 +94,6 @@ Um spezifische Details zu einer einzelnen _Communciation_ mittels der RESTful AP
 	</div>
 <!--
 	<div id="Response-Examples">
-		<!-- TODO: Add a dedicated Communication read example for RX. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleRxCommunicationSearchset XML %}
 		</div>

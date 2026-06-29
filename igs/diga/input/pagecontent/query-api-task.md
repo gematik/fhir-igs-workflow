@@ -31,7 +31,6 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 	</div>
 <!--
 	<div id="Response-Examples">
-		<!-- TODO: Replace placeholder searchset with a representative Task query example for DiGA. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleDiGATaskSearchset XML %}
 		</div>
@@ -50,7 +49,6 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 	</div>
 <!--
 	<div id="Request-Examples">
-		<!-- TODO: Add a dedicated Task patch request example for DiGA. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleDiGAOperationRequestParameters XML %}
 		</div>
@@ -58,7 +56,6 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 -->
 <!--
 	<div id="Response-Examples">
-		<!-- TODO: Add a dedicated Task patch response example for DiGA. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleDiGATaskSearchset XML %}
 		</div>
