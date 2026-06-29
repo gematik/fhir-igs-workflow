@@ -1,0 +1,67 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/Bundle/ExampleDiGACommunicationSearchset> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleDiGACommunicationSearchset"] ;
+  fhir:Bundle.type [ fhir:value "searchset"] ;
+  fhir:Bundle.total [ fhir:value "1"^^xsd:nonNegativeInteger] ;
+  fhir:Bundle.link [
+     fhir:index 0 ;
+     fhir:Bundle.link.relation [ fhir:value "self" ] ;
+     fhir:Bundle.link.url [ fhir:value "https://erp-ref.example.org/Communication?received=NULL" ]
+  ] ;
+  fhir:Bundle.entry [
+     fhir:index 0 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://erp-ref.example.org/Communication/Communication_Reply_DiGA" ] ;
+     fhir:Bundle.entry.resource <https://erp-ref.example.org/Communication/Communication_Reply_DiGA> ;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
+  ] .
+
+<https://erp-ref.example.org/Communication/Communication_Reply_DiGA> a fhir:Communication ;
+  fhir:Resource.id [ fhir:value "140f716f-f649-44fe-9a4e-157eb3c8adf3"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA>
+     ]
+  ] ;
+  fhir:Communication.basedOn [
+     fhir:index 0 ;
+     fhir:link <https://gematik.de/fhir/tiflow-diga/Task/ExampleDiGATaskInReadyState> ;
+     fhir:Reference.reference [ fhir:value "Task/ExampleDiGATaskInReadyState" ]
+  ] ;
+  fhir:Communication.status [ fhir:value "unknown"] ;
+  fhir:Communication.sent [ fhir:value "2028-10-01T15:29:00.434+00:00"^^xsd:dateTime] ;
+  fhir:Communication.recipient [
+     fhir:index 0 ;
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "X234567890" ]
+     ]
+  ] ;
+  fhir:Communication.sender [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+       fhir:Identifier.value [ fhir:value "8-SMC-B-Testkarte-783498105628375" ]
+     ]
+  ] ;
+  fhir:Communication.payload [
+     fhir:index 0 ;
+     fhir:Communication.payload.contentString [ fhir:value "Nachrichteninhalt für den Versicherten" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/Bundle/ExampleDiGACommunicationSearchset.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,82 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/CodeSystem/GEM-ERP-CS-AvailabilityStatus> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "GEM-ERP-CS-AvailabilityStatus"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem GEM-ERP-CS-AvailabilityStatus</b></p><a name=\"GEM-ERP-CS-AvailabilityStatus\"> </a><a name=\"hcGEM-ERP-CS-AvailabilityStatus\"> </a><p>This case-sensitive code system <code>https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_AvailabilityStatus</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">10<a name=\"GEM-ERP-CS-AvailabilityStatus-10\"> </a></td><td>sofort verfügbar</td></tr><tr><td style=\"white-space:nowrap\">20<a name=\"GEM-ERP-CS-AvailabilityStatus-20\"> </a></td><td>noch Heute verfügbar</td></tr><tr><td style=\"white-space:nowrap\">30<a name=\"GEM-ERP-CS-AvailabilityStatus-30\"> </a></td><td>am nächsten Werktag - vormittags</td></tr><tr><td style=\"white-space:nowrap\">40<a name=\"GEM-ERP-CS-AvailabilityStatus-40\"> </a></td><td>am nächsten Werktag- nachmittags</td></tr><tr><td style=\"white-space:nowrap\">50<a name=\"GEM-ERP-CS-AvailabilityStatus-50\"> </a></td><td>nicht verfügbar</td></tr><tr><td style=\"white-space:nowrap\">90<a name=\"GEM-ERP-CS-AvailabilityStatus-90\"> </a></td><td>unbekannt</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_AvailabilityStatus"] ;
+  fhir:CodeSystem.version [ fhir:value "2.0.0-ballot.2"] ;
+  fhir:CodeSystem.name [ fhir:value "GEM_ERP_CS_AvailabilityStatus"] ;
+  fhir:CodeSystem.title [ fhir:value "CodeSystem des Verfügbarkeitsstatus"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-06-30"^^xsd:date] ;
+  fhir:CodeSystem.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:CodeSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "erp-umsetzung@gematik.de" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit."] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:CodeSystem.copyright [ fhir:value "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0."] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "6"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "10" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "sofort verfügbar" ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "20" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "noch Heute verfügbar" ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "30" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "am nächsten Werktag - vormittags" ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "40" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "am nächsten Werktag- nachmittags" ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.concept.code [ fhir:value "50" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "nicht verfügbar" ]
+  ], [
+     fhir:index 5 ;
+     fhir:CodeSystem.concept.code [ fhir:value "90" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "unbekannt" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/CodeSystem/GEM-ERP-CS-AvailabilityStatus.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

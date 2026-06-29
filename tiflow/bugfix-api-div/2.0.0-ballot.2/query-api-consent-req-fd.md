@@ -1,0 +1,146 @@
+# Server-Anforderungen: Consent-Query - Implementation Guide TIFlow - Kernfunktionalitäten v2.0.0-ballot.2
+
+Implementation Guide
+
+TIFlow - Kernfunktionalitäten
+
+Version 2.0.0-ballot.2 - ballot 
+
+* [**Table of Contents**](toc.md)
+* [**Query API**](menu-schnittstellen-query-api.md)
+* [**Query API: Consent**](query-api-consent.md)
+* **Server-Anforderungen: Consent-Query**
+
+## Server-Anforderungen: Consent-Query
+
+Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Consent-Endpunkt.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Consent mittels der HTTP-Operationen PUT, PATCH, oder HEAD unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
+### POST /Consent
+
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
+* oid_versicherter
+die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 403 - Forbidden: error
+* HTTP-Code: Code
+  * 403 - Forbidden: invalid
+* HTTP-Code: Details Code
+  * 403 - Forbidden: TIFLOW_AUTH_ROLE_NOT_ALLOWED
+* HTTP-Code: Details Text
+  * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
+
+abbrechen, damit eine Einwilligung nicht durch Unberechtigte erteilt werden kann.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass der zeta-user-info.identifier des Nutzers (KVNR) und die KVNR in Consent.patient.identifier übereinstimmen und im Fehlerfall die Operation mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 403 - Forbidden: error
+* HTTP-Code: Code
+  * 403 - Forbidden: invalid
+* HTTP-Code: Details Code
+  * 403 - Forbidden: SVC_IDENTITY_MISMATCH
+* HTTP-Code: Details Text
+  * 403 - Forbidden: FHIR Profile Validation Failed
+
+abbrechen, damit eine Einwilligung für einen Versicherten nicht durch Dritte erteilt werden kann.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Consent übertragene Consent Ressource gegen das FHIR-Profil Consent prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 400 - Bad Request: error
+* HTTP-Code: Code
+  * 400 - Bad Request: invalid
+* HTTP-Code: Details Code
+  * 400 - Bad Request: SVC_VALIDATION_FAILED
+* HTTP-Code: Details Text
+  * 400 - Bad Request: FHIR Profile Validation Failed
+
+abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent sicherstellen, dass noch keine Consent Ressource für den zeta-user-info.identifier des Nutzers (KVNR) und Consent.category.coding.code = <Einwilligungstyp> aus URL-Parameter category gespeichert ist und im Fehlerfall die Operation mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 409 - Conflict: error
+* HTTP-Code: Code
+  * 409 - Conflict: invalid
+* HTTP-Code: Details Code
+  * 409 - Conflict: TIFLOW_CONSENT_ALREADY_EXISTS
+* HTTP-Code: Details Text
+  * 409 - Conflict: -
+
+abbrechen, um maximal eine Einwilligung für den Versicherten für jeden Einwilligungstypen zu speichern.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent den Zeitpunkt des erfolgreichen Operationsaufrufs in der Consent-Ressource unter .dateTime mit Sekundengenauigkeit hinterlegen.
+
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent - falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch der Operation führen - die übermittelte Ressource persistieren.
+
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /Consent, falls bei den Prüfungen keine Fehler aufgetreten sind, welche zum Abbruch der Operation führen, die übermittelte Ressource persistieren.
+### GET /Consent
+
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
+* oid_versicherter
+die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 403 - Forbidden: error
+* HTTP-Code: Code
+  * 403 - Forbidden: invalid
+* HTTP-Code: Details Code
+  * 403 - Forbidden: TIFLOW_AUTH_ROLE_NOT_ALLOWED
+* HTTP-Code: Details Text
+  * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
+
+abbrechen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Consent die dem Versicherten zugeordneten Consent-Ressourcen anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren und in den Response aufnehmen, die in Consent.Patient.identifier die entsprechende KVNR des Versicherten referenziert haben, damit ausschließlich Versicherte ihre eigenen Information zu Einwilligungen einsehen können.
+### DELETE /Consent
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent prüfen, dass der URL-Parameter ?category angegeben ist und bei Abweichung die Operation mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 405 - Method Not Allowed: error
+* HTTP-Code: Code
+  * 405 - Method Not Allowed: invalid
+* HTTP-Code: Details Code
+  * 405 - Method Not Allowed: TIFLOW_CONSENT_CATEGORY_REQUIRED
+* HTTP-Code: Details Text
+  * 405 - Method Not Allowed: -
+
+abbrechen, um das Löschen mehrerer Ressourcen über einen Request zu verhindern.
+
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
+* oid_versicherter
+die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 403 - Forbidden: error
+* HTTP-Code: Code
+  * 403 - Forbidden: invalid
+* HTTP-Code: Details Code
+  * 403 - Forbidden: TIFLOW_AUTH_ROLE_NOT_ALLOWED
+* HTTP-Code: Details Text
+  * 403 - Forbidden: Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern
+
+abbrechen, damit die Information zur Einwilligung nicht durch Unberechtigte gelöscht werden kann.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent prüfen, dass der für ?category angegebene Wert in den CodeSystemen
+* https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType
+* https://gematik.de/fhir/erp-eu/CodeSystem/GEM_ERPEU_CS_ConsentType
+enthalten ist und bei fehlerhafter Prüfung die Operation mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 400 - Bad Request: error
+* HTTP-Code: Code
+  * 400 - Bad Request: invalid
+* HTTP-Code: Details Code
+  * 400 - Bad Request: TIFLOW_CONSENT_CATEGORY_INVALID
+* HTTP-Code: Details Text
+  * 400 - Bad Request: -
+
+abbrechen, damit nur Löschrequests für definierte Consent Typen ausgeführt werden.
+Es bestehen anwendungsfall-spezifische Anforderungen, welche Inhalte beim Widerruf einer Einwilligung zu löschen sind. 
+
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Consent-Ressource löschen, bei der Consent.patient.identifier dem zeta-user-info.identifier des Nutzers (KVNR) sowie Consent.category.coding.code dem in ?category übermittelten Wert entspricht.
+
