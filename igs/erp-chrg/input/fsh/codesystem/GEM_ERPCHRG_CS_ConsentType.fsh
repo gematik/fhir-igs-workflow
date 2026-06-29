@@ -3,5 +3,6 @@ Id: GEM-ERPCHRG-CS-ConsentType
 Title: "CodeSystem of types for a consent"
 Description: "Type of patient consent."
 * insert LegacyMeta(CodeSystem, GEM_ERPCHRG_CS_ConsentType)
+* ^caseSensitive = true
 * ^content = #complete
 * #CHARGCONS "Consent for saving electronic charge item"
