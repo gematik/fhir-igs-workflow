@@ -23,15 +23,18 @@ Die Nachricht wird als HTTP `DELETE` an `/$revoke-eu-access-permission` gesendet
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-Revoke-EU-Access-Permission.json %}
+			{% include OperationDefinition-RevokeEUAccessPermission.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
 		<!-- TODO: Verify if a request body example is required for $revoke-eu-access-permission. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/Example-EU-PermissionRequest XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
 		<!-- TODO: Verify if operation response is empty/success-only or returns a payload. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
@@ -41,6 +44,7 @@ Die Nachricht wird als HTTP `DELETE` an `/$revoke-eu-access-permission` gesendet
 			{% fragment OperationOutcome/ExampleERPEUOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 

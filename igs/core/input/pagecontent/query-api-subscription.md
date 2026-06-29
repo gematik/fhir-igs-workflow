@@ -26,6 +26,7 @@ Der Client sendet eine FHIR-Subscription-Ressource über die ZETA-gesicherte FHI
       {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
     </pre>
   </div>
+<!--
   <div id="Request-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
       {% fragment Subscription/erp-notification-avs-01-request-PostSubscriptionPseudo JSON %}
@@ -34,6 +35,8 @@ Der Client sendet eine FHIR-Subscription-Ressource über die ZETA-gesicherte FHI
       {% fragment Subscription/erp-notification-avs-01-request-PostSubscriptionPseudo XML %}
     </div>
   </div>
+-->
+<!--
   <div id="Response-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
       {% fragment Subscription/erp-notification-avs-02-response-PostSubscriptionPseudo JSON %}
@@ -42,6 +45,7 @@ Der Client sendet eine FHIR-Subscription-Ressource über die ZETA-gesicherte FHI
       {% fragment Subscription/erp-notification-avs-02-response-PostSubscriptionPseudo XML %}
     </div>
   </div>
+-->
 </div>
 
 

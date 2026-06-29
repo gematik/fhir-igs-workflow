@@ -33,12 +33,14 @@ Anfragen an die <i>Task</i>-Ressource können über die RESTful API mittels HTTP
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
 		<!-- TODO: Replace placeholder searchset with a representative task query example. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleRxTaskSearchset XML %}
 		</div>
 	</div>
+-->
 </div>
 
 ### Instance API
@@ -56,10 +58,12 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
 		<!-- TODO: Add a dedicated Task read example for RX. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleRxTaskSearchset XML %}
 		</div>
 	</div>
+-->
 </div>

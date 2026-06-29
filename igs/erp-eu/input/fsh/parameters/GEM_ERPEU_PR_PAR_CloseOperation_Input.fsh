@@ -12,11 +12,11 @@ Description: "This profile defines the parameters for receiving dispense informa
 * parameter ^slicing.rules = #closed
 
 * parameter contains 
-  rxDispensation 1..*
-  and requestData 1..1
-  and practitionerData 1..1
-  and organizationData 1..1
-  and practitionerRoleData 1..1
+  rxDispensation 1..* MS
+  and requestData 1..1 MS
+  and practitionerData 1..1 MS
+  and organizationData 1..1 MS
+  and practitionerRoleData 1..1 MS
 
 * parameter[requestData]
   * name MS
@@ -123,8 +123,8 @@ Description: "This profile defines the parameters for receiving dispense informa
     * ^slicing.discriminator.path = "name"
     * ^slicing.rules = #closed
   * part contains
-    medicationDispense 1..1 and
-    medication 1..1
+    medicationDispense 1..1 MS and
+    medication 1..1 MS
   * part[medicationDispense]
     * name MS
     * name = "medicationDispense"

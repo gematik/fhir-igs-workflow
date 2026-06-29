@@ -1,7 +1,7 @@
-Instance: Grant-EU-Access-Permission
+Instance: GrantEUAccessPermission
 InstanceOf: OperationDefinition
 Usage: #definition
-* insert Operation(Grant-EU-Access-Permission)
+* insert Operation(GrantEUAccessPermission)
 * description = "This operation receives the access code and the country that the patient wants to grant access to. The operation validates the country and creates registeres the Access Code."
 * code = #grant-eu-access-permission
 * system = true

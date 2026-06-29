@@ -36,8 +36,8 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mit
 			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
 		</pre>
 	</div>
-	<!--
-	<div id="Response-Examples"> -->
+<!--
+	<div id="Response-Examples">
 		<!-- TODO: Replace placeholder searchset with a representative Communication query example for ERP-CHRG. -->
 		<!--
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
@@ -45,6 +45,7 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mit
 		</div>
 		-->
 	</div>
+-->
 </div>
 
 ## Sicherheitsanforderungen
