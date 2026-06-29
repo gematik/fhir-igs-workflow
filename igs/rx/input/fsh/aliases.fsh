@@ -1,5 +1,5 @@
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
-Alias: $erp-base-url = https://tiflow.de/rx/fhir
+Alias: $erp-base-url = https://tiflow.de/rx/fhir/v1
 
 Alias: $erp-task = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task
 Alias: $erp-communication = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication
