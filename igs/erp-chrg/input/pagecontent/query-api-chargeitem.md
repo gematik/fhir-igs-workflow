@@ -36,10 +36,12 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
 		<!-- TODO: Replace placeholder searchset with a representative ChargeItem query example. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleERPCHRGChargeItemSearchset XML %}
 		</div>
 	</div>
+-->
 </div>
