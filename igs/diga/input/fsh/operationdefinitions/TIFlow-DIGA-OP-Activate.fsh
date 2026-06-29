@@ -10,3 +10,19 @@ Description: "Diese Operation aktiviert die erstellte Aufgabe für das Rezept. D
 
 * inputProfile = Canonical(TIFlowDiGAActivateOperationInput)
 * outputProfile = Canonical(TIFlowDiGAActivateOperationOutput)
+
+// in
+* parameter[+]
+  * name = #ePrescription
+  * use = #in
+  * min = 1
+  * max = "1"
+  * type = #Binary
+
+// out
+* parameter[+]
+  * name = #return
+  * use = #out
+  * min = 1
+  * max = "1"
+  * type = #Task

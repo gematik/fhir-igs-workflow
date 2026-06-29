@@ -10,3 +10,24 @@ Description: "Die $close-Operation beendet den E-Rezept-Workflow und erstellt ei
 
 * inputProfile = Canonical(TIFlowDiGACloseOperationInput)
 * outputProfile = Canonical(TIFlowDiGACloseOperationOutput)
+
+// in
+* parameter[+]
+  * name = #rxDispensation
+  * use = #in
+  * min = 1
+  * max = "1"
+  * part[+]
+    * name = #medicationDispense
+    * type = #MedicationDispense
+    * use = #in
+    * min = 1
+    * max = "1"
+
+// out
+* parameter[+]
+  * name = #return
+  * use = #out
+  * min = 1
+  * max = "1"
+  * type = #Bundle

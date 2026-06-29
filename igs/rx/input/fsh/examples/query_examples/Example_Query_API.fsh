@@ -27,18 +27,18 @@ Description: "Beispiel fuer eine Task-Suchantwort mit zwei Treffern"
 * entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/b12eb5f7-91ce-4887-93c7-800454601377"
 * entry[=].resource = GenericTask
 
-Instance: QueryAuditEventSearchResponseBundle
-InstanceOf: Bundle
-Usage: #example
-Title: "Antwortbundle fuer GET /AuditEvent"
-Description: "Beispiel fuer eine AuditEvent-Suchantwort"
-* id = "example-searchset-auditevent"
-* type = #searchset
-* total = 1
-* link[+].relation = "self"
-* link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/AuditEvent?date=ge2025-01-01"
-* entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa"
-* entry[=].resource = AuditEventSample
+// Instance: QueryAuditEventSearchResponseBundle
+// InstanceOf: Bundle
+// Usage: #example
+// Title: "Antwortbundle fuer GET /AuditEvent"
+// Description: "Beispiel fuer eine AuditEvent-Suchantwort"
+// * id = "example-searchset-auditevent"
+// * type = #searchset
+// * total = 1
+// * link[+].relation = "self"
+// * link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/AuditEvent?date=ge2025-01-01"
+// * entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa"
+// * entry[=].resource = AuditEventSample
 
 Instance: QueryMedicationDispenseSearchResponseBundle
 InstanceOf: Bundle
