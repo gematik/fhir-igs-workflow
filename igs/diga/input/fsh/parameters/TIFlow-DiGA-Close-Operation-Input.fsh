@@ -11,7 +11,7 @@ Description: "Dieses Profil definiert die Parameter für das Schließen einer Di
 * parameter ^slicing.discriminator.path = "name"
 * parameter ^slicing.rules = #closed
 
-* parameter contains rxDispensation 1..1
+* parameter contains rxDispensation 1..1 MS
 
 * parameter[rxDispensation]
   * name MS
@@ -22,7 +22,7 @@ Description: "Dieses Profil definiert die Parameter für das Schließen einer Di
     * ^slicing.discriminator.type = #pattern
     * ^slicing.discriminator.path = "name"
     * ^slicing.rules = #closed
-  * part contains medicationDispense 1..1
+  * part contains medicationDispense 1..1 MS
   * part[medicationDispense]
     * name MS
     * name = "medicationDispense"

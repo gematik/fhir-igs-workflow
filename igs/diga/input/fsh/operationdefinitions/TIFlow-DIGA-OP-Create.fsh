@@ -10,3 +10,19 @@ Description: "Diese Operation erstellt eine Aufgabe für die Verschreibung eines
 
 * inputProfile = Canonical(TIFlowDiGACreateOperationInput)
 * outputProfile = Canonical(TIFlowDiGACreateOperationOutput)
+
+// in
+* parameter[+]
+  * name = #workflowType
+  * use = #in
+  * min = 1
+  * max = "1"
+  * type = #Coding
+
+// out
+* parameter[+]
+  * name = #return
+  * use = #out
+  * min = 1
+  * max = "1"
+  * type = #Task

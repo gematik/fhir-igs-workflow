@@ -18,3 +18,11 @@ Description: "Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. 
   * max = "1"
   * documentation = "Der Secret-Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen."
   * type = #string
+
+// out
+* parameter[+]
+  * name = #return
+  * use = #out
+  * min = 1
+  * max = "1"
+  * type = #Bundle

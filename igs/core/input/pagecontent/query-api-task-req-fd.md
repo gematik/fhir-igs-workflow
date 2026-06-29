@@ -9,7 +9,6 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 </requirement>
 
-Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter [Operations](./menu-schnittstellen-operation-api.html) beschrieben.
 
 ### GET /Task (Liste)
 
