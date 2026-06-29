@@ -39,9 +39,14 @@ Die Operation $create wird als HTTP POST auf /Task/$create ausgeführt.
 		</div>
 	</div>
 	<div id="Response-Examples">
-		<!-- TODO: Replace with operation-specific response examples for $create. -->
+		<pre>
+			POST /Task/$create HTTP/1.1
+			Host: example.org
+			Content-Type: application/fhir+xml; charset=UTF-8
+			Accept: application/fhir+xml
+		</pre>
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationCreateError XML %}
+			{% fragment OperationOutcome/erp-diga-01-task-162-create XML %}
 		</div>
 	</div>
 </div>
