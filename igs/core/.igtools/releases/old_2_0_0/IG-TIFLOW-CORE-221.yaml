@@ -1,0 +1,22 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 87f6361e97764a7966d966d1b4ab12fcff3b7577a0b7427a3fc548bab704bfcd
+created: '2026-03-23T10:57:48.470088'
+date: '2026-06-22T14:40:54.342817'
+key: IG-TIFLOW-CORE-221
+modified: '2026-06-22T14:40:54.342817'
+release_status: MODIFIED
+source: input/pagecontent/op-create-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst MUSS beim Anlegen eines neuen Tasks eine Rezept-ID gemäß
+  der Bildungsregel in [IG-TIFLOW-CORE-357] generieren und als Identifier mit Namingsystem
+  https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId dem Task
+  hinzufügen und sicherstellen, dass diese Rezept-ID innerhalb von 11 Jahren nach
+  ihrer Erzeugung nicht erneut vergeben wird, damit es innerhalb der Aufbewahrungsfrist
+  der Abrechnungsdaten bei den Krankenkassen zu keinen Dubletten kommt.
+title: TI-Flow-Fachdienst - Task erzeugen - Generierung Rezept-ID
+version: 1

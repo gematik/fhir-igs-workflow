@@ -6,10 +6,10 @@
 #### E-Rezept-FdV 
 
 <!-- A_19443 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-24" title="E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A24" title="E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle
 
@@ -95,10 +95,10 @@
 
 
 <!--A_27116 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-25" title="E-Rezept-FdV: Zugriffsberechtigung anzeigen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A25" title="E-Rezept-FdV: Zugriffsberechtigung anzeigen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung anzeigen" folgende Informationen auf dem Display anzeigen: 
     <ul>
@@ -115,7 +115,7 @@ Das E-Rezept-FdV MUSS bei der Anzeige des Zugriffscodes die Lesbarkeit der Zeich
 
 Hinweis: Mit Lesbarkeit ist das Erkennen und Unterscheiden einzelner Buchstaben und Ziffern gemeint, d.h. die Unterscheidbarkeit von beispielsweise von 0 (Null) und O (Großbuchstabe O), sowie I (Großbuchstabe i) und l (Kleinbuchstabe L) und 1 (Ziffer Eins).
 
-Das E-Rezept-FdV MUSS die Gültigkeitsdauer der Zugriffsberechtigung auf dem Display hervorheben, wenn die Gültigkeitsdauer 10 Minuten unterschreitet.
+Das E-Rezept-FdV MUSS die Gültigkeitsdauer der Zugriffsberechtigung auf dem Display hervorheben, wenn die Gültigkeitsdauer 10 Minuten unterschreitet.
 
 Das E-Rezept-FdV MUSS, wenn die Gültigkeit der Zugriffsberechtigung zeitlich abgelaufen ist, den Versicherten informieren.
 

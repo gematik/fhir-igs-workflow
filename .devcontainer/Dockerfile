@@ -32,6 +32,9 @@ RUN apk add --no-cache jekyll
 # Install py-pip
 RUN apk add --no-cache py-pip py3-yaml pipx
 
+# Install yq
+RUN apk add --no-cache yq
+
 # Install Firely Terminal as vscode user
 # Switch to the vscode user
 USER vscode

@@ -1,0 +1,22 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 05a6bda08b71261417e472f36f8ab4763cd121977f535c10f1e04c476eb86b39
+created: '2026-03-23T10:57:49.330117'
+date: '2026-05-21T07:13:06.247521'
+key: IG-TIFLOW-CHRG-88
+modified: '2026-05-21T07:13:06.247521'
+release_status: MODIFIED
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst DARF beim Aufruf der HTTP-PUT-Operation auf eine konkrete
+  über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende
+  LEI das in "ChargeItem.supportingInformation" referenzierte Element "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle"
+  und den Identifier ChargeItem.identifier:AccessCode NICHT in den Response übernehmen,
+  sodass die abgebende LEI nicht die Quittung und AccessCode erhält.
+title: TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - kein AccessCode
+  und Quittung
+version: 1

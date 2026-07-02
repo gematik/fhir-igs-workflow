@@ -23,17 +23,19 @@ Die Operation $abort wird als HTTP POST auf /Task/<id>/$abort ausgeführt.
 	data-api-operation-id="abortOperation">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
   <div id="OperationDefinition">
     <pre>
-      {% include OperationDefinition-AbortOperation.json %}
+      {% include OperationDefinition-tiflow-diga-abort-op.json %}
     </pre>
   </div>
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>

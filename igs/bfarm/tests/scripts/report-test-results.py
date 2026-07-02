@@ -54,7 +54,9 @@ def main() -> int:
         name = case_dir.name
         case_out = output_dir / name
         bundle_path = case_out / f"{name}-mapping-bundle.json"
-        dd_path = case_out / f"{name}-digitaler-durchschlag.json"
+        dd_path = case_out / f"Parameters-{name}-digitaler-durchschlag.json"
+        if not dd_path.exists():
+            dd_path = case_out / f"{name}-digitaler-durchschlag.json"
 
         build_ok = bundle_path.exists()
         transform_ok = dd_path.exists()

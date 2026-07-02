@@ -4,7 +4,7 @@ run-name: Build IGs - ${{ inputs.ig || github.event.inputs.ig || 'all' }}
 on:
   push:
     branches:
-      - develop
+      - main
   workflow_dispatch:
     inputs:
       ig:
@@ -28,10 +28,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BUILD_USE_IGTOOLS: "false"
-      BUILD_GENERATE_DRAWIO_IMAGES: "false"
       INSTALL_SUSHI_DEPS: "skip"
-      DRAWIO_APP: "/usr/local/bin/drawio"
-      FHIR_PACKAGE_CACHE_DIR: /home/runner/.fhir/packages
+      CI_HOME: /tmp/fhir-ci-home
+      FHIR_PACKAGE_CACHE_DIR: /tmp/fhir-ci-home/.fhir/packages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -50,6 +49,7 @@ jobs:
           node-version: "20"
 
       - name: Set up .NET
+        if: ${{ github.actor != 'nektos/act' }}
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
@@ -57,7 +57,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -71,6 +71,10 @@ jobs:
           npm install -g fsh-sushi
           sudo wget -q https://github.com/mikefarah/yq/releases/download/v4.44.1/yq_linux_amd64 -O /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
+          python -m pip install --upgrade pip pipx
+          python -m pip install pyyaml
+          python -m pipx install git+https://github.com/gematik/fhir-scripts.git
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Verify Graphviz
         run: |
@@ -78,6 +82,7 @@ jobs:
           dot -V
 
       - name: Install Firely Terminal (fhir)
+        if: ${{ github.actor != 'nektos/act' }}
         run: |
           dotnet tool install --tool-path /usr/local/bin Firely.Terminal --version 3.4.0
 
@@ -355,24 +360,6 @@ jobs:
           echo "- $igtools_line" >> "$GITHUB_STEP_SUMMARY"
           echo "- $git_line" >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Install draw.io (headless)
-        if: env.BUILD_GENERATE_DRAWIO_IMAGES == 'true'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y jq xvfb
-          drawio_url=$(curl -s https://api.github.com/repos/jgraph/drawio-desktop/releases/latest \
-            | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url' \
-            | head -n 1)
-          echo "Downloading draw.io from $drawio_url"
-          sudo curl -L "$drawio_url" -o /usr/local/bin/drawio.appimage
-          sudo chmod +x /usr/local/bin/drawio.appimage
-          printf '%s\n' \
-            '#!/usr/bin/env bash' \
-            'set -euo pipefail' \
-            'exec xvfb-run -a /usr/local/bin/drawio.appimage "$@"' \
-            | sudo tee /usr/local/bin/drawio >/dev/null
-          sudo chmod +x /usr/local/bin/drawio
-
       - name: Determine IGs to build
         id: igs
         shell: bash
@@ -413,56 +400,56 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-fhir-packages-
 
-      - name: Install FHIR packages
+      - name: Download IG Publisher
         if: steps.igs.outputs.ig_list != ''
         shell: bash
         run: |
           set -euo pipefail
-          cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}"
-          mkdir -p "$cache_dir"
+          publisher_url="https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar"
+          publisher_path="$GITHUB_WORKSPACE/input-cache/publisher.jar"
+          mkdir -p "$(dirname "$publisher_path")"
 
-          declare -A dep_map=()
-
-          for ig in ${{ steps.igs.outputs.ig_list }}; do
-            cfg="igs/$ig/sushi-config.yaml"
-            [[ -f "$cfg" ]] || continue
-            mapfile -t deps < <(yq eval '.dependencies // {} | to_entries | .[] | "\(.key) \(.value)"' "$cfg")
-            for dep in "${deps[@]}"; do
-              pkg="${dep%% *}"
-              ver="${dep#* }"
-              [[ -z "$pkg" || -z "$ver" ]] && continue
-              if [[ "$ver" == "dev" || "$ver" == "current" ]]; then
-                echo "Skipping local dependency ${pkg}#${ver}; it must be provided by an earlier build in this job."
-                continue
+          # Prefer an already available local publisher (especially for `act`)
+          # to avoid unnecessary large downloads.
+          pick_existing_publisher() {
+            local candidates=(
+              "$publisher_path"
+              "$GITHUB_WORKSPACE/igs/core/input-cache/publisher.jar"
+              "$GITHUB_WORKSPACE/igs/diga/input-cache/publisher.jar"
+              "$GITHUB_WORKSPACE/igs/erp-chrg/input-cache/publisher.jar"
+              "$GITHUB_WORKSPACE/igs/erp-eu/input-cache/publisher.jar"
+              "$GITHUB_WORKSPACE/igs/rx/input-cache/publisher.jar"
+              "$GITHUB_WORKSPACE/igs/bfarm/input-cache/publisher.jar"
+            )
+            local c
+            for c in "${candidates[@]}"; do
+              [[ -f "$c" ]] || continue
+              if java -jar "$c" -v >/dev/null 2>&1; then
+                echo "$c"
+                return 0
               fi
-              dep_map["${pkg}#${ver}"]=1
             done
-          done
+            return 1
+          }
 
-          if [[ ${#dep_map[@]} -eq 0 ]]; then
-            echo "No external package dependencies to install."
-            exit 0
-          fi
-
-          mapfile -t dep_keys < <(printf '%s\n' "${!dep_map[@]}" | sort)
-          echo "Installing ${#dep_keys[@]} unique package dependencies..."
-
-          for key in "${dep_keys[@]}"; do
-            pkg="${key%%#*}"
-            ver="${key#*#}"
-
-            if [[ -d "$cache_dir/$key" ]]; then
-              echo "Already cached ${key}; skipping."
-              continue
+          if existing_publisher="$(pick_existing_publisher)"; then
+            if [[ "$existing_publisher" != "$publisher_path" ]]; then
+              cp -f "$existing_publisher" "$publisher_path"
             fi
-
-            echo "Installing ${pkg} ${ver}..."
-            fhir install "$pkg" "$ver"
-          done
-
-      - name: Download IG Publisher
-        if: steps.igs.outputs.ig_list != ''
-        run: ./update-publisher.sh -y
+            echo "Using local IG Publisher from $existing_publisher"
+          else
+            echo "Downloading IG Publisher from $publisher_url"
+            curl -sSLf "$publisher_url" -o "$publisher_path"
+            if [[ ! -s "$publisher_path" ]]; then
+              echo "Failed to download publisher jar" >&2
+              exit 1
+            fi
+            if ! java -jar "$publisher_path" -v >/dev/null 2>&1; then
+              echo "Downloaded publisher jar is invalid" >&2
+              exit 1
+            fi
+            echo "Downloaded IG Publisher to $publisher_path"
+          fi
 
       - name: Download HAPI validator for StructureMap transformation
         if: steps.igs.outputs.ig_list != '' && (contains(steps.igs.outputs.ig_list, 'bfarm') || contains(steps.igs.outputs.ig_list, 'rx'))
@@ -484,29 +471,351 @@ jobs:
       - name: Build IGs
         if: steps.igs.outputs.ig_list != ''
         id: build_igs
-        continue-on-error: true
+        continue-on-error: false
         shell: bash
         run: |
           set -euo pipefail
           successful_igs=()
           failed_igs=()
-          core_dev_cache_dir="${FHIR_PACKAGE_CACHE_DIR:-/home/runner/.fhir/packages}/de.gematik.tiflow.core#dev"
+          ci_home="${CI_HOME:-${RUNNER_TEMP:-/tmp}/fhir-ci-home}"
+          cache_dir="${FHIR_PACKAGE_CACHE_DIR:-$ci_home/.fhir/packages}"
+
+          mkdir -p "$ci_home"
+          mkdir -p "$cache_dir"
+
+          core_pkg_id="de.gematik.tiflow"
+          core_pkg_version="$(yq -r '.version // ""' igs/core/sushi-config.yaml)"
+          core_dev_cache_dir="$cache_dir/${core_pkg_id}#dev"
+          core_version_cache_dir="$cache_dir/${core_pkg_id}#${core_pkg_version}"
           core_failed=0
 
-          if [[ "${{ steps.igs.outputs.ig_mode }}" == "all" ]]; then
-            for ig in ${{ steps.igs.outputs.ig_list }}; do
-              if [[ "$core_failed" -eq 1 ]]; then
-                echo "Skipping $ig because core build failed and de.gematik.tiflow.core#dev is unavailable."
-                failed_igs+=("$ig")
+          core_cache_available() {
+            [[ -f "$core_dev_cache_dir/package/package.json" || -f "$core_version_cache_dir/package/package.json" ]]
+          }
+
+          ensure_core_package_in_cache() {
+            local dependent_ig="$1"
+
+            # Core itself obviously must not depend on a pre-hydrated core package.
+            if [[ "$dependent_ig" == "core" ]]; then
+              return 0
+            fi
+
+            if core_cache_available; then
+              return 0
+            fi
+
+            local core_pkg_tgz="igs/core/output/package.tgz"
+            if [[ ! -f "$core_pkg_tgz" ]]; then
+              echo "Error: Missing local core package artifact at $core_pkg_tgz; cannot build $dependent_ig." >&2
+              return 1
+            fi
+
+            if [[ -z "$core_pkg_version" ]]; then
+              echo "Error: Could not read core version from igs/core/sushi-config.yaml; cannot build $dependent_ig." >&2
+              return 1
+            fi
+
+            rm -rf "$core_version_cache_dir"
+            mkdir -p "$core_version_cache_dir"
+            tar -xzf "$core_pkg_tgz" -C "$core_version_cache_dir"
+
+            local core_pkg_json="$core_version_cache_dir/package/package.json"
+            local extracted_id=""
+            local extracted_version=""
+
+            if [[ ! -f "$core_pkg_json" ]]; then
+              echo "Error: Rehydrated core package is missing package/package.json at $core_pkg_json" >&2
+              return 1
+            fi
+
+            extracted_id="$(yq -r '.name // ""' "$core_pkg_json")"
+            extracted_version="$(yq -r '.version // ""' "$core_pkg_json")"
+            if [[ "$extracted_id" != "$core_pkg_id" || "$extracted_version" != "$core_pkg_version" ]]; then
+              echo "Error: Core package metadata mismatch while preparing $dependent_ig." >&2
+              echo "Expected: ${core_pkg_id}#${core_pkg_version}" >&2
+              echo "Found: ${extracted_id}#${extracted_version} from $core_pkg_tgz" >&2
+              return 1
+            fi
+
+            rm -rf "$core_dev_cache_dir"
+            cp -R "$core_version_cache_dir" "$core_dev_cache_dir"
+            mirror_package_to_runner_caches "$core_pkg_id" "$core_pkg_version" "$core_version_cache_dir"
+
+            if ! core_cache_available; then
+              echo "Error: Core package cache hydration failed before building $dependent_ig" >&2
+              return 1
+            fi
+
+            echo "Prepared local ${core_pkg_id}#${core_pkg_version} cache for $dependent_ig"
+          }
+
+          resolve_local_package_artifact() {
+            local ig="$1"
+            local base_dir="igs/$ig/output"
+            local candidate=""
+
+            for candidate in \
+              "$base_dir/package.tgz" \
+              "$base_dir/package-combined.tgz"; do
+              if [[ -f "$candidate" ]]; then
+                echo "$candidate"
+                return 0
+              fi
+            done
+
+            return 1
+          }
+
+          materialize_ig_package_to_cache() {
+            local ig="$1"
+            local cfg="igs/$ig/sushi-config.yaml"
+            local pkg_tgz=""
+            local pkg_id=""
+            local pkg_version=""
+            local target_dir=""
+
+            if [[ ! -f "$cfg" ]]; then
+              echo "Warning: Missing config for $ig at $cfg; skip cache materialization." >&2
+              return 0
+            fi
+
+            pkg_tgz="$(resolve_local_package_artifact "$ig" || true)"
+            if [[ -z "$pkg_tgz" ]]; then
+              echo "Warning: Missing package artifact for $ig at igs/$ig/output/package-combined.tgz or package.tgz; skip cache materialization." >&2
+              return 0
+            fi
+
+            pkg_id="$(yq -r '.id // ""' "$cfg")"
+            pkg_version="$(yq -r '.version // ""' "$cfg")"
+
+            if [[ -z "$pkg_id" || -z "$pkg_version" ]]; then
+              echo "Warning: Missing id/version in $cfg; skip cache materialization." >&2
+              return 0
+            fi
+
+            target_dir="$cache_dir/${pkg_id}#${pkg_version}"
+            rm -rf "$target_dir"
+            mkdir -p "$target_dir"
+            tar -xzf "$pkg_tgz" -C "$target_dir"
+
+            local extracted_pkg_json="$target_dir/package/package.json"
+            local extracted_id=""
+            local extracted_version=""
+
+            if [[ ! -f "$extracted_pkg_json" ]]; then
+              echo "Error: Materialized package for $ig is missing package/package.json: $extracted_pkg_json" >&2
+              return 1
+            fi
+
+            extracted_id="$(yq -r '.name // ""' "$extracted_pkg_json")"
+            extracted_version="$(yq -r '.version // ""' "$extracted_pkg_json")"
+            if [[ "$extracted_id" != "$pkg_id" || "$extracted_version" != "$pkg_version" ]]; then
+              echo "Error: Package metadata mismatch for $ig." >&2
+              echo "Expected: ${pkg_id}#${pkg_version}" >&2
+              echo "Found: ${extracted_id}#${extracted_version} from $pkg_tgz" >&2
+              return 1
+            fi
+
+            # Keep a #dev alias for locally built packages for tooling that
+            # still resolves local dependencies via "dev".
+            rm -rf "$cache_dir/${pkg_id}#dev"
+            cp -R "$target_dir" "$cache_dir/${pkg_id}#dev"
+
+            echo "Materialized local package ${pkg_id}#${pkg_version} into $target_dir"
+
+            # Defensive fallback: some tools may still look at runner-default
+            # cache roots despite env overrides. Mirror the package there when
+            # writable so local resolution works before any remote fallback.
+            mirror_package_to_runner_caches "$pkg_id" "$pkg_version" "$target_dir"
+          }
+
+          mirror_package_to_runner_caches() {
+            local pkg_id="$1"
+            local pkg_version="$2"
+            local source_dir="$3"
+            local dst_roots=(
+              "$HOME/.fhir/packages"
+              "/home/runner/.fhir/packages"
+              "/github/home/.fhir/packages"
+            )
+
+            [[ -d "$source_dir" ]] || return 0
+
+            for dst_root in "${dst_roots[@]}"; do
+              local parent_dir
+              parent_dir="$(dirname "$dst_root")"
+
+              if [[ ! -d "$dst_root" ]]; then
+                if [[ -d "$parent_dir" && -w "$parent_dir" ]]; then
+                  mkdir -p "$dst_root"
+                else
+                  continue
+                fi
+              fi
+
+              rm -rf "$dst_root/${pkg_id}#${pkg_version}" "$dst_root/${pkg_id}#dev"
+              cp -R "$source_dir" "$dst_root/${pkg_id}#${pkg_version}"
+              cp -R "$source_dir" "$dst_root/${pkg_id}#dev"
+              echo "Mirrored ${pkg_id}#${pkg_version} to $dst_root"
+            done
+          }
+
+          sanitize_package_cache() {
+            local dir="$1"
+            [[ -d "$dir" ]] || return 0
+
+            # Remove stale lock files from interrupted runs.
+            find "$dir" -maxdepth 1 -type f -name '*.lock' -print -delete || true
+
+            # Remove incomplete cache entries that can crash IG Publisher with
+            # NullPointerExceptions while loading NPM package content.
+            for entry in "$dir"/*; do
+              [[ -e "$entry" ]] || continue
+
+              if [[ -f "$entry" ]]; then
+                # Cache should only contain package directories and lock files.
+                if [[ "$entry" != *.lock ]]; then
+                  echo "Removing unexpected file in FHIR cache: $entry"
+                  rm -f "$entry"
+                fi
                 continue
               fi
 
+              if [[ ! -d "$entry" ]]; then
+                continue
+              fi
+
+              local base
+              base="$(basename "$entry")"
+
+              # Package directories are expected to have "name#version" shape.
+              if [[ "$base" != *#* ]]; then
+                echo "Removing malformed FHIR cache entry: $entry"
+                rm -rf "$entry"
+                continue
+              fi
+
+              if [[ ! -f "$entry/package/package.json" ]]; then
+                echo "Removing invalid FHIR cache entry: $entry"
+                rm -rf "$entry"
+                continue
+              fi
+
+              # Defensive check for known critical core package resource.
+              if [[ "$base" == hl7.fhir.r4.core#* && ! -f "$entry/package/StructureDefinition-StructureDefinition.json" ]]; then
+                echo "Removing broken hl7.fhir.r4.core cache entry: $entry"
+                rm -rf "$entry"
+              fi
+            done
+          }
+
+          purge_cache_for_retry() {
+            local ig="$1"
+            [[ -d "$cache_dir" ]] || return 0
+
+            if [[ "$ig" == "core" ]]; then
+              echo "[$ig] Purging complete FHIR cache for clean retry"
+              find "$cache_dir" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+            else
+              echo "[$ig] Purging non-core FHIR cache entries for clean retry"
+              find "$cache_dir" -mindepth 1 -maxdepth 1 \
+                ! -name 'de.gematik.tiflow#*' \
+                -exec rm -rf {} +
+            fi
+          }
+
+          run_pipeline() {
+            local ig="$1"
+            local fs_cmd=""
+            local root_publisher="$GITHUB_WORKSPACE/input-cache/publisher.jar"
+            local ig_input_cache="igs/$ig/input-cache"
+            local ig_publisher="$ig_input_cache/publisher.jar"
+            local java_tool_options="${JAVA_TOOL_OPTIONS:-} -Dfile.encoding=UTF-8 -Duser.home=${ci_home}"
+
+            echo "[$ig] HOME=$ci_home"
+            echo "[$ig] FHIR_PACKAGE_CACHE_DIR=$cache_dir"
+            if [[ -d "$cache_dir" ]]; then
+              echo "[$ig] Cache entries (de.gematik.tiflow*):"
+              find "$cache_dir" -maxdepth 1 -type d -name 'de.gematik.tiflow*' | sort || true
+            fi
+
+            if command -v fhirscripts >/dev/null 2>&1; then
+              fs_cmd="fhirscripts"
+            elif command -v fhirscripts-dev >/dev/null 2>&1; then
+              fs_cmd="fhirscripts-dev"
+            else
+              echo "Neither fhirscripts nor fhirscripts-dev is available in PATH" >&2
+              return 1
+            fi
+
+            # Keep IG Publisher discoverable for IG-local fhirscripts runs.
+            # TODO: Remove once fhirscripts resolves publisher from workspace root automatically.
+            mkdir -p "$ig_input_cache"
+            if [[ -f "$root_publisher" ]]; then
+              cp -f "$root_publisher" "$ig_publisher"
+            else
+              echo "Warning: Root publisher jar not found at $root_publisher" >&2
+            fi
+
+            # Run install/build with one deterministic HOME so SUSHI and
+            # IG Publisher share the same ~/.fhir/packages cache.
+            sanitize_package_cache "$cache_dir"
+            ensure_core_package_in_cache "$ig"
+
+            local build_exit_code=0
+            (
+              cd "igs/$ig"
+              export HOME="$ci_home"
+              export DOTNET_CLI_HOME="$ci_home"
+              export FHIR_PACKAGE_CACHE_DIR="$cache_dir"
+              export JAVA_TOOL_OPTIONS="$java_tool_options"
+              "$fs_cmd" install
+              "$fs_cmd" build pipeline
+            ) || build_exit_code=$?
+
+            if [[ "$build_exit_code" -ne 0 ]]; then
+              local template_cache_dir="$cache_dir/fhir.base.template#0.8.1"
+              if [[ -d "$template_cache_dir" ]]; then
+                echo "[$ig] Removing template cache before retry: $template_cache_dir"
+                rm -rf "$template_cache_dir"
+              fi
+
+              purge_cache_for_retry "$ig"
+              sanitize_package_cache "$cache_dir"
+
+              echo "[$ig] Retrying pipeline after cache cleanup"
+              (
+                cd "igs/$ig"
+                export HOME="$ci_home"
+                export DOTNET_CLI_HOME="$ci_home"
+                export FHIR_PACKAGE_CACHE_DIR="$cache_dir"
+                export JAVA_TOOL_OPTIONS="$java_tool_options"
+                "$fs_cmd" install
+                "$fs_cmd" build pipeline
+              ) || return $?
+            fi
+
+            materialize_ig_package_to_cache "$ig"
+          }
+
+          # TODO: Remove this core-first orchestration once fhirscripts natively
+          # handles local core dependency bootstrapping in CI.
+          if [[ "${{ steps.igs.outputs.ig_mode }}" == "all" ]]; then
+            for ig in ${{ steps.igs.outputs.ig_list }}; do
+              if [[ "$core_failed" -eq 1 ]]; then
+                echo "::error title=Build aborted::Skipping $ig because core build failed and local de.gematik.tiflow package is unavailable."
+                failed_igs+=("$ig")
+                exit 1
+              fi
+
               echo "::group::Build $ig"
-              if ./build-all.sh --ig "$ig"; then
-                if [[ "$ig" == "core" && ! -d "$core_dev_cache_dir" ]]; then
-                  echo "::error title=Missing local core dev package::core built but de.gematik.tiflow.core#dev was not found in $core_dev_cache_dir"
+              if run_pipeline "$ig"; then
+                if [[ "$ig" == "core" && ! core_cache_available ]]; then
+                  echo "::error title=Missing local core package::core built but neither $core_dev_cache_dir nor $core_version_cache_dir was found"
                   failed_igs+=("core")
                   core_failed=1
+                  exit 1
                 else
                   successful_igs+=("$ig")
                 fi
@@ -515,15 +824,66 @@ jobs:
                 if [[ "$ig" == "core" ]]; then
                   core_failed=1
                 fi
+                echo "::error title=Build failed::IG '$ig' failed. Failing fast."
+                exit 1
               fi
               echo "::endgroup::"
             done
           else
             ig="${{ steps.igs.outputs.ig_list }}"
-            if ./build-all.sh --ig "$ig"; then
-              successful_igs+=("$ig")
+
+            if [[ "$ig" == "core" ]]; then
+              echo "::group::Build core"
+              if run_pipeline "core"; then
+                if ! core_cache_available; then
+                  echo "::error title=Missing local core package::core built but neither $core_dev_cache_dir nor $core_version_cache_dir was found"
+                  failed_igs+=("core")
+                  exit 1
+                else
+                  successful_igs+=("core")
+                fi
+              else
+                failed_igs+=("core")
+                echo "::error title=Build failed::IG 'core' failed. Failing fast."
+                exit 1
+              fi
+              echo "::endgroup::"
             else
-              failed_igs+=("$ig")
+              echo "::group::Build core (prerequisite for $ig)"
+              if run_pipeline "core"; then
+                if ! core_cache_available; then
+                  echo "::error title=Missing local core package::core built but neither $core_dev_cache_dir nor $core_version_cache_dir was found"
+                  core_failed=1
+                  failed_igs+=("core")
+                  exit 1
+                else
+                  successful_igs+=("core")
+                fi
+              else
+                core_failed=1
+                failed_igs+=("core")
+                echo "::error title=Build failed::IG 'core' failed. Failing fast."
+                exit 1
+              fi
+              echo "::endgroup::"
+
+              # TODO: Remove this prerequisite gate when fhirscripts no longer
+              # requires manual core cache warm-up for dependent IG builds.
+              if [[ "$core_failed" -eq 1 ]]; then
+                echo "::error title=Build aborted::Skipping $ig because core build failed and local de.gematik.tiflow package is unavailable."
+                failed_igs+=("$ig")
+                exit 1
+              else
+                echo "::group::Build $ig"
+                if run_pipeline "$ig"; then
+                  successful_igs+=("$ig")
+                else
+                  failed_igs+=("$ig")
+                  echo "::error title=Build failed::IG '$ig' failed. Failing fast."
+                  exit 1
+                fi
+                echo "::endgroup::"
+              fi
             fi
           fi
 

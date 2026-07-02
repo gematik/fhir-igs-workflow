@@ -2,10 +2,10 @@
 Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen abgelaufener oder nicht mehr benötigter Ressourcen. Dieses Kapitel beschreibt die Löschfristen und die zugehörigen Anforderungen.
 
 <!-- A_19252-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-123" title="TI-Flow-Fachdienst - Löschfrist abgelaufener Rezepte" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A123" title="TI-Flow-Fachdienst - Löschfrist abgelaufener Rezepte" version="0">
 	<meta lockversion="false"/>
-	<actor name="TI-Flow_FD">
-    	<testProcedure id="Produktgutachten"/>
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäß der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.
 	<table>
@@ -37,47 +37,47 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 </requirement>
 
 <!-- A_26264 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-124" title="TI-Flow-Fachdienst - Löschinformation ePA Medication Service bereitstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A124" title="TI-Flow-Fachdienst - Löschinformation ePA Medication Service bereitstellen" version="0">
 	<meta lockversion="false"/>
-	<actor name="TI-Flow_FD">
-    	<testProcedure id="Produkttest"/>
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS beim Löschen eines Task nach Ablauf der Löschfrist, wenn Task.status = "ready" oder Task.status = "in-progress", die Daten für die Löschinformation des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.
 </requirement>
 
 <!-- A_19254-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-125" title="TI-Flow-Fachdienst - Löschen referenzierter Bundles" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A125" title="TI-Flow-Fachdienst - Löschen referenzierter Bundles" version="0">
 	<meta lockversion="false"/>
-	<actor name="TI-Flow_FD">
-    	<testProcedure id="Produkttest"/>
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines Tasks alle referenzierten Bundles (QES-Datensatz, Quittungs-Bundle, Dispensierinformationen) ebenfalls löschen.
 </requirement>
 
 <!-- A_19255 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-126" title="TI-Flow-Fachdienst - Löschfrist veraltete MedicationDispense" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A126" title="TI-Flow-Fachdienst - Löschfrist veraltete MedicationDispense" version="0">
 	<meta lockversion="false"/>
-	<actor name="TI-Flow_FD">
-    	<testProcedure id="Produktgutachten"/>
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource MedicationDispense nach 100 Tagen ab ihrem Erzeugungsdatum MedicationDispense.whenHandedOver automatisch löschen.
 </requirement>
 
 <!-- A_22109 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-127" title="TI-Flow-Fachdienst - Löschfrist ChargeItem" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A127" title="TI-Flow-Fachdienst - Löschfrist ChargeItem" version="0">
 	<meta lockversion="false"/>
-	<actor name="TI-Flow_FD">
-    	<testProcedure id="Produktgutachten"/>
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.<br>
 	Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.
 </requirement>
 
 <!-- A_19253-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-128" title="TI-Flow-Fachdienst - Löschfrist veraltete Nachrichten" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A128" title="TI-Flow-Fachdienst - Löschfrist veraltete Nachrichten" version="0">
 	<meta lockversion="false"/>
-	<actor name="TI-Flow_FD">
-    	<testProcedure id="Produktgutachten"/>
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource Communication
 	automatisch löschen:
@@ -89,10 +89,10 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 </requirement>
 
 <!-- A_19256-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-129" title="TI-Flow-Fachdienst - Löschfrist veraltete Protokolleinträge" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A129" title="TI-Flow-Fachdienst - Löschfrist veraltete Protokolleinträge" version="0">
 	<meta lockversion="false"/>
-	<actor name="TI-Flow_FD">
-    	<testProcedure id="Produktgutachten"/>
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   	</actor>
 	Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource AuditEvent nach 3 Jahren ab dem Erzeugungsdatum AuditEvent.recorded innerhalb von einem Monat löschen.
 </requirement>

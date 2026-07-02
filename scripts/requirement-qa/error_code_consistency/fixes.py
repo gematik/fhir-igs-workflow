@@ -31,11 +31,52 @@ from .parsing import (
 
 
 def _cap_files(ig_root: Path) -> Tuple[Path, Path, Path]:
-    cap_dir = ig_root / "input" / "fsh" / "capabilitystatement"
+    def _pick_first(candidates: List[Path]) -> Path:
+        for candidate in candidates:
+            if candidate.exists():
+                return candidate
+        return candidates[0]
+
+    cap_candidates = [
+        ig_root / "input" / "fsh" / "capabilitystatement" / "ERPCapabilityStatementServer.fsh",
+        ig_root / "input" / "fsh" / "capabilitystatement" / "TIFlow-Rx-CapabilityStatementServer.fsh",
+        ig_root / "input" / "fsh" / "capabilitystatements" / "TIFlowCapabilityStatement.fsh",
+    ]
+
+    resp_def_candidates = [
+        ig_root
+        / "input"
+        / "fsh"
+        / "capabilitystatement"
+        / "rulesets"
+        / "ERPCapabilityStatementRulesetsResponseDefinition.fsh",
+        ig_root
+        / "input"
+        / "fsh"
+        / "capabilitystatements"
+        / "capst-rulesets"
+        / "TIFlowCapabilityStatementResponseDefinition.fsh",
+    ]
+
+    resp_candidates = [
+        ig_root
+        / "input"
+        / "fsh"
+        / "capabilitystatement"
+        / "rulesets"
+        / "ERPCapabilityStatementRulesetsResponse.fsh",
+        ig_root
+        / "input"
+        / "fsh"
+        / "capabilitystatements"
+        / "capst-rulesets"
+        / "TIFlowCapabilityStatementResponse.fsh",
+    ]
+
     return (
-        cap_dir / "ERPCapabilityStatementServer.fsh",
-        cap_dir / "rulesets" / "ERPCapabilityStatementRulesetsResponseDefinition.fsh",
-        cap_dir / "rulesets" / "ERPCapabilityStatementRulesetsResponse.fsh",
+        _pick_first(cap_candidates),
+        _pick_first(resp_def_candidates),
+        _pick_first(resp_candidates),
     )
 
 
@@ -339,6 +380,60 @@ def _wrapper_insert_line(
     return f"* {prefix}insert {rs_name}\n"
 
 
+def _ensure_response_ruleset(
+    resp_file: Path,
+    resp_content: str,
+    code_info: Dict[str, ErrorCode],
+    code: str,
+) -> tuple[str, bool]:
+    rs_name = _ruleset_name_for_code(code)
+    if f"RuleSet: {rs_name}" in resp_content:
+        return resp_content, False
+
+    ec = code_info.get(code)
+    http_code = _to_numeric_status_code(ec.http_code if ec else "400")
+    description = f"TODO: description for {code}"
+
+    new_ruleset = (
+        f"\nRuleSet: {rs_name}\n"
+        f"* extension[responseInfo][+]\n"
+        f'  * extension[statusCode].valueString = "{http_code}"\n'
+        f'  * extension[description].valueString = "{description}"\n'
+        f'  * extension[responseType].valueString = "TIFlowOperationOutcome"\n'
+        f'  * extension[errorCode].valueString = "{code}"\n'
+    )
+    resp_file.write_text(resp_content.rstrip("\n") + "\n" + new_ruleset, encoding="utf-8")
+    return resp_file.read_text(encoding="utf-8"), True
+
+
+def _ensure_wrapper_insert(
+    resp_def_file: Path,
+    resp_def_content: str,
+    wrapper_rule: str,
+    rs_name: str,
+    endpoint: str = "",
+) -> tuple[str, bool]:
+    wrapper_header = f"RuleSet: {wrapper_rule}"
+    if wrapper_header not in resp_def_content:
+        return resp_def_content, False
+
+    insert_line = _wrapper_insert_line(resp_def_content, wrapper_rule, rs_name, endpoint)
+    if insert_line is None:
+        return resp_def_content, False
+
+    wrapper_start = resp_def_content.index(wrapper_header)
+    next_ruleset = resp_def_content.find("\nRuleSet:", wrapper_start + len(wrapper_header))
+    if next_ruleset != -1:
+        new_def_content = (
+            resp_def_content[:next_ruleset] + "\n" + insert_line + resp_def_content[next_ruleset:]
+        )
+    else:
+        new_def_content = resp_def_content.rstrip("\n") + "\n" + insert_line
+
+    resp_def_file.write_text(new_def_content, encoding="utf-8")
+    return resp_def_file.read_text(encoding="utf-8"), True
+
+
 # ── Fix functions ─────────────────────────────────────────────────────────────
 
 
@@ -504,7 +599,11 @@ def fix_module_codesystem_placement(
 
 
 def fix_orphaned_codes(findings: List[Finding], ig_roots: Dict[str, Path]) -> int:
-    """Remove orphaned codes from OperationOutcomeDetails CodeSystems, ValueSets, and RuleSets."""
+    """Remove orphaned codes from OperationOutcomeDetails artifacts.
+
+    If an orphaned code is represented by its own CapabilityStatement response RuleSet,
+    remove the whole RuleSet block and its `insert` references rather than leaving a shell.
+    """
     fixes_applied = 0
 
     # Group orphaned codes by the CS file they live in
@@ -562,35 +661,24 @@ def fix_orphaned_codes(findings: List[Finding], ig_roots: Dict[str, Path]) -> in
             if modified:
                 vs_file.write_text("".join(new_lines), encoding="utf-8")
 
-    # 3. Remove from CapabilityStatement RuleSets (errorCode + accompanying description line)
+    # 3. Remove orphaned CapabilityStatement RuleSets and their insert references.
+    orphaned_rulesets_by_module: Dict[str, Set[str]] = {}
     for module, ig_root in ig_roots.items():
-        _cap, _resp_def, resp_file = _cap_files(ig_root)
-        for ruleset_file in (_resp_def, resp_file):
-            if not ruleset_file.exists():
-                continue
-            content = ruleset_file.read_text(encoding="utf-8")
-            new_lines = []
-            skip_desc = False
-            modified = False
-            lines = content.splitlines(keepends=True)
-            for i, line in enumerate(lines):
-                code_match = RULESET_ERROR_CODE_RE.search(line)
-                if code_match and code_match.group(1) in all_orphaned:
-                    modified = True
-                    skip_desc = True
-                    print(f"  [FIX] Removed {code_match.group(1)} from {ruleset_file.name}")
-                    fixes_applied += 1
-                    # Also skip an immediately-following description line
-                    if i + 1 < len(lines) and "extension[description]" in lines[i + 1]:
-                        pass  # will be handled by skip_desc on next iteration
-                    continue
-                if skip_desc and "extension[description]" in line:
-                    skip_desc = False
-                    continue
-                skip_desc = False
-                new_lines.append(line)
-            if modified:
-                ruleset_file.write_text("".join(new_lines), encoding="utf-8")
+        _cap_file, resp_def_file, resp_file = _cap_files(ig_root)
+        if not resp_file.exists() or not resp_def_file.exists():
+            continue
+
+        for ruleset_name, codes in parse_response_error_codes(resp_file).items():
+            if codes and codes.issubset(all_orphaned):
+                orphaned_rulesets_by_module.setdefault(module, set()).add(ruleset_name)
+
+    for module, ruleset_names in orphaned_rulesets_by_module.items():
+        ig_root = ig_roots.get(module)
+        if not ig_root:
+            continue
+        _, resp_def_file, resp_file = _cap_files(ig_root)
+        fixes_applied += _remove_ruleset_blocks(resp_file, ruleset_names)
+        fixes_applied += _remove_insert_references(resp_def_file, ruleset_names)
 
     return fixes_applied
 
@@ -613,7 +701,7 @@ def _remove_ruleset_blocks(resp_file: Path, ruleset_names: Set[str]) -> int:
         block_start = m.start()
         block_end = starts[i + 1].start() if i + 1 < len(starts) else len(content)
         if name in ruleset_names:
-            print(f"  [FIX] Removed undefined RuleSet '{name}' from {resp_file.name}")
+            print(f"  [FIX] Removed RuleSet '{name}' from {resp_file.name}")
             removed += 1
         else:
             kept_parts.append(content[block_start:block_end])
@@ -802,6 +890,49 @@ def fix_capstat(
     for module in ig_roots:
         ensure_normalized(module)
 
+    # Ensure GlobalOperationErrorCodes covers shared operation errors.
+    global_findings_by_module: Dict[str, List[Finding]] = {}
+    for finding in findings:
+        if finding.type == "CAPSTAT_GLOBAL_MISSING_CODE":
+            global_findings_by_module.setdefault(finding.ig_module, []).append(finding)
+
+    for module, module_findings in global_findings_by_module.items():
+        ig_root = ig_roots.get(module)
+        if not ig_root:
+            continue
+        ensure_normalized(module)
+
+        _cap_file, resp_def_file, resp_file = _cap_files(ig_root)
+        resp_def_content = resp_def_file.read_text(encoding="utf-8")
+        if "RuleSet: GlobalOperationErrorCodes" not in resp_def_content:
+            print(f"  [SKIP] Wrapper RuleSet 'GlobalOperationErrorCodes' not found in {resp_def_file}")
+            continue
+
+        resp_content = resp_file.read_text(encoding="utf-8")
+        for finding in module_findings:
+            code = finding.code
+            rs_name = _ruleset_name_for_code(code)
+
+            resp_content, added_ruleset = _ensure_response_ruleset(
+                resp_file, resp_content, code_info, code
+            )
+            if added_ruleset:
+                print(f"  [FIX] Added RuleSet {rs_name} to {resp_file.name}")
+                fixes_applied += 1
+
+            resp_def_content, added_insert = _ensure_wrapper_insert(
+                resp_def_file,
+                resp_def_content,
+                "GlobalOperationErrorCodes",
+                rs_name,
+            )
+            if added_insert:
+                print(
+                    f"  [FIX] Added '* insert {rs_name}' to wrapper 'GlobalOperationErrorCodes' "
+                    f"in {resp_def_file.name}"
+                )
+                fixes_applied += 1
+
     # Ensure endpoint → RuleSet mappings exist for CAPSTAT_ENDPOINT_NOT_MAPPED findings
     for finding in findings:
         if finding.type != "CAPSTAT_ENDPOINT_NOT_MAPPED":
@@ -854,50 +985,23 @@ def fix_capstat(
             rs_name = _to_ruleset_name(code)
 
             # 1. Add base RuleSet to resp_file if not already present
-            if f"RuleSet: {rs_name}" not in resp_content:
-                ec = code_info.get(code)
-                http_code = _to_numeric_status_code(ec.http_code if ec else "400")
-                description = f"TODO: description for {code}"
-
-                new_ruleset = (
-                    f"\nRuleSet: {rs_name}\n"
-                    f"* extension[responseInfo][+]\n"
-                    f'  * extension[statusCode].valueString = "{http_code}"\n'
-                    f'  * extension[description].valueString = "{description}"\n'
-                    f'  * extension[responseType].valueString = "TIFlowOperationOutcome"\n'
-                    f'  * extension[errorCode].valueString = "{code}"\n'
-                )
-                resp_file.write_text(resp_content.rstrip("\n") + "\n" + new_ruleset, encoding="utf-8")
-                resp_content = resp_file.read_text(encoding="utf-8")
+            resp_content, added_ruleset = _ensure_response_ruleset(
+                resp_file, resp_content, code_info, code
+            )
+            if added_ruleset:
                 print(f"  [FIX] Added RuleSet {rs_name} to {resp_file.name}")
                 fixes_applied += 1
 
             # 2. Insert into the wrapper RuleSet in resp_def_file
-            wrapper_header = f"RuleSet: {endpoint_rule}"
-            if wrapper_header not in resp_def_content:
+            if f"RuleSet: {endpoint_rule}" not in resp_def_content:
                 print(f"  [SKIP] Wrapper RuleSet '{endpoint_rule}' not found in {resp_def_file}")
                 continue
 
-            insert_line = _wrapper_insert_line(resp_def_content, endpoint_rule, rs_name, endpoint)
-            if insert_line is None:
-                continue
-
-            wrapper_start = resp_def_content.index(wrapper_header)
-            next_ruleset = resp_def_content.find("\nRuleSet:", wrapper_start + len(wrapper_header))
-            if next_ruleset != -1:
-                # Ensure the inserted line starts on a new line. Without this, a section
-                # comment (e.g. ``// Task/<id>/$accept``) that immediately precedes the
-                # next RuleSet header would cause the new code to be appended to that
-                # comment line, making it syntactically invisible to the FSH compiler.
-                new_def_content = (
-                    resp_def_content[:next_ruleset] + "\n" + insert_line + resp_def_content[next_ruleset:]
-                )
-            else:
-                new_def_content = resp_def_content.rstrip("\n") + "\n" + insert_line
-
-            resp_def_file.write_text(new_def_content, encoding="utf-8")
-            resp_def_content = resp_def_file.read_text(encoding="utf-8")
-            print(f"  [FIX] Added '* insert {rs_name}' to wrapper '{endpoint_rule}' in {resp_def_file.name}")
-            fixes_applied += 1
+            resp_def_content, added_insert = _ensure_wrapper_insert(
+                resp_def_file, resp_def_content, endpoint_rule, rs_name, endpoint
+            )
+            if added_insert:
+                print(f"  [FIX] Added '* insert {rs_name}' to wrapper '{endpoint_rule}' in {resp_def_file.name}")
+                fixes_applied += 1
 
     return fixes_applied

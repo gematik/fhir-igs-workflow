@@ -4,6 +4,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/../../.." && pwd)"
 
+
 resolve_hapi_validator_jar() {
 	local -a candidates=()
 
@@ -81,12 +82,12 @@ if [[ -z "$MAPPING_BUNDLE_SOURCE" ]]; then
 	exit 1
 fi
 
-TRANSFORM_MAP_URL="https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapCarbonCopy"
+TRANSFORM_MAP_URL="https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy"
 TRANSFORM_OUTPUT="./input/content/Bundle-erp-t-prescription-carbon-copy-actual.json"
 
-# Create a temporary directory containing only the StructureMaps (excluding example bundles).
-# The HAPI validator 6.5.26 loads ALL JSON files from -ig directories, including example
-# bundles, which can cause JSON type casting errors. We isolate just the StructureMaps.
+# Create a temporary directory with mapping artifacts only (excluding examples).
+# The validator loads all JSON files from -ig directories; keep it lean to avoid
+# type-casting issues from example bundles while still including required profiles.
 TEMP_IG_DIR=$(mktemp -d)
 trap "rm -rf '$TEMP_IG_DIR'" EXIT
 
@@ -94,11 +95,17 @@ for sm_file in ./fsh-generated/resources/StructureMap-*.json; do
 	cp "$sm_file" "$TEMP_IG_DIR/"
 done
 
-# Build command using legacy -transform syntax compatible with HAPI validator 6.5.26+.
+for sd_file in ./fsh-generated/resources/StructureDefinition-*.json; do
+	cp "$sd_file" "$TEMP_IG_DIR/"
+done
+
+# Try modern 'transform URL input' syntax first (HAPI 6.8+).
+# Fall back to legacy 'input -transform URL' syntax for older validators (HAPI 6.5.x).
+# Note: always use the temp IG dir to avoid loading example bundles.
 set +e
 java -jar "$HAPI_VALIDATOR_JAR_PATH" \
+	transform "$TRANSFORM_MAP_URL" \
 	"$MAPPING_BUNDLE_SOURCE" \
-	-transform "$TRANSFORM_MAP_URL" \
 	-version 4.0.1 \
 	-output "$TRANSFORM_OUTPUT" \
 	-ig "$TEMP_IG_DIR" \
@@ -107,6 +114,22 @@ java -jar "$HAPI_VALIDATOR_JAR_PATH" \
 	-ig de.gematik.ti#1.1.0
 transform_rc=$?
 set -e
+
+if [[ $transform_rc -ne 0 ]]; then
+	echo "⚠️ Modern transform syntax failed (exit $transform_rc). Retrying with legacy -transform syntax..." >&2
+	set +e
+	java -jar "$HAPI_VALIDATOR_JAR_PATH" \
+		"$MAPPING_BUNDLE_SOURCE" \
+		-transform "$TRANSFORM_MAP_URL" \
+		-version 4.0.1 \
+		-output "$TRANSFORM_OUTPUT" \
+		-ig "$TEMP_IG_DIR" \
+		-ig de.gematik.erezept-workflow.r4 \
+		-ig kbv.ita.erp \
+		-ig de.gematik.ti#1.1.0
+	transform_rc=$?
+	set -e
+fi
 
 if [[ $transform_rc -ne 0 ]]; then
 	echo "❌ Transform command failed with exit code $transform_rc." >&2

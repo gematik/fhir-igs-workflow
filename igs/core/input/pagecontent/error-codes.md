@@ -7,10 +7,10 @@ Der TI-Flow-Fachdienst stellt eine http-Schnittstelle für den Aufruf durch Clie
 Die Fehlermeldung beinhaltet bei fachlichen Fehlern einen VAU-verschlüsselten inneren http-Response. In diesem inneren Response werden ggf. ausschliesslich personenbezogene oder medizinische Daten an den aufrufenden Client übermittelt, welche bereits im VAU-verschlüsselten inneren http-Request, welcher zum Fehler führte, enthalten waren. Das kann bspw. bei Fehlern bei der Prüfung der FHIR Konformität von Datensätzen auftreten.
 
 <!-- A_22103 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-432" title="TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A432" title="TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produktgutachten"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS im Fehlerfall (http-Statuscodes &gt;= 400) Hinweise zur Fehlerursache 
      
@@ -22,6 +22,8 @@ Die Fehlermeldung beinhaltet bei fachlichen Fehlern einen VAU-verschlüsselten i
       
       an den Client zurückgeben, ohne Implementierungsdetails (z.B. kein Stacktrace) preiszugeben und dabei sicherstellen, dass personenbezogene oder medizinische Daten, falls für die qualifizierte Fehlerbeschreibung notwendig, ausschließlich in der VAU-verschlüsselten inneren http-Response übertragen werden.
 </requirement>
+
+*Hinweis zum Fehlerhandling*: Nur wenn der äußere Response der TI-Flow-Fachdienstes den Response-Code 200 liefert, enthält der payload eine mittels ASL-Protokoll verschlüsselte Response. Liefert der äußere Response eine Code >= 400, ist im ASL-Protokoll ein Fehler aufgetreten. Das PS muss nicht versuchen, den payload zu entschlüsseln.
 
 ### Fehlerstruktur bei FHIR-Schnittstellen
 
@@ -77,7 +79,7 @@ Dabei können Fehler aus den folgenden Quellen definiert sein:
 |Quelle|Beschreibung|Beispiel|
 |---|---|---|
 |[HL7 OperationOutcome Codes](https://hl7.org/fhir/R4/codesystem-operation-outcome.html)|FHIR übergreifende Fehlercodes definiert in der FHIR-Spezifikation.|MSG_ID_INVALID - invalid id of the FHIR-Resource|
-|[TI-Common OperationOutcomeDetailsCS](https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes)|TI-weite Fehlercodes, die für FHIR Systeme der TI gelten.|SVC_INVALID_ACCESS_TOKEN - Ungültiges ACCESS_TOKEN|
+|[TI-Common OperationOutcomeDetailsCS](https://gemspec.gematik.de/ig/fhir/ti/1.3.0/CodeSystem-operation-outcome-details-codes.html)|TI-weite Fehlercodes, die für FHIR Systeme der TI gelten.|SVC_INVALID_ACCESS_TOKEN - Ungültiges ACCESS_TOKEN|
 |[TI-Flow OperationOutcomeDetailsCS](./CodeSystem-tiflow-operation-outcome-details-cs.html)|Fehlercodes, die für die TIFlow-Anwendungen gelten.|TIFLOW_AUTH_ROLE_NOT_ALLOWED - Rolle für den Endpunkt nicht autorisiert|
 |TI-Flow Modul OperationOutcomeDetailsCS|Fehlercodes, die für das konkrete TI-Flow Modul definiert wurden.|TIFLOW_EREZEPT_PZN_INVALID - Invalide PZN|
 
@@ -119,8 +121,8 @@ Die folgenden Fehlercodes können ungeachtet des Endpunktes auftreten und gelten
             <td>
                 <ul>
                     <li>MSG_BAD_FORMAT - Invalid request format</li>
-                    <li>MSG_TIMEOUT - Request timeout</li>
-                    <li>MSG_INTERNAL_ERROR - Internal server error</li>
+                    <li>TIFLOW_TIMEOUT - Request timeout</li>
+                    <li>TIFLOW_INTERNAL_ERROR - Internal server error</li>
                 </ul>
             </td>
         </tr>
@@ -213,7 +215,7 @@ FHIR definiert drei Ebenen auf denen Operationen ausgeführt werden können:
 |---|---|
 |System Level|[baseUrl]/$operation|
 |Type Level|[baseUrl]/Task/$operation|
-|Instance Level|[baseUrl]/Task/<id>/$operation|
+|Instance Level|[baseUrl]/Task/&#60;id&#62;/$operation|
 
 <div><figcaption><strong>Tabelle: </strong>Ebenen von FHIR Operationen</figcaption></div><br>
 
@@ -258,7 +260,7 @@ Hierfür gelten für die TIFlow-Anwendungen die folgenden Fehlercodes für Opera
 
 ### Struktur von Fehlern bei Nicht-FHIR APIs
 
-Der TI-Flow-Fachdienst bietet Schnittstellen, deren Austauschformat nicht nach FHIR modelliert wurde. Bspw. [Push-API: Pusher](./query-api-pushers.md). 
+Der TI-Flow-Fachdienst bietet Schnittstellen, deren Austauschformat nicht nach FHIR modelliert wurde. Bspw. [Push-API: Pusher](./query-api-pushers.html). 
 
 Diese Schnittstellen haben eine eigens definierte JSON Struktur von Fehlern, die in der jeweils referenzierten OpenAPI dokumentiert ist. Im Fehlerfall erhalten Clients eine HTTP Antwort mit HTTP Status Code und einem Response Body im Media Type <i>application/json</i>.
 

@@ -1,16 +1,16 @@
 Die Funktionalität zu Push Notification für FdVs ist anwendungsübergreifend in [gemF_PushNotification] beschrieben.
 
-Der TI-Flow-Fachdienst übernimmt die Rolle „Fachdienst“. Er verwaltet FdV-Instanzen, die sich bei ihm für den Empfang von Push Notifications registriert haben, erstellt Push Notifications für vom Nutzer abonnierte Ereignisse und übermittelt diese an das zuständige Push Gateway. Der TI-Flow-Fachdienst bietet Schnittstellen für das E-Rezept-FdV zur Registrierung, Deregistrierung und Konfiguration von Kanälen an.
+Der TI-Flow-Fachdienst übernimmt die Rolle "Fachdienst". Er verwaltet FdV-Instanzen, die sich bei ihm für den Empfang von Push Notifications registriert haben, erstellt Push Notifications für vom Nutzer abonnierte Ereignisse und übermittelt diese an das zuständige Push Gateway. Der TI-Flow-Fachdienst bietet Schnittstellen für das E-Rezept-FdV zur Registrierung, Deregistrierung und Konfiguration von Kanälen an.
 
 ### Push Notification senden
 
 Der TI-Flow-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Notifications wie in [OpenAPI_PushGateway] beschrieben. Der Nachrichteninhalt, auf den in diesem Kapitel verwiesen wird, ist der Inhalt des Ciphertexts.
 
 <!-- A_28115 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-225" title="TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A225" title="TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß TAB_eRPFD_028 erzeugen.
 
@@ -35,7 +35,7 @@ Der TI-Flow-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Not
 Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
 Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 </td>
-<td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
 <td>POST /Task/&lt;id&gt;/$activate</td>
 </tr>
 
@@ -47,7 +47,7 @@ Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeabl
 Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
 Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 </td>
-<td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
 <td>POST /Task/&lt;id&gt;/$accept</td>
 </tr>
 
@@ -59,7 +59,7 @@ Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeabl
 Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
 Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 </td>
-<td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
 <td>POST /Task/&lt;id&gt;/$reject</td>
 </tr>
 
@@ -71,7 +71,7 @@ Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeabl
 Falls Task.flowType = "160","166","169","200","209": GEM_ERP_PR_PAR_CloseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]<br>
 Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 </td>
-<td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
 <td>POST /Task/&lt;id&gt;/$close</td>
 </tr>
 
@@ -83,7 +83,7 @@ Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeabl
 Falls Task.flowType = "160","166","169","200","209": GEM_ERP_PR_PAR_DispenseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]<br>
 Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 </td>
-<td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
 <td>POST /Task/&lt;id&gt;/$dispense</td>
 </tr>
 
@@ -95,7 +95,7 @@ Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeabl
 Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
 Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 </td>
-<td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
 <td>POST /Task/&lt;id&gt;/$abort</td>
 </tr>
 
@@ -107,7 +107,7 @@ Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeabl
 Falls Communication.basedOn.reference.Task.flowType = "160","166","200": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
 Falls Communication.basedOn.reference.Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 </td>
-<td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
 <td>
 POST /Communication<br>
 Falls Profil GEM_ERP_PR_Communication_Reply: Communication.payload.content.info_text<br>
@@ -120,7 +120,7 @@ Falls Profil GEM_ERP_PR_Communication_DiGA: Communication.payload.content
 <td>ChargeItem.identifier.PrescriptionID</td>
 <td>TaskId</td>
 <td>ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName]</td>
-<td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
 <td>POST /ChargeItem</td>
 </tr>
 
@@ -129,7 +129,7 @@ Falls Profil GEM_ERP_PR_Communication_DiGA: Communication.payload.content
 <td>ChargeItem.identifier.PrescriptionID</td>
 <td>TaskId</td>
 <td>ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName]</td>
-<td>Lesbarer Name aus dem ACCESS_TOKEN des Ausführenden</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
 <td>PUT /ChargeItem/&lt;id&gt;</td>
 </tr>
 
@@ -162,7 +162,7 @@ Falls Profil GEM_ERP_PR_Communication_DiGA: Communication.payload.content
 
 </tbody>
 </table>
-<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_028 Nachrichteninhalt Push Notification</figcaption></div>
+<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_028 Nachrichteninhalt Push Notification</figcaption></div>
 
 <p>
 <strong>Definition [medicationName]:</strong><br>
@@ -177,10 +177,10 @@ Ansonsten:<br>
 </requirement>
 
 <!-- A_28116 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-226" title="TI-Flow-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A226" title="TI-Flow-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification verschlüsseln.
 </requirement>
@@ -188,10 +188,10 @@ Ansonsten:<br>
 Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push Notification senden - Nachricht verschlüsseln` beschrieben.
 
 <!-- A_28135-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-227" title="TI-Flow-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A227" title="TI-Flow-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notifcation das Identifier-Feld des äußeren Notification-Objekts (notification.identifier) in Abhängigkeit von der ChannelId wie folgt befüllen:
      <table>
@@ -213,13 +213,13 @@ Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push No
 ### Push Notification Datenstruktur
 
 <!-- A_28124 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-228" title="E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A228" title="E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="eRp_FdV">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall "Push Notifications" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:
 
@@ -272,7 +272,7 @@ Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push No
 <tr>
 <td>Message</td>
 <td>nein</td>
-<td>Die Nachricht, die an den Versicherten verschickt wird.<br>Nachrichten mit mehr als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (…) ergänzt werden.</td>
+<td>Die Nachricht, die an den Versicherten verschickt wird.<br>Nachrichten mit mehr als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (...) ergänzt werden.</td>
 <td>bis zu 240 Stellen, UTF-8</td>
 <td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen.</td>
 </tr>

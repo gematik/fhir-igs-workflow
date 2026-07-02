@@ -1,21 +1,48 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 <!-- A_27088 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-56" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A56" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produktgutachten"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die Rolle professionOID des Aufrufers im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ausschließlich Versicherte in der Rolle oid_versicherter die Operation am TI-Flow-Fachdienst aufrufen dürfen, damit eine Zugriffsberechtigte nicht durch Unberechtigte erteilt werden kann.
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
+     <ul>
+     <li>oid_versicherter </li>
+     </ul>
+     die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+        </tr>
+    </table> 
+    abbrechen, damit eine Zugriffsberechtigte nicht durch Unberechtigte erteilt werden kann.
 </requirement>
 
 <!-- A_27089 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-57" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A57" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die KVNR des Versicherten im ACCESS_TOKEN im HTTP-RequestHeader "Authorization" feststellen und sicherstellen, dass ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission den zeta-user-info.identifier des Nutzers (KVNR) bestimmen und sicherstellen, dass ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -42,10 +69,10 @@
 </requirement>
 
 <!-- A_27090 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-58" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A58" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Ländercode (Parameters.parameter:countryCode) einem Land entspricht, welches die Anwendung ePrescription/eDispensation Szenario Land A unterstützt und bei fehlschlagender Prüfung die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
@@ -74,10 +101,10 @@
 </requirement>
 
 <!-- A_27091 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-59" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A59" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Zugriffscode (Parameters.parameter:accessCode) das korrekte Format hat und bei fehlschlagender Prüfung die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
@@ -106,28 +133,28 @@
 </requirement>
 
 <!-- A_27092 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-60" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender Zugriffsberechtigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A60" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender Zugriffsberechtigung" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, ob für die im Request übermittelte KVNR Zugriffsberechtigungen gespeichert sind und falls ja, diese löschen.
 </requirement>
 
 <!-- A_27093 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-61" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung speichern" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A61" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung speichern" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission mit dem im Request übermittelten KVNR, Zugriffscode und Ländercode eine neue Zugriffsberechtigung speichern und den Wert valid_until auf aktuellen Zeitpunkt + 1h setzen.
 </requirement>
 
 <!-- A_27094 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-62" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Response" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A62" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Response" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS im Response zu einem Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission eine Ressource des Profils [GEM_ERP_PR_PAR_EU_Access_Authorization_Response] mit den Daten des gespeicherten Datensatz zur Zugriffsberechtigung übermitteln.
 </requirement>
@@ -138,10 +165,10 @@
 <!-- ToDo: Die Afo soll an einen geeigneten Ort verschoben werden. -->
 
 <!-- A_27083 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-63" title="TI-Flow-Fachdienst - Zugriffsberechtigung - periodische Bereinigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A63" title="TI-Flow-Fachdienst - Zugriffsberechtigung - periodische Bereinigung" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS periodisch prüfen, dass keine zeitlich ungültigen Zugriffsberechtigungen gespeichert sind.
 </requirement>

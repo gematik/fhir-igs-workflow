@@ -12,19 +12,19 @@ Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Dat
 
 ### Anforderungen zur Umsetzung des IGs
 
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-15" title="E-Rezept: Anwendung des IG 'Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst' für Übertragung von Daten vom TI-Flow-Fachdienst an den BfArM Webdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A15" title="E-Rezept: Anwendung des IG 'Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst' für Übertragung von Daten vom TI-Flow-Fachdienst an den BfArM Webdienst" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS zur Umsetzung der Übertragung von Daten vom TI-Flow-Fachdienst an den BfArM Webdienst den Implementation Guide "Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst" umsetzen.
 </requirement>
 
 <!-- A_27843 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-16" title="E-Rezept: Umsetzung des Moduls 'Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst'" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A16" title="E-Rezept: Umsetzung des Moduls 'Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst'" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Herstellererklärung"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS zur Umsetzung des Implementation Guides "Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 </requirement>

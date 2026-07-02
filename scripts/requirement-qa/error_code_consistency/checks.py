@@ -29,13 +29,65 @@ from .parsing import (
 )
 
 
+SHARED_OPERATION_ERROR_CODES = {
+    "MSG_BAD_FORMAT",
+    "TIFLOW_TIMEOUT",
+    "TIFLOW_INTERNAL_ERROR",
+}
+
+
 def _cap_files(ig_root: Path) -> Tuple[Path, Path, Path]:
-    """Return (cap_server, resp_def, resp) for an IG root."""
-    cap_dir = ig_root / "input" / "fsh" / "capabilitystatement"
+    """Return (cap_server, resp_def, resp) for an IG root.
+
+    Supports legacy/new naming variants across IG modules.
+    """
+
+    def _pick_first(candidates: List[Path]) -> Path:
+        for candidate in candidates:
+            if candidate.exists():
+                return candidate
+        return candidates[0]
+
+    cap_candidates = [
+        ig_root / "input" / "fsh" / "capabilitystatement" / "ERPCapabilityStatementServer.fsh",
+        ig_root / "input" / "fsh" / "capabilitystatement" / "TIFlow-Rx-CapabilityStatementServer.fsh",
+        ig_root / "input" / "fsh" / "capabilitystatements" / "TIFlowCapabilityStatement.fsh",
+    ]
+
+    resp_def_candidates = [
+        ig_root
+        / "input"
+        / "fsh"
+        / "capabilitystatement"
+        / "rulesets"
+        / "ERPCapabilityStatementRulesetsResponseDefinition.fsh",
+        ig_root
+        / "input"
+        / "fsh"
+        / "capabilitystatements"
+        / "capst-rulesets"
+        / "TIFlowCapabilityStatementResponseDefinition.fsh",
+    ]
+
+    resp_candidates = [
+        ig_root
+        / "input"
+        / "fsh"
+        / "capabilitystatement"
+        / "rulesets"
+        / "ERPCapabilityStatementRulesetsResponse.fsh",
+        ig_root
+        / "input"
+        / "fsh"
+        / "capabilitystatements"
+        / "capst-rulesets"
+        / "TIFlowCapabilityStatementResponse.fsh",
+    ]
+
     return (
-        cap_dir / "ERPCapabilityStatementServer.fsh",
-        cap_dir / "rulesets" / "ERPCapabilityStatementRulesetsResponseDefinition.fsh",
-        cap_dir / "rulesets" / "ERPCapabilityStatementRulesetsResponse.fsh",
+        _pick_first(cap_candidates),
+        _pick_first(resp_def_candidates),
+        _pick_first(resp_candidates),
     )
 
 
@@ -181,6 +233,16 @@ def _ruleset_name_for_code(code: str) -> str:
     return "".join(part.capitalize() for part in code.split("_"))
 
 
+def _shared_operation_requirement_codes(error_codes: List[ErrorCode]) -> List[ErrorCode]:
+    return [
+        err
+        for err in error_codes
+        if err.module == "core"
+        and err.file_path.name == "error-codes-req-fd.md"
+        and err.code in SHARED_OPERATION_ERROR_CODES
+    ]
+
+
 def check_valueset_import_descriptions(ig_roots: Dict[str, Path]) -> List[Finding]:
     """Check that imported external codes in module ValueSets carry the short description from core."""
     findings: List[Finding] = []
@@ -240,6 +302,11 @@ def check_capabilitystatement_consistency(
 
     for (module, endpoint), errs in grouped.items():
         if not endpoint.startswith("op:"):
+            continue
+
+        # Core requirements define shared operation error semantics, but operation
+        # endpoint mappings are declared in module-specific CapabilityStatements.
+        if module == "core":
             continue
 
         ig_root = ig_roots.get(module)
@@ -313,6 +380,46 @@ def check_capabilitystatement_consistency(
                         ),
                     )
                 )
+
+    shared_operation_requirements = _shared_operation_requirement_codes(error_codes)
+    if not shared_operation_requirements:
+        return findings
+
+    shared_required_codes = {err.code for err in shared_operation_requirements}
+    shared_exemplar_by_code = {
+        err.code: next(item for item in shared_operation_requirements if item.code == err.code)
+        for err in shared_operation_requirements
+    }
+
+    for module, ig_root in ig_roots.items():
+        cap_file, resp_def_file, resp_file = _cap_files(ig_root)
+        if not cap_file.exists() or not resp_def_file.exists() or not resp_file.exists():
+            continue
+
+        refs = parse_ruleset_references(resp_def_file)
+        if "GlobalOperationErrorCodes" not in refs:
+            continue
+        base_codes = parse_response_error_codes(resp_file)
+        global_operation_codes = resolve_ruleset_codes(
+            "GlobalOperationErrorCodes", refs, base_codes
+        )
+
+        for missing in sorted(shared_required_codes - global_operation_codes):
+            exemplar = shared_exemplar_by_code[missing]
+            findings.append(
+                Finding(
+                    type="CAPSTAT_GLOBAL_MISSING_CODE",
+                    ig_module=module,
+                    file_path=exemplar.file_path,
+                    line=exemplar.line,
+                    code=missing,
+                    requirement_key=exemplar.requirement_key,
+                    message=(
+                        "Global operation RuleSet 'GlobalOperationErrorCodes' does not "
+                        f"expose error code '{missing}' in module '{module}'"
+                    ),
+                )
+            )
 
     return findings
 

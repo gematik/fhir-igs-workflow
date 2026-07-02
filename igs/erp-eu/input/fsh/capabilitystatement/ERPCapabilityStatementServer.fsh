@@ -1,7 +1,7 @@
 Instance: ERPFachdienstServerErpEu
 InstanceOf: TICapabilityStatement
 Usage: #definition
-* id = "erp-fachdienst-server-erpeu"
+* id = "ti-flow-fachdienst-server-erpeu"
 * title = "ERPEU CapabilityStatement fuer den E-Rezept-Fachdienst"
 * description = "CapabilityStatement fuer den E-Rezept-Fachdienst (EU-Zugriff)"
 * version = "1.1.1"
@@ -63,17 +63,17 @@ RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")
 
 RuleSet: GrantEUAccessPermissionInteraction(expectation)
-* insert CapSupportSystemOperation(grant-eu-access-permission, Grant-EU-Access-Permission, {expectation}, "Registers access code and country for EU prescription access")
+* insert CapSupportSystemOperation(grant-eu-access-permission, GrantEUAccessPermission, {expectation}, "Registers access code and country for EU prescription access")
 * insert GrantEUAccessPermissionOperationStatusCodes
 
 RuleSet: ReadEUAccessPermissionInteraction(expectation)
-* insert CapSupportSystemOperation(read-eu-access-permission, Read-EU-Access-Permission, {expectation}, "Reads the currently registered EU access code")
+* insert CapSupportSystemOperation(read-eu-access-permission, ReadEUAccessPermission, {expectation}, "Reads the currently registered EU access code")
 * insert ReadEUAccessPermissionOperationStatusCodes
 
 RuleSet: RevokeEUAccessPermissionInteraction(expectation)
-* insert CapSupportSystemOperation(revoke-eu-access-permission, Revoke-EU-Access-Permission, {expectation}, "Revokes the currently registered EU access code")
+* insert CapSupportSystemOperation(revoke-eu-access-permission, RevokeEUAccessPermission, {expectation}, "Revokes the currently registered EU access code")
 * insert RevokeEUAccessPermissionOperationStatusCodes
 
 RuleSet: GetEUPrescriptionsInteraction(expectation)
-* insert CapSupportSystemOperation(get-eu-prescriptions, GET-Prescription-EU, {expectation}, "Returns prescription information for EU ePrescription workflows")
+* insert CapSupportSystemOperation(get-eu-prescriptions, GETPrescriptionEU, {expectation}, "Returns prescription information for EU ePrescription workflows")
 * insert GetEUPrescriptionsOperationStatusCodes

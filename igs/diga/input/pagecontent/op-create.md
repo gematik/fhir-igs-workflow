@@ -22,25 +22,27 @@ Die Operation $create wird als HTTP POST auf /Task/$create ausgeführt.
 	data-api-operation-id="createOperation">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-CreateOperation.json %}
+			{% include OperationDefinition-tiflow-diga-create-op.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
-		<!-- TODO: Replace with operation-specific request examples for $create. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleDiGAOperationRequestParameters XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
-		<!-- TODO: Replace with operation-specific response examples for $create. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
  

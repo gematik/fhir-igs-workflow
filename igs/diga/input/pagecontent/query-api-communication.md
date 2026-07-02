@@ -1,5 +1,5 @@
 
-Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/query-api-communication.html) und beschreibt den Einstieg in die Communication-Query-Schnittstelle.
+Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/query-api-communication.html) und beschreibt den Einstieg in die Communication-Query-Schnittstelle.
 
 Communication wird für die Kommunikation zwischen Versicherten und Kostenträger verwendet.
 
@@ -34,21 +34,23 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 	data-api-fhir-interaction="create">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
-		<!-- TODO: Replace with a representative Communication create request for DiGA. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3 XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
-		<!-- TODO: Add a dedicated create response example if needed. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 ### GET /Communication
@@ -62,13 +64,14 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 	data-api-fhir-interaction="search-type">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
-		<!-- TODO: Replace placeholder searchset with a representative Communication query example for DiGA. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleDiGACommunicationSearchset XML %}
 		</div>
 	</div>
+-->
 </div>

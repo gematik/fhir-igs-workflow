@@ -24,13 +24,14 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _MedicationDispense_ wird üb
 	data-api-fhir-interaction="search-type">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
-		<!-- TODO: Replace placeholder searchset with a representative MedicationDispense query example for DiGA. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleDiGAMedicationDispenseSearchset XML %}
 		</div>
 	</div>
+-->
 </div>

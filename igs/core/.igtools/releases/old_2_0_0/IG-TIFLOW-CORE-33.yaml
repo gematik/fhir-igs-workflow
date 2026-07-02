@@ -1,0 +1,23 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 843975264e0781ce722c610d824b7c003afb360a41d0bb51fb60c2c5bd01eafa
+created: '2026-03-23T10:57:48.431539'
+date: '2026-06-18T13:56:46.343221'
+key: IG-TIFLOW-CORE-33
+modified: '2026-06-18T13:56:46.343221'
+release_status: MODIFIED
+source: input/pagecontent/audit-service.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst MUSS beim automatischen Löschen nach Fehlerbehandlung
+  gemäß "TAB_TIFlowFD_004b Versichertenprotokoll nach Löschen wegen Fehlerbehandlung"
+  protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag
+  AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten
+  in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte
+  die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff
+  ggf. intervenieren.
+title: TI-Flow-Fachdienst - Versichertenprotokoll zu Löschen nach Fehlerbehandlung
+version: 1

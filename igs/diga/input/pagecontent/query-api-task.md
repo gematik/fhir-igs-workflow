@@ -26,15 +26,16 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 	data-api-fhir-interaction="search-type">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
-		<!-- TODO: Replace placeholder searchset with a representative Task query example for DiGA. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleDiGATaskSearchset XML %}
 		</div>
 	</div>
+-->
 </div>
 
 <div class="gematik-api"
@@ -43,20 +44,22 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 	data-api-fhir-interaction="patch">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-diga.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
-		<!-- TODO: Add a dedicated Task patch request example for DiGA. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleDiGAOperationRequestParameters XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
-		<!-- TODO: Add a dedicated Task patch response example for DiGA. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleDiGATaskSearchset XML %}
 		</div>
 	</div>
+-->
 </div>
 

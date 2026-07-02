@@ -1,4 +1,4 @@
-Mit der FHIR-Operation kann die Zugriffsberechtigung für die im ACCESS_TOKEN angegebene KVNR abgerufen werden. Diese Operation steht Versicherten zur Verfügung.
+Mit der FHIR-Operation kann die Zugriffsberechtigung für die in der Nutzerinformation (zeta-user-info.identifier) angegebene KVNR abgerufen werden. Diese Operation steht Versicherten zur Verfügung.
 
 ### Nachricht
 
@@ -18,20 +18,22 @@ Die Nachricht wird als HTTP `GET` an `/$read-eu-access-permission` gesendet.
 	data-api-operation-id="readEUAccessPermissionOperation">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpeu.json %}
 		</pre>
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-Read-EU-Access-Permission.json %}
+			{% include OperationDefinition-ReadEUAccessPermission.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
-		<!-- TODO: Verify if a request body example is required for $read-eu-access-permission. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/Example-EU-PermissionRequest XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/Example-EU-PermissionResponse XML %}
@@ -40,6 +42,7 @@ Die Nachricht wird als HTTP `GET` an `/$read-eu-access-permission` gesendet.
 			{% fragment OperationOutcome/ExampleERPEUOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 

@@ -13,6 +13,5 @@ Description: "Fehlercodes für cross-border Szenarien, die im Rahmen des TIFlow 
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_ACCESSCODE_MISMATCH "Access code mismatch"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_TASK_STATUS_MISMATCH "Task status mismatch"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_TASK_ID_REQUIRED "Task id required"
-* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_KVNR_MISMATCH "KVNR mismatch"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_CONSENT_MISSING "Consent missing"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_ACCESS_CODE_INVALID "Access code invalid"

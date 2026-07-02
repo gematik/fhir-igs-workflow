@@ -14,8 +14,50 @@ import os
 import sys
 import subprocess
 import tempfile
+from urllib.request import urlopen
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
+
+
+def resolve_hapi_jar() -> Path:
+    """Resolve HAPI validator path from env vars or HOME fallback."""
+    configured = os.getenv("FHIR_VALIDATOR_JAR") or os.getenv("HAPI_VALIDATOR_JAR")
+    if configured:
+        return Path(configured).expanduser().resolve()
+    return (Path.home() / ".fhir" / "validators" / "validator_cli.jar").resolve()
+
+
+def ensure_hapi_jar(hapi_jar_path: Path) -> bool:
+    """Ensure validator jar exists, downloading it when missing."""
+    if hapi_jar_path.exists():
+        return True
+
+    download_url = os.getenv(
+        "FHIR_VALIDATOR_URL",
+        "https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar",
+    )
+
+    hapi_jar_path.parent.mkdir(parents=True, exist_ok=True)
+    print(f"ℹ HAPI validator not found at: {hapi_jar_path}")
+    print(f"⬇ Downloading validator_cli.jar from: {download_url}")
+
+    try:
+        with urlopen(download_url, timeout=120) as response:
+            data = response.read()
+
+        if not data:
+            print("❌ Download failed: empty response")
+            return False
+
+        tmp_path = hapi_jar_path.with_suffix(".jar.tmp")
+        with tmp_path.open("wb") as tmp_file:
+            tmp_file.write(data)
+        tmp_path.replace(hapi_jar_path)
+        print(f"✅ Downloaded validator jar to: {hapi_jar_path}")
+        return True
+    except Exception as exc:  # noqa: BLE001
+        print(f"❌ Failed to download HAPI validator: {exc}")
+        return False
 
 
 def sanitize_decimal_value(value):
@@ -111,7 +153,7 @@ def run_hapi_transform(
     input_bundle: Path,
     output_file: Path,
     fhir_version: str = "4.0.1",
-    transform_url: str = "https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapCarbonCopy"
+    transform_url: str = "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy"
 ) -> tuple[int, str, str]:
     """
     Run HAPI FHIR transformation on the mapping bundle.
@@ -136,85 +178,81 @@ def run_hapi_transform(
         "de.gematik.epa.medication",
     ]
     
-    # Build modern command (validator 6.8+)
-    cmd_modern = [
+    # Build argument tail shared by modern and legacy syntax variants.
+    shared_args = [
+        "-version",
+        fhir_version,
+        "-output",
+        str(output_file),
+    ]
+
+    for ig_path in ig_paths:
+        shared_args.extend(["-ig", ig_path])
+
+    modern_cmd = [
         "java",
         "-jar",
         str(hapi_jar_path),
         "transform",
         transform_url,
         str(input_bundle),
-        "-version",
-        fhir_version,
-        "-output",
-        str(output_file)
+        *shared_args,
     ]
 
-    # Build legacy command (older validator versions)
-    cmd_legacy = [
+    legacy_cmd = [
         "java",
         "-jar",
         str(hapi_jar_path),
         str(input_bundle),
         "-transform",
         transform_url,
-        "-version",
-        fhir_version,
-        "-output",
-        str(output_file)
+        *shared_args,
     ]
-    
-    # Add all IG dependencies
-    for ig_path in ig_paths:
-        cmd_modern.extend(["-ig", ig_path])
-        cmd_legacy.extend(["-ig", ig_path])
     
     print("🚀 Running HAPI FHIR transformation...")
     print(f"   Input: {input_bundle}")
     print(f"   Output: {output_file}")
     print(f"   Transform: {transform_url}\n")
     
-    # Run the modern command first
+    # Try modern syntax first, then retry with legacy syntax for older validators.
     result = subprocess.run(
-        cmd_modern,
+        modern_cmd,
         capture_output=True,
         text=True,
         cwd=str(project_root)
     )
 
-    # Retry with legacy syntax for compatibility with older validators
-    if result.returncode != 0:
-        print("⚠ Modern transform command failed, retrying legacy -transform syntax...")
-        result = subprocess.run(
-            cmd_legacy,
-            capture_output=True,
-            text=True,
-            cwd=str(project_root)
+    if result.returncode == 0:
+        return result.returncode, result.stdout, result.stderr
+
+    print(
+        "⚠ Modern transform syntax failed. "
+        "Retrying with legacy '-transform' syntax..."
+    )
+
+    legacy_result = subprocess.run(
+        legacy_cmd,
+        capture_output=True,
+        text=True,
+        cwd=str(project_root)
+    )
+
+    if legacy_result.returncode == 0:
+        combined_stdout = "\n".join(
+            text for text in [result.stdout, legacy_result.stdout] if text
         )
-    
-    return result.returncode, result.stdout, result.stderr
+        combined_stderr = "\n".join(
+            text for text in [result.stderr, legacy_result.stderr] if text
+        )
+        return legacy_result.returncode, combined_stdout, combined_stderr
 
-
-def resolve_hapi_validator_path() -> Path:
-    """Resolve validator jar path from env and known local defaults."""
-    candidates = []
-
-    env_path = os.getenv("HAPI_VALIDATOR_JAR")
-    if env_path:
-        candidates.append(Path(env_path).expanduser())
-
-    script_dir = Path(__file__).parent
-    project_root = script_dir.parent.parent
-    candidates.extend([
-        project_root / "input-cache" / "current_hapi_validator.jar",
-        Path("/Users/gematik/dev/validators/current_hapi_validator.jar"),
-    ])
-
-    for path in candidates:
-        if path.exists():
-            return path
-
-    return Path(candidates[0]) if candidates else Path("/Users/gematik/dev/validators/current_hapi_validator.jar")
+    combined_stdout = "\n".join(
+        text for text in [result.stdout, legacy_result.stdout] if text
+    )
+    combined_stderr = "\n".join(
+        text for text in [result.stderr, legacy_result.stderr] if text
+    )
+    return legacy_result.returncode, combined_stdout, combined_stderr
 
 
 def main():
@@ -241,13 +279,20 @@ def main():
         test_case_name = bundle_name
     
     # Create output file path with naming convention
-    output_file = output_dir / f"{test_case_name}-digitaler-durchschlag.json"
+    output_file = output_dir / f"Parameters-{test_case_name}-digitaler-durchschlag.json"
     
     # Find HAPI validator
-    hapi_jar_path = resolve_hapi_validator_path()
+    hapi_jar_path = resolve_hapi_jar()
+
+    if not ensure_hapi_jar(hapi_jar_path):
+        print(f"❌ Error: Unable to provision HAPI validator at: {hapi_jar_path}")
+        print("Set FHIR_VALIDATOR_JAR (or HAPI_VALIDATOR_JAR), or place validator_cli.jar at ~/.fhir/validators/validator_cli.jar")
+        print("Optional override: set FHIR_VALIDATOR_URL to a custom download URL")
+        sys.exit(1)
     
     if not hapi_jar_path.exists():
         print(f"❌ Error: HAPI validator not found at: {hapi_jar_path}")
+        print("Set FHIR_VALIDATOR_JAR (or HAPI_VALIDATOR_JAR), or place validator_cli.jar at ~/.fhir/validators/validator_cli.jar")
         print("\nPlease ensure the HAPI FHIR validator JAR is available.")
         print("Download from: https://github.com/hapifhir/org.hl7.fhir.core/releases")
         sys.exit(1)

@@ -7,7 +7,8 @@ Description: "Mapping-Anweisungen zur Transformation von gematik ERP MedicationD
 
 // * insert sd_structure(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense, source, gematikMedicationDispense)
 * insert sd_structure(http://hl7.org/fhir/StructureDefinition/MedicationDispense, source, gematikMedicationDispense)
-* insert sd_structure(https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-medication-dispense, target, bfarmMedicationDispense)
+// * insert sd_structure(https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-medication-dispense, target, bfarmMedicationDispense)
+* insert sd_structure(http://hl7.org/fhir/StructureDefinition/MedicationDispense, target, bfarmMedicationDispense)
 
 * group[+]
   * name = "ERPTPrescriptionStructureMapMedicationDispense"

@@ -1,0 +1,27 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: c0829d39d7eddf49e8207a4139ac3bce23c6685dbcaf2617a5b6ca1ab6094680
+created: '2026-03-23T10:57:49.329524'
+date: '2026-05-21T07:13:06.237043'
+key: IG-TIFLOW-CHRG-84
+modified: '2026-05-21T07:13:06.237043'
+release_status: MODIFIED
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produktgutachten
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete\
+  \ über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende\
+  \ LEI die Signatur des PKV-Abgabedatensatzes gemäß ETSI_QES prüfen und bei fehlender\
+  \ oder nicht gültiger Signatur die Operation mit dem folgenden Fehler:\n <table\
+  \ id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_CHARGEITEM_DISPENSE_SIGNATURE_INVALID</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
+  \ um ausschließlich authentische Daten zu verwalten."
+title: TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - Signaturprüfung
+  PKV-Abgabedatensatz
+version: 1

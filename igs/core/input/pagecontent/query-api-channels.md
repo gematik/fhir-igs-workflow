@@ -32,17 +32,19 @@ Der TI-Flow-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle 
 	data-api-url-path="/channels">
 	<div id="CapabilityStatement">
 		<pre>
-		{% include CapabilityStatement-erp-fachdienst-server.json %}
+		{% include CapabilityStatement-ti-flow-fachdienst-server.json %}
 		</pre>
 	</div>
 	<div id="Formats">
 			<div data-value="application/json"></div>
 	</div>
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/json" data-type="JSON">
 			{% include channels-list-response-example.json %}
 		</div>
 	</div>
+-->
 	<div id="Responses">
 		<div data-code="200" data-error-code="" data-response-type="application/json">Successful operation</div>
 		<div data-code="400" data-error-code="badRequest" data-response-type="application/fhir+json">Bad Request</div>
@@ -61,17 +63,19 @@ Der TI-Flow-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle 
 	data-api-url-path="/channels/{pushkey}">
 	<div id="CapabilityStatement">
 		<pre>
-		{% include CapabilityStatement-erp-fachdienst-server.json %}
+		{% include CapabilityStatement-ti-flow-fachdienst-server.json %}
 		</pre>
 	</div>
 	<div id="Formats">
 			<div data-value="application/json"></div>
 	</div>
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/json" data-type="JSON">
 			{% include channels-list-response-example.json %}
 		</div>
 	</div>
+-->
 	<div id="Responses">
 		<div data-code="200" data-error-code="" data-response-type="application/json">Successful operation</div>
 		<div data-code="400" data-error-code="badRequest" data-response-type="application/fhir+json">Bad Request</div>
@@ -90,22 +94,26 @@ Der TI-Flow-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle 
 	data-api-url-path="/channels/{pushkey}">
 	<div id="CapabilityStatement">
 		<pre>
-		{% include CapabilityStatement-erp-fachdienst-server.json %}
+		{% include CapabilityStatement-ti-flow-fachdienst-server.json %}
 		</pre>
 	</div>
 	<div id="Formats">
 			<div data-value="application/json"></div>
 	</div>
+<!--
 	<div id="Request-Examples">
 		<div data-name="application/json" data-type="JSON">
 			{% include channels-set-request-example.json %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/json" data-type="JSON">
 			{% include empty-object-response-example.json %}
 		</div>
 	</div>
+-->
 	<div id="Responses">
 		<div data-code="200" data-error-code="" data-response-type="application/json">Successful operation</div>
 		<div data-code="400" data-error-code="badRequest" data-response-type="application/fhir+json">Bad Request</div>

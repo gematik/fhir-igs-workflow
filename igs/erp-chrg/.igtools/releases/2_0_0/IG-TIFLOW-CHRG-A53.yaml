@@ -1,0 +1,31 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 9132cfb5404c1dc9692d1d2abd2699b493dfb06aeb1ad68d9534fe8da54d7951
+created: '2026-06-25T13:00:23.933354'
+date: '2026-06-25T13:00:23.933356'
+key: IG-TIFLOW-CHRG-A53
+modified: '2026-06-25T13:00:23.933355'
+release_status: NEW
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkreten\
+  \ über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende\
+  \ Leistungserbringerinstitution, den im URL-Parameter \"?ac=...\" übertragenen AccessCode\
+  \ gegen den im referenzierten ChargeItem gespeicherten AccessCode ChargeItem.identifier:AccessCode\
+  \ als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode prüfen und\
+  \ bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem folgenden\
+  \ Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403\
+  \ - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n\
+  \            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n\
+  \            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details\
+  \ Code</th>\n            <td>TIFLOW_ACCESSCODE_MISMATCH</td>\n        </tr>\n  \
+  \      <tr>\n            <th>Details Text</th>\n            <td>-</td>\n       \
+  \ </tr>\n    </table> \n    abbrechen, damit Zugriffe auf diesen Datensatz nur durch\
+  \ Berechtigte in Kenntnis des AccessCodes erfolgen."
+title: TI-Flow-Fachdienst - Abrechnungsinformation abrufen - Apotheke - Prüfung AccessCode
+version: 0

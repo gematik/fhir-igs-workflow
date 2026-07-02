@@ -1,0 +1,32 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 0757d9e0c11b3c81350a7ee1f731b40edbc39eb7090dadde9625f7bf3d3cd38a
+created: '2026-03-23T10:57:49.786500'
+date: '2026-05-21T07:13:08.322672'
+key: IG-TIFLOW-ERP-39
+modified: '2026-05-21T07:13:08.322672'
+release_status: MODIFIED
+source: input/pagecontent/op-dispense-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen\
+  \ mittels POST /Task/&lt;id&gt;/$dispense das im http-Body des Requests enthaltene\
+  \ Parameters-Objekt gegen das Profil https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PAR_DispenseOperation_Input\
+  \ prüfen, insbesondere bei der darin enthaltenen MedicationDispense:\n <ul> \n\
+  \ <li>die Korrektheit der Rezept-ID https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId\
+  \ als MedicationDispense.identifier </li>\n <li>die KVNR des Versicherten im referenzierten\
+  \ Task (Task.for) gegen KVNR in MedicationDispense.subject:identifier </li>\n <li>und\
+  \ ob der zeta-user-info.identifier des Nutzers (Telematik-ID) mit dem Wert in MedicationDispense.performer.actor:identifier\
+  \ übereinstimmt </li>\n </ul>\n und im Fehlerfall die Operation mit dem folgenden\
+  \ Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n\
+  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
+  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n\
+  \ </table> \n abbrechen."
+title: TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Schemaprüfung
+  MedicationDispense
+version: 1

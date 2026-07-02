@@ -135,6 +135,24 @@ Usage: #definition
 * group[=].element[39].code = #TIFLOW_TASK_STATUS_MISMATCH
 * group[=].element[39].target[0].code = #79238
 * group[=].element[39].target[0].equivalence = #equivalent
+* group[=].element[40].code = #TIFLOW_POPP_TOKEN_INVALID
+* group[=].element[40].target[0].code = #79273
+* group[=].element[40].target[0].equivalence = #equivalent
+* group[=].element[41].code = #TIFLOW_INTERNAL_ERROR
+* group[=].element[41].target[0].code = #79274
+* group[=].element[41].target[0].equivalence = #equivalent
+* group[=].element[42].code = #TIFLOW_TIMEOUT
+* group[=].element[42].target[0].code = #79275
+* group[=].element[42].target[0].equivalence = #equivalent
+* group[=].element[43].code = #TIFLOW_BLOCKED_FEATURE
+* group[=].element[43].target[0].code = #79268
+* group[=].element[43].target[0].equivalence = #equivalent
+* group[=].element[44].code = #TIFLOW_BLOCKED_FLOWTYPE
+* group[=].element[44].target[0].code = #79270
+* group[=].element[44].target[0].equivalence = #equivalent
+
+
+
 
 
 // TIFLOW_CHARGEITEM_CS_OperationOutcomeDetails.fsh
@@ -253,18 +271,12 @@ Usage: #definition
 * group[=].element[5].code = #MSG_DELETED
 * group[=].element[5].target[0].code = #79267
 * group[=].element[5].target[0].equivalence = #equivalent
-* group[=].element[6].code = #MSG_INTERNAL_ERROR
-* group[=].element[6].target[0].code = #79268
+* group[=].element[6].code = #MSG_PARAM_UNKNOWN
+* group[=].element[6].target[0].code = #79269
 * group[=].element[6].target[0].equivalence = #equivalent
-* group[=].element[7].code = #MSG_PARAM_UNKNOWN
-* group[=].element[7].target[0].code = #79269
+* group[=].element[7].code = #MSG_UNKNOWN_OPERATION
+* group[=].element[7].target[0].code = #79271
 * group[=].element[7].target[0].equivalence = #equivalent
-* group[=].element[8].code = #MSG_TIMEOUT
-* group[=].element[8].target[0].code = #79270
+* group[=].element[8].code = #MSG_UNKNOWN_TYPE
+* group[=].element[8].target[0].code = #79272
 * group[=].element[8].target[0].equivalence = #equivalent
-* group[=].element[9].code = #MSG_UNKNOWN_OPERATION
-* group[=].element[9].target[0].code = #79271
-* group[=].element[9].target[0].equivalence = #equivalent
-* group[=].element[10].code = #MSG_UNKNOWN_TYPE
-* group[=].element[10].target[0].code = #79272
-* group[=].element[10].target[0].equivalence = #equivalent

@@ -1,7 +1,7 @@
 Profile: GEM_ERPCHRG_PR_ChargeItem
 Parent: ChargeItem
 Id: GEM-ERPCHRG-PR-ChargeItem
-* insert MetaProfile (GEM_ERPCHRG_PR_ChargeItem)
+* insert LegacyMeta(StructureDefinition, GEM_ERPCHRG_PR_ChargeItem)
 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
@@ -57,15 +57,19 @@ Id: GEM-ERPCHRG-PR-ChargeItem
     dispenseItemBundle 0..1 and
     receiptBundle 0..1
 
+* supportingInformation[dispenseItemBundle] MS
 * supportingInformation[dispenseItemBundle].display = $DAV-PKV-PR-ERP-AbgabedatenBundle (exactly)
 * supportingInformation[dispenseItemBundle] only Reference(Bundle)
 
+* supportingInformation[dispenseItemBinary] MS
 * supportingInformation[dispenseItemBinary].display = "Binary" (exactly)
 * supportingInformation[dispenseItemBinary] only Reference(Binary)
 
+* supportingInformation[receiptBundle] MS
 * supportingInformation[receiptBundle].display = $GEM_ERP_PR_Bundle (exactly)
 * supportingInformation[receiptBundle] only Reference(Bundle)
 
+* supportingInformation[prescriptionItemBundle] MS
 * supportingInformation[prescriptionItemBundle].display = $KBV_PR_ERP_Bundle (exactly)
 * supportingInformation[prescriptionItemBundle] only Reference(Bundle)
 

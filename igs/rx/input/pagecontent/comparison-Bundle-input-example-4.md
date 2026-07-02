@@ -1,6 +1,7 @@
 ## Bundle → Parameters Mapping
 
-> Quelle: [KBV Bundle](Bundle-input-example-4.html)
+{% comment %}Bundle-input-example-4{% endcomment %}
+> Quelle: [KBV Bundle](Bundle-44420ed9-7388-4be5-acc5-9c124fad9f34.html)
 > Ziel: [EPA Provide Parameters](Parameters-output-example-4.html)
 
 ### Verordnungskennung
@@ -124,7 +125,7 @@
 | `Practitioner.qualification[0].code.coding[0].system` | — | `https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type` | ⚠️ Offen |
 | `Practitioner.qualification[1].code.coding[0].code` | — | `Berufsbezeichnung` | ⚠️ Offen |
 | `Practitioner.qualification[1].code.coding[0].system` | — | `https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung` | ⚠️ Offen |
-| `Practitioner.qualification[1].code.text` | — | `Facharzt für Innere Medizin: Kardiologie` | ⚠️ Offen |
+| `Practitioner.qualification[1].code.text` | — | `Facharzt für Innere Medizin: Kardiologie` | ⚠️ Offen |
 
 ### KBV Medication → EPA Medication
 

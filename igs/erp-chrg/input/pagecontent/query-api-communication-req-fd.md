@@ -9,10 +9,10 @@ Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `Comm
 #### POST /Communication
 
 <!--A_22734-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-96" title="TI-Flow-Fachdienst – Nachricht einstellen – Prüfung Existenz ChargeItem" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A96" title="TI-Flow-Fachdienst - Nachricht einstellen - Prüfung Existenz ChargeItem" version="0">
     <meta lockversion="false"/>
-    <actor name="TI-Flow_FD">
-        <testProcedure id="Produkttest"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht der Profile GEM_ERPCHRG_PR_Communication_ChargChangeReq oder GEM_ERPCHRG_PR_Communication_ChargChangeReply über die HTTP-Operation POST auf den Endpunkt /Communication prüfen und, wenn Communication.basedOn eine nicht existierende ChargeItem Ressource referenziert, mit dem folgenden Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">

@@ -7,30 +7,30 @@ Der Abgabedatensatz dient der Abrechnung. Demgegenüber stehen die Dispensierinf
 Für die Signatur des Abgabedatensatzes wird der Konnektor verwendet.
 
 <!-- A_21619-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-1" title="PS abgebende LEI: Abgabedatensatz mit QES: OCSP Response einbetten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A1" title="PS abgebende LEI: Abgabedatensatz mit QES: OCSP Response einbetten" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Produkttest"/>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Das PS der abgebenden LEI MUSS beim Signieren des Abgabedatensatzes mit einer QES die Signaturoperation des Konnektors mit eingebetteter OCSP-Antwort (IncludeRevocationInfo = true) ausführen.
 </requirement>
 
 <!-- A_21244-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-2" title="PS abgebende LEI: Abgabedatensatz signieren - Signaturverfahren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A2" title="PS abgebende LEI: Abgabedatensatz signieren - Signaturverfahren" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Produkttest"/>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Das PS der abgebenden LEI MUSS die Signatur des Abgabedatensatzes mittels Einzelsignatur, Stapelsignatur und Komfortsignatur unterstützen.
 </requirement>
 
 <!-- A_27050 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-3" title="PS abgebende LEI: Abgabedatensatz signieren - Gültigkeit SMC-B prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A3" title="PS abgebende LEI: Abgabedatensatz signieren - Gültigkeit SMC-B prüfen" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend">
-        <testProcedure id="Produkttest"/>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Das PS der abgebenden LEI MUSS beim Signieren eines Abgabedatensatzes mit einer non-QES vor dem Signieren prüfen, dass die für die nonQES verwendet SMC-B gültig ist.
+     Das PS der abgebenden LEI MUSS beim Signieren eines Abgabedatensatzes mit einer nonQES vor dem Signieren prüfen, dass die für die nonQES verwendet SMC-B gültig ist.
 </requirement>
 
-Hinweis: Die SMC-B ist gültig, wenn ein gültiger ACCESS_TOKEN für den Zugriff auf den TI-Flow-Fachdienst auf Basis dieser SMC-B vorliegt.
+Hinweis: Die SMC-B ist gültig, wenn eine Authentisierung für den Zugriff auf den TI-Flow-Fachdienst auf Basis dieser SMC-B erfolgreich war.

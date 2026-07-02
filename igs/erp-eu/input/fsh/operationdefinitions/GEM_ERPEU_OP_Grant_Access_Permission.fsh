@@ -1,7 +1,7 @@
-Instance: Grant-EU-Access-Permission
+Instance: GrantEUAccessPermission
 InstanceOf: OperationDefinition
 Usage: #definition
-* insert Operation(Grant_Access_Permission)
+* insert Operation(GrantEUAccessPermission)
 * description = "This operation receives the access code and the country that the patient wants to grant access to. The operation validates the country and creates registeres the Access Code."
 * code = #grant-eu-access-permission
 * system = true
@@ -13,21 +13,21 @@ Usage: #definition
 * outputProfile = Canonical(GEM_ERPEU_PR_PAR_Access_Authorization_Response)
 
 // in
-* parameter[+]
-  * name = #countryCode
-  * use = #in
-  * min = 1
-  * max = "1"
-  * documentation = "The country for which the patient wants to grant access."
-  * type = #Coding
+// * parameter[+]
+//   * name = #countryCode
+//   * use = #in
+//   * min = 1
+//   * max = "1"
+//   * documentation = "The country for which the patient wants to grant access."
+//   * type = #Coding
 
-* parameter[+]
-  * name = #accessCode
-  * use = #in
-  * min = 1
-  * max = "1"
-  * documentation = "The access code for that country."
-  * type = #Identifier
+// * parameter[+]
+//   * name = #accessCode
+//   * use = #in
+//   * min = 1
+//   * max = "1"
+//   * documentation = "The access code for that country."
+//   * type = #Identifier
 
 
 // out

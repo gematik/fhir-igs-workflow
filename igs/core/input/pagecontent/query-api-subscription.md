@@ -1,27 +1,21 @@
-Diese Seite beschreibt den Einstieg in die Subscription-Query-Schnittstelle.
+Diese Seite beschreibt die Subscription-Schnittstelle des TI-Flow-Fachdienstes. Das konzeptuelle Pattern des Subscription-Mechanismus ist auf der Seite [Technische Umsetzung - Subscription](./menu-technische-umsetzung-subscription.html) beschrieben.
 
-### Nachricht
+Die Subscription-Schnittstelle besteht aus zwei Endpunkten:
 
-Die Nachricht zum Registrierungsanforderungen zur Benachrichtigungen über Communications wird als HTTP GET-Anfrage an den TI-Flow-Fachdienst gesendet.
+| Endpunkt | HTTP-Methode | Absicherung | Zweck |
+|---|---|---|---|
+| `/Subscription` | POST | ZETA | Subscription registrieren, Bearer-Token erhalten |
+| `/subscription` | GET (WebSocket Upgrade) | TLS + FD Bearer-Token | WebSocket-Verbindung aufbauen |
 
-Die Nachricht zur Interaktion mit Subscription als FHIR-Ressource _Subscription_ wird über die folgenden HTTP-Methoden ermöglicht:
-
-|Akteur|HTTP-Methode|Ergebnis der Anfrage|
-|---|---|---|
-|Apotheke, Kostenträger|POST|Registrierung an der TI-Flow-Fachdienst Webschnittstelle|
-|Apotheke, Kostenträger|GET|Websocket-Verbindung zum NotificationService|
-
-### Anforderungen an Schnittstelle
+### Anforderungen
 
 - [FD-Anforderungen zur Subscription-Query](./query-api-subscription-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [AVS-Anforderungen zur Subscription-Query](./query-api-subscription-req-avs.html): Anforderungen an AVS zur Nutzung der Schnittstelle.
 - [KTR-Anforderungen zur Subscription-Query](./query-api-subscription-req-ktr.html): Anforderungen an Clientsysteme der Kostenträger zur Nutzung der Schnittstelle.
 
-### Resource API
+### POST /Subscription – Subscription registrieren
 
-Anfragen an die <i>Subscription</i>-Ressource können über die RESTful API mittels HTTP GET-Anfragen durchgeführt werden. 
-
-#### API Beschreibung
+Der Client sendet eine FHIR-Subscription-Ressource über die ZETA-gesicherte FHIR-API. Der TI-Flow-Fachdienst generiert ein Pseudonym der Telematik-ID als `Subscription.id` und stellt einen Bearer-Token für den Subscription-Endpunkt aus.
 
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"
@@ -29,66 +23,79 @@ Anfragen an die <i>Subscription</i>-Ressource können über die RESTful API mitt
   data-api-fhir-interaction="create">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
     </pre>
   </div>
+<!--
   <div id="Request-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Subscription/example-create-subscription-request JSON %}
+      {% fragment Subscription/erp-notification-avs-01-request-PostSubscriptionPseudo JSON %}
     </div>
     <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment Subscription/example-create-subscription-request XML %}
+      {% fragment Subscription/erp-notification-avs-01-request-PostSubscriptionPseudo XML %}
     </div>
   </div>
+-->
+<!--
   <div id="Response-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-      {% fragment Subscription/example-create-subscription-response JSON %}
+      {% fragment Subscription/erp-notification-avs-02-response-PostSubscriptionPseudo JSON %}
     </div>
     <div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-      {% fragment Subscription/example-create-subscription-response XML %}
+      {% fragment Subscription/erp-notification-avs-02-response-PostSubscriptionPseudo XML %}
     </div>
   </div>
+-->
 </div>
 
-#### Beispielhafter Ablauf
+
+### GET /subscription – WebSocket-Verbindung aufbauen
+
+Nach der Registrierung baut der Client eine TLS-verschlüsselte WebSocket-Verbindung zum Subscription-Endpunkt auf. Dieser Request läuft **nicht** über ZETA, sondern direkt zum Subscription-Service.
+
+**Request:**
 
 ```http
-GET https://subscription.zentral.erp.splitdns.ti-dienste.de/subscription
-Authorization: Bearer secret-token-abc-123
+GET /subscription HTTP/1.1
+Host: <subscription-endpunkt>
+Authorization: Bearer <vom TI-Flow-FD ausgestellter Bearer-Token>
 Connection: Upgrade
 Pragma: no-cache
 Cache-Control: no-cache
 Upgrade: websocket
 Sec-WebSocket-Version: 13
-Sec-WebSocket-Key: q4xkcO32u266gldTuKaSOw==
+Sec-WebSocket-Key: <Base64-kodierte Nonce (16 Byte)>
 ```
 
-Der Subscription Service antwortet mit dem Upgrade
+**Response (erfolgreicher Upgrade):**
 
 ```http
 HTTP/1.1 101 Switching Protocols
 Upgrade: websocket
 Connection: Upgrade
-Sec-WebSocket-Accept: fA9dggdnMPU79lJgAE3W4TRnyDM=
+Sec-WebSocket-Accept: <Hash>
 ```
 
-Das Upgrade erfolgt mit einer "bind" Text-Nachricht über die Web Socket-Verbindung an den Server.
+Nach dem Upgrade sendet der Client eine `bind`-Nachricht mit der `Subscription.id`:
 
-`bind: <subscription id>`
+```
+bind: <Subscription.id>
+```
 
-Der Subscription Service antwortet mit einer "bound" um die Einrichtung der Subscription zu bestätigen.
+Der Subscription-Service bestätigt mit:
 
-`bound: <subscription id>`
+```
+bound: <Subscription.id>
+```
 
-Wenn eine neue Nachricht für die Telematik-ID der Apotheke eingestellt wird, dann sendet der TI-Flow-Fachdienst eine Nachricht ping: &lt;subscription-id&gt;. Das AVS kann dann diese Nachricht mittels des Anwendungsfalls "Nachrichten von Versicherten empfangen" unter Nutzung des Requests GET /Communication?received=null&recipient=&lt;Telematik-ID&gt; abrufen.
+Ab diesem Zeitpunkt sendet der Subscription-Service bei jeder neu vorliegenden Ressource:
 
-Bei Nutzung des Subscription Services kann abweichend von der Anforderung "A_21556 - PS abgebende LEI: Häufigkeit des Abrufen von Nachrichten" die Operation GET /Communication häufiger als alle 5 Minuten, d.h. nach jeder Notification, mit den obigen Parametern angefragt werden.
+```
+ping: <Subscription.id>
+```
 
-Die Websocket-Verbindung kann bis zu 12 h bestehen. Danach muss das Clientsystem die Subscription neu registrieren.
+Der Client ruft die Ressourcen daraufhin über die reguläre ZETA-gesicherte FHIR-Schnittstelle ab. Über die WebSocket-Verbindung selbst werden keine fachlichen Daten übertragen.
 
-#### Hinweise
+*Hinweis:* Der Subscription-Service antwortet beim Schließen der Verbindung mit WebSocket-Status-Codes gemäß [RFC 6455, Section 7.4](https://datatracker.ietf.org/doc/html/rfc6455#section-7.4). Bei internen Fehlern liefert er HTTP-Status 502 Bad Gateway oder 504 Gateway Timeout.
 
-- Das Signaturzertifikat muss nicht aus der Komponenten-PKI der TI abgeleitet werden.
-- Es wird kein fester Turnus festgelegt, in dem der Schlüssel gewechselt wird. Ein Wechsel kann über betriebliche Prozesse initiiert werden.
-- Der Schlüssel für die Signatur muss sicher gespeichert, jedoch nicht zwingend im HSM abgelegt werden.
-- Jede eingestellte Nachricht führt zu einem Ping, ggfs. im Millisekundenbereich, wenn viele Nachrichten an einen Empfänger gerichtet werden. In Abhängigkeit von der Implementierung kann dieses Verhalten zu einer Überlastung des PS führen, wenn bspw. jedes einzelne Ping den Anwendungsfall „Nachrichten von Versicherten empfangen“ triggert.
+*Hinweis:* Die Signaturschlüssel für Bearer-Tokens müssen nicht aus der Komponenten-PKI der TI abgeleitet werden. Es wird kein fester Wechsel-Turnus festgelegt; ein Schlüsselwechsel kann über betriebliche Prozesse initiiert werden. Der Schlüssel muss sicher gespeichert, jedoch nicht zwingend in einem HSM abgelegt werden.

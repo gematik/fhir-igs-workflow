@@ -1,6 +1,9 @@
+Alias: $erp-base-url = https://tiflow.de/fhir/v1
+
 // FHIR
 Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
+Alias: $hl7-task-status-cs = http://hl7.org/fhir/task-status
 
 // KBV
 Alias: $KBV_EX_ERP_Medication_Category = https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category
@@ -46,6 +49,7 @@ Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-
 Alias: $sct = http://snomed.info/sct
 Alias: $cs-ucum = http://unitsofmeasure.org
 Alias: $hl7-oo = http://terminology.hl7.org/CodeSystem/operation-outcome
+Alias: $dcm = http://dicom.nema.org/resources/ontology/DCM|01
 
 // R5 Backport
 Alias: $medicationDispense-renderedDosageInstruction-r5 = http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction

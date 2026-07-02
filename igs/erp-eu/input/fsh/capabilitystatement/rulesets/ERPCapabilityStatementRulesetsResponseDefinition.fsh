@@ -4,10 +4,6 @@ RuleSet: GlobalQueryErrorCodes
 
 * rest.resource[=].interaction[=] insert InvalidRequest
 
-* rest.resource[=].interaction[=] insert RequestTimeout
-
-* rest.resource[=].interaction[=] insert InternalServerError
-
 // Query-API Interactions
 RuleSet: ReadInteractionStatusCodes
 * insert GlobalQueryErrorCodes
@@ -42,10 +38,6 @@ RuleSet: GlobalSystemOperationErrorCodes
 
 * insert InvalidRequest
 
-* insert RequestTimeout
-
-* insert InternalServerError
-
 RuleSet: SystemOperationStatusCodesWithParameters
 * insert SuccessfulWithParameters
 * insert GlobalSystemOperationErrorCodes
@@ -59,9 +51,9 @@ RuleSet: GlobalOperationErrorCodes
 
 * insert InvalidRequest
 
-* insert RequestTimeout
+* insert TiflowInternalError
 
-* insert InternalServerError
+* insert TiflowTimeout
 
 RuleSet: InstanceOperationStatusCodes
 * insert ResourceIsNotKnown
@@ -89,11 +81,17 @@ RuleSet: GrantEUAccessPermissionOperationStatusCodes
 * rest.operation[=] insert TiflowConsentRequired
 * rest.operation[=] insert TiflowXborderCountryCodeInvalid
 
+* rest.operation[=] insert TiflowAuthRoleNotAllowed
+
 RuleSet: ReadEUAccessPermissionOperationStatusCodes
 * rest.operation[=] insert SystemOperationStatusCodesWithParameters
 
+* rest.operation[=] insert TiflowAuthRoleNotAllowed
+
 RuleSet: RevokeEUAccessPermissionOperationStatusCodes
 * rest.operation[=] insert SystemQueryOperationStatusCodesWithNormalSuccess
+
+* rest.operation[=] insert TiflowAuthRoleNotAllowed
 
 RuleSet: GetEUPrescriptionsOperationStatusCodes
 * rest.operation[=] insert SystemOperationStatusCodesWithParameters

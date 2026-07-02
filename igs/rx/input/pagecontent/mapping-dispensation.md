@@ -8,7 +8,7 @@ Für die erfolgreiche Übertragung an den ePA Medication Service müssen allerdi
 
 Hierbei werden verschiedene Quellen benötigt, um die Daten vollständig zu überführen:
 - Die Dispensierinformationen aus GEM ERP PR CloseOperation Input
-- Der ACCESS_TOKEN der Anfrage zur $close-Operation
+- Die Nutzerinformation (zeta-user-info) der Anfrage zur $close-Operation
 
 ## Übersicht des Mappingvorgehens
 

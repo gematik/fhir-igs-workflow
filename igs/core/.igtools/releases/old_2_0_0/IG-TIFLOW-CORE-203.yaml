@@ -1,0 +1,26 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 405067a203c5f07aa1e76efd873f1f5264f844e593c9346261f82d598dba1189
+created: '2026-03-23T10:57:48.466062'
+date: '2026-05-21T07:13:04.334834'
+key: IG-TIFLOW-CORE-203
+modified: '2026-05-21T07:13:04.334834'
+release_status: MODIFIED
+source: input/pagecontent/query-api-consent-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt\
+  \ /Consent sicherstellen, dass der zeta-user-info.identifier des Nutzers (KVNR)\
+  \ und die KVNR in Consent.patient.identifier übereinstimmen und im Fehlerfall die\
+  \ Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403\
+  \ - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>SVC_IDENTITY_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR\
+  \ Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen, damit eine Einwilligung\
+  \ für einen Versicherten nicht durch Dritte erteilt werden kann."
+title: TI-Flow-Fachdienst - Consent schreiben - Prüfung KVNR
+version: 1

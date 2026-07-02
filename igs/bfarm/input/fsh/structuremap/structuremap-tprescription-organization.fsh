@@ -5,8 +5,10 @@ Title: "E-T-Rezept Structure Map for Organization"
 Description: "Mapping-Anweisungen zur Erstellung einer BfArM Organization aus dem VZD SearchSet"
 * insert Instance(StructureMap, ERPTPrescriptionStructureMapOrganization)
 
-* insert sd_structure(https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-vzd-searchset, source, vzdSearchSet)
-* insert sd_structure(https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-organization, target, bfarmOrganization)
+// * insert sd_structure(https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-vzd-searchset, source, vzdSearchSet)
+* insert sd_structure(http://hl7.org/fhir/StructureDefinition/Bundle, source, vzdSearchSet)
+// * insert sd_structure(https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-organization, target, bfarmOrganization)
+* insert sd_structure(http://hl7.org/fhir/StructureDefinition/Organization, target, bfarmOrganization)
 
 * group[+]
   * name = "ERPTPrescriptionStructureMapOrganization"
@@ -24,6 +26,7 @@ Description: "Mapping-Anweisungen zur Erstellung einer BfArM Organization aus de
       * name = "entry"
       * documentation = "Verarbeitet jeden Eintrag im SearchSet"
       * insert treeSource(srcEntryOrgVar, resource, srcEntryOrganizationVar)
+      * source[=].type = "Organization"
       * source[=].condition = "ofType(Organization)"
       // * source[=].logMessage = "ofType(Organization)"
       
@@ -59,6 +62,7 @@ Description: "Mapping-Anweisungen zur Erstellung einer BfArM Organization aus de
       * name = "entry"
       * documentation = "Verarbeitet HealthcareService-Einträge aus dem SearchSet"
       * insert treeSource(srcEntryHCSVar, resource, srcEntryHealthcareServiceVar)
+      * source[=].type = "HealthcareService"
       * source[=].condition = "ofType(HealthcareService)"
       // * source[=].logMessage = "ofType(HealthcareService)"
       * rule[+]
@@ -75,6 +79,7 @@ Description: "Mapping-Anweisungen zur Erstellung einer BfArM Organization aus de
       * name = "entry"
       * documentation = "Verarbeitet Location-Einträge aus dem SearchSet"
       * insert treeSource(srcEntryHCSVar, resource, srcEntryLocationVar)
+      * source[=].type = "Location"
       * source[=].condition = "ofType(Location)"
       // * source[=].logMessage = "ofType(Location)"
       * rule[+]

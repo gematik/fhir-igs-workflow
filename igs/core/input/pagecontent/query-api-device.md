@@ -7,7 +7,7 @@ Die Device-Query wird über HTTP `GET` auf `/Device` aufgerufen.
 ### Anforderungen an Schnittstelle
 
 - [Server Anforderungen zur Device-Query](./query-api-device-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-- [Client-Anforderungen zur Device-Query](./query-api-device-client-requirements.html): Anforderungen an den Client des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
+- [Client-Anforderungen zur Device-Query](./query-api-device-req-fdv.html): Anforderungen an den Client des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 
@@ -17,9 +17,10 @@ Die Device-Query wird über HTTP `GET` auf `/Device` aufgerufen.
   data-api-fhir-interaction="search-type">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
     </pre>
   </div>
+<!--
   <div id="Response-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
       {% fragment Device/ReceiptBundleDevice JSON %}
@@ -28,6 +29,7 @@ Die Device-Query wird über HTTP `GET` auf `/Device` aufgerufen.
       {% fragment Device/ReceiptBundleDevice XML %}
     </div>
   </div>
+-->
 </div>
 
 ### Hinweise

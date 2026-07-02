@@ -159,7 +159,7 @@ for test_case_path in "${BUILT_TEST_CASES[@]}"; do
 
     test_output_dir="$OUTPUT_DIR/$test_case_name"
     bundle_file="$test_output_dir/${test_case_name}-mapping-bundle.json"
-    result_file="$test_output_dir/${test_case_name}-digitaler-durchschlag.json"
+    result_file="$test_output_dir/Parameters-${test_case_name}-digitaler-durchschlag.json"
 
     echo -e "${YELLOW}[2/3] Transforming with StructureMap...${NC}"
     if python3 "$TRANSFORM_SCRIPT" "$bundle_file" "$test_output_dir"; then
@@ -200,7 +200,10 @@ if [[ "$VALIDATE_CARBON_COPY" == "true" ]]; then
     VALIDATION_INPUTS=()
     for test_case_path in "${TEST_CASES[@]}"; do
         test_case_name=$(basename "$test_case_path")
-        result_file="$OUTPUT_DIR/$test_case_name/${test_case_name}-digitaler-durchschlag.json"
+        result_file="$OUTPUT_DIR/$test_case_name/Parameters-${test_case_name}-digitaler-durchschlag.json"
+        if [[ ! -f "$result_file" ]]; then
+            result_file="$OUTPUT_DIR/$test_case_name/${test_case_name}-digitaler-durchschlag.json"
+        fi
         if [[ -f "$result_file" ]]; then
             VALIDATION_INPUTS+=("$result_file")
         fi
@@ -244,6 +247,12 @@ mkdir -p "$FSH_RESOURCES_DIR"
 # Find all JSON files in output directory and copy them flat
 find "$OUTPUT_DIR" -name "*.json" -type f | while read -r json_file; do
     filename=$(basename "$json_file")
+
+    # Skip pipeline metadata files that are not FHIR resources.
+    if [[ "$filename" == "validation-summary.json" ]]; then
+        continue
+    fi
+
     cp "$json_file" "$FSH_RESOURCES_DIR/$filename"
     echo -e "${GREEN}✓ Copied: $filename${NC}"
 done

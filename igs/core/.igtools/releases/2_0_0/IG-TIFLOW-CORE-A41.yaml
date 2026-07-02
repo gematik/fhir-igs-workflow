@@ -1,0 +1,21 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 1b4aea950ed7f52cf2be43b71e9f3c1b3049d28879787df7c3843bd1335dd9e7
+created: '2026-06-25T11:30:11.200686'
+date: '2026-06-25T11:30:11.200688'
+key: IG-TIFLOW-CORE-A41
+modified: '2026-06-25T11:30:11.200687'
+release_status: NEW
+source: input/pagecontent/op-reject-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation
+  über /Task/&#60;id&#62;/$reject die externe ID in Task.identifier:Secret als https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Secret
+  löschen und den Status des referenzierten Tasks auf Task.status = ready setzen,
+  damit nachfolgende Zugriffe auf diesen Datensatz durch Berechtigte in Kenntnis des
+  AccessCodes erfolgen können.
+title: TI-Flow-Fachdienst - Task zurückweisen - Secret löschen und Status setzen
+version: 0

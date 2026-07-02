@@ -1,0 +1,22 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 9edfba12b0af32840e5fea90a5b4670afc4a1519e510c66497dda248a50ee691
+created: '2026-03-23T10:57:49.326659'
+date: '2026-05-21T07:13:06.223225'
+key: IG-TIFLOW-CHRG-70
+modified: '2026-05-21T07:13:06.223225'
+release_status: MODIFIED
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produktgutachten
+text: Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
+  /ChargeItem eine 256-Bit-Zufallszahl mit einer Mindestentropie von 120 Bit erzeugen,
+  hexadezimal kodieren ([0-9a-f]{64}) und diese im zu speichernden ChargeItem als
+  externe ID in ChargeItem.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode
+  hinzufügen, damit nachfolgende Zugriffe auf diesen Datensatz nur durch Berechtigte
+  in Kenntnis des AccessCodes erfolgen.
+title: TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Generierung AccessCode
+version: 1

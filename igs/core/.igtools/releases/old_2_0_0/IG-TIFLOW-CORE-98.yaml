@@ -1,0 +1,27 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 098b74d3e90456c15fa69d6566884e3b3ffdbd0dd2c1b9961df8bac5ba09c4fb
+created: '2026-03-23T10:57:48.445561'
+date: '2026-05-26T06:22:49.986015'
+key: IG-TIFLOW-CORE-98
+modified: '2026-05-26T06:22:49.986015'
+release_status: MODIFIED
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produktgutachten
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt\
+  \ /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI, den im HTTP-Header\
+  \ X-PoPP-Token übermittelten Token extrahieren, prüfen und bei Fehlen oder fehlerhafter\
+  \ Prüfung mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px\
+  \ solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403\
+  \ - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_POPP_TOKEN_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>PoPP\
+  \ token invalid</td>\n </tr>\n </table> \n abbrechen, damit die Autorisierung zum\
+  \ Zugriff auf die Daten nur erfolgt, wenn ein Anwesenheitsnachweis erfolgreich durchgeführt\
+  \ wurde."
+title: TI-Flow-Fachdienst - Rezepte lesen - Apotheke - Prüfung PoPP-Token
+version: 1

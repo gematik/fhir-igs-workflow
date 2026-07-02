@@ -1,0 +1,28 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 8ef6c12a88bac0215192e48ad663824bcde8f3e9bf9860cadaab5fb956d0ca90
+created: '2026-03-23T10:57:49.324901'
+date: '2026-05-21T07:13:06.203787'
+key: IG-TIFLOW-CHRG-59
+modified: '2026-05-21T07:13:06.203787'
+release_status: MODIFIED
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt\
+  \ /ChargeItem das im URL-Parameter \"secret=...\" übertragene Secret gegen das im\
+  \ referenzierten Task gespeicherte Secret Task.identifier:Secret als https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_NS_Secret\
+  \ prüfen und bei Ungleichheit oder Fehlen des URL-Parameters die Operation mit dem\
+  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_SECRET_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
+  \ damit der Zugriff auf diesen Datensatz nur durch die berechtigten Apotheke in\
+  \ Kenntnis des Secrets erfolgt."
+title: TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Prüfung Secret
+  Task
+version: 1

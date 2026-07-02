@@ -23,15 +23,16 @@ Anfragen an die <i>MedicationDispense</i>-Ressource können über die RESTful AP
 	data-api-fhir-interaction="search-type">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-rx.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
-		<!-- TODO: Replace placeholder searchset with a representative MedicationDispense query example. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleRxMedicationDispenseSearchset XML %}
 		</div>
 	</div>
+-->
 </div>
 
 
@@ -47,15 +48,16 @@ Um spezifische Details zu einem einzelnen _MedicationDispense_ mittels der RESTf
 	data-api-fhir-interaction="read">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-rx.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
-		<!-- TODO: Add a dedicated MedicationDispense read example for RX. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleRxMedicationDispenseSearchset XML %}
 		</div>
 	</div>
+-->
 </div>
 
 #### Hinweise

@@ -18,19 +18,22 @@ Die Nachricht wird als HTTP `POST` an `/$grant-eu-access-permission` gesendet.
 	data-api-operation-id="grantEUAccessPermissionOperation">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpeu.json %}
 		</pre>
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-Grant-EU-Access-Permission.json %}
+			{% include OperationDefinition-GrantEUAccessPermission.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/Example-EU-PermissionRequest XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/Example-EU-PermissionResponse XML %}
@@ -39,6 +42,7 @@ Die Nachricht wird als HTTP `POST` an `/$grant-eu-access-permission` gesendet.
 			{% fragment OperationOutcome/ExampleERPEUOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 

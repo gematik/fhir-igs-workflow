@@ -18,7 +18,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/$eu-close` gesendet.
 	data-api-operation-id="euCloseOperation">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-erpeu.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpeu.json %}
 		</pre>
 	</div>
 	<div id="OperationDefinition">
@@ -26,17 +26,20 @@ Die Nachricht wird als HTTP `POST` an `/Task/$eu-close` gesendet.
 			{% include OperationDefinition-EUCloseOperation.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleEUCloseInputParameters XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
-		<!-- TODO: Add operation-specific success response for $eu-close. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleERPEUOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 

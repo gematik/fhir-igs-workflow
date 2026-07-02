@@ -1,0 +1,28 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 27642772139b1ddaa1d00608958e1df6ed65dcea29a99eb3ce9894566a53b8e4
+created: '2026-06-25T13:14:39.021629'
+date: '2026-06-25T13:14:39.021632'
+key: IG-TIFLOW-XBORDER-A21
+modified: '2026-06-25T13:14:39.021631'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete\
+  \ über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten\
+  \ auf die Ressource übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPEU_PR_PAR_PATCH_Task_Input\
+  \ prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n   \
+  \   <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n\
+  \        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n\
+  \        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR\
+  \ Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen, damit\
+  \ nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst akzeptiert werden."
+title: TI-Flow-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters
+version: 0

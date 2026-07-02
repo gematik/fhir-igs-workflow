@@ -1,0 +1,28 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: e2be5871f23df2359c82fea9bb8a3c6f3e876dfe1e600fc7f4dec2c3e78657d7
+created: '2026-03-23T10:57:49.574278'
+date: '2026-05-21T07:13:07.005573'
+key: IG-TIFLOW-XBORDER-54
+modified: '2026-05-21T07:13:07.005573'
+release_status: MODIFIED
+source: input/pagecontent/op-revoke-eu-access-permission-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produktgutachten
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt\
+  \ /$revoke-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen\
+  \ und sicherstellen, dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n\
+  \ </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die\
+  \ Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403\
+  \ - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit die Information zur Zugriffsberechtigung\
+  \ nicht durch Unberechtigte gelöscht werden kann."
+title: TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung
+version: 1

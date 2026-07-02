@@ -17,9 +17,10 @@ Die AuditEvent-Query wird über HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
   data-api-fhir-interaction="search-type">
   <div id="CapabilityStatement">
     <pre>
-      {% include CapabilityStatement-erp-fachdienst-server.json %}
+      {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
     </pre>
   </div>
+<!--
   <div id="Response-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
       {% fragment Bundle/example-searchset-auditevent JSON %}
@@ -28,6 +29,7 @@ Die AuditEvent-Query wird über HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
       {% fragment Bundle/example-searchset-auditevent XML %}
     </div>
   </div>
+-->
 </div>
 
 

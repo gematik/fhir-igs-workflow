@@ -1,0 +1,24 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 357adeab263e4d76510949bd9fd8eccf7de6af27e7d2c4249dc9f89eecde6310
+created: '2026-03-23T10:57:48.447588'
+date: '2026-05-26T06:22:49.988452'
+key: IG-TIFLOW-CORE-108
+modified: '2026-05-26T06:22:49.988452'
+release_status: MODIFIED
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS bei der Prüfung des PoPP-Token prüfen, dass die\
+  \ Telematik-ID actor_id aus dem Token mit dem zeta-user-info.identifier des Nutzers\
+  \ (Telematik-ID) übereinstimmt und bei fehlerhafter Prüfung mit dem folgenden Fehler:\n\
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>TIFLOW_POPP_TOKEN_INVALID</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>PoPP token invalid</td>\n </tr>\n </table> \n abbrechen."
+title: TI-Flow-Fachdienst - Prüfung PoPP-Token - Telematik-ID prüfen
+version: 1

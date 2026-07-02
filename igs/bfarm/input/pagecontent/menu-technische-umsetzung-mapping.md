@@ -1,14 +1,14 @@
 Nach geltenden gesetzlichen Regelungen ist dem BfArM nach Abgabe einer Verordnung eines Arzneimittels nach §3a Abs. 1 Satz 1 AMVV, also die teratogenen Wirkstoffe Lenalidomid, Pomalidomid oder Thalidomid, ein digitaler Durchschlag des E-T-Rezepts zu übermitteln.
 
-Nach erfolgreichem Abschluss eines E-T-Rezept-Workflows – konkret durch den Aufruf der FHIR-Operation `$close` am TI-Flow-Fachdienst durch die Apotheke – erstellt der TI-Flow-Fachdienst für das betroffene E-T-Rezept ein Dokument gemäß dem Profil [digitaler Durchschlag T-Rezept](./StructureDefinition-erp-tprescription-carbon-copy.html) und überträgt dieses automatisiert und asynchron an den Webdienst des BfArM. Bei einer temporären Nicht-Erreichbarkeit des BfArM wird die zuverlässige Übertragung durch Backoff-Retry-Mechanismen sichergestellt.
+Nach erfolgreichem Abschluss eines E-T-Rezept-Workflows - konkret durch den Aufruf der FHIR-Operation `$close` am TI-Flow-Fachdienst durch die Apotheke - erstellt der TI-Flow-Fachdienst für das betroffene E-T-Rezept ein Dokument gemäß dem Profil [digitaler Durchschlag T-Rezept](./StructureDefinition-erp-tprescription-carbon-copy.html) und überträgt dieses automatisiert und asynchron an den Webdienst des BfArM. Bei einer temporären Nicht-Erreichbarkeit des BfArM wird die zuverlässige Übertragung durch Backoff-Retry-Mechanismen sichergestellt.
 
 Hintergründe zum Datenmodell und zu den Designentscheidungen finden sich unter [Informationen zum Datenmodell](./menu-technische-umsetzung-t-register.html#fachliche-informationseinheiten-des-digitalen-durchschlags).
 
 ### Erstellen des digitalen Durchschlags
 
-Der TI-Flow-Fachdienst erstellt ein Artefakt mit dem Profil „digitaler Durchschlag T-Rezept“. Dabei werden Informationen aus der Verordnung, der Dispensierung (Abgabe) und dem FHIR-VZD (Verzeichnisdienst) genutzt. Die fachlichen Inhalte, die hierbei übertragen werden, sind im [Logisches Modell digitaler Durchschlag E-T-Rezept](./StructureDefinition-erp-tprescription-carbon-copy-logical.html) abgebildet.
+Der TI-Flow-Fachdienst erstellt ein Artefakt mit dem Profil "digitaler Durchschlag T-Rezept". Dabei werden Informationen aus der Verordnung, der Dispensierung (Abgabe) und dem FHIR-VZD (Verzeichnisdienst) genutzt. Die fachlichen Inhalte, die hierbei übertragen werden, sind im [Logisches Modell digitaler Durchschlag E-T-Rezept](./StructureDefinition-erp-tprescription-carbon-copy-logical.html) abgebildet.
 
-Der TI-Flow-Fachdienst erzeugt diesen Datensatz aus den Eingangsdaten, die nach abschliessender Bereitstellung der Dispensierinformation im E-Rezept-Workflows zur Verfügung stehen. Der relevante Workflow-Typ ist der [Flowtype 166](https://simplifier.net/erezept-workflow/gem-erp-cs-flowtype) („Flowtype für Arzneimittel nach § 3a AMVV“), der speziell für diesen Anwendungsfall eingeführt wurde.
+Der TI-Flow-Fachdienst erzeugt diesen Datensatz aus den Eingangsdaten, die nach abschliessender Bereitstellung der Dispensierinformation im E-Rezept-Workflows zur Verfügung stehen. Der relevante Workflow-Typ ist der [Flowtype 166](https://simplifier.net/erezept-workflow/gem-erp-cs-flowtype) ("Flowtype für Arzneimittel nach § 3a AMVV"), der speziell für diesen Anwendungsfall eingeführt wurde.
 
 ### Mapping des digitalen Durchschlags E-T-Rezept
 
@@ -71,7 +71,7 @@ Um HAPI FHIR zur Transformation zu nutzen, müssen FHIR-Version, die verwendeten
 ```
 sushi && \
 java -jar <path-to>/fhir_hapi.jar fsh-generated/resources/example-case-01-mapping-bundle.json \
--transform https://gematik.de/fhir/erp-t-prescription/StructureMap/ERPTPrescriptionStructureMapCarbonCopy \
+-transform https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy \
 -version 4.0.1 \
 -ig ./fsh-generated/resources \
 -ig de.gematik.erezept-workflow.r4 \

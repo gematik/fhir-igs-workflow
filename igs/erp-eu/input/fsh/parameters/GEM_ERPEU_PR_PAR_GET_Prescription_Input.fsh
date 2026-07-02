@@ -12,7 +12,7 @@ Description: "This profile defines the parameters for receiving dispense informa
 * parameter ^slicing.rules = #closed
 
 * parameter contains 
-  requestData 1..1
+  requestData 1..1 MS
 
 * parameter[requestData]
   * obeys workflow-parameters-get-prescription-eu-1
@@ -89,7 +89,7 @@ Description: "This profile defines the parameters for receiving dispense informa
     * name = "practitionerRole"
     * value[x] 1..1
     * value[x] only Coding
-    * valueCoding from EPAStructuralRoleofHealthcareProfessionalVS (required)
+    * valueCoding from $epa-role-of-healthcare-vs (required)
       * system 1..1 MS
     * resource 0..0
     * part 0..0
@@ -105,7 +105,7 @@ Description: "This profile defines the parameters for receiving dispense informa
     * name = "healthcare-facility-type"
     * value[x] 1..1
     * value[x] only Coding
-    * valueCoding from TIOrganizationProfessionTypeOidVS (required)
+    * valueCoding from $profession-oid-vs (required)
       * system 1..1 MS
     * resource 0..0
     * part 0..0

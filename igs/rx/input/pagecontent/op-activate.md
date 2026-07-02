@@ -18,26 +18,28 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet.
 	data-api-operation-id="activateOperation">
 	<div id="CapabilityStatement">
 		<pre>
-			{% include CapabilityStatement-erp-fachdienst-server-rx.json %}
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-ActivateOperation.json %}
+			{% include OperationDefinition-tiflow-rx-activate-op.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
-		<!-- TODO: Replace with operation-specific request examples for $activate. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleRxOperationRequestParameters XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
-		<!-- TODO: Replace with operation-specific response examples for $activate. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 

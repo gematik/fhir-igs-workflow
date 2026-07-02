@@ -5,7 +5,7 @@ Eine MVO besteht aus mehreren Teilverordnungen, die jeweils als eigenes E-Rezept
 
 ### Kontext
 
-Mehrfachverordnungen sollen die Versorgung mit Arzneimittel für chronisch Kranke erleichtern. Hierfür wurde in § 31 Absatz 1b SGB V die Grundlage geschaffen: „Für Versicherte, die eine kontinuierliche Versorgung mit einem bestimmten Arzneimittel benötigen, können Vertragsärzte Verordnungen ausstellen, nach denen eine nach der Erstabgabe bis zu dreimal sich wiederholende Abgabe erlaubt ist. Die Verordnungen sind besonders zu kennzeichnen. Sie dürfen bis zu einem Jahr nach Ausstellungsdatum zu Lasten der gesetzlichen Krankenkasse durch Apotheken beliefert werden."
+Mehrfachverordnungen sollen die Versorgung mit Arzneimittel für chronisch Kranke erleichtern. Hierfür wurde in § 31 Absatz 1b SGB V die Grundlage geschaffen: "Für Versicherte, die eine kontinuierliche Versorgung mit einem bestimmten Arzneimittel benötigen, können Vertragsärzte Verordnungen ausstellen, nach denen eine nach der Erstabgabe bis zu dreimal sich wiederholende Abgabe erlaubt ist. Die Verordnungen sind besonders zu kennzeichnen. Sie dürfen bis zu einem Jahr nach Ausstellungsdatum zu Lasten der gesetzlichen Krankenkasse durch Apotheken beliefert werden."
 
 Neben § 31 Absatz 1b SGB V regelt § 4 Abs. 3 AMVV i.V.m. § 2 Abs. 1 Nr. 6a AMVV die gesetzliche Grundlage der Mehrfachverordnungen.
 
