@@ -21,3 +21,6 @@ Alias: $cs-pzn = http://fhir.de/CodeSystem/ifa/pzn
 // DE-Basisprofile
 Alias: $identifier-kvid-10 = http://fhir.de/sid/gkv/kvid-10
 Alias: $identifier-telematik-id = https://gematik.de/fhir/sid/telematik-id
+
+// Workflow
+Alias: $cs-flowtype = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType
