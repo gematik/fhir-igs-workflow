@@ -45,8 +45,6 @@ Usage: #example
 * meta.id = "Task-erp-diga-01-task-162-create"
 * insert DiGA_Task(draft)
 
-
-
 RuleSet: DiGA_Task(status)
 * status = #{status}
 * insert Task162Exension
@@ -73,3 +71,9 @@ RuleSet: GKV_Identifier(field)
 RuleSet: TaskMiscInfo
 * insert DateTime(authoredOn)
 * insert DateTimeStamp(lastModified)
+
+RuleSet: DiGAExpiryDate(field) //Date plus 100 Tage
+* {field} = "2026-01-09"
+
+RuleSet: KVNR(field)
+* {field} = "X123456789"
