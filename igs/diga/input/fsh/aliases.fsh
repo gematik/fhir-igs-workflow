@@ -24,3 +24,6 @@ Alias: $identifier-telematik-id = https://gematik.de/fhir/sid/telematik-id
 
 // Workflow
 Alias: $cs-flowtype = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType
+
+//Schlüsseltabellen
+Alias: $GEM_ERP_CS_OrganizationType = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OrganizationType
