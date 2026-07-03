@@ -1,0 +1,24 @@
+@startuml
+
+!include ./utils/style.iuml
+!include ./utils/states.iuml
+hide empty description
+
+$correct_state_requested(requested)
+$correct_state_rejected(rejected)
+
+$tech_state_draft(draft)
+$tech_state_in_progress(inprogress)
+$tech_state_completed(completed)
+$tech_state_cancelled(cancelled)
+
+
+[*] -d-> draft
+draft -r-> requested
+requested -r-> inprogress
+requested -d-> cancelled
+inprogress -l-> requested
+inprogress -d-> rejected
+inprogress -r-> completed
+
+@enduml
