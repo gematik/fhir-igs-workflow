@@ -23,13 +23,23 @@ Description: "Representative business error for DiGA operation calls"
 * issue[0].diagnostics = "Expected status ready but found completed"
 
 Instance: ExampleDiGATaskInReadyState
-InstanceOf: Task
+InstanceOf: TIFlowDiGATask
 Usage: #example
 Title: "DiGA Task in ready state"
 * id = "ExampleDiGATaskInReadyState"
-* status = #ready
-* intent = #order
-* authoredOn = "2026-03-20"
+* insert DiGA_Task(ready)
+* insert TaskIdentifierAccessCode
+* insert TaskInputReceipt(3ebd56b4-5cdf-42bc-b26a-738d0b08068a)
+// TODO: Bug im E-Rezept-Fachdienst
+* input[patientReceipt].type = $GEM_ERP_CS_DocumentType#2
+* input[patientReceipt].valueReference.reference = "3ebd56b4-5cdf-42bc-b26a-738d0b08068a"
+
+Instance: 3ebd56b4-5cdf-42bc-b26a-738d0b08068a
+InstanceOf: Bundle
+Usage: #inline
+* meta.profile[0] = "$evdga-bundle|1.2"
+* meta.tag.display = "Unvollständiges Beispiel eines DiGA-Rezept-Bundles"
+* type = #document
 
 Instance: ExampleDiGATaskSearchset
 InstanceOf: Bundle
@@ -44,6 +54,8 @@ Description: "Example response for GET /Task in DiGA workflow"
 * entry[+].fullUrl = "https://erp-ref.example.org/Task/ExampleDiGATaskInReadyState"
 * entry[=].resource = ExampleDiGATaskInReadyState
 * entry[=].search.mode = #match
+* entry[+].fullUrl = "urn:uuid:3ebd56b4-5cdf-42bc-b26a-738d0b08068a"
+* entry[=].resource = 3ebd56b4-5cdf-42bc-b26a-738d0b08068a
 
 Instance: ExampleDiGACommunicationSearchset
 InstanceOf: Bundle

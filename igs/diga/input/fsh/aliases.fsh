@@ -6,6 +6,7 @@ Alias: $erp-base-url = https://tiflow.de/diga/fhir/v1
 Alias: $erp-task = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task
 Alias: $erp-communication-diga = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA
 Alias: $erp-medication-dispense-diga = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA
+Alias: $evdga-bundle = https://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle
 
 Alias: $op-create = https://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition
 Alias: $op-activate = https://gematik.de/fhir/erp/OperationDefinition/ActivateOperationDefinition
@@ -24,6 +25,7 @@ Alias: $identifier-telematik-id = https://gematik.de/fhir/sid/telematik-id
 
 // Workflow
 Alias: $cs-flowtype = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType
+Alias: $GEM_ERP_CS_DocumentType = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType
 
 //Schlüsseltabellen
 Alias: $GEM_ERP_CS_OrganizationType = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OrganizationType

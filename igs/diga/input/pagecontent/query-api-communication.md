@@ -37,20 +37,16 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3 XML %}
+			{% fragment Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3-payload XML %}
 		</div>
 	</div>
--->
-<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
+			{% fragment Communication/140f716f-f649-44fe-9a4e-157eb3c8adf3-response XML %}
 		</div>
 	</div>
--->
 </div>
 
 ### GET /Communication

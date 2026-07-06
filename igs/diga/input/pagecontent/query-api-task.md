@@ -29,13 +29,11 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleDiGATaskSearchset XML %}
 		</div>
 	</div>
--->
 </div>
 
 <div class="gematik-api"
