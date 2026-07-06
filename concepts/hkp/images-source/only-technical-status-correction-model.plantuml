@@ -9,6 +9,7 @@ $correct_state_rejected(rejected)
 
 $tech_state_draft(draft)
 $tech_state_in_progress(inprogress)
+$tech_state_on_hold(onhold)
 $tech_state_completed(completed)
 $tech_state_cancelled(cancelled)
 
@@ -20,5 +21,7 @@ requested -d-> cancelled
 inprogress -l-> requested
 inprogress -d-> rejected
 inprogress -r-> completed
+inprogress -u-> onhold
+onhold -d-> inprogress
 
 @enduml
