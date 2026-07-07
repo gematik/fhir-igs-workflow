@@ -10,8 +10,7 @@ Das _Capability_ _Statement_ beschreibt die Anforderungen und Fähigkeiten, die 
 ### Ressourcenprofile
 
 {% capture profiles %}
-StructureDefinition/GEM-ERP-PR-Communication-DiGA,
-StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA
+StructureDefinition/tiflow-hkp-correction-questionnaire
 {% endcapture %}
 {% include artifacts-table-generator.html render=profiles %}
 <div><figcaption><strong>Tabelle:</strong> Ressourcenprofile</figcaption></div>
@@ -27,8 +26,7 @@ StructureDefinition/GEM-ERP-LOG-MedicationDispense-DiGA
 ### Erweiterungen (Extension) Definitions
 
 {% capture extensions %}
-StructureDefinition/GEM-ERP-EX-RedeemCode,
-StructureDefinition/GEM-ERP-EX-DeepLink
+StructureDefinition/tiflow-extract-from-document,
 {% endcapture %}
 {% include artifacts-table-generator.html render=extensions %}
 <div><figcaption><strong>Tabelle:</strong> Extension Definitions</figcaption></div>
