@@ -4,13 +4,18 @@ Instance: example-questionnaire-response-new
 InstanceOf: QuestionnaireResponse
 Usage: #example
 Title: "example-questionnaire-response-new"
-Description: "Beispiel für Anfrageantwort"
+Description: "Beispiel für Anfrage zum Hinzufügen einer Maßnahme"
 * status = #completed
+* questionnaire = Canonical(KBVHKPKorrekturVerordnung)
+
+// Neue Maßnahme Insulingabe
 * item[+]
-  * linkId = "leistungHinzufuegen"
+  * linkId = "ressourceHinzufuegen"
   * item[+]
     * linkId = "leistungHinzufuegen.leistungsArt"
     * answer.valueCoding = $hkp-la#insulingabe
+
+// Neue Maßnahme Insulingabe
 * item[+]
   * linkId = "leistungHinzufuegen"
   * item[+]
