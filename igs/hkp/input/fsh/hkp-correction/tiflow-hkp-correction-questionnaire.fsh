@@ -37,6 +37,23 @@ Description: "Manipulate FHIR-Document Questionnaire Profile"
   * ^short = "Templates für neue Ressourcen"
   * ^definition = "Falls die Gruppe ressourceHinzufügen genutzt wird, muss in contained template Ressourcen angelegt werden, die zu befüllen sind."
 
+* extension MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "url"
+  * ^slicing.description = "Erweiterungen für den Kontext der Auswertung"
+  * ^slicing.rules = #open
+  * ^slicing.ordered = false
+* extension contains LaunchContextExtension named launchContext 1..1 MS
+
+* extension[launchContext]
+  * ^short = "Kontext für die Auswertung"
+  * ^definition = "Die FHIR-Document-Bundle, die bearbeitet werden soll, wird als Kontext für die Template-Extraktion übergeben."
+  * extension contains TIFlowLaunchContextProfile named profile 1..1 MS
+  
+  * extension[name].valueCoding = LaunchContext#sourceDocument
+  * extension[type].valueCode = #Bundle
+  * extension[description].valueString = "Das FHIR-Dokument, das bearbeitet werden soll"
+
 * item
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "linkId"
@@ -59,47 +76,57 @@ ressourceLoeschen 0..* MS
     * ^slicing.description = "Erweiterungen für das Hinzufügen einer neuen Ressource"
     * ^slicing.rules = #open
     * ^slicing.ordered = false
-  * extension contains TemplateExtractExtension named templateExtractExtension 1..1 MS
+  * extension contains TemplateExtractExtension named templateExtract 1..1 MS
+  and ExtractAllocateIdExtension named extractAllocateId 1..1 MS
   and TIFlowAddReferenceInDocument named tiflowAddReferenceInDocument 0..* MS
   
-  * extension[templateExtractExtension]
+  * extension[templateExtract]
     * ^short = "Referenz zum Template, was erzeugt werden soll"
     * ^definition = "Verweist auf eine in .contained hinterlegte Template-Ressource, die als Vorlage für die neu zu erstellende Ressource dient. Die Template-Ressource wird über SDC-Extensions mit Werten befüllt und anschließend als neue Ressource ins Dokument eingefügt."
     
+  * extension[extractAllocateId]
+    * ^short = "Setzen einer neuen UUID für die Referenzierung"
+    * ^definition = "Allokiert für jede Wiederholung des Items eine neue UUID, die in den templateExtract- und templateExtractValue-Ausdrücken verfügbar ist."
+    * valueString 1..1 MS
+  
   * extension[tiflowAddReferenceInDocument]
     * ^short = "Ort der Referenzhinzufügung"
     
   * item 0..* MS
     
 * item[ressourceAeandern]
-  * linkId = "ressourceAeandern"
   * type = #group
   * repeats MS
 
-  * item 2..2
-    * ^slicing.discriminator.type = #value
-    * ^slicing.discriminator.path = "linkId"
-    * ^slicing.rules = #closed
-    * ^slicing.description = "Identifikatoren für die Änderungen an einer Ressource"
-    * ^slicing.ordered = false
-
-  * item contains id 0..1 MS and value 1..1 MS
+  * item 1..2 MS
+    * ^short = "Sub-Items für Identifikation und Wert"
+    * ^definition = "Optional ein item für die Ressourcen-ID, und mindestens ein item für den neuen Wert."
+    * type MS
   
-  * item[id]
-    * linkId = "ressourceAeandern.id"
-    * type = #reference
+  * item ^slicing.discriminator.type = #value
+  * item ^slicing.discriminator.path = "type"
+  * item ^slicing.rules = #open
+  * item ^slicing.description = "Unterscheidung nach item type"
+  * item ^slicing.ordered = false
+  
+  * item contains idItem 0..1 MS and valueItem 1..1 MS
+  
+  * item[idItem]
+    * type = #reference (exactly)
     * repeats = false
-  * item[value]
-    * linkId = "ressourceAeandern.value"
+    * ^short = "ID der zu ändernden Ressource"
+  
+  * item[valueItem]
+    * type MS
     * repeats = false
-
+    * ^short = "Neuer Wert für das zu ändernde Feld"
     * extension MS
       * ^slicing.discriminator.type = #value
       * ^slicing.discriminator.path = "url"
       * ^slicing.description = "Erweiterungen für das Ändern einer ressource"
       * ^slicing.rules = #open
       * ^slicing.ordered = false
-    * extension contains TIFlowExtractFromDocument named tiFlowExtractFromDocument 1..1 MS
+    * extension contains TIFlowTargetPath named tiFlowTargetPath 1..1 MS
 
 * item[ressourceLoeschen]
   * linkId = "ressourceLoeschen"
@@ -117,14 +144,6 @@ ressourceLoeschen 0..* MS
   * extension[tiflowRemoveReferenceInDocument]
     * ^short = "Ort der Referenzlöschung"
 
-Extension: TIFlowExtractFromDocument
-Id: tiflow-extract-from-document
-Title: "TI Flow Extract From Document"
-Description: "TBD"
-* value[x] only string
-* valueString 1..1 MS
-  * ^short = "FHIR-Path zum Feld"
-  * ^definition = "FHIR-Path Ausdruck zum Ändern des Wertes in einem Dokument. Relativ zur extrahierten Ressource."
 
 Extension: TIFlowAddReferenceInDocument
 Id: tiflow-add-reference-in-document
@@ -134,6 +153,25 @@ Description: "SDC - Extension zum Hinzufügen einer Referenz in einem Dokument"
 * valueString 1..1 MS
   * ^short = "Ort der Referenz"
   * ^definition = "FHIR-Path Ausdruck zum Hinzufügen der Referenz"
+ 
+Extension: TIFlowLaunchContextProfile
+Id: tiflow-launch-context-profile
+Title: "TI Flow Launch Context Profile"
+Description: "SDC - Extension zur Angabe von Profil und Version des Fachdokuments"
+* value[x] only canonical
+* valueCanonical 1..1 MS
+  * ^short = "Canonical des Fachdokuments"
+  * ^definition = "Anzugeben als Canonical mit Version des Fachdokuments"
+  * ^comment = "Der E-Rezept-Fachdienst nutzt diese Cannonical um zu validieren, dass ein Fachdokument in dieser Version vorliegt."
+
+Extension: TIFlowTargetPath
+Id: tiflow-target-path
+Title: "TI Flow Target Path"
+Description: "Spezifiziert den FHIRPath im FHIR-Dokument, wo ein Feld aktualisiert werden soll"
+* value[x] only string
+* valueString 1..1 MS
+  * ^short = "Ziel-Feldpfad"
+  * ^definition = "FHIRPath-Ausdruck (relativ zur identifizierten Ressource) der angibt, welches Feld in der Ressource aktualisiert werden soll"
 
 Extension: TIFlowRemoveReferenceInDocument
 Id: tiflow-remove-reference-in-document
