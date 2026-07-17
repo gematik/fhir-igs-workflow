@@ -29,6 +29,14 @@ state "completed" as $alias #DodgerBlue
 state "cancelled" as $alias #Orange
 !endprocedure
 
+!procedure $correct_state_requested($alias)
+state "requested" as $alias #Aquamarine
+!endprocedure
+
+!procedure $correct_state_rejected($alias)
+state "rejected" as $alias #Coral
+!endprocedure
+
 
 !procedure $state_init($alias)
 state "<<initialisiert>>\nOrderTask" as $alias
