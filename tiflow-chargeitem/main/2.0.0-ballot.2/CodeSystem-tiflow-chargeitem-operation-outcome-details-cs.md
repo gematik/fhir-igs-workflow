@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - ballot
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-chargeitem/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-06-29 | *Computable Name*:TIFLOWChargeItemOperationOutcomeDetailsCS |
+| Draft as of 2026-07-23 | *Computable Name*:TIFLOWChargeItemOperationOutcomeDetailsCS |
 
  
 Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können 
@@ -38,7 +38,7 @@ Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den Oper
   "title" : "TIFLOW ChargeItem Operation Outcome Details CS",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-06-29T14:39:26+00:00",
+  "date" : "2026-07-23T13:24:10+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
