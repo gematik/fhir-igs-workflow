@@ -23,6 +23,24 @@ Description: "Maps KBV-Ingredient ERP Medication to BfArM T-Prescription Medicat
     * insert targetSetIdVariable(bfarmMedication, id, IdVar)
     * documentation = "Übernimmt die eindeutige Medication-ID unverändert"
 
+  // Extensions
+  * rule[+]
+    * name = "medicationExt"
+    * insert treeSource(kbvMedicationIngredient, extension, extVar)
+    * insert treeTarget(bfarmMedication, extension, tgtExtVar)
+    * documentation = "Mappt Medication-Extensions von KBV- zu BfArM-Format"
+    * rule[+]
+      * name = "copyNormgroesseExtensionUrl"
+      * documentation = "Übernimmt die Normgröße-Extension unverändert (deutsche Packungsgrößenangabe)"
+      * source[+].context = "extVar"
+      * source[=].condition = "url='http://fhir.de/StructureDefinition/normgroesse'"
+      * insert targetSetStringVariable(tgtExtVar, url, http://fhir.de/StructureDefinition/normgroesse)
+      * rule[+]
+        * name = "copyExtensionValue"
+        * documentation = "Kopiert den Wert der Normgröße-Extension (N1, N2, N3)"
+        * insert treeSource(extVar, value, extValVar)
+        * insert targetSetIdVariable(tgtExtVar, value, extValVar)
+
   // form
   * rule[+]
     * name = "medicationForm"

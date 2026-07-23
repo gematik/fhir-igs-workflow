@@ -1,32 +1,31 @@
 Instance: ExampleMedicationRequest-T
 InstanceOf: ERP_TPrescription_MedicationRequest
 Title: "Beispiel BfArM MedicationRequest"
-Description: "Ein MedicationRequest für die Ausgabe von Pomalidomid mit einer Dosierung von 1-1-1-1"
+Description: "Ein MedicationRequest für die Ausgabe von Pomalidomid mit einer Freitextdosierung"
 * status = #completed
 * intent = #order
 * authoredOn = "2026-04-01"
-* subject.identifier.system = $identifier-kvid-10
-// * subject.identifier.system.extension[+].url = $data-absent-reason
-// * subject.identifier.system.extension[=].valueCode = #not-permitted
+* subject.identifier.system.extension[+].url = $data-absent-reason
+* subject.identifier.system.extension[=].valueCode = #not-permitted
 * subject.identifier.value.extension[+].url = $data-absent-reason
 * subject.identifier.value.extension[=].valueCode = #not-permitted
 * medicationReference = Reference(ExampleMedication1-Pomalidomid-T)
-* extension[renderedDosageInstruction].valueMarkdown = "1-1-1-1 nach Bedarf"
+* extension[renderedDosageInstruction].valueMarkdown = "nach Bedarf mit ausreichend Flüssigkeit"
 * extension[generatedDosageInstructionsMeta]
   * url = $generatedMeta
   * extension[+].url = "algorithmVersion"
   * extension[=].valueString = "1.0.0"
   * extension[+].url = "language"
   * extension[=].valueCode = #de-DE
-* dosageInstruction[+].text = "1-1-1-1 nach Bedarf"
+* dosageInstruction[+].text = "nach Bedarf mit ausreichend Flüssigkeit"
 * dispenseRequest
   * quantity.value = 10
   * quantity.unit = "Tablette"
 * extension[teratogenic]
   * extension[off-label].valueBoolean = true
   * extension[childbearing-potential].valueBoolean = true
-  * extension[security-compliance].valueBoolean = false
-  * extension[hand-out-information-material].valueBoolean = false
+  * extension[security-compliance].valueBoolean = true
+  * extension[hand-out-information-material].valueBoolean = true
   * extension[declaration-of-expertise].valueBoolean = true
 
 Instance: ExampleMedication1-Pomalidomid-T
