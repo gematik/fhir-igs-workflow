@@ -1,0 +1,37 @@
+name: "Änderungs Issue"
+description: Enthält Angaben zu einem Change der aus einem Kommentar oder Änderungseintrag hervorgeht.
+title: C_XXX - 
+labels: [
+  "IG",
+  "change"
+]
+body:
+  - type: input
+    id: reprod-url
+    attributes:
+      label: "URL in the IG"
+      description: Wenn es um einen issue im IG geht, dann hier den Link zur Seite/ Anforderung hinterlegen.
+    validations:
+      required: false
+  - type: input
+    id: polarion-url
+    attributes:
+      label: "Link nach Polarion"
+      description: Falls es sich um einen Polarion Änderungseintrag handelt, kann dieser hier verlinkt werden.
+    validations:
+      required: false
+  - type: textarea
+    id: motivation
+    attributes:
+      label: "Beschreibung der Änderungsmotivation"
+      description: Hier bitte die Motivation für den Änderungsbedarf dokumentieren.
+    validations:
+      required: true
+  - type: textarea
+    id: change-content
+    attributes:
+      label: "Beschreibung der Änderung"
+      description: Hier bitte die geplanten, bzw. durchzuführenden Änderungen dokumentieren.
+    validations:
+      required: true
+  
