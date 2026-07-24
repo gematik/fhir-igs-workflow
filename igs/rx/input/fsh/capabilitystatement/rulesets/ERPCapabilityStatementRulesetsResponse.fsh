@@ -271,3 +271,55 @@ RuleSet: TiflowTimeout
   * extension[description].valueString = "Timeout"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_TIMEOUT"
+
+// EU-spezifische Response-Definitionen (grenzüberschreitender Datenaustausch)
+
+RuleSet: SuccessfulWithParameters
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "200"
+  * extension[description].valueString = "Successful operation"
+  * extension[responseType].valueString = "Parameters"
+
+RuleSet: TiflowAccessPermissionInvalid
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "403"
+  * extension[description].valueString = "Access permission invalid"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_ACCESS_PERMISSION_INVALID"
+
+RuleSet: TiflowConsentRequired
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "403"
+  * extension[description].valueString = "Consent required"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_CONSENT_REQUIRED"
+
+RuleSet: TiflowConsentMissing
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "403"
+  * extension[description].valueString = "Consent missing"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_CONSENT_MISSING"
+
+RuleSet: TiflowAccessCodeInvalid
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400"
+  * extension[description].valueString = "Access code invalid"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_ACCESS_CODE_INVALID"
+
+RuleSet: TiflowXborderNoPrescriptionsFound
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "404"
+  * extension[description].valueString = "No prescriptions found"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND"
+
+RuleSet: TiflowXborderCountryCodeInvalid
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "409"
+  * extension[description].valueString = "Country code invalid"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_XBORDER_COUNTRY_CODE_INVALID"
+
+// Errors for all System Operations

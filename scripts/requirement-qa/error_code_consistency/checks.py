@@ -486,7 +486,7 @@ def check_module_codesystem_placement(ig_roots: Dict[str, Path]) -> List[Finding
         "TIFLOW_EREZEPT_": ("rx", "TIFLOW_EREZEPT_CS_OperationOutcomeDetails"),
         "TIFLOW_DIGA_": ("diga", "TIFLOW_DIGA_CS_OperationOutcomeDetails"),
         "TIFLOW_CHARGEITEM_": ("erp-chrg", "TIFLOW_CHARGEITEM_CS_OperationOutcomeDetails"),
-        "TIFLOW_XBORDER_": ("erp-eu", "TIFLOW_XBORDER_CS_OperationOutcomeDetails"),
+        "TIFLOW_XBORDER_": ("rx", "TIFLOW_XBORDER_CS_OperationOutcomeDetails"),
     }
 
     for module, ig_root in ig_roots.items():
