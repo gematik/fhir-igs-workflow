@@ -22,7 +22,7 @@ InstanceOf: TIMedicationDgMP
 Title: "Augentropfen-Komponente"
 Description: "Augentropfen als Teil einer Kombipackung"
 Usage: #inline
-* extension[type].valueCoding = $sct#373873005 "Pharmaceutical / biologic product (product)"
+* extension[type].valueCoding = $sct#373873005 "Pharmaceutical / biologic product"
 * ingredient[+]
   * itemCodeableConcept
     * coding[atc-de] = $cs-atc-de|1.4.0#R01AC01 "Natriumcromoglicat"
@@ -43,7 +43,7 @@ InstanceOf: TIMedicationDgMP
 Title: "Nasenspray-Komponente"
 Description: "Nasenspray als Teil einer Kombipackung"
 Usage: #inline
-* extension[type].valueCoding = $sct#373873005 "Pharmaceutical / biologic product (product)"
+* extension[type].valueCoding = $sct#373873005 "Pharmaceutical / biologic product"
 * ingredient[+]
   * itemCodeableConcept
     * coding[atc-de] = $cs-atc-de|1.4.0#R01AC01 "Natriumcromoglicat"

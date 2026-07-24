@@ -10,7 +10,7 @@ Usage: #example
 * extension[drugCategory].valueCoding = $epa-drug-categoy-cs#00
 
 //MedicationType
-* extension[type].valueCoding = $sct#1208954007 "Extemporaneous preparation (product)"
+* extension[type].valueCoding = $sct#1208954007 "Extemporaneous preparation"
 
 // Impfstoff
 * extension[isVaccine].valueBoolean = false
@@ -45,7 +45,7 @@ InstanceOf: TIMedicationDgMP
 Title: "Hydrocortison-Wirkstoff"
 Description: "Hydrocortison-Wirkstoff als Bestandteil einer Rezeptur"
 Usage: #inline
-* extension[type].valueCoding = $sct#781405001 "Medicinal product package (product)"
+* extension[type].valueCoding = $sct#781405001 "Medicinal product package"
 * code
   * coding[pzn]
     * code = #03424249
@@ -57,7 +57,7 @@ InstanceOf: TIMedicationDgMP
 Title: "Dexpanthenol-Wirkstoff"
 Description: "Dexpanthenol-Wirkstoff als Bestandteil einer Rezeptur"
 Usage: #inline
-* extension[type].valueCoding = $sct#781405001 "Medicinal product package (product)"
+* extension[type].valueCoding = $sct#781405001 "Medicinal product package"
 * code
   * coding[pzn]
     * code = #16667195
