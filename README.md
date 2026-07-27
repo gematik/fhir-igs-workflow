@@ -17,6 +17,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | `2.0.0-ballot.2` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/develop/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `examples` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/examples/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `main` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/main/2.0.0-ballot.2) |
+| `2.0.0-ballot.2` | `merge-rx-igs` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/merge-rx-igs/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `move-configuration-requirements` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/move-configuration-requirements/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `ti-common-paging-sorting` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/ti-common-paging-sorting/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `ti-flow-system-diagram` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/ti-flow-system-diagram/2.0.0-ballot.2) |
@@ -76,6 +77,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | `2.0.0-ballot.2` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/develop/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `examples` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/examples/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `main` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/main/2.0.0-ballot.2) |
+| `2.0.0-ballot.2` | `merge-rx-igs` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/merge-rx-igs/2.0.0-ballot.2) |
 | `1.0.0-draft` | `TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration/1.0.0-draft) |
 | `1.0.0-draft` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/develop/1.0.0-draft) |
 | `0.9.0` | `release` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-erezept/0.9.0) |
