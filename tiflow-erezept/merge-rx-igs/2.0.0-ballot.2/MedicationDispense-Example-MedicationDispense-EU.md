@@ -1,0 +1,52 @@
+# Example Medication Dispense - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
+
+TIFlow - Verordnungen für Arzneimittel
+
+Version 2.0.0-ballot.2 - ballot 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **Example Medication Dispense**
+
+## Example MedicationDispense: Example Medication Dispense
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "MedicationDispense",
+  "id" : "Example-MedicationDispense-EU",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-MedicationDispense"]
+  },
+  "identifier" : [{
+    "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+    "value" : "160.000.033.491.280.78"
+  }],
+  "status" : "completed",
+  "medicationReference" : {
+    "reference" : "Medication/EUSumatripanMedication"
+  },
+  "subject" : {
+    "identifier" : {
+      "system" : "http://fhir.de/sid/gkv/kvid-10",
+      "value" : "X123456789"
+    }
+  },
+  "performer" : [{
+    "actor" : {
+      "reference" : "PractitionerRole/Example-EU-PractitionerRole"
+    }
+  }],
+  "quantity" : {
+    "value" : 2,
+    "unit" : "pkg"
+  },
+  "whenHandedOver" : "2028-10-01"
+}
+
+```

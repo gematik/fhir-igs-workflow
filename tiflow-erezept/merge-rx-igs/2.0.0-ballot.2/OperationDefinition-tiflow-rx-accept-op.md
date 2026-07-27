@@ -1,0 +1,82 @@
+# E-Rezept abrufen - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
+
+TIFlow - Verordnungen für Arzneimittel
+
+Version 2.0.0-ballot.2 - ballot 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **E-Rezept abrufen**
+
+## OperationDefinition: E-Rezept abrufen 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-accept-op | *Version*:2.0.0-ballot.2 |
+| Active as of 2026-06-30 | *Computable Name*:TIFlowRXOPAccept |
+
+ 
+Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'. 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "tiflow-rx-accept-op",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-accept-op",
+  "version" : "2.0.0-ballot.2",
+  "name" : "TIFlowRXOPAccept",
+  "title" : "E-Rezept abrufen",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2026-06-30",
+  "publisher" : "gematik GmbH",
+  "contact" : [{
+    "name" : "gematik GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://gematik.de"
+    },
+    {
+      "system" : "email",
+      "value" : "erp-umsetzung@gematik.de"
+    }]
+  }],
+  "description" : "Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "affectsState" : true,
+  "code" : "accept",
+  "resource" : ["Task"],
+  "system" : false,
+  "type" : false,
+  "instance" : true,
+  "outputProfile" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Accept-Operation-Output",
+  "parameter" : [{
+    "name" : "ac",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der Secret-Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen.",
+    "type" : "string"
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "type" : "Bundle"
+  }]
+}
+
+```

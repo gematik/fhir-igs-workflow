@@ -1,0 +1,94 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/MedicationDispense/Example-MedicationDispense-Dosage-weekday> a fhir:MedicationDispense ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "Example-MedicationDispense-Dosage-weekday"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0>
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction" ] ;
+     fhir:Extension.valueMarkdown [ fhir:value "dienstags — je 2 Stück, donnerstags — je 2 Stück" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "algorithmVersion" ] ;
+       fhir:Extension.valueString [ fhir:value "1.0.0" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "language" ] ;
+       fhir:Extension.valueCode [ fhir:value "de-DE" ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta" ]
+  ] ;
+  fhir:MedicationDispense.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+     fhir:Identifier.value [ fhir:value "160.000.033.491.280.78" ]
+  ] ;
+  fhir:MedicationDispense.status [ fhir:value "completed"] ;
+  fhir:MedicationDispense.medicationReference [
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/Medication/SumatripanMedication> ;
+     fhir:Reference.reference [ fhir:value "Medication/SumatripanMedication" ]
+  ] ;
+  fhir:MedicationDispense.subject [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "X123456789" ]
+     ]
+  ] ;
+  fhir:MedicationDispense.performer [
+     fhir:index 0 ;
+     fhir:MedicationDispense.performer.actor [
+       fhir:Reference.identifier [
+         fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+         fhir:Identifier.value [ fhir:value "3-SMC-B-Testkarte-883110000095957" ]
+       ]
+     ]
+  ] ;
+  fhir:MedicationDispense.whenHandedOver [ fhir:value "2028-10-01"^^xsd:date] ;
+  fhir:MedicationDispense.dosageInstruction [
+     fhir:index 0 ;
+     fhir:Dosage.timing [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.frequency [ fhir:value "2"^^xsd:positiveInteger ] ;
+         fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ] ;
+         fhir:Timing.repeat.periodUnit [ fhir:value "wk" ] ;
+         fhir:Timing.repeat.dayOfWeek [
+           fhir:value "tue" ;
+           fhir:index 0
+         ], [
+           fhir:value "thu" ;
+           fhir:index 1
+         ]
+       ]
+     ] ;
+     fhir:Dosage.doseAndRate [
+       fhir:index 0 ;
+       fhir:Dosage.doseAndRate.doseQuantity [
+         fhir:Quantity.value [ fhir:value "2"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "Stück" ] ;
+         fhir:Quantity.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT" ] ;
+         fhir:Quantity.code [ fhir:value "1" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/MedicationDispense/Example-MedicationDispense-Dosage-weekday.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

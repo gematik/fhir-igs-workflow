@@ -1,0 +1,25 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Task/ExampleRxTaskInReadyState> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleRxTaskInReadyState"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task ExampleRxTaskInReadyState</b></p><a name=\"ExampleRxTaskInReadyState\"> </a><a name=\"hcExampleRxTaskInReadyState\"> </a><p><b>status</b>: Ready</p><p><b>intent</b>: order</p><p><b>authoredOn</b>: 2026-03-20</p></div>"
+  ] ;
+  fhir:Task.status [ fhir:value "ready"] ;
+  fhir:Task.intent [ fhir:value "order"] ;
+  fhir:Task.authoredOn [ fhir:value "2026-03-20"^^xsd:date] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Task/ExampleRxTaskInReadyState.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

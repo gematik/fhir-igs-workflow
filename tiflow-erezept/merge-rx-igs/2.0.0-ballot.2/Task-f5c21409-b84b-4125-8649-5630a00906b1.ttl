@@ -1,0 +1,109 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Task/f5c21409-b84b-4125-8649-5630a00906b1> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "f5c21409-b84b-4125-8649-5630a00906b1"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task|2.0" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task|2.0>
+     ] ;
+     fhir:Meta.tag [
+       fhir:index 0 ;
+       fhir:Coding.display [ fhir:value "Task in IN-PROGRESS state claimed by pharmacy via $accept operation" ]
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task f5c21409-b84b-4125-8649-5630a00906b1</b></p><a name=\"f5c21409-b84b-4125-8649-5630a00906b1\"> </a><a name=\"hcf5c21409-b84b-4125-8649-5630a00906b1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERP-PR-Task.html\">Task für E-Rezept</a> version: 2.0.0-ballot.2</p><p style=\"margin-bottom: 0px\">Tag: </p></div><p><b>TI Flow Type</b>: <a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-GEM-ERP-CS-FlowType.html#GEM-ERP-CS-FlowType-160\">CodeSystem der Flowtypes in TIFlow Anwendungen: 160</a> (Flowtype für Apothekenpflichtige Arzneimittel)</p><p><b>TI Flow AcceptDate</b>: 2028-10-01</p><p><b>TI Flow ExpiryDate</b>: 2028-10-01</p><p><b>GEM ERP EX LastMedicationDispense</b>: 2028-10-01 16:44:00+0000</p><p><b>identifier</b>: <code>https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId</code>/160.000.033.491.280.78, <code>https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode</code>/777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea</p><p><b>status</b>: In Progress</p><p><b>intent</b>: order</p><p><b>for</b>: Identifier: NamingSystemKVID/X123456789</p><p><b>authoredOn</b>: 2028-10-01 15:29:00+0000</p><p><b>lastModified</b>: 2028-10-01 16:44:00+0000</p><p><b>performerType</b>: <span title=\"Codes:{https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OrganizationType urn:oid:1.2.276.0.76.4.54}\">Öffentliche Apotheke</span></p><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType 1}\">Health Care Provider Prescription</span></p><p><b>value</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/281a985c-f25b-4aae-91a6-41ad744080b0\">281a985c-f25b-4aae-91a6-41ad744080b0</a></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType 2}\">Patient Confirmation</span></p><p><b>value</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/f8c2298f-7c00-4a68-af29-8a2862d55d43\">f8c2298f-7c00-4a68-af29-8a2862d55d43</a></p></blockquote></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType" ] ;
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType" ] ;
+       fhir:Coding.code [ fhir:value "160" ] ;
+       fhir:Coding.display [ fhir:value "Flowtype für Apothekenpflichtige Arzneimittel" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AcceptDate" ] ;
+     fhir:Extension.valueDate [ fhir:value "2028-10-01"^^xsd:date ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_ExpiryDate" ] ;
+     fhir:Extension.valueDate [ fhir:value "2028-10-01"^^xsd:date ]
+  ], [
+     fhir:index 3 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_LastMedicationDispense" ] ;
+     fhir:Extension.valueInstant [ fhir:value "2028-10-01T16:44:00.434+00:00"^^xsd:dateTime ]
+  ] ;
+  fhir:Task.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+     fhir:Identifier.value [ fhir:value "160.000.033.491.280.78" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode" ] ;
+     fhir:Identifier.value [ fhir:value "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]
+  ] ;
+  fhir:Task.status [ fhir:value "in-progress"] ;
+  fhir:Task.intent [ fhir:value "order"] ;
+  fhir:Task.for [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "X123456789" ]
+     ]
+  ] ;
+  fhir:Task.authoredOn [ fhir:value "2028-10-01T15:29:00+00:00"^^xsd:dateTime] ;
+  fhir:Task.lastModified [ fhir:value "2028-10-01T16:44:00.434+00:00"^^xsd:dateTime] ;
+  fhir:Task.performerType [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OrganizationType" ] ;
+       fhir:Coding.code [ fhir:value "urn:oid:1.2.276.0.76.4.54" ] ;
+       fhir:Coding.display [ fhir:value "Öffentliche Apotheke" ]
+     ]
+  ] ;
+  fhir:Task.input [
+     fhir:index 0 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType" ] ;
+         fhir:Coding.code [ fhir:value "1" ] ;
+         fhir:Coding.display [ fhir:value "Health Care Provider Prescription" ]
+       ]
+     ] ;
+     fhir:Task.input.valueReference [
+       fhir:Reference.reference [ fhir:value "281a985c-f25b-4aae-91a6-41ad744080b0" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType" ] ;
+         fhir:Coding.code [ fhir:value "2" ] ;
+         fhir:Coding.display [ fhir:value "Patient Confirmation" ]
+       ]
+     ] ;
+     fhir:Task.input.valueReference [
+       fhir:Reference.reference [ fhir:value "f8c2298f-7c00-4a68-af29-8a2862d55d43" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Task/f5c21409-b84b-4125-8649-5630a00906b1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

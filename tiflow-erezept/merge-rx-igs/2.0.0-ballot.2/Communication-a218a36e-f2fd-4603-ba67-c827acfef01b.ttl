@@ -1,0 +1,69 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Communication/a218a36e-f2fd-4603-ba67-c827acfef01b> a fhir:Communication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "a218a36e-f2fd-4603-ba67-c827acfef01b"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq|2.0" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq|2.0>
+     ] ;
+     fhir:Meta.tag [
+       fhir:index 0 ;
+       fhir:Coding.display [ fhir:value "Dispense Request from Patient to Pharmacy" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Coding.display [ fhir:value "Communication message sent by patient to pharmacy to request the dispensation of medicine by providing the AccessCode" ]
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Communication a218a36e-f2fd-4603-ba67-c827acfef01b</b></p><a name=\"a218a36e-f2fd-4603-ba67-c827acfef01b\"> </a><a name=\"hca218a36e-f2fd-4603-ba67-c827acfef01b\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERP-PR-Communication-DispReq.html\">GEM ERP PR Communication DispReq</a> version: 2.0.0-ballot.2</p><p style=\"margin-bottom: 0px\">Tags: , </p></div><p><b>TI Flow Type</b>: <a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-GEM-ERP-CS-FlowType.html#GEM-ERP-CS-FlowType-160\">CodeSystem der Flowtypes in TIFlow Anwendungen: 160</a> (Flowtype für Apothekenpflichtige Arzneimittel)</p><p><b>basedOn</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Task/160.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea\">Task/160.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea</a></p><p><b>status</b>: Unknown</p><p><b>sent</b>: 2028-10-01 15:29:00+0000</p><p><b>recipient</b>: Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/3-SMC-B-Testkarte-883110000123465</p><p><b>sender</b>: Identifier: NamingSystemKVID/X234567890</p><h3>Payloads</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Content[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>{ \"version\": \"1\", \"supplyOptionsType\": \"delivery\", \"name\": \"Dr. Maximilian von Muster\", \"address\": [ \"wohnhaft bei Emilia Fischer\", \"Bundesallee 312\", \"123. OG\", \"12345 Berlin\" ], \"hint\": \"Bitte im Morsecode klingeln: -.-.\", \"phone\": \"004916094858168\" }</td></tr></table></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType" ] ;
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType" ] ;
+       fhir:Coding.code [ fhir:value "160" ] ;
+       fhir:Coding.display [ fhir:value "Flowtype für Apothekenpflichtige Arzneimittel" ]
+     ]
+  ] ;
+  fhir:Communication.basedOn [
+     fhir:index 0 ;
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/Task/160.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea> ;
+     fhir:Reference.reference [ fhir:value "Task/160.000.033.491.280.78/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]
+  ] ;
+  fhir:Communication.status [ fhir:value "unknown"] ;
+  fhir:Communication.sent [ fhir:value "2028-10-01T15:29:00.434+00:00"^^xsd:dateTime] ;
+  fhir:Communication.recipient [
+     fhir:index 0 ;
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+       fhir:Identifier.value [ fhir:value "3-SMC-B-Testkarte-883110000123465" ]
+     ]
+  ] ;
+  fhir:Communication.sender [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "X234567890" ]
+     ]
+  ] ;
+  fhir:Communication.payload [
+     fhir:index 0 ;
+     fhir:Communication.payload.contentString [ fhir:value "{ \"version\": \"1\", \"supplyOptionsType\": \"delivery\", \"name\": \"Dr. Maximilian von Muster\", \"address\": [ \"wohnhaft bei Emilia Fischer\", \"Bundesallee 312\", \"123. OG\", \"12345 Berlin\" ], \"hint\": \"Bitte im Morsecode klingeln: -.-.\", \"phone\": \"004916094858168\" }" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Communication/a218a36e-f2fd-4603-ba67-c827acfef01b.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

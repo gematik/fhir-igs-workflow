@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="example-searchset-task"/>
+  <type value="searchset"/>
+  <total value="1"/>
+  <link>
+    <relation value="self"/>
+    <url value="https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task?status=ready&amp;_count=2"/>
+  </link>
+  <entry>
+    <fullUrl value="https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/b12eb5f7-91ce-4887-93c7-800454601377"/>
+    <resource>
+      <Task>
+        <id value="b9f1fbdd-f28b-4ec7-959c-5283d3433b0e"/>
+        <meta>
+          <profile value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task|2.0"/>
+          <tag>
+            <display value="Task in DRAFT state just created by Fachdienst via $create operation"/>
+          </tag>
+        </meta>
+        <extension url="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType">
+          <valueCoding>
+            <system value="https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"/>
+            <code value="160"/>
+            <display value="Flowtype für Apothekenpflichtige Arzneimittel"/>
+          </valueCoding>
+        </extension>
+        <identifier>
+          <system value="https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"/>
+          <value value="160.000.033.491.280.78"/>
+        </identifier>
+        <status value="draft"/>
+        <intent value="order"/>
+        <authoredOn value="2028-10-01T15:29:00+00:00"/>
+      </Task>
+    </resource>
+  </entry>
+</Bundle>

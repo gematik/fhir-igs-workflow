@@ -1,0 +1,119 @@
+# Example Dispense Parameters - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.2
+
+Implementation Guide
+
+TIFlow - Verordnungen für Arzneimittel
+
+Version 2.0.0-ballot.2 - ballot 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **Example Dispense Parameters**
+
+## Example Parameters: Example Dispense Parameters
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Parameters",
+  "id" : "ExampleDispenseInputParameters",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input"]
+  },
+  "parameter" : [{
+    "name" : "rxDispensation",
+    "part" : [{
+      "name" : "medicationDispense",
+      "resource" : {
+        "resourceType" : "MedicationDispense",
+        "id" : "Example-MedicationDispense",
+        "meta" : {
+          "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|2.0"]
+        },
+        "identifier" : [{
+          "system" : "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId",
+          "value" : "160.000.033.491.280.78"
+        }],
+        "status" : "completed",
+        "medicationReference" : {
+          "reference" : "Medication/SumatripanMedication"
+        },
+        "subject" : {
+          "identifier" : {
+            "system" : "http://fhir.de/sid/gkv/kvid-10",
+            "value" : "X123456789"
+          }
+        },
+        "performer" : [{
+          "actor" : {
+            "identifier" : {
+              "system" : "https://gematik.de/fhir/sid/telematik-id",
+              "value" : "3-SMC-B-Testkarte-883110000095957"
+            }
+          }
+        }],
+        "whenHandedOver" : "2028-10-01"
+      }
+    },
+    {
+      "name" : "medication",
+      "resource" : {
+        "resourceType" : "Medication",
+        "id" : "SumatripanMedication",
+        "meta" : {
+          "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication|2.0"]
+        },
+        "extension" : [{
+          "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension",
+          "valueCoding" : {
+            "system" : "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs",
+            "code" : "00"
+          }
+        },
+        {
+          "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension",
+          "valueBoolean" : false
+        },
+        {
+          "url" : "http://fhir.de/StructureDefinition/normgroesse",
+          "valueCode" : "N1"
+        }],
+        "code" : {
+          "coding" : [{
+            "system" : "http://fhir.de/CodeSystem/ifa/pzn",
+            "code" : "06313728"
+          }],
+          "text" : "Sumatriptan-1a Pharma 100 mg Tabletten"
+        },
+        "status" : "active",
+        "form" : {
+          "coding" : [{
+            "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
+            "code" : "TAB"
+          }]
+        },
+        "amount" : {
+          "numerator" : {
+            "extension" : [{
+              "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension",
+              "valueString" : "20"
+            }],
+            "value" : 20,
+            "unit" : "St"
+          },
+          "denominator" : {
+            "value" : 1
+          }
+        },
+        "batch" : {
+          "lotNumber" : "1234567890"
+        }
+      }
+    }]
+  }]
+}
+
+```

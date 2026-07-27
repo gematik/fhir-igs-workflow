@@ -1,0 +1,84 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596> a fhir:Communication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "7977a4ab-97a9-4d95-afb3-6c4c1e2ac596"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply|2.0" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply|2.0>
+     ] ;
+     fhir:Meta.tag [
+       fhir:index 0 ;
+       fhir:Coding.display [ fhir:value "Reply from Pharmacy to Patient" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Coding.display [ fhir:value "Communication message sent by pharmacy to patient in response to a previous Task-related message" ]
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Communication 7977a4ab-97a9-4d95-afb3-6c4c1e2ac596</b></p><a name=\"7977a4ab-97a9-4d95-afb3-6c4c1e2ac596\"> </a><a name=\"hc7977a4ab-97a9-4d95-afb3-6c4c1e2ac596\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERP-PR-Communication-Reply.html\">GEM ERP PR Communication Reply</a> version: 2.0.0-ballot.2</p><p style=\"margin-bottom: 0px\">Tags: , </p></div><p><b>basedOn</b>: <a href=\"https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&amp;canonical=http://fhir.org/packages/de.basisprofil.r4/Task/160.000.033.491.280.78\">Task/160.000.033.491.280.78</a></p><p><b>status</b>: Unknown</p><p><b>sent</b>: 2028-10-01 15:29:00+0000</p><p><b>recipient</b>: Identifier: NamingSystemKVID/X234567890</p><p><b>sender</b>: Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/3-SMC-B-Testkarte-883110000123465</p><blockquote><p><b>payload</b></p><p><b>GEM ERP EX AvailabilityState</b>: <a href=\"https://gematik.de/fhir/tiflow/2.0.0-ballot.2/CodeSystem-GEM-ERP-CS-AvailabilityStatus.html#GEM-ERP-CS-AvailabilityStatus-20\">CodeSystem des Verfügbarkeitsstatus: 20</a> (noch Heute verfügbar)</p><blockquote><p><b>GEM ERP EX SupplyOptionsType</b></p><ul><li>delivery: true</li><li>onPremise: true</li><li>shipment: false</li></ul></blockquote><p><b>content</b>: Eisern</p></blockquote></div>"
+  ] ;
+  fhir:Communication.basedOn [
+     fhir:index 0 ;
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/Task/160.000.033.491.280.78> ;
+     fhir:Reference.reference [ fhir:value "Task/160.000.033.491.280.78" ]
+  ] ;
+  fhir:Communication.status [ fhir:value "unknown"] ;
+  fhir:Communication.sent [ fhir:value "2028-10-01T15:29:00.434+00:00"^^xsd:dateTime] ;
+  fhir:Communication.recipient [
+     fhir:index 0 ;
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "X234567890" ]
+     ]
+  ] ;
+  fhir:Communication.sender [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+       fhir:Identifier.value [ fhir:value "3-SMC-B-Testkarte-883110000123465" ]
+     ]
+  ] ;
+  fhir:Communication.payload [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AvailabilityState" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_AvailabilityStatus" ] ;
+         fhir:Coding.code [ fhir:value "20" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "delivery" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "onPremise" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "shipment" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+       ] ;
+       fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_SupplyOptionsType" ]
+     ] ;
+     fhir:Communication.payload.contentString [ fhir:value "Eisern" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
