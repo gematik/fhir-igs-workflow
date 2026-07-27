@@ -2,7 +2,7 @@ Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle
 
 ### Systemdesign
 
-Der Service, der die AuditEvents verwaltet muss in der Lage sein aus allen Anwendungsmodulen des TI-Flow-Fachdienstes dem Versicherten Einträge des Zugriffsprotokolls auszugeben. Dabei obliegt es dem Anbieter des TI-Flow-Fachdienst wie das Design hierzu aussieht.
+Der Service, der die AuditEvents verwaltet muss in der Lage sein aus allen Anwendungsmodulen des TI-Flow-Fachdienstes dem Versicherten Einträge des Zugriffsprotokolls auszugeben. Dabei obliegt es dem Anbieter des TI-Flow-Fachdienst das Architekturdesign für die Schnittstelle festzulegen.
 
 ### Zugriffsprotokoll für den Versicherten
 
