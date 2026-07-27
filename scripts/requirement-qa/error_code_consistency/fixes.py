@@ -778,7 +778,7 @@ def fix_cs_vs(
             if not cs_file.exists():
                 if any(
                     finding.code.startswith(p)
-                    for p in ("TIFLOW_EREZEPT_", "TIFLOW_DIGA_", "TIFLOW_CHARGEITEM_", "TIFLOW_XBORDER_")
+                    for p in ("TIFLOW_EREZEPT_", "TIFLOW_DIGA_", "TIFLOW_CHARGEITEM_")
                 ):
                     print(f"  [SKIP] Module-specific code '{finding.code}' - target CS not found: {cs_file}")
                 else:

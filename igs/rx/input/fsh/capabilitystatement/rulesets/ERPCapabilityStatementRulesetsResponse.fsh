@@ -308,18 +308,18 @@ RuleSet: TiflowAccessCodeInvalid
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_ACCESS_CODE_INVALID"
 
-RuleSet: TiflowXborderNoPrescriptionsFound
+RuleSet: TiflowErezeptNoPrescriptionsFound
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "404"
   * extension[description].valueString = "No prescriptions found"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND"
+  * extension[errorCode].valueString = "TIFLOW_EREZEPT_NO_PRESCRIPTIONS_FOUND"
 
-RuleSet: TiflowXborderCountryCodeInvalid
+RuleSet: TiflowErezeptCountryCodeInvalid
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "409"
   * extension[description].valueString = "Country code invalid"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_XBORDER_COUNTRY_CODE_INVALID"
+  * extension[errorCode].valueString = "TIFLOW_EREZEPT_COUNTRY_CODE_INVALID"
 
 // Errors for all System Operations

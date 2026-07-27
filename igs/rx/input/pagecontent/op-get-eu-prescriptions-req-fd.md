@@ -199,7 +199,7 @@
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>
+            <td>TIFLOW_EREZEPT_NO_PRESCRIPTIONS_FOUND</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -231,7 +231,7 @@
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>
+            <td>TIFLOW_EREZEPT_NO_PRESCRIPTIONS_FOUND</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -263,7 +263,7 @@
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND</td>
+            <td>TIFLOW_EREZEPT_NO_PRESCRIPTIONS_FOUND</td>
         </tr>
         <tr>
             <th>Details Text</th>

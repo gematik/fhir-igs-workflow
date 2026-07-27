@@ -113,7 +113,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_XBORDER_NOT_ACTIVATED</td>
+            <td>TIFLOW_EREZEPT_NOT_ACTIVATED</td>
         </tr>
         <tr>
             <th>Details Text</th>

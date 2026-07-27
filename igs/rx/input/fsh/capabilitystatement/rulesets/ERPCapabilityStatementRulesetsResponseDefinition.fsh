@@ -196,7 +196,7 @@ RuleSet: GrantEUAccessPermissionOperationStatusCodes
 * rest.operation[=] insert SystemOperationStatusCodesWithParameters
 * rest.operation[=] insert TiflowAccessCodeInvalid
 * rest.operation[=] insert TiflowConsentRequired
-* rest.operation[=] insert TiflowXborderCountryCodeInvalid
+* rest.operation[=] insert TiflowErezeptCountryCodeInvalid
 
 * rest.operation[=] insert TiflowAuthRoleNotAllowed
 
@@ -216,7 +216,7 @@ RuleSet: GetEUPrescriptionsOperationStatusCodes
 * rest.operation[=] insert TiflowAccessPermissionInvalid
 * rest.operation[=] insert TiflowAuthRoleNotAllowed
 * rest.operation[=] insert TiflowConsentRequired
-* rest.operation[=] insert TiflowXborderNoPrescriptionsFound
+* rest.operation[=] insert TiflowErezeptNoPrescriptionsFound
 
 RuleSet: EuCloseOperationStatusCodes
 * rest.resource[=].operation[=] insert SvcValidationFailed
