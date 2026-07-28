@@ -1,8 +1,10 @@
-# E-T-Rezept Structure Map for KBV Ingredient Medication - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# E-T-Rezept Structure Map for KBV Ingredient Medication - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVIngredientMedication | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-05-26 | *Computable Name*:ERPTPrescriptionStructureMapKBVIngredientMedication |
+| Draft as of 2026-06-30 | *Computable Name*:ERPTPrescriptionStructureMapKBVIngredientMedication |
 
  
 Maps KBV-Ingredient ERP Medication to BfArM T-Prescription Medication format 
@@ -32,7 +34,7 @@ Maps KBV-Ingredient ERP Medication to BfArM T-Prescription Medication format
   "title" : "E-T-Rezept Structure Map for KBV Ingredient Medication",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-05-26",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -94,6 +96,56 @@ Maps KBV-Ingredient ERP Medication to BfArM T-Prescription Medication format
         }]
       }],
       "documentation" : "Übernimmt die eindeutige Medication-ID unverändert"
+    },
+    {
+      "name" : "medicationExt",
+      "source" : [{
+        "context" : "kbvMedicationIngredient",
+        "element" : "extension",
+        "variable" : "extVar"
+      }],
+      "target" : [{
+        "context" : "bfarmMedication",
+        "contextType" : "variable",
+        "element" : "extension",
+        "variable" : "tgtExtVar"
+      }],
+      "rule" : [{
+        "name" : "copyNormgroesseExtensionUrl",
+        "source" : [{
+          "context" : "extVar",
+          "condition" : "url='http://fhir.de/StructureDefinition/normgroesse'"
+        }],
+        "target" : [{
+          "context" : "tgtExtVar",
+          "contextType" : "variable",
+          "element" : "url",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://fhir.de/StructureDefinition/normgroesse"
+          }]
+        }],
+        "rule" : [{
+          "name" : "copyExtensionValue",
+          "source" : [{
+            "context" : "extVar",
+            "element" : "value",
+            "variable" : "extValVar"
+          }],
+          "target" : [{
+            "context" : "tgtExtVar",
+            "contextType" : "variable",
+            "element" : "value",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueId" : "extValVar"
+            }]
+          }],
+          "documentation" : "Kopiert den Wert der Normgröße-Extension (N1, N2, N3)"
+        }],
+        "documentation" : "Übernimmt die Normgröße-Extension unverändert (deutsche Packungsgrößenangabe)"
+      }],
+      "documentation" : "Mappt Medication-Extensions von KBV- zu BfArM-Format"
     },
     {
       "name" : "medicationForm",

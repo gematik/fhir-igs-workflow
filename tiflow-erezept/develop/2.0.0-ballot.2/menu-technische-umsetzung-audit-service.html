@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"3.7"}
-    h3,h4,h5,h6{--heading-prefix:"3.7"}</style>
+    <style type="text/css">h2{--heading-prefix:"3.9"}
+    h3,h4,h5,h6{--heading-prefix:"3.9"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -137,6 +137,9 @@
         <a href="menu-fachlichkeit-wf-le.html">Workflow-Steuerung durch LE</a>
       </li>
       <li>
+        <a href="menu-fachlichkeit-szenario-eu.html">Szenario EU</a>
+      </li>
+      <li>
         <a href="menu-fachlichkeit-ux-verordnend.html">UX verordnend</a>
       </li>
       <li>
@@ -162,6 +165,12 @@
         <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
       </li>
       <li>
+        <a href="menu-technische-umsetzung-konzept.html">Technisches Konzept EU</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit EU</a>
+      </li>
+      <li>
         <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
       </li>
     </ul>
@@ -179,11 +188,8 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -200,6 +206,9 @@
         <a href="license.html">Lizenz</a>
       </li>
     </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -220,7 +229,7 @@
 Implementation Guide<br /> TIFlow - Verordnungen für Arzneimittel
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -241,7 +250,7 @@ Implementation Guide<br /> TIFlow - Verordnungen für Arzneimittel
 
           <span style="float:right;">
 
-            <a href="comparison-Bundle-input-example-5.html">&lt;vorherige</a> | 
+            <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">&lt;vorherige</a> | 
 
             <a href="#bottom">unten</a>
 
@@ -366,6 +375,60 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_RX_004 Versichertenprotokoll</figcaption></div>
 
+<h4 id="zugriffsprotokollierung-für-das-einlösen-im-eu-ausland">Zugriffsprotokollierung für das Einlösen im EU-Ausland</h4>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A272" title="TI-Flow-Fachdienst - Versichertenprotokoll zu EU-Operationen" version="0">
+    <meta lockversion="false" />
+	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+  	</actor>
+	Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß "TAB_EU_004 Versichertenprotokoll" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.
+</requirement>
+
+<table>
+  <tr>
+    <th>Operation</th>
+    <th>Rolle des zugreifenden Nutzers</th>
+    <th>Beschreibung (ggf. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>
+  </tr>
+  <tr>
+    <td>http POST /rx/fhir/Task/&#60;id&#62;/$eu-close</td>
+    <td>NCPeH-FD</td>
+    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihr E-Rezept eingelöst.</td>
+  </tr>
+  <tr>
+    <td>http PATCH /rx/fhir/Task/&#60;id&#62;</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat Markierung zu Einlösung im EU Ausland gespeichert</td>
+  </tr>  
+  <tr>
+    <td>http POST /rx/fhir/$grant-eu-access-permission</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat eine Zugriffsberechtigung zum Einlösen von E-Rezepten für das Land "Land B" erteilt.</td>
+  </tr>
+  <tr>
+    <td>http DELETE /rx/fhir/$revoke-eu-access-permission</td>
+    <td>Versicherter</td>
+    <td>Versicherter hat die Zugriffsberechtigung zum Einlösen von E-Rezepten für das Land "Land B" widerrufen.</td>
+  </tr>
+  <tr>
+    <td>POST /rx/fhir/$get-eu-prescriptions<br />Parameters.parameter:requestData.part:requesttype = demographics</td>
+    <td>NCPeH-FD</td>
+    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre Patientendaten abgerufen.</td>
+  </tr>
+  <tr>
+    <td>POST /rx/fhir/$get-eu-prescriptions<br />Parameters.parameter:requestData.part:requesttype = e-prescriptions-list</td>
+    <td>NCPeH-FD</td>
+    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre ausgwählten und einlösbaren E-Rezepte abgerufen.</td>
+  </tr>
+  <tr>
+    <td>POST /rx/fhir/$get-eu-prescriptions<br />Parameters.parameter:requestData.part:requesttype = e-prescriptions-retrieval</td>
+    <td>NCPeH-FD</td>
+    <td>Der Parameters.parameter:requestData.part:practitionerRole Parameters.parameter:requestData.part:practitionerName hat in Parameters.parameter:requestData.part:healthcare-facility-type Parameters.parameter:requestData.part:pointOfCare in Land B (Klartext aus: Parameters.parameter:requestData.part:countryCode) Ihre einzulösenden E-Rezepte abgerufen.</td>
+  </tr>  
+</table>
+<div><figcaption><strong>Tabelle: </strong>TAB_EU_004 Versichertenprotokoll</figcaption></div>
+
 <h4 id="zugriffsprotokollierung-für-übermittlung-für-epa-medication-service">Zugriffsprotokollierung für Übermittlung für ePA Medication Service</h4>
 
 <p>Der TI-Flow-Fachdienst protokolliert das erfolgreiche Übermitteln von Daten für jedes E-Rezept an den Medication Service im Zugriffsprotokoll des Versicherten. Für Übermittlungsversuche, welche nicht erfolgreich durchgeführt werden konnten und für die die Übermittlung erneut versucht wird, wird kein Eintrag im Zugriffsprotokoll angelegt.</p>
@@ -456,7 +519,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="comparison-Bundle-input-example-5.html">&lt;vorherige</a>
+                <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">&lt;vorherige</a>
 
               </td>
               <td style="text-align:center">
@@ -474,7 +537,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 09:08+0000">2026-06-26</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:36+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

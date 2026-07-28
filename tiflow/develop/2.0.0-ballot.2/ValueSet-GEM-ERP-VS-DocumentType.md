@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - draft
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_VS_DocumentType | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:GEM_ERP_VS_DocumentType |
+| Active as of 2026-06-30 | *Computable Name*:GEM_ERP_VS_DocumentType |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -58,7 +58,7 @@ Art der Dokumente je nach Empfänger.
   "title" : "ValueSet der Dokumenttyp-Codes",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

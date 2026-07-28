@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -77,7 +77,7 @@ Version 2.0.0-ballot.2 - ci-build
             "valueCoding" : {
               "system" : "http://snomed.info/sct",
               "code" : "373873005",
-              "display" : "Pharmaceutical / biologic product (product)"
+              "display" : "Pharmaceutical / biologic product"
             }
           }],
           "ingredient" : [{
@@ -116,7 +116,7 @@ Version 2.0.0-ballot.2 - ci-build
             "valueCoding" : {
               "system" : "http://snomed.info/sct",
               "code" : "373873005",
-              "display" : "Pharmaceutical / biologic product (product)"
+              "display" : "Pharmaceutical / biologic product"
             }
           }],
           "ingredient" : [{

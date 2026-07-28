@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * **Implementation Guide TI-Flow-Fachdienst**
@@ -14,7 +14,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-erezept/ImplementationGuide/de.gematik.tiflow.erezept | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-05-25 | *Computable Name*:gemIG_TIFlow_erezept |
+| Draft as of 2026-06-30 | *Computable Name*:gemIG_TIFlow_erezept |
 
 Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des TI-Flow-Fachdienstes für den Anwendungsfall von "Arzneimittelverordnung". Er bildet das Fundament für die fachlichen Szenarien und die technischen Schnittstellen im E-Rezept-Workflow für dieses Szenario.
 
@@ -27,12 +27,16 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des TI-Flow
  
 * Profile, Operationen und Validierungsregeln
 * Funktionale Anforderungen
+* Einlösen von E-Rezepten im EU-Ausland (Feature "EU Zugriff E-Rezept", siehe [gemspec eRp EU 1.0.1](https://gemspec.gematik.de/docs/gemF/gemF_eRp_EU/gemF_eRp_EU_V1.0.1/)): Ergänzungen an den Schnittstellen des TI-Flow-Fachdienstes sowie Use Cases für Versicherte zur Verwaltung von Einwilligung und Zugriff
 
 ### Nicht im Scope
 
 * Modul-übergreifende Anwendungsfälle
 * Produkttyp-spezifische Implementierungsdetails außerhalb des Fachdienstes
 * Beschreibung und Definition von Prozessen außerhalb des Fachdienstes
+* Anbindung der TI an die eHDSI
+* Mapping zwischen deutschen Verordnungsdaten und dem EU-Datenmodell
+* Abrechnung von im EU-Ausland eingelösten E-Rezepten
 
 ### Anforderungen zur Umsetzung des IGs
 
@@ -51,6 +55,14 @@ funkt. Eignung: Herstellererklärung
 funkt. Eignung: Herstellererklärung
 
 funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Einlösens von E-Rezepten im EU Ausland die in diesem Implementation Guide definierten Inhalte zum Feature "EU Zugriff E-Rezept" umsetzen.
+
+funkt. Eignung: Herstellererklärung
+
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Features "EU Zugriff E-Rezept" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG für das Feature definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 ### Wie dieser IG zu lesen ist
 
 Dieser Implementation Guide ist "von links nach rechts" zu lesen. Die Menüstruktur beginnt mit fachlichen Inhalten, welche über die technischen Anwendungsfälle dann in den Spezifikationen der Endpunkte und APIs münden. Es wird empfohlen, die Inhalte in der vorgegebenen Reihenfolge zu lesen, um ein umfassendes Verständnis der Anforderungen und Spezifikationen zu erhalten.
@@ -87,7 +99,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
   "name" : "gemIG_TIFlow_erezept",
   "title" : "Implementation Guide TIFlow - Verordnungen für Arzneimittel",
   "status" : "draft",
-  "date" : "2026-05-25",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -118,7 +130,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.2.0"
+    "version" : "7.3.0"
   },
   {
     "id" : "hl7ext",
@@ -167,7 +179,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "ballot"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -179,6 +191,259 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       {
         "url" : "value",
         "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AvailabilityState"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PATIENT_AUTHORIZATION"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PROPERTIES"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_LastMedicationDispense"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_SupplyOptionsType"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AuditEvent"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle_OP_Accept"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationdispenseMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpBundleMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationCompoundingMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationFreetextMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationIngredientMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationPznMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -278,6 +543,468 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       {
         "url" : "value",
         "valueString" : "Provenance/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/1f339db0-9e55-4946-9dfa-f1b30953be9b"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/9c85a2a5-92ee-4a57-83cb-ba90a0df2a21"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/4863d1fb-dc26-4680-bb35-018610d1749d"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/44420ed9-7388-4be5-acc5-9c124fad9f34"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/9581ce65-b118-4751-9073-19c091b341e0"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/GEMErpPrMedicationMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/GEMErpPrMedicationdispenseMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/GEMErpPrMedicationdispenseMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrErpBundleMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrErpMedicationCompoundingMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrErpMedicationFreetextMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrErpMedicationIngredientMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrErpMedicationPznMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrErpPrescriptionMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrForOrganizationMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrForPractitionerMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/Bundle-AcceptOperation"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/ExampleAcceptResponseBundle"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/ExampleRxCommunicationSearchset"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/ExampleRxMedicationDispenseSearchset"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/ExampleRxTaskSearchset"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/dffbfd6a-5712-4798-bdc8-07201eb77ab8"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/example-searchset-auditevent"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/example-searchset-consent"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/example-searchset-medicationdispense"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/example-searchset-task"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Communication/2be1c6ac-5d10-47f6-84ee-8318b2c22c76"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Communication/a218a36e-f2fd-4603-ba67-c827acfef01b"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Consent/QueryConsentCHARGCONS"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/9b48f82c-9c11-4a57-aa72-a805f9537a82"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/TaskInClosedState"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/TaskInReadyState"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/f5c21409-b84b-4125-8649-5630a00906b1"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/output-example-1"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/output-example-2"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/output-example-3"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/output-example-4"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/output-example-5"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureDefinition/logical-eu-dispense-data"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -556,7 +1283,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "ballot"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -568,6 +1295,259 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       {
         "url" : "value",
         "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AvailabilityState"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PATIENT_AUTHORIZATION"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PROPERTIES"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_LastMedicationDispense"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_SupplyOptionsType"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AuditEvent"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle_OP_Accept"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationdispenseMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpBundleMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationCompoundingMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationFreetextMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationIngredientMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationPznMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "special-url"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -667,6 +1647,468 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       {
         "url" : "value",
         "valueString" : "Provenance/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/1f339db0-9e55-4946-9dfa-f1b30953be9b"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/9c85a2a5-92ee-4a57-83cb-ba90a0df2a21"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/4863d1fb-dc26-4680-bb35-018610d1749d"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/44420ed9-7388-4be5-acc5-9c124fad9f34"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/9581ce65-b118-4751-9073-19c091b341e0"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/GEMErpPrMedicationMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/GEMErpPrMedicationdispenseMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/GEMErpPrMedicationdispenseMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrErpBundleMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrErpMedicationCompoundingMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrErpMedicationFreetextMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrErpMedicationIngredientMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrErpMedicationPznMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrErpPrescriptionMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrForOrganizationMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureMap/KBVPrForPractitionerMap"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/Bundle-AcceptOperation"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/ExampleAcceptResponseBundle"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/ExampleRxCommunicationSearchset"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/ExampleRxMedicationDispenseSearchset"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/ExampleRxTaskSearchset"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/dffbfd6a-5712-4798-bdc8-07201eb77ab8"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/example-searchset-auditevent"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/example-searchset-consent"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/example-searchset-medicationdispense"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/example-searchset-task"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Communication/2be1c6ac-5d10-47f6-84ee-8318b2c22c76"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Communication/a218a36e-f2fd-4603-ba67-c827acfef01b"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Consent/QueryConsentCHARGCONS"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/9b48f82c-9c11-4a57-aa72-a805f9537a82"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/TaskInClosedState"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/TaskInReadyState"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/f5c21409-b84b-4125-8649-5630a00906b1"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/output-example-1"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/output-example-2"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/output-example-3"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/output-example-4"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/output-example-5"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-validate"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureDefinition/logical-eu-dispense-data"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -927,6 +2369,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-1f339db0-9e55-4946-9dfa-f1b30953be9b.html"
       }],
       "reference" : {
         "reference" : "Bundle/1f339db0-9e55-4946-9dfa-f1b30953be9b"
@@ -938,6 +2384,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-44420ed9-7388-4be5-acc5-9c124fad9f34.html"
       }],
       "reference" : {
         "reference" : "Bundle/44420ed9-7388-4be5-acc5-9c124fad9f34"
@@ -949,6 +2399,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-4863d1fb-dc26-4680-bb35-018610d1749d.html"
       }],
       "reference" : {
         "reference" : "Bundle/4863d1fb-dc26-4680-bb35-018610d1749d"
@@ -960,6 +2414,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-9581ce65-b118-4751-9073-19c091b341e0.html"
       }],
       "reference" : {
         "reference" : "Bundle/9581ce65-b118-4751-9073-19c091b341e0"
@@ -971,6 +2429,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-9c85a2a5-92ee-4a57-83cb-ba90a0df2a21.html"
       }],
       "reference" : {
         "reference" : "Bundle/9c85a2a5-92ee-4a57-83cb-ba90a0df2a21"
@@ -982,6 +2444,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Subscription"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Subscription-example-create-subscription-request.html"
       }],
       "reference" : {
         "reference" : "Subscription/example-create-subscription-request"
@@ -994,6 +2460,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Subscription"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Subscription-example-create-subscription-response.html"
       }],
       "reference" : {
         "reference" : "Subscription/example-create-subscription-response"
@@ -1006,6 +2476,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Communication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Communication-7977a4ab-97a9-4d95-afb3-6c4c1e2ac596.html"
       }],
       "reference" : {
         "reference" : "Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596"
@@ -1018,6 +2492,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-example-searchset-auditevent.html"
       }],
       "reference" : {
         "reference" : "Bundle/example-searchset-auditevent"
@@ -1030,6 +2508,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-example-searchset-consent.html"
       }],
       "reference" : {
         "reference" : "Bundle/example-searchset-consent"
@@ -1042,6 +2524,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-example-searchset-medicationdispense.html"
       }],
       "reference" : {
         "reference" : "Bundle/example-searchset-medicationdispense"
@@ -1054,6 +2540,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-example-searchset-task.html"
       }],
       "reference" : {
         "reference" : "Bundle/example-searchset-task"
@@ -1066,18 +2556,26 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "AuditEvent"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "AuditEvent-9361863d-fec0-4ba9-8776-7905cf1b0cfa.html"
       }],
       "reference" : {
         "reference" : "AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa"
       },
       "name" : "AuditEvent-Eintrag vom TI-Flow-Fachdienst",
       "description" : "Beispiel für einen AuditEvent-Eintrag, der vom TI-Flow-Fachdienst beim Zugriff auf Patientendaten generiert wird",
-      "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AuditEvent"
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-GEM-ERP-VS-OrganizationType.html"
       }],
       "reference" : {
         "reference" : "ValueSet/GEM-ERP-VS-OrganizationType"
@@ -1090,6 +2588,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-Bundle-AcceptOperation.html"
       }],
       "reference" : {
         "reference" : "Bundle/Bundle-AcceptOperation"
@@ -1102,6 +2604,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ExampleCloseInputParameters.html"
       }],
       "reference" : {
         "reference" : "Parameters/ExampleCloseInputParameters"
@@ -1114,6 +2620,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ExampleCloseInputParametersKombipackung.html"
       }],
       "reference" : {
         "reference" : "Parameters/ExampleCloseInputParametersKombipackung"
@@ -1126,6 +2636,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ExampleCloseInputParametersMultipleMedicationDispenses.html"
       }],
       "reference" : {
         "reference" : "Parameters/ExampleCloseInputParametersMultipleMedicationDispenses"
@@ -1138,6 +2652,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-Example-MedicationDispense-Kombipackung.html"
       }],
       "reference" : {
         "reference" : "MedicationDispense/Example-MedicationDispense-Kombipackung"
@@ -1150,6 +2668,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-Example-MedicationDispense.html"
       }],
       "reference" : {
         "reference" : "MedicationDispense/Example-MedicationDispense"
@@ -1162,6 +2684,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-Example-MedicationDispense-Dosage-tageszeit.html"
       }],
       "reference" : {
         "reference" : "MedicationDispense/Example-MedicationDispense-Dosage-tageszeit"
@@ -1174,6 +2700,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-Example-MedicationDispense-Dosage-interval.html"
       }],
       "reference" : {
         "reference" : "MedicationDispense/Example-MedicationDispense-Dosage-interval"
@@ -1186,6 +2716,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-Example-MedicationDispense-Dosage-comb-interval.html"
       }],
       "reference" : {
         "reference" : "MedicationDispense/Example-MedicationDispense-Dosage-comb-interval"
@@ -1198,6 +2732,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-Example-MedicationDispense-Dosage-comb-dayofweek.html"
       }],
       "reference" : {
         "reference" : "MedicationDispense/Example-MedicationDispense-Dosage-comb-dayofweek"
@@ -1210,6 +2748,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-Example-MedicationDispense-Dosage-uhrzeit.html"
       }],
       "reference" : {
         "reference" : "MedicationDispense/Example-MedicationDispense-Dosage-uhrzeit"
@@ -1222,6 +2764,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-Example-MedicationDispense-Dosage-weekday.html"
       }],
       "reference" : {
         "reference" : "MedicationDispense/Example-MedicationDispense-Dosage-weekday"
@@ -1234,6 +2780,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-Example-MedicationDispense-Without-Medication.html"
       }],
       "reference" : {
         "reference" : "MedicationDispense/Example-MedicationDispense-Without-Medication"
@@ -1246,6 +2796,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-ExampleUnitMedication.html"
       }],
       "reference" : {
         "reference" : "Medication/ExampleUnitMedication"
@@ -1258,6 +2812,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-SumatripanMedication.html"
       }],
       "reference" : {
         "reference" : "Medication/SumatripanMedication"
@@ -1270,6 +2828,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-ExampleAcceptResponseBundle.html"
       }],
       "reference" : {
         "reference" : "Bundle/ExampleAcceptResponseBundle"
@@ -1281,7 +2843,43 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-GEM-ERPEU-CS-RequestType.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/GEM-ERPEU-CS-RequestType"
+      },
+      "name" : "CodeSystem of NCPeH Request Types",
+      "description" : "Type of Request from NCPeH",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-GEM-ERPEU-CS-ConsentType.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/GEM-ERPEU-CS-ConsentType"
+      },
+      "name" : "CodeSystem of types for a consent",
+      "description" : "Type of patient consent.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-ExampleRxCommunicationSearchset.html"
       }],
       "reference" : {
         "reference" : "Bundle/ExampleRxCommunicationSearchset"
@@ -1293,7 +2891,27 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERPEU-PR-Consent.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERPEU-PR-Consent"
+      },
+      "name" : "Consent for ePrescriptions",
+      "description" : "Records the consent of the patient for an operation in the context of ePrescription.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Communication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Communication-2be1c6ac-5d10-47f6-84ee-8318b2c22c76.html"
       }],
       "reference" : {
         "reference" : "Communication/2be1c6ac-5d10-47f6-84ee-8318b2c22c76"
@@ -1305,7 +2923,43 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERPEU-PR-MedicationDispense.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERPEU-PR-MedicationDispense"
+      },
+      "name" : "Dispensation of the Prescription from the EU",
+      "description" : "Handles information about the redeem of the prescription and the submited medication from the EU.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-logical-eu-dispense-data.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/logical-eu-dispense-data"
+      },
+      "name" : "Dispense Data from EU",
+      "description" : "Logical Information that is Provided in the dispensation document by the NCPeH of country B for Dispensing Medication",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-tiflow-rx-abort-op.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/tiflow-rx-abort-op"
@@ -1318,6 +2972,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-tiflow-rx-close-op.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/tiflow-rx-close-op"
@@ -1330,6 +2988,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-tiflow-rx-accept-op.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/tiflow-rx-accept-op"
@@ -1342,6 +3004,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-tiflow-rx-activate-op.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/tiflow-rx-activate-op"
@@ -1354,6 +3020,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-tiflow-rx-create-op.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/tiflow-rx-create-op"
@@ -1366,6 +3036,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-tiflow-rx-dispense-op.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/tiflow-rx-dispense-op"
@@ -1378,6 +3052,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-tiflow-rx-reject-op.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/tiflow-rx-reject-op"
@@ -1390,6 +3068,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-SimpleMedication.html"
       }],
       "reference" : {
         "reference" : "Medication/SimpleMedication"
@@ -1402,6 +3084,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Consent"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Consent-QueryConsentCHARGCONS.html"
       }],
       "reference" : {
         "reference" : "Consent/QueryConsentCHARGCONS"
@@ -1413,7 +3099,43 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERPEU-PR-Medication.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERPEU-PR-Medication"
+      },
+      "name" : "EU-Medication",
+      "description" : "Medication of a Prescription or Dispensation from the EU",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-EUCloseOperation.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/EUCloseOperation"
+      },
+      "name" : "EUCloseOperation",
+      "description" : "The operation $close finishes the e-prescription workflow and creates a receipt. The Output of this operation is a signed Bundle, to be used for further financial processing. The status of the Task then changes into #completed",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ExampleCloseInputParametersRezeptur.html"
       }],
       "reference" : {
         "reference" : "Parameters/ExampleCloseInputParametersRezeptur"
@@ -1425,6 +3147,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ExampleDispenseInputParameters.html"
       }],
       "reference" : {
         "reference" : "Parameters/ExampleDispenseInputParameters"
@@ -1436,6 +3162,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ExampleDispenseInputParametersMultipleMedicationDispenses.html"
       }],
       "reference" : {
         "reference" : "Parameters/ExampleDispenseInputParametersMultipleMedicationDispenses"
@@ -1447,6 +3177,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ExampleDispenseInputParametersKombipackung.html"
       }],
       "reference" : {
         "reference" : "Parameters/ExampleDispenseInputParametersKombipackung"
@@ -1458,6 +3192,26 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationOutcome"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationOutcome-ExampleERPEUOperationOutcomeError.html"
+      }],
+      "reference" : {
+        "reference" : "OperationOutcome/ExampleERPEUOperationOutcomeError"
+      },
+      "name" : "Example error response for ERP-EU operations",
+      "description" : "Representative validation error for EU access operation input",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationOutcome"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationOutcome-ExampleRxOperationOutcomeError.html"
       }],
       "reference" : {
         "reference" : "OperationOutcome/ExampleRxOperationOutcomeError"
@@ -1470,6 +3224,116 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ExampleEUCloseInputParameters.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ExampleEUCloseInputParameters"
+      },
+      "name" : "Example EU-Close Parameters",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-Close-Operation-Input"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ExampleEUGETPrescriptionDEMOGRAPHICS.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ExampleEUGETPrescriptionDEMOGRAPHICS"
+      },
+      "name" : "Example EU-GET Prescription Parameters",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ExampleEUGETPrescriptionE-PRESCRIPTIONS-LIST.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-LIST"
+      },
+      "name" : "Example EU-GET Prescription Parameters",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ExampleEUGETPrescriptionE-PRESCRIPTIONS-RETRIEVAL.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-RETRIEVAL"
+      },
+      "name" : "Example EU-GET Prescription Parameters",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-ExampleGetConsent.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ExampleGetConsent"
+      },
+      "name" : "Example for a Bundle with a Consent",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Consent"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Consent-f97a0772-c99f-4159-90c6-2a41c7d96779.html"
+      }],
+      "reference" : {
+        "reference" : "Consent/f97a0772-c99f-4159-90c6-2a41c7d96779"
+      },
+      "name" : "Example for a Consent to redeem EU Prescritptions",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Consent"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-Example-MedicationDispense-EU.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/Example-MedicationDispense-EU"
+      },
+      "name" : "Example Medication Dispense",
+      "description" : "Example of a Medication Dispense.",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-MedicationDispense"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ExampleRxOperationRequestParameters.html"
       }],
       "reference" : {
         "reference" : "Parameters/ExampleRxOperationRequestParameters"
@@ -1482,6 +3346,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-Example-MedicationDispense-Rezeptur.html"
       }],
       "reference" : {
         "reference" : "MedicationDispense/Example-MedicationDispense-Rezeptur"
@@ -1493,7 +3361,89 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-Example-EU-Organization.html"
+      }],
+      "reference" : {
+        "reference" : "Organization/Example-EU-Organization"
+      },
+      "name" : "Example-EU-Organization",
+      "description" : "Example of an EU Organization",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Organization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-Example-EU-Practitioner.html"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/Example-EU-Practitioner"
+      },
+      "name" : "Example-EU-Practitioner",
+      "description" : "Example of an EU Practitioner",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Practitioner"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-Example-EU-PractitionerRole.html"
+      }],
+      "reference" : {
+        "reference" : "PractitionerRole/Example-EU-PractitionerRole"
+      },
+      "name" : "Example-EU-PractitionerRole",
+      "description" : "Example of an EU PractitionerRole",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PractitionerRole"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-Example-PATCH-Task-Single-Input-Request-True.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/Example-PATCH-Task-Single-Input-Request-True"
+      },
+      "name" : "Example_PATCH_Task_Single_Input",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-PATCH-Task-Input"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-Example-PATCH-Task-Single-Input-Request-False.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/Example-PATCH-Task-Single-Input-Request-False"
+      },
+      "name" : "Example_PATCH_Task_Single_Input",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-PATCH-Task-Input"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-EX-AvailabilityState.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-EX-AvailabilityState"
@@ -1506,6 +3456,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-EX-EU-IS-REDEEMABLE-BY-PATIENT-AUTHORIZATION.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-EX-EU-IS-REDEEMABLE-BY-PATIENT-AUTHORIZATION"
@@ -1518,6 +3472,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-EX-EU-IS-REDEEMABLE-BY-PROPERTIES.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-EX-EU-IS-REDEEMABLE-BY-PROPERTIES"
@@ -1530,6 +3488,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-EX-LastMedicationDispense.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-EX-LastMedicationDispense"
@@ -1542,6 +3504,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-EX-SupplyOptionsType.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-EX-SupplyOptionsType"
@@ -1554,6 +3520,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-PAR-Accept-Operation-Output.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Accept-Operation-Output"
@@ -1566,6 +3536,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-PAR-Activate-Operation-Input.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Activate-Operation-Input"
@@ -1578,6 +3552,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-PAR-Activate-Operation-Output.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Activate-Operation-Output"
@@ -1590,18 +3568,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/GEM-ERP-PR-AuditEvent"
       },
-      "name" : "GEM ERP PR AuditEvent",
-      "description" : "AuditEvent für die Protokollierung des Zugriffs auf E-Rezepte",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-Bundle-OP-Accept.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-Bundle-OP-Accept"
@@ -1614,6 +3584,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input"
@@ -1626,6 +3600,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Output.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Output"
@@ -1638,6 +3616,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource:abstract"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-Communication.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-Communication"
@@ -1650,6 +3632,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-Communication-DispReq.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-Communication-DispReq"
@@ -1662,6 +3648,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-Communication-Reply.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-Communication-Reply"
@@ -1674,6 +3664,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-PAR-Create-Operation-Input.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Create-Operation-Input"
@@ -1686,6 +3680,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-PAR-Create-Operation-Output.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Create-Operation-Output"
@@ -1698,6 +3696,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-PAR-Dispense-Operation-Input.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input"
@@ -1710,6 +3712,26 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERPEU-PR-PAR-Close-Operation-Input.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERPEU-PR-PAR-Close-Operation-Input"
+      },
+      "name" : "GEM ERP PR EU CloseOperation Input",
+      "description" : "This profile defines the parameters for receiving dispense information for a prescription that was redeemed in the EU",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-Medication.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-Medication"
@@ -1722,6 +3744,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-MedicationDispense.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-MedicationDispense"
@@ -1733,7 +3759,91 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERPEU-PR-PAR-AccessAuthorization-Request.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Request"
+      },
+      "name" : "GEM ERPEU PR PAR Access Authorization Request",
+      "description" : "Displays Parameters for EU Access Authorization",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERPEU-PR-PAR-AccessAuthorization-Response.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Response"
+      },
+      "name" : "GEM ERPEU PR PAR Access Authorization Response",
+      "description" : "Displays Response Parameters for EU Access Authorization",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input"
+      },
+      "name" : "GEM ERPEU PR PAR GET Prescription Input",
+      "description" : "This profile defines the parameters for receiving dispense information for a prescription that was redeemed in the EU",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-gem-erpeu-pr-par-get-prescription-output.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/gem-erpeu-pr-par-get-prescription-output"
+      },
+      "name" : "GEM ERPEU PR PAR GET Prescription Output",
+      "description" : "This profile defines the output parameters for the Get Prescription Operation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERPEU-PR-PAR-PATCH-Task-Input.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERPEU-PR-PAR-PATCH-Task-Input"
+      },
+      "name" : "GEM ERPEU PR PAR PATCH Task Input",
+      "description" : "This profile defines the parameters for patching the Task to mark the prescription as to-be-redeemed in the EU",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureMap"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureMap-GEMErpPrMedicationdispenseMap.html"
       }],
       "reference" : {
         "reference" : "StructureMap/GEMErpPrMedicationdispenseMap"
@@ -1746,6 +3856,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureMap"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureMap-GEMErpPrMedicationMap.html"
       }],
       "reference" : {
         "reference" : "StructureMap/GEMErpPrMedicationMap"
@@ -1757,7 +3871,73 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERPEU-EX-MedicinalPackageDescription.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERPEU-EX-MedicinalPackageDescription"
+      },
+      "name" : "GEM_ERPEU_EX_MedicinalPackageDescription",
+      "description" : "Description of a packaged medicinal product.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERPEU-EX-MedicinalPackageIdentifier.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERPEU-EX-MedicinalPackageIdentifier"
+      },
+      "name" : "GEM_ERPEU_EX_MedicinalPackageIdentifier",
+      "description" : "Identifier of a packaged medicinal product refers to a specific pack size of a specific product.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-Example-EU-PermissionRequest.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/Example-EU-PermissionRequest"
+      },
+      "name" : "GEM_ERPEU_PR_PAR_Access_Authorization_Request",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Request"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-Example-EU-PermissionResponse.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/Example-EU-PermissionResponse"
+      },
+      "name" : "GEM_ERPEU_PR_PAR_Access_Authorization_Response",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Response"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Device"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Device-ReceiptBundleDevice.html"
       }],
       "reference" : {
         "reference" : "Device/ReceiptBundleDevice"
@@ -1769,7 +3949,59 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-GETPrescriptionEU.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/GETPrescriptionEU"
+      },
+      "name" : "GETPrescriptionEU",
+      "description" : "The Operation gets Presciption Information from the ERP System for usage in the e-prescription workflow for EU countries",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-GrantEUAccessPermission.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/GrantEUAccessPermission"
+      },
+      "name" : "GrantEUAccessPermission",
+      "description" : "This operation receives the access code and the country that the patient wants to grant access to. The operation validates the country and creates registeres the Access Code.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERPEU-PR-AccessCode.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERPEU-PR-AccessCode"
+      },
+      "name" : "Identifier Profile for EU AccessCode",
+      "description" : "The AccessCode that is generated by the FdV in order to access the ePrescription in an EU country.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureMap"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureMap-KBVPrErpBundleMap.html"
       }],
       "reference" : {
         "reference" : "StructureMap/KBVPrErpBundleMap"
@@ -1782,6 +4014,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureMap"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureMap-KBVPrErpMedicationCompoundingMap.html"
       }],
       "reference" : {
         "reference" : "StructureMap/KBVPrErpMedicationCompoundingMap"
@@ -1794,6 +4030,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureMap"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureMap-KBVPrErpMedicationFreetextMap.html"
       }],
       "reference" : {
         "reference" : "StructureMap/KBVPrErpMedicationFreetextMap"
@@ -1806,6 +4046,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureMap"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureMap-KBVPrErpMedicationIngredientMap.html"
       }],
       "reference" : {
         "reference" : "StructureMap/KBVPrErpMedicationIngredientMap"
@@ -1818,6 +4062,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureMap"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureMap-KBVPrErpMedicationPznMap.html"
       }],
       "reference" : {
         "reference" : "StructureMap/KBVPrErpMedicationPznMap"
@@ -1830,6 +4078,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureMap"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureMap-KBVPrErpPrescriptionMap.html"
       }],
       "reference" : {
         "reference" : "StructureMap/KBVPrErpPrescriptionMap"
@@ -1842,6 +4094,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureMap"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureMap-KBVPrForOrganizationMap.html"
       }],
       "reference" : {
         "reference" : "StructureMap/KBVPrForOrganizationMap"
@@ -1854,6 +4110,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureMap"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureMap-KBVPrForPractitionerMap.html"
       }],
       "reference" : {
         "reference" : "StructureMap/KBVPrForPractitionerMap"
@@ -1866,6 +4126,40 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-EU-Medication-Without-Strength-Code.html"
+      }],
+      "reference" : {
+        "reference" : "Medication/EU-Medication-Without-Strength-Code"
+      },
+      "name" : "Medication Without code or system for Strength",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Medication"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-EU-Medication-Without-Strength-Numerator.html"
+      }],
+      "reference" : {
+        "reference" : "Medication/EU-Medication-Without-Strength-Numerator"
+      },
+      "name" : "Medication Without code or system for Strength",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Medication"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-Medication-Rezeptur-FD.html"
       }],
       "reference" : {
         "reference" : "Medication/Medication-Rezeptur-FD"
@@ -1877,6 +4171,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-ExampleRxMedicationDispenseSearchset.html"
       }],
       "reference" : {
         "reference" : "Bundle/ExampleRxMedicationDispenseSearchset"
@@ -1889,6 +4187,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-Medication-Without-Strength-Code.html"
       }],
       "reference" : {
         "reference" : "Medication/Medication-Without-Strength-Code"
@@ -1901,6 +4203,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-Medication-Without-Strength-Numerator.html"
       }],
       "reference" : {
         "reference" : "Medication/Medication-Without-Strength-Numerator"
@@ -1913,6 +4219,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-Medication-Kombipackung.html"
       }],
       "reference" : {
         "reference" : "Medication/Medication-Kombipackung"
@@ -1925,6 +4235,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-Medication-Rezeptur.html"
       }],
       "reference" : {
         "reference" : "Medication/Medication-Rezeptur"
@@ -1936,7 +4250,134 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERPEU-PR-Organization.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERPEU-PR-Organization"
+      },
+      "name" : "Organization Information Received from the EU",
+      "description" : "This Organization Profile is sent by the NCPeH when redeeming a Prescription in the EU",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-output-example-1.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/output-example-1"
+      },
+      "name" : "output-example-1",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-output-example-2.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/output-example-2"
+      },
+      "name" : "output-example-2",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-output-example-3.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/output-example-3"
+      },
+      "name" : "output-example-3",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-output-example-4.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/output-example-4"
+      },
+      "name" : "output-example-4",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-output-example-5.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/output-example-5"
+      },
+      "name" : "output-example-5",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERPEU-PR-Practitioner.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERPEU-PR-Practitioner"
+      },
+      "name" : "Practitioner Information Received from the EU",
+      "description" : "This Practitioner Profile is sent by the NCPeH when redeeming a Prescription in the EU",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERPEU-PR-PractitionerRole.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/GEM-ERPEU-PR-PractitionerRole"
+      },
+      "name" : "PractitionerRole Information Received from the EU",
+      "description" : "This PractitionerRole Profile is sent by the NCPeH when redeeming a Prescription in the EU",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-dffbfd6a-5712-4798-bdc8-07201eb77ab8.html"
       }],
       "reference" : {
         "reference" : "Bundle/dffbfd6a-5712-4798-bdc8-07201eb77ab8"
@@ -1948,7 +4389,43 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-ReadEUAccessPermission.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/ReadEUAccessPermission"
+      },
+      "name" : "ReadEUAccessPermission",
+      "description" : "This operation reads the currenty in the E-Rezept-Fachdienst registered Access Code for redeeming ePrescriptions in an EU country.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-RevokeEUAccessPermission.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/RevokeEUAccessPermission"
+      },
+      "name" : "RevokeEUAccessPermission",
+      "description" : "This operation revokes the currently registered access code for redeeming prescriptions in an EU country.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Communication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Communication-ExampleRxCommunicationDispReq.html"
       }],
       "reference" : {
         "reference" : "Communication/ExampleRxCommunicationDispReq"
@@ -1960,6 +4437,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-ExampleRxMedicationDispense.html"
       }],
       "reference" : {
         "reference" : "MedicationDispense/ExampleRxMedicationDispense"
@@ -1971,6 +4452,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-ExampleRxTaskInReadyState.html"
       }],
       "reference" : {
         "reference" : "Task/ExampleRxTaskInReadyState"
@@ -1981,7 +4466,41 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-EUSumatripanMedication.html"
+      }],
+      "reference" : {
+        "reference" : "Medication/EUSumatripanMedication"
+      },
+      "name" : "Sample Medication Sumatripan",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Medication"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-EUSimpleMedication.html"
+      }],
+      "reference" : {
+        "reference" : "Medication/EUSimpleMedication"
+      },
+      "name" : "Sample Simple Medication",
+      "exampleCanonical" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Medication"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-TaskInClosedState.html"
       }],
       "reference" : {
         "reference" : "Task/TaskInClosedState"
@@ -1994,6 +4513,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-TaskInReadyState.html"
       }],
       "reference" : {
         "reference" : "Task/TaskInReadyState"
@@ -2006,6 +4529,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-d70932d1-9e1c-483c-b2d4-b7dced09b35e.html"
       }],
       "reference" : {
         "reference" : "Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e"
@@ -2018,6 +4545,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-9b48f82c-9c11-4a57-aa72-a805f9537a82.html"
       }],
       "reference" : {
         "reference" : "Task/9b48f82c-9c11-4a57-aa72-a805f9537a82"
@@ -2030,6 +4561,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-b12eb5f7-91ce-4887-93c7-800454601377.html"
       }],
       "reference" : {
         "reference" : "Task/b12eb5f7-91ce-4887-93c7-800454601377"
@@ -2042,6 +4577,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-b9f1fbdd-f28b-4ec7-959c-5283d3433b0e.html"
       }],
       "reference" : {
         "reference" : "Task/b9f1fbdd-f28b-4ec7-959c-5283d3433b0e"
@@ -2054,6 +4593,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-GEM-ERP-PR-Task.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/GEM-ERP-PR-Task"
@@ -2066,6 +4609,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-f5c21409-b84b-4125-8649-5630a00906b1.html"
       }],
       "reference" : {
         "reference" : "Task/f5c21409-b84b-4125-8649-5630a00906b1"
@@ -2078,6 +4625,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-ExampleRxTaskSearchset.html"
       }],
       "reference" : {
         "reference" : "Bundle/ExampleRxTaskSearchset"
@@ -2090,6 +4641,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-tiflow-erezept-operation-outcome-details-cs.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/tiflow-erezept-operation-outcome-details-cs"
@@ -2102,6 +4657,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-tiflow-erezept-operation-outcome-details-vs.html"
       }],
       "reference" : {
         "reference" : "ValueSet/tiflow-erezept-operation-outcome-details-vs"
@@ -2114,6 +4673,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-ti-flow-fachdienst-server-rx.html"
       }],
       "reference" : {
         "reference" : "CapabilityStatement/ti-flow-fachdienst-server-rx"
@@ -2125,7 +4688,59 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-GEM-ERPEU-VS-ConsentType.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/GEM-ERPEU-VS-ConsentType"
+      },
+      "name" : "ValueSet of Consent Codes",
+      "description" : "Type of Consents for the ePrescription.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-GEM-ERPEU-VS-Consent-PolicyRule.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/GEM-ERPEU-VS-Consent-PolicyRule"
+      },
+      "name" : "ValueSet of Consent PolyRule Codes",
+      "description" : "Type of Policy Rules for Consents of the ePrescription.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-GEM-ERPEU-VS-RequestType.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/GEM-ERPEU-VS-RequestType"
+      },
+      "name" : "ValueSet of NCPeH Request Types",
+      "description" : "Type of Request from NCPeH",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Communication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Communication-a218a36e-f2fd-4603-ba67-c827acfef01b.html"
       }],
       "reference" : {
         "reference" : "Communication/a218a36e-f2fd-4603-ba67-c827acfef01b"
@@ -2138,6 +4753,10 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-Example-MedicationDispense-2.html"
       }],
       "reference" : {
         "reference" : "MedicationDispense/Example-MedicationDispense-2"
@@ -2145,51 +4764,6 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
       "name" : "Zweites Beispiel Medikamentenabgabe",
       "description" : "Zweites Beispiel für eine Medikamentenabgabe mit anderen Eigenschaften",
       "exampleCanonical" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Parameters"
-      }],
-      "reference" : {
-        "reference" : "Parameters/Parameters-output-example-1"
-      }
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Parameters"
-      }],
-      "reference" : {
-        "reference" : "Parameters/Parameters-output-example-2"
-      }
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Parameters"
-      }],
-      "reference" : {
-        "reference" : "Parameters/Parameters-output-example-3"
-      }
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Parameters"
-      }],
-      "reference" : {
-        "reference" : "Parameters/Parameters-output-example-4"
-      }
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Parameters"
-      }],
-      "reference" : {
-        "reference" : "Parameters/Parameters-output-example-5"
-      }
     }],
     "page" : {
       "extension" : [{
@@ -2250,6 +4824,15 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
           }],
           "nameUrl" : "menu-fachlichkeit-t-rezept.html",
           "title" : "Verordnung von E-T-Rezepten",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "menu-fachlichkeit-szenario-eu.html"
+          }],
+          "nameUrl" : "menu-fachlichkeit-szenario-eu.html",
+          "title" : "Einlösen von E-Rezepten im europäischen Ausland",
           "generation" : "markdown"
         },
         {
@@ -2480,6 +5063,24 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "menu-technische-umsetzung-konzept.html"
+          }],
+          "nameUrl" : "menu-technische-umsetzung-konzept.html",
+          "title" : "Technisches Konzept - Einlösen im EU-Ausland",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "menu-technische-umsetzung-datenschutz-und-sicherheit.html"
+          }],
+          "nameUrl" : "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
+          "title" : "Datenschutz und Sicherheit - Einlösen im EU-Ausland",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
             "valueUrl" : "menu-technische-umsetzung-audit-service.html"
           }],
           "nameUrl" : "menu-technische-umsetzung-audit-service.html",
@@ -2600,6 +5201,33 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             }],
             "nameUrl" : "query-api-communication-req-data.html",
             "title" : "Datenmodell payload",
+            "generation" : "markdown"
+          }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "query-api-consent.html"
+          }],
+          "nameUrl" : "query-api-consent.html",
+          "title" : "Query API: Consent",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-consent-req-fd.html"
+            }],
+            "nameUrl" : "query-api-consent-req-fd.html",
+            "title" : "FD-Anforderungen: Consent",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "query-api-consent-req-fdv.html"
+            }],
+            "nameUrl" : "query-api-consent-req-fdv.html",
+            "title" : "FdV-Anforderungen: Consent",
             "generation" : "markdown"
           }]
         }]
@@ -2818,6 +5446,141 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
             "title" : "AVS-Anforderungen $abort",
             "generation" : "markdown"
           }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "op-grant-eu-access-permission.html"
+          }],
+          "nameUrl" : "op-grant-eu-access-permission.html",
+          "title" : "Operation API: Zugriffsberechtigung erstellen",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-grant-eu-access-permission-req-fd.html"
+            }],
+            "nameUrl" : "op-grant-eu-access-permission-req-fd.html",
+            "title" : "Server Anforderungen: Zugriffsberechtigung erstellen",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-grant-eu-access-permission-req-fdv.html"
+            }],
+            "nameUrl" : "op-grant-eu-access-permission-req-fdv.html",
+            "title" : "FdV-Anforderungen: Zugriffsberechtigung erstellen",
+            "generation" : "markdown"
+          }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "op-read-eu-access-permission.html"
+          }],
+          "nameUrl" : "op-read-eu-access-permission.html",
+          "title" : "Operation API: Zugriffsberechtigung einsehen",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-read-eu-access-permission-req-fd.html"
+            }],
+            "nameUrl" : "op-read-eu-access-permission-req-fd.html",
+            "title" : "FD-Anforderungen: Zugriffsberechtigung einsehen",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-read-eu-access-permission-req-fdv.html"
+            }],
+            "nameUrl" : "op-read-eu-access-permission-req-fdv.html",
+            "title" : "FdV-Anforderungen: Zugriffsberechtigung einsehen",
+            "generation" : "markdown"
+          }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "op-revoke-eu-access-permission.html"
+          }],
+          "nameUrl" : "op-revoke-eu-access-permission.html",
+          "title" : "Operation API: Zugriffsberechtigung löschen",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-revoke-eu-access-permission-req-fd.html"
+            }],
+            "nameUrl" : "op-revoke-eu-access-permission-req-fd.html",
+            "title" : "FD-Anforderungen: Zugriffsberechtigung löschen",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-revoke-eu-access-permission-req-fdv.html"
+            }],
+            "nameUrl" : "op-revoke-eu-access-permission-req-fdv.html",
+            "title" : "FdV-Anforderungen: Zugriffsberechtigung löschen",
+            "generation" : "markdown"
+          }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "op-get-eu-prescriptions.html"
+          }],
+          "nameUrl" : "op-get-eu-prescriptions.html",
+          "title" : "Operation API: E-Rezepte zur Einlösung im EU-Ausland abrufen",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-get-eu-prescriptions-req-fd.html"
+            }],
+            "nameUrl" : "op-get-eu-prescriptions-req-fd.html",
+            "title" : "FD-Anforderungen: E-Rezepte zur Einlösung im EU-Ausland abrufen",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-get-eu-prescriptions-req-ncpeha.html"
+            }],
+            "nameUrl" : "op-get-eu-prescriptions-req-ncpeha.html",
+            "title" : "NCPeH-Anforderungen: E-Rezepte zur Einlösung im EU-Ausland abrufen",
+            "generation" : "markdown"
+          }]
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "op-eu-close.html"
+          }],
+          "nameUrl" : "op-eu-close.html",
+          "title" : "Operation API: Abgabe von E-Rezepten im EU-Ausland",
+          "generation" : "markdown",
+          "page" : [{
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-eu-close-req-fd.html"
+            }],
+            "nameUrl" : "op-eu-close-req-fd.html",
+            "title" : "FD-Anforderungen: Abgabe von E-Rezepten im EU-Ausland",
+            "generation" : "markdown"
+          },
+          {
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "op-eu-close-req-ncpeha.html"
+            }],
+            "nameUrl" : "op-eu-close-req-ncpeha.html",
+            "title" : "NCPeH-Anforderungen: Abgabe von E-Rezepten im EU-Ausland",
+            "generation" : "markdown"
+          }]
         }]
       },
       {
@@ -2868,15 +5631,7 @@ HL7®, HEALTH LEVEL SEVEN®, FHIR® und das FHIR®-Logo sind Marken von Health L
     },
     "parameter" : [{
       "code" : "path-resource",
-      "value" : "input/resources/structuremaps"
-    },
-    {
-      "code" : "path-resource",
-      "value" : "input/resources/kbv-bundles"
-    },
-    {
-      "code" : "path-resource",
-      "value" : "input/resources/transformed-kbv-bundles"
+      "value" : "input/resources/*"
     },
     {
       "code" : "path-pages",

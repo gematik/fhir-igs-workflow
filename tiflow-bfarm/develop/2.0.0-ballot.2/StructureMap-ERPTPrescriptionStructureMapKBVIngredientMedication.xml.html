@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>E-T-Rezept Structure Map for KBV Ingredient Medication - XML Representation - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
+    <title>E-T-Rezept Structure Map for KBV Ingredient Medication - XML Representation - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -163,11 +163,8 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -188,6 +185,9 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -204,10 +204,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Datenaustausch BfArM Webdienst
+Implementation Guide<br /> TIFlow - Datenaustausch BfArM Webdienst
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -301,7 +301,7 @@ TIFlow - Datenaustausch BfArM Webdienst
         
           Draft
           
-            as of 2026-05-26
+            as of 2026-06-30
           
         
       </td>
@@ -317,7 +317,7 @@ TIFlow - Datenaustausch BfArM Webdienst
 
 
 
-  <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
+  <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code style="white-space: pre; text-wrap: nowrap;">
 &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap">StructureMap</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
   &lt;<a href="http://hl7.org/fhir/R4/resource.html#StructureMap.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ERPTPrescriptionStructureMapKBVIngredientMedication&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#StructureMap.text">text</a>&gt;
@@ -332,23 +332,44 @@ TIFlow - Datenaustausch BfArM Webdienst
 
 &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Mapping-Anweisungen zur Transformation von KBV Wirkstoff-Medikamenten zu BfArM T-Prescription Format&lt;/span&gt;
 &lt;b&gt;group &lt;/b&gt;ERPTPrescriptionStructureMapKBVIngredientMedication&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;b&gt;source&lt;/b&gt; &lt;span style=&quot;color: maroon&quot;&gt;kbvMedicationIngredient&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; : &lt;/span&gt;kbvMedicationIngredient, &lt;b&gt;target&lt;/b&gt; &lt;span style=&quot;color: maroon&quot;&gt;bfarmMedication&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; : &lt;/span&gt;bfarmMedication&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; {
-&lt;/span&gt;  kbvMedicationIngredient.id&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;IdVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedication.id = &lt;span style=&quot;color: maroon&quot;&gt;IdVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationId&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Übernimmt die eindeutige Medication-ID unverändert&lt;/span&gt;
-  kbvMedicationIngredient.form&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;formVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedication.form = &lt;span style=&quot;color: maroon&quot;&gt;formVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationForm&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert die gewünschte Darreichungsform für die Wirkstoff-Verordnung (Kapseln, Salbe, Lösung, etc.)&lt;/span&gt;
+&lt;/span&gt;  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Übernimmt die eindeutige Medication-ID unverändert&lt;/span&gt;
+  kbvMedicationIngredient.id&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;IdVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedication.id = &lt;span style=&quot;color: maroon&quot;&gt;IdVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationId&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Mappt Medication-Extensions von KBV- zu BfArM-Format&lt;/span&gt;
+  kbvMedicationIngredient.extension&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;extVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedication.extension&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgtExtVar&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
+&lt;/span&gt;    &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Übernimmt die Normgröße-Extension unverändert (deutsche Packungsgrößenangabe)&lt;/span&gt;
+    extVar&lt;b&gt; where &lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;url='http://fhir.de/StructureDefinition/normgroesse'&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtExtVar.url = &lt;span style=&quot;color: blue&quot;&gt;'http://fhir.de/StructureDefinition/normgroesse'&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
+&lt;/span&gt;      &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert den Wert der Normgröße-Extension (N1, N2, N3)&lt;/span&gt;
+      extVar.value&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;extValVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtExtVar.value = &lt;span style=&quot;color: maroon&quot;&gt;extValVar&lt;/span&gt; &lt;i&gt;&amp;quot;copyExtensionValue&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+    &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;copyNormgroesseExtensionUrl&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;medicationExt&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert die gewünschte Darreichungsform für die Wirkstoff-Verordnung (Kapseln, Salbe, Lösung, etc.)&lt;/span&gt;
+  kbvMedicationIngredient.form&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;formVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedication.form = &lt;span style=&quot;color: maroon&quot;&gt;formVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationForm&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Mappt die Gesamtmenge der herzustellenden Wirkstoff-Verordnung&lt;/span&gt;
   kbvMedicationIngredient.amount&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;amountVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedication.amount&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgtAmountVar&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
-&lt;/span&gt;    amountVar.denominator&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;amountDenominatorVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountVar.denominator = &lt;span style=&quot;color: maroon&quot;&gt;amountDenominatorVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmountDenominator&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert den Nenner der Mengenangabe (z.B. '1' für 'pro Herstellung')&lt;/span&gt;
+&lt;/span&gt;    &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert den Nenner der Mengenangabe (z.B. '1' für 'pro Herstellung')&lt;/span&gt;
+    amountVar.denominator&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;amountDenominatorVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountVar.denominator = &lt;span style=&quot;color: maroon&quot;&gt;amountDenominatorVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmountDenominator&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+    &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Mappt die detaillierte Mengenangabe&lt;/span&gt;
     amountVar.numerator&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountVar.numerator&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgtAmountNumeratorVar&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
-&lt;/span&gt;      amountNumeratorVar.extension&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;amountNumExtVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountNumeratorVar.extension&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgtAmountNumExtVar&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
-&lt;/span&gt;        amountNumExtVar&lt;b&gt; where &lt;/b&gt;url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize'&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountNumExtVar.url = &lt;span style=&quot;color: blue&quot;&gt;'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension'&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
-&lt;/span&gt;          amountNumExtVar.value&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;extValVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountNumExtVar.value = &lt;span style=&quot;color: maroon&quot;&gt;extValVar&lt;/span&gt; &lt;i&gt;&amp;quot;copyExtensionValue&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Übernimmt den Packungsgrößenwert&lt;/span&gt;
-        &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;copyPackagingSizeExtensionUrl&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Wandelt KBV-Packungsgrößen-Extension in gematik EPA-Medication Extension um&lt;/span&gt;
-      &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmountExt&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Transformiert Packungsgrößen-Extensions von KBV- zu gematik-Format für Wirkstoff Verordnung&lt;/span&gt;
-      amountNumeratorVar.value&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorValueVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountNumeratorVar.value = &lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorValueVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmountNumeratorValue&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert den numerischen Wert der Gesamtmenge (z.B. '100' für 100g Salbe)&lt;/span&gt;
-      amountNumeratorVar.unit&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorUnitVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountNumeratorVar.unit = &lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorUnitVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmountNumeratorUnit&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Übernimmt die Mengeneinheit (g, ml, Stück, etc.)&lt;/span&gt;
-      amountNumeratorVar.system&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorSystemVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountNumeratorVar.system = &lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorSystemVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmountNumeratorSystem&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert das Codesystem für die Mengeneinheit (meist UCUM)&lt;/span&gt;
-      amountNumeratorVar.code&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorCodeVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountNumeratorVar.code = &lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorCodeVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmountNumeratorCode&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Übernimmt den standardisierten Code für die Mengeneinheit&lt;/span&gt;
-    &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmountNumerator&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Mappt die detaillierte Mengenangabe&lt;/span&gt;
-  &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmount&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Mappt die Gesamtmenge der herzustellenden Wirkstoff-Verordnung&lt;/span&gt;
-  kbvMedicationIngredient.ingredient&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;ingredientVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedication.ingredient = &lt;span style=&quot;color: maroon&quot;&gt;ingredientVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationIngredient&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert die detaillierten Wirkstoffinformationen mit Konzentrationen und Mengenangaben&lt;/span&gt;
+&lt;/span&gt;      &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Transformiert Packungsgrößen-Extensions von KBV- zu gematik-Format für Wirkstoff Verordnung&lt;/span&gt;
+      amountNumeratorVar.extension&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;amountNumExtVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountNumeratorVar.extension&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgtAmountNumExtVar&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
+&lt;/span&gt;        &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Wandelt KBV-Packungsgrößen-Extension in gematik EPA-Medication Extension um&lt;/span&gt;
+        amountNumExtVar&lt;b&gt; where &lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize'&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountNumExtVar.url = &lt;span style=&quot;color: blue&quot;&gt;'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension'&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
+&lt;/span&gt;          &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Übernimmt den Packungsgrößenwert&lt;/span&gt;
+          amountNumExtVar.value&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;extValVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountNumExtVar.value = &lt;span style=&quot;color: maroon&quot;&gt;extValVar&lt;/span&gt; &lt;i&gt;&amp;quot;copyExtensionValue&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+        &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;copyPackagingSizeExtensionUrl&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+      &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmountExt&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+      &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert den numerischen Wert der Gesamtmenge (z.B. '100' für 100g Salbe)&lt;/span&gt;
+      amountNumeratorVar.value&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorValueVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountNumeratorVar.value = &lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorValueVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmountNumeratorValue&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+      &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Übernimmt die Mengeneinheit (g, ml, Stück, etc.)&lt;/span&gt;
+      amountNumeratorVar.unit&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorUnitVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountNumeratorVar.unit = &lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorUnitVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmountNumeratorUnit&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+      &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert das Codesystem für die Mengeneinheit (meist UCUM)&lt;/span&gt;
+      amountNumeratorVar.system&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorSystemVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountNumeratorVar.system = &lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorSystemVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmountNumeratorSystem&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+      &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Übernimmt den standardisierten Code für die Mengeneinheit&lt;/span&gt;
+      amountNumeratorVar.code&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorCodeVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtAmountNumeratorVar.code = &lt;span style=&quot;color: maroon&quot;&gt;amountNumeratorCodeVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmountNumeratorCode&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+    &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmountNumerator&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;medicationAmount&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert die detaillierten Wirkstoffinformationen mit Konzentrationen und Mengenangaben&lt;/span&gt;
+  kbvMedicationIngredient.ingredient&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;ingredientVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedication.ingredient = &lt;span style=&quot;color: maroon&quot;&gt;ingredientVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationIngredient&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
 &lt;span style=&quot;color: navy&quot;&gt;}
 
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;<a name="end-xhtml"></a>
@@ -360,7 +381,7 @@ TIFlow - Datenaustausch BfArM Webdienst
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;E-T-Rezept Structure Map for KBV Ingredient Medication&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;draft&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.experimental">experimental</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-05-26&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-06-30&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;gematik GmbH&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.contact">contact</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;gematik GmbH&quot;/&gt;
@@ -425,6 +446,61 @@ TIFlow - Datenaustausch BfArM Webdienst
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Übernimmt die eindeutige Medication-ID unverändert&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;medicationExt&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;kbvMedicationIngredient&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;extension&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;extVar&quot;/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;bfarmMedication&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;variable&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;extension&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.variable">variable</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;tgtExtVar&quot;/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;copyNormgroesseExtensionUrl&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;extVar&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">condition</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;url='http://fhir.de/StructureDefinition/normgroesse'&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;tgtExtVar&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;variable&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;url&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;copy&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a>
+                         <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://fhir.de/StructureDefinition/normgroesse&quot;/&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;copyExtensionValue&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;extVar&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;value&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;extValVar&quot;/&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;tgtExtVar&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;variable&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;value&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.transform">transform</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;copy&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;extValVar&quot;/&gt;
+            &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>
+                         <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Kopiert den Wert der Normgröße-Extension (N1, N2, N3)&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Übernimmt die Normgröße-Extension unverändert (deutsche Packungsgrößenangabe)&quot;/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Mappt Medication-Extensions von KBV- zu BfArM-Format&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;medicationForm&quot;/&gt;
@@ -691,7 +767,7 @@ TIFlow - Datenaustausch BfArM Webdienst
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:48+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:29+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,8 +1,10 @@
-# Szenario Übermittlung an das T-Register - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# Szenario Übermittlung an das T-Register - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * **Szenario Übermittlung an das T-Register**

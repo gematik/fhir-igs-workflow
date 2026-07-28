@@ -1,15 +1,40 @@
-# FHIR-Artefakte - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# FHIR-Artefakte - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * **FHIR-Artefakte**
 
 ## FHIR-Artefakte
 
-Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen dieses Implementation Guide für die Patientenrechnung im TI-Flow-Fachdienst definiert werden.
+Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen dieses Implementation Guide definiert werden. Sie bilden die Grundlage für die strukturierte Abbildung und Verarbeitung von Daten. Dazu gehören Profile zur Spezifizierung von Ressourcen, ein **Capability Statement** zur Beschreibung der unterstützten Funktionen sowie **Operation Definitions**, die spezielle FHIR-Operationen für den Abruf und die Verwaltung der Daten festlegen.
+
+### Terminologien: Value Sets
+
+Die folgenden Value Sets sind für die TIFlow-Funktionalitäten festgelegt.
+
+| | |
+| :--- | :--- |
+| [ ValueSet of Consent Codes ](ValueSet-GEM-ERPCHRG-VS-ConsentType.md) | Type of Consents for the ePrescription. |
+| [ TIFLOW ChargeItem Operation Outcome Details VS ](ValueSet-tiflow-chargeitem-operation-outcome-details-vs.md) | Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können |
+
+**Tabelle:**Value Sets
+
+### Systemverhalten
+
+#### Capability Statements
+
+Das **Capability** **Statement** beschreibt die Anforderungen und Fähigkeiten, die ein Server für die konforme Implementierung des TIFlow Fachdienstes umsetzen muss. Es handelt sich um eine Konformitätserklärung, die spezifiziert, welche Ressourcen, Interaktionen und Suchparameter das der TIFlow Fachdienste unterstützen muss.
+
+| | |
+| :--- | :--- |
+| [ ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst ](CapabilityStatement-ti-flow-fachdienst-server-erpchrg.md) | CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen) |
+
+**Tabelle:**Capability Statements
 
 ### Beispielinstanzen
 

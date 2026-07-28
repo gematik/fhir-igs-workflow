@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Fehlermeldung BfArM Webdienst - TTL Representation - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
+    <title>Fehlermeldung BfArM Webdienst - TTL Representation - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -80,8 +80,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"5.26"}
-    h3,h4,h5,h6{--heading-prefix:"5.26"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.28"}
+    h3,h4,h5,h6{--heading-prefix:"5.28"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -163,11 +163,8 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -188,6 +185,9 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -204,10 +204,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Datenaustausch BfArM Webdienst
+Implementation Guide<br /> TIFlow - Datenaustausch BfArM Webdienst
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -232,7 +232,7 @@ TIFlow - Datenaustausch BfArM Webdienst
 
             <a href="#bottom">unten</a>
 
-          | <a href="Parameters-Parameters-example-case-01-digitaler-durchschlag.html">nächste&gt;</a>
+          | <a href="referenced.html">nächste&gt;</a>
 
           </span>
 
@@ -305,34 +305,49 @@ TIFlow - Datenaustausch BfArM Webdienst
   <pre class="rdf" data-fhir="generated" style="white-space: pre; overflow: hidden"><code class="language-turtle">
 @prefix fhir: &lt;http://hl7.org/fhir/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 # - resource -------------------------------------------------------------------
 
- a fhir:OperationOutcome ;
+&lt;http://hl7.org/fhir/OperationOutcome/ERP-TPrescription-OperationOutcome-1&gt; a fhir:OperationOutcome ;
   <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
-  <a href="http://hl7.org/fhir/R4/resource.html#OperationOutcome.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;ERP-TPrescription-OperationOutcome-1&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/domainresource.html#OperationOutcome.text">fhir:text</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">fhir:div</a> [ <a href="http://hl7.org/fhir/R4/narrative.html#xhtml">fhir:v</a> &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: OperationOutcome ERP-TPrescription-OperationOutcome-1&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;ERP-TPrescription-OperationOutcome-1\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcERP-TPrescription-OperationOutcome-1\&quot;&gt; &lt;/a&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;issue&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;severity&lt;/b&gt;: Error&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Invalid Content&lt;/p&gt;&lt;p&gt;&lt;b&gt;details&lt;/b&gt;: &lt;span title=\&quot;Codes:\&quot;&gt;Invalid request payload&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;diagnostics&lt;/b&gt;: This field is required&lt;/p&gt;&lt;p&gt;&lt;b&gt;expression&lt;/b&gt;: parameter[rxPrescription].part[prescriptionId].value&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;issue&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;severity&lt;/b&gt;: Error&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Element value invalid&lt;/p&gt;&lt;p&gt;&lt;b&gt;details&lt;/b&gt;: &lt;span title=\&quot;Codes:\&quot;&gt;Invalid format for field&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;diagnostics&lt;/b&gt;: Value must be a date&lt;/p&gt;&lt;p&gt;&lt;b&gt;expression&lt;/b&gt;: parameter[rxPrescription].part[medicationRequest].resource.authoredOn&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;^^rdf:XMLLiteral ]
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue">fhir:issue</a> ( [
-<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.severity">fhir:severity</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;error&quot; ] ;
-<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;invalid&quot; ] ;
-<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.details">fhir:details</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Invalid request payload&quot; ]     ] ;
-<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.diagnostics">fhir:diagnostics</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;This field is required&quot; ] ;
-    ( <a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.expression">fhir:expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;parameter[rxPrescription].part[prescriptionId].value&quot; ] )
-  ] [
-<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.severity">fhir:severity</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;error&quot; ] ;
-<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;value&quot; ] ;
-<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.details">fhir:details</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Invalid format for field&quot; ]     ] ;
-<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.diagnostics">fhir:diagnostics</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Value must be a date&quot; ] ;
-    ( <a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.expression">fhir:expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;parameter[rxPrescription].part[medicationRequest].resource.authoredOn&quot; ] )
-  ] ) . # 
+  <a href="http://hl7.org/fhir/R4/resource.html#OperationOutcome.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;ERP-TPrescription-OperationOutcome-1&quot;] ;
+  <a href="http://hl7.org/fhir/R4/domainresource.html#OperationOutcome.text">fhir:DomainResource.text</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;generated&quot; ] ;
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: OperationOutcome ERP-TPrescription-OperationOutcome-1&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;ERP-TPrescription-OperationOutcome-1\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcERP-TPrescription-OperationOutcome-1\&quot;&gt; &lt;/a&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;issue&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;severity&lt;/b&gt;: Error&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Invalid Content&lt;/p&gt;&lt;p&gt;&lt;b&gt;details&lt;/b&gt;: &lt;span title=\&quot;Codes:\&quot;&gt;Invalid request payload&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;diagnostics&lt;/b&gt;: This field is required&lt;/p&gt;&lt;p&gt;&lt;b&gt;expression&lt;/b&gt;: parameter[rxPrescription].part[prescriptionId].value&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;issue&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;severity&lt;/b&gt;: Error&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Element value invalid&lt;/p&gt;&lt;p&gt;&lt;b&gt;details&lt;/b&gt;: &lt;span title=\&quot;Codes:\&quot;&gt;Invalid format for field&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;diagnostics&lt;/b&gt;: Value must be a date&lt;/p&gt;&lt;p&gt;&lt;b&gt;expression&lt;/b&gt;: parameter[rxPrescription].part[medicationRequest].resource.authoredOn&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;
+  ] ;
+  <a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue">fhir:OperationOutcome.issue</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.severity">fhir:OperationOutcome.issue.severity</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;error&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.code">fhir:OperationOutcome.issue.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;invalid&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.details">fhir:OperationOutcome.issue.details</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:CodeableConcept.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Invalid request payload&quot; ]
+     ] ;
+     <a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.diagnostics">fhir:OperationOutcome.issue.diagnostics</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;This field is required&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.expression">fhir:OperationOutcome.issue.expression</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;parameter[rxPrescription].part[prescriptionId].value&quot; ;
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0
+     ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+     <a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.severity">fhir:OperationOutcome.issue.severity</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;error&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.code">fhir:OperationOutcome.issue.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;value&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.details">fhir:OperationOutcome.issue.details</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:CodeableConcept.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Invalid format for field&quot; ]
+     ] ;
+     <a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.diagnostics">fhir:OperationOutcome.issue.diagnostics</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Value must be a date&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.expression">fhir:OperationOutcome.issue.expression</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;parameter[rxPrescription].part[medicationRequest].resource.authoredOn&quot; ;
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/OperationOutcome/ERP-TPrescription-OperationOutcome-1.ttl&gt; a owl:Ontology ;
+  owl:imports fhir:fhir.ttl ;
+  owl:versionIRI &lt;http://build.fhir.org/OperationOutcome/ERP-TPrescription-OperationOutcome-1.ttl&gt; .
 
 </code></pre>
 
@@ -371,7 +386,7 @@ TIFlow - Datenaustausch BfArM Webdienst
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="Parameters-Parameters-example-case-01-digitaler-durchschlag.html">nächste&gt;</a>
+                <a href="referenced.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -381,7 +396,7 @@ TIFlow - Datenaustausch BfArM Webdienst
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:48+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:29+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

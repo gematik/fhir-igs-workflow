@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Release Notes - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
+    <title>Release Notes - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -161,11 +161,8 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -186,6 +183,9 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -202,10 +202,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Datenaustausch BfArM Webdienst
+Implementation Guide<br /> TIFlow - Datenaustausch BfArM Webdienst
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -271,23 +271,486 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>Seiteninhalt:</p>
 
 <ul id="markdown-toc">
-  <li><a href="#version-110" id="markdown-toc-version-110">Version 1.1.0</a></li>
-  <li><a href="#version-100" id="markdown-toc-version-100">Version 1.0.0</a></li>
+  <li><a href="#release-notes" id="markdown-toc-release-notes">Release Notes</a></li>
+  <li><a href="#version-200" id="markdown-toc-version-200">Version 2.0.0</a></li>
 </ul>
 
 </div>
 <p>Diese Seite führt die Release-Notes für die verschiedenen Versionen des E-Rezept T-Rezept Implementation Guide auf.</p>
+<h3 id="release-notes">Release Notes</h3>
 
-<h3 id="version-110">Version 1.1.0</h3>
+<h3 id="version-200">Version 2.0.0</h3>
+
 <ul>
   <li>Verschiebung der subject identifier data absent reason extension</li>
   <li>Anpassung der Struktur vom digitalen Durchschlag um der close operation input parameters zu entsprechen</li>
 </ul>
 
-<h3 id="version-100">Version 1.0.0</h3>
-<ul>
-  <li>Initiales Release des T-Rezept Implementation Guide</li>
-</ul>
+<h4 id="anforderungen">Anforderungen</h4>
+
+<p>Neue Anforderungen wurden hinzugefügt, bestehende geändert und nicht mehr benötigte gelöscht. Die folgenden Release Notes geben einen detaillierten Überblick über alle Anpassungen.</p>
+
+<table class="no-stripe release-notes" id="release-table-2-0-0">
+    <tr id="row-toggle-all-2-0-0" style="display: none;">
+        <td colspan="99" style="text-align: right; border: none; padding-bottom: 10px;">
+            <button id="btn-toggle-all-2-0-0" class="btn btn-outline-primary btn-sm" style="font-size: 0.75em; padding: 2px 6px; color: black;">
+                &#128269; Alle Details umschalten
+            </button>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A1">
+                    IG-TIFLOW-BFARM-A1
+                </a>
+            
+        </td>
+        <td>
+            Anbieter TI-Flow-Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A10">
+                    IG-TIFLOW-BFARM-A10
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A11">
+                    IG-TIFLOW-BFARM-A11
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A12">
+                    IG-TIFLOW-BFARM-A12
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - BfArM - Übertragen des digitalen Durchschlags
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A13">
+                    IG-TIFLOW-BFARM-A13
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A14">
+                    IG-TIFLOW-BFARM-A14
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./index.html" data-anchor="IG-TIFLOW-BFARM-A15">
+                    IG-TIFLOW-BFARM-A15
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept: Anwendung des IG 'Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst' für Übertragung von Daten vom TI-Flow-Fachdienst an den BfArM Webdienst
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./index.html" data-anchor="IG-TIFLOW-BFARM-A16">
+                    IG-TIFLOW-BFARM-A16
+                </a>
+            
+        </td>
+        <td>
+            E-Rezept: Umsetzung des Moduls 'Datenaustausch TI-Flow-Fachdienst und BfArM Webdienst'
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A17">
+                    IG-TIFLOW-BFARM-A17
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - kein VZD Eintrag für die Apotheke
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A2">
+                    IG-TIFLOW-BFARM-A2
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A3">
+                    IG-TIFLOW-BFARM-A3
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - BfArM - Beziehen des AccessTokens
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A4">
+                    IG-TIFLOW-BFARM-A4
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A5">
+                    IG-TIFLOW-BFARM-A5
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A6">
+                    IG-TIFLOW-BFARM-A6
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A7">
+                    IG-TIFLOW-BFARM-A7
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - BfArM - Flowtype 166
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A8">
+                    IG-TIFLOW-BFARM-A8
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+    <tr>
+        <td>
+            <strong>
+             NEU
+            
+            </strong>
+        </td>
+        <td>
+            
+                <a class="requirement-link" href="./query-api-t-register-req-fd.html" data-anchor="IG-TIFLOW-BFARM-A9">
+                    IG-TIFLOW-BFARM-A9
+                </a>
+            
+        </td>
+        <td>
+            TI-Flow-Fachdienst - BfArM - Suche nach Apothekendaten
+
+            
+
+            
+        </td>
+    </tr>
+
+    
+
+    
+</table>
+
+<div class="legend">
+    Legende:
+    <span><strong>NEU</strong> = Hinzugefügt</span> |
+    <span><strong>ÄND</strong> = Geändert</span> |
+    <span><strong>VERS</strong> = Verschoben</span> |
+    <span><strong>DEL</strong> = Entfernt</span>
+</div>
+
 
 
 
@@ -329,7 +792,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:48+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:29+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

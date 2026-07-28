@@ -1,8 +1,10 @@
-# Anforderungen an den TI-Flow-Fachdienst für die $activate-Operation - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# Anforderungen an den TI-Flow-Fachdienst für die $activate-Operation - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Operation API**](operation-api.md)
@@ -75,7 +77,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Zugriff auf eine
 
 abbrechen, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.
 
-Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur des übergebenen QES-Datensatzes gemäß [gemSpec_PKI#TUC_PKI_030] mit folgenden Parametern auf Gültigkeit prüfen:
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS das QES-Signaturzertifikat C.HP.QES in der Signatur des übergebenen QES-Datensatzes gemäß [gemSpec_PKI]#TUC_PKI_030 mit folgenden Parametern auf Gültigkeit prüfen:
 
 * Parameter: Zertifikat
   * Wert: Signaturzertifikat des HBA (eingebettet in Signatur-Objekt des QES-Datensatzes):* C.HP.QES (oid_hba_qes = 1.2.276.0.76.4.72 gemäß gemSpec_OID)
@@ -146,19 +148,6 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Zugriff auf eine
 abbrechen.
 
 Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate den Datensatz als PKCS#7-Datei speichern und in Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType = 1 über eine interne, eindeutige UUID referenzieren, damit der nachfolgende Workflow auf Basis vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
-
-Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate die Angabe zum Mimetype des signierten Dokumentes prüfen und, wenn dieser ungleich "text/plain; charset=utf-8" ist, die Operation mit dem folgenden Fehler:
-
-* HTTP-Code: Severity
-  * 400 - Bad Request: error
-* HTTP-Code: Code
-  * 400 - Bad Request: invalid
-* HTTP-Code: Details Code
-  * 400 - Bad Request: TIFLOW_SIGNATURE_INVALID
-* HTTP-Code: Details Text
-  * 400 - Bad Request: -
-
-abbrechen.
 
 Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/<id>/$activate prüfen, dass die PrescriptionID des Tasks mit der PrescriptionID im übergebenen QES-Datensatz übereinstimmt und andernfalls die Operation mit dem folgenden Fehler:
 

@@ -1,8 +1,10 @@
-# Abrechnungsinformationen des E-Rezepts für PKV-Versicherte - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# Abrechnungsinformationen des E-Rezepts für PKV-Versicherte - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * **Abrechnungsinformationen des E-Rezepts für PKV-Versicherte**

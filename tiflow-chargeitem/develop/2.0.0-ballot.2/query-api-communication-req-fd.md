@@ -1,8 +1,10 @@
-# FD-Anforderungen: Communication-Query - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# FD-Anforderungen: Communication-Query - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Query API**](query-api.md)
@@ -40,7 +42,7 @@ abbrechen, damit der Nachrichtenaustausch nicht zwischen Unbefugten erfolgt.
 
 Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Abrufen von Nachrichten über die http-Operation GET auf den Endpunkt /Communication bzw. beim Abruf einer einzelnen Nachricht über /Communication/<id> ausschließlich die Nachrichten an den Aufrufer zurückgeben, die im Attribut Communication.recipient oder Communication.sender mit dem entsprechenden Identifier https://gematik.de/fhir/sid/telematik-id für Apotheken bzw. http://fhir.de/sid/gkv/kvid-10 für Versicherte den gleichen Typ und den identischen Wert haben wie zeta-user-info.identifier in den Nutzerinformationen, damit keine Nachrichten an Dritte unrechtmäßig ausgelesen werden.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Abrufen von Nachrichten über die http-Operation GET auf den Endpunkt /Communication bzw. beim Abruf einer einzelnen Nachricht über /Communication/<id> den Wert des Attributs Communication.received = <aktuelle Systemzeit&gt setzen, wenn dieser Wert zum Zeitpunkt des Abrufs der Nachrichten NULL ist, damit Nutzer eine Filtermöglicheit auf "neue Nachrichten" haben.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Abrufen von Nachrichten über die http-Operation GET auf den Endpunkt /Communication bzw. beim Abruf einer einzelnen Nachricht über /Communication/<id> den Wert des Attributs Communication.received = <aktuelle Systemzeit> setzen, wenn dieser Wert zum Zeitpunkt des Abrufs der Nachrichten NULL ist, damit Nutzer eine Filtermöglicheit auf "neue Nachrichten" haben.
 #### POST /Communication
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication die im http-Request-Body übergebene Communications-Ressource gegen das aus der Kommunikationsbeziehung ableitbare, zulässige Schema gemäß TAB_eRPFD_008 prüfen und den Aufruf bei Nicht-Konformität die Operation mit dem folgenden Fehler:
@@ -76,19 +78,6 @@ abbrechen, damit ausschließlich konforme E-Rezept-Nachrichten ausgetauscht werd
 **Tabelle: **TAB_eRPFD_008 Nachrichtentyp zu Kommunikationsbeziehung
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_DispReq-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in "Tabelle: E-Rezept einer Apotheke zuweisen" überprüfen und bei negativem Prüfergebnis, die Operation mit dem folgenden Fehler:
-
-* HTTP-Code: Severity
-  * 400 - Bad Request: error
-* HTTP-Code: Code
-  * 400 - Bad Request: invalid
-* HTTP-Code: Details Code
-  * 400 - Bad Request: SVC_VALIDATION_FAILED
-* HTTP-Code: Details Text
-  * 400 - Bad Request: FHIR Profile Validation Failed
-
-abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.
-
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in "Tabelle: Nachricht als Apotheke an einen Versicherten schicken" überprüfen und bei negativem Prüfergebnis, die Operation mit dem folgenden Fehler:
 
 * HTTP-Code: Severity
   * 400 - Bad Request: error

@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - draft
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/ValueSet/tiflow-order-task-status-vs | *Version*:2.0.0-ballot.2 |
-| Draft as of 2028-04-01 | *Computable Name*:TIFlowOrderTaskStatusVS |
+| Draft as of 2026-06-30 | *Computable Name*:TIFlowOrderTaskStatusVS |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -58,7 +58,7 @@ TIFlow Order Task ValueSet
   "title" : "TIFlow Order Task ValueSet",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * **Technische Umsetzung - ePA Medication Service**
@@ -58,7 +58,9 @@ Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS für die Authen
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS bei allen Operationsaufrufen am Information Service, Authorization Service oder Medication Service die clientID "ERP-FD" verwenden, um den zu übermittelnden UserAgent zu erzeugen.
 ### ePA-Aktensysteme ermitteln
 
-funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS zur Lokalisierung der ePA-Aktensysteme die durch die im DNS für die übergreifende ePA-Domäne epa4all.de eingestellten Informationen aufrufen.
+funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS in der Lage sein, alle Instanzen der ePA-Aktensysteme unterhalb der Domäne `epa4all.de` zur Lokalisierung zu adressieren.
+**Hinweis:** Die Adressierung kann bspw. durch automatische Auflösung (z. B. DNS-basiert) oder durch Deployment-Konfiguration erfolgen.
+
 Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktensystem - Registrierung an übergreifender ePA-Domäne". Die Informationen zu jedem ePA-Aktensystem enthalten den Endpunkt für den Authorization Service [I_Authorization_Service], Medication Service [I_Medication_Service] und Information Service [I_Information_Service].
 
 funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst DARF NICHT Lokalisierungsinformationen zu ePA-Aktensystemen verwenden, welche länger als 24h lokal durch den TI-Flow-Fachdienst gecacht wurden.

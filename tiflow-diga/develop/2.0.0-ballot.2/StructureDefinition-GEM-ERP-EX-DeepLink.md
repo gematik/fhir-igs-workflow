@@ -1,8 +1,10 @@
-# GEM ERP EX DeepLink - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# GEM ERP EX DeepLink - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_DeepLink | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:GEM_ERP_EX_DeepLink |
+| Active as of 2026-06-30 | *Computable Name*:GEM_ERP_EX_DeepLink |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
 Enthält Informationen zum Deep Link für eine DiGA.
@@ -57,7 +59,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-EX-DeepLink.
   "title" : "GEM ERP EX DeepLink",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

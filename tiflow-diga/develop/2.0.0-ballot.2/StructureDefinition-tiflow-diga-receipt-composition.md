@@ -1,8 +1,10 @@
-# DiGA QuittungsComposition - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# DiGA QuittungsComposition - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-receipt-composition | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TIFlowDiGAReceiptComposition |
+| Active as of 2026-06-30 | *Computable Name*:TIFlowDiGAReceiptComposition |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -47,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-diga-receipt-
   "title" : "DiGA QuittungsComposition",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -71,9 +73,9 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-diga-receipt-
   "copyright" : "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "v2",
-    "uri" : "http://hl7.org/v2",
-    "name" : "HL7 v2 Mapping"
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
   },
   {
     "identity" : "rim",
@@ -86,19 +88,24 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-diga-receipt-
     "name" : "CDA (R2)"
   },
   {
+    "identity" : "fhirdocumentreference",
+    "uri" : "http://hl7.org/fhir/documentreference",
+    "name" : "FHIR DocumentReference"
+  },
+  {
     "identity" : "w5",
     "uri" : "http://hl7.org/fhir/fivews",
     "name" : "FiveWs Pattern Mapping"
   }],
   "kind" : "resource",
   "abstract" : false,
-  "type" : "Bundle",
-  "baseDefinition" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle",
+  "type" : "Composition",
+  "baseDefinition" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Composition",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "Bundle",
-      "path" : "Bundle"
+      "id" : "Composition",
+      "path" : "Composition"
     }]
   }
 }

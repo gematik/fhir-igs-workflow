@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>E-T-Rezept Structure Map for Medication - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
+    <title>E-T-Rezept Structure Map for Medication - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -161,11 +161,8 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -186,6 +183,9 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -202,10 +202,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Datenaustausch BfArM Webdienst
+Implementation Guide<br /> TIFlow - Datenaustausch BfArM Webdienst
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -314,7 +314,7 @@ TIFlow - Datenaustausch BfArM Webdienst
         
           Draft
           
-            as of 2026-05-26
+            as of 2026-06-30
           
         
       </td>
@@ -362,21 +362,31 @@ TIFlow - Datenaustausch BfArM Webdienst
 </span>
 <span style="color: navy">// </span><span style="color: green">Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf dem KBV/gematik Profil</span>
 <b>group </b>ERPTPrescriptionStructureMapMedication<span style="color: navy">(</span><b>source</b> <span style="color: maroon">srcMedication</span><span style="color: navy"> : </span>srcMedication, <b>target</b> <span style="color: maroon">tgtMedication</span><span style="color: navy"> : </span>tgtMedication<span style="color: navy">)</span><span style="color: navy"> {
-</span>  srcMedication<b> as </b><span style="color: maroon">srcPZN</span><b> where </b>meta.profile.contains('KBV_PR_ERP_Medication_PZN')<b> then</b><span style="color: navy"> {
-</span>    srcPZN<b> then </b>ERPTPrescriptionStructureMapKBVPZNMedication<span style="color: navy">(</span><span style="color: maroon">srcMedication</span><span style="color: navy">, </span><span style="color: maroon">tgtMedication</span><span style="color: navy">)</span> <i>&quot;mapPZN&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Führt die Transformation für PZN-Medikamente durch (Fertigarzneimittel mit Pharmazentralnummer)</span>
-  <span style="color: navy">}</span> <i>&quot;decideOnMedicationPZN&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Erkennt PZN-basierte Medikamente und leitet an spezialisiertes PZN-Mapping weiter</span>
-  srcMedication<b> as </b><span style="color: maroon">srcFreeText</span><b> where </b>meta.profile.contains('KBV_PR_ERP_Medication_FreeText')<b> then</b><span style="color: navy"> {
-</span>    srcFreeText<b> then </b>ERPTPrescriptionStructureMapKBVFreeTextMedication<span style="color: navy">(</span><span style="color: maroon">srcMedication</span><span style="color: navy">, </span><span style="color: maroon">tgtMedication</span><span style="color: navy">)</span> <i>&quot;mapFreeText&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Führt die Transformation für Freitext-Medikamente durch (nicht standardisierte Arzneimittelangaben)</span>
-  <span style="color: navy">}</span> <i>&quot;decideOnMedicationFreeText&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Erkennt Freitext-Medikamente und leitet an spezialisiertes FreeText-Mapping weiter</span>
-  srcMedication<b> as </b><span style="color: maroon">srcIngredient</span><b> where </b>meta.profile.contains('KBV_PR_ERP_Medication_Ingredient')<b> then</b><span style="color: navy"> {
-</span>    srcIngredient<b> then </b>ERPTPrescriptionStructureMapKBVIngredientMedication<span style="color: navy">(</span><span style="color: maroon">srcMedication</span><span style="color: navy">, </span><span style="color: maroon">tgtMedication</span><span style="color: navy">)</span> <i>&quot;mapIngredient&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Führt die Transformation für wirkstoffbasierte Medikamente durch (Rezeptur nach Wirkstoffen)</span>
-  <span style="color: navy">}</span> <i>&quot;decideOnMedicationIngredient&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Erkennt wirkstoffbasierte Medikamente und leitet an spezialisiertes Ingredient-Mapping weiter</span>
-  srcMedication<b> as </b><span style="color: maroon">srcCompounding</span><b> where </b>meta.profile.contains('KBV_PR_ERP_Medication_Compounding')<b> then</b><span style="color: navy"> {
-</span>    srcCompounding<b> then </b>ERPTPrescriptionStructureMapKBVCompoundingMedication<span style="color: navy">(</span><span style="color: maroon">srcMedication</span><span style="color: navy">, </span><span style="color: maroon">tgtMedication</span><span style="color: navy">)</span> <i>&quot;mapCompounding&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Führt die Transformation für Rezeptur-Medikamente durch (individuell hergestellte Arzneimittel)</span>
-  <span style="color: navy">}</span> <i>&quot;decideOnMedicationCompounding&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Erkennt Rezeptur-Medikamente und leitet an spezialisiertes Compounding-Mapping weiter</span>
-  srcMedication<b> as </b><span style="color: maroon">srcGemMed</span><b> where </b>meta.profile.contains('GEM_ERP_PR_Medication')<b> then</b><span style="color: navy"> {
-</span>    srcGemMed<b> then </b>ERPTPrescriptionStructureMapGEMMedication<span style="color: navy">(</span><span style="color: maroon">srcMedication</span><span style="color: navy">, </span><span style="color: maroon">tgtMedication</span><span style="color: navy">)</span> <i>&quot;mapGemMed&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Führt die Transformation für gematik-Medikamente durch (abgegebene Arzneimittel aus der Apotheke)</span>
-  <span style="color: navy">}</span> <i>&quot;decideOnMedicationGematik&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Erkennt gematik-Medikamente und leitet an spezialisiertes gematik-Mapping weiter</span>
+</span>  <span style="color: navy">// </span><span style="color: green">Erkennt PZN-basierte Medikamente und leitet an spezialisiertes PZN-Mapping weiter</span>
+  srcMedication<b> as </b><span style="color: maroon">srcPZN</span><b> where </b><span style="color: navy">(</span>meta.profile.contains('KBV_PR_ERP_Medication_PZN')<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    <span style="color: navy">// </span><span style="color: green">Führt die Transformation für PZN-Medikamente durch (Fertigarzneimittel mit Pharmazentralnummer)</span>
+    srcPZN<b> then </b>ERPTPrescriptionStructureMapKBVPZNMedication<span style="color: navy">(</span><span style="color: maroon">srcMedication</span><span style="color: navy">, </span><span style="color: maroon">tgtMedication</span><span style="color: navy">)</span> <i>&quot;mapPZN&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;decideOnMedicationPZN&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Erkennt Freitext-Medikamente und leitet an spezialisiertes FreeText-Mapping weiter</span>
+  srcMedication<b> as </b><span style="color: maroon">srcFreeText</span><b> where </b><span style="color: navy">(</span>meta.profile.contains('KBV_PR_ERP_Medication_FreeText')<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    <span style="color: navy">// </span><span style="color: green">Führt die Transformation für Freitext-Medikamente durch (nicht standardisierte Arzneimittelangaben)</span>
+    srcFreeText<b> then </b>ERPTPrescriptionStructureMapKBVFreeTextMedication<span style="color: navy">(</span><span style="color: maroon">srcMedication</span><span style="color: navy">, </span><span style="color: maroon">tgtMedication</span><span style="color: navy">)</span> <i>&quot;mapFreeText&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;decideOnMedicationFreeText&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Erkennt wirkstoffbasierte Medikamente und leitet an spezialisiertes Ingredient-Mapping weiter</span>
+  srcMedication<b> as </b><span style="color: maroon">srcIngredient</span><b> where </b><span style="color: navy">(</span>meta.profile.contains('KBV_PR_ERP_Medication_Ingredient')<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    <span style="color: navy">// </span><span style="color: green">Führt die Transformation für wirkstoffbasierte Medikamente durch (Rezeptur nach Wirkstoffen)</span>
+    srcIngredient<b> then </b>ERPTPrescriptionStructureMapKBVIngredientMedication<span style="color: navy">(</span><span style="color: maroon">srcMedication</span><span style="color: navy">, </span><span style="color: maroon">tgtMedication</span><span style="color: navy">)</span> <i>&quot;mapIngredient&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;decideOnMedicationIngredient&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Erkennt Rezeptur-Medikamente und leitet an spezialisiertes Compounding-Mapping weiter</span>
+  srcMedication<b> as </b><span style="color: maroon">srcCompounding</span><b> where </b><span style="color: navy">(</span>meta.profile.contains('KBV_PR_ERP_Medication_Compounding')<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    <span style="color: navy">// </span><span style="color: green">Führt die Transformation für Rezeptur-Medikamente durch (individuell hergestellte Arzneimittel)</span>
+    srcCompounding<b> then </b>ERPTPrescriptionStructureMapKBVCompoundingMedication<span style="color: navy">(</span><span style="color: maroon">srcMedication</span><span style="color: navy">, </span><span style="color: maroon">tgtMedication</span><span style="color: navy">)</span> <i>&quot;mapCompounding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;decideOnMedicationCompounding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Erkennt gematik-Medikamente und leitet an spezialisiertes gematik-Mapping weiter</span>
+  srcMedication<b> as </b><span style="color: maroon">srcGemMed</span><b> where </b><span style="color: navy">(</span>meta.profile.contains('GEM_ERP_PR_Medication')<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    <span style="color: navy">// </span><span style="color: green">Führt die Transformation für gematik-Medikamente durch (abgegebene Arzneimittel aus der Apotheke)</span>
+    srcGemMed<b> then </b>ERPTPrescriptionStructureMapGEMMedication<span style="color: navy">(</span><span style="color: maroon">srcMedication</span><span style="color: navy">, </span><span style="color: maroon">tgtMedication</span><span style="color: navy">)</span> <i>&quot;mapGemMed&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;decideOnMedicationGematik&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span></pre></div>
@@ -426,7 +436,7 @@ TIFlow - Datenaustausch BfArM Webdienst
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:48+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:29+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

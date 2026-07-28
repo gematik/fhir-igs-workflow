@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FdV-Anforderungen: ChargeItem-Query - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
+    <title>FdV-Anforderungen: ChargeItem-Query - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -196,10 +199,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Abrechnungsinformationen
+Implementation Guide<br /> TIFlow - Abrechnungsinformationen
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -278,7 +281,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformationen vom TI-Flow-Fachdienst abrufen, welche für den Versicherten bereitgestellt wurden.</p>
 
 <!--A_24554-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG-10" title="E-Rezept-FdV: optional: Liste Abrechnungsinformationen abrufen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A10" title="E-Rezept-FdV: optional: Liste Abrechnungsinformationen abrufen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -287,7 +290,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!--A_22173-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-11" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A11" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -304,7 +307,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformation zu einem E-Rezept vom TI-Flow-Fachdienst herunterladen.</p>
 
 <!--A_24544-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG-12" title="E-Rezept-FdV: optional: Abrechnungsinformation abrufen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A12" title="E-Rezept-FdV: optional: Abrechnungsinformation abrufen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -313,7 +316,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!--A_22175-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-13" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A13" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -331,7 +334,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner Abrechnungsinformation setzen. Diese werden auf dem TI-Flow-Fachdienst gespeichert.</p>
 
 <!--A_24553-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG-14" title="E-Rezept-FdV: optional: Abrechnungsinformation markieren" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A14" title="E-Rezept-FdV: optional: Abrechnungsinformation markieren" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -340,7 +343,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!--A_22176-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-15" title="E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A15" title="E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -354,7 +357,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!--A_22179-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-16" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A16" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -374,7 +377,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="abrechnungsinformation-löschen-delete-chargeitemid">Abrechnungsinformation löschen (DELETE /ChargeItem/&#60;id&#62;)</h3>
 <!--A_24546-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG-17" title="E-Rezept-FdV: optional: Abrechnungsinformation löschen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A17" title="E-Rezept-FdV: optional: Abrechnungsinformation löschen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -383,7 +386,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!--A_22180-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-18" title="E-Rezept-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A18" title="E-Rezept-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -392,7 +395,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!--A_22181-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-19" title="E-Rezept-FdV: Abrechnungsinformation löschen - Bestätigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A19" title="E-Rezept-FdV: Abrechnungsinformation löschen - Bestätigung" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -405,7 +408,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen Löschen für die zu löschende Abrechnungsinformation zusammen mit dem Löschen auf dem TI-Flow-Fachdienst auszuführen.</p>
 
 <!--A_22183-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-20" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A20" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -418,7 +421,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!--A_22707-01-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG-21" title="E-Rezept-FdV: Hinweis automatisches Löschen Abrechnungsinformationen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A21" title="E-Rezept-FdV: Hinweis automatisches Löschen Abrechnungsinformationen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -466,7 +469,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:53+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:34+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

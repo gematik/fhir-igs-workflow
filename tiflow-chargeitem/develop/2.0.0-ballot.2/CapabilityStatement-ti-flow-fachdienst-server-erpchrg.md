@@ -1,8 +1,10 @@
-# ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-chargeitem/CapabilityStatement/ti-flow-fachdienst-server-erpchrg | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*: |
+| Active as of 2026-06-30 | *Computable Name*: |
 
  
 CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen) 
@@ -31,13 +33,13 @@ CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)
   },
   "extension" : [{
     "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url",
-    "valueString" : "https://tiflow.de"
+    "valueString" : "https://tiflow.de/rx/fhir/v1"
   }],
   "url" : "https://gematik.de/fhir/tiflow-chargeitem/CapabilityStatement/ti-flow-fachdienst-server-erpchrg",
   "version" : "2.0.0-ballot.2",
   "title" : "ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst",
   "status" : "active",
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

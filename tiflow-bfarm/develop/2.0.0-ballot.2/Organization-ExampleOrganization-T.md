@@ -1,8 +1,10 @@
-# Beispiel BfArM Organisation - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# Beispiel BfArM Organisation - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -12,7 +14,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 Profile: [E-T-Rezept Organization](StructureDefinition-erp-tprescription-organization.md)
 
-**identifier**: 3-Test-APO000053
+**identifier**: `https://gematik.de/fhir/sid/telematik-id`/3-Test-APO000053
 
 **name**: Stadt-Apotheke
 
@@ -32,6 +34,7 @@ Profile: [E-T-Rezept Organization](StructureDefinition-erp-tprescription-organiz
     "profile" : ["https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-organization"]
   },
   "identifier" : [{
+    "system" : "https://gematik.de/fhir/sid/telematik-id",
     "value" : "3-Test-APO000053"
   }],
   "name" : "Stadt-Apotheke",

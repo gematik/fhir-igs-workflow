@@ -7,7 +7,7 @@
   "title" : "GEM ERP PR CloseOperation Input",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -654,6 +654,7 @@
         "expression" : "part.where(name = 'medicationDispense').resource.medication.ofType(Reference).reference.exists() implies ((part.where(name = 'medicationDispense').resource.medication.reference.split('/').last().split(':').last()) = (part.where(name = 'medication').resource.id))",
         "source" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input"
       }],
+      "mustSupport" : true,
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
@@ -1428,6 +1429,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
+      "mustSupport" : true,
       "isSummary" : true
     },
     {
@@ -1815,6 +1817,7 @@
       "type" : [{
         "code" : "BackboneElement"
       }],
+      "mustSupport" : true,
       "isSummary" : true
     },
     {
@@ -2221,7 +2224,8 @@
         "human" : "If a reference from a MedicationDispense to a Medication exists, the reference must resolve to the Medication.",
         "expression" : "part.where(name = 'medicationDispense').resource.medication.ofType(Reference).reference.exists() implies ((part.where(name = 'medicationDispense').resource.medication.reference.split('/').last().split(':').last()) = (part.where(name = 'medication').resource.id))",
         "source" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.name",
@@ -2260,7 +2264,8 @@
       "max" : "1",
       "type" : [{
         "code" : "BackboneElement"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.name",
@@ -2294,7 +2299,8 @@
       "max" : "1",
       "type" : [{
         "code" : "BackboneElement"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part:medication.name",

@@ -1,8 +1,10 @@
-# E-Rezept Abgabe vollziehen - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# E-Rezept Abgabe vollziehen - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-close-op | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TIFlow-DIGA-OP-Close |
+| Active as of 2026-06-30 | *Computable Name*:TIFlow-DIGA-OP-Close |
 
  
 Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed. 
@@ -32,7 +34,7 @@ Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. D
   "title" : "E-Rezept Abgabe vollziehen",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -60,7 +62,14 @@ Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. D
   "type" : false,
   "instance" : true,
   "inputProfile" : "https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-close-operation-input",
-  "outputProfile" : "https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-close-operation-output"
+  "outputProfile" : "https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-close-operation-output",
+  "parameter" : [{
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "type" : "Bundle"
+  }]
 }
 
 ```

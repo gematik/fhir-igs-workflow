@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Query API**](menu-schnittstellen-query-api.md)
@@ -20,8 +20,6 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Task-Endpunkt.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
-Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter [Operations](./menu-schnittstellen-operation-api.md) beschrieben.
-
 #### GET /Task (Liste)
 
 Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnungen steht ausschließlich dem Versicherten bzw. einer abgebenden Institution mit Nachweis eines Behandlungskontextes zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.
@@ -73,7 +71,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-
   * 403 - Bad Request: PoPP token invalid
 
 abbrechen.
-Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung von A_23399-* im Rahmen des Änderungsmanagement für Spezifikationen.
+Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung der obigen Anforderung im Rahmen des Änderungsmanagement für Spezifikationen.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI mit der Rolle
 * oid_oeffentliche_apotheke
@@ -182,11 +180,11 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-
 * HTTP-Code: Severity
   * 403 - Forbidden: error
 * HTTP-Code: Code
-  * 403 - Forbidden: ???
+  * 403 - Forbidden: invalid
 * HTTP-Code: Details Code
-  * 403 - Forbidden: ???
+  * 403 - Forbidden: SVC_IDENTITY_MISMATCH
 * HTTP-Code: Details Text
-  * 403 - Forbidden: ???
+  * 403 - Forbidden: -
 
 abbrechen, damit ausschließlich der begünstigte Versicherte den Task abrufen kann.
 
@@ -277,7 +275,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-
 * HTTP-Code: Code
   * 403 - Forbidden: invalid
 * HTTP-Code: Details Code
-  * 403 - Forbidden: TIFLOW_KVNR_MISMATCH
+  * 403 - Forbidden: SVC_IDENTITY_MISMATCH
 * HTTP-Code: Details Text
   * 403 - Forbidden: -
 
@@ -305,4 +303,33 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-
   * 403 - Forbidden: Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)
 
 abbrechen.
+#### PATCH /Task
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über <id> adressierte /Task/<id> Ressource durch einen Versicherten auf die Ressource übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPEU_PR_PAR_PATCH_Task_Input prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 400 - Bad Request: error
+* HTTP-Code: Code
+  * 400 - Bad Request: invalid
+* HTTP-Code: Details Code
+  * 400 - Bad Request: SVC_VALIDATION_FAILED
+* HTTP-Code: Details Text
+  * 400 - Bad Request: FHIR Profile Validation Failed
+
+abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst akzeptiert werden.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über <id> adressierte /Task/<id> Ressource durch einen Versicherten prüfen, ob der adressierte Task in Task.extension:eu-isRedeemableByProperties.valueBoolean = true gesetzt ist und anderfalls mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 409 - Conflict: error
+* HTTP-Code: Code
+  * 409 - Conflict: invalid
+* HTTP-Code: Details Code
+  * 409 - Conflict: TIFLOW_EREZEPT_NOT_ACTIVATED
+* HTTP-Code: Details Text
+  * 409 - Conflict: -
+
+abbrechen.
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über <id> adressierte /Task/<id> Ressource durch einen Versicherten, den im Parameter `eu-isRedeemableByPatientAuthorization` enthaltenen boolschen Wert in `Task.extension:eu-isRedeemableByPatientAuthorization.valueBoolean` setzen.
 

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FHIR-Artefakte - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
+    <title>FHIR-Artefakte - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -196,10 +199,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Abrechnungsinformationen
+Implementation Guide<br /> TIFlow - Abrechnungsinformationen
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -261,12 +264,314 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
-</div>
-<p>Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen dieses Implementation Guide für die Patientenrechnung im TI-Flow-Fachdienst definiert werden.</p>
+<div class="markdown-toc">
+  <p>Seiteninhalt:</p>
 
-<!-- TODO: Für Neuausschreibung Artefakte hier hin schieben, die hierhin gehören -->
+<ul id="markdown-toc">
+  <li><a href="#terminologien-value-sets" id="markdown-toc-terminologien-value-sets">Terminologien: Value Sets</a></li>
+  <li><a href="#systemverhalten" id="markdown-toc-systemverhalten">Systemverhalten</a></li>
+  <li><a href="#beispielinstanzen" id="markdown-toc-beispielinstanzen">Beispielinstanzen</a></li>
+</ul>
+
+</div>
+<p>Diese Seite enthält eine Übersicht aller FHIR-Artefakte, die im Rahmen dieses Implementation Guide definiert werden. Sie bilden die Grundlage für die strukturierte Abbildung und Verarbeitung von Daten. Dazu gehören Profile zur Spezifizierung von Ressourcen, ein <em>Capability Statement</em> zur Beschreibung der unterstützten Funktionen sowie <em>Operation Definitions</em>, die spezielle FHIR-Operationen für den Abruf und die Verwaltung der Daten festlegen.</p>
+
+<h3 id="terminologien-value-sets">Terminologien: Value Sets</h3>
+
+<p>Die folgenden Value Sets sind für die TIFlow-Funktionalitäten festgelegt.</p>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-GEM-ERPCHRG-VS-ConsentType.html" title="ValueSet/GEM-ERPCHRG-VS-ConsentType">
+                
+                    ValueSet of Consent Codes
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Type of Consents for the ePrescription.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-tiflow-chargeitem-operation-outcome-details-vs.html" title="ValueSet/tiflow-chargeitem-operation-outcome-details-vs">
+                
+                    TIFLOW ChargeItem Operation Outcome Details VS
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können</p>
+            </td>
+            
+         </tr>
+         
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Value Sets</figcaption></div>
+
+<h3 id="systemverhalten">Systemverhalten</h3>
+
+<h4 id="capability-statements">Capability Statements</h4>
+
+<p>Das <em>Capability</em> <em>Statement</em> beschreibt die Anforderungen und Fähigkeiten, die ein Server für die konforme Implementierung des TIFlow Fachdienstes umsetzen muss. Es handelt sich um eine Konformitätserklärung, die spezifiziert, welche Ressourcen, Interaktionen und Suchparameter das der TIFlow Fachdienste unterstützen muss.</p>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CapabilityStatement-ti-flow-fachdienst-server-erpchrg.html" title="CapabilityStatement/ti-flow-fachdienst-server-erpchrg">
+                
+                    ERPCHRG CapabilityStatement für den E-Rezept-Fachdienst
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>CapabilityStatement für den E-Rezept-Fachdienst (PKV-Abrechnungsinformationen)</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Capability Statements</figcaption></div>
 
 <h3 id="beispielinstanzen">Beispielinstanzen</h3>
 
@@ -381,7 +686,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:53+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:34+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

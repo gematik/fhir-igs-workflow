@@ -1,8 +1,10 @@
-# Datenschutz und Sicherheit - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# Datenschutz und Sicherheit - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Systemüberblick**](menu-technische-umsetzung-systemueberblick.md)

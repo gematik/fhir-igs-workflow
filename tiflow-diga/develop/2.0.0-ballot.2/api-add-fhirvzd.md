@@ -1,8 +1,10 @@
-# API FHIR-VZD - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# API FHIR-VZD - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Additional APIs**](menu-schnittstellen-additional-api.md)

@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>E-T-Rezept Structure Map for MedicationDispense - XML Representation - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
+    <title>E-T-Rezept Structure Map for MedicationDispense - XML Representation - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -163,11 +163,8 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -188,6 +185,9 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -204,10 +204,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Datenaustausch BfArM Webdienst
+Implementation Guide<br /> TIFlow - Datenaustausch BfArM Webdienst
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -301,7 +301,7 @@ TIFlow - Datenaustausch BfArM Webdienst
         
           Draft
           
-            as of 2026-05-26
+            as of 2026-06-30
           
         
       </td>
@@ -332,20 +332,31 @@ TIFlow - Datenaustausch BfArM Webdienst
 
 &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Mapping-Anweisungen zur Transformation von gematik ERP MedicationDispense zu BfArM T-Prescription MedicationDispense&lt;/span&gt;
 &lt;b&gt;group &lt;/b&gt;ERPTPrescriptionStructureMapMedicationDispense&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;b&gt;source&lt;/b&gt; &lt;span style=&quot;color: maroon&quot;&gt;gematikMedicationDispense&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; : &lt;/span&gt;gematikMedicationDispense, &lt;b&gt;target&lt;/b&gt; &lt;span style=&quot;color: maroon&quot;&gt;bfarmMedicationDispense&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; : &lt;/span&gt;bfarmMedicationDispense&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; {
-&lt;/span&gt;  gematikMedicationDispense.extension&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;extDosageMetaVar&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;url='http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta'&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.extension = &lt;span style=&quot;color: maroon&quot;&gt;extDosageMetaVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispenseExt&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert Dosage Metadata Extension&lt;/span&gt;
-  gematikMedicationDispense.extension&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;extDosageRenderedVar&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;url='http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction'&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.extension = &lt;span style=&quot;color: maroon&quot;&gt;extDosageRenderedVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispenseExt&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert RenderedDosageText&lt;/span&gt;
-  gematikMedicationDispense.dosageInstruction&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;dosageInstructionVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.dosageInstruction = &lt;span style=&quot;color: maroon&quot;&gt;dosageInstructionVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispenseDosageInstruction&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Übernimmt die Dosierungsanweisungen aus der ursprünglichen Abgabe für den digitalen Durchschlag&lt;/span&gt;
-  gematikMedicationDispense.whenHandedOver&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;whenHandedOverVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.whenHandedOver = &lt;span style=&quot;color: maroon&quot;&gt;whenHandedOverVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispenseWhenHandedOver&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert das Abgabedatum zur Dokumentation des Zeitpunkts der Medikamentenausgabe&lt;/span&gt;
-  gematikMedicationDispense.medication&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;medicationVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.medication = &lt;span style=&quot;color: maroon&quot;&gt;medicationVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationReference&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert die Medikamentenreferenz - das referenzierte Medication wird separat gemappt&lt;/span&gt;
-  gematikMedicationDispense.status&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;gematikMedicationDispenseStatus&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.status = &lt;span style=&quot;color: blue&quot;&gt;'completed'&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispenseStatus&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Setzt den Status auf 'completed' da die Abgabe bereits erfolgt ist (digitaler Durchschlag)&lt;/span&gt;
-  gematikMedicationDispense.quantity&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;quantityVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.quantity = &lt;span style=&quot;color: maroon&quot;&gt;quantityVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispenseQuantity&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Übernimmt die abgegebene Menge zur Dokumentation der tatsächlich ausgehändigten Medikamentenmenge&lt;/span&gt;
+&lt;/span&gt;  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert Dosage Metadata Extension&lt;/span&gt;
+  gematikMedicationDispense.extension&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;extDosageMetaVar&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;url='http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta'&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.extension = &lt;span style=&quot;color: maroon&quot;&gt;extDosageMetaVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispenseExt&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert RenderedDosageText&lt;/span&gt;
+  gematikMedicationDispense.extension&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;extDosageRenderedVar&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;url='http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction'&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.extension = &lt;span style=&quot;color: maroon&quot;&gt;extDosageRenderedVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispenseExt&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Übernimmt die Dosierungsanweisungen aus der ursprünglichen Abgabe für den digitalen Durchschlag&lt;/span&gt;
+  gematikMedicationDispense.dosageInstruction&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;dosageInstructionVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.dosageInstruction = &lt;span style=&quot;color: maroon&quot;&gt;dosageInstructionVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispenseDosageInstruction&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert das Abgabedatum zur Dokumentation des Zeitpunkts der Medikamentenausgabe&lt;/span&gt;
+  gematikMedicationDispense.whenHandedOver&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;whenHandedOverVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.whenHandedOver = &lt;span style=&quot;color: maroon&quot;&gt;whenHandedOverVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispenseWhenHandedOver&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Kopiert die Medikamentenreferenz - das referenzierte Medication wird separat gemappt&lt;/span&gt;
+  gematikMedicationDispense.medication&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;medicationVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.medication = &lt;span style=&quot;color: maroon&quot;&gt;medicationVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationReference&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Setzt den Status auf 'completed' da die Abgabe bereits erfolgt ist (digitaler Durchschlag)&lt;/span&gt;
+  gematikMedicationDispense.status&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;gematikMedicationDispenseStatus&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.status = &lt;span style=&quot;color: blue&quot;&gt;'completed'&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispenseStatus&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Übernimmt die abgegebene Menge zur Dokumentation der tatsächlich ausgehändigten Medikamentenmenge&lt;/span&gt;
+  gematikMedicationDispense.quantity&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;quantityVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.quantity = &lt;span style=&quot;color: maroon&quot;&gt;quantityVar&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispenseQuantity&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Transformiert Apotheken-Identifier zu Organization-Referenz für eindeutige Zuordnung der abgebenden Apotheke&lt;/span&gt;
   gematikMedicationDispense.performer&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;srcPerformerVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;bfarmMedicationDispense.performer&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgtPerformerVar&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
-&lt;/span&gt;    srcPerformerVar.actor&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;srcPerformerActorVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtPerformerVar.actor&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgtPerformerActorVar&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
-&lt;/span&gt;      srcPerformerActorVar.identifier&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;srcPerformerActorIdentifierVar&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
-&lt;/span&gt;        srcPerformerActorIdentifierVar.value&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;srcPerformerActorIdentifierValueVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtPerformerActorVar.reference = &lt;b&gt;append&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'Organization/'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;srcPerformerActorIdentifierValueVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispensePerformerActorIdentifierValue&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Wandelt Apotheken-Identifier in Organization-Referenz um (Organization/&amp;lt;telematik-id&amp;gt;)&lt;/span&gt;
-      &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispensePerformerActorIdentifier&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Extrahiert den Identifier der abgebenden Apotheke&lt;/span&gt;
-    &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispensePerformerActor&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Verarbeitet den Actor (abgebende Apotheke) des Performers&lt;/span&gt;
-  &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispensePerformer&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Transformiert Apotheken-Identifier zu Organization-Referenz für eindeutige Zuordnung der abgebenden Apotheke&lt;/span&gt;
+&lt;/span&gt;    &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Verarbeitet den Actor (abgebende Apotheke) des Performers&lt;/span&gt;
+    srcPerformerVar.actor&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;srcPerformerActorVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtPerformerVar.actor&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgtPerformerActorVar&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
+&lt;/span&gt;      &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Extrahiert den Identifier der abgebenden Apotheke&lt;/span&gt;
+      srcPerformerActorVar.identifier&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;srcPerformerActorIdentifierVar&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
+&lt;/span&gt;        &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Wandelt Apotheken-Identifier in Organization-Referenz um (Organization/&amp;lt;telematik-id&amp;gt;)&lt;/span&gt;
+        srcPerformerActorIdentifierVar.value&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;srcPerformerActorIdentifierValueVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgtPerformerActorVar.reference = &lt;b&gt;append&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'Organization/'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;srcPerformerActorIdentifierValueVar&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispensePerformerActorIdentifierValue&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+      &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispensePerformerActorIdentifier&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+    &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispensePerformerActor&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;medicationDispensePerformer&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
 &lt;span style=&quot;color: navy&quot;&gt;}
 
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;<a name="end-xhtml"></a>
@@ -357,7 +368,7 @@ TIFlow - Datenaustausch BfArM Webdienst
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;E-T-Rezept Structure Map for MedicationDispense&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;draft&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.experimental">experimental</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-05-26&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-06-30&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;gematik GmbH&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.contact">contact</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;gematik GmbH&quot;/&gt;
@@ -650,7 +661,7 @@ TIFlow - Datenaustausch BfArM Webdienst
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:48+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:29+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

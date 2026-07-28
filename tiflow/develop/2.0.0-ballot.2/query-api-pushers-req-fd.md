@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Additional API**](menu-schnittstellen-additional-api.md)
@@ -24,7 +24,7 @@ Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS alle Zugriffe a
 
 abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 
-funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS die API mit den Endpunkten GET /pushers und POST /pushers/set gemäß [OpenAPI_FD] bereitstellen.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS die API mit den Endpunkten GET /pushers und POST /pushers/set gemäß [OpenAPI_PUSH_FD] bereitstellen.
 ### GET /pushers
 
 Mit der Operation GET /pushers können alle für den Nutzer registrierten FdV-Instanzen abgefragt werden.
@@ -43,7 +43,7 @@ abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /pushers die dem Versicherten zugeordneten Pusher-Ressourcen anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren, damit ausschließlich Versicherte ihre eigenen App-Registrierungen einsehen können.
 ### POST /pushers/set
 
-Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set das Payload gegen das Schema in [OpenAPI_FD] validieren und bei Abweichungen mit dem folgenden Fehler:
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set das Payload gegen das Schema in [OpenAPI_PUSH_FD] validieren und bei Abweichungen mit dem folgenden Fehler:
 
 * HTTP-Code: Error Code
   * 400 - Bad Request: malformedRequest

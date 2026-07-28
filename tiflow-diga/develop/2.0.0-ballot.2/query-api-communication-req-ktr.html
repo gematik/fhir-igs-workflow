@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>KTR-Anforderungen: Communication-Query - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
+    <title>KTR-Anforderungen: Communication-Query - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-datenschutz-und-sicherheit.html">Datenschutz und Informationssicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -168,7 +171,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -205,10 +208,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
+Implementation Guide<br /> TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -287,7 +290,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="nachrichten-abrufen">Nachrichten abrufen</h4>
 <!-- A_21556 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-51" title="CS Kostenträger: Nachrichten abrufen - Häufigkeit" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A51" title="CS Kostenträger: Nachrichten abrufen - Häufigkeit" version="0">
   <meta lockversion="false" />
   <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -296,7 +299,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19329-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-52" title="CS Kostenträger: Nachrichten abrufen - Abfrage" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A52" title="CS Kostenträger: Nachrichten abrufen - Abfrage" version="0">
   <meta lockversion="false" />
   <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -315,7 +318,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.</p>
 
 <!-- A_19334 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-53" title="CS Kostenträger: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A53" title="CS Kostenträger: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0">
   <meta lockversion="false" />
   <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -330,12 +333,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="nachricht-löschen">Nachricht löschen</h4>
 <p>Mit diesem Anwendungsfall kann ein Kostenträger von ihm versendete Nachrichten an einen Versicherten auf dem Fachdienst löschen.</p>
 
-<p>Das CS Kostenträger MUSS es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem Fachdienst auszuwählen.</p>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A453" title="CS Kostenträger: Nachricht löschen - Nachricht auswählen" version="0">
+  <meta lockversion="false" />
+  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+  </actor>
+  Das Clientsystem Kostenträger MUSS es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem Fachdienst auszuwählen.
+</requirement>
 
-<p>Das CS Kostenträger MUSS vom Nutzer eine Bestätigung einholen, dass die ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.</p>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A454" title="CS Kostenträger: Nachricht löschen - Bestätigung einholen" version="0">
+  <meta lockversion="false" />
+  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+  </actor>
+  Das Clientsystem Kostenträger MUSS vom Nutzer eine Bestätigung einholen, dass die ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.
+</requirement>
 
 <!-- A_21489 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-54" title="CS Kostenträger: Nachricht löschen - Löschrequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A54" title="CS Kostenträger: Nachricht löschen - Löschrequest" version="0">
   <meta lockversion="false" />
   <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -349,14 +364,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Der Fachdienst prüft anhand der Telematik-ID aus den Nutzerinformationen (zeta-user-info), ob der Kostenträger der Absender der zu löschenden Nachricht ist.</p>
 
-<p>Das CS Kostenträger KANN im Anwendungsfall "Nachricht durch Abgebenden löschen" dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.</p>
+<p>Das Clientsystem Kostenträger KANN im Anwendungsfall "Nachricht durch Abgebenden löschen" dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.</p>
 
 <p>Hinweis: Nachrichten an Versicherte sind immer an den Workflow der referenzierten Verordnung gebunden. Wenn ein Workflow, bspw. durch den Versicherten oder aufgrund von durch den Fachdienst durchgesetzte Löschfristen, auf dem Fachdienst gelöscht wird, dann werden auch alle zugehörigen Nachrichten gelöscht.</p>
 
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
 <!-- A_28540 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-2" title="CS Kostenträger: Nachricht versenden - Flowtype 162 - Communication erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A2" title="CS Kostenträger: Nachricht versenden - Flowtype 162 - Communication erstellen" version="0">
   <meta lockversion="false" />
   <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
     <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -404,7 +419,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:51+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:32+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

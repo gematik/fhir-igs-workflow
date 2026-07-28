@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)

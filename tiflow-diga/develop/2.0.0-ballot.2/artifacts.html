@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FHIR-Artefakte - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
+    <title>FHIR-Artefakte - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-datenschutz-und-sicherheit.html">Datenschutz und Informationssicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -168,7 +171,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -205,10 +208,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
+Implementation Guide<br /> TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -491,6 +494,279 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
         
     
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Capability Statements</figcaption></div>
+
+<h4 id="operation-definitions">Operation Definitions</h4>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-tiflow-diga-abort-op.html" title="OperationDefinition/tiflow-diga-abort-op">
+                
+                    E-Rezept abbrechen
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Operation bricht den Workflow einer DiGA-Verordnung ab und löscht alle Daten, die mit dieser Aufgabe zusammenhängen.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-tiflow-diga-accept-op.html" title="OperationDefinition/tiflow-diga-accept-op">
+                
+                    E-Rezept abrufen
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-tiflow-diga-activate-op.html" title="OperationDefinition/tiflow-diga-activate-op">
+                
+                    E-Rezept aktivieren
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der TI-Flow-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-tiflow-diga-close-op.html" title="OperationDefinition/tiflow-diga-close-op">
+                
+                    E-Rezept Abgabe vollziehen
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-tiflow-diga-create-op.html" title="OperationDefinition/tiflow-diga-create-op">
+                
+                    E-Rezept erstellen
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Flowtypes.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-tiflow-diga-reject-op.html" title="OperationDefinition/tiflow-diga-reject-op">
+                
+                    E-Rezept zurückgeben
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Lehnt die Ausgabe einer DiGA-Verordnung ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Kostenträger zugänglich oder kann vom Patienten gelöscht werden.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
         
         
         
@@ -506,7 +782,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tbody>
 </table>
 
-<div><figcaption><strong>Tabelle:</strong> Capability Statements</figcaption></div>
+<div><figcaption><strong>Tabelle:</strong> Operation Definitions</figcaption></div>
 
 <h3 id="ressourcenprofile">Ressourcenprofile</h3>
 
@@ -517,10 +793,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tbody>
     
     
-    
-        
-        
-        
     
         
         
@@ -732,14 +1004,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
         
     
-        
-        
-        
-    
-        
-        
-        
-    
     </tbody>
 </table>
 
@@ -754,10 +1018,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tbody>
     
     
-    
-        
-        
-        
     
         
         
@@ -954,14 +1214,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
         
     
-        
-        
-        
-    
-        
-        
-        
-    
     </tbody>
 </table>
 
@@ -976,10 +1228,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tbody>
     
     
-    
-        
-        
-        
     
         
         
@@ -1191,14 +1439,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
         
     
-        
-        
-        
-    
-        
-        
-        
-    
     </tbody>
 </table>
 
@@ -1213,18 +1453,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tbody>
     
     
-    
-        
-        
-        
-    
-        
-        
-        
-    
-        
-        
-        
     
         
         
@@ -1546,7 +1774,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:51+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:32+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

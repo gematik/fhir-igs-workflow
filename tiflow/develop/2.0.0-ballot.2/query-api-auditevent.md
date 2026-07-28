@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Query API**](menu-schnittstellen-query-api.md)
@@ -29,8 +29,9 @@ Die AuditEvent-Query wird über HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
 server
 ```
 
-Error processing command: Unable to find fragment resource Bundle/example-searchset-auditevent pointed to in file /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/input/pagecontent/query-api-auditevent </div> 
+### Hinweise
 
-Error processing command: Unable to find fragment resource Bundle/example-searchset-auditevent pointed to in file /home/runner/work/fhir-igs-workflow/fhir-igs-workflow/igs/core/input/pagecontent/query-api-auditevent </div> </div> </div> ### Hinweise - Dieser Aufruf soll nicht regelmäßig im FdV ausgeführt werden, sondern nur, wenn der Versicherte Einsicht in das Protokoll nehmen möchte. Dies spart Ressourcen am TI-Flow-Fachdienst. - Die Angabe "`total`" wird vom TI-Flow-Fachdienst aus Gründen der Performance nicht unterstützt. Die Anzahl der zurückgegebenen Einträge ist nach Möglichkeit immer 50. - Die Sprache muss in jedem Aufruf mittels "Accept-Language" Heder übergeben werden, um die Protokolleinträge in der bevorzugten Sprache des Versicherten zurückzugeben. 
-
+* Dieser Aufruf soll nicht regelmäßig im FdV ausgeführt werden, sondern nur, wenn der Versicherte Einsicht in das Protokoll nehmen möchte. Dies spart Ressourcen am TI-Flow-Fachdienst.
+* Die Angabe "`total`" wird vom TI-Flow-Fachdienst aus Gründen der Performance nicht unterstützt. Die Anzahl der zurückgegebenen Einträge ist nach Möglichkeit immer 50.
+* Die Sprache muss in jedem Aufruf mittels "Accept-Language" Heder übergeben werden, um die Protokolleinträge in der bevorzugten Sprache des Versicherten zurückzugeben.
 

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Anforderungen an den verordnende Primärsystem für die $activate-Operation - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
+    <title>Anforderungen an den verordnende Primärsystem für die $activate-Operation - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-datenschutz-und-sicherheit.html">Datenschutz und Informationssicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -168,7 +171,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -205,10 +208,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
+Implementation Guide<br /> TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -286,7 +289,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation <code class="language-plaintext highlighter-rouge">$activate</code>.</p>
 
 <!-- A_19273-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-150" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A150" title="PS verordnende LEI: E-Rezept einstellen - Task auf Fachdienst aktivieren" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
     <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -305,7 +308,7 @@ Fehler 403 mit dem OperationOutcome "Task not in status draft but in status read
 
 <h4 id="patientenausdruck">Patientenausdruck</h4>
 <!-- A_22503 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-151" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A151" title="PS verordnende LEI: E-Rezept einstellen - kein Patientenausdruck bei Fehler beim Aktivieren" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -317,7 +320,7 @@ Fehler 403 mit dem OperationOutcome "Task not in status draft but in status read
 <!-- ToDo: Können in den workflow-spezifischen Modulen weitere Hinweise geben? rx und diga haben unterschiedliche vorgaben durch die KBV --></p>
 
 <!-- A_22423 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-152" title="PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A152" title="PS verordnende LEI: E-Rezept einstellen - separater Patientenausdruck je Flowtype" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -326,7 +329,7 @@ Fehler 403 mit dem OperationOutcome "Task not in status draft but in status read
 </requirement>
 
 <!-- A_19279 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-153" title="PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A153" title="PS verordnende LEI: E-Rezept einstellen - E-Rezept-Token erstellen" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -338,7 +341,7 @@ Fehler 403 mit dem OperationOutcome "Task not in status draft but in status read
 <!-- ToDo: Referenz korrigieren --></p>
 
 <!-- A_19280 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-154" title="PS verordnende LEI: E-Rezept einstellen - Datamatrix-Code erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A154" title="PS verordnende LEI: E-Rezept einstellen - Datamatrix-Code erstellen" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -354,7 +357,7 @@ Fehler 403 mit dem OperationOutcome "Task not in status draft but in status read
 <p>Um die Einlösung einer elektronischen DiGA-Verordnung (Flowtype 162) sicherzustellen, ist dem Patienten ein Ausdruck auszuhändigen, ausgenommen der Patient lehnt einen Ausdruck ab, da er bspw. ein E-Rezept-Frontend des Versicherten der Krankenkasse oder der gematik nutzt.</p>
 
 <!-- A_28862 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-29" title="PS verordnende LEI: E-Rezept einstellen - Flowtype 162 - Patientenausdruck" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A29" title="PS verordnende LEI: E-Rezept einstellen - Flowtype 162 - Patientenausdruck" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -402,7 +405,7 @@ Fehler 403 mit dem OperationOutcome "Task not in status draft but in status read
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:51+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:32+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

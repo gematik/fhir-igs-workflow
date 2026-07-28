@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Additional API**](menu-schnittstellen-additional-api.md)
@@ -41,8 +41,6 @@ Der TI-Flow-Fachdienst unterstützt das optionale Feature "Channels". Ruft alle 
 server
 ```
 
-{ "channels": [ { "id": "channel1", "status": "enabled" }, { "id": "channel2", "status": "disabled" } ] }
-
 Successful operation
 
 Bad Request
@@ -59,8 +57,6 @@ Too Many Requests
 server
 ```
 
-{ "channels": [ { "id": "channel1", "status": "enabled" }, { "id": "channel2", "status": "disabled" } ] }
-
 Successful operation
 
 Bad Request
@@ -76,10 +72,6 @@ Too Many Requests
 ```
 server
 ```
-
-{ "channels": [ { "name": "channel1", "value": "enabled" }, { "name": "channel2", "value": "disabled" } ] }
-
-{}
 
 Successful operation
 

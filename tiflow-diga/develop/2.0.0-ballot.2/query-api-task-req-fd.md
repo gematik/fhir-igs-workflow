@@ -1,8 +1,10 @@
-# FD-Anforderungen: Task-Query - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# FD-Anforderungen: Task-Query - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Query API**](query-api.md)
@@ -18,8 +20,6 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Task-Endpunkt.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
-Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter [Operations](./menu-schnittstellen-operation-api.md) beschrieben.
-
 #### GET /Task (Liste)
 
 Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnungen steht ausschließlich dem Versicherten bzw. einer abgebenden Institution mit Nachweis eines Behandlungskontextes zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.
@@ -71,7 +71,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-
   * 403 - Bad Request: PoPP token invalid
 
 abbrechen.
-Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung von A_23399-* im Rahmen des Änderungsmanagement für Spezifikationen.
+Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung der obigen Anforderung im Rahmen des Änderungsmanagement für Spezifikationen.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI mit der Rolle
 * oid_oeffentliche_apotheke
@@ -86,7 +86,7 @@ Diese Operation führt nicht zu einer Statusänderung bei den zurück gelieferte
 
 ##### HTTP-Operation GET - Prüfung PoPP-TokenWenn der TI-Flow-Fachdienst in einem Aufruf einen PoPP-Token empfängt muss geprüft werden, dass der Token vom PoPP-Service ausgestellt wurde. Hierzu wird die Signatur des PoPP-Tokens geprüft.
 
-Der TI-Flow-Fachdienst setzt gemäß [gemSpec_PoPP_Service] in der Rolle PoPP-Verifier folgende Prüfschritte via TI-PKI um (siehe [gemSpec_PoPP_Service#5.1.2 PoPP-Token Prüfung], A_27015):
+Der TI-Flow-Fachdienst setzt gemäß [gemSpec_PoPP_Service] in der Rolle PoPP-Verifier folgende Prüfschritte via TI-PKI um (siehe [gemSpec_PoPP_Service]#5.1.2 PoPP-Token Prüfung, A_27015):
 
 * Prüfschritt: Beziehen der URL für den PoPP-Service
   * Anforderung: A_27358
@@ -117,7 +117,7 @@ Ergänzung der stündlichen Abfrage des JWKS zu A_26449 - Beziehen der Schlüsse
 funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS stündlich die JWK-Set des PoPP-Service [RFC7517] über dem im Entity Statement metadata.oauth_resource.signed_jwks_uri angegeben URL abrufen und die öffentlichen Schlüssel zur Verifikation der PoPP-Token verwenden.
 Der TI-Flow-Fachdienst prüft zur Umsetzung von A_27016-* das Signaturzertifikat des PoPP-Service wie folgt:
 
-Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS das Signatur-Zertifikat des PoPP-Service für die Signatur des PoPP-Token gemäß [gemSpec_PKI#TUC_PKI_018] mit folgenden Parametern auf Gültigkeit prüfen:
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS das Signatur-Zertifikat des PoPP-Service für die Signatur des PoPP-Token gemäß [gemSpec_PKI]#TUC_PKI_018 mit folgenden Parametern auf Gültigkeit prüfen:
 
 * Parameter: Zertifikat
   * : Signaturzertifikat des PoPP-Service
@@ -180,11 +180,11 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-
 * HTTP-Code: Severity
   * 403 - Forbidden: error
 * HTTP-Code: Code
-  * 403 - Forbidden: ???
+  * 403 - Forbidden: invalid
 * HTTP-Code: Details Code
-  * 403 - Forbidden: ???
+  * 403 - Forbidden: SVC_IDENTITY_MISMATCH
 * HTTP-Code: Details Text
-  * 403 - Forbidden: ???
+  * 403 - Forbidden: -
 
 abbrechen, damit ausschließlich der begünstigte Versicherte den Task abrufen kann.
 
@@ -275,7 +275,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-
 * HTTP-Code: Code
   * 403 - Forbidden: invalid
 * HTTP-Code: Details Code
-  * 403 - Forbidden: TIFLOW_KVNR_MISMATCH
+  * 403 - Forbidden: SVC_IDENTITY_MISMATCH
 * HTTP-Code: Details Text
   * 403 - Forbidden: -
 

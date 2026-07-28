@@ -9,11 +9,18 @@
     "oids" : ["1.2.840.10008.2.16.4"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-audit-event-sub-type.html" : "Audit Event Sub-Type",
-    "http://hl7.org/fhir/R4/valueset-dicm-405-mediatype.html" : "Media Type Code",
-    "http://hl7.org/fhir/R4/valueset-audit-event-type.html" : "Audit Event ID",
-    "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType",
-    "http://hl7.org/fhir/R4/valueset-participation-role-type.html" : "ParticipationRoleType"
+    "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
+  },
+  {
+    "url" : "http://fhir.de/CodeSystem/identifier-type-de-basis",
+    "version" : "1.5.4",
+    "status" : "active",
+    "name" : "IdentifierTypeDeBasis",
+    "title" : "Identifier Type De Basis",
+    "description" : "Liste der Identfikatorentypen des deutschen Basisprofils welche die Standardtypen ergänzen.",
+    "uses" : {
+    },
+    "https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/ValueSet/identifier-type-de-basis" : "Identifier Type DeBasis ValueSet"
   },
   {
     "url" : "http://hl7.org/fhir/CodeSystem/medication-status",
@@ -40,28 +47,40 @@
     "http://hl7.org/fhir/R4/valueset-task-code.html" : "Task Codes"
   },
   {
-    "url" : "http://hl7.org/fhir/audit-event-action",
+    "url" : "http://hl7.org/fhir/address-type",
     "version" : "4.0.1",
-    "status" : "draft",
-    "name" : "AuditEventAction",
-    "title" : "AuditEventAction",
-    "description" : "Indicator for type of action performed during the event that generated the event.",
-    "oids" : ["2.16.840.1.113883.4.642.4.453"],
+    "status" : "active",
+    "name" : "AddressType",
+    "title" : "AddressType",
+    "description" : "The type of an address (physical / postal).",
+    "oids" : ["2.16.840.1.113883.4.642.4.70"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-audit-event-action.html" : "AuditEventAction"
+    "http://hl7.org/fhir/R4/valueset-address-type.html" : "AddressType"
   },
   {
-    "url" : "http://hl7.org/fhir/audit-event-outcome",
+    "url" : "http://hl7.org/fhir/address-use",
     "version" : "4.0.1",
-    "status" : "draft",
-    "name" : "AuditEventOutcome",
-    "title" : "AuditEventOutcome",
-    "description" : "Indicates whether the event succeeded or failed.",
-    "oids" : ["2.16.840.1.113883.4.642.4.455"],
+    "status" : "active",
+    "name" : "AddressUse",
+    "title" : "AddressUse",
+    "description" : "The use of an address.",
+    "oids" : ["2.16.840.1.113883.4.642.4.68"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-audit-event-outcome.html" : "AuditEventOutcome"
+    "http://hl7.org/fhir/R4/valueset-address-use.html" : "AddressUse"
+  },
+  {
+    "url" : "http://hl7.org/fhir/administrative-gender",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "AdministrativeGender",
+    "title" : "AdministrativeGender",
+    "description" : "The gender of a person used for administrative purposes.",
+    "oids" : ["2.16.840.1.113883.4.642.4.2"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-administrative-gender.html" : "AdministrativeGender"
   },
   {
     "url" : "http://hl7.org/fhir/bundle-type",
@@ -74,6 +93,78 @@
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-bundle-type.html" : "BundleType"
+  },
+  {
+    "url" : "http://hl7.org/fhir/consent-data-meaning",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ConsentDataMeaning",
+    "title" : "ConsentDataMeaning",
+    "description" : "How a resource reference is interpreted when testing consent restrictions.",
+    "oids" : ["2.16.840.1.113883.4.642.4.760"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-consent-data-meaning.html" : "ConsentDataMeaning"
+  },
+  {
+    "url" : "http://hl7.org/fhir/consent-provision-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ConsentProvisionType",
+    "title" : "ConsentProvisionType",
+    "description" : "How a rule statement is applied, such as adding additional consent or removing consent.",
+    "oids" : ["2.16.840.1.113883.4.642.4.758"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-consent-provision-type.html" : "ConsentProvisionType"
+  },
+  {
+    "url" : "http://hl7.org/fhir/consent-state-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ConsentState",
+    "title" : "ConsentState",
+    "description" : "Indicates the state of the consent.",
+    "oids" : ["2.16.840.1.113883.4.642.4.756"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-consent-state-codes.html" : "ConsentState"
+  },
+  {
+    "url" : "http://hl7.org/fhir/contact-point-system",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "ContactPointSystem",
+    "title" : "ContactPointSystem",
+    "description" : "Telecommunications form for contact point.",
+    "oids" : ["2.16.840.1.113883.4.642.4.72"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-contact-point-system.html" : "ContactPointSystem"
+  },
+  {
+    "url" : "http://hl7.org/fhir/contact-point-use",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "ContactPointUse",
+    "title" : "ContactPointUse",
+    "description" : "Use of contact point.",
+    "oids" : ["2.16.840.1.113883.4.642.4.74"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-contact-point-use.html" : "ContactPointUse"
+  },
+  {
+    "url" : "http://hl7.org/fhir/days-of-week",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "DaysOfWeek",
+    "title" : "DaysOfWeek",
+    "description" : "The days of the week.",
+    "oids" : ["2.16.840.1.113883.4.642.4.513"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-days-of-week.html" : "DaysOfWeek"
   },
   {
     "url" : "http://hl7.org/fhir/event-status",
@@ -100,16 +191,28 @@
     "http://hl7.org/fhir/R4/valueset-http-verb.html" : "HTTPVerb"
   },
   {
-    "url" : "http://hl7.org/fhir/network-type",
+    "url" : "http://hl7.org/fhir/identifier-use",
     "version" : "4.0.1",
-    "status" : "draft",
-    "name" : "AuditEventAgentNetworkType",
-    "title" : "AuditEventAgentNetworkType",
-    "description" : "The type of network access point of this agent in the audit event.",
-    "oids" : ["2.16.840.1.113883.4.642.4.457"],
+    "status" : "active",
+    "name" : "IdentifierUse",
+    "title" : "IdentifierUse",
+    "description" : "Identifies the purpose for this identifier, if known .",
+    "oids" : ["2.16.840.1.113883.4.642.4.58"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-network-type.html" : "AuditEventAgentNetworkType"
+    "http://hl7.org/fhir/R4/valueset-identifier-use.html" : "IdentifierUse"
+  },
+  {
+    "url" : "http://hl7.org/fhir/name-use",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "NameUse",
+    "title" : "NameUse",
+    "description" : "The use of a human name.",
+    "oids" : ["2.16.840.1.113883.4.642.4.66"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-name-use.html" : "NameUse"
   },
   {
     "url" : "http://hl7.org/fhir/quantity-comparator",
@@ -156,19 +259,8 @@
     "description" : "One of the resource types defined as part of this version of FHIR.",
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-audit-entity-type.html" : "Audit event entity type",
+    "http://hl7.org/fhir/R4/valueset-consent-content-class.html" : "Consent Content Class",
     "http://hl7.org/fhir/R4/valueset-resource-types.html" : "ResourceType"
-  },
-  {
-    "url" : "http://hl7.org/fhir/restful-interaction",
-    "version" : "4.0.1",
-    "status" : "active",
-    "name" : "FHIR Restful Interactions",
-    "title" : null,
-    "description" : "The set of interactions defined by the RESTful part of the FHIR specification.",
-    "uses" : {
-    },
-    "http://hl7.org/fhir/R4/valueset-audit-event-sub-type.html" : "Audit Event Sub-Type"
   },
   {
     "url" : "http://hl7.org/fhir/search-entry-mode",
@@ -207,6 +299,17 @@
     "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/ValueSet-tiflow-order-task-status-vs.html" : "TIFlow Order Task ValueSet"
   },
   {
+    "url" : "http://loinc.org",
+    "version" : "2.82",
+    "status" : "active",
+    "name" : "LOINC",
+    "title" : null,
+    "description" : "This is a place holder for the code system which is fully supported through internal means (not by this code system)",
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-consent-content-code.html" : "Consent Content Codes"
+  },
+  {
     "url" : "http://snomed.info/sct",
     "version" : null,
     "status" : "active",
@@ -216,34 +319,12 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-clinical-findings.html" : "SNOMED CT Clinical Findings",
+    "http://hl7.org/fhir/R4/valueset-c80-practice-codes.html" : "Practice Setting Code Value Set",
+    "http://hl7.org/fhir/R4/valueset-practitioner-role.html" : "Practitioner role",
     "http://hl7.org/fhir/R4/valueset-performer-role.html" : "Procedure Performer Role Codes",
+    "http://hl7.org/fhir/R4/valueset-medication-codes.html" : "SNOMED CT Medication Codes",
     "http://hl7.org/fhir/R4/valueset-medication-form-codes.html" : "SNOMED CT Form Codes",
-    "http://hl7.org/fhir/R4/valueset-medication-codes.html" : "SNOMED CT Medication Codes"
-  },
-  {
-    "url" : "http://terminology.hl7.org/CodeSystem/audit-entity-type",
-    "version" : "1.0.1",
-    "status" : "active",
-    "name" : "AuditEventEntityType",
-    "title" : "Audit event entity type",
-    "description" : "Code for the entity type involved in the audit event.",
-    "oids" : ["2.16.840.1.113883.4.642.1.1134"],
-    "uses" : {
-    },
-    "http://hl7.org/fhir/R4/valueset-audit-entity-type.html" : "Audit event entity type"
-  },
-  {
-    "url" : "http://terminology.hl7.org/CodeSystem/audit-event-type",
-    "version" : "1.0.0",
-    "status" : "active",
-    "name" : "AuditEventID",
-    "title" : "Audit Event ID",
-    "description" : "Event Types for Audit Events - defined by DICOM with some FHIR specific additions.",
-    "oids" : ["2.16.840.1.113883.4.642.1.1136"],
-    "uses" : {
-    },
-    "http://hl7.org/fhir/R4/valueset-audit-event-type.html" : "Audit Event ID"
+    "http://hl7.org/fhir/R4/valueset-clinical-findings.html" : "SNOMED CT Clinical Findings"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/common-tags",
@@ -294,6 +375,42 @@
     "http://hl7.org/fhir/R4/valueset-communication-topic.html" : "CommunicationTopic"
   },
   {
+    "url" : "http://terminology.hl7.org/CodeSystem/consentaction",
+    "version" : "1.0.1",
+    "status" : "active",
+    "name" : "ConsentActionCodes",
+    "title" : "Consent Action Codes",
+    "description" : "This value set includes sample Consent Action codes.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1227"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-consent-action.html" : "Consent Action Codes"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/consentscope",
+    "version" : "2.0.1",
+    "status" : "active",
+    "name" : "ConsentScopeCodes",
+    "title" : "Consent Scope Codes",
+    "description" : "This value set includes the four Consent scope codes.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1228"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-consent-scope.html" : "Consent Scope Codes"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/contactentity-type",
+    "version" : "2.0.0",
+    "status" : "active",
+    "name" : "ContactEntityType",
+    "title" : "Contact entity type",
+    "description" : "This example value set defines a set of codes that can be used to indicate the purpose for which you would contact a contact party.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1129"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-contactentity-type.html" : "Contact entity type"
+  },
+  {
     "url" : "http://terminology.hl7.org/CodeSystem/contractsignertypecodes",
     "version" : "1.0.1",
     "status" : "active",
@@ -303,19 +420,7 @@
     "oids" : ["2.16.840.1.113883.4.642.1.1201"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType",
-    "http://hl7.org/fhir/R4/valueset-participation-role-type.html" : "ParticipationRoleType"
-  },
-  {
-    "url" : "http://terminology.hl7.org/CodeSystem/dicom-audit-lifecycle",
-    "version" : "2.0.0",
-    "status" : "active",
-    "name" : "DicomAuditMessageRecordLifecycleEvents",
-    "title" : "DICOM Audit Message Record Lifecycle Events",
-    "description" : "Attached is vocabulary for the record lifecycle events, as per DICOM Audit Message,",
-    "uses" : {
-    },
-    "http://hl7.org/fhir/R4/valueset-object-lifecycle-events.html" : "ObjectLifecycleEvents"
+    "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/extra-security-role-type",
@@ -326,20 +431,7 @@
     "description" : "This CodeSystem contains Additional FHIR-defined Security Role types not defined elsewhere",
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType",
-    "http://hl7.org/fhir/R4/valueset-participation-role-type.html" : "ParticipationRoleType"
-  },
-  {
-    "url" : "http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle",
-    "version" : "1.0.0",
-    "status" : "active",
-    "name" : "Iso_21089_2017_Health_Record_Lifecycle_Events",
-    "title" : "ISO 21089 2017 Health Record Lifecycle Events",
-    "description" : "Attached is vocabulary for the 27 record lifecycle events, as per ISO TS 21089-2017, Health Informatics - Trusted End-to-End Information Flows, Section 3, Terms and Definitions (2017, at ISO Central Secretariat, passed ballot and ready for publication).  This will also be included in the FHIR EHR Record Lifecycle Event Implementation Guide, balloted and (to be) published with FHIR STU-3.",
-    "uses" : {
-    },
-    "http://hl7.org/fhir/R4/valueset-audit-event-type.html" : "Audit Event ID",
-    "http://hl7.org/fhir/R4/valueset-object-lifecycle-events.html" : "ObjectLifecycleEvents"
+    "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function",
@@ -354,32 +446,45 @@
     "http://hl7.org/fhir/R4/valueset-medicationdispense-performer-function.html" : "Medication dispense  performer  function  codes"
   },
   {
-    "url" : "http://terminology.hl7.org/CodeSystem/object-role",
-    "version" : "1.1.0",
+    "url" : "http://terminology.hl7.org/CodeSystem/organization-type",
+    "version" : "2.0.1",
     "status" : "active",
-    "name" : "AuditEventEntityRole",
-    "title" : "AuditEventEntityRole",
-    "description" : "Code representing the role the entity played in the audit event.",
-    "oids" : ["2.16.840.1.113883.4.642.1.1135"],
+    "name" : "OrganizationType",
+    "title" : "Organization type",
+    "description" : "This example value set defines a set of codes that can be used to indicate a type of organization.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1128"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-object-role.html" : "AuditEventEntityRole"
+    "http://hl7.org/fhir/R4/valueset-organization-type.html" : "Organization type"
   },
   {
-    "url" : "http://terminology.hl7.org/CodeSystem/security-source-type",
-    "version" : "1.0.0",
+    "url" : "http://terminology.hl7.org/CodeSystem/practitioner-role",
+    "version" : "1.0.1",
     "status" : "active",
-    "name" : "AuditEventSourceType",
-    "title" : "Audit Event Source Type",
-    "description" : "The type of process where the audit event originated from.",
-    "oids" : ["2.16.840.1.113883.4.642.1.1137"],
+    "name" : "PractitionerRole",
+    "title" : "Practitioner role",
+    "description" : "This example value set defines a set of codes that can be used to indicate the role of a Practitioner.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1132"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-audit-source-type.html" : "Audit Event Source Type"
+    "http://hl7.org/fhir/R4/valueset-practitioner-role.html" : "Practitioner role"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+    "version" : "5.0.0",
+    "status" : "active",
+    "name" : "IdentifierType",
+    "title" : "identifierType",
+    "description" : "HL7-defined code system of concepts specifying type of identifier. Used in HL7 Version 2.x messaging data types CX, PLN, PPN, XCN and XON.",
+    "oids" : ["2.16.840.1.113883.18.108"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-identifier-type.html" : "IdentifierType",
+    "https://simplifier.net/resolve?scope=de.basisprofil.r4@1.5.4&canonical=http://fhir.de/ValueSet/identifier-type-de-basis" : "Identifier Type DeBasis ValueSet"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-    "version" : "10.0.0",
+    "version" : "11.0.0",
     "status" : "active",
     "name" : "ActCode",
     "title" : "ActCode",
@@ -387,7 +492,8 @@
     "oids" : ["2.16.840.1.113883.5.4"],
     "uses" : {
     },
-    "http://terminology.hl7.org/7.2.0/ValueSet-v3-ActPharmacySupplyType.html" : "ActPharmacySupplyType"
+    "http://terminology.hl7.org/7.3.0/ValueSet-v3-ActPharmacySupplyType.html" : "ActPharmacySupplyType",
+    "ValueSet-GEM-ERPEU-VS-Consent-PolicyRule.html" : "ValueSet of Consent PolyRule Codes"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
@@ -399,12 +505,12 @@
     "oids" : ["2.16.840.1.113883.5.8"],
     "uses" : {
     },
-    "http://terminology.hl7.org/7.2.0/ValueSet-v3-PurposeOfUse.html" : "PurposeOfUse",
-    "http://terminology.hl7.org/7.2.0/ValueSet-v3-SubstanceAdminSubstitutionReason.html" : "SubstanceAdminSubstitutionReason"
+    "http://terminology.hl7.org/7.3.0/ValueSet-v3-PurposeOfUse.html" : "PurposeOfUse",
+    "http://terminology.hl7.org/7.3.0/ValueSet-v3-SubstanceAdminSubstitutionReason.html" : "SubstanceAdminSubstitutionReason"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ParticipationFunction",
-    "version" : "4.0.0",
+    "version" : "5.0.0",
     "status" : "active",
     "name" : "ParticipationFunction",
     "title" : "ParticipationFunction",
@@ -412,12 +518,11 @@
     "oids" : ["2.16.840.1.113883.5.88"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType",
-    "http://hl7.org/fhir/R4/valueset-participation-role-type.html" : "ParticipationRoleType"
+    "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ParticipationMode",
-    "version" : "5.0.0",
+    "version" : "6.0.0",
     "status" : "active",
     "name" : "ParticipationMode",
     "title" : "ParticipationMode",
@@ -425,11 +530,11 @@
     "oids" : ["2.16.840.1.113883.5.1064"],
     "uses" : {
     },
-    "http://terminology.hl7.org/7.2.0/ValueSet-v3-ParticipationMode.html" : "ParticipationMode"
+    "http://terminology.hl7.org/7.3.0/ValueSet-v3-ParticipationMode.html" : "ParticipationMode"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-    "version" : "6.0.0",
+    "version" : "7.0.0",
     "status" : "active",
     "name" : "ParticipationType",
     "title" : "ParticipationType",
@@ -437,12 +542,11 @@
     "oids" : ["2.16.840.1.113883.5.90"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType",
-    "http://hl7.org/fhir/R4/valueset-participation-role-type.html" : "ParticipationRoleType"
+    "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-RoleClass",
-    "version" : "5.0.0",
+    "version" : "6.0.0",
     "status" : "active",
     "name" : "RoleClass",
     "title" : "RoleClass",
@@ -450,8 +554,7 @@
     "oids" : ["2.16.840.1.113883.5.110"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType",
-    "http://hl7.org/fhir/R4/valueset-participation-role-type.html" : "ParticipationRoleType"
+    "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
@@ -463,12 +566,11 @@
     "oids" : ["2.16.840.1.113883.5.111"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType",
-    "http://hl7.org/fhir/R4/valueset-participation-role-type.html" : "ParticipationRoleType"
+    "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
-    "version" : "4.0.0",
+    "version" : "5.0.0",
     "status" : "active",
     "name" : "SubstanceAdminSubstitution",
     "title" : "Substance Admin Substitution",
@@ -476,7 +578,7 @@
     "oids" : ["2.16.840.1.113883.5.1070"],
     "uses" : {
     },
-    "http://terminology.hl7.org/7.2.0/ValueSet-v3-ActSubstanceAdminSubstitutionCode.html" : "ActSubstanceAdminSubstitutionCode"
+    "http://terminology.hl7.org/7.3.0/ValueSet-v3-ActSubstanceAdminSubstitutionCode.html" : "ActSubstanceAdminSubstitutionCode"
   },
   {
     "url" : "http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-status-reason",
@@ -535,6 +637,28 @@
     "ValueSet-tiflow-erezept-operation-outcome-details-vs.html" : "TIFLOW EREZEPT Operation Outcome Details VS"
   },
   {
+    "url" : "https://gematik.de/fhir/tiflow-erezept/CodeSystem/GEM-ERPEU-CS-ConsentType",
+    "version" : "2.0.0-ballot.2",
+    "status" : "draft",
+    "name" : "GEM_ERPEU_CS_ConsentType",
+    "title" : "CodeSystem of types for a consent",
+    "description" : "Type of patient consent.",
+    "uses" : {
+    },
+    "ValueSet-GEM-ERPEU-VS-ConsentType.html" : "ValueSet of Consent Codes"
+  },
+  {
+    "url" : "https://gematik.de/fhir/tiflow-erezept/CodeSystem/GEM-ERPEU-CS-RequestType",
+    "version" : "2.0.0-ballot.2",
+    "status" : "draft",
+    "name" : "GEM_ERPEU_CS_RequestType",
+    "title" : "CodeSystem of NCPeH Request Types",
+    "description" : "Type of Request from NCPeH",
+    "uses" : {
+    },
+    "ValueSet-GEM-ERPEU-VS-RequestType.html" : "ValueSet of NCPeH Request Types"
+  },
+  {
     "url" : "https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs",
     "version" : "2.0.0-ballot.2",
     "status" : "active",
@@ -566,5 +690,16 @@
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-languages.html" : "Common Languages"
+  },
+  {
+    "url" : "urn:iso:std:iso:3166",
+    "version" : "2018",
+    "status" : "active",
+    "name" : "Country Codes",
+    "title" : null,
+    "description" : "This is a place holder for the code system which is fully supported through internal means (not by this code system)",
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-iso3166-1-2.html" : "Iso 3166 Part 1: 2 Letter Codes"
   }]
 }

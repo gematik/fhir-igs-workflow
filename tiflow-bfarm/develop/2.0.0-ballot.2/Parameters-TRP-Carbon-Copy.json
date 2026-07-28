@@ -3,7 +3,7 @@
   "id" : "TRP-Carbon-Copy",
   "meta" : {
     "profile" : ["https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-carbon-copy",
-    "https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.1"]
+    "https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.2"]
   },
   "parameter" : [{
     "name" : "rxPrescription",
@@ -37,11 +37,11 @@
           },
           {
             "url" : "security-compliance",
-            "valueBoolean" : false
+            "valueBoolean" : true
           },
           {
             "url" : "hand-out-information-material",
-            "valueBoolean" : false
+            "valueBoolean" : true
           },
           {
             "url" : "declaration-of-expertise",
@@ -51,12 +51,12 @@
         },
         {
           "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
-          "valueMarkdown" : "1-0-1-0 Stück"
+          "valueMarkdown" : "1-0-2-0 Stück"
         },
         {
           "extension" : [{
             "url" : "algorithmVersion",
-            "valueString" : "1.0.1"
+            "valueString" : "1.0.0"
           },
           {
             "url" : "language",
@@ -197,6 +197,7 @@
           "profile" : ["https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-organization"]
         },
         "identifier" : [{
+          "system" : "https://gematik.de/fhir/sid/telematik-id",
           "value" : "Organisation 3-2arvtst-ap000053"
         }],
         "name" : "Stadt Apotheke",

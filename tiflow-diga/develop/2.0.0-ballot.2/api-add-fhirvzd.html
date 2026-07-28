@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>API FHIR-VZD - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
+    <title>API FHIR-VZD - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-datenschutz-und-sicherheit.html">Datenschutz und Informationssicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -168,7 +171,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -205,10 +208,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
+Implementation Guide<br /> TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -280,7 +283,7 @@ muss diese zur Laufzeit bestimmt werden. Hierfür nutzt das E-Rezept-FdV das IKN
 KTR, wodurch es dann in der Lage ist nach der Telematik-ID im FHIRVZD zu suchen.</p>
 
 <!-- A_26009 -->
-<requirement conformance="MAY" key="IG-TIFLOW-DIGA-8" title="E-Rezept-FdV: optional: Kostenträger suchen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-DIGA-A8" title="E-Rezept-FdV: optional: Kostenträger suchen" version="0">
   <meta lockversion="false" />
   <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -289,7 +292,7 @@ KTR, wodurch es dann in der Lage ist nach der Telematik-ID im FHIRVZD zu suchen.
 </requirement>
 
 <!-- A_26010  -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-DIGA-9" title="E-Rezept-FdV: Kostenträger suchen - IKNR aus ACCESS_TOKEN beziehen" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-DIGA-A9" title="E-Rezept-FdV: Kostenträger suchen - IKNR aus ACCESS_TOKEN beziehen" version="0">
   <meta lockversion="false" />
   <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -298,7 +301,7 @@ KTR, wodurch es dann in der Lage ist nach der Telematik-ID im FHIRVZD zu suchen.
 </requirement>
 
 <!-- A_26011 -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-DIGA-10" title="E-Rezept-FdV: Kostenträger suchen - Telematik-ID im Verzeichnisdienst suchen" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-DIGA-A10" title="E-Rezept-FdV: Kostenträger suchen - Telematik-ID im Verzeichnisdienst suchen" version="0">
   <meta lockversion="false" />
   <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -322,7 +325,7 @@ KTR, wodurch es dann in der Lage ist nach der Telematik-ID im FHIRVZD zu suchen.
 <p>Der Nutzer soll eine Liste aller Kostenträger, denen eine DiGA zugewiesen werden kann, zur Auswahl angezeigt bekommen.</p>
 
 <!-- Quelle: A_26012 - E-Rezept-FdV: Kostenträger Suchen - Liste verfügbarer Kostenträger ermitteln -->
-<requirement conformance="SHOULD" key="IG-TIFLOW-DIGA-11" title="E-Rezept-FdV: Kostenträger Suchen - Liste verfügbarer Kostenträger ermitteln" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-DIGA-A11" title="E-Rezept-FdV: Kostenträger Suchen - Liste verfügbarer Kostenträger ermitteln" version="0">
   <meta lockversion="false" />
   <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -386,7 +389,7 @@ und zu verarbeiten:</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:51+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:32+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-activate-op | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TIFlow-RX-OP-Activate |
+| Active as of 2026-06-30 | *Computable Name*:TIFlowRXOPActivate |
 
  
 Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der TI-Flow-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow. 
@@ -30,11 +30,11 @@ Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabepara
   "id" : "tiflow-rx-activate-op",
   "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-activate-op",
   "version" : "2.0.0-ballot.2",
-  "name" : "TIFlow-RX-OP-Activate",
+  "name" : "TIFlowRXOPActivate",
   "title" : "E-Rezept aktivieren",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -62,7 +62,14 @@ Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabepara
   "type" : false,
   "instance" : true,
   "inputProfile" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Activate-Operation-Input",
-  "outputProfile" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Activate-Operation-Output"
+  "outputProfile" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Activate-Operation-Output",
+  "parameter" : [{
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "type" : "Task"
+  }]
 }
 
 ```

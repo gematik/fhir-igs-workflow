@@ -1,8 +1,10 @@
-# Consent to store digital ChargeItem - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# Consent to store digital ChargeItem - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)

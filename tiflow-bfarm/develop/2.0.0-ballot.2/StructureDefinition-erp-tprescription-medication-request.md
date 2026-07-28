@@ -1,8 +1,10 @@
-# E-T-Rezept Medication Request - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# E-T-Rezept Medication Request - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-medication-request | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-05-26 | *Computable Name*:ERP_TPrescription_MedicationRequest |
+| Draft as of 2026-06-30 | *Computable Name*:ERP_TPrescription_MedicationRequest |
 
  
 Informationen zu einer Verordnung, die ein Arzt im E-T-Rezept angegeben hat. 
@@ -66,7 +68,7 @@ Folgende Tabelle gibt eine grobe Darstellung des Mappings für dieses Profil:
 **Usages:**
 
 * Use this Profile: [Digitaler Durchschlag T-Rezept](StructureDefinition-erp-tprescription-carbon-copy.md)
-* Examples for this Profile: [MedicationRequest/ExampleMedicationRequest-T](MedicationRequest-ExampleMedicationRequest-T.md)
+* Examples for this Profile: [MedicationRequest/ExampleMedicationRequest-T-Compounding](MedicationRequest-ExampleMedicationRequest-T-Compounding.md) and [MedicationRequest/ExampleMedicationRequest-T](MedicationRequest-ExampleMedicationRequest-T.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow.bfarm|current/StructureDefinition/StructureDefinition-erp-tprescription-medication-request.json)
 
@@ -91,7 +93,7 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-me
   "name" : "ERP_TPrescription_MedicationRequest",
   "title" : "E-T-Rezept Medication Request",
   "status" : "draft",
-  "date" : "2026-05-26",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -141,7 +143,7 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-me
   "kind" : "resource",
   "abstract" : false,
   "type" : "MedicationRequest",
-  "baseDefinition" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request",
+  "baseDefinition" : "https://gematik.de/fhir/ti/StructureDefinition/ti-medication-request-dgmp",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{

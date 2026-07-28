@@ -1,8 +1,10 @@
-# FD-Anforderungen: Consent-Query - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# FD-Anforderungen: Consent-Query - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Query API**](query-api.md)
@@ -144,7 +146,7 @@ enthalten ist und bei fehlerhafter Prüfung die Operation mit dem folgenden Fehl
 abbrechen, damit nur Löschrequests für definierte Consent Typen ausgeführt werden.
 Es bestehen anwendungsfall-spezifische Anforderungen, welche Inhalte beim Widerruf einer Einwilligung zu löschen sind. 
 
-Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Ressource löschen, bei der Consent.patient.identifier dem zeta-user-info.identifier des Nutzers (KVNR) sowie Consent.category.coding.code dem in ?category übermittelten Wert entspricht.
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Consent-Ressource löschen, bei der Consent.patient.identifier dem zeta-user-info.identifier des Nutzers (KVNR) sowie Consent.category.coding.code dem in ?category übermittelten Wert entspricht.
 ### Modulspezifische Anforderungen
 
 #### DELETE /Consent (Einwilligung widerrufen)

@@ -1,8 +1,10 @@
-# Schnittstelle zur Übertragung an das BfArM T-Register - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# Schnittstelle zur Übertragung an das BfArM T-Register - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Schnittstellen - Query API**](menu-schnittstellen-query-api.md)
@@ -23,7 +25,7 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
 
 **Abbildung: **Authentifizierung BfArM Webdienst
 
-funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst MUSS vor dem Zugriff auf den BfArM Webdienst prüfen, ob der zuletzt bezogene AccessToken noch gültig ist und im Falle der Ungültigkeit einen neuen AccessToken über den /ords/rezepte/oauth/token Endpunkt am BfArM Webdienst beziehen.
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS vor dem Zugriff auf den BfArM Webdienst prüfen, ob der zuletzt bezogene AccessToken noch gültig ist und im Falle der Ungültigkeit einen neuen AccessToken über den /ords/rezepte/oauth/token Endpunkt am BfArM Webdienst beziehen.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS zum Beziehen eines AccessTokens den Endpunkt /ords/rezepte/oauth/token am BfArM Webdienst mit folgenden Parametern aufrufen:
 

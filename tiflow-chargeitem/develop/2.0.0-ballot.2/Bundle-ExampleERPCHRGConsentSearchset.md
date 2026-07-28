@@ -1,8 +1,10 @@
-# Consent searchset response for ERP-CHRG - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# Consent searchset response for ERP-CHRG - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)

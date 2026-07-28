@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FD-Anforderungen: Consent-Query - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
+    <title>FD-Anforderungen: Consent-Query - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -196,10 +199,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Abrechnungsinformationen
+Implementation Guide<br /> TIFlow - Abrechnungsinformationen
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -277,7 +280,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Consent-Endpunkt.</p>
 
 <!-- A_22153 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-201" title="TI-Flow-Fachdienst - Consent - unzulässige Operationen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A201" title="TI-Flow-Fachdienst - Consent - unzulässige Operationen" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -296,7 +299,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="post-consent">POST /Consent</h4>
 <!-- A_22161 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-202" title="TI-Flow-Fachdienst - Consent schreiben - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A202" title="TI-Flow-Fachdienst - Consent schreiben - Rollenprüfung" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -332,7 +335,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22289 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-203" title="TI-Flow-Fachdienst - Consent schreiben - Prüfung KVNR" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A203" title="TI-Flow-Fachdienst - Consent schreiben - Prüfung KVNR" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -364,7 +367,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22351 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-204" title="TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A204" title="TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -396,7 +399,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22162-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-205" title="TI-Flow-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und Einwilligungstyp" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A205" title="TI-Flow-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und Einwilligungstyp" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -428,7 +431,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27143 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-206" title="TI-Flow-Fachdienst - Consent schreiben - Zeitstempel setzen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A206" title="TI-Flow-Fachdienst - Consent schreiben - Zeitstempel setzen" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -437,7 +440,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22350 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-207" title="TI-Flow-Fachdienst - Consent schreiben - Persistieren" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A207" title="TI-Flow-Fachdienst - Consent schreiben - Persistieren" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -446,7 +449,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27143 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-208" title="TI-Flow-Fachdienst - Consent schreiben - Persistieren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A208" title="TI-Flow-Fachdienst - Consent schreiben - Persistieren" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -456,7 +459,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="get-consent">GET /Consent</h4>
 <!-- A_22159 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-209" title="TI-Flow-Fachdienst - Consent lesen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A209" title="TI-Flow-Fachdienst - Consent lesen - Rollenprüfung" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -492,7 +495,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22160 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-210" title="TI-Flow-Fachdienst - Consent lesen - Filter KVNR" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A210" title="TI-Flow-Fachdienst - Consent lesen - Filter KVNR" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -502,7 +505,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="delete-consent">DELETE /Consent</h4>
 <!-- A_22154 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-211" title="TI-Flow-Fachdienst - Consent löschen - alles Löschen verbieten" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A211" title="TI-Flow-Fachdienst - Consent löschen - alles Löschen verbieten" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -534,7 +537,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22155 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-212" title="TI-Flow-Fachdienst - Consent löschen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A212" title="TI-Flow-Fachdienst - Consent löschen - Rollenprüfung" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -570,7 +573,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22874-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-213" title="TI-Flow-Fachdienst - Consent löschen - Prüfung category" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A213" title="TI-Flow-Fachdienst - Consent löschen - Prüfung category" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -610,12 +613,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- ToDo: A_27131 -> EU IG --></p>
 
 <!-- A_22158 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-214" title="TI-Flow-Fachdienst - Consent löschen - Ressource löschen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A214" title="TI-Flow-Fachdienst - Consent löschen - Ressource löschen" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Ressource löschen, bei der Consent.patient.identifier dem zeta-user-info.identifier des Nutzers (KVNR) sowie Consent.category.coding.code dem in ?category übermittelten Wert entspricht.
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Consent-Ressource löschen, bei der Consent.patient.identifier dem zeta-user-info.identifier des Nutzers (KVNR) sowie Consent.category.coding.code dem in ?category übermittelten Wert entspricht.
 </requirement>
 
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
@@ -623,7 +626,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="delete-consent-einwilligung-widerrufen">DELETE /Consent (Einwilligung widerrufen)</h4>
 
 <!-- A_22157 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-43" title="TI-Flow-Fachdienst - Consent löschen - Löschen der bestehenden Abrechnungsinformationen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A43" title="TI-Flow-Fachdienst - Consent löschen - Löschen der bestehenden Abrechnungsinformationen" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -672,7 +675,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:53+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:34+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

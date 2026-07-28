@@ -1,8 +1,10 @@
-# FHIR-Artefakte - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# FHIR-Artefakte - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * **FHIR-Artefakte**
@@ -20,6 +22,19 @@ Das **Capability** **Statement** beschreibt die Anforderungen und Fähigkeiten, 
 | [ ERP DiGA CapabilityStatement für den E-Rezept-Fachdienst ](CapabilityStatement-ti-flow-fachdienst-server-diga.md) | CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendungen) |
 
 **Tabelle:**Capability Statements
+
+#### Operation Definitions
+
+| | |
+| :--- | :--- |
+| [ E-Rezept abbrechen ](OperationDefinition-tiflow-diga-abort-op.md) | Diese Operation bricht den Workflow einer DiGA-Verordnung ab und löscht alle Daten, die mit dieser Aufgabe zusammenhängen. |
+| [ E-Rezept abrufen ](OperationDefinition-tiflow-diga-accept-op.md) | Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'. |
+| [ E-Rezept aktivieren ](OperationDefinition-tiflow-diga-activate-op.md) | Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der TI-Flow-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow. |
+| [ E-Rezept Abgabe vollziehen ](OperationDefinition-tiflow-diga-close-op.md) | Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed. |
+| [ E-Rezept erstellen ](OperationDefinition-tiflow-diga-create-op.md) | Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Flowtypes. |
+| [ E-Rezept zurückgeben ](OperationDefinition-tiflow-diga-reject-op.md) | Lehnt die Ausgabe einer DiGA-Verordnung ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Kostenträger zugänglich oder kann vom Patienten gelöscht werden. |
+
+**Tabelle:**Operation Definitions
 
 ### Ressourcenprofile
 

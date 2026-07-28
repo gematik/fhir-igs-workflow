@@ -7,7 +7,7 @@
   "title" : "GEM ERP PR CreateOperation Input",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -640,6 +640,7 @@
         "xpath" : "(exists(f:resource) or exists(f:part) or exists(f:*[starts-with(local-name(.), 'value')])) and not(exists(f:*[starts-with(local-name(.), 'value')])) and exists(f:resource))) and not(exists(f:*[starts-with(local-name(.), 'value')])) and exists(f:part))) and not(exists(f:part) and exists(f:resource))",
         "source" : "http://hl7.org/fhir/StructureDefinition/Parameters"
       }],
+      "mustSupport" : true,
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
@@ -1176,7 +1177,8 @@
       "path" : "Parameters.parameter",
       "sliceName" : "workflowType",
       "min" : 1,
-      "max" : "1"
+      "max" : "1",
+      "mustSupport" : true
     },
     {
       "id" : "Parameters.parameter:workflowType.name",

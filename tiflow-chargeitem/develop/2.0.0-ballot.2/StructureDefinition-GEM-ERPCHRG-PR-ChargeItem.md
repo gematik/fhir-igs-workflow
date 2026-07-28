@@ -1,8 +1,10 @@
-# GEM_ERPCHRG_PR_ChargeItem - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# GEM_ERPCHRG_PR_ChargeItem - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_ChargeItem | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:GEM_ERPCHRG_PR_ChargeItem |
+| Active as of 2026-06-30 | *Computable Name*:GEM_ERPCHRG_PR_ChargeItem |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
 **Usages:**
@@ -45,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-Charg
   "name" : "GEM_ERPCHRG_PR_ChargeItem",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -105,6 +107,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-Charg
           "type" : "value",
           "path" : "url"
         }],
+        "description" : "Extensions are always sliced by (at least) url",
         "rules" : "closed"
       }
     },
@@ -235,7 +238,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-Charg
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Bundle"]
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "ChargeItem.supportingInformation:prescriptionItemBundle.display",
@@ -252,7 +256,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-Charg
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Binary"]
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "ChargeItem.supportingInformation:dispenseItemBinary.display",
@@ -269,7 +274,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-Charg
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Bundle"]
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "ChargeItem.supportingInformation:dispenseItemBundle.display",
@@ -286,7 +292,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-Charg
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Bundle"]
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "ChargeItem.supportingInformation:receiptBundle.display",

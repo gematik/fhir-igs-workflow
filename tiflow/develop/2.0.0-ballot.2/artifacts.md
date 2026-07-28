@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * **FHIR-Artefakte**
@@ -22,6 +22,14 @@ Die folgenden Value Sets sind für die TIFlow-Funktionalitäten festgelegt.
 | [ TIFlow Order Task ValueSet ](ValueSet-tiflow-order-task-status-vs.md) | TIFlow Order Task ValueSet |
 
 **Tabelle:**Value Sets
+
+### Terminologien: Code Systems
+
+| | |
+| :--- | :--- |
+| [ TIFLOW Operation Outcome Details CS ](CodeSystem-tiflow-operation-outcome-details-cs.md) | Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können |
+
+**Tabelle:**Code Systems
 
 ### Logical Models
 
@@ -43,6 +51,7 @@ Die folgenden Value Sets sind für die TIFlow-Funktionalitäten festgelegt.
 | [ CodeSystem der Flowtypes in TIFlow Anwendungen ](CodeSystem-GEM-ERP-CS-FlowType.md) | Zeigt die verschiedenen Typen der TI Workflows entsprechend der Verordnungsformulare. WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheken wie z.B. Pharmazeutische Dienstleistungen! |
 | [ TIFLOW Operation Outcome Details CS ](CodeSystem-tiflow-operation-outcome-details-cs.md) | Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können |
 | [ Telemetry Data Status Codes Concept Map ](ConceptMap-TIFLOW-CM-TelemetryDataStatusCodes.md) | Maps operation outcome codes to the telemetry data status codes |
+| [ Validieren einer FHIR-Ressource ](OperationDefinition-tiflow-core-validate-op.md) | Diese Operation validiert eine FHIR-Ressource gegen eine konfigurierbare FHIR-Konfiguration. Sie erweitert die standardisierte FHIR $validate-Operation (http://hl7.org/fhir/OperationDefinition/Resource-validate) um einen gematik-spezifischen `fhir_config` Parameter zur Auswahl der Validierungskonfiguration. Mit dem Parameter `returnBoolean` kann wahlweise ein kompaktes boolesches Ergebnis (`true`/`false`) angefordert werden, anstelle eines vollständigen OperationOutcome. |
 | [ TaskAcceptDateSP ](SearchParameter-TaskAcceptDateSP.md) | Das Einlösedatum eines E-Rezeptes. Nach Ablaufen dieses Datums darf ein E-Rezept nicht mehr zu Lasten des Kostenträgers abgegeben werden. |
 | [ TaskExpiryDateSP ](SearchParameter-TaskExpiryDateSP.md) | Das Ablaufdatum eines E-Rezepzes. Nach ablauf dieses Datums darf ein E-Rezept nicht mehr beliefert werden. |
 | [ TI Flow AcceptDate ](StructureDefinition-GEM-ERP-EX-AcceptDate.md) | Diese Extension sollte in der Task-Ressource verwendet werden. Sie speichert das Datum, bis zu dem eine Krankenkasse die Verschreibung akzeptiert und bezahlt. |
@@ -57,15 +66,18 @@ Die folgenden Value Sets sind für die TIFlow-Funktionalitäten festgelegt.
 | [ GEM_ERP_PR_Signature ](StructureDefinition-GEM-ERP-PR-Signature.md) | Profil für die Signatur von Bundles im E-Rezept-Kontext |
 | [ TI Audit Event Rest ](StructureDefinition-audit-event-rest.md) | Das AuditEvent-Profil für die Protokollierung des Zugriffs auf einen FHIR Data Service der Telematikinfrastruktur (TI) |
 | [ TI Feature Definition ](StructureDefinition-ti-feature-definition.md) | Logical Model zur Beschreibung eines aktivierbaren Features. |
-| [ Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel ](StructureDefinition-ti-flow-feature-wf160.md) | Featurebeschreibung für die Verordnung von Apothekenpflichtigen Arzneimitteln |
-| [ Feature: WF169 - Flowtype für Apothekenpflichtige Arzneimittel mit Steuerung durch den Leistungserbringer ](StructureDefinition-ti-flow-feature-wf169.md) | Featurebeschreibung für die Verordnung von Apothekenpflichtigen Arzneimitteln mit Steuerung durch den Leistungserbringer |
+| [ TIFlow CORE Validate Operation Input ](StructureDefinition-ti-flow-core-validate-operation-input.md) | Dieses Profil definiert die Eingabeparameter für die $validate-Operation des TI-Flow-Fachdienstes. |
+| [ TIFlow CORE Validate Operation Output ](StructureDefinition-ti-flow-core-validate-operation-output.md) | Dieses Profil definiert die Ausgabeparameter für die $validate-Operation des TI-Flow-Fachdienstes. |
 | [ Generische TIFlow Communication ](StructureDefinition-tiflow-communication.md) | Generische TIFlow Workflow-Communication |
 | [ Bundle der $accept Operation ](StructureDefinition-tiflow-op-accept-bundle.md) | Antwort des TI-Flow-Fachdienst auf die $accept-Operation |
 | [ TIFlow OperationOutcome ](StructureDefinition-tiflow-operation-outcome.md) | OperationOutcome für Angabe von Fehlermeldungen vom TI-Flow-Fachdienst |
 | [ Task für TIFlow Verordnungen ](StructureDefinition-tiflow-order-task.md) | Task für die Verwaltung von Workflows der TIFlow Verordnungen |
+| [ - ](Subscription-erp-notification-avs-01-request-PostSubscriptionPseudo.md) | - |
+| [ - ](Subscription-erp-notification-avs-02-response-PostSubscriptionPseudo.md) | - |
 | [ ValueSet der Verfügbarkeitsstatus-Codes ](ValueSet-GEM-ERP-VS-AvailabilityStatus.md) | Art des Verfügbarkeitsstatus für die Verfügbarkeitsanfrage von Medikamenten |
 | [ ValueSet der Dokumenttyp-Codes ](ValueSet-GEM-ERP-VS-DocumentType.md) | Art der Dokumente je nach Empfänger. |
 | [ ValueSet der Flowtypes in TIFlow Anwendungen ](ValueSet-GEM-ERP-VS-FlowType.md) | Zeigt die verschiedenen Typen der TI Workflows entsprechend der Verordnungsformulare. |
+| [ TIFlow AuditEvent Agent Type ValueSet ](ValueSet-tiflow-audit-event-agent-type-vs.md) | AuditEvent agent type (client) |
 | [ TIFLOW Operation Outcome Details VS ](ValueSet-tiflow-operation-outcome-details-vs.md) | Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können |
 | [ TIFlow Order Task ValueSet ](ValueSet-tiflow-order-task-status-vs.md) | TIFlow Order Task ValueSet |
 
@@ -116,7 +128,7 @@ Das **Capability** **Statement** beschreibt die Anforderungen und Fähigkeiten, 
 
 Diese Sektion enthält FHIR-Artefakte, deren kanonische URL bewusst auf einem vorherigen Stand belassen wurde. Dadurch bleibt die Rückwärtskompatibilität für bestehende Implementierungen erhalten.
 
-#### Lagacy Terminologien: Code Systems
+#### Legacy Terminologien: Code Systems
 
 | | |
 | :--- | :--- |
@@ -124,9 +136,9 @@ Diese Sektion enthält FHIR-Artefakte, deren kanonische URL bewusst auf einem vo
 | [ CodeSystem der Dokumententypen ](CodeSystem-GEM-ERP-CS-DocumentType.md) | Dokumententyp abhängig vom Empfänger des Bundles. |
 | [ CodeSystem der Flowtypes in TIFlow Anwendungen ](CodeSystem-GEM-ERP-CS-FlowType.md) | Zeigt die verschiedenen Typen der TI Workflows entsprechend der Verordnungsformulare. WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheken wie z.B. Pharmazeutische Dienstleistungen! |
 
-**Tabelle:**Lagacy Code Systems
+**Tabelle:**Legacy Code Systems
 
-#### Lagacy Terminologien: Value Sets
+#### Legacy Terminologien: Value Sets
 
 | | |
 | :--- | :--- |
@@ -134,18 +146,18 @@ Diese Sektion enthält FHIR-Artefakte, deren kanonische URL bewusst auf einem vo
 | [ ValueSet der Dokumenttyp-Codes ](ValueSet-GEM-ERP-VS-DocumentType.md) | Art der Dokumente je nach Empfänger. |
 | [ ValueSet der Flowtypes in TIFlow Anwendungen ](ValueSet-GEM-ERP-VS-FlowType.md) | Zeigt die verschiedenen Typen der TI Workflows entsprechend der Verordnungsformulare. |
 
-**Tabelle:**Lagacy Value Sets
+**Tabelle:**Legacy Value Sets
 
-#### Lagacy Suchparameter
+#### Legacy Suchparameter
 
 | | |
 | :--- | :--- |
 | [ TaskAcceptDateSP ](SearchParameter-TaskAcceptDateSP.md) | Das Einlösedatum eines E-Rezeptes. Nach Ablaufen dieses Datums darf ein E-Rezept nicht mehr zu Lasten des Kostenträgers abgegeben werden. |
 | [ TaskExpiryDateSP ](SearchParameter-TaskExpiryDateSP.md) | Das Ablaufdatum eines E-Rezepzes. Nach ablauf dieses Datums darf ein E-Rezept nicht mehr beliefert werden. |
 
-**Tabelle:**Lagacy Suchparameter
+**Tabelle:**Legacy Suchparameter
 
-#### Lagacy Ressourcenprofile
+#### Legacy Ressourcenprofile
 
 | | |
 | :--- | :--- |
@@ -155,9 +167,9 @@ Diese Sektion enthält FHIR-Artefakte, deren kanonische URL bewusst auf einem vo
 | [ GEM ERP PR Device ](StructureDefinition-GEM-ERP-PR-Device.md) | Statische Informationen auf dem TI-Flow-Fachdienst |
 | [ GEM ERP PR Digest ](StructureDefinition-GEM-ERP-PR-Digest.md) | QES-Digest in Binary |
 
-**Tabelle:**Lagacy Ressourcenprofile
+**Tabelle:**Legacy Ressourcenprofile
 
-#### Lagacy Erweiterungen (Extension) Definitions
+#### Legacy Erweiterungen (Extension) Definitions
 
 | | |
 | :--- | :--- |
@@ -168,17 +180,23 @@ Diese Sektion enthält FHIR-Artefakte, deren kanonische URL bewusst auf einem vo
 
 **Tabelle:**Extension Definitions
 
-#### Lagacy Datentypen
+#### Legacy Datentypen
 
 | | |
 | :--- | :--- |
 | [ GEM_ERP_PR_Signature ](StructureDefinition-GEM-ERP-PR-Signature.md) | Profil für die Signatur von Bundles im E-Rezept-Kontext |
 
-**Tabelle:**Lagacy Datentypen
+**Tabelle:**Legacy Datentypen
 
 ### Beispielinstanzen
 
 **CapabilityStatement**
 
 * [Example CapabilityStatement Server PU - RX](CapabilityStatement-ExampleCapabilityStatementServerPU.md)
+
+**Subscription**
+
+* [erp-notification-avs-01-request-PostSubscriptionPseudo](Subscription-erp-notification-avs-01-request-PostSubscriptionPseudo.md)
+
+* [erp-notification-avs-02-response-PostSubscriptionPseudo](Subscription-erp-notification-avs-02-response-PostSubscriptionPseudo.md)
 

@@ -1,8 +1,10 @@
-# E-T-Rezept Organization - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# E-T-Rezept Organization - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-organization | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-05-26 | *Computable Name*:ERP_TPrescription_Organization |
+| Draft as of 2026-06-30 | *Computable Name*:ERP_TPrescription_Organization |
 
  
 Angaben zur Apotheke, die das T-Rezept beliefert hat. 
@@ -70,7 +72,7 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-or
   "name" : "ERP_TPrescription_Organization",
   "title" : "E-T-Rezept Organization",
   "status" : "draft",
-  "date" : "2026-05-26",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>AVS-Anforderungen: ChargeItem-Query - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
+    <title>AVS-Anforderungen: ChargeItem-Query - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -196,10 +199,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Abrechnungsinformationen
+Implementation Guide<br /> TIFlow - Abrechnungsinformationen
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -275,7 +278,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Mit diesem Anwendungsfall stellt die abgebende LEI die Abrechnungsinformation zu einem E-Rezept auf dem TI-Flow-Fachdienst ein.</p>
 
 <!--A_22708-->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-22" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - Einwilligung muss vorliegen" version="1">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-A22" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - Einwilligung muss vorliegen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -284,7 +287,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!--A_22186-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-23" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - E-Rezept auswählen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A23" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - E-Rezept auswählen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -295,7 +298,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Information, dass der Versicherte die Einwilligung zum Speichern der Abrechnungsinformationen auf dem TI-Flow-Fachdienst erteilt hat, wird im Anwendungsfall "E-Rezept abrufen" übermittelt.</p>
 
 <!--A_22188-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-24" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - PKV-Abgabedatensatz erstellen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A24" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - PKV-Abgabedatensatz erstellen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -308,7 +311,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Abgabedatensatz signieren". Für die Wahl des Signaturverfahrens (QES oder nonQES) gelten die rechtlichen Vorgaben.</p>
 
 <!--A_22189-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-25" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - ChargeItem erstellen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A25" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - ChargeItem erstellen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -319,7 +322,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].</p>
 
 <!--A_22190-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-26" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - Speicherrequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A26" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - Speicherrequest" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -341,7 +344,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu einem E-Rezept, welche die abgebende LEI zuvor auf dem TI-Flow-Fachdienst bereitgestellt hat, ändern. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.</p>
 
 <!--A_22191-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-27" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz zum Ändern auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A27" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz zum Ändern auswählen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -350,7 +353,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!--A_22193-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-28" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz erstellen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A28" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz erstellen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -363,7 +366,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Abgabedatensatz signieren".</p>
 
 <!--A_22194 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-29" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - ChargeItem erstellen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A29" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - ChargeItem erstellen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -374,7 +377,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].</p>
 
 <!--A_22195-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-30" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - Speicherrequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A30" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - Speicherrequest" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -394,7 +397,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Mit diesem Anwendungsfall kann eine abgebende LEI die Abrechnungsinformation vom TI-Flow-Fachdienst abrufen, welche durch sie zuvor bereitgestellt und noch nicht gelöscht wurde. Als Voraussetzung muss der Versicherte der abgebenden LEI einen AccessCode übermitteln, um die abgebende LEI zu berechtigen.</p>
 
 <!--A_22203-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-31" title="PS abgebende LEI: Abrechnungsinformation abrufen - Leserequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A31" title="PS abgebende LEI: Abrechnungsinformation abrufen - Leserequest" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -449,7 +452,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:53+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:34+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

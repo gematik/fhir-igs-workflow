@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - draft
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AcceptDate | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:GEM_ERP_EX_AcceptDate |
+| Active as of 2026-06-30 | *Computable Name*:GEM_ERP_EX_AcceptDate |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
 Diese Extension sollte in der Task-Ressource verwendet werden. Sie speichert das Datum, bis zu dem eine Krankenkasse die Verschreibung akzeptiert und bezahlt.
@@ -59,7 +59,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-EX-AcceptDat
   "title" : "TI Flow AcceptDate",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

@@ -8,9 +8,9 @@
   "url" : "https://gematik.de/fhir/tiflow-diga/ImplementationGuide/de.gematik.tiflow.diga",
   "version" : "2.0.0-ballot.2",
   "name" : "gemIG_TIFlow_diga",
-  "title" : "TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)",
+  "title" : "Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)",
   "status" : "draft",
-  "date" : "2026-05-25",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -41,7 +41,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.1.0"
+    "version" : "7.3.0"
   },
   {
     "id" : "hl7ext",
@@ -60,22 +60,10 @@
     "version" : "1.5.4"
   },
   {
-    "id" : "de_gematik_epa_medication",
-    "uri" : "https://gematik.de/fhir/epa-medication/ImplementationGuide/de.gematik.epa.medication",
-    "packageId" : "de.gematik.epa.medication",
-    "version" : "1.3.2"
-  },
-  {
-    "id" : "de_gematik_terminology",
-    "uri" : "https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology",
-    "packageId" : "de.gematik.terminology",
-    "version" : "1.0.9"
-  },
-  {
     "id" : "de_gematik_ti",
     "uri" : "https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti",
     "packageId" : "de.gematik.ti",
-    "version" : "1.3.1"
+    "version" : "1.4.0-ballot.1"
   },
   {
     "id" : "de_gematik_tiflow",
@@ -102,7 +90,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "ballot"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -114,6 +102,116 @@
       {
         "url" : "value",
         "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureDefinition/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "OperationOutcome/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Medication/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "MedicationRequest/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "MedicationDispense/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "CapabilityStatement/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Provenance/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/*"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -392,7 +490,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "ballot"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -404,6 +502,116 @@
       {
         "url" : "value",
         "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "StructureDefinition/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Bundle/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "OperationOutcome/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Medication/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "MedicationRequest/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "MedicationDispense/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "CapabilityStatement/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Provenance/*"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-narrative"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Task/*"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -881,18 +1089,6 @@
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
-        "reference" : "OperationDefinition/tiflow-diga-dispense-op"
-      },
-      "name" : "E-Rezept vorläufig abgeben",
-      "description" : "Die Operation $dispense ermöglicht es dem Kostenträger, eine Ausgabe für eine DiGA-Verordnung durchzuführen, ohne den Status der Aufgabe zu ändern. Diese Aktion erlaubt es einem Frontend anzuzeigen, dass eine DiGA ausgegeben wurde, bevor sie vom Kostenträger abgeschlossen wird.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      }],
-      "reference" : {
         "reference" : "OperationDefinition/tiflow-diga-reject-op"
       },
       "name" : "E-Rezept zurückgeben",
@@ -1154,18 +1350,6 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/tiflow-diga-audit-event"
-      },
-      "name" : "TIFlow DiGA AuditEvent",
-      "description" : "AuditEvent für die Protokollierung des Zugriffs auf DiGA-Verordnungen",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/ti-flow-di-ga-close-operation-input"
       },
       "name" : "TIFlow DiGA Close Operation Input",
@@ -1206,18 +1390,6 @@
       },
       "name" : "TIFlow DiGA Create Operation Output",
       "description" : "Dieses Profil definiert die Parameter für die Erstellung einer DiGA Aufgabe vom TI-Flow-Fachdienst. Dies kann für die $create-Operation verwendet werden.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ti-flow-di-ga-dispense-operation-input"
-      },
-      "name" : "TIFlow DiGA Dispense Operation Input",
-      "description" : "Dieses Profil definiert die Parameter für die Abgabe einer DiGA Verordnung vom Kostenträger an den TI-Flow-Fachdienst. Dies kann für die $dispense-Operation verwendet werden.",
       "exampleBoolean" : false
     }],
     "page" : {
@@ -1270,6 +1442,15 @@
           }],
           "nameUrl" : "menu-technische-umsetzung-verarbeitungsregeln.html",
           "title" : "Verarbeitungsregeln",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "menu-technische-umsetzung-audit-service.html"
+          }],
+          "nameUrl" : "menu-technische-umsetzung-audit-service.html",
+          "title" : "Zugriffsprotokollierung mit AuditEvent",
           "generation" : "markdown"
         }]
       },

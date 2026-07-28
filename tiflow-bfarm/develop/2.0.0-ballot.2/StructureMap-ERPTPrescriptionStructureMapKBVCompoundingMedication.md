@@ -1,8 +1,10 @@
-# E-T-Rezept Structure Map for KBV Compounding Medication - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# E-T-Rezept Structure Map for KBV Compounding Medication - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVCompoundingMedication | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-05-26 | *Computable Name*:ERPTPrescriptionStructureMapKBVCompoundingMedication |
+| Draft as of 2026-06-30 | *Computable Name*:ERPTPrescriptionStructureMapKBVCompoundingMedication |
 
  
 Mapping-Anweisungen zur Transformation von KBV Rezeptur-Medikamenten zu BfArM T-Prescription Format 
@@ -32,7 +34,7 @@ Mapping-Anweisungen zur Transformation von KBV Rezeptur-Medikamenten zu BfArM T-
   "title" : "E-T-Rezept Structure Map for KBV Compounding Medication",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-05-26",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -125,6 +127,42 @@ Mapping-Anweisungen zur Transformation von KBV Rezeptur-Medikamenten zu BfArM T-
           "documentation" : "Übernimmt den Verpackungswert für die Rezeptur"
         }],
         "documentation" : "Transformiert KBV-Verpackungs-Extension in gematik-Formulierungs-Verpackungs-Extension"
+      },
+      {
+        "name" : "copyFormulaInstructionExtensionUrl",
+        "source" : [{
+          "context" : "extVar",
+          "variable" : "extMatchVar",
+          "condition" : "url='https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_CompoundingInstruction'"
+        }],
+        "target" : [{
+          "context" : "tgtExtVar",
+          "contextType" : "variable",
+          "element" : "url",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-manufacturing-instructions-extension"
+          }]
+        }],
+        "rule" : [{
+          "name" : "copyExtensionValue",
+          "source" : [{
+            "context" : "extMatchVar",
+            "element" : "value",
+            "variable" : "extValVar"
+          }],
+          "target" : [{
+            "context" : "tgtExtVar",
+            "contextType" : "variable",
+            "element" : "value",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueId" : "extValVar"
+            }]
+          }],
+          "documentation" : "Übernimmt den Herstellungsanweisung für die Rezeptur"
+        }],
+        "documentation" : "Transformiert KBV-Herstellungsanweisung-Extension in gematik-Formulierungs-Herstellungsanweisung-Extension"
       }],
       "documentation" : "Mappt Rezeptur-spezifische Extensions von KBV- zu BfArM-Format"
     },

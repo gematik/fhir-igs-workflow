@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - draft
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_Beneficiary | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:GEM_ERP_EX_Beneficiary |
+| Active as of 2026-06-30 | *Computable Name*:GEM_ERP_EX_Beneficiary |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
 Der Begünstigte (z. B. Apotheke) der Quittung eines TIFlow Vorgangs, der erstellt wird, wenn der Workflow abgeschlossen ist.
@@ -59,7 +59,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-EX-Beneficia
   "title" : "TIFlow Beneficiary",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

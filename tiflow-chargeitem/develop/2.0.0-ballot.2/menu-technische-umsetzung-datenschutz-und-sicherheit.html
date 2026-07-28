@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Datenschutz und Sicherheit - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
+    <title>Datenschutz und Sicherheit - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -196,10 +199,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Abrechnungsinformationen
+Implementation Guide<br /> TIFlow - Abrechnungsinformationen
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -224,7 +227,7 @@ TIFlow - Abrechnungsinformationen
 
             <a href="#bottom">unten</a>
 
-          | <a href="query-api.html">nächste&gt;</a>
+          | <a href="menu-technische-umsetzung-audit-service.html">nächste&gt;</a>
 
           </span>
 
@@ -269,7 +272,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Um zu vermeiden, dass der Anbieter des TI-Flow-Fachdienstes ein Profil über alle PKV-Versicherten mit Einwilligung erhält, wird die Information über die Einwilligung in der VAU verarbeitet und verschlüsselt gespeichert. Die Nichtabstreitbarkeit der Einwilligung ist technisch sicherzustellen.</p>
 
 <!--A_22207-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-35" title="Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A35" title="Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -279,7 +282,7 @@ Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Einwilligung in die Ver
 
 <p>Für den TI-Flow-Fachdienst heißt dies:
 <!--A_22208--></p>
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-36" title="Verarbeitung von Abrechnungsinformationen nur nach Einwilligung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A36" title="Verarbeitung von Abrechnungsinformationen nur nach Einwilligung" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -288,7 +291,7 @@ Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Verarbeitung von Abrech
 </requirement>
 
 <!--A_22209-->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-37" title="Verarbeitung von Abrechnungsinformationen im TI-Flow-Fachdienst nur nach Einwilligung" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CHRG-A37" title="Verarbeitung von Abrechnungsinformationen im TI-Flow-Fachdienst nur nach Einwilligung" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -297,7 +300,7 @@ Der TI-Flow-Fachdienst DARF NICHT Abrechnungsinformationen verarbeiten, wenn kei
 </requirement>
 
 <!--A_22210-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-38" title="Nichtabstreitbarkeit der Einwilligung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A38" title="Nichtabstreitbarkeit der Einwilligung" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -306,7 +309,7 @@ Die Fachanwendung E-Rezept MUSS sicherstellen, dass die technische Umsetzung der
 </requirement>
 
 <!--A_22211-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-39" title="Löschen von Abrechnungsinformationen nach zehn Jahren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A39" title="Löschen von Abrechnungsinformationen nach zehn Jahren" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -315,7 +318,7 @@ Der TI-Flow-Fachdienst MUSS Abrechnungsinformationen zu einem E-Rezept nach zehn
 </requirement>
 
 <!--A_22212-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-40" title="Information über Möglichkeit des Speicherns der Abrechnungsinformationen nur für konkretes E-Rezept" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A40" title="Information über Möglichkeit des Speicherns der Abrechnungsinformationen nur für konkretes E-Rezept" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -324,7 +327,7 @@ Der TI-Flow-Fachdienst MUSS sicherstellen, dass abgebende Leistungserbringer die
 </requirement>
 
 <!--A_22213-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-41" title="Schutz der Abrechnungsinformationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A41" title="Schutz der Abrechnungsinformationen" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -333,7 +336,7 @@ Der TI-Flow-Fachdienst MUSS die Abrechnungsinformationen während der Verarbeitu
 </requirement>
 
 <!--A_22214-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-42" title="Protokollierung der Einwilligung bzw. des Widerrufs" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A42" title="Protokollierung der Einwilligung bzw. des Widerrufs" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -372,7 +375,7 @@ Der TI-Flow-Fachdienst MUSS die Einwilligung in das Speichern der Abrechnungsinf
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="query-api.html">nächste&gt;</a>
+                <a href="menu-technische-umsetzung-audit-service.html">nächste&gt;</a>
 
               </td>
             </tr>
@@ -382,7 +385,7 @@ Der TI-Flow-Fachdienst MUSS die Einwilligung in das Speichern der Abrechnungsinf
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:53+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:34+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

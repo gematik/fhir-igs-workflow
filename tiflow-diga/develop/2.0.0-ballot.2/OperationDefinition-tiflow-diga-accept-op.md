@@ -1,8 +1,10 @@
-# E-Rezept abrufen - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# E-Rezept abrufen - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-accept-op | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TIFlow-DIGA-OP-Accept |
+| Active as of 2026-06-30 | *Computable Name*:TIFlow-DIGA-OP-Accept |
 
  
 Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'. 
@@ -32,7 +34,7 @@ Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der
   "title" : "E-Rezept abrufen",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -67,6 +69,13 @@ Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der
     "max" : "1",
     "documentation" : "Der Secret-Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen.",
     "type" : "string"
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "type" : "Bundle"
   }]
 }
 

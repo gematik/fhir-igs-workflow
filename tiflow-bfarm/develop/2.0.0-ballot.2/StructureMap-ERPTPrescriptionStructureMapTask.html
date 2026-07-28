@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>E-T-Rezept Structure Map for Task - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
+    <title>E-T-Rezept Structure Map for Task - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -161,11 +161,8 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -186,6 +183,9 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -202,10 +202,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Datenaustausch BfArM Webdienst
+Implementation Guide<br /> TIFlow - Datenaustausch BfArM Webdienst
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -314,7 +314,7 @@ TIFlow - Datenaustausch BfArM Webdienst
         
           Draft
           
-            as of 2026-05-26
+            as of 2026-06-30
           
         
       </td>
@@ -356,8 +356,9 @@ TIFlow - Datenaustausch BfArM Webdienst
 
 <span style="color: navy">// </span><span style="color: green">Mapping Anweisungen für GEM_Task</span>
 <b>group </b>ERPTPrescriptionStructureMapTask<span style="color: navy">(</span><b>source</b> <span style="color: maroon">task</span><span style="color: navy"> : </span>task, <b>target</b> <span style="color: maroon">tgtIdentifier</span><span style="color: navy"> : </span>tgtIdentifier<span style="color: navy">)</span><span style="color: navy"> {
-</span>  task.identifier<b> as </b><span style="color: maroon">srcTaskIdentifier</span><b> where </b>$this.system='https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId'<b> then</b><span style="color: navy"> {
-</span>    srcTaskIdentifier.value<b> as </b><span style="color: maroon">srcTaskIdentifierValue</span><b> log </b>tgtIdentifier<span style="color: navy"><b> -&gt; </b></span> tgtIdentifier.system = <span style="color: blue">'https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId'</span><span style="color: navy">, </span> tgtIdentifier.value = <span style="color: maroon">srcTaskIdentifierValue</span> <i>&quot;prescriptionIdValue&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Mappt die E-Rezept-ID aus dem Task in den Identifier</span>
+</span>  task.identifier<b> as </b><span style="color: maroon">srcTaskIdentifier</span><b> where </b><span style="color: navy">(</span>$this.system='https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    <span style="color: navy">// </span><span style="color: green">Mappt die E-Rezept-ID aus dem Task in den Identifier</span>
+    srcTaskIdentifier.value<b> as </b><span style="color: maroon">srcTaskIdentifierValue</span><b> log </b><span style="color: navy">(</span>tgtIdentifier<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span> tgtIdentifier.system = <span style="color: blue">'https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId'</span><span style="color: navy">, </span> tgtIdentifier.value = <span style="color: maroon">srcTaskIdentifierValue</span> <i>&quot;prescriptionIdValue&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;prescriptionId&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
@@ -408,7 +409,7 @@ TIFlow - Datenaustausch BfArM Webdienst
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:48+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:29+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

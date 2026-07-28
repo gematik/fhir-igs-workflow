@@ -1,21 +1,16 @@
-# Beispiel für Accept-Operation Fehlerantwort - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# Beispiel für Accept-Operation Fehlerantwort - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
 * **Beispiel für Accept-Operation Fehlerantwort**
 
 ## Example OperationOutcome: Beispiel für Accept-Operation Fehlerantwort
-
-### Issues
-
-| | | | |
-| :--- | :--- | :--- | :--- |
-| - | **Severity** | **Code** | **Details** |
-| * | Error | Edit Version Conflict | Task has invalid status draft |
 
 
 

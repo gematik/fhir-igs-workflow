@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Medication Dispense DiGA, Name and PZN - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
+    <title>Medication Dispense DiGA, Name and PZN - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"8.45"}
-    h3,h4,h5,h6{--heading-prefix:"8.45"}</style>
+    <style type="text/css">h2{--heading-prefix:"8.42"}
+    h3,h4,h5,h6{--heading-prefix:"8.42"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-datenschutz-und-sicherheit.html">Datenschutz und Informationssicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -168,7 +171,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -205,10 +208,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
+Implementation Guide<br /> TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -304,7 +307,7 @@ TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><a name="Example-MedicationDispense-DiGA-Name-And-PZN"> </a><a name="hcExample-MedicationDispense-DiGA-Name-And-PZN"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.html">GEM ERP PR MedicationDispense DiGA</a></p></div><p><b>GEM ERP EX RedeemCode</b>: DE12345678901234</p><p><b>identifier</b>: <code>https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId</code>/162.000.033.491.280.78</p><p><b>status</b>: Completed</p><p><b>medication</b>: Gematico Diabetestherapie (Identifier: <code>http://fhir.de/CodeSystem/ifa/pzn</code>/12345678)</p><p><b>subject</b>: Identifier: NamingSystemKVID/X123456789</p><h3>Performers</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Actor</b></td></tr><tr><td style="display: none">*</td><td>Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/8-SMC-B-Testkarte-883110000095957</td></tr></table><p><b>whenHandedOver</b>: 2028-10-01</p></div>
+  <div data-fhir="generated"><p class="res-header-id"/><a name="Example-MedicationDispense-DiGA-Name-And-PZN"> </a><a name="hcExample-MedicationDispense-DiGA-Name-And-PZN"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.html">GEM ERP PR MedicationDispense DiGA</a></p></div><p><b>GEM ERP EX RedeemCode</b>: DE12345678901234</p><p><b>identifier</b>: <code>https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId</code>/162.000.033.491.280.78</p><p><b>status</b>: Completed</p><p><b>medication</b>: Gematico Diabetestherapie (Identifier: <code>http://fhir.de/CodeSystem/ifa/pzn</code>/12345678)</p><p><b>subject</b>: Identifier: NamingSystemKVID/X123456789</p><h3>Performers</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Actor</b></td></tr><tr><td style="display: none">*</td><td>Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/8-SMC-B-Testkarte-883110000095957</td></tr></table><p><b>whenHandedOver</b>: 2028-10-01</p></div>
 
   
 
@@ -351,7 +354,7 @@ TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:51+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:32+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Query API**](menu-schnittstellen-query-api.md)
@@ -89,4 +89,17 @@ funkt. Eignung: HerstellererklärungDer TI-Flow-Fachdienst, das E-Rezept-FdV und
   * Beschreibung: Übermittlung des Lieferstatus
 * Nachrichtentyp (communicationType): paymentInfo
   * Beschreibung: Übermittlung eines Hinweises zum zu zahlenden Betrags
+
+funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation POST auf den Endpunkt /Communication, falls die Ressource dem GEM_ERP_PR_Communication_Reply-Profil entspricht, den Inhalt der contentString-Eigenschaft auf valides JSON sowie gegen die Struktur in "Tabelle: Nachricht als Apotheke an einen Versicherten schicken" überprüfen und bei negativem Prüfergebnis, die Operation mit dem folgenden Fehler:
+
+* HTTP-Code: Severity
+  * 400 - Bad Request: error
+* HTTP-Code: Code
+  * 400 - Bad Request: invalid
+* HTTP-Code: Details Code
+  * 400 - Bad Request: SVC_VALIDATION_FAILED
+* HTTP-Code: Details Text
+  * 400 - Bad Request: FHIR Profile Validation Failed
+
+abbrechen sowie mit einer aussagekräftigen Fehlermeldung in Form einer eingebetteten OperationOutcome-Ressource antworten.
 

@@ -1,8 +1,10 @@
-# E-T-Rezept Structure Map for MedicationDispense - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# E-T-Rezept Structure Map for MedicationDispense - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedicationDispense | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-05-26 | *Computable Name*:ERPTPrescriptionStructureMapMedicationDispense |
+| Draft as of 2026-06-30 | *Computable Name*:ERPTPrescriptionStructureMapMedicationDispense |
 
  
 Mapping-Anweisungen zur Transformation von gematik ERP MedicationDispense zu BfArM T-Prescription MedicationDispense 
@@ -32,7 +34,7 @@ Mapping-Anweisungen zur Transformation von gematik ERP MedicationDispense zu BfA
   "title" : "E-T-Rezept Structure Map for MedicationDispense",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-05-26",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

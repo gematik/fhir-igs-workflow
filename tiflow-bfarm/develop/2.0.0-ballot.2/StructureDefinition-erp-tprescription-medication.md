@@ -1,8 +1,10 @@
-# E-T-Rezept Medication - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# E-T-Rezept Medication - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-medication | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-05-26 | *Computable Name*:ERP_TPrescription_Medication |
+| Draft as of 2026-06-30 | *Computable Name*:ERP_TPrescription_Medication |
 
  
 Medikationsprofil, welches Informationen zum verordneten oder abgegebenen Arzneimittel enthält. 
@@ -168,7 +170,7 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-me
   "name" : "ERP_TPrescription_Medication",
   "title" : "E-T-Rezept Medication",
   "status" : "draft",
-  "date" : "2026-05-26",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -213,7 +215,7 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-me
   "kind" : "resource",
   "abstract" : false,
   "type" : "Medication",
-  "baseDefinition" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication",
+  "baseDefinition" : "https://gematik.de/fhir/ti/StructureDefinition/ti-medication-dgmp",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -240,7 +242,8 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-me
       "id" : "Medication.contained",
       "path" : "Medication.contained",
       "short" : "Enthaltene Medikationen",
-      "comment" : "Im Falle einer Rezeptur oder Kombipackung sind die Bestandteile der Rezeptur, bzw. Kombipackung hier als Medications gelistet."
+      "comment" : "Im Falle einer Rezeptur oder Kombipackung sind die Bestandteile der Rezeptur, bzw. Kombipackung hier als Medications gelistet.",
+      "mustSupport" : true
     },
     {
       "id" : "Medication.extension:rxPrescriptionProcessIdentifier",
@@ -258,12 +261,6 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-me
       "id" : "Medication.extension:drugCategory",
       "path" : "Medication.extension",
       "sliceName" : "drugCategory",
-      "max" : "0"
-    },
-    {
-      "id" : "Medication.extension:manufacturingInstructions",
-      "path" : "Medication.extension",
-      "sliceName" : "manufacturingInstructions",
       "max" : "0"
     },
     {

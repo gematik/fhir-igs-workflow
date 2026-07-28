@@ -25,9 +25,9 @@
   fhir:Resource.id [ fhir:value "9361863d-fec0-4ba9-8776-7905cf1b0cfa"] ;
   fhir:Resource.meta [
      fhir:Meta.profile [
-       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AuditEvent|2.0" ;
+       fhir:value "https://gematik.de/fhir/tiflow/StructureDefinition/audit-event-rest" ;
        fhir:index 0 ;
-       fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AuditEvent|2.0>
+       fhir:link <https://gematik.de/fhir/tiflow/StructureDefinition/audit-event-rest>
      ] ;
      fhir:Meta.tag [
        fhir:index 0 ;
@@ -56,9 +56,9 @@
      fhir:AuditEvent.agent.type [
        fhir:CodeableConcept.coding [
          fhir:index 0 ;
-         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/extra-security-role-type" ] ;
-         fhir:Coding.code [ fhir:value "humanuser" ] ;
-         fhir:Coding.display [ fhir:value "Human User" ]
+         fhir:Coding.system [ fhir:value "http://dicom.nema.org/resources/ontology/DCM|01" ] ;
+         fhir:Coding.code [ fhir:value "110150" ] ;
+         fhir:Coding.display [ fhir:value "Application" ]
        ]
      ] ;
      fhir:AuditEvent.agent.who [
@@ -80,15 +80,27 @@
   fhir:AuditEvent.entity [
      fhir:index 0 ;
      fhir:AuditEvent.entity.what [
-       fhir:link <https://erp.app.ti-dienste.de/Task/160.123.456.789.123.58> ;
-       fhir:Reference.reference [ fhir:value "https://erp.app.ti-dienste.de/Task/160.123.456.789.123.58" ] ;
+       fhir:Reference.identifier [
+         fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+         fhir:Identifier.value [ fhir:value "X234567890" ]
+       ]
+     ] ;
+     fhir:AuditEvent.entity.type [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/audit-entity-type" ] ;
+       fhir:Coding.code [ fhir:value "Patient" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:AuditEvent.entity.what [
        fhir:Reference.identifier [
          fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
          fhir:Identifier.value [ fhir:value "160.123.456.789.123.58" ]
        ]
      ] ;
-     fhir:AuditEvent.entity.name [ fhir:value "X234567890" ] ;
-     fhir:AuditEvent.entity.description [ fhir:value "160.123.456.789.123.58" ]
+     fhir:AuditEvent.entity.type [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/audit-entity-type" ] ;
+       fhir:Coding.code [ fhir:value "Task" ]
+     ]
   ] .
 
 # - ontology header ------------------------------------------------------------

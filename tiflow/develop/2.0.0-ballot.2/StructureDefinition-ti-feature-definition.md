@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - draft
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/StructureDefinition/ti-feature-definition | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-06-26 | *Computable Name*:TIFeatureDefinition |
+| Draft as of 2026-07-28 | *Computable Name*:TIFeatureDefinition |
 | **Copyright/Legal**: gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -23,7 +23,7 @@ Logical Model zur Beschreibung eines aktivierbaren Features.
 
 **Usages:**
 
-* Derived from this Logical Model: [Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel](StructureDefinition-ti-flow-feature-wf160.md) and [Feature: WF169 - Flowtype für Apothekenpflichtige Arzneimittel mit Steuerung durch den Leistungserbringer](StructureDefinition-ti-flow-feature-wf169.md)
+* This Logical Model is not used by any profiles in this Specification
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/de.gematik.tiflow|current/StructureDefinition/StructureDefinition-ti-feature-definition.json)
 
@@ -48,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-feature-definitio
   "name" : "TIFeatureDefinition",
   "title" : "TI Feature Definition",
   "status" : "draft",
-  "date" : "2026-06-26T09:04:41+00:00",
+  "date" : "2026-07-28T10:25:52+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -415,31 +415,6 @@ Maps operation outcome codes to the telemetry data status codes
     }]
   },
   {
-    "source" : "https://gematik.de/fhir/erp/CodeSystem/tiflow-xborder-operation-outcome-details-cs",
-    "target" : "ti-flow-telemetriedaten-statuscodes",
-    "element" : [{
-      "code" : "TIFLOW_XBORDER_COUNTRY_CODE_INVALID",
-      "target" : [{
-        "code" : "79244",
-        "equivalence" : "equivalent"
-      }]
-    },
-    {
-      "code" : "TIFLOW_XBORDER_NOT_ACTIVATED",
-      "target" : [{
-        "code" : "79245",
-        "equivalence" : "equivalent"
-      }]
-    },
-    {
-      "code" : "TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND",
-      "target" : [{
-        "code" : "79246",
-        "equivalence" : "equivalent"
-      }]
-    }]
-  },
-  {
     "source" : "https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs",
     "target" : "ti-flow-telemetriedaten-statuscodes",
     "element" : [{
@@ -495,6 +470,27 @@ Maps operation outcome codes to the telemetry data status codes
       "code" : "TIFLOW_EREZEPT_PZN_INVALID",
       "target" : [{
         "code" : "79254",
+        "equivalence" : "equivalent"
+      }]
+    },
+    {
+      "code" : "TIFLOW_EREZEPT_COUNTRY_CODE_INVALID",
+      "target" : [{
+        "code" : "79244",
+        "equivalence" : "equivalent"
+      }]
+    },
+    {
+      "code" : "TIFLOW_EREZEPT_NOT_ACTIVATED",
+      "target" : [{
+        "code" : "79245",
+        "equivalence" : "equivalent"
+      }]
+    },
+    {
+      "code" : "TIFLOW_EREZEPT_NO_PRESCRIPTIONS_FOUND",
+      "target" : [{
+        "code" : "79246",
         "equivalence" : "equivalent"
       }]
     }]

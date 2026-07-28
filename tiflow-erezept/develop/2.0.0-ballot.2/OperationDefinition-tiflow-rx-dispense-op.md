@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-dispense-op | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TIFlow-RX-OP-Dispense |
+| Active as of 2026-06-30 | *Computable Name*:TIFlowRXOPDispense |
 
  
 Die Operation $dispense ermöglicht es der Apotheke, eine Ausgabe für ein Medikament durchzuführen, ohne den Status der Aufgabe zu ändern. Diese Aktion erlaubt es einem Frontend anzuzeigen, dass ein Medikament ausgegeben wurde, bevor es von der Apotheke abgeschlossen wird. 
@@ -30,11 +30,11 @@ Die Operation $dispense ermöglicht es der Apotheke, eine Ausgabe für ein Medik
   "id" : "tiflow-rx-dispense-op",
   "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-dispense-op",
   "version" : "2.0.0-ballot.2",
-  "name" : "TIFlow-RX-OP-Dispense",
+  "name" : "TIFlowRXOPDispense",
   "title" : "E-Rezept vorläufig abgeben",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

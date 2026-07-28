@@ -1,91 +1,60 @@
 {
   "codeSystems" : [{
-    "url" : "http://hl7.org/fhir/ValueSet/audit-entity-type",
-    "version" : "4.0.1",
-    "status" : "draft",
-    "name" : "AuditEventEntityType",
-    "title" : "Audit event entity type",
-    "description" : "Code for the entity type involved in the audit event.",
-    "systems" : ["http://terminology.hl7.org/CodeSystem/audit-entity-type",
-    "http://hl7.org/fhir/resource-types"],
-    "oids" : ["2.16.840.1.113883.4.642.3.458"],
-    "sources" : ["2.16.840.1.113883.4.642.3.458"],
+    "url" : "http://fhir.de/ValueSet/identifier-type-de-basis",
+    "version" : "1.5.4",
+    "status" : "active",
+    "name" : "IdentifierTypeDeBasisVS",
+    "title" : "Identifier Type DeBasis ValueSet",
+    "description" : "ValueSet zur Codierung des Identifier-Typs",
+    "systems" : ["http://fhir.de/CodeSystem/identifier-type-de-basis",
+    "http://terminology.hl7.org/CodeSystem/v2-0203"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent"
+    "StructureDefinition-GEM-ERPEU-PR-Practitioner.html" : "Practitioner Information Received from the EU",
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions",
+    "StructureDefinition-GEM-ERPEU-PR-Organization.html" : "Organization Information Received from the EU"
   },
   {
-    "url" : "http://hl7.org/fhir/ValueSet/audit-event-action",
-    "version" : "4.0.1",
-    "status" : "draft",
-    "name" : "AuditEventAction",
-    "title" : "AuditEventAction",
-    "description" : "Indicator for type of action performed during the event that generated the event.",
-    "systems" : ["http://hl7.org/fhir/audit-event-action"],
-    "oids" : ["2.16.840.1.113883.4.642.3.452"],
-    "sources" : ["2.16.840.1.113883.4.642.3.452"],
-    "uses" : {
-    },
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent"
-  },
-  {
-    "url" : "http://hl7.org/fhir/ValueSet/audit-event-outcome",
-    "version" : "4.0.1",
-    "status" : "draft",
-    "name" : "AuditEventOutcome",
-    "title" : "AuditEventOutcome",
-    "description" : "Indicates whether the event succeeded or failed.",
-    "systems" : ["http://hl7.org/fhir/audit-event-outcome"],
-    "oids" : ["2.16.840.1.113883.4.642.3.454"],
-    "sources" : ["2.16.840.1.113883.4.642.3.454"],
-    "uses" : {
-    },
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent"
-  },
-  {
-    "url" : "http://hl7.org/fhir/ValueSet/audit-event-sub-type",
+    "url" : "http://hl7.org/fhir/ValueSet/address-type",
     "version" : "4.0.1",
     "status" : "active",
-    "name" : "AuditEventSub-Type",
-    "title" : "Audit Event Sub-Type",
-    "description" : "More detailed code concerning the type of the audit event - defined by DICOM with some FHIR specific additions.",
-    "systems" : ["http://dicom.nema.org/resources/ontology/DCM",
-    "http://hl7.org/fhir/restful-interaction"],
-    "oids" : ["2.16.840.1.113883.4.642.3.464"],
-    "sources" : ["2.16.840.1.113883.4.642.3.464"],
+    "name" : "AddressType",
+    "title" : "AddressType",
+    "description" : "The type of an address (physical / postal).",
+    "systems" : ["http://hl7.org/fhir/address-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.69"],
+    "sources" : ["2.16.840.1.113883.4.642.3.69"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent"
+    "StructureDefinition-GEM-ERPEU-PR-Organization.html" : "Organization Information Received from the EU"
   },
   {
-    "url" : "http://hl7.org/fhir/ValueSet/audit-event-type",
+    "url" : "http://hl7.org/fhir/ValueSet/address-use",
     "version" : "4.0.1",
     "status" : "active",
-    "name" : "AuditEventID",
-    "title" : "Audit Event ID",
-    "description" : "Event Types for Audit Events - defined by DICOM with some FHIR specific additions.",
-    "systems" : ["http://terminology.hl7.org/CodeSystem/audit-event-type",
-    "http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle",
-    "http://dicom.nema.org/resources/ontology/DCM"],
-    "oids" : ["2.16.840.1.113883.4.642.3.462"],
-    "sources" : ["2.16.840.1.113883.4.642.3.462"],
+    "name" : "AddressUse",
+    "title" : "AddressUse",
+    "description" : "The use of an address.",
+    "systems" : ["http://hl7.org/fhir/address-use"],
+    "oids" : ["2.16.840.1.113883.4.642.3.67"],
+    "sources" : ["2.16.840.1.113883.4.642.3.67"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent"
+    "StructureDefinition-GEM-ERPEU-PR-Organization.html" : "Organization Information Received from the EU"
   },
   {
-    "url" : "http://hl7.org/fhir/ValueSet/audit-source-type",
+    "url" : "http://hl7.org/fhir/ValueSet/administrative-gender",
     "version" : "4.0.1",
     "status" : "active",
-    "name" : "AuditEventSourceType",
-    "title" : "Audit Event Source Type",
-    "description" : "The type of process where the audit event originated from.",
-    "systems" : ["http://terminology.hl7.org/CodeSystem/security-source-type"],
-    "oids" : ["2.16.840.1.113883.4.642.3.466"],
-    "sources" : ["2.16.840.1.113883.4.642.3.466"],
+    "name" : "AdministrativeGender",
+    "title" : "AdministrativeGender",
+    "description" : "The gender of a person used for administrative purposes.",
+    "systems" : ["http://hl7.org/fhir/administrative-gender"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent"
+    "StructureDefinition-GEM-ERPEU-PR-Practitioner.html" : "Practitioner Information Received from the EU"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/bundle-type",
@@ -102,6 +71,20 @@
     "StructureDefinition-GEM-ERP-PR-Bundle-OP-Accept.html" : "GEM ERP PR Bundle OP Accept"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/c80-practice-codes",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "PracticeSettingCodeValueSet",
+    "title" : "Practice Setting Code Value Set",
+    "description" : "This is the code representing the clinical specialty of the clinician or provider who interacted with, treated, or provided a service to/for the patient. The value set used for clinical specialty has been limited by HITSP to the value set reproduced from HITSP C80 Table 2-149 Clinical Specialty Value Set Definition.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.3.88.12.80.72"],
+    "sources" : ["2.16.840.1.113883.3.88.12.80.72"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-PractitionerRole.html" : "PractitionerRole Information Received from the EU"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/clinical-findings",
     "version" : "4.0.1",
     "status" : "draft",
@@ -113,9 +96,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.232"],
     "uses" : {
     },
+    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply",
     "StructureDefinition-GEM-ERP-PR-Communication-DispReq.html" : "GEM ERP PR Communication DispReq",
-    "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication",
-    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply"
+    "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/common-tags",
@@ -130,13 +113,17 @@
     "uses" : {
     },
     "StructureDefinition-GEM-ERP-PR-Bundle-OP-Accept.html" : "GEM ERP PR Bundle OP Accept",
-    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication",
-    "StructureDefinition-GEM-ERP-PR-Task.html" : "Task für E-Rezept",
+    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply",
+    "StructureDefinition-GEM-ERPEU-PR-PractitionerRole.html" : "PractitionerRole Information Received from the EU",
+    "StructureDefinition-GEM-ERPEU-PR-Practitioner.html" : "Practitioner Information Received from the EU",
     "StructureDefinition-GEM-ERP-PR-Communication-DispReq.html" : "GEM ERP PR Communication DispReq",
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent",
     "StructureDefinition-GEM-ERP-PR-MedicationDispense.html" : "GEM ERP PR MedicationDispense",
     "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication",
-    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply"
+    "StructureDefinition-GEM-ERPEU-PR-MedicationDispense.html" : "Dispensation of the Prescription from the EU",
+    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication",
+    "StructureDefinition-GEM-ERPEU-PR-Organization.html" : "Organization Information Received from the EU",
+    "StructureDefinition-GEM-ERP-PR-Task.html" : "Task für E-Rezept",
+    "StructureDefinition-GEM-ERPEU-PR-Medication.html" : "EU-Medication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/communication-category",
@@ -150,9 +137,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.172"],
     "uses" : {
     },
+    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply",
     "StructureDefinition-GEM-ERP-PR-Communication-DispReq.html" : "GEM ERP PR Communication DispReq",
-    "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication",
-    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply"
+    "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/communication-not-done-reason",
@@ -166,9 +153,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.174"],
     "uses" : {
     },
+    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply",
     "StructureDefinition-GEM-ERP-PR-Communication-DispReq.html" : "GEM ERP PR Communication DispReq",
-    "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication",
-    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply"
+    "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/communication-topic",
@@ -182,23 +169,166 @@
     "sources" : ["2.16.840.1.113883.4.642.3.983"],
     "uses" : {
     },
+    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply",
     "StructureDefinition-GEM-ERP-PR-Communication-DispReq.html" : "GEM ERP PR Communication DispReq",
-    "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication",
-    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply"
+    "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication"
   },
   {
-    "url" : "http://hl7.org/fhir/ValueSet/dicm-405-mediatype",
+    "url" : "http://hl7.org/fhir/ValueSet/consent-action",
     "version" : "4.0.1",
-    "status" : "active",
-    "name" : "MediaTypeCode",
-    "title" : "Media Type Code",
-    "description" : "Media Type Code",
-    "systems" : ["http://dicom.nema.org/resources/ontology/DCM"],
-    "oids" : ["1.2.840.10008.6.​1.​908"],
-    "sources" : ["1.2.840.10008.6.​1.​908"],
+    "status" : "draft",
+    "name" : "ConsentActionCodes",
+    "title" : "Consent Action Codes",
+    "description" : "This value set includes sample Consent Action codes.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/consentaction"],
+    "oids" : ["2.16.840.1.113883.4.642.3.753"],
+    "sources" : ["2.16.840.1.113883.4.642.3.753"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent"
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/consent-content-class",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ConsentContentClass",
+    "title" : "Consent Content Class",
+    "description" : "This value set includes the FHIR resource types, along with some other important content class codes",
+    "systems" : ["urn:ietf:rfc:3986",
+    "urn:ietf:bcp:13",
+    "http://hl7.org/fhir/resource-types",
+    "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem"],
+    "oids" : ["2.16.840.1.113883.4.642.3.747"],
+    "sources" : ["2.16.840.1.113883.4.642.3.747"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/consent-content-code",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ConsentContentCodes",
+    "title" : "Consent Content Codes",
+    "description" : "This example value set contains all LOINC code",
+    "systems" : ["http://loinc.org"],
+    "oids" : ["2.16.840.1.113883.4.642.3.748"],
+    "sources" : ["2.16.840.1.113883.4.642.3.748"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/consent-data-meaning",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ConsentDataMeaning",
+    "title" : "ConsentDataMeaning",
+    "description" : "How a resource reference is interpreted when testing consent restrictions.",
+    "systems" : ["http://hl7.org/fhir/consent-data-meaning"],
+    "oids" : ["2.16.840.1.113883.4.642.3.759"],
+    "sources" : ["2.16.840.1.113883.4.642.3.759"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/consent-provision-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ConsentProvisionType",
+    "title" : "ConsentProvisionType",
+    "description" : "How a rule statement is applied, such as adding additional consent or removing consent.",
+    "systems" : ["http://hl7.org/fhir/consent-provision-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.757"],
+    "sources" : ["2.16.840.1.113883.4.642.3.757"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/consent-scope",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ConsentScopeCodes",
+    "title" : "Consent Scope Codes",
+    "description" : "This value set includes the four Consent scope codes.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/consentscope"],
+    "oids" : ["2.16.840.1.113883.4.642.3.761"],
+    "sources" : ["2.16.840.1.113883.4.642.3.761"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/consent-state-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ConsentState",
+    "title" : "ConsentState",
+    "description" : "Indicates the state of the consent.",
+    "systems" : ["http://hl7.org/fhir/consent-state-codes"],
+    "oids" : ["2.16.840.1.113883.4.642.3.755"],
+    "sources" : ["2.16.840.1.113883.4.642.3.755"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/contact-point-system",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "ContactPointSystem",
+    "title" : "ContactPointSystem",
+    "description" : "Telecommunications form for contact point.",
+    "systems" : ["http://hl7.org/fhir/contact-point-system"],
+    "oids" : ["2.16.840.1.113883.4.642.3.71"],
+    "sources" : ["2.16.840.1.113883.4.642.3.71"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-PractitionerRole.html" : "PractitionerRole Information Received from the EU"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/contact-point-use",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "ContactPointUse",
+    "title" : "ContactPointUse",
+    "description" : "Use of contact point.",
+    "systems" : ["http://hl7.org/fhir/contact-point-use"],
+    "oids" : ["2.16.840.1.113883.4.642.3.73"],
+    "sources" : ["2.16.840.1.113883.4.642.3.73"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-PractitionerRole.html" : "PractitionerRole Information Received from the EU"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/contactentity-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ContactEntityType",
+    "title" : "Contact entity type",
+    "description" : "This example value set defines a set of codes that can be used to indicate the purpose for which you would contact a contact party.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/contactentity-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.416"],
+    "sources" : ["2.16.840.1.113883.4.642.3.416"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-Organization.html" : "Organization Information Received from the EU"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/days-of-week",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "DaysOfWeek",
+    "title" : "DaysOfWeek",
+    "description" : "The days of the week.",
+    "systems" : ["http://hl7.org/fhir/days-of-week"],
+    "oids" : ["2.16.840.1.113883.4.642.3.512"],
+    "sources" : ["2.16.840.1.113883.4.642.3.512"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-PractitionerRole.html" : "PractitionerRole Information Received from the EU"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/event-status",
@@ -212,9 +342,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.109"],
     "uses" : {
     },
+    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply",
     "StructureDefinition-GEM-ERP-PR-Communication-DispReq.html" : "GEM ERP PR Communication DispReq",
-    "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication",
-    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply"
+    "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/http-verb",
@@ -231,6 +361,59 @@
     "StructureDefinition-GEM-ERP-PR-Bundle-OP-Accept.html" : "GEM ERP PR Bundle OP Accept"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/identifier-type",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "Identifier Type Codes",
+    "title" : "IdentifierType",
+    "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0203"],
+    "oids" : ["2.16.840.1.113883.4.642.3.45"],
+    "sources" : ["2.16.840.1.113883.4.642.3.45"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-AccessCode.html" : "Identifier Profile for EU AccessCode",
+    "StructureDefinition-GEM-ERPEU-EX-MedicinalPackageIdentifier.html" : "GEM_ERPEU_EX_MedicinalPackageIdentifier",
+    "StructureDefinition-GEM-ERPEU-PR-PractitionerRole.html" : "PractitionerRole Information Received from the EU",
+    "StructureDefinition-GEM-ERPEU-PR-Practitioner.html" : "Practitioner Information Received from the EU",
+    "StructureDefinition-GEM-ERPEU-PR-Organization.html" : "Organization Information Received from the EU"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/identifier-use",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "IdentifierUse",
+    "title" : "IdentifierUse",
+    "description" : "Identifies the purpose for this identifier, if known .",
+    "systems" : ["http://hl7.org/fhir/identifier-use"],
+    "oids" : ["2.16.840.1.113883.4.642.3.57"],
+    "sources" : ["2.16.840.1.113883.4.642.3.57"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-AccessCode.html" : "Identifier Profile for EU AccessCode",
+    "StructureDefinition-GEM-ERPEU-EX-MedicinalPackageIdentifier.html" : "GEM_ERPEU_EX_MedicinalPackageIdentifier",
+    "StructureDefinition-GEM-ERPEU-PR-PractitionerRole.html" : "PractitionerRole Information Received from the EU",
+    "StructureDefinition-GEM-ERPEU-PR-Practitioner.html" : "Practitioner Information Received from the EU",
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions",
+    "StructureDefinition-GEM-ERPEU-PR-Organization.html" : "Organization Information Received from the EU"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/iso3166-1-2",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "Iso3166-1-2",
+    "title" : "Iso 3166 Part 1: 2 Letter Codes",
+    "description" : "This value set defines the ISO 3166 Part 1 2-letter codes",
+    "systems" : ["urn:iso:std:iso:3166"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-Organization.html" : "Organization Information Received from the EU",
+    "StructureDefinition-GEM-ERPEU-PR-PAR-AccessAuthorization-Response.html" : "GEM ERPEU PR PAR Access Authorization Response",
+    "StructureDefinition-GEM-ERPEU-PR-PAR-Close-Operation-Input.html" : "GEM ERP PR EU CloseOperation Input",
+    "StructureDefinition-GEM-ERPEU-PR-PAR-AccessAuthorization-Request.html" : "GEM ERPEU PR PAR Access Authorization Request",
+    "StructureDefinition-GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input.html" : "GEM ERPEU PR PAR GET Prescription Input"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/languages",
     "version" : "4.0.1",
     "status" : "draft",
@@ -242,22 +425,33 @@
     "sources" : ["2.16.840.1.113883.4.642.3.20"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-PAR-Create-Operation-Input.html" : "GEM ERP PR CreateOperation Input",
     "StructureDefinition-GEM-ERP-PR-Bundle-OP-Accept.html" : "GEM ERP PR Bundle OP Accept",
-    "StructureDefinition-GEM-ERP-PR-PAR-Create-Operation-Output.html" : "GEM ERP PR CreateOperation Output",
-    "StructureDefinition-GEM-ERP-PR-PAR-Dispense-Operation-Input.html" : "GEM ERP PR DispenseOperation Input",
-    "StructureDefinition-GEM-ERP-PR-Communication-DispReq.html" : "GEM ERP PR Communication DispReq",
     "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply",
-    "StructureDefinition-GEM-ERP-PR-PAR-Activate-Operation-Output.html" : "GEM ERP PR ActivateOperation Output",
-    "StructureDefinition-GEM-ERP-PR-PAR-Accept-Operation-Output.html" : "GEM ERP PR AcceptOperation Output",
-    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication",
+    "StructureDefinition-GEM-ERPEU-PR-PractitionerRole.html" : "PractitionerRole Information Received from the EU",
     "StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Output.html" : "GEM ERP PR CloseOperation Output",
-    "StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.html" : "GEM ERP PR CloseOperation Input",
     "StructureDefinition-GEM-ERP-PR-PAR-Activate-Operation-Input.html" : "GEM ERP PR ActivateOperation Input",
+    "StructureDefinition-GEM-ERP-PR-PAR-Accept-Operation-Output.html" : "GEM ERP PR AcceptOperation Output",
+    "StructureDefinition-GEM-ERPEU-PR-PAR-AccessAuthorization-Request.html" : "GEM ERPEU PR PAR Access Authorization Request",
+    "StructureDefinition-gem-erpeu-pr-par-get-prescription-output.html" : "GEM ERPEU PR PAR GET Prescription Output",
+    "StructureDefinition-GEM-ERP-PR-Communication-DispReq.html" : "GEM ERP PR Communication DispReq",
+    "StructureDefinition-GEM-ERPEU-PR-MedicationDispense.html" : "Dispensation of the Prescription from the EU",
+    "StructureDefinition-GEM-ERPEU-PR-Organization.html" : "Organization Information Received from the EU",
     "StructureDefinition-GEM-ERP-PR-Task.html" : "Task für E-Rezept",
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent",
+    "StructureDefinition-GEM-ERP-PR-PAR-Dispense-Operation-Input.html" : "GEM ERP PR DispenseOperation Input",
+    "StructureDefinition-GEM-ERPEU-PR-Medication.html" : "EU-Medication",
+    "StructureDefinition-GEM-ERPEU-PR-PAR-AccessAuthorization-Response.html" : "GEM ERPEU PR PAR Access Authorization Response",
+    "StructureDefinition-GEM-ERPEU-PR-PAR-Close-Operation-Input.html" : "GEM ERP PR EU CloseOperation Input",
+    "StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.html" : "GEM ERP PR CloseOperation Input",
+    "StructureDefinition-GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input.html" : "GEM ERPEU PR PAR GET Prescription Input",
+    "StructureDefinition-GEM-ERPEU-PR-PAR-PATCH-Task-Input.html" : "GEM ERPEU PR PAR PATCH Task Input",
+    "StructureDefinition-GEM-ERP-PR-PAR-Create-Operation-Input.html" : "GEM ERP PR CreateOperation Input",
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions",
+    "StructureDefinition-GEM-ERP-PR-PAR-Create-Operation-Output.html" : "GEM ERP PR CreateOperation Output",
+    "StructureDefinition-GEM-ERP-PR-PAR-Activate-Operation-Output.html" : "GEM ERP PR ActivateOperation Output",
+    "StructureDefinition-GEM-ERPEU-PR-Practitioner.html" : "Practitioner Information Received from the EU",
     "StructureDefinition-GEM-ERP-PR-MedicationDispense.html" : "GEM ERP PR MedicationDispense",
-    "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication"
+    "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication",
+    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/medication-codes",
@@ -271,7 +465,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.375"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication"
+    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication",
+    "StructureDefinition-GEM-ERPEU-PR-Medication.html" : "EU-Medication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/medication-form-codes",
@@ -285,7 +480,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.374"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication"
+    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication",
+    "StructureDefinition-GEM-ERPEU-PR-Medication.html" : "EU-Medication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/medication-status",
@@ -299,7 +495,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.376"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication"
+    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication",
+    "StructureDefinition-GEM-ERPEU-PR-Medication.html" : "EU-Medication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/medicationdispense-performer-function",
@@ -313,7 +510,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.1318"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-MedicationDispense.html" : "GEM ERP PR MedicationDispense"
+    "StructureDefinition-GEM-ERP-PR-MedicationDispense.html" : "GEM ERP PR MedicationDispense",
+    "StructureDefinition-GEM-ERPEU-PR-MedicationDispense.html" : "Dispensation of the Prescription from the EU"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/medicationdispense-status-reason",
@@ -327,68 +525,51 @@
     "sources" : ["2.16.840.1.113883.4.642.3.1316"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-MedicationDispense.html" : "GEM ERP PR MedicationDispense"
+    "StructureDefinition-GEM-ERP-PR-MedicationDispense.html" : "GEM ERP PR MedicationDispense",
+    "StructureDefinition-GEM-ERPEU-PR-MedicationDispense.html" : "Dispensation of the Prescription from the EU"
   },
   {
-    "url" : "http://hl7.org/fhir/ValueSet/network-type",
+    "url" : "http://hl7.org/fhir/ValueSet/mimetypes",
     "version" : "4.0.1",
-    "status" : "draft",
-    "name" : "AuditEventAgentNetworkType",
-    "title" : "AuditEventAgentNetworkType",
-    "description" : "The type of network access point of this agent in the audit event.",
-    "systems" : ["http://hl7.org/fhir/network-type"],
-    "oids" : ["2.16.840.1.113883.4.642.3.456"],
-    "sources" : ["2.16.840.1.113883.4.642.3.456"],
+    "status" : "active",
+    "name" : "Mime Types",
+    "title" : "MimeType",
+    "description" : "This value set includes all possible codes from BCP-13 (http://tools.ietf.org/html/bcp13)",
+    "systems" : ["urn:ietf:bcp:13"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1024"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1024"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent"
+    "StructureDefinition-GEM-ERPEU-PR-Practitioner.html" : "Practitioner Information Received from the EU"
   },
   {
-    "url" : "http://hl7.org/fhir/ValueSet/object-lifecycle-events",
+    "url" : "http://hl7.org/fhir/ValueSet/name-use",
     "version" : "4.0.1",
-    "status" : "draft",
-    "name" : "ObjectLifecycleEvents",
-    "title" : null,
-    "description" : "This example FHIR value set is comprised of lifecycle event codes. The FHIR Actor value set is based on    DICOM Audit Message, ParticipantObjectDataLifeCycle;   ISO Standard, TS 21089-2017;",
-    "systems" : ["http://terminology.hl7.org/CodeSystem/dicom-audit-lifecycle",
-    "http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle"],
+    "status" : "active",
+    "name" : "NameUse",
+    "title" : "NameUse",
+    "description" : "The use of a human name.",
+    "systems" : ["http://hl7.org/fhir/name-use"],
+    "oids" : ["2.16.840.1.113883.4.642.3.65"],
+    "sources" : ["2.16.840.1.113883.4.642.3.65"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent"
+    "StructureDefinition-GEM-ERPEU-PR-Practitioner.html" : "Practitioner Information Received from the EU",
+    "StructureDefinition-GEM-ERPEU-PR-Organization.html" : "Organization Information Received from the EU"
   },
   {
-    "url" : "http://hl7.org/fhir/ValueSet/object-role",
+    "url" : "http://hl7.org/fhir/ValueSet/organization-type",
     "version" : "4.0.1",
     "status" : "draft",
-    "name" : "AuditEventEntityRole",
-    "title" : "AuditEventEntityRole",
-    "description" : "Code representing the role the entity played in the audit event.",
-    "systems" : ["http://terminology.hl7.org/CodeSystem/object-role"],
-    "oids" : ["2.16.840.1.113883.4.642.3.460"],
-    "sources" : ["2.16.840.1.113883.4.642.3.460"],
+    "name" : "OrganizationType",
+    "title" : "Organization type",
+    "description" : "This example value set defines a set of codes that can be used to indicate a type of organization.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/organization-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.414"],
+    "sources" : ["2.16.840.1.113883.4.642.3.414"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent"
-  },
-  {
-    "url" : "http://hl7.org/fhir/ValueSet/participation-role-type",
-    "version" : "4.0.1",
-    "status" : "draft",
-    "name" : "ParticipationRoleType",
-    "title" : "ParticipationRoleType",
-    "description" : "This FHIR value set is comprised of Actor participation Type codes, which can be used to value FHIR agents, actors, and other role         elements. The FHIR Actor participation type value set is based on    DICOM Audit Message, C402;   ASTM Standard, E1762-95 [2013]; selected codes and          derived actor roles from HL7 RoleClass OID 2.16.840.1.113883.5.110;    HL7 Role Code 2.16.840.1.113883.5.111, including AgentRoleType;          HL7 ParticipationType OID: 2.16.840.1.113883.5.90; and    HL7 ParticipationFunction codes OID: 2.16.840.1.113883.5.88.           This value set includes, by reference, role codes from external code systems: NUCC Health Care Provider Taxonomy OID: 2.16.840.1.113883.6.101;          North American Industry Classification System [NAICS]OID: 2.16.840.1.113883.6.85; IndustryClassificationSystem 2.16.840.1.113883.1.11.16039;          and US Census Occupation Code OID: 2.16.840.1.113883.6.243 for relevant recipient or custodian codes not included in this value set.            If no source is indicated in the definition comments, then these are example FHIR codes.",
-    "systems" : ["http://terminology.hl7.org/CodeSystem/extra-security-role-type",
-    "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-    "http://terminology.hl7.org/CodeSystem/v3-RoleClass",
-    "http://terminology.hl7.org/CodeSystem/v3-ParticipationFunction",
-    "http://terminology.hl7.org/CodeSystem/contractsignertypecodes",
-    "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-    "http://dicom.nema.org/resources/ontology/DCM"],
-    "oids" : ["2.16.840.1.113883.4.642.3.54"],
-    "sources" : ["2.16.840.1.113883.4.642.3.54"],
-    "uses" : {
-    },
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent"
+    "StructureDefinition-GEM-ERPEU-PR-Organization.html" : "Organization Information Received from the EU"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/performer-role",
@@ -405,6 +586,21 @@
     "StructureDefinition-GEM-ERP-PR-Task.html" : "Task für E-Rezept"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/practitioner-role",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "PractitionerRole",
+    "title" : "Practitioner role",
+    "description" : "This example value set defines a set of codes that can be used to indicate the role of a Practitioner.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/practitioner-role",
+    "http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.439"],
+    "sources" : ["2.16.840.1.113883.4.642.3.439"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-PractitionerRole.html" : "PractitionerRole Information Received from the EU"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/quantity-comparator",
     "version" : "4.0.1",
     "status" : "active",
@@ -416,7 +612,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.59"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication"
+    "StructureDefinition-GEM-ERPEU-PR-MedicationDispense.html" : "Dispensation of the Prescription from the EU",
+    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication",
+    "StructureDefinition-GEM-ERPEU-PR-Medication.html" : "EU-Medication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/request-priority",
@@ -430,10 +628,10 @@
     "sources" : ["2.16.840.1.113883.4.642.3.115"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-Task.html" : "Task für E-Rezept",
+    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply",
     "StructureDefinition-GEM-ERP-PR-Communication-DispReq.html" : "GEM ERP PR Communication DispReq",
     "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication",
-    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply"
+    "StructureDefinition-GEM-ERP-PR-Task.html" : "Task für E-Rezept"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/resource-types",
@@ -447,13 +645,18 @@
     "sources" : ["2.16.840.1.113883.4.642.3.27"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication",
-    "StructureDefinition-GEM-ERP-PR-Task.html" : "Task für E-Rezept",
+    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply",
+    "StructureDefinition-GEM-ERPEU-PR-PractitionerRole.html" : "PractitionerRole Information Received from the EU",
+    "StructureDefinition-GEM-ERPEU-PR-Practitioner.html" : "Practitioner Information Received from the EU",
     "StructureDefinition-GEM-ERP-PR-Communication-DispReq.html" : "GEM ERP PR Communication DispReq",
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent",
     "StructureDefinition-GEM-ERP-PR-MedicationDispense.html" : "GEM ERP PR MedicationDispense",
     "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication",
-    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply"
+    "StructureDefinition-GEM-ERPEU-PR-MedicationDispense.html" : "Dispensation of the Prescription from the EU",
+    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication",
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions",
+    "StructureDefinition-GEM-ERPEU-PR-Organization.html" : "Organization Information Received from the EU",
+    "StructureDefinition-GEM-ERP-PR-Task.html" : "Task für E-Rezept",
+    "StructureDefinition-GEM-ERPEU-PR-Medication.html" : "EU-Medication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/search-entry-mode",
@@ -486,13 +689,18 @@
     "uses" : {
     },
     "StructureDefinition-GEM-ERP-PR-Bundle-OP-Accept.html" : "GEM ERP PR Bundle OP Accept",
-    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication",
-    "StructureDefinition-GEM-ERP-PR-Task.html" : "Task für E-Rezept",
+    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply",
+    "StructureDefinition-GEM-ERPEU-PR-PractitionerRole.html" : "PractitionerRole Information Received from the EU",
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions",
+    "StructureDefinition-GEM-ERPEU-PR-Practitioner.html" : "Practitioner Information Received from the EU",
     "StructureDefinition-GEM-ERP-PR-Communication-DispReq.html" : "GEM ERP PR Communication DispReq",
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent",
     "StructureDefinition-GEM-ERP-PR-MedicationDispense.html" : "GEM ERP PR MedicationDispense",
     "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication",
-    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply"
+    "StructureDefinition-GEM-ERPEU-PR-MedicationDispense.html" : "Dispensation of the Prescription from the EU",
+    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication",
+    "StructureDefinition-GEM-ERPEU-PR-Organization.html" : "Organization Information Received from the EU",
+    "StructureDefinition-GEM-ERP-PR-Task.html" : "Task für E-Rezept",
+    "StructureDefinition-GEM-ERPEU-PR-Medication.html" : "EU-Medication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/security-role-type",
@@ -512,7 +720,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.978"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent"
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/task-code",
@@ -555,7 +763,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.912"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication"
+    "StructureDefinition-GEM-ERP-PR-Medication.html" : "GEM ERP PR Medication",
+    "StructureDefinition-GEM-ERPEU-PR-Medication.html" : "EU-Medication"
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType",
@@ -569,7 +778,8 @@
     "sources" : ["2.16.840.1.113883.1.11.16208"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-MedicationDispense.html" : "GEM ERP PR MedicationDispense"
+    "StructureDefinition-GEM-ERP-PR-MedicationDispense.html" : "GEM ERP PR MedicationDispense",
+    "StructureDefinition-GEM-ERPEU-PR-MedicationDispense.html" : "Dispensation of the Prescription from the EU"
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode",
@@ -583,7 +793,8 @@
     "sources" : ["2.16.840.1.113883.1.11.16621"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-MedicationDispense.html" : "GEM ERP PR MedicationDispense"
+    "StructureDefinition-GEM-ERP-PR-MedicationDispense.html" : "GEM ERP PR MedicationDispense",
+    "StructureDefinition-GEM-ERPEU-PR-MedicationDispense.html" : "Dispensation of the Prescription from the EU"
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/v3-ParticipationMode",
@@ -597,9 +808,9 @@
     "sources" : ["2.16.840.1.113883.1.11.16543"],
     "uses" : {
     },
+    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply",
     "StructureDefinition-GEM-ERP-PR-Communication-DispReq.html" : "GEM ERP PR Communication DispReq",
-    "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication",
-    "StructureDefinition-GEM-ERP-PR-Communication-Reply.html" : "GEM ERP PR Communication Reply"
+    "StructureDefinition-GEM-ERP-PR-Communication.html" : "GEM ERP PR Communication"
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/v3-PurposeOfUse",
@@ -613,7 +824,7 @@
     "sources" : ["2.16.840.1.113883.1.11.20448"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-AuditEvent.html" : "GEM ERP PR AuditEvent"
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions"
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason",
@@ -627,7 +838,8 @@
     "sources" : ["2.16.840.1.113883.1.11.19377"],
     "uses" : {
     },
-    "StructureDefinition-GEM-ERP-PR-MedicationDispense.html" : "GEM ERP PR MedicationDispense"
+    "StructureDefinition-GEM-ERP-PR-MedicationDispense.html" : "GEM ERP PR MedicationDispense",
+    "StructureDefinition-GEM-ERPEU-PR-MedicationDispense.html" : "Dispensation of the Prescription from the EU"
   },
   {
     "url" : "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_VS_DocumentType",
@@ -665,6 +877,42 @@
     "uses" : {
     },
     "StructureDefinition-GEM-ERP-PR-PAR-Create-Operation-Input.html" : "GEM ERP PR CreateOperation Input"
+  },
+  {
+    "url" : "https://gematik.de/fhir/tiflow-erezept/ValueSet/GEM-ERPEU-VS-Consent-PolicyRule",
+    "version" : "2.0.0-ballot.2",
+    "status" : "draft",
+    "name" : "GEM_ERPEU_VS_Consent_PolicyRule",
+    "title" : "ValueSet of Consent PolyRule Codes",
+    "description" : "Type of Policy Rules for Consents of the ePrescription.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions"
+  },
+  {
+    "url" : "https://gematik.de/fhir/tiflow-erezept/ValueSet/GEM-ERPEU-VS-ConsentType",
+    "version" : "2.0.0-ballot.2",
+    "status" : "draft",
+    "name" : "GEM_ERPEU_VS_ConsentType",
+    "title" : "ValueSet of Consent Codes",
+    "description" : "Type of Consents for the ePrescription.",
+    "systems" : ["https://gematik.de/fhir/tiflow-erezept/CodeSystem/GEM-ERPEU-CS-ConsentType"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-Consent.html" : "Consent for ePrescriptions"
+  },
+  {
+    "url" : "https://gematik.de/fhir/tiflow-erezept/ValueSet/GEM-ERPEU-VS-RequestType",
+    "version" : "2.0.0-ballot.2",
+    "status" : "draft",
+    "name" : "GEM_ERPEU_VS_RequestType",
+    "title" : "ValueSet of NCPeH Request Types",
+    "description" : "Type of Request from NCPeH",
+    "systems" : ["https://gematik.de/fhir/tiflow-erezept/CodeSystem/GEM-ERPEU-CS-RequestType"],
+    "uses" : {
+    },
+    "StructureDefinition-GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input.html" : "GEM ERPEU PR PAR GET Prescription Input"
   },
   {
     "url" : "https://gematik.de/fhir/tiflow-erezept/ValueSet/tiflow-erezept-operation-outcome-details-vs",

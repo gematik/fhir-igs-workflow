@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Anforderungen an den TI-Flow-Fachdienst für die $reject-Operation - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
+    <title>Anforderungen an den TI-Flow-Fachdienst für die $reject-Operation - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-datenschutz-und-sicherheit.html">Datenschutz und Informationssicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -168,7 +171,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -205,10 +208,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
+Implementation Guide<br /> TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -288,7 +291,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.</p>
 
 <!-- A_19171-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-39" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Secret" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A39" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Secret" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -320,7 +323,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19171-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-40" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Status" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A40" title="TI-Flow-Fachdienst - Task zurückweisen - Prüfung Status" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -352,7 +355,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19172-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-41" title="TI-Flow-Fachdienst - Task zurückweisen - Secret löschen und Status setzen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A41" title="TI-Flow-Fachdienst - Task zurückweisen - Secret löschen und Status setzen" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -361,7 +364,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_24175 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-42" title="TI-Flow-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A42" title="TI-Flow-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -370,7 +373,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_28128 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-43" title="TI-Flow-Fachdienst - Task zurückweisen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A43" title="TI-Flow-Fachdienst - Task zurückweisen - Push Notification Versicherter" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -381,7 +384,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="modulspezifische-anforderungen">Modulspezifische Anforderungen</h3>
 
 <!-- A_19170-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-1" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A1" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung" version="0">
   <meta lockversion="false" />
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -456,7 +459,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:51+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:32+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

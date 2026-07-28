@@ -1,8 +1,10 @@
-# FHIR-Artefakte - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# FHIR-Artefakte - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * **FHIR-Artefakte**
@@ -63,6 +65,8 @@ StructureMaps sind strukturierte Dokumente, die maschinenlesbare Möglichkeit bi
 
 * [Beispiel BfArM Medication (Verordnung) - Pomalidomid](Medication-ExampleMedication1-Pomalidomid-T.md)
 
+* [Beispiel BfArM Medication (Verordnung) - Rezeptur](Medication-ExampleMedication1-Thalidomid-T-Compounding.md)
+
 * [Beispiel BfArM Medication (Abgabe) - Pomalidomid](Medication-ExampleMedication2-Pomalidomid-T.md)
 
 **MedicationDispense**
@@ -70,6 +74,8 @@ StructureMaps sind strukturierte Dokumente, die maschinenlesbare Möglichkeit bi
 * [Beispiel BfArM MedicationDispense](MedicationDispense-ExampleMedicationDispense-T.md)
 
 **MedicationRequest**
+
+* [Beispiel BfArM MedicationRequest](MedicationRequest-ExampleMedicationRequest-T-Compounding.md)
 
 * [Beispiel BfArM MedicationRequest](MedicationRequest-ExampleMedicationRequest-T.md)
 

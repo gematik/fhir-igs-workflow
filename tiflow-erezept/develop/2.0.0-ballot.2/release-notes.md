@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * **Release Notes**
@@ -159,12 +159,77 @@ Neue Anforderungen wurden hinzugefügt, bestehende geändert und nicht mehr ben�
 | ** NEU ** | [ IG-TIFLOW-ERP-A220 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_Compounding |
 | ** NEU ** | [ IG-TIFLOW-ERP-A221 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Längenprüfung PZN |
 | ** NEU ** | [ IG-TIFLOW-ERP-A222 ](./menu-technische-umsetzung-audit-service.md) | TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll |
+| ** NEU ** | [ IG-TIFLOW-ERP-A223 ](./query-api-communication-req-data.md) | TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload GEM_ERP_PR_Communication_Reply |
+| ** NEU ** | [ IG-TIFLOW-ERP-A224 ](./menu-technische-umsetzung-konzept.md) | Format Zugriffscode |
+| ** NEU ** | [ IG-TIFLOW-ERP-A225 ](./menu-technische-umsetzung-konzept.md) | TI-Flow-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder |
+| ** NEU ** | [ IG-TIFLOW-ERP-A226 ](./menu-technische-umsetzung-konzept.md) | TI-Flow-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder |
+| ** NEU ** | [ IG-TIFLOW-ERP-A227 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Rollenprüfung |
+| ** NEU ** | [ IG-TIFLOW-ERP-A228 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Schemaprüfung |
+| ** NEU ** | [ IG-TIFLOW-ERP-A229 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR |
 | ** NEU ** | [ IG-TIFLOW-ERP-A23 ](./op-close-req-fd.md) | TI-Flow-Fachdienst - Task schließen - T-Rezept Daten an BfArM Webdienst bereitstellen |
+| ** NEU ** | [ IG-TIFLOW-ERP-A230 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung |
+| ** NEU ** | [ IG-TIFLOW-ERP-A231 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Filter einlösbarer E-Rezepte |
+| ** NEU ** | [ IG-TIFLOW-ERP-A232 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage der aktuellsten Verordnungsinformationen |
+| ** NEU ** | [ IG-TIFLOW-ERP-A233 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage aller einlösbaren Verordnungsinformationen |
+| ** NEU ** | [ IG-TIFLOW-ERP-A234 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids |
+| ** NEU ** | [ IG-TIFLOW-ERP-A235 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Schema des Response |
+| ** NEU ** | [ IG-TIFLOW-ERP-A236 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen |
+| ** NEU ** | [ IG-TIFLOW-ERP-A237 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen |
+| ** NEU ** | [ IG-TIFLOW-ERP-A238 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids |
+| ** NEU ** | [ IG-TIFLOW-ERP-A239 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Statuswechsel Task |
 | ** NEU ** | [ IG-TIFLOW-ERP-A24 ](./query-api-communication-req-fdv.md) | E-Rezept-FdV: Anfrage Belieferung - Flowtype 162 / 169 / 209 - Anfrage nicht zulässig |
+| ** NEU ** | [ IG-TIFLOW-ERP-A240 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Secret |
+| ** NEU ** | [ IG-TIFLOW-ERP-A241 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner |
+| ** NEU ** | [ IG-TIFLOW-ERP-A242 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen - Push Notification Versicherter |
+| ** NEU ** | [ IG-TIFLOW-ERP-A243 ](./op-get-eu-prescriptions-req-fd.md) | TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Push Notification Versicherter |
+| ** NEU ** | [ IG-TIFLOW-ERP-A244 ](./query-api-task-req-fd.md) | TI-Flow-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters |
+| ** NEU ** | [ IG-TIFLOW-ERP-A245 ](./query-api-task-req-fd.md) | TI-Flow-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte |
+| ** NEU ** | [ IG-TIFLOW-ERP-A246 ](./query-api-task-req-fd.md) | TI-Flow-Fachdienst -Task markieren -Versicherter - Änderung Markierung Task Ressource |
+| ** NEU ** | [ IG-TIFLOW-ERP-A247 ](./menu-technische-umsetzung-anwendungsfaelle.md) | E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle |
+| ** NEU ** | [ IG-TIFLOW-ERP-A248 ](./menu-technische-umsetzung-anwendungsfaelle.md) | E-Rezept-FdV: Zugriffsberechtigung anzeigen |
+| ** NEU ** | [ IG-TIFLOW-ERP-A249 ](./query-api-task-req-fdv.md) | E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren |
 | ** NEU ** | [ IG-TIFLOW-ERP-A25 ](./query-api-communication-req-fdv.md) | E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig |
+| ** NEU ** | [ IG-TIFLOW-ERP-A250 ](./query-api-task-req-fdv.md) | E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren - Hinweis Belieferungsmöglichkeit |
+| ** NEU ** | [ IG-TIFLOW-ERP-A251 ](./query-api-task-req-fdv.md) | E-Rezept-FdV: optional: E-Rezept markieren |
+| ** NEU ** | [ IG-TIFLOW-ERP-A252 ](./query-api-task-req-fdv.md) | E-Rezept-FdV: E-Rezept markieren - E-Rezepte auswählen |
+| ** NEU ** | [ IG-TIFLOW-ERP-A253 ](./query-api-task-req-fdv.md) | E-Rezept-FdV: E-Rezept markieren |
+| ** NEU ** | [ IG-TIFLOW-ERP-A254 ](./query-api-task-req-fdv.md) | E-Rezept-FdV: E-Rezept markieren - FHIR Ressource erstellen |
+| ** NEU ** | [ IG-TIFLOW-ERP-A255 ](./query-api-task-req-fdv.md) | E-Rezept-FdV: E-Rezept markieren - Speicherrequest |
+| ** NEU ** | [ IG-TIFLOW-ERP-A256 ](./query-api-consent-req-fd.md) | TI-Flow-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung |
+| ** NEU ** | [ IG-TIFLOW-ERP-A257 ](./op-revoke-eu-access-permission-req-fdv.md) | E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest |
+| ** NEU ** | [ IG-TIFLOW-ERP-A258 ](./op-revoke-eu-access-permission-req-fdv.md) | E-Rezept-FdV: Zugriffsberechtigung löschen - lokale Zugriffsberechtigung löschen |
+| ** NEU ** | [ IG-TIFLOW-ERP-A259 ](./op-read-eu-access-permission-req-fd.md) | TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung |
 | ** NEU ** | [ IG-TIFLOW-ERP-A26 ](./query-api-communication-req-fdv.md) | E-Rezept-FdV: E-Rezept zuweisen- Flowtype 166 - Zuweisen als Versand nicht zulässig |
+| ** NEU ** | [ IG-TIFLOW-ERP-A260 ](./op-read-eu-access-permission-req-fd.md) | TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Response |
+| ** NEU ** | [ IG-TIFLOW-ERP-A261 ](./op-eu-close-req-fd.md) | TI-Flow-Fachdienst - Task schließen - EU - Rollenprüfung |
+| ** NEU ** | [ IG-TIFLOW-ERP-A262 ](./op-eu-close-req-fd.md) | TI-Flow-Fachdienst - Task schließen - EU - Schemaprüfung |
+| ** NEU ** | [ IG-TIFLOW-ERP-A263 ](./op-eu-close-req-fd.md) | TI-Flow-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR |
+| ** NEU ** | [ IG-TIFLOW-ERP-A264 ](./op-eu-close-req-fd.md) | TI-Flow-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung |
+| ** NEU ** | [ IG-TIFLOW-ERP-A265 ](./op-eu-close-req-fd.md) | TI-Flow-Fachdienst - Task schließen - EU - Statusprüfung |
+| ** NEU ** | [ IG-TIFLOW-ERP-A266 ](./op-eu-close-req-fd.md) | TI-Flow-Fachdienst - Task schließen - EU - Zeitstempel MedicationDispense |
+| ** NEU ** | [ IG-TIFLOW-ERP-A267 ](./op-eu-close-req-fd.md) | TI-Flow-Fachdienst - Task schließen - EU - Status beenden |
+| ** NEU ** | [ IG-TIFLOW-ERP-A268 ](./op-eu-close-req-fd.md) | TI-Flow-Fachdienst - Task schließen - EU - Push Notification Versicherter |
+| ** NEU ** | [ IG-TIFLOW-ERP-A269 ](./op-read-eu-access-permission-req-fdv.md) | E-Rezept-FdV: Zugriffsberechtigung abrufen - Abfragerequest |
 | ** NEU ** | [ IG-TIFLOW-ERP-A27 ](./query-api-communication-req-fdv.md) | E-Rezept-FdV: E-Rezept zuweisen - Beginn Gültigkeit prüfen |
+| ** NEU ** | [ IG-TIFLOW-ERP-A270 ](./index.md) | E-Rezept: Anwendung des Features 'EU Zugriff E-Rezept' für Einlösen von E-Rezepten im EU Ausland |
+| ** NEU ** | [ IG-TIFLOW-ERP-A271 ](./index.md) | E-Rezept: Umsetzung des Features 'EU Zugriff E-Rezept' |
+| ** NEU ** | [ IG-TIFLOW-ERP-A272 ](./menu-technische-umsetzung-audit-service.md) | TI-Flow-Fachdienst - Versichertenprotokoll zu EU-Operationen |
+| ** NEU ** | [ IG-TIFLOW-ERP-A273 ](./op-grant-eu-access-permission-req-fdv.md) | E-Rezept-FdV: Zugriffsberechtigung - Liste zulässiger Länder |
+| ** NEU ** | [ IG-TIFLOW-ERP-A274 ](./op-grant-eu-access-permission-req-fdv.md) | E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder |
+| ** NEU ** | [ IG-TIFLOW-ERP-A275 ](./op-grant-eu-access-permission-req-fdv.md) | E-Rezept-FdV: Zugriffsberechtigung - Land auswählen |
+| ** NEU ** | [ IG-TIFLOW-ERP-A276 ](./op-grant-eu-access-permission-req-fdv.md) | E-Rezept-FdV: Zugriffsberechtigung - Zugriffscode erzeugen |
+| ** NEU ** | [ IG-TIFLOW-ERP-A277 ](./op-grant-eu-access-permission-req-fdv.md) | E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am TI-Flow-Fachdienst speichern |
+| ** NEU ** | [ IG-TIFLOW-ERP-A278 ](./op-revoke-eu-access-permission-req-fd.md) | TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung |
+| ** NEU ** | [ IG-TIFLOW-ERP-A279 ](./op-revoke-eu-access-permission-req-fd.md) | TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Löschen |
 | ** NEU ** | [ IG-TIFLOW-ERP-A28 ](./query-api-communication-req-fdv.md) | E-Rezept-FdV: E-Rezept zuweisen - Textnachricht ohne Link |
+| ** NEU ** | [ IG-TIFLOW-ERP-A280 ](./op-grant-eu-access-permission-req-fd.md) | TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung |
+| ** NEU ** | [ IG-TIFLOW-ERP-A281 ](./op-grant-eu-access-permission-req-fd.md) | TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR |
+| ** NEU ** | [ IG-TIFLOW-ERP-A282 ](./op-grant-eu-access-permission-req-fd.md) | TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode |
+| ** NEU ** | [ IG-TIFLOW-ERP-A283 ](./op-grant-eu-access-permission-req-fd.md) | TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode |
+| ** NEU ** | [ IG-TIFLOW-ERP-A284 ](./op-grant-eu-access-permission-req-fd.md) | TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender Zugriffsberechtigung |
+| ** NEU ** | [ IG-TIFLOW-ERP-A285 ](./op-grant-eu-access-permission-req-fd.md) | TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung speichern |
+| ** NEU ** | [ IG-TIFLOW-ERP-A286 ](./op-grant-eu-access-permission-req-fd.md) | TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Response |
+| ** NEU ** | [ IG-TIFLOW-ERP-A287 ](./op-grant-eu-access-permission-req-fd.md) | TI-Flow-Fachdienst - Zugriffsberechtigung - periodische Bereinigung |
 | ** NEU ** | [ IG-TIFLOW-ERP-A3 ](./menu-technische-umsetzung-abgabedatensatz.md) | PS abgebende LEI: Abgabedatensatz signieren - Gültigkeit SMC-B prüfen |
 | ** NEU ** | [ IG-TIFLOW-ERP-A30 ](./query-api-communication-req-fdv.md) | E-Rezept-FdV: E-Rezept zuweisen - Zuweisen - Payload |
 | ** NEU ** | [ IG-TIFLOW-ERP-A31 ](./query-api-communication-req-fdv.md) | E-Rezept-FdV: E-Rezept zuweisen - Auf Nachricht antworten - Payload |

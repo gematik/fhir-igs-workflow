@@ -1,35 +1,16 @@
-# Medication Dispense DiGA, Name and PZN - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# Medication Dispense DiGA, Name and PZN - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
 * **Medication Dispense DiGA, Name and PZN**
 
 ## Example MedicationDispense: Medication Dispense DiGA, Name and PZN
-
-Profile: [GEM ERP PR MedicationDispense DiGA](StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.md)
-
-**GEM ERP EX RedeemCode**: DE12345678901234
-
-**identifier**: `https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId`/162.000.033.491.280.78
-
-**status**: Completed
-
-**medication**: Gematico Diabetestherapie (Identifier: `http://fhir.de/CodeSystem/ifa/pzn`/12345678)
-
-**subject**: Identifier: NamingSystemKVID/X123456789
-
-### Performers
-
-| | |
-| :--- | :--- |
-| - | **Actor** |
-| * | Identifier:`https://gematik.de/fhir/sid/telematik-id`/8-SMC-B-Testkarte-883110000095957 |
-
-**whenHandedOver**: 2028-10-01
 
 
 

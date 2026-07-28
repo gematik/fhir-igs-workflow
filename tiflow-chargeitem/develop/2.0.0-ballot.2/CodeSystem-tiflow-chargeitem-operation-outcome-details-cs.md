@@ -1,8 +1,10 @@
-# TIFLOW ChargeItem Operation Outcome Details CS - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# TIFLOW ChargeItem Operation Outcome Details CS - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-chargeitem/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-06-15 | *Computable Name*:TIFLOWChargeItemOperationOutcomeDetailsCS |
+| Draft as of 2026-07-28 | *Computable Name*:TIFLOWChargeItemOperationOutcomeDetailsCS |
 
  
 Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können 
@@ -35,7 +37,8 @@ Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den Oper
   "name" : "TIFLOWChargeItemOperationOutcomeDetailsCS",
   "title" : "TIFLOW ChargeItem Operation Outcome Details CS",
   "status" : "draft",
-  "date" : "2026-06-15T07:53:41+00:00",
+  "experimental" : false,
+  "date" : "2026-07-28T10:34:36+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -56,6 +59,7 @@ Abrechnungsinformationen-spezifische Codes, die im Rahmen des TIFlow in den Oper
       "display" : "Germany"
     }]
   }],
+  "caseSensitive" : true,
   "content" : "complete",
   "count" : 5,
   "concept" : [{

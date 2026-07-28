@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Query API**](menu-schnittstellen-query-api.md)
@@ -16,8 +16,6 @@ Version 2.0.0-ballot.2 - draft
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Task-Endpunkt.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
-Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter [Operations](./menu-schnittstellen-operation-api.md) beschrieben.
-
 ### GET /Task (Liste)
 
 Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnungen steht ausschließlich dem Versicherten bzw. einer abgebenden Institution mit Nachweis eines Behandlungskontextes zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.
@@ -69,7 +67,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-
   * 403 - Bad Request: PoPP token invalid
 
 abbrechen.
-Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung von A_23399-* im Rahmen des Änderungsmanagement für Spezifikationen.
+Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung der obigen Anforderung im Rahmen des Änderungsmanagement für Spezifikationen.
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task mit HTTP-Header X-PoPP-Token durch eine abgebende LEI mit der Rolle
 * oid_oeffentliche_apotheke
@@ -180,11 +178,11 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-
 * HTTP-Code: Severity
   * 403 - Forbidden: error
 * HTTP-Code: Code
-  * 403 - Forbidden: ???
+  * 403 - Forbidden: invalid
 * HTTP-Code: Details Code
-  * 403 - Forbidden: ???
+  * 403 - Forbidden: SVC_IDENTITY_MISMATCH
 * HTTP-Code: Details Text
-  * 403 - Forbidden: ???
+  * 403 - Forbidden: -
 
 abbrechen, damit ausschließlich der begünstigte Versicherte den Task abrufen kann.
 
@@ -275,7 +273,7 @@ funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-
 * HTTP-Code: Code
   * 403 - Forbidden: invalid
 * HTTP-Code: Details Code
-  * 403 - Forbidden: TIFLOW_KVNR_MISMATCH
+  * 403 - Forbidden: SVC_IDENTITY_MISMATCH
 * HTTP-Code: Details Text
   * 403 - Forbidden: -
 

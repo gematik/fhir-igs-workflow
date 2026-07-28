@@ -1,8 +1,10 @@
-# Technische Umsetzung - Mapping des digitalen Durchschlags - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# Technische Umsetzung - Mapping des digitalen Durchschlags - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Technische Umsetzung - Systemüberblick**](menu-technische-umsetzung-systemueberblick.md)

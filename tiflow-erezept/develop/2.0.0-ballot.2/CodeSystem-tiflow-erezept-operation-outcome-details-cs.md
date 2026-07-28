@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TIFLOWEREZEPTOperationOutcomeDetailsCS |
+| Active as of 2026-06-30 | *Computable Name*:TIFLOWEREZEPTOperationOutcomeDetailsCS |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -39,7 +39,7 @@ E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.de
   "title" : "TIFLOW EREZEPT Operation Outcome Details CS",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -63,7 +63,7 @@ E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.de
   "copyright" : "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0.",
   "caseSensitive" : true,
   "content" : "complete",
-  "count" : 8,
+  "count" : 11,
   "concept" : [{
     "code" : "TIFLOW_EREZEPT_PZN_INVALID",
     "display" : "PZN invalid",
@@ -134,6 +134,33 @@ E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.de
     "designation" : [{
       "language" : "de-DE",
       "value" : "Teilverordnung noch nicht einlösbar"
+    }]
+  },
+  {
+    "code" : "TIFLOW_EREZEPT_NO_PRESCRIPTIONS_FOUND",
+    "display" : "No prescriptions found",
+    "definition" : "No redeemable prescriptions were found for the requested query scope",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Keine einlösbaren Verordnungen gefunden"
+    }]
+  },
+  {
+    "code" : "TIFLOW_EREZEPT_NOT_ACTIVATED",
+    "display" : "EU redemption not activated",
+    "definition" : "The addressed task is not activated for EU redemption",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "EU-Einlösung nicht aktiviert"
+    }]
+  },
+  {
+    "code" : "TIFLOW_EREZEPT_COUNTRY_CODE_INVALID",
+    "display" : "Country code invalid",
+    "definition" : "The provided country code is not supported for ePrescription or eDispensation processing",
+    "designation" : [{
+      "language" : "de-DE",
+      "value" : "Ländercode ungültig"
     }]
   }]
 }

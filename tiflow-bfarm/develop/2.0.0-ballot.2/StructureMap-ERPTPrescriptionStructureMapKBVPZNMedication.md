@@ -1,8 +1,10 @@
-# E-T-Rezept Structure Map for KBV PZN Medication - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# E-T-Rezept Structure Map for KBV PZN Medication - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVPZNMedication | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-05-26 | *Computable Name*:ERPTPrescriptionStructureMapKBVPZNMedication |
+| Draft as of 2026-06-30 | *Computable Name*:ERPTPrescriptionStructureMapKBVPZNMedication |
 
  
 Mapping-Anweisungen zur Transformation von KBV PZN-Medikamenten zu BfArM T-Prescription Format 
@@ -32,7 +34,7 @@ Mapping-Anweisungen zur Transformation von KBV PZN-Medikamenten zu BfArM T-Presc
   "title" : "E-T-Rezept Structure Map for KBV PZN Medication",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-05-26",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

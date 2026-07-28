@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>E-T-Rezept Structure Map for Medication - TTL Representation - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
+    <title>E-T-Rezept Structure Map for Medication - TTL Representation - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -163,11 +163,8 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -188,6 +185,9 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -204,10 +204,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Datenaustausch BfArM Webdienst
+Implementation Guide<br /> TIFlow - Datenaustausch BfArM Webdienst
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -301,7 +301,7 @@ TIFlow - Datenaustausch BfArM Webdienst
         
           Draft
           
-            as of 2026-05-26
+            as of 2026-06-30
           
         
       </td>
@@ -320,154 +320,261 @@ TIFlow - Datenaustausch BfArM Webdienst
   <pre class="rdf" data-fhir="generated" style="white-space: pre; overflow: hidden"><code class="language-turtle">
 @prefix fhir: &lt;http://hl7.org/fhir/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 # - resource -------------------------------------------------------------------
 
- a fhir:StructureMap ;
+&lt;http://hl7.org/fhir/StructureMap/ERPTPrescriptionStructureMapMedication&gt; a fhir:StructureMap ;
   <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
-  <a href="http://hl7.org/fhir/R4/resource.html#StructureMap.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;ERPTPrescriptionStructureMapMedication&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/domainresource.html#StructureMap.text">fhir:text</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">fhir:div</a> [ <a href="http://hl7.org/fhir/R4/narrative.html#xhtml">fhir:v</a> &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: StructureMap ERPTPrescriptionStructureMapMedication&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;ERPTPrescriptionStructureMapMedication\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcERPTPrescriptionStructureMapMedication\&quot;&gt; &lt;/a&gt;&lt;pre class=\&quot;fml\&quot;&gt;#xD;\n&lt;b&gt;map&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedication&lt;span style=\&quot;color: navy\&quot;&gt;\&quot; = \&quot;&lt;/span&gt;ERPTPrescriptionStructureMapMedication&lt;span style=\&quot;color: navy\&quot;&gt;\&quot;#xD;\n#xD;\n&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf dem KBV/gematik Profil&lt;/span&gt;#xD;\n#xD;\n&lt;b&gt;uses&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/medication.html\&quot; title=\&quot;Medication\&quot;&gt;http://hl7.org/fhir/StructureDefinition/Medication&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot; &lt;/span&gt;&lt;b&gt;alias &lt;/b&gt;srcMedication &lt;b&gt;as &lt;/b&gt;&lt;b&gt;source&lt;/b&gt;#xD;\n&lt;b&gt;uses&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/medication.html\&quot; title=\&quot;Medication\&quot;&gt;http://hl7.org/fhir/StructureDefinition/Medication&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot; &lt;/span&gt;&lt;b&gt;alias &lt;/b&gt;tgtMedication &lt;b&gt;as &lt;/b&gt;&lt;b&gt;target&lt;/b&gt;#xD;\n#xD;\n&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-ERPTPrescriptionStructureMapGEMMedication.html\&quot; title=\&quot;E-T-Rezept Structure Map for Medication\&quot;&gt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapGEMMedication&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot;#xD;\n&lt;/span&gt;&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-ERPTPrescriptionStructureMapKBVCompoundingMedication.html\&quot; title=\&quot;E-T-Rezept Structure Map for KBV Compounding Medication\&quot;&gt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVCompoundingMedication&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot;#xD;\n&lt;/span&gt;&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-ERPTPrescriptionStructureMapKBVPZNMedication.html\&quot; title=\&quot;E-T-Rezept Structure Map for KBV PZN Medication\&quot;&gt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVPZNMedication&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot;#xD;\n&lt;/span&gt;&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-ERPTPrescriptionStructureMapKBVFreeTextMedication.html\&quot; title=\&quot;E-T-Rezept Structure Map for KBV FreeText Medication\&quot;&gt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot;#xD;\n&lt;/span&gt;&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-ERPTPrescriptionStructureMapKBVIngredientMedication.html\&quot; title=\&quot;E-T-Rezept Structure Map for KBV Ingredient Medication\&quot;&gt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVIngredientMedication&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot;#xD;\n&lt;/span&gt;#xD;\n&lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf dem KBV/gematik Profil&lt;/span&gt;#xD;\n&lt;b&gt;group &lt;/b&gt;ERPTPrescriptionStructureMapMedication&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;b&gt;source&lt;/b&gt; &lt;span style=\&quot;color: maroon\&quot;&gt;srcMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt; : &lt;/span&gt;srcMedication, &lt;b&gt;target&lt;/b&gt; &lt;span style=\&quot;color: maroon\&quot;&gt;tgtMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt; : &lt;/span&gt;tgtMedication&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {#xD;\n&lt;/span&gt;  srcMedication&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcPZN&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;meta.profile.contains('KBV_PR_ERP_Medication_PZN')&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {#xD;\n&lt;/span&gt;    srcPZN&lt;b&gt; then &lt;/b&gt;ERPTPrescriptionStructureMapKBVPZNMedication&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;tgtMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;\&quot;mapPZN\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Führt die Transformation für PZN-Medikamente durch (Fertigarzneimittel mit Pharmazentralnummer)&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;\&quot;decideOnMedicationPZN\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Erkennt PZN-basierte Medikamente und leitet an spezialisiertes PZN-Mapping weiter&lt;/span&gt;#xD;\n  srcMedication&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcFreeText&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;meta.profile.contains('KBV_PR_ERP_Medication_FreeText')&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {#xD;\n&lt;/span&gt;    srcFreeText&lt;b&gt; then &lt;/b&gt;ERPTPrescriptionStructureMapKBVFreeTextMedication&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;tgtMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;\&quot;mapFreeText\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Führt die Transformation für Freitext-Medikamente durch (nicht standardisierte Arzneimittelangaben)&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;\&quot;decideOnMedicationFreeText\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Erkennt Freitext-Medikamente und leitet an spezialisiertes FreeText-Mapping weiter&lt;/span&gt;#xD;\n  srcMedication&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcIngredient&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;meta.profile.contains('KBV_PR_ERP_Medication_Ingredient')&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {#xD;\n&lt;/span&gt;    srcIngredient&lt;b&gt; then &lt;/b&gt;ERPTPrescriptionStructureMapKBVIngredientMedication&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;tgtMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;\&quot;mapIngredient\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Führt die Transformation für wirkstoffbasierte Medikamente durch (Rezeptur nach Wirkstoffen)&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;\&quot;decideOnMedicationIngredient\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Erkennt wirkstoffbasierte Medikamente und leitet an spezialisiertes Ingredient-Mapping weiter&lt;/span&gt;#xD;\n  srcMedication&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcCompounding&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;meta.profile.contains('KBV_PR_ERP_Medication_Compounding')&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {#xD;\n&lt;/span&gt;    srcCompounding&lt;b&gt; then &lt;/b&gt;ERPTPrescriptionStructureMapKBVCompoundingMedication&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;tgtMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;\&quot;mapCompounding\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Führt die Transformation für Rezeptur-Medikamente durch (individuell hergestellte Arzneimittel)&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;\&quot;decideOnMedicationCompounding\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Erkennt Rezeptur-Medikamente und leitet an spezialisiertes Compounding-Mapping weiter&lt;/span&gt;#xD;\n  srcMedication&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcGemMed&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;meta.profile.contains('GEM_ERP_PR_Medication')&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {#xD;\n&lt;/span&gt;    srcGemMed&lt;b&gt; then &lt;/b&gt;ERPTPrescriptionStructureMapGEMMedication&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;tgtMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;\&quot;mapGemMed\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Führt die Transformation für gematik-Medikamente durch (abgegebene Arzneimittel aus der Apotheke)&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;\&quot;decideOnMedicationGematik\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Erkennt gematik-Medikamente und leitet an spezialisiertes gematik-Mapping weiter&lt;/span&gt;#xD;\n&lt;span style=\&quot;color: navy\&quot;&gt;}#xD;\n#xD;\n&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&quot;^^rdf:XMLLiteral ]
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedication&quot;^^xsd:anyURI] ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.version">fhir:version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;2.0.0-ballot.2&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;ERPTPrescriptionStructureMapMedication&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.title">fhir:title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;E-T-Rezept Structure Map for Medication&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;draft&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.experimental">fhir:experimental</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> false] ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2026-05-26&quot;^^xsd:date] ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.publisher">fhir:publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;gematik GmbH&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.contact">fhir:contact</a> ( [
-<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;gematik GmbH&quot; ] ;
-    ( <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">fhir:telecom</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;url&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;https://gematik.de&quot; ]     ] [
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;email&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;erp-umsetzung@gematik.de&quot; ]     ] )
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.description">fhir:description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:v</a> &quot;Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf dem KBV/gematik Profil&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.jurisdiction">fhir:jurisdiction</a> ( [
-    ( <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:coding</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;urn:iso:std:iso:3166&quot;^^xsd:anyURI ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DE&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Germany&quot; ]     ] )
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure">fhir:structure</a> ( [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.url">fhir:url</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;http://hl7.org/fhir/StructureDefinition/Medication&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/StructureDefinition/Medication&gt;     ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.mode">fhir:mode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;source&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.alias">fhir:alias</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;srcMedication&quot; ]
-  ] [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.url">fhir:url</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;http://hl7.org/fhir/StructureDefinition/Medication&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/StructureDefinition/Medication&gt;     ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.mode">fhir:mode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;target&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.alias">fhir:alias</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;tgtMedication&quot; ]
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.import">fhir:import</a> ( [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapGEMMedication&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapGEMMedication&gt;
-  ] [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVCompoundingMedication&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVCompoundingMedication&gt;
-  ] [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVPZNMedication&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVPZNMedication&gt;
-  ] [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication&gt;
-  ] [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVIngredientMedication&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVIngredientMedication&gt;
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group">fhir:group</a> ( [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;ERPTPrescriptionStructureMapMedication&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.typeMode">fhir:typeMode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;none&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf dem KBV/gematik Profil&quot; ] ;
-    ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input">fhir:input</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcMedication&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;srcMedication&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.mode">fhir:mode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;source&quot; ]     ] [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;tgtMedication&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;tgtMedication&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.mode">fhir:mode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;target&quot; ]     ] ) ;
-    ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">fhir:rule</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;decideOnMedicationPZN&quot; ] ;
-      ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:source</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcMedication&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">fhir:variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcPZN&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">fhir:condition</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;meta.profile.contains('KBV_PR_ERP_Medication_PZN')&quot; ]       ] ) ;
-      ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">fhir:rule</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;mapPZN&quot; ] ;
-        ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:source</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcPZN&quot; ]         ] ) ;
-        ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">fhir:dependent</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;ERPTPrescriptionStructureMapKBVPZNMedication&quot; ] ;
-          ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">fhir:variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;srcMedication&quot; ] [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;tgtMedication&quot; ] )         ] ) ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Führt die Transformation für PZN-Medikamente durch (Fertigarzneimittel mit Pharmazentralnummer)&quot; ]       ] ) ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Erkennt PZN-basierte Medikamente und leitet an spezialisiertes PZN-Mapping weiter&quot; ]     ] [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;decideOnMedicationFreeText&quot; ] ;
-      ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:source</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcMedication&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">fhir:variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcFreeText&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">fhir:condition</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;meta.profile.contains('KBV_PR_ERP_Medication_FreeText')&quot; ]       ] ) ;
-      ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">fhir:rule</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;mapFreeText&quot; ] ;
-        ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:source</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcFreeText&quot; ]         ] ) ;
-        ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">fhir:dependent</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;ERPTPrescriptionStructureMapKBVFreeTextMedication&quot; ] ;
-          ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">fhir:variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;srcMedication&quot; ] [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;tgtMedication&quot; ] )         ] ) ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Führt die Transformation für Freitext-Medikamente durch (nicht standardisierte Arzneimittelangaben)&quot; ]       ] ) ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Erkennt Freitext-Medikamente und leitet an spezialisiertes FreeText-Mapping weiter&quot; ]     ] [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;decideOnMedicationIngredient&quot; ] ;
-      ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:source</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcMedication&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">fhir:variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcIngredient&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">fhir:condition</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;meta.profile.contains('KBV_PR_ERP_Medication_Ingredient')&quot; ]       ] ) ;
-      ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">fhir:rule</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;mapIngredient&quot; ] ;
-        ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:source</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcIngredient&quot; ]         ] ) ;
-        ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">fhir:dependent</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;ERPTPrescriptionStructureMapKBVIngredientMedication&quot; ] ;
-          ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">fhir:variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;srcMedication&quot; ] [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;tgtMedication&quot; ] )         ] ) ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Führt die Transformation für wirkstoffbasierte Medikamente durch (Rezeptur nach Wirkstoffen)&quot; ]       ] ) ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Erkennt wirkstoffbasierte Medikamente und leitet an spezialisiertes Ingredient-Mapping weiter&quot; ]     ] [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;decideOnMedicationCompounding&quot; ] ;
-      ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:source</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcMedication&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">fhir:variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcCompounding&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">fhir:condition</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;meta.profile.contains('KBV_PR_ERP_Medication_Compounding')&quot; ]       ] ) ;
-      ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">fhir:rule</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;mapCompounding&quot; ] ;
-        ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:source</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcCompounding&quot; ]         ] ) ;
-        ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">fhir:dependent</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;ERPTPrescriptionStructureMapKBVCompoundingMedication&quot; ] ;
-          ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">fhir:variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;srcMedication&quot; ] [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;tgtMedication&quot; ] )         ] ) ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Führt die Transformation für Rezeptur-Medikamente durch (individuell hergestellte Arzneimittel)&quot; ]       ] ) ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Erkennt Rezeptur-Medikamente und leitet an spezialisiertes Compounding-Mapping weiter&quot; ]     ] [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;decideOnMedicationGematik&quot; ] ;
-      ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:source</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcMedication&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">fhir:variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcGemMed&quot; ] ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">fhir:condition</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;meta.profile.contains('GEM_ERP_PR_Medication')&quot; ]       ] ) ;
-      ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">fhir:rule</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;mapGemMed&quot; ] ;
-        ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:source</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;srcGemMed&quot; ]         ] ) ;
-        ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">fhir:dependent</a> [
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;ERPTPrescriptionStructureMapGEMMedication&quot; ] ;
-          ( <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">fhir:variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;srcMedication&quot; ] [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;tgtMedication&quot; ] )         ] ) ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Führt die Transformation für gematik-Medikamente durch (abgegebene Arzneimittel aus der Apotheke)&quot; ]       ] ) ;
-<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Erkennt gematik-Medikamente und leitet an spezialisiertes gematik-Mapping weiter&quot; ]     ] )
-  ] ) . # 
+  <a href="http://hl7.org/fhir/R4/resource.html#StructureMap.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;ERPTPrescriptionStructureMapMedication&quot;] ;
+  <a href="http://hl7.org/fhir/R4/domainresource.html#StructureMap.text">fhir:DomainResource.text</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;generated&quot; ] ;
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: StructureMap ERPTPrescriptionStructureMapMedication&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;ERPTPrescriptionStructureMapMedication\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcERPTPrescriptionStructureMapMedication\&quot;&gt; &lt;/a&gt;&lt;pre class=\&quot;fml\&quot;&gt;#xD;\n&lt;b&gt;map&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedication&lt;span style=\&quot;color: navy\&quot;&gt;\&quot; = \&quot;&lt;/span&gt;ERPTPrescriptionStructureMapMedication&lt;span style=\&quot;color: navy\&quot;&gt;\&quot;#xD;\n#xD;\n&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf dem KBV/gematik Profil&lt;/span&gt;#xD;\n#xD;\n&lt;b&gt;uses&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/medication.html\&quot; title=\&quot;Medication\&quot;&gt;http://hl7.org/fhir/StructureDefinition/Medication&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot; &lt;/span&gt;&lt;b&gt;alias &lt;/b&gt;srcMedication &lt;b&gt;as &lt;/b&gt;&lt;b&gt;source&lt;/b&gt;#xD;\n&lt;b&gt;uses&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/medication.html\&quot; title=\&quot;Medication\&quot;&gt;http://hl7.org/fhir/StructureDefinition/Medication&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot; &lt;/span&gt;&lt;b&gt;alias &lt;/b&gt;tgtMedication &lt;b&gt;as &lt;/b&gt;&lt;b&gt;target&lt;/b&gt;#xD;\n#xD;\n&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-ERPTPrescriptionStructureMapGEMMedication.html\&quot; title=\&quot;E-T-Rezept Structure Map for Medication\&quot;&gt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapGEMMedication&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot;#xD;\n&lt;/span&gt;&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-ERPTPrescriptionStructureMapKBVCompoundingMedication.html\&quot; title=\&quot;E-T-Rezept Structure Map for KBV Compounding Medication\&quot;&gt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVCompoundingMedication&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot;#xD;\n&lt;/span&gt;&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-ERPTPrescriptionStructureMapKBVPZNMedication.html\&quot; title=\&quot;E-T-Rezept Structure Map for KBV PZN Medication\&quot;&gt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVPZNMedication&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot;#xD;\n&lt;/span&gt;&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-ERPTPrescriptionStructureMapKBVFreeTextMedication.html\&quot; title=\&quot;E-T-Rezept Structure Map for KBV FreeText Medication\&quot;&gt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot;#xD;\n&lt;/span&gt;&lt;b&gt;imports&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; \&quot;&lt;/span&gt;&lt;a href=\&quot;StructureMap-ERPTPrescriptionStructureMapKBVIngredientMedication.html\&quot; title=\&quot;E-T-Rezept Structure Map for KBV Ingredient Medication\&quot;&gt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVIngredientMedication&lt;/a&gt;&lt;span style=\&quot;color: navy\&quot;&gt;\&quot;#xD;\n&lt;/span&gt;#xD;\n&lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf dem KBV/gematik Profil&lt;/span&gt;#xD;\n&lt;b&gt;group &lt;/b&gt;ERPTPrescriptionStructureMapMedication&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;b&gt;source&lt;/b&gt; &lt;span style=\&quot;color: maroon\&quot;&gt;srcMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt; : &lt;/span&gt;srcMedication, &lt;b&gt;target&lt;/b&gt; &lt;span style=\&quot;color: maroon\&quot;&gt;tgtMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt; : &lt;/span&gt;tgtMedication&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {#xD;\n&lt;/span&gt;  &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Erkennt PZN-basierte Medikamente und leitet an spezialisiertes PZN-Mapping weiter&lt;/span&gt;#xD;\n  srcMedication&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcPZN&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;meta.profile.contains('KBV_PR_ERP_Medication_PZN')&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {#xD;\n&lt;/span&gt;    &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Führt die Transformation für PZN-Medikamente durch (Fertigarzneimittel mit Pharmazentralnummer)&lt;/span&gt;#xD;\n    srcPZN&lt;b&gt; then &lt;/b&gt;ERPTPrescriptionStructureMapKBVPZNMedication&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;tgtMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;\&quot;mapPZN\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;\&quot;decideOnMedicationPZN\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Erkennt Freitext-Medikamente und leitet an spezialisiertes FreeText-Mapping weiter&lt;/span&gt;#xD;\n  srcMedication&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcFreeText&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;meta.profile.contains('KBV_PR_ERP_Medication_FreeText')&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {#xD;\n&lt;/span&gt;    &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Führt die Transformation für Freitext-Medikamente durch (nicht standardisierte Arzneimittelangaben)&lt;/span&gt;#xD;\n    srcFreeText&lt;b&gt; then &lt;/b&gt;ERPTPrescriptionStructureMapKBVFreeTextMedication&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;tgtMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;\&quot;mapFreeText\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;\&quot;decideOnMedicationFreeText\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Erkennt wirkstoffbasierte Medikamente und leitet an spezialisiertes Ingredient-Mapping weiter&lt;/span&gt;#xD;\n  srcMedication&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcIngredient&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;meta.profile.contains('KBV_PR_ERP_Medication_Ingredient')&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {#xD;\n&lt;/span&gt;    &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Führt die Transformation für wirkstoffbasierte Medikamente durch (Rezeptur nach Wirkstoffen)&lt;/span&gt;#xD;\n    srcIngredient&lt;b&gt; then &lt;/b&gt;ERPTPrescriptionStructureMapKBVIngredientMedication&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;tgtMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;\&quot;mapIngredient\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;\&quot;decideOnMedicationIngredient\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Erkennt Rezeptur-Medikamente und leitet an spezialisiertes Compounding-Mapping weiter&lt;/span&gt;#xD;\n  srcMedication&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcCompounding&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;meta.profile.contains('KBV_PR_ERP_Medication_Compounding')&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {#xD;\n&lt;/span&gt;    &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Führt die Transformation für Rezeptur-Medikamente durch (individuell hergestellte Arzneimittel)&lt;/span&gt;#xD;\n    srcCompounding&lt;b&gt; then &lt;/b&gt;ERPTPrescriptionStructureMapKBVCompoundingMedication&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;tgtMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;\&quot;mapCompounding\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;\&quot;decideOnMedicationCompounding\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Erkennt gematik-Medikamente und leitet an spezialisiertes gematik-Mapping weiter&lt;/span&gt;#xD;\n  srcMedication&lt;b&gt; as &lt;/b&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcGemMed&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;meta.profile.contains('GEM_ERP_PR_Medication')&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=\&quot;color: navy\&quot;&gt; {#xD;\n&lt;/span&gt;    &lt;span style=\&quot;color: navy\&quot;&gt;// &lt;/span&gt;&lt;span style=\&quot;color: green\&quot;&gt;Führt die Transformation für gematik-Medikamente durch (abgegebene Arzneimittel aus der Apotheke)&lt;/span&gt;#xD;\n    srcGemMed&lt;b&gt; then &lt;/b&gt;ERPTPrescriptionStructureMapGEMMedication&lt;span style=\&quot;color: navy\&quot;&gt;(&lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;srcMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;, &lt;/span&gt;&lt;span style=\&quot;color: maroon\&quot;&gt;tgtMedication&lt;/span&gt;&lt;span style=\&quot;color: navy\&quot;&gt;)&lt;/span&gt; &lt;i&gt;\&quot;mapGemMed\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;#xD;\n  &lt;span style=\&quot;color: navy\&quot;&gt;}&lt;/span&gt; &lt;i&gt;\&quot;decideOnMedicationGematik\&quot;&lt;/i&gt;&lt;span style=\&quot;color: navy\&quot;&gt;;&lt;/span&gt;#xD;\n&lt;span style=\&quot;color: navy\&quot;&gt;}#xD;\n#xD;\n&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&quot;
+  ] ;
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.url">fhir:StructureMap.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedication&quot;] ;
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.version">fhir:StructureMap.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2.0.0-ballot.2&quot;] ;
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.name">fhir:StructureMap.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;ERPTPrescriptionStructureMapMedication&quot;] ;
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.title">fhir:StructureMap.title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;E-T-Rezept Structure Map for Medication&quot;] ;
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.status">fhir:StructureMap.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;draft&quot;] ;
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.experimental">fhir:StructureMap.experimental</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean] ;
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">fhir:StructureMap.date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2026-06-30&quot;^^xsd:date] ;
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.publisher">fhir:StructureMap.publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;gematik GmbH&quot;] ;
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.contact">fhir:StructureMap.contact</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">fhir:ContactDetail.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;gematik GmbH&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">fhir:ContactDetail.telecom</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:ContactPoint.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;url&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:ContactPoint.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;https://gematik.de&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:ContactPoint.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;email&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:ContactPoint.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;erp-umsetzung@gematik.de&quot; ]
+     ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.description">fhir:StructureMap.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:value</a> &quot;Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf dem KBV/gematik Profil&quot;] ;
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.jurisdiction">fhir:StructureMap.jurisdiction</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;urn:iso:std:iso:3166&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;DE&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Germany&quot; ]
+     ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure">fhir:StructureMap.structure</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.url">fhir:StructureMap.structure.url</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;http://hl7.org/fhir/StructureDefinition/Medication&quot; ;
+       <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/StructureDefinition/Medication&gt;
+     ] ;
+     <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.mode">fhir:StructureMap.structure.mode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;source&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.alias">fhir:StructureMap.structure.alias</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;srcMedication&quot; ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+     <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.url">fhir:StructureMap.structure.url</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;http://hl7.org/fhir/StructureDefinition/Medication&quot; ;
+       <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/StructureDefinition/Medication&gt;
+     ] ;
+     <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.mode">fhir:StructureMap.structure.mode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;target&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.structure.alias">fhir:StructureMap.structure.alias</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;tgtMedication&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.import">fhir:StructureMap.import</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapGEMMedication&quot; ;
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapGEMMedication&gt;
+  ], [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVCompoundingMedication&quot; ;
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+     <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVCompoundingMedication&gt;
+  ], [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVPZNMedication&quot; ;
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2 ;
+     <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVPZNMedication&gt;
+  ], [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication&quot; ;
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 3 ;
+     <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication&gt;
+  ], [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVIngredientMedication&quot; ;
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 4 ;
+     <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVIngredientMedication&gt;
+  ] ;
+  <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group">fhir:StructureMap.group</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.name">fhir:StructureMap.group.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;ERPTPrescriptionStructureMapMedication&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.typeMode">fhir:StructureMap.group.typeMode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;none&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.documentation">fhir:StructureMap.group.documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf dem KBV/gematik Profil&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input">fhir:StructureMap.group.input</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.name">fhir:StructureMap.group.input.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcMedication&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.type">fhir:StructureMap.group.input.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;srcMedication&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.mode">fhir:StructureMap.group.input.mode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;source&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.name">fhir:StructureMap.group.input.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;tgtMedication&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.type">fhir:StructureMap.group.input.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;tgtMedication&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.mode">fhir:StructureMap.group.input.mode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;target&quot; ]
+     ] ;
+     <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">fhir:StructureMap.group.rule</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:StructureMap.group.rule.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;decideOnMedicationPZN&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:StructureMap.group.rule.source</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:StructureMap.group.rule.source.context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcMedication&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">fhir:StructureMap.group.rule.source.variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcPZN&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">fhir:StructureMap.group.rule.source.condition</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;meta.profile.contains('KBV_PR_ERP_Medication_PZN')&quot; ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">fhir:StructureMap.group.rule.rule</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:StructureMap.group.rule.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;mapPZN&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:StructureMap.group.rule.source</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:StructureMap.group.rule.source.context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcPZN&quot; ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">fhir:StructureMap.group.rule.dependent</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">fhir:StructureMap.group.rule.dependent.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;ERPTPrescriptionStructureMapKBVPZNMedication&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">fhir:StructureMap.group.rule.dependent.variable</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;srcMedication&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0
+           ], [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;tgtMedication&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1
+           ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:StructureMap.group.rule.documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Führt die Transformation für PZN-Medikamente durch (Fertigarzneimittel mit Pharmazentralnummer)&quot; ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:StructureMap.group.rule.documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Erkennt PZN-basierte Medikamente und leitet an spezialisiertes PZN-Mapping weiter&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:StructureMap.group.rule.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;decideOnMedicationFreeText&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:StructureMap.group.rule.source</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:StructureMap.group.rule.source.context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcMedication&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">fhir:StructureMap.group.rule.source.variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcFreeText&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">fhir:StructureMap.group.rule.source.condition</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;meta.profile.contains('KBV_PR_ERP_Medication_FreeText')&quot; ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">fhir:StructureMap.group.rule.rule</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:StructureMap.group.rule.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;mapFreeText&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:StructureMap.group.rule.source</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:StructureMap.group.rule.source.context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcFreeText&quot; ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">fhir:StructureMap.group.rule.dependent</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">fhir:StructureMap.group.rule.dependent.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;ERPTPrescriptionStructureMapKBVFreeTextMedication&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">fhir:StructureMap.group.rule.dependent.variable</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;srcMedication&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0
+           ], [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;tgtMedication&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1
+           ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:StructureMap.group.rule.documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Führt die Transformation für Freitext-Medikamente durch (nicht standardisierte Arzneimittelangaben)&quot; ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:StructureMap.group.rule.documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Erkennt Freitext-Medikamente und leitet an spezialisiertes FreeText-Mapping weiter&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2 ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:StructureMap.group.rule.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;decideOnMedicationIngredient&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:StructureMap.group.rule.source</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:StructureMap.group.rule.source.context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcMedication&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">fhir:StructureMap.group.rule.source.variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcIngredient&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">fhir:StructureMap.group.rule.source.condition</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;meta.profile.contains('KBV_PR_ERP_Medication_Ingredient')&quot; ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">fhir:StructureMap.group.rule.rule</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:StructureMap.group.rule.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;mapIngredient&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:StructureMap.group.rule.source</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:StructureMap.group.rule.source.context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcIngredient&quot; ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">fhir:StructureMap.group.rule.dependent</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">fhir:StructureMap.group.rule.dependent.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;ERPTPrescriptionStructureMapKBVIngredientMedication&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">fhir:StructureMap.group.rule.dependent.variable</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;srcMedication&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0
+           ], [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;tgtMedication&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1
+           ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:StructureMap.group.rule.documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Führt die Transformation für wirkstoffbasierte Medikamente durch (Rezeptur nach Wirkstoffen)&quot; ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:StructureMap.group.rule.documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Erkennt wirkstoffbasierte Medikamente und leitet an spezialisiertes Ingredient-Mapping weiter&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 3 ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:StructureMap.group.rule.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;decideOnMedicationCompounding&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:StructureMap.group.rule.source</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:StructureMap.group.rule.source.context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcMedication&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">fhir:StructureMap.group.rule.source.variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcCompounding&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">fhir:StructureMap.group.rule.source.condition</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;meta.profile.contains('KBV_PR_ERP_Medication_Compounding')&quot; ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">fhir:StructureMap.group.rule.rule</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:StructureMap.group.rule.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;mapCompounding&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:StructureMap.group.rule.source</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:StructureMap.group.rule.source.context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcCompounding&quot; ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">fhir:StructureMap.group.rule.dependent</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">fhir:StructureMap.group.rule.dependent.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;ERPTPrescriptionStructureMapKBVCompoundingMedication&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">fhir:StructureMap.group.rule.dependent.variable</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;srcMedication&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0
+           ], [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;tgtMedication&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1
+           ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:StructureMap.group.rule.documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Führt die Transformation für Rezeptur-Medikamente durch (individuell hergestellte Arzneimittel)&quot; ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:StructureMap.group.rule.documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Erkennt Rezeptur-Medikamente und leitet an spezialisiertes Compounding-Mapping weiter&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 4 ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:StructureMap.group.rule.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;decideOnMedicationGematik&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:StructureMap.group.rule.source</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:StructureMap.group.rule.source.context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcMedication&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">fhir:StructureMap.group.rule.source.variable</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcGemMed&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.condition">fhir:StructureMap.group.rule.source.condition</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;meta.profile.contains('GEM_ERP_PR_Medication')&quot; ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">fhir:StructureMap.group.rule.rule</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">fhir:StructureMap.group.rule.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;mapGemMed&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">fhir:StructureMap.group.rule.source</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">fhir:StructureMap.group.rule.source.context</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;srcGemMed&quot; ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">fhir:StructureMap.group.rule.dependent</a> [
+           <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.name">fhir:StructureMap.group.rule.dependent.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;ERPTPrescriptionStructureMapGEMMedication&quot; ] ;
+           <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">fhir:StructureMap.group.rule.dependent.variable</a> [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;srcMedication&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0
+           ], [
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;tgtMedication&quot; ;
+             <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1
+           ]
+         ] ;
+         <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:StructureMap.group.rule.documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Führt die Transformation für gematik-Medikamente durch (abgegebene Arzneimittel aus der Apotheke)&quot; ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">fhir:StructureMap.group.rule.documentation</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Erkennt gematik-Medikamente und leitet an spezialisiertes gematik-Mapping weiter&quot; ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/StructureMap/ERPTPrescriptionStructureMapMedication.ttl&gt; a owl:Ontology ;
+  owl:imports fhir:fhir.ttl ;
+  owl:versionIRI &lt;http://build.fhir.org/StructureMap/ERPTPrescriptionStructureMapMedication.ttl&gt; .
 
 </code></pre>
 
@@ -516,7 +623,7 @@ TIFlow - Datenaustausch BfArM Webdienst
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:48+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:29+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

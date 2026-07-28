@@ -1,8 +1,10 @@
-# Logisches Modell digitaler Durchschlag E-T-Rezept - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# Logisches Modell digitaler Durchschlag E-T-Rezept - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-carbon-copy-logical | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-06-15 | *Computable Name*:ERP_TPrescription_CarbonCopy_Logical |
+| Draft as of 2026-07-28 | *Computable Name*:ERP_TPrescription_CarbonCopy_Logical |
 
  
 Logical Model zur Abbildung der im digitalen Durchschlag E-T-Rezept erforderlichen fachlichen Informationen. 
@@ -51,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-ca
   "name" : "ERP_TPrescription_CarbonCopy_Logical",
   "title" : "Logisches Modell digitaler Durchschlag E-T-Rezept",
   "status" : "draft",
-  "date" : "2026-06-15T07:48:09+00:00",
+  "date" : "2026-07-28T10:29:55+00:00",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -122,8 +124,8 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-ca
     {
       "id" : "erp-tprescription-carbon-copy-logical.rxVerordnung.bezeichnung",
       "path" : "erp-tprescription-carbon-copy-logical.rxVerordnung.bezeichnung",
-      "short" : "Bezeichnung Fertigarzneimittel/Wirkstoff ODER Rezeptur (verordnet). Je nach dem welcher Rezepttyp angewandt wurde liegt diese Angabe als Freitext oder strukturiert vor.",
-      "definition" : "Bezeichnung Fertigarzneimittel/Wirkstoff ODER Rezeptur (verordnet). Je nach dem welcher Rezepttyp angewandt wurde liegt diese Angabe als Freitext oder strukturiert vor.",
+      "short" : "Bezeichnung des verordneten Arzneimittels. Ein T-Arzneimittel kann in Form aller vier Verordnungstypen (PZN-, Freitext-, Strukturierte Wirkstoff-, Strukturierte Rezeptur-Verordnung) verordnet werden.",
+      "definition" : "Bezeichnung des verordneten Arzneimittels. Ein T-Arzneimittel kann in Form aller vier Verordnungstypen (PZN-, Freitext-, Strukturierte Wirkstoff-, Strukturierte Rezeptur-Verordnung) verordnet werden.",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -142,13 +144,16 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-ca
       }]
     },
     {
-      "id" : "erp-tprescription-carbon-copy-logical.rxVerordnung.darreichungsform",
-      "path" : "erp-tprescription-carbon-copy-logical.rxVerordnung.darreichungsform",
+      "id" : "erp-tprescription-carbon-copy-logical.rxVerordnung.darreichungsform[x]",
+      "path" : "erp-tprescription-carbon-copy-logical.rxVerordnung.darreichungsform[x]",
       "short" : "Darreichungsform (verordnetes Arzneimittel)",
       "definition" : "Darreichungsform (verordnetes Arzneimittel)",
       "min" : 0,
       "max" : "1",
       "type" : [{
+        "code" : "string"
+      },
+      {
         "code" : "Coding"
       }]
     },
@@ -166,8 +171,8 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-ca
     {
       "id" : "erp-tprescription-carbon-copy-logical.rxVerordnung.dosierung",
       "path" : "erp-tprescription-carbon-copy-logical.rxVerordnung.dosierung",
-      "short" : "Dosierung (verordnetes Arzneimittel)",
-      "definition" : "Dosierung (verordnetes Arzneimittel)",
+      "short" : "Dosierung (verordnetes Arzneimittel). Das Profil entspricht DosageDgMp des [IG DE Medication](https://ig.fhir.de/igs/medication/1.0.7/)",
+      "definition" : "Dosierung (verordnetes Arzneimittel). Das Profil entspricht DosageDgMp des [IG DE Medication](https://ig.fhir.de/igs/medication/1.0.7/)",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -182,7 +187,7 @@ Other representations of profile: [CSV](StructureDefinition-erp-tprescription-ca
       "min" : 1,
       "max" : "1",
       "type" : [{
-        "code" : "string"
+        "code" : "Duration"
       }]
     },
     {

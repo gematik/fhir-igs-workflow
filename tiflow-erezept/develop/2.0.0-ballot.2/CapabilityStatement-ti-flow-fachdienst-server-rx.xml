@@ -6,13 +6,13 @@
     <profile value="https://gematik.de/fhir/ti/StructureDefinition/ti-capability-statement"/>
   </meta>
   <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-base-url">
-    <valueString value="https://tiflow.de/rx/fhir"/>
+    <valueString value="https://tiflow.de/rx/fhir/v1"/>
   </extension>
   <url value="https://gematik.de/fhir/tiflow-erezept/CapabilityStatement/ti-flow-fachdienst-server-rx"/>
   <version value="2.0.0-ballot.2"/>
   <title value="TIFlow Fachdienst Server Capabilities"/>
   <status value="active"/>
-  <date value="2028-04-01"/>
+  <date value="2026-06-30"/>
   <publisher value="gematik GmbH"/>
   <contact>
     <name value="gematik GmbH"/>
@@ -250,8 +250,39 @@
         </extension>
         <code value="read"/>
       </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="patch"/>
+      </interaction>
       <versioning value="versioned-update"/>
       <readHistory value="true"/>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="Task.id - Unterstützt die Suche nach der Task-ID"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="prescription-id"/>
+        <type value="token"/>
+        <documentation value="Task.identifier - Unterstützt die Suche nach der E-Rezept-ID"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="access-code"/>
+        <type value="token"/>
+        <documentation value="Task.identifier - Unterstützt die Suche nach dem Zugriffscode"/>
+      </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -430,7 +461,7 @@
           </extension>
         </extension>
         <name value="create"/>
-        <definition value="TIFlow-RX-OP-Create"/>
+        <definition value="https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-create-op"/>
         <documentation value="Creates a Task for a specific flow type"/>
       </operation>
       <operation>
@@ -810,7 +841,7 @@
           </extension>
         </extension>
         <name value="activate"/>
-        <definition value="TIFlow-RX-OP-Activate"/>
+        <definition value="https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-activate-op"/>
         <documentation value="Activates the created Task using the signed ePrescription bundle"/>
       </operation>
       <operation>
@@ -980,7 +1011,7 @@
           </extension>
         </extension>
         <name value="accept"/>
-        <definition value="TIFlow-RX-OP-Accept"/>
+        <definition value="https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-accept-op"/>
         <documentation value="Pharmacy claims an ePrescription and sets Task status to in-progress"/>
       </operation>
       <operation>
@@ -1108,7 +1139,7 @@
           </extension>
         </extension>
         <name value="reject"/>
-        <definition value="TIFlow-RX-OP-Reject"/>
+        <definition value="https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-reject-op"/>
         <documentation value="Rejects dispensing and resets Task status to active"/>
       </operation>
       <operation>
@@ -1292,7 +1323,7 @@
           </extension>
         </extension>
         <name value="close"/>
-        <definition value="TIFlow-RX-OP-Close"/>
+        <definition value="https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-close-op"/>
         <documentation value="Finishes the ePrescription workflow and sets Task status to completed"/>
       </operation>
       <operation>
@@ -1448,7 +1479,7 @@
           </extension>
         </extension>
         <name value="abort"/>
-        <definition value="TIFlow-RX-OP-Abort"/>
+        <definition value="https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-abort-op"/>
         <documentation value="Aborts the ePrescription workflow and deletes Task related data"/>
       </operation>
       <operation>
@@ -1590,8 +1621,156 @@
           </extension>
         </extension>
         <name value="dispense"/>
-        <definition value="TIFlow-RX-OP-Dispense"/>
+        <definition value="https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-dispense-op"/>
         <documentation value="Documents medication dispensation without changing Task status"/>
+      </operation>
+      <operation>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="FHIR Profile Validation Failed"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="SVC_VALIDATION_FAILED"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="403"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Access permission invalid"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="TIFLOW_ACCESS_PERMISSION_INVALID"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="403"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Access role not allowed"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="TIFLOW_AUTH_ROLE_NOT_ALLOWED"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="403"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Consent missing"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="TIFLOW_CONSENT_MISSING"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Task status mismatch"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="TIFLOW_TASK_STATUS_MISMATCH"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource is not known"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RESOURCE_ID_FAIL"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="410"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource was deleted"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_DELETED"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="500"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Internal Server Error"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="TIFLOW_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="408"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Timeout"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="TIFLOW_TIMEOUT"/>
+          </extension>
+        </extension>
+        <name value="eu-close"/>
+        <definition value="https://gematik.de/fhir/tiflow-erezept/OperationDefinition/EUCloseOperation"/>
+        <documentation value="Finishes the EU ePrescription workflow and creates a signed receipt bundle"/>
       </operation>
     </resource>
     <resource>
@@ -1999,7 +2178,7 @@
         </extension>
         <name value="recipient"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Communication-recipient"/>
-        <type value="string"/>
+        <type value="reference"/>
         <documentation value="Communication.recipient.identifier.value - Unterstützt die Suche nach dem Empfänger einer Nachricht"/>
       </searchParam>
       <searchParam>
@@ -2008,7 +2187,7 @@
         </extension>
         <name value="sender"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Communication-sender"/>
-        <type value="string"/>
+        <type value="reference"/>
         <documentation value="Communication.sender.identifier.value - Unterstützt die Suche nach dem Absender einer Nachricht"/>
       </searchParam>
       <searchParam>
@@ -2268,7 +2447,7 @@
         </extension>
         <name value="performer"/>
         <definition value="http://hl7.org/fhir/SearchParameter/MedicationDispense-performer"/>
-        <type value="string"/>
+        <type value="reference"/>
         <documentation value="MedicationDispense.performer.actor.identifier.value - Unterstützt die Suche einer MedicationDispense zu einer Abgebenden LEI."/>
       </searchParam>
       <searchParam>
@@ -2472,5 +2651,571 @@
       <versioning value="versioned-update"/>
       <readHistory value="true"/>
     </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <type value="Consent"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="408"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Timeout"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="TIFLOW_TIMEOUT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="500"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Internal Server Error"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="TIFLOW_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="200"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown search parameter"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_PARAM_UNKNOWN"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid query parameter(s)"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_SYNTAX"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="408"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Timeout"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="TIFLOW_TIMEOUT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="500"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Internal Server Error"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="TIFLOW_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="201"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource created"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="400"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Invalid request"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_BAD_FORMAT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="408"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Timeout"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="TIFLOW_TIMEOUT"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="500"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Internal Server Error"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="TIFLOW_INTERNAL_ERROR"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="204"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Successful operation without response body"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Unknown resource type"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_UNKNOWN_TYPE"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="404"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource is not known"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_RESOURCE_ID_FAIL"/>
+          </extension>
+        </extension>
+        <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+          <extension url="statusCode">
+            <valueString value="410"/>
+          </extension>
+          <extension url="description">
+            <valueString value="Resource was deleted"/>
+          </extension>
+          <extension url="responseType">
+            <valueString value="TIFlowOperationOutcome"/>
+          </extension>
+          <extension url="errorCode">
+            <valueString value="MSG_DELETED"/>
+          </extension>
+        </extension>
+        <code value="delete"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <readHistory value="true"/>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="category"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Consent-category"/>
+        <type value="token"/>
+        <documentation value="Consent.category - Unterstützt die Suche nach der Art der Einwilligung"/>
+      </searchParam>
+    </resource>
+    <operation>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="200"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Successful operation"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="Parameters"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="400"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Invalid request"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="MSG_BAD_FORMAT"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="400"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Access code invalid"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="TIFLOW_ACCESS_CODE_INVALID"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="403"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Consent required"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="TIFLOW_CONSENT_REQUIRED"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="409"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Country code invalid"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="TIFLOW_EREZEPT_COUNTRY_CODE_INVALID"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="403"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Access role not allowed"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="TIFLOW_AUTH_ROLE_NOT_ALLOWED"/>
+        </extension>
+      </extension>
+      <name value="grant-eu-access-permission"/>
+      <definition value="https://gematik.de/fhir/tiflow-erezept/OperationDefinition/GrantEUAccessPermission"/>
+      <documentation value="Registers access code and country for EU prescription access"/>
+    </operation>
+    <operation>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="200"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Successful operation"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="Parameters"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="400"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Invalid request"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="MSG_BAD_FORMAT"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="403"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Access role not allowed"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="TIFLOW_AUTH_ROLE_NOT_ALLOWED"/>
+        </extension>
+      </extension>
+      <name value="read-eu-access-permission"/>
+      <definition value="https://gematik.de/fhir/tiflow-erezept/OperationDefinition/ReadEUAccessPermission"/>
+      <documentation value="Reads the currently registered EU access code"/>
+    </operation>
+    <operation>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="200"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Successful operation"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="400"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Invalid request"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="MSG_BAD_FORMAT"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="403"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Access role not allowed"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="TIFLOW_AUTH_ROLE_NOT_ALLOWED"/>
+        </extension>
+      </extension>
+      <name value="revoke-eu-access-permission"/>
+      <definition value="https://gematik.de/fhir/tiflow-erezept/OperationDefinition/RevokeEUAccessPermission"/>
+      <documentation value="Revokes the currently registered EU access code"/>
+    </operation>
+    <operation>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="200"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Successful operation"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="Parameters"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="400"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Invalid request"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="MSG_BAD_FORMAT"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="400"/>
+        </extension>
+        <extension url="description">
+          <valueString value="FHIR Profile Validation Failed"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="SVC_VALIDATION_FAILED"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="403"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Access permission invalid"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="TIFLOW_ACCESS_PERMISSION_INVALID"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="403"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Access role not allowed"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="TIFLOW_AUTH_ROLE_NOT_ALLOWED"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="403"/>
+        </extension>
+        <extension url="description">
+          <valueString value="Consent required"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="TIFLOW_CONSENT_REQUIRED"/>
+        </extension>
+      </extension>
+      <extension url="https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info">
+        <extension url="statusCode">
+          <valueString value="404"/>
+        </extension>
+        <extension url="description">
+          <valueString value="No prescriptions found"/>
+        </extension>
+        <extension url="responseType">
+          <valueString value="TIFlowOperationOutcome"/>
+        </extension>
+        <extension url="errorCode">
+          <valueString value="TIFLOW_EREZEPT_NO_PRESCRIPTIONS_FOUND"/>
+        </extension>
+      </extension>
+      <name value="get-eu-prescriptions"/>
+      <definition value="https://gematik.de/fhir/tiflow-erezept/OperationDefinition/GETPrescriptionEU"/>
+      <documentation value="Returns prescription information for EU ePrescription workflows"/>
+    </operation>
   </rest>
 </CapabilityStatement>

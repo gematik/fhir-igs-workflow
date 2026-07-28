@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Query API**](menu-schnittstellen-query-api.md)
@@ -16,14 +16,7 @@ Version 2.0.0-ballot.2 - draft
 Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `AuditEvent`-Query-Endpunkte.
 
 funkt. Eignung: Test Produkt/FADas E-Rezept-FdV MUSS im Anwendungsfall "Protokolldaten anzeigen" zum Abrufen der Protokolleinträge vom TI-Flow-Fachdienst die HTTP-Operation GET /AuditEvent ausführen.
-Der Response beinhaltet ein Bundle mit einem searchset von AuditEvent Ressourcen. Eine AuditEvent Ressource beinhaltet die folgenden Informationen (Siehe auch [gemSpec_DM_eRp#A_19296-* - TI-Flow-Fachdienst - Inhalt Protokolleintrag]):
-
-* ID des Datenobjektes, auf das zugegriffen wurde (AuditEvent.entity.what) Das entspricht der Task-ID oder MedicationDispense-ID
-* Verordnungs-ID (AuditEvent.entity.description)
-* lesbarer Beschreibung in einfacher Sprache (AuditEvent.text)
-* Name des Zugreifenden (AuditEvent.agent.who)
-* Zeitpunkt des Zugriffs (AuditEvent.recorded)
-* Ergebnis der aufgerufenen Operation (AuditEvent.outcome)
+Der Response beinhaltet ein Bundle mit einem searchset von AuditEvent Ressourcen. Die Informationen, die eine AuditEvent Ressource enthält, werden [hier](./audit-service.md) beschrieben.
 
 Das E-Rezept-FdV kann es dem Nutzer über einen Link in der Anzeige ermöglichen, die Details zur referenzierten Verordnung anzuzeigen.
 

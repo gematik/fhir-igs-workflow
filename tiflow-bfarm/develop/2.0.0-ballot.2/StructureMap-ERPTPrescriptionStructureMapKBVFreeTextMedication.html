@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>E-T-Rezept Structure Map for KBV FreeText Medication - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
+    <title>E-T-Rezept Structure Map for KBV FreeText Medication - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -161,11 +161,8 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -186,6 +183,9 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -202,10 +202,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Datenaustausch BfArM Webdienst
+Implementation Guide<br /> TIFlow - Datenaustausch BfArM Webdienst
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -314,7 +314,7 @@ TIFlow - Datenaustausch BfArM Webdienst
         
           Draft
           
-            as of 2026-05-26
+            as of 2026-06-30
           
         
       </td>
@@ -356,13 +356,18 @@ TIFlow - Datenaustausch BfArM Webdienst
 
 <span style="color: navy">// </span><span style="color: green">Mapping-Anweisungen zur Transformation von KBV Freitext-Medikamenten zu BfArM T-Prescription Format</span>
 <b>group </b>ERPTPrescriptionStructureMapKBVFreeTextMedication<span style="color: navy">(</span><b>source</b> <span style="color: maroon">kbvMedicationFreeText</span><span style="color: navy"> : </span>kbvMedicationFreeText, <b>target</b> <span style="color: maroon">bfarmMedication</span><span style="color: navy"> : </span>bfarmMedication<span style="color: navy">)</span><span style="color: navy"> {
-</span>  kbvMedicationFreeText.id<b> as </b><span style="color: maroon">IdVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmMedication.id = <span style="color: maroon">IdVar</span> <i>&quot;medicationId&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Übernimmt die eindeutige Medication-ID unverändert</span>
+</span>  <span style="color: navy">// </span><span style="color: green">Übernimmt die eindeutige Medication-ID unverändert</span>
+  kbvMedicationFreeText.id<b> as </b><span style="color: maroon">IdVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmMedication.id = <span style="color: maroon">IdVar</span> <i>&quot;medicationId&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Mappt den Medikamentencode mit Freitext-Beschreibung</span>
   kbvMedicationFreeText.code<b> as </b><span style="color: maroon">srcCodeVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmMedication.code<b> as </b><span style="color: maroon">tgtCodeVar</span><b> then</b><span style="color: navy"> {
-</span>    srcCodeVar.text<b> as </b><span style="color: maroon">srcCodeTextVar</span><span style="color: navy"><b> -&gt; </b></span>tgtCodeVar.text = <span style="color: maroon">srcCodeTextVar</span> <i>&quot;medicationCodeText&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Kopiert die Freitext-Bezeichnung des Medikaments (z.B. 'Aspirin 500mg Tabletten')</span>
-  <span style="color: navy">}</span> <i>&quot;medicationCode&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Mappt den Medikamentencode mit Freitext-Beschreibung</span>
+</span>    <span style="color: navy">// </span><span style="color: green">Kopiert die Freitext-Bezeichnung des Medikaments (z.B. 'Aspirin 500mg Tabletten')</span>
+    srcCodeVar.text<b> as </b><span style="color: maroon">srcCodeTextVar</span><span style="color: navy"><b> -&gt; </b></span>tgtCodeVar.text = <span style="color: maroon">srcCodeTextVar</span> <i>&quot;medicationCodeText&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;medicationCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Mappt die Darreichungsform als Freitext</span>
   kbvMedicationFreeText.form<b> as </b><span style="color: maroon">srcFormVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmMedication.form<b> as </b><span style="color: maroon">tgtFormVar</span><b> then</b><span style="color: navy"> {
-</span>    srcFormVar.text<b> as </b><span style="color: maroon">srcformTextVar</span><span style="color: navy"><b> -&gt; </b></span>tgtFormVar.text = <span style="color: maroon">srcformTextVar</span> <i>&quot;medicationFormText&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Übernimmt die Freitext-Darreichungsform (z.B. 'Tabletten', 'Tropfen zum Einnehmen')</span>
-  <span style="color: navy">}</span> <i>&quot;medicationForm&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Mappt die Darreichungsform als Freitext</span>
+</span>    <span style="color: navy">// </span><span style="color: green">Übernimmt die Freitext-Darreichungsform (z.B. 'Tabletten', 'Tropfen zum Einnehmen')</span>
+    srcFormVar.text<b> as </b><span style="color: maroon">srcformTextVar</span><span style="color: navy"><b> -&gt; </b></span>tgtFormVar.text = <span style="color: maroon">srcformTextVar</span> <i>&quot;medicationFormText&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;medicationForm&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span></pre></div>
@@ -412,7 +417,7 @@ TIFlow - Datenaustausch BfArM Webdienst
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:48+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:29+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

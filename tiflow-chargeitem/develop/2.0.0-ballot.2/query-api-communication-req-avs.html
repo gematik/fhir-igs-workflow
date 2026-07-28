@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>AVS-Anforderungen: Communication-Query - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
+    <title>AVS-Anforderungen: Communication-Query - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -196,10 +199,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Abrechnungsinformationen
+Implementation Guide<br /> TIFlow - Abrechnungsinformationen
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -278,7 +281,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="nachrichten-abrufen">Nachrichten abrufen</h4>
 <!-- A_21556 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-146" title="PS abgebende LEI: Nachrichten abrufen - Häufigkeit" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A146" title="PS abgebende LEI: Nachrichten abrufen - Häufigkeit" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -287,7 +290,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19329-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-147" title="PS abgebende LEI: Nachrichten abrufen - Abfrage" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A147" title="PS abgebende LEI: Nachrichten abrufen - Abfrage" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -306,7 +309,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.</p>
 
 <!-- A_19334 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-148" title="PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A148" title="PS abgebende LEI: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -321,15 +324,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="nachricht-löschen">Nachricht löschen</h4>
 <p>Mit diesem Anwendungsfall kann die abgebende LEI von ihr versendete Nachrichten an einen Versicherten auf dem Fachdienst löschen.</p>
 
-<p>Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, eine Nachricht zum
-Löschen auf dem Fachdienst auszuwählen.</p>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A455" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="0">
+  <meta lockversion="false" />
+  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+  </actor>
+ Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem Fachdienst auszuwählen.
+</requirement>
 
-<p>Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass die
-ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das
-Löschen abzubrechen.</p>
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A456" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="0">
+  <meta lockversion="false" />
+  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+  </actor>
+ Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass die ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.
+</requirement>
 
 <!-- A_21489 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-149" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A149" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="0">
   <meta lockversion="false" />
   <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -352,7 +364,7 @@ Löschen abzubrechen.</p>
 <h4 id="nachricht-versenden-1">Nachricht versenden</h4>
 
 <!--A_28539-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-32" title="PS abgebende LEI: Nachricht versenden - Apotheke  - Abrechnungsinformation - Communication Ressource erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A32" title="PS abgebende LEI: Nachricht versenden - Apotheke  - Abrechnungsinformation - Communication Ressource erstellen" version="0">
     <meta lockversion="false" />
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -400,7 +412,7 @@ Löschen abzubrechen.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:53+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:34+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

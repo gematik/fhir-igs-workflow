@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>E-T-Rezept Structure Map for Organization - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
+    <title>E-T-Rezept Structure Map for Organization - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -161,11 +161,8 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -186,6 +183,9 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -202,10 +202,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Datenaustausch BfArM Webdienst
+Implementation Guide<br /> TIFlow - Datenaustausch BfArM Webdienst
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -314,7 +314,7 @@ TIFlow - Datenaustausch BfArM Webdienst
         
           Draft
           
-            as of 2026-05-26
+            as of 2026-06-30
           
         
       </td>
@@ -356,24 +356,35 @@ TIFlow - Datenaustausch BfArM Webdienst
 
 <span style="color: navy">// </span><span style="color: green">Mapping-Anweisungen zur Erstellung einer BfArM Organization aus dem VZD SearchSet</span>
 <b>group </b>ERPTPrescriptionStructureMapOrganization<span style="color: navy">(</span><b>source</b> <span style="color: maroon">vzdSearchSet</span><span style="color: navy"> : </span>vzdSearchSet, <b>target</b> <span style="color: maroon">bfarmOrganization</span><span style="color: navy"> : </span>bfarmOrganization<span style="color: navy">)</span><span style="color: navy"> {
-</span>  vzdSearchSet.entry<b> as </b><span style="color: maroon">srcEntryOrgVar</span><b> then</b><span style="color: navy"> {
-</span>    srcEntryOrgVar.resource<span style="color: navy"> : </span>Organization<b> as </b><span style="color: maroon">srcEntryOrganizationVar</span><b> where </b>ofType(Organization)<b> then</b><span style="color: navy"> {
-</span>      srcEntryOrganizationVar.name<b> as </b><span style="color: maroon">srcOrgNameVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmOrganization.name = <span style="color: maroon">srcOrgNameVar</span><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Übernimmt den Namen der Organisation aus dem VZD in die BfArM Organization</span>
-      srcEntryOrganizationVar.identifier<b> as </b><span style="color: maroon">srcOrgIdentifierVar</span><b> where </b>$this.system='https://gematik.de/fhir/sid/telematik-id'<span style="color: navy"><b> -&gt; </b></span>bfarmOrganization.identifier<b> as </b><span style="color: maroon">bfarmOrganizationIdentifierVar</span><b> then</b><span style="color: navy"> {
-</span>        srcOrgIdentifierVar.value<b> as </b><span style="color: maroon">srcOrgIdentifierValueVar</span><b> log </b>tgtTidIdentifier<span style="color: navy"><b> -&gt; </b></span> bfarmOrganizationIdentifierVar.system = <span style="color: blue">'https://gematik.de/fhir/sid/telematik-id'</span><span style="color: navy">, </span> bfarmOrganizationIdentifierVar.value = <span style="color: maroon">srcOrgIdentifierValueVar</span><span style="color: navy">, </span> bfarmOrganization.id = <span style="color: maroon">srcOrgIdentifierValueVar</span> <i>&quot;tidValue&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Kopiert die Telematik-ID mit korrektem System-Identifier in die Ziel-Organisation</span>
-      <span style="color: navy">}</span> <i>&quot;tid&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Mappt die Telematik-ID der Organisation</span>
-    <span style="color: navy">}</span> <i>&quot;entry&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Verarbeitet jeden Eintrag im SearchSet</span>
-  <span style="color: navy">}</span> <i>&quot;mapOrganization&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Mappt Organization-Einträge aus dem VZD SearchSet</span>
+</span>  <span style="color: navy">// </span><span style="color: green">Mappt Organization-Einträge aus dem VZD SearchSet</span>
+  vzdSearchSet.entry<b> as </b><span style="color: maroon">srcEntryOrgVar</span><b> then</b><span style="color: navy"> {
+</span>    <span style="color: navy">// </span><span style="color: green">Verarbeitet jeden Eintrag im SearchSet</span>
+    srcEntryOrgVar.resource<span style="color: navy"> : </span>Organization<b> as </b><span style="color: maroon">srcEntryOrganizationVar</span><b> where </b><span style="color: navy">(</span>ofType(Organization)<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>      <span style="color: navy">// </span><span style="color: green">Übernimmt den Namen der Organisation aus dem VZD in die BfArM Organization</span>
+      srcEntryOrganizationVar.name<b> as </b><span style="color: maroon">srcOrgNameVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmOrganization.name = <span style="color: maroon">srcOrgNameVar</span><span style="color: navy">;</span>
+      <span style="color: navy">// </span><span style="color: green">Mappt die Telematik-ID der Organisation</span>
+      srcEntryOrganizationVar.identifier<b> as </b><span style="color: maroon">srcOrgIdentifierVar</span><b> where </b><span style="color: navy">(</span>$this.system='https://gematik.de/fhir/sid/telematik-id'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>bfarmOrganization.identifier<b> as </b><span style="color: maroon">bfarmOrganizationIdentifierVar</span><b> then</b><span style="color: navy"> {
+</span>        <span style="color: navy">// </span><span style="color: green">Kopiert die Telematik-ID mit korrektem System-Identifier in die Ziel-Organisation</span>
+        srcOrgIdentifierVar.value<b> as </b><span style="color: maroon">srcOrgIdentifierValueVar</span><b> log </b><span style="color: navy">(</span>tgtTidIdentifier<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span> bfarmOrganizationIdentifierVar.system = <span style="color: blue">'https://gematik.de/fhir/sid/telematik-id'</span><span style="color: navy">, </span> bfarmOrganizationIdentifierVar.value = <span style="color: maroon">srcOrgIdentifierValueVar</span><span style="color: navy">, </span> bfarmOrganization.id = <span style="color: maroon">srcOrgIdentifierValueVar</span> <i>&quot;tidValue&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;tid&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;entry&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mapOrganization&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Mappt HealthcareService-Informationen für Kontaktdaten</span>
   vzdSearchSet.entry<b> as </b><span style="color: maroon">srcEntryHCSVar</span><b> then</b><span style="color: navy"> {
-</span>    srcEntryHCSVar.resource<span style="color: navy"> : </span>HealthcareService<b> as </b><span style="color: maroon">srcEntryHealthcareServiceVar</span><b> where </b>ofType(HealthcareService)<b> then</b><span style="color: navy"> {
-</span>      srcEntryHealthcareServiceVar.telecom<b> as </b><span style="color: maroon">srcHcsTelecomVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmOrganization.telecom = <span style="color: maroon">srcHcsTelecomVar</span><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Übernimmt Kontaktinformationen (Telefon, E-Mail) aus dem HealthcareService in die Organisation</span>
-    <span style="color: navy">}</span> <i>&quot;entry&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Verarbeitet HealthcareService-Einträge aus dem SearchSet</span>
-  <span style="color: navy">}</span> <i>&quot;mapHealthcareService&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Mappt HealthcareService-Informationen für Kontaktdaten</span>
+</span>    <span style="color: navy">// </span><span style="color: green">Verarbeitet HealthcareService-Einträge aus dem SearchSet</span>
+    srcEntryHCSVar.resource<span style="color: navy"> : </span>HealthcareService<b> as </b><span style="color: maroon">srcEntryHealthcareServiceVar</span><b> where </b><span style="color: navy">(</span>ofType(HealthcareService)<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>      <span style="color: navy">// </span><span style="color: green">Übernimmt Kontaktinformationen (Telefon, E-Mail) aus dem HealthcareService in die Organisation</span>
+      srcEntryHealthcareServiceVar.telecom<b> as </b><span style="color: maroon">srcHcsTelecomVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmOrganization.telecom = <span style="color: maroon">srcHcsTelecomVar</span><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;entry&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mapHealthcareService&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Mappt Location-Informationen für Adressdaten</span>
   vzdSearchSet.entry<b> as </b><span style="color: maroon">srcEntryHCSVar</span><b> then</b><span style="color: navy"> {
-</span>    srcEntryHCSVar.resource<span style="color: navy"> : </span>Location<b> as </b><span style="color: maroon">srcEntryLocationVar</span><b> where </b>ofType(Location)<b> then</b><span style="color: navy"> {
-</span>      srcEntryLocationVar.address<b> as </b><span style="color: maroon">srcLocationAddressVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmOrganization.address = <span style="color: maroon">srcLocationAddressVar</span><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Übernimmt die Adressinformationen aus der Location in die Organisation</span>
-    <span style="color: navy">}</span> <i>&quot;entry&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Verarbeitet Location-Einträge aus dem SearchSet</span>
-  <span style="color: navy">}</span> <i>&quot;mapLocation&quot;</i><span style="color: navy">;</span> <span style="color: navy">// </span><span style="color: green">Mappt Location-Informationen für Adressdaten</span>
+</span>    <span style="color: navy">// </span><span style="color: green">Verarbeitet Location-Einträge aus dem SearchSet</span>
+    srcEntryHCSVar.resource<span style="color: navy"> : </span>Location<b> as </b><span style="color: maroon">srcEntryLocationVar</span><b> where </b><span style="color: navy">(</span>ofType(Location)<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>      <span style="color: navy">// </span><span style="color: green">Übernimmt die Adressinformationen aus der Location in die Organisation</span>
+      srcEntryLocationVar.address<b> as </b><span style="color: maroon">srcLocationAddressVar</span><span style="color: navy"><b> -&gt; </b></span>bfarmOrganization.address = <span style="color: maroon">srcLocationAddressVar</span><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;entry&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;mapLocation&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span></pre></div>
@@ -423,7 +434,7 @@ TIFlow - Datenaustausch BfArM Webdienst
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:48+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:29+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

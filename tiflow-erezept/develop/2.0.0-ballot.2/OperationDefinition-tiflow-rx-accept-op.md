@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-accept-op | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TIFlow-RX-OP-Accept |
+| Active as of 2026-06-30 | *Computable Name*:TIFlowRXOPAccept |
 
  
 Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'. 
@@ -30,11 +30,11 @@ Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der
   "id" : "tiflow-rx-accept-op",
   "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-accept-op",
   "version" : "2.0.0-ballot.2",
-  "name" : "TIFlow-RX-OP-Accept",
+  "name" : "TIFlowRXOPAccept",
   "title" : "E-Rezept abrufen",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -69,6 +69,13 @@ Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der
     "max" : "1",
     "documentation" : "Der Secret-Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen.",
     "type" : "string"
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "type" : "Bundle"
   }]
 }
 

@@ -1,8 +1,10 @@
-# Task searchset response for DiGA - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# Task searchset response for DiGA - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -29,10 +31,6 @@ Version 2.0.0-ballot.2 - ci-build
     "resource" : {
       "resourceType" : "Task",
       "id" : "ExampleDiGATaskInReadyState",
-      "text" : {
-        "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Task_ExampleDiGATaskInReadyState\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Task ExampleDiGATaskInReadyState</b></p><a name=\"ExampleDiGATaskInReadyState\"> </a><a name=\"hcExampleDiGATaskInReadyState\"> </a><p><b>status</b>: Ready</p><p><b>intent</b>: order</p><p><b>authoredOn</b>: 2026-03-20</p></div>"
-      },
       "status" : "ready",
       "intent" : "order",
       "authoredOn" : "2026-03-20"

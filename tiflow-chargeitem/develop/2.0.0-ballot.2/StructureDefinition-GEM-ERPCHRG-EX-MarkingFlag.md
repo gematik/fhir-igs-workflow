@@ -1,8 +1,10 @@
-# GEM_ERPCHRG_EX_MarkingFlag - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# GEM_ERPCHRG_EX_MarkingFlag - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_EX_MarkingFlag | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:GEM_ERPCHRG_EX_MarkingFlag |
+| Active as of 2026-06-30 | *Computable Name*:GEM_ERPCHRG_EX_MarkingFlag |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
 **Context of Use**
@@ -54,7 +56,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-EX-Marki
   "name" : "GEM_ERPCHRG_EX_MarkingFlag",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

@@ -1,8 +1,10 @@
-# Communication searchset response for DiGA - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# Communication searchset response for DiGA - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -31,10 +33,6 @@ Version 2.0.0-ballot.2 - ci-build
       "id" : "140f716f-f649-44fe-9a4e-157eb3c8adf3",
       "meta" : {
         "profile" : ["https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA"]
-      },
-      "text" : {
-        "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Communication_140f716f-f649-44fe-9a4e-157eb3c8adf3\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Communication 140f716f-f649-44fe-9a4e-157eb3c8adf3</b></p><a name=\"140f716f-f649-44fe-9a4e-157eb3c8adf3\"> </a><a name=\"hc140f716f-f649-44fe-9a4e-157eb3c8adf3\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-GEM-ERP-PR-Communication-DiGA.html\">GEM ERP PR Communication DiGA</a></p></div><p><b>basedOn</b>: <a href=\"Task-ExampleDiGATaskInReadyState.html\">Task: status = ready; intent = order; authoredOn = 2026-03-20</a></p><p><b>status</b>: Unknown</p><p><b>sent</b>: 2028-10-01 15:29:00+0000</p><p><b>recipient</b>: Identifier: NamingSystemKVID/X234567890</p><p><b>sender</b>: Identifier: <code>https://gematik.de/fhir/sid/telematik-id</code>/8-SMC-B-Testkarte-783498105628375</p><h3>Payloads</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Content[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>Nachrichteninhalt für den Versicherten</td></tr></table></div>"
       },
       "basedOn" : [{
         "reference" : "Task/ExampleDiGATaskInReadyState"

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Schnittstelle zur Übertragung an das BfArM T-Register - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
+    <title>Schnittstelle zur Übertragung an das BfArM T-Register - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -161,11 +161,8 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -186,6 +183,9 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -202,10 +202,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Datenaustausch BfArM Webdienst
+Implementation Guide<br /> TIFlow - Datenaustausch BfArM Webdienst
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -287,7 +287,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Über einen organisatorischen Prozess müssen Client Credentials beim BfArM angefragt werden, welche zur Authentifizierung des TI-Flow-Fachdienst ggü. dem BfArM Webdienst genutzt werden.</p>
 
 <!-- A_27819 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-1" title="Anbieter TI-Flow-Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A1" title="Anbieter TI-Flow-Fachdienst - BfArM - Registrierung für Client Credentials am BfArM Webdienst" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -305,16 +305,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </figure>
 
 <!-- A_27820 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-2" title="TI-Flow-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A2" title="TI-Flow-Fachdienst - BfArM - Prüfung Gültigkeit AccessToken" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst MUSS vor dem Zugriff auf den BfArM Webdienst prüfen, ob der zuletzt bezogene AccessToken noch gültig ist und im Falle der Ungültigkeit einen neuen AccessToken über den /ords/rezepte/oauth/token Endpunkt am BfArM Webdienst beziehen.
 </requirement>
 
 <!-- A_27821 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-3" title="TI-Flow-Fachdienst - BfArM - Beziehen des AccessTokens" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A3" title="TI-Flow-Fachdienst - BfArM - Beziehen des AccessTokens" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -338,7 +338,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27822 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-4" title="TI-Flow-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A4" title="TI-Flow-Fachdienst - BfArM - AccessToken für Zugriff auf den BfArM Webdienst" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -353,7 +353,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="lokalisierung">Lokalisierung</h3>
 
 <!-- A_27882 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-5" title="TI-Flow-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A5" title="TI-Flow-Fachdienst - BfArM - Lokalisierung Konfigurationsparameter BfArM_Domain" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -364,7 +364,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Der Defaultwert für den Parameter ist  <code class="language-plaintext highlighter-rouge">https://webapps-public.bfarm.de</code>.</p>
 
 <!-- A_27817 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-6" title="TI-Flow-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A6" title="TI-Flow-Fachdienst - BfArM - Lokalisierung des BfArM Webdienstes" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -377,7 +377,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Nach Abschluss eines Workflows 166 durch Aufrufen der $close Operation erstellt der TI-Flow-Fachdienst den digitalen Durchschlag für den Vorgang des E-T-Rezeptes. Die fachlichen Informationen hierzu sind im Dokument [gemF_eRp_T-Rezept] dokumentiert.</p>
 
 <!-- A_27823 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-7" title="TI-Flow-Fachdienst - BfArM - Flowtype 166" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A7" title="TI-Flow-Fachdienst - BfArM - Flowtype 166" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -386,7 +386,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27824 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-8" title="TI-Flow-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A8" title="TI-Flow-Fachdienst - BfArM - asynchrone Bereitstellung und Übermittlung" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -399,7 +399,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Als Datengrundlage für diesen Durchschlag dient der Verordnungsdatensatz samt QES, der Dispensierdatensatz, der Task der Verordnung und Daten der Apotheke aus dem FHIR-VZD. Als Kriterium für die Suche nach Apothekendaten im FHIR-VZD wird die Telematik-ID der Apotheke genutzt.</p>
 
 <!-- A_27825 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-9" title="TI-Flow-Fachdienst - BfArM - Suche nach Apothekendaten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A9" title="TI-Flow-Fachdienst - BfArM - Suche nach Apothekendaten" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -431,7 +431,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Anschließend erstellt der TI-Flow-Fachdienst den digitalen Durchschlag für den BfArM Webdienst. Dieser basiert auf einem definierten FHIR-Profil.</p>
 
 <!-- A_27826-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-10" title="TI-Flow-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A10" title="TI-Flow-Fachdienst - BfArM - Erzeugen digitaler Durchschlag E-T-Rezept" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -440,7 +440,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27827 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-11" title="TI-Flow-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A11" title="TI-Flow-Fachdienst - BfArM - Anwendungsfall Übertragen des digitalen Durchschlags" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -492,7 +492,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27828 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-12" title="TI-Flow-Fachdienst - BfArM - Übertragen des digitalen Durchschlags" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A12" title="TI-Flow-Fachdienst - BfArM - Übertragen des digitalen Durchschlags" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -540,7 +540,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ol>
 
 <!-- A_28979 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-17" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - kein VZD Eintrag für die Apotheke" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A17" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - kein VZD Eintrag für die Apotheke" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -556,7 +556,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Dieses Vorgehen stellt sicher, dass die Übertragung an das T-Register nicht aufgrund eines fehlenden FHIR-VZD-Eintrags blockiert wird und gleichzeitig die Nachvollziehbarkeit über die Telematik-ID gewährleistet bleibt.</p>
 
 <!-- A_27830 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-13" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A13" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -565,7 +565,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_27831 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-14" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-BFARM-A14" title="TI-Flow-Fachdienst - BfArM - Fehlerbehandlung - Protokollierung struktureller Fehler" version="0">
     <meta lockversion="false" />
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -614,7 +614,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:48+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.bfarm#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:29+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

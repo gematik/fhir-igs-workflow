@@ -8,6 +8,13 @@ const literatureData = [
     },
     
     {
+        key: "gemF_PushNotification",
+        link: "https://gemspec.gematik.de/docs/gemF/gemF_PushNotification/latest/",
+        title: "Anwendungsübergreifende Push Notification",
+        author: "gematik"
+    },
+    
+    {
         key: "gemSpec_DM_eRp",
         link: "https://gemspec.gematik.de/docs/gemSpec/gemSpec_DM_eRp/latest/",
         title: "Spezifikation Datenmodell E-Rezept",
@@ -81,6 +88,20 @@ const literatureData = [
         key: "gemIG_TIFlow_erezept",
         link: "https://gemspec.gematik.de/ig/fhir/tiflow-erezept/2.0.0-ballot.1",
         title: "TIFlow - Verordnungen für Arzneimittel",
+        author: "gematik"
+    },
+    
+    {
+        key: "OpenAPI_PUSH_FD",
+        link: "https://github.com/gematik/api-erp/blob/master/resources/openapi/erp_fd_push_notifications.yaml",
+        title: "Push Open API vom TI-Flow-Fachdienst, v. 1.2.0",
+        author: "gematik"
+    },
+    
+    {
+        key: "E-Rezept API Dokumentation",
+        link: "https://github.com/gematik/api-erp",
+        title: "API Dokumentation des E-Rezept-Fachdienst",
         author: "gematik"
     }
     

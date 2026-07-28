@@ -18,13 +18,13 @@
   fhir:DomainResource.extension [
      fhir:index 0 ;
      fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url" ] ;
-     fhir:Extension.valueString [ fhir:value "https://tiflow.de/rx/fhir" ]
+     fhir:Extension.valueString [ fhir:value "https://tiflow.de/rx/fhir/v1" ]
   ] ;
   fhir:CapabilityStatement.url [ fhir:value "https://gematik.de/fhir/tiflow-erezept/CapabilityStatement/ti-flow-fachdienst-server-rx"] ;
   fhir:CapabilityStatement.version [ fhir:value "2.0.0-ballot.2"] ;
   fhir:CapabilityStatement.title [ fhir:value "TIFlow Fachdienst Server Capabilities"] ;
   fhir:CapabilityStatement.status [ fhir:value "active"] ;
-  fhir:CapabilityStatement.date [ fhir:value "2028-04-01"^^xsd:date] ;
+  fhir:CapabilityStatement.date [ fhir:value "2026-06-30"^^xsd:date] ;
   fhir:CapabilityStatement.publisher [ fhir:value "gematik GmbH"] ;
   fhir:CapabilityStatement.contact [
      fhir:index 0 ;
@@ -369,11 +369,53 @@
            fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
          ] ;
          fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
+           fhir:Extension.valueCode [ fhir:value "SHALL" ]
+         ] ;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "patch" ]
        ] ;
        fhir:CapabilityStatement.rest.resource.versioning [ fhir:value "versioned-update" ] ;
        fhir:CapabilityStatement.rest.resource.readHistory [ fhir:value "true"^^xsd:boolean ] ;
        fhir:CapabilityStatement.rest.resource.searchParam [
          fhir:index 0 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
+           fhir:Extension.valueCode [ fhir:value "SHALL" ]
+         ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "_id" ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Resource-id" ;
+           fhir:link <http://hl7.org/fhir/SearchParameter/Resource-id>
+         ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Task.id - Unterstützt die Suche nach der Task-ID" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
+           fhir:Extension.valueCode [ fhir:value "SHALL" ]
+         ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "prescription-id" ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Task.identifier - Unterstützt die Suche nach der E-Rezept-ID" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
+           fhir:Extension.valueCode [ fhir:value "SHALL" ]
+         ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "access-code" ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Task.identifier - Unterstützt die Suche nach dem Zugriffscode" ]
+       ], [
+         fhir:index 3 ;
          fhir:Element.extension [
            fhir:index 0 ;
            fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
@@ -387,7 +429,7 @@
          fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "date" ] ;
          fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Task.authoredOn - Unterstützt die Suche nach dem Erstellungsdatum; default sort if _sort is not provided" ]
        ], [
-         fhir:index 1 ;
+         fhir:index 4 ;
          fhir:Element.extension [
            fhir:index 0 ;
            fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
@@ -401,7 +443,7 @@
          fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ] ;
          fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Task.status - Unterstützt die Suche nach dem Status einer Task" ]
        ], [
-         fhir:index 2 ;
+         fhir:index 5 ;
          fhir:Element.extension [
            fhir:index 0 ;
            fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
@@ -411,7 +453,7 @@
          fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "date" ] ;
          fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Task.extension:expiryDate.valueDate - Unterstützt die Suche nach dem Verfallsdatum" ]
        ], [
-         fhir:index 3 ;
+         fhir:index 6 ;
          fhir:Element.extension [
            fhir:index 0 ;
            fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
@@ -421,7 +463,7 @@
          fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "date" ] ;
          fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Task.extension:acceptDate.valueDate - Unterstützt die Suche nach dem Akzeptanzdatum" ]
        ], [
-         fhir:index 4 ;
+         fhir:index 7 ;
          fhir:Element.extension [
            fhir:index 0 ;
            fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
@@ -435,7 +477,7 @@
          fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "date" ] ;
          fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Task.lastModified - Unterstützt die Suche nach dem zuletzt modifizierten Datum" ]
        ], [
-         fhir:index 5 ;
+         fhir:index 8 ;
          fhir:Element.extension [
            fhir:index 0 ;
            fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
@@ -445,7 +487,7 @@
          fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ] ;
          fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Unterstützt das Sortieren nach unterstützten Task-Suchkriterien" ]
        ], [
-         fhir:index 6 ;
+         fhir:index 9 ;
          fhir:Element.extension [
            fhir:index 0 ;
            fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
@@ -455,7 +497,7 @@
          fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "number" ] ;
          fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50" ]
        ], [
-         fhir:index 7 ;
+         fhir:index 10 ;
          fhir:Element.extension [
            fhir:index 0 ;
            fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
@@ -625,7 +667,10 @@
            fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
          ] ;
          fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "create" ] ;
-         fhir:CapabilityStatement.rest.resource.operation.definition [ fhir:value "TIFlow-RX-OP-Create" ] ;
+         fhir:CapabilityStatement.rest.resource.operation.definition [
+           fhir:value "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-create-op" ;
+           fhir:link <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-create-op>
+         ] ;
          fhir:CapabilityStatement.rest.resource.operation.documentation [ fhir:value "Creates a Task for a specific flow type" ]
        ], [
          fhir:index 1 ;
@@ -1167,7 +1212,10 @@
            fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
          ] ;
          fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "activate" ] ;
-         fhir:CapabilityStatement.rest.resource.operation.definition [ fhir:value "TIFlow-RX-OP-Activate" ] ;
+         fhir:CapabilityStatement.rest.resource.operation.definition [
+           fhir:value "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-activate-op" ;
+           fhir:link <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-activate-op>
+         ] ;
          fhir:CapabilityStatement.rest.resource.operation.documentation [ fhir:value "Activates the created Task using the signed ePrescription bundle" ]
        ], [
          fhir:index 2 ;
@@ -1409,7 +1457,10 @@
            fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
          ] ;
          fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "accept" ] ;
-         fhir:CapabilityStatement.rest.resource.operation.definition [ fhir:value "TIFlow-RX-OP-Accept" ] ;
+         fhir:CapabilityStatement.rest.resource.operation.definition [
+           fhir:value "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-accept-op" ;
+           fhir:link <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-accept-op>
+         ] ;
          fhir:CapabilityStatement.rest.resource.operation.documentation [ fhir:value "Pharmacy claims an ePrescription and sets Task status to in-progress" ]
        ], [
          fhir:index 3 ;
@@ -1591,7 +1642,10 @@
            fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
          ] ;
          fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "reject" ] ;
-         fhir:CapabilityStatement.rest.resource.operation.definition [ fhir:value "TIFlow-RX-OP-Reject" ] ;
+         fhir:CapabilityStatement.rest.resource.operation.definition [
+           fhir:value "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-reject-op" ;
+           fhir:link <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-reject-op>
+         ] ;
          fhir:CapabilityStatement.rest.resource.operation.documentation [ fhir:value "Rejects dispensing and resets Task status to active" ]
        ], [
          fhir:index 4 ;
@@ -1853,7 +1907,10 @@
            fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
          ] ;
          fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "close" ] ;
-         fhir:CapabilityStatement.rest.resource.operation.definition [ fhir:value "TIFlow-RX-OP-Close" ] ;
+         fhir:CapabilityStatement.rest.resource.operation.definition [
+           fhir:value "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-close-op" ;
+           fhir:link <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-close-op>
+         ] ;
          fhir:CapabilityStatement.rest.resource.operation.documentation [ fhir:value "Finishes the ePrescription workflow and sets Task status to completed" ]
        ], [
          fhir:index 5 ;
@@ -2075,7 +2132,10 @@
            fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
          ] ;
          fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "abort" ] ;
-         fhir:CapabilityStatement.rest.resource.operation.definition [ fhir:value "TIFlow-RX-OP-Abort" ] ;
+         fhir:CapabilityStatement.rest.resource.operation.definition [
+           fhir:value "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-abort-op" ;
+           fhir:link <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-abort-op>
+         ] ;
          fhir:CapabilityStatement.rest.resource.operation.documentation [ fhir:value "Aborts the ePrescription workflow and deletes Task related data" ]
        ], [
          fhir:index 6 ;
@@ -2277,8 +2337,224 @@
            fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
          ] ;
          fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "dispense" ] ;
-         fhir:CapabilityStatement.rest.resource.operation.definition [ fhir:value "TIFlow-RX-OP-Dispense" ] ;
+         fhir:CapabilityStatement.rest.resource.operation.definition [
+           fhir:value "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-dispense-op" ;
+           fhir:link <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-dispense-op>
+         ] ;
          fhir:CapabilityStatement.rest.resource.operation.documentation [ fhir:value "Documents medication dispensation without changing Task status" ]
+       ], [
+         fhir:index 7 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
+           fhir:Extension.valueCode [ fhir:value "SHALL" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "400" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "FHIR Profile Validation Failed" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "SVC_VALIDATION_FAILED" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "403" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Access permission invalid" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFLOW_ACCESS_PERMISSION_INVALID" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "403" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Access role not allowed" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFLOW_AUTH_ROLE_NOT_ALLOWED" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 4 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "403" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Consent missing" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFLOW_CONSENT_MISSING" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 5 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "400" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Task status mismatch" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFLOW_TASK_STATUS_MISMATCH" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 6 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "404" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Resource is not known" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "MSG_RESOURCE_ID_FAIL" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 7 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "410" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Resource was deleted" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "MSG_DELETED" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 8 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "400" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Invalid request" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "MSG_BAD_FORMAT" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 9 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "500" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Internal Server Error" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFLOW_INTERNAL_ERROR" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 10 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "408" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Timeout" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFLOW_TIMEOUT" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ] ;
+         fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "eu-close" ] ;
+         fhir:CapabilityStatement.rest.resource.operation.definition [
+           fhir:value "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/EUCloseOperation" ;
+           fhir:link <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/EUCloseOperation>
+         ] ;
+         fhir:CapabilityStatement.rest.resource.operation.documentation [ fhir:value "Finishes the EU ePrescription workflow and creates a signed receipt bundle" ]
        ]
      ], [
        fhir:index 1 ;
@@ -2870,7 +3146,7 @@
            fhir:value "http://hl7.org/fhir/SearchParameter/Communication-recipient" ;
            fhir:link <http://hl7.org/fhir/SearchParameter/Communication-recipient>
          ] ;
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ] ;
          fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Communication.recipient.identifier.value - Unterstützt die Suche nach dem Empfänger einer Nachricht" ]
        ], [
          fhir:index 3 ;
@@ -2884,7 +3160,7 @@
            fhir:value "http://hl7.org/fhir/SearchParameter/Communication-sender" ;
            fhir:link <http://hl7.org/fhir/SearchParameter/Communication-sender>
          ] ;
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ] ;
          fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Communication.sender.identifier.value - Unterstützt die Suche nach dem Absender einer Nachricht" ]
        ], [
          fhir:index 4 ;
@@ -3258,7 +3534,7 @@
            fhir:value "http://hl7.org/fhir/SearchParameter/MedicationDispense-performer" ;
            fhir:link <http://hl7.org/fhir/SearchParameter/MedicationDispense-performer>
          ] ;
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ] ;
          fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "MedicationDispense.performer.actor.identifier.value - Unterstützt die Suche einer MedicationDispense zu einer Abgebenden LEI." ]
        ], [
          fhir:index 3 ;
@@ -3542,6 +3818,825 @@
        ] ;
        fhir:CapabilityStatement.rest.resource.versioning [ fhir:value "versioned-update" ] ;
        fhir:CapabilityStatement.rest.resource.readHistory [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
+         fhir:Extension.valueCode [ fhir:value "SHALL" ]
+       ] ;
+       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Consent" ] ;
+       fhir:CapabilityStatement.rest.resource.interaction [
+         fhir:index 0 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
+           fhir:Extension.valueCode [ fhir:value "SHALL" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "400" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Invalid request" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "MSG_BAD_FORMAT" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "408" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Timeout" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFLOW_TIMEOUT" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "500" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Internal Server Error" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFLOW_INTERNAL_ERROR" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 4 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "200" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Successful operation" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 5 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "400" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Unknown search parameter" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "MSG_PARAM_UNKNOWN" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 6 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "400" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Invalid query parameter(s)" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "MSG_BAD_SYNTAX" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 7 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "404" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Unknown resource type" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "MSG_UNKNOWN_TYPE" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ] ;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
+           fhir:Extension.valueCode [ fhir:value "SHALL" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "400" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Invalid request" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "MSG_BAD_FORMAT" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "408" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Timeout" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFLOW_TIMEOUT" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "500" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Internal Server Error" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFLOW_INTERNAL_ERROR" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 4 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "201" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Resource created" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 5 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "404" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Unknown resource type" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "MSG_UNKNOWN_TYPE" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ] ;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "create" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
+           fhir:Extension.valueCode [ fhir:value "SHALL" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "400" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Invalid request" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "MSG_BAD_FORMAT" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "408" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Timeout" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFLOW_TIMEOUT" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "500" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Internal Server Error" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFLOW_INTERNAL_ERROR" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 4 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "204" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Successful operation without response body" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 5 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "404" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Unknown resource type" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "MSG_UNKNOWN_TYPE" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 6 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "404" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Resource is not known" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "MSG_RESOURCE_ID_FAIL" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ], [
+           fhir:index 7 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "statusCode" ] ;
+             fhir:Extension.valueString [ fhir:value "410" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "description" ] ;
+             fhir:Extension.valueString [ fhir:value "Resource was deleted" ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "responseType" ] ;
+             fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "errorCode" ] ;
+             fhir:Extension.valueString [ fhir:value "MSG_DELETED" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+         ] ;
+         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "delete" ]
+       ] ;
+       fhir:CapabilityStatement.rest.resource.versioning [ fhir:value "versioned-update" ] ;
+       fhir:CapabilityStatement.rest.resource.readHistory [ fhir:value "true"^^xsd:boolean ] ;
+       fhir:CapabilityStatement.rest.resource.searchParam [
+         fhir:index 0 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
+           fhir:Extension.valueCode [ fhir:value "SHALL" ]
+         ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "category" ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.definition [
+           fhir:value "http://hl7.org/fhir/SearchParameter/Consent-category" ;
+           fhir:link <http://hl7.org/fhir/SearchParameter/Consent-category>
+         ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ] ;
+         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Consent.category - Unterstützt die Suche nach der Art der Einwilligung" ]
+       ]
+     ] ;
+     fhir:CapabilityStatement.rest.operation [
+       fhir:index 0 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
+         fhir:Extension.valueCode [ fhir:value "SHALL" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "200" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Successful operation" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "Parameters" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "400" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Invalid request" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "MSG_BAD_FORMAT" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "400" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Access code invalid" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFLOW_ACCESS_CODE_INVALID" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 4 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "403" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Consent required" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFLOW_CONSENT_REQUIRED" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 5 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "409" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Country code invalid" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFLOW_EREZEPT_COUNTRY_CODE_INVALID" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 6 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "403" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Access role not allowed" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFLOW_AUTH_ROLE_NOT_ALLOWED" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ] ;
+       fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "grant-eu-access-permission" ] ;
+       fhir:CapabilityStatement.rest.resource.operation.definition [
+         fhir:value "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/GrantEUAccessPermission" ;
+         fhir:link <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/GrantEUAccessPermission>
+       ] ;
+       fhir:CapabilityStatement.rest.resource.operation.documentation [ fhir:value "Registers access code and country for EU prescription access" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
+         fhir:Extension.valueCode [ fhir:value "SHALL" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "200" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Successful operation" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "Parameters" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "400" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Invalid request" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "MSG_BAD_FORMAT" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "403" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Access role not allowed" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFLOW_AUTH_ROLE_NOT_ALLOWED" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ] ;
+       fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "read-eu-access-permission" ] ;
+       fhir:CapabilityStatement.rest.resource.operation.definition [
+         fhir:value "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/ReadEUAccessPermission" ;
+         fhir:link <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/ReadEUAccessPermission>
+       ] ;
+       fhir:CapabilityStatement.rest.resource.operation.documentation [ fhir:value "Reads the currently registered EU access code" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
+         fhir:Extension.valueCode [ fhir:value "SHALL" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "200" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Successful operation" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "400" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Invalid request" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "MSG_BAD_FORMAT" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "403" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Access role not allowed" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFLOW_AUTH_ROLE_NOT_ALLOWED" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ] ;
+       fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "revoke-eu-access-permission" ] ;
+       fhir:CapabilityStatement.rest.resource.operation.definition [
+         fhir:value "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/RevokeEUAccessPermission" ;
+         fhir:link <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/RevokeEUAccessPermission>
+       ] ;
+       fhir:CapabilityStatement.rest.resource.operation.documentation [ fhir:value "Revokes the currently registered EU access code" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" ] ;
+         fhir:Extension.valueCode [ fhir:value "SHALL" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "200" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Successful operation" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "Parameters" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "400" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Invalid request" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "MSG_BAD_FORMAT" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "400" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "FHIR Profile Validation Failed" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "SVC_VALIDATION_FAILED" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 4 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "403" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Access permission invalid" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFLOW_ACCESS_PERMISSION_INVALID" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 5 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "403" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Access role not allowed" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFLOW_AUTH_ROLE_NOT_ALLOWED" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 6 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "403" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "Consent required" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFLOW_CONSENT_REQUIRED" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ], [
+         fhir:index 7 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "statusCode" ] ;
+           fhir:Extension.valueString [ fhir:value "404" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "description" ] ;
+           fhir:Extension.valueString [ fhir:value "No prescriptions found" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Extension.url [ fhir:value "responseType" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFlowOperationOutcome" ]
+         ], [
+           fhir:index 3 ;
+           fhir:Extension.url [ fhir:value "errorCode" ] ;
+           fhir:Extension.valueString [ fhir:value "TIFLOW_EREZEPT_NO_PRESCRIPTIONS_FOUND" ]
+         ] ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info" ]
+       ] ;
+       fhir:CapabilityStatement.rest.resource.operation.name [ fhir:value "get-eu-prescriptions" ] ;
+       fhir:CapabilityStatement.rest.resource.operation.definition [
+         fhir:value "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/GETPrescriptionEU" ;
+         fhir:link <https://gematik.de/fhir/tiflow-erezept/OperationDefinition/GETPrescriptionEU>
+       ] ;
+       fhir:CapabilityStatement.rest.resource.operation.documentation [ fhir:value "Returns prescription information for EU ePrescription workflows" ]
      ]
   ] .
 

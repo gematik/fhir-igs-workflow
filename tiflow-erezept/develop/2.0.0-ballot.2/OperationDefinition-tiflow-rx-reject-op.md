@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-reject-op | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TIFlow-RX-OP-Reject |
+| Active as of 2026-06-30 | *Computable Name*:TIFlowRXOPReject |
 
  
 Lehnt die Ausgabe eines E-Rezepts ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Apotheker zugänglich oder kann vom Patienten gelöscht werden. 
@@ -30,11 +30,11 @@ Lehnt die Ausgabe eines E-Rezepts ab. Die Aufgabe wird in einen aktiven Zustand 
   "id" : "tiflow-rx-reject-op",
   "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-reject-op",
   "version" : "2.0.0-ballot.2",
-  "name" : "TIFlow-RX-OP-Reject",
+  "name" : "TIFlowRXOPReject",
   "title" : "E-Rezept zurückgeben",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

@@ -3,15 +3,15 @@
   "id" : "tiflow-rx-close-op",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition tiflow-rx-close-op</b></p><a name=\"tiflow-rx-close-op\"> </a><a name=\"hctiflow-rx-close-op\"> </a><p>URL: [base]/Task/[id]/$close</p><p>Input parameters Profile:<a href=\"StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.html\">GEM ERP PR CloseOperation Input</a></p><p>Output parameters Profile:<a href=\"StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Output.html\">GEM ERP PR CloseOperation Output</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr></table></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition tiflow-rx-close-op</b></p><a name=\"tiflow-rx-close-op\"> </a><a name=\"hctiflow-rx-close-op\"> </a><p>URL: [base]/Task/[id]/$close</p><p>Input parameters Profile:<a href=\"StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Input.html\">GEM ERP PR CloseOperation Input</a></p><p>Output parameters Profile:<a href=\"StructureDefinition-GEM-ERP-PR-PAR-Close-Operation-Output.html\">GEM ERP PR CloseOperation Output</a></p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td/></tr></table></div>"
   },
   "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-close-op",
   "version" : "2.0.0-ballot.2",
-  "name" : "TIFlow-RX-OP-Close",
+  "name" : "TIFlowRXOPClose",
   "title" : "E-Rezept Abgabe vollziehen",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -39,5 +39,12 @@
   "type" : false,
   "instance" : true,
   "inputProfile" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input",
-  "outputProfile" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Output"
+  "outputProfile" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Output",
+  "parameter" : [{
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "type" : "Bundle"
+  }]
 }

@@ -1,8 +1,10 @@
-# TIFlow - DiGA - Task - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# TIFlow - DiGA - Task - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-task | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TIFlowDiGATask |
+| Active as of 2026-06-30 | *Computable Name*:TIFlowDiGATask |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -47,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-diga-task.csv
   "title" : "TIFlow - DiGA - Task",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -93,10 +95,23 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-diga-task.csv
   "kind" : "resource",
   "abstract" : false,
   "type" : "Task",
-  "baseDefinition" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-task",
+  "baseDefinition" : "https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-order-task",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
+      "id" : "Task.extension",
+      "path" : "Task.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Erweiterungen für die Aufgabe, die durch url unterschieden werden.",
+        "ordered" : false,
+        "rules" : "closed"
+      }
+    },
+    {
       "id" : "Task.extension:acceptDate",
       "path" : "Task.extension",
       "sliceName" : "acceptDate",
@@ -149,8 +164,7 @@ Other representations of profile: [CSV](StructureDefinition-tiflow-diga-task.csv
         "rules" : "closed"
       },
       "short" : "Input Bundle",
-      "definition" : "Referenz auf Eingabe und Ergebnis der DiGA Verordnung während des Prozesses",
-      "mustSupport" : true
+      "definition" : "Referenz auf Eingabe und Ergebnis der DiGA Verordnung während des Prozesses"
     },
     {
       "id" : "Task.input:ePrescription",

@@ -1,8 +1,10 @@
-# Beispiel 1: PZN Verordnung - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# Beispiel 1: PZN Verordnung - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)

@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * **Release Notes**
@@ -75,11 +75,11 @@ Neue Anforderungen wurden hinzugefügt, bestehende geändert und nicht mehr ben�
 | ** NEU ** | [ IG-TIFLOW-CORE-A157 ](./kommunikation-dienste-ti.md) | CS: Kommunikation über TLS-Verbindung |
 | ** NEU ** | [ IG-TIFLOW-CORE-A158 ](./kommunikation-dienste-ti.md) | CS: Unzulässige TLS-Verbindungen ablehnen |
 | ** NEU ** | [ IG-TIFLOW-CORE-A162 ](./kommunikation-dienste-ti.md) | CS: Umsetzung sicherer Kanal zur VAU des TI-Flow-Fachdienstes |
-| ** NEU ** | [ IG-TIFLOW-CORE-A163 ](./menu-technische-umsetzung-subscription.md) | TI-Flow-Fachdienst - Subscription Service - Webschnittstelle |
-| ** NEU ** | [ IG-TIFLOW-CORE-A164 ](./menu-technische-umsetzung-subscription.md) | TI-Flow-Fachdienst - Subscription Service - Prüfung Bearer-Token |
-| ** NEU ** | [ IG-TIFLOW-CORE-A165 ](./menu-technische-umsetzung-subscription.md) | TI-Flow-Fachdienst - Subscription Service - Upgrade |
-| ** NEU ** | [ IG-TIFLOW-CORE-A166 ](./menu-technische-umsetzung-subscription.md) | TI-Flow-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen |
-| ** NEU ** | [ IG-TIFLOW-CORE-A167 ](./menu-technische-umsetzung-subscription.md) | TI-Flow-Fachdienst - Subscription Service - Verbot Profilbildung |
+| ** NEU ** | [ IG-TIFLOW-CORE-A163 ](./query-api-subscription-req-fd.md) | TI-Flow-Fachdienst - Subscription Service - Webschnittstelle |
+| ** NEU ** | [ IG-TIFLOW-CORE-A164 ](./query-api-subscription-req-fd.md) | TI-Flow-Fachdienst - Subscription Service - Prüfung Bearer-Token |
+| ** NEU ** | [ IG-TIFLOW-CORE-A165 ](./query-api-subscription-req-fd.md) | TI-Flow-Fachdienst - Subscription Service - Upgrade |
+| ** NEU ** | [ IG-TIFLOW-CORE-A166 ](./query-api-subscription-req-fd.md) | TI-Flow-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen |
+| ** NEU ** | [ IG-TIFLOW-CORE-A167 ](./query-api-subscription-req-fd.md) | TI-Flow-Fachdienst - Subscription Service - Verbot Profilbildung |
 | ** NEU ** | [ IG-TIFLOW-CORE-A168 ](./op-abort-req-avs.md) | PS abgebende LEI: E-Rezepte löschen - E-Rezept auswählen |
 | ** NEU ** | [ IG-TIFLOW-CORE-A169 ](./op-abort-req-avs.md) | PS abgebende LEI: E-Rezept löschen - Bestätigung |
 | ** NEU ** | [ IG-TIFLOW-CORE-A170 ](./op-abort-req-avs.md) | PS abgebende LEI: E-Rezept durch Abgebenden löschen |
@@ -91,7 +91,6 @@ Neue Anforderungen wurden hinzugefügt, bestehende geändert und nicht mehr ben�
 | ** NEU ** | [ IG-TIFLOW-CORE-A176 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Schemavalidierung |
 | ** NEU ** | [ IG-TIFLOW-CORE-A177 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA |
 | ** NEU ** | [ IG-TIFLOW-CORE-A178 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Verordnung QES prüfen |
-| ** NEU ** | [ IG-TIFLOW-CORE-A179 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Mimetype Signatur |
 | ** NEU ** | [ IG-TIFLOW-CORE-A180 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Prüfung Rezept-ID in Task gegen Verordnungsdatensatz |
 | ** NEU ** | [ IG-TIFLOW-CORE-A181 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten |
 | ** NEU ** | [ IG-TIFLOW-CORE-A182 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum |
@@ -229,7 +228,6 @@ Neue Anforderungen wurden hinzugefügt, bestehende geändert und nicht mehr ben�
 | ** NEU ** | [ IG-TIFLOW-CORE-A32 ](./audit-service.md) | TI-Flow-Fachdienst - Versichertenprotokoll zu automatischen Löschen |
 | ** NEU ** | [ IG-TIFLOW-CORE-A320 ](./query-api-communication-req-fd.md) | TI-Flow-Fachdienst - Nachricht einstellen - Schemaprüfung |
 | ** NEU ** | [ IG-TIFLOW-CORE-A321 ](./query-api-communication-req-fd.md) | TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload GEM_ERP_PR_Communication_DispReq |
-| ** NEU ** | [ IG-TIFLOW-CORE-A322 ](./query-api-communication-req-fd.md) | TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload GEM_ERP_PR_Communication_Reply |
 | ** NEU ** | [ IG-TIFLOW-CORE-A323 ](./query-api-communication-req-fd.md) | TI-Flow-Fachdienst - Nachricht einstellen - Absender und Sendedatum |
 | ** NEU ** | [ IG-TIFLOW-CORE-A327 ](./query-api-communication-req-fd.md) | TI-Flow-Fachdienst - Nachricht einstellen - Ausschluss Nachrichten an Empfänger gleich Absender |
 | ** NEU ** | [ IG-TIFLOW-CORE-A328 ](./query-api-communication-req-fd.md) | TI-Flow-Fachdienst - Nachricht einstellen - Schadcodeprüfung |
@@ -358,6 +356,10 @@ Neue Anforderungen wurden hinzugefügt, bestehende geändert und nicht mehr ben�
 | ** NEU ** | [ IG-TIFLOW-CORE-A450 ](./capability-statement-extensions.md) | TI-Flow-Fachdienst - Umsetzung der Deaktivierung eines Features |
 | ** NEU ** | [ IG-TIFLOW-CORE-A451 ](./capability-statement-extensions.md) | TI-Flow-Fachdienst - Kein Offset in der Produktivumgebung |
 | ** NEU ** | [ IG-TIFLOW-CORE-A452 ](./capability-statement-extensions.md) | TI-Flow-Fachdienst - Konfigurationsausgabe im CapabilityStatement |
+| ** NEU ** | [ IG-TIFLOW-CORE-A453 ](./query-api-communication-req-ktr.md) | CS Kostenträger: Nachricht löschen - Nachricht auswählen |
+| ** NEU ** | [ IG-TIFLOW-CORE-A454 ](./query-api-communication-req-ktr.md) | CS Kostenträger: Nachricht löschen - Bestätigung einholen |
+| ** NEU ** | [ IG-TIFLOW-CORE-A455 ](./query-api-communication-req-avs.md) | PS abgebende LEI: Nachricht löschen - Löschrequest |
+| ** NEU ** | [ IG-TIFLOW-CORE-A456 ](./query-api-communication-req-avs.md) | PS abgebende LEI: Nachricht löschen - Löschrequest |
 | ** NEU ** | [ IG-TIFLOW-CORE-A46 ](./op-abort-req-fdv.md) | E-Rezept-FdV: E-Rezepte löschen - Coverage PKV - Warnung Abgabeinformationen |
 | ** NEU ** | [ IG-TIFLOW-CORE-A47 ](./op-abort-req-fdv.md) | E-Rezept-FdV: E-Rezept löschen - Bestätigung |
 | ** NEU ** | [ IG-TIFLOW-CORE-A48 ](./op-abort-req-fdv.md) | E-Rezept-FdV: E-Rezept löschen |

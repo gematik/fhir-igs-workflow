@@ -1,8 +1,10 @@
-# TIFlow DiGA Close Operation Input - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# TIFlow DiGA Close Operation Input - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-close-operation-input | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TIFlowDiGACloseOperationInput |
+| Active as of 2026-06-30 | *Computable Name*:TIFlowDiGACloseOperationInput |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -47,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-ti-flow-di-ga-close-
   "title" : "TIFlow DiGA Close Operation Input",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -108,7 +110,8 @@ Other representations of profile: [CSV](StructureDefinition-ti-flow-di-ga-close-
       "path" : "Parameters.parameter",
       "sliceName" : "rxDispensation",
       "min" : 1,
-      "max" : "1"
+      "max" : "1",
+      "mustSupport" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.name",
@@ -147,7 +150,8 @@ Other representations of profile: [CSV](StructureDefinition-ti-flow-di-ga-close-
       "max" : "1",
       "type" : [{
         "code" : "BackboneElement"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.name",

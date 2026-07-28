@@ -1,0 +1,83 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/Medication/ExampleMedication1-Thalidomid-T-Compounding> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleMedication1-Thalidomid-T-Compounding"] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-formulation-packaging-extension" ] ;
+     fhir:Extension.valueString [ fhir:value "Packung als 20 Kapseln in Schachtel." ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-manufacturing-instructions-extension" ] ;
+     fhir:Extension.valueString [ fhir:value "M.D.S." ]
+  ] ;
+  fhir:Medication.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://www.whocc.no/atc" ] ;
+       fhir:Coding.code [ fhir:value "L04AX02" ] ;
+       fhir:Coding.display [ fhir:value "thalidomide" ]
+     ]
+  ] ;
+  fhir:Medication.form [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM" ] ;
+       fhir:Coding.code [ fhir:value "HKP" ] ;
+       fhir:Coding.display [ fhir:value "Hartkapseln" ]
+     ]
+  ] ;
+  fhir:Medication.amount [
+     fhir:Ratio.numerator [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension" ] ;
+         fhir:Extension.valueString [ fhir:value "100" ]
+       ] ;
+       fhir:Quantity.unit [ fhir:value "ml" ]
+     ] ;
+     fhir:Ratio.denominator [
+       fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ]
+     ]
+  ] ;
+  fhir:Medication.ingredient [
+     fhir:index 0 ;
+     fhir:Medication.ingredient.itemCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Thalidomid" ]
+     ] ;
+     fhir:Medication.ingredient.strength [
+       fhir:Ratio.numerator [
+         fhir:Quantity.value [ fhir:value "5"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "g" ]
+       ] ;
+       fhir:Ratio.denominator [
+         fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Medication.ingredient.itemCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Mannit" ]
+     ] ;
+     fhir:Medication.ingredient.strength [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-amount-extension" ] ;
+         fhir:Extension.valueString [ fhir:value "1g" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/Medication/ExampleMedication1-Thalidomid-T-Compounding.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

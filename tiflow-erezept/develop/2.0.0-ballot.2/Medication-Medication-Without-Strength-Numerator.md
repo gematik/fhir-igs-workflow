@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -28,11 +28,7 @@ Version 2.0.0-ballot.2 - ci-build
   },
   "status" : "active",
   "form" : {
-    "coding" : [{
-      "system" : "http://standardterms.edqm.eu",
-      "code" : "11210000",
-      "display" : "Solution for infusion"
-    }]
+    "text" : "Solution for infusion"
   },
   "ingredient" : [{
     "itemCodeableConcept" : {

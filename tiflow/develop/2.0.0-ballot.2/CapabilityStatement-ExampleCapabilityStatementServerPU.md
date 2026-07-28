@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -40,7 +40,7 @@ Version 2.0.0-ballot.2 - draft
   {
     "extension" : [{
       "url" : "definition",
-      "valueCanonical" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf160"
+      "valueCanonical" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-160"
     },
     {
       "url" : "value",
@@ -51,7 +51,7 @@ Version 2.0.0-ballot.2 - draft
   {
     "extension" : [{
       "url" : "definition",
-      "valueCanonical" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf169"
+      "valueCanonical" : "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-feature-wf-169"
     },
     {
       "url" : "value",

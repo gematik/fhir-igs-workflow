@@ -1,8 +1,10 @@
-# FD-Anforderungen: ChargeItem-Query - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# FD-Anforderungen: ChargeItem-Query - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Query API**](query-api.md)
@@ -17,7 +19,20 @@ Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `Char
 
 funkt. Eignung: Test Produkt/FADer TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels der HTTP-Operationen HEAD unterbinden, damit keine unzulässigen Operationen auf die Informationen zu Abrechnungsinformationen ausgeführt werden können.
 
-Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS ein Signatur-Zertifikat einer nonQES-Signatur eine Leistungserbringerinstitution gemäß [gemSpec_PKI#TUC_PKI_018] mit folgenden Parametern auf Gültigkeit prüfen: Tabelle # : TAB_eRPFD_013 Parameter Prüfung Signaturzertifikat SMC-B Parameter Zertifikat Signaturzertifikat aus nonQES PolicyList oid_smc_b_osig intendedKeyUsage nonRepudiation intendedExtendedKeyUsage (leer) OCSP-Graceperiod 12 Stunden Offline-Modus nein Prüfmodus OCSP Der TI-Flow-Fachdienst darf die OCSP-Response für die Abfrage des Zertifikatsstatus für 12 Stunden zwischenspeichern.
+Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS das Signatur-Zertifikat einer nonQES-Signatur eine Leistungserbringerinstitution gemäß [gemSpec_PKI]#TUC_PKI_018 mit folgenden Parametern auf Gültigkeit prüfen:
+
+| | |
+| :--- | :--- |
+| Zertifikat | Signaturzertifikat aus nonQES |
+| PolicyList | oid_smc_b_osig |
+| intendedKeyUsage | nonRepudiation |
+| intendedExtendedKeyUsage | (leer) |
+| OCSP-Graceperiod | 12 Stunden |
+| Offline-Modus | nein |
+| Prüfmodus | OCSP |
+
+**Tabelle: **TAB_eRPFD_013 Parameter Prüfung Signaturzertifikat
+
 ### GET /ChargeItem
 
 Sich.techn. Eignung: ProduktgutachtenDer TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /ChargeItem die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle

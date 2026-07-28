@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * **Anforderungslisten**
@@ -58,18 +58,17 @@ Die nachstehende Tabelle fasst Anforderungen dieses Implementation Guide zusamme
 | [ IG-TIFLOW-CORE-A144 ](./op-abort-req-fd.md) | TI-Flow-Fachdienst - E-Rezept löschen - Status | MUSS |
 | [ IG-TIFLOW-CORE-A145 ](./op-abort-req-fd.md) | TI-Flow-Fachdienst - E-Rezept löschen - Push Notification Versicherter | MUSS |
 | [ IG-TIFLOW-CORE-A162 ](./kommunikation-dienste-ti.md) | CS: Umsetzung sicherer Kanal zur VAU des TI-Flow-Fachdienstes | MUSS |
-| [ IG-TIFLOW-CORE-A163 ](./menu-technische-umsetzung-subscription.md) | TI-Flow-Fachdienst - Subscription Service - Webschnittstelle | MUSS |
-| [ IG-TIFLOW-CORE-A164 ](./menu-technische-umsetzung-subscription.md) | TI-Flow-Fachdienst - Subscription Service - Prüfung Bearer-Token | MUSS |
-| [ IG-TIFLOW-CORE-A165 ](./menu-technische-umsetzung-subscription.md) | TI-Flow-Fachdienst - Subscription Service - Upgrade | MUSS |
-| [ IG-TIFLOW-CORE-A166 ](./menu-technische-umsetzung-subscription.md) | TI-Flow-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen | MUSS |
-| [ IG-TIFLOW-CORE-A167 ](./menu-technische-umsetzung-subscription.md) | TI-Flow-Fachdienst - Subscription Service - Verbot Profilbildung | DARF NICHT |
+| [ IG-TIFLOW-CORE-A163 ](./query-api-subscription-req-fd.md) | TI-Flow-Fachdienst - Subscription Service - Webschnittstelle | MUSS |
+| [ IG-TIFLOW-CORE-A164 ](./query-api-subscription-req-fd.md) | TI-Flow-Fachdienst - Subscription Service - Prüfung Bearer-Token | MUSS |
+| [ IG-TIFLOW-CORE-A165 ](./query-api-subscription-req-fd.md) | TI-Flow-Fachdienst - Subscription Service - Upgrade | MUSS |
+| [ IG-TIFLOW-CORE-A166 ](./query-api-subscription-req-fd.md) | TI-Flow-Fachdienst - Subscription Service - abgelaufene Verbindungen schließen | MUSS |
+| [ IG-TIFLOW-CORE-A167 ](./query-api-subscription-req-fd.md) | TI-Flow-Fachdienst - Subscription Service - Verbot Profilbildung | DARF NICHT |
 | [ IG-TIFLOW-CORE-A173 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Rollenprüfung | MUSS |
 | [ IG-TIFLOW-CORE-A174 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Prüfung AccessCode | MUSS |
 | [ IG-TIFLOW-CORE-A175 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Prüfung Status | MUSS |
 | [ IG-TIFLOW-CORE-A176 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Schemavalidierung | MUSS |
 | [ IG-TIFLOW-CORE-A177 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - QES Prüfung Signaturzertifikat des HBA | MUSS |
 | [ IG-TIFLOW-CORE-A178 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Verordnung QES prüfen | MUSS |
-| [ IG-TIFLOW-CORE-A179 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Mimetype Signatur | MUSS |
 | [ IG-TIFLOW-CORE-A180 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Prüfung Rezept-ID in Task gegen Verordnungsdatensatz | MUSS |
 | [ IG-TIFLOW-CORE-A181 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Versicherten-ID als Identifikator von Versicherten | MUSS |
 | [ IG-TIFLOW-CORE-A182 ](./op-activate-req-fd.md) | TI-Flow-Fachdienst - Task aktivieren - Prüfregel Ausstellungsdatum | MUSS |
@@ -144,7 +143,6 @@ Die nachstehende Tabelle fasst Anforderungen dieses Implementation Guide zusamme
 | [ IG-TIFLOW-CORE-A32 ](./audit-service.md) | TI-Flow-Fachdienst - Versichertenprotokoll zu automatischen Löschen | MUSS |
 | [ IG-TIFLOW-CORE-A320 ](./query-api-communication-req-fd.md) | TI-Flow-Fachdienst - Nachricht einstellen - Schemaprüfung | MUSS |
 | [ IG-TIFLOW-CORE-A321 ](./query-api-communication-req-fd.md) | TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload GEM_ERP_PR_Communication_DispReq | MUSS |
-| [ IG-TIFLOW-CORE-A322 ](./query-api-communication-req-fd.md) | TI-Flow-Fachdienst - Nachricht einstellen - Validierung Payload GEM_ERP_PR_Communication_Reply | MUSS |
 | [ IG-TIFLOW-CORE-A323 ](./query-api-communication-req-fd.md) | TI-Flow-Fachdienst - Nachricht einstellen - Absender und Sendedatum | MUSS |
 | [ IG-TIFLOW-CORE-A327 ](./query-api-communication-req-fd.md) | TI-Flow-Fachdienst - Nachricht einstellen - Ausschluss Nachrichten an Empfänger gleich Absender | MUSS |
 | [ IG-TIFLOW-CORE-A328 ](./query-api-communication-req-fd.md) | TI-Flow-Fachdienst - Nachricht einstellen - Schadcodeprüfung | MUSS |
@@ -392,6 +390,8 @@ Die nachstehende Tabelle fasst Anforderungen dieses Implementation Guide zusamme
 | [ IG-TIFLOW-CORE-A435 ](./zeta-client.md) | CS: ZETA Client - Kommunikation mit Fachdienst | MUSS |
 | [ IG-TIFLOW-CORE-A436 ](./zeta-client.md) | CS: ZETA Client - Authentisierung | MUSS |
 | [ IG-TIFLOW-CORE-A437 ](./zeta-client.md) | CS: ZETA Client - ZETA/ASL-Kanal | MUSS |
+| [ IG-TIFLOW-CORE-A455 ](./query-api-communication-req-avs.md) | PS abgebende LEI: Nachricht löschen - Löschrequest | MUSS |
+| [ IG-TIFLOW-CORE-A456 ](./query-api-communication-req-avs.md) | PS abgebende LEI: Nachricht löschen - Löschrequest | MUSS |
 
 **Tabelle:**Anforderungen
 *Schnittstelle eines abgebenden PS (Apotheke)*
@@ -494,6 +494,8 @@ Die nachstehende Tabelle fasst Anforderungen dieses Implementation Guide zusamme
 | [ IG-TIFLOW-CORE-A435 ](./zeta-client.md) | CS: ZETA Client - Kommunikation mit Fachdienst | MUSS |
 | [ IG-TIFLOW-CORE-A436 ](./zeta-client.md) | CS: ZETA Client - Authentisierung | MUSS |
 | [ IG-TIFLOW-CORE-A437 ](./zeta-client.md) | CS: ZETA Client - ZETA/ASL-Kanal | MUSS |
+| [ IG-TIFLOW-CORE-A453 ](./query-api-communication-req-ktr.md) | CS Kostenträger: Nachricht löschen - Nachricht auswählen | MUSS |
+| [ IG-TIFLOW-CORE-A454 ](./query-api-communication-req-ktr.md) | CS Kostenträger: Nachricht löschen - Bestätigung einholen | MUSS |
 | [ IG-TIFLOW-CORE-A51 ](./query-api-communication-req-ktr.md) | CS Kostenträger: Nachrichten abrufen - Häufigkeit | MUSS |
 | [ IG-TIFLOW-CORE-A52 ](./query-api-communication-req-ktr.md) | CS Kostenträger: Nachrichten abrufen - Abfrage | MUSS |
 | [ IG-TIFLOW-CORE-A53 ](./query-api-communication-req-ktr.md) | CS Kostenträger: Nachricht versenden - Nachricht auf Fachdienst einstellen | MUSS |

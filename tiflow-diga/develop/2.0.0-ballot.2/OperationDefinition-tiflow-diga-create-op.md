@@ -1,8 +1,10 @@
-# E-Rezept erstellen - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# E-Rezept erstellen - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-diga/OperationDefinition/tiflow-diga-create-op | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TIFlow-DIGA-OP-Create |
+| Active as of 2026-06-30 | *Computable Name*:TIFlow-DIGA-OP-Create |
 
  
 Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Flowtypes. 
@@ -32,7 +34,7 @@ Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Fl
   "title" : "E-Rezept erstellen",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -60,7 +62,14 @@ Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Fl
   "type" : true,
   "instance" : false,
   "inputProfile" : "https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-create-operation-input",
-  "outputProfile" : "https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-create-operation-output"
+  "outputProfile" : "https://gematik.de/fhir/tiflow-diga/StructureDefinition/ti-flow-di-ga-create-operation-output",
+  "parameter" : [{
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "type" : "Task"
+  }]
 }
 
 ```

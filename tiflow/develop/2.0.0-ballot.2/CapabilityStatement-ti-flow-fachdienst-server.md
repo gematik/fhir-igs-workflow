@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - draft
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/CapabilityStatement/ti-flow-fachdienst-server | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TIFlowFachdienstServer |
+| Active as of 2026-06-30 | *Computable Name*:TIFlowFachdienstServer |
 | **Copyright/Legal**: gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -34,7 +34,7 @@ CapabilityStatement für den TI-Flow-Fachdienst
   },
   "extension" : [{
     "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url",
-    "valueString" : "https://tiflow.de"
+    "valueString" : "https://tiflow.de/fhir/v1"
   },
   {
     "extension" : [{
@@ -79,7 +79,7 @@ CapabilityStatement für den TI-Flow-Fachdienst
   "name" : "TIFlowFachdienstServer",
   "title" : "CapabilityStatement für den TI-Flow-Fachdienst",
   "status" : "active",
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

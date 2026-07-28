@@ -8,9 +8,9 @@
   <url value="https://gematik.de/fhir/tiflow-diga/ImplementationGuide/de.gematik.tiflow.diga"/>
   <version value="2.0.0-ballot.2"/>
   <name value="gemIG_TIFlow_diga"/>
-  <title value="TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)"/>
+  <title value="Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)"/>
   <status value="draft"/>
-  <date value="2026-05-25"/>
+  <date value="2026-06-30"/>
   <publisher value="gematik GmbH"/>
   <contact>
     <name value="gematik GmbH"/>
@@ -39,7 +39,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="7.1.0"/>
+    <version value="7.3.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -54,20 +54,10 @@
     <packageId value="de.basisprofil.r4"/>
     <version value="1.5.4"/>
   </dependsOn>
-  <dependsOn id="de_gematik_epa_medication">
-    <uri value="https://gematik.de/fhir/epa-medication/ImplementationGuide/de.gematik.epa.medication"/>
-    <packageId value="de.gematik.epa.medication"/>
-    <version value="1.3.2"/>
-  </dependsOn>
-  <dependsOn id="de_gematik_terminology">
-    <uri value="https://gematik.de/fhir/terminology/ImplementationGuide/de.gematik.terminology"/>
-    <packageId value="de.gematik.terminology"/>
-    <version value="1.0.9"/>
-  </dependsOn>
   <dependsOn id="de_gematik_ti">
     <uri value="https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti"/>
     <packageId value="de.gematik.ti"/>
-    <version value="1.3.1"/>
+    <version value="1.4.0-ballot.1"/>
   </dependsOn>
   <dependsOn id="de_gematik_tiflow">
     <uri value="https://gematik.de/fhir/tiflow/ImplementationGuide/de.gematik.tiflow"/>
@@ -88,7 +78,7 @@
         <valueString value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="ci-build"/>
+        <valueString value="ballot"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -97,6 +87,86 @@
       </extension>
       <extension url="value">
         <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureDefinition/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="OperationOutcome/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Medication/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="MedicationRequest/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="MedicationDispense/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="CapabilityStatement/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Provenance/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/*"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -299,7 +369,7 @@
         <valueCode value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="ci-build"/>
+        <valueString value="ballot"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -308,6 +378,86 @@
       </extension>
       <extension url="value">
         <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureDefinition/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="OperationOutcome/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Medication/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="MedicationRequest/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="MedicationDispense/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="CapabilityStatement/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Provenance/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/*"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -696,17 +846,6 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/tiflow-diga-dispense-op"/>
-      </reference>
-      <name value="E-Rezept vorläufig abgeben"/>
-      <description value="Die Operation $dispense ermöglicht es dem Kostenträger, eine Ausgabe für eine DiGA-Verordnung durchzuführen, ohne den Status der Aufgabe zu ändern. Diese Aktion erlaubt es einem Frontend anzuzeigen, dass eine DiGA ausgegeben wurde, bevor sie vom Kostenträger abgeschlossen wird."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="OperationDefinition"/>
-      </extension>
-      <reference>
         <reference value="OperationDefinition/tiflow-diga-reject-op"/>
       </reference>
       <name value="E-Rezept zurückgeben"/>
@@ -946,17 +1085,6 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/tiflow-diga-audit-event"/>
-      </reference>
-      <name value="TIFlow DiGA AuditEvent"/>
-      <description value="AuditEvent für die Protokollierung des Zugriffs auf DiGA-Verordnungen"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/ti-flow-di-ga-close-operation-input"/>
       </reference>
       <name value="TIFlow DiGA Close Operation Input"/>
@@ -994,17 +1122,6 @@
       </reference>
       <name value="TIFlow DiGA Create Operation Output"/>
       <description value="Dieses Profil definiert die Parameter für die Erstellung einer DiGA Aufgabe vom TI-Flow-Fachdienst. Dies kann für die $create-Operation verwendet werden."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/ti-flow-di-ga-dispense-operation-input"/>
-      </reference>
-      <name value="TIFlow DiGA Dispense Operation Input"/>
-      <description value="Dieses Profil definiert die Parameter für die Abgabe einer DiGA Verordnung vom Kostenträger an den TI-Flow-Fachdienst. Dies kann für die $dispense-Operation verwendet werden."/>
       <exampleBoolean value="false"/>
     </resource>
     <page>
@@ -1051,6 +1168,14 @@
           </extension>
           <nameUrl value="menu-technische-umsetzung-verarbeitungsregeln.html"/>
           <title value="Verarbeitungsregeln"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-technische-umsetzung-audit-service.html"/>
+          </extension>
+          <nameUrl value="menu-technische-umsetzung-audit-service.html"/>
+          <title value="Zugriffsprotokollierung mit AuditEvent"/>
           <generation value="markdown"/>
         </page>
       </page>

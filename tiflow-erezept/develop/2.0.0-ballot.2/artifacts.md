@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * **FHIR-Artefakte**
@@ -25,6 +25,9 @@ Die folgenden Value Sets sind für die FHIR-Data-Service-Funktionalitäten festg
 | | |
 | :--- | :--- |
 | [ Bearbeiter eines E-Rezeptes ](ValueSet-GEM-ERP-VS-OrganizationType.md) | ValueSet der Organisationstyp-Codes eines Performers für den RX Task |
+| [ ValueSet of Consent PolyRule Codes ](ValueSet-GEM-ERPEU-VS-Consent-PolicyRule.md) | Type of Policy Rules for Consents of the ePrescription. |
+| [ ValueSet of Consent Codes ](ValueSet-GEM-ERPEU-VS-ConsentType.md) | Type of Consents for the ePrescription. |
+| [ ValueSet of NCPeH Request Types ](ValueSet-GEM-ERPEU-VS-RequestType.md) | Type of Request from NCPeH |
 | [ TIFLOW EREZEPT Operation Outcome Details VS ](ValueSet-tiflow-erezept-operation-outcome-details-vs.md) | E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können |
 
 ### Terminologien: Code Systems
@@ -36,7 +39,17 @@ Die folgenden Value Sets sind für die FHIR-Data-Service-Funktionalitäten festg
 
 | | |
 | :--- | :--- |
+| [ CodeSystem of types for a consent ](CodeSystem-GEM-ERPEU-CS-ConsentType.md) | Type of patient consent. |
+| [ CodeSystem of NCPeH Request Types ](CodeSystem-GEM-ERPEU-CS-RequestType.md) | Type of Request from NCPeH |
 | [ TIFLOW EREZEPT Operation Outcome Details CS ](CodeSystem-tiflow-erezept-operation-outcome-details-cs.md) | E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können |
+
+### Logical Models
+
+| | |
+| :--- | :--- |
+| [ Dispense Data from EU ](StructureDefinition-logical-eu-dispense-data.md) | Logical Information that is Provided in the dispensation document by the NCPeH of country B for Dispensing Medication |
+
+**Tabelle:**Logical Models
 
 ### Systemverhalten
 
@@ -54,6 +67,11 @@ Das **Capability** **Statement** beschreibt die Anforderungen und Fähigkeiten, 
 
 | | |
 | :--- | :--- |
+| [ EUCloseOperation ](OperationDefinition-EUCloseOperation.md) | The operation $close finishes the e-prescription workflow and creates a receipt. The Output of this operation is a signed Bundle, to be used for further financial processing. The status of the Task then changes into #completed |
+| [ GETPrescriptionEU ](OperationDefinition-GETPrescriptionEU.md) | The Operation gets Presciption Information from the ERP System for usage in the e-prescription workflow for EU countries |
+| [ GrantEUAccessPermission ](OperationDefinition-GrantEUAccessPermission.md) | This operation receives the access code and the country that the patient wants to grant access to. The operation validates the country and creates registeres the Access Code. |
+| [ ReadEUAccessPermission ](OperationDefinition-ReadEUAccessPermission.md) | This operation reads the currenty in the E-Rezept-Fachdienst registered Access Code for redeeming ePrescriptions in an EU country. |
+| [ RevokeEUAccessPermission ](OperationDefinition-RevokeEUAccessPermission.md) | This operation revokes the currently registered access code for redeeming prescriptions in an EU country. |
 | [ E-Rezept abbrechen ](OperationDefinition-tiflow-rx-abort-op.md) | Diese Operation bricht den Workflow eines E-Rezepts ab und löscht alle Daten, die mit dieser Aufgabe zusammenhängen. |
 | [ E-Rezept abrufen ](OperationDefinition-tiflow-rx-accept-op.md) | Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'. |
 | [ E-Rezept aktivieren ](OperationDefinition-tiflow-rx-activate-op.md) | Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der TI-Flow-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow. |
@@ -76,6 +94,12 @@ Das **Capability** **Statement** beschreibt die Anforderungen und Fähigkeiten, 
 | [ GEM ERP PR CreateOperation Input ](StructureDefinition-GEM-ERP-PR-PAR-Create-Operation-Input.md) | Dieses Profil definiert die Parameter für die Erstellung einer Aufgabe von PVS zum TI-Flow-Fachdienst. Dies kann für die $create-Operation verwendet werden. |
 | [ GEM ERP PR CreateOperation Output ](StructureDefinition-GEM-ERP-PR-PAR-Create-Operation-Output.md) | Dieses Profil definiert die Parameter für die Erstellung einer Aufgabe von PVS zum TI-Flow-Fachdienst. Dies kann für die $create-Operation verwendet werden. |
 | [ GEM ERP PR DispenseOperation Input ](StructureDefinition-GEM-ERP-PR-PAR-Dispense-Operation-Input.md) | Dieses Profil definiert die Parameter für die Abgabe eines Medikaments von AVS an den TI-Flow-Fachdienst. Dies kann für die $dispense-Operation verwendet werden. |
+| [ GEM ERPEU PR PAR Access Authorization Request ](StructureDefinition-GEM-ERPEU-PR-PAR-AccessAuthorization-Request.md) | Displays Parameters for EU Access Authorization |
+| [ GEM ERPEU PR PAR Access Authorization Response ](StructureDefinition-GEM-ERPEU-PR-PAR-AccessAuthorization-Response.md) | Displays Response Parameters for EU Access Authorization |
+| [ GEM ERP PR EU CloseOperation Input ](StructureDefinition-GEM-ERPEU-PR-PAR-Close-Operation-Input.md) | This profile defines the parameters for receiving dispense information for a prescription that was redeemed in the EU |
+| [ GEM ERPEU PR PAR GET Prescription Input ](StructureDefinition-GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input.md) | This profile defines the parameters for receiving dispense information for a prescription that was redeemed in the EU |
+| [ GEM ERPEU PR PAR PATCH Task Input ](StructureDefinition-GEM-ERPEU-PR-PAR-PATCH-Task-Input.md) | This profile defines the parameters for patching the Task to mark the prescription as to-be-redeemed in the EU |
+| [ GEM ERPEU PR PAR GET Prescription Output ](StructureDefinition-gem-erpeu-pr-par-get-prescription-output.md) | This profile defines the output parameters for the Get Prescription Operation |
 
 **Tabelle:**Parameterprofile
 
@@ -83,7 +107,6 @@ Das **Capability** **Statement** beschreibt die Anforderungen und Fähigkeiten, 
 
 | | |
 | :--- | :--- |
-| [ GEM ERP PR AuditEvent ](StructureDefinition-GEM-ERP-PR-AuditEvent.md) | AuditEvent für die Protokollierung des Zugriffs auf E-Rezepte |
 | [ GEM ERP PR Bundle OP Accept ](StructureDefinition-GEM-ERP-PR-Bundle-OP-Accept.md) | Antwort des TI-Flow-Fachdienst auf die $accept-Operation |
 | [ GEM ERP PR Communication DispReq ](StructureDefinition-GEM-ERP-PR-Communication-DispReq.md) | Anfrage zur Einlösung des E-Rezepts |
 | [ GEM ERP PR Communication Reply ](StructureDefinition-GEM-ERP-PR-Communication-Reply.md) | Antwort vom Leistungserbringer an den Patienten |
@@ -91,13 +114,20 @@ Das **Capability** **Statement** beschreibt die Anforderungen und Fähigkeiten, 
 | [ GEM ERP PR Medication ](StructureDefinition-GEM-ERP-PR-Medication.md) | Medikament zur Ausgabe des Rezepts |
 | [ GEM ERP PR MedicationDispense ](StructureDefinition-GEM-ERP-PR-MedicationDispense.md) | Dispensierung eines E-Rezepts |
 | [ Task für E-Rezept ](StructureDefinition-GEM-ERP-PR-Task.md) | Task für die Verwaltung des E-Rezept-Workflows |
+| [ Consent for ePrescriptions ](StructureDefinition-GEM-ERPEU-PR-Consent.md) | Records the consent of the patient for an operation in the context of ePrescription. |
+| [ EU-Medication ](StructureDefinition-GEM-ERPEU-PR-Medication.md) | Medication of a Prescription or Dispensation from the EU |
+| [ Dispensation of the Prescription from the EU ](StructureDefinition-GEM-ERPEU-PR-MedicationDispense.md) | Handles information about the redeem of the prescription and the submited medication from the EU. |
+| [ Organization Information Received from the EU ](StructureDefinition-GEM-ERPEU-PR-Organization.md) | This Organization Profile is sent by the NCPeH when redeeming a Prescription in the EU |
+| [ Practitioner Information Received from the EU ](StructureDefinition-GEM-ERPEU-PR-Practitioner.md) | This Practitioner Profile is sent by the NCPeH when redeeming a Prescription in the EU |
+| [ PractitionerRole Information Received from the EU ](StructureDefinition-GEM-ERPEU-PR-PractitionerRole.md) | This PractitionerRole Profile is sent by the NCPeH when redeeming a Prescription in the EU |
 
 **Tabelle:**Ressourcenprofile
 
 ### Datentypen
 
-|
-|
+| | |
+| :--- | :--- |
+| [ Identifier Profile for EU AccessCode ](StructureDefinition-GEM-ERPEU-PR-AccessCode.md) | The AccessCode that is generated by the FdV in order to access the ePrescription in an EU country. |
 
 **Tabelle:**Datentypen
 
@@ -110,6 +140,8 @@ Das **Capability** **Statement** beschreibt die Anforderungen und Fähigkeiten, 
 | [ GEM ERP EX EU IS REDEEMABLE BY PROPERTIES ](StructureDefinition-GEM-ERP-EX-EU-IS-REDEEMABLE-BY-PROPERTIES.md) | Extension zur vom TI-Flow-Fachdienst ermittelten Angabe, ob das E-Rezept in der EU zur Einlösung verfügbar sein soll oder nicht. |
 | [ GEM ERP EX LastMedicationDispense ](StructureDefinition-GEM-ERP-EX-LastMedicationDispense.md) | Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt den Zeitstempel der letzten Ausgabe an. |
 | [ GEM ERP EX SupplyOptionsType ](StructureDefinition-GEM-ERP-EX-SupplyOptionsType.md) | Extension zur Angabe des bevorzugten Versorgungskanals |
+| [ GEM_ERPEU_EX_MedicinalPackageDescription ](StructureDefinition-GEM-ERPEU-EX-MedicinalPackageDescription.md) | Description of a packaged medicinal product. |
+| [ GEM_ERPEU_EX_MedicinalPackageIdentifier ](StructureDefinition-GEM-ERPEU-EX-MedicinalPackageIdentifier.md) | Identifier of a packaged medicinal product refers to a specific pack size of a specific product. |
 
 **Tabelle:**Extension Definitions
 
@@ -152,6 +184,8 @@ In diesem Paket sind die benötigten cross-version Extensions enthalten:
 
 * [Beispielantwort fuer die $accept-Operation](Bundle-ExampleAcceptResponseBundle.md)
 
+* [Example for a Bundle with a Consent](Bundle-ExampleGetConsent.md)
+
 * [Communication searchset response for Rx](Bundle-ExampleRxCommunicationSearchset.md)
 
 * [MedicationDispense searchset response for Rx](Bundle-ExampleRxMedicationDispenseSearchset.md)
@@ -182,11 +216,21 @@ In diesem Paket sind die benötigten cross-version Extensions enthalten:
 
 * [Einwilligung fuer den Use Case CHARGCONS](Consent-QueryConsentCHARGCONS.md)
 
+* [Example for a Consent to redeem EU Prescritptions](Consent-f97a0772-c99f-4159-90c6-2a41c7d96779.md)
+
 **Device**
 
 * [Gerät für Quittungs-Bundle](Device-ReceiptBundleDevice.md)
 
 **Medication**
+
+* [Medication Without code or system for Strength](Medication-EU-Medication-Without-Strength-Code.md)
+
+* [Medication Without code or system for Strength](Medication-EU-Medication-Without-Strength-Numerator.md)
+
+* [Sample Simple Medication](Medication-EUSimpleMedication.md)
+
+* [Sample Medication Sumatripan](Medication-EUSumatripanMedication.md)
 
 * [Beispiel-Medikament mit Einheiten](Medication-ExampleUnitMedication.md)
 
@@ -220,6 +264,8 @@ In diesem Paket sind die benötigten cross-version Extensions enthalten:
 
 * [Beispiel Medikamentenabgabe mit Dosierung nach Wochentagsbezug](MedicationDispense-Example-MedicationDispense-Dosage-weekday.md)
 
+* [Example Medication Dispense](MedicationDispense-Example-MedicationDispense-EU.md)
+
 * [Beispiel Kombipackung Medikamentenabgabe](MedicationDispense-Example-MedicationDispense-Kombipackung.md)
 
 * [Example Rezeptur Medication Dispense](MedicationDispense-Example-MedicationDispense-Rezeptur.md)
@@ -232,9 +278,23 @@ In diesem Paket sind die benötigten cross-version Extensions enthalten:
 
 **OperationOutcome**
 
+* [Example error response for ERP-EU operations](OperationOutcome-ExampleERPEUOperationOutcomeError.md)
+
 * [Example error response for Rx operations](OperationOutcome-ExampleRxOperationOutcomeError.md)
 
+**Organization**
+
+* [Example-EU-Organization](Organization-Example-EU-Organization.md)
+
 **Parameters**
+
+* [GEM_ERPEU_PR_PAR_Access_Authorization_Request](Parameters-Example-EU-PermissionRequest.md)
+
+* [GEM_ERPEU_PR_PAR_Access_Authorization_Response](Parameters-Example-EU-PermissionResponse.md)
+
+* [Example_PATCH_Task_Single_Input](Parameters-Example-PATCH-Task-Single-Input-Request-False.md)
+
+* [Example_PATCH_Task_Single_Input](Parameters-Example-PATCH-Task-Single-Input-Request-True.md)
 
 * [Beispiel Close-Parameter](Parameters-ExampleCloseInputParameters.md)
 
@@ -250,7 +310,23 @@ In diesem Paket sind die benötigten cross-version Extensions enthalten:
 
 * [Example Dispense Parameters](Parameters-ExampleDispenseInputParametersMultipleMedicationDispenses.md)
 
+* [Example EU-Close Parameters](Parameters-ExampleEUCloseInputParameters.md)
+
+* [Example EU-GET Prescription Parameters](Parameters-ExampleEUGETPrescriptionDEMOGRAPHICS.md)
+
+* [Example EU-GET Prescription Parameters](Parameters-ExampleEUGETPrescriptionE-PRESCRIPTIONS-LIST.md)
+
+* [Example EU-GET Prescription Parameters](Parameters-ExampleEUGETPrescriptionE-PRESCRIPTIONS-RETRIEVAL.md)
+
 * [Example request parameters for Rx operations](Parameters-ExampleRxOperationRequestParameters.md)
+
+**Practitioner**
+
+* [Example-EU-Practitioner](Practitioner-Example-EU-Practitioner.md)
+
+**PractitionerRole**
+
+* [Example-EU-PractitionerRole](PractitionerRole-Example-EU-PractitionerRole.md)
 
 **Subscription**
 

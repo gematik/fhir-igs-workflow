@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-erezept/ValueSet/tiflow-erezept-operation-outcome-details-vs | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TIFLOWEREZEPTOperationOutcomeDetailsVS |
+| Active as of 2026-06-30 | *Computable Name*:TIFLOWEREZEPTOperationOutcomeDetailsVS |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -58,7 +58,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "TIFLOW EREZEPT Operation Outcome Details VS",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -122,10 +122,6 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
       {
         "code" : "TIFLOW_TASK_ID_REQUIRED",
         "display" : "Task id required"
-      },
-      {
-        "code" : "TIFLOW_KVNR_MISMATCH",
-        "display" : "KVNR mismatch"
       },
       {
         "code" : "TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE",
@@ -198,6 +194,22 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
       {
         "code" : "TIFLOW_MVO_NOT_VALID_YET",
         "display" : "MVO not valid yet"
+      },
+      {
+        "code" : "TIFLOW_CONSENT_REQUIRED",
+        "display" : "Consent required"
+      },
+      {
+        "code" : "TIFLOW_ACCESS_PERMISSION_INVALID",
+        "display" : "Access permission invalid"
+      },
+      {
+        "code" : "TIFLOW_CONSENT_MISSING",
+        "display" : "Consent missing"
+      },
+      {
+        "code" : "TIFLOW_ACCESS_CODE_INVALID",
+        "display" : "Access code invalid"
       }]
     },
     {

@@ -1,5 +1,16 @@
 {
   "codeSystems" : [{
+    "url" : "http://fhir.de/CodeSystem/identifier-type-de-basis",
+    "version" : "1.5.4",
+    "status" : "active",
+    "name" : "IdentifierTypeDeBasis",
+    "title" : "Identifier Type De Basis",
+    "description" : "Liste der Identfikatorentypen des deutschen Basisprofils welche die Standardtypen ergänzen.",
+    "uses" : {
+    },
+    "https://simplifier.net/resolve?scope=de.gematik.ti@1.4.0-ballot.1&canonical=http://fhir.de/ValueSet/identifier-type-de-basis" : "Identifier Type DeBasis ValueSet"
+  },
+  {
     "url" : "http://hl7.org/fhir/CodeSystem/medication-status",
     "version" : "4.0.1",
     "status" : "draft",
@@ -22,18 +33,6 @@
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-medicationrequest-intent.html" : "Medication request  intent"
-  },
-  {
-    "url" : "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
-    "version" : "4.0.1",
-    "status" : "draft",
-    "name" : "medicationrequest Status",
-    "title" : "Medicationrequest  status",
-    "description" : "MedicationRequest Status Codes",
-    "oids" : ["2.16.840.1.113883.4.642.4.1377"],
-    "uses" : {
-    },
-    "https://simplifier.net/resolve?scope=de.gematik.ti@1.2.0&canonical=https://gematik.de/fhir/terminology/ValueSet/ti-medication-request-status-vs" : "TI Medication Request ValueSet"
   },
   {
     "url" : "http://hl7.org/fhir/address-type",
@@ -70,6 +69,18 @@
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-identifier-use.html" : "IdentifierUse"
+  },
+  {
+    "url" : "http://hl7.org/fhir/name-use",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "NameUse",
+    "title" : "NameUse",
+    "description" : "The use of a human name.",
+    "oids" : ["2.16.840.1.113883.4.642.4.66"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-name-use.html" : "NameUse"
   },
   {
     "url" : "http://hl7.org/fhir/quantity-comparator",
@@ -116,10 +127,10 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-condition-code.html" : "Condition/Problem/Diagnosis Codes",
-    "http://hl7.org/fhir/R4/valueset-medication-form-codes.html" : "SNOMED CT Form Codes",
+    "http://hl7.org/fhir/R4/valueset-performer-role.html" : "Procedure Performer Role Codes",
     "http://hl7.org/fhir/R4/valueset-medication-codes.html" : "SNOMED CT Medication Codes",
-    "http://hl7.org/fhir/R4/valueset-performer-role.html" : "Procedure Performer Role Codes"
+    "http://hl7.org/fhir/R4/valueset-condition-code.html" : "Condition/Problem/Diagnosis Codes",
+    "http://hl7.org/fhir/R4/valueset-medication-form-codes.html" : "SNOMED CT Form Codes"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/common-tags",
@@ -227,11 +238,12 @@
     "oids" : ["2.16.840.1.113883.18.108"],
     "uses" : {
     },
-    "http://hl7.org/fhir/R4/valueset-identifier-type.html" : "IdentifierType"
+    "http://hl7.org/fhir/R4/valueset-identifier-type.html" : "IdentifierType",
+    "https://simplifier.net/resolve?scope=de.gematik.ti@1.4.0-ballot.1&canonical=http://fhir.de/ValueSet/identifier-type-de-basis" : "Identifier Type DeBasis ValueSet"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-    "version" : "10.0.0",
+    "version" : "11.0.0",
     "status" : "active",
     "name" : "ActCode",
     "title" : "ActCode",
@@ -239,7 +251,7 @@
     "oids" : ["2.16.840.1.113883.5.4"],
     "uses" : {
     },
-    "http://terminology.hl7.org/7.1.0/ValueSet-v3-ActPharmacySupplyType.html" : "ActPharmacySupplyType"
+    "http://terminology.hl7.org/7.3.0/ValueSet-v3-ActPharmacySupplyType.html" : "ActPharmacySupplyType"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
@@ -251,11 +263,11 @@
     "oids" : ["2.16.840.1.113883.5.8"],
     "uses" : {
     },
-    "http://terminology.hl7.org/7.1.0/ValueSet-v3-SubstanceAdminSubstitutionReason.html" : "SubstanceAdminSubstitutionReason"
+    "http://terminology.hl7.org/7.3.0/ValueSet-v3-SubstanceAdminSubstitutionReason.html" : "SubstanceAdminSubstitutionReason"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
-    "version" : "4.0.0",
+    "version" : "5.0.0",
     "status" : "active",
     "name" : "SubstanceAdminSubstitution",
     "title" : "Substance Admin Substitution",
@@ -263,7 +275,7 @@
     "oids" : ["2.16.840.1.113883.5.1070"],
     "uses" : {
     },
-    "http://terminology.hl7.org/7.1.0/ValueSet-v3-ActSubstanceAdminSubstitutionCode.html" : "ActSubstanceAdminSubstitutionCode"
+    "http://terminology.hl7.org/7.3.0/ValueSet-v3-ActSubstanceAdminSubstitutionCode.html" : "ActSubstanceAdminSubstitutionCode"
   },
   {
     "url" : "http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category",
@@ -301,39 +313,6 @@
     "http://hl7.org/fhir/R4/valueset-ucum-units.html" : "UCUM Codes"
   },
   {
-    "url" : "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
-    "version" : "1.0.7",
-    "status" : "active",
-    "name" : "TIOrganizationProfessionTypeOidCS",
-    "title" : "ProfessionOID of Institutions",
-    "description" : "The codes for Organizations based on Profession OIDs defined in [gemSpec_OID]",
-    "uses" : {
-    },
-    "https://simplifier.net/resolve?scope=de.gematik.ti@1.2.0&canonical=https://gematik.de/fhir/directory/ValueSet/OrganizationProfessionOIDTypeVS" : "TI Organization Profession Type OIDs"
-  },
-  {
-    "url" : "https://gematik.de/fhir/directory/CodeSystem/OrganizationProviderType",
-    "version" : "1.0.7",
-    "status" : "active",
-    "name" : "TIOrganizationProviderTypeCS",
-    "title" : "TI Organization Provider Types",
-    "description" : "CodeSystem of TI Service Provider types",
-    "uses" : {
-    },
-    "https://simplifier.net/resolve?scope=de.gematik.ti@1.2.0&canonical=https://gematik.de/fhir/directory/ValueSet/OrganizationTypeVS" : "TI Organization Types"
-  },
-  {
-    "url" : "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs",
-    "version" : "1.0.7",
-    "status" : "active",
-    "name" : "EPADrugCategoryCS",
-    "title" : "EPA Code System für Arzneimittelkategorien",
-    "description" : "EPA Code System für Arzneimittelkategorien",
-    "uses" : {
-    },
-    "https://simplifier.net/resolve?scope=de.gematik.ti@1.2.0&canonical=https://gematik.de/fhir/terminology/ValueSet/ti-drug-category-vs" : "TI Drug Category ValueSet"
-  },
-  {
     "url" : "urn:ietf:bcp:47",
     "version" : "2.0.1",
     "status" : "active",
@@ -343,5 +322,16 @@
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-languages.html" : "Common Languages"
+  },
+  {
+    "url" : "urn:iso:std:iso:3166",
+    "version" : "2018",
+    "status" : "active",
+    "name" : "Country Codes",
+    "title" : null,
+    "description" : "This is a place holder for the code system which is fully supported through internal means (not by this code system)",
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-iso3166-1-2.html" : "Iso 3166 Part 1: 2 Letter Codes"
   }]
 }

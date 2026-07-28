@@ -1,21 +1,16 @@
-# Beispiel für Create-Operation Fehlerantwort - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# Beispiel für Create-Operation Fehlerantwort - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
 * **Beispiel für Create-Operation Fehlerantwort**
 
 ## Example OperationOutcome: Beispiel für Create-Operation Fehlerantwort
-
-### Issues
-
-| | | | | |
-| :--- | :--- | :--- | :--- | :--- |
-| - | **Severity** | **Code** | **Details** | **Diagnostics** |
-| * | Error | Invalid Content | FHIR-Validation error | Parameters.parameter[0].valueCoding: error: Code 140 is not part of CodeSystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType (from profile: http://hl7.org/fhir/StructureDefinition/Parameters|4.0.1); Parameters.parameter[0].valueCoding: error: Code 140 is not part of CodeSystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType (from profile: http://hl7.org/fhir/StructureDefinition/Coding|4.0.1); |
 
 
 

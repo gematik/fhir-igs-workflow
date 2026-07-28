@@ -1,8 +1,10 @@
-# E-T-Rezept Structure Map for Medication - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# E-T-Rezept Structure Map for Medication - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapMedication | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-05-26 | *Computable Name*:ERPTPrescriptionStructureMapMedication |
+| Draft as of 2026-06-30 | *Computable Name*:ERPTPrescriptionStructureMapMedication |
 
  
 Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf dem KBV/gematik Profil 
@@ -32,7 +34,7 @@ Router-Mapping zur Auswahl der korrekten Medication-Transformation basierend auf
   "title" : "E-T-Rezept Structure Map for Medication",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-05-26",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

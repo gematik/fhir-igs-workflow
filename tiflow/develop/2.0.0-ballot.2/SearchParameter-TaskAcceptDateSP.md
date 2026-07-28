@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Kernfunktionalitäten
 
-Version 2.0.0-ballot.2 - draft 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - draft
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow/SearchParameter/TaskAcceptDateSP | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TaskAcceptDateSP |
+| Active as of 2026-06-30 | *Computable Name*:TaskAcceptDateSP |
 | **Copyright/Legal**: gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -33,7 +33,7 @@ Das Einlösedatum eines E-Rezeptes. Nach Ablaufen dieses Datums darf ein E-Rezep
   "version" : "2.0.0-ballot.2",
   "name" : "TaskAcceptDateSP",
   "status" : "active",
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

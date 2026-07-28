@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:GEM_ERP_PR_PAR_DispenseOperation_Input |
+| Active as of 2026-06-30 | *Computable Name*:GEM_ERP_PR_PAR_DispenseOperation_Input |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -49,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-PAR-Dispe
   "title" : "GEM ERP PR DispenseOperation Input",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -116,7 +116,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-PAR-Dispe
         "human" : "If a reference from a MedicationDispense to a Medication exists, the reference must resolve to the Medication.",
         "expression" : "part.where(name = 'medicationDispense').resource.medication.ofType(Reference).reference.exists() implies ((part.where(name = 'medicationDispense').resource.medication.reference.split('/').last().split(':').last()) = (part.where(name = 'medication').resource.id))",
         "source" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.name",
@@ -155,7 +156,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-PAR-Dispe
       "max" : "1",
       "type" : [{
         "code" : "BackboneElement"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part:medicationDispense.name",
@@ -189,7 +191,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-PAR-Dispe
       "max" : "1",
       "type" : [{
         "code" : "BackboneElement"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Parameters.parameter:rxDispensation.part:medication.name",

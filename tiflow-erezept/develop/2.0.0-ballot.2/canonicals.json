@@ -34,13 +34,6 @@
   "name" : "GEM_ERP_EX_SupplyOptionsType"
 },
 {
-  "id" : "GEM-ERP-PR-AuditEvent",
-  "type" : "StructureDefinition",
-  "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AuditEvent",
-  "version" : "2.0.0-ballot.2",
-  "name" : "GEM_ERP_PR_AuditEvent"
-},
-{
   "id" : "GEM-ERP-PR-Bundle-OP-Accept",
   "type" : "StructureDefinition",
   "url" : "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle_OP_Accept",
@@ -166,6 +159,20 @@
   "version" : "2.0.0-ballot.2"
 },
 {
+  "id" : "GEM-ERPEU-CS-ConsentType",
+  "type" : "CodeSystem",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/CodeSystem/GEM-ERPEU-CS-ConsentType",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_CS_ConsentType"
+},
+{
+  "id" : "GEM-ERPEU-CS-RequestType",
+  "type" : "CodeSystem",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/CodeSystem/GEM-ERPEU-CS-RequestType",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_CS_RequestType"
+},
+{
   "id" : "tiflow-erezept-operation-outcome-details-cs",
   "type" : "CodeSystem",
   "url" : "https://gematik.de/fhir/tiflow-erezept/CodeSystem/tiflow-erezept-operation-outcome-details-cs",
@@ -180,53 +187,88 @@
   "name" : "gemIG_TIFlow_erezept"
 },
 {
+  "id" : "EUCloseOperation",
+  "type" : "OperationDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/EUCloseOperation",
+  "version" : "2.0.0-ballot.2",
+  "name" : "EUCloseOperation"
+},
+{
+  "id" : "GETPrescriptionEU",
+  "type" : "OperationDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/GETPrescriptionEU",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GETPrescriptionEU"
+},
+{
+  "id" : "GrantEUAccessPermission",
+  "type" : "OperationDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/GrantEUAccessPermission",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GrantEUAccessPermission"
+},
+{
+  "id" : "ReadEUAccessPermission",
+  "type" : "OperationDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/ReadEUAccessPermission",
+  "version" : "2.0.0-ballot.2",
+  "name" : "ReadEUAccessPermission"
+},
+{
+  "id" : "RevokeEUAccessPermission",
+  "type" : "OperationDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/RevokeEUAccessPermission",
+  "version" : "2.0.0-ballot.2",
+  "name" : "RevokeEUAccessPermission"
+},
+{
   "id" : "tiflow-rx-abort-op",
   "type" : "OperationDefinition",
   "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-abort-op",
   "version" : "2.0.0-ballot.2",
-  "name" : "TIFlow-RX-OP-Abort"
+  "name" : "TIFlowRXOPAbort"
 },
 {
   "id" : "tiflow-rx-accept-op",
   "type" : "OperationDefinition",
   "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-accept-op",
   "version" : "2.0.0-ballot.2",
-  "name" : "TIFlow-RX-OP-Accept"
+  "name" : "TIFlowRXOPAccept"
 },
 {
   "id" : "tiflow-rx-activate-op",
   "type" : "OperationDefinition",
   "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-activate-op",
   "version" : "2.0.0-ballot.2",
-  "name" : "TIFlow-RX-OP-Activate"
+  "name" : "TIFlowRXOPActivate"
 },
 {
   "id" : "tiflow-rx-close-op",
   "type" : "OperationDefinition",
   "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-close-op",
   "version" : "2.0.0-ballot.2",
-  "name" : "TIFlow-RX-OP-Close"
+  "name" : "TIFlowRXOPClose"
 },
 {
   "id" : "tiflow-rx-create-op",
   "type" : "OperationDefinition",
   "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-create-op",
   "version" : "2.0.0-ballot.2",
-  "name" : "TIFlow-RX-OP-Create"
+  "name" : "TIFlowRXOPCreate"
 },
 {
   "id" : "tiflow-rx-dispense-op",
   "type" : "OperationDefinition",
   "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-dispense-op",
   "version" : "2.0.0-ballot.2",
-  "name" : "TIFlow-RX-OP-Dispense"
+  "name" : "TIFlowRXOPDispense"
 },
 {
   "id" : "tiflow-rx-reject-op",
   "type" : "OperationDefinition",
   "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-reject-op",
   "version" : "2.0.0-ballot.2",
-  "name" : "TIFlow-RX-OP-Reject"
+  "name" : "TIFlowRXOPReject"
 },
 {
   "id" : "GEM-ERP-PR-Communication",
@@ -290,6 +332,139 @@
   "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input",
   "version" : "2.0.0-ballot.2",
   "name" : "GEM_ERP_PR_PAR_DispenseOperation_Input"
+},
+{
+  "id" : "GEM-ERPEU-EX-MedicinalPackageDescription",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-EX-MedicinalPackageDescription",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_EX_MedicinalPackageDescription"
+},
+{
+  "id" : "GEM-ERPEU-EX-MedicinalPackageIdentifier",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-EX-MedicinalPackageIdentifier",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_EX_MedicinalPackageIdentifier"
+},
+{
+  "id" : "GEM-ERPEU-PR-AccessCode",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-AccessCode",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_PR_Access_Code"
+},
+{
+  "id" : "GEM-ERPEU-PR-Consent",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Consent",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_PR_Consent"
+},
+{
+  "id" : "GEM-ERPEU-PR-Medication",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Medication",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_PR_Medication"
+},
+{
+  "id" : "GEM-ERPEU-PR-MedicationDispense",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-MedicationDispense",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_PR_MedicationDispense"
+},
+{
+  "id" : "GEM-ERPEU-PR-Organization",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Organization",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_PR_Organization"
+},
+{
+  "id" : "GEM-ERPEU-PR-PAR-AccessAuthorization-Request",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Request",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_PR_PAR_Access_Authorization_Request"
+},
+{
+  "id" : "GEM-ERPEU-PR-PAR-AccessAuthorization-Response",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Response",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_PR_PAR_Access_Authorization_Response"
+},
+{
+  "id" : "GEM-ERPEU-PR-PAR-Close-Operation-Input",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-Close-Operation-Input",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_PR_PAR_CloseOperation_Input"
+},
+{
+  "id" : "GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_PR_PAR_GET_Prescription_Input"
+},
+{
+  "id" : "GEM-ERPEU-PR-PAR-PATCH-Task-Input",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-PATCH-Task-Input",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_PR_PAR_PATCH_Task_Input"
+},
+{
+  "id" : "GEM-ERPEU-PR-Practitioner",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Practitioner",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_PR_Practitioner"
+},
+{
+  "id" : "GEM-ERPEU-PR-PractitionerRole",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PractitionerRole",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_PR_PractitionerRole"
+},
+{
+  "id" : "gem-erpeu-pr-par-get-prescription-output",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/gem-erpeu-pr-par-get-prescription-output",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_PR_PAR_GET_Prescription_Output"
+},
+{
+  "id" : "logical-eu-dispense-data",
+  "type" : "StructureDefinition",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/logical-eu-dispense-data",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_LOG_DispenseData"
+},
+{
+  "id" : "GEM-ERPEU-VS-Consent-PolicyRule",
+  "type" : "ValueSet",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/ValueSet/GEM-ERPEU-VS-Consent-PolicyRule",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_VS_Consent_PolicyRule"
+},
+{
+  "id" : "GEM-ERPEU-VS-ConsentType",
+  "type" : "ValueSet",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/ValueSet/GEM-ERPEU-VS-ConsentType",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_VS_ConsentType"
+},
+{
+  "id" : "GEM-ERPEU-VS-RequestType",
+  "type" : "ValueSet",
+  "url" : "https://gematik.de/fhir/tiflow-erezept/ValueSet/GEM-ERPEU-VS-RequestType",
+  "version" : "2.0.0-ballot.2",
+  "name" : "GEM_ERPEU_VS_RequestType"
 },
 {
   "id" : "tiflow-erezept-operation-outcome-details-vs",

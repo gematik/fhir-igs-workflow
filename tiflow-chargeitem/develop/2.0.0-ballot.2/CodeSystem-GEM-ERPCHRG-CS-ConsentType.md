@@ -1,8 +1,10 @@
-# CodeSystem of types for a consent - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# CodeSystem of types for a consent - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:GEM_ERPCHRG_CS_ConsentType |
+| Active as of 2026-06-30 | *Computable Name*:GEM_ERPCHRG_CS_ConsentType |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -37,7 +39,7 @@ Type of patient consent.
   "title" : "CodeSystem of types for a consent",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -59,6 +61,7 @@ Type of patient consent.
     }]
   }],
   "copyright" : "gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.html), Version 2.0.",
+  "caseSensitive" : true,
   "content" : "complete",
   "count" : 1,
   "concept" : [{

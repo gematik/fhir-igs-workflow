@@ -137,6 +137,9 @@
         <a href="menu-fachlichkeit-wf-le.html">Workflow-Steuerung durch LE</a>
       </li>
       <li>
+        <a href="menu-fachlichkeit-szenario-eu.html">Szenario EU</a>
+      </li>
+      <li>
         <a href="menu-fachlichkeit-ux-verordnend.html">UX verordnend</a>
       </li>
       <li>
@@ -162,6 +165,12 @@
         <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
       </li>
       <li>
+        <a href="menu-technische-umsetzung-konzept.html">Technisches Konzept EU</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit EU</a>
+      </li>
+      <li>
         <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
       </li>
     </ul>
@@ -179,11 +188,8 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -200,6 +206,9 @@
         <a href="license.html">Lizenz</a>
       </li>
     </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -220,7 +229,7 @@
 Implementation Guide<br /> TIFlow - Verordnungen für Arzneimittel
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -305,8 +314,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </actor>
     Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 </requirement>
-
-<p>Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter <a href="./menu-schnittstellen-operation-api.html">Operations</a> beschrieben.</p>
 
 <h4 id="get-task-liste">GET /Task (Liste)</h4>
 <p>Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnungen steht ausschließlich dem Versicherten bzw. einer abgebenden Institution mit Nachweis eines Behandlungskontextes zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.</p>
@@ -435,7 +442,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       abbrechen.
 </requirement>
 
-<p>Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung von A_23399-* im Rahmen des Änderungsmanagement für Spezifikationen.</p>
+<p>Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung der obigen Anforderung im Rahmen des Änderungsmanagement für Spezifikationen.</p>
 
 <!-- A_22431-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A100" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - PoPP - PoPP - Filter KVNR" version="0">
@@ -677,15 +684,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         </tr>
         <tr>
             <th>Code</th>
-            <td>???</td>
+            <td>invalid</td>
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>???</td>
+            <td>SVC_IDENTITY_MISMATCH</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>???</td>
+            <td>-</td>
         </tr>
     </table> 
   abbrechen, damit ausschließlich der begünstigte Versicherte den Task abrufen kann.
@@ -926,7 +933,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_KVNR_MISMATCH</td>
+            <td>SVC_IDENTITY_MISMATCH</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -989,6 +996,81 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     abbrechen.
 </requirement>
 
+<h4 id="patch-task-1">PATCH /Task</h4>
+
+<!-- A_27551 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A244" title="TI-Flow-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters" version="0">
+    <meta lockversion="false" />
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten auf die Ressource übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPEU_PR_PAR_PATCH_Task_Input prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_VALIDATION_FAILED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>FHIR Profile Validation Failed</td>
+        </tr>
+    </table> 
+    abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst akzeptiert werden.
+</requirement>
+
+<!-- A_28500 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A245" title="TI-Flow-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte" version="0">
+    <meta lockversion="false" />
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten prüfen, ob der adressierte Task in Task.extension:eu-isRedeemableByProperties.valueBoolean = true gesetzt ist und anderfalls mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>409 - Conflict</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_EREZEPT_NOT_ACTIVATED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen.
+</requirement>
+
+<!-- A_27552 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A246" title="TI-Flow-Fachdienst -Task markieren -Versicherter - Änderung Markierung Task Ressource" version="0">
+    <meta lockversion="false" />
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten, den im Parameter `eu-isRedeemableByPatientAuthorization` enthaltenen boolschen Wert in `Task.extension:eu-isRedeemableByPatientAuthorization.valueBoolean` setzen.
+</requirement>
+
 
 
 
@@ -1030,7 +1112,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 09:08+0000">2026-06-26</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:36+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

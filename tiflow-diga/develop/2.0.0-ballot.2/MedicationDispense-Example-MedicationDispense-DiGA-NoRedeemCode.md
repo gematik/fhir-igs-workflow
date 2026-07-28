@@ -1,40 +1,16 @@
-# Medication Dispense DiGA without a redeem code - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# Medication Dispense DiGA without a redeem code - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
 * **Medication Dispense DiGA without a redeem code**
 
 ## Example MedicationDispense: Medication Dispense DiGA without a redeem code
-
-Profile: [GEM ERP PR MedicationDispense DiGA](StructureDefinition-GEM-ERP-PR-MedicationDispense-DiGA.md)
-
-**identifier**: `https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId`/162.000.033.491.280.78
-
-**status**: Completed
-
-**medication**: ?rref?
-
-**subject**: Identifier: NamingSystemKVID/X123456789
-
-### Performers
-
-| | |
-| :--- | :--- |
-| - | **Actor** |
-| * | Identifier:`https://gematik.de/fhir/sid/telematik-id`/8-SMC-B-Testkarte-883110000095957 |
-
-**whenHandedOver**: 2028-10-01
-
-**note**: 
-
-> 
-
-Freischaltcode für DiGA konnte nicht erstellt werden
-
 
 
 

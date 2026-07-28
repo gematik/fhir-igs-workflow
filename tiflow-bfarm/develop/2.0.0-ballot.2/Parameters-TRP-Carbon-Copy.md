@@ -1,8 +1,10 @@
-# Beispiel digitaler Durchschlag E-T-Rezept - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# Beispiel digitaler Durchschlag E-T-Rezept - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -20,7 +22,7 @@ Version 2.0.0-ballot.2 - ci-build
   "id" : "TRP-Carbon-Copy",
   "meta" : {
     "profile" : ["https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-carbon-copy",
-    "https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.1"]
+    "https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.2"]
   },
   "parameter" : [{
     "name" : "rxPrescription",
@@ -54,11 +56,11 @@ Version 2.0.0-ballot.2 - ci-build
           },
           {
             "url" : "security-compliance",
-            "valueBoolean" : false
+            "valueBoolean" : true
           },
           {
             "url" : "hand-out-information-material",
-            "valueBoolean" : false
+            "valueBoolean" : true
           },
           {
             "url" : "declaration-of-expertise",
@@ -68,12 +70,12 @@ Version 2.0.0-ballot.2 - ci-build
         },
         {
           "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
-          "valueMarkdown" : "1-0-1-0 Stück"
+          "valueMarkdown" : "1-0-2-0 Stück"
         },
         {
           "extension" : [{
             "url" : "algorithmVersion",
-            "valueString" : "1.0.1"
+            "valueString" : "1.0.0"
           },
           {
             "url" : "language",
@@ -214,6 +216,7 @@ Version 2.0.0-ballot.2 - ci-build
           "profile" : ["https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-organization"]
         },
         "identifier" : [{
+          "system" : "https://gematik.de/fhir/sid/telematik-id",
           "value" : "Organisation 3-2arvtst-ap000053"
         }],
         "name" : "Stadt Apotheke",

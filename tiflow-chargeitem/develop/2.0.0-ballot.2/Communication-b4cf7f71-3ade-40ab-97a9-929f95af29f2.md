@@ -1,8 +1,10 @@
-# Communication message sent by patient to pharmacy to request the change of an existing ChargeItem by providing the AccessCode - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# Communication message sent by patient to pharmacy to request the change of an existing ChargeItem by providing the AccessCode - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)

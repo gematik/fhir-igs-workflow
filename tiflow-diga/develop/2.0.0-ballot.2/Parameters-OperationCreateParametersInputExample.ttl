@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,15 +7,20 @@
 
 <https://gematik.de/fhir/tiflow-diga/Parameters/OperationCreateParametersInputExample> a fhir:Parameters ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "OperationCreateParametersInputExample"] ; # 
-  fhir:parameter ( [
-     fhir:name [ fhir:v "workflowType" ] ;
-     fhir:value [
-       a fhir:Coding ;
-       fhir:system [ fhir:v "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "160" ]
+  fhir:Resource.id [ fhir:value "OperationCreateParametersInputExample"] ;
+  fhir:Parameters.parameter [
+     fhir:index 0 ;
+     fhir:Parameters.parameter.name [ fhir:value "workflowType" ] ;
+     fhir:Parameters.parameter.valueCoding [
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType" ] ;
+       fhir:Coding.code [ fhir:value "160" ]
      ]
-  ] ) . # 
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/Parameters/OperationCreateParametersInputExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-create-op | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:TIFlow-RX-OP-Create |
+| Active as of 2026-06-30 | *Computable Name*:TIFlowRXOPCreate |
 
  
 Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Flowtypes. 
@@ -30,11 +30,11 @@ Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Fl
   "id" : "tiflow-rx-create-op",
   "url" : "https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-create-op",
   "version" : "2.0.0-ballot.2",
-  "name" : "TIFlow-RX-OP-Create",
+  "name" : "TIFlowRXOPCreate",
   "title" : "E-Rezept erstellen",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -62,7 +62,14 @@ Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Fl
   "type" : true,
   "instance" : false,
   "inputProfile" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Create-Operation-Input",
-  "outputProfile" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Create-Operation-Output"
+  "outputProfile" : "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Create-Operation-Output",
+  "parameter" : [{
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "type" : "Task"
+  }]
 }
 
 ```

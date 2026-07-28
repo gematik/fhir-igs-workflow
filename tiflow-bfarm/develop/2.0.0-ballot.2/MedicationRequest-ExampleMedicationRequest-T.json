@@ -5,6 +5,21 @@
     "profile" : ["https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-medication-request"]
   },
   "extension" : [{
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+    "valueMarkdown" : "nach Bedarf mit ausreichend Flüssigkeit"
+  },
+  {
+    "extension" : [{
+      "url" : "algorithmVersion",
+      "valueString" : "1.0.0"
+    },
+    {
+      "url" : "language",
+      "valueCode" : "de-DE"
+    }],
+    "url" : "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta"
+  },
+  {
     "extension" : [{
       "url" : "off-label",
       "valueBoolean" : true
@@ -15,11 +30,11 @@
     },
     {
       "url" : "security-compliance",
-      "valueBoolean" : false
+      "valueBoolean" : true
     },
     {
       "url" : "hand-out-information-material",
-      "valueBoolean" : false
+      "valueBoolean" : true
     },
     {
       "url" : "declaration-of-expertise",
@@ -45,7 +60,7 @@
   },
   "authoredOn" : "2026-04-01",
   "dosageInstruction" : [{
-    "text" : "1-1-1-1"
+    "text" : "nach Bedarf mit ausreichend Flüssigkeit"
   }],
   "dispenseRequest" : {
     "quantity" : {

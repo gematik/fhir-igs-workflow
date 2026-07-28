@@ -137,6 +137,9 @@
         <a href="menu-fachlichkeit-wf-le.html">Workflow-Steuerung durch LE</a>
       </li>
       <li>
+        <a href="menu-fachlichkeit-szenario-eu.html">Szenario EU</a>
+      </li>
+      <li>
         <a href="menu-fachlichkeit-ux-verordnend.html">UX verordnend</a>
       </li>
       <li>
@@ -162,6 +165,12 @@
         <a href="menu-technische-umsetzung-mapping.html">Mappings</a>
       </li>
       <li>
+        <a href="menu-technische-umsetzung-konzept.html">Technisches Konzept EU</a>
+      </li>
+      <li>
+        <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit EU</a>
+      </li>
+      <li>
         <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
       </li>
     </ul>
@@ -179,11 +188,8 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR-Artefakte</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -200,6 +206,9 @@
         <a href="license.html">Lizenz</a>
       </li>
     </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR-Artefakte</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -220,7 +229,7 @@
 Implementation Guide<br /> TIFlow - Verordnungen für Arzneimittel
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -351,6 +360,78 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
      Das E-Rezept-FdV MUSS den Nutzer bei der Einsicht in ein E-Rezept mit dem Flowtype 166 darauf hinweisen, dass bei diesem Vorgang seine Einlösemöglichkeiten beschränkt sind und das Rezept eine verkürzte Gültigkeit aufweist.
 </requirement>
 
+<h4 id="patch-task">PATCH /Task</h4>
+
+<p>Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicherten zur Verfügung. Die PATCH-Operation führt zu keiner Statusänderung des Tasks.</p>
+
+<!-- A_27488 -->
+<requirement conformance="MAY" key="IG-TIFLOW-ERP-A249" title="E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+     Das E-Rezept-FdV KANN es dem Nutzer ermöglichen, die Markierung eines E-Rezeptes zum Einlösen im EU-Ausland zu verwalten.
+</requirement>
+
+<!-- A_27617 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A250" title="E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren - Hinweis Belieferungsmöglichkeit" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept markieren" dem Nutzer vor der Möglichkeit zum Markieren der E-Rezepte zum Einlösen im EU-Ausland einen Hinweis anzeigen, dass die Belieferungsmöglichkeit für die E-Rezepte mit der Apotheke vorab geklärt werden soll.
+</requirement>
+
+<!-- A_27489 -->
+<requirement conformance="MAY" key="IG-TIFLOW-ERP-A251" title="E-Rezept-FdV: optional: E-Rezept markieren" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+     Das E-Rezept-FdV KANN den Anwendungsfall "E-Rezept markieren" umsetzen.
+</requirement>
+
+<!-- A_27618 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A252" title="E-Rezept-FdV: E-Rezept markieren - E-Rezepte auswählen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept markieren" dem Nutzer ermöglichen, ein oder mehrere E-Rezepte auszuwählen.
+</requirement>
+
+<!-- A_27490 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A253" title="E-Rezept-FdV: E-Rezept markieren" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+     Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall umsetzt, den Anwendungsfall "E-Rezept durch den Versicherten markieren" gemäß TAB_FdVERP_029 umsetzen. Tabelle #: TAB_FdVERP_029 - E-Rezept markieren Name E-Rezept markieren Auslöser Aufruf des Anwendungsfalls in der Graphical User Interface (GUI) Akteur Versicherter Vorbedingung Der Nutzer hat eine oder mehrere Markierungen aus- oder abgewählt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Die Markierungen sind im TI-Flow-Fachdienst gespeichert. Standardablauf Task-ID bestimmen FHIR Ressource erstellen Daten im TI-Flow-Fachdienst speichern
+</requirement>
+
+<!-- A_27545 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A254" title="E-Rezept-FdV: E-Rezept markieren - FHIR Ressource erstellen" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept markieren" eine Parameters Ressource des Profils [GEM ERPEU PR PAR PATCH Task Input] erstellen.
+</requirement>
+
+<!-- A_27491 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A255" title="E-Rezept-FdV: E-Rezept markieren - Speicherrequest" version="0">
+    <meta lockversion="false" />
+    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept markieren" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /Task/&lt;id&gt; mit: 
+    <ul> 
+        <li>Prescription-ID in URL &lt;id&gt; </li>
+        <li>FHIR-Ressource im HTTP-Request-Body </li>
+    </ul>
+    ausführen.
+</requirement>
+
 
 
 
@@ -392,7 +473,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 09:08+0000">2026-06-26</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.erezept#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:36+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

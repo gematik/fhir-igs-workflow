@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Beispiel für Close-Operation Fehlerantwort - XML Representation - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
+    <title>Beispiel für Close-Operation Fehlerantwort - XML Representation - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -80,8 +80,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"8.32"}
-    h3,h4,h5,h6{--heading-prefix:"8.32"}</style>
+    <style type="text/css">h2{--heading-prefix:"8.29"}
+    h3,h4,h5,h6{--heading-prefix:"8.29"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -148,6 +148,9 @@
       <li>
         <a href="menu-datenschutz-und-sicherheit.html">Datenschutz und Informationssicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -170,7 +173,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -207,10 +210,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
+Implementation Guide<br /> TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -308,33 +311,6 @@ TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
   <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
 &lt;<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome">OperationOutcome</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
   &lt;<a href="http://hl7.org/fhir/R4/resource.html#OperationOutcome.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ExampleOperationCloseError&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#OperationOutcome.text">text</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
-    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: OperationOutcome ExampleOperationCloseError&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;ExampleOperationCloseError&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcExampleOperationCloseError&quot;&gt; &lt;/a&gt;&lt;h3&gt;Issues&lt;/h3&gt;&lt;table class=&quot;grid&quot;&gt;&lt;tr&gt;&lt;td style=&quot;display: none&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Severity&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Details&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Diagnostics&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;display: none&quot;&gt;*&lt;/td&gt;&lt;td&gt;Error&lt;/td&gt;&lt;td&gt;Invalid Content&lt;/td&gt;&lt;td&gt;&lt;span title=&quot;Codes:&quot;&gt;FHIR-Validation error&lt;/span&gt;&lt;/td&gt;&lt;td&gt;MedicationDispense.status: error: Value closed not allowed for ValueSet binding, allowed are 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]cancelled, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]completed, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]declined, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]entered-in-error, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]in-progress, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]on-hold, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]preparation, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]stopped, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]unknown 
-(from profile: https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2); 
-MedicationDispense.status: error: Value closed not allowed for ValueSet binding, allowed are 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]cancelled, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]completed, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]declined, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]entered-in-error, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]in-progress, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]on-hold, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]preparation, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]stopped, 
-[http://terminology.hl7.org/CodeSystem/medicationdispense-status]unknown 
-(from profile: http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1); 
-MedicationDispense.status: error: value must match fixed value: &amp;quot;completed&amp;quot; (but is &amp;quot;closed&amp;quot;) 
-(from profile: https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense|1.2);&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
-  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#OperationOutcome.text">text</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue">issue</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.severity">severity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;error&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationoutcome.html#OperationOutcome.issue.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;invalid&quot;/&gt;
@@ -413,7 +389,7 @@ MedicationDispense.status: error: value must match fixed value: &amp;quot;comple
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:51+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:32+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

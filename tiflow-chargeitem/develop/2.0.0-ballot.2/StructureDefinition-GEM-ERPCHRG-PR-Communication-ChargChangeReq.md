@@ -1,8 +1,10 @@
-# Request for Modification on ChargeItem - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# Request for Modification on ChargeItem - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:GEM_ERPCHRG_PR_Communication_ChargChangeReq |
+| Active as of 2026-06-30 | *Computable Name*:GEM_ERPCHRG_PR_Communication_ChargChangeReq |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -48,7 +50,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-Commu
   "title" : "Request for Modification on ChargeItem",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

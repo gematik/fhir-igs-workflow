@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FdV-Anforderungen: Communication-Query - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
+    <title>FdV-Anforderungen: Communication-Query - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -196,10 +199,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Abrechnungsinformationen
+Implementation Guide<br /> TIFlow - Abrechnungsinformationen
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -278,7 +281,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="nachrichten-abrufen">Nachrichten abrufen</h4>
 <!-- A_19205 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-70" title="Nachrichten abrufen - Nachrichten von Fachdienst herunterladen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A70" title="Nachrichten abrufen - Nachrichten von Fachdienst herunterladen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -294,7 +297,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="nachricht-versenden">Nachricht versenden</h4>
 <h5 id="zuweisen">Zuweisen</h5>
 <!-- A_26318 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-71" title="Nachricht senden - E-Rezept zuweisen - Status prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A71" title="Nachricht senden - E-Rezept zuweisen - Status prüfen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -303,7 +306,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_26319 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-72" title="Nachricht senden - E-Rezept zuweisen - Ende Gültigkeit prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A72" title="Nachricht senden - E-Rezept zuweisen - Ende Gültigkeit prüfen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -314,7 +317,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Die für die Nachricht zu verwendende Communication-Ressource wird modul- und anwendungsfall-spezifisch festgelegt.</p>
 
 <!-- A_28543 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-73" title="Nachricht senden - E-Rezept zuweisen - Zuweisen - TransactionID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A73" title="Nachricht senden - E-Rezept zuweisen - Zuweisen - TransactionID" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -323,7 +326,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_28545 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-74" title="Nachricht senden - E-Rezept zuweisen - Auf Nachricht antworten - TransactionID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A74" title="Nachricht senden - E-Rezept zuweisen - Auf Nachricht antworten - TransactionID" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -332,7 +335,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_19203 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-75" title="Nachricht senden - Nachricht auf Fachdienst einstellen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A75" title="Nachricht senden - Nachricht auf Fachdienst einstellen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -350,7 +353,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Das E-Rezept-FdV MUSS im Anwendungsfall "Nachricht löschen" vom Nutzer eine Bestätigung einholen, dass die selektierte Nachricht gelöscht werden sollen und die Möglichkeit geben, das Löschen abzubrechen.</p>
 
 <!-- A_21526-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-78" title="E-Rezept-FdV: Nachricht löschen - Löschrequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A78" title="E-Rezept-FdV: Nachricht löschen - Löschrequest" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -378,7 +381,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 Innerhalb der Textnachricht sind keine Internet-Links und keine Non-Printable-Characters zulässig.</p>
 
 <!--A_22739-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-1" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A1" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -393,7 +396,7 @@ Innerhalb der Textnachricht sind keine Internet-Links und keine Non-Printable-Ch
 </requirement>
 
 <!--A_22740-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-2" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf TI-Flow-Fachdienst einstellen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A2" title="E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf TI-Flow-Fachdienst einstellen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -445,7 +448,7 @@ Innerhalb der Textnachricht sind keine Internet-Links und keine Non-Printable-Ch
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:53+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:34+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

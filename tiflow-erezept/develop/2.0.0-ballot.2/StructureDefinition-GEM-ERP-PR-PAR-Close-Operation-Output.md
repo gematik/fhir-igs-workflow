@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Output | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:GEM_ERP_PR_PAR_CloseOperation_Output |
+| Active as of 2026-06-30 | *Computable Name*:GEM_ERP_PR_PAR_CloseOperation_Output |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -49,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-PAR-Close
   "title" : "GEM ERP PR CloseOperation Output",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -110,7 +110,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-PAR-Close
       "path" : "Parameters.parameter",
       "sliceName" : "return",
       "min" : 1,
-      "max" : "1"
+      "max" : "1",
+      "mustSupport" : true
     },
     {
       "id" : "Parameters.parameter:return.name",

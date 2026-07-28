@@ -97,15 +97,31 @@
         "Dosage",
         "Meta"
       ]
+    },
+    {
+      "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-EX-MedicinalPackageDescription",
+      "title": "GEM_ERPEU_EX_MedicinalPackageDescription",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-EX-MedicinalPackageIdentifier",
+      "title": "GEM_ERPEU_EX_MedicinalPackageIdentifier",
+      "types": [
+        "Identifier",
+        "string",
+        "Extension",
+        "code",
+        "CodeableConcept",
+        "uri",
+        "string",
+        "Period",
+        "Reference"
+      ]
     }
   ],
   "profiles": {
-    "AuditEvent": [
-      {
-        "url": "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AuditEvent",
-        "title": "GEM ERP PR AuditEvent"
-      }
-    ],
     "Bundle": [
       {
         "url": "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle_OP_Accept",
@@ -120,14 +136,14 @@
     ],
     "Medication": [
       {
-        "url": "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication",
-        "title": "GEM ERP PR Medication"
+        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Medication",
+        "title": "EU-Medication"
       }
     ],
     "MedicationDispense": [
       {
-        "url": "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense",
-        "title": "GEM ERP PR MedicationDispense"
+        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-MedicationDispense",
+        "title": "Dispensation of the Prescription from the EU"
       }
     ],
     "Task": [
@@ -138,36 +154,32 @@
     ],
     "Parameters": [
       {
-        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Accept-Operation-Output",
-        "title": "GEM ERP PR AcceptOperation Output"
-      },
+        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/gem-erpeu-pr-par-get-prescription-output",
+        "title": "GEM ERPEU PR PAR GET Prescription Output"
+      }
+    ],
+    "Consent": [
       {
-        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Activate-Operation-Input",
-        "title": "GEM ERP PR ActivateOperation Input"
-      },
+        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Consent",
+        "title": "Consent for ePrescriptions"
+      }
+    ],
+    "Organization": [
       {
-        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Activate-Operation-Output",
-        "title": "GEM ERP PR ActivateOperation Output"
-      },
+        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Organization",
+        "title": "Organization Information Received from the EU"
+      }
+    ],
+    "Practitioner": [
       {
-        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input",
-        "title": "GEM ERP PR CloseOperation Input"
-      },
+        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Practitioner",
+        "title": "Practitioner Information Received from the EU"
+      }
+    ],
+    "PractitionerRole": [
       {
-        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Output",
-        "title": "GEM ERP PR CloseOperation Output"
-      },
-      {
-        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Create-Operation-Input",
-        "title": "GEM ERP PR CreateOperation Input"
-      },
-      {
-        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Create-Operation-Output",
-        "title": "GEM ERP PR CreateOperation Output"
-      },
-      {
-        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input",
-        "title": "GEM ERP PR DispenseOperation Input"
+        "url": "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PractitionerRole",
+        "title": "PractitionerRole Information Received from the EU"
       }
     ]
   },
@@ -186,7 +198,8 @@
     ],
     "http://fhir.de/StructureDefinition/humanname-namenszusatz": [
       "Bundle.entry.resource.name.family",
-      "Parameters.parameter.part.resource.name.family"
+      "Parameters.parameter.part.resource.name.family",
+      "Practitioner.name.family"
     ],
     "http://fhir.de/StructureDefinition/normgroesse": [
       "Bundle.entry.resource",
@@ -202,6 +215,7 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation": [
       "CapabilityStatement.imports",
+      "CapabilityStatement.rest.operation",
       "CapabilityStatement.rest.resource",
       "CapabilityStatement.rest.resource.interaction",
       "CapabilityStatement.rest.resource.operation",
@@ -231,11 +245,13 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/humanname-own-name": [
       "Bundle.entry.resource.name.family",
-      "Parameters.parameter.part.resource.name.family"
+      "Parameters.parameter.part.resource.name.family",
+      "Practitioner.name.family"
     ],
     "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix": [
       "Bundle.entry.resource.name.family",
-      "Parameters.parameter.part.resource.name.family"
+      "Parameters.parameter.part.resource.name.family",
+      "Practitioner.name.family"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator": [
       "Bundle.entry.resource.address.line",
@@ -251,7 +267,11 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier": [
       "Bundle.entry.resource.name.prefix",
-      "Parameters.parameter.part.resource.name.prefix"
+      "Parameters.parameter.part.resource.name.prefix",
+      "Practitioner.name.prefix"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/regex": [
+      "StructureDefinition.snapshot.element.type"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
@@ -406,8 +426,18 @@
       "CapabilityStatement"
     ],
     "https://gematik.de/fhir/ti/StructureDefinition/extension-http-response-info": [
+      "CapabilityStatement.rest.operation",
       "CapabilityStatement.rest.resource.interaction",
       "CapabilityStatement.rest.resource.operation"
+    ],
+    "https://gematik.de/fhir/ti/StructureDefinition/ncpeh-country-extension": [
+      "Organization"
+    ],
+    "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-EX-MedicinalPackageDescription": [
+      "Medication"
+    ],
+    "https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-EX-MedicinalPackageIdentifier": [
+      "Medication"
     ]
   }
 }

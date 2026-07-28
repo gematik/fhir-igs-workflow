@@ -1,8 +1,10 @@
-# Beispiel BfArM MedicationRequest - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# Beispiel BfArM MedicationRequest - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -22,6 +24,21 @@ Version 2.0.0-ballot.2 - ci-build
     "profile" : ["https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-medication-request"]
   },
   "extension" : [{
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+    "valueMarkdown" : "nach Bedarf mit ausreichend Flüssigkeit"
+  },
+  {
+    "extension" : [{
+      "url" : "algorithmVersion",
+      "valueString" : "1.0.0"
+    },
+    {
+      "url" : "language",
+      "valueCode" : "de-DE"
+    }],
+    "url" : "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta"
+  },
+  {
     "extension" : [{
       "url" : "off-label",
       "valueBoolean" : true
@@ -32,11 +49,11 @@ Version 2.0.0-ballot.2 - ci-build
     },
     {
       "url" : "security-compliance",
-      "valueBoolean" : false
+      "valueBoolean" : true
     },
     {
       "url" : "hand-out-information-material",
-      "valueBoolean" : false
+      "valueBoolean" : true
     },
     {
       "url" : "declaration-of-expertise",
@@ -62,7 +79,7 @@ Version 2.0.0-ballot.2 - ci-build
   },
   "authoredOn" : "2026-04-01",
   "dosageInstruction" : [{
-    "text" : "1-1-1-1"
+    "text" : "nach Bedarf mit ausreichend Flüssigkeit"
   }],
   "dispenseRequest" : {
     "quantity" : {

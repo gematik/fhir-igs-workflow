@@ -4,7 +4,7 @@ Implementation Guide
 
 TIFlow - Verordnungen für Arzneimittel
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**Technische Aspekte zur Arzneimittelverordnung**](menu-technisch.md)
@@ -15,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 
 ## Bundle → Parameters Mapping
 
-> Quelle: [KBV Bundle](Bundle-input-example-3.md) Ziel: [EPA Provide Parameters](Parameters-output-example-3.md)
+> Quelle: [KBV Bundle](Bundle-4863d1fb-dc26-4680-bb35-018610d1749d.md) Ziel: [EPA Provide Parameters](Parameters-output-example-3.md)
 
 ### Verordnungskennung
 

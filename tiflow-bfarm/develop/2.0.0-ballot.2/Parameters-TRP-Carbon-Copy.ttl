@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,330 +7,337 @@
 
 <https://gematik.de/fhir/tiflow-bfarm/Parameters/TRP-Carbon-Copy> a fhir:Parameters ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "TRP-Carbon-Copy"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-carbon-copy"^^xsd:anyURI ;
+  fhir:Resource.id [ fhir:value "TRP-Carbon-Copy"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-carbon-copy" ;
+       fhir:index 0 ;
        fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-carbon-copy>
-     ] [
-       fhir:v "https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.1"^^xsd:anyURI ;
-       fhir:link <https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.1>
-     ] )
-  ] ; # 
-  fhir:parameter ( [
-     fhir:name [ fhir:v "rxPrescription" ] ;
-     fhir:part ( [
-       fhir:name [ fhir:v "prescriptionSignatureDate" ] ;
-       fhir:value [
-         a fhir:instant ;
-         fhir:v "2026-04-01T08:23:12Z"^^xsd:dateTime
+     ], [
+       fhir:value "https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.2" ;
+       fhir:index 1 ;
+       fhir:link <https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.2>
+     ]
+  ] ;
+  fhir:Parameters.parameter [
+     fhir:index 0 ;
+     fhir:Parameters.parameter.name [ fhir:value "rxPrescription" ] ;
+     fhir:Parameters.parameter.part [
+       fhir:index 0 ;
+       fhir:Parameters.parameter.name [ fhir:value "prescriptionSignatureDate" ] ;
+       fhir:Parameters.parameter.valueInstant [ fhir:value "2026-04-01T08:23:12Z"^^xsd:dateTime ]
+     ], [
+       fhir:index 1 ;
+       fhir:Parameters.parameter.name [ fhir:value "prescriptionId" ] ;
+       fhir:Parameters.parameter.valueIdentifier [
+         fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+         fhir:Identifier.value [ fhir:value "166.100.000.000.001.39" ]
        ]
-     ] [
-       fhir:name [ fhir:v "prescriptionId" ] ;
-       fhir:value [
-         a fhir:Identifier ;
-         fhir:system [ fhir:v "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "166.100.000.000.001.39" ]
-       ]
-     ] [
-       fhir:name [ fhir:v "medicationRequest" ] ;
-       fhir:Parameters.parameter.resource ( [
+     ], [
+       fhir:index 2 ;
+       fhir:Parameters.parameter.name [ fhir:value "medicationRequest" ] ;
+       fhir:Parameters.parameter.resource [
          a fhir:MedicationRequest ;
-         fhir:id [ fhir:v "TRP-Carbon-Copy-MedicationRequest" ] ;
-         fhir:meta [
-           fhir:profile ( [
-             fhir:v "https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-medication-request"^^xsd:anyURI ;
+         fhir:Resource.id [ fhir:value "TRP-Carbon-Copy-MedicationRequest" ] ;
+         fhir:Resource.meta [
+           fhir:Meta.profile [
+             fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-medication-request" ;
+             fhir:index 0 ;
              fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-medication-request>
-           ] )
-         ] ;
-         fhir:extension ( [
-           fhir:extension ( [
-             fhir:url [ fhir:v "off-label"^^xsd:anyURI ] ;
-             fhir:value [
-               a fhir:boolean ;
-               fhir:v true
-             ]
-           ] [
-             fhir:url [ fhir:v "childbearing-potential"^^xsd:anyURI ] ;
-             fhir:value [
-               a fhir:boolean ;
-               fhir:v true
-             ]
-           ] [
-             fhir:url [ fhir:v "security-compliance"^^xsd:anyURI ] ;
-             fhir:value [
-               a fhir:boolean ;
-               fhir:v false
-             ]
-           ] [
-             fhir:url [ fhir:v "hand-out-information-material"^^xsd:anyURI ] ;
-             fhir:value [
-               a fhir:boolean ;
-               fhir:v false
-             ]
-           ] [
-             fhir:url [ fhir:v "declaration-of-expertise"^^xsd:anyURI ] ;
-             fhir:value [
-               a fhir:boolean ;
-               fhir:v true
-             ]
-           ] ) ;
-           fhir:url [ fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/teratogenic-extension"^^xsd:anyURI ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction"^^xsd:anyURI ] ;
-           fhir:value [
-             a fhir:markdown ;
-             fhir:v "1-0-1-0 Stück"
            ]
-         ] [
-           fhir:extension ( [
-             fhir:url [ fhir:v "algorithmVersion"^^xsd:anyURI ] ;
-             fhir:value [
-               a fhir:string ;
-               fhir:v "1.0.1"
-             ]
-           ] [
-             fhir:url [ fhir:v "language"^^xsd:anyURI ] ;
-             fhir:value [
-               a fhir:code ;
-               fhir:v "de-DE"
-             ]
-           ] ) ;
-           fhir:url [ fhir:v "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta"^^xsd:anyURI ]
-         ] ) ;
-         fhir:status [ fhir:v "completed" ] ;
-         fhir:intent [ fhir:v "order" ] ;
-         fhir:medication [
-           a fhir:Reference ;
+         ] ;
+         fhir:DomainResource.extension [
+           fhir:index 0 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "off-label" ] ;
+             fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "childbearing-potential" ] ;
+             fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+           ], [
+             fhir:index 2 ;
+             fhir:Extension.url [ fhir:value "security-compliance" ] ;
+             fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+           ], [
+             fhir:index 3 ;
+             fhir:Extension.url [ fhir:value "hand-out-information-material" ] ;
+             fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+           ], [
+             fhir:index 4 ;
+             fhir:Extension.url [ fhir:value "declaration-of-expertise" ] ;
+             fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+           ] ;
+           fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/teratogenic-extension" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction" ] ;
+           fhir:Extension.valueMarkdown [ fhir:value "1-0-2-0 Stück" ]
+         ], [
+           fhir:index 2 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "algorithmVersion" ] ;
+             fhir:Extension.valueString [ fhir:value "1.0.0" ]
+           ], [
+             fhir:index 1 ;
+             fhir:Extension.url [ fhir:value "language" ] ;
+             fhir:Extension.valueCode [ fhir:value "de-DE" ]
+           ] ;
+           fhir:Extension.url [ fhir:value "http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta" ]
+         ] ;
+         fhir:MedicationRequest.status [ fhir:value "completed" ] ;
+         fhir:MedicationRequest.intent [ fhir:value "order" ] ;
+         fhir:MedicationRequest.medicationReference [
            fhir:link <https://gematik.de/fhir/tiflow-bfarm/Medication/TRP-Carbon-Copy-Medication> ;
-           fhir:reference [ fhir:v "Medication/TRP-Carbon-Copy-Medication" ]
+           fhir:Reference.reference [ fhir:value "Medication/TRP-Carbon-Copy-Medication" ]
          ] ;
-         fhir:subject [
-           fhir:identifier [
-             fhir:system [
-               fhir:extension ( [
-                 fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ] ;
-                 fhir:value [
-                   a fhir:code ;
-                   fhir:v "not-permitted"
-                 ]
-               ] )
+         fhir:MedicationRequest.subject [
+           fhir:Reference.identifier [
+             fhir:Identifier.system [
+               fhir:Element.extension [
+                 fhir:index 0 ;
+                 fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/data-absent-reason" ] ;
+                 fhir:Extension.valueCode [ fhir:value "not-permitted" ]
+               ]
              ] ;
-             fhir:value [
-               fhir:extension ( [
-                 fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ] ;
-                 fhir:value [
-                   a fhir:code ;
-                   fhir:v "not-permitted"
-                 ]
-               ] )
+             fhir:Identifier.value [
+               fhir:Element.extension [
+                 fhir:index 0 ;
+                 fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/data-absent-reason" ] ;
+                 fhir:Extension.valueCode [ fhir:value "not-permitted" ]
+               ]
              ]
            ]
          ] ;
-         fhir:authoredOn [ fhir:v "2025-05-20"^^xsd:date ] ;
-         fhir:dosageInstruction ( [
-           fhir:timing [
-             fhir:repeat [
-               fhir:frequency [ fhir:v "1"^^xsd:positiveInteger ] ;
-               fhir:period [ fhir:v "1"^^xsd:decimal ] ;
-               fhir:periodUnit [ fhir:v "d" ] ;
-               fhir:when ( [ fhir:v "MORN" ] )
+         fhir:MedicationRequest.authoredOn [ fhir:value "2025-05-20"^^xsd:date ] ;
+         fhir:MedicationRequest.dosageInstruction [
+           fhir:index 0 ;
+           fhir:Dosage.timing [
+             fhir:Timing.repeat [
+               fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+               fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ] ;
+               fhir:Timing.repeat.periodUnit [ fhir:value "d" ] ;
+               fhir:Timing.repeat.when [
+                 fhir:value "MORN" ;
+                 fhir:index 0
+               ]
              ]
            ] ;
-           fhir:doseAndRate ( [
-             fhir:dose [
-               a fhir:Quantity ;
-               fhir:value [ fhir:v "1"^^xsd:decimal ] ;
-               fhir:unit [ fhir:v "Stück" ] ;
-               fhir:system [ fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"^^xsd:anyURI ] ;
-               fhir:code [ fhir:v "1" ]
+           fhir:Dosage.doseAndRate [
+             fhir:index 0 ;
+             fhir:Dosage.doseAndRate.doseQuantity [
+               fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+               fhir:Quantity.unit [ fhir:value "Stück" ] ;
+               fhir:Quantity.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT" ] ;
+               fhir:Quantity.code [ fhir:value "1" ]
              ]
-           ] )
-         ] [
-           fhir:timing [
-             fhir:repeat [
-               fhir:frequency [ fhir:v "1"^^xsd:positiveInteger ] ;
-               fhir:period [ fhir:v "1"^^xsd:decimal ] ;
-               fhir:periodUnit [ fhir:v "d" ] ;
-               fhir:when ( [ fhir:v "EVE" ] )
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:Dosage.timing [
+             fhir:Timing.repeat [
+               fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+               fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ] ;
+               fhir:Timing.repeat.periodUnit [ fhir:value "d" ] ;
+               fhir:Timing.repeat.when [
+                 fhir:value "EVE" ;
+                 fhir:index 0
+               ]
              ]
            ] ;
-           fhir:doseAndRate ( [
-             fhir:dose [
-               a fhir:Quantity ;
-               fhir:value [ fhir:v "2"^^xsd:decimal ] ;
-               fhir:unit [ fhir:v "Stück" ] ;
-               fhir:system [ fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"^^xsd:anyURI ] ;
-               fhir:code [ fhir:v "1" ]
+           fhir:Dosage.doseAndRate [
+             fhir:index 0 ;
+             fhir:Dosage.doseAndRate.doseQuantity [
+               fhir:Quantity.value [ fhir:value "2"^^xsd:decimal ] ;
+               fhir:Quantity.unit [ fhir:value "Stück" ] ;
+               fhir:Quantity.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT" ] ;
+               fhir:Quantity.code [ fhir:value "1" ]
              ]
-           ] )
-         ] ) ;
-         fhir:dispenseRequest [
-           fhir:quantity [
-             fhir:value [ fhir:v "1"^^xsd:decimal ] ;
-             fhir:unit [ fhir:v "Packung" ]
+           ]
+         ] ;
+         fhir:MedicationRequest.dispenseRequest [
+           fhir:MedicationRequest.dispenseRequest.quantity [
+             fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+             fhir:Quantity.unit [ fhir:value "Packung" ]
            ] ;
-           fhir:expectedSupplyDuration [
-             fhir:value [ fhir:v "3"^^xsd:decimal ] ;
-             fhir:unit [ fhir:v "Woche(n)" ]
+           fhir:MedicationRequest.dispenseRequest.expectedSupplyDuration [
+             fhir:Quantity.value [ fhir:value "3"^^xsd:decimal ] ;
+             fhir:Quantity.unit [ fhir:value "Woche(n)" ]
            ]
          ]
-       ] )
-     ] [
-       fhir:name [ fhir:v "medication" ] ;
-       fhir:Parameters.parameter.resource ( [
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:Parameters.parameter.name [ fhir:value "medication" ] ;
+       fhir:Parameters.parameter.resource [
          a fhir:Medication ;
-         fhir:id [ fhir:v "TRP-Carbon-Copy-Medication" ] ;
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://fhir.de/StructureDefinition/normgroesse"^^xsd:anyURI ] ;
-           fhir:value [
-             a fhir:code ;
-             fhir:v "N1"
-           ]
-         ] ) ;
-         fhir:code [
-           fhir:coding ( [
-             fhir:system [ fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ] ;
-             fhir:code [ fhir:v "19201712" ]
-           ] ) ;
-           fhir:text [ fhir:v "Pomalidomid Accord 1 mg 21 x 1 Hartkapseln" ]
+         fhir:Resource.id [ fhir:value "TRP-Carbon-Copy-Medication" ] ;
+         fhir:DomainResource.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/normgroesse" ] ;
+           fhir:Extension.valueCode [ fhir:value "N1" ]
          ] ;
-         fhir:form [
-           fhir:coding ( [
-             fhir:system [ fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"^^xsd:anyURI ] ;
-             fhir:code [ fhir:v "HKP" ]
-           ] )
-         ] ;
-         fhir:amount [
-           fhir:numerator [
-             fhir:extension ( [
-               fhir:url [ fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension"^^xsd:anyURI ] ;
-               fhir:value [
-                 a fhir:string ;
-                 fhir:v "21"
-               ]
-             ] ) ;
-             fhir:unit [ fhir:v "Stück" ]
+         fhir:Medication.code [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/ifa/pzn" ] ;
+             fhir:Coding.code [ fhir:value "19201712" ]
            ] ;
-           fhir:denominator [
-             fhir:value [ fhir:v "1"^^xsd:decimal ]
+           fhir:CodeableConcept.text [ fhir:value "Pomalidomid Accord 1 mg 21 x 1 Hartkapseln" ]
+         ] ;
+         fhir:Medication.form [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM" ] ;
+             fhir:Coding.code [ fhir:value "HKP" ]
            ]
          ] ;
-         fhir:ingredient ( [
-           fhir:item [
-             a fhir:CodeableConcept ;
-             fhir:text [ fhir:v "Pomalidomid" ]
-           ] ;
-           fhir:strength [
-             fhir:numerator [
-               fhir:value [ fhir:v "1"^^xsd:decimal ] ;
-               fhir:unit [ fhir:v "mg" ]
+         fhir:Medication.amount [
+           fhir:Ratio.numerator [
+             fhir:Element.extension [
+               fhir:index 0 ;
+               fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension" ] ;
+               fhir:Extension.valueString [ fhir:value "21" ]
              ] ;
-             fhir:denominator [
-               fhir:value [ fhir:v "1"^^xsd:decimal ] ;
-               fhir:unit [ fhir:v "Stück" ]
+             fhir:Quantity.unit [ fhir:value "Stück" ]
+           ] ;
+           fhir:Ratio.denominator [
+             fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ]
+           ]
+         ] ;
+         fhir:Medication.ingredient [
+           fhir:index 0 ;
+           fhir:Medication.ingredient.itemCodeableConcept [
+             fhir:CodeableConcept.text [ fhir:value "Pomalidomid" ]
+           ] ;
+           fhir:Medication.ingredient.strength [
+             fhir:Ratio.numerator [
+               fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+               fhir:Quantity.unit [ fhir:value "mg" ]
+             ] ;
+             fhir:Ratio.denominator [
+               fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+               fhir:Quantity.unit [ fhir:value "Stück" ]
              ]
            ]
-         ] )
-       ] )
-     ] )
-  ] [
-     fhir:name [ fhir:v "rxDispensation" ] ;
-     fhir:part ( [
-       fhir:name [ fhir:v "dispenseOrganization" ] ;
-       fhir:Parameters.parameter.resource ( [
+         ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Parameters.parameter.name [ fhir:value "rxDispensation" ] ;
+     fhir:Parameters.parameter.part [
+       fhir:index 0 ;
+       fhir:Parameters.parameter.name [ fhir:value "dispenseOrganization" ] ;
+       fhir:Parameters.parameter.resource [
          a fhir:Organization ;
-         fhir:id [ fhir:v "8b416995-852f-4933-99bf-c71ad76abae3" ] ;
-         fhir:meta [
-           fhir:profile ( [
-             fhir:v "https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-organization"^^xsd:anyURI ;
+         fhir:Resource.id [ fhir:value "8b416995-852f-4933-99bf-c71ad76abae3" ] ;
+         fhir:Resource.meta [
+           fhir:Meta.profile [
+             fhir:value "https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-organization" ;
+             fhir:index 0 ;
              fhir:link <https://gematik.de/fhir/tiflow-bfarm/StructureDefinition/erp-tprescription-organization>
-           ] )
+           ]
          ] ;
-         fhir:identifier ( [
-           fhir:value [ fhir:v "Organisation 3-2arvtst-ap000053" ]
-         ] ) ;
-         fhir:name [ fhir:v "Stadt Apotheke" ] ;
-         fhir:telecom ( [
-           fhir:system [ fhir:v "phone" ] ;
-           fhir:value [ fhir:v "1234" ] ;
-           fhir:use [ fhir:v "work" ]
-         ] ) ;
-         fhir:address ( [
-           fhir:use [ fhir:v "work" ] ;
-           fhir:type [ fhir:v "postal" ] ;
-           fhir:line ( [ fhir:v "Schwarzwaldstr. 18" ] ) ;
-           fhir:city [ fhir:v "Großostheim" ] ;
-           fhir:state [ fhir:v "Bayern" ] ;
-           fhir:postalCode [ fhir:v "63762" ] ;
-           fhir:country [ fhir:v "DE" ]
-         ] )
-       ] )
-     ] [
-       fhir:name [ fhir:v "dispenseInformation" ] ;
-       fhir:part ( [
-         fhir:name [ fhir:v "medicationDispense" ] ;
-         fhir:Parameters.parameter.resource ( [
+         fhir:Organization.identifier [
+           fhir:index 0 ;
+           fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+           fhir:Identifier.value [ fhir:value "Organisation 3-2arvtst-ap000053" ]
+         ] ;
+         fhir:Organization.name [ fhir:value "Stadt Apotheke" ] ;
+         fhir:Organization.telecom [
+           fhir:index 0 ;
+           fhir:ContactPoint.system [ fhir:value "phone" ] ;
+           fhir:ContactPoint.value [ fhir:value "1234" ] ;
+           fhir:ContactPoint.use [ fhir:value "work" ]
+         ] ;
+         fhir:Organization.address [
+           fhir:index 0 ;
+           fhir:Address.use [ fhir:value "work" ] ;
+           fhir:Address.type [ fhir:value "postal" ] ;
+           fhir:Address.line [
+             fhir:value "Schwarzwaldstr. 18" ;
+             fhir:index 0
+           ] ;
+           fhir:Address.city [ fhir:value "Großostheim" ] ;
+           fhir:Address.state [ fhir:value "Bayern" ] ;
+           fhir:Address.postalCode [ fhir:value "63762" ] ;
+           fhir:Address.country [ fhir:value "DE" ]
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Parameters.parameter.name [ fhir:value "dispenseInformation" ] ;
+       fhir:Parameters.parameter.part [
+         fhir:index 0 ;
+         fhir:Parameters.parameter.name [ fhir:value "medicationDispense" ] ;
+         fhir:Parameters.parameter.resource [
            a fhir:MedicationDispense ;
-           fhir:id [ fhir:v "TRP-Carbon-Copy-MedicationDispense" ] ;
-           fhir:status [ fhir:v "completed" ] ;
-           fhir:medication [
-             a fhir:Reference ;
+           fhir:Resource.id [ fhir:value "TRP-Carbon-Copy-MedicationDispense" ] ;
+           fhir:MedicationDispense.status [ fhir:value "completed" ] ;
+           fhir:MedicationDispense.medicationReference [
              fhir:link <https://gematik.de/fhir/tiflow-bfarm/Medication/TRP-Carbon-Copy-D-Medication> ;
-             fhir:reference [ fhir:v "Medication/TRP-Carbon-Copy-D-Medication" ]
+             fhir:Reference.reference [ fhir:value "Medication/TRP-Carbon-Copy-D-Medication" ]
            ] ;
-           fhir:performer ( [
-             fhir:actor [
+           fhir:MedicationDispense.performer [
+             fhir:index 0 ;
+             fhir:MedicationDispense.performer.actor [
                fhir:link <https://gematik.de/fhir/tiflow-bfarm/Organization/8b416995-852f-4933-99bf-c71ad76abae3> ;
-               fhir:reference [ fhir:v "Organization/8b416995-852f-4933-99bf-c71ad76abae3" ]
+               fhir:Reference.reference [ fhir:value "Organization/8b416995-852f-4933-99bf-c71ad76abae3" ]
              ]
-           ] ) ;
-           fhir:whenHandedOver [ fhir:v "2026-04-01"^^xsd:date ]
-         ] )
-       ] [
-         fhir:name [ fhir:v "medication" ] ;
-         fhir:Parameters.parameter.resource ( [
+           ] ;
+           fhir:MedicationDispense.whenHandedOver [ fhir:value "2026-04-01"^^xsd:date ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:Parameters.parameter.name [ fhir:value "medication" ] ;
+         fhir:Parameters.parameter.resource [
            a fhir:Medication ;
-           fhir:id [ fhir:v "TRP-Carbon-Copy-D-Medication" ] ;
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://fhir.de/StructureDefinition/normgroesse"^^xsd:anyURI ] ;
-             fhir:value [
-               a fhir:code ;
-               fhir:v "N1"
-             ]
-           ] ) ;
-           fhir:code [
-             fhir:coding ( [
-               fhir:system [ fhir:v "http://fhir.de/CodeSystem/ifa/pzn"^^xsd:anyURI ] ;
-               fhir:code [ fhir:v "19201712" ]
-             ] ) ;
-             fhir:text [ fhir:v "Pomalidomid Accord 1 mg 21 x 1 Hartkapseln" ]
+           fhir:Resource.id [ fhir:value "TRP-Carbon-Copy-D-Medication" ] ;
+           fhir:DomainResource.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "http://fhir.de/StructureDefinition/normgroesse" ] ;
+             fhir:Extension.valueCode [ fhir:value "N1" ]
            ] ;
-           fhir:form [
-             fhir:coding ( [
-               fhir:system [ fhir:v "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"^^xsd:anyURI ] ;
-               fhir:code [ fhir:v "HKP" ]
-             ] )
-           ] ;
-           fhir:amount [
-             fhir:numerator [
-               fhir:extension ( [
-                 fhir:url [ fhir:v "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension"^^xsd:anyURI ] ;
-                 fhir:value [
-                   a fhir:string ;
-                   fhir:v "21"
-                 ]
-               ] ) ;
-               fhir:unit [ fhir:v "Stück" ]
+           fhir:Medication.code [
+             fhir:CodeableConcept.coding [
+               fhir:index 0 ;
+               fhir:Coding.system [ fhir:value "http://fhir.de/CodeSystem/ifa/pzn" ] ;
+               fhir:Coding.code [ fhir:value "19201712" ]
              ] ;
-             fhir:denominator [
-               fhir:value [ fhir:v "1"^^xsd:decimal ]
+             fhir:CodeableConcept.text [ fhir:value "Pomalidomid Accord 1 mg 21 x 1 Hartkapseln" ]
+           ] ;
+           fhir:Medication.form [
+             fhir:CodeableConcept.coding [
+               fhir:index 0 ;
+               fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM" ] ;
+               fhir:Coding.code [ fhir:value "HKP" ]
+             ]
+           ] ;
+           fhir:Medication.amount [
+             fhir:Ratio.numerator [
+               fhir:Element.extension [
+                 fhir:index 0 ;
+                 fhir:Extension.url [ fhir:value "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension" ] ;
+                 fhir:Extension.valueString [ fhir:value "21" ]
+               ] ;
+               fhir:Quantity.unit [ fhir:value "Stück" ]
+             ] ;
+             fhir:Ratio.denominator [
+               fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ]
              ]
            ]
-         ] )
-       ] )
-     ] )
-  ] ) . # 
+         ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/Parameters/TRP-Carbon-Copy.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

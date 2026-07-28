@@ -1,8 +1,10 @@
-# GEM ERPCHRG PR PAR Patch ChargeItem Input Parameter - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+# GEM ERPCHRG PR PAR Patch ChargeItem Input Parameter - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Abrechnungsinformationen
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input |
+| Active as of 2026-06-30 | *Computable Name*:GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -47,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-PAR-P
   "title" : "GEM ERPCHRG PR PAR Patch ChargeItem Input Parameter",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -115,7 +117,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-PAR-P
         "human" : "At least one Part must be present.",
         "expression" : "part.exists()",
         "source" : "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Parameters.parameter:markingFlag.name",
@@ -153,7 +156,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-PAR-P
       "max" : "1",
       "type" : [{
         "code" : "BackboneElement"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Parameters.parameter:markingFlag.part:insuranceProvider.name",
@@ -187,7 +191,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-PAR-P
       "max" : "1",
       "type" : [{
         "code" : "BackboneElement"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Parameters.parameter:markingFlag.part:subsidy.name",
@@ -221,7 +226,8 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERPCHRG-PR-PAR-P
       "max" : "1",
       "type" : [{
         "code" : "BackboneElement"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Parameters.parameter:markingFlag.part:taxOffice.name",

@@ -38,22 +38,23 @@
         height: 280px;
         background-color: #2a6496;
         background: url('./tiflow-bg.png') no-repeat;
-        background-position: 580px -20px;
+        background-position: 555px -20px;
         background-size: 49% auto;
     }
+
     .bubble-link {
         display: none;
         transition: opacity 0.2s;
-        }
+    }
 
-        h1:hover .bubble-link,
-        h2:hover .bubble-link,
-        h3:hover .bubble-link,
-        h4:hover .bubble-link,
-        h5:hover .bubble-link,
-        h6:hover .bubble-link {
+    h1:hover .bubble-link,
+    h2:hover .bubble-link,
+    h3:hover .bubble-link,
+    h4:hover .bubble-link,
+    h5:hover .bubble-link,
+    h6:hover .bubble-link {
         display: inline;
-        }
+    }
 </style>
 
 <script type="text/javascript" src="assets/js/heading-links.js"> </script>
@@ -238,7 +239,7 @@
 Implementation Guide<br /> TIFlow - Kernfunktionalitäten
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - draft
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -305,6 +306,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul id="markdown-toc">
   <li><a href="#terminologien-value-sets" id="markdown-toc-terminologien-value-sets">Terminologien: Value Sets</a></li>
+  <li><a href="#terminologien-code-systems" id="markdown-toc-terminologien-code-systems">Terminologien: Code Systems</a></li>
   <li><a href="#logical-models" id="markdown-toc-logical-models">Logical Models</a></li>
   <li><a href="#funktions-definition" id="markdown-toc-funktions-definition">Funktions Definition</a></li>
   <li><a href="#systemverhalten" id="markdown-toc-systemverhalten">Systemverhalten</a></li>
@@ -460,6 +462,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
         
         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
          <tr>
             <td style="column-width:30%">
                 <a href="ValueSet-tiflow-order-task-status-vs.html" title="ValueSet/tiflow-order-task-status-vs">
@@ -481,6 +499,184 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div><figcaption><strong>Tabelle:</strong> Value Sets</figcaption></div>
 
+<h3 id="terminologien-code-systems">Terminologien: Code Systems</h3>
+
+<table class="grid">
+    <colgroup>
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="CodeSystem-tiflow-operation-outcome-details-cs.html" title="CodeSystem/tiflow-operation-outcome-details-cs">
+                
+                    TIFLOW Operation Outcome Details CS
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    </tbody>
+</table>
+
+<div><figcaption><strong>Tabelle:</strong> Code Systems</figcaption></div>
+
 <h3 id="logical-models">Logical Models</h3>
 
 <table class="grid">
@@ -490,6 +686,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tbody>
     
     
+    
+        
+        
+        
     
         
         
@@ -593,6 +793,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             
          </tr>
          
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
     
         
         
@@ -802,6 +1014,29 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
             
             <td>
                 <p>Maps operation outcome codes to the telemetry data status codes</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="OperationDefinition-tiflow-core-validate-op.html" title="OperationDefinition/tiflow-core-validate-op">
+                
+                    Validieren einer FHIR-Ressource
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>Diese Operation validiert eine FHIR-Ressource gegen eine konfigurierbare FHIR-Konfiguration.
+
+Sie erweitert die standardisierte FHIR $validate-Operation (http://hl7.org/fhir/OperationDefinition/Resource-validate) um einen gematik-spezifischen `fhir_config` Parameter zur Auswahl der Validierungskonfiguration.
+
+Mit dem Parameter `returnBoolean` kann wahlweise ein kompaktes boolesches Ergebnis (`true`/`false`) angefordert werden, anstelle eines vollständigen OperationOutcome.</p>
             </td>
             
          </tr>
@@ -1078,15 +1313,15 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
         
          <tr>
             <td style="column-width:30%">
-                <a href="StructureDefinition-ti-flow-feature-wf160.html" title="StructureDefinition/ti-flow-feature-wf160">
+                <a href="StructureDefinition-ti-flow-core-validate-operation-input.html" title="StructureDefinition/ti-flow-core-validate-operation-input">
                 
-                    Feature: WF160 - Flowtype für Apothekenpflichtige Arzneimittel
+                    TIFlow CORE Validate Operation Input
                 
                 </a>
             </td>
             
             <td>
-                <p>Featurebeschreibung für die Verordnung von Apothekenpflichtigen Arzneimitteln</p>
+                <p>Dieses Profil definiert die Eingabeparameter für die $validate-Operation des TI-Flow-Fachdienstes.</p>
             </td>
             
          </tr>
@@ -1097,15 +1332,15 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
         
          <tr>
             <td style="column-width:30%">
-                <a href="StructureDefinition-ti-flow-feature-wf169.html" title="StructureDefinition/ti-flow-feature-wf169">
+                <a href="StructureDefinition-ti-flow-core-validate-operation-output.html" title="StructureDefinition/ti-flow-core-validate-operation-output">
                 
-                    Feature: WF169 - Flowtype für Apothekenpflichtige Arzneimittel mit Steuerung durch den Leistungserbringer
+                    TIFlow CORE Validate Operation Output
                 
                 </a>
             </td>
             
             <td>
-                <p>Featurebeschreibung für die Verordnung von Apothekenpflichtigen Arzneimitteln mit Steuerung durch den Leistungserbringer</p>
+                <p>Dieses Profil definiert die Ausgabeparameter für die $validate-Operation des TI-Flow-Fachdienstes.</p>
             </td>
             
          </tr>
@@ -1192,6 +1427,44 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
         
          <tr>
             <td style="column-width:30%">
+                <a href="Subscription-erp-notification-avs-01-request-PostSubscriptionPseudo.html" title="Subscription/erp-notification-avs-01-request-PostSubscriptionPseudo">
+                
+                    -
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>-</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="Subscription-erp-notification-avs-02-response-PostSubscriptionPseudo.html" title="Subscription/erp-notification-avs-02-response-PostSubscriptionPseudo">
+                
+                    -
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>-</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
                 <a href="ValueSet-GEM-ERP-VS-AvailabilityStatus.html" title="ValueSet/GEM-ERP-VS-AvailabilityStatus">
                 
                     ValueSet der Verfügbarkeitsstatus-Codes
@@ -1239,6 +1512,25 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
             
             <td>
                 <p>Zeigt die verschiedenen Typen der TI Workflows entsprechend der Verordnungsformulare.</p>
+            </td>
+            
+         </tr>
+         
+    
+        
+        
+        
+         <tr>
+            <td style="column-width:30%">
+                <a href="ValueSet-tiflow-audit-event-agent-type-vs.html" title="ValueSet/tiflow-audit-event-agent-type-vs">
+                
+                    TIFlow AuditEvent Agent Type ValueSet
+                
+                </a>
+            </td>
+            
+            <td>
+                <p>AuditEvent agent type (client)</p>
             </td>
             
          </tr>
@@ -1342,6 +1634,22 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
             
          </tr>
          
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
     
         
         
@@ -1600,6 +1908,10 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
         
         
         
+    
+        
+        
+        
          <tr>
             <td style="column-width:30%">
                 <a href="StructureDefinition-tiflow-operation-outcome.html" title="StructureDefinition/tiflow-operation-outcome">
@@ -1615,6 +1927,18 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
             
          </tr>
          
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
     
         
         
@@ -1716,6 +2040,22 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
             
          </tr>
          
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
     
         
         
@@ -1931,6 +2271,10 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
         
         
         
+    
+        
+        
+        
          <tr>
             <td style="column-width:30%">
                 <a href="StructureDefinition-tiflow-communication.html" title="StructureDefinition/tiflow-communication">
@@ -2009,6 +2353,18 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
         
         
     
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
     </tbody>
 </table>
 
@@ -2018,7 +2374,7 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
 
 <p>Diese Sektion enthält FHIR-Artefakte, deren kanonische URL bewusst auf einem vorherigen Stand belassen wurde. Dadurch bleibt die Rückwärtskompatibilität für bestehende Implementierungen erhalten.</p>
 
-<h4 id="lagacy-terminologien-code-systems">Lagacy Terminologien: Code Systems</h4>
+<h4 id="legacy-terminologien-code-systems">Legacy Terminologien: Code Systems</h4>
 
 <table class="grid">
     <colgroup>
@@ -2207,12 +2563,28 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
         
         
     
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
     </tbody>
 </table>
 
-<div><figcaption><strong>Tabelle:</strong> Lagacy Code Systems</figcaption></div>
+<div><figcaption><strong>Tabelle:</strong> Legacy Code Systems</figcaption></div>
 
-<h4 id="lagacy-terminologien-value-sets">Lagacy Terminologien: Value Sets</h4>
+<h4 id="legacy-terminologien-value-sets">Legacy Terminologien: Value Sets</h4>
 
 <table class="grid">
     <colgroup>
@@ -2221,6 +2593,18 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
     <tbody>
     
     
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
     
         
         
@@ -2399,12 +2783,16 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
         
         
     
+        
+        
+        
+    
     </tbody>
 </table>
 
-<div><figcaption><strong>Tabelle:</strong> Lagacy Value Sets</figcaption></div>
+<div><figcaption><strong>Tabelle:</strong> Legacy Value Sets</figcaption></div>
 
-<h4 id="lagacy-suchparameter">Lagacy Suchparameter</h4>
+<h4 id="legacy-suchparameter">Legacy Suchparameter</h4>
 
 <table class="grid">
     <colgroup>
@@ -2413,6 +2801,10 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
     <tbody>
     
     
+    
+        
+        
+        
     
         
         
@@ -2576,12 +2968,24 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
         
         
     
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
     </tbody>
 </table>
 
-<div><figcaption><strong>Tabelle:</strong> Lagacy Suchparameter</figcaption></div>
+<div><figcaption><strong>Tabelle:</strong> Legacy Suchparameter</figcaption></div>
 
-<h4 id="lagacy-ressourcenprofile">Lagacy Ressourcenprofile</h4>
+<h4 id="legacy-ressourcenprofile">Legacy Ressourcenprofile</h4>
 
 <table class="grid">
     <colgroup>
@@ -2590,6 +2994,10 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
     <tbody>
     
     
+    
+        
+        
+        
     
         
         
@@ -2798,12 +3206,24 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
         
         
     
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
     </tbody>
 </table>
 
-<div><figcaption><strong>Tabelle:</strong> Lagacy Ressourcenprofile</figcaption></div>
+<div><figcaption><strong>Tabelle:</strong> Legacy Ressourcenprofile</figcaption></div>
 
-<h4 id="lagacy-erweiterungen-extension-definitions">Lagacy Erweiterungen (Extension) Definitions</h4>
+<h4 id="legacy-erweiterungen-extension-definitions">Legacy Erweiterungen (Extension) Definitions</h4>
 
 <table class="grid">
     <colgroup>
@@ -2812,6 +3232,10 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
     <tbody>
     
     
+    
+        
+        
+        
     
         
         
@@ -3005,12 +3429,24 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
         
         
     
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
     </tbody>
 </table>
 
 <div><figcaption><strong>Tabelle:</strong> Extension Definitions</figcaption></div>
 
-<h4 id="lagacy-datentypen">Lagacy Datentypen</h4>
+<h4 id="legacy-datentypen">Legacy Datentypen</h4>
 
 <table class="grid">
     <colgroup>
@@ -3019,6 +3455,10 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
     <tbody>
     
     
+    
+        
+        
+        
     
         
         
@@ -3167,10 +3607,22 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
         
         
     
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
     </tbody>
 </table>
 
-<div><figcaption><strong>Tabelle:</strong> Lagacy Datentypen</figcaption></div>
+<div><figcaption><strong>Tabelle:</strong> Legacy Datentypen</figcaption></div>
 
 <h3 id="beispielinstanzen">Beispielinstanzen</h3>
 
@@ -3178,6 +3630,16 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
 
 <ul>
           <li><a href="CapabilityStatement-ExampleCapabilityStatementServerPU.html">Example CapabilityStatement Server PU - RX</a></li>
+      </ul>
+
+<p><b>Subscription</b></p>
+
+<ul>
+          <li><a href="Subscription-erp-notification-avs-01-request-PostSubscriptionPseudo.html">erp-notification-avs-01-request-PostSubscriptionPseudo</a></li>
+      </ul>
+
+<ul>
+          <li><a href="Subscription-erp-notification-avs-02-response-PostSubscriptionPseudo.html">erp-notification-avs-02-response-PostSubscriptionPseudo</a></li>
       </ul>
 
 
@@ -3221,7 +3683,7 @@ WICHTIG: Der Codebereich 9xx ist reserviert für Abrechnungsprozesse in Apotheke
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Fri, Jun 26, 2026 09:04+0000">2026-06-26</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:25+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

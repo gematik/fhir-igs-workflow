@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FdV-Anforderungen: Consent-Query - TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
+    <title>FdV-Anforderungen: Consent-Query - Implementation Guide TIFlow - Abrechnungsinformationen v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-technische-umsetzung-datenschutz-und-sicherheit.html">Datenschutz und Sicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -196,10 +199,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Abrechnungsinformationen
+Implementation Guide<br /> TIFlow - Abrechnungsinformationen
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -283,7 +286,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </figure>
 
 <!-- A_22709-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-287" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A287" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -292,7 +295,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22163-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-288" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A288" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -301,7 +304,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22165-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-289" title="E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A289" title="E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -315,7 +318,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22166-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-290" title="E-Rezept-FdV: Einwilligung erteilen - Speicherrequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A290" title="E-Rezept-FdV: Einwilligung erteilen - Speicherrequest" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -340,7 +343,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </figure>
 
 <!-- A_22168-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-291" title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A291" title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -363,7 +366,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </figure>
 
 <!-- A_22169-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-292" title="E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A292" title="E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -372,7 +375,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22330-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-293" title="E-Rezept-FdV: Einwilligung widerrufen - Bestätigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A293" title="E-Rezept-FdV: Einwilligung widerrufen - Bestätigung" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -381,7 +384,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </requirement>
 
 <!-- A_22171-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-294" title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A294" title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="0">
     <meta lockversion="false" />
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -435,7 +438,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:53+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.chargeitem#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:34+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

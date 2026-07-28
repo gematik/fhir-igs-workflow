@@ -1,8 +1,10 @@
-# ERP DiGA CapabilityStatement für den E-Rezept-Fachdienst - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# ERP DiGA CapabilityStatement für den E-Rezept-Fachdienst - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-diga/CapabilityStatement/ti-flow-fachdienst-server-diga | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*: |
+| Active as of 2026-06-30 | *Computable Name*: |
 
  
 CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendungen) 
@@ -31,13 +33,13 @@ CapabilityStatement für den E-Rezept-Fachdienst (Digitale Gesundheitsanwendunge
   },
   "extension" : [{
     "url" : "https://gematik.de/fhir/ti/StructureDefinition/extension-base-url",
-    "valueString" : "https://tiflow.de"
+    "valueString" : "https://tiflow.de/diga/fhir/v1"
   }],
   "url" : "https://gematik.de/fhir/tiflow-diga/CapabilityStatement/ti-flow-fachdienst-server-diga",
   "version" : "2.0.0-ballot.2",
   "title" : "ERP DiGA CapabilityStatement für den E-Rezept-Fachdienst",
   "status" : "active",
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

@@ -1,8 +1,10 @@
-# E-T-Rezept Structure Map for KBV FreeText Medication - TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+# E-T-Rezept Structure Map for KBV FreeText Medication - Implementation Guide TIFlow - Datenaustausch BfArM Webdienst v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Datenaustausch BfArM Webdienst
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapKBVFreeTextMedication | *Version*:2.0.0-ballot.2 |
-| Draft as of 2026-05-26 | *Computable Name*:ERPTPrescriptionStructureMapKBVFreeTextMedication |
+| Draft as of 2026-06-30 | *Computable Name*:ERPTPrescriptionStructureMapKBVFreeTextMedication |
 
  
 Maps KBV FreeText Medication to BfArM T-Prescription Medication format 
@@ -32,7 +34,7 @@ Maps KBV FreeText Medication to BfArM T-Prescription Medication format
   "title" : "E-T-Rezept Structure Map for KBV FreeText Medication",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-05-26",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",

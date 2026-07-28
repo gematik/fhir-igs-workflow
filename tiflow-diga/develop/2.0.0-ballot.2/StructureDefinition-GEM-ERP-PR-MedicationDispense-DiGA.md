@@ -1,8 +1,10 @@
-# GEM ERP PR MedicationDispense DiGA - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+# GEM ERP PR MedicationDispense DiGA - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2
+
+Implementation Guide
 
 TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
-Version 2.0.0-ballot.2 - ci-build 
+Version 2.0.0-ballot.2 - ballot 
 
 * [**Table of Contents**](toc.md)
 * [**FHIR-Artefakte**](artifacts.md)
@@ -13,7 +15,7 @@ Version 2.0.0-ballot.2 - ci-build
 | | |
 | :--- | :--- |
 | *Official URL*:https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense_DiGA | *Version*:2.0.0-ballot.2 |
-| Active as of 2028-04-01 | *Computable Name*:GEM_ERP_PR_MedicationDispense_DiGA |
+| Active as of 2026-06-30 | *Computable Name*:GEM_ERP_PR_MedicationDispense_DiGA |
 | **Copyright/Legal**: gematik GmbH / Dieses Artefakt ist lizenziert unter [Apache License](./license.md), Version 2.0. | |
 
  
@@ -21,7 +23,7 @@ Dispensierung einer DiGA-Verordnung
 
 **Usages:**
 
-* Use this Profile: [TIFlow DiGA Close Operation Input](StructureDefinition-ti-flow-di-ga-close-operation-input.md) and [TIFlow DiGA Dispense Operation Input](StructureDefinition-ti-flow-di-ga-dispense-operation-input.md)
+* Use this Profile: [TIFlow DiGA Close Operation Input](StructureDefinition-ti-flow-di-ga-close-operation-input.md)
 * Examples for this Profile: [MedicationDispense/Example-MedicationDispense-DiGA-DeepLink](MedicationDispense-Example-MedicationDispense-DiGA-DeepLink.md), [MedicationDispense/Example-MedicationDispense-DiGA-Name-And-PZN](MedicationDispense-Example-MedicationDispense-DiGA-Name-And-PZN.md) and [MedicationDispense/Example-MedicationDispense-DiGA-NoRedeemCode](MedicationDispense-Example-MedicationDispense-DiGA-NoRedeemCode.md)
 * CapabilityStatements using this Profile: [ERP DiGA CapabilityStatement für den E-Rezept-Fachdienst](CapabilityStatement-ti-flow-fachdienst-server-diga.md)
 
@@ -49,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
   "title" : "GEM ERP PR MedicationDispense DiGA",
   "status" : "active",
   "experimental" : false,
-  "date" : "2028-04-01",
+  "date" : "2026-06-30",
   "publisher" : "gematik GmbH",
   "contact" : [{
     "name" : "gematik GmbH",
@@ -100,7 +102,7 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
   "kind" : "resource",
   "abstract" : false,
   "type" : "MedicationDispense",
-  "baseDefinition" : "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-dispense",
+  "baseDefinition" : "https://gematik.de/fhir/ti/StructureDefinition/ti-medication-dispense-dgmp",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -171,6 +173,11 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
       }
     },
     {
+      "id" : "MedicationDispense.partOf",
+      "path" : "MedicationDispense.partOf",
+      "max" : "0"
+    },
+    {
       "id" : "MedicationDispense.status",
       "path" : "MedicationDispense.status",
       "short" : "completed",
@@ -200,23 +207,42 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
     {
       "id" : "MedicationDispense.medication[x].identifier",
       "path" : "MedicationDispense.medication[x].identifier",
-      "short" : "Eindeutige Identifikationsnummer für eine Verschreibungseinheit einer DiGA (PZN)."
+      "short" : "Eindeutige Identifikationsnummer für eine Verschreibungseinheit einer DiGA (PZN).",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.medication[x].identifier.system",
       "path" : "MedicationDispense.medication[x].identifier.system",
       "min" : 1,
-      "fixedUri" : "http://fhir.de/CodeSystem/ifa/pzn"
+      "fixedUri" : "http://fhir.de/CodeSystem/ifa/pzn",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.medication[x].identifier.value",
       "path" : "MedicationDispense.medication[x].identifier.value",
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.medication[x].display",
       "path" : "MedicationDispense.medication[x].display",
-      "short" : "Name der DiGA-Verschreibungseinheit."
+      "short" : "Name der DiGA-Verschreibungseinheit.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.context",
+      "path" : "MedicationDispense.context",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.supportingInformation",
+      "path" : "MedicationDispense.supportingInformation",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.performer.actor",
+      "path" : "MedicationDispense.performer.actor",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.performer.actor.identifier",
@@ -226,6 +252,21 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
         "code" : "Identifier",
         "profile" : ["http://fhir.de/StructureDefinition/identifier-telematik-id"]
       }]
+    },
+    {
+      "id" : "MedicationDispense.location",
+      "path" : "MedicationDispense.location",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.type",
+      "path" : "MedicationDispense.type",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.daysSupply",
+      "path" : "MedicationDispense.daysSupply",
+      "max" : "0"
     },
     {
       "id" : "MedicationDispense.whenHandedOver",
@@ -240,9 +281,24 @@ Other representations of profile: [CSV](StructureDefinition-GEM-ERP-PR-Medicatio
       }]
     },
     {
+      "id" : "MedicationDispense.destination",
+      "path" : "MedicationDispense.destination",
+      "max" : "0"
+    },
+    {
       "id" : "MedicationDispense.substitution",
       "path" : "MedicationDispense.substitution",
       "comment" : "Laut Bundesamt für Soziale Sicherung ist der Ersatz für DiGAs nicht erlaubt.",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.detectedIssue",
+      "path" : "MedicationDispense.detectedIssue",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.eventHistory",
+      "path" : "MedicationDispense.eventHistory",
       "max" : "0"
     }]
   }

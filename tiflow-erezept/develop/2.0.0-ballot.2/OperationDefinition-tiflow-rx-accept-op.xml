@@ -4,15 +4,15 @@
   <id value="tiflow-rx-accept-op"/>
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition tiflow-rx-accept-op</b></p><a name="tiflow-rx-accept-op"> </a><a name="hctiflow-rx-accept-op"> </a><p>URL: [base]/Task/[id]/$accept</p><p>Output parameters Profile:<a href="StructureDefinition-GEM-ERP-PR-PAR-Accept-Operation-Output.html">GEM ERP PR AcceptOperation Output</a></p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>ac</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>Der Secret-Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen.</p>
-</div></td></tr></table></div>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td/></tr></table></div>
   </text>
   <url value="https://gematik.de/fhir/tiflow-erezept/OperationDefinition/tiflow-rx-accept-op"/>
   <version value="2.0.0-ballot.2"/>
-  <name value="TIFlow-RX-OP-Accept"/>
+  <name value="TIFlowRXOPAccept"/>
   <title value="E-Rezept abrufen"/>
   <status value="active"/>
   <kind value="operation"/>
-  <date value="2028-04-01"/>
+  <date value="2026-06-30"/>
   <publisher value="gematik GmbH"/>
   <contact>
     <name value="gematik GmbH"/>
@@ -47,5 +47,12 @@
     <max value="1"/>
     <documentation value="Der Secret-Parameter, der es Benutzern ermöglicht, exklusiv über die URL und den Parameter ?ac auf die Aufgabe zuzugreifen."/>
     <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <type value="Bundle"/>
   </parameter>
 </OperationDefinition>

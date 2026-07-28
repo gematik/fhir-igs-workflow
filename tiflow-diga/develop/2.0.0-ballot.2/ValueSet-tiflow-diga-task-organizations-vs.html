@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Bearbeiter eines E-Rezeptes - TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
+    <title>Bearbeiter eines E-Rezeptes - Implementation Guide TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA) v2.0.0-ballot.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -78,8 +78,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"8.27"}
-    h3,h4,h5,h6{--heading-prefix:"8.27"}</style>
+    <style type="text/css">h2{--heading-prefix:"8.24"}
+    h3,h4,h5,h6{--heading-prefix:"8.24"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -146,6 +146,9 @@
       <li>
         <a href="menu-datenschutz-und-sicherheit.html">Datenschutz und Informationssicherheit</a>
       </li>
+      <li>
+        <a href="menu-technische-umsetzung-audit-service.html">Zugriffsprotokollierung</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -168,7 +171,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anhänge
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Über
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -205,10 +208,10 @@
     <div id="gem-ig-headline" class="col-lg-10 col-md-12">
         <div class="gem-ig-headline-title">
             
-TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
+Implementation Guide<br /> TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
         </div>
         <div id="ig-status" class="gem-ig-headline-subtitle">
-            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ci-build
+            <span style="display:inline-block;">Version 2.0.0-ballot.2 - ballot
                 
                 
             </span>
@@ -315,7 +318,7 @@ TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
         
           Active
           
-            as of 2028-04-01
+            as of 2026-06-30
           
         
       </td>
@@ -360,13 +363,14 @@ TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 <!-- Content Logical Definition heading in the fragment -->
   <h3>Logical Definition (CLD)</h3>
 <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"></p><a name="tiflow-diga-task-organizations-vs"> </a><a name="hctiflow-diga-task-organizations-vs"> </a>
-<ul><li>Include these codes as defined in <a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.2&amp;canonical=https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"><code>https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID</code></a><span title="Version is not explicitly stated, which means it is fixed to 1.0.7, the version found through the package references"> version &#x1F4E6;1.0.7</span><table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.2&amp;canonical=https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID#ti-organization-profession-type-oid-cs-1.462.46276.460.4676.464.4659">1.2.276.0.76.4.59</a></td><td>Betriebsstätte Kostenträger</td></tr></table></li></ul></div>
+<ul><li>Include these codes as defined in <code>https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID</code><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>1.2.276.0.76.4.59</td><td>Betriebsstätte Kostenträger</td></tr></table></li></ul></div>
 
   <p>&#160;</p>
   <a name="expansion"> </a>
   <h3 id="expansion">Expansion</h3>
 
-  <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"/><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion performed internally based on <a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.2&amp;canonical=https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID">codesystem ProfessionOID of Institutions v1.0.7 (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID|1.0.7" title="Click to Copy URL" class="btn-copy"> </button></span></p><p>This value set contains 1 concepts</p><table class="codes" data-fhir="generated"><tr><td><b>System</b></td><td style="white-space:nowrap"><b>Code</b></td><td><b>Display (de)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name="x-https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID-1.2.276.0.76.4.59"> </a><code>https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID</code></td><td style="white-space:nowrap">  <a href="https://simplifier.net/resolve?scope=de.gematik.epa.medication@1.3.2&amp;canonical=https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID#ti-organization-profession-type-oid-cs-1.462.46276.460.4676.464.4659">1.2.276.0.76.4.59</a></td><td/><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID&quot;, &quot;version&quot;: &quot;1.0.7&quot;, &quot;code&quot;: &quot;1.2.276.0.76.4.59&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID&quot;&gt;&lt;version value=&quot;1.0.7&quot;&gt;&lt;code value=&quot;1.2.276.0.76.4.59&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr></table></div>
+  <p style="border: maroon 1px solid; background-color: #FFCCCC; font-weight: bold; padding: 8px" title="No Expansion for this valueset (Unknown Code System&lt;!-- [Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID' could not be found, so the value set cannot be expanded] --&gt;)">No Expansion for this valueset (Unknown Code System<!-- [Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID' could not be found, so the value set cannot be expanded] -->)</p>
+
 
   <hr/>
   <p>
@@ -447,7 +451,7 @@ TIFlow - Verordnungen für Digitale Gesundheitsanwendungen (DiGA)
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Mon, Jun 15, 2026 07:51+0000">2026-06-15</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://gematik.de">gematik GmbH</a>.  Paket de.gematik.tiflow.diga#2.0.0-ballot.2 basierend auf <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generiert <span title="Tue, Jul 28, 2026 10:32+0000">2026-07-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
