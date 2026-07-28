@@ -30,7 +30,7 @@ Mit dem Parameter `returnBoolean` kann wahlweise ein kompaktes boolesches Ergebn
 * parameter[+]
   * name = #resource
   * use = #in
-  * min = 0
+  * min = 1
   * max = "1"
   * documentation = "Die zu validierende FHIR-Ressource."
   * type = #Resource

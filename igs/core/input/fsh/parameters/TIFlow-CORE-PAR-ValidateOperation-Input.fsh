@@ -12,7 +12,7 @@ Description: "Dieses Profil definiert die Eingabeparameter für die $validate-Op
 * parameter ^slicing.rules = #closed
 
 * parameter contains
-    resource 0..1 and
+    resource 1..1 and
     fhir_config 1..1 and
     profile 0..1 and
     returnBoolean 0..1
