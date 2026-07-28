@@ -1,0 +1,31 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: fd5486bbf5a3d96a232a47f0a76cf5c5b2659f1221c3bcf3b8451b7a1d1d40ed
+created: '2026-06-25T11:30:11.247687'
+date: '2026-06-25T11:30:11.247689'
+key: IG-TIFLOW-CORE-A190
+modified: '2026-06-25T11:30:11.247688'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate einen im FHIR Profil KBV_PR_FOR_Practitioner\
+  \ hinterlegten Wert für identifier:ANR.value bzw. identifier:ZANR.value gemäß der\
+  \ Anlage 6 BMV-Ä der \"Technischen Anlage zum Vertrag über den Datenaustausch zwischen\
+  \ dem GKV-Spitzenverband (Spitzenverband Bund der Krankenkassen) und der Kassenärztlichen\
+  \ Bundesvereinigung\" unter \"Aufbau der lebenslangen Arztnummer - LANR\" beschriebenen\
+  \ Prüfalgorithmus unter Beachtung der folgenden zulässigen Ausnahmen validieren,\
+  \ und bei einer fehlerhaften Prüfung auf diese Auffälligkeit gemäß der Konfiguration\
+  \ reagieren.\n    <table>\n        <tr> \n            <th>ANR/ZANR</th>\n      \
+  \      <th>Ursache</th>\n        </tr>\n        <tr> \n            <td>555555 plus\
+  \ Ordnungsnummer für die Reihenfolge in der Anzeige an die ASV-Verzeichnisstelle\
+  \ (KH-Zähler) plus Fachgruppencode</td>\n            <td>Verordnungen im Rahmen\
+  \ der Versorgung nach § 116b Abs. 1 SGB</td>\n        </tr>\n    </table>\n    <div><figcaption><strong>Tabelle:\
+  \ </strong>TAB_eRPFD_016 Zulässige Ausnahmen in Form von Pseudoarztnummern</figcaption></div>"
+title: TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR im Profil
+  KBV_PR_FOR_Practitioner
+version: 0

@@ -11,7 +11,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 ##### Workflowspezifische Anforderungen
 
 <!-- A_21360-01 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-34" title="TI-Flow-Fachdienst - Liste Task abrufen - Flowtype 169 / 209 - Versicherter keine Einlöseinformationen" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-A34" title="TI-Flow-Fachdienst - Liste Task abrufen - Flowtype 169 / 209 - Versicherter keine Einlöseinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -26,7 +26,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 ##### Workflowspezifische Anforderungen
 
 <!-- A_26148 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-35" title="TI-Flow-Fachdienst - Task abrufen - Flowtype 169/209 - Nicht verfügbar bei KVNR-Mismatch" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A35" title="TI-Flow-Fachdienst - Task abrufen - Flowtype 169/209 - Nicht verfügbar bei KVNR-Mismatch" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

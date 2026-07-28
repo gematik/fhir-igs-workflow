@@ -1,0 +1,34 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 2acdddc839de7ad628b2d403729517136fa608a6b06389c8adf718ab8e10eaf9
+created: '2026-06-25T13:00:23.936739'
+date: '2026-06-25T13:00:23.936741'
+key: IG-TIFLOW-CHRG-A63
+modified: '2026-06-25T13:00:23.936740'
+release_status: NEW
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeItem\
+  \ übertragene ChargeItem-Ressource gegen das FHIR-Profil ChargeItem prüfen und \n\
+  \    <ul>\n    <li>die Korrektheit der Rezept-ID (GEM_ERP_PR_PrescriptionId) im\
+  \ referenzierten Task als ChargeItem.identifier, </li>\n    <li>die Korrektheit\
+  \ der Versicherten-ID des Versicherten im referenzierten Task (Task.for) gegen ChargeItem.subject.identifier\
+  \ </li>\n    <li>und die Korrektheit der Telematik-ID der Apotheke gemäß Nutzerinformation\
+  \ (zeta-user-info.identifier) mit dem Wert in ChargeItem.enterer.identifier</li>\n\
+  \    </ul>\n    prüfen und bei Nicht-Konformität die Operation mit dem folgenden\
+  \ Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400\
+  \ - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n\
+  \            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n\
+  \            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details\
+  \ Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n       \
+  \ <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation\
+  \ Failed</td>\n        </tr>\n    </table> \n    abbrechen, damit nur FHIR-valide\
+  \ Ressourcen in den TI-Flow-Fachdienst hochgeladen werden."
+title: TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - FHIR-Validierung
+  ChargeItem
+version: 0

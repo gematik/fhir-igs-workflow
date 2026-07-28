@@ -39,8 +39,7 @@ Description: "Dispensierung eines E-Rezepts"
 
 // Not applicable fields
 * partOf 0..0
-* statusReasonCodeableConcept 0..0
-* statusReasonReference 0..0
+* statusReason[x] 0..0
 * context 0..0
 * supportingInformation 0..0
 * location 0..0

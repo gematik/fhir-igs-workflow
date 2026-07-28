@@ -7,7 +7,7 @@ Der TI-Flow-Fachdienst übernimmt die Rolle "Fachdienst". Er verwaltet FdV-Insta
 Der TI-Flow-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Notifications wie in [OpenAPI_PushGateway] beschrieben. Der Nachrichteninhalt, auf den in diesem Kapitel verwiesen wird, ist der Inhalt des Ciphertexts.
 
 <!-- A_28115 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-225" title="TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A225" title="TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -177,7 +177,7 @@ Ansonsten:<br>
 </requirement>
 
 <!-- A_28116 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-226" title="TI-Flow-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A226" title="TI-Flow-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -188,7 +188,7 @@ Ansonsten:<br>
 Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push Notification senden - Nachricht verschlüsseln` beschrieben.
 
 <!-- A_28135-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-227" title="TI-Flow-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A227" title="TI-Flow-Fachdienst - Push Notification senden - Referenz auf Protokolleintrag" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -213,7 +213,7 @@ Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push No
 ### Push Notification Datenstruktur
 
 <!-- A_28124 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-228" title="E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A228" title="E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

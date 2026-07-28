@@ -6,7 +6,7 @@ Usage: #example
 * scope = $cs-consent-scope#patient-privacy "Privacy Consent"
 * category = GEM_ERPEU_CS_ConsentType#EUDISPCONS "Consent for redeeming e-prescriptions in EU countries"
 * patient.identifier.value = "X123456789"
-* patient.identifier.assigner.identifier.value = "98765543"
+* patient.identifier.assigner.identifier.value = "987655435"
 * dateTime = "2025-10-01T12:03:23Z"
 * policyRule = v3-ActCode#OPTIN
 
@@ -14,8 +14,13 @@ Instance: ExampleGetConsent
 InstanceOf: Bundle
 Title: "Example for a Bundle with a Consent"
 Usage: #example
+* link[+]
+  * relation = "self"
+  * url = "https://erp-dev.zentral.erp.splitdns.ti-dienste.de/Consent?category=EUDISPCONS"
 * type = #searchset
 * timestamp = "2025-10-01T12:03:23Z"
 * total = 1
-* entry.fullUrl = "https://erp-dev.zentral.erp.splitdns.ti-dienste.de/Consent/f97a0772-c99f-4159-90c6-2a41c7d96779"
-* entry.resource = ExampleEUConsent
+* entry[+]
+  * fullUrl = "https://erp-dev.zentral.erp.splitdns.ti-dienste.de/Consent/f97a0772-c99f-4159-90c6-2a41c7d96779"
+  * resource = ExampleEUConsent
+  * search.mode = #match

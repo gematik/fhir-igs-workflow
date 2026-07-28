@@ -11,7 +11,14 @@ Description: "Ein MedicationRequest für die Ausgabe von Pomalidomid mit einer D
 * subject.identifier.value.extension[+].url = $data-absent-reason
 * subject.identifier.value.extension[=].valueCode = #not-permitted
 * medicationReference = Reference(ExampleMedication1-Pomalidomid-T)
-* dosageInstruction[+].text = "1-1-1-1"
+* extension[renderedDosageInstruction].valueMarkdown = "1-1-1-1 nach Bedarf"
+* extension[generatedDosageInstructionsMeta]
+  * url = $generatedMeta
+  * extension[+].url = "algorithmVersion"
+  * extension[=].valueString = "1.0.0"
+  * extension[+].url = "language"
+  * extension[=].valueCode = #de-DE
+* dosageInstruction[+].text = "1-1-1-1 nach Bedarf"
 * dispenseRequest
   * quantity.value = 10
   * quantity.unit = "Tablette"

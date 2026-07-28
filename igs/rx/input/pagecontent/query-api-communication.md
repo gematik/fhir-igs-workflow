@@ -39,6 +39,7 @@ Der Aufruf erfolgt als http-POST-Operation. Der Server prüft die Nachricht auf 
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596 JSON %}
@@ -47,6 +48,7 @@ Der Aufruf erfolgt als http-POST-Operation. Der Server prüft die Nachricht auf 
 			{% fragment Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596 XML %}
 		</div>
 	</div>
+-->
 </div>
 
 #### Abrufen von Communications
@@ -63,6 +65,7 @@ Als Apotheke oder Kostenträger möchten wir alle Nachrichten des Monats April 2
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleRxCommunicationSearchset JSON %}
@@ -71,6 +74,7 @@ Als Apotheke oder Kostenträger möchten wir alle Nachrichten des Monats April 2
 			{% fragment Bundle/ExampleRxCommunicationSearchset XML %}
 		</div>
 	</div>
+-->
 </div>
 
 ### Instance API
@@ -88,12 +92,13 @@ Um spezifische Details zu einer einzelnen _Communciation_ mittels der RESTful AP
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
-		<!-- TODO: Add a dedicated Communication read example for RX. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleRxCommunicationSearchset XML %}
 		</div>
 	</div>
+-->
 </div>
 
 #### Löschen von Communications
@@ -116,7 +121,7 @@ Als Apotheke oder Kostenträger möchten wir eine von uns versendete Nachricht a
 - Mit der Übergabe der Referenz auf den E-Rezept-Task inkl. des AccessCodes in `"reference": "Task/160.000.000.000.000.01/$accept?ac=*" ` ist die Apotheke berechtigt, das E-Rezept herunterzuladen und zu beliefern.
 - Die von der Apotheke übermittelte Antwort ist strukturiert in .payload.contentString abgelegt.
 - In der Extension .payload.extension:OfferedSupplyOptions kann das AVS die zur Verfügung gestellten Optionen zur Belieferung angeben. Im JSON unter "supplyOptionsType" wird die ausgewählte Belieferungsart angegeben.
-- Die Extension `.payload.extension:AvailabilityStatus` kann genutzt werden, um anzugeben, wann eine Belieferung möglich ist. Die möglichen Werte sind in [GEM_ERP_CS_AvailabilityStatus](./CodeSystem-GEM-ERP-CS-AvailabilityStatus.html) definiert.
+- Die Extension `.payload.extension:AvailabilityStatus` kann genutzt werden, um anzugeben, wann eine Belieferung möglich ist. Die möglichen Werte sind in [GEM_ERP_CS_AvailabilityStatus] definiert.
 - 	Der Server übernimmt beim Absenden der Nachricht den Sendezeitpunkt in die Communication-Ressource ` <sent value="2020-03-12T18:01:10+00:00" />`
 - Die Informationen zum Absender werden aus dem im Request übergebenen Nutzerinformation (zeta-user-info) übernommen, in diesem Fall die Telematik-ID der Apotheke in ` <sender>` als Absender der Nachricht.
 - Der Aufruf ist aus Performance Gründen nicht für die regelmäßige Abfrage von Nachrichten vorgesehen. Es soll nur nach neuen Nachrichten geprüft werden, wenn der Nutzer aktiv eine Aktion ausführt, die eine solche Prüfung erfordert oder in der App ein "refresh" der Daten durchgeführt wird.

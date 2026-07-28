@@ -1,0 +1,29 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 302e1bc36588fbedc8e3d252969f9d9c80f4ad8c69714fa31903c4afeae87320
+created: '2026-06-25T11:30:11.211719'
+date: '2026-06-25T11:30:11.211721'
+key: IG-TIFLOW-CORE-A61
+modified: '2026-06-25T11:30:11.211720'
+release_status: NEW
+source: input/pagecontent/op-close-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$close den im referenzierten Task gespeicherten Status Task.status\
+  \ prüfen und, wenn Task.status ungleich \"in-progress\" ist, die Operation mit dem\
+  \ folgenden Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
+  \            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n           \
+  \ <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n \
+  \           <th>Code</th>\n            <td>invalid</td>\n        </tr>\n       \
+  \ <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Task\
+  \ has invalid status.</td>\n        </tr>\n    </table>\n    abbrechen, damit der\
+  \ Workflow nur abgeschlossen werden kann, wenn sich die Verordnung in Belieferung\
+  \ befindet."
+title: TI-Flow-Fachdienst - Task schließen - Prüfung Status
+version: 0

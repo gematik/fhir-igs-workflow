@@ -32,6 +32,7 @@ Durch Angabe des URL-Parameter `?secret=` bei der GET-Operation kann eine abgebe
       {% include CapabilityStatement-ti-flow-fachdienst-server-erpeu.json %}
     </pre>
   </div>
+<!--
   <div id="Response-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
       {% fragment Bundle/example-searchset-task JSON %}
@@ -40,6 +41,7 @@ Durch Angabe des URL-Parameter `?secret=` bei der GET-Operation kann eine abgebe
       {% fragment Bundle/example-searchset-task XML %}
     </div>
   </div>
+-->
 </div>
 
 ### Instance API
@@ -57,6 +59,7 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
       {% include CapabilityStatement-ti-flow-fachdienst-server-erpeu.json %}
     </pre>
   </div>
+<!--
   <div id="Response-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
       {% fragment Task/TaskInReadyState JSON %}
@@ -65,6 +68,7 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
       {% fragment Task/TaskInReadyState XML %}
     </div>
   </div>
+-->
 </div>
 
 #### Task markieren
@@ -78,6 +82,7 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
       {% include CapabilityStatement-ti-flow-fachdienst-server-erpeu.json %}
     </pre>
   </div>
+<!--
   <div id="Response-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
       {% fragment Task/TaskInReadyState JSON %}
@@ -86,4 +91,5 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
       {% fragment Task/TaskInReadyState XML %}
     </div>
   </div>
+-->
 </div>

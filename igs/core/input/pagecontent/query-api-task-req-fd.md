@@ -1,7 +1,7 @@
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Task-Endpunkt.
 
 <!-- A_19030 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-79" title="TI-Flow-Fachdienst - unzulässige Operationen Task" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A79" title="TI-Flow-Fachdienst - unzulässige Operationen Task" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -9,14 +9,13 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 </requirement>
 
-Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter [Operations](./menu-schnittstellen-operation-api.html) beschrieben.
 
 ### GET /Task (Liste)
 
 Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnungen steht ausschließlich dem Versicherten bzw. einer abgebenden Institution mit Nachweis eines Behandlungskontextes zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.
 
 <!-- A_21558-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-80" title="TI-Flow-Fachdienst - Liste Task abrufen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A80" title="TI-Flow-Fachdienst - Liste Task abrufen - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -54,7 +53,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnunge
 </requirement>
 
 <!-- A_19115-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-81" title="TI-Flow-Fachdienst - Liste Task abrufen - Versicherter- Filter auf KVNR" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A81" title="TI-Flow-Fachdienst - Liste Task abrufen - Versicherter- Filter auf KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -63,7 +62,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnunge
 </requirement>
 
 <!-- A_19129-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-82" title="TI-Flow-Fachdienst - Liste Task abrufen - Versicherter - Rückgabe Tasks im Bundle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A82" title="TI-Flow-Fachdienst - Liste Task abrufen - Versicherter - Rückgabe Tasks im Bundle" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -74,7 +73,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnunge
 <!-- eGK in der Apotheke -->
 
 <!-- A_22432-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-98" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - Prüfung PoPP-Token" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A98" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - Prüfung PoPP-Token" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -108,7 +107,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnunge
 Die Anforderungen zum Prüfen des PoPP-Token sind im Kapitel "HTTP-Operation GET - Prüfung PoPP-Token" beschrieben.
 
 <!-- A_23399-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-99" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - PoPP - Zeitraum Akzeptanz PoPP-Token" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A99" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - PoPP - Zeitraum Akzeptanz PoPP-Token" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -139,10 +138,10 @@ Die Anforderungen zum Prüfen des PoPP-Token sind im Kapitel "HTTP-Operation GET
       abbrechen.
 </requirement>
 
-Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung von A_23399-* im Rahmen des Änderungsmanagement für Spezifikationen.
+Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung der obigen Anforderung im Rahmen des Änderungsmanagement für Spezifikationen.
 
 <!-- A_22431-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-100" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - PoPP - PoPP - Filter KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A100" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - PoPP - PoPP - Filter KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -212,7 +211,7 @@ Der TI-Flow-Fachdienst setzt gemäß [gemSpec_PoPP_Service] in der Rolle PoPP-Ve
 Anstelle zur nicht zugewiesenen Anforderung  A_27358 - Beziehen der URL für den PoPP-Service
 
 <!-- A_28579 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-104" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Apotheke - PoPP Prüfung - Konfiguration PoPP-Service URL" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A104" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Apotheke - PoPP Prüfung - Konfiguration PoPP-Service URL" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -223,7 +222,7 @@ Anstelle zur nicht zugewiesenen Anforderung  A_27358 - Beziehen der URL für den
 Ergänzung der stündlichen Abfrage des JWKS zu A_26449 - Beziehen der Schlüssel für die PoPP-Token Signaturprüfung :
 
 <!-- A_28580 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-105" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Aktualisierung des PoPP-Service JWK-Sets" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A105" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Aktualisierung des PoPP-Service JWK-Sets" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -234,7 +233,7 @@ Ergänzung der stündlichen Abfrage des JWKS zu A_26449 - Beziehen der Schlüsse
 Der TI-Flow-Fachdienst prüft zur Umsetzung von A_27016-* das Signaturzertifikat des PoPP-Service wie folgt:
 
 <!-- A_28724 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-106" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Prüfung Signaturzertifikat PoPP-Service" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A106" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Prüfung Signaturzertifikat PoPP-Service" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -282,7 +281,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_27016-* das Signaturzertifikat
 Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat enthaltene Rolle (Admission) zurück. Der TI-Flow-Fachdienst prüft zur Umsetzung von A_27016-* die Rolle. wie folgt:
 
 <!-- A_28731 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-107" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Prüfung Rolle Signaturzertifikat PoPP-Service" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A107" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Prüfung Rolle Signaturzertifikat PoPP-Service" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -293,7 +292,7 @@ Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat ent
 Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus dem PoPP-Token wie folgt:
 
 <!-- A_23402-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-108" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Telematik-ID prüfen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A108" title="TI-Flow-Fachdienst - Prüfung PoPP-Token - Telematik-ID prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -329,7 +328,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
 Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezifische Verordnung steht ausschließlich dem Versicherten bzw. einer abgebenden Institution mit Wissen um das Secret zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.
 
 <!-- A_19113-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-109" title="TI-Flow-Fachdienst - Task abrufen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A109" title="TI-Flow-Fachdienst - Task abrufen - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -367,7 +366,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
     abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-407" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A407" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Prüfung KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -384,15 +383,15 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
         </tr>
         <tr>
             <th>Code</th>
-            <td>???</td>
+            <td>invalid</td>
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>???</td>
+            <td>SVC_IDENTITY_MISMATCH</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>???</td>
+            <td>-</td>
         </tr>
     </table> 
   abbrechen, damit ausschließlich der begünstigte Versicherte den Task abrufen kann.
@@ -400,7 +399,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
 <!-- ToDo Hendre: Fehler ergänzrn -->
 
 <!-- A_21375-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-111" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Rückgabe Task inkl. Bundles" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A111" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Rückgabe Task inkl. Bundles" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -409,7 +408,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
 </requirement>
 
 <!-- A_21532-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-112" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Kein Secret" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A112" title="TI-Flow-Fachdienst - Task abrufen - Versicherter - Kein Secret" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -418,7 +417,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
 </requirement>
 
 <!-- A_20702-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-113" title="TI-Flow-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten Clients" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A113" title="TI-Flow-Fachdienst - Task abrufen - Keine Einlöseinformationen in unbekannten Clients" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -428,7 +427,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
 
 
 <!-- A_24176-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-114" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Telematik-ID" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A114" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Telematik-ID" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -460,7 +459,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
 </requirement>
 
 <!-- A_24177-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-115" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung AccessCode" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A115" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung AccessCode" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -492,7 +491,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
 </requirement>
 
 <!-- A_24178-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-116" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Status" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A116" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - Prüfung Status" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -524,7 +523,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
 </requirement>
 
 <!-- A_24179-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-117" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - erneuter Abruf Verordnung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A117" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen - erneuter Abruf Verordnung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -533,7 +532,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
 </requirement>
 
 <!-- A_19226-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-118" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Rückgabe Task inkl. Bundle im Bundle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A118" title="TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Rückgabe Task inkl. Bundle im Bundle" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -547,7 +546,7 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
 Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicherten zur Verfügung. Die PATCH-Operation führt zu keiner Statusänderung des Tasks.
 
 <!-- A_27548 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-120" title="TI-Flow-Fachdienst - Task markieren - alles Markieren verbieten" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A120" title="TI-Flow-Fachdienst - Task markieren - alles Markieren verbieten" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -579,7 +578,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27549 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-121" title="TI-Flow-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A121" title="TI-Flow-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter markiert Rezepte" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -615,7 +614,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27550 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-122" title="TI-Flow-Fachdienst -Task markieren - Versicherter - Prüfung KVNR" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A122" title="TI-Flow-Fachdienst -Task markieren - Versicherter - Prüfung KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -636,7 +635,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_KVNR_MISMATCH</td>
+            <td>SVC_IDENTITY_MISMATCH</td>
         </tr>
         <tr>
             <th>Details Text</th>

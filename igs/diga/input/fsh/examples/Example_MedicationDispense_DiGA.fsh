@@ -21,7 +21,7 @@ Usage: #example
 Title: "Medication Dispense DiGA with a deep link."
 Description: "Example of a Medication Dispense for DiGAs which states a deep link."
 * extension[redeemCode].valueString = "DE12345678901234"
-* extension[deepLink].valueUrl = "https://gematico.de?redeemCode=DE12345678901234"
+* extension[deepLink].valueUrl = "https://example.com?redeemCode=DE12345678901234"
 * identifier[prescriptionID].system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
 * identifier[prescriptionID].value = "162.000.033.491.280.78"
 * subject.identifier.system = $identifier-kvid-10

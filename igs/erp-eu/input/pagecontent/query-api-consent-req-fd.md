@@ -7,7 +7,7 @@
 #### DELETE
 
 <!-- A_27131 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-33" title="TI-Flow-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A33" title="TI-Flow-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

@@ -1,7 +1,7 @@
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 <!-- A_27086 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-36" title="TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A36" title="TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -37,7 +37,7 @@
 </requirement>
 
 <!-- A_27087 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-37" title="TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Response" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A37" title="TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Response" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

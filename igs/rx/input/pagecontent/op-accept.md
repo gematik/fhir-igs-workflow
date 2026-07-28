@@ -26,13 +26,13 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$accept` gesendet.
 			{% include OperationDefinition-tiflow-rx-accept-op.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
-		<!-- TODO: Add an RX-specific successful response example for $accept. -->
-		<!-- TODO: Replace with operation-specific response examples for $accept. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 ### Hinweise

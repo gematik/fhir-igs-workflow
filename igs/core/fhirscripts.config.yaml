@@ -11,6 +11,7 @@ deploy:
 build:
   pipeline:
     - shell: ../../scripts/install-ig-packages.sh ./fhir-ig-installer.conf
+    - shell: ./scripts/generate-heading-links-js.sh
     - shell: ./scripts/pre-build.sh
     - requirements
     - shell: reqtools polarion ./input/content

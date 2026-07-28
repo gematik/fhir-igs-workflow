@@ -1,0 +1,22 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 96023163fd46804a87f1f876ce2792cd4fe82bc6604ba7f340ef9e9e7cf6cc81
+created: '2026-06-25T11:30:11.219644'
+date: '2026-06-25T11:30:11.219646'
+key: IG-TIFLOW-CORE-A111
+modified: '2026-06-25T11:30:11.219645'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen
+  /Task/&lt;id&gt; durch einen Versicherten die einzelne Task-Ressource um das referenzierte,
+  serverseitig signierte E-Rezept-Bundle aus Task.input mit Codingsystem https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType
+  = 2 als search.include im Ergebnis-Bundle an den Aufrufer zurückgeben, damit der
+  Versicherte eine vollständige Einsicht in den Task und den signierten Verordnungsdatensatz
+  für eigene Dokumentationszwecke erhält.
+title: TI-Flow-Fachdienst - Task abrufen - Versicherter - Rückgabe Task inkl. Bundles
+version: 0

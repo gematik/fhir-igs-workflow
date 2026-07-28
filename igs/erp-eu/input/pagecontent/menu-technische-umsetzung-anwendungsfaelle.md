@@ -6,7 +6,7 @@
 #### E-Rezept-FdV 
 
 <!-- A_19443 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-24" title="E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A24" title="E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -95,7 +95,7 @@
 
 
 <!--A_27116 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-25" title="E-Rezept-FdV: Zugriffsberechtigung anzeigen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-XBORDER-A25" title="E-Rezept-FdV: Zugriffsberechtigung anzeigen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

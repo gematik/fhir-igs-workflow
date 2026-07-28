@@ -1,0 +1,29 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: bbb1817489bfd7c9ab8f12298b881e6050e36f4e51e97987e0ad09662f1fbca7
+created: '2026-06-25T13:00:23.936172'
+date: '2026-06-25T13:00:23.936174'
+key: IG-TIFLOW-CHRG-A61
+modified: '2026-06-25T13:00:23.936173'
+release_status: NEW
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt\
+  \ /ChargeItem sicherstellen, dass zu der in ChargeItem.subject.identifier übermittelten\
+  \ KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code\
+  \ = CHARGCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden\
+  \ Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403\
+  \ - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n\
+  \            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n\
+  \            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details\
+  \ Code</th>\n            <td>TIFLOW_CONSENT_REQUIRED</td>\n        </tr>\n     \
+  \   <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n\
+  \    </table> \n    abbrechen, damit nur eine Abrechnungsinformation für Versicherte\
+  \ gespeichert wird, die eine Einwilligung erteilt haben."
+title: TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Prüfung Einwilligung
+version: 0

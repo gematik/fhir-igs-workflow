@@ -32,6 +32,7 @@ Der Aufruf erfolgt als http-`POST`-Operation auf die Ressource /Consent.
       {% include CapabilityStatement-ti-flow-fachdienst-server-erpeu.json %}
     </pre>
   </div>
+<!--
   <div id="Response-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
       {% fragment Consent/ExampleEUConsent JSON %}
@@ -40,6 +41,7 @@ Der Aufruf erfolgt als http-`POST`-Operation auf die Ressource /Consent.
       {% fragment Consent/ExampleEUConsent XML %}
     </div>
   </div>
+-->
 </div>
 
 #### Abfragen von Einwilligungen
@@ -57,6 +59,7 @@ Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Der Fachdi
       {% include CapabilityStatement-ti-flow-fachdienst-server-erpeu.json %}
     </pre>
   </div>
+<!--
   <div id="Response-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
       {% fragment Bundle/ExampleGetConsent JSON %}
@@ -65,6 +68,7 @@ Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Der Fachdi
       {% fragment Bundle/ExampleGetConsent XML %}
     </div>
   </div>
+-->
 </div>
 
 ### Instance API

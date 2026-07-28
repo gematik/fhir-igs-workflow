@@ -2,7 +2,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 
 
 <!-- A_19558-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-406" title="CS Kostenträger: E-Rezept abrufen - Task herunterladen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A406" title="CS Kostenträger: E-Rezept abrufen - Task herunterladen" version="0">
     <meta lockversion="false"/>
     <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

@@ -1,0 +1,30 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 7df6eab4c672af2babf7e7dd193858acc326f7efdee4805be09c504a2b2f79e2
+created: '2026-06-25T13:00:23.942827'
+date: '2026-06-25T13:00:23.942829'
+key: IG-TIFLOW-CHRG-A83
+modified: '2026-06-25T13:00:23.942828'
+release_status: NEW
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete\
+  \ über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende\
+  \ LEI die im HTTP-PUT-Operation auf die Ressource ChargeItem übertragene PKV-Abgabedatensatz-Ressource\
+  \ gegen das FHIR-Profil PKV-Abgabedatensatz prüfen und bei Nicht-Konformität die\
+  \ Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
+  \            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n         \
+  \   <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n\
+  \            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n      \
+  \  <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR\
+  \ Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen, damit\
+  \ nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden."
+title: TI-Flow-Fachdienst - Abrechnungsinformation ändern - Apotheke - FHIR-Validierung
+  PKV-Abgabedatensatz
+version: 0

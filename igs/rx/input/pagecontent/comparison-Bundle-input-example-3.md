@@ -1,6 +1,7 @@
 ## Bundle → Parameters Mapping
 
-> Quelle: [KBV Bundle](Bundle-input-example-3.html)
+{% comment %}Bundle-input-example-3{% endcomment %}
+> Quelle: [KBV Bundle](Bundle-4863d1fb-dc26-4680-bb35-018610d1749d.html)
 > Ziel: [EPA Provide Parameters](Parameters-output-example-3.html)
 
 ### Verordnungskennung

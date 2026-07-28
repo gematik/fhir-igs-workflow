@@ -5,7 +5,7 @@ Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `ChargeItem`-Que
 Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformationen vom TI-Flow-Fachdienst abrufen, welche für den Versicherten bereitgestellt wurden.
 
 <!--A_24554-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG-10" title="E-Rezept-FdV: optional: Liste Abrechnungsinformationen abrufen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A10" title="E-Rezept-FdV: optional: Liste Abrechnungsinformationen abrufen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -14,7 +14,7 @@ Mit diesem Anwendungsfall kann der Nutzer eine Liste aller Abrechnungsinformatio
 </requirement>
 
 <!--A_22173-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-11" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A11" title="E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -31,7 +31,7 @@ In der Response ist eine Liste von ChargeItem-Ressourcen enthalten. Für jede Ch
 Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformation zu einem E-Rezept vom TI-Flow-Fachdienst herunterladen.
 
 <!--A_24544-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG-12" title="E-Rezept-FdV: optional: Abrechnungsinformation abrufen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A12" title="E-Rezept-FdV: optional: Abrechnungsinformation abrufen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -40,7 +40,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) die Abrechnungsinformat
 </requirement>
 
 <!--A_22175-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-13" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A13" title="E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -58,7 +58,7 @@ In der Response ist die ChargeItem Ressource und die zugehörigen Detaildatensä
 Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner Abrechnungsinformation setzen. Diese werden auf dem TI-Flow-Fachdienst gespeichert.
 
 <!--A_24553-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG-14" title="E-Rezept-FdV: optional: Abrechnungsinformation markieren" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A14" title="E-Rezept-FdV: optional: Abrechnungsinformation markieren" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -67,7 +67,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 </requirement>
 
 <!--A_22176-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-15" title="E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A15" title="E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -81,7 +81,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 </requirement>
 
 <!--A_22179-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-16" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A16" title="E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -101,7 +101,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 
 ### Abrechnungsinformation löschen (DELETE /ChargeItem/&#60;id&#62;)
 <!--A_24546-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG-17" title="E-Rezept-FdV: optional: Abrechnungsinformation löschen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A17" title="E-Rezept-FdV: optional: Abrechnungsinformation löschen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -110,7 +110,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 </requirement>
 
 <!--A_22180-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-18" title="E-Rezept-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A18" title="E-Rezept-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -119,7 +119,7 @@ Mit diesem Anwendungsfall kann der Nutzer (Versicherter) Markierungen zu seiner 
 </requirement>
 
 <!--A_22181-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-19" title="E-Rezept-FdV: Abrechnungsinformation löschen - Bestätigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A19" title="E-Rezept-FdV: Abrechnungsinformation löschen - Bestätigung" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -132,7 +132,7 @@ Das E-Rezept-FdV muss im Rahmen der Bestätigung darauf hinweisen, dass mit dem 
 Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen Löschen für die zu löschende Abrechnungsinformation zusammen mit dem Löschen auf dem TI-Flow-Fachdienst auszuführen.
 
 <!--A_22183-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-20" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A20" title="E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -145,7 +145,7 @@ Das E-Rezept-FdV kann es dem Nutzer ermöglichen, den Anwendungsfall zum lokalen
 </requirement>
 
 <!--A_22707-01-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG-21" title="E-Rezept-FdV: Hinweis automatisches Löschen Abrechnungsinformationen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A21" title="E-Rezept-FdV: Hinweis automatisches Löschen Abrechnungsinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

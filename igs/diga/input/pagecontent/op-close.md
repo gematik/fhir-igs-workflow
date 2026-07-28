@@ -26,17 +26,20 @@ Die Operation $close wird als HTTP POST auf /Task/&#60;id&#62;/$close ausgeführ
 			{% include OperationDefinition-tiflow-diga-close-op.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleCloseInputParametersDiGA XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
-		<!-- TODO: Replace with operation-specific response examples for $close. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 

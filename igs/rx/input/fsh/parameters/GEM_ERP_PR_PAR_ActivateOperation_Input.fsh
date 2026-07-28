@@ -11,7 +11,7 @@ Description: "Dieses Profil definiert die Parameter für das Einstellen eines E-
 * parameter ^slicing.discriminator.path = "name"
 * parameter ^slicing.rules = #closed
 
-* parameter contains ePrescription 1..1
+* parameter contains ePrescription 1..1 MS
 
 * parameter[ePrescription]
   * name MS

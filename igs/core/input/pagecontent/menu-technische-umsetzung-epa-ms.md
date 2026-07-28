@@ -13,7 +13,7 @@ Der ePA-Aktensystem nutzt sein C.FD.TLS-S Zertifikat für den TLS-Verbindungsauf
 
 
 <!-- A_25971 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-376" title="TI-Flow-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems auf Gültigkeit prüfen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A376" title="TI-Flow-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems auf Gültigkeit prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -82,7 +82,7 @@ Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorg
 Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat enthaltene Rolle (Admission) zurück. Diese muss geprüft werden.
 
 <!-- A_25972 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-377" title="TI-Flow-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems Rolle prüfen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A377" title="TI-Flow-Fachdienst - ePA - TLS-Server X.509-Zertifikat des ePA-Aktensystems Rolle prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -104,7 +104,7 @@ Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermitt
 Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Bearer-Token. Für die Signatur wird das AUT-Zertifikat der E-Rezept-VAU verwendet. Siehe [gemSpec_Krypt]#Authentisierung des E-Rezept-FD als ePA-Client und [gemSpec_Aktensystem_ePAfueralle]#3.16.3 Anforderungen an den Authorization Service für die Authentisierung des TI-Flow-Fachdienstes.
 
 <!-- A_26066 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-378" title="TI-Flow-Fachdienst - ePA - JWT Bearer-Token Claims" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A378" title="TI-Flow-Fachdienst - ePA - JWT Bearer-Token Claims" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -113,7 +113,7 @@ Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Beare
 </requirement>
 
 <!-- A_25935 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-379" title="TI-Flow-Fachdienst - ePA - JWT Bearer-Token Signatur" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A379" title="TI-Flow-Fachdienst - ePA - JWT Bearer-Token Signatur" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -122,7 +122,7 @@ Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Beare
 </requirement>
 
 <!-- A_25936 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-380" title="TI-Flow-Fachdienst - ePA - Festlegung der ClientID" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A380" title="TI-Flow-Fachdienst - ePA - Festlegung der ClientID" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -133,18 +133,20 @@ Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Beare
 ### ePA-Aktensysteme ermitteln
 
 <!-- A_25937 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-381" title="TI-Flow-Fachdienst - ePA - Lokalisierung des ePA-Aktensysteme" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A381" title="TI-Flow-Fachdienst - ePA - Lokalisierung des ePA-Aktensysteme" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS zur Lokalisierung der ePA-Aktensysteme die durch die im DNS für die übergreifende ePA-Domäne epa4all.de eingestellten Informationen aufrufen.
+     Der TI-Flow-Fachdienst MUSS in der Lage sein, alle Instanzen der ePA-Aktensysteme unterhalb der Domäne `epa4all.de` zur Lokalisierung zu adressieren.
 </requirement>
+
+*Hinweis:* Die Adressierung kann bspw. durch automatische Auflösung (z. B. DNS-basiert) oder durch Deployment-Konfiguration erfolgen.
 
 Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktensystem - Registrierung an übergreifender ePA-Domäne". Die Informationen zu jedem ePA-Aktensystem enthalten den Endpunkt für den Authorization Service [I_Authorization_Service], Medication Service [I_Medication_Service] und Information Service [I_Information_Service].
 
 <!-- A_25938 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-382" title="TI-Flow-Fachdienst - ePA - Aktualisierung Cache ePA-Aktensysteme" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A382" title="TI-Flow-Fachdienst - ePA - Aktualisierung Cache ePA-Aktensysteme" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -155,7 +157,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 ### ePA-Aktensystem für KVNR ermitteln
 
 <!-- A_25939 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-383" title="TI-Flow-Fachdienst - ePA - ePA-Aktensystem für KVNR ermitteln" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A383" title="TI-Flow-Fachdienst - ePA - ePA-Aktensystem für KVNR ermitteln" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -164,7 +166,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 </requirement>
 
 <!-- A_25940 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-384" title="TI-Flow-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A384" title="TI-Flow-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -173,7 +175,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 </requirement>
 
 <!-- A_25941 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-385" title="TI-Flow-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem - Statuscode 404" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A385" title="TI-Flow-Fachdienst - ePA - Aktualisierung Cache Zuordnung KVNR zu ePA-Aktensystem - Statuscode 404" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -182,7 +184,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 </requirement>
 
 <!-- A_25942 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-386" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Information Service - Fehler im Information Service" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A386" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Information Service - Fehler im Information Service" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -191,7 +193,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 </requirement>
 
 <!-- A_25943 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-387" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Information Service - Struktureller Fehler" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A387" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Information Service - Struktureller Fehler" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -202,7 +204,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 ### Übermittlung an den Medication Service
 
 <!-- A_25944-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-388" title="TI-Flow-Fachdienst - ePA - Flowtype 160/166/169/200/209" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A388" title="TI-Flow-Fachdienst - ePA - Flowtype 160/166/169/200/209" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -211,7 +213,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 </requirement>
 
 <!-- A_25945 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-389" title="TI-Flow-Fachdienst - ePA - asynchrone Bereitstellung und Übermittlung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A389" title="TI-Flow-Fachdienst - ePA - asynchrone Bereitstellung und Übermittlung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -222,7 +224,7 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 #### Mappingregeln
 
 <!-- A_25946 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-390" title="TI-Flow-Fachdienst - ePA - Mapping" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A390" title="TI-Flow-Fachdienst - ePA - Mapping" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -367,7 +369,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </requirement>
 
 <!-- A_25947 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-391" title="TI-Flow-Fachdienst - ePA - provide-dispensation-erp - Organisation-Ressource" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A391" title="TI-Flow-Fachdienst - ePA - provide-dispensation-erp - Organisation-Ressource" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -376,7 +378,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </requirement>
 
 <!-- A_25948 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-392" title="TI-Flow-Fachdienst - ePA - Mapping - Übernahme von Werten zwischen Profilen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A392" title="TI-Flow-Fachdienst - ePA - Mapping - Übernahme von Werten zwischen Profilen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -385,7 +387,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 </requirement>
 
 <!-- A_25949 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-393" title="TI-Flow-Fachdienst - ePA - Mapping - Handhabung von Extensions" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A393" title="TI-Flow-Fachdienst - ePA - Mapping - Handhabung von Extensions" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -408,7 +410,7 @@ Der TI-Flow-Fachdienst benötigt für das Übermitteln von Informationen zu Vero
 </figure>
 
 <!-- A_25950 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-394" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Nichtauffinden in allen ePA-Aktensystemen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A394" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Nichtauffinden in allen ePA-Aktensystemen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -421,7 +423,7 @@ Der TI-Flow-Fachdienst benötigt für das Übermitteln von Informationen zu Vero
 Vor jedem Übermitteln prüft der TI-Flow-Fachdienst, ob der Versicherte in das Einstellen von Verordnungsdaten und Dispensierinformationen durch den TI-Flow-Fachdienst eingewilligt hat.
 
 <!-- A_25951-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-395" title="TI-Flow-Fachdienst - ePA - Prüfung des Widerspruchs vor Übermittlung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A395" title="TI-Flow-Fachdienst - ePA - Prüfung des Widerspruchs vor Übermittlung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -439,7 +441,7 @@ Für die Kommunikation mit dem Medication Service wurde [gemIG_ePA_Medication] d
 <!-- ToDo Link [gemIG_ePA_Medication] -->
 
 <!-- A_28691 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-420" title="TI-Flow-Fachdienst - ePA - Übermittlung - Spezifikation der Schnittstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A420" title="TI-Flow-Fachdienst - ePA - Übermittlung - Spezifikation der Schnittstellen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -448,7 +450,7 @@ Für die Kommunikation mit dem Medication Service wurde [gemIG_ePA_Medication] d
 </requirement>
 
 <!-- A_25952 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-396" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Verordnungsdaten" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A396" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Verordnungsdaten" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -457,7 +459,7 @@ Für die Kommunikation mit dem Medication Service wurde [gemIG_ePA_Medication] d
 </requirement>
 
 <!-- A_25953 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-397" title="TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Verordnungsdaten" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A397" title="TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Verordnungsdaten" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -466,7 +468,7 @@ Für die Kommunikation mit dem Medication Service wurde [gemIG_ePA_Medication] d
 </requirement>
 
 <!-- A_25954-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-398" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Dispensierinformationen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A398" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Dispensierinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -475,7 +477,7 @@ Für die Kommunikation mit dem Medication Service wurde [gemIG_ePA_Medication] d
 </requirement>
 
 <!-- A_25955 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-399" title="TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Dispensierinformationen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A399" title="TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Dispensierinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -484,7 +486,7 @@ Für die Kommunikation mit dem Medication Service wurde [gemIG_ePA_Medication] d
 </requirement>
 
 <!-- A_25956 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-400" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bündelung von Übermittlungsaufträgen nach KVNR" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-A400" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bündelung von Übermittlungsaufträgen nach KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -520,7 +522,7 @@ Es wird unterschieden zwischen den Szenarien, dass ein Aktenkonto innerhalb eine
 
 
 <!-- A_25957 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-401" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Aktenkonto-Umzug" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A401" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Aktenkonto-Umzug" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -539,7 +541,7 @@ Es wird unterschieden zwischen den Szenarien, dass ein Aktenkonto innerhalb eine
 </figure>
 
 <!-- A_25958 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-402" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A402" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -548,7 +550,7 @@ Es wird unterschieden zwischen den Szenarien, dass ein Aktenkonto innerhalb eine
 </requirement>
 
 <!-- A_25959 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-403" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Probleme bei der Entschlüsselung durch den Medication Service" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A403" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Probleme bei der Entschlüsselung durch den Medication Service" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -557,7 +559,7 @@ Es wird unterschieden zwischen den Szenarien, dass ein Aktenkonto innerhalb eine
 </requirement>
 
 <!-- A_25960 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-404" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Probleme bei der Entschlüsselung durch den TI-Flow-Fachdienst" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A404" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Probleme bei der Entschlüsselung durch den TI-Flow-Fachdienst" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -566,7 +568,7 @@ Es wird unterschieden zwischen den Szenarien, dass ein Aktenkonto innerhalb eine
 </requirement>
 
 <!-- A_25961 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-405" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Nichtverfügbarkeit des Medication Service" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A405" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Nichtverfügbarkeit des Medication Service" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

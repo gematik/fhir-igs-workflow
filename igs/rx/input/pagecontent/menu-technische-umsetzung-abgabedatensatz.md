@@ -7,7 +7,7 @@ Der Abgabedatensatz dient der Abrechnung. Demgegenüber stehen die Dispensierinf
 Für die Signatur des Abgabedatensatzes wird der Konnektor verwendet.
 
 <!-- A_21619-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-1" title="PS abgebende LEI: Abgabedatensatz mit QES: OCSP Response einbetten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A1" title="PS abgebende LEI: Abgabedatensatz mit QES: OCSP Response einbetten" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -16,7 +16,7 @@ Für die Signatur des Abgabedatensatzes wird der Konnektor verwendet.
 </requirement>
 
 <!-- A_21244-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-2" title="PS abgebende LEI: Abgabedatensatz signieren - Signaturverfahren" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A2" title="PS abgebende LEI: Abgabedatensatz signieren - Signaturverfahren" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -25,7 +25,7 @@ Für die Signatur des Abgabedatensatzes wird der Konnektor verwendet.
 </requirement>
 
 <!-- A_27050 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-3" title="PS abgebende LEI: Abgabedatensatz signieren - Gültigkeit SMC-B prüfen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A3" title="PS abgebende LEI: Abgabedatensatz signieren - Gültigkeit SMC-B prüfen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

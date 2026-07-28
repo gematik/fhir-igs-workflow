@@ -12,7 +12,7 @@ Description: "This profile defines the parameters for receiving dispense informa
 * parameter ^slicing.rules = #closed
 
 * parameter contains 
-  requestData 1..1
+  requestData 1..1 MS
 
 * parameter[requestData]
   * obeys workflow-parameters-get-prescription-eu-1

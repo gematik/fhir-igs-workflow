@@ -1,0 +1,30 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 4eebd8af61d4f22dd7b47ea80cf8cae8715fcf0ae427d74b95cee13c6dfffa78
+created: '2026-06-25T11:30:11.250785'
+date: '2026-06-25T11:30:11.250788'
+key: IG-TIFLOW-CORE-A202
+modified: '2026-06-25T11:30:11.250787'
+release_status: NEW
+source: input/pagecontent/query-api-consent-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produktgutachten
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt\
+  \ /Consent die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen,\
+  \ dass ausschließlich Nutzer in der Rolle \n  <ul>\n    <li>oid_versicherter</li>\n\
+  \  </ul> \n  die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen\
+  \ die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n         \
+  \   <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n  \
+  \      <tr>\n            <th>Severity</th>\n            <td>error</td>\n       \
+  \ </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der\
+  \ Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n    \
+  \    </tr>\n    </table> \n    abbrechen, damit eine Einwilligung nicht durch Unberechtigte\
+  \ erteilt werden kann."
+title: TI-Flow-Fachdienst - Consent schreiben - Rollenprüfung
+version: 0

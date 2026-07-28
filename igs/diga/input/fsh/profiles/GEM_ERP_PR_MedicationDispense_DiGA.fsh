@@ -53,8 +53,7 @@ Description: "Dispensierung einer DiGA-Verordnung"
 
 // Not applicable fields
 * partOf 0..0
-* statusReasonCodeableConcept 0..0
-* statusReasonReference 0..0
+* statusReason[x]
 * context 0..0
 * supportingInformation 0..0
 * location 0..0

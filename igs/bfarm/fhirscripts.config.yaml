@@ -12,11 +12,12 @@ build:
   pipeline:
     - shell: ../../scripts/install-hapi-validator.sh
     - shell: ./scripts/pre-build.sh
+    - shell: ./scripts/generate-heading-links-js.sh
     - shell: ../../scripts/install-ig-packages.sh ./fhir-ig-installer.conf
     - requirements
     - shell: reqtools polarion ./input/content
     - sushi
-    - shell: ./scripts/post-build.sh
+    #- shell: ./scripts/post-build.sh
     - shell: ../../scripts/install-ig-packages.sh ./fhir-ig-installer.conf --reinstall
     - igpub
     - igpub_qa
