@@ -96,7 +96,7 @@ Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermitt
 
 <figure>
 	<div class="gem-ig-img-container" style="--box-width: 800px; margin-bottom: 30px;">
-		<img src="./epa-ms-abbildung-3-transport-durch-die-ti.png" alt="Transport durch die TI" style="width: 100%;">
+		<img src="./tif-epa-uebertragung.drawio.png" alt="Transport durch die TI" style="width: 100%;">
 	</div>
 	<figcaption><strong>Abbildung: </strong>Transport durch die TI</figcaption>
 </figure>
