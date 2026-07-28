@@ -116,7 +116,19 @@ Das PS der abgebenden LEI muss es dem Nutzer ermöglichen, einen 2D-Code für da
     <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das CS einer abgebenden Institution MUSS die gescannten Inhalte vor einer weiteren Verarbeitung validieren, um sich vor Schadsoftware zu schützen.
+    Das Clientsystem einer abgebenden Institution MUSS die gescannten Inhalte vor einer weiteren Verarbeitung validieren, um sich vor Schadsoftware zu schützen.
+</requirement>
+
+<!-- TI-Flow-26_2 BSI_19 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A460" title="CS: 2D-Code einscannen - Prüfung der Struktur" version="0">
+    <meta lockversion="false"/>
+    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das Clientsystem einer abgebenden Institution MUSS zur Schadsoftware-Prüfung der gescannten Inhalte mindestens eine strukturelle Validierung des 2D-Codes durchführen und sicherstellen, dass die entnommenen Token den erwarteten Datenstrukturen entsprechen.
 </requirement>
 
 Der 2D-Code für E-Rezept-Token enthält mindestens einen Token für ein E-Rezept und kann zu 3 Token zusammenfassen. Dies dient einer besseren Usability.
