@@ -79,7 +79,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 
 <!-- TI-Flow-26_2 BSI_07 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A287" title="TI-Flow-Fachdienst - Gültigkeitswerte gegen aktuelle FHIR-Konfiguration auswerten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A458" title="TI-Flow-Fachdienst - Gültigkeitswerte gegen aktuelle FHIR-Konfiguration auswerten" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -170,7 +170,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Auffälligkeiten die Operation mit dem folgenden Fehler:
+	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Abweichung die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -202,7 +202,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Auffälligkeiten die Operation mit dem folgenden Fehler:
+	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Abweichung die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -234,7 +234,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Auffälligkeiten die Operation mit dem folgenden Fehler:
+	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Abweichung die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -266,7 +266,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Auffälligkeiten die Operation mit dem folgenden Fehler:
+	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Abweichung die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
