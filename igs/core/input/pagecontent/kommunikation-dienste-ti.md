@@ -82,55 +82,6 @@ Es gelten die Vorgaben aus [gemSpec_Krypt] für TLS.
     Das Clientsystem des TI-Flow-Fachdienst MUSS bei jedem Verbindungsaufbau zum TI-Flow-Fachdienst diesen anhand seines TLS-Zertifikats authentifizieren und MUSS die Verbindungen ablehnen, falls die Authentifizierung fehlschlägt.
 </requirement>
 
-<table>
-<tr>
-<th>API / Operation</th>
-<th>X-erp-resource</th>
-</tr>
-<tr>
-<td>Query API: AuditEvent</td>
-<td>AuditEvent</td>
-</tr>
-<tr>
-<td>Query API: ChargeItem</td>
-<td>ChargeItem</td>
-</tr>
-<tr>
-<td>Query API: Consent</td>
-<td>Consent</td>
-</tr>
-<tr>
-<td>Query API: Communication</td>
-<td>Communication</td>
-</tr>
-<tr>
-<td>GET /Device</td>
-<td>Device</td>
-</tr>
-<tr>
-<td>GET /metadata</td>
-<td>metadata</td>
-</tr>
-<tr>
-<td>POST /Subscription</td>
-<td>Subscription</td>
-</tr>
-<tr>
-<td>Query API: Task<br>POST /Task *</td>
-<td>Task</td>
-</tr>
-<tr>
-<td>POST /$get-eu-prescriptions</td>
-<td>Prescription</td>
-</tr>
-<tr>
-<td>GET /$read-eu-access-permission<br>POST /$grant-eu-access-permission<br>DELETE /$revoke-eu-access-permission</td>
-<td>access-permission</td>
-</tr>
-</table>
-<div><figcaption><strong>Tabelle: </strong>HTTP-Header "X-erp-resource"</figcaption></div>
-
-
 ### Verschlüsselte Kommunikation zur VAU des TI-Flow-Fachdienstes  
   
 Die Kommunikation zum TI-Flow-Fachdienst wird zusätzlich zu TLS über einen sicheren Kanal (Verschlüsselung auf Http-Ebene) zwischen dem PS und der Vertrauenswürdigen Ausführungsumgebung (VAU) im TI-Flow-Fachdienst gesichert. 
