@@ -203,6 +203,17 @@ Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktens
 
 ### Übermittlung an den Medication Service
 
+<!-- TI-Flow-26-2 PKV-FD-09 -->
+Die Übermittlung von Daten an den ePA Medication Service wird über einen asynchronen Prozess realisiert. Diese Übertragung wird durch den Aufruf eines Clients am E-Rezept-Fachdienst ausgelöst, bspw. durch die Bereitstellung der Verordnung. Nachdem die Verordnung eingestellt wurde, wird der REST-Aufruf gegenüber dem Client bestätigt und die Verbdinung abgebaut. Anschließend erfolgt die Aufbereitung und Übertragung der Daten an den ePA Medication Service.
+
+Ein Client, der einen Aufruf gegenüber dem E-Rezept-Fachdienst durchführt muss dadurch nicht warten, bis die Übertragung an das ePA Aktensystem durchgeführt wurde.
+
+Die asynchrone Verarbeitung der Übertragung hat neben den Vorteilen für die Clients die folgenden Konsequenzen:
+
+- Clients wissen nicht ob, und wann die Übertragung der Daten an den ePA Medication Service erfolgt
+- Es kann im Livebetrieb nicht nachvollzogen werden, warum eine Übertragung nicht erfolgreich stattgefunden hat
+
+
 <!-- A_25944-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A388" title="TI-Flow-Fachdienst - ePA - Flowtype 160/166/169/200/209" version="0">
     <meta lockversion="false"/>
