@@ -2,18 +2,18 @@ Logical: ERP_TPrescription_CarbonCopy_Logical
 Id: erp-tprescription-carbon-copy-logical
 Title: "Logisches Modell digitaler Durchschlag E-T-Rezept"
 Description: "Logical Model zur Abbildung der im digitalen Durchschlag E-T-Rezept erforderlichen fachlichen Informationen."
-
+// TI-Flow-26_2 KBV_05, KBV_07, KBV_09, KBV_10
 * datumSignatur 1..1 instant "Zeitpunkt der Signatur"
   * ^comment = "Dieses Datum wird aus der QES Signatur 1.2.840.113549.1.9.5 signingTime herangezogen und muss in ein FHIR Instant Datenformat überführt werden."
 * rezeptID 1..1 Identifier "E-Rezept-ID"
 
 * rxVerordnung 1..1 BackboneElement "Angaben zum verordneten Medikament"
-  * bezeichnung 0..1 CodeableConcept "Bezeichnung Fertigarzneimittel/Wirkstoff ODER Rezeptur (verordnet). Je nach dem welcher Rezepttyp angewandt wurde liegt diese Angabe als Freitext oder strukturiert vor."
+  * bezeichnung 0..1 CodeableConcept "Bezeichnung des verordneten Arzneimittels. Ein T-Arzneimittel kann in Form aller vier Verordnungstypen (PZN-, Freitext-, Strukturierte Wirkstoff-, Strukturierte Rezeptur-Verordnung) verordnet werden."
   * wirkstaerke 0..1 Ratio "Wirkstärke (verordnetes Arzneimittel)"
-  * darreichungsform 0..1 Coding "Darreichungsform (verordnetes Arzneimittel)"
+  * darreichungsform[x] 0..1 string or Coding "Darreichungsform (verordnetes Arzneimittel)"
   * menge 0..1 Ratio "Menge (verordnetes Arzneimittel)"
-  * dosierung 0..1 Dosage "Dosierung (verordnetes Arzneimittel)"
-  * reichdauer 1..1 string "Reichdauer (verordnetes Arzneimittel)"
+  * dosierung 0..1 Dosage "Dosierung (verordnetes Arzneimittel). Das Profil entspricht DosageDgMp des [IG DE Medication](https://ig.fhir.de/igs/medication/1.0.7/)"
+  * reichdauer 1..1 Duration "Reichdauer (verordnetes Arzneimittel)"
   * rxTRezeptBestaetigungen 1..1 BackboneElement "Bestätigungen des Arztes nach §3a Abs. 2, 5 AMVV"
     * bestaetigungSicherheitsmassnahmen 1..1 boolean "Bestätigung Sicherheitsmaßnahmen (T-Rezept)"
     * aushaendigungInformationsmaterialien 1..1 boolean "Aushändigung Informationsmaterialien (T-Rezept)"
