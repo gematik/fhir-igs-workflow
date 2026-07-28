@@ -12,3 +12,14 @@ Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem _Primärsystem eR
 - Primärsystem: [Operation API: Task zurückweisen](./op-reject.html)
 - Primärsystem: [Operation API: Dispensierinformationen bereitstellen](./op-dispense.html)
 - Primärsystem: [Operation API: Task schließen](./op-close.html)
+
+### Verwaltung der Zugriffsberechtigung durch den Versicherten (EU)
+
+- E-Rezept-FdV: [Operation API: Zugriffsberechtigung erstellen](./op-grant-eu-access-permission.html)
+- E-Rezept-FdV: [Operation API: Zugriffsberechtigung abfragen](./op-read-eu-access-permission.html)
+- E-Rezept-FdV: [Operation API: Zugriffsberechtigung löschen](./op-revoke-eu-access-permission.html)
+
+### Belieferung durch eine Apotheke im europäischen Ausland
+
+- NCPeH: [Operation API: Interaktion NCPeH - Abrufen](./op-get-eu-prescriptions.html)
+- NCPeH: [Operation API: Interaktion NCPeH - Abgeben](./op-eu-close.html)

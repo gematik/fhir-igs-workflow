@@ -30,6 +30,15 @@ CodeSystem/epa-medicationstatement-processing-event-code,
 {% include artifacts-table-generator.html resourceType="CodeSystem" %}
 
 
+### Logical Models
+
+{% capture logicals %}
+StructureDefinition/logical-eu-dispense-data,
+{% endcapture %}
+{% include artifacts-table-generator.html render=logicals%}
+<div><figcaption><strong>Tabelle:</strong> Logical Models</figcaption></div>
+
+
 ### Systemverhalten
 
 #### Capability Statements
@@ -86,7 +95,13 @@ StructureDefinition/GEM-ERP-PR-Device,
 StructureDefinition/GEM-ERP-PR-Digest,
 StructureDefinition/GEM-ERP-PR-Medication,
 StructureDefinition/GEM-ERP-PR-MedicationDispense,
-StructureDefinition/GEM-ERP-PR-Task
+StructureDefinition/GEM-ERP-PR-Task,
+StructureDefinition/GEM-ERPEU-PR-Consent,
+StructureDefinition/GEM-ERPEU-PR-Medication,
+StructureDefinition/GEM-ERPEU-PR-MedicationDispense,
+StructureDefinition/GEM-ERPEU-PR-Practitioner,
+StructureDefinition/GEM-ERPEU-PR-PractitionerRole,
+StructureDefinition/GEM-ERPEU-PR-Organization
 {% endcapture %}
 {% include artifacts-table-generator.html render=profiles %}
 <div><figcaption><strong>Tabelle:</strong> Ressourcenprofile</figcaption></div>
@@ -97,7 +112,8 @@ StructureDefinition/GEM-ERP-PR-Task
 {% capture datatypes %}
 StructureDefinition/GEM-ERP-PR-AccessCode,
 StructureDefinition/GEM-ERP-PR-Secret,
-StructureDefinition/GEM-ERP-PR-Signature
+StructureDefinition/GEM-ERP-PR-Signature,
+StructureDefinition/GEM-ERPEU-PR-AccessCode
 {% endcapture %}
 {% include artifacts-table-generator.html render=datatypes %}
 <div><figcaption><strong>Tabelle:</strong> Datentypen</figcaption></div>

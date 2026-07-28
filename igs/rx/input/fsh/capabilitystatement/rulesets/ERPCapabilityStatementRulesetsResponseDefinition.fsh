@@ -165,3 +165,63 @@ RuleSet: MedicationDispenseSearchTypeInteractionStatusCodes
 RuleSet: MedicationDispenseReadInteractionStatusCodes
 * insert ReadInteractionStatusCodes
 
+// EU-spezifische Status-Codes (grenzüberschreitender Datenaustausch)
+
+RuleSet: GlobalSystemOperationErrorCodes
+
+* insert InvalidRequest
+
+RuleSet: SystemOperationStatusCodesWithParameters
+* insert SuccessfulWithParameters
+* insert GlobalSystemOperationErrorCodes
+
+RuleSet: SystemQueryOperationStatusCodesWithNormalSuccess
+* insert Successful
+* insert GlobalSystemOperationErrorCodes
+
+// Consent Query-API Interactions
+
+RuleSet: ConsentSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: ConsentCreateInteractionStatusCodes
+* insert CreateInteractionStatusCodes
+
+RuleSet: ConsentDeleteInteractionStatusCodes
+* insert DeleteInteractionStatusCodes
+
+// EU Operationen
+
+RuleSet: GrantEUAccessPermissionOperationStatusCodes
+* rest.operation[=] insert SystemOperationStatusCodesWithParameters
+* rest.operation[=] insert TiflowAccessCodeInvalid
+* rest.operation[=] insert TiflowConsentRequired
+* rest.operation[=] insert TiflowErezeptCountryCodeInvalid
+
+* rest.operation[=] insert TiflowAuthRoleNotAllowed
+
+RuleSet: ReadEUAccessPermissionOperationStatusCodes
+* rest.operation[=] insert SystemOperationStatusCodesWithParameters
+
+* rest.operation[=] insert TiflowAuthRoleNotAllowed
+
+RuleSet: RevokeEUAccessPermissionOperationStatusCodes
+* rest.operation[=] insert SystemQueryOperationStatusCodesWithNormalSuccess
+
+* rest.operation[=] insert TiflowAuthRoleNotAllowed
+
+RuleSet: GetEUPrescriptionsOperationStatusCodes
+* rest.operation[=] insert SystemOperationStatusCodesWithParameters
+* rest.operation[=] insert SvcValidationFailed
+* rest.operation[=] insert TiflowAccessPermissionInvalid
+* rest.operation[=] insert TiflowAuthRoleNotAllowed
+* rest.operation[=] insert TiflowConsentRequired
+* rest.operation[=] insert TiflowErezeptNoPrescriptionsFound
+
+RuleSet: EuCloseOperationStatusCodes
+* rest.resource[=].operation[=] insert SvcValidationFailed
+* rest.resource[=].operation[=] insert TiflowAccessPermissionInvalid
+* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+* rest.resource[=].operation[=] insert TiflowConsentMissing
+* rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
+* rest.resource[=].operation[=] insert InstanceOperationStatusCodes

@@ -57,3 +57,6 @@ RuleSet: CapSupportOperation(name, operation, expectation, documentation)
   * definition = Canonical({operation})
   * documentation = {documentation}
   * extension[expectation].valueCode = {expectation}
+
+RuleSet: CapSupportSystemOperation(name, operation, expectation, documentation)
+* rest insert CapSupportOperation({name}, {operation}, {expectation}, {documentation})

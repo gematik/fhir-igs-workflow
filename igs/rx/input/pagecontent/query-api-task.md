@@ -11,12 +11,15 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 |Apotheke|GET X-PoPP-Token|E-Rezepte von Versicherten abrufen (PoPP)|
 |Apotheke|GET /&#60;id&#62;?ac=|Recovery Secret|
 |Apotheke|GET /&#60;id&#62;?secret=|Quittung erneut abrufen|
+|Versicherter|PATCH /&#60;id&#62;|E-Rezept zum Einlösen im EU-Ausland markieren|
 
 ### Anforderungen an Schnittstelle
 
 - [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [FdV-Anforderungen für Task-Query](./query-api-task-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
 - [AVS-Anforderungen für Task-Query](./query-api-task-req-avs.html): Anforderungen an das AVS zur Nutzung der Schnittstelle.
+
+Anforderungen für den **NCPeH-Fachdienst** zur Nutzung der Operationen am `/Task`-Endpunkt finden sich in [gemSpec_NCPeH_FD] ab Kapitel [6.2.4](https://gemspec.gematik.de/docs/gemSpec/gemSpec_NCPeH_FD/latest/#6.2.4).
 
 ### Resource API
 
@@ -64,4 +67,19 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 		</div>
 	</div>
 -->
+</div>
+
+#### Task markieren (Einlösen im EU-Ausland)
+
+Über eine HTTP-PATCH-Anfrage an den Endpunkt <i>/Task/&lt;id&gt;</i> kann der Versicherte ein E-Rezept zum Einlösen im EU-Ausland markieren.
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-interaction="patch">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
+		</pre>
+	</div>
 </div>
