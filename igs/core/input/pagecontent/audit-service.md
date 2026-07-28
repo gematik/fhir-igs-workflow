@@ -130,6 +130,9 @@ Der Service, der die AuditEvents verwaltet muss in der Lage sein aus allen Anwen
 </table>
 <div><figcaption><strong>Tabelle: </strong>TAB_TIFlowFD_004 Versichertenprotokoll</figcaption></div>
 
+<!-- TI-Flow-26_2 BSI_05 -->
+> *Hinweis:* Diese Tabelle enthält nur die Operationen, die in keinem der anderen IGs aufgeführt sind. Daher umfasst sie nur die modulübergreifenden Protokolleinträge. Jeder IG einer Fachanwendung (z.B. E-Rezept, DiGA) enthält zusätzlich die Protokolleinträge für die anwendungsspezifischen Operationen.
+
 <table>
   <tr>
     <th>Wert in proofMethod</th>

@@ -2,7 +2,7 @@
 <!-- TI-Flow-26_2 KBV_23, KBV_30 -->
 Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen abgelaufener oder nicht mehr benötigter Ressourcen. 
 
-> **Hinweis:** Spezifische Löschfristen für Anwendungsmodule und deren Workflows und werden in den jeweiligen Implementation Guides definiert.
+> *Hinweis:* Spezifische Löschfristen für Anwendungsmodule und deren Workflows und werden in den jeweiligen Implementation Guides definiert.
 
 ## Allgemeine Anforderungen zur Protokollierung beim Löschen
 
