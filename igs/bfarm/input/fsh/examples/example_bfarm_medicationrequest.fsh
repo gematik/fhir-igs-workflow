@@ -2,6 +2,7 @@ Instance: ExampleMedicationRequest-T
 InstanceOf: ERP_TPrescription_MedicationRequest
 Title: "Beispiel BfArM MedicationRequest"
 Description: "Ein MedicationRequest für die Ausgabe von Pomalidomid mit einer Freitextdosierung"
+// TI-Flow-26_2 KBV_11, KBV_12
 * status = #completed
 * intent = #order
 * authoredOn = "2026-04-01"

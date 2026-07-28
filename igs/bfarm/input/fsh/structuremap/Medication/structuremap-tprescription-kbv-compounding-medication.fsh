@@ -33,7 +33,7 @@ Description: "Mapping-Anweisungen zur Transformation von KBV Rezeptur-Medikament
         * documentation = "Übernimmt den Verpackungswert für die Rezeptur"
         * insert treeSource(extMatchVar, value, extValVar)
         * insert targetSetIdVariable(tgtExtVar, value, extValVar)
-    * rule[+]
+    * rule[+] // TI-Flow-26_2 KBV_16
       * name = "copyFormulaInstructionExtensionUrl"
       * documentation = "Transformiert KBV-Herstellungsanweisung-Extension in gematik-Formulierungs-Herstellungsanweisung-Extension"
       * source[+].context = "extVar"

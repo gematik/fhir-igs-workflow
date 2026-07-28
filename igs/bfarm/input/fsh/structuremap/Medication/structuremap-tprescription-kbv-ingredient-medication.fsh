@@ -24,7 +24,7 @@ Description: "Maps KBV-Ingredient ERP Medication to BfArM T-Prescription Medicat
     * documentation = "Übernimmt die eindeutige Medication-ID unverändert"
 
   // Extensions
-  * rule[+]
+  * rule[+] // TI-Flow-26_2 KBV_13
     * name = "medicationExt"
     * insert treeSource(kbvMedicationIngredient, extension, extVar)
     * insert treeTarget(bfarmMedication, extension, tgtExtVar)

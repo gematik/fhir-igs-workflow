@@ -2,7 +2,7 @@ Logical: ERP_TPrescription_CarbonCopy_Logical
 Id: erp-tprescription-carbon-copy-logical
 Title: "Logisches Modell digitaler Durchschlag E-T-Rezept"
 Description: "Logical Model zur Abbildung der im digitalen Durchschlag E-T-Rezept erforderlichen fachlichen Informationen."
-
+// TI-Flow-26_2 KBV_05, KBV_07, KBV_09, KBV_10
 * datumSignatur 1..1 instant "Zeitpunkt der Signatur"
   * ^comment = "Dieses Datum wird aus der QES Signatur 1.2.840.113549.1.9.5 signingTime herangezogen und muss in ein FHIR Instant Datenformat überführt werden."
 * rezeptID 1..1 Identifier "E-Rezept-ID"
