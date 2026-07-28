@@ -67,16 +67,6 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 	Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource MedicationDispense nach 100 Tagen ab ihrem Erzeugungsdatum MedicationDispense.whenHandedOver automatisch löschen.
 </requirement>
 
-<!-- A_22109 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A292" title="E-Rezept: Löschfrist ChargeItem" version="0">
-	<meta lockversion="false"/>
-	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-    	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
-  	</actor>
-	Der TI-Flow-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.<br>
-	Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.
-</requirement>
-
 <!-- A_19253-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A293" title="E-Rezept: Löschfrist veraltete Nachrichten" version="0">
 	<meta lockversion="false"/>
