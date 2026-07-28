@@ -1,22 +1,25 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 2aa00c2ea6d0e9decc6bc5d852e858fa1d1af2d6651bffb31467a5e3b7c268f5
+content_hash: d40b6c03578627314093efe6b2656ec6f5cefa6714b1a4cf116e6d2db8c74307
 created: '2026-07-28T07:25:32.019558'
-date: '2026-07-28T07:25:32.019561'
+date: '2026-08-24T12:14:06.123950'
 key: IG-TIFLOW-ERP-A228
-modified: '2026-07-28T07:25:32.019560'
+modified: '2026-08-24T12:14:06.123950'
 release_status: NEW
-source: input/pagecontent/ttl.md
+source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
-  - Produktgutachten
-text: "Der TI-Flow-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf\
-  \ von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen\
-  \ in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.<br>\n\
-  \tDer TI-Flow-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten\
-  \ Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen,\
-  \ damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden."
-title: 'E-Rezept: Löschfrist ChargeItem'
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts\
+  \ /$get-eu-prescriptions durch den NCPeH-FD das im http-Body des Requests enthaltene\
+  \ Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_GET_Prescription_EU_Input]\
+  \ prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:\n <table id=\"\
+  error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n\
+  \ <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen."
+title: TI-Flow-Fachdienst - eu-prescription abfragen - Schemaprüfung
 version: 0

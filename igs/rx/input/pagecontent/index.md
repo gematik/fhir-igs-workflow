@@ -18,7 +18,7 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des TI-Flow
 - Anbindung der TI an die eHDSI
 - Mapping zwischen deutschen Verordnungsdaten und dem EU-Datenmodell
 - Abrechnung von im EU-Ausland eingelösten E-Rezepten
-- Nicht final mit Stakeholdern Abgestimmte Workflows <!-- TI-Flow-26_2 KBV_20 -->
+- Workflows, die nicht final mit Stakeholdern des TI-Flow abgestimmt sind <!-- TI-Flow-26_2 KBV_20, KBV_04 -->
 
 ### Anforderungen zur Umsetzung des IGs
 
