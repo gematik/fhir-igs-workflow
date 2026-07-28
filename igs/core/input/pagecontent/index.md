@@ -34,7 +34,7 @@ Dieser "IG TIFlow Kernfunktionalitäten" fokussiert auf die technische Basisschi
 - Validierung von FHIR-Ressourcen und Bundles
 - Modulübergreifende Operationen auf Task ($create, $activate, $abort, ...)
 - Zugriffs- und Systemprotokollierung (AuditEvent)
-- Löschfristen und automatisches Löschen
+- Allgemeine Anforderungen zur Datenbereinigung
 
 Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow Landschaft weiterverwendet:
 
