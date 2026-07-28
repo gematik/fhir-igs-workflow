@@ -6,7 +6,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS bei der Prüfung der zeitlichen Gültigkeit einer FHIR Ressource den Wert aus dem Element gemäß folgender Tabelle zugrunde legen. 
+     Der TI-Flow-Fachdienst MUSS bei der Prüfung der zeitlichen Gültigkeit einer FHIR Ressource den Referenzwert aus dem Element gemäß folgender Tabelle zugrunde legen. 
 
   <table>
     <thead>
@@ -77,6 +77,16 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
   </table>
   <div><figcaption><strong>Tabelle: </strong>TAB_ERP_FD_PruefungGueltigkeit_FHIR_Ressource Werte bei Prüfung der zeitlichen Gültigkeit einer FHIR Ressource</figcaption></div>
 </requirement>
+
+<!-- TI-Flow-26_2 BSI_07 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A287" title="TI-Flow-Fachdienst - Gültigkeitswerte gegen aktuelle FHIR-Konfiguration auswerten" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS den ermittelten Referenzwert der Gültigkeit gegen die aktuell gültige FHIR-Konfiguration auswerten und als Referenzzeitpunkt für die Prüfung der zeitlichen Gültigkeit einer FHIR Ressource zugrundelegen.
+</requirement>
+
 
 <!-- A_27658 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A274" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation" version="0">
