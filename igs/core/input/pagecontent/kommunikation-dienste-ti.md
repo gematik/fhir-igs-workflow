@@ -98,11 +98,8 @@ Die Kommunikation zum TI-Flow-Fachdienst wird zusätzlich zu TLS über einen sic
     <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="Anb_NCPeH_FD" description="Anbieter eines NCPeH-Fachdienstes">
+    <actor name="NCPeH_FD" description="NCPeH-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
-    </actor>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienstes MUSS für alle Anfragen an den TI-Flow-Fachdienst für
 	<ul>
@@ -114,18 +111,25 @@ Die Kommunikation zum TI-Flow-Fachdienst wird zusätzlich zu TLS über einen sic
 
 Für Informationen zum Kommunikationsprotokoll zwischen E-Rezept-FdV und der VAU des TI-Flow-Fachdienstes siehe [gemSpec_Krypt]#E-Rezept-spezifische Vorgaben und [gemSpec_Krypt]#ZETA/ASL (VAU-Protokoll).
 
-Alternativ zur Umsetzung des TUC_PKI_018 gemäß [gemSpec_Krypt]#A_21216 soll das Primärsystem für die Prüfung des VAU-Zertifikates die VerifyCertificate Operation des Konnektors/Basis Consumers nutzen.
-
-<!-- ToDo: Anpassen auf ASL -->
-Folgendes kann umgesetzt werden:
-<ol>
-<li>Beziehen des VAU-Zertifikat von /VAUCertificate</li>
-<li>Lokales Speichern der aktuellen Zeit mit dem VAU-Zertifikat als Tupel</li>
-<li>Prüfen des VAU-Zertifikates mittels der Konnektor-Operation VerifyCertificate</li>
-<li>Abbrechen falls INVALID</li>
-<li>
-(5) if (get_current_time() < gespeicherte Zeit + 12h) { VAU-Zertifikat wird als gültig angesehen, Nutzen des VAU-Zertifikat } <br>
-if (get_current_time() >= gespeicherte Zeit + 12h) { VAU-Zertifikat neu beziehen, siehe (1)}
-</li>
-</ol>
+<!-- TI-Flow-26_2 BSI_16 -->
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-A459" title="CS: Alternative VAU-Zertifikat-Verifikation mittels Konnektor" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das Clientsystem des TI-Flow-Fachdienstes KANN als Alternative zur Umsetzung des TUC_PKI_018 gemäß [gemSpec_Krypt]#A_21216 für die Prüfung des VAU-Zertifikates die VerifyCertificate Operation des Konnektors/Basis Consumers nach folgendem Verfahren nutzen:
+    <ol>
+    <li>Beziehen des VAU-Zertifikates von /VAUCertificate</li>
+    <li>Lokales Speichern der aktuellen Zeit mit dem VAU-Zertifikat als Tupel</li>
+    <li>Prüfung des VAU-Zertifikates mittels der Konnektor-Operation VerifyCertificate</li>
+    <li>Abbruch falls INVALID</li>
+    <li>Wenn (get_current_time() &lt; gespeicherte Zeit + 12h): VAU-Zertifikat wird als gültig angesehen und verwendet; andernfalls (get_current_time() &gt;= gespeicherte Zeit + 12h): VAU-Zertifikat erneut beziehen (siehe Punkt 1)</li>
+    </ol>
+</requirement>
 
