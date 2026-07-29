@@ -399,7 +399,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 
 #### Lokalisierung
 
-Der TI-Flow-Fachdienst benötigt für das Übermitteln von Informationen zu Verordnungsdaten und Dispensierinformationen die Information, bei welchen ePA-Aktensystem das Aktenkonto des Versicherten verwaltet wird. Siehe Kapitel 6.10.3 ePA-Aktensystem für KVNR ermitteln.
+Der TI-Flow-Fachdienst benötigt für das Übermitteln von Informationen zu Verordnungsdaten und Dispensierinformationen die Information, bei welchen ePA-Aktensystem das Aktenkonto des Versicherten verwaltet wird. Siehe Kapitel "ePA-Aktensystem für KVNR ermitteln".
 
 <figure>
 	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
