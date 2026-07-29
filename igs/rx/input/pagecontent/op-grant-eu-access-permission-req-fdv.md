@@ -48,10 +48,8 @@ dieser Länder aus dem FHIR-VZD. Die Liste kann für 96h gecacht werden.
     Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung" einen eigens generierten Zugriffscode als Zufallswert erzeugen.
 </requirement>
 
-Das Format für den Zugriffscode ist in [gemSpec_DM_eRp#A_27097-*] beschrieben.
+Der Zugriffscode muss ein sicherer Zufallswert sein und wird zur Berechtigung des NCPeH-Fachdienstes verwendet.
 Für jede weitere Erteilung einer Zugriffsberechtigung für ePrescription/Dispensation Szenario Land A muss ein neuer Zugriffscode erzeugt werden.
-
-<!-- ToDo: Afo Zugriffscode in IG übernehmen -->
 
 <!--A_27114 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A277" title="E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am TI-Flow-Fachdienst speichern" version="0">

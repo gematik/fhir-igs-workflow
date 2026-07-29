@@ -39,7 +39,7 @@ Es gelten weitere modulspezifische Anforderungen für den Verordnungsdatensatz.
 
 Für weitere Informationen siehe Operation "E-Rezept erstellen" aus der API-Schnittstelle [E-Rezept API Dokumentation].
 
-Der Value-Katalog für FlowType ist in [gemSpec_DM_eRp] beschrieben.
+Der FlowType wird als Parameter der FHIR-Operation $create angegeben und bestimmt den Workflow des E-Rezeptes.
 
 Der Response des Fachdienstes liefert
 - die Rezept-ID (Task.Identifier mit "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId"), mit der das E-Rezept-Bundle vervollständigt wird,
