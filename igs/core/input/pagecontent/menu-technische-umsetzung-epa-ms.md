@@ -101,7 +101,7 @@ Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermitt
 	<figcaption><strong>Abbildung: </strong>Transport durch die TI</figcaption>
 </figure>
 
-Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Bearer-Token. Für die Signatur wird das AUT-Zertifikat der E-Rezept-VAU verwendet. Siehe [gemSpec_Krypt]#Authentisierung des E-Rezept-FD als ePA-Client und [gemSpec_Aktensystem_ePAfueralle]#3.16.3 Anforderungen an den Authorization Service für die Authentisierung des TI-Flow-Fachdienstes.
+Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Bearer-Token. Für die Signatur wird das AUT-Zertifikat der E-Rezept-VAU verwendet. Siehe [gemSpec_Krypt]#Authentisierung des E-Rezept-FD als ePA-Client und [gemSpec_Aktensystem_ePAfueralle]#Anforderungen an den Authorization Service für die Authentisierung über JWT Bearer Token.
 
 <!-- A_26066 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A378" title="TI-Flow-Fachdienst - ePA - JWT Bearer-Token Claims" version="0">
