@@ -27,7 +27,7 @@ siehe [Datenmodell Payload für Communication-Query](./query-api-communication-r
   <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
-  Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die Nachricht gemäß der Struktur [gemSpec_DM_eRp#TAB_eRpDM_003] und 
+  Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die Nachricht gemäß der Struktur für Communication-Ressourcen und 
   <ul>
     <li>einem communicationType entsprechend der zu übermittelnden Information</li>
     <li>TransactionID aus der empfangenen Nachricht des Versicherten</li>
@@ -39,7 +39,7 @@ Für TAB_eRpDM_003 siehe [Datenmodell Payload für Communication-Query](./query-
 
 Beispiele für diesen Anwendungsfall stehen im GitHub  https://github.com/gematik/interactive-api-erp . 
 
-Die Erläuterung und das Schema des Payloads sind in [gemSpec_DM_eRp#TAB_eRpDM_003] zu finden.
+Die Nachrichtenstruktur wird durch die Communication-Ressource und ihre Erweiterungen definiert.
 
 <!-- A_19333-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A57" title="PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Communication Ressource erstellen" version="0">

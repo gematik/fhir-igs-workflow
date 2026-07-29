@@ -1,4 +1,4 @@
-Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung abrufen" muss das PS der abgebenden LEI Dispensierinformationen an den TI-Flow-Fachdienst übermitteln. Dieses Kapitel beschreibt, wie ein entsprechendes PS den Datensatz zu den Dispensierinformationen zu befüllen hat. Für die Spezifikation der Ressource MedicationDispense siehe [gemSpec_DM_eRp].
+Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung abrufen" muss das PS der abgebenden LEI Dispensierinformationen an den TI-Flow-Fachdienst übermitteln. Dieses Kapitel beschreibt, wie ein entsprechendes PS den Datensatz zu den Dispensierinformationen zu befüllen hat. Für die Spezifikation der Ressource MedicationDispense siehe [MedicationDispense Query API](./query-api-medicationdispense.html).
 
 <!-- A_27035-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A207" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - MedicationDispense erstellen" version="0">
@@ -29,7 +29,7 @@ Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung 
     Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit mehreren Teilabgaben und mit Flowtype 160, 166, 169, 200 oder 209 mehrere MedicationDispenses im Parameters Profil angeben.
 </requirement>
 
-Die Profilversion bei der Abgabe richtet sich nach dem Abgabedatum der Arzneimittel. Wenn mehrere Arzneimittel zu einer Verordnung abgegeben werden, dann richtet sich die gültige Profilversion nach dem Datum der neuesten Abgabe (s. [gemSpec_DM_eRp#Zeitliche Gültigkeit von FHIR-Ressourcen]).
+Die Profilversion bei der Abgabe richtet sich nach dem Abgabedatum der Arzneimittel. Wenn mehrere Arzneimittel zu einer Verordnung abgegeben werden, dann richtet sich die gültige Profilversion nach dem Datum der neuesten Abgabe.
 <!-- ToDo: Link auflösen -->
 
 <!-- A_27047-01 -->
