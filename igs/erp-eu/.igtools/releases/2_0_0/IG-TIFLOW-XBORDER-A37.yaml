@@ -1,0 +1,20 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 419e5f2fd5ff1805d04a86883893f07a98d287982c052c50daf1bec81be5ed0c
+created: '2026-06-25T13:14:39.028087'
+date: '2026-06-25T13:14:39.028089'
+key: IG-TIFLOW-XBORDER-A37
+modified: '2026-06-25T13:14:39.028088'
+release_status: NEW
+source: input/pagecontent/op-read-eu-access-permission-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt
+  /$read-eu-access-permission den zeta-user-info.identifier des Nutzers (KVNR) bestimmen
+  und im Response falls vorhanden eine Ressource des Profils [GEM_ERP_PR_PAR_EU_Access_Authorization_Response]
+  mit zur KVNR gespeicherte zeitlich gültige Zugriffsberechtigung übermitteln.
+title: TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Response
+version: 0

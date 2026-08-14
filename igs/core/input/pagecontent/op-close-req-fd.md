@@ -2,7 +2,7 @@
 Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_19231-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-60" title="TI-Flow-Fachdienst - Task schließen - Prüfung Secret" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A60" title="TI-Flow-Fachdienst - Task schließen - Prüfung Secret" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -34,7 +34,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19231-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-61" title="TI-Flow-Fachdienst - Task schließen - Prüfung Status" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A61" title="TI-Flow-Fachdienst - Task schließen - Prüfung Status" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -66,7 +66,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19248-05 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-62" title="TI-Flow-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A62" title="TI-Flow-Fachdienst - Task schließen - Schemaprüfung MedicationDispense" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -104,7 +104,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_28666 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-63" title="TI-Flow-Fachdienst - Task schließen - MedicationDispense speichern" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A63" title="TI-Flow-Fachdienst - Task schließen - MedicationDispense speichern" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -113,7 +113,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_26337 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-64" title="TI-Flow-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A64" title="TI-Flow-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="0">
     <meta lockversion="true"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -122,7 +122,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_28411 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-65" title="TI-Flow-Fachdienst - Task schließen - Telematik-ID der abgebenden LEI speichern" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A65" title="TI-Flow-Fachdienst - Task schließen - Telematik-ID der abgebenden LEI speichern" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -131,7 +131,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_28129 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-66" title="TI-Flow-Fachdienst - Task schließen - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A66" title="TI-Flow-Fachdienst - Task schließen - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -140,7 +140,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19232 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-67" title="TI-Flow-Fachdienst - Task schließen - Status beenden" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A67" title="TI-Flow-Fachdienst - Task schließen - Status beenden" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -149,7 +149,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 </requirement>
 
 <!-- A_19233-06 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-68" title="TI-Flow-Fachdienst - Task schließen - Quittung erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A68" title="TI-Flow-Fachdienst - Task schließen - Quittung erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -171,7 +171,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 
 <!-- A_22919 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-69" title="TI-Flow-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A69" title="TI-Flow-Fachdienst - Task schließen - OCSP-Response nicht älter als 24h" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

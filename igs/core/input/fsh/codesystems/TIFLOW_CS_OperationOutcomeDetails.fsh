@@ -133,3 +133,9 @@ Description: "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details a
 * #TIFLOW_INTERNAL_ERROR "Internal Server Error" "The service ran into an unspecified error."
   * ^designation.language = #de-DE
   * ^designation.value = "Server Fehler"
+* #TIFLOW_BLOCKED_FLOWTYPE "FlowType Blocked" "The Flowtype may not be used in the TI-Flow-Fachdienst."
+  * ^designation.language = #de-DE
+  * ^designation.value = "Gesperrter Flowtype"
+* #TIFLOW_BLOCKED_FEATURE "Blocked Feature" "The functionality for a feature is blocked in the TI-Flow-Fachdienst."
+  * ^designation.language = #de-DE
+  * ^designation.value = "Gesperrtes Feature"

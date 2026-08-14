@@ -1,0 +1,22 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: b5288d4e5fb65c8750a0699d2b93bbed6e9709c7baf8303514044a9ebc4b0245
+created: '2026-06-25T11:30:11.289375'
+date: '2026-06-25T11:30:11.289376'
+key: IG-TIFLOW-CORE-A323
+modified: '2026-06-25T11:30:11.289376'
+release_status: NEW
+source: input/pagecontent/query-api-communication-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht über die http-Operation
+  POST auf den Endpunkt /Communication die Absenderidentifikation aus dem zeta-user-info.identifier
+  der Nutzerinformation mit dem entsprechenden System https://gematik.de/fhir/sid/telematik-id
+  für Institutionen der TI bzw. http://fhir.de/sid/gkv/kvid-10 für Versicherte übernehmen
+  sowie das Absendedatum Communication.sent auf die aktuelle Systemzeit des TI-Flow-Fachdienstes
+  setzen, damit Absender und Sendezeitpunkt für den Empfänger eindeutig sind.
+title: TI-Flow-Fachdienst - Nachricht einstellen - Absender und Sendedatum
+version: 0

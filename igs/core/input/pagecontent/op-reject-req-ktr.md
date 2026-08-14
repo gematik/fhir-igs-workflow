@@ -1,7 +1,7 @@
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an Clientsysteme für die Nutzung der Operation `$reject`.
 
 <!-- A_19250 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-344" title="CS Kostenträger: Verordnung zurückgeben - Statusrequest" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A344" title="CS Kostenträger: Verordnung zurückgeben - Statusrequest" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -15,7 +15,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 </requirement>
 
 <!-- A_19251 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-345" title="CS Kostenträger: Verordnung zurückgeben - Verordnung löschen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A345" title="CS Kostenträger: Verordnung zurückgeben - Verordnung löschen" version="0">
   <meta lockversion="false"/>
   <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

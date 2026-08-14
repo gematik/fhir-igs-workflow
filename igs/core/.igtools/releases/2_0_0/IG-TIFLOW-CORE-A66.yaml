@@ -1,0 +1,21 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 5a897424b0a7d8661336aa8282adfb45a50db0c8c1e00f18cff254b479f34c05
+created: '2026-06-25T11:30:11.212810'
+date: '2026-06-25T11:30:11.212812'
+key: IG-TIFLOW-CORE-A66
+modified: '2026-06-25T11:30:11.212812'
+release_status: NEW
+source: input/pagecontent/op-close-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation
+  über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt
+  wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification
+  Prozess für den Trigger mit der ChannelId "erp.task.close" und den Versicherten
+  mit der KVNR = Task.for initiieren.
+title: TI-Flow-Fachdienst - Task schließen - Push Notification Versicherter
+version: 0

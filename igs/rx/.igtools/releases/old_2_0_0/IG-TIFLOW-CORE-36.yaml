@@ -1,0 +1,41 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: c2bb0ff55402e95b12f367cc618d37b7cff6e5d514200c442ca520317663f4f3
+created: '2026-06-19T08:44:57.945913'
+date: '2026-06-19T08:44:57.945934'
+key: IG-TIFLOW-CORE-36
+modified: '2026-06-19T08:44:57.945929'
+release_status: NEW
+source: input/pagecontent/menu-technische-umsetzung-audit-service.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS einen Aufruf der folgenden Endpunkte, für jeden\
+  \ betroffene E-Rezept abhängig von Ergebnis des Operationsaufrufes gemäß Tab_TIFlowFD_020\
+  \ im Zugriffsprotokoll des Versicherten protokollieren:\n  <table>\n    <tr>\n \
+  \     <th>Endpunkt</th>\n      <th>Ergebnis der Operation</th>\n      <th>Beschreibung\
+  \ (ggfs. als Vorschlag für einen lesbaren Protokolleintrag in einfacher Sprache)</th>\n\
+  \    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$provide-prescription-erp</td>\n\
+  \      <td>erfolgreich</td>\n      <td>Die Verordnung wurde in die Patientenakte\
+  \ übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht\
+  \ übermittelbar</td>\n      <td>Die Verordnung konnte nicht in die Patientenakte\
+  \ übertragen werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$provide-dispensation-erp</td>\n\
+  \      <td>erfolgreich</td>\n      <td>Die Medikamentenabgabe wurde in die Patientenakte\
+  \ übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>final nicht\
+  \ übermittelbar</td>\n      <td>Die Medikamentenabgabe konnte nicht in die Patientenakte\
+  \ übertragen werden.</td>\n    </tr>\n    <tr>\n      <td>/epa/medication/api/{version}/fhir/$cancel-prescription-erp</td>\n\
+  \      <td>erfolgreich</td>\n      <td>Die Löschinformation zum E-Rezept wurde in\
+  \ die Patientenakte übermittelt.</td>\n    </tr>\n    <tr>\n      <td></td>\n  \
+  \    <td>final nicht übermittelbar</td>\n      <td>Die Löschinformation zum E-Rezept\
+  \ konnte nicht in die Patientenakte übermittelt werden.</td>\n    </tr>\n    <tr>\n\
+  \      <td>/epa/medication/api/{version}/fhir/$cancel-dispensation-erp</td>\n  \
+  \    <td>erfolgreich</td>\n      <td>Die Löschinformation für die Medikamentenabgabe\
+  \ wurde in die Patientenakte übertragen.</td>\n    </tr>\n    <tr>\n      <td></td>\n\
+  \      <td>final nicht übermittelbar</td>\n      <td>Die Löschinformation für die\
+  \ Medikamentenabgabe konnte nicht in die Patientenakte übertragen werden.</td>\n\
+  \    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>Tab_TIFlowFD_020\
+  \ Versichertenprotokoll für ePA Medication Service</figcaption></div>"
+title: TI-Flow-Fachdienst - ePA - Medication Service - Versichertenprotokoll
+version: 0

@@ -1,0 +1,30 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 2bf39900cf6918ecf314f577cbbf5f0d222bd42e8255aaa0f2f2b160c27e766e
+created: '2026-06-25T11:30:11.231807'
+date: '2026-06-25T11:30:11.231809'
+key: IG-TIFLOW-CORE-A141
+modified: '2026-06-25T11:30:11.231808'
+release_status: NEW
+source: input/pagecontent/op-abort-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts über den mittels der\
+  \ &#60;id&#62; adressierten/Task/&#60;id&#62;/$abort durch verordnende Leistungserbringer\
+  \ den im HTTP-Header \"X-AccessCode\" gegen den im referenzierten Task enthaltenen\
+  \ AccessCode prüfen und bei Missmatch oder Fehlen im HTTP-Header, den Aufruf mit\
+  \ dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
+  \            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n           \
+  \ <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n \
+  \           <th>Code</th>\n            <td>invalid</td>\n        </tr>\n       \
+  \ <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_ACCESSCODE_MISMATCH</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n\
+  \        </tr>\n    </table> \n    abweisen, damit ausschließlich die verordnende\
+  \ Leistungserbringerinstitution in Kenntnis des AccessCodes als Berechtigte ein\
+  \ E-Rezept löschen."
+title: TI-Flow-Fachdienst - E-Rezept löschen - Verordnender - Prüfung AccessCode
+version: 0

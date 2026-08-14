@@ -1,0 +1,30 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 46c8c590f36ba5cd9705a0401227b83dfafec09f8a45c8323e53100716abacf4
+created: '2026-06-25T11:30:11.220279'
+date: '2026-06-25T11:30:11.220281'
+key: IG-TIFLOW-CORE-A114
+modified: '2026-06-25T11:30:11.220280'
+release_status: NEW
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produktgutachten
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf einen einzelnen\
+  \ Task mittels \"/Task/&lt;id&gt;?ac=...\" durch eine abgebende Institution die\
+  \ zum referenzierten Task in Task.owner gespeicherte Telematik-ID der abgebenden\
+  \ Institution mit der Telematik-ID aus der Nutzerinformation (zeta-user-info.identifier)\
+  \ vergleichen und bei Ungleichheit die Operation mit dem folgenden Fehler:\n   \
+  \   <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n        <tr>\n            <th>HTTP-Code</th>\n            <td>412 - Bad Request</td>\n\
+  \        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n\
+  \        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_NOT_OWNER</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n\
+  \        </tr>\n    </table> \n    abbrechen, damit der Zugriff auf diesen Datensatz\
+  \ nur durch Berechtigte erfolgt."
+title: TI-Flow-Fachdienst - Task abrufen - abgebende Institution - Verordnung abrufen
+  - Prüfung Telematik-ID
+version: 0

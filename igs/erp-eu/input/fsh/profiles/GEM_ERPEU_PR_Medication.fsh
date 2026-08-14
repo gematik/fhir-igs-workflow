@@ -1,5 +1,5 @@
 Profile: GEM_ERPEU_PR_Medication
-Parent: EPAMedication
+Parent: TIMedicationDgMP
 Id: GEM-ERPEU-PR-Medication
 Title: "EU-Medication"
 Description: "Medication of a Prescription or Dispensation from the EU"

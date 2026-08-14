@@ -27,19 +27,26 @@ Die Operation $create wird als HTTP POST auf /Task/$create ausgeführt.
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-tiflow-diga-create-op.json %}
+			{% include OperationDefinition-TIFLOW-DIGA-create-op.json %}
 		</pre>
 	</div>
 	<div id="Request-Examples">
-		<!-- TODO: Replace with operation-specific request examples for $create. -->
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleDiGAOperationRequestParameters XML %}
+			{% fragment Parameters/OperationCreateParametersInputExample XML %}
+		</div>
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/OperationCreateParametersInputExample XML %}
 		</div>
 	</div>
 	<div id="Response-Examples">
-		<!-- TODO: Replace with operation-specific response examples for $create. -->
+		<pre>
+			POST /Task/$create HTTP/1.1
+			Host: example.org
+			Content-Type: application/fhir+xml; charset=UTF-8
+			Accept: application/fhir+xml
+		</pre>
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
+			{% fragment OperationOutcome/erp-diga-01-task-162-create XML %}
 		</div>
 	</div>
 </div>

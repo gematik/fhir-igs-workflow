@@ -1,9 +1,12 @@
-# Release Notes
+### Release Notes
 
-## Dokumenthistorie
+### Version 2.0.0
 
-| Version | Stand | Änderung |
-| --- | --- | --- |
-| 1.0.1 | 10.04.2025 | Aktualisierung der Spezifikation |
+#### Anforderungen
 
-Revision: 1175180
+Neue Anforderungen wurden hinzugefügt, bestehende geändert und nicht mehr benötigte gelöscht. Die folgenden Release Notes geben einen detaillierten Überblick über alle Anpassungen.
+
+{% include release-notes.html version="2.0.0" with_links=true %}
+
+
+<br>

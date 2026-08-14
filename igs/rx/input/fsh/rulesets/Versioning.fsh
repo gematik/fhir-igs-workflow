@@ -37,6 +37,13 @@ RuleSet: LegacyMetaProfile(name)
 
 * insert PackageMetaProfileExactly(StructureDefinition/{name})
 
+
+RuleSet: LegacyValueSet(name)
+* ^url = "https://gematik.de/fhir/erp/ValueSet/{name}"
+* insert Meta-VS
+
+
+
 RuleSet: Meta
 * insert MetaVersion(^version)
 * insert MetaStatus(^status)

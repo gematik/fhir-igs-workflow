@@ -1,6 +1,6 @@
 
 Instance: ReceiptBundleComposition
-InstanceOf: TIFlowReceiptComposition
+InstanceOf: GEM_ERP_PR_Composition
 Title: "Zusammenstellung für Quittungs-Bundle"
 Description: "Beispiel für eine Zusammenstellung (Composition) für ein E-Rezept-Quittungs-Bundle"
 Usage: #inline

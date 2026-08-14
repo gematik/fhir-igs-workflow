@@ -104,8 +104,11 @@ Usage: #inline
 * authoredOn = "2025-05-20"
 * extension[renderedDosageInstruction].valueMarkdown = "1-0-1-0 Stück"
 * extension[generatedDosageInstructionsMeta]
-  * extension[algorithmVersion].valueString = "1.0.1"
-  * extension[language].valueCode = #de-DE
+  * url = $generatedMeta
+  * extension[+].url = "algorithmVersion"
+  * extension[=].valueString = "1.0.0"
+  * extension[+].url = "language"
+  * extension[=].valueCode = #de-DE
 * dosageInstruction[+]
   * timing.repeat
     * when[+] = #MORN

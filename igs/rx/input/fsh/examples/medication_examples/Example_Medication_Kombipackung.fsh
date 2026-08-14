@@ -8,7 +8,7 @@ Usage: #example
 * contained[+] = NasenSpray
 * batch.lotNumber = "56498416854"
 * extension[isVaccine].valueBoolean = false
-* extension[drugCategory].valueCoding = EPADrugCategoryCS#00
+* extension[drugCategory].valueCoding = $epa-drug-categoy-cs#00
 * extension[drugCategory].valueCoding.display = "Arzneimittel oder in die Arzneimittelversorgung nach § 31 SGB V einbezogenes Produkt"
 * code.coding[pzn] = $cs-pzn#1746517 "CROMO-RATIOPHARM Kombipackung"
 * status = #active
@@ -18,7 +18,7 @@ Usage: #example
 * ingredient[+].itemReference = Reference(Augentropfen)
 
 Instance: Augentropfen
-InstanceOf: EPAMedicationPharmaceuticalProduct
+InstanceOf: TIMedicationDgMP
 Title: "Augentropfen-Komponente"
 Description: "Augentropfen als Teil einer Kombipackung"
 Usage: #inline
@@ -39,7 +39,7 @@ Usage: #inline
       * code = #ml
 
 Instance: NasenSpray
-InstanceOf: EPAMedicationPharmaceuticalProduct
+InstanceOf: TIMedicationDgMP
 Title: "Nasenspray-Komponente"
 Description: "Nasenspray als Teil einer Kombipackung"
 Usage: #inline

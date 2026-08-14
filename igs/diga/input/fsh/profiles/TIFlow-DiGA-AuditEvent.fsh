@@ -1,5 +1,5 @@
 Profile: TIFlowDiGAAuditEvent
-Parent: TIAuditEventRest
+Parent: TIFlowAuditEventRest
 Id: tiflow-diga-audit-event
 Title: "TIFlow DiGA AuditEvent"
 Description: "AuditEvent für die Protokollierung des Zugriffs auf DiGA-Verordnungen"

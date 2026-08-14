@@ -1,5 +1,5 @@
 Profile: GEM_ERP_PR_AuditEvent
-Parent: TIAuditEventRest
+Parent: TIFlowAuditEventRest
 Id: GEM-ERP-PR-AuditEvent
 Title: "GEM ERP PR AuditEvent"
 Description: "AuditEvent für die Protokollierung des Zugriffs auf E-Rezepte"

@@ -1,7 +1,7 @@
 Diese Seite beschreibt Anforderungen ein E-Rezept-FdV zur Nutzung der `MedicationDispense`-Query-Endpunkte.
 
 <!-- A_19345 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-339" title="E-Rezept-FdV: Abgabeinformationen abfragen - MedicationDispense abrufen" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A339" title="E-Rezept-FdV: Abgabeinformationen abfragen - MedicationDispense abrufen" version="0">
     <meta lockversion="false"/>
     <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

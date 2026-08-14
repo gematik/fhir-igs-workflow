@@ -62,6 +62,9 @@ Alias: $ex-capability-environment = https://gematik.de/fhir/erp/StructureDefinit
 // TI Common
 Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes
 
+// TI Terminologies
+Alias: $epa-drug-categoy-cs = https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs
+
 // International
 Alias: $sct = http://snomed.info/sct
 Alias: $cs-ucum = http://unitsofmeasure.org

@@ -1,0 +1,35 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 2b3c657dd7915f677f2237f92c8c71ac8b4bde6a3127c7d95febfeddad6f4024
+created: '2026-06-25T11:30:11.266066'
+date: '2026-06-25T11:30:11.266068'
+key: IG-TIFLOW-CORE-A249
+modified: '2026-06-25T11:30:11.266067'
+release_status: NEW
+source: input/pagecontent/op-accept-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$accept, wenn der StatusTask.status = \"completed\", Task.status\
+  \ = \"in-progress\" oder Task.status = \"draft\" ist, die Operation mit dem folgenden\
+  \ Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>409\
+  \ - Conflict</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n\
+  \            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n\
+  \            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details\
+  \ Code</th>\n            <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n        </tr>\n \
+  \       <tr>\n            <th>Details Text</th>\n            <td>%1</td>\n     \
+  \   </tr>\n    </table> \n    abbrechen, damit ein bereits in Abgabe befindliches\
+  \ oder beliefertes E-Rezept nicht durch eine zweite Apotheke bearbeitet werden kann.\
+  \ <br>\n    Der TI-Flow-Fachdienst MUSS in OperationOutcome die Information zum\
+  \ Status angeben: \"Task has invalid status completed\", \"Task has invalid status\
+  \ in-progress\" bzw. \"Task has invalid status draft\". <br>\n    Der TI-Flow-Fachdienst\
+  \ MUSS in OperationOutcome zusätzlich die Information \"Task is processed by requesting\
+  \ institution\" ergänzen, wenn Task.status = \"in-progress\" und die zum referenzierten\
+  \ Task in Task.owner gespeicherte Telematik-ID der abgebenden LEI mit zeta-user-info.identifier\
+  \ des Nutzers übereinstimmt."
+title: TI-Flow-Fachdienst - Task akzeptieren - Rezept bereits in Abgabe oder Bearbeitung
+version: 0

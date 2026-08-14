@@ -1,0 +1,22 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 1a462733857b205f657732e486ce152ac22e0130c134c75c8ec1b923a8d25e6a
+created: '2026-06-25T13:00:23.938583'
+date: '2026-06-25T13:00:23.938585'
+key: IG-TIFLOW-CHRG-A68
+modified: '2026-06-25T13:00:23.938584'
+release_status: NEW
+source: input/pagecontent/query-api-chargeitem-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produktgutachten
+text: Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
+  /ChargeItem das E-Rezept-Bundle vom Profil KBV_PR_ERP_Bundle ohne die Signatur zur
+  im URL-Parameter "task=..." übertragenen Task-ID identifizieren und zur ChargeItem-Ressource
+  mit dem Identifier PrescriptionID speichern und in ChargeItem.supportingInformation:prescriptionItem
+  die Referenz hinzufügen.
+title: TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - Verordnungsdatensatz
+  übernehmen
+version: 0

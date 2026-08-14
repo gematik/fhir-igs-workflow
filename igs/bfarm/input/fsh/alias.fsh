@@ -2,6 +2,9 @@
 Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $capabilitystatement-expectation = http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation
 
+//FHIR DE
+Alias: $generatedMeta = http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta
+
 // Adress-Komponenten (ISO 21090)
 Alias: $iso21090-ADXP-additionalLocator = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
 Alias: $iso21090-ADXP-houseNumber = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber

@@ -1,0 +1,21 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: c74d79a77b5d098af2abb54449a9e161712b0d1677182b5ea438904be236f068
+created: '2026-06-25T11:43:04.352067'
+date: '2026-06-25T11:43:04.352069'
+key: IG-TIFLOW-ERP-A83
+modified: '2026-06-25T11:43:04.352068'
+release_status: NEW
+source: input/pagecontent/op-activate-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate den Wert für Task.extension:eu-isRedeemableByProperties\
+  \ auf \"true\" setzen, wenn: \n    <ul>\n      <li>Task.extension:flowType = 160\
+  \ oder 200 und</li>\n      <li>MedicationRequests.medication vom Typ KBV_PR_ERP_Medication_PZN.</li>\n\
+  \    </ul>\n    Andernfalls ist der Wert der Extension auf \"false\" zu setzen."
+title: TI-Flow-Fachdienst - Task aktivieren - Bestimmung der Einlösbarkeit im EU-Ausland
+version: 0

@@ -1,5 +1,5 @@
 Profile: ERP_TPrescription_MedicationRequest
-Parent: EPAMedicationRequest
+Parent: TIMedicationRequestDgMP
 Id: erp-tprescription-medication-request
 Title: "E-T-Rezept Medication Request"
 Description: "Informationen zu einer Verordnung, die ein Arzt im E-T-Rezept angegeben hat."

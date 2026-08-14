@@ -1,5 +1,5 @@
 Instance: ExampleCapabilityStatementServerPU
-InstanceOf: TIFlowCapabilityStatement
+InstanceOf: TICapabilityStatement
 Title: "Example CapabilityStatement Server PU - RX"
 Description: "Example capability statement for productive environment with common features enabled."
 Usage: #example
@@ -17,8 +17,8 @@ Usage: #example
 * rest.mode = #server
 * implementation.description = "example"
 
-* extension[environment].valueCode = #PU
-* extension[fhirConfiguration][+].valueCode = #tiflow_2028_03
+* extension[environment].valueCode = #prod
+* extension[fhirConfiguration][+].valueCode = #tiflow_2028_0
 * extension[feature][+]
   * extension[definition].valueCanonical = Canonical(TIFlowFeatureWF160)
   * extension[value].valueBoolean = true

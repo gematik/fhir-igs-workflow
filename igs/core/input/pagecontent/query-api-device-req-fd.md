@@ -2,7 +2,7 @@
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für den Device-Query-Endpunkt.
 
 <!-- A_20744 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-375" title="TI-Flow-Fachdienst - Selbstauskunft Device-Informationen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A375" title="TI-Flow-Fachdienst - Selbstauskunft Device-Informationen" version="0">
   <meta lockversion="false"/>
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

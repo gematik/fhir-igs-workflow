@@ -1,5 +1,5 @@
 Profile: GEM_ERPEU_PR_MedicationDispense
-Parent: EPAMedicationDispense
+Parent: TIMedicationDispenseDgMP
 Id: GEM-ERPEU-PR-MedicationDispense
 Title: "Dispensation of the Prescription from the EU"
 Description: "Handles information about the redeem of the prescription and the submited medication from the EU."

@@ -1,5 +1,5 @@
 Profile: ERP_TPrescription_MedicationDispense
-Parent: MedicationDispense
+Parent: MedicationDispense //todo: TI Profil nutzen? subject müsste dann 0..1 sein
 Id: erp-tprescription-medication-dispense
 Title: "E-T-Rezept Medication Dispense"
 Description: "Abgabeinformationen einer Apotheke, die es im Rahmen der Belieferung eines T-Rezeptes an den E-Rezept-Fachdienst übermittelt hat."

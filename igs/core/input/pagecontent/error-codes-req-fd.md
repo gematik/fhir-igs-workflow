@@ -3,7 +3,7 @@ Diese Seite listet und beschreibt Anforderungen zu Fehlercodes und -konstellatio
 ### Allgemeine Anforderungen zur Fehlerbehandlung
 
 <!-- A_19514-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-340" title="TI-Flow-Fachdienst - Fehlerbehandlung - Http-Status-Codes" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A340" title="TI-Flow-Fachdienst - Fehlerbehandlung - Http-Status-Codes" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -13,7 +13,7 @@ Diese Seite listet und beschreibt Anforderungen zu Fehlercodes und -konstellatio
 
 
 <!-- A_22103 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-341" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlerdetails in OperationOutcome" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A341" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlerdetails in OperationOutcome" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
@@ -33,7 +33,7 @@ Diese Seite listet und beschreibt Anforderungen zu Fehlercodes und -konstellatio
 
 Der TI-Flow-Fachdienst muss allgemeine Anforderungen zu Fehlercodes umsetzen, um wiederkehrende Fehlerszenarien umzusetzen.
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-421" title="TI-Flow-Fachdienst - Fehlerbehandlung - HTTP Formatfehler" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A421" title="TI-Flow-Fachdienst - Fehlerbehandlung - HTTP Formatfehler" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -64,7 +64,7 @@ Der TI-Flow-Fachdienst muss allgemeine Anforderungen zu Fehlercodes umsetzen, um
       abbrechen, damit nur korrekt formattierte Requests verarbeitet werden.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-422" title="TI-Flow-Fachdienst - Fehlerbehandlung - HTTP-Timeoutfehler" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A422" title="TI-Flow-Fachdienst - Fehlerbehandlung - HTTP-Timeoutfehler" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -95,7 +95,7 @@ Der TI-Flow-Fachdienst muss allgemeine Anforderungen zu Fehlercodes umsetzen, um
       abbrechen, damit Clients über Timeouts informiert werden und entsprechend reagieren können.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-423" title="TI-Flow-Fachdienst - Fehlerbehandlung - Serverfehler" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A423" title="TI-Flow-Fachdienst - Fehlerbehandlung - Serverfehler" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -130,7 +130,7 @@ Der TI-Flow-Fachdienst muss allgemeine Anforderungen zu Fehlercodes umsetzen, um
 
 Die folgenden Anforderungen definieren spezifische Fehlercodes, die in verschiedenen Fehlerkonstellationen bei Query- und Operation-API Endpunkten verwendet werden.
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-424" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_UNKNOWN_TYPE" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A424" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_UNKNOWN_TYPE" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -161,7 +161,7 @@ Die folgenden Anforderungen definieren spezifische Fehlercodes, die in verschied
       abbrechen, damit Clients eindeutig identifizieren können, dass der angeforderte Ressourcentyp nicht bekannt ist.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-425" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_RESOURCE_ID_FAIL" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A425" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_RESOURCE_ID_FAIL" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -192,7 +192,7 @@ Die folgenden Anforderungen definieren spezifische Fehlercodes, die in verschied
       abbrechen, damit Clients erkennen können, dass eine Ressource mit der angeforderten ID nicht existiert.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-426" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_DELETED" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A426" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_DELETED" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -223,7 +223,7 @@ Die folgenden Anforderungen definieren spezifische Fehlercodes, die in verschied
       abbrechen, damit Clients erkennen können, dass eine Ressource dauerhaft gelöscht wurde.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-427" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_PARAM_UNKNOWN" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A427" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_PARAM_UNKNOWN" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -254,7 +254,7 @@ Die folgenden Anforderungen definieren spezifische Fehlercodes, die in verschied
       abbrechen, damit Clients erkennen können, dass ein verwendeter Suchparameter nicht unterstützt wird.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-428" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_BAD_SYNTAX" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A428" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_BAD_SYNTAX" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -285,7 +285,7 @@ Die folgenden Anforderungen definieren spezifische Fehlercodes, die in verschied
       abbrechen, damit Clients erkennen können, dass die verwendeten Query-Parameter syntaktisch oder semantisch ungültig sind.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-429" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_UNKNOWN_OPERATION" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A429" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_UNKNOWN_OPERATION" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

@@ -19,6 +19,6 @@ Description: "Dieses Profil definiert die Parameter für die Erstellung einer Au
   * resource 0..0
   * part 0..0
   * value[x] only Coding
-  * valueCoding from TIFlowTypesVS (required)
+  * valueCoding from GEM_ERP_VS_FlowType (required)
     * system 1..1 MS
     * code 1..1 MS

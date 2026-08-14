@@ -1,4 +1,16 @@
+### Release Notes
+
+### Version 2.0.0
+
+#### Anforderungen
+
+Neue Anforderungen wurden hinzugefügt, bestehende geändert und nicht mehr benötigte gelöscht. Die folgenden Release Notes geben einen detaillierten Überblick über alle Anpassungen.
+
+{% include release-notes.html version="2.0.0" diff_to="0.9.0" with_links=true %}
+
+
 ### Version 1.1.0 (2025-04-10)
+
 - `breaking-change` new meta.profile Version 1.1
 - `breaking-change` new dependencies:
 	- de.basisprofil.r4 1.5.2
@@ -12,5 +24,6 @@
 
 Neue Anforderungen wurden hinzugefügt, bestehende geändert und nicht mehr benötigte gelöscht. Die folgenden Release Notes geben einen detaillierten Überblick über alle Anpassungen.
 
-{% include release-notes.html version="1.1.0" with_links=true %}
+{% include release-notes.html version="0.9.0" with_links=false %}
 
+<br>

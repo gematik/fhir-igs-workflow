@@ -144,6 +144,13 @@ Usage: #definition
 * group[=].element[42].code = #TIFLOW_TIMEOUT
 * group[=].element[42].target[0].code = #79275
 * group[=].element[42].target[0].equivalence = #equivalent
+* group[=].element[43].code = #TIFLOW_BLOCKED_FEATURE
+* group[=].element[43].target[0].code = #79268
+* group[=].element[43].target[0].equivalence = #equivalent
+* group[=].element[44].code = #TIFLOW_BLOCKED_FLOWTYPE
+* group[=].element[44].target[0].code = #79270
+* group[=].element[44].target[0].equivalence = #equivalent
+
 
 
 

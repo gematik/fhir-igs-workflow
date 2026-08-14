@@ -1,12 +1,18 @@
 Profile: TIFlowDiGATask
-Parent: TIFlowTask
+Parent: TIFlowOrderTask
 Id: tiflow-diga-task
 Title: "TIFlow - DiGA - Task"
 Description: "Task für die Verwaltung des E-Rezept-Workflows für digitale Gesundheitsanwendungen"
 * insert Meta
 
-* extension contains TIFlowAcceptDate named acceptDate 0..1 MS
-and TIFlowExpiryDate named expiryDate 0..1 MS
+* extension ^slicing.discriminator.type = #value
+* extension ^slicing.discriminator.path = "url"
+* extension ^slicing.description = "Erweiterungen für die Aufgabe, die durch url unterschieden werden."
+* extension ^slicing.rules = #closed
+* extension ^slicing.ordered = false
+
+* extension contains GEM_ERP_EX_AcceptDate named acceptDate 0..1 MS
+and GEM_ERP_EX_ExpiryDate named expiryDate 0..1 MS
 
 * for.identifier only IdentifierKvid10
 
