@@ -1,0 +1,69 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/Task/162.000.000.000.000.01> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "162.000.000.000.000.01"] ;
+  fhir:Resource.meta [
+     fhir:Element.id [ fhir:value "Task-erp-diga-01-task-162-create" ] ;
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-task" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-task>
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType" ] ;
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType" ] ;
+       fhir:Coding.code [ fhir:value "162" ] ;
+       fhir:Coding.display [ fhir:value "Muster 16 (Digitale Gesundheitsanwendungen)" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AcceptDate" ] ;
+     fhir:Extension.valueDate [ fhir:value "2028-10-09"^^xsd:date ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_ExpiryDate" ] ;
+     fhir:Extension.valueDate [ fhir:value "2028-10-09"^^xsd:date ]
+  ] ;
+  fhir:Task.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+     fhir:Identifier.value [ fhir:value "162.000.000.000.000.01" ]
+  ] ;
+  fhir:Task.status [ fhir:value "draft"] ;
+  fhir:Task.intent [ fhir:value "order"] ;
+  fhir:Task.for [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "X123456789" ]
+     ]
+  ] ;
+  fhir:Task.authoredOn [ fhir:value "2028-10-01T15:29:00+00:00"^^xsd:dateTime] ;
+  fhir:Task.lastModified [ fhir:value "2028-10-01T15:29:00.434+00:00"^^xsd:dateTime] ;
+  fhir:Task.performerType [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OrganizationType" ] ;
+       fhir:Coding.code [ fhir:value "urn:oid:1.2.276.0.76.4.59" ] ;
+       fhir:Coding.display [ fhir:value "Kostenträger" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Kostenträger" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/Task/162.000.000.000.000.01.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
