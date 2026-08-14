@@ -25,9 +25,10 @@ Die Operation $activate wird als HTTP POST auf /Task/&#60;id&#62;/$activate ausg
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-TIFLOW-DIGA-activate-op.json %}
+			{% include OperationDefinition-tiflow-diga-activate-op.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleOperationActivateParametersInput JSON %}
@@ -36,6 +37,8 @@ Die Operation $activate wird als HTTP POST auf /Task/&#60;id&#62;/$activate ausg
 			{% fragment Parameters/ExampleOperationActivateParametersInput XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleOperationActivateInvalidRoleError JSON %}
@@ -44,6 +47,7 @@ Die Operation $activate wird als HTTP POST auf /Task/&#60;id&#62;/$activate ausg
 			{% fragment OperationOutcome/ExampleOperationActivateInvalidRoleError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 

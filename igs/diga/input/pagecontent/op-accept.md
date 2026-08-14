@@ -23,15 +23,14 @@ Die Operation $accept wird als HTTP POST auf /Task/&#60;id&#62;/$accept ausgefü
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-TIFLOW-DIGA-accept-op.json %}
+			{% include OperationDefinition-tiflow-diga-accept-op.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Response-Examples">
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationAcceptRoleError JSON %}
-		</div>
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleOperationAcceptRoleError XML %}
 		</div>
 	</div>
+-->
 </div>

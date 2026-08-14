@@ -175,20 +175,6 @@ Usage: #definition
 * group[=].element[4].target[0].code = #79243
 * group[=].element[4].target[0].equivalence = #equivalent
 
-// TIFLOW_XBORDER_CS_OperationOutcomeDetails.fsh
-* group[+].source = "https://gematik.de/fhir/erp/CodeSystem/tiflow-xborder-operation-outcome-details-cs"
-* group[=].target = "ti-flow-telemetriedaten-statuscodes"
-
-* group[=].element[0].code = #TIFLOW_XBORDER_COUNTRY_CODE_INVALID
-* group[=].element[0].target[0].code = #79244
-* group[=].element[0].target[0].equivalence = #equivalent
-* group[=].element[1].code = #TIFLOW_XBORDER_NOT_ACTIVATED
-* group[=].element[1].target[0].code = #79245
-* group[=].element[1].target[0].equivalence = #equivalent
-* group[=].element[2].code = #TIFLOW_XBORDER_NO_PRESCRIPTIONS_FOUND
-* group[=].element[2].target[0].code = #79246
-* group[=].element[2].target[0].equivalence = #equivalent
-
 // TIFLOW_EREZEPT_CS_OperationOutcomeDetails.fsh
 * group[+].source = "https://gematik.de/fhir/erp/CodeSystem/tiflow-erezept-operation-outcome-details-cs"
 * group[=].target = "ti-flow-telemetriedaten-statuscodes"
@@ -217,6 +203,15 @@ Usage: #definition
 * group[=].element[7].code = #TIFLOW_EREZEPT_PZN_INVALID
 * group[=].element[7].target[0].code = #79254
 * group[=].element[7].target[0].equivalence = #equivalent
+* group[=].element[8].code = #TIFLOW_EREZEPT_COUNTRY_CODE_INVALID
+* group[=].element[8].target[0].code = #79244
+* group[=].element[8].target[0].equivalence = #equivalent
+* group[=].element[9].code = #TIFLOW_EREZEPT_NOT_ACTIVATED
+* group[=].element[9].target[0].code = #79245
+* group[=].element[9].target[0].equivalence = #equivalent
+* group[=].element[10].code = #TIFLOW_EREZEPT_NO_PRESCRIPTIONS_FOUND
+* group[=].element[10].target[0].code = #79246
+* group[=].element[10].target[0].equivalence = #equivalent
 
 // Non OperationOutcome JSON Fehlercodes
 * group[+].source = "json-fehlercodes"

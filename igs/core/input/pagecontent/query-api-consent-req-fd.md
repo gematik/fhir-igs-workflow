@@ -345,5 +345,5 @@ Es bestehen anwendungsfall-spezifische Anforderungen, welche Inhalte beim Widerr
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   </actor>
-  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Ressource löschen, bei der Consent.patient.identifier dem zeta-user-info.identifier des Nutzers (KVNR) sowie Consent.category.coding.code dem in ?category übermittelten Wert entspricht.
+  Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt /Consent die Consent-Ressource löschen, bei der Consent.patient.identifier dem zeta-user-info.identifier des Nutzers (KVNR) sowie Consent.category.coding.code dem in ?category übermittelten Wert entspricht.
 </requirement>

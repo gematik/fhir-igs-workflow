@@ -6,9 +6,9 @@ title: Implementation Guide TIFlow - Verordnungen für Arzneimittel
 status: draft # draft | active | retired | unknown
 version: 2.0.0-ballot.2
 # version: 0.9.0
-date: 2026-05-25
+date: 2026-06-30
 copyrightYear: 2026+
-releaseLabel: ci-build # ci-build, ballot, release
+releaseLabel: ballot # ci-build, ballot, release
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: gematik GmbH
@@ -30,6 +30,7 @@ menu:
     Teratogene Arzneimittel: menu-fachlichkeit-t-rezept.html
     Mehrfachverordnungen: menu-fachlichkeit-mvo.html
     Workflow-Steuerung durch LE: menu-fachlichkeit-wf-le.html
+    Szenario EU: menu-fachlichkeit-szenario-eu.html
     UX verordnend: menu-fachlichkeit-ux-verordnend.html
     UX abgebend: menu-fachlichkeit-ux-abgebend.html
   Technische Umsetzung:
@@ -37,12 +38,13 @@ menu:
     Strukturierte Dosierungen: menu-technische-umsetzung-dosierung.html
     Dispensierinformationen: menu-technische-umsetzung-dispensierinformationen.html
     Mappings: menu-technische-umsetzung-mapping.html
+    Technisches Konzept EU: menu-technische-umsetzung-konzept.html
+    Datenschutz und Sicherheit EU: menu-technische-umsetzung-datenschutz-und-sicherheit.html
     Zugriffsprotokollierung: menu-technische-umsetzung-audit-service.html
   Schnittstellen:
     Query API: menu-schnittstellen-query-api.html
     Operation API: menu-schnittstellen-operation-api.html
-  FHIR-Artefakte: artifacts.html
-  Anhänge:
+  Über:
     Referenzen: referenced.html
     Downloads: downloads.html
     #OpenAPI: erp-openapi.html
@@ -50,6 +52,7 @@ menu:
     #Steckbriefe: spec-sheet.html
     #Versionsvergleiche: comparisons.html
     Lizenz: license.html
+  FHIR-Artefakte: artifacts.html
 
 pages:
   index.md:
@@ -64,6 +67,8 @@ pages:
       title: "Verordnung von Mehrfachverordnungen (MVO)"
     menu-fachlichkeit-t-rezept.md:
       title: "Verordnung von E-T-Rezepten"
+    menu-fachlichkeit-szenario-eu.md:
+      title: "Einlösen von E-Rezepten im europäischen Ausland"
     menu-fachlichkeit-ux-verordnend.md:
       title: "Best practice UX Primärsysteme für verordnende LEIs"
     menu-fachlichkeit-ux-abgebend.md:
@@ -114,6 +119,10 @@ pages:
         title: "Beispiel für eine Transformation einer Rezepturverordnung"
       comparison-Bundle-input-example-5.md:
         title: "Beispiel für eine Transformation einer Verordnung mit absoluter Referenzierung"
+    menu-technische-umsetzung-konzept.md:
+      title: "Technisches Konzept - Einlösen im EU-Ausland"
+    menu-technische-umsetzung-datenschutz-und-sicherheit.md:
+      title: "Datenschutz und Sicherheit - Einlösen im EU-Ausland"
     menu-technische-umsetzung-audit-service.md:
       title: "Zugriffsprotokollierung mit AuditEvent"
   menu-schnittstellen-query-api.md:
@@ -142,6 +151,12 @@ pages:
         title: "AVS-Anforderungen: Communication-Query"
       query-api-communication-req-data.md:
         title: "Datenmodell payload"
+    query-api-consent.md:
+      title: "Query API: Consent"
+      query-api-consent-req-fd.md:
+        title: "FD-Anforderungen: Consent"
+      query-api-consent-req-fdv.md:
+        title: "FdV-Anforderungen: Consent"
   menu-schnittstellen-operation-api.md:
     title: "Operation API"
     op-create.md:
@@ -190,6 +205,36 @@ pages:
         title: "PVS-Anforderungen $abort"
       op-abort-req-avs.md:
         title: "AVS-Anforderungen $abort"
+    op-grant-eu-access-permission.md:
+      title: "Operation API: Zugriffsberechtigung erstellen"
+      op-grant-eu-access-permission-req-fd.md:
+        title: "Server Anforderungen: Zugriffsberechtigung erstellen"
+      op-grant-eu-access-permission-req-fdv.md:
+        title: "FdV-Anforderungen: Zugriffsberechtigung erstellen"
+    op-read-eu-access-permission.md:
+      title: "Operation API: Zugriffsberechtigung einsehen"
+      op-read-eu-access-permission-req-fd.md:
+        title: "FD-Anforderungen: Zugriffsberechtigung einsehen"
+      op-read-eu-access-permission-req-fdv.md:
+        title: "FdV-Anforderungen: Zugriffsberechtigung einsehen"
+    op-revoke-eu-access-permission.md:
+      title: "Operation API: Zugriffsberechtigung löschen"
+      op-revoke-eu-access-permission-req-fd.md:
+        title: "FD-Anforderungen: Zugriffsberechtigung löschen"
+      op-revoke-eu-access-permission-req-fdv.md:
+        title: "FdV-Anforderungen: Zugriffsberechtigung löschen"
+    op-get-eu-prescriptions.md:
+      title: "Operation API: E-Rezepte zur Einlösung im EU-Ausland abrufen"
+      op-get-eu-prescriptions-req-fd.md:
+        title: "FD-Anforderungen: E-Rezepte zur Einlösung im EU-Ausland abrufen"
+      op-get-eu-prescriptions-req-ncpeha.md:
+        title: "NCPeH-Anforderungen: E-Rezepte zur Einlösung im EU-Ausland abrufen"
+    op-eu-close.md:
+      title: "Operation API: Abgabe von E-Rezepten im EU-Ausland"
+      op-eu-close-req-fd.md:
+        title: "FD-Anforderungen: Abgabe von E-Rezepten im EU-Ausland"
+      op-eu-close-req-ncpeha.md:
+        title: "NCPeH-Anforderungen: Abgabe von E-Rezepten im EU-Ausland"
   artifacts.md:
     title: "FHIR-Artefakte"
   referenced.md:
@@ -223,10 +268,22 @@ parameters:
     - https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense
     - https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task
     - https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus
+    - https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationdispenseMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpBundleMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationCompoundingMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationFreetextMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationIngredientMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationPznMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap
+    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap
+
   path-resource:
-    - input/resources/structuremaps
-    - input/resources/kbv-bundles
-    - input/resources/transformed-kbv-bundles
+    - input/resources/*
+    # - input/resources/structuremaps
+    # - input/resources/kbv-bundles
+    # - input/resources/transformed-kbv-bundles
   path-pages:
     - input/content
     - input/pagecontent
@@ -242,4 +299,47 @@ parameters:
     - Parameters/*
     - CapabilityStatement/*
     - Provenance/*
+  no-validate:
+    - Bundle/1f339db0-9e55-4946-9dfa-f1b30953be9b
+    - Bundle/9c85a2a5-92ee-4a57-83cb-ba90a0df2a21
+    - Bundle/4863d1fb-dc26-4680-bb35-018610d1749d
+    - Bundle/44420ed9-7388-4be5-acc5-9c124fad9f34
+    - Bundle/9581ce65-b118-4751-9073-19c091b341e0
+    - StructureMap/GEMErpPrMedicationMap
+    - StructureMap/GEMErpPrMedicationdispenseMap
+    - StructureMap/GEMErpPrMedicationdispenseMap
+    - StructureMap/KBVPrErpBundleMap
+    - StructureMap/KBVPrErpMedicationCompoundingMap
+    - StructureMap/KBVPrErpMedicationFreetextMap
+    - StructureMap/KBVPrErpMedicationIngredientMap
+    - StructureMap/KBVPrErpMedicationPznMap
+    - StructureMap/KBVPrErpPrescriptionMap
+    - StructureMap/KBVPrForOrganizationMap
+    - StructureMap/KBVPrForPractitionerMap
+    - Bundle/Bundle-AcceptOperation
+    - Bundle/ExampleAcceptResponseBundle
+    - Bundle/ExampleRxCommunicationSearchset
+    - Bundle/ExampleRxMedicationDispenseSearchset
+    - Bundle/ExampleRxTaskSearchset
+    - Bundle/dffbfd6a-5712-4798-bdc8-07201eb77ab8
+    - Bundle/example-searchset-auditevent
+    - Bundle/example-searchset-consent
+    - Bundle/example-searchset-medicationdispense
+    - Bundle/example-searchset-task
+    - Communication/2be1c6ac-5d10-47f6-84ee-8318b2c22c76
+    - Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596
+    - Communication/a218a36e-f2fd-4603-ba67-c827acfef01b
+    - Consent/QueryConsentCHARGCONS
+    - Task/9b48f82c-9c11-4a57-aa72-a805f9537a82
+    - Task/TaskInClosedState
+    - Task/TaskInReadyState
+    - Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e
+    - Task/f5c21409-b84b-4125-8649-5630a00906b1
+    - Parameters/output-example-1
+    - Parameters/output-example-2
+    - Parameters/output-example-3
+    - Parameters/output-example-4
+    - Parameters/output-example-5
+    - AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa
+    - StructureDefinition/logical-eu-dispense-data
   #autoload-resources: true

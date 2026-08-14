@@ -28,6 +28,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 			{% include OperationDefinition-tiflow-rx-abort-op.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
 		<div data-name="Beispiel - $abort Request mit AccessCode Header und Secret als URL-Parameter" data-type="HTTP" data-render="ig-Fragment">
 			<pre>
@@ -45,6 +46,8 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 			</pre>
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
 		<div data-name="Fehler - Response ohne Rechte application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleRxAbortOperationOutcomeError JSON %}
@@ -53,6 +56,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 			{% fragment OperationOutcome/ExampleRxAbortOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 ### Hinweise

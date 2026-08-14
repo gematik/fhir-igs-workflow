@@ -40,7 +40,7 @@ and rxDispensation 1..*
     * part 0..0
   * part[prescriptionId]
     * ^short = "Rezept-ID der Verordnung"
-    * ^comment = "Das Format der Rezept ID wird in [gemSpec_DM_eRp#E-Rezept-ID](https://gemspec.gematik.de/docs/gemSpec/gemSpec_DM_eRp/latest/#2.2) beschrieben und hat das Format aaa.bbb.bbb.bbb.bbb.cc"
+    * ^comment = "Das Format der Rezept ID wird aus der Task-Ressource entnommen und hat das Format aaa.bbb.bbb.bbb.bbb.cc"
     * name MS
     * name = "prescriptionId"  (exactly)
     * value[x] 1..1 MS

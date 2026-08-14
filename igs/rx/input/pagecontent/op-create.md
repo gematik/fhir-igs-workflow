@@ -29,6 +29,7 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
       {% include OperationDefinition-tiflow-rx-create-op.json %}
     </pre>
   </div>
+<!--
   <div id="Request-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
       {% fragment Parameters/ExampleRxCreateOperationRequestParameters JSON %}
@@ -37,6 +38,8 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
       {% fragment Parameters/ExampleRxCreateOperationRequestParameters XML %}
     </div>
   </div>
+-->
+<!--
   <div id="Response-Examples">
     <div data-name="Erfolg application/fhir+json" data-type="JSON" data-render="ig-Fragment">
       {% fragment Task/TaskInCreatedState JSON %}
@@ -51,6 +54,7 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
       {% fragment OperationOutcome/ExampleRxCreateOperationOutcomeError XML %}
     </div>
   </div>
+-->
 </div>
 
 ### Hinweise

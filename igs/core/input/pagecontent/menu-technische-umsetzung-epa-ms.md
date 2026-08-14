@@ -101,7 +101,7 @@ Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermitt
 	<figcaption><strong>Abbildung: </strong>Transport durch die TI</figcaption>
 </figure>
 
-Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Bearer-Token. Für die Signatur wird das AUT-Zertifikat der E-Rezept-VAU verwendet. Siehe [gemSpec_Krypt]#Authentisierung des E-Rezept-FD als ePA-Client und [gemSpec_Aktensystem_ePAfueralle]#3.16.3 Anforderungen an den Authorization Service für die Authentisierung des TI-Flow-Fachdienstes.
+Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Bearer-Token. Für die Signatur wird das AUT-Zertifikat der E-Rezept-VAU verwendet. Siehe [gemSpec_Krypt]#Authentisierung des E-Rezept-FD als ePA-Client und [gemSpec_Aktensystem_ePAfueralle]#Anforderungen an den Authorization Service für die Authentisierung über JWT Bearer Token.
 
 <!-- A_26066 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A378" title="TI-Flow-Fachdienst - ePA - JWT Bearer-Token Claims" version="0">
@@ -138,8 +138,10 @@ Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Beare
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS zur Lokalisierung der ePA-Aktensysteme die durch die im DNS für die übergreifende ePA-Domäne epa4all.de eingestellten Informationen aufrufen.
+     Der TI-Flow-Fachdienst MUSS in der Lage sein, alle Instanzen der ePA-Aktensysteme unterhalb der Domäne `epa4all.de` zur Lokalisierung zu adressieren.
 </requirement>
+
+*Hinweis:* Die Adressierung kann bspw. durch automatische Auflösung (z. B. DNS-basiert) oder durch Deployment-Konfiguration erfolgen.
 
 Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktensystem - Registrierung an übergreifender ePA-Domäne". Die Informationen zu jedem ePA-Aktensystem enthalten den Endpunkt für den Authorization Service [I_Authorization_Service], Medication Service [I_Medication_Service] und Information Service [I_Information_Service].
 
@@ -397,7 +399,7 @@ https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
 
 #### Lokalisierung
 
-Der TI-Flow-Fachdienst benötigt für das Übermitteln von Informationen zu Verordnungsdaten und Dispensierinformationen die Information, bei welchen ePA-Aktensystem das Aktenkonto des Versicherten verwaltet wird. Siehe Kapitel 6.10.3 ePA-Aktensystem für KVNR ermitteln.
+Der TI-Flow-Fachdienst benötigt für das Übermitteln von Informationen zu Verordnungsdaten und Dispensierinformationen die Information, bei welchen ePA-Aktensystem das Aktenkonto des Versicherten verwaltet wird. Siehe Kapitel "ePA-Aktensystem für KVNR ermitteln".
 
 <figure>
 	<div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">

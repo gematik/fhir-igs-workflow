@@ -11,7 +11,7 @@ Description: "Dieses Profil definiert die Parameter für die Erstellung einer Au
 * parameter ^slicing.discriminator.path = "name"
 * parameter ^slicing.rules = #closed
 
-* parameter contains return 1..1
+* parameter contains return 1..1 MS
 
 * parameter[return]
   * name MS

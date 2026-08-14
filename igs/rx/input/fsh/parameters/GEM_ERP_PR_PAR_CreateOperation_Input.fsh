@@ -11,7 +11,7 @@ Description: "Dieses Profil definiert die Parameter für die Erstellung einer Au
 * parameter ^slicing.discriminator.path = "name"
 * parameter ^slicing.rules = #closed
 
-* parameter contains workflowType 1..1
+* parameter contains workflowType 1..1 MS
 
 * parameter[workflowType]
   * name MS

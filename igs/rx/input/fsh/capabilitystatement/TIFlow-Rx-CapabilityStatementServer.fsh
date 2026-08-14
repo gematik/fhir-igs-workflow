@@ -23,6 +23,11 @@ Description: "CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Wor
 * insert CommunicationInteraction(#SHALL)
 * insert MedicationDispenseInteraction(#SHALL)
 * insert SubscriptionInteraction(#SHALL)
+* insert ConsentInteraction(#SHALL)
+* insert GrantEUAccessPermissionInteraction(#SHALL)
+* insert ReadEUAccessPermissionInteraction(#SHALL)
+* insert RevokeEUAccessPermissionInteraction(#SHALL)
+* insert GetEUPrescriptionsInteraction(#SHALL)
 
 RuleSet: TaskInteraction(expectation)
 * insert CapSupportResource(Task, #SHALL)
@@ -32,7 +37,11 @@ RuleSet: TaskInteraction(expectation)
 * insert TaskSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
 * insert TaskReadInteractionStatusCodes
+* insert CapResourceInteraction(#patch, #SHALL)
 
+* insert CapSupportResourceSearchParam(_id, http://hl7.org/fhir/SearchParameter/Resource-id, #token, {expectation}, "Task.id - Unterstützt die Suche nach der Task-ID")
+* insert CapSupportResourceSearchParamNoDefinition(prescription-id, #token, {expectation}, "Task.identifier - Unterstützt die Suche nach der E-Rezept-ID")
+* insert CapSupportResourceSearchParamNoDefinition(access-code, #token, {expectation}, "Task.identifier - Unterstützt die Suche nach dem Zugriffscode")
 * insert CapSupportResourceSearchParam(authored-on, http://hl7.org/fhir/SearchParameter/Task-authored-on, #date, {expectation}, "Task.authoredOn - Unterstützt die Suche nach dem Erstellungsdatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(status, http://hl7.org/fhir/SearchParameter/Task-status, #token, {expectation}, "Task.status - Unterstützt die Suche nach dem Status einer Task")
 * insert CapSupportResourceSearchParamNoDefinition(expiry-date, #date, {expectation}, "Task.extension:expiryDate.valueDate - Unterstützt die Suche nach dem Verfallsdatum")
@@ -42,20 +51,22 @@ RuleSet: TaskInteraction(expectation)
 * insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50")
 * insert CapSupportResourceSearchParamNoDefinition(_offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
 
-* insert CapSupportResourceOperation(create, TIFlow-RX-OP-Create, {expectation}, "Creates a Task for a specific flow type")
+* insert CapSupportResourceOperation(create, TIFlowRXOPCreate, {expectation}, "Creates a Task for a specific flow type")
 * insert TaskCreateOperationStatusCodes
-* insert CapSupportResourceOperation(activate, TIFlow-RX-OP-Activate, {expectation}, "Activates the created Task using the signed ePrescription bundle")
+* insert CapSupportResourceOperation(activate, TIFlowRXOPActivate, {expectation}, "Activates the created Task using the signed ePrescription bundle")
 * insert TaskActivateOperationStatusCodes
-* insert CapSupportResourceOperation(accept, TIFlow-RX-OP-Accept, {expectation}, "Pharmacy claims an ePrescription and sets Task status to in-progress")
+* insert CapSupportResourceOperation(accept, TIFlowRXOPAccept, {expectation}, "Pharmacy claims an ePrescription and sets Task status to in-progress")
 * insert TaskAcceptOperationStatusCodes
-* insert CapSupportResourceOperation(reject, TIFlow-RX-OP-Reject, {expectation}, "Rejects dispensing and resets Task status to active")
+* insert CapSupportResourceOperation(reject, TIFlowRXOPReject, {expectation}, "Rejects dispensing and resets Task status to active")
 * insert TaskRejectOperationStatusCodes
-* insert CapSupportResourceOperation(close, TIFlow-RX-OP-Close, {expectation}, "Finishes the ePrescription workflow and sets Task status to completed")
+* insert CapSupportResourceOperation(close, TIFlowRXOPClose, {expectation}, "Finishes the ePrescription workflow and sets Task status to completed")
 * insert TaskCloseOperationStatusCodes
-* insert CapSupportResourceOperation(abort, TIFlow-RX-OP-Abort, {expectation}, "Aborts the ePrescription workflow and deletes Task related data")
+* insert CapSupportResourceOperation(abort, TIFlowRXOPAbort, {expectation}, "Aborts the ePrescription workflow and deletes Task related data")
 * insert TaskAbortOperationStatusCodes
-* insert CapSupportResourceOperation(dispense, TIFlow-RX-OP-Dispense, {expectation}, "Documents medication dispensation without changing Task status")
+* insert CapSupportResourceOperation(dispense, TIFlowRXOPDispense, {expectation}, "Documents medication dispensation without changing Task status")
 * insert TaskDispenseOperationStatusCodes
+* insert CapSupportResourceOperation(eu-close, EUCloseOperation, {expectation}, "Finishes the EU ePrescription workflow and creates a signed receipt bundle")
+* insert EuCloseOperationStatusCodes
 
 RuleSet: MedicationDispenseInteraction(expectation)
 * insert CapSupportResource(MedicationDispense, #SHALL)
@@ -68,7 +79,7 @@ RuleSet: MedicationDispenseInteraction(expectation)
 
 * insert CapSupportResourceSearchParam(whenhandedover, http://hl7.org/fhir/SearchParameter/MedicationDispense-whenhandedover, #date, {expectation}, "MedicationDispense.whenHandedOver - Unterstützt die Suche nach dem Abgabedatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(whenprepared, http://hl7.org/fhir/SearchParameter/MedicationDispense-whenprepared, #date, {expectation}, "MedicationDispense.whenPrepared - Unterstützt die Suche nach dem Herstellungsdatum")
-* insert CapSupportResourceSearchParam(performer, http://hl7.org/fhir/SearchParameter/MedicationDispense-performer, #string, {expectation}, "MedicationDispense.performer.actor.identifier.value - Unterstützt die Suche einer MedicationDispense zu einer Abgebenden LEI.")
+* insert CapSupportResourceSearchParam(performer, http://hl7.org/fhir/SearchParameter/MedicationDispense-performer, #reference, {expectation}, "MedicationDispense.performer.actor.identifier.value - Unterstützt die Suche einer MedicationDispense zu einer Abgebenden LEI.")
 * insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Unterstützt das Sortieren nach unterstützten MedicationDispense-Suchkriterien")
 * insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50")
 * insert CapSupportResourceSearchParamNoDefinition(_offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
@@ -89,8 +100,8 @@ RuleSet: CommunicationInteraction(expectation)
 
 * insert CapSupportResourceSearchParam(sent, http://hl7.org/fhir/SearchParameter/Communication-sent, #date, {expectation}, "Communication.sent - Unterstützt die Suche nach dem Sendedatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(received, http://hl7.org/fhir/SearchParameter/Communication-received, #date, {expectation}, "Communication.received - Unterstützt die Suche nach dem Empfangsdatum")
-* insert CapSupportResourceSearchParam(recipient, http://hl7.org/fhir/SearchParameter/Communication-recipient, #string, {expectation}, "Communication.recipient.identifier.value - Unterstützt die Suche nach dem Empfänger einer Nachricht")
-* insert CapSupportResourceSearchParam(sender, http://hl7.org/fhir/SearchParameter/Communication-sender, #string, {expectation}, "Communication.sender.identifier.value - Unterstützt die Suche nach dem Absender einer Nachricht")
+* insert CapSupportResourceSearchParam(recipient, http://hl7.org/fhir/SearchParameter/Communication-recipient, #reference, {expectation}, "Communication.recipient.identifier.value - Unterstützt die Suche nach dem Empfänger einer Nachricht")
+* insert CapSupportResourceSearchParam(sender, http://hl7.org/fhir/SearchParameter/Communication-sender, #reference, {expectation}, "Communication.sender.identifier.value - Unterstützt die Suche nach dem Absender einer Nachricht")
 * insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Unterstützt das Sortieren nach unterstützten Communication-Suchkriterien")
 * insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50")
 * insert CapSupportResourceSearchParamNoDefinition(_offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
@@ -101,3 +112,31 @@ RuleSet: SubscriptionInteraction(expectation)
 * insert SubscriptionSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#create, {expectation})
 * insert SubscriptionCreateInteractionStatusCodes
+
+RuleSet: ConsentInteraction(expectation)
+* insert CapSupportResource(Consent, {expectation})
+
+* insert CapResourceInteraction(#search-type, #SHALL)
+* insert ConsentSearchTypeInteractionStatusCodes
+* insert CapResourceInteraction(#create, #SHALL)
+* insert ConsentCreateInteractionStatusCodes
+* insert CapResourceInteraction(#delete, #SHALL)
+* insert ConsentDeleteInteractionStatusCodes
+
+* insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")
+
+RuleSet: GrantEUAccessPermissionInteraction(expectation)
+* insert CapSupportSystemOperation(grant-eu-access-permission, GrantEUAccessPermission, {expectation}, "Registers access code and country for EU prescription access")
+* insert GrantEUAccessPermissionOperationStatusCodes
+
+RuleSet: ReadEUAccessPermissionInteraction(expectation)
+* insert CapSupportSystemOperation(read-eu-access-permission, ReadEUAccessPermission, {expectation}, "Reads the currently registered EU access code")
+* insert ReadEUAccessPermissionOperationStatusCodes
+
+RuleSet: RevokeEUAccessPermissionInteraction(expectation)
+* insert CapSupportSystemOperation(revoke-eu-access-permission, RevokeEUAccessPermission, {expectation}, "Revokes the currently registered EU access code")
+* insert RevokeEUAccessPermissionOperationStatusCodes
+
+RuleSet: GetEUPrescriptionsInteraction(expectation)
+* insert CapSupportSystemOperation(get-eu-prescriptions, GETPrescriptionEU, {expectation}, "Returns prescription information for EU ePrescription workflows")
+* insert GetEUPrescriptionsOperationStatusCodes

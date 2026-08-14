@@ -23,14 +23,17 @@ Die Operation $close wird als HTTP POST auf /Task/&#60;id&#62;/$close ausgeführ
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-TIFLOW-DIGA-close-op.json %}
+			{% include OperationDefinition-tiflow-diga-close-op.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleCloseInputParametersDiGA XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
 		<div data-name="Fehler 400 - Beispiel für Close-Operation Fehlerantwort application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleOperationCloseProfileError JSON %}
@@ -39,6 +42,7 @@ Die Operation $close wird als HTTP POST auf /Task/&#60;id&#62;/$close ausgeführ
 			{% fragment OperationOutcome/ExampleOperationCloseProfileError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 

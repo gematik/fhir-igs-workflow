@@ -1,6 +1,5 @@
-
 Instance: AuditEventSample
-InstanceOf: GEM_ERP_PR_AuditEvent
+InstanceOf: TIFlowAuditEventRest
 Title: "AuditEvent-Eintrag vom TI-Flow-Fachdienst"
 Description: "Beispiel für einen AuditEvent-Eintrag, der vom TI-Flow-Fachdienst beim Zugriff auf Patientendaten generiert wird"
 Usage: #example
@@ -16,17 +15,24 @@ Usage: #example
 * action = #C
 * insert DateTimeStamp(recorded)
 * outcome = #0
-* agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
-* agent[=].type.coding[=].code = #humanuser
-* agent[=].type.coding[=].display = "Human User"
+
+* agent[+].type.coding[+].system = "http://dicom.nema.org/resources/ontology/DCM|01"
+* agent[=].type.coding[=].code = #110150
+* agent[=].type.coding[=].display = "Application"
 * agent[=].who.identifier.system = $identifier-telematik-id
 * agent[=].who.identifier.value = "1-SMC-B-Testkarte-883110000095957"
 * agent[=].name = "Praxis Dr. Müller"
 * agent[=].requestor = false
+
 * source.site = "TI-Flow-Fachdienst"
 * source.observer = Reference(ReceiptBundleDevice)
-* entity[+].what.reference = "https://erp.app.ti-dienste.de/Task/160.123.456.789.123.58"
+
+* entity[+].type.system = "http://terminology.hl7.org/CodeSystem/audit-entity-type"
+* entity[=].type.code = #Patient
+* entity[=].what.identifier.system = "http://fhir.de/sid/gkv/kvid-10"
+* entity[=].what.identifier.value = "X234567890"
+
+* entity[+].type.system = "http://terminology.hl7.org/CodeSystem/audit-entity-type"
+* entity[=].type.code = #Task
 * entity[=].what.identifier.system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
 * entity[=].what.identifier.value = "160.123.456.789.123.58"
-* entity[=].name = "X234567890"
-* entity[=].description = "160.123.456.789.123.58"

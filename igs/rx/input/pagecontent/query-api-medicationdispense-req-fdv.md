@@ -16,7 +16,7 @@ Mit dem Abschluss des Workflows ist Task.status=complete. Ein Ändern der Abgabe
 
 Hinweis: Die Information, dass eine Abgabeinformation eingestellt wurde (Task.status = "in-progress" und Task.extension:lastMedicationDispense existiert) kann dafür genutzt werden den Status des E-Rezepts als Abgegeben darzustellen.
 
-Falls auf dem TI-Flow-Fachdienst Informationen zur Abgabe durch die abgebende LEI hinterlegt wurden, liefert der Response ein MedicationDispense Ressource. Zur Spezifikation der MedicationDispense Ressource siehe [gemSpec_DM_eRp]. Diese beinhaltet u.a. die folgenden fachlichen Informationen zum abgegebenen Arzneimittel:
+Falls auf dem TI-Flow-Fachdienst Informationen zur Abgabe durch die abgebende LEI hinterlegt wurden, liefert der Response eine MedicationDispense Ressource. Diese beinhaltet u.a. die folgenden fachlichen Informationen zum abgegebenen Arzneimittel:
 - Pharmazentralnummer
 - Beschreibung des Arzneimittels
 Der Abruf aller MedicationDispense-Objekte zu einer Verordnung erfolgt über die Abfrage GET /MedicationDispense?identifer=&lt;PrescriptionID&gt;. Dieser Aufruf liefert ein FHIR-Bundle von MedicationDispense-Objekten. Enthalten sind alle (ein oder mehrere) MedicationDispense-Objekte die für die Verordnung mit PrescriptionID eingestellt wurden.

@@ -1,4 +1,4 @@
-<!--> FD-Anforderungen: Query API AuditEvent -->
+<!-- FD-Anforderungen: Query API AuditEvent -->
 
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für die AuditEvent-Query-Endpunkte.
 

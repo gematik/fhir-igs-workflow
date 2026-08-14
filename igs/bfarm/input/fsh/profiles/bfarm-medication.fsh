@@ -12,7 +12,6 @@ Description: "Medikationsprofil, welches Informationen zum verordneten oder abge
 * extension[rxPrescriptionProcessIdentifier] 0..0
 * extension[isVaccine] 0..0
 * extension[drugCategory] 0..0
-* extension[manufacturingInstructions] 0..0
 * extension[type] 0..0
 
 * meta 0..0

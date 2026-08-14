@@ -9,7 +9,6 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem HTTP-Code "405 - Method Not Allowed" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.
 </requirement>
 
-Der Zugriff mittels POST und Angabe einer gültigen FHIR-Operation ist unter [Operations](./menu-schnittstellen-operation-api.html) beschrieben.
 
 ### GET /Task (Liste)
 
@@ -139,7 +138,7 @@ Die Anforderungen zum Prüfen des PoPP-Token sind im Kapitel "HTTP-Operation GET
       abbrechen.
 </requirement>
 
-Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung von A_23399-* im Rahmen des Änderungsmanagement für Spezifikationen.
+Eine mögliche Änderung der Konfiguration für den Zeitraum der Gültigkeit des PoPP-Token erfolgt ausschließlich nach Anpassung der obigen Anforderung im Rahmen des Änderungsmanagement für Spezifikationen.
 
 <!-- A_22431-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A100" title="TI-Flow-Fachdienst - Rezepte lesen - Apotheke - PoPP - PoPP - Filter KVNR" version="0">
@@ -384,15 +383,15 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
         </tr>
         <tr>
             <th>Code</th>
-            <td>???</td>
+            <td>invalid</td>
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>???</td>
+            <td>SVC_IDENTITY_MISMATCH</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>???</td>
+            <td>-</td>
         </tr>
     </table> 
   abbrechen, damit ausschließlich der begünstigte Versicherte den Task abrufen kann.
@@ -636,7 +635,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_KVNR_MISMATCH</td>
+            <td>SVC_IDENTITY_MISMATCH</td>
         </tr>
         <tr>
             <th>Details Text</th>

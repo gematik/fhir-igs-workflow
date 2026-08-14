@@ -30,9 +30,7 @@ Die Information, dass der Versicherte die Einwilligung zum Speichern der Abrechn
       Das PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereitstellen" eine FHIR-Ressource des PKV-Abgabedatensatzes mit den Informationen zur Abrechnung des abgegebenen Medikaments erstellen.
 </requirement>
 
-Für die Spezifikation der Ressource PKV-Abgabedatensatz siehe [gemSpec_DM_eRp].
-
-Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Abgabedatensatz signieren". Für die Wahl des Signaturverfahrens (QES oder nonQES) gelten die rechtlichen Vorgaben.
+Das Signieren des PKV-Abgabedatensatzes erfolgt nach den Vorgaben für qualifizierte Signaturen gemäß [gemILF_PS]. Für die Wahl des Signaturverfahrens (QES oder nonQES) gelten die rechtlichen Vorgaben.
 
 <!--A_22189-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A25" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - ChargeItem erstellen" version="0">
@@ -42,8 +40,6 @@ Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Ab
     </actor>
       Das PS der abgebenden LEI MUSS im Anwendungsfall "Abrechnungsinformation bereitstellen" eine FHIR-Ressource ChargeItem erstellen und den PKV-Abgabedatensatzes als contained Ressource einfügen.
 </requirement>
-
-Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
 
 <!--A_22190-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A26" title="PS abgebende LEI: Abrechnungsinformation bereitstellen - Speicherrequest" version="0">
@@ -85,9 +81,7 @@ Mit diesem Anwendungsfall kann die abgebende LEI den PKV-Abgabedatensatz zu eine
       Das PS der abgebenden LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" eine FHIR-Ressource des PKV-Abgabedatensatzes mit den Informationen zur Abrechnung des abgegebenen Medikaments erstellen.
 </requirement>
 
-Für die Spezifikation der Ressource PKV-Abgabedatensatz siehe [gemSpec_DM_eRp].
-
-Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Abgabedatensatz signieren".
+Das Signieren des PKV-Abgabedatensatzes erfolgt nach den Vorgaben für qualifizierte Signaturen gemäß [gemILF_PS].
 
 <!--A_22194 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A29" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - ChargeItem erstellen" version="0">
@@ -98,7 +92,6 @@ Das Signieren des PKV-Abgabedatensatzes erfolgt gemäß [gemILF_PS_eRp] Kap. "Ab
       Das PS der abgebenden LEI MUSS im Anwendungsfall "PKV-Abgabedatensatz ändern" eine FHIR-Ressource ChargeItem erstellen und den PKV-Abgabedatensatzes als contained Ressource einfügen.
 </requirement>
 
-Für die Spezifikation der Ressource ChargeItem siehe [gemSpec_DM_eRp].
 
 <!--A_22195-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A30" title="PS abgebende LEI: PKV-Abgabedatensatz ändern - Speicherrequest" version="0">

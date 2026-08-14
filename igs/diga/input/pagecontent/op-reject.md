@@ -26,9 +26,10 @@ Die Operation $reject wird als HTTP POST auf /Task/&#60;id&#62;/$reject ausgefü
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-TIFLOW-DIGA-reject-op.json %}
+			{% include OperationDefinition-tiflow-diga-reject-op.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
 		<div data-name="Beispiel - $abort Request mit AccessCode und Secret im Header" data-type="HTTP" data-render="ig-Fragment">
 					<pre>
@@ -39,6 +40,8 @@ Die Operation $reject wird als HTTP POST auf /Task/&#60;id&#62;/$reject ausgefü
 					</pre>
 				</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
 		<div data-name="Fehler 403 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleOperationRejectRolleError JSON %}
@@ -47,6 +50,7 @@ Die Operation $reject wird als HTTP POST auf /Task/&#60;id&#62;/$reject ausgefü
 			{% fragment OperationOutcome/ExampleOperationRejectRolleError XML %}
 		</div>
 	</div>
+-->
 </div>
  
 ### Hinweise

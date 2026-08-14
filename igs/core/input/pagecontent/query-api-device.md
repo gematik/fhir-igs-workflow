@@ -20,6 +20,7 @@ Die Device-Query wird über HTTP `GET` auf `/Device` aufgerufen.
       {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
     </pre>
   </div>
+<!--
   <div id="Response-Examples">
     <div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
       {% fragment Device/ReceiptBundleDevice JSON %}
@@ -28,6 +29,7 @@ Die Device-Query wird über HTTP `GET` auf `/Device` aufgerufen.
       {% fragment Device/ReceiptBundleDevice XML %}
     </div>
   </div>
+-->
 </div>
 
 ### Hinweise

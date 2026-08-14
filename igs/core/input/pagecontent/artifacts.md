@@ -10,7 +10,7 @@ ValueSet/tiflow-order-task-status-vs
 {% include artifacts-table-generator.html render=valuesets %}
 <div><figcaption><strong>Tabelle:</strong> Value Sets</figcaption></div>
 
-{% comment %}
+
 ### Terminologien: Code Systems
 
 {% capture codesystems %}
@@ -18,7 +18,7 @@ CodeSystem/tiflow-operation-outcome-details-cs,
 {% endcapture %}
 {% include artifacts-table-generator.html render=codesystems %}
 <div><figcaption><strong>Tabelle:</strong> Code Systems</figcaption></div>
-{% endcomment %}
+
 
 ### Logical Models
 
@@ -107,7 +107,7 @@ StructureDefinition/tiflow-op-accept-bundle
 
 Diese Sektion enthält FHIR-Artefakte, deren kanonische URL bewusst auf einem vorherigen Stand belassen wurde. Dadurch bleibt die Rückwärtskompatibilität für bestehende Implementierungen erhalten.
 
-#### Lagacy Terminologien: Code Systems
+#### Legacy Terminologien: Code Systems
 
 {% capture legacy-codesystems %}
 CodeSystem/GEM-ERP-CS-AvailabilityStatus,
@@ -115,9 +115,9 @@ CodeSystem/GEM-ERP-CS-DocumentType,
 CodeSystem/GEM-ERP-CS-FlowType,
 {% endcapture %}
 {% include artifacts-table-generator.html render=legacy-codesystems %}
-<div><figcaption><strong>Tabelle:</strong> Lagacy Code Systems</figcaption></div>
+<div><figcaption><strong>Tabelle:</strong> Legacy Code Systems</figcaption></div>
 
-#### Lagacy Terminologien: Value Sets
+#### Legacy Terminologien: Value Sets
 
 {% capture legacy-valuesets %}
 ValueSet/GEM-ERP-VS-FlowType,
@@ -125,18 +125,18 @@ ValueSet/GEM-ERP-VS-DocumentType,
 ValueSet/GEM-ERP-VS-AvailabilityStatus
 {% endcapture %}
 {% include artifacts-table-generator.html render=legacy-valuesets %}
-<div><figcaption><strong>Tabelle:</strong> Lagacy Value Sets</figcaption></div>
+<div><figcaption><strong>Tabelle:</strong> Legacy Value Sets</figcaption></div>
 
-#### Lagacy Suchparameter
+#### Legacy Suchparameter
 
 {% capture legacy-searchparams %}
 SearchParameter/TaskAcceptDateSP,
 SearchParameter/TaskExpiryDateSP
 {% endcapture %}
 {% include artifacts-table-generator.html render=legacy-searchparams %}
-<div><figcaption><strong>Tabelle:</strong> Lagacy Suchparameter</figcaption></div>
+<div><figcaption><strong>Tabelle:</strong> Legacy Suchparameter</figcaption></div>
 
-#### Lagacy Ressourcenprofile
+#### Legacy Ressourcenprofile
 
 {% capture legacy-profiles %}
 StructureDefinition/GEM-ERP-PR-Binary,
@@ -146,9 +146,9 @@ StructureDefinition/GEM-ERP-PR-Bundle,
 StructureDefinition/GEM-ERP-PR-Composition,
 {% endcapture %}
 {% include artifacts-table-generator.html render=legacy-profiles %}
-<div><figcaption><strong>Tabelle:</strong> Lagacy Ressourcenprofile</figcaption></div>
+<div><figcaption><strong>Tabelle:</strong> Legacy Ressourcenprofile</figcaption></div>
 
-#### Lagacy Erweiterungen (Extension) Definitions
+#### Legacy Erweiterungen (Extension) Definitions
 
 {% capture legacy-extensions %}
 StructureDefinition/GEM-ERP-EX-AcceptDate,
@@ -159,13 +159,13 @@ StructureDefinition/GEM-ERP-EX-PrescriptionType,
 {% include artifacts-table-generator.html render=legacy-extensions %}
 <div><figcaption><strong>Tabelle:</strong> Extension Definitions</figcaption></div>
 
-#### Lagacy Datentypen
+#### Legacy Datentypen
 
 {% capture legacy-datatypes %}
 StructureDefinition/GEM-ERP-PR-Signature,
 {% endcapture %}
 {% include artifacts-table-generator.html render=legacy-datatypes %}
-<div><figcaption><strong>Tabelle:</strong> Lagacy Datentypen</figcaption></div>
+<div><figcaption><strong>Tabelle:</strong> Legacy Datentypen</figcaption></div>
 
 ### Beispielinstanzen
 

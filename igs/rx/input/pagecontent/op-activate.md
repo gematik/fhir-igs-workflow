@@ -26,6 +26,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet.
 			{% include OperationDefinition-tiflow-rx-activate-op.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleRxActivateOperationRequestParameters JSON %}
@@ -42,6 +43,8 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet.
 			{% fragment Task/TaskInReadyState XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
 		<div data-name="Fehler application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleRxActivateOperationOutcomeError JSON %}
@@ -50,6 +53,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet.
 			{% fragment OperationOutcome/ExampleRxActivateOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 

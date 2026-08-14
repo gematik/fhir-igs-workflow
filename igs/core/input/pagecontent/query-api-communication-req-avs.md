@@ -50,12 +50,22 @@ Die für die Nachricht zu verwendende Communication-Ressource wird modul- und an
 
 Mit diesem Anwendungsfall kann die abgebende LEI von ihr versendete Nachrichten an einen Versicherten auf dem Fachdienst löschen.
 
-Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, eine Nachricht zum
-Löschen auf dem Fachdienst auszuwählen.
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A455" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="0">
+  <meta lockversion="false"/>
+  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+  </actor>
+ Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem Fachdienst auszuwählen.
+</requirement>
 
-Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass die
-ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das
-Löschen abzubrechen.
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A456" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="0">
+  <meta lockversion="false"/>
+  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+  </actor>
+ Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass die ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.
+</requirement>
+
 
 <!-- A_21489 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A149" title="PS abgebende LEI: Nachricht löschen - Löschrequest" version="0">

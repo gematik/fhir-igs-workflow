@@ -30,7 +30,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine Message mit "Content-Type: multipart/mixed;..." und der folgenden Struktur verwenden. Tabelle # : Struktur der Message mit "Content-Type: multipart/mixed;..." Teil Inhalt optional Freitext Freitextmessage für den Empfänger default: "direkte Zuweisung E-Rezept" nein Einlöseinformation E-Rezept-Token als Link gemäß gemSpec_DM_eRp#A_19554 Nach 45 Zeichen MUSS ein Steuerzeichen "CRLF" eingefügt werden nein Therapieplan Therapieplan als Anhang, base64 codiert ja
+     Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine Message mit "Content-Type: multipart/mixed;..." und der folgenden Struktur verwenden. Tabelle # : Struktur der Message mit "Content-Type: multipart/mixed;..." Teil Inhalt optional Freitext Freitextmessage für den Empfänger default: "direkte Zuweisung E-Rezept" nein Einlöseinformation E-Rezept-Token als Link nach [2D-Code für E-Rezept-Token](../../core/input/pagecontent/datamatrix-code-client.html) Nach 45 Zeichen MUSS ein Steuerzeichen "CRLF" eingefügt werden nein Therapieplan Therapieplan als Anhang, base64 codiert ja
 </requirement>
 
 <!-- A_21874 -->

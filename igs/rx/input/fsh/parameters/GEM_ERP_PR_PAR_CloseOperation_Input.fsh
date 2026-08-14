@@ -11,7 +11,7 @@ Description: "Dieses Profil definiert die Parameter für das Schließen eines Wo
 * parameter ^slicing.discriminator.path = "name"
 * parameter ^slicing.rules = #closed
 
-* parameter contains rxDispensation 0..*
+* parameter contains rxDispensation 0..* MS
   
 * parameter[rxDispensation]
   * name MS
@@ -25,8 +25,8 @@ Description: "Dieses Profil definiert die Parameter für das Schließen eines Wo
     * ^slicing.discriminator.path = "name"
     * ^slicing.rules = #closed
   * part contains
-    medicationDispense 1..1 and
-    medication 0..1
+    medicationDispense 1..1 MS and
+    medication 0..1 MS
   * part[medicationDispense]
     * name MS
     * name = "medicationDispense"

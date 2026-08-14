@@ -26,6 +26,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$close` gesendet.
 			{% include OperationDefinition-tiflow-rx-close-op.json %}
 		</pre>
 	</div>
+<!--
 	<div id="Request-Examples">
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleCloseInputParameters JSON %}
@@ -34,6 +35,8 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$close` gesendet.
 			{% fragment Parameters/ExampleCloseInputParameters XML %}
 		</div>
 	</div>
+-->
+<!--
 	<div id="Response-Examples">
 		<div data-name="Erfolg (200) application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleRxCloseOutputParameters JSON %}
@@ -48,6 +51,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$close` gesendet.
 			{% fragment OperationOutcome/ExampleRxCloseOperationOutcomeError XML %}
 		</div>
 	</div>
+-->
 </div>
 
 ### Hinweise
