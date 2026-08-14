@@ -1,28 +1,30 @@
 Instance: ExampleOperationAbortErrorAVS
 InstanceOf: OperationOutcome
-Title: "Beispiel für Abort-Operation Fehlerantwort (AVS)"
-Description: "Beispiel für eine Fehlerantwort bei der Abort-Operation aus Sicht des AVS"
+Title: "Beispiel für Abort-Operation Fehlerantwort (403)"
+Description: "Beispiel für eine Fehlerantwort bei der Abort-Operation"
 Usage: #example
 * issue[+]
   * severity = #error
   * code = #forbidden
-  * details.text = "Abort not expected for newly created Task"
+  * details.coding.code = #SVC_IDENTITY_MISMATCH
+  * details.text = "Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)"
 
 Instance: ExampleOperationAbortErrorPVS
 InstanceOf: OperationOutcome
-Title: "Beispiel für Abort-Operation Fehlerantwort (PVS)"
-Description: "Beispiel für eine Fehlerantwort bei der Abort-Operation aus Sicht des PVS"
+Title: "Beispiel für Abort-Operation Fehlerantwort (412)"
+Description: "Beispiel für eine Fehlerantwort bei der Abort-Operation"
 Usage: #example
 * issue[+]
   * severity = #error
   * code = #forbidden
-  * details.text = "Task must not be in progress for users other than pharmacy, but is: in-progress"
+  * details.coding.code = #TIFLOW_TASK_STATUS_MISMATCH
+  * details.text = "Task has invalid status."
 
   
 Instance: ExampleOperationAbortErrorRoleFdV
 InstanceOf: OperationOutcome
-Title: "Fehler 403 - Beispiel für Abort-Operation Fehlerantwort bei Rollenprüfung (FdV)"
-Description: "Beispiel für eine Fehlerantwort bei der Abort-Operation aus Sicht des FdV bei Rollenprüfung"
+Title: "Fehler 403 - Beispiel für Abort-Operation Fehlerantwort bei Rollenprüfung"
+Description: "Beispiel für eine Fehlerantwort bei der Abort-Operation bei Rollenprüfung"
 Usage: #example
 * issue[+]
   * severity = #error

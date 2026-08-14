@@ -31,7 +31,6 @@ Die Operation $abort wird als HTTP POST auf /Task/<id>/$abort ausgeführt.
       {% include OperationDefinition-tiflow-diga-abort-op.json %}
     </pre>
   </div>
-<!--
 	<div id="Response-Examples">
 		<div data-name="Fehler 403 - Beispiel für Abort-Operation Fehlerantwort application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleOperationAbortErrorRoleFdV JSON %}
@@ -40,5 +39,4 @@ Die Operation $abort wird als HTTP POST auf /Task/<id>/$abort ausgeführt.
 			{% fragment OperationOutcome/ExampleOperationAbortErrorRoleFdV XML %}
 		</div>
 	</div>
--->
 </div>

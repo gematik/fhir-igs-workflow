@@ -1,12 +1,13 @@
 Instance: ExampleOperationCloseError
 InstanceOf: OperationOutcome
-Title: "Beispiel für Close-Operation Fehlerantwort"
+Title: "Error 400 - Beispiel für Close-Operation Fehlerantwort"
 Description: "Beispiel für eine Fehlerantwort bei der Close-Operation mit FHIR-Validierungsfehlern"
 Usage: #example
 * issue[+]
   * severity = #error
   * code = #invalid
-  * details.text = "FHIR-Validation error"
+  * details.coding.code = #SVC_VALIDATION_FAILED
+  * details.text = "FHIR Profile Validation Failed"
   * diagnostics = """
     MedicationDispense.status: error: Value closed not allowed for ValueSet binding, allowed are 
     [http://terminology.hl7.org/CodeSystem/medicationdispense-status]cancelled, 
@@ -35,7 +36,7 @@ Usage: #example
     """
 Instance: ExampleOperationCloseProfileError
 InstanceOf: OperationOutcome
-Title: "Fehler 400 - Beispiel für Close-Operation Fehlerantwort bei  Profilprüfung MedicationDispense"
+Title: "Error 400 - Beispiel für Close-Operation Fehlerantwort bei Profilprüfung MedicationDispense"
 Description: "Beispiel für eine Fehlerantwort bei der Close-Operation mit Profilprüfung MedicationDispense"
 Usage: #example
 * issue[+]

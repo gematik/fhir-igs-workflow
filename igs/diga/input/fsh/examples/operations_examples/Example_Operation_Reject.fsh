@@ -1,12 +1,13 @@
 Instance: ExampleOperationRejectError
 InstanceOf: OperationOutcome
-Title: "Beispiel für Reject-Operation Fehlerantwort"
+Title: "Fehler 412 - Beispiel für Reject-Operation Fehlerantwort"
 Description: "Beispiel für eine Fehlerantwort bei der Reject-Operation wegen falschen Task-Status"
 Usage: #example
 * issue[+]
   * severity = #error
-  * code = #forbidden
-  * details.text = "Task not in status in progress, is: ready"
+  * code = #invalid
+  * details.coding.code = #TIFLOW_TASK_STATUS_MISMATCH
+  * details.text = "Task has invalid status."
 
  Instance: ExampleOperationRejectRolleError
 InstanceOf: OperationOutcome

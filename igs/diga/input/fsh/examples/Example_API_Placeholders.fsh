@@ -11,6 +11,7 @@ Description: "Reusable operation request payload for DiGA API documentation"
 * parameter[+].name = "secret"
 * parameter[=].valueString = "SECRET-DIGA-01"
 
+/*
 Instance: ExampleDiGAOperationOutcomeError
 InstanceOf: OperationOutcome
 Usage: #example
@@ -21,6 +22,7 @@ Description: "Representative business error for DiGA operation calls"
 * issue[0].code = #invalid
 * issue[0].details.text = "Task has invalid status for requested operation"
 * issue[0].diagnostics = "Expected status ready but found completed"
+*/
 
 Instance: ExampleDiGATaskInReadyState
 InstanceOf: TIFlowDiGATask
@@ -28,6 +30,7 @@ Usage: #example
 Title: "DiGA Task in ready state"
 * id = "ExampleDiGATaskInReadyState"
 * insert DiGA_Task(ready)
+* insert GKV_Identifier(for.identifier) // Only when not draft
 * insert TaskIdentifierAccessCode
 * insert TaskInputReceipt(3ebd56b4-5cdf-42bc-b26a-738d0b08068a)
 // TODO: Bug im E-Rezept-Fachdienst

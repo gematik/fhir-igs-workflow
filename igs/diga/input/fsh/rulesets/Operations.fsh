@@ -13,7 +13,7 @@ RuleSet: DiGA_Task(status)
 * insert Task162Exension
 * extension[flowType].valueCoding.display = "Muster 16 (Digitale Gesundheitsanwendungen)"
 * insert TaskIdentifier(162)
-* insert GKV_Identifier(for.identifier)
+//* insert GKV_Identifier(for.identifier) -> Only when not draft
 * insert TaskMiscInfo
 * performerType = $GEM_ERP_CS_OrganizationType#urn:oid:1.2.276.0.76.4.59 "Kostenträger"
 * performerType.text = "Kostenträger"

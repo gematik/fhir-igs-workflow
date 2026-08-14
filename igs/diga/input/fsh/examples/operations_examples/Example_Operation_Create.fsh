@@ -8,24 +8,25 @@ Usage: #example
 
 Instance: ExampleCreateOperationOutputError
 InstanceOf: OperationOutcome
-Title: "Fehler 403 - Beispiel für Create-Operation Fehlerantwort"
+Title: "Error 403 - Beispiel für Create-Operation Fehlerantwort"
 Description: "Beispiel für eine Fehlerantwort bei der Create-Operation mit FHIR-Validierungsfehlern"
 Usage: #example
 * issue[+]
   * severity = #error
   * code = #forbidden
-  * details.coding.code = #BLOCKED_FLOWTYPE
-  * details.text = "The Flowtype may not be used in the TI-Flow-Fachdienst"
+  * details.coding.code = #TIFLOW_AUTH_ROLE_NOT_ALLOWED
+  * details.text = "Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern"
 
 Instance: ExampleOperationCreateError
 InstanceOf: OperationOutcome
-Title: "Beispiel für Create-Operation Fehlerantwort"
+Title: "Error 400 - Beispiel für Create-Operation Fehlerantwort"
 Description: "Beispiel für eine Fehlerantwort bei der Create-Operation mit FHIR-Validierungsfehlern"
 Usage: #example
 * issue[+]
   * severity = #error
   * code = #invalid
-  * details.text = "FHIR-Validation error"
+  * details.coding.code = #SVC_VALIDATION_FAILED
+  * details.text = "FHIR Profile Validation Failed"
   * diagnostics = """
     Parameters.parameter[0].valueCoding: error: Code 140 is not part of CodeSystem 
     https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType (from profile: 

@@ -1,11 +1,12 @@
 Instance: ExampleOperationAcceptError
 InstanceOf: OperationOutcome
-Title: "Beispiel für Accept-Operation Fehlerantwort"
+Title: "Error 409 - Beispiel für Accept-Operation Fehlerantwort"
 Description: "Beispiel für eine Fehlerantwort bei der Accept-Operation eines E-Rezepts"
 Usage: #example
 * issue[+]
   * severity = #error
-  * code = #conflict
+  * code = #invalid
+  * details.coding.code = #TIFLOW_TASK_STATUS_MISMATCH
   * details.text = "Task has invalid status draft"
 
 Instance: ExampleOperationAcceptRoleError
@@ -18,3 +19,18 @@ Usage: #example
   * code = #invalid
   * details.coding.code = #TIFLOW_AUTH_ROLE_NOT_ALLOWED
   * details.text = "	Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern"
+
+Instance: ExampleDiGAAcceptResponse
+InstanceOf: Bundle
+Usage: #example
+Title: "$accept response for DiGA"
+Description: "Example response for $accept in DiGA workflow"
+* id = "ExampleDiGAAcceptResponse"
+* type = #collection
+* link[+].relation = "self"
+* link[=].url = "https://erp-ref.example.org/Task/162.000.000.000.000.01/$accept"
+* entry[+].fullUrl = "https://erp-ref.example.org/Task/162.000.000.000.000.01"
+* entry[=].resource = ExampleDiGATaskInReadyState
+* entry[=].search.mode = #match
+* entry[+].fullUrl = "urn:uuid:3ebd56b4-5cdf-42bc-b26a-738d0b08068a"
+* entry[=].resource = 3ebd56b4-5cdf-42bc-b26a-738d0b08068a
