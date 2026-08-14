@@ -16,6 +16,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 | `2.0.0-ballot.2` | `bugfix-api-div` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/bugfix-api-div/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/develop/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `examples` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/examples/2.0.0-ballot.2) |
+| `2.0.0-ballot.2` | `examples-diga-TMD-3332` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/examples-diga-TMD-3332/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `main` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/main/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `merge-rx-igs` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/merge-rx-igs/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `move-configuration-requirements` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow/move-configuration-requirements/2.0.0-ballot.2) |
@@ -64,6 +65,7 @@ This page contains built FHIR Implementation Guides (IGs) from the [gematik/fhir
 |---------|--------|------|
 | `2.0.0-ballot.2` | `bugfix-api-div` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/bugfix-api-div/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `develop` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/develop/2.0.0-ballot.2) |
+| `2.0.0-ballot.2` | `examples-diga-TMD-3332` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/examples-diga-TMD-3332/2.0.0-ballot.2) |
 | `2.0.0-ballot.2` | `main` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/main/2.0.0-ballot.2) |
 | `2.0.0-ballot.1` | `fix-build-stuff` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/fix-build-stuff/2.0.0-ballot.1) |
 | `1.0.0-draft` | `TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration` | [View IG](https://gematik.github.io/fhir-igs-workflow/tiflow-diga/TMD-3103-anforderungen-an-ti-flow-fd-fuer-zeta-guard-integration/1.0.0-draft) |
