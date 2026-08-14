@@ -37,13 +37,15 @@ Die Operation $create wird als HTTP POST auf /Task/$create ausgeführt.
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/OperationCreateParametersInputExample XML %}
 		</div>
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/OperationCreateParametersInputExample XML %}
+		</div>
 	</div>
 	<div id="Response-Examples">
 		<pre>
-			POST https://erp.zentral.erp.splitdns.ti-dienste.de/Task/$create
-			Host: erp.zentral.erp.splitdns.ti-dienste.de
+			POST /Task/$create HTTP/1.1
+			Host: example.org
 			Content-Type: application/fhir+xml; charset=UTF-8
-			Authorization: Bearer eyJraWQ.ewogImL2pA10Qql22ddtutrvx4FsDlz.rHQjEmB1lLmpqn9J
 			Accept: application/fhir+xml
 		</pre>
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">

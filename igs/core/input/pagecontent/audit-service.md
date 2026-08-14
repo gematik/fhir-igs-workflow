@@ -1,7 +1,10 @@
+Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Diese Zugriffsprotokolle sind unabhängig vom Systemprotokoll und stehen ausschließlich dem Versicherten zur Wahrnehmung seiner Betroffenenrechte zur Einsicht zur Verfügung.
+
+### Systemdesign
+
+Der Service, der die AuditEvents verwaltet muss in der Lage sein aus allen Anwendungsmodulen des TI-Flow-Fachdienstes dem Versicherten Einträge des Zugriffsprotokolls auszugeben. Dabei obliegt es dem Anbieter des TI-Flow-Fachdienst das Architekturdesign für die Schnittstelle festzulegen.
 
 ### Zugriffsprotokoll für den Versicherten
-
-Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Diese Zugriffsprotokolle sind unabhängig vom Systemprotokoll und stehen ausschließlich dem Versicherten zur Wahrnehmung seiner Betroffenenrechte zur Einsicht zur Verfügung.
 
 <!-- A_19296-04 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A30" title="TI-Flow-Fachdienst - Inhalt Protokolleintrag" version="0">

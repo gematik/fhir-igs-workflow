@@ -29,7 +29,7 @@ Die Operation $accept wird als HTTP POST auf /Task/&#60;id&#62;/$accept ausgefü
 <!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
+			{% fragment OperationOutcome/ExampleOperationAcceptRoleError XML %}
 		</div>
 	</div>
 -->

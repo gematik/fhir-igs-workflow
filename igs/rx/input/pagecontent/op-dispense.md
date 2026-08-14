@@ -28,14 +28,17 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$dispense` gesendet.
 <!--
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleRxOperationRequestParameters XML %}
+			{% fragment Parameters/ExampleDispenseInputParameters XML %}
 		</div>
 	</div>
 -->
 <!--
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
+		<div data-name="Fehler (403) application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleRxDispenseOperationOutcomeError JSON %}
+		</div>
+		<div data-name="Fehler (403) application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleRxDispenseOperationOutcomeError XML %}
 		</div>
 	</div>
 -->

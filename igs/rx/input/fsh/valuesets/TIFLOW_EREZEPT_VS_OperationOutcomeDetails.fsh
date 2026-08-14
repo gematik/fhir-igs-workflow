@@ -34,3 +34,7 @@ Description: "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den Operat
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_RECIPIENT_INVALID "Recipient invalid"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_TASK_NOT_FOUND "Task not found"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_MVO_NOT_VALID_YET "MVO not valid yet"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_CONSENT_REQUIRED "Consent required"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_ACCESS_PERMISSION_INVALID "Access permission invalid"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_CONSENT_MISSING "Consent missing"
+* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_ACCESS_CODE_INVALID "Access code invalid"

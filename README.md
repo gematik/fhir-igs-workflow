@@ -31,7 +31,7 @@ If your local binary is named `fhirscripts-dev`, use that command instead.
 Build IGs sequentially (core first):
 
 ```shell
-for ig in core bfarm diga erp-chrg erp-eu rx; do
+for ig in core bfarm diga erp-chrg rx; do
 	echo "=== Building $ig ==="
 	(
 		cd "igs/$ig"

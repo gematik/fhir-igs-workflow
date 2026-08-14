@@ -3400,6 +3400,150 @@
             "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-communication-req-data.html#IG-TIFLOW-ERP-A223"
         },
         {
+            "key": "IG-TIFLOW-ERP-A224",
+            "title": "Format Zugriffscode",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Produkttypen der Anwendung E-Rezept MÜSSEN, wenn sie einen Zugriffscode für das Einlösen im europäischen Ausland verarbeiten, folgende Formatvorgaben für den Zugriffscode einhalten: String mit Gesamtlänge von 6 Zeichen, erlaubte Zeichen: a-z, A-Z, 0-9.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/menu-technische-umsetzung-konzept.html#IG-TIFLOW-ERP-A224"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A225",
+            "title": "TI-Flow-Fachdienst - Zugriffsberechtigung - Liste zulässiger Länder",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS die Liste aller zulässigen Länder aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird: Abfrage der Ressource \"HealthcareService\", HealthcareServices, deren Speciality \"57833-6\" aus https://loinc.org enthalten, HealthcareServices, deren Organisation aktiv sind, HealthcareServices, deren Organisation den OrganizationProfessionOIDType \"1.2.276.0.76.4.292\" entspricht, Einbeziehen der Organisation in das Rückgabeergebnis.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/menu-technische-umsetzung-konzept.html#IG-TIFLOW-ERP-A225"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A226",
+            "title": "TI-Flow-Fachdienst - Zugriffsberechtigung - Caching Liste zulässiger Länder",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst DARF NICHT Informationen zur Liste zulässiger Länder verwenden, welche länger als 96h lokal durch den TI-Flow-Fachdienst gecacht wurden.",
+            "conformance": "SHALL NOT",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/menu-technische-umsetzung-konzept.html#IG-TIFLOW-ERP-A226"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A227",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Rollenprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n     <ul>\n     <li>oid_ncpeh </li>\n     </ul>\n     die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A227"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A228",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Schemaprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_GET_Prescription_EU_Input] prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A228"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A229",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Einwilligung für KVNR",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CONSENT_REQUIRED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A229"
+        },
+        {
             "key": "IG-TIFLOW-ERP-A23",
             "title": "TI-Flow-Fachdienst - Task schließen - T-Rezept Daten an BfArM Webdienst bereitstellen",
             "version": 0,
@@ -3422,6 +3566,246 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-close-req-fd.html#IG-TIFLOW-ERP-A23"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A230",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Prüfung Zugriffsberechtigung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im TI-Flow-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_ACCESS_PERMISSION_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur Verordnungsdaten für Versicherte übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A230"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A231",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Filter einlösbarer E-Rezepte",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass nur Ressourcen eines Tasks bereitgestellt werden, die folgende Kriterien erfüllen: Task.for = KVNR für die KVNR aus Parameters.parameter:requestData.part:kvnr Task.ExpiryDate nicht vor dem aktuellen Datum Falls MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true, dann MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start nicht nach dem aktuellen Datum Task.extension:eu-isRedeemableByProperties = true Task.extension:eu-isRedeemableByPatientAuthorization = true damit eine Apotheke im europäischen Ausland nur einlösbare E-Rezepte abrufen kann.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A231"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A232",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage der aktuellsten Verordnungsinformationen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions?_count=1 durch den NCPeH-FD sicherstellen, dass nur eine Ressource eines Tasks bereitgestellt wird, die folgendes Kriterium erfüllt: Task.status = ready.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A232"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A233",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage aller einlösbaren Verordnungsinformationen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id leer ist, nur Ressourcen eines Tasks bereitgestellt werden, die folgendes Kriterium erfüllen: Task.status = ready.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A233"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A234",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Filter Status - Abfrage nach Liste Rezept-Ids",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, nur Ressourcen eines Tasks bereitgestellt werden, die folgendes Kriterium erfüllen: Task.status = ready ODER (Task.status = in-progress UND Task.owner = zeta-user-info.identifier).",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A234"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A235",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Schema des Response",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass die FHIR-Ressourcen zu einlösbaren Verordnungen in einem übergreifenden FHIR-Bundle gruppiert werden, absteigend sortiert nach dem medicationrequest.authored-on Datum, wobei das Bundle pro Verordnung ein FHIR-Bundle vom Typ https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle enthält, mit der unter https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId abgelegten Task-ID sowie den im MedicationRequest referenzierten Ressourcen MedicationRequest, Medication, Patient, Practitioner und Coverage.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A235"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A236",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage der aktuellsten Verordnungsinformationen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions?_count=1 durch den NCPeH-FD sicherstellen, dass die Ressourcen der zuletzt ausgestellten einlösbaren Verordnung zurückgegeben werden und falls keine Verordnung vorliegt, mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>404 - Not Found</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_EREZEPT_NO_PRESCRIPTIONS_FOUND</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n antworten.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A236"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A237",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden und falls keine Verordnung vorliegt, die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>404 - Not Found</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_EREZEPT_NO_PRESCRIPTIONS_FOUND</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A237"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A238",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD sicherstellen, dass wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, die Ressourcen aller einlösbaren Verordnung zurückgegeben werden, deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, und falls keine Verordnung vorliegt, die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>404 - Not Found</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_EREZEPT_NO_PRESCRIPTIONS_FOUND</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A238"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A239",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Statuswechsel Task",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, für alle Tasks deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, den Status auf Task.status = in-progress setzen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A239"
         },
         {
             "key": "IG-TIFLOW-ERP-A24",
@@ -3448,6 +3832,246 @@
             "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-communication-req-fdv.html#IG-TIFLOW-ERP-A24"
         },
         {
+            "key": "IG-TIFLOW-ERP-A240",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Secret",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, für alle Tasks deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, eine 256 Bit Zufallszahl mit einer Mindestentropie von 120 Bit erzeugen, hexadezimal kodieren ([0-9a-f]{64}) und diese im zu speichernden Task als externe ID in Task.identifier:Secret als [Identifier Profile for Secret (GEM_ERP_PR_Secret)] hinzufügen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A240"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A241",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Task Owner",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, für alle Tasks deren Task-IDs in Parameters.parameter:requestData.part:prescription-id enthalten sind, den zeta-user-info.identifier des Nutzers in Task.owner speichern.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A241"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A242",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen - Push Notification Versicherter",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.get\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A242"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A243",
+            "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Push Notification Versicherter",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.redeem\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-get-eu-prescriptions-req-fd.html#IG-TIFLOW-ERP-A243"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A244",
+            "title": "TI-Flow-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten auf die Ressource übertragene Parameters Ressource gegen das FHIR-Profil GEM_ERPEU_PR_PAR_PATCH_Task_Input prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst akzeptiert werden.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-task-req-fd.html#IG-TIFLOW-ERP-A244"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A245",
+            "title": "TI-Flow-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten prüfen, ob der adressierte Task in Task.extension:eu-isRedeemableByProperties.valueBoolean = true gesetzt ist und anderfalls mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>409 - Conflict</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_EREZEPT_NOT_ACTIVATED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-task-req-fd.html#IG-TIFLOW-ERP-A245"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A246",
+            "title": "TI-Flow-Fachdienst -Task markieren -Versicherter - Änderung Markierung Task Ressource",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten, den im Parameter `eu-isRedeemableByPatientAuthorization` enthaltenen boolschen Wert in `Task.extension:eu-isRedeemableByPatientAuthorization.valueBoolean` setzen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-task-req-fd.html#IG-TIFLOW-ERP-A246"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A247",
+            "title": "E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle\n\n    <ul>\n    <li>UC 3.13 - Einwilligung einsehen</li>\n    <li>UC 3.14 - Einwilligung erteilen</li>\n    <li>UC 3.15 - Einwilligung widerrufen</li>\n    <li>UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen</li>\n    <li>UC 3.17 - Zugriffsberechtigung durch Versicherten löschen</li>\n    <li>UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen</li>\n    <li>Zugriffsberechtigung anzeigen</li>\n    <li>UC 3.19 - E-Rezept durch den Versicherten markieren</li>\n    </ul>\n\n    umsetzen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-ERP-A247"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A248",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung anzeigen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung anzeigen\" folgende Informationen auf dem Display anzeigen: \n    <ul>\n    <li>Name des Landes,</li>\n    <li>Gültigkeitsende,</li>\n    <li>Zugriffscode,</li>\n    <li>KVNR des Versicherten.</li>\n    </ul>",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-ERP-A248"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A249",
+            "title": "E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV KANN es dem Nutzer ermöglichen, die Markierung eines E-Rezeptes zum Einlösen im EU-Ausland zu verwalten.",
+            "conformance": "MAY",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-ERP-A249"
+        },
+        {
             "key": "IG-TIFLOW-ERP-A25",
             "title": "E-Rezept-FdV: E-Rezept zuweisen - Flowtype 169 / 209 - Zuweisen nicht zulässig",
             "version": 0,
@@ -3470,6 +4094,246 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-communication-req-fdv.html#IG-TIFLOW-ERP-A25"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A250",
+            "title": "E-Rezept-FdV: E-Rezept zum Einlösen im EU-Ausland markieren - Hinweis Belieferungsmöglichkeit",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" dem Nutzer vor der Möglichkeit zum Markieren der E-Rezepte zum Einlösen im EU-Ausland einen Hinweis anzeigen, dass die Belieferungsmöglichkeit für die E-Rezepte mit der Apotheke vorab geklärt werden soll.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-ERP-A250"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A251",
+            "title": "E-Rezept-FdV: optional: E-Rezept markieren",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"E-Rezept markieren\" umsetzen.",
+            "conformance": "MAY",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-ERP-A251"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A252",
+            "title": "E-Rezept-FdV: E-Rezept markieren - E-Rezepte auswählen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" dem Nutzer ermöglichen, ein oder mehrere E-Rezepte auszuwählen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-ERP-A252"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A253",
+            "title": "E-Rezept-FdV: E-Rezept markieren",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall umsetzt, den Anwendungsfall \"E-Rezept durch den Versicherten markieren\" gemäß TAB_FdVERP_029 umsetzen. Tabelle #: TAB_FdVERP_029 - E-Rezept markieren Name E-Rezept markieren Auslöser Aufruf des Anwendungsfalls in der Graphical User Interface (GUI) Akteur Versicherter Vorbedingung Der Nutzer hat eine oder mehrere Markierungen aus- oder abgewählt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Die Markierungen sind im TI-Flow-Fachdienst gespeichert. Standardablauf Task-ID bestimmen FHIR Ressource erstellen Daten im TI-Flow-Fachdienst speichern",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-ERP-A253"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A254",
+            "title": "E-Rezept-FdV: E-Rezept markieren - FHIR Ressource erstellen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" eine Parameters Ressource des Profils [GEM ERPEU PR PAR PATCH Task Input] erstellen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-ERP-A254"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A255",
+            "title": "E-Rezept-FdV: E-Rezept markieren - Speicherrequest",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept markieren\" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /Task/&lt;id&gt; mit: \n    <ul> \n        <li>Prescription-ID in URL &lt;id&gt; </li>\n        <li>FHIR-Ressource im HTTP-Request-Body </li>\n    </ul>\n    ausführen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-task-req-fdv.html#IG-TIFLOW-ERP-A255"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A256",
+            "title": "TI-Flow-Fachdienst - Consent löschen - EUDISPCONS - Löschen Zugriffsberechtigung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-Operation DELETE auf den Endpunkt `/Consent` mit `?category=EUDISPCONS` alle dem Versicherten zugeordneten Zugriffsberechtigungen anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren und löschen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-consent-req-fd.html#IG-TIFLOW-ERP-A256"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A257",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung löschen - Abfragerequest",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung löschen\" zum Löschen der Information auf dem TI-Flow-Fachdienst die HTTP-Operation DELETE /$revoke-eu-access-permission ausführen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-revoke-eu-access-permission-req-fdv.html#IG-TIFLOW-ERP-A257"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A258",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung löschen - lokale Zugriffsberechtigung löschen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung löschen\" die lokal gespeicherten Informationen zur Zugriffsberechtigung löschen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-revoke-eu-access-permission-req-fdv.html#IG-TIFLOW-ERP-A258"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A259",
+            "title": "TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Rollenprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n     <ul>\n     <li>oid_versicherter</li>\n     </ul>\n     die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-read-eu-access-permission-req-fd.html#IG-TIFLOW-ERP-A259"
         },
         {
             "key": "IG-TIFLOW-ERP-A26",
@@ -3496,6 +4360,246 @@
             "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-communication-req-fdv.html#IG-TIFLOW-ERP-A26"
         },
         {
+            "key": "IG-TIFLOW-ERP-A260",
+            "title": "TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Response",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission den zeta-user-info.identifier des Nutzers (KVNR) bestimmen und im Response falls vorhanden eine Ressource des Profils [GEM_ERP_PR_PAR_EU_Access_Authorization_Response] mit zur KVNR gespeicherte zeitlich gültige Zugriffsberechtigung übermitteln.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-read-eu-access-permission-req-fd.html#IG-TIFLOW-ERP-A260"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A261",
+            "title": "TI-Flow-Fachdienst - Task schließen - EU - Rollenprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n     <ul>\n     <li>oid_ncpeh</li>\n     </ul>\n     die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-ERP-A261"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A262",
+            "title": "TI-Flow-Fachdienst - Task schließen - EU - Schemaprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-ERP-A262"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A263",
+            "title": "TI-Flow-Fachdienst - Task schließen - EU - Prüfung Einwilligung für KVNR",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass für die in Parameters.parameter:requestData.part:kvnr übermittelte KVNR ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CONSENT_MISSING</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur Dispensierinformationen für Versicherte übermittelt werden, die eine Einwilligung erteilt haben.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-ERP-A263"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A264",
+            "title": "TI-Flow-Fachdienst - Task schließen - EU - Prüfung Zugriffsberechtigung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass zu dem in Parameters.parameter:requestData.part:kvnr, Parameters.parameter:requestData.part:accessCode und Parameters.parameter:requestData.part:countryCode übermittelte Tripple von KVNR, Zugriffs- und Ländercode eine zeitliche gültige Zugriffsberechtigung im TI-Flow-Fachdienst existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_ACCESS_PERMISSION_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur Dispensierinformationen übermittelt werden, wenn eine gültige Zugriffsberechtigung vorliegt.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-ERP-A264"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A265",
+            "title": "TI-Flow-Fachdienst - Task schließen - EU - Statusprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status = in-progress ist und bei Ungleichheit die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Task has invalid status.</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-ERP-A265"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A266",
+            "title": "TI-Flow-Fachdienst - Task schließen - EU - Zeitstempel MedicationDispense",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass der Zeitpunkt des Aufrufes in Task.extension:lastMedicationDispense im Format \"YYYY-MM-DDThh:mm:ss+zz:zz\" (FHIR-instant) angelegt und gespeichert wird.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-ERP-A266"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A267",
+            "title": "TI-Flow-Fachdienst - Task schließen - EU - Status beenden",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass die zulässige Beendigung eines übermittelten Tasks im Status Task.status = completed vollzogen wird, damit der Workflow für den Versicherten als beendet und das E-Rezept somit als eingelöst dargestellt wird.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-ERP-A267"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A268",
+            "title": "TI-Flow-Fachdienst - Task schließen - EU - Push Notification Versicherter",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-eu-close-req-fd.html#IG-TIFLOW-ERP-A268"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A269",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung abrufen - Abfragerequest",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung abrufen\" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /$read-eu-access-permission ausführen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-read-eu-access-permission-req-fdv.html#IG-TIFLOW-ERP-A269"
+        },
+        {
             "key": "IG-TIFLOW-ERP-A27",
             "title": "E-Rezept-FdV: E-Rezept zuweisen - Beginn Gültigkeit prüfen",
             "version": 0,
@@ -3520,6 +4624,272 @@
             "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-communication-req-fdv.html#IG-TIFLOW-ERP-A27"
         },
         {
+            "key": "IG-TIFLOW-ERP-A270",
+            "title": "E-Rezept: Anwendung des Features 'EU Zugriff E-Rezept' für Einlösen von E-Rezepten im EU Ausland",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Einlösens von E-Rezepten im EU Ausland die in diesem Implementation Guide definierten Inhalte zum Feature \"EU Zugriff E-Rezept\" umsetzen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/index.html#IG-TIFLOW-ERP-A270"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A271",
+            "title": "E-Rezept: Umsetzung des Features 'EU Zugriff E-Rezept'",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Features \"EU Zugriff E-Rezept\" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG für das Feature definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/index.html#IG-TIFLOW-ERP-A271"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A272",
+            "title": "TI-Flow-Fachdienst - Versichertenprotokoll zu EU-Operationen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS jeden Aufruf von Operationen gemäß \"TAB_EU_004 Versichertenprotokoll\" protokollieren und die gelesene bzw. geschriebene Ressource im Protokolleintrag AuditEvent.entity.what als Referenz hinzufügen sowie die KVNR des betroffenen Versicherten in AuditEvent.entity.name speichern. Mit diesen Informationen kann der Versicherte die Zugriffe auf seine Daten nachvollziehen und bei einem unberechtigten Zugriff ggf. intervenieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/menu-technische-umsetzung-audit-service.html#IG-TIFLOW-ERP-A272"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A273",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung - Liste zulässiger Länder",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS Anwendungsfall \"Zugriffsberechtigung erteilen\" die Liste aller zulässigen Länder aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird:\n    <ul>\n        <li>Abfrage der Ressource \"HealthcareService\"</li>\n        <li>HealthcareServices, deren Speciality \"57833-6\" aus https://loinc.org enthalten</li>\n        <li>HealthcareServices, deren Organisation aktiv sind</li>\n        <li>HealthcareServices, deren Organisation den OrganizationProfessionOIDType \"1.2.276.0.76.4.292\" entspricht</li>\n        <li>Einbeziehen der Organisation in das Rückgabeergebnis</li>\n    </ul>",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-ERP-A273"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A274",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung - Caching Liste zulässiger Länder",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV DARF NICHT Informationen zur Liste zulässiger Länder verwenden, welche länger als 96h lokal durch das E-Rezept-FdV gecacht wurden.",
+            "conformance": "SHALL NOT",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-ERP-A274"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A275",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung - Land auswählen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung erteilen\" es dem Nutzer ermöglichen, ein Land aus der Liste der zulässigen Länder auszuwählen, für das der Nutzer die Zugriffsberechtigung erteilen möchte.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-ERP-A275"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A276",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung - Zugriffscode erzeugen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung\" einen eigens generierten Zugriffscode als Zufallswert erzeugen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-ERP-A276"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A277",
+            "title": "E-Rezept-FdV: Zugriffsberechtigung - Zugriffsberechtigung am TI-Flow-Fachdienst speichern",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Zugriffsberechtigung erteilen\" zum Speichern der Information am TI-Flow-Fachdienst die HTTP-Operation POST /$grant-eu-access-permission mit:\n    <ul>\n        <li>Organization.extension:ncpehCountryEx.valueCodeableConcept.coding.code des vom Nutzer ausgewählten Landes in Parameters.parameter:countryCode</li>\n        <li>erzeugter Zugriffscode in Parameters.parameter:accessCode</li>\n    </ul>\n    ausführen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-grant-eu-access-permission-req-fdv.html#IG-TIFLOW-ERP-A277"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A278",
+            "title": "TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n    <ul>\n    <li>oid_versicherter</li>\n    </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit die Information zur Zugriffsberechtigung nicht durch Unberechtigte gelöscht werden kann.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-revoke-eu-access-permission-req-fd.html#IG-TIFLOW-ERP-A278"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A279",
+            "title": "TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Löschen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission den zeta-user-info.identifier des Nutzers (KVNR) bestimmen und, falls vorhanden, zu dieser KVNR gespeicherte Zugriffsberechtigungen löschen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-revoke-eu-access-permission-req-fd.html#IG-TIFLOW-ERP-A279"
+        },
+        {
             "key": "IG-TIFLOW-ERP-A28",
             "title": "E-Rezept-FdV: E-Rezept zuweisen - Textnachricht ohne Link",
             "version": 0,
@@ -3542,6 +4912,198 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/query-api-communication-req-fdv.html#IG-TIFLOW-ERP-A28"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A280",
+            "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n     <ul>\n     <li>oid_versicherter </li>\n     </ul>\n     die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit eine Zugriffsberechtigte nicht durch Unberechtigte erteilt werden kann.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-ERP-A280"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A281",
+            "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission den zeta-user-info.identifier des Nutzers (KVNR) bestimmen und sicherstellen, dass ein Consent-Datensatz mit Consent.patient.identifier = KVNR und Consent.category.coding.code = EUDISPCONS existiert und bei fehlgeschlagener Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_CONSENT_REQUIRED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Das Erstellen einer Zugriffsberechtigung ist erst zulässig, wenn eine Einwilligung durch den Nutzer zum Einlösen von E-Rezepten im europäischen Ausland erteilt wurde.</td>\n        </tr>\n    </table> \n    abbrechen, damit nur Versicherte eine Zugriffsberechtigung schreiben, die eine Einwilligung erteilt haben.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-ERP-A281"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A282",
+            "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Ländercode",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Ländercode (Parameters.parameter:countryCode) einem Land entspricht, welches die Anwendung ePrescription/eDispensation Szenario Land A unterstützt und bei fehlschlagender Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>409 - Conflict</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_EREZEPT_COUNTRY_CODE_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Für das angefragte Land ist Einlösen von E-Rezepten nicht möglich.</td>\n </tr>\n </table> \n abbrechen, damit der Versicherte nur für zulässige europäische Länder eine Zugriffsberechtigung erteilt.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-ERP-A282"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A283",
+            "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Zugriffscode",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, dass der im Request übermittelte Zugriffscode (Parameters.parameter:accessCode) das korrekte Format hat und bei fehlschlagender Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_ACCESS_CODE_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der übermittelte Zugriffscode ist nicht zulässig.</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-ERP-A283"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A284",
+            "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Löschen bestehender Zugriffsberechtigung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission prüfen, ob für die im Request übermittelte KVNR Zugriffsberechtigungen gespeichert sind und falls ja, diese löschen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-ERP-A284"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A285",
+            "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Neue Zugriffsberechtigung speichern",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission mit dem im Request übermittelten KVNR, Zugriffscode und Ländercode eine neue Zugriffsberechtigung speichern und den Wert valid_until auf aktuellen Zeitpunkt + 1h setzen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-ERP-A285"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A286",
+            "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Response",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS im Response zu einem Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission eine Ressource des Profils [GEM_ERP_PR_PAR_EU_Access_Authorization_Response] mit den Daten des gespeicherten Datensatz zur Zugriffsberechtigung übermitteln.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-ERP-A286"
+        },
+        {
+            "key": "IG-TIFLOW-ERP-A287",
+            "title": "TI-Flow-Fachdienst - Zugriffsberechtigung - periodische Bereinigung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS periodisch prüfen, dass keine zeitlich ungültigen Zugriffsberechtigungen gespeichert sind.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0-ballot.2/op-grant-eu-access-permission-req-fd.html#IG-TIFLOW-ERP-A287"
         },
         {
             "key": "IG-TIFLOW-ERP-A3",

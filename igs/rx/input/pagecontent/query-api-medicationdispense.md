@@ -28,8 +28,11 @@ Anfragen an die <i>MedicationDispense</i>-Ressource können über die RESTful AP
 	</div>
 <!--
 	<div id="Response-Examples">
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleRxMedicationDispenseSearchsetResponse JSON %}
+		</div>
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleRxMedicationDispenseSearchset XML %}
+			{% fragment Bundle/ExampleRxMedicationDispenseSearchsetResponse XML %}
 		</div>
 	</div>
 -->
@@ -53,8 +56,11 @@ Um spezifische Details zu einem einzelnen _MedicationDispense_ mittels der RESTf
 	</div>
 <!--
 	<div id="Response-Examples">
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment MedicationDispense/Example-MedicationDispense JSON %}
+		</div>
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleRxMedicationDispenseSearchset XML %}
+			{% fragment MedicationDispense/Example-MedicationDispense XML %}
 		</div>
 	</div>
 -->

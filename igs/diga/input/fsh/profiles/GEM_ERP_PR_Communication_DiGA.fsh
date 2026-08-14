@@ -8,10 +8,10 @@ Description: "Antwort des Leistungserbringers an den Patienten"
 * basedOn 1..1 MS
 * basedOn only Reference(Task)
 * basedOn ^type.aggregation = #referenced
-  * ^short = "Gibt das E-Rezept-Token gemäß gemSpec_DM_eRp an."
+  * ^short = "Referenz zum E-Rezept-Task"
   * ^comment = "Hat die Form 'Task/{{PrescriptionID}}'"
   * reference 1..1 MS
-    * ^short = "Gibt das E-Rezept-Token gemäß gemSpec_DM_eRp an."
+    * ^short = "Referenz zum E-Rezept-Task"
     * ^comment = "Hat die Form 'Task/{{PrescriptionID}}'"
 
 * status MS
@@ -40,7 +40,7 @@ Description: "Antwort des Leistungserbringers an den Patienten"
 * payload 1..1 MS
   * content[x] only string
     * ^short = "Der tatsächliche Inhalt der Nachricht"
-    * ^comment = "Dieser Inhalt muss ein JSON gemäß gemSpec_DM_eRp sein."
+    * ^comment = "Dieser Inhalt muss im JSON-Format sein."
   * content[x] MS
 
 

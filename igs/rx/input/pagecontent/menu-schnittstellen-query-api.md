@@ -3,3 +3,4 @@ Die folgenden Query APIs stellt der TI-Flow-Fachdienst den Clientsystemen zur Ve
 - [Query API: Task (E-Rezept)](./query-api-task.html)
 - [Query API: MedicationDispense (Abgabe)](./query-api-medicationdispense.html)
 - [Query API: Communication (Zuweisung)](./query-api-communication.html)
+- [Query API: Consent (Einwilligung Einlösen im EU-Ausland)](./query-api-consent.html)

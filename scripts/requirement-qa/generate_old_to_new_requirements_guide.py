@@ -39,7 +39,6 @@ DEFAULT_IG_BASE_URLS = {
     "erp-chrg": "https://gemspec.gematik.de/ig/fhir/tiflow-chargeitem/2.0.0-ballot.1",
     "diga": "https://gemspec.gematik.de/ig/fhir/tiflow-diga/2.0.0-ballot.1",
     "rx": "https://gemspec.gematik.de/ig/fhir/tiflow-erezept/2.0.0-ballot.1",
-    "erp-eu": "https://gemspec.gematik.de/ig/fhir/tiflow-xborder/2.0.0-ballot.1",
 }
 
 
