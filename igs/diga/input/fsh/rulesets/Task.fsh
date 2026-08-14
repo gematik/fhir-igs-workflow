@@ -8,10 +8,6 @@ RuleSet: Task162Extension
 * insert DiGAExpiryDate(extension[acceptDate].valueDate) // Expiry, weil so festgelegt beide Daten 3 Monate
 * insert DiGAExpiryDate(extension[expiryDate].valueDate)
 
-RuleSet: TaskIdentifier(flowType)
-* identifier[PrescriptionID].use = #official
-* identifier[PrescriptionID].value = "{flowType}.000.000.000.000.01"
-
 RuleSet: TaskIdentifierAccessCode
 * identifier[AccessCode].use = #official
 * identifier[AccessCode].value = "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
@@ -34,10 +30,6 @@ RuleSet: TaskOutputReceipt(ref)
 
 RuleSet: KVNR(field)
 * {field} = "X123456789"
-
-RuleSet: GKV_Identifier(field)
-* insert KVNR({field}.value)
-* {field}.system = "http://fhir.de/sid/gkv/kvid-10"
 
 RuleSet: PKV_Identifier(field)
 * {field}.value = "P987654321"
@@ -63,16 +55,6 @@ RuleSet: GKV_Task(status)
 * insert TaskMiscInfo
 * performerType = $GEM_ERP_CS_OrganizationType#urn:oid:1.2.276.0.76.4.54 "Öffentliche Apotheke"
 * performerType.text = "Öffentliche Apotheke"
-
-RuleSet: DiGA_Task(status)
-* status = #{status}
-* insert Task162Extension
-//* extension[flowType].valueCoding.display = "Muster 16 (Digitale Gesundheitsanwendungen)"
-//* insert TaskIdentifier(162)
-* insert GKV_Identifier(for.identifier)
-* insert TaskMiscInfo
-* performerType = $GEM_ERP_CS_OrganizationType#urn:oid:1.2.276.0.76.4.59 "Kostenträger"
-* performerType.text = "Kostenträger"
 
 RuleSet: RS_DiGA_VerordnungsDatensatz(task-id)
 * identifier.value = "{task-id}"

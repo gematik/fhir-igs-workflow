@@ -6,15 +6,6 @@ Usage: #example
 * parameter[+].name = "workflowType"
 * parameter[=].valueCoding = GEM_ERP_CS_FlowType#162
 
-
-// taken from https://github.com/gematik/eRezept-Examples/blob/2f3598589e4f95887fcb0bef285c696752f6b0c2/api-examples/fsh/input/fsh/examples/erp_diga/01_task_162_create.fsh
-Instance: erp-diga-01-task-162-create
-InstanceOf: GEM_ERP_PR_Task
-Usage: #example
-* id = "162.000.000.000.000.01"
-* meta.id = "Task-erp-diga-01-task-162-create"
-* insert DiGA_Task(draft)
-
 Instance: ExampleCreateOperationOutputError
 InstanceOf: OperationOutcome
 Title: "Fehler 403 - Beispiel für Create-Operation Fehlerantwort"
@@ -44,17 +35,6 @@ Usage: #example
     http://hl7.org/fhir/StructureDefinition/Coding|4.0.1);
     """
 
-Instance: ExampleCreateOperationOutputError
-InstanceOf: OperationOutcome
-Title: "Fehler 403 - Beispiel für Create-Operation Fehlerantwort"
-Description: "Beispiel für eine Fehlerantwort bei der Create-Operation mit FHIR-Validierungsfehlern"
-Usage: #example
-* issue[+]
-  * severity = #error
-  * code = #forbidden
-  * details.coding.code = #BLOCKED_FLOWTYPE
-  * details.text = "The Flowtype may not be used in the TI-Flow-Fachdienst"
-
 // taken from https://github.com/gematik/eRezept-Examples/blob/2f3598589e4f95887fcb0bef285c696752f6b0c2/api-examples/fsh/input/fsh/examples/erp_diga/01_task_162_create.fsh
 // example and following rulesets
 Instance: erp-diga-01-task-162-create
@@ -63,7 +43,3 @@ Usage: #example
 * id = "162.000.000.000.000.01"
 * meta.id = "Task-erp-diga-01-task-162-create"
 * insert DiGA_Task(draft)
-
-RuleSet: TaskMiscInfo
-* insert DateTime(authoredOn)
-* insert DateTimeStamp(lastModified)

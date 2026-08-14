@@ -19,7 +19,7 @@ RuleSet: DiGA_Task(status)
 * performerType.text = "Kostenträger"
 
 RuleSet: Task162Exension
-* extension[flowType].valueCoding = $GEM_ERP_CS_FlowType#162 "Muster 16 (Digitale Gesundheitsanwendungen)"
+* extension[flowType].valueCoding = $cs-flowtype#162 "Muster 16 (Digitale Gesundheitsanwendungen)"
 * insert DiGAExpiryDate(extension[acceptDate].valueDate) // Expiry, weil so festgelegt beide Daten 3 Monate
 * insert DiGAExpiryDate(extension[expiryDate].valueDate)
 
