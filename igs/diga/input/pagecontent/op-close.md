@@ -32,6 +32,9 @@ Die Operation $close wird als HTTP POST auf /Task/&#60;id&#62;/$close ausgeführ
 		</div>
 	</div>
 	<div id="Response-Examples">
+		<div data-name="200 - application/fhir+json" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleOperationCloseOutput XML %}
+		</div>
 		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleOperationCloseError JSON %}
 		</div>
