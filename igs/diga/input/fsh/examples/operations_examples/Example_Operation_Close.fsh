@@ -96,6 +96,21 @@ Usage: #inline
 * contentType = #application/octet-stream
 * data = "tJg8c5ZtdhzEEhJ0ZpAsUVFx5dKuYgQFs5oKgthi17M="
 
+/*Instance: ExampleReceiptBundle
+InstanceOf: TIFlowDiGAReceiptBundle
+Title: "Quittungs-Bundle für abgeschlossene Rezeptabgabe"
+Description: "Beispiel für ein Quittungs-Bundle nach erfolgter Abgabe einer DiGA"
+Usage: #inline
+* id = "ExampleReceiptBundle"
+* type = #document
+* identifier[+].system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
+* identifier[=].value = "162.000.033.491.280.78"
+* insert DateTime(timestamp)
+* entry[+].fullUrl = "urn:uuid:1413b38d-81a6-432a-a801-98d7307a422b"
+* entry[=].resource = ReceiptBundleDevice
+* entry[+].fullUrl = "urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652"
+* entry[=].resource = ReceiptBundleBinary*/
+
 Instance: ReceiptBundleDevice
 InstanceOf: GEM_ERP_PR_Device
 Title: "Gerät für Quittungs-Bundle"

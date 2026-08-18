@@ -14,5 +14,5 @@ Usage: #example
 Title: "Example Close Parameters"
 * parameter[+]
   * name = "return"
-  * resource = Example-MedicationDispense-DiGA-Name-And-PZN  
+  * resource = ExampleOperationCloseOutput //Example-MedicationDispense-DiGA-Name-And-PZN  
     

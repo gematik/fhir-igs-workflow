@@ -11,7 +11,7 @@ RuleSet: OperationResource(resource, affectsState, system, type, instance)
 RuleSet: DiGA_Task(status)
 * status = #{status}
 * insert Task162Exension
-* extension[flowType].valueCoding.display = "Muster 16 (Digitale Gesundheitsanwendungen)"
+* extension[flowType].valueCoding.display = "Flowtype für Digitale Gesundheitsanwendungen"
 * insert TaskIdentifier(162)
 //* insert GKV_Identifier(for.identifier) -> Only when not draft
 * insert TaskMiscInfo
@@ -19,7 +19,7 @@ RuleSet: DiGA_Task(status)
 * performerType.text = "Kostenträger"
 
 RuleSet: Task162Exension
-* extension[flowType].valueCoding = $cs-flowtype#162 "Muster 16 (Digitale Gesundheitsanwendungen)"
+* extension[flowType].valueCoding = $cs-flowtype#162 "Flowtype für Digitale Gesundheitsanwendungen"
 * insert DiGAExpiryDate(extension[acceptDate].valueDate) // Expiry, weil so festgelegt beide Daten 3 Monate
 * insert DiGAExpiryDate(extension[expiryDate].valueDate)
 

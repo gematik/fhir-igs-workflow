@@ -32,17 +32,25 @@ Title: "DiGA Task in ready state"
 * insert DiGA_Task(ready)
 * insert GKV_Identifier(for.identifier) // Only when not draft
 * insert TaskIdentifierAccessCode
-* insert TaskInputReceipt(3ebd56b4-5cdf-42bc-b26a-738d0b08068a)
+* insert TaskInputReceipt(ExampleDiGABundle)
 // TODO: Bug im E-Rezept-Fachdienst
 * input[patientReceipt].type = $GEM_ERP_CS_DocumentType#2
-* input[patientReceipt].valueReference.reference = "3ebd56b4-5cdf-42bc-b26a-738d0b08068a"
+* input[patientReceipt].valueReference.reference = "Bundle/ExampleDiGABundle"
 
-Instance: 3ebd56b4-5cdf-42bc-b26a-738d0b08068a
+Instance: ExampleDiGABundle
 InstanceOf: Bundle
 Usage: #inline
-* meta.profile[0] = "$evdga-bundle|1.2"
-* meta.tag.display = "Unvollständiges Beispiel eines DiGA-Rezept-Bundles"
+//* meta.profile[0] = "$evdga-bundle|1.2"
+* meta.tag.display = "Unvollständiges Beispiel eines DiGA-Rezept-Bundles - https://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle|1.2"
+//* id = "3ebd56b4-5cdf-42bc-b26a-738d0b08068a"
 * type = #document
+
+Instance: ExampleDiGABinary
+InstanceOf: TIFlowDiGABinary
+Usage: #inline
+//* id = "b939a82a-9c23-4b6d-a139-f468d1b9d652"
+* contentType = #application/octet-stream
+* data = "tJg8c5ZtdhzEEhJ0ZpAsUVFx5dKuYgQFs5oKgthi17M="
 
 Instance: ExampleDiGATaskSearchset
 InstanceOf: Bundle
@@ -57,8 +65,8 @@ Description: "Example response for GET /Task in DiGA workflow"
 * entry[+].fullUrl = "https://erp-ref.example.org/Task/ExampleDiGATaskInReadyState"
 * entry[=].resource = ExampleDiGATaskInReadyState
 * entry[=].search.mode = #match
-* entry[+].fullUrl = "urn:uuid:3ebd56b4-5cdf-42bc-b26a-738d0b08068a"
-* entry[=].resource = 3ebd56b4-5cdf-42bc-b26a-738d0b08068a
+//* entry[+].fullUrl = "https://erp-ref.example.org/Bundle/ExampleDiGABundle"
+//* entry[=].resource = ExampleDiGABundle
 
 Instance: ExampleDiGACommunicationSearchset
 InstanceOf: Bundle

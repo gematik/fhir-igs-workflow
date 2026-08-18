@@ -29,8 +29,8 @@ Description: "Example response for $accept in DiGA workflow"
 * type = #collection
 * link[+].relation = "self"
 * link[=].url = "https://erp-ref.example.org/Task/162.000.000.000.000.01/$accept"
-* entry[+].fullUrl = "https://erp-ref.example.org/Task/162.000.000.000.000.01"
+* entry[+].fullUrl = "https://erp-ref.example.org/Task/ExampleDiGATaskInReadyState"
 * entry[=].resource = ExampleDiGATaskInReadyState
 * entry[=].search.mode = #match
-* entry[+].fullUrl = "urn:uuid:3ebd56b4-5cdf-42bc-b26a-738d0b08068a"
-* entry[=].resource = 3ebd56b4-5cdf-42bc-b26a-738d0b08068a
+* entry[+].fullUrl = "https://erp-ref.example.org/Binary/ExampleDiGABinary"
+* entry[=].resource = ExampleDiGABinary
