@@ -70,8 +70,8 @@ Description: "Example response for GET /Communication in DiGA workflow"
 * total = 1
 * link[+].relation = "self"
 * link[=].url = "https://erp-ref.example.org/Communication?received=NULL"
-* entry[+].fullUrl = "https://erp-ref.example.org/Communication/Communication_Reply_DiGA"
-* entry[=].resource = Communication_Reply_DiGA
+* entry[+].fullUrl = "https://erp-ref.example.org/Communication/Communication-Reply-DiGA"
+* entry[=].resource = Communication-Reply-DiGA
 * entry[=].search.mode = #match
 
 Instance: ExampleDiGAMedicationDispenseSearchset

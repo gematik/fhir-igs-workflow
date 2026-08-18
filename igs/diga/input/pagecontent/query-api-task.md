@@ -10,7 +10,6 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 |Versicherter|GET /&#60;id&#62;|Spezifischen Task abrufen|
 |Kostenträger|GET /&#60;id&#62;?ac=|Recovery Secret|
 |Kostenträger|GET /&#60;id&#62;?secret=|Quittung erneut abrufen|
-|Versicherter|PATCH|Task markieren|
 
 ### Anforderungen an Schnittstelle
 
@@ -34,30 +33,5 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 			{% fragment Bundle/ExampleDiGATaskSearchset XML %}
 		</div>
 	</div>
-</div>
-
-<div class="gematik-api"
-	data-api-type="FHIRResource"
-	data-api-fhir-resource-type="Task"
-	data-api-fhir-interaction="patch">
-	<div id="CapabilityStatement">
-		<pre>
-			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
-		</pre>
-	</div>
-<!--
-	<div id="Request-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleDiGAOperationRequestParameters XML %}
-		</div>
-	</div>
--->
-<!--
-	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleDiGATaskSearchset XML %}
-		</div>
-	</div>
--->
 </div>
 

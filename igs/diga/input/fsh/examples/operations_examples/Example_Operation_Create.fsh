@@ -40,7 +40,8 @@ Usage: #example
 // example and following rulesets
 Instance: erp-diga-01-task-162-create
 InstanceOf: TIFlowDiGATask
+Title: "DiGA Task in draft state"
 Usage: #example
-* id = "162.000.000.000.000.01"
+//* id = "162.000.000.000.000.01"
 * meta.id = "Task-erp-diga-01-task-162-create"
 * insert DiGA_Task(draft)
