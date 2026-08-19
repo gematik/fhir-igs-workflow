@@ -7,24 +7,26 @@ Usage: #example
 * parameter[=].valueCoding = GEM_ERP_CS_FlowType#162
 
 Instance: ExampleCreateOperationOutputError
-InstanceOf: OperationOutcome
+InstanceOf: TIFlowOperationOutcome
 Title: "Error 403 - Beispiel für Create-Operation Fehlerantwort"
 Description: "Beispiel für eine Fehlerantwort bei der Create-Operation mit FHIR-Validierungsfehlern"
 Usage: #example
 * issue[+]
   * severity = #error
   * code = #forbidden
+  * details.coding.system = $cs-tiflow-oo-details
   * details.coding.code = #TIFLOW_AUTH_ROLE_NOT_ALLOWED
   * details.text = "Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern"
 
 Instance: ExampleOperationCreateError
-InstanceOf: OperationOutcome
+InstanceOf: TIFlowOperationOutcome
 Title: "Error 400 - Beispiel für Create-Operation Fehlerantwort"
 Description: "Beispiel für eine Fehlerantwort bei der Create-Operation mit FHIR-Validierungsfehlern"
 Usage: #example
 * issue[+]
   * severity = #error
   * code = #invalid
+  * details.coding.system = $cs-ti-oo-details
   * details.coding.code = #SVC_VALIDATION_FAILED
   * details.text = "FHIR Profile Validation Failed"
   * diagnostics = """

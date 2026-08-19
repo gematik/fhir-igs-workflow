@@ -29,3 +29,7 @@ Alias: $GEM_ERP_CS_DocumentType = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP
 
 //Schlüsseltabellen
 Alias: $GEM_ERP_CS_OrganizationType = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OrganizationType
+
+// OperationOutcome details
+Alias: $cs-tiflow-oo-details = https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs
+Alias: $cs-ti-oo-details = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes

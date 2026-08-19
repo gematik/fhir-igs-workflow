@@ -1,22 +1,24 @@
 Instance: ExampleOperationAcceptError
-InstanceOf: OperationOutcome
+InstanceOf: TIFlowOperationOutcome
 Title: "Error 409 - Beispiel für Accept-Operation Fehlerantwort"
 Description: "Beispiel für eine Fehlerantwort bei der Accept-Operation eines E-Rezepts"
 Usage: #example
 * issue[+]
   * severity = #error
   * code = #invalid
+  * details.coding.system = $cs-tiflow-oo-details
   * details.coding.code = #TIFLOW_TASK_STATUS_MISMATCH
   * details.text = "Task has invalid status draft"
 
 Instance: ExampleOperationAcceptRoleError
-InstanceOf: OperationOutcome
+InstanceOf: TIFlowOperationOutcome
 Title: "Error 403 - Beispiel für Accept-Operation durch Rollenprüfung"
 Description: "Beispiel für eine Fehlerantwort Rollenprüfung bei der Accept-Operation eines E-Rezepts"
 Usage: #example
 * issue[+]
   * severity = #error
   * code = #invalid
+  * details.coding.system = $cs-tiflow-oo-details
   * details.coding.code = #TIFLOW_AUTH_ROLE_NOT_ALLOWED
   * details.text = "Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern"
 

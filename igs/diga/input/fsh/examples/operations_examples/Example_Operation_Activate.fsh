@@ -14,21 +14,23 @@ Usage: #example
 * parameter[=].resource = PrescriptionBinary
 
 Instance: ExampleOperationActivateInvalidRoleError
-InstanceOf: OperationOutcome
+InstanceOf: TIFlowOperationOutcome
 Title: "Error 400 - QES nicht valide; Example Activate operation error response"
 Usage: #example
 * issue[+]
   * severity = #error
   * code = #invalid
+  * details.coding.system = $cs-tiflow-oo-details
   * details.coding.code = #TIFLOW_SIGNATURE_INVALID
 
 Instance: ExampleOperationActivateError
-InstanceOf: OperationOutcome
+InstanceOf: TIFlowOperationOutcome
 Title: "Error 400 - Example Activate operation error response"
 Usage: #example
 * issue[+]
   * severity = #error
   * code = #invalid
+  * details.coding.system = $cs-ti-oo-details
   * details.coding.code = #SVC_VALIDATION_FAILED
   * details.text = "FHIR Profile Validation Failed"
   * diagnostics = "Unable to determine profile type from name: https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle"
