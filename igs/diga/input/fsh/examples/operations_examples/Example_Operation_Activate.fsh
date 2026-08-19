@@ -9,6 +9,7 @@ Usage: #inline
 Instance: ExampleOperationActivateParametersInput
 InstanceOf: Parameters
 Title: "Example Activate operation input parameters"
+Description: "Beispiel der Eingabeparameter für die $activate-Operation im DiGA-Workflow"
 Usage: #example
 * parameter[+].name = "ePrescription"
 * parameter[=].resource = PrescriptionBinary
@@ -16,6 +17,7 @@ Usage: #example
 Instance: ExampleOperationActivateInvalidRoleError
 InstanceOf: TIFlowOperationOutcome
 Title: "Error 400 - QES nicht valide; Example Activate operation error response"
+Description: "Beispiel einer Fehlerantwort der $activate-Operation bei ungültiger Signatur"
 Usage: #example
 * issue[+]
   * severity = #error
@@ -26,6 +28,7 @@ Usage: #example
 Instance: ExampleOperationActivateError
 InstanceOf: TIFlowOperationOutcome
 Title: "Error 400 - Example Activate operation error response"
+Description: "Beispiel einer Fehlerantwort der $activate-Operation bei fehlgeschlagener Profilvalidierung"
 Usage: #example
 * issue[+]
   * severity = #error

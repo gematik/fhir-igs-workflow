@@ -43,6 +43,7 @@ Usage: #example
 Instance: erp-diga-01-task-162-create
 InstanceOf: TIFlowDiGATask
 Title: "DiGA Task in draft state"
+Description: "Beispiel eines DiGA-Task im Status draft, wie er als Antwort auf die $create-Operation zurückgegeben wird"
 Usage: #example
 //* id = "162.000.000.000.000.01"
 * meta.id = "Task-erp-diga-01-task-162-create"

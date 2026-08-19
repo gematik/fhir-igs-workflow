@@ -20,4 +20,4 @@ Usage: #example
   * code = #invalid
   * details.coding.system = $cs-tiflow-oo-details
   * details.coding.code = #TIFLOW_AUTH_ROLE_NOT_ALLOWED
-  * details.text = "	Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern"
+  * details.text = "Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern"

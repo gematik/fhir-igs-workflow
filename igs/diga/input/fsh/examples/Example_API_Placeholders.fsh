@@ -28,6 +28,7 @@ Instance: ExampleDiGATaskInReadyState
 InstanceOf: TIFlowDiGATask
 Usage: #example
 Title: "DiGA Task in ready state"
+Description: "Beispiel eines DiGA-Task im Status ready, der vom Kostenträger eingelöst werden kann"
 * id = "ExampleDiGATaskInReadyState"
 * insert DiGA_Task(ready)
 * insert GKV_Identifier(for.identifier) // Only when not draft
