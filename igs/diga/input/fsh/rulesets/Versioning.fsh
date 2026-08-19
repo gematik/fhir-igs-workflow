@@ -69,3 +69,6 @@ RuleSet: DateTimeStamp(field)
 
 RuleSet: DateTimeStampPlus1Hr(field)
 * {field} = "2028-10-01T16:44:00.434+00:00"
+
+RuleSet: DiGAExpiryDate(field) //Date plus 100 Tage
+* {field} = "2028-10-09"

@@ -11,6 +11,7 @@ Description: "Reusable operation request payload for DiGA API documentation"
 * parameter[+].name = "secret"
 * parameter[=].valueString = "SECRET-DIGA-01"
 
+/*
 Instance: ExampleDiGAOperationOutcomeError
 InstanceOf: OperationOutcome
 Usage: #example
@@ -21,15 +22,53 @@ Description: "Representative business error for DiGA operation calls"
 * issue[0].code = #invalid
 * issue[0].details.text = "Task has invalid status for requested operation"
 * issue[0].diagnostics = "Expected status ready but found completed"
+*/
 
 Instance: ExampleDiGATaskInReadyState
-InstanceOf: Task
+InstanceOf: TIFlowDiGATask
 Usage: #example
 Title: "DiGA Task in ready state"
+Description: "Beispiel eines DiGA-Task im Status ready, der vom Kostenträger eingelöst werden kann"
 * id = "ExampleDiGATaskInReadyState"
-* status = #ready
-* intent = #order
-* authoredOn = "2026-03-20"
+* insert DiGA_Task(ready)
+* insert GKV_Identifier(for.identifier) // Only when not draft
+* insert TaskIdentifierAccessCode
+* insert TaskInputReceipt(ExampleDiGABundle)
+// TODO: Bug im E-Rezept-Fachdienst
+* input[patientReceipt].type = $GEM_ERP_CS_DocumentType#2
+* input[patientReceipt].valueReference.reference = "Bundle/ExampleDiGABundle"
+
+Instance: ExampleDiGABundle
+InstanceOf: Bundle
+Usage: #example
+Title: "DiGA-Verordnungs-Bundle (unvollständig)"
+Description: "Unvollständiges Beispiel eines DiGA-Rezept-Bundles nach KBV_PR_EVDGA_Bundle"
+//* meta.profile[0] = "$evdga-bundle|1.2"
+* meta.tag.display = "Unvollständiges Beispiel eines DiGA-Rezept-Bundles - https://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle|1.2"
+* id = "ExampleDiGABundle"
+* identifier.system = $prescription-id-ns
+* identifier.value = "162.000.000.000.000.01"
+* type = #document
+* insert DateTimeStamp(timestamp)
+* entry[+].fullUrl = "https://erp-ref.example.org/Composition/ExampleDiGAComposition"
+* entry[=].resource = ExampleDiGAComposition
+
+Instance: ExampleDiGAComposition
+InstanceOf: Composition
+Usage: #inline
+* status = #final
+* type.coding.system = "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_FORMULAR_ART"
+* type.coding.code = #e16D
+* date = "2026-03-01T10:00:00+01:00"
+* author.display = "Verordnende Praxis"
+* title = "elektronische Verordnung digitaler Gesundheitsanwendungen"
+
+Instance: ExampleDiGABinary
+InstanceOf: TIFlowDiGABinary
+Usage: #inline
+//* id = "b939a82a-9c23-4b6d-a139-f468d1b9d652"
+* contentType = #application/octet-stream
+* data = "tJg8c5ZtdhzEEhJ0ZpAsUVFx5dKuYgQFs5oKgthi17M="
 
 Instance: ExampleDiGATaskSearchset
 InstanceOf: Bundle
@@ -44,6 +83,8 @@ Description: "Example response for GET /Task in DiGA workflow"
 * entry[+].fullUrl = "https://erp-ref.example.org/Task/ExampleDiGATaskInReadyState"
 * entry[=].resource = ExampleDiGATaskInReadyState
 * entry[=].search.mode = #match
+//* entry[+].fullUrl = "https://erp-ref.example.org/Bundle/ExampleDiGABundle"
+//* entry[=].resource = ExampleDiGABundle
 
 Instance: ExampleDiGACommunicationSearchset
 InstanceOf: Bundle
@@ -55,8 +96,8 @@ Description: "Example response for GET /Communication in DiGA workflow"
 * total = 1
 * link[+].relation = "self"
 * link[=].url = "https://erp-ref.example.org/Communication?received=NULL"
-* entry[+].fullUrl = "https://erp-ref.example.org/Communication/Communication_Reply_DiGA"
-* entry[=].resource = Communication_Reply_DiGA
+* entry[+].fullUrl = "https://erp-ref.example.org/Communication/Communication-Reply-DiGA"
+* entry[=].resource = Communication-Reply-DiGA
 * entry[=].search.mode = #match
 
 Instance: ExampleDiGAMedicationDispenseSearchset

@@ -28,18 +28,21 @@ Die Operation $reject wird als HTTP POST auf /Task/&#60;id&#62;/$reject ausgefü
 		<pre>
 			{% include OperationDefinition-tiflow-diga-reject-op.json %}
 		</pre>
-	</div>
-<!--
-	<div id="Request-Examples">
-	</div>
--->
-<!--
+	</div>	
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
+		<div data-name="Fehler 403 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationRejectRolleError XML %}
+		</div>
+		<div data-name="Fehler 412 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationRejectError XML %}
+		</div>
+		<div data-name="Fehler 403 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationRejectRolleError JSON %}
+		</div>
+		<div data-name="Fehler 412 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationRejectError JSON %}
 		</div>
 	</div>
--->
 </div>
  
 ### Hinweise

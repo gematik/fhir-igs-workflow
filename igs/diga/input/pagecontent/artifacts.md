@@ -16,10 +16,28 @@ Das _Capability_ _Statement_ beschreibt die Anforderungen und Fähigkeiten, die 
 
 {% capture profiles %}
 StructureDefinition/GEM-ERP-PR-Communication-DiGA,
-StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA
+StructureDefinition/GEM-ERP-PR-MedicationDispense-DiGA,
+StructureDefinition/TIFlowDiGATask,
+StructureDefinition/TIFlowDiGABinary,
+StructureDefinition/TIFlowDiGAReceiptBundle,
+StructureDefinition/TIFlowDiGAReceiptComposition
 {% endcapture %}
 {% include artifacts-table-generator.html render=profiles %}
 <div><figcaption><strong>Tabelle:</strong> Ressourcenprofile</figcaption></div>
+
+### Parameters
+
+{% capture parameters %}
+StructureDefinition/TIFlowDiGAAcceptOperationOutput,
+StructureDefinition/TIFlowDiGAActivateOperationInput,
+StructureDefinition/TIFlowDiGAActivateOperationOutput,
+StructureDefinition/TIFlowDiGACloseOperationInput,
+StructureDefinition/TIFlowDiGACloseOperationOutput,
+StructureDefinition/TIFlowDiGACreateOperationInput,
+StructureDefinition/TIFlowDiGACreateOperationOutput
+{% endcapture %}
+{% include artifacts-table-generator.html render=parameters %}
+<div><figcaption><strong>Tabelle:</strong> Parameters</figcaption></div>
 
 ### Logische Modelle
 

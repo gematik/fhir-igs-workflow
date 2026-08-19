@@ -27,11 +27,24 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _MedicationDispense_ wird üb
 			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleDiGAMedicationDispenseSearchset XML %}
+		<div data-name="200 - Name-And-PZN" data-type="XML" data-render="ig-Fragment">
+			{% fragment MedicationDispense/Example-MedicationDispense-DiGA-Name-And-PZN XML %}
+		</div>		
+		<div data-name="200 - DeepLink" data-type="XML" data-render="ig-Fragment">
+			{% fragment MedicationDispense/Example-MedicationDispense-DiGA-DeepLink XML %}
+		</div>		
+		<div data-name="200 - No redeem Code" data-type="XML" data-render="ig-Fragment">
+			{% fragment MedicationDispense/Example-MedicationDispense-DiGA-NoRedeemCode XML %}
+		</div>
+		<div data-name="200 - Name-And-PZN" data-type="JSON" data-render="ig-Fragment">
+			{% fragment MedicationDispense/Example-MedicationDispense-DiGA-Name-And-PZN JSON %}
+		</div>
+		<div data-name="200 - DeepLink" data-type="JSON" data-render="ig-Fragment">
+			{% fragment MedicationDispense/Example-MedicationDispense-DiGA-DeepLink JSON %}
+		</div>
+		<div data-name="200 - No redeem Code" data-type="JSON" data-render="ig-Fragment">
+			{% fragment MedicationDispense/Example-MedicationDispense-DiGA-NoRedeemCode JSON %}
 		</div>
 	</div>
--->
 </div>
