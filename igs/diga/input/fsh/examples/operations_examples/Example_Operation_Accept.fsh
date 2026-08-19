@@ -31,6 +31,5 @@ Description: "Example response for $accept in DiGA workflow"
 * link[=].url = "https://erp-ref.example.org/Task/162.000.000.000.000.01/$accept"
 * entry[+].fullUrl = "https://erp-ref.example.org/Task/ExampleDiGATaskInReadyState"
 * entry[=].resource = ExampleDiGATaskInReadyState
-* entry[=].search.mode = #match
 * entry[+].fullUrl = "https://erp-ref.example.org/Binary/ExampleDiGABinary"
 * entry[=].resource = ExampleDiGABinary

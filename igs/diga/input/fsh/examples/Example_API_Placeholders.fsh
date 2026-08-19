@@ -39,11 +39,28 @@ Title: "DiGA Task in ready state"
 
 Instance: ExampleDiGABundle
 InstanceOf: Bundle
-Usage: #inline
+Usage: #example
+Title: "DiGA-Verordnungs-Bundle (unvollständig)"
+Description: "Unvollständiges Beispiel eines DiGA-Rezept-Bundles nach KBV_PR_EVDGA_Bundle"
 //* meta.profile[0] = "$evdga-bundle|1.2"
 * meta.tag.display = "Unvollständiges Beispiel eines DiGA-Rezept-Bundles - https://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle|1.2"
-//* id = "3ebd56b4-5cdf-42bc-b26a-738d0b08068a"
+* id = "ExampleDiGABundle"
+* identifier.system = $prescription-id-ns
+* identifier.value = "162.000.000.000.000.01"
 * type = #document
+* insert DateTimeStamp(timestamp)
+* entry[+].fullUrl = "https://erp-ref.example.org/Composition/ExampleDiGAComposition"
+* entry[=].resource = ExampleDiGAComposition
+
+Instance: ExampleDiGAComposition
+InstanceOf: Composition
+Usage: #inline
+* status = #final
+* type.coding.system = "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_FORMULAR_ART"
+* type.coding.code = #e16D
+* date = "2026-03-01T10:00:00+01:00"
+* author.display = "Verordnende Praxis"
+* title = "elektronische Verordnung digitaler Gesundheitsanwendungen"
 
 Instance: ExampleDiGABinary
 InstanceOf: TIFlowDiGABinary
