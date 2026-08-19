@@ -34,6 +34,9 @@ Die Operation $create wird als HTTP POST auf /Task/$create ausgeführt.
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/OperationCreateParametersInputExample XML %}
 		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/OperationCreateParametersInputExample JSON %}
+		</div>
 	</div>
 	<div id="Response-Examples">
 		<pre>
@@ -50,6 +53,15 @@ Die Operation $create wird als HTTP POST auf /Task/$create ausgeführt.
 		</div>
 		<div data-name="403 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleCreateOperationOutputError XML %}
+		</div>
+		<div data-name="200 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Task/erp-diga-01-task-162-create JSON %}
+		</div>
+		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationCreateError JSON %}
+		</div>
+		<div data-name="403 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleCreateOperationOutputError JSON %}
 		</div>
 	</div>
 </div>

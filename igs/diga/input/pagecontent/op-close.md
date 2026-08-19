@@ -30,16 +30,28 @@ Die Operation $close wird als HTTP POST auf /Task/&#60;id&#62;/$close ausgeführ
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleCloseInputParametersDiGA XML %}
 		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleCloseInputParametersDiGA JSON %}
+		</div>
 	</div>
 	<div id="Response-Examples">
-		<div data-name="200 - application/fhir+json" data-type="XML" data-render="ig-Fragment">
+		<div data-name="200 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleOperationCloseOutput XML %}
+		</div>
+		<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationCloseError XML %}
+		</div>
+		<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationCloseProfileError XML %}
+		</div>
+		<div data-name="200 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleOperationCloseOutput JSON %}
 		</div>
 		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleOperationCloseError JSON %}
 		</div>
-		<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationCloseProfileError XML %}
+		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationCloseProfileError JSON %}
 		</div>
 	</div>
 </div>
