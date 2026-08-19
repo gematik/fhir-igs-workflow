@@ -83,4 +83,3 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 		</pre>
 	</div>
 </div>
-
