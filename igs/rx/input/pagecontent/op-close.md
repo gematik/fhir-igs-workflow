@@ -28,27 +28,15 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$close` gesendet.
 	</div>
 <!--
 	<div id="Request-Examples">
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleCloseInputParameters JSON %}
-		</div>
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleCloseInputParameters XML %}
+			{% fragment Parameters/ExampleRxOperationRequestParameters XML %}
 		</div>
 	</div>
 -->
 <!--
 	<div id="Response-Examples">
-		<div data-name="Erfolg (200) application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleRxCloseOutputParameters JSON %}
-		</div>
-		<div data-name="Erfolg (200) application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleRxCloseOutputParameters XML %}
-		</div>
-		<div data-name="Fehler (403) application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleRxCloseOperationOutcomeError JSON %}
-		</div>
-		<div data-name="Fehler (403) application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleRxCloseOperationOutcomeError XML %}
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
 		</div>
 	</div>
 -->

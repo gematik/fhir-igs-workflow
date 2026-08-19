@@ -38,17 +38,8 @@ Anfragen an die <i>Task</i>-Ressource können über die RESTful API mittels HTTP
 	</div>
 <!--
 	<div id="Response-Examples">
-		<div data-name="Alle Tasks application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleRxTaskSearchsetResponse JSON %}
-		</div>
-		<div data-name="Alle Tasks application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleRxTaskSearchsetResponse XML %}
-		</div>
-		<div data-name="Gefiltert (status=ready) application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleRxTaskSearchsetResponseReady JSON %}
-		</div>
-		<div data-name="Gefiltert (status=ready) application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleRxTaskSearchsetResponseReady XML %}
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleRxTaskSearchset XML %}
 		</div>
 	</div>
 -->
@@ -71,11 +62,8 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 	</div>
 <!--
 	<div id="Response-Examples">
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Task/TaskInReadyState JSON %}
-		</div>
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Task/TaskInReadyState XML %}
+			{% fragment Bundle/ExampleRxTaskSearchset XML %}
 		</div>
 	</div>
 -->

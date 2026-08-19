@@ -29,7 +29,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet.
 <!--
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleRxOperationRequestParameters XML %}		
+			{% fragment Parameters/ExampleRxOperationRequestParameters XML %}
 		</div>
 	</div>
 -->

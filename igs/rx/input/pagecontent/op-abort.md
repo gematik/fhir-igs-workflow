@@ -29,13 +29,14 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 		</pre>
 	</div>
 <!--
-	<div id="Request-Examples">		
+	<div id="Request-Examples">
 	</div>
 -->
 <!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
+		</div>
 	</div>
 -->
 </div>
