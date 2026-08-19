@@ -33,6 +33,14 @@ RuleSet: ChargeItemInteraction(expectation)
 * insert ChargeItemSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
 * insert ChargeItemReadInteractionStatusCodes
+* insert CapResourceInteraction(#create, #SHALL)
+* insert ChargeItemCreateInteractionStatusCodes
+* insert CapResourceInteraction(#update, #SHALL)
+* insert ChargeItemUpdateInteractionStatusCodes
+* insert CapResourceInteraction(#patch, #SHALL)
+* insert ChargeItemPatchInteractionStatusCodes
+* insert CapResourceInteraction(#delete, #SHALL)
+* insert ChargeItemDeleteInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(_lastUpdated, http://hl7.org/fhir/SearchParameter/Resource-lastUpdated, #date, {expectation}, "Resource.meta.lastUpdated - Unterstützt die Suche nach dem zuletzt aktualisierten Datum")
 * insert CapSupportResourceSearchParam(entered-date, http://hl7.org/fhir/SearchParameter/ChargeItem-entered-date, #date, {expectation}, "ChargeItem.enteredDate - Unterstützt die Suche nach dem Eingangsdatum; default sort if _sort is not provided")
@@ -49,6 +57,10 @@ RuleSet: CommunicationInteraction(expectation)
 * insert CommunicationSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
 * insert CommunicationReadInteractionStatusCodes
+* insert CapResourceInteraction(#create, #SHALL)
+* insert CommunicationCreateInteractionStatusCodes
+* insert CapResourceInteraction(#delete, #SHALL)
+* insert CommunicationDeleteInteractionStatusCodes
 
 RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResource(Consent, #SHALL)
@@ -58,5 +70,9 @@ RuleSet: ConsentInteraction(expectation)
 * insert ConsentSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
 * insert ConsentReadInteractionStatusCodes
+* insert CapResourceInteraction(#create, #SHALL)
+* insert ConsentCreateInteractionStatusCodes
+* insert CapResourceInteraction(#delete, #SHALL)
+* insert ConsentDeleteInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")
