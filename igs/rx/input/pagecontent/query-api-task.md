@@ -36,13 +36,14 @@ Anfragen an die <i>Task</i>-Ressource können über die RESTful API mittels HTTP
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleRxTaskSearchset XML %}
 		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleRxTaskSearchset JSON %}
+		</div>
 	</div>
--->
 </div>
 
 ### Instance API
@@ -60,13 +61,14 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleRxTaskSearchset XML %}
+			{% fragment Task/TaskInReadyState XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Task/TaskInReadyState JSON %}
 		</div>
 	</div>
--->
 </div>
 
 #### Task markieren (Einlösen im EU-Ausland)
@@ -81,5 +83,21 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 		<pre>
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
+	</div>
+	<div id="Request-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/Example-PATCH-Task-Single-Input-Request-True XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/Example-PATCH-Task-Single-Input-Request-True JSON %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Task/ExampleERPEUTaskInReadyState XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Task/ExampleERPEUTaskInReadyState JSON %}
+		</div>
 	</div>
 </div>

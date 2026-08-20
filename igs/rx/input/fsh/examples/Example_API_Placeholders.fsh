@@ -61,8 +61,8 @@ Description: "Example response for GET /Task"
 * total = 1
 * link[+].relation = "self"
 * link[=].url = "https://erp-ref.example.org/Task?status=ready&_count=1"
-* entry[+].fullUrl = "https://erp-ref.example.org/Task/ExampleRxTaskInReadyState"
-* entry[=].resource = ExampleRxTaskInReadyState
+* entry[+].fullUrl = "https://erp-ref.example.org/Task/TaskInReadyState"
+* entry[=].resource = TaskInReadyState
 * entry[=].search.mode = #match
 
 Instance: ExampleRxCommunicationSearchset

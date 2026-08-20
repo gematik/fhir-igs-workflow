@@ -26,20 +26,34 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$close` gesendet.
 			{% include OperationDefinition-tiflow-rx-close-op.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleRxOperationRequestParameters XML %}
+			{% fragment Parameters/ExampleCloseInputParameters XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleCloseInputParameters JSON %}
 		</div>
 	</div>
--->
-<!--
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
+		<div data-name="200 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleCloseOutputParameters XML %}
+		</div>
+		<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationCloseError XML %}
+		</div>
+		<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationCloseProfileError XML %}
+		</div>
+		<div data-name="200 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleCloseOutputParameters JSON %}
+		</div>
+		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationCloseError JSON %}
+		</div>
+		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationCloseProfileError JSON %}
 		</div>
 	</div>
--->
 </div>
 
 ### Hinweise

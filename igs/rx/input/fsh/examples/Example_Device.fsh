@@ -5,9 +5,9 @@ Description: "Beispiel für ein Gerät, das für die Erstellung von E-Rezept-Qui
 Usage: #example
 * id = "ReceiptBundleDevice"
 * status = #active
-* serialNumber = "1.14.0"
+* serialNumber = "2.0.0"
 * deviceName.name = "TI-Flow-Fachdienst"
 * deviceName.type = #user-friendly-name
-* version.value = "1.14.0"
+* version.value = "2.0.0"
 * contact.system = #email
 * contact.value = "betrieb@gematik.de"

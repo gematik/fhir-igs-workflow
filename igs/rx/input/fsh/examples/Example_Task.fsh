@@ -4,7 +4,7 @@ InstanceOf: GEM_ERP_PR_Task
 Title: "Task erstellt durch Fachdienst via $create Operation"
 Description: "Beispiel für einen Task, der vom Fachdienst über die $create Operation erstellt wurde"
 Usage: #example
-* id = "b12eb5f7-91ce-4887-93c7-800454601377"
+* id = "TaskInCreatedState"
 * meta.tag.display = "Task in DRAFT state just created by Fachdienst via $create operation"
 * extension[flowType].url = "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType"
 * extension[flowType].valueCoding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType#160 "Flowtype für Apothekenpflichtige Arzneimittel"
@@ -46,9 +46,9 @@ Usage: #example
 * for.identifier.value = "X123456789"
 * insert DateTimeStampPlus1Hr(lastModified)
 * input[ePrescription].type.coding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType#1 "Health Care Provider Prescription"
-* input[ePrescription].valueReference.reference = "281a985c-f25b-4aae-91a6-41ad744080b0"
+* input[ePrescription].valueReference = Reference(PrescriptionBinaryWithMeta)
 * input[patientReceipt].type.coding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType#2 "Patient Confirmation"
-* input[patientReceipt].valueReference.reference = "f8c2298f-7c00-4a68-af29-8a2862d55d43"
+* input[patientReceipt].valueReference = Reference(ExampleERPBundle)
 
 Instance: TaskIn-ProgressState
 InstanceOf: GEM_ERP_PR_Task

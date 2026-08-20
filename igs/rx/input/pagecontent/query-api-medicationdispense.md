@@ -26,13 +26,14 @@ Anfragen an die <i>MedicationDispense</i>-Ressource können über die RESTful AP
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleRxMedicationDispenseSearchset XML %}
+			{% fragment Bundle/ExampleMedicationDispenseSearchResponse XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleMedicationDispenseSearchResponse JSON %}
 		</div>
 	</div>
--->
 </div>
 
 
@@ -51,13 +52,14 @@ Um spezifische Details zu einem einzelnen _MedicationDispense_ mittels der RESTf
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleRxMedicationDispenseSearchset XML %}
+			{% fragment Bundle/ExampleMedicationDispenseSearchResponse XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleMedicationDispenseSearchResponse JSON %}
 		</div>
 	</div>
--->
 </div>
 
 #### Hinweise
