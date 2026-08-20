@@ -11,7 +11,7 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäß der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.
+	Der TI-Flow-Fachdienst MUSS einen Task mit Flowtype 162 nach Ablauf der Löschfrist gemäß der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.
 	<table>
 		<tr> 
 		<th>Task.status nach Statuswechsel</th>
@@ -46,7 +46,7 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines Tasks alle referenzierten Bundles ebenfalls löschen.
+	Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines Tasks mit Flowtype 162 alle referenzierten Bundles ebenfalls löschen.
 </requirement>
 
 <!-- A_19253-01 -->
@@ -55,10 +55,9 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource Communication
-	automatisch löschen:
+	Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource Communication automatisch löschen:
 	<ul>
 		<li>ohne eine Referenz auf einen Task in Communication.basedOn nach 30 Tagen ab ihrem Sendedatum Communication.sent,</li>
-		<li>mit einer Referenz auf einen Task in Communication.basedOn gemäß der Löschfrist beim Löschen des Tasks.</li>
+		<li>mit einer Referenz auf einen Task mit Flowtype 162 in Communication.basedOn gemäß der Löschfrist beim Löschen des Tasks.</li>
 	</ul>
 </requirement>
