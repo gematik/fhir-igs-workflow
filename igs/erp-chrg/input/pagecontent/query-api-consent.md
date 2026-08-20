@@ -20,11 +20,50 @@ Für die Verwaltung der Einwilligung zum Speichern der Abrechnungsinformationen 
 			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleERPCHRGConsentSearchset XML %}
 		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleERPCHRGConsentSearchset JSON %}
+		</div>
 	</div>
--->
+</div>
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Consent"
+	data-api-fhir-interaction="create">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>
+	<div id="Request-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Consent/ChargeItemConsent-Request XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Consent/ChargeItemConsent-Request JSON %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Consent/0dcc5d4c-bf24-4c06-b02e-be5bc24587e2 XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Consent/0dcc5d4c-bf24-4c06-b02e-be5bc24587e2 JSON %}
+		</div>
+	</div>
+</div>
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Consent"
+	data-api-fhir-interaction="delete">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>	
 </div>

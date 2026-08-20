@@ -52,3 +52,9 @@ Usage: #example
 * insert PKV_Identifier(subject.identifier)
 * insert ApoTelematikID(enterer.identifier)
 * insert DateTimeStamp(enteredDate)
+
+Instance: ChargeItem-PATCH-Input
+InstanceOf: GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input
+Usage: #example
+* parameter[markingFlag].part[insuranceProvider].valueBoolean = false
+* parameter[markingFlag].part[taxOffice].valueBoolean = false
