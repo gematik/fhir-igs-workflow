@@ -1,14 +1,8 @@
 Instance: ExampleEUConsent
 InstanceOf: GEM_ERPEU_PR_Consent
-Title: "Example for a Consent to redeem EU Prescritptions"
+Title: "Example for a Consent to redeem EU Prescriptions"
 Usage: #example
-* id = "f97a0772-c99f-4159-90c6-2a41c7d96779"
-* scope = $cs-consent-scope#patient-privacy "Privacy Consent"
-* category = GEM_ERPEU_CS_ConsentType#EUDISPCONS "Consent for redeeming e-prescriptions in EU countries"
-* patient.identifier.value = "X123456789"
-* patient.identifier.assigner.identifier.value = "987655435"
-* dateTime = "2025-10-01T12:03:23Z"
-* policyRule = v3-ActCode#OPTIN
+* insert Consent(GEM_ERPEU_CS_ConsentType#EUDISPCONS "Consent for redeeming e-prescriptions in EU countries")
 
 Instance: ExampleGetConsent
 InstanceOf: Bundle
@@ -16,11 +10,11 @@ Title: "Example for a Bundle with a Consent"
 Usage: #example
 * link[+]
   * relation = "self"
-  * url = "https://erp-dev.zentral.erp.splitdns.ti-dienste.de/Consent?category=EUDISPCONS"
+  * url = "https://erp-ref.example.org/Consent?category=EUDISPCONS"
 * type = #searchset
-* timestamp = "2025-10-01T12:03:23Z"
+* insert DateTimeStamp(timestamp)
 * total = 1
 * entry[+]
-  * fullUrl = "https://erp-dev.zentral.erp.splitdns.ti-dienste.de/Consent/f97a0772-c99f-4159-90c6-2a41c7d96779"
+  * fullUrl = "https://erp-ref.example.org/Consent/ExampleEUConsent"
   * resource = ExampleEUConsent
   * search.mode = #match

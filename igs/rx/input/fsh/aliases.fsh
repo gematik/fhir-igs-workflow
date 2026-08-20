@@ -76,6 +76,7 @@ Alias: $medicationDispense-renderedDosageInstruction-r5 = http://hl7.org/fhir/5.
 // EU (grenzüberschreitender Datenaustausch)
 Alias: $cs-iso-3166 = urn:iso:std:iso:3166
 Alias: $cs-consent-scope = http://terminology.hl7.org/CodeSystem/consentscope
+Alias: $v3-ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
 Alias: $cs-organization-profession-oid = https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID
 Alias: $sid-identifier-rx-originator-process = https://gematik.de/fhir/epa-medication/sid/rx-originator-process-identifier
 Alias: $sid-identifier-dispensation = https://gematik.de/fhir/epa-medication/sid/dispensation-identifier
