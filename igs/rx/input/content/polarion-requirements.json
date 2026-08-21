@@ -374,7 +374,7 @@
             "title": "E-Rezept - Struktur Zuweisungs-Message",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine Message mit \"Content-Type: multipart/mixed;...\" und der folgenden Struktur verwenden. Tabelle # : Struktur der Message mit \"Content-Type: multipart/mixed;...\" Teil Inhalt optional Freitext Freitextmessage für den Empfänger default: \"direkte Zuweisung E-Rezept\" nein Einlöseinformation E-Rezept-Token als Link gemäß gemSpec_DM_eRp#A_19554 Nach 45 Zeichen MUSS ein Steuerzeichen \"CRLF\" eingefügt werden nein Therapieplan Therapieplan als Anhang, base64 codiert ja",
+            "text": "Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine Message mit \"Content-Type: multipart/mixed;...\" und der folgenden Struktur verwenden. Tabelle # : Struktur der Message mit \"Content-Type: multipart/mixed;...\" Teil Inhalt optional Freitext Freitextmessage für den Empfänger default: \"direkte Zuweisung E-Rezept\" nein Einlöseinformation E-Rezept-Token als Link nach [2D-Code für E-Rezept-Token](../../core/input/pagecontent/datamatrix-code-client.html) Nach 45 Zeichen MUSS ein Steuerzeichen \"CRLF\" eingefügt werden nein Therapieplan Therapieplan als Anhang, base64 codiert ja",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -5734,7 +5734,7 @@
             "title": "PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Nachricht erstellen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall \"Nachricht an Versicherten versenden\" die Nachricht gemäß der Struktur [gemSpec_DM_eRp#TAB_eRpDM_003] und \n  <ul>\n    <li>einem communicationType entsprechend der zu übermittelnden Information</li>\n    <li>TransactionID aus der empfangenen Nachricht des Versicherten</li>\n  </ul>\n  erstellen.",
+            "text": "Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall \"Nachricht an Versicherten versenden\" die Nachricht gemäß der Struktur für Communication-Ressourcen und \n <ul>\n <li>einem communicationType entsprechend der zu übermittelnden Information</li>\n <li>TransactionID aus der empfangenen Nachricht des Versicherten</li>\n </ul>\n erstellen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
