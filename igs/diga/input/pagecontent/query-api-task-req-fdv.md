@@ -5,3 +5,5 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Task`-
 {% include core.query-api-task-req-fdv.md %}
 
 ### Modulspezifische Anforderungen
+
+Es gibt keine modulspezifischen Anforderungen.

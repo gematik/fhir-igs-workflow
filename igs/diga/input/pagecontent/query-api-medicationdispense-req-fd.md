@@ -5,3 +5,5 @@ Diese Seite beschreibt Anforderungen an den TI-Flow-Fachdienst zur Bereitstellun
 {% include core.query-api-medicationdispense-req-fd.md %}
 
 ### Modulspezifische Anforderungen
+
+Es gibt keine modulspezifischen Anforderungen.

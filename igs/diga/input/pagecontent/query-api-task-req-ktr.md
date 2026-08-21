@@ -5,3 +5,5 @@ Diese Seite beschreibt Anforderungen an das CS Kostenträger zur Nutzung der `Ta
 {% include core.query-api-task-req-ktr.md %}
 
 ### Modulspezifische Anforderungen
+
+Es gibt keine modulspezifischen Anforderungen.
