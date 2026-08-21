@@ -66,7 +66,7 @@ Description: "Beispiel einer Consent-Ressource fuer die Consent-Query"
 * id = "QueryConsentCHARGCONS"
 * status = #active
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy "Privacy Consent"
-* category[+] = http://loinc.org#59284-0 "Consent Document"
+* category[+] = http://loinc.org#59284-0 "Einwilligung - Dokument"
 * patient.identifier.system = "http://fhir.de/sid/gkv/kvid-10"
 * patient.identifier.value = "X123456789"
 * dateTime = "2025-01-15T10:15:00+01:00"
