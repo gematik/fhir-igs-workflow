@@ -11,6 +11,7 @@ Description: "Reusable example request payload for operation documentation in th
 * parameter[+].name = "secret"
 * parameter[=].valueString = "A1B2C3D4E5"
 
+/*
 Instance: ExampleRxOperationOutcomeError
 InstanceOf: OperationOutcome
 Usage: #example
@@ -21,6 +22,7 @@ Description: "Representative error response for invalid task status during opera
 * issue[0].code = #conflict
 * issue[0].details.text = "Task has invalid status draft"
 * issue[0].diagnostics = "Operation requires Task status ready or in-progress"
+*/
 
 Instance: ExampleRxTaskInReadyState
 InstanceOf: Task

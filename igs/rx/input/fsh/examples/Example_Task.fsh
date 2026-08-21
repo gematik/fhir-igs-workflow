@@ -75,7 +75,7 @@ Usage: #example
 * for.identifier.value = "X123456789"
 * insert DateTimeStampPlus1Hr(lastModified)
 * input[ePrescription].type.coding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType#1 "Health Care Provider Prescription"
-* input[ePrescription].valueReference = Reference(PrescriptionBinary)
+* input[ePrescription].valueReference = Reference(PrescriptionBinaryWithMeta)
 
 Instance: TaskIn-ProgressState-Dispensed
 InstanceOf: GEM_ERP_PR_Task
@@ -103,9 +103,9 @@ Usage: #example
 * for.identifier.value = "X123456789"
 * insert DateTimeStampPlus1Hr(lastModified)
 * input[ePrescription].type.coding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType#1 "Health Care Provider Prescription"
-* input[ePrescription].valueReference.reference = "281a985c-f25b-4aae-91a6-41ad744080b0"
+* input[ePrescription].valueReference = Reference(PrescriptionBinaryWithMeta)
 * input[patientReceipt].type.coding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType#2 "Patient Confirmation"
-* input[patientReceipt].valueReference.reference = "f8c2298f-7c00-4a68-af29-8a2862d55d43"
+* input[patientReceipt].valueReference = Reference(ExampleERPBundle)
 
 Instance: TaskIn-ProgressState-Dispensed-Multiple-MedicationDispenses
 InstanceOf: GEM_ERP_PR_Task
@@ -134,9 +134,9 @@ Usage: #example
 * for.identifier.value = "X123456789"
 * insert DateTimeStampPlus1Hr(lastModified)
 * input[ePrescription].type.coding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType#1 "Health Care Provider Prescription"
-* input[ePrescription].valueReference.reference = "281a985c-f25b-4aae-91a6-41ad744080b0"
+* input[ePrescription].valueReference = Reference(PrescriptionBinaryWithMeta)
 * input[patientReceipt].type.coding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType#2 "Patient Confirmation"
-* input[patientReceipt].valueReference.reference = "f8c2298f-7c00-4a68-af29-8a2862d55d43"
+* input[patientReceipt].valueReference = Reference(ExampleERPBundle)
 
 Instance: TaskInClosedState
 InstanceOf: GEM_ERP_PR_Task
@@ -163,8 +163,8 @@ Usage: #example
 * for.identifier.value = "X123456789"
 * insert DateTimeStampPlus1Hr(lastModified)
 * input[ePrescription].type.coding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType#1 "Health Care Provider Prescription"
-* input[ePrescription].valueReference.reference = "281a985c-f25b-4aae-91a6-41ad744080b0"
+* input[ePrescription].valueReference = Reference(PrescriptionBinaryWithMeta)
 * input[patientReceipt].type.coding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType#2 "Patient Confirmation"
-* input[patientReceipt].valueReference.reference = "f8c2298f-7c00-4a68-af29-8a2862d55d43"
+* input[patientReceipt].valueReference = Reference(ExampleERPBundle)
 * output[receipt].type.coding = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType#3 "Receipt"
-* output[receipt].valueReference.reference = "dffbfd6a-5712-4798-bdc8-07201eb77ab8"
+* output[receipt].valueReference = Reference(ReceiptBundleQuittung)
