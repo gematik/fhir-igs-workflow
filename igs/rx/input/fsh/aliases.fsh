@@ -56,9 +56,11 @@ Alias: $prescription-id-ns = https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS
 Alias: $eu-access-code-ns = https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_EU_AccessCode
 Alias: $cs-flowtype = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType
 Alias: $cs-features = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_Features
+Alias: $cs-availability-status = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_AvailabilityStatus
 Alias: $ex-capability-feature = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_CapabilityStatement_Feature
 Alias: $ex-capability-environment = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_CapabilityStatement_Environment
-
+Alias: $ex-supply-options-type = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_SupplyOptionsType
+Alias: $ex-availability-state = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AvailabilityState
 // TI Common
 Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes
 
