@@ -48,6 +48,54 @@
         "release": "2.0.0"
     },
     {
+        "key": "IG-TIFLOW-CHRG-A100",
+        "title": "E-Rezept Charging: Löschfrist ChargeItem",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/ttl.md",
+        "text": "Der TI-Flow-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.",
+        "conformance": "SHALL",
+        "created": "2026-07-28T11:39:12.978908",
+        "modified": "2026-07-28T11:39:12.978915",
+        "date": "2026-07-28T11:39:12.978917",
+        "content_hash": "a76d0a5567d2adbf2ed862b1ee8a8aef45dde0866e9d0210d437857652252292",
+        "path": "ttl.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A101",
+        "title": "E-Rezept Charging: Löschen referenzierter Bundles bei ChargeItem-Löschung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/ttl.md",
+        "text": "Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.",
+        "conformance": "SHALL",
+        "created": "2026-07-28T11:39:12.979121",
+        "modified": "2026-07-28T11:39:12.979126",
+        "date": "2026-07-28T11:39:12.979127",
+        "content_hash": "862f96e61cbe0be88faadcba67543a618b9b9ac231083731fd3afcd2240e03a3",
+        "path": "ttl.html",
+        "release": "2.0.0"
+    },
+    {
         "key": "IG-TIFLOW-CHRG-A11",
         "title": "E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest",
         "actor": [

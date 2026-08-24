@@ -409,7 +409,7 @@
     },
     {
         "key": "IG-TIFLOW-CORE-A122",
-        "title": "TI-Flow-Fachdienst -Task markieren - Versicherter - Prüfung KVNR",
+        "title": "TI-Flow-Fachdienst - Task markieren - Versicherter - Prüfung KVNR",
         "actor": [
             "TI-Flow_FD"
         ],
@@ -425,154 +425,10 @@
         "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten, den Versicherten anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_IDENTITY_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit ausschließlich der begünstigte Versicherte als Berechtigter einen Task ändert.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.222530",
-        "modified": "2026-06-26T12:33:16.561587",
-        "date": "2026-06-26T12:33:16.561587",
-        "content_hash": "9f6aac08b4c8f37dca5ae716652628e4366bc8874cfde39765216dad57a87214",
+        "modified": "2026-08-24T14:30:39.236841",
+        "date": "2026-08-24T14:30:39.236841",
+        "content_hash": "83de8bd03fd4ebb30c9a5ea85d6de12c0343084cb7291afb643288e9c067c3d7",
         "path": "query-api-task-req-fd.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A123",
-        "title": "TI-Flow-Fachdienst - Löschfrist abgelaufener Rezepte",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produktgutachten"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/ttl.md",
-        "text": "Der TI-Flow-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäß der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.\n\t<table>\n\t\t<tr> \n\t\t<th>Task.status nach Statuswechsel</th>\n\t\t<th>Löschfrist</th>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>draft</td>\n\t\t<td>10 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>ready</td>\n\t\t<td>10 Tage nach Datum in Task.expiryDate</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>in-progress</td>\n\t\t<td>100 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>completed</td>\n\t\t<td>100 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>cancelled</td>\n\t\t<td>10 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t</table>",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.223150",
-        "modified": "2026-06-25T11:30:11.223151",
-        "date": "2026-06-25T11:30:11.223152",
-        "content_hash": "52a2d259182e81869b84cd5c052196f6b5c7bbded87a059a9b76eda3351a45e2",
-        "path": "ttl.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A124",
-        "title": "TI-Flow-Fachdienst - Löschinformation ePA Medication Service bereitstellen",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/ttl.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Löschen eines Task nach Ablauf der Löschfrist, wenn Task.status = \"ready\" oder Task.status = \"in-progress\", die Daten für die Löschinformation des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.223359",
-        "modified": "2026-06-25T11:30:11.223360",
-        "date": "2026-06-25T11:30:11.223361",
-        "content_hash": "f21726879fe43cfd8c83b0b8593fd1d1da5fb1213de448a5a7ab2d71636f6260",
-        "path": "ttl.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A125",
-        "title": "TI-Flow-Fachdienst - Löschen referenzierter Bundles",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/ttl.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines Tasks alle referenzierten Bundles (QES-Datensatz, Quittungs-Bundle, Dispensierinformationen) ebenfalls löschen.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.223509",
-        "modified": "2026-06-25T11:30:11.223511",
-        "date": "2026-06-25T11:30:11.223512",
-        "content_hash": "c74bd77496e3f4398eea8c918bcf06baa0ea985b86d2f9b1d54e3adb3f118811",
-        "path": "ttl.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A126",
-        "title": "TI-Flow-Fachdienst - Löschfrist veraltete MedicationDispense",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produktgutachten"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/ttl.md",
-        "text": "Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource MedicationDispense nach 100 Tagen ab ihrem Erzeugungsdatum MedicationDispense.whenHandedOver automatisch löschen.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.223650",
-        "modified": "2026-06-25T11:30:11.223652",
-        "date": "2026-06-25T11:30:11.223652",
-        "content_hash": "8d7886d6ed149bcc49ab145f7f8e90e3e4c0f092739b797d8ebc94155fc08c77",
-        "path": "ttl.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A127",
-        "title": "TI-Flow-Fachdienst - Löschfrist ChargeItem",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produktgutachten"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/ttl.md",
-        "text": "Der TI-Flow-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.<br>\n\tDer TI-Flow-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.223797",
-        "modified": "2026-06-25T11:30:11.223798",
-        "date": "2026-06-25T11:30:11.223799",
-        "content_hash": "d7848936a3ff933e9c1a483e502344a42f6633516f68e04b638859c13fb08646",
-        "path": "ttl.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A128",
-        "title": "TI-Flow-Fachdienst - Löschfrist veraltete Nachrichten",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produktgutachten"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/ttl.md",
-        "text": "Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource Communication\n\tautomatisch löschen:\n\t<ul>\n\t\t<li>ohne eine Referenz auf einen Task in Communication.basedOn nach 100 Tagen ab ihrem Sendedatum Communication.sent,</li>\n\t\t<li>mit einer Referenz auf einen Task in Communication.basedOn gemäß der Löschfrist beim Löschen des Tasks,</li>\n\t\t<li>mit einer Referenz auf einen ChargeItem in Communication.basedOn nach 100 Tagen ab ihrem Sendedatum Communication.sent.</li>\n\t</ul>",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.224206",
-        "modified": "2026-06-25T11:30:11.224207",
-        "date": "2026-06-25T11:30:11.224208",
-        "content_hash": "a0b921c9eaac13354d5d5be3c574fa4e9983a184ece353e429cadb8f144f4a4a",
-        "path": "ttl.html",
         "release": "2.0.0"
     },
     {
@@ -1203,17 +1059,17 @@
         "key": "IG-TIFLOW-CORE-A155",
         "title": "CS: Lokalisierung TI-Flow-Fachdienst",
         "actor": [
-            "Anb_NCPeH_FD",
             "CS_E-Rezept_KTR",
+            "NCPeH_ePeDA",
             "PS_E-Rezept_abgebend",
             "PS_E-Rezept_verordnend"
         ],
         "test_procedures": {
-            "Anb_NCPeH_FD": [
-                "Produkttest"
-            ],
             "CS_E-Rezept_KTR": [
                 "Herstellererklärung"
+            ],
+            "NCPeH_ePeDA": [
+                "Produkttest"
             ],
             "PS_E-Rezept_abgebend": [
                 "Herstellererklärung"
@@ -1230,7 +1086,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.235389",
         "modified": "2026-06-25T11:30:11.235390",
-        "date": "2026-06-25T11:30:11.235391",
+        "date": "2026-07-28T09:48:51.366100",
         "content_hash": "429a977c106f0edf8555a1998ee1ee1187aa4e4355987a28296c1eec83a884eb",
         "path": "kommunikation-dienste-ti.html",
         "release": "2.0.0"
@@ -1239,17 +1095,17 @@
         "key": "IG-TIFLOW-CORE-A156",
         "title": "CS: Endpunkt Schnittstelle TI-Flow-Fachdienst",
         "actor": [
-            "Anb_NCPeH_FD",
             "CS_E-Rezept_KTR",
+            "NCPeH_ePeDA",
             "PS_E-Rezept_abgebend",
             "PS_E-Rezept_verordnend"
         ],
         "test_procedures": {
-            "Anb_NCPeH_FD": [
-                "Produkttest"
-            ],
             "CS_E-Rezept_KTR": [
                 "Herstellererklärung"
+            ],
+            "NCPeH_ePeDA": [
+                "Produkttest"
             ],
             "PS_E-Rezept_abgebend": [
                 "Herstellererklärung"
@@ -1266,7 +1122,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.235698",
         "modified": "2026-06-25T11:30:11.235699",
-        "date": "2026-06-25T11:30:11.235700",
+        "date": "2026-07-28T09:48:51.366459",
         "content_hash": "a0dbb4afef0be7bb89bb572ae9eccca17f242d6e0a193d94bed26fd25177c367",
         "path": "kommunikation-dienste-ti.html",
         "release": "2.0.0"
@@ -1275,17 +1131,17 @@
         "key": "IG-TIFLOW-CORE-A157",
         "title": "CS: Kommunikation über TLS-Verbindung",
         "actor": [
-            "Anb_NCPeH_FD",
             "CS_E-Rezept_KTR",
+            "NCPeH_ePeDA",
             "PS_E-Rezept_abgebend",
             "PS_E-Rezept_verordnend"
         ],
         "test_procedures": {
-            "Anb_NCPeH_FD": [
-                "Produkttest"
-            ],
             "CS_E-Rezept_KTR": [
                 "Herstellererklärung"
+            ],
+            "NCPeH_ePeDA": [
+                "Produkttest"
             ],
             "PS_E-Rezept_abgebend": [
                 "Herstellererklärung"
@@ -1302,7 +1158,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.235976",
         "modified": "2026-06-25T11:30:11.235977",
-        "date": "2026-06-25T11:30:11.235978",
+        "date": "2026-07-28T09:48:51.366806",
         "content_hash": "368381feab4e23bbffdfac70d6689ecbf64e1d4e327e7a7646ab364cb492d6d6",
         "path": "kommunikation-dienste-ti.html",
         "release": "2.0.0"
@@ -1311,17 +1167,17 @@
         "key": "IG-TIFLOW-CORE-A158",
         "title": "CS: Unzulässige TLS-Verbindungen ablehnen",
         "actor": [
-            "Anb_NCPeH_FD",
             "CS_E-Rezept_KTR",
+            "NCPeH_ePeDA",
             "PS_E-Rezept_abgebend",
             "PS_E-Rezept_verordnend"
         ],
         "test_procedures": {
-            "Anb_NCPeH_FD": [
-                "Produkttest"
-            ],
             "CS_E-Rezept_KTR": [
                 "Herstellererklärung"
+            ],
+            "NCPeH_ePeDA": [
+                "Produkttest"
             ],
             "PS_E-Rezept_abgebend": [
                 "Herstellererklärung"
@@ -1338,7 +1194,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.236272",
         "modified": "2026-06-25T11:30:11.236274",
-        "date": "2026-06-25T11:30:11.236274",
+        "date": "2026-07-28T09:48:51.367178",
         "content_hash": "2c2c5986f8d55a7dac1cdcceed50b1e117b4ecb63317354271f97f8339a0348b",
         "path": "kommunikation-dienste-ti.html",
         "release": "2.0.0"
@@ -1347,27 +1203,23 @@
         "key": "IG-TIFLOW-CORE-A162",
         "title": "CS: Umsetzung sicherer Kanal zur VAU des TI-Flow-Fachdienstes",
         "actor": [
-            "Anb_NCPeH_FD",
             "CS_E-Rezept_KTR",
+            "NCPeH_ePeDA",
             "PS_E-Rezept_abgebend",
-            "PS_E-Rezept_verordnend",
-            "TI-Flow_FD"
+            "PS_E-Rezept_verordnend"
         ],
         "test_procedures": {
-            "Anb_NCPeH_FD": [
-                "Produktgutachten"
-            ],
             "CS_E-Rezept_KTR": [
                 "Herstellererklärung"
+            ],
+            "NCPeH_ePeDA": [
+                "Produktgutachten"
             ],
             "PS_E-Rezept_abgebend": [
                 "Herstellererklärung"
             ],
             "PS_E-Rezept_verordnend": [
                 "Herstellererklärung"
-            ],
-            "TI-Flow_FD": [
-                "Produkttest"
             ]
         },
         "version": 0,
@@ -1378,7 +1230,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.236638",
         "modified": "2026-06-25T11:30:11.236639",
-        "date": "2026-06-25T11:30:11.236640",
+        "date": "2026-07-28T09:48:51.367579",
         "content_hash": "c6ce47eeb4f2d1b693ee2c328b6b974217c6c5540cfbb033bd4a9121d9910b43",
         "path": "kommunikation-dienste-ti.html",
         "release": "2.0.0"
@@ -2526,12 +2378,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-task-req-ktr.md",
-        "text": "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Recovery Secret\" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit \n  <ul>\n    <li>Task-ID in URL &lt;id&gt; </li>\n    <li>AccessCode in URL-Parameter ?ac=</li>\n  </ul>\n  ausführen.",
+        "text": "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Recovery Secret\" für die Verordnung die HTTP-Operation GET /Task/&lt;id&gt;/ mit \n <ul>\n <li>Task-ID in URL &lt;id&gt; </li>\n <li>AccessCode in URL-Parameter ?ac=</li>\n </ul>\n ausführen.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.254852",
-        "modified": "2026-06-25T11:30:11.254854",
-        "date": "2026-06-25T11:30:11.254854",
-        "content_hash": "4ef8d1e662abc4b50b5b1e2141714322e32608d709b2b3f12ece078173bc6708",
+        "modified": "2026-08-24T14:30:39.267041",
+        "date": "2026-08-24T14:30:39.267041",
+        "content_hash": "c6d507930d84f009f1e9febf4505b3a4d7ce2854501a10623ad31c6482f87d18",
         "path": "query-api-task-req-ktr.html",
         "release": "2.0.0"
     },
@@ -2550,12 +2402,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-task-req-ktr.md",
-        "text": "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Quittung erneut abrufen\" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit \n  <ul>\n    <li>Task-ID in URL &lt;id&gt; </li>\n    <li>Geheimnis in URL-Parameter ?secret=</li>\n  </ul>\n  ausführen.",
+        "text": "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Quittung erneut abrufen\" für die Verordnung die HTTP-Operation GET /Task/&lt;id&gt;/ mit \n <ul>\n <li>Task-ID in URL &lt;id&gt; </li>\n <li>Geheimnis in URL-Parameter ?secret=</li>\n </ul>\n ausführen.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.255068",
-        "modified": "2026-06-25T11:30:11.255069",
-        "date": "2026-06-25T11:30:11.255070",
-        "content_hash": "6d3ee9afc08b5ba51596987ab5b3252fad7abefd708c7f7a59aeba57f10ab1a2",
+        "modified": "2026-08-24T14:30:39.267353",
+        "date": "2026-08-24T14:30:39.267353",
+        "content_hash": "929a038d3b4c2541dd23081b9de04b4aa4e80fb34b315e9783317e22d67e2fa9",
         "path": "query-api-task-req-ktr.html",
         "release": "2.0.0"
     },
@@ -2622,12 +2474,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-create-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation den Parameter workflowType (Rezepttyp) aus dem HTTP-Body des POST-Requests entnehmen, als Attribut Task.extension:flowType des zu erstellenden Tasks verwenden und bei Fehlen bzw. Nicht-Konformität des Parameters den Request als unzulässig abweisen, damit auf Basis dieser Parameter ausschließlich gültige Workflows gestartet werden können und dem Versicherten bei Einsicht des Tasks der Weg in entweder eine Apotheke oder ein Sanitätshaus oder eine andere zuständige Einrichtung gewiesen werden kann.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation den Parameter workflowType (Workflow-Typ für die Verordneung) aus dem HTTP-Body des POST-Requests entnehmen, als Attribut Task.extension:flowType des zu erstellenden Tasks verwenden und bei Fehlen bzw. Nicht-Konformität des Parameters den Request als unzulässig abweisen, damit auf Basis dieser Parameter ausschließlich gültige Workflows gestartet werden können und dem Versicherten bei Einsicht des Tasks der Weg in entweder eine Apotheke oder ein Sanitätshaus oder eine andere zuständige Einrichtung gewiesen werden kann.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.256256",
-        "modified": "2026-06-25T11:30:11.256257",
-        "date": "2026-06-25T11:30:11.256258",
-        "content_hash": "828f2a9562ace72aeb9283d90d853b7e056004ff8e6b7593919ed4c63844561d",
+        "modified": "2026-08-24T14:30:39.268614",
+        "date": "2026-08-24T14:30:39.268614",
+        "content_hash": "e1713650cc1d7f2b38a3b76817a1923899fafa47c8cd36307ea7cdeb0741b5b9",
         "path": "op-create-req-fd.html",
         "release": "2.0.0"
     },
@@ -3002,12 +2854,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/datamatrix-code-client.md",
-        "text": "Das CS einer abgebenden Institution MUSS die gescannten Inhalte vor einer weiteren Verarbeitung validieren, um sich vor Schadsoftware zu schützen.",
+        "text": "Das Clientsystem einer abgebenden Institution MUSS die gescannten Inhalte vor einer weiteren Verarbeitung validieren, um sich vor Schadsoftware zu schützen.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.261800",
-        "modified": "2026-06-25T11:30:11.261802",
-        "date": "2026-06-25T11:30:11.261802",
-        "content_hash": "5d44c4211823d389766056a8fddd54ff8ab1fbb573ad04910bb94865595c65e6",
+        "modified": "2026-07-28T09:53:26.329452",
+        "date": "2026-07-28T09:53:26.329452",
+        "content_hash": "4a49f4f9ff770e5e93538845e14414d5545dafffed8e9da96ce4e340f6d3264b",
         "path": "datamatrix-code-client.html",
         "release": "2.0.0"
     },
@@ -3958,12 +3810,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/fhir-validate.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei der Prüfung der zeitlichen Gültigkeit einer FHIR Ressource den Wert aus dem Element gemäß folgender Tabelle zugrunde legen. \n\n  <table>\n    <thead>\n      <tr>\n        <th>Bezeichnung</th>\n        <th>Package</th>\n        <th>FHIR Profil</th>\n        <th>Element/Zeitpunkt</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>KBV Verordnungsdatensatz</td>\n        <td><code>kbv.ita.erp</code></td>\n        <td><code>KBV_PR_ERP_Prescription</code></td>\n        <td><code>MedicationRequest.authoredOn</code></td>\n      </tr>\n      <tr>\n        <td>KBV Verordnungsdatensatz DiGA</td>\n        <td><code>kbv.itv.evdga</code></td>\n        <td><code>KBV_PR_EVDGA_HealthAppRequest</code></td>\n        <td><code>DeviceRequest.authoredOn</code></td>\n      </tr>\n      <tr>\n        <td>Communication</td>\n        <td><code>de.gematik.erezept-workflow.r4</code></td>\n        <td>\n          <code>GEM_ERP_PR_Communication_DispReq</code>\n          <code>GEM_ERP_PR_Communication_Reply</code>\n          <code>GEM_ERP_PR_Communication_DiGA</code>\n        </td>\n        <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n      </tr>\n      <tr>\n        <td>MedicationDispense</td>\n        <td><code>de.gematik.erezept-workflow.r4</code></td>\n        <td>\n          <code>Gem_erxMedicationDispense</code>\n          <code>GEM_ERP_PR_MedicationDispense</code>\n        </td>\n        <td><code>MedicationDispense.whenHandedOver</code></td>\n      </tr>\n      <tr>\n        <td>PKV Patientenrechnung</td>\n        <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>\n        <td>\n          <code>GEM_ERPCHRG_PR_ChargeItem</code>\n          <code>GEM_ERPCHRG_PR_Consent</code>\n        </td>\n        <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n      </tr>\n      <tr>\n        <td>PKV Patientenrechnung Communication</td>\n        <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>\n        <td>\n          <code>GEM_ERPCHRG_PR_Communication_ChargChangeReq</code>\n          <code>GEM_ERPCHRG_PR_Communication_ChargChangeReply</code>\n        </td>\n        <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n      </tr>\n      <tr>\n        <td>PKV Abgabedatensatz</td>\n        <td><code>de.abda.eRezeptAbgabedatenPKV</code></td>\n        <td><code>DAV_PKV_PR_ERP_Abgabeinformationen</code></td>\n        <td><code>MedicationDispense.whenHandedOver</code></td>\n      </tr>\n    </tbody>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>TAB_ERP_FD_PruefungGueltigkeit_FHIR_Ressource Werte bei Prüfung der zeitlichen Gültigkeit einer FHIR Ressource</figcaption></div>",
+        "text": "Der TI-Flow-Fachdienst MUSS bei der Prüfung der zeitlichen Gültigkeit einer FHIR Ressource den Referenzwert aus dem Element gemäß folgender Tabelle zugrunde legen. \n\n <table>\n <thead>\n <tr>\n <th>Bezeichnung</th>\n <th>Package</th>\n <th>FHIR Profil</th>\n <th>Element/Zeitpunkt</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>KBV Verordnungsdatensatz</td>\n <td><code>kbv.ita.erp</code></td>\n <td><code>KBV_PR_ERP_Prescription</code></td>\n <td><code>MedicationRequest.authoredOn</code></td>\n </tr>\n <tr>\n <td>KBV Verordnungsdatensatz DiGA</td>\n <td><code>kbv.itv.evdga</code></td>\n <td><code>KBV_PR_EVDGA_HealthAppRequest</code></td>\n <td><code>DeviceRequest.authoredOn</code></td>\n </tr>\n <tr>\n <td>Communication</td>\n <td><code>de.gematik.erezept-workflow.r4</code></td>\n <td>\n <code>GEM_ERP_PR_Communication_DispReq</code>\n <code>GEM_ERP_PR_Communication_Reply</code>\n <code>GEM_ERP_PR_Communication_DiGA</code>\n </td>\n <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n </tr>\n <tr>\n <td>MedicationDispense</td>\n <td><code>de.gematik.erezept-workflow.r4</code></td>\n <td>\n <code>Gem_erxMedicationDispense</code>\n <code>GEM_ERP_PR_MedicationDispense</code>\n </td>\n <td><code>MedicationDispense.whenHandedOver</code></td>\n </tr>\n <tr>\n <td>PKV Patientenrechnung</td>\n <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>\n <td>\n <code>GEM_ERPCHRG_PR_ChargeItem</code>\n <code>GEM_ERPCHRG_PR_Consent</code>\n </td>\n <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n </tr>\n <tr>\n <td>PKV Patientenrechnung Communication</td>\n <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>\n <td>\n <code>GEM_ERPCHRG_PR_Communication_ChargChangeReq</code>\n <code>GEM_ERPCHRG_PR_Communication_ChargChangeReply</code>\n </td>\n <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n </tr>\n <tr>\n <td>PKV Abgabedatensatz</td>\n <td><code>de.abda.eRezeptAbgabedatenPKV</code></td>\n <td><code>DAV_PKV_PR_ERP_Abgabeinformationen</code></td>\n <td><code>MedicationDispense.whenHandedOver</code></td>\n </tr>\n </tbody>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_ERP_FD_PruefungGueltigkeit_FHIR_Ressource Werte bei Prüfung der zeitlichen Gültigkeit einer FHIR Ressource</figcaption></div>",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.274804",
-        "modified": "2026-06-25T11:30:11.274806",
-        "date": "2026-06-25T11:30:11.274807",
-        "content_hash": "841d840929f64610b2d31681e75f2d5a4dcb3985d3565bb4de8199451a3a0c6e",
+        "modified": "2026-07-28T07:56:10.712182",
+        "date": "2026-07-28T07:56:10.712182",
+        "content_hash": "4d6a0b8900585fa39c5d2a8aa7055c24d9d3f2d41fb2684abe42074b4d507170",
         "path": "fhir-validate.html",
         "release": "2.0.0"
     },
@@ -4043,11 +3895,31 @@
         "key": "IG-TIFLOW-CORE-A277",
         "title": "FHIR-Ressourcen - Eindeutige Angabe meta.profile",
         "actor": [
-            "TI-Flow_FD"
+            "CS_E-Rezept_KTR",
+            "NCPeH_ePeDA",
+            "PS_E-Rezept_abgebend",
+            "PS_E-Rezept_verordnend",
+            "TI-Flow_FD",
+            "eRp_FdV"
         ],
         "test_procedures": {
+            "CS_E-Rezept_KTR": [
+                "Herstellererklärung"
+            ],
+            "NCPeH_ePeDA": [
+                "Herstellererklärung"
+            ],
+            "PS_E-Rezept_abgebend": [
+                "Herstellererklärung"
+            ],
+            "PS_E-Rezept_verordnend": [
+                "Herstellererklärung"
+            ],
             "TI-Flow_FD": [
                 "Produkttest"
+            ],
+            "eRp_FdV": [
+                "Herstellererklärung"
             ]
         },
         "version": 0,
@@ -4058,7 +3930,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.275832",
         "modified": "2026-06-25T11:30:11.275833",
-        "date": "2026-06-25T11:30:11.275833",
+        "date": "2026-07-28T07:47:25.027388",
         "content_hash": "52a96be4aa02aae0913f00ee173097604d2fc851e9fd3df4f24809bcf069f1fe",
         "path": "fhir-validate.html",
         "release": "2.0.0"
@@ -4078,12 +3950,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/fhir-validate.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Auffälligkeiten die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>MSG_RESOURCE_ID_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Die ID einer Ressource und die ID der zugehörigen fullUrl stimmen nicht überein.</td>\n        </tr>\n    </table> \n    abbrechen.",
+        "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Abweichung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>MSG_RESOURCE_ID_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Die ID einer Ressource und die ID der zugehörigen fullUrl stimmen nicht überein.</td>\n </tr>\n </table> \n abbrechen.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.276165",
-        "modified": "2026-06-25T11:30:11.276167",
-        "date": "2026-06-25T11:30:11.276167",
-        "content_hash": "a2477221f627077b3a796353ce62d442d1df87d2703bd7fc31c6c936b4b4e75f",
+        "modified": "2026-07-28T07:56:10.714419",
+        "date": "2026-07-28T07:56:10.714419",
+        "content_hash": "c1d341bf8fadc5a8f728ccb5d510565bff06ded7a3168f0605021ce3c355c06a",
         "path": "fhir-validate.html",
         "release": "2.0.0"
     },
@@ -4102,12 +3974,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/fhir-validate.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Auffälligkeiten die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_RESOURCE_FULLURL_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Format der fullUrl ist ungültig.</td>\n        </tr>\n    </table> \n    abbrechen.",
+        "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Abweichung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_RESOURCE_FULLURL_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Format der fullUrl ist ungültig.</td>\n </tr>\n </table> \n abbrechen.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.276540",
-        "modified": "2026-06-25T11:30:11.276541",
-        "date": "2026-06-25T11:30:11.276542",
-        "content_hash": "6e2d1067533c910c9a21514005ffd653383035819db23f0758e4ecfcda252591",
+        "modified": "2026-07-28T07:56:10.714895",
+        "date": "2026-07-28T07:56:10.714895",
+        "content_hash": "14680d292495b5ec0c5af937f5f3e0127f33fc25770754be59b94115beee16bf",
         "path": "fhir-validate.html",
         "release": "2.0.0"
     },
@@ -4126,12 +3998,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/fhir-validate.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Auffälligkeiten die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>MSG_RESOURCE_ID_MISSING</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Die ID einer Ressource im Bundle ist nicht vorhanden.</td>\n        </tr>\n    </table> \n    abbrechen.",
+        "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Abweichung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>MSG_RESOURCE_ID_MISSING</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Die ID einer Ressource im Bundle ist nicht vorhanden.</td>\n </tr>\n </table> \n abbrechen.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.276909",
-        "modified": "2026-06-25T11:30:11.276910",
-        "date": "2026-06-25T11:30:11.276911",
-        "content_hash": "0200dcd8b61b2f712e7cba0b6685cdfd68723e83af2f47978c1dc011164a20aa",
+        "modified": "2026-07-28T07:56:10.715393",
+        "date": "2026-07-28T07:56:10.715393",
+        "content_hash": "37b27f1d89ba403b881c61a02991aaa00f6b4b0d83affeac961c09b142a02424",
         "path": "fhir-validate.html",
         "release": "2.0.0"
     },
@@ -4150,12 +4022,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/fhir-validate.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Auffälligkeiten die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>MSG_RESOURCE_ID_FAIL</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Referenz einer Ressource konnte nicht aufgelöst werden.</td>\n        </tr>\n    </table> \n    abbrechen.",
+        "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Abweichung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>MSG_RESOURCE_ID_FAIL</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Referenz einer Ressource konnte nicht aufgelöst werden.</td>\n </tr>\n </table> \n abbrechen.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.277266",
-        "modified": "2026-06-25T11:30:11.277267",
-        "date": "2026-06-25T11:30:11.277268",
-        "content_hash": "f89164eece38349e5383f8487a7a1897551c878c0e2074a15cf203d992597c3c",
+        "modified": "2026-07-28T07:56:10.715870",
+        "date": "2026-07-28T07:56:10.715870",
+        "content_hash": "d1dc30e3f904b23b4545daa61dd864bce80b2fbf0151efd8056e9b6be9c14d50",
         "path": "fhir-validate.html",
         "release": "2.0.0"
     },
@@ -4282,12 +4154,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/fhir-validate.md",
-        "text": "Der TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der zweistelligen Versionsnummer (major.minor) gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen, zu dessen aktuell gültiger Profilversion sie mutmaßlich validieren.",
+        "text": "Der TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der zweistelligen Versionsnummer (major.minor) gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.278399",
-        "modified": "2026-06-25T11:30:11.278400",
-        "date": "2026-06-25T11:30:11.278401",
-        "content_hash": "6948249e21cc20ac44aac5f327364d06c7495e8c3324757535cfbfadb6638247",
+        "modified": "2026-07-28T07:58:50.720070",
+        "date": "2026-07-28T07:58:50.720070",
+        "content_hash": "46d69f7974252a23aaafcb0edb6b59af52118b3d076c800bd3c50f160f8e67b9",
         "path": "fhir-validate.html",
         "release": "2.0.0"
     },
@@ -4727,17 +4599,17 @@
         "key": "IG-TIFLOW-CORE-A302",
         "title": "CS: verpflichtende Zertifikatsprüfung",
         "actor": [
-            "Anb_NCPeH_FD",
             "CS_E-Rezept_KTR",
+            "NCPeH_ePeDA",
             "PS_E-Rezept_abgebend",
             "PS_E-Rezept_verordnend"
         ],
         "test_procedures": {
-            "Anb_NCPeH_FD": [
-                "Produktgutachten"
-            ],
             "CS_E-Rezept_KTR": [
                 "Herstellererklärung"
+            ],
+            "NCPeH_ePeDA": [
+                "Produktgutachten"
             ],
             "PS_E-Rezept_abgebend": [
                 "Herstellererklärung"
@@ -4754,7 +4626,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.283174",
         "modified": "2026-06-25T11:30:11.283175",
-        "date": "2026-06-25T11:30:11.283176",
+        "date": "2026-07-28T09:49:53.286902",
         "content_hash": "703295d774e51b76be3205d00c4d1b2c847d15acb9ddc1167782e29d9172d2a6",
         "path": "pki-zertifikatspruefung.html",
         "release": "2.0.0"
@@ -4763,17 +4635,17 @@
         "key": "IG-TIFLOW-CORE-A303",
         "title": "CS: Prüfung TI-Zertifikate",
         "actor": [
-            "Anb_NCPeH_FD",
             "CS_E-Rezept_KTR",
+            "NCPeH_ePeDA",
             "PS_E-Rezept_abgebend",
             "PS_E-Rezept_verordnend"
         ],
         "test_procedures": {
-            "Anb_NCPeH_FD": [
-                "Produktgutachten"
-            ],
             "CS_E-Rezept_KTR": [
                 "Herstellererklärung"
+            ],
+            "NCPeH_ePeDA": [
+                "Produktgutachten"
             ],
             "PS_E-Rezept_abgebend": [
                 "Herstellererklärung"
@@ -4790,7 +4662,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.283690",
         "modified": "2026-06-25T11:30:11.283694",
-        "date": "2026-06-25T11:30:11.283695",
+        "date": "2026-07-28T09:49:53.287386",
         "content_hash": "f956eba8ba40dc94ee2280c72232617586c692a4a34fc2dd99f83d2f15e0f8f7",
         "path": "pki-zertifikatspruefung.html",
         "release": "2.0.0"
@@ -4799,17 +4671,17 @@
         "key": "IG-TIFLOW-CORE-A304",
         "title": "CS: Prüfung der Zertifikate für TLS-Verbindung zu TI-Flow-Fachdienst",
         "actor": [
-            "Anb_NCPeH_FD",
             "CS_E-Rezept_KTR",
+            "NCPeH_ePeDA",
             "PS_E-Rezept_abgebend",
             "PS_E-Rezept_verordnend"
         ],
         "test_procedures": {
-            "Anb_NCPeH_FD": [
-                "Produktgutachten"
-            ],
             "CS_E-Rezept_KTR": [
                 "Herstellererklärung"
+            ],
+            "NCPeH_ePeDA": [
+                "Produktgutachten"
             ],
             "PS_E-Rezept_abgebend": [
                 "Herstellererklärung"
@@ -4826,7 +4698,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.284043",
         "modified": "2026-06-25T11:30:11.284045",
-        "date": "2026-06-25T11:30:11.284046",
+        "date": "2026-07-28T09:49:53.287817",
         "content_hash": "245d3a2a5f8545ec91092cadce26d70418eb67e9dc7011cce8464022149a6f2a",
         "path": "pki-zertifikatspruefung.html",
         "release": "2.0.0"
@@ -7137,7 +7009,7 @@
     },
     {
         "key": "IG-TIFLOW-CORE-A406",
-        "title": "CS Kostenträger: E-Rezept abrufen - Task herunterladen",
+        "title": "CS Kostenträger: Verordnung abrufen - Task herunterladen",
         "actor": [
             "CS_E-Rezept_KTR"
         ],
@@ -7150,12 +7022,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-accept-req-ktr.md",
-        "text": "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Verordnung abrufen\" zum Herunterladen der Verordnung die HTTP-Operation POST /Task/&#60;id&#62;/$accept mit\n    <ul> \n        <li>Task-ID in URL &#60;id&#62;</li>\n        <li>AccessCode im X-AccessCode-Header oder als URL-Parameter ?ac=</li>\n    </ul>\n    ausführen.",
+        "text": "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Verordnung abrufen\" zum Herunterladen der Verordnung die HTTP-Operation POST /Task/&#60;id&#62;/$accept mit\n <ul> \n <li>Task-ID in URL &#60;id&#62;</li>\n <li>AccessCode im X-AccessCode-Header oder als URL-Parameter ?ac=</li>\n </ul>\n ausführen.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.310130",
-        "modified": "2026-06-25T11:30:11.310132",
-        "date": "2026-06-25T11:30:11.310133",
-        "content_hash": "b190d47b1266a00b640250b4e4de9ac4c3d2f02d6db16a3eea94a986944f2e86",
+        "modified": "2026-08-24T14:30:39.331371",
+        "date": "2026-08-24T14:30:39.331371",
+        "content_hash": "843f3f321802ea43552485135215afc1d1b4f646d35aa9a133f6b1199fd21965",
         "path": "op-accept-req-ktr.html",
         "release": "2.0.0"
     },
@@ -7832,30 +7704,6 @@
         "release": "2.0.0"
     },
     {
-        "key": "IG-TIFLOW-CORE-A432",
-        "title": "TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produktgutachten"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/error-codes.md",
-        "text": "Der TI-Flow-Fachdienst MUSS im Fehlerfall (http-Statuscodes &gt;= 400) Hinweise zur Fehlerursache \n     \n     <ul>\n        <li>im der inneren http-Response-Body als FHIR-Ressource OperationOutcome bei FHIR-Schnittstellen</li>\n        <li>im der inneren http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail` bei non FHIR-Schnittstellen</li>\n        <li>falls keine innere ASL-Response existiert, in einem \"äußeren\" http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail`</li>\n     </ul>\n      \n      an den Client zurückgeben, ohne Implementierungsdetails (z.B. kein Stacktrace) preiszugeben und dabei sicherstellen, dass personenbezogene oder medizinische Daten, falls für die qualifizierte Fehlerbeschreibung notwendig, ausschließlich in der VAU-verschlüsselten inneren http-Response übertragen werden.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.293882",
-        "modified": "2026-06-25T11:30:11.293883",
-        "date": "2026-06-25T11:30:11.293884",
-        "content_hash": "39e3dbad6fa09884e3a3661ef3a53f89e3de5b2392e7683bb0e6d75a08289f30",
-        "path": "error-codes.html",
-        "release": "2.0.0"
-    },
-    {
         "key": "IG-TIFLOW-CORE-A433",
         "title": "TI-Flow-Fachdienst - Nutzerinformationen",
         "actor": [
@@ -8528,6 +8376,62 @@
         "release": "2.0.0"
     },
     {
+        "key": "IG-TIFLOW-CORE-A458",
+        "title": "TI-Flow-Fachdienst - Gültigkeitswerte gegen aktuelle FHIR-Konfiguration auswerten",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/fhir-validate.md",
+        "text": "Der TI-Flow-Fachdienst MUSS den ermittelten Referenzwert der Gültigkeit gegen die aktuell gültige FHIR-Konfiguration auswerten und als Referenzzeitpunkt für die Prüfung der zeitlichen Gültigkeit einer FHIR Ressource zugrundelegen.",
+        "conformance": "SHALL",
+        "created": "2026-07-28T07:56:10.712794",
+        "modified": "2026-07-28T07:56:10.712796",
+        "date": "2026-07-28T07:56:10.712798",
+        "content_hash": "dab34c1e2463eee7a6b5ddd9472cd970f1a167b78cd7a5ff93e527bd4c47e09a",
+        "path": "fhir-validate.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CORE-A459",
+        "title": "CS: Alternative VAU-Zertifikat-Verifikation mittels Konnektor",
+        "actor": [
+            "CS_E-Rezept_KTR",
+            "PS_E-Rezept_abgebend",
+            "PS_E-Rezept_verordnend"
+        ],
+        "test_procedures": {
+            "CS_E-Rezept_KTR": [
+                "Herstellererklärung"
+            ],
+            "PS_E-Rezept_abgebend": [
+                "Herstellererklärung"
+            ],
+            "PS_E-Rezept_verordnend": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/kommunikation-dienste-ti.md",
+        "text": "Das Clientsystem des TI-Flow-Fachdienstes KANN als Alternative zur Umsetzung des TUC_PKI_018 gemäß [gemSpec_Krypt]#A_21216 für die Prüfung des VAU-Zertifikates die VerifyCertificate Operation des Konnektors/Basis Consumers nach folgendem Verfahren nutzen:\n    <ol>\n    <li>Beziehen des VAU-Zertifikates von /VAUCertificate</li>\n    <li>Lokales Speichern der aktuellen Zeit mit dem VAU-Zertifikat als Tupel</li>\n    <li>Prüfung des VAU-Zertifikates mittels der Konnektor-Operation VerifyCertificate</li>\n    <li>Abbruch falls INVALID</li>\n    <li>Wenn (get_current_time() &lt; gespeicherte Zeit + 12h): VAU-Zertifikat wird als gültig angesehen und verwendet; andernfalls (get_current_time() &gt;= gespeicherte Zeit + 12h): VAU-Zertifikat erneut beziehen (siehe Punkt 1)</li>\n    </ol>",
+        "conformance": "MAY",
+        "created": "2026-07-28T09:46:48.281704",
+        "modified": "2026-07-28T09:46:48.281706",
+        "date": "2026-07-28T09:46:48.281707",
+        "content_hash": "14d583140f9c52f632449b3764c6520ce3fe9ef3a6a587cbafe897568a60a5ed",
+        "path": "kommunikation-dienste-ti.html",
+        "release": "2.0.0"
+    },
+    {
         "key": "IG-TIFLOW-CORE-A46",
         "title": "E-Rezept-FdV:  E-Rezepte löschen - Coverage PKV - Warnung Abgabeinformationen",
         "actor": [
@@ -8549,6 +8453,186 @@
         "date": "2026-06-25T11:30:11.201873",
         "content_hash": "319ab675baf985a207f285fcf465a896c16212cc2288b148428d912b21f6c44c",
         "path": "op-abort-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CORE-A460",
+        "title": "CS: 2D-Code einscannen - Prüfung der Struktur",
+        "actor": [
+            "CS_E-Rezept_KTR",
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "CS_E-Rezept_KTR": [
+                "Herstellererklärung"
+            ],
+            "PS_E-Rezept_abgebend": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/datamatrix-code-client.md",
+        "text": "Das Clientsystem einer abgebenden Institution MUSS zur Schadsoftware-Prüfung der gescannten Inhalte mindestens eine strukturelle Validierung des 2D-Codes durchführen und sicherstellen, dass die entnommenen Token den erwarteten Datenstrukturen entsprechen.",
+        "conformance": "SHALL",
+        "created": "2026-07-28T09:53:26.329713",
+        "modified": "2026-07-28T09:53:26.329715",
+        "date": "2026-07-28T09:53:26.329716",
+        "content_hash": "69f2d96e297da3d6d3c099a634283c70c804ec68584f7683c9b5b3d57e9d71c8",
+        "path": "datamatrix-code-client.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CORE-A461",
+        "title": "CS: Subscription - Handling häufiger Ping-Events",
+        "actor": [
+            "CS_E-Rezept_KTR",
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "CS_E-Rezept_KTR": [
+                "Herstellererklärung"
+            ],
+            "PS_E-Rezept_abgebend": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-subscription.md",
+        "text": "Das Clientsystem des TI-Flow-Fachdienst MUSS bei der Verarbeitung eingehender Ressourcen berücksichtigen, dass jede Ressource zu einem `ping` führen kann, potentiell im Millisekundenbereich und eine Strategie implementieren, um eine Überlastung zu vermeiden (z.B. durch kurze Wartezeiten vor Abrufen), wobei zwischenzeitlich eingegangene Ressourcen bei nachfolgenden Abrufen gesammelt abgerufen werden können.",
+        "conformance": "SHALL",
+        "created": "2026-07-28T10:09:03.784744",
+        "modified": "2026-07-28T10:09:03.784749",
+        "date": "2026-07-28T10:09:03.784751",
+        "content_hash": "41624c469d25012e1a2ecdbf53d29582af1e87e2e8f2aae2f57d02aeecbc0210",
+        "path": "menu-technische-umsetzung-subscription.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CORE-A462",
+        "title": "CS: Subscription - Wiederverbindung nach WebSocket-Fehler",
+        "actor": [
+            "CS_E-Rezept_KTR",
+            "PS_E-Rezept_abgebend"
+        ],
+        "test_procedures": {
+            "CS_E-Rezept_KTR": [
+                "Herstellererklärung"
+            ],
+            "PS_E-Rezept_abgebend": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-subscription.md",
+        "text": "Das Clientsystem des TI-Flow-Fachdienst MUSS im Fall, dass die WebSocket-Verbindung zu einem Subscription-Endpunkt unerwartet terminiert wird, vor dem Aufbau einer neuen WebSocket-Verbindung eine zufällig gewählte Wartezeit zwischen 5 und 60 Sekunden warten, bis eine neue Verbindung aufgebaut wird.",
+        "conformance": "SHALL",
+        "created": "2026-07-28T10:09:03.784974",
+        "modified": "2026-07-28T10:09:03.784976",
+        "date": "2026-07-28T10:09:03.784978",
+        "content_hash": "bf179599866cd1f3bf99d92d2c40274c6e2aad3ac6ec2a4fba0ae65860185619",
+        "path": "menu-technische-umsetzung-subscription.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CORE-A463",
+        "title": "CS: Subscription - Eine WebSocket-Verbindung pro Telematik-ID",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-subscription.md",
+        "text": "Der TI-Flow-Fachdienst MUSS pro Telematik-ID nur eine aktive WebSocket-Verbindung gleichzeitig zulassen.",
+        "conformance": "SHALL",
+        "created": "2026-07-28T10:09:03.785157",
+        "modified": "2026-07-28T10:09:03.785158",
+        "date": "2026-07-28T10:09:03.785160",
+        "content_hash": "e07418f5c739e359f2bdf0fc57a7efdd3752e88896def42db233ef8e38e9bfa3",
+        "path": "menu-technische-umsetzung-subscription.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CORE-A464",
+        "title": "CS: Subscription - Automatisches Schließen nach 12 Stunden",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-subscription.md",
+        "text": "Der TI-Flow-Fachdienst MUSS WebSocket-Verbindungen zu Subscription-Endpunkten nach spätestens 12 Stunden automatisch schließen.",
+        "conformance": "SHALL",
+        "created": "2026-07-28T10:09:03.785319",
+        "modified": "2026-07-28T10:09:03.785320",
+        "date": "2026-07-28T10:09:03.785321",
+        "content_hash": "c3a07fc8133cfad2a2174031bfa7480a08f875f338d8935e63e809aa48d121d0",
+        "path": "menu-technische-umsetzung-subscription.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CORE-A465",
+        "title": "CS: Subscription - Zulässige Verwendung von Verbindungsmetadaten",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-subscription.md",
+        "text": "Der TI-Flow-Fachdienst DARF anfallende Verbindungsmetadaten ausschließlich zur Sicherung der Schnittstelle (DDoS-Schutz, Fehleranalyse im sehr eingeschränkten Maß) verwenden.",
+        "conformance": "MAY",
+        "created": "2026-07-28T10:09:03.785469",
+        "modified": "2026-07-28T10:09:03.785470",
+        "date": "2026-07-28T10:09:03.785471",
+        "content_hash": "b1c7d2667e5aa2fe7d9efa66b436080714a0f727388d70e37761bd57c9db9de2",
+        "path": "menu-technische-umsetzung-subscription.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CORE-A466",
+        "title": "CS: Subscription - Verbot von Profilbildung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-subscription.md",
+        "text": "Der TI-Flow-Fachdienst DARF NICHT Verbindungsmetadaten speichern, um eine Profilbildung der verbundenen Clients durchzuführen.",
+        "conformance": "SHALL NOT",
+        "created": "2026-07-28T10:09:03.785619",
+        "modified": "2026-07-28T10:09:03.785620",
+        "date": "2026-07-28T10:09:03.785621",
+        "content_hash": "53d1fd253773677096d0800ef519bbbf44a303e41b622f37a880cb96e1960403",
+        "path": "menu-technische-umsetzung-subscription.html",
         "release": "2.0.0"
     },
     {

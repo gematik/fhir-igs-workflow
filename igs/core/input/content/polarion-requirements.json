@@ -419,7 +419,7 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A122",
-            "title": "TI-Flow-Fachdienst -Task markieren - Versicherter - Prüfung KVNR",
+            "title": "TI-Flow-Fachdienst - Task markieren - Versicherter - Prüfung KVNR",
             "version": 0,
             "status": "ACTIVE",
             "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten, den Versicherten anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren, diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_IDENTITY_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit ausschließlich der begünstigte Versicherte als Berechtigter einen Task ändert.",
@@ -440,150 +440,6 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-task-req-fd.html#IG-TIFLOW-CORE-A122"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A123",
-            "title": "TI-Flow-Fachdienst - Löschfrist abgelaufener Rezepte",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS einen Task nach Ablauf der Löschfrist gemäß der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.\n\t<table>\n\t\t<tr> \n\t\t<th>Task.status nach Statuswechsel</th>\n\t\t<th>Löschfrist</th>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>draft</td>\n\t\t<td>10 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>ready</td>\n\t\t<td>10 Tage nach Datum in Task.expiryDate</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>in-progress</td>\n\t\t<td>100 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>completed</td>\n\t\t<td>100 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>cancelled</td>\n\t\t<td>10 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t</table>",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT27",
-                            "name": "Sich.techn. Eignung: Produktgutachten"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/ttl.html#IG-TIFLOW-CORE-A123"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A124",
-            "title": "TI-Flow-Fachdienst - Löschinformation ePA Medication Service bereitstellen",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Löschen eines Task nach Ablauf der Löschfrist, wenn Task.status = \"ready\" oder Task.status = \"in-progress\", die Daten für die Löschinformation des Verordnungsdatensatzes in den ePA Medication Service bereitstellen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/ttl.html#IG-TIFLOW-CORE-A124"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A125",
-            "title": "TI-Flow-Fachdienst - Löschen referenzierter Bundles",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines Tasks alle referenzierten Bundles (QES-Datensatz, Quittungs-Bundle, Dispensierinformationen) ebenfalls löschen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/ttl.html#IG-TIFLOW-CORE-A125"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A126",
-            "title": "TI-Flow-Fachdienst - Löschfrist veraltete MedicationDispense",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource MedicationDispense nach 100 Tagen ab ihrem Erzeugungsdatum MedicationDispense.whenHandedOver automatisch löschen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT27",
-                            "name": "Sich.techn. Eignung: Produktgutachten"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/ttl.html#IG-TIFLOW-CORE-A126"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A127",
-            "title": "TI-Flow-Fachdienst - Löschfrist ChargeItem",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.<br>\n\tDer TI-Flow-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT27",
-                            "name": "Sich.techn. Eignung: Produktgutachten"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/ttl.html#IG-TIFLOW-CORE-A127"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A128",
-            "title": "TI-Flow-Fachdienst - Löschfrist veraltete Nachrichten",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource Communication\n\tautomatisch löschen:\n\t<ul>\n\t\t<li>ohne eine Referenz auf einen Task in Communication.basedOn nach 100 Tagen ab ihrem Sendedatum Communication.sent,</li>\n\t\t<li>mit einer Referenz auf einen Task in Communication.basedOn gemäß der Löschfrist beim Löschen des Tasks,</li>\n\t\t<li>mit einer Referenz auf einen ChargeItem in Communication.basedOn nach 100 Tagen ab ihrem Sendedatum Communication.sent.</li>\n\t</ul>",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT27",
-                            "name": "Sich.techn. Eignung: Produktgutachten"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/ttl.html#IG-TIFLOW-CORE-A128"
         },
         {
             "key": "IG-TIFLOW-CORE-A129",
@@ -1219,19 +1075,6 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "Anb_NCPeH_FD",
-                        "id": "supplier38",
-                        "description": "Anbieter eines NCPeH-Fachdienstes"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
                         "name": "CS_E-Rezept_KTR",
                         "id": "productType136",
                         "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
@@ -1240,6 +1083,19 @@
                         {
                             "id": "testProcedurePT02",
                             "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
                         }
                     ]
                 },
@@ -1282,19 +1138,6 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "Anb_NCPeH_FD",
-                        "id": "supplier38",
-                        "description": "Anbieter eines NCPeH-Fachdienstes"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
                         "name": "CS_E-Rezept_KTR",
                         "id": "productType136",
                         "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
@@ -1303,6 +1146,19 @@
                         {
                             "id": "testProcedurePT02",
                             "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
                         }
                     ]
                 },
@@ -1345,19 +1201,6 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "Anb_NCPeH_FD",
-                        "id": "supplier38",
-                        "description": "Anbieter eines NCPeH-Fachdienstes"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
                         "name": "CS_E-Rezept_KTR",
                         "id": "productType136",
                         "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
@@ -1366,6 +1209,19 @@
                         {
                             "id": "testProcedurePT02",
                             "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
                         }
                     ]
                 },
@@ -1408,19 +1264,6 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "Anb_NCPeH_FD",
-                        "id": "supplier38",
-                        "description": "Anbieter eines NCPeH-Fachdienstes"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
                         "name": "CS_E-Rezept_KTR",
                         "id": "productType136",
                         "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
@@ -1429,6 +1272,19 @@
                         {
                             "id": "testProcedurePT02",
                             "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
                         }
                     ]
                 },
@@ -1471,19 +1327,6 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "Anb_NCPeH_FD",
-                        "id": "supplier38",
-                        "description": "Anbieter eines NCPeH-Fachdienstes"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT27",
-                            "name": "Sich.techn. Eignung: Produktgutachten"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
                         "name": "CS_E-Rezept_KTR",
                         "id": "productType136",
                         "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
@@ -1492,6 +1335,19 @@
                         {
                             "id": "testProcedurePT02",
                             "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
                         }
                     ]
                 },
@@ -1518,19 +1374,6 @@
                         {
                             "id": "testProcedurePT02",
                             "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
                         }
                     ]
                 }
@@ -2670,7 +2513,7 @@
             "title": "CS Kostenträger: Recovery Secret - Statusrequest",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Recovery Secret\" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit \n  <ul>\n    <li>Task-ID in URL &lt;id&gt; </li>\n    <li>AccessCode in URL-Parameter ?ac=</li>\n  </ul>\n  ausführen.",
+            "text": "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Recovery Secret\" für die Verordnung die HTTP-Operation GET /Task/&lt;id&gt;/ mit \n <ul>\n <li>Task-ID in URL &lt;id&gt; </li>\n <li>AccessCode in URL-Parameter ?ac=</li>\n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -2694,7 +2537,7 @@
             "title": "CS Kostenträger: Quittung erneut abrufen - Statusrequest",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Quittung erneut abrufen\" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit \n  <ul>\n    <li>Task-ID in URL &lt;id&gt; </li>\n    <li>Geheimnis in URL-Parameter ?secret=</li>\n  </ul>\n  ausführen.",
+            "text": "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Quittung erneut abrufen\" für die Verordnung die HTTP-Operation GET /Task/&lt;id&gt;/ mit \n <ul>\n <li>Task-ID in URL &lt;id&gt; </li>\n <li>Geheimnis in URL-Parameter ?secret=</li>\n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -2766,7 +2609,7 @@
             "title": "TI-Flow-Fachdienst - Task erzeugen - Parametrierung Task für Workflow-Typ",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation den Parameter workflowType (Rezepttyp) aus dem HTTP-Body des POST-Requests entnehmen, als Attribut Task.extension:flowType des zu erstellenden Tasks verwenden und bei Fehlen bzw. Nicht-Konformität des Parameters den Request als unzulässig abweisen, damit auf Basis dieser Parameter ausschließlich gültige Workflows gestartet werden können und dem Versicherten bei Einsicht des Tasks der Weg in entweder eine Apotheke oder ein Sanitätshaus oder eine andere zuständige Einrichtung gewiesen werden kann.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation den Parameter workflowType (Workflow-Typ für die Verordneung) aus dem HTTP-Body des POST-Requests entnehmen, als Attribut Task.extension:flowType des zu erstellenden Tasks verwenden und bei Fehlen bzw. Nicht-Konformität des Parameters den Request als unzulässig abweisen, damit auf Basis dieser Parameter ausschließlich gültige Workflows gestartet werden können und dem Versicherten bei Einsicht des Tasks der Weg in entweder eine Apotheke oder ein Sanitätshaus oder eine andere zuständige Einrichtung gewiesen werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -3178,7 +3021,7 @@
             "title": "CS: 2D-Code scannen - Gescannte Inhalte prüfen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das CS einer abgebenden Institution MUSS die gescannten Inhalte vor einer weiteren Verarbeitung validieren, um sich vor Schadsoftware zu schützen.",
+            "text": "Das Clientsystem einer abgebenden Institution MUSS die gescannten Inhalte vor einer weiteren Verarbeitung validieren, um sich vor Schadsoftware zu schützen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4354,7 +4197,7 @@
             "title": "TI-Flow-Fachdienst - Prüfung Gültigkeit FHIR Ressourcen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei der Prüfung der zeitlichen Gültigkeit einer FHIR Ressource den Wert aus dem Element gemäß folgender Tabelle zugrunde legen. \n\n  <table>\n    <thead>\n      <tr>\n        <th>Bezeichnung</th>\n        <th>Package</th>\n        <th>FHIR Profil</th>\n        <th>Element/Zeitpunkt</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>KBV Verordnungsdatensatz</td>\n        <td><code>kbv.ita.erp</code></td>\n        <td><code>KBV_PR_ERP_Prescription</code></td>\n        <td><code>MedicationRequest.authoredOn</code></td>\n      </tr>\n      <tr>\n        <td>KBV Verordnungsdatensatz DiGA</td>\n        <td><code>kbv.itv.evdga</code></td>\n        <td><code>KBV_PR_EVDGA_HealthAppRequest</code></td>\n        <td><code>DeviceRequest.authoredOn</code></td>\n      </tr>\n      <tr>\n        <td>Communication</td>\n        <td><code>de.gematik.erezept-workflow.r4</code></td>\n        <td>\n          <code>GEM_ERP_PR_Communication_DispReq</code>\n          <code>GEM_ERP_PR_Communication_Reply</code>\n          <code>GEM_ERP_PR_Communication_DiGA</code>\n        </td>\n        <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n      </tr>\n      <tr>\n        <td>MedicationDispense</td>\n        <td><code>de.gematik.erezept-workflow.r4</code></td>\n        <td>\n          <code>Gem_erxMedicationDispense</code>\n          <code>GEM_ERP_PR_MedicationDispense</code>\n        </td>\n        <td><code>MedicationDispense.whenHandedOver</code></td>\n      </tr>\n      <tr>\n        <td>PKV Patientenrechnung</td>\n        <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>\n        <td>\n          <code>GEM_ERPCHRG_PR_ChargeItem</code>\n          <code>GEM_ERPCHRG_PR_Consent</code>\n        </td>\n        <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n      </tr>\n      <tr>\n        <td>PKV Patientenrechnung Communication</td>\n        <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>\n        <td>\n          <code>GEM_ERPCHRG_PR_Communication_ChargChangeReq</code>\n          <code>GEM_ERPCHRG_PR_Communication_ChargChangeReply</code>\n        </td>\n        <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n      </tr>\n      <tr>\n        <td>PKV Abgabedatensatz</td>\n        <td><code>de.abda.eRezeptAbgabedatenPKV</code></td>\n        <td><code>DAV_PKV_PR_ERP_Abgabeinformationen</code></td>\n        <td><code>MedicationDispense.whenHandedOver</code></td>\n      </tr>\n    </tbody>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>TAB_ERP_FD_PruefungGueltigkeit_FHIR_Ressource Werte bei Prüfung der zeitlichen Gültigkeit einer FHIR Ressource</figcaption></div>",
+            "text": "Der TI-Flow-Fachdienst MUSS bei der Prüfung der zeitlichen Gültigkeit einer FHIR Ressource den Referenzwert aus dem Element gemäß folgender Tabelle zugrunde legen. \n\n <table>\n <thead>\n <tr>\n <th>Bezeichnung</th>\n <th>Package</th>\n <th>FHIR Profil</th>\n <th>Element/Zeitpunkt</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>KBV Verordnungsdatensatz</td>\n <td><code>kbv.ita.erp</code></td>\n <td><code>KBV_PR_ERP_Prescription</code></td>\n <td><code>MedicationRequest.authoredOn</code></td>\n </tr>\n <tr>\n <td>KBV Verordnungsdatensatz DiGA</td>\n <td><code>kbv.itv.evdga</code></td>\n <td><code>KBV_PR_EVDGA_HealthAppRequest</code></td>\n <td><code>DeviceRequest.authoredOn</code></td>\n </tr>\n <tr>\n <td>Communication</td>\n <td><code>de.gematik.erezept-workflow.r4</code></td>\n <td>\n <code>GEM_ERP_PR_Communication_DispReq</code>\n <code>GEM_ERP_PR_Communication_Reply</code>\n <code>GEM_ERP_PR_Communication_DiGA</code>\n </td>\n <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n </tr>\n <tr>\n <td>MedicationDispense</td>\n <td><code>de.gematik.erezept-workflow.r4</code></td>\n <td>\n <code>Gem_erxMedicationDispense</code>\n <code>GEM_ERP_PR_MedicationDispense</code>\n </td>\n <td><code>MedicationDispense.whenHandedOver</code></td>\n </tr>\n <tr>\n <td>PKV Patientenrechnung</td>\n <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>\n <td>\n <code>GEM_ERPCHRG_PR_ChargeItem</code>\n <code>GEM_ERPCHRG_PR_Consent</code>\n </td>\n <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n </tr>\n <tr>\n <td>PKV Patientenrechnung Communication</td>\n <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>\n <td>\n <code>GEM_ERPCHRG_PR_Communication_ChargChangeReq</code>\n <code>GEM_ERPCHRG_PR_Communication_ChargChangeReply</code>\n </td>\n <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n </tr>\n <tr>\n <td>PKV Abgabedatensatz</td>\n <td><code>de.abda.eRezeptAbgabedatenPKV</code></td>\n <td><code>DAV_PKV_PR_ERP_Abgabeinformationen</code></td>\n <td><code>MedicationDispense.whenHandedOver</code></td>\n </tr>\n </tbody>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_ERP_FD_PruefungGueltigkeit_FHIR_Ressource Werte bei Prüfung der zeitlichen Gültigkeit einer FHIR Ressource</figcaption></div>",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4455,6 +4298,58 @@
             "characteristics": [
                 {
                     "product_type": {
+                        "name": "CS_E-Rezept_KTR",
+                        "id": "productType136",
+                        "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_E-Rezept_abgebend",
+                        "id": "productType98",
+                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_E-Rezept_verordnend",
+                        "id": "productType99",
+                        "description": "E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
                         "name": "TI-Flow_FD",
                         "id": "productType175",
                         "description": "TI-Flow-Fachdienst"
@@ -4463,6 +4358,19 @@
                         {
                             "id": "testProcedurePT03",
                             "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "eRp_FdV",
+                        "id": "productType88",
+                        "description": "E-Rezept-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
                         }
                     ]
                 }
@@ -4474,7 +4382,7 @@
             "title": "TI-Flow-Fachdienst - FHIR-Ressource validieren - Pruefung Konsistenz Ressource IDs",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Auffälligkeiten die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>MSG_RESOURCE_ID_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Die ID einer Ressource und die ID der zugehörigen fullUrl stimmen nicht überein.</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Abweichung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>MSG_RESOURCE_ID_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Die ID einer Ressource und die ID der zugehörigen fullUrl stimmen nicht überein.</td>\n </tr>\n </table> \n abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4498,7 +4406,7 @@
             "title": "TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Format fullUrl",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Auffälligkeiten die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_RESOURCE_FULLURL_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Format der fullUrl ist ungültig.</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Abweichung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_RESOURCE_FULLURL_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Format der fullUrl ist ungültig.</td>\n </tr>\n </table> \n abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4522,7 +4430,7 @@
             "title": "TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Auffälligkeiten die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>MSG_RESOURCE_ID_MISSING</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Die ID einer Ressource im Bundle ist nicht vorhanden.</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Abweichung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>MSG_RESOURCE_ID_MISSING</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Die ID einer Ressource im Bundle ist nicht vorhanden.</td>\n </tr>\n </table> \n abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4546,7 +4454,7 @@
             "title": "TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Auffälligkeiten die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>MSG_RESOURCE_ID_FAIL</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Referenz einer Ressource konnte nicht aufgelöst werden.</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Abweichung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>MSG_RESOURCE_ID_FAIL</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Referenz einer Ressource konnte nicht aufgelöst werden.</td>\n </tr>\n </table> \n abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4748,7 +4656,7 @@
             "title": "FHIR-Ressourcen Versionsangabe",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der zweistelligen Versionsnummer (major.minor) gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen, zu dessen aktuell gültiger Profilversion sie mutmaßlich validieren.",
+            "text": "Der TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der zweistelligen Versionsnummer (major.minor) gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -5274,19 +5182,6 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "Anb_NCPeH_FD",
-                        "id": "supplier38",
-                        "description": "Anbieter eines NCPeH-Fachdienstes"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT27",
-                            "name": "Sich.techn. Eignung: Produktgutachten"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
                         "name": "CS_E-Rezept_KTR",
                         "id": "productType136",
                         "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
@@ -5295,6 +5190,19 @@
                         {
                             "id": "testProcedurePT02",
                             "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
                         }
                     ]
                 },
@@ -5337,19 +5245,6 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "Anb_NCPeH_FD",
-                        "id": "supplier38",
-                        "description": "Anbieter eines NCPeH-Fachdienstes"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT27",
-                            "name": "Sich.techn. Eignung: Produktgutachten"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
                         "name": "CS_E-Rezept_KTR",
                         "id": "productType136",
                         "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
@@ -5358,6 +5253,19 @@
                         {
                             "id": "testProcedurePT02",
                             "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
                         }
                     ]
                 },
@@ -5400,19 +5308,6 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "Anb_NCPeH_FD",
-                        "id": "supplier38",
-                        "description": "Anbieter eines NCPeH-Fachdienstes"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT27",
-                            "name": "Sich.techn. Eignung: Produktgutachten"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
                         "name": "CS_E-Rezept_KTR",
                         "id": "productType136",
                         "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
@@ -5421,6 +5316,19 @@
                         {
                             "id": "testProcedurePT02",
                             "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
                         }
                     ]
                 },
@@ -7867,10 +7775,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A406",
-            "title": "CS Kostenträger: E-Rezept abrufen - Task herunterladen",
+            "title": "CS Kostenträger: Verordnung abrufen - Task herunterladen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Verordnung abrufen\" zum Herunterladen der Verordnung die HTTP-Operation POST /Task/&#60;id&#62;/$accept mit\n    <ul> \n        <li>Task-ID in URL &#60;id&#62;</li>\n        <li>AccessCode im X-AccessCode-Header oder als URL-Parameter ?ac=</li>\n    </ul>\n    ausführen.",
+            "text": "Das Clientsystem Kostenträger MUSS im Anwendungsfall \"Verordnung abrufen\" zum Herunterladen der Verordnung die HTTP-Operation POST /Task/&#60;id&#62;/$accept mit\n <ul> \n <li>Task-ID in URL &#60;id&#62;</li>\n <li>AccessCode im X-AccessCode-Header oder als URL-Parameter ?ac=</li>\n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -8560,30 +8468,6 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-pushers-req-fd.html#IG-TIFLOW-CORE-A431"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A432",
-            "title": "TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS im Fehlerfall (http-Statuscodes &gt;= 400) Hinweise zur Fehlerursache \n     \n     <ul>\n        <li>im der inneren http-Response-Body als FHIR-Ressource OperationOutcome bei FHIR-Schnittstellen</li>\n        <li>im der inneren http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail` bei non FHIR-Schnittstellen</li>\n        <li>falls keine innere ASL-Response existiert, in einem \"äußeren\" http-Response-Body in einer JSON-Struktur mit den Feldern `errorCode` und `errorDetail`</li>\n     </ul>\n      \n      an den Client zurückgeben, ohne Implementierungsdetails (z.B. kein Stacktrace) preiszugeben und dabei sicherstellen, dass personenbezogene oder medizinische Daten, falls für die qualifizierte Fehlerbeschreibung notwendig, ausschließlich in der VAU-verschlüsselten inneren http-Response übertragen werden.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT27",
-                            "name": "Sich.techn. Eignung: Produktgutachten"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/error-codes.html#IG-TIFLOW-CORE-A432"
         },
         {
             "key": "IG-TIFLOW-CORE-A433",
@@ -9366,6 +9250,80 @@
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/query-api-communication-req-avs.html#IG-TIFLOW-CORE-A456"
         },
         {
+            "key": "IG-TIFLOW-CORE-A458",
+            "title": "TI-Flow-Fachdienst - Gültigkeitswerte gegen aktuelle FHIR-Konfiguration auswerten",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS den ermittelten Referenzwert der Gültigkeit gegen die aktuell gültige FHIR-Konfiguration auswerten und als Referenzzeitpunkt für die Prüfung der zeitlichen Gültigkeit einer FHIR Ressource zugrundelegen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/fhir-validate.html#IG-TIFLOW-CORE-A458"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A459",
+            "title": "CS: Alternative VAU-Zertifikat-Verifikation mittels Konnektor",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das Clientsystem des TI-Flow-Fachdienstes KANN als Alternative zur Umsetzung des TUC_PKI_018 gemäß [gemSpec_Krypt]#A_21216 für die Prüfung des VAU-Zertifikates die VerifyCertificate Operation des Konnektors/Basis Consumers nach folgendem Verfahren nutzen:\n    <ol>\n    <li>Beziehen des VAU-Zertifikates von /VAUCertificate</li>\n    <li>Lokales Speichern der aktuellen Zeit mit dem VAU-Zertifikat als Tupel</li>\n    <li>Prüfung des VAU-Zertifikates mittels der Konnektor-Operation VerifyCertificate</li>\n    <li>Abbruch falls INVALID</li>\n    <li>Wenn (get_current_time() &lt; gespeicherte Zeit + 12h): VAU-Zertifikat wird als gültig angesehen und verwendet; andernfalls (get_current_time() &gt;= gespeicherte Zeit + 12h): VAU-Zertifikat erneut beziehen (siehe Punkt 1)</li>\n    </ol>",
+            "conformance": "MAY",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "CS_E-Rezept_KTR",
+                        "id": "productType136",
+                        "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_E-Rezept_abgebend",
+                        "id": "productType98",
+                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_E-Rezept_verordnend",
+                        "id": "productType99",
+                        "description": "E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/kommunikation-dienste-ti.html#IG-TIFLOW-CORE-A459"
+        },
+        {
             "key": "IG-TIFLOW-CORE-A46",
             "title": "E-Rezept-FdV:  E-Rezepte löschen - Coverage PKV - Warnung Abgabeinformationen",
             "version": 0,
@@ -9388,6 +9346,213 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/op-abort-req-fdv.html#IG-TIFLOW-CORE-A46"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A460",
+            "title": "CS: 2D-Code einscannen - Prüfung der Struktur",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das Clientsystem einer abgebenden Institution MUSS zur Schadsoftware-Prüfung der gescannten Inhalte mindestens eine strukturelle Validierung des 2D-Codes durchführen und sicherstellen, dass die entnommenen Token den erwarteten Datenstrukturen entsprechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "CS_E-Rezept_KTR",
+                        "id": "productType136",
+                        "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_E-Rezept_abgebend",
+                        "id": "productType98",
+                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/datamatrix-code-client.html#IG-TIFLOW-CORE-A460"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A461",
+            "title": "CS: Subscription - Handling häufiger Ping-Events",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das Clientsystem des TI-Flow-Fachdienst MUSS bei der Verarbeitung eingehender Ressourcen berücksichtigen, dass jede Ressource zu einem `ping` führen kann, potentiell im Millisekundenbereich und eine Strategie implementieren, um eine Überlastung zu vermeiden (z.B. durch kurze Wartezeiten vor Abrufen), wobei zwischenzeitlich eingegangene Ressourcen bei nachfolgenden Abrufen gesammelt abgerufen werden können.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "CS_E-Rezept_KTR",
+                        "id": "productType136",
+                        "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_E-Rezept_abgebend",
+                        "id": "productType98",
+                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-subscription.html#IG-TIFLOW-CORE-A461"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A462",
+            "title": "CS: Subscription - Wiederverbindung nach WebSocket-Fehler",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das Clientsystem des TI-Flow-Fachdienst MUSS im Fall, dass die WebSocket-Verbindung zu einem Subscription-Endpunkt unerwartet terminiert wird, vor dem Aufbau einer neuen WebSocket-Verbindung eine zufällig gewählte Wartezeit zwischen 5 und 60 Sekunden warten, bis eine neue Verbindung aufgebaut wird.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "CS_E-Rezept_KTR",
+                        "id": "productType136",
+                        "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_E-Rezept_abgebend",
+                        "id": "productType98",
+                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-subscription.html#IG-TIFLOW-CORE-A462"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A463",
+            "title": "CS: Subscription - Eine WebSocket-Verbindung pro Telematik-ID",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS pro Telematik-ID nur eine aktive WebSocket-Verbindung gleichzeitig zulassen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-subscription.html#IG-TIFLOW-CORE-A463"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A464",
+            "title": "CS: Subscription - Automatisches Schließen nach 12 Stunden",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS WebSocket-Verbindungen zu Subscription-Endpunkten nach spätestens 12 Stunden automatisch schließen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-subscription.html#IG-TIFLOW-CORE-A464"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A465",
+            "title": "CS: Subscription - Zulässige Verwendung von Verbindungsmetadaten",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst DARF anfallende Verbindungsmetadaten ausschließlich zur Sicherung der Schnittstelle (DDoS-Schutz, Fehleranalyse im sehr eingeschränkten Maß) verwenden.",
+            "conformance": "MAY",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-subscription.html#IG-TIFLOW-CORE-A465"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A466",
+            "title": "CS: Subscription - Verbot von Profilbildung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst DARF NICHT Verbindungsmetadaten speichern, um eine Profilbildung der verbundenen Clients durchzuführen.",
+            "conformance": "SHALL NOT",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.2/menu-technische-umsetzung-subscription.html#IG-TIFLOW-CORE-A466"
         },
         {
             "key": "IG-TIFLOW-CORE-A47",
