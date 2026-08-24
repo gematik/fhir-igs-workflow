@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 0044694fe20e9dc910121724677d7e2c7f99c264c5a3683a0abfe36fa405e85f
+content_hash: fc82d82f352d2a55528f1e8f6ba2f60d71d5c4429da40cfe272c6994cdc5e173
 created: '2026-08-24T12:14:06.139167'
-date: '2026-08-24T12:14:06.139171'
+date: '2026-08-24T14:30:41.443629'
 key: IG-TIFLOW-ERP-A293
-modified: '2026-08-24T12:14:06.139170'
+modified: '2026-08-24T14:30:41.443629'
 release_status: NEW
 source: input/pagecontent/ttl.md
 status: ACTIVE
@@ -15,8 +15,9 @@ test_procedures:
 text: "Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource Communication\n\tautomatisch\
   \ löschen:\n\t<ul>\n\t\t<li>ohne eine Referenz auf einen Task in Communication.basedOn\
   \ nach 100 Tagen ab ihrem Sendedatum Communication.sent,</li>\n\t\t<li>mit einer\
-  \ Referenz auf einen Task in Communication.basedOn gemäß der Löschfrist beim Löschen\
-  \ des Tasks,</li>\n\t\t<li>mit einer Referenz auf einen ChargeItem in Communication.basedOn\
-  \ nach 100 Tagen ab ihrem Sendedatum Communication.sent.</li>\n\t</ul>"
+  \ Referenz auf einen Task mit Flowtype 160, 166, 169, 200 oder 209 in Communication.basedOn\
+  \ gemäß der Löschfrist beim Löschen des Tasks,</li>\n\t\t<li>mit einer Referenz\
+  \ auf einen ChargeItem in Communication.basedOn nach 100 Tagen ab ihrem Sendedatum\
+  \ Communication.sent.</li>\n\t</ul>"
 title: 'E-Rezept: Löschfrist veraltete Nachrichten'
 version: 0
