@@ -412,7 +412,7 @@ Solch eine Nicht-Erreichbarkeit kann durch einen Ausfall der TI- Dienste oder de
      Das PS der abgebenden LEI SOLL im Falle der Nicht-Erreichbarkeit von zentralen Diensten der TI automatisch versuchen eine Fehlerbehebung durchzuführen.
 </requirement>
 
-Für das Umschwenken auf eine andere Instanz des TI-Flow-Fachdienstes müssen DNS-basierte Servicelokalisierungsmechanismen verwendet werden. Weitere Informationen zur Servicelokalisierung siehe [Servicelokalisierung](./kommunikation-dienste-ti.html).
+Für das Umschwenken auf eine andere Instanz des TI-Flow-Fachdienstes müssen DNS-basierte Servicelokalisierungsmechanismen verwendet werden.
 
 <!-- A_23815 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A149" title="PS abgebende LEI: UX - Hinweis bei Nicht-Erreichbarkeit des TI-Flow-Fachdienstes" version="0">

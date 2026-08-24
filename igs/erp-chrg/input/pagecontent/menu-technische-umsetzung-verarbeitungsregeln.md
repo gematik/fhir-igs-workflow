@@ -57,8 +57,6 @@ Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code
       Das E-Rezept-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" für das ausgewählte E-Rezept den Abrechnungsinformation-Token erstellen.
 </requirement>
 
-Für die Beschreibung der Struktur des Abrechnungsinformation-Token siehe [2D-Code für Abrechnungsinformation-Token].
-
 <!--A_22728-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A6" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen" version="0">
     <meta lockversion="false"/>

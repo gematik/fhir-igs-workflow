@@ -53,8 +53,6 @@ Für den Patientenausdruck gelten vorrangig die Regelungen zum Ausdruck aus den 
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden einstellen", wenn ein Patientenausdruck erstellt werden soll, einen E-Rezept-Token erstellen.
 </requirement>
 
-Für die Spezifikation des E-Rezept-Token siehe [2D-Code für E-Rezept-Token](./datamatrix-code-client.html#datenstruktur-einlöseinformationen-für-e-rezept).
-
 <!-- A_19280 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A154" title="PS verordnende LEI: E-Rezept einstellen - Datamatrix-Code erstellen" version="0">
   <meta lockversion="false"/>
@@ -63,5 +61,3 @@ Für die Spezifikation des E-Rezept-Token siehe [2D-Code für E-Rezept-Token](./
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden einstellen", wenn ein Patientenausdruck erstellt werden soll, Datamatrix-Codes erstellen und für den Patientenausdruck verwenden.
 </requirement>
-
-Für die Spezifikation des Datamatrix-Code für E-Rezept-Token siehe [2D-Code für E-Rezept-Token](./datamatrix-code-client.html#2d-code-für-e-rezept-token).

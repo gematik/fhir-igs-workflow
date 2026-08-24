@@ -225,7 +225,7 @@
                     "diff": {}
                 },
                 {
-                    "title": "TI-Flow-Fachdienst -Task markieren - Versicherter - Prüfung KVNR",
+                    "title": "TI-Flow-Fachdienst - Task markieren - Versicherter - Prüfung KVNR",
                     "key": "IG-TIFLOW-CORE-A122",
                     "actor": [
                         "TI-Flow_FD"
@@ -235,84 +235,6 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "query-api-task-req-fd.html",
-                    "diff": {}
-                },
-                {
-                    "title": "TI-Flow-Fachdienst - Löschfrist abgelaufener Rezepte",
-                    "key": "IG-TIFLOW-CORE-A123",
-                    "actor": [
-                        "TI-Flow_FD"
-                    ],
-                    "version": 0,
-                    "release_status": "NEW",
-                    "status": "ACTIVE",
-                    "conformance": "SHALL",
-                    "path": "ttl.html",
-                    "diff": {}
-                },
-                {
-                    "title": "TI-Flow-Fachdienst - Löschinformation ePA Medication Service bereitstellen",
-                    "key": "IG-TIFLOW-CORE-A124",
-                    "actor": [
-                        "TI-Flow_FD"
-                    ],
-                    "version": 0,
-                    "release_status": "NEW",
-                    "status": "ACTIVE",
-                    "conformance": "SHALL",
-                    "path": "ttl.html",
-                    "diff": {}
-                },
-                {
-                    "title": "TI-Flow-Fachdienst - Löschen referenzierter Bundles",
-                    "key": "IG-TIFLOW-CORE-A125",
-                    "actor": [
-                        "TI-Flow_FD"
-                    ],
-                    "version": 0,
-                    "release_status": "NEW",
-                    "status": "ACTIVE",
-                    "conformance": "SHALL",
-                    "path": "ttl.html",
-                    "diff": {}
-                },
-                {
-                    "title": "TI-Flow-Fachdienst - Löschfrist veraltete MedicationDispense",
-                    "key": "IG-TIFLOW-CORE-A126",
-                    "actor": [
-                        "TI-Flow_FD"
-                    ],
-                    "version": 0,
-                    "release_status": "NEW",
-                    "status": "ACTIVE",
-                    "conformance": "SHALL",
-                    "path": "ttl.html",
-                    "diff": {}
-                },
-                {
-                    "title": "TI-Flow-Fachdienst - Löschfrist ChargeItem",
-                    "key": "IG-TIFLOW-CORE-A127",
-                    "actor": [
-                        "TI-Flow_FD"
-                    ],
-                    "version": 0,
-                    "release_status": "NEW",
-                    "status": "ACTIVE",
-                    "conformance": "SHALL",
-                    "path": "ttl.html",
-                    "diff": {}
-                },
-                {
-                    "title": "TI-Flow-Fachdienst - Löschfrist veraltete Nachrichten",
-                    "key": "IG-TIFLOW-CORE-A128",
-                    "actor": [
-                        "TI-Flow_FD"
-                    ],
-                    "version": 0,
-                    "release_status": "NEW",
-                    "status": "ACTIVE",
-                    "conformance": "SHALL",
-                    "path": "ttl.html",
                     "diff": {}
                 },
                 {
@@ -657,8 +579,8 @@
                     "title": "CS: Lokalisierung TI-Flow-Fachdienst",
                     "key": "IG-TIFLOW-CORE-A155",
                     "actor": [
-                        "Anb_NCPeH_FD",
                         "CS_E-Rezept_KTR",
+                        "NCPeH_ePeDA",
                         "PS_E-Rezept_abgebend",
                         "PS_E-Rezept_verordnend"
                     ],
@@ -673,8 +595,8 @@
                     "title": "CS: Endpunkt Schnittstelle TI-Flow-Fachdienst",
                     "key": "IG-TIFLOW-CORE-A156",
                     "actor": [
-                        "Anb_NCPeH_FD",
                         "CS_E-Rezept_KTR",
+                        "NCPeH_ePeDA",
                         "PS_E-Rezept_abgebend",
                         "PS_E-Rezept_verordnend"
                     ],
@@ -689,8 +611,8 @@
                     "title": "CS: Kommunikation über TLS-Verbindung",
                     "key": "IG-TIFLOW-CORE-A157",
                     "actor": [
-                        "Anb_NCPeH_FD",
                         "CS_E-Rezept_KTR",
+                        "NCPeH_ePeDA",
                         "PS_E-Rezept_abgebend",
                         "PS_E-Rezept_verordnend"
                     ],
@@ -705,8 +627,8 @@
                     "title": "CS: Unzulässige TLS-Verbindungen ablehnen",
                     "key": "IG-TIFLOW-CORE-A158",
                     "actor": [
-                        "Anb_NCPeH_FD",
                         "CS_E-Rezept_KTR",
+                        "NCPeH_ePeDA",
                         "PS_E-Rezept_abgebend",
                         "PS_E-Rezept_verordnend"
                     ],
@@ -721,11 +643,10 @@
                     "title": "CS: Umsetzung sicherer Kanal zur VAU des TI-Flow-Fachdienstes",
                     "key": "IG-TIFLOW-CORE-A162",
                     "actor": [
-                        "Anb_NCPeH_FD",
                         "CS_E-Rezept_KTR",
+                        "NCPeH_ePeDA",
                         "PS_E-Rezept_abgebend",
-                        "PS_E-Rezept_verordnend",
-                        "TI-Flow_FD"
+                        "PS_E-Rezept_verordnend"
                     ],
                     "version": 0,
                     "release_status": "NEW",
@@ -2144,7 +2065,12 @@
                     "title": "FHIR-Ressourcen - Eindeutige Angabe meta.profile",
                     "key": "IG-TIFLOW-CORE-A277",
                     "actor": [
-                        "TI-Flow_FD"
+                        "CS_E-Rezept_KTR",
+                        "NCPeH_ePeDA",
+                        "PS_E-Rezept_abgebend",
+                        "PS_E-Rezept_verordnend",
+                        "TI-Flow_FD",
+                        "eRp_FdV"
                     ],
                     "version": 0,
                     "release_status": "NEW",
@@ -2497,8 +2423,8 @@
                     "title": "CS: verpflichtende Zertifikatsprüfung",
                     "key": "IG-TIFLOW-CORE-A302",
                     "actor": [
-                        "Anb_NCPeH_FD",
                         "CS_E-Rezept_KTR",
+                        "NCPeH_ePeDA",
                         "PS_E-Rezept_abgebend",
                         "PS_E-Rezept_verordnend"
                     ],
@@ -2513,8 +2439,8 @@
                     "title": "CS: Prüfung TI-Zertifikate",
                     "key": "IG-TIFLOW-CORE-A303",
                     "actor": [
-                        "Anb_NCPeH_FD",
                         "CS_E-Rezept_KTR",
+                        "NCPeH_ePeDA",
                         "PS_E-Rezept_abgebend",
                         "PS_E-Rezept_verordnend"
                     ],
@@ -2529,8 +2455,8 @@
                     "title": "CS: Prüfung der Zertifikate für TLS-Verbindung zu TI-Flow-Fachdienst",
                     "key": "IG-TIFLOW-CORE-A304",
                     "actor": [
-                        "Anb_NCPeH_FD",
                         "CS_E-Rezept_KTR",
+                        "NCPeH_ePeDA",
                         "PS_E-Rezept_abgebend",
                         "PS_E-Rezept_verordnend"
                     ],
@@ -3776,7 +3702,7 @@
                     "diff": {}
                 },
                 {
-                    "title": "CS Kostenträger: E-Rezept abrufen - Task herunterladen",
+                    "title": "CS Kostenträger: Verordnung abrufen - Task herunterladen",
                     "key": "IG-TIFLOW-CORE-A406",
                     "actor": [
                         "CS_E-Rezept_KTR"
@@ -4153,19 +4079,6 @@
                     "diff": {}
                 },
                 {
-                    "title": "TI-Flow-Fachdienst - Fehlerdetails in OperationOutcome",
-                    "key": "IG-TIFLOW-CORE-A432",
-                    "actor": [
-                        "TI-Flow_FD"
-                    ],
-                    "version": 0,
-                    "release_status": "NEW",
-                    "status": "ACTIVE",
-                    "conformance": "SHALL",
-                    "path": "error-codes.html",
-                    "diff": {}
-                },
-                {
                     "title": "TI-Flow-Fachdienst - Nutzerinformationen",
                     "key": "IG-TIFLOW-CORE-A433",
                     "actor": [
@@ -4516,6 +4429,34 @@
                     "diff": {}
                 },
                 {
+                    "title": "TI-Flow-Fachdienst - Gültigkeitswerte gegen aktuelle FHIR-Konfiguration auswerten",
+                    "key": "IG-TIFLOW-CORE-A458",
+                    "actor": [
+                        "TI-Flow_FD"
+                    ],
+                    "version": 0,
+                    "release_status": "NEW",
+                    "status": "ACTIVE",
+                    "conformance": "SHALL",
+                    "path": "fhir-validate.html",
+                    "diff": {}
+                },
+                {
+                    "title": "CS: Alternative VAU-Zertifikat-Verifikation mittels Konnektor",
+                    "key": "IG-TIFLOW-CORE-A459",
+                    "actor": [
+                        "CS_E-Rezept_KTR",
+                        "PS_E-Rezept_abgebend",
+                        "PS_E-Rezept_verordnend"
+                    ],
+                    "version": 0,
+                    "release_status": "NEW",
+                    "status": "ACTIVE",
+                    "conformance": "MAY",
+                    "path": "kommunikation-dienste-ti.html",
+                    "diff": {}
+                },
+                {
                     "title": "E-Rezept-FdV:  E-Rezepte löschen - Coverage PKV - Warnung Abgabeinformationen",
                     "key": "IG-TIFLOW-CORE-A46",
                     "actor": [
@@ -4526,6 +4467,100 @@
                     "status": "ACTIVE",
                     "conformance": "SHALL",
                     "path": "op-abort-req-fdv.html",
+                    "diff": {}
+                },
+                {
+                    "title": "CS: 2D-Code einscannen - Prüfung der Struktur",
+                    "key": "IG-TIFLOW-CORE-A460",
+                    "actor": [
+                        "CS_E-Rezept_KTR",
+                        "PS_E-Rezept_abgebend"
+                    ],
+                    "version": 0,
+                    "release_status": "NEW",
+                    "status": "ACTIVE",
+                    "conformance": "SHALL",
+                    "path": "datamatrix-code-client.html",
+                    "diff": {}
+                },
+                {
+                    "title": "CS: Subscription - Handling häufiger Ping-Events",
+                    "key": "IG-TIFLOW-CORE-A461",
+                    "actor": [
+                        "CS_E-Rezept_KTR",
+                        "PS_E-Rezept_abgebend"
+                    ],
+                    "version": 0,
+                    "release_status": "NEW",
+                    "status": "ACTIVE",
+                    "conformance": "SHALL",
+                    "path": "menu-technische-umsetzung-subscription.html",
+                    "diff": {}
+                },
+                {
+                    "title": "CS: Subscription - Wiederverbindung nach WebSocket-Fehler",
+                    "key": "IG-TIFLOW-CORE-A462",
+                    "actor": [
+                        "CS_E-Rezept_KTR",
+                        "PS_E-Rezept_abgebend"
+                    ],
+                    "version": 0,
+                    "release_status": "NEW",
+                    "status": "ACTIVE",
+                    "conformance": "SHALL",
+                    "path": "menu-technische-umsetzung-subscription.html",
+                    "diff": {}
+                },
+                {
+                    "title": "CS: Subscription - Eine WebSocket-Verbindung pro Telematik-ID",
+                    "key": "IG-TIFLOW-CORE-A463",
+                    "actor": [
+                        "TI-Flow_FD"
+                    ],
+                    "version": 0,
+                    "release_status": "NEW",
+                    "status": "ACTIVE",
+                    "conformance": "SHALL",
+                    "path": "menu-technische-umsetzung-subscription.html",
+                    "diff": {}
+                },
+                {
+                    "title": "CS: Subscription - Automatisches Schließen nach 12 Stunden",
+                    "key": "IG-TIFLOW-CORE-A464",
+                    "actor": [
+                        "TI-Flow_FD"
+                    ],
+                    "version": 0,
+                    "release_status": "NEW",
+                    "status": "ACTIVE",
+                    "conformance": "SHALL",
+                    "path": "menu-technische-umsetzung-subscription.html",
+                    "diff": {}
+                },
+                {
+                    "title": "CS: Subscription - Zulässige Verwendung von Verbindungsmetadaten",
+                    "key": "IG-TIFLOW-CORE-A465",
+                    "actor": [
+                        "TI-Flow_FD"
+                    ],
+                    "version": 0,
+                    "release_status": "NEW",
+                    "status": "ACTIVE",
+                    "conformance": "MAY",
+                    "path": "menu-technische-umsetzung-subscription.html",
+                    "diff": {}
+                },
+                {
+                    "title": "CS: Subscription - Verbot von Profilbildung",
+                    "key": "IG-TIFLOW-CORE-A466",
+                    "actor": [
+                        "TI-Flow_FD"
+                    ],
+                    "version": 0,
+                    "release_status": "NEW",
+                    "status": "ACTIVE",
+                    "conformance": "SHALL NOT",
+                    "path": "menu-technische-umsetzung-subscription.html",
                     "diff": {}
                 },
                 {

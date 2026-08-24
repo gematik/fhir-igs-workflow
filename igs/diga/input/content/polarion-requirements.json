@@ -83,10 +83,10 @@
         },
         {
             "key": "IG-TIFLOW-DIGA-A12",
-            "title": "PS verordnende LEI: TIFlow-DIGA - verpflichtende Anwendungsfälle",
+            "title": "PS verordnende LEI: TIFlow - DIGA - verpflichtende Anwendungsfälle",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle\n    <ul>\n        <li>UC 2.1 - E-Rezepte erzeugen</li>\n        <li>E-Rezept qualifiziert signieren</li>\n        <li>UC 2.3 - E-Rezept einstellen</li>\n        <li>UC 2.5 - E-Rezept durch Verordnenden löschen</li>\n    </ul>\n    umsetzen.",
+            "text": "Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle\n <ul>\n <li>UC 2.1 - E-Rezepte erzeugen</li>\n <li>E-Rezept qualifiziert signieren</li>\n <li>UC 2.3 - E-Rezept einstellen</li>\n <li>UC 2.5 - E-Rezept durch Verordnenden löschen</li>\n </ul>\n umsetzen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -106,11 +106,35 @@
             "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-DIGA-A12"
         },
         {
-            "key": "IG-TIFLOW-DIGA-A13",
-            "title": "E-Rezept-FdV: TIFlow-DIGA - verpflichtende Anwendungsfälle",
+            "key": "IG-TIFLOW-DIGA-A129",
+            "title": "DiGA: Löschfrist abgelaufener Verordnungen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle\n    <ul>\n        <li>UC 3.1 - E-Rezepte durch Versicherten abrufen</li>\n        <li>UC 3.2 - E-Rezept durch Versicherten löschen</li>\n        <li>Kostenträger suchen</li>\n        <li>UC 3.3 - Nachricht durch Versicherten übermitteln</li>\n        <li>UC 3.4 - Nachricht durch Versicherten empfangen</li>\n        <li>UC 3.8 - Nachricht durch Versicherten löschen</li>\n        <li>UC 3.5 - Protokolldaten abrufen</li>\n    </ul>\n    umsetzen.",
+            "text": "Der TI-Flow-Fachdienst MUSS einen Task mit Flowtype 162 nach Ablauf der Löschfrist gemäß der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.\n\t<table>\n\t\t<tr> \n\t\t<th>Task.status nach Statuswechsel</th>\n\t\t<th>Löschfrist</th>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>draft</td>\n\t\t<td>10 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>ready</td>\n\t\t<td>10 Tage nach Datum in Task.expiryDate</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>in-progress</td>\n\t\t<td>30 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>completed</td>\n\t\t<td>30 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>cancelled</td>\n\t\t<td>10 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t</table>",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/ttl.html#IG-TIFLOW-DIGA-A129"
+        },
+        {
+            "key": "IG-TIFLOW-DIGA-A13",
+            "title": "E-Rezept-FdV: TIFlow - DIGA - verpflichtende Anwendungsfälle",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle\n <ul>\n <li>UC 3.1 - E-Rezepte durch Versicherten abrufen</li>\n <li>UC 3.2 - E-Rezept durch Versicherten löschen</li>\n <li>Kostenträger suchen</li>\n <li>UC 3.3 - Nachricht durch Versicherten übermitteln</li>\n <li>UC 3.4 - Nachricht durch Versicherten empfangen</li>\n <li>UC 3.8 - Nachricht durch Versicherten löschen</li>\n <li>UC 3.5 - Protokolldaten abrufen</li>\n </ul>\n umsetzen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -130,11 +154,59 @@
             "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-DIGA-A13"
         },
         {
-            "key": "IG-TIFLOW-DIGA-A14",
-            "title": "CS Kostenträger: TIFlow-DIGA - verpflichtende Anwendungsfälle",
+            "key": "IG-TIFLOW-DIGA-A130",
+            "title": "DiGA: Löschen referenzierter Bundles",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das Clientsystem des Kostenträgers MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle\n    <ul>\n        <li>UC 4.1 - E-Rezept durch Abgebenden abrufen</li>\n        <li>UC 4.2 - E-Rezept durch Abgebenden zurückgeben</li>\n        <li>UC 4.4 - Quittung abrufen</li>\n        <li>UC 4.17 - Verordnung erneut abrufen</li>\n        <li>UC 4.8 - Quittung erneut abrufen</li>\n        <li>UC 4.6 - Nachrichten durch Abgebenden empfangen</li>\n        <li>UC 4.7 - Nachricht durch Abgebenden übermitteln</li>\n        <li>UC 4.9 - Nachricht durch Abgebenden löschen</li>\n    </ul>\n    umsetzen.",
+            "text": "Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines Tasks mit Flowtype 162 alle referenzierten Bundles ebenfalls löschen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/ttl.html#IG-TIFLOW-DIGA-A130"
+        },
+        {
+            "key": "IG-TIFLOW-DIGA-A131",
+            "title": "DiGA: Löschfrist veraltete Nachrichten",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource Communication automatisch löschen:\n\t<ul>\n\t\t<li>ohne eine Referenz auf einen Task in Communication.basedOn nach 30 Tagen ab ihrem Sendedatum Communication.sent,</li>\n\t\t<li>mit einer Referenz auf einen Task mit Flowtype 162 in Communication.basedOn gemäß der Löschfrist beim Löschen des Tasks.</li>\n\t</ul>",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0-ballot.2/ttl.html#IG-TIFLOW-DIGA-A131"
+        },
+        {
+            "key": "IG-TIFLOW-DIGA-A14",
+            "title": "CS Kostenträger: TIFlow - DIGA - verpflichtende Anwendungsfälle",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Das Clientsystem des Kostenträgers MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle\n <ul>\n <li>UC 4.1 - E-Rezept durch Abgebenden abrufen</li>\n <li>UC 4.2 - E-Rezept durch Abgebenden zurückgeben</li>\n <li>UC 4.4 - Quittung abrufen</li>\n <li>UC 4.17 - Verordnung erneut abrufen</li>\n <li>UC 4.8 - Quittung erneut abrufen</li>\n <li>UC 4.6 - Nachrichten durch Abgebenden empfangen</li>\n <li>UC 4.7 - Nachricht durch Abgebenden übermitteln</li>\n <li>UC 4.9 - Nachricht durch Abgebenden löschen</li>\n </ul>\n umsetzen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -158,7 +230,7 @@
             "title": "TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die einer der folgenden professionOID entspricht:\n  <ul>\n    <li>oid_arzt</li>\n    <li>oid_zahnarzt</li>\n    <li>oid_psychotherapeut</li>\n    <li>oid_ps_psychotherapeut</li>\n    <li>oid_kuj_psychotherapeut</li>\n  </ul>\n  die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die einer der folgenden professionOID entspricht:\n <ul>\n <li>oid_arzt</li>\n <li>oid_zahnarzt</li>\n <li>oid_psychotherapeut</li>\n <li>oid_ps_psychotherapeut</li>\n <li>oid_kuj_psychotherapeut</li>\n </ul>\n die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit nur solche Leistungserbringer eine signierte Verordnung einstellen, die zur Verordnung von DiGAs ermächtigt sind.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -206,7 +278,7 @@
             "title": "TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prüfung Coverage Type",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, dass Coverage.type.coding.code nicht mit dem Wert \"PKV\" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_COVERAGE_TYPE_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, dass Coverage.type.coding.code nicht mit dem Wert \"PKV\" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_COVERAGE_TYPE_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, um sicherzustellen, dass diese Workflows nicht für Verordnungen für PKV-Versicherte genutzt werden.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -278,7 +350,7 @@
             "title": "TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Prozessparameter",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.<br>\n\n  <table>\n    <tr> \n      <th>Feld in Task</th>\n      <th>Feldbelegung</th>\n    </tr>\n    <tr> \n      <td>Task.performerType.coding.system</td>\n      <td>\"https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType\"</td>\n    </tr>\n    <tr> \n      <td>Task.performerType.coding.code</td>\n      <td>\"1.2.276.0.76.4.59\"</td>\n    </tr>\n    <tr> \n      <td>Task.performerType.coding.diplay</td>\n      <td>\"Kostenträger\"</td>\n    </tr>\n    <tr> \n      <td>Task.PrescriptionType.valueCoding.display</td>\n      <td>\"Flowtype für Digitale Gesundheitsanwendungen\"</td>\n    </tr>\n    <tr> \n      <td>Task.ExpiryDate</td>\n      <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>\n    </tr>\n    <tr> \n      <td>Task.AcceptDate</td>\n      <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>\n    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_005 Prozessparameter Flowtype 162</figcaption></div>",
+            "text": "Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte Verordnungs-Bundle gemäß TAB_eRpDM_005 belegen.<br>\n\n <table>\n <tr> \n <th>Feld in Task</th>\n <th>Feldbelegung</th>\n </tr>\n <tr> \n <td>Task.performerType.coding.system</td>\n <td>\"https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType\"</td>\n </tr>\n <tr> \n <td>Task.performerType.coding.code</td>\n <td>\"1.2.276.0.76.4.59\"</td>\n </tr>\n <tr> \n <td>Task.performerType.coding.diplay</td>\n <td>\"Kostenträger\"</td>\n </tr>\n <tr> \n <td>Task.PrescriptionType.valueCoding.display</td>\n <td>\"Flowtype für Digitale Gesundheitsanwendungen\"</td>\n </tr>\n <tr> \n <td>Task.ExpiryDate</td>\n <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>\n </tr>\n <tr> \n <td>Task.AcceptDate</td>\n <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>\n </tr>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_005 Prozessparameter Flowtype 162</figcaption></div>",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -450,7 +522,7 @@
             "title": "E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Anzeige des Freischaltcodes",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abgabeinformationen abfragen\" dem Nutzer Abgabeinformationen eines Tasks mit Flowtyp 162 den Freischaltcode in geeigneter Weise darstellen.",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abgabeinformationen abfragen\" für einen Task mit Flowtyp 162 dem Nutzer den Freischaltcode den Freischaltcode in geeigneter Weise darstellen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -474,7 +546,7 @@
             "title": "E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Supportinformationen für DiGA-App",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abgabeinformationen abfragen\" dem Nutzer zusammen mit den Abgabeinformationen zu einer DiGA-App Supportinformationen zu der DiGA-App anzeigen.",
+            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abgabeinformationen abfragen\" für einen Task mit Flowtyp 162 dem Nutzer Supportinformationen zu der DiGA-App zusammen mit dem Freischaltcode anzeigen.",
             "conformance": "SHALL",
             "characteristics": [
                 {

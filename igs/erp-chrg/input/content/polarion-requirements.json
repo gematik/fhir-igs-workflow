@@ -58,6 +58,54 @@
             "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A10"
         },
         {
+            "key": "IG-TIFLOW-CHRG-A100",
+            "title": "E-Rezept Charging: Löschfrist ChargeItem",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/ttl.html#IG-TIFLOW-CHRG-A100"
+        },
+        {
+            "key": "IG-TIFLOW-CHRG-A101",
+            "title": "E-Rezept Charging: Löschen referenzierter Bundles bei ChargeItem-Löschung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/ttl.html#IG-TIFLOW-CHRG-A101"
+        },
+        {
             "key": "IG-TIFLOW-CHRG-A11",
             "title": "E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest",
             "version": 0,
