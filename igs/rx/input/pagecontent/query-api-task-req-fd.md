@@ -60,7 +60,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 #### PATCH /Task
 
 <!-- A_27551 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A244" title="TI-Flow-Fachdienst -Task markieren -Versicherter - FHIR-Validierung Parameters" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A244" title="TI-Flow-Fachdienst - Task markieren - Versicherter - FHIR-Validierung Parameters" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -92,7 +92,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_28500 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A245" title="TI-Flow-Fachdienst -Task markieren -Versicherter - nur einlösbare E-Rezepte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A245" title="TI-Flow-Fachdienst - Task markieren - Versicherter - nur einlösbare E-Rezepte" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -124,7 +124,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 </requirement>
 
 <!-- A_27552 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A246" title="TI-Flow-Fachdienst -Task markieren -Versicherter - Änderung Markierung Task Ressource" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A246" title="TI-Flow-Fachdienst - Task markieren - Versicherter - Änderung Markierung Task Ressource" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

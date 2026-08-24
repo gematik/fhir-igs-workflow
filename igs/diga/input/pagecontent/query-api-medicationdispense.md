@@ -7,9 +7,9 @@ Falls kein Freischaltcode bereitgestellt werden kann, enthält die Abgabeinforma
 
 Die Interaktion mit Nachrichten als FHIR-Ressource _MedicationDispense_ wird über die folgenden HTTP-Methoden ermöglicht:
 
-|HTTP-Methode|Ergebnis der Anfrage|
-|---|---|
-|GET|Freischaltcodes abrufen|
+|Akteur|HTTP-Methode|Ergebnis der Anfrage|
+|---|---|---|
+|Versicherter|GET|Freischaltcodes abrufen|
 
 ### Anforderungen an Schnittstelle
 

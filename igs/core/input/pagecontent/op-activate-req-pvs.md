@@ -32,7 +32,7 @@ Fehler 403 mit dem OperationOutcome "Task not in status draft but in status read
   Das PS der verordnenden LEI DARF im Anwendungsfall "E-Rezept durch Verordnenden einstellen" NICHT einen Ausdruck für den Versicherten erstellen, wenn der TI-Flow-Fachdienst im Response der Operation POST /Task/&lt;id&gt;/$activate mit einem Fehler antwortet.
 </requirement>
 
-Für den Patientenausdruck gelten vorrangig die Regelungen zum Ausdruck eines E-Rezepts aus den Bundesmantelverträgen [BMV] und [BMV-Z].
+Für den Patientenausdruck gelten vorrangig die Regelungen zum Ausdruck aus den Bundesmantelverträgen [BMV] und [BMV-Z].
 <!-- ToDo: Können in den workflow-spezifischen Modulen weitere Hinweise geben? rx und diga haben unterschiedliche vorgaben durch die KBV -->
 
 <!-- A_22423 -->

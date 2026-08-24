@@ -97,6 +97,9 @@ In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwillig
     Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" vom Nutzer eine Bestätigung einholen, dass die Einwilligung widerrufen werden soll, somit ggf. korrespondierende Daten gelöscht werden und die Möglichkeit geben, das Widerrufen abzubrechen.
 </requirement>
 
+<!-- TI-Flow-26_2 PKV-CHI-03 -->
+> *Hinweis:* Bei Widerruf der Einwilligung sollte der FdV-Hersteller den Versicherten über die Konsequenzen der Datenlöschung informieren, insbesondere über die Auswirkungen auf Leistungsprüfung, erneute Einreichung, Beweiswert und Kundenservice.
+
 <!-- A_22171-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A294" title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="0">
     <meta lockversion="false"/>

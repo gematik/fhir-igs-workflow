@@ -1,0 +1,32 @@
+actor:
+- CS_E-Rezept_KTR
+- PS_E-Rezept_abgebend
+- PS_E-Rezept_verordnend
+conformance: MAY
+content_hash: 14d583140f9c52f632449b3764c6520ce3fe9ef3a6a587cbafe897568a60a5ed
+created: '2026-07-28T09:46:48.281704'
+date: '2026-07-28T09:46:48.281707'
+key: IG-TIFLOW-CORE-A459
+modified: '2026-07-28T09:46:48.281706'
+release_status: NEW
+source: input/pagecontent/kommunikation-dienste-ti.md
+status: ACTIVE
+test_procedures:
+  CS_E-Rezept_KTR:
+  - Herstellererklärung
+  PS_E-Rezept_abgebend:
+  - Herstellererklärung
+  PS_E-Rezept_verordnend:
+  - Herstellererklärung
+text: "Das Clientsystem des TI-Flow-Fachdienstes KANN als Alternative zur Umsetzung\
+  \ des TUC_PKI_018 gemäß [gemSpec_Krypt]#A_21216 für die Prüfung des VAU-Zertifikates\
+  \ die VerifyCertificate Operation des Konnektors/Basis Consumers nach folgendem\
+  \ Verfahren nutzen:\n    <ol>\n    <li>Beziehen des VAU-Zertifikates von /VAUCertificate</li>\n\
+  \    <li>Lokales Speichern der aktuellen Zeit mit dem VAU-Zertifikat als Tupel</li>\n\
+  \    <li>Prüfung des VAU-Zertifikates mittels der Konnektor-Operation VerifyCertificate</li>\n\
+  \    <li>Abbruch falls INVALID</li>\n    <li>Wenn (get_current_time() &lt; gespeicherte\
+  \ Zeit + 12h): VAU-Zertifikat wird als gültig angesehen und verwendet; andernfalls\
+  \ (get_current_time() &gt;= gespeicherte Zeit + 12h): VAU-Zertifikat erneut beziehen\
+  \ (siehe Punkt 1)</li>\n    </ol>"
+title: 'CS: Alternative VAU-Zertifikat-Verifikation mittels Konnektor'
+version: 0

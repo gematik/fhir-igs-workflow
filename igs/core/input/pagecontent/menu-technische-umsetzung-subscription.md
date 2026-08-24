@@ -16,12 +16,61 @@ Request/Response-Beispiele und das vollständige Protokoll (bind/bound/ping) sin
 
 ### Wichtige Hinweise zur Implementierung
 
-*Achtung:* Jede eingehende Ressource führt zu einem `ping`, ggf. im Millisekundenbereich, wenn viele Ressourcen an einen Empfänger gerichtet werden. In Abhängigkeit von der Implementierung kann dieses Verhalten zu einer Überlastung des Clients führen, wenn bspw. jedes einzelne `ping` unmittelbar einen Abruf auslöst. Im Zweifel ist eine kurze Wartezeit sinnvoll, bevor ein Abruf gestartet wird. Zwischenzeitlich eingegangene Ressourcen gehen dabei nicht verloren, da sie beim nächsten Abruf gesammelt heruntergeladen werden können.
+<!-- TI-Flow-26_2 BSI_23 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A461" title="CS: Subscription - Handling häufiger Ping-Events" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das Clientsystem des TI-Flow-Fachdienst MUSS bei der Verarbeitung eingehender Ressourcen berücksichtigen, dass jede Ressource zu einem `ping` führen kann, potentiell im Millisekundenbereich und eine Strategie implementieren, um eine Überlastung zu vermeiden (z.B. durch kurze Wartezeiten vor Abrufen), wobei zwischenzeitlich eingegangene Ressourcen bei nachfolgenden Abrufen gesammelt abgerufen werden können.
+</requirement>
 
-*Achtung:* Wird die WebSocket-Verbindung aufgrund eines Fehlers unerwartet terminiert, MUSS der Client eine zufällig gewählte Pause zwischen 5 und 60 Sekunden warten, bevor eine neue WebSocket-Verbindung aufgebaut wird.
+<!-- TI-Flow-26_2 BSI_23 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A462" title="CS: Subscription - Wiederverbindung nach WebSocket-Fehler" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das Clientsystem des TI-Flow-Fachdienst MUSS im Fall, dass die WebSocket-Verbindung zu einem Subscription-Endpunkt unerwartet terminiert wird, vor dem Aufbau einer neuen WebSocket-Verbindung eine zufällig gewählte Wartezeit zwischen 5 und 60 Sekunden warten, bis eine neue Verbindung aufgebaut wird.
+</requirement>
 
-*Hinweis:* Je Telematik-ID ist nur eine WebSocket-Verbindung gleichzeitig möglich.
+<!-- TI-Flow-26_2 BSI_23 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A463" title="CS: Subscription - Eine WebSocket-Verbindung pro Telematik-ID" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS pro Telematik-ID nur eine aktive WebSocket-Verbindung gleichzeitig zulassen.
+</requirement>
 
-*Hinweis:* Die WebSocket-Verbindung wird nach 12h automatisch geschlossen. Der Client muss anschließend eine neue Subscription registrieren (ab Schritt 1).
+<!-- TI-Flow-26_2 BSI_23 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A464" title="CS: Subscription - Automatisches Schließen nach 12 Stunden" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS WebSocket-Verbindungen zu Subscription-Endpunkten nach spätestens 12 Stunden automatisch schließen.
+</requirement>
 
-*Hinweis:* Eine Verwendung anfallender Verbindungsmetadaten zur Sicherung der Schnittstelle (DDoS-Schutz, Fehleranalyse in sehr eingeschränktem Maß) ist zulässig. Eine darüber hinausgehende Profilbildung der verbundenen Clients ist nicht zulässig.
+<!-- TI-Flow-26_2 BSI_23 -->
+<requirement conformance="MAY" key="IG-TIFLOW-CORE-A465" title="CS: Subscription - Zulässige Verwendung von Verbindungsmetadaten" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst DARF anfallende Verbindungsmetadaten ausschließlich zur Sicherung der Schnittstelle (DDoS-Schutz, Fehleranalyse im sehr eingeschränkten Maß) verwenden.
+</requirement>
+
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A466" title="CS: Subscription - Verbot von Profilbildung" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst DARF NICHT Verbindungsmetadaten speichern, um eine Profilbildung der verbundenen Clients durchzuführen.
+</requirement>
