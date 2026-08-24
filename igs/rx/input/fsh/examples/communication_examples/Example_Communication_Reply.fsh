@@ -3,8 +3,6 @@ InstanceOf: GEM_ERP_PR_Communication_Reply
 Title: "Antwort-Nachricht der Apotheke an den Patienten"
 Description: "Beispiel für eine Antwort-Nachricht, die von der Apotheke an den Patienten als Antwort auf eine vorherige Task-bezogene Nachricht gesendet wird"
 Usage: #example
-* meta.tag[+].display = "Reply from Pharmacy to Patient"
-* meta.tag[+].display = "Communication message sent by pharmacy to patient in response to a previous Task-related message"
 * basedOn.reference = "Task/160.000.033.491.280.78"
 * insert GKV_Identifier(recipient.identifier)
 * insert ApoTelematikID(sender.identifier)
