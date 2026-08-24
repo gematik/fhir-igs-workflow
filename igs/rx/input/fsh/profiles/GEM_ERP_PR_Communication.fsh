@@ -11,7 +11,7 @@ Description: "Generische Workflow-Communication"
 * basedOn ^type.aggregation = #referenced
   * reference 1..1 MS
     * ^short = "Referenz zum E-Rezept-Task"
-    * ^comment = "Hat die Form 'Task/{{TaskID}}'"
+    * ^comment = "Hat die Form 'Task/{{PrescriptionID}}'"
 
 
 
