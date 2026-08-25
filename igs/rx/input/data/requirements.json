@@ -5152,6 +5152,150 @@
         "release": "2.0.0"
     },
     {
+        "key": "IG-TIFLOW-ERP-A294",
+        "title": "TI-Flow-Fachdienst - ePA - Flowtype 160/166/169/200/209",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-epa-ms.md",
+        "text": "Der TI-Flow-Fachdienst MUSS sicherstellen, dass ausschließlich Daten zu Tasks mit dem Flowtype 160, 166, 169, 200 oder 209 für den ePA Medication Service bereitstellt werden.",
+        "conformance": "SHALL",
+        "created": "2026-08-25T15:13:36.021199",
+        "modified": "2026-08-25T15:13:36.021204",
+        "date": "2026-08-25T15:13:36.021205",
+        "content_hash": "b4ad3cbef2d71a9449564728810b32ac2589b5dcf9139d493d6b6f69627ef9ac",
+        "path": "menu-technische-umsetzung-epa-ms.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A295",
+        "title": "TI-Flow-Fachdienst - ePA - asynchrone Bereitstellung und Übermittlung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-epa-ms.md",
+        "text": "Der TI-Flow-Fachdienst MUSS das Übermitteln der Daten an den ePA Medication Service asynchron zur Bereitstellung der Daten durch die Clientsysteme umsetzen, damit für das bereitstellende Primärsystem der verordnenden oder abgebenden Leistungserbringerinstitution oder E-Rezept-FdV keine verlängerte Verarbeitungsdauer der auslösenden Operation auftritt.",
+        "conformance": "SHALL",
+        "created": "2026-08-25T15:13:36.021359",
+        "modified": "2026-08-25T15:13:36.021361",
+        "date": "2026-08-25T15:13:36.021362",
+        "content_hash": "0169edfe0b9676092a6c9c926e3cb8a8181fe955f10ea53d9fec125f7819c627",
+        "path": "menu-technische-umsetzung-epa-ms.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A296",
+        "title": "TI-Flow-Fachdienst - ePA - Mapping",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-epa-ms.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Bereitstellen der Daten für ePA Medication Service die durch Clientsysteme des TI-Flow-Fachdienst bereitgestellten Ressourcen (E-Rezept FHIR Ressource) in Ressourcen des ePA Medication Service (ePA Medication Service FHIR Ressourcen) gemäß der Tabelle Tab_eRPFD_019 unter Beachtung der Ausnahmeregelungen überführen.\n    \n<table>\n<tr>\n<th>Ausgangsprofil der E-Rezept FHIR Ressourcen</th>\n<th>Zielprofil der ePA Medication Service FHIR Ressourcen</th>\n<th>Ausnahmeregelungen des Mappings</th>\n</tr>\n\n<tr>\n<td>\nKBV_PR_ERP_Medication_PZN\nhttps://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN\n</td>\n<td>\nMedication resource for the ePA Medication Service\nhttps://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication\n</td>\n<td>\nKeine Übernahme von \"extension:Kategorie\"-Elementen\n</td>\n</tr>\n\n<tr>\n<td>\nKBV_PR_ERP_Medication_Ingredient\nhttps://simplifier.net/erezept/kbvprerpmedicationingredient\n</td>\n<td>\nMedication resource for the ePA Medication Service\nhttps://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication\n</td>\n<td></td>\n</tr>\n\n<tr>\n<td>\nKBV_PR_ERP_Medication_Compounding\nhttps://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding\n</td>\n<td>\nMedication resource for the ePA Medication Service\nhttps://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication\n</td>\n<td>\nKeine Übernahme von \"extension:Kategorie\"-Elementen\n</td>\n</tr>\n\n<tr>\n<td>\nKBV_PR_ERP_Medication_FreeText\nhttps://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_FreeText\n</td>\n<td>\nMedication resource for the ePA Medication Service\nhttps://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication\n</td>\n<td></td>\n</tr>\n\n<tr>\n<td>\nKBV_PR_ERP_Prescription\nhttps://simplifier.net/erezept/kbvprerpprescription\n</td>\n<td>\nMedicationRequest resource for the ePA Medication Service\nhttps://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request\n</td>\n<td>\nSetzen des Pattern \"filler-order\" für .inten\nKeine Übernahme von \"insurance\"-Elemente\nKeine Übernahme von \"requester.reference\"-Elemente\nKeine Übernahme von \"subject.reference\"-Elemente\nKeine Übernahme von \"extension:Notdienstgebuehr\"-Elemente\nKeine Übernahme von \"extension:Zuzahlungsstatus\"-Elemente\nKeine Übernahme von \"dosageInstruction.extension:Dosierungskennzeichen\"-Elemente\nKeine Übernahme von \"MedicationRequest.extension:Unfallinformationen\"-Elementen\n</td>\n</tr>\n\n<tr>\n<td>\nKBV_PR_FOR_Practitioner\nhttps://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner\n</td>\n<td>\nPractitioner in gematik Directory\nhttps://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory\n</td>\n<td>\nÜberschreiben/Setzen der \"identifier:Telematik-ID\" des Arztes aus dem Signaturzertifikat der QES\n</td>\n</tr>\n\n<tr>\n<td>\nKBV_PR_FOR_Organization\nhttps://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization\n</td>\n<td>\nOrganization in gematik Directory\nhttps://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory\n</td>\n<td>\nÜberschreiben/Setzen des \"identifier:TelematikID\" mit zeta-user-info.identifier aus den Nutzerinformationen des verwendeten Operationsaufrufes\n</td>\n</tr>\n\n<tr>\n<td>\nGEM_ERP_PR_MedicationDispense\nhttps://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense\n</td>\n<td>\nEPA MedicationDispense\nhttps://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-dispense\n</td>\n<td></td>\n</tr>\n\n<tr>\n<td>\nGEM_ERP_PR_Medication\nhttps://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication\n</td>\n<td>\nMedication resource for the ePA Medication Service\nhttps://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication\n</td>\n<td></td>\n</tr>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Übersicht Mapping und Ausnahmeregelungen des Mappings</figcaption></div>",
+        "conformance": "SHALL",
+        "created": "2026-08-25T15:13:36.021940",
+        "modified": "2026-08-25T15:13:36.021941",
+        "date": "2026-08-25T15:13:36.021942",
+        "content_hash": "c0387311f95969bac428ac4e71f6415f817bf5856217302bf7331d18e2331197",
+        "path": "menu-technische-umsetzung-epa-ms.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A297",
+        "title": "TI-Flow-Fachdienst - ePA - provide-dispensation-erp - Organisation-Ressource",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-epa-ms.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Bereitstellen der MedicationDispense für den ePA Medication Service eine Ressource des Profils https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory erstellen und Organization.identifier:TelematikID mit zeta-user-info.identifier sowie Organization.name mit zeta-user-info.commonName aus den Nutzerinformationen belegen.",
+        "conformance": "SHALL",
+        "created": "2026-08-25T15:13:36.022268",
+        "modified": "2026-08-25T15:13:36.022270",
+        "date": "2026-08-25T15:13:36.022270",
+        "content_hash": "ca70d9981a86963e5639cc8b9358c9f1353336ea91d82af3ed18d176d8228797",
+        "path": "menu-technische-umsetzung-epa-ms.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A298",
+        "title": "TI-Flow-Fachdienst - ePA - Mapping - Übernahme von Werten zwischen Profilen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-epa-ms.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Bereitstellen der Daten für den ePA Medication Service sicherstellen, dass Datenwerte der E-Rezept FHIR Ressource übernommen werden, sofern das entsprechende Element in dem Ausgangs- und Zielprofilen vorhanden ist.",
+        "conformance": "SHALL",
+        "created": "2026-08-25T15:13:36.022428",
+        "modified": "2026-08-25T15:13:36.022429",
+        "date": "2026-08-25T15:13:36.022430",
+        "content_hash": "af7cc4b6c3b46939f82f29b03731c2c85234eaa90a599cb71e0eef9767c02ded",
+        "path": "menu-technische-umsetzung-epa-ms.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A299",
+        "title": "TI-Flow-Fachdienst - ePA - Mapping - Handhabung von Extensions",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-epa-ms.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Bereitstellen der Daten für den ePA Medication Service sicherstellen, dass alle Extensions aus den E-Rezept FHIR-Ressourcen in die ePA Medication Service FHIR-Ressource übernommen werden, es sei denn, eine Ausnahmeregelung ist in der Tab_eRPFD_019 festgelegt.",
+        "conformance": "SHALL",
+        "created": "2026-08-25T15:13:36.022564",
+        "modified": "2026-08-25T15:13:36.022565",
+        "date": "2026-08-25T15:13:36.022566",
+        "content_hash": "c077338b95e5df80cfcbe401698ea4e6115e7a2cf75f437cf79a831b134d3708",
+        "path": "menu-technische-umsetzung-epa-ms.html",
+        "release": "2.0.0"
+    },
+    {
         "key": "IG-TIFLOW-ERP-A3",
         "title": "PS abgebende LEI: Abgabedatensatz signieren - Gültigkeit SMC-B prüfen",
         "actor": [
@@ -5197,6 +5341,150 @@
         "date": "2026-08-25T14:32:14.892590",
         "content_hash": "513ab968204ca00745b0bda06aec9ca461d4133c6e3d2162101d127465e14cd2",
         "path": "query-api-communication-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A300",
+        "title": "TI-Flow-Fachdienst - ePA - Übermittlung - Spezifikation der Schnittstellen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-epa-ms.md",
+        "text": "Der TI-Flow-Fachdienst MUSS bei der Übermittlung von Daten an den Medication Service die Schnittstellen nach [gemIG_ePA_Medication] verwenden.",
+        "conformance": "SHALL",
+        "created": "2026-08-25T15:13:36.022747",
+        "modified": "2026-08-25T15:13:36.022748",
+        "date": "2026-08-25T15:13:36.022749",
+        "content_hash": "f0c5cffad9d45c5d776b16e5dfa7bae0116bf0058d4afde78dfe5944ff8fa1e5",
+        "path": "menu-technische-umsetzung-epa-ms.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A301",
+        "title": "TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Verordnungsdaten",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-epa-ms.md",
+        "text": "Der TI-Flow-Fachdienst MUSS zur Bereitstellung von Verordnungsdaten an den ePA Medication Service die Operation `providePrescription_MedicationSvc` des Medication Service aufrufen.",
+        "conformance": "SHALL",
+        "created": "2026-08-25T15:13:36.022882",
+        "modified": "2026-08-25T15:13:36.022883",
+        "date": "2026-08-25T15:13:36.022884",
+        "content_hash": "f51ec73e0acf9cf8055a1c3420d4ce7e141640496be85a0b1db0c9229c71b2f0",
+        "path": "menu-technische-umsetzung-epa-ms.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A302",
+        "title": "TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Verordnungsdaten",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-epa-ms.md",
+        "text": "Der TI-Flow-Fachdienst MUSS, um die Löschinformation für Verordnungsdaten an den ePA Medication Service zu übermitteln, die Operation `cancelPrescription_MedicationSvc` des Medication Service aufrufen.",
+        "conformance": "SHALL",
+        "created": "2026-08-25T15:13:36.023027",
+        "modified": "2026-08-25T15:13:36.023028",
+        "date": "2026-08-25T15:13:36.023029",
+        "content_hash": "67c776abf973a693e8b299394dc163474affc204b87e76e6aaf485c4626016fe",
+        "path": "menu-technische-umsetzung-epa-ms.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A303",
+        "title": "TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Dispensierinformationen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-epa-ms.md",
+        "text": "Der TI-Flow-Fachdienst MUSS zur Bereitstellung von Dispensierinformationen an den ePA Medication Service die Operation `provideDispensation_MedicationSvc` des Medication Service mit rxDispensation.status gemäß dem bereitgestellten Status aufrufen.",
+        "conformance": "SHALL",
+        "created": "2026-08-25T15:13:36.023169",
+        "modified": "2026-08-25T15:13:36.023171",
+        "date": "2026-08-25T15:13:36.023172",
+        "content_hash": "25fb15101d68a2f34fbbd0ac26055ebf05e15f921267f59371671dec5abfa795",
+        "path": "menu-technische-umsetzung-epa-ms.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A304",
+        "title": "TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Dispensierinformationen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-epa-ms.md",
+        "text": "Der TI-Flow-Fachdienst MUSS, um die Löschinformation für Dispensierinformationen an den ePA Medication Service zu übermitteln, die Operation `cancelDispensation_MedicationSvc` des Medication Service aufrufen.",
+        "conformance": "SHALL",
+        "created": "2026-08-25T15:13:36.023321",
+        "modified": "2026-08-25T15:13:36.023323",
+        "date": "2026-08-25T15:13:36.023323",
+        "content_hash": "aff99466b4e8a049f7eea442a21b0f6a71b3da364c3c382f4ada7c9594808041",
+        "path": "menu-technische-umsetzung-epa-ms.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A305",
+        "title": "TI-Flow-Fachdienst - ePA - Übermittlung - Bündelung von Übermittlungsaufträgen nach KVNR",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-epa-ms.md",
+        "text": "Der TI-Flow-Fachdienst KANN für die Übermittlung von Verordnungsdaten und Dispensierinformationen an den ePA Medication Service mehrere Instanzen von MedicationRequest oder mehrere Instanzen von MedicationDispense einer KVNR in einem einzigen Operationsaufruf bündeln.",
+        "conformance": "MAY",
+        "created": "2026-08-25T15:13:36.023454",
+        "modified": "2026-08-25T15:13:36.023455",
+        "date": "2026-08-25T15:13:36.023456",
+        "content_hash": "f3ea0966314c5c1f739edf4359e590e3c26d0c5446131cc25d34c04757acd8f0",
+        "path": "menu-technische-umsetzung-epa-ms.html",
         "release": "2.0.0"
     },
     {

@@ -1,8 +1,7 @@
-### Kommunikation mit ePA-Aktensystem
 
 Die Datenübermittlung zwischen TI-Flow-Fachdienst und ePA-Aktensystem erfolgt über HTTPS/TLS gemäß den Vorgaben aus den referenzierten Spezifikationen. Dabei wird das Server-Zertifikat des ePA-Aktensystems geprüft. Zusätzlich wird das VAU-Protokoll verwendet. Für die Authentisierung erstellt der TI-Flow-Fachdienst ein self-signed JWT Bearer-Token, und für Operationsaufrufe wird die clientID für den User-Agent festgelegt.
 
-#### TLS-Verbindung
+### TLS-Verbindung
 
 Zur Absicherung der Datenübermittlung muss der Transport der Nachrichten zwischen TI-Flow-Fachdienst uns ePA-Aktensystem mittels HTTPS erfolgen. Transport Layer Security (TLS) ist gemäß den Vorgaben aus [gemSpec_Krypt] einzusetzen.
 
@@ -90,7 +89,7 @@ Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat ent
      Der TI-Flow-Fachdienst MUSS prüfen, dass die im Zertifikat enthaltene Rolle (Admission) gleich oid_epa_dvw ist und im Fehlerfall den Aufbau der HTTPS-Verbindung abbrechen.
 </requirement>
 
-#### VAU-Protokoll
+### VAU-Protokoll
 
 Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermittelten Daten mit dem VAU-Protokoll gesichert. Es gelten die Vorgaben aus [gemSpec_Krypt]#VAU-Protokoll für ePA für alle.
 
@@ -200,214 +199,8 @@ Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Beare
      Der TI-Flow-Fachdienst MUSS den Aufruf zum Ermitteln des ePA-Aktensystem als fehlerhaft kennzeichnen und eine detaillierte Fehlermeldung für interne Analysezwecke protokollieren, wenn der Information Service der ePA auf einen Operationsaufruf mit einem Statuscode 400 (malformed Request) reagiert.
 </requirement>
 
-### Übermittlung an den Medication Service
 
-<!-- TI-Flow-26-2 PKV-FD-09 -->
-Die Übermittlung von Daten an den ePA Medication Service wird über einen asynchronen Prozess realisiert. Diese Übertragung wird durch den Aufruf eines Clients am E-Rezept-Fachdienst ausgelöst, bspw. durch die Bereitstellung der Verordnung. Nachdem die Verordnung eingestellt wurde, wird der REST-Aufruf gegenüber dem Client bestätigt und die Verbindung abgebaut. Anschließend erfolgt die Aufbereitung und Übertragung der Daten an den ePA Medication Service.
-
-Ein Clientsystem, welches einen Aufruf gegenüber dem E-Rezept-Fachdienst durchführt, muss dadurch nicht warten, bis die Übertragung an das ePA Aktensystem durchgeführt wurde.
-
-Die asynchrone Verarbeitung der Übertragung hat neben den Vorteilen für die Clientsysteme die folgenden Konsequenzen:
-
-- Clientsysteme wissen nach Abschluss ihres Operationsaufrufes nicht, ob und wann die Übertragung der Daten an den ePA Medication Service erfolgt
-- Es kann im Livebetrieb nicht nachvollzogen werden, warum eine Übertragung nicht erfolgreich stattgefunden hat, weil der Response des ePA Medication Service mit der Fehlerbeschreibung nicht an das Clientsystem übermittelt wird.
-
-
-<!-- A_25944-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A388" title="TI-Flow-Fachdienst - ePA - Flowtype 160/166/169/200/209" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS sicherstellen, dass ausschließlich Daten zu Tasks mit dem Flowtype 160, 166, 169, 200 oder 209 für den ePA Medication Service bereitstellt werden.
-</requirement>
-
-<!-- A_25945 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A389" title="TI-Flow-Fachdienst - ePA - asynchrone Bereitstellung und Übermittlung" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS das Übermitteln der Daten an den ePA Medication Service asynchron zur Bereitstellung der Daten durch die Clientsysteme umsetzen, damit für das bereitstellende Primärsystem der verordnenden oder abgebenden Leistungserbringerinstitution oder E-Rezept-FdV keine verlängerte Verarbeitungsdauer der auslösenden Operation auftritt.
-</requirement>
-
-#### Mappingregeln
-
-<!-- A_25946 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A390" title="TI-Flow-Fachdienst - ePA - Mapping" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-Der TI-Flow-Fachdienst MUSS beim Bereitstellen der Daten für ePA Medication Service die durch Clientsysteme des TI-Flow-Fachdienst bereitgestellten Ressourcen (E-Rezept FHIR Ressource) in Ressourcen des ePA Medication Service (ePA Medication Service FHIR Ressourcen) gemäß der Tabelle Tab_eRPFD_019 unter Beachtung der Ausnahmeregelungen überführen.
-    
-<table>
-<tr>
-<th>Ausgangsprofil der E-Rezept FHIR Ressourcen</th>
-<th>Zielprofil der ePA Medication Service FHIR Ressourcen</th>
-<th>Ausnahmeregelungen des Mappings</th>
-</tr>
-
-<tr>
-<td>
-KBV_PR_ERP_Medication_PZN
-https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN
-</td>
-<td>
-Medication resource for the ePA Medication Service
-https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
-</td>
-<td>
-Keine Übernahme von "extension:Kategorie"-Elementen
-</td>
-</tr>
-
-<tr>
-<td>
-KBV_PR_ERP_Medication_Ingredient
-https://simplifier.net/erezept/kbvprerpmedicationingredient
-</td>
-<td>
-Medication resource for the ePA Medication Service
-https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
-</td>
-<td></td>
-</tr>
-
-<tr>
-<td>
-KBV_PR_ERP_Medication_Compounding
-https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding
-</td>
-<td>
-Medication resource for the ePA Medication Service
-https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
-</td>
-<td>
-Keine Übernahme von "extension:Kategorie"-Elementen
-</td>
-</tr>
-
-<tr>
-<td>
-KBV_PR_ERP_Medication_FreeText
-https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_FreeText
-</td>
-<td>
-Medication resource for the ePA Medication Service
-https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
-</td>
-<td></td>
-</tr>
-
-<tr>
-<td>
-KBV_PR_ERP_Prescription
-https://simplifier.net/erezept/kbvprerpprescription
-</td>
-<td>
-MedicationRequest resource for the ePA Medication Service
-https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-request
-</td>
-<td>
-Setzen des Pattern "filler-order" für .inten
-Keine Übernahme von "insurance"-Elemente
-Keine Übernahme von "requester.reference"-Elemente
-Keine Übernahme von "subject.reference"-Elemente
-Keine Übernahme von "extension:Notdienstgebuehr"-Elemente
-Keine Übernahme von "extension:Zuzahlungsstatus"-Elemente
-Keine Übernahme von "dosageInstruction.extension:Dosierungskennzeichen"-Elemente
-Keine Übernahme von "MedicationRequest.extension:Unfallinformationen"-Elementen
-</td>
-</tr>
-
-<tr>
-<td>
-KBV_PR_FOR_Practitioner
-https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner
-</td>
-<td>
-Practitioner in gematik Directory
-https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory
-</td>
-<td>
-Überschreiben/Setzen der "identifier:Telematik-ID" des Arztes aus dem Signaturzertifikat der QES
-</td>
-</tr>
-
-<tr>
-<td>
-KBV_PR_FOR_Organization
-https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization
-</td>
-<td>
-Organization in gematik Directory
-https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory
-</td>
-<td>
-Überschreiben/Setzen des "identifier:TelematikID" mit zeta-user-info.identifier aus den Nutzerinformationen des verwendeten Operationsaufrufes
-</td>
-</tr>
-
-<tr>
-<td>
-GEM_ERP_PR_MedicationDispense
-https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense
-</td>
-<td>
-EPA MedicationDispense
-https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication-dispense
-</td>
-<td></td>
-</tr>
-
-<tr>
-<td>
-GEM_ERP_PR_Medication
-https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication
-</td>
-<td>
-Medication resource for the ePA Medication Service
-https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication
-</td>
-<td></td>
-</tr>
-</table>
-
-<div><figcaption><strong>Tabelle: </strong>Übersicht Mapping und Ausnahmeregelungen des Mappings</figcaption></div>
-
-</requirement>
-
-<!-- A_25947 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A391" title="TI-Flow-Fachdienst - ePA - provide-dispensation-erp - Organisation-Ressource" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS beim Bereitstellen der MedicationDispense für den ePA Medication Service eine Ressource des Profils https://gematik.de/fhir/directory/StructureDefinition/OrganizationDirectory erstellen und Organization.identifier:TelematikID mit zeta-user-info.identifier sowie Organization.name mit zeta-user-info.commonName aus den Nutzerinformationen belegen.
-</requirement>
-
-<!-- A_25948 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A392" title="TI-Flow-Fachdienst - ePA - Mapping - Übernahme von Werten zwischen Profilen" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS beim Bereitstellen der Daten für den ePA Medication Service sicherstellen, dass Datenwerte der E-Rezept FHIR Ressource übernommen werden, sofern das entsprechende Element in dem Ausgangs- und Zielprofilen vorhanden ist.
-</requirement>
-
-<!-- A_25949 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A393" title="TI-Flow-Fachdienst - ePA - Mapping - Handhabung von Extensions" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS beim Bereitstellen der Daten für den ePA Medication Service sicherstellen, dass alle Extensions aus den E-Rezept FHIR-Ressourcen in die ePA Medication Service FHIR-Ressource übernommen werden, es sei denn, eine Ausnahmeregelung ist in der Tab_eRPFD_019 festgelegt.
-</requirement>
-
-*Hinweis: Falls in GEM_ERP_PR_MedicationDispense eine Extension MedicationDispense.medication[x].extension:dataAbsentReason vorhanden ist, wird diese in die EPA MedicationDispense übernommen. Der TI-Flow-Fachdienst loggt die Verwendung dieser Extension in den Betriebsdaten.*
-
-#### Lokalisierung
+### Lokalisierung
 
 Der TI-Flow-Fachdienst benötigt für das Übermitteln von Informationen zu Verordnungsdaten und Dispensierinformationen die Information, bei welchen ePA-Aktensystem das Aktenkonto des Versicherten verwaltet wird. Siehe Kapitel "ePA-Aktensystem für KVNR ermitteln".
 
@@ -428,7 +221,7 @@ Der TI-Flow-Fachdienst benötigt für das Übermitteln von Informationen zu Vero
      Der TI-Flow-Fachdienst MUSS alle Übermittlungsaufträge für eine KVNR abbrechen, wenn bei dem Versuch, ein Aktenkonto für diese KVNR zu finden, die Information Services aller ePA-Aktensysteme eine Response mit dem Statuscode 404 zurückgeben.
 </requirement>
 
-#### Widerspruchsprüfung
+### Widerspruchsprüfung
 
 Vor jedem Übermitteln prüft der TI-Flow-Fachdienst, ob der Versicherte in das Einstellen von Verordnungsdaten und Dispensierinformationen durch den TI-Flow-Fachdienst eingewilligt hat.
 
@@ -441,70 +234,12 @@ Vor jedem Übermitteln prüft der TI-Flow-Fachdienst, ob der Versicherte in das 
      Der TI-Flow-Fachdienst MUSS vor jedem Übermitteln von Informationen zu Verordnungsdaten oder Dispensierinformationen an den ePA Medication Service den Endpunkt /information/api/v1/ehr/consentdecisions des Information Service aufrufen, prüfen, ob für die Funktion "erp-submission" der Wert "permit" vorliegt und die Übermittlung final abbrechen, wenn die Prüfung fehlschlägt.
 </requirement>
 
-#### Verschlüsseln
+### Verschlüsseln
 
 Der TI-Flow-Fachdienst muss den Inhalt jedes Operationsaufrufes am Medication Service gemäß [gemSpec_Krypt]#A_24628-* VAU-Protokoll: VAU-Client: Request erzeugen/verschlüsseln verschlüsseln.
 
-#### Übermitteln
 
-Für die Kommunikation mit dem Medication Service wurde [gemIG_ePA_Medication] definiert. Dieser FHIR-IG enthält Spezifikationen für Schnittstellen und Datenmodelle des ePA Medication Service.
-<!-- ToDo Link [gemIG_ePA_Medication] -->
-
-<!-- A_28691 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A420" title="TI-Flow-Fachdienst - ePA - Übermittlung - Spezifikation der Schnittstellen" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS bei der Übermittlung von Daten an den Medication Service die Schnittstellen nach [gemIG_ePA_Medication] verwenden.
-</requirement>
-
-<!-- A_25952 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A396" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Verordnungsdaten" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS zur Bereitstellung von Verordnungsdaten an den ePA Medication Service die Operation `providePrescription_MedicationSvc` des Medication Service aufrufen.
-</requirement>
-
-<!-- A_25953 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A397" title="TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Verordnungsdaten" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS, um die Löschinformation für Verordnungsdaten an den ePA Medication Service zu übermitteln, die Operation `cancelPrescription_MedicationSvc` des Medication Service aufrufen.
-</requirement>
-
-<!-- A_25954-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A398" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bereitstellung von Dispensierinformationen" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS zur Bereitstellung von Dispensierinformationen an den ePA Medication Service die Operation `provideDispensation_MedicationSvc` des Medication Service mit rxDispensation.status gemäß dem bereitgestellten Status aufrufen.
-</requirement>
-
-<!-- A_25955 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A399" title="TI-Flow-Fachdienst - ePA - Übermittlung - Löschinformation von Dispensierinformationen" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS, um die Löschinformation für Dispensierinformationen an den ePA Medication Service zu übermitteln, die Operation `cancelDispensation_MedicationSvc` des Medication Service aufrufen.
-</requirement>
-
-<!-- A_25956 -->
-<requirement conformance="MAY" key="IG-TIFLOW-CORE-A400" title="TI-Flow-Fachdienst - ePA - Übermittlung - Bündelung von Übermittlungsaufträgen nach KVNR" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst KANN für die Übermittlung von Verordnungsdaten und Dispensierinformationen an den ePA Medication Service mehrere Instanzen von MedicationRequest oder mehrere Instanzen von MedicationDispense einer KVNR in einem einzigen Operationsaufruf bündeln.
-</requirement>
-
-#### Entschlüsseln
+### Entschlüsseln
 
 Der TI-Flow-Fachdienst muss den Response eines Operationsaufrufes am Medication Service gemäß der [gemSpec_Krypt]#A_24633-* VAU-Protokoll: VAU-Client: Response entschlüsseln/auswerten entschlüsseln. 
 
@@ -549,6 +284,8 @@ Es wird unterschieden zwischen den Szenarien, dass ein Aktenkonto innerhalb eine
 	</div>
 	<figcaption><strong>Abbildung: </strong>ePA-Aktensystem nicht verfügbar</figcaption>
 </figure>
+
+<br/>
 
 <!-- A_25958 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A402" title="TI-Flow-Fachdienst - ePA - Fehlerbehandlung - Reaktion auf Scheitern des Operationaufrufs" version="0">

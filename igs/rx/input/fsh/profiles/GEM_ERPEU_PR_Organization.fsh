@@ -5,12 +5,13 @@ Title: "Organization Information Received from the EU"
 Description: "This Organization Profile is sent by the NCPeH when redeeming a Prescription in the EU"
 * insert Versioning
 
-* identifier 1..* MS
-  * ^short = "Organization Identifier"
-  * ^definition = "An identifier for the organization"
-  * ^comment = "There are not yet specific identifier systems defined. Therefore the field system is optional, but has to be used if there is a known identifier system."
-  * system MS
-  * value 1..1 MS
+// * identifier 1..* MS
+//   * ^short = "Organization Identifier"
+//   * ^definition = "An identifier for the organization"
+//   * ^comment = "There are not yet specific identifier systems defined. Therefore the field system is optional, but has to be used if there is a known identifier system."
+//   * system MS
+//   * value 1..1 MS
+* identifier[TelematikID] 1..1 MS
 
 * name 1..1 MS
 
