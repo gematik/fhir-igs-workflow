@@ -3,7 +3,7 @@ Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung 
 <!-- A_27035-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A207" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - MedicationDispense erstellen" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
         Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 eine FHIR-Ressource mit dem Profil GEM_ERP_PR_MedicationDispense erstellen.
@@ -12,7 +12,7 @@ Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung 
 <!-- A_28575 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A208" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Bereitstellen von Dosierinformationen" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG](https://ig.fhir.de/igs/medication/) erzeugen und im E-Rezept-Bundle angeben.
@@ -23,7 +23,7 @@ Für die Anwendungsfälle "Dispensierinformationen bereitstellen" und "Quittung 
 <!-- A_22071-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A209" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Mehrere MedicationDispense" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit mehreren Teilabgaben und mit Flowtype 160, 166, 169, 200 oder 209 mehrere MedicationDispenses im Parameters Profil angeben.
@@ -35,7 +35,7 @@ Die Profilversion bei der Abgabe richtet sich nach dem Abgabedatum der Arzneimit
 <!-- A_27047-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A210" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Profilversion bei mehreren MedicationDispenses" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209, wenn mehrere Teilabgaben oder Stückelungen enthalten sind, eine Profilversion zur Erstellung der Parameters Ressource nutzen, die zum Zeitpunkt des neuesten Abgabedatums (MedicationDispense.whenHandedOver) gültig ist.
@@ -48,7 +48,7 @@ Wenn der Secupharm-Code Informationen zu Charge und Haltbarkeitsdatum enthält, 
 <!-- A_21105-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A211" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Fertigarzneimittel: Chargeninfo" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 die FHIR-Ressource Medication um Chargeninformation und Verfallsdatum aus dem SecurPharm-Scan [SecurPharm] ergänzen, sofern es sich bei dem abgegebenen Arzneimittel um ein Fertigarzneimittel handelt, das einen Data-Matrix-Code gemäß securPharmSystem besitzt.
@@ -57,7 +57,7 @@ Wenn der Secupharm-Code Informationen zu Charge und Haltbarkeitsdatum enthält, 
 <!-- A_27033-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A212" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Fertigarzneimittel: Wirkstoff, Wirkstärke und Handelsname" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das PS der abgebenden LEI MUSS beim Erstellen einer MedicationDispense eines Fertigarzneimittels für ein E-Rezept des Flowtype 160, 166, 169, 200 oder 209 jede FHIR-Ressource Medication um Wirkstoff, Wirkstärke (inkl. Einheit) und Handelsnamen ergänzen, sofern die Informationen in der verwendeten Arzneimittel-Datenbank vorliegen.
@@ -66,7 +66,7 @@ Wenn der Secupharm-Code Informationen zu Charge und Haltbarkeitsdatum enthält, 
 <!-- A_27034-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A213" title="PS abgebende LEI:  Dispensierinformationen - Flowtype 160/166/169/200/209 - Rezeptur: Wirkstoff, Wirkstärke" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das PS der abgebenden LEI MUSS beim Erstellen einer MedicationDispense einer Rezeptur für ein E-Rezept des Flowtype 160, 166, 169, 200 oder 209 für jede FHIR-Ressource Medication Wirkstoff und Wirkstärke (inkl. Einheit) strukturiert angeben, wenn diese Information strukturiert im Verordnungsdatensatz vorlag.
@@ -77,7 +77,7 @@ Die Dosieranweisung werden in der MedicationDispense als Freitext angegeben. Die
 <!-- A_27036-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A214" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Dosieranweisung" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 die Dosieranweisung angeben, wenn diese sich im Vergleich zu der Dosieranweisung in der Verordnung verändert hat.
@@ -86,7 +86,7 @@ Die Dosieranweisung werden in der MedicationDispense als Freitext angegeben. Die
 <!-- A_27037-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A215" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Dosierangaben Freitext" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 Dosierinformationen nach [Medication IG] erzeugen und im E-Rezept-Bundle angeben.
@@ -95,7 +95,7 @@ Die Dosieranweisung werden in der MedicationDispense als Freitext angegeben. Die
 <!-- A_28417 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A216" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - Substitutionskennzeichen" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das PS der abgebenden LEI MUSS beim Erstellen von Dispensierinformationen mit Flowtype 160, 166, 169, 200 oder 209 die FHIR-Ressource MedicationDispense in .substitution.wasSubstituted um die Angabe ergänzen, ob eine Substitution erfolgte, sofern eine PZN-Verordnung beliefert wird.

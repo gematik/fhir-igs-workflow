@@ -9,7 +9,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 <!-- A_21870 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A110" title="E-Rezept - X-KIM-Dienstkennung - Zuweisung" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Das PS der verordnenden LEI MUSS bei der Übermittlung eines E-Rezepts über KIM im KIM-Header "X-KIM-Dienstkennung" den Wert "eRezept;Zuweisung;V1.0" für die direkte Zuweisung und Übermittlung der Einlöseinformationen verwenden.
@@ -18,7 +18,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 <!-- A_21871 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A111" title="E-Rezept - X-KIM-Dienstkennung - Kommunikation" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Das PS der verordnenden oder abgebenden LEI MUSS in einer Nachricht zu einem E-Rezept über KIM im KIM-Header "X-KIM-Dienstkennung" den Wert "eRezept;Kommunikation;V1.0" für die sonstige Kommunikation untereinander im Rahmen der Belieferung durch eine Apotheke verwenden.
@@ -27,7 +27,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 <!-- A_21873 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A112" title="E-Rezept - Struktur Zuweisungs-Message" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine Message mit "Content-Type: multipart/mixed;..." und der folgenden Struktur verwenden. Tabelle # : Struktur der Message mit "Content-Type: multipart/mixed;..." Teil Inhalt optional Freitext Freitextmessage für den Empfänger default: "direkte Zuweisung E-Rezept" nein Einlöseinformation E-Rezept-Token als Link nach 2D-Code für E-Rezept-Token Nach 45 Zeichen MUSS ein Steuerzeichen "CRLF" eingefügt werden nein Therapieplan Therapieplan als Anhang, base64 codiert ja
@@ -36,7 +36,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 <!-- A_21874 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A113" title="E-Rezept - Zuweisungs-Message - CRLF" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Das PS der abgebenden LEI MUSS bei der Verarbeitung des Nachrichtenteils Einlöseinformation das Steuerzeichen "CRLF" aus dem E-Rezept-Token entfernen.
@@ -45,7 +45,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 <!-- A_21875 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A114" title="E-Rezept - Struktur Kommunikation-Message" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Das PS der abgebenden und verordnenden LEI MUSS bei Versand einer Kommunikation-Message eine Message mit "Content-Type: text/plain;charset=UTF-8" verwenden.

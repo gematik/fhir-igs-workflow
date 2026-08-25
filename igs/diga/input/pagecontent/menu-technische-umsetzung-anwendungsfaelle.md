@@ -19,7 +19,7 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A12" title="PS verordnende LEI: TIFlow - DIGA - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle
@@ -36,7 +36,7 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A13" title="E-Rezept-FdV: TIFlow - DIGA - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle
@@ -56,7 +56,7 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A14" title="CS Kostenträger: TIFlow - DIGA - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das Clientsystem des Kostenträgers MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle

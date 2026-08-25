@@ -5,7 +5,7 @@ Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der `Task`-Query-End
 <!-- A_24181 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A37" title="PS abgebende LEI: Recovery Secret - Statusrequest" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+  <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "Recovery Secret" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit 
@@ -25,7 +25,7 @@ Der Anwendungsfall kann bei Bedarf wiederholt werden.
 <!-- A_19292 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A38" title="PS abgebende LEI: Quittung erneut abrufen - Statusrequest" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+  <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "Quittung erneut abrufen" für das E-Rezept die HTTP-Operation GET /Task/&lt;id&gt;/ mit 

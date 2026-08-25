@@ -9,7 +9,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 <!-- A_26004-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A27" title="CS Kostenträger: Dispensierinformationen - Flowtype 162 - MedicationDispense erstellen" version="0">
   <meta lockversion="false"/>
-  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+  <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
     <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
   </actor>
   Das Clientsystem des Kostenträgers MUSS im Anwendungsfall "Quittung abrufen" eine FHIR-Ressource mit dem Profil GEM_ERP_PR_MedicationDispense_DiGA erstellen.
