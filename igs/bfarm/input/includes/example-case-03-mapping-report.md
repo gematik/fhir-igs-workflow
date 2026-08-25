@@ -1,15 +1,9 @@
-# StructureMap Transformation Report
-
-
-## Summary
 
 **Anwendungsfall:** Verschreibung und Abgabe eines Freitext-Medikaments und Transformation in einen digitalen Durchschlag.
 
 **Beispiel-Artefakte:**
 - **Digitaler Durchschlag (Ergebnis):** [`Parameters-example-case-03-digitaler-durchschlag.json`](test-examples/Parameters-example-case-03-digitaler-durchschlag.json)
 
-
-## Resource Mapping Details
 
 ### Medication
 

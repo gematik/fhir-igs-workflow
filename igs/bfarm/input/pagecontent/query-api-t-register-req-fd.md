@@ -103,7 +103,7 @@ Nach Abschluss eines Workflows 166 durch Aufrufen der $close Operation erstellt 
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS sicherstellen, dass ausschließlich Daten zu Tasks mit dem Flowtype 166 für den Webdienst des BfArM bereitgestellt werden.
+     Der TI-Flow-Fachdienst MUSS sicherstellen, dass ausschließlich Daten zu Tasks mit dem Flowtype 166 für das T-Register des Webdienst des BfArM bereitgestellt werden.
 </requirement>
 
 <!-- A_27824 -->

@@ -6,6 +6,9 @@
 | Quelle (Eingangsdaten) | Ziel (Ausgabedaten) | Transformation & Beschreibung |
 |------------------------|---------------------|-------------------------------|
 | `kbvMedicationIngredient.id` | `bfarmMedication.id` | Übernimmt die eindeutige Medication-ID unverändert<br>→ übernimmt Wert aus Quellvariable |
+| `kbvMedicationIngredient.extension` | `bfarmMedication.extension` | Mappt Medication-Extensions von KBV- zu BfArM-Format |
+| `kbvMedicationIngredient.extension [normgroesse]` | `bfarmMedication.extension.url` | Übernimmt die Normgröße-Extension unverändert (deutsche Packungsgrößenangabe)<br>→ setzt URL 'http://fhir.de/StructureDefinition/normgroesse' |
+| `kbvMedicationIngredient.extension [normgroesse].value` | `bfarmMedication.extension.url.value` | Kopiert den Wert der Normgröße-Extension (N1, N2, N3)<br>→ übernimmt Wert aus Quellvariable |
 | `kbvMedicationIngredient.form` | `bfarmMedication.form` | Kopiert die gewünschte Darreichungsform für die Wirkstoff-Verordnung (Kapseln, Salbe, Lösung, etc.)<br>→ übernimmt Wert aus Quellvariable |
 | `kbvMedicationIngredient.amount` | `bfarmMedication.amount` | Mappt die Gesamtmenge der herzustellenden Wirkstoff-Verordnung |
 | `kbvMedicationIngredient.amount.denominator` | `bfarmMedication.amount.denominator` | Kopiert den Nenner der Mengenangabe (z.B. '1' für 'pro Herstellung')<br>→ übernimmt Wert aus Quellvariable |

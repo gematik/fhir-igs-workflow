@@ -1,15 +1,9 @@
-# StructureMap Transformation Report
-
-
-## Summary
 
 **Anwendungsfall:** Verschreibung, Abgabe und Transformation einer Verordnung mit absoluten Referenzen in einen digitalen Durchschlag.
 
 **Beispiel-Artefakte:**
 - **Digitaler Durchschlag (Ergebnis):** [`Parameters-example-case-04-digitaler-durchschlag.json`](test-examples/Parameters-example-case-04-digitaler-durchschlag.json)
 
-
-## Resource Mapping Details
 
 ### Medication
 

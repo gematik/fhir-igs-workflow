@@ -1,8 +1,8 @@
-Die Einführung des E-Rezepts für PKV-Versicherte setzt auf die bestehende Infrastruktur auf, die mit der Umsetzung des E-Rezepts geschaffen wurde.
+Das E-Rezept für PKV-Versicherte nutzt die bestehende Infrastruktur des E-Rezepts.
 
-PKV-Versicherte sind eine neue Benutzergruppe. 
+PKV-Versicherte nutzen das E-Rezept zur Verwaltung und Weitergabe von Abrechnungsinformationen.
 
-Die App des Kostenträgers ist eine neue Komponente, zu der das E-Rezept-Frontend des Versicherten eine Schnittstelle für Abrechnungsinformationen anbietet. Die App des Kostenträgers ist keine Komponente der TI. Der Export in Form eines PDFs ermöglicht hierbei weitere Kanäle zur Übermittlung wie bspw. E-Mail oder Webportal.
+Das E-Rezept-Frontend des Versicherten bietet für Abrechnungsinformationen eine Schnittstelle zur App des Kostenträgers. Die App des Kostenträgers ist keine Komponente der TI. Der Export in Form eines PDFs ermöglicht weitere Übermittlungswege wie E-Mail oder Webportal.
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 800px; margin-bottom: 30px;">

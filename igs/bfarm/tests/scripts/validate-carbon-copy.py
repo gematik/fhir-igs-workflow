@@ -6,27 +6,37 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
-from urllib.request import urlopen
 from pathlib import Path
 from typing import Any, Optional
 
-DEFAULT_HAPI_JAR = Path.home() / ".fhir" / "validators" / "validator_cli.jar"
 DEFAULT_PROFILE = "https://gematik.de/fhir/erp-t-prescription/StructureDefinition/erp-tprescription-carbon-copy"
 DEFAULT_FHIR_VERSION = "4.0.1"
 
-# IG dependencies to load into the HAPI validator. Mirrors tests/scripts/transform-bundle.py.
-IG_PATHS = [
-    "de.gematik.erezept-workflow.r4",
-    # "kbv.ita.erp",
-    "de.gematik.fhir.directory",
-    "de.gematik.ti",
-    "hl7.fhir.uv.xver-r5.r4",
-    # "de.basisprofil.r4",
-    "de.gematik.epa.medication",
-]
+def project_root() -> Path:
+    return Path(__file__).resolve().parents[2]
+
+
+def default_hapi_jar() -> Path:
+    return project_root().parents[1] / "input-cache" / "current_hapi_validator.jar"
+
+
+def load_validator_dependencies() -> list[str]:
+    configured = os.getenv("HAPI_VALIDATOR_IGS", "")
+    if not configured:
+        raise RuntimeError("HAPI_VALIDATOR_IGS must be configured by post-build.sh.")
+    return [dependency for dependency in configured.splitlines() if dependency]
+
+
+def create_local_validator_ig() -> tempfile.TemporaryDirectory[str]:
+    temp_ig = tempfile.TemporaryDirectory(prefix="bfarm-validator-")
+    resources_dir = project_root() / "fsh-generated" / "resources"
+    for resource in resources_dir.glob("StructureDefinition-*.json"):
+        shutil.copy2(resource, temp_ig.name)
+    return temp_ig
 
 
 def load_ig_dependencies(project_root: Path) -> list[str]:
@@ -62,16 +72,14 @@ def build_command(
     resource_paths: list[Path],
     profile_url: str,
     fhir_version: str,
+    local_ig_dir: str,
     output_bundle: Optional[Path] = None,
 ) -> list[str]:
     """Construct the validator CLI command."""
-    script_dir = Path(__file__).parent
-    project_root = script_dir.parent.parent
-
     ig_dependencies = [
-        str(project_root / "fsh-generated" / "resources"),
-        *IG_PATHS,
-        *load_ig_dependencies(project_root),
+        local_ig_dir,
+        *load_validator_dependencies(),
+        *load_ig_dependencies(project_root()),
     ]
 
     cmd: list[str] = [
@@ -88,7 +96,7 @@ def build_command(
     if output_bundle is not None:
         cmd.extend(["-output", str(output_bundle)])
 
-    for ig in ig_dependencies:
+    for ig in dict.fromkeys(ig_dependencies):
         cmd.extend(["-ig", ig])
 
     return cmd
@@ -143,44 +151,21 @@ def run_validator(cmd: list[str], working_dir: Path) -> subprocess.CompletedProc
 
 
 def ensure_hapi_jar(jar_path: Path) -> bool:
-    """Ensure validator jar exists, downloading when needed."""
+    """Provision the shared HAPI validator cache when it is missing."""
     if jar_path.exists():
         return True
 
-    download_url = os.getenv(
-        "FHIR_VALIDATOR_URL",
-        "https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar",
-    )
-
-    jar_path.parent.mkdir(parents=True, exist_ok=True)
+    installer = project_root().parents[1] / "scripts" / "install-hapi-validator.sh"
     print(f"ℹ HAPI validator not found at: {jar_path}")
-    print(f"⬇ Downloading validator_cli.jar from: {download_url}")
-
-    try:
-        with urlopen(download_url, timeout=120) as response:
-            data = response.read()
-
-        if not data:
-            print("❌ Download failed: empty response")
-            return False
-
-        tmp_path = jar_path.with_suffix(".jar.tmp")
-        with tmp_path.open("wb") as tmp_file:
-            tmp_file.write(data)
-        tmp_path.replace(jar_path)
-        print(f"✅ Downloaded validator jar to: {jar_path}")
-        return True
-    except Exception as exc:  # noqa: BLE001
-        print(f"❌ Failed to download HAPI validator: {exc}")
-        return False
+    return subprocess.run([str(installer)], check=False).returncode == 0 and jar_path.exists()
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("resources", nargs="+", type=Path, help="Path(s) to carbon copy JSON resources")
     parser.add_argument("--profile", default=DEFAULT_PROFILE, help="Canonical profile to validate against")
-    default_hapi_jar = os.getenv("FHIR_VALIDATOR_JAR") or os.getenv("HAPI_VALIDATOR_JAR") or str(DEFAULT_HAPI_JAR)
-    parser.add_argument("--hapi-jar", default=default_hapi_jar, help="Path to the HAPI validator JAR")
+    configured_hapi_jar = os.getenv("FHIR_VALIDATOR_JAR") or os.getenv("HAPI_VALIDATOR_JAR") or str(default_hapi_jar())
+    parser.add_argument("--hapi-jar", default=configured_hapi_jar, help="Path to the HAPI validator JAR")
     parser.add_argument("--fhir-version", default=DEFAULT_FHIR_VERSION, help="FHIR version for validation")
     parser.add_argument(
         "--summary-json",
@@ -210,25 +195,24 @@ def main() -> int:
         print("Set FHIR_VALIDATOR_JAR (or HAPI_VALIDATOR_JAR), or place validator_cli.jar at ~/.fhir/validators/validator_cli.jar")
         return 1
 
-    script_dir = Path(__file__).parent
-    project_root = script_dir.parent.parent
-
     with tempfile.NamedTemporaryFile("w", delete=False, suffix=".json") as tmp:
         output_bundle_path = Path(tmp.name)
 
-    cmd = build_command(
-        jar_path,
-        resource_paths,
-        args.profile,
-        args.fhir_version,
-        output_bundle=output_bundle_path,
-    )
+    with create_local_validator_ig() as local_ig_dir:
+        cmd = build_command(
+            jar_path,
+            resource_paths,
+            args.profile,
+            args.fhir_version,
+            local_ig_dir,
+            output_bundle=output_bundle_path,
+        )
 
-    print("🔍 Validating carbon copy resources against profile…")
-    print(f"   Count:    {len(resource_paths)}")
-    print(f"   Profile:  {args.profile}\n")
+        print("🔍 Validating carbon copy resources against profile…")
+        print(f"   Count:    {len(resource_paths)}")
+        print(f"   Profile:  {args.profile}\n")
 
-    result = run_validator(cmd, project_root)
+        result = run_validator(cmd, project_root())
 
     if result.stdout:
         print("📋 STDOUT:")
