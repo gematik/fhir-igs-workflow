@@ -1,0 +1,115 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/OperationDefinition/tiflow-core-validate-op> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "tiflow-core-validate-op"] ;
+  fhir:OperationDefinition.url [ fhir:value "https://gematik.de/fhir/tiflow/OperationDefinition/tiflow-core-validate-op"] ;
+  fhir:OperationDefinition.version [ fhir:value "2.0.0-ballot.3"] ;
+  fhir:OperationDefinition.name [ fhir:value "TIFlow-CORE-OP-Validate"] ;
+  fhir:OperationDefinition.title [ fhir:value "Validieren einer FHIR-Ressource"] ;
+  fhir:OperationDefinition.status [ fhir:value "active"] ;
+  fhir:OperationDefinition.kind [ fhir:value "operation"] ;
+  fhir:OperationDefinition.date [ fhir:value "2026-06-30"^^xsd:date] ;
+  fhir:OperationDefinition.publisher [ fhir:value "gematik GmbH"] ;
+  fhir:OperationDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "gematik GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://gematik.de" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "erp-umsetzung@gematik.de" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.description [ fhir:value "Diese Operation validiert eine FHIR-Ressource gegen eine konfigurierbare FHIR-Konfiguration.\n\nSie erweitert die standardisierte FHIR $validate-Operation (http://hl7.org/fhir/OperationDefinition/Resource-validate) um einen gematik-spezifischen `fhir_config` Parameter zur Auswahl der Validierungskonfiguration.\n\nMit dem Parameter `returnBoolean` kann wahlweise ein kompaktes boolesches Ergebnis (`true`/`false`) angefordert werden, anstelle eines vollständigen OperationOutcome."] ;
+  fhir:OperationDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.affectsState [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.code [ fhir:value "validate"] ;
+  fhir:OperationDefinition.base [
+     fhir:value "http://hl7.org/fhir/OperationDefinition/Resource-validate" ;
+     fhir:link <http://hl7.org/fhir/OperationDefinition/Resource-validate>
+  ] ;
+  fhir:OperationDefinition.system [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.type [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.instance [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.inputProfile [
+     fhir:value "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-core-validate-operation-input" ;
+     fhir:link <https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-core-validate-operation-input>
+  ] ;
+  fhir:OperationDefinition.outputProfile [
+     fhir:value "https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-core-validate-operation-output" ;
+     fhir:link <https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-core-validate-operation-output>
+  ] ;
+  fhir:OperationDefinition.parameter [
+     fhir:index 0 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "resource" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Die zu validierende FHIR-Ressource." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "Resource" ]
+  ], [
+     fhir:index 1 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "fhir_config" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Angabe der FHIR-Konfiguration, gegen welche die Validierungskomponente validieren soll." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "code" ]
+  ], [
+     fhir:index 2 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "profile" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Wenn angegeben, wird die Ressource gegen dieses spezifische Profil validiert. Falls der Server das Profil nicht kennt, wird ein Fehler zurückgegeben." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "canonical" ]
+  ], [
+     fhir:index 3 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "returnBoolean" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Wenn 'true', gibt die Operation nur den Parameter 'valid' (boolean) zurück, ohne ein vollständiges OperationOutcome. Nützlich für schnelle Prüfungen, ob Daten valide sind." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "boolean" ]
+  ], [
+     fhir:index 4 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "return" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "out" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Das Ergebnis der Validierung als OperationOutcome. Wird zurückgegeben, wenn 'returnBoolean' nicht gesetzt oder 'false' ist. Enthält keine Fehler, wenn die Validierung erfolgreich war." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "OperationOutcome" ]
+  ], [
+     fhir:index 5 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "valid" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "out" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Boolesches Validierungsergebnis. Wird nur zurückgegeben, wenn 'returnBoolean=true' gesetzt wurde. 'true' bedeutet valide, 'false' bedeutet nicht valide." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "boolean" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow/OperationDefinition/tiflow-core-validate-op.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

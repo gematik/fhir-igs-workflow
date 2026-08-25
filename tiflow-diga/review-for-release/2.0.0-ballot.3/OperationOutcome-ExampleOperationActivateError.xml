@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationOutcome xmlns="http://hl7.org/fhir">
+  <id value="ExampleOperationActivateError"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-operation-outcome"/>
+  </meta>
+  <issue>
+    <severity value="error"/>
+    <code value="invalid"/>
+    <details>
+      <coding>
+        <system value="https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes"/>
+        <code value="SVC_VALIDATION_FAILED"/>
+      </coding>
+      <text value="FHIR Profile Validation Failed"/>
+    </details>
+    <diagnostics value="Unable to determine profile type from name: https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle"/>
+  </issue>
+</OperationOutcome>

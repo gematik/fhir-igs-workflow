@@ -1,0 +1,117 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/Bundle/ExampleDiGAAcceptResponse> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleDiGAAcceptResponse"] ;
+  fhir:Bundle.type [ fhir:value "collection"] ;
+  fhir:Bundle.link [
+     fhir:index 0 ;
+     fhir:Bundle.link.relation [ fhir:value "self" ] ;
+     fhir:Bundle.link.url [ fhir:value "https://erp-ref.example.org/Task/162.000.000.000.000.01/$accept" ]
+  ] ;
+  fhir:Bundle.entry [
+     fhir:index 0 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://erp-ref.example.org/Task/ExampleDiGATaskInReadyState" ] ;
+     fhir:Bundle.entry.resource <https://erp-ref.example.org/Task/ExampleDiGATaskInReadyState>
+  ], [
+     fhir:index 1 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://erp-ref.example.org/Binary/ExampleDiGABinary" ] ;
+     fhir:Bundle.entry.resource <https://erp-ref.example.org/Binary/ExampleDiGABinary>
+  ] .
+
+<https://erp-ref.example.org/Task/ExampleDiGATaskInReadyState> a fhir:Task ;
+  fhir:Resource.id [ fhir:value "ExampleDiGATaskInReadyState"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-task" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-task>
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType" ] ;
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType" ] ;
+       fhir:Coding.code [ fhir:value "162" ] ;
+       fhir:Coding.display [ fhir:value "Flowtype für Digitale Gesundheitsanwendungen" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AcceptDate" ] ;
+     fhir:Extension.valueDate [ fhir:value "2028-10-09"^^xsd:date ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_ExpiryDate" ] ;
+     fhir:Extension.valueDate [ fhir:value "2028-10-09"^^xsd:date ]
+  ] ;
+  fhir:Task.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+     fhir:Identifier.value [ fhir:value "162.000.000.000.000.01" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode" ] ;
+     fhir:Identifier.value [ fhir:value "777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]
+  ] ;
+  fhir:Task.status [ fhir:value "ready"] ;
+  fhir:Task.intent [ fhir:value "order"] ;
+  fhir:Task.for [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "X123456789" ]
+     ]
+  ] ;
+  fhir:Task.authoredOn [ fhir:value "2028-10-01T15:29:00+00:00"^^xsd:dateTime] ;
+  fhir:Task.lastModified [ fhir:value "2028-10-01T15:29:00.434+00:00"^^xsd:dateTime] ;
+  fhir:Task.performerType [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OrganizationType" ] ;
+       fhir:Coding.code [ fhir:value "urn:oid:1.2.276.0.76.4.59" ] ;
+       fhir:Coding.display [ fhir:value "Kostenträger" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Kostenträger" ]
+  ] ;
+  fhir:Task.input [
+     fhir:index 0 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType" ] ;
+         fhir:Coding.code [ fhir:value "2" ]
+       ]
+     ] ;
+     fhir:Task.input.valueReference [
+       fhir:link <https://gematik.de/fhir/tiflow-diga/Bundle/ExampleDiGABundle> ;
+       fhir:Reference.reference [ fhir:value "Bundle/ExampleDiGABundle" ]
+     ]
+  ] .
+
+<https://erp-ref.example.org/Binary/ExampleDiGABinary> a fhir:Binary ;
+  fhir:Resource.id [ fhir:value "ExampleDiGABinary"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-binary" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/tiflow-diga/StructureDefinition/tiflow-diga-binary>
+     ]
+  ] ;
+  fhir:Binary.contentType [ fhir:value "application/octet-stream"] ;
+  fhir:Binary.data [ fhir:value "tJg8c5ZtdhzEEhJ0ZpAsUVFx5dKuYgQFs5oKgthi17M="^^xsd:base64Binary] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/Bundle/ExampleDiGAAcceptResponse.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

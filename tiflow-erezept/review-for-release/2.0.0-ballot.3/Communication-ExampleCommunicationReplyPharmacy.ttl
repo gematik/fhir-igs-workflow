@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Communication/ExampleCommunicationReplyPharmacy> a fhir:Communication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleCommunicationReplyPharmacy"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply|2.0" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply|2.0>
+     ]
+  ] ;
+  fhir:Communication.basedOn [
+     fhir:index 0 ;
+     fhir:link <https://gematik.de/fhir/tiflow-erezept/Task/160.000.033.491.280.78> ;
+     fhir:Reference.reference [ fhir:value "Task/160.000.033.491.280.78" ]
+  ] ;
+  fhir:Communication.status [ fhir:value "unknown"] ;
+  fhir:Communication.sent [ fhir:value "2028-10-01T15:29:00.434+00:00"^^xsd:dateTime] ;
+  fhir:Communication.recipient [
+     fhir:index 0 ;
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "X123456789" ] ;
+       fhir:Identifier.assigner [
+         fhir:Reference.identifier [
+           fhir:Identifier.value [ fhir:value "168140950" ]
+         ]
+       ]
+     ]
+  ] ;
+  fhir:Communication.sender [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+       fhir:Identifier.value [ fhir:value "3-2-APO-XanthippeVeilchenblau01" ]
+     ]
+  ] ;
+  fhir:Communication.payload [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "delivery" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "onPremise" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "shipment" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+       ] ;
+       fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_SupplyOptionsType" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AvailabilityState" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_AvailabilityStatus" ] ;
+         fhir:Coding.code [ fhir:value "20" ]
+       ]
+     ] ;
+     fhir:Communication.payload.contentString [ fhir:value "{\"version\": 1,\"supplyOptionsType\": \"onPremise\",\"info_text\": \"Hallo, wir haben das Medikament vorraetig. Kommen Sie gern in die Filiale oder wir schicken einen Boten.\",\"url\": \"https://sonnenschein-apotheke.de\"}" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Communication/ExampleCommunicationReplyPharmacy.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

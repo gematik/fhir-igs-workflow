@@ -1,0 +1,52 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/Bundle/ExampleDiGABundle> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleDiGABundle"] ;
+  fhir:Resource.meta [
+     fhir:Meta.tag [
+       fhir:index 0 ;
+       fhir:Coding.display [ fhir:value "Unvollständiges Beispiel eines DiGA-Rezept-Bundles - https://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle|1.2" ]
+     ]
+  ] ;
+  fhir:Bundle.identifier [
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+     fhir:Identifier.value [ fhir:value "162.000.000.000.000.01" ]
+  ] ;
+  fhir:Bundle.type [ fhir:value "document"] ;
+  fhir:Bundle.timestamp [ fhir:value "2028-10-01T15:29:00.434+00:00"^^xsd:dateTime] ;
+  fhir:Bundle.entry [
+     fhir:index 0 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://erp-ref.example.org/Composition/ExampleDiGAComposition" ] ;
+     fhir:Bundle.entry.resource <https://erp-ref.example.org/Composition/ExampleDiGAComposition>
+  ] .
+
+<https://erp-ref.example.org/Composition/ExampleDiGAComposition> a fhir:Composition ;
+  fhir:Resource.id [ fhir:value "ExampleDiGAComposition"] ;
+  fhir:Composition.status [ fhir:value "final"] ;
+  fhir:Composition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_FORMULAR_ART" ] ;
+       fhir:Coding.code [ fhir:value "e16D" ]
+     ]
+  ] ;
+  fhir:Composition.date [ fhir:value "2026-03-01T10:00:00+01:00"^^xsd:dateTime] ;
+  fhir:Composition.author [
+     fhir:index 0 ;
+     fhir:Reference.display [ fhir:value "Verordnende Praxis" ]
+  ] ;
+  fhir:Composition.title [ fhir:value "elektronische Verordnung digitaler Gesundheitsanwendungen"] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/Bundle/ExampleDiGABundle.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

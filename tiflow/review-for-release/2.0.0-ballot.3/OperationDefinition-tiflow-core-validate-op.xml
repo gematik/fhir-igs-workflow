@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="tiflow-core-validate-op"/>
+  <url value="https://gematik.de/fhir/tiflow/OperationDefinition/tiflow-core-validate-op"/>
+  <version value="2.0.0-ballot.3"/>
+  <name value="TIFlow-CORE-OP-Validate"/>
+  <title value="Validieren einer FHIR-Ressource"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2026-06-30"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <description value="Diese Operation validiert eine FHIR-Ressource gegen eine konfigurierbare FHIR-Konfiguration.&#xA;&#xA;Sie erweitert die standardisierte FHIR $validate-Operation (http://hl7.org/fhir/OperationDefinition/Resource-validate) um einen gematik-spezifischen `fhir_config` Parameter zur Auswahl der Validierungskonfiguration.&#xA;&#xA;Mit dem Parameter `returnBoolean` kann wahlweise ein kompaktes boolesches Ergebnis (`true`/`false`) angefordert werden, anstelle eines vollständigen OperationOutcome."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="false"/>
+  <code value="validate"/>
+  <base value="http://hl7.org/fhir/OperationDefinition/Resource-validate"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <inputProfile value="https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-core-validate-operation-input"/>
+  <outputProfile value="https://gematik.de/fhir/tiflow/StructureDefinition/ti-flow-core-validate-operation-output"/>
+  <parameter>
+    <name value="resource"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Die zu validierende FHIR-Ressource."/>
+    <type value="Resource"/>
+  </parameter>
+  <parameter>
+    <name value="fhir_config"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Angabe der FHIR-Konfiguration, gegen welche die Validierungskomponente validieren soll."/>
+    <type value="code"/>
+  </parameter>
+  <parameter>
+    <name value="profile"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Wenn angegeben, wird die Ressource gegen dieses spezifische Profil validiert. Falls der Server das Profil nicht kennt, wird ein Fehler zurückgegeben."/>
+    <type value="canonical"/>
+  </parameter>
+  <parameter>
+    <name value="returnBoolean"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Wenn 'true', gibt die Operation nur den Parameter 'valid' (boolean) zurück, ohne ein vollständiges OperationOutcome. Nützlich für schnelle Prüfungen, ob Daten valide sind."/>
+    <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Das Ergebnis der Validierung als OperationOutcome. Wird zurückgegeben, wenn 'returnBoolean' nicht gesetzt oder 'false' ist. Enthält keine Fehler, wenn die Validierung erfolgreich war."/>
+    <type value="OperationOutcome"/>
+  </parameter>
+  <parameter>
+    <name value="valid"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Boolesches Validierungsergebnis. Wird nur zurückgegeben, wenn 'returnBoolean=true' gesetzt wurde. 'true' bedeutet valide, 'false' bedeutet nicht valide."/>
+    <type value="boolean"/>
+  </parameter>
+</OperationDefinition>

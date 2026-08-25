@@ -1,0 +1,38 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-chargeitem/Parameters/Example-Parameters-Patch-ChargeItem-1> a fhir:Parameters ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "Example-Parameters-Patch-ChargeItem-1"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_PAR_Patch_ChargeItem_Input>
+     ]
+  ] ;
+  fhir:Parameters.parameter [
+     fhir:index 0 ;
+     fhir:Parameters.parameter.name [ fhir:value "markingFlag" ] ;
+     fhir:Parameters.parameter.part [
+       fhir:index 0 ;
+       fhir:Parameters.parameter.name [ fhir:value "insuranceProvider" ] ;
+       fhir:Parameters.parameter.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 1 ;
+       fhir:Parameters.parameter.name [ fhir:value "taxOffice" ] ;
+       fhir:Parameters.parameter.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-chargeitem/Parameters/Example-Parameters-Patch-ChargeItem-1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

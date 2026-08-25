@@ -1,0 +1,34 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/Medication/ExampleMedication1-Pomalidomid-T> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleMedication1-Pomalidomid-T"] ;
+  fhir:Medication.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://www.whocc.no/atc" ] ;
+       fhir:Coding.code [ fhir:value "L04AX06" ] ;
+       fhir:Coding.display [ fhir:value "pomalidomide" ]
+     ]
+  ] ;
+  fhir:Medication.form [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM" ] ;
+       fhir:Coding.code [ fhir:value "HKP" ] ;
+       fhir:Coding.display [ fhir:value "Hartkapseln" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-bfarm/Medication/ExampleMedication1-Pomalidomid-T.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

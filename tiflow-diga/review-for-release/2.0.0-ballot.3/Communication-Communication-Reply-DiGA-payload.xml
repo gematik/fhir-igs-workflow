@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Communication xmlns="http://hl7.org/fhir">
+  <id value="Communication-Reply-DiGA-payload"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA"/>
+  </meta>
+  <basedOn>
+    <reference value="Task/ExampleDiGATaskInReadyState"/>
+  </basedOn>
+  <status value="unknown"/>
+  <recipient>
+    <identifier>
+      <system value="http://fhir.de/sid/gkv/kvid-10"/>
+      <value value="X234567890"/>
+    </identifier>
+  </recipient>
+  <payload>
+    <contentString value="Nachrichteninhalt für den Versicherten"/>
+  </payload>
+</Communication>

@@ -1,0 +1,18 @@
+{
+  "resourceType" : "OperationOutcome",
+  "id" : "ExampleOperationAbortErrorAVS",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-operation-outcome"]
+  },
+  "issue" : [{
+    "severity" : "error",
+    "code" : "forbidden",
+    "details" : {
+      "coding" : [{
+        "system" : "https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes",
+        "code" : "SVC_IDENTITY_MISMATCH"
+      }],
+      "text" : "Identity mismatch: Access token or x-insurantid header does not match FHIR data (Telematik-ID / KVNR)"
+    }
+  }]
+}

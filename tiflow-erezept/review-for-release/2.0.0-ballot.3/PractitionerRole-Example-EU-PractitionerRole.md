@@ -1,0 +1,40 @@
+# Example-EU-PractitionerRole - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.3
+
+Implementation Guide
+
+TIFlow - Verordnungen für Arzneimittel
+
+Version 2.0.0-ballot.3 - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **Example-EU-PractitionerRole**
+
+## Example PractitionerRole: Example-EU-PractitionerRole
+
+Profile: [PractitionerRole Information Received from the EU](StructureDefinition-GEM-ERPEU-PR-PractitionerRole.md)
+
+**practitioner**: [Practitioner Pedro Sanches](Practitioner-Example-EU-Practitioner.md)
+
+**organization**: [Organization Pharmacia de Santa Maria](Organization-Example-EU-Organization.md)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "PractitionerRole",
+  "id" : "Example-EU-PractitionerRole",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PractitionerRole"]
+  },
+  "practitioner" : {
+    "reference" : "Practitioner/Example-EU-Practitioner"
+  },
+  "organization" : {
+    "reference" : "Organization/Example-EU-Organization"
+  }
+}
+
+```

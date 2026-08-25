@@ -1,0 +1,62 @@
+# Example for a Consent to redeem EU Prescriptions - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.3
+
+Implementation Guide
+
+TIFlow - Verordnungen für Arzneimittel
+
+Version 2.0.0-ballot.3 - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **Example for a Consent to redeem EU Prescriptions**
+
+## Example Consent: Example for a Consent to redeem EU Prescriptions
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Consent",
+  "id" : "ExampleEUConsent",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Consent"]
+  },
+  "status" : "active",
+  "scope" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/consentscope",
+      "code" : "patient-privacy",
+      "display" : "Privacy Consent"
+    }]
+  },
+  "category" : [{
+    "coding" : [{
+      "system" : "https://gematik.de/fhir/tiflow-erezept/CodeSystem/GEM-ERPEU-CS-ConsentType",
+      "code" : "EUDISPCONS",
+      "display" : "Consent for redeeming e-prescriptions in EU countries"
+    }]
+  }],
+  "patient" : {
+    "identifier" : {
+      "system" : "http://fhir.de/sid/gkv/kvid-10",
+      "value" : "X123456789",
+      "assigner" : {
+        "identifier" : {
+          "system" : "http://fhir.de/sid/arge-ik/iknr",
+          "value" : "168140950"
+        }
+      }
+    }
+  },
+  "dateTime" : "2028-10-01T15:29:00+00:00",
+  "policyRule" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "OPTIN"
+    }]
+  }
+}
+
+```

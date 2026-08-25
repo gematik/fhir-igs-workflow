@@ -1,0 +1,74 @@
+# Medication Without code or system for Strength - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.3
+
+Implementation Guide
+
+TIFlow - Verordnungen für Arzneimittel
+
+Version 2.0.0-ballot.3 - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **Medication Without code or system for Strength**
+
+## Example Medication: Medication Without code or system for Strength
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Medication",
+  "id" : "EU-Medication-Without-Strength-Numerator",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Medication"]
+  },
+  "code" : {
+    "text" : "Infusion bestehend aus 85mg Doxorubicin aufgeloest zur Verabreichung in 250ml 5-%iger (50 mg/ml) Glucose-Infusionsloesung"
+  },
+  "form" : {
+    "coding" : [{
+      "system" : "http://standardterms.edqm.eu",
+      "code" : "11210000",
+      "display" : "Solution for infusion"
+    }]
+  },
+  "ingredient" : [{
+    "itemCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://fhir.de/CodeSystem/bfarm/atc",
+        "version" : "2024",
+        "code" : "L01DB01",
+        "display" : "Doxorubicin"
+      }]
+    },
+    "isActive" : true,
+    "strength" : {
+      "numerator" : {
+        "_value" : {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode" : "unknown"
+          }]
+        },
+        "_system" : {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode" : "unknown"
+          }]
+        },
+        "_code" : {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode" : "unknown"
+          }]
+        }
+      },
+      "denominator" : {
+        "value" : 1
+      }
+    }
+  }]
+}
+
+```

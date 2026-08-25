@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Consent xmlns="http://hl7.org/fhir">
+  <id value="ExampleEUConsent"/>
+  <meta>
+    <profile value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Consent"/>
+  </meta>
+  <status value="active"/>
+  <scope>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
+      <code value="patient-privacy"/>
+      <display value="Privacy Consent"/>
+    </coding>
+  </scope>
+  <category>
+    <coding>
+      <system value="https://gematik.de/fhir/tiflow-erezept/CodeSystem/GEM-ERPEU-CS-ConsentType"/>
+      <code value="EUDISPCONS"/>
+      <display value="Consent for redeeming e-prescriptions in EU countries"/>
+    </coding>
+  </category>
+  <patient>
+    <identifier>
+      <system value="http://fhir.de/sid/gkv/kvid-10"/>
+      <value value="X123456789"/>
+      <assigner>
+        <identifier>
+          <system value="http://fhir.de/sid/arge-ik/iknr"/>
+          <value value="168140950"/>
+        </identifier>
+      </assigner>
+    </identifier>
+  </patient>
+  <dateTime value="2028-10-01T15:29:00+00:00"/>
+  <policyRule>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+      <code value="OPTIN"/>
+    </coding>
+  </policyRule>
+</Consent>

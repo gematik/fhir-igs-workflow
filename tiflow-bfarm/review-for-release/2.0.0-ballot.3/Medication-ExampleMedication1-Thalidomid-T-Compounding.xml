@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="ExampleMedication1-Thalidomid-T-Compounding"/>
+  <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-formulation-packaging-extension">
+    <valueString value="Packung als 20 Kapseln in Schachtel."/>
+  </extension>
+  <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-manufacturing-instructions-extension">
+    <valueString value="M.D.S."/>
+  </extension>
+  <code>
+    <coding>
+      <system value="http://www.whocc.no/atc"/>
+      <code value="L04AX02"/>
+      <display value="thalidomide"/>
+    </coding>
+  </code>
+  <form>
+    <coding>
+      <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"/>
+      <code value="HKP"/>
+      <display value="Hartkapseln"/>
+    </coding>
+  </form>
+  <amount>
+    <numerator>
+      <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-packaging-size-extension">
+        <valueString value="100"/>
+      </extension>
+      <unit value="ml"/>
+    </numerator>
+    <denominator>
+      <value value="1"/>
+    </denominator>
+  </amount>
+  <ingredient>
+    <itemCodeableConcept>
+      <text value="Thalidomid"/>
+    </itemCodeableConcept>
+    <strength>
+      <numerator>
+        <value value="5"/>
+        <unit value="g"/>
+      </numerator>
+      <denominator>
+        <value value="1"/>
+      </denominator>
+    </strength>
+  </ingredient>
+  <ingredient>
+    <itemCodeableConcept>
+      <text value="Mannit"/>
+    </itemCodeableConcept>
+    <strength>
+      <extension url="https://gematik.de/fhir/epa-medication/StructureDefinition/medication-ingredient-amount-extension">
+        <valueString value="1g"/>
+      </extension>
+    </strength>
+  </ingredient>
+</Medication>

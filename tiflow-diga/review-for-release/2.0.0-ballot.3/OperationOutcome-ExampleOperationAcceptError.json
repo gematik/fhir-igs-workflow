@@ -1,0 +1,18 @@
+{
+  "resourceType" : "OperationOutcome",
+  "id" : "ExampleOperationAcceptError",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/tiflow/StructureDefinition/tiflow-operation-outcome"]
+  },
+  "issue" : [{
+    "severity" : "error",
+    "code" : "invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs",
+        "code" : "TIFLOW_TASK_STATUS_MISMATCH"
+      }],
+      "text" : "Task has invalid status draft"
+    }
+  }]
+}

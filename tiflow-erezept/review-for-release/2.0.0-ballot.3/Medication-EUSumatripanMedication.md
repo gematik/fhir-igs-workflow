@@ -1,0 +1,72 @@
+# Sample Medication Sumatripan - Implementation Guide TIFlow - Verordnungen für Arzneimittel v2.0.0-ballot.3
+
+Implementation Guide
+
+TIFlow - Verordnungen für Arzneimittel
+
+Version 2.0.0-ballot.3 - ci-build 
+
+* [**Table of Contents**](toc.md)
+* [**FHIR-Artefakte**](artifacts.md)
+* **Sample Medication Sumatripan**
+
+## Example Medication: Sample Medication Sumatripan
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Medication",
+  "id" : "EUSumatripanMedication",
+  "meta" : {
+    "profile" : ["https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Medication"]
+  },
+  "extension" : [{
+    "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/drug-category-extension",
+    "valueCoding" : {
+      "system" : "https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs",
+      "code" : "00"
+    }
+  },
+  {
+    "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-id-vaccine-extension",
+    "valueBoolean" : false
+  },
+  {
+    "url" : "http://fhir.de/StructureDefinition/normgroesse",
+    "valueCode" : "N1"
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.de/CodeSystem/ifa/pzn",
+      "code" : "06313728"
+    }],
+    "text" : "Sumatriptan-1a Pharma 100 mg Tabletten"
+  },
+  "form" : {
+    "coding" : [{
+      "system" : "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM",
+      "code" : "TAB"
+    }]
+  },
+  "amount" : {
+    "numerator" : {
+      "extension" : [{
+        "url" : "https://gematik.de/fhir/epa-medication/StructureDefinition/medication-total-quantity-formulation-extension",
+        "valueString" : "20"
+      }],
+      "value" : 20,
+      "unit" : "St"
+    },
+    "denominator" : {
+      "value" : 1
+    }
+  },
+  "batch" : {
+    "lotNumber" : "1234567890"
+  }
+}
+
+```

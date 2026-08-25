@@ -1,0 +1,52 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-chargeitem/Communication/3bbc2209-9c23-4553-986e-a5c9f69a39fb-1> a fhir:Communication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "3bbc2209-9c23-4553-986e-a5c9f69a39fb-1"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReply" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReply>
+     ] ;
+     fhir:Meta.tag [
+       fhir:index 0 ;
+       fhir:Coding.display [ fhir:value "Communication message sent by pharmacy to patient in response to a previous ChargeItem-related message" ]
+     ]
+  ] ;
+  fhir:Communication.basedOn [
+     fhir:index 0 ;
+     fhir:link <https://gematik.de/fhir/tiflow-chargeitem/ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8> ;
+     fhir:Reference.reference [ fhir:value "ChargeItem/a51520ec-0899-404f-bb97-fe7d461f90a8" ]
+  ] ;
+  fhir:Communication.status [ fhir:value "unknown"] ;
+  fhir:Communication.recipient [
+     fhir:index 0 ;
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "P987654321" ]
+     ]
+  ] ;
+  fhir:Communication.sender [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+       fhir:Identifier.value [ fhir:value "3-2-APO-XanthippeVeilchenblau01" ]
+     ]
+  ] ;
+  fhir:Communication.payload [
+     fhir:index 0 ;
+     fhir:Communication.payload.contentString [ fhir:value "Erledigt." ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-chargeitem/Communication/3bbc2209-9c23-4553-986e-a5c9f69a39fb-1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-chargeitem/Consent/ChargeItemConsent-Request> a fhir:Consent ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ChargeItemConsent-Request"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Consent" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Consent>
+     ]
+  ] ;
+  fhir:Consent.status [ fhir:value "active"] ;
+  fhir:Consent.scope [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/consentscope" ] ;
+       fhir:Coding.code [ fhir:value "patient-privacy" ] ;
+       fhir:Coding.display [ fhir:value "Privacy Consent" ]
+     ]
+  ] ;
+  fhir:Consent.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType" ] ;
+       fhir:Coding.code [ fhir:value "CHARGCONS" ] ;
+       fhir:Coding.display [ fhir:value "Consent for saving electronic charge item" ]
+     ]
+  ] ;
+  fhir:Consent.patient [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "P987654321" ] ;
+       fhir:Identifier.assigner [
+         fhir:Reference.identifier [
+           fhir:Identifier.system [ fhir:value "http://fhir.de/sid/arge-ik/iknr" ] ;
+           fhir:Identifier.value [ fhir:value "168140950" ]
+         ]
+       ]
+     ]
+  ] ;
+  fhir:Consent.policyRule [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ] ;
+       fhir:Coding.code [ fhir:value "OPTIN" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-chargeitem/Consent/ChargeItemConsent-Request.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

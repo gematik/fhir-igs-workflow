@@ -1,0 +1,4105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="de.gematik.tiflow.erezept"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide de.gematik.tiflow.erezept</b></p><a name="de.gematik.tiflow.erezept"> </a><a name="hcde.gematik.tiflow.erezept"> </a><h2>gemIG_TIFlow_erezept</h2><p>The official URL for this implementation guide is: </p><pre>https://gematik.de/fhir/tiflow-erezept/ImplementationGuide/de.gematik.tiflow.erezept</pre></div>
+  </text>
+  <url value="https://gematik.de/fhir/tiflow-erezept/ImplementationGuide/de.gematik.tiflow.erezept"/>
+  <version value="2.0.0-ballot.3"/>
+  <name value="gemIG_TIFlow_erezept"/>
+  <title value="Implementation Guide TIFlow - Verordnungen für Arzneimittel"/>
+  <status value="draft"/>
+  <date value="2026-06-30"/>
+  <publisher value="gematik GmbH"/>
+  <contact>
+    <name value="gematik GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://gematik.de"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="erp-umsetzung@gematik.de"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="de.gematik.tiflow.erezept"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="7.3.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="5.3.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_xver_r5_r4">
+    <uri value="http://hl7.org/fhir/uv/xver/ImplementationGuide/hl7.fhir.uv.xver-r5.r4"/>
+    <packageId value="hl7.fhir.uv.xver-r5.r4"/>
+    <version value="0.1.0"/>
+  </dependsOn>
+  <dependsOn id="de_basisprofil_r4">
+    <uri value="http://fhir.org/packages/de.basisprofil.r4/ImplementationGuide/de.basisprofil.r4"/>
+    <packageId value="de.basisprofil.r4"/>
+    <version value="1.6.0"/>
+  </dependsOn>
+  <dependsOn id="de_gematik_ti">
+    <uri value="https://gematik.de/fhir/ti/ImplementationGuide/de.gematik.ti"/>
+    <packageId value="de.gematik.ti"/>
+    <version value="1.4.0-ballot.2"/>
+  </dependsOn>
+  <dependsOn id="de_gematik_tiflow">
+    <uri value="https://gematik.de/fhir/tiflow/ImplementationGuide/de.gematik.tiflow"/>
+    <packageId value="de.gematik.tiflow"/>
+    <version value="2.0.0-ballot.3"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2026+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="shownav"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AvailabilityState"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PATIENT_AUTHORIZATION"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PROPERTIES"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_LastMedicationDispense"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_SupplyOptionsType"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AuditEvent"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle_OP_Accept"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_OrganizationType"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationdispenseMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpBundleMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationCompoundingMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationFreetextMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationIngredientMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationPznMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureDefinition/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="OperationOutcome/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Medication/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="MedicationRequest/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="MedicationDispense/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="CapabilityStatement/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Provenance/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Communication/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Consent/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="AuditEvent/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/1f339db0-9e55-4946-9dfa-f1b30953be9b"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/9c85a2a5-92ee-4a57-83cb-ba90a0df2a21"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/4863d1fb-dc26-4680-bb35-018610d1749d"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/44420ed9-7388-4be5-acc5-9c124fad9f34"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/9581ce65-b118-4751-9073-19c091b341e0"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/GEMErpPrMedicationMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/GEMErpPrMedicationdispenseMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/GEMErpPrMedicationdispenseMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrErpBundleMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrErpMedicationCompoundingMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrErpMedicationFreetextMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrErpMedicationIngredientMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrErpMedicationPznMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrErpPrescriptionMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrForOrganizationMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrForPractitionerMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Communication/2be1c6ac-5d10-47f6-84ee-8318b2c22c76"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Communication/a218a36e-f2fd-4603-ba67-c827acfef01b"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/tiflow-erezept/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools.r4#1.1.2"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2026+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="shownav"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AvailabilityState"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PATIENT_AUTHORIZATION"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PROPERTIES"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_LastMedicationDispense"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_SupplyOptionsType"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_AuditEvent"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle_OP_Accept"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_OrganizationType"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationdispenseMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpBundleMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationCompoundingMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationFreetextMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationIngredientMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationPznMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureDefinition/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="OperationOutcome/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Medication/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="MedicationRequest/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="MedicationDispense/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="CapabilityStatement/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Provenance/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Communication/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Consent/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Task/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-narrative"/>
+      </extension>
+      <extension url="value">
+        <valueString value="AuditEvent/*"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/1f339db0-9e55-4946-9dfa-f1b30953be9b"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/9c85a2a5-92ee-4a57-83cb-ba90a0df2a21"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/4863d1fb-dc26-4680-bb35-018610d1749d"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/44420ed9-7388-4be5-acc5-9c124fad9f34"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Bundle/9581ce65-b118-4751-9073-19c091b341e0"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/GEMErpPrMedicationMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/GEMErpPrMedicationdispenseMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/GEMErpPrMedicationdispenseMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrErpBundleMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrErpMedicationCompoundingMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrErpMedicationFreetextMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrErpMedicationIngredientMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrErpMedicationPznMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrErpPrescriptionMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrForOrganizationMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="StructureMap/KBVPrForPractitionerMap"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Communication/2be1c6ac-5d10-47f6-84ee-8318b2c22c76"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="no-validate"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Communication/a218a36e-f2fd-4603-ba67-c827acfef01b"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://gematik.de/fhir/tiflow-erezept/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/ExampleRXAcceptResponse"/>
+      </reference>
+      <name value="$accept response for RX"/>
+      <description value="Example response for $accept in RX workflow"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/1f339db0-9e55-4946-9dfa-f1b30953be9b"/>
+      </reference>
+      <name value="1f339db0-9e55-4946-9dfa-f1b30953be9b"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/44420ed9-7388-4be5-acc5-9c124fad9f34"/>
+      </reference>
+      <name value="44420ed9-7388-4be5-acc5-9c124fad9f34"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/4863d1fb-dc26-4680-bb35-018610d1749d"/>
+      </reference>
+      <name value="4863d1fb-dc26-4680-bb35-018610d1749d"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/9581ce65-b118-4751-9073-19c091b341e0"/>
+      </reference>
+      <name value="9581ce65-b118-4751-9073-19c091b341e0"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/9c85a2a5-92ee-4a57-83cb-ba90a0df2a21"/>
+      </reference>
+      <name value="9c85a2a5-92ee-4a57-83cb-ba90a0df2a21"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Subscription"/>
+      </extension>
+      <reference>
+        <reference value="Subscription/example-create-subscription-request"/>
+      </reference>
+      <name value="Anfrage fuer POST /Subscription"/>
+      <description value="Beispiel fuer eine Subscription-Anlage"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Subscription"/>
+      </extension>
+      <reference>
+        <reference value="Subscription/example-create-subscription-response"/>
+      </reference>
+      <name value="Antwort fuer POST /Subscription"/>
+      <description value="Beispiel fuer eine erfolgreiche Subscription-Anlage"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Communication"/>
+      </extension>
+      <reference>
+        <reference value="Communication/ExampleCommunicationReplyPharmacy"/>
+      </reference>
+      <name value="Antwort-Nachricht der Apotheke an den Patienten"/>
+      <description value="Beispiel für eine Antwort-Nachricht, die von der Apotheke an den Patienten als Antwort auf eine vorherige Task-bezogene Nachricht gesendet wird"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/example-searchset-consent"/>
+      </reference>
+      <name value="Antwortbundle fuer GET /Consent"/>
+      <description value="Beispiel fuer eine Consent-Suchantwort"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/example-searchset-medicationdispense"/>
+      </reference>
+      <name value="Antwortbundle fuer GET /MedicationDispense"/>
+      <description value="Beispiel fuer eine MedicationDispense-Suchantwort"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/GEM-ERP-VS-OrganizationType"/>
+      </reference>
+      <name value="Bearbeiter eines E-Rezeptes"/>
+      <description value="ValueSet der Organisationstyp-Codes eines Performers für den RX Task"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/Bundle-AcceptOperation"/>
+      </reference>
+      <name value="Beispiel Accept-Bundle"/>
+      <description value="Dieses Bundle enthält den Task und das qualifiziert signierte E-Rezept für die Accept-Operation"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle_OP_Accept"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ExampleCloseInputParameters"/>
+      </reference>
+      <name value="Beispiel Close-Parameter"/>
+      <description value="Beispiel für Eingabeparameter der Close-Operation mit einfacher Medikamentenabgabe"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ExampleCloseInputParametersKombipackung"/>
+      </reference>
+      <name value="Beispiel Close-Parameter für Kombipackung"/>
+      <description value="Beispiel für Eingabeparameter der Close-Operation für eine Kombipackung"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ExampleCloseInputParametersMultipleMedicationDispenses"/>
+      </reference>
+      <name value="Beispiel Close-Parameter mit mehreren MedicationDispenses"/>
+      <description value="Beispiel für Eingabeparameter der Close-Operation mit mehreren Medikamentenabgaben"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/OperationCreateParametersInputExample"/>
+      </reference>
+      <name value="Beispiel für $create Operation Parameter"/>
+      <description value="Beispiel für Eingabeparameter der $create Operation zur Erstellung einer neuen Aufgabe"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationAbortErrorAVS"/>
+      </reference>
+      <name value="Beispiel für Abort-Operation Fehlerantwort (403)"/>
+      <description value="Beispiel für eine Fehlerantwort bei der Abort-Operation"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleERPEUOperationOutcomeError"/>
+      </reference>
+      <name value="Beispiel für Abort-Operation Fehlerantwort (412)"/>
+      <description value="Beispiel für eine Fehlerantwort bei der Abort-Operation"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationAbortErrorPVS"/>
+      </reference>
+      <name value="Beispiel für Abort-Operation Fehlerantwort (412)"/>
+      <description value="Beispiel für eine Fehlerantwort bei der Abort-Operation"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/Example-MedicationDispense-Kombipackung"/>
+      </reference>
+      <name value="Beispiel Kombipackung Medikamentenabgabe"/>
+      <description value="Beispiel für eine Medikamentenabgabe einer Kombipackung"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/Example-MedicationDispense"/>
+      </reference>
+      <name value="Beispiel Medikamentenabgabe"/>
+      <description value="Beispiel für eine Medikamentenabgabe mit vollständigen Angaben"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/Example-MedicationDispense-Dosage-tageszeit"/>
+      </reference>
+      <name value="Beispiel Medikamentenabgabe mit Dosierung nach 4er Schema"/>
+      <description value="Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach 4er Schema"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/Example-MedicationDispense-Dosage-interval"/>
+      </reference>
+      <name value="Beispiel Medikamentenabgabe mit Dosierung nach Interval"/>
+      <description value="Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Interval"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/Example-MedicationDispense-Dosage-comb-interval"/>
+      </reference>
+      <name value="Beispiel Medikamentenabgabe mit Dosierung nach Kombination des Intervals"/>
+      <description value="Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Kombination des Intervals"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/Example-MedicationDispense-Dosage-comb-dayofweek"/>
+      </reference>
+      <name value="Beispiel Medikamentenabgabe mit Dosierung nach Kombination des Wochentags"/>
+      <description value="Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Kombination des Wochentags"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/Example-MedicationDispense-Dosage-uhrzeit"/>
+      </reference>
+      <name value="Beispiel Medikamentenabgabe mit Dosierung nach Uhrzeitbezug"/>
+      <description value="Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Uhrzeitbezug"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/Example-MedicationDispense-Dosage-weekday"/>
+      </reference>
+      <name value="Beispiel Medikamentenabgabe mit Dosierung nach Wochentagsbezug"/>
+      <description value="Beispiel für eine Medikamentenabgabe mit vollständigen Angaben und Dosierung nach Wochentagsbezug"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/Example-MedicationDispense-Without-Medication"/>
+      </reference>
+      <name value="Beispiel Medikamentenabgabe ohne Medikament"/>
+      <description value="Beispiel für eine Medikamentenabgabe ohne Medikamentenreferenz"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/ExampleUnitMedication"/>
+      </reference>
+      <name value="Beispiel-Medikament mit Einheiten"/>
+      <description value="Beispiel für ein Medikament mit spezifischen Maßeinheiten und Wirkstoffangaben"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/SumatripanMedication"/>
+      </reference>
+      <name value="Beispiel-Medikament Sumatriptan"/>
+      <description value="Beispiel für ein Sumatriptan-Medikament mit vollständigen Eigenschaften"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/ExampleAcceptResponseBundle"/>
+      </reference>
+      <name value="Beispielantwort fuer die $accept-Operation"/>
+      <description value="Bundle-Antwort der $accept-Operation mit Task und qualifiziert signiertem E-Rezept"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Bundle_OP_Accept"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Binary"/>
+      </extension>
+      <reference>
+        <reference value="Binary/PrescriptionBinaryWithMeta"/>
+      </reference>
+      <name value="Binary einer Verschreibung (QES) mit Metadaten"/>
+      <description value="Beispiel für binäre Daten einer elektronischen Verschreibung mit erweiterten Metadaten"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/GEM-ERPEU-CS-RequestType"/>
+      </reference>
+      <name value="CodeSystem of NCPeH Request Types"/>
+      <description value="Type of Request from NCPeH"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/GEM-ERPEU-CS-ConsentType"/>
+      </reference>
+      <name value="CodeSystem of types for a consent"/>
+      <description value="Type of patient consent."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/ExampleRxCommunicationSearchset"/>
+      </reference>
+      <name value="Communication searchset response for Rx"/>
+      <description value="Example response for GET /Communication"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/ExampleCommunicationGetDispReq"/>
+      </reference>
+      <name value="Communication searchset response for Rx"/>
+      <description value="Example response for GET /Communication"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERPEU-PR-Consent"/>
+      </reference>
+      <name value="Consent for ePrescriptions"/>
+      <description value="Records the consent of the patient for an operation in the context of ePrescription."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERPEU-PR-MedicationDispense"/>
+      </reference>
+      <name value="Dispensation of the Prescription from the EU"/>
+      <description value="Handles information about the redeem of the prescription and the submited medication from the EU."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/logical-eu-dispense-data"/>
+      </reference>
+      <name value="Dispense Data from EU"/>
+      <description value="Logical Information that is Provided in the dispensation document by the NCPeH of country B for Dispensing Medication"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/tiflow-rx-abort-op"/>
+      </reference>
+      <name value="E-Rezept abbrechen"/>
+      <description value="Diese Operation bricht den Workflow eines E-Rezepts ab und löscht alle Daten, die mit dieser Aufgabe zusammenhängen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/tiflow-rx-close-op"/>
+      </reference>
+      <name value="E-Rezept Abgabe vollziehen"/>
+      <description value="Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/tiflow-rx-accept-op"/>
+      </reference>
+      <name value="E-Rezept abrufen"/>
+      <description value="Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/tiflow-rx-activate-op"/>
+      </reference>
+      <name value="E-Rezept aktivieren"/>
+      <description value="Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der TI-Flow-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/tiflow-rx-create-op"/>
+      </reference>
+      <name value="E-Rezept erstellen"/>
+      <description value="Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Flowtypes."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/tiflow-rx-dispense-op"/>
+      </reference>
+      <name value="E-Rezept vorläufig abgeben"/>
+      <description value="Die Operation $dispense ermöglicht es der Apotheke, eine Ausgabe für ein Medikament durchzuführen, ohne den Status der Aufgabe zu ändern. Diese Aktion erlaubt es einem Frontend anzuzeigen, dass ein Medikament ausgegeben wurde, bevor es von der Apotheke abgeschlossen wird."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/tiflow-rx-reject-op"/>
+      </reference>
+      <name value="E-Rezept zurückgeben"/>
+      <description value="Lehnt die Ausgabe eines E-Rezepts ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Apotheker zugänglich oder kann vom Patienten gelöscht werden."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/ExampleERPBundle"/>
+      </reference>
+      <name value="E-Rezept-Verordnungs-Bundle (unvollständig)"/>
+      <description value="Unvollständiges Beispiel eines E-Rezept-Bundles nach KBV_PR_EVDGA_Bundle"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/SimpleMedication"/>
+      </reference>
+      <name value="Einfaches Beispiel-Medikament"/>
+      <description value="Beispiel für ein einfaches Medikament mit minimalen Eigenschaften"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Consent"/>
+      </extension>
+      <reference>
+        <reference value="Consent/QueryConsentCHARGCONS"/>
+      </reference>
+      <name value="Einwilligung fuer den Use Case CHARGCONS"/>
+      <description value="Beispiel einer Consent-Ressource fuer die Consent-Query"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationCloseError"/>
+      </reference>
+      <name value="Error 400 - Beispiel für Close-Operation Fehlerantwort"/>
+      <description value="Beispiel für eine Fehlerantwort bei der Close-Operation mit FHIR-Validierungsfehlern"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationCloseProfileError"/>
+      </reference>
+      <name value="Error 400 - Beispiel für Close-Operation Fehlerantwort bei Profilprüfung MedicationDispense"/>
+      <description value="Beispiel für eine Fehlerantwort bei der Close-Operation mit Profilprüfung MedicationDispense"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationCreateError"/>
+      </reference>
+      <name value="Error 400 - Beispiel für Create-Operation Fehlerantwort"/>
+      <description value="Beispiel für eine Fehlerantwort bei der Create-Operation mit FHIR-Validierungsfehlern"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationActivateError"/>
+      </reference>
+      <name value="Error 400 - Example Activate operation error response"/>
+      <description value="Beispiel einer Fehlerantwort der $activate-Operation bei fehlgeschlagener Profilvalidierung"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationEUCloseError"/>
+      </reference>
+      <name value="Error 400 - Example EU Close operation error response"/>
+      <description value="Beispiel einer Fehlerantwort der $eu-close-Operation bei fehlgeschlagener Profilvalidierung"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationGetEUError"/>
+      </reference>
+      <name value="Error 400 - Example EU Get Prescriptions operation error response"/>
+      <description value="Beispiel einer Fehlerantwort der $get-eu-prescriptions-Operation bei fehlgeschlagener Profilvalidierung"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationActivateInvalidRoleError"/>
+      </reference>
+      <name value="Error 400 - QES nicht valide; Example Activate operation error response"/>
+      <description value="Beispiel einer Fehlerantwort der $activate-Operation bei ungültiger Signatur"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationAcceptRoleError"/>
+      </reference>
+      <name value="Error 403 - Beispiel für Accept-Operation durch Rollenprüfung"/>
+      <description value="Beispiel für eine Fehlerantwort Rollenprüfung bei der Accept-Operation eines E-Rezepts"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleCreateOperationOutputError"/>
+      </reference>
+      <name value="Error 403 - Beispiel für Create-Operation Fehlerantwort"/>
+      <description value="Beispiel für eine Fehlerantwort bei der Create-Operation mit FHIR-Validierungsfehlern"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationDispenseRoleError"/>
+      </reference>
+      <name value="Error 403 - Beispiel für Dispense-Operation durch Rollenprüfung"/>
+      <description value="Beispiel für eine Fehlerantwort Rollenprüfung bei der Dispense-Operation eines E-Rezepts"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationAcceptError"/>
+      </reference>
+      <name value="Error 409 - Beispiel für Accept-Operation Fehlerantwort"/>
+      <description value="Beispiel für eine Fehlerantwort bei der Accept-Operation eines E-Rezepts"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERPEU-PR-Medication"/>
+      </reference>
+      <name value="EU-Medication"/>
+      <description value="Medication of a Prescription or Dispensation from the EU"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/EUCloseOperation"/>
+      </reference>
+      <name value="EUCloseOperation"/>
+      <description value="The operation $close finishes the e-prescription workflow and creates a receipt. The Output of this operation is a signed Bundle, to be used for further financial processing. The status of the Task then changes into #completed"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ExampleOperationActivateParametersInput"/>
+      </reference>
+      <name value="Example Activate operation input parameters"/>
+      <description value="Beispiel der Eingabeparameter für die $activate-Operation im RX-Workflow"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ExampleCloseOutputParameters"/>
+      </reference>
+      <name value="Example Close Parameters"/>
+      <description value="Beispiel der Ausgabeparameter der $close-Operation im ERP-Workflow"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Output"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ExampleCloseInputParametersRezeptur"/>
+      </reference>
+      <name value="Example Close Parameters"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ExampleDispenseInputParameters"/>
+      </reference>
+      <name value="Example Dispense Parameters"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ExampleDispenseInputParametersMultipleMedicationDispenses"/>
+      </reference>
+      <name value="Example Dispense Parameters"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ExampleDispenseInputParametersKombipackung"/>
+      </reference>
+      <name value="Example Dispense Parameters"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ExampleEUCloseInputParameters"/>
+      </reference>
+      <name value="Example EU-Close Parameters"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-Close-Operation-Input"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ExampleEUGETPrescriptionDEMOGRAPHICS"/>
+      </reference>
+      <name value="Example EU-GET Prescription Parameters"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-LIST"/>
+      </reference>
+      <name value="Example EU-GET Prescription Parameters"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-RETRIEVAL"/>
+      </reference>
+      <name value="Example EU-GET Prescription Parameters"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/ExampleGetConsent"/>
+      </reference>
+      <name value="Example for a Bundle with a Consent"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Consent"/>
+      </extension>
+      <reference>
+        <reference value="Consent/ExampleEUConsent"/>
+      </reference>
+      <name value="Example for a Consent to redeem EU Prescriptions"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Consent"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/Example-MedicationDispense-EU"/>
+      </reference>
+      <name value="Example Medication Dispense"/>
+      <description value="Example of a Medication Dispense."/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-MedicationDispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ExampleRxOperationRequestParameters"/>
+      </reference>
+      <name value="Example request parameters for Rx operations"/>
+      <description value="Reusable example request payload for operation documentation in the Rx IG"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/Example-MedicationDispense-Rezeptur"/>
+      </reference>
+      <name value="Example Rezeptur Medication Dispense"/>
+      <description value="Example of a Rezeptur Medication Dispense."/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Example-EU-Organization"/>
+      </reference>
+      <name value="Example-EU-Organization"/>
+      <description value="Example of an EU Organization"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/Example-EU-Practitioner"/>
+      </reference>
+      <name value="Example-EU-Practitioner"/>
+      <description value="Example of an EU Practitioner"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/Example-EU-PractitionerRole"/>
+      </reference>
+      <name value="Example-EU-PractitionerRole"/>
+      <description value="Example of an EU PractitionerRole"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PractitionerRole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/ExampleGetEUPrescriptionBundle"/>
+      </reference>
+      <name value="ExampleGetEUPrescriptionBundle"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/ExampleMedicationDispenseSearchResponse"/>
+      </reference>
+      <name value="ExampleMedicationDispenseSearchResponse"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/Example-PATCH-Task-Single-Input-Request-True"/>
+      </reference>
+      <name value="Example_PATCH_Task_Single_Input"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-PATCH-Task-Input"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/Example-PATCH-Task-Single-Input-Request-False"/>
+      </reference>
+      <name value="Example_PATCH_Task_Single_Input"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-PATCH-Task-Input"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationAbortErrorRoleFdV"/>
+      </reference>
+      <name value="Fehler 403 - Beispiel für Abort-Operation Fehlerantwort bei Rollenprüfung"/>
+      <description value="Beispiel für eine Fehlerantwort bei der Abort-Operation bei Rollenprüfung"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationRejectRolleError"/>
+      </reference>
+      <name value="Fehler 403 - Beispiel für Reject-Operation Fehlerantwort bei Rollenprüfung"/>
+      <description value="Beispiel für eine Fehlerantwort bei der Reject-Operation bei Rollenprüfung"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationOutcome"/>
+      </extension>
+      <reference>
+        <reference value="OperationOutcome/ExampleOperationRejectError"/>
+      </reference>
+      <name value="Fehler 412 - Beispiel für Reject-Operation Fehlerantwort"/>
+      <description value="Beispiel für eine Fehlerantwort bei der Reject-Operation wegen falschen Task-Status"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-EX-AvailabilityState"/>
+      </reference>
+      <name value="GEM ERP EX AvailabilityState"/>
+      <description value="Extension zur Angabe von Typ des Verfügbarkeitsstatus für die Anfrage zur Medikamentenverfügbarkeit."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-EX-EU-IS-REDEEMABLE-BY-PATIENT-AUTHORIZATION"/>
+      </reference>
+      <name value="GEM ERP EX EU IS REDEEMABLE BY PATIENT AUTHORIZATION"/>
+      <description value="Extension zur Angabe des Nutzers, ob das E-Rezept in der EU zur Einlösung verfügbar sein soll oder nicht."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-EX-EU-IS-REDEEMABLE-BY-PROPERTIES"/>
+      </reference>
+      <name value="GEM ERP EX EU IS REDEEMABLE BY PROPERTIES"/>
+      <description value="Extension zur vom TI-Flow-Fachdienst ermittelten Angabe, ob das E-Rezept in der EU zur Einlösung verfügbar sein soll oder nicht."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-EX-LastMedicationDispense"/>
+      </reference>
+      <name value="GEM ERP EX LastMedicationDispense"/>
+      <description value="Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt den Zeitstempel der letzten Ausgabe an."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-EX-SupplyOptionsType"/>
+      </reference>
+      <name value="GEM ERP EX SupplyOptionsType"/>
+      <description value="Extension zur Angabe des bevorzugten Versorgungskanals"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-PAR-Accept-Operation-Output"/>
+      </reference>
+      <name value="GEM ERP PR AcceptOperation Output"/>
+      <description value="Dieses Profil definiert die Parameter für die Annahme eines Medikaments von AVS zum TI-Flow-Fachdienst. Dies kann für die $accept-Operation verwendet werden."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-PAR-Activate-Operation-Input"/>
+      </reference>
+      <name value="GEM ERP PR ActivateOperation Input"/>
+      <description value="Dieses Profil definiert die Parameter für das Einstellen eines E-Rezeptes von PVS zum TI-Flow-Fachdienst."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-PAR-Activate-Operation-Output"/>
+      </reference>
+      <name value="GEM ERP PR ActivateOperation Output"/>
+      <description value="Dieses Profil definiert die Parameter für die Aktivierung einer Aufgabe von PVS zum TI-Flow-Fachdienst. Dies kann für die $activate-Operation verwendet werden."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-Bundle-OP-Accept"/>
+      </reference>
+      <name value="GEM ERP PR Bundle OP Accept"/>
+      <description value="Antwort des TI-Flow-Fachdienst auf die $accept-Operation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Input"/>
+      </reference>
+      <name value="GEM ERP PR CloseOperation Input"/>
+      <description value="Dieses Profil definiert die Parameter für das Schließen eines Workflows für ein Rezept vom AVS zum TI-Flow-Fachdienst. Dies kann für die Operationen $close und $dispense verwendet werden."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-PAR-Close-Operation-Output"/>
+      </reference>
+      <name value="GEM ERP PR CloseOperation Output"/>
+      <description value="Dieses Profil definiert die Parameter für die Ausgabe eines Medikaments von AVS an den TI-Flow-Fachdienst. Dies kann für die $close-Operation verwendet werden."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource:abstract"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-Communication"/>
+      </reference>
+      <name value="GEM ERP PR Communication"/>
+      <description value="Generische Workflow-Communication"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-Communication-DispReq"/>
+      </reference>
+      <name value="GEM ERP PR Communication DispReq"/>
+      <description value="Anfrage zur Einlösung des E-Rezepts"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-Communication-Reply"/>
+      </reference>
+      <name value="GEM ERP PR Communication Reply"/>
+      <description value="Antwort vom Leistungserbringer an den Patienten"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-PAR-Create-Operation-Input"/>
+      </reference>
+      <name value="GEM ERP PR CreateOperation Input"/>
+      <description value="Dieses Profil definiert die Parameter für die Erstellung einer Aufgabe von PVS zum TI-Flow-Fachdienst. Dies kann für die $create-Operation verwendet werden."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-PAR-Create-Operation-Output"/>
+      </reference>
+      <name value="GEM ERP PR CreateOperation Output"/>
+      <description value="Dieses Profil definiert die Parameter für die Erstellung einer Aufgabe von PVS zum TI-Flow-Fachdienst. Dies kann für die $create-Operation verwendet werden."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-PAR-Dispense-Operation-Input"/>
+      </reference>
+      <name value="GEM ERP PR DispenseOperation Input"/>
+      <description value="Dieses Profil definiert die Parameter für die Abgabe eines Medikaments von AVS an den TI-Flow-Fachdienst. Dies kann für die $dispense-Operation verwendet werden."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERPEU-PR-PAR-Close-Operation-Input"/>
+      </reference>
+      <name value="GEM ERP PR EU CloseOperation Input"/>
+      <description value="This profile defines the parameters for receiving dispense information for a prescription that was redeemed in the EU"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-Medication"/>
+      </reference>
+      <name value="GEM ERP PR Medication"/>
+      <description value="Medikament zur Ausgabe des Rezepts"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-MedicationDispense"/>
+      </reference>
+      <name value="GEM ERP PR MedicationDispense"/>
+      <description value="Dispensierung eines E-Rezepts"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Request"/>
+      </reference>
+      <name value="GEM ERPEU PR PAR Access Authorization Request"/>
+      <description value="Displays Parameters for EU Access Authorization"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Response"/>
+      </reference>
+      <name value="GEM ERPEU PR PAR Access Authorization Response"/>
+      <description value="Displays Response Parameters for EU Access Authorization"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERPEU-PR-PAR-EU-GET-Prescription-Input"/>
+      </reference>
+      <name value="GEM ERPEU PR PAR GET Prescription Input"/>
+      <description value="This profile defines the parameters for receiving dispense information for a prescription that was redeemed in the EU"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/gem-erpeu-pr-par-get-prescription-output"/>
+      </reference>
+      <name value="GEM ERPEU PR PAR GET Prescription Output"/>
+      <description value="This profile defines the output parameters for the Get Prescription Operation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERPEU-PR-PAR-PATCH-Task-Input"/>
+      </reference>
+      <name value="GEM ERPEU PR PAR PATCH Task Input"/>
+      <description value="This profile defines the parameters for patching the Task to mark the prescription as to-be-redeemed in the EU"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/GEMErpPrMedicationdispenseMap"/>
+      </reference>
+      <name value="GEMErpPrMedicationdispenseMap"/>
+      <description value="Auto-generated StructureMap for GEM_ERP_PR_MedicationDispense|1.6.1 -&gt; EPAMedicationDispense|1.3.0"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/GEMErpPrMedicationMap"/>
+      </reference>
+      <name value="GEMErpPrMedicationMap"/>
+      <description value="Auto-generated StructureMap for GEM_ERP_PR_Medication|1.6.1 -&gt; EPAMedication|1.3.0"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERPEU-EX-MedicinalPackageDescription"/>
+      </reference>
+      <name value="GEM_ERPEU_EX_MedicinalPackageDescription"/>
+      <description value="Description of a packaged medicinal product."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERPEU-EX-MedicinalPackageIdentifier"/>
+      </reference>
+      <name value="GEM_ERPEU_EX_MedicinalPackageIdentifier"/>
+      <description value="Identifier of a packaged medicinal product refers to a specific pack size of a specific product."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/Example-EU-PermissionRequest"/>
+      </reference>
+      <name value="GEM_ERPEU_PR_PAR_Access_Authorization_Request"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Request"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/Example-EU-PermissionResponse"/>
+      </reference>
+      <name value="GEM_ERPEU_PR_PAR_Access_Authorization_Response"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-PAR-AccessAuthorization-Response"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/ReceiptBundleDevice"/>
+      </reference>
+      <name value="Gerät für Quittungs-Bundle"/>
+      <description value="Beispiel für ein Gerät, das für die Erstellung von E-Rezept-Quittungen verwendet wird"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/GETPrescriptionEU"/>
+      </reference>
+      <name value="GETPrescriptionEU"/>
+      <description value="The Operation gets Presciption Information from the ERP System for usage in the e-prescription workflow for EU countries"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/GrantEUAccessPermission"/>
+      </reference>
+      <name value="GrantEUAccessPermission"/>
+      <description value="This operation receives the access code and the country that the patient wants to grant access to. The operation validates the country and creates registeres the Access Code."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERPEU-PR-AccessCode"/>
+      </reference>
+      <name value="Identifier Profile for EU AccessCode"/>
+      <description value="The AccessCode that is generated by the FdV in order to access the ePrescription in an EU country."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/KBVPrErpBundleMap"/>
+      </reference>
+      <name value="KBVPrErpBundleMap"/>
+      <description value="Auto-generated StructureMap for transformation KBV_PR_ERP_Bundle|1.4.0 -&gt; EPAOpProvidePrescriptionERPInputParameters|1.3.0"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/KBVPrErpMedicationCompoundingMap"/>
+      </reference>
+      <name value="KBVPrErpMedicationCompoundingMap"/>
+      <description value="Auto-generated StructureMap for KBV_PR_ERP_Medication_Compounding|1.4.0 -&gt; EPAMedication|1.3.0"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/KBVPrErpMedicationFreetextMap"/>
+      </reference>
+      <name value="KBVPrErpMedicationFreetextMap"/>
+      <description value="Auto-generated StructureMap for KBV_PR_ERP_Medication_FreeText|1.4.0 -&gt; EPAMedication|1.3.0"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/KBVPrErpMedicationIngredientMap"/>
+      </reference>
+      <name value="KBVPrErpMedicationIngredientMap"/>
+      <description value="Auto-generated StructureMap for KBV_PR_ERP_Medication_Ingredient|1.4.0 -&gt; EPAMedication|1.3.0"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/KBVPrErpMedicationPznMap"/>
+      </reference>
+      <name value="KBVPrErpMedicationPznMap"/>
+      <description value="Auto-generated StructureMap for KBV_PR_ERP_Medication_PZN|1.4.0 -&gt; EPAMedication|1.3.0"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/KBVPrErpPrescriptionMap"/>
+      </reference>
+      <name value="KBVPrErpPrescriptionMap"/>
+      <description value="Auto-generated StructureMap for KBV_PR_ERP_Prescription|1.4.0 -&gt; EPAMedicationRequest|1.3.0"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/KBVPrForOrganizationMap"/>
+      </reference>
+      <name value="KBVPrForOrganizationMap"/>
+      <description value="Auto-generated StructureMap for KBV_PR_FOR_Organization|1.3.0 -&gt; OrganizationDirectory|1.0.0"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/KBVPrForPractitionerMap"/>
+      </reference>
+      <name value="KBVPrForPractitionerMap"/>
+      <description value="Auto-generated StructureMap for KBV_PR_FOR_Practitioner|1.3.0 -&gt; PractitionerDirectory|1.0.0"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/EU-Medication-Without-Strength-Code"/>
+      </reference>
+      <name value="Medication Without code or system for Strength"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/EU-Medication-Without-Strength-Numerator"/>
+      </reference>
+      <name value="Medication Without code or system for Strength"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/Medication-Rezeptur-FD"/>
+      </reference>
+      <name value="Medication-Rezeptur-FD"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/ExampleRxMedicationDispenseSearchset"/>
+      </reference>
+      <name value="MedicationDispense searchset response for Rx"/>
+      <description value="Example response for GET /MedicationDispense"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/Medication-Without-Strength-Code"/>
+      </reference>
+      <name value="Medikament ohne Stärke-Code"/>
+      <description value="Beispiel für ein Medikament ohne System und Code für die Wirkstoffstärke"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/Medication-Without-Strength-Numerator"/>
+      </reference>
+      <name value="Medikament ohne Stärke-Numerator"/>
+      <description value="Beispiel für ein Medikament ohne Code oder System für die Stärkenangabe im Numerator"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/Medication-Kombipackung"/>
+      </reference>
+      <name value="Medikament-Kombipackung"/>
+      <description value="Beispiel für eine Kombipackung mit mehreren Einzelpräparaten"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/Medication-Rezeptur"/>
+      </reference>
+      <name value="Medikament-Rezeptur"/>
+      <description value="Beispiel für eine Rezeptur mit mehreren Wirkstoffen als zusammengesetztes Medikament"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERPEU-PR-Organization"/>
+      </reference>
+      <name value="Organization Information Received from the EU"/>
+      <description value="This Organization Profile is sent by the NCPeH when redeeming a Prescription in the EU"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/output-example-1"/>
+      </reference>
+      <name value="output-example-1"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/output-example-2"/>
+      </reference>
+      <name value="output-example-2"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/output-example-3"/>
+      </reference>
+      <name value="output-example-3"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/output-example-4"/>
+      </reference>
+      <name value="output-example-4"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/output-example-5"/>
+      </reference>
+      <name value="output-example-5"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERPEU-PR-Practitioner"/>
+      </reference>
+      <name value="Practitioner Information Received from the EU"/>
+      <description value="This Practitioner Profile is sent by the NCPeH when redeeming a Prescription in the EU"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERPEU-PR-PractitionerRole"/>
+      </reference>
+      <name value="PractitionerRole Information Received from the EU"/>
+      <description value="This PractitionerRole Profile is sent by the NCPeH when redeeming a Prescription in the EU"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/dffbfd6a-5712-4798-bdc8-07201eb77ab8"/>
+      </reference>
+      <name value="Quittungs-Bundle für abgeschlossene Rezeptabgabe"/>
+      <description value="Beispiel für ein Quittungs-Bundle nach erfolgter Abgabe eines E-Rezepts"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Binary"/>
+      </extension>
+      <reference>
+        <reference value="Binary/b939a82a-9c23-4b6d-a139-f468d1b9d652"/>
+      </reference>
+      <name value="Quittungs-Hash Binärdaten"/>
+      <description value="Binäre Digest-Daten für ein E-Rezept-Quittungs-Bundle"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/ReadEUAccessPermission"/>
+      </reference>
+      <name value="ReadEUAccessPermission"/>
+      <description value="This operation reads the currenty in the E-Rezept-Fachdienst registered Access Code for redeeming ePrescriptions in an EU country."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/RevokeEUAccessPermission"/>
+      </reference>
+      <name value="RevokeEUAccessPermission"/>
+      <description value="This operation revokes the currently registered access code for redeeming prescriptions in an EU country."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Communication"/>
+      </extension>
+      <reference>
+        <reference value="Communication/ExampleRxCommunicationDispReq"/>
+      </reference>
+      <name value="Rx Communication request example"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/ExampleRxMedicationDispense"/>
+      </reference>
+      <name value="Rx MedicationDispense example"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/ExampleRxTaskInReadyState"/>
+      </reference>
+      <name value="Rx Task in ready state"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/EUSumatripanMedication"/>
+      </reference>
+      <name value="Sample Medication Sumatripan"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/EUSimpleMedication"/>
+      </reference>
+      <name value="Sample Simple Medication"/>
+      <exampleCanonical value="https://gematik.de/fhir/tiflow-erezept/StructureDefinition/GEM-ERPEU-PR-Medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/TaskInClosedState"/>
+      </reference>
+      <name value="Task abgeschlossen durch Apotheke via $close Operation"/>
+      <description value="Beispiel für einen Task, der von einer Apotheke über die $close Operation abgeschlossen wurde"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/ExampleERPEUTaskInReadyState"/>
+      </reference>
+      <name value="Task activated by (Z)PVS/KIS via $activate operation that carries a dispensable ePrescription"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/TaskInReadyState"/>
+      </reference>
+      <name value="Task aktiviert durch (Z)PVS/KIS via $activate Operation"/>
+      <description value="Beispiel für einen Task, der durch (Z)PVS/KIS über die $activate Operation aktiviert wurde und ein einlösbares E-Rezept trägt"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/160.000.033.491.280.78"/>
+      </reference>
+      <name value="Task aktiviert durch (Z)PVS/KIS via $activate Operation"/>
+      <description value="Beispiel für einen Task, der durch (Z)PVS/KIS über die $activate Operation aktiviert wurde und ein einlösbares E-Rezept trägt"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e"/>
+      </reference>
+      <name value="Task angenommen durch Apotheke via $accept Operation"/>
+      <description value="Beispiel für einen Task, der von einer Apotheke über die $accept Operation angenommen wurde"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/9b48f82c-9c11-4a57-aa72-a805f9537a82"/>
+      </reference>
+      <name value="Task angenommen und abgegeben via $dispense Operation"/>
+      <description value="Beispiel für einen Task, der von einer Apotheke angenommen und dann über die $dispense Operation abgegeben wurde"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/TaskInCreatedState"/>
+      </reference>
+      <name value="Task erstellt durch Fachdienst via $create Operation"/>
+      <description value="Beispiel für einen Task, der vom Fachdienst über die $create Operation erstellt wurde"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/GEM-ERP-PR-Task"/>
+      </reference>
+      <name value="Task für E-Rezept"/>
+      <description value="Task für die Verwaltung des E-Rezept-Workflows"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/f5c21409-b84b-4125-8649-5630a00906b1"/>
+      </reference>
+      <name value="Task mit mehreren MedicationDispenses"/>
+      <description value="Beispiel für einen Task, der von einer Apotheke angenommen und dann über die $dispense Operation mit mehreren MedicationDispenses abgegeben wurde"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/ExampleRxTaskSearchset"/>
+      </reference>
+      <name value="Task searchset response for Rx"/>
+      <description value="Example response for GET /Task"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/tiflow-erezept-operation-outcome-details-cs"/>
+      </reference>
+      <name value="TIFLOW EREZEPT Operation Outcome Details CS"/>
+      <description value="E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/tiflow-erezept-operation-outcome-details-vs"/>
+      </reference>
+      <name value="TIFLOW EREZEPT Operation Outcome Details VS"/>
+      <description value="E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den OperationOutcomes.details angegeben werden können"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ti-flow-fachdienst-server-rx"/>
+      </reference>
+      <name value="TIFlow Fachdienst Server Capabilities"/>
+      <description value="CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Workflow)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/GEM-ERPEU-VS-ConsentType"/>
+      </reference>
+      <name value="ValueSet of Consent Codes"/>
+      <description value="Type of Consents for the ePrescription."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/GEM-ERPEU-VS-Consent-PolicyRule"/>
+      </reference>
+      <name value="ValueSet of Consent PolyRule Codes"/>
+      <description value="Type of Policy Rules for Consents of the ePrescription."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/GEM-ERPEU-VS-RequestType"/>
+      </reference>
+      <name value="ValueSet of NCPeH Request Types"/>
+      <description value="Type of Request from NCPeH"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/Example-MedicationDispense-2"/>
+      </reference>
+      <name value="Zweites Beispiel Medikamentenabgabe"/>
+      <description value="Zweites Beispiel für eine Medikamentenabgabe mit anderen Eigenschaften"/>
+      <exampleCanonical value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense"/>
+    </resource>
+    <page>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+        <valueUrl value="toc.html"/>
+      </extension>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="index.html"/>
+        </extension>
+        <nameUrl value="index.html"/>
+        <title value="Implementation Guide TI-Flow-Fachdienst"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="menu-fachlichkeit.html"/>
+        </extension>
+        <nameUrl value="menu-fachlichkeit.html"/>
+        <title value="Fachliche Aspekte zur Arzneimittelverordnung"/>
+        <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-fachlichkeit-e-rezept.html"/>
+          </extension>
+          <nameUrl value="menu-fachlichkeit-e-rezept.html"/>
+          <title value="Verordnung von apothekenpflichtigen Arzneimitteln"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-fachlichkeit-wf-le.html"/>
+          </extension>
+          <nameUrl value="menu-fachlichkeit-wf-le.html"/>
+          <title value="Verordnung mit Steuerung durch Leistungserbringer"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-fachlichkeit-mvo.html"/>
+          </extension>
+          <nameUrl value="menu-fachlichkeit-mvo.html"/>
+          <title value="Verordnung von Mehrfachverordnungen (MVO)"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-fachlichkeit-t-rezept.html"/>
+          </extension>
+          <nameUrl value="menu-fachlichkeit-t-rezept.html"/>
+          <title value="Verordnung von E-T-Rezepten"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-fachlichkeit-szenario-eu.html"/>
+          </extension>
+          <nameUrl value="menu-fachlichkeit-szenario-eu.html"/>
+          <title value="Einlösen von E-Rezepten im europäischen Ausland"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-fachlichkeit-ux-verordnend.html"/>
+          </extension>
+          <nameUrl value="menu-fachlichkeit-ux-verordnend.html"/>
+          <title value="Best practice UX Primärsysteme für verordnende LEIs"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-fachlichkeit-ux-abgebend.html"/>
+          </extension>
+          <nameUrl value="menu-fachlichkeit-ux-abgebend.html"/>
+          <title value="Best practice UX Primärsysteme für abgebende LEIs"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="menu-technisch.html"/>
+        </extension>
+        <nameUrl value="menu-technisch.html"/>
+        <title value="Technische Aspekte zur Arzneimittelverordnung"/>
+        <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-technische-umsetzung-anwendungsfaelle.html"/>
+          </extension>
+          <nameUrl value="menu-technische-umsetzung-anwendungsfaelle.html"/>
+          <title value="Technische Anwendungsfälle"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-technische-umsetzung-dosierung.html"/>
+          </extension>
+          <nameUrl value="menu-technische-umsetzung-dosierung.html"/>
+          <title value="Validierung von Dosierungsinformationen"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-technische-umsetzung-dispensierinformationen.html"/>
+          </extension>
+          <nameUrl value="menu-technische-umsetzung-dispensierinformationen.html"/>
+          <title value="Erstellen von Dispensierinformationen"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-technische-umsetzung-abgabedatensatz.html"/>
+          </extension>
+          <nameUrl value="menu-technische-umsetzung-abgabedatensatz.html"/>
+          <title value="Abgabedatensatz signieren"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-technische-umsetzung-kim.html"/>
+          </extension>
+          <nameUrl value="menu-technische-umsetzung-kim.html"/>
+          <title value="E-Rezept-spezifische KIM-Messages"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-technische-umsetzung-mapping.html"/>
+          </extension>
+          <nameUrl value="menu-technische-umsetzung-mapping.html"/>
+          <title value="Vorgaben zum Mapping von FHIR-Instanzen"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="mapping-prescription.html"/>
+            </extension>
+            <nameUrl value="mapping-prescription.html"/>
+            <title value="Mapping von Verordnungsdaten"/>
+            <generation value="markdown"/>
+            <page>
+              <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+                <valueUrl value="mapping-prescription-bundle-parameters.html"/>
+              </extension>
+              <nameUrl value="mapping-prescription-bundle-parameters.html"/>
+              <title value="Mapping des Bundles zu Parameters für Verordnungsdaten"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+                <valueUrl value="mapping-prescription-practitioner.html"/>
+              </extension>
+              <nameUrl value="mapping-prescription-practitioner.html"/>
+              <title value="Mapping des Verordnenden für Verordnungsdaten"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+                <valueUrl value="mapping-prescription-organization.html"/>
+              </extension>
+              <nameUrl value="mapping-prescription-organization.html"/>
+              <title value="Mapping der Organization für Verordnungsdaten"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+                <valueUrl value="mapping-prescription-medicationrequest.html"/>
+              </extension>
+              <nameUrl value="mapping-prescription-medicationrequest.html"/>
+              <title value="Mapping der Verschreibung für Verordnungsdaten"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+                <valueUrl value="mapping-prescription-medication.html"/>
+              </extension>
+              <nameUrl value="mapping-prescription-medication.html"/>
+              <title value="Mapping der Arzneimitteldaten für Verordnungsdaten"/>
+              <generation value="markdown"/>
+              <page>
+                <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+                  <valueUrl value="mapping-prescription-medication-compounding.html"/>
+                </extension>
+                <nameUrl value="mapping-prescription-medication-compounding.html"/>
+                <title value="Mapping einer Rezeptur Medikation"/>
+                <generation value="markdown"/>
+              </page>
+              <page>
+                <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+                  <valueUrl value="mapping-prescription-medication-freetext.html"/>
+                </extension>
+                <nameUrl value="mapping-prescription-medication-freetext.html"/>
+                <title value="Mapping einer Freitext Medikation"/>
+                <generation value="markdown"/>
+              </page>
+              <page>
+                <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+                  <valueUrl value="mapping-prescription-medication-ingredient.html"/>
+                </extension>
+                <nameUrl value="mapping-prescription-medication-ingredient.html"/>
+                <title value="Mapping einer Wirkstoff Medikation"/>
+                <generation value="markdown"/>
+              </page>
+              <page>
+                <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+                  <valueUrl value="mapping-prescription-medication-pzn.html"/>
+                </extension>
+                <nameUrl value="mapping-prescription-medication-pzn.html"/>
+                <title value="Mapping einer PZN Medikation"/>
+                <generation value="markdown"/>
+              </page>
+            </page>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="mapping-dispensation.html"/>
+            </extension>
+            <nameUrl value="mapping-dispensation.html"/>
+            <title value="Mapping von Dispensierinformationen"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="comparison-Bundle-input-example-1.html"/>
+            </extension>
+            <nameUrl value="comparison-Bundle-input-example-1.html"/>
+            <title value="Beispiel für eine Transformation einer PZN"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="comparison-Bundle-input-example-2.html"/>
+            </extension>
+            <nameUrl value="comparison-Bundle-input-example-2.html"/>
+            <title value="Beispiel für eine Transformation einer Wirkstoffverordnung"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="comparison-Bundle-input-example-3.html"/>
+            </extension>
+            <nameUrl value="comparison-Bundle-input-example-3.html"/>
+            <title value="Beispiel für eine Transformation einer Freitextverordnung"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="comparison-Bundle-input-example-4.html"/>
+            </extension>
+            <nameUrl value="comparison-Bundle-input-example-4.html"/>
+            <title value="Beispiel für eine Transformation einer Rezepturverordnung"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="comparison-Bundle-input-example-5.html"/>
+            </extension>
+            <nameUrl value="comparison-Bundle-input-example-5.html"/>
+            <title value="Beispiel für eine Transformation einer Verordnung mit absoluter Referenzierung"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-technische-umsetzung-konzept.html"/>
+          </extension>
+          <nameUrl value="menu-technische-umsetzung-konzept.html"/>
+          <title value="Technisches Konzept - Einlösen im EU-Ausland"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-technische-umsetzung-datenschutz-und-sicherheit.html"/>
+          </extension>
+          <nameUrl value="menu-technische-umsetzung-datenschutz-und-sicherheit.html"/>
+          <title value="Datenschutz und Sicherheit - Einlösen im EU-Ausland"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="menu-technische-umsetzung-audit-service.html"/>
+          </extension>
+          <nameUrl value="menu-technische-umsetzung-audit-service.html"/>
+          <title value="Zugriffsprotokollierung mit AuditEvent"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="ttl.html"/>
+        </extension>
+        <nameUrl value="ttl.html"/>
+        <title value="Löschfristen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="menu-schnittstellen-query-api.html"/>
+        </extension>
+        <nameUrl value="menu-schnittstellen-query-api.html"/>
+        <title value="Query API"/>
+        <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="query-api-task.html"/>
+          </extension>
+          <nameUrl value="query-api-task.html"/>
+          <title value="Query API: Task"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-task-req-fd.html"/>
+            </extension>
+            <nameUrl value="query-api-task-req-fd.html"/>
+            <title value="FD-Anforderungen: Task-Query"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-task-req-fdv.html"/>
+            </extension>
+            <nameUrl value="query-api-task-req-fdv.html"/>
+            <title value="FdV-Anforderungen: Task-Query"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-task-req-avs.html"/>
+            </extension>
+            <nameUrl value="query-api-task-req-avs.html"/>
+            <title value="AVS-Anforderungen: Task-Query"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="query-api-medicationdispense.html"/>
+          </extension>
+          <nameUrl value="query-api-medicationdispense.html"/>
+          <title value="Query API: MedicationDispense"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-medicationdispense-req-fd.html"/>
+            </extension>
+            <nameUrl value="query-api-medicationdispense-req-fd.html"/>
+            <title value="FD-Anforderungen: MedicationDispense-Query"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-medicationdispense-req-fdv.html"/>
+            </extension>
+            <nameUrl value="query-api-medicationdispense-req-fdv.html"/>
+            <title value="FdV-Anforderungen: MedicationDispense-Query"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="query-api-communication.html"/>
+          </extension>
+          <nameUrl value="query-api-communication.html"/>
+          <title value="Query API: Communication"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-communication-req-fd.html"/>
+            </extension>
+            <nameUrl value="query-api-communication-req-fd.html"/>
+            <title value="FD-Anforderungen: Communication-Query"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-communication-req-fdv.html"/>
+            </extension>
+            <nameUrl value="query-api-communication-req-fdv.html"/>
+            <title value="FdV-Anforderungen: Communication-Query"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-communication-req-avs.html"/>
+            </extension>
+            <nameUrl value="query-api-communication-req-avs.html"/>
+            <title value="AVS-Anforderungen: Communication-Query"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-communication-req-data.html"/>
+            </extension>
+            <nameUrl value="query-api-communication-req-data.html"/>
+            <title value="Datenmodell payload"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="query-api-consent.html"/>
+          </extension>
+          <nameUrl value="query-api-consent.html"/>
+          <title value="Query API: Consent"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-consent-req-fd.html"/>
+            </extension>
+            <nameUrl value="query-api-consent-req-fd.html"/>
+            <title value="FD-Anforderungen: Consent"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="query-api-consent-req-fdv.html"/>
+            </extension>
+            <nameUrl value="query-api-consent-req-fdv.html"/>
+            <title value="FdV-Anforderungen: Consent"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="menu-schnittstellen-operation-api.html"/>
+        </extension>
+        <nameUrl value="menu-schnittstellen-operation-api.html"/>
+        <title value="Operation API"/>
+        <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="op-create.html"/>
+          </extension>
+          <nameUrl value="op-create.html"/>
+          <title value="Operation $create (Task erzeugen)"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-create-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-create-req-fd.html"/>
+            <title value="FD-Anforderungen $create"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-create-req-pvs.html"/>
+            </extension>
+            <nameUrl value="op-create-req-pvs.html"/>
+            <title value="PVS-Anforderungen $create"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="op-activate.html"/>
+          </extension>
+          <nameUrl value="op-activate.html"/>
+          <title value="Operation $activate (Task aktivieren)"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-activate-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-activate-req-fd.html"/>
+            <title value="FD-Anforderungen $activate"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-activate-req-pvs.html"/>
+            </extension>
+            <nameUrl value="op-activate-req-pvs.html"/>
+            <title value="PVS-Anforderungen $activate"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="op-accept.html"/>
+          </extension>
+          <nameUrl value="op-accept.html"/>
+          <title value="Operation $accept (Task akzeptieren)"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-accept-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-accept-req-fd.html"/>
+            <title value="FD-Anforderungen $accept"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-accept-req-avs.html"/>
+            </extension>
+            <nameUrl value="op-accept-req-avs.html"/>
+            <title value="AVS-Anforderungen $accept"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="op-reject.html"/>
+          </extension>
+          <nameUrl value="op-reject.html"/>
+          <title value="Operation $reject (Task zurückweisen)"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-reject-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-reject-req-fd.html"/>
+            <title value="FD-Anforderungen $reject"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-reject-req-avs.html"/>
+            </extension>
+            <nameUrl value="op-reject-req-avs.html"/>
+            <title value="AVS-Anforderungen $reject"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="op-dispense.html"/>
+          </extension>
+          <nameUrl value="op-dispense.html"/>
+          <title value="Operation $dispense (Dispensierinformationen bereitstellen)"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-dispense-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-dispense-req-fd.html"/>
+            <title value="FD-Anforderungen $dispense"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-dispense-req-avs.html"/>
+            </extension>
+            <nameUrl value="op-dispense-req-avs.html"/>
+            <title value="AVS-Anforderungen $dispense"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="op-close.html"/>
+          </extension>
+          <nameUrl value="op-close.html"/>
+          <title value="Operation $close (Task schließen)"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-close-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-close-req-fd.html"/>
+            <title value="FD-Anforderungen $close"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-close-req-avs.html"/>
+            </extension>
+            <nameUrl value="op-close-req-avs.html"/>
+            <title value="AVS-Anforderungen $close"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="op-abort.html"/>
+          </extension>
+          <nameUrl value="op-abort.html"/>
+          <title value="Operation $abort (Task abbrechen)"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-abort-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-abort-req-fd.html"/>
+            <title value="FdV-Anforderungen $abort"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-abort-req-fdv.html"/>
+            </extension>
+            <nameUrl value="op-abort-req-fdv.html"/>
+            <title value="E-Rezept-FdV Anforderungen $abort"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-abort-req-pvs.html"/>
+            </extension>
+            <nameUrl value="op-abort-req-pvs.html"/>
+            <title value="PVS-Anforderungen $abort"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-abort-req-avs.html"/>
+            </extension>
+            <nameUrl value="op-abort-req-avs.html"/>
+            <title value="AVS-Anforderungen $abort"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="op-grant-eu-access-permission.html"/>
+          </extension>
+          <nameUrl value="op-grant-eu-access-permission.html"/>
+          <title value="Operation API: Zugriffsberechtigung erstellen"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-grant-eu-access-permission-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-grant-eu-access-permission-req-fd.html"/>
+            <title value="Server Anforderungen: Zugriffsberechtigung erstellen"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-grant-eu-access-permission-req-fdv.html"/>
+            </extension>
+            <nameUrl value="op-grant-eu-access-permission-req-fdv.html"/>
+            <title value="FdV-Anforderungen: Zugriffsberechtigung erstellen"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="op-read-eu-access-permission.html"/>
+          </extension>
+          <nameUrl value="op-read-eu-access-permission.html"/>
+          <title value="Operation API: Zugriffsberechtigung einsehen"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-read-eu-access-permission-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-read-eu-access-permission-req-fd.html"/>
+            <title value="FD-Anforderungen: Zugriffsberechtigung einsehen"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-read-eu-access-permission-req-fdv.html"/>
+            </extension>
+            <nameUrl value="op-read-eu-access-permission-req-fdv.html"/>
+            <title value="FdV-Anforderungen: Zugriffsberechtigung einsehen"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="op-revoke-eu-access-permission.html"/>
+          </extension>
+          <nameUrl value="op-revoke-eu-access-permission.html"/>
+          <title value="Operation API: Zugriffsberechtigung löschen"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-revoke-eu-access-permission-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-revoke-eu-access-permission-req-fd.html"/>
+            <title value="FD-Anforderungen: Zugriffsberechtigung löschen"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-revoke-eu-access-permission-req-fdv.html"/>
+            </extension>
+            <nameUrl value="op-revoke-eu-access-permission-req-fdv.html"/>
+            <title value="FdV-Anforderungen: Zugriffsberechtigung löschen"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="op-get-eu-prescriptions.html"/>
+          </extension>
+          <nameUrl value="op-get-eu-prescriptions.html"/>
+          <title value="Operation API: E-Rezepte zur Einlösung im EU-Ausland abrufen"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-get-eu-prescriptions-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-get-eu-prescriptions-req-fd.html"/>
+            <title value="FD-Anforderungen: E-Rezepte zur Einlösung im EU-Ausland abrufen"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-get-eu-prescriptions-req-ncpeha.html"/>
+            </extension>
+            <nameUrl value="op-get-eu-prescriptions-req-ncpeha.html"/>
+            <title value="NCPeH-Anforderungen: E-Rezepte zur Einlösung im EU-Ausland abrufen"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="op-eu-close.html"/>
+          </extension>
+          <nameUrl value="op-eu-close.html"/>
+          <title value="Operation API: Abgabe von E-Rezepten im EU-Ausland"/>
+          <generation value="markdown"/>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-eu-close-req-fd.html"/>
+            </extension>
+            <nameUrl value="op-eu-close-req-fd.html"/>
+            <title value="FD-Anforderungen: Abgabe von E-Rezepten im EU-Ausland"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+              <valueUrl value="op-eu-close-req-ncpeha.html"/>
+            </extension>
+            <nameUrl value="op-eu-close-req-ncpeha.html"/>
+            <title value="NCPeH-Anforderungen: Abgabe von E-Rezepten im EU-Ausland"/>
+            <generation value="markdown"/>
+          </page>
+        </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="artifacts.html"/>
+        </extension>
+        <nameUrl value="artifacts.html"/>
+        <title value="FHIR-Artefakte"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="referenced.html"/>
+        </extension>
+        <nameUrl value="referenced.html"/>
+        <title value="Referenzen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="downloads.html"/>
+        </extension>
+        <nameUrl value="downloads.html"/>
+        <title value="Downloads"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="release-notes.html"/>
+        </extension>
+        <nameUrl value="release-notes.html"/>
+        <title value="Release Notes"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="license.html"/>
+        </extension>
+        <nameUrl value="license.html"/>
+        <title value="Apache Licence"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources/*"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/content"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/pagecontent"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/intro-notes"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

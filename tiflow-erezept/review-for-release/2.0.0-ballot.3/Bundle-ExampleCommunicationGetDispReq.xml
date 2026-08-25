@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="ExampleCommunicationGetDispReq"/>
+  <type value="searchset"/>
+  <total value="1"/>
+  <link>
+    <relation value="self"/>
+    <url value="https://erp-ref.example.org/Communication?_sort=sent&amp;_count=50&amp;sent=gt2025-01-14"/>
+  </link>
+  <entry>
+    <fullUrl value="https://erp-ref.example.org/Communication/ExampleCommunicationDispReq"/>
+    <resource>
+      <Communication>
+        <id value="ExampleCommunicationDispReq"/>
+        <meta>
+          <profile value="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq|2.0"/>
+        </meta>
+        <extension url="https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType">
+          <valueCoding>
+            <system value="https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType"/>
+            <code value="160"/>
+          </valueCoding>
+        </extension>
+        <basedOn>
+          <reference value="Task/160.000.033.491.280.78"/>
+        </basedOn>
+        <status value="unknown"/>
+        <sent value="2028-10-01T15:29:00.434+00:00"/>
+        <recipient>
+          <identifier>
+            <system value="https://gematik.de/fhir/sid/telematik-id"/>
+            <value value="3-2-APO-XanthippeVeilchenblau01"/>
+          </identifier>
+        </recipient>
+        <sender>
+          <identifier>
+            <system value="http://fhir.de/sid/gkv/kvid-10"/>
+            <value value="X123456789"/>
+            <assigner>
+              <identifier>
+                <value value="168140950"/>
+              </identifier>
+            </assigner>
+          </identifier>
+        </sender>
+        <payload>
+          <contentString value="{ &quot;version&quot;: 1, &quot;supplyOptionsType&quot;: &quot;onPremise&quot;, &quot;name&quot;: &quot;Dr. Maximilian von Muster&quot;, &quot;address&quot;: [ &quot;wohnhaft bei Emilia Fischer&quot;, &quot;Bundesallee 312&quot;, &quot;123. OG&quot;, &quot;12345 Berlin&quot; ], &quot;phone&quot;: &quot;004916094858168&quot; }"/>
+        </payload>
+      </Communication>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+</Bundle>

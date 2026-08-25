@@ -1,0 +1,129 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Bundle/ExampleERPBundle> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleERPBundle"] ;
+  fhir:Resource.meta [
+     fhir:Meta.tag [
+       fhir:index 0 ;
+       fhir:Coding.display [ fhir:value "Unvollständiges Beispiel eines E-Rezept-Bundles - https://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle|1.2" ]
+     ]
+  ] ;
+  fhir:Bundle.identifier [
+     fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId" ] ;
+     fhir:Identifier.value [ fhir:value "160.000.000.000.000.01" ]
+  ] ;
+  fhir:Bundle.type [ fhir:value "document"] ;
+  fhir:Bundle.timestamp [ fhir:value "2028-10-01T15:29:00.434+00:00"^^xsd:dateTime] ;
+  fhir:Bundle.entry [
+     fhir:index 0 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Composition/c624cf47-e235-4624-af71-0a09dc9254dc" ] ;
+     fhir:Bundle.entry.resource <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Composition/c624cf47-e235-4624-af71-0a09dc9254dc>
+  ], [
+     fhir:index 1 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Device/ReceiptBundleDevice" ] ;
+     fhir:Bundle.entry.resource <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Device/ReceiptBundleDevice>
+  ], [
+     fhir:index 2 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652" ] ;
+     fhir:Bundle.entry.resource <urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652>
+  ] .
+
+<https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Composition/c624cf47-e235-4624-af71-0a09dc9254dc> a fhir:Composition ;
+  fhir:Resource.id [ fhir:value "c624cf47-e235-4624-af71-0a09dc9254dc"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Composition" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Composition>
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_Beneficiary" ] ;
+     fhir:Extension.valueIdentifier [
+       fhir:Identifier.system [ fhir:value "https://gematik.de/fhir/sid/telematik-id" ] ;
+       fhir:Identifier.value [ fhir:value "3-SMC-B-Testkarte-883110000129070" ]
+     ]
+  ] ;
+  fhir:Composition.status [ fhir:value "final"] ;
+  fhir:Composition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType" ] ;
+       fhir:Coding.code [ fhir:value "3" ] ;
+       fhir:Coding.display [ fhir:value "Receipt" ]
+     ]
+  ] ;
+  fhir:Composition.date [ fhir:value "2028-10-01T15:29:00+00:00"^^xsd:dateTime] ;
+  fhir:Composition.author [
+     fhir:index 0 ;
+     fhir:link <https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Device/ReceiptBundleDevice> ;
+     fhir:Reference.reference [ fhir:value "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Device/ReceiptBundleDevice" ]
+  ] ;
+  fhir:Composition.title [ fhir:value "Quittung"] ;
+  fhir:Composition.event [
+     fhir:index 0 ;
+     fhir:Composition.event.period [
+       fhir:Period.start [ fhir:value "2028-10-01T15:29:00+00:00"^^xsd:dateTime ] ;
+       fhir:Period.end [ fhir:value "2028-10-01T15:29:00+00:00"^^xsd:dateTime ]
+     ]
+  ] ;
+  fhir:Composition.section [
+     fhir:index 0 ;
+     fhir:Composition.section.entry [
+       fhir:index 0 ;
+       fhir:Reference.reference [ fhir:value "urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652" ]
+     ]
+  ] .
+
+<https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Device/ReceiptBundleDevice> a fhir:Device ;
+  fhir:Resource.id [ fhir:value "ReceiptBundleDevice"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Device" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Device>
+     ]
+  ] ;
+  fhir:Device.status [ fhir:value "active"] ;
+  fhir:Device.serialNumber [ fhir:value "2.0.0"] ;
+  fhir:Device.deviceName [
+     fhir:index 0 ;
+     fhir:Device.deviceName.name [ fhir:value "TI-Flow-Fachdienst" ] ;
+     fhir:Device.deviceName.type [ fhir:value "user-friendly-name" ]
+  ] ;
+  fhir:Device.version [
+     fhir:index 0 ;
+     fhir:Device.version.value [ fhir:value "2.0.0" ]
+  ] ;
+  fhir:Device.contact [
+     fhir:index 0 ;
+     fhir:ContactPoint.system [ fhir:value "email" ] ;
+     fhir:ContactPoint.value [ fhir:value "betrieb@gematik.de" ]
+  ] .
+
+<urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652> a fhir:Binary ;
+  fhir:Resource.id [ fhir:value "b939a82a-9c23-4b6d-a139-f468d1b9d652"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Digest" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Digest>
+     ]
+  ] ;
+  fhir:Binary.contentType [ fhir:value "application/octet-stream"] ;
+  fhir:Binary.data [ fhir:value "tJg8c5ZtdhzEEhJ0ZpAsUVFx5dKuYgQFs5oKgthi17M="^^xsd:base64Binary] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-erezept/Bundle/ExampleERPBundle.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

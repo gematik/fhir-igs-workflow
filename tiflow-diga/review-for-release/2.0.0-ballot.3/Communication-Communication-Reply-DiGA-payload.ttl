@@ -1,0 +1,42 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/Communication/Communication-Reply-DiGA-payload> a fhir:Communication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "Communication-Reply-DiGA-payload"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA" ;
+       fhir:index 0 ;
+       fhir:link <https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA>
+     ]
+  ] ;
+  fhir:Communication.basedOn [
+     fhir:index 0 ;
+     fhir:link <https://gematik.de/fhir/tiflow-diga/Task/ExampleDiGATaskInReadyState> ;
+     fhir:Reference.reference [ fhir:value "Task/ExampleDiGATaskInReadyState" ]
+  ] ;
+  fhir:Communication.status [ fhir:value "unknown"] ;
+  fhir:Communication.recipient [
+     fhir:index 0 ;
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "http://fhir.de/sid/gkv/kvid-10" ] ;
+       fhir:Identifier.value [ fhir:value "X234567890" ]
+     ]
+  ] ;
+  fhir:Communication.payload [
+     fhir:index 0 ;
+     fhir:Communication.payload.contentString [ fhir:value "Nachrichteninhalt für den Versicherten" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://gematik.de/fhir/tiflow-diga/Communication/Communication-Reply-DiGA-payload.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
