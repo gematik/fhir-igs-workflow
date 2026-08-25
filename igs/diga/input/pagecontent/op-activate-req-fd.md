@@ -3,7 +3,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core.op-activate-req-fd.md %}
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/index.html)
 
 ### Modulspezifische Anforderungen
 

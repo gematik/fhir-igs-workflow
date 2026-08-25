@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `Comm
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core.query-api-communication-req-fd.md %}
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/index.html)
 
 ### Modulspezifische Anforderungen
 

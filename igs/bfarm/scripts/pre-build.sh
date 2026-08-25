@@ -18,6 +18,7 @@ refresh_special_urls() {
 
 source "$ROOT_DIR/scripts/prepare-environment.sh"
 
+"$ROOT_DIR/scripts/update-tiflow-core-version.sh" "$PROJECT_ROOT"
 refresh_special_urls
 
 # Merge use cases and core includes
@@ -25,10 +26,4 @@ if [[ -x "$ROOT_DIR/scripts/merge-use-cases.sh" ]]; then
 	"$ROOT_DIR/scripts/merge-use-cases.sh" bfarm
 else
 	echo "Warning: merge-use-cases.sh not found or not executable"
-fi
-
-if [[ -x "$ROOT_DIR/scripts/merge-core-includes.sh" ]]; then
-	"$ROOT_DIR/scripts/merge-core-includes.sh" bfarm
-else
-	echo "Warning: merge-core-includes.sh not found or not executable"
 fi

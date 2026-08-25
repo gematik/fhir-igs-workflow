@@ -18,6 +18,7 @@ cd "$PROJECT_ROOT"
 
 source "$ROOT_DIR/scripts/prepare-environment.sh"
 
+"$ROOT_DIR/scripts/update-tiflow-core-version.sh" "$PROJECT_ROOT"
 # refresh_special_urls
 
 # Merge use cases and core includes

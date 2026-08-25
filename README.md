@@ -107,6 +107,5 @@ Module pages can include selected Markdown snippets from core without copying al
 	`{% include core.query-api-consent-fd-requirements.md %}`
 - Build step copies only referenced `core-*.md` includes from
 	`igs/core/input/pagecontent/<name>.md` to `igs/<module>/input/includes/core-<name>.md`
-- Sync script: [scripts/merge-core-includes.sh](scripts/merge-core-includes.sh)
 
 This keeps core as source of truth and synchronizes only tagged include files.

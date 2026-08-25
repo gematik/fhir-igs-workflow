@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der `Task`-Query-End
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core.query-api-task-req-avs.md %}
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/index.html)
 
 
 ### Modulspezifische Anforderungen
