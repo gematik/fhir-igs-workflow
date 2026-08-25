@@ -9,7 +9,7 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A71" title="PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von E-Rezepten für Arzneimittel die Anwendungsfälle

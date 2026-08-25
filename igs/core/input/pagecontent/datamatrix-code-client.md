@@ -6,7 +6,7 @@ Diese beiden Datenfelder, URL des Tasks und AccessCode, werden vom Versicherten 
 <!-- A_19554 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A229" title="Datenstruktur Einlöseinformationen für E-Rezept" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
@@ -25,7 +25,7 @@ Beispiel für E-Rezept-Einlöseinformationen (z.B. für Nutzung als Referenz in 
 <!-- A_19553-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A230" title="Generierung 2D-Code als Sammlung" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
@@ -58,7 +58,7 @@ Der Datentyp der Task.id erlaubt bis zu 64 Zeichen zur Angabe einer ID des Tasks
 <!-- A_19543 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A231" title="Generierung DataMatrix-Code" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">

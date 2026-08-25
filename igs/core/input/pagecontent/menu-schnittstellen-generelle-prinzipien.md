@@ -210,7 +210,7 @@ Für die Erstellung von Datensätzen gelten für Clientsysteme folgende Anforder
 <!-- A_28429 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A361" title="Character Encoding für TI-Flow-Fachdienst" version="0">
     <meta lockversion="false"/>
-            <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+            <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
@@ -231,7 +231,7 @@ Für die Erstellung von Datensätzen gelten für Clientsysteme folgende Anforder
 <!-- A_28430 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A362" title="Verbot Angabe von BOM für TI-Flow-Fachdienst" version="0">
     <meta lockversion="false"/>
-        <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+        <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
@@ -261,7 +261,7 @@ Aufgrund der Profilierung einiger Datenfelder kommt es vor, dass keine Zeitzonen
 <!-- A_27660 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A363" title="CS: Verarbeitung von Datumsangaben ohne Zeitzoneninformation" version="0">
     <meta lockversion="false"/>
-        <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+        <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">

@@ -3,7 +3,7 @@ Tritt ein Fehler bei der Verarbeitung von Operationsaufrufen an einem Dienst der
 <!-- A_20152 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A263" title="CS: Verständliche Fehlermeldung" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
@@ -22,7 +22,7 @@ Dort sind sämtliche Fehlercodes aufgeführt und für jeden einzelnen Code wird 
 <!-- A_25460 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A264" title="CS: Fehlerbehandlung - Retry von Anfragen an TI-Flow-Fachdienst" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
@@ -64,7 +64,7 @@ Folgende Fehler können in allen Operationen ausgegeben werden. Im Folgenden sin
 <!-- A_20088 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-CORE-A265" title="CS: Schreiben eines Fehlerprotokolls" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
@@ -79,7 +79,7 @@ Folgende Fehler können in allen Operationen ausgegeben werden. Im Folgenden sin
 <!-- A_20089 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-CORE-A266" title="CS: Anzeige von Meldungen" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
@@ -91,7 +91,7 @@ Folgende Fehler können in allen Operationen ausgegeben werden. Im Folgenden sin
 <!-- A_20884 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-CORE-A267" title="CS: Exponential Backoff bei Verbindungsfehlern" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">

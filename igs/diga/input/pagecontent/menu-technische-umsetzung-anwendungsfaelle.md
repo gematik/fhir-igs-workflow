@@ -19,7 +19,7 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A12" title="PS verordnende LEI: TIFlow - DIGA - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle

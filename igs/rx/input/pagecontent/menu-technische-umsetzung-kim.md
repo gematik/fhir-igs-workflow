@@ -9,7 +9,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 <!-- A_21870 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A110" title="E-Rezept - X-KIM-Dienstkennung - Zuweisung" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Das PS der verordnenden LEI MUSS bei der Übermittlung eines E-Rezepts über KIM im KIM-Header "X-KIM-Dienstkennung" den Wert "eRezept;Zuweisung;V1.0" für die direkte Zuweisung und Übermittlung der Einlöseinformationen verwenden.
@@ -27,7 +27,7 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
 <!-- A_21873 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A112" title="E-Rezept - Struktur Zuweisungs-Message" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine Message mit "Content-Type: multipart/mixed;..." und der folgenden Struktur verwenden. Tabelle # : Struktur der Message mit "Content-Type: multipart/mixed;..." Teil Inhalt optional Freitext Freitextmessage für den Empfänger default: "direkte Zuweisung E-Rezept" nein Einlöseinformation E-Rezept-Token als Link nach 2D-Code für E-Rezept-Token Nach 45 Zeichen MUSS ein Steuerzeichen "CRLF" eingefügt werden nein Therapieplan Therapieplan als Anhang, base64 codiert ja

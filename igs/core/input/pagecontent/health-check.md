@@ -26,7 +26,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <!-- A_23214 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A240" title="CS: Health-Check - Datensparsamkeit" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
@@ -41,7 +41,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <!-- A_23215 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A241" title="CS: Health-Check - keine Health-Checks mit Fehlerrückgabe" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
@@ -56,7 +56,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <!-- A_23223 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-A242" title="CS: erweiterter Health-Check" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
@@ -71,7 +71,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <!-- A_23217 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A243" title="CS: erweiterter Health-Check - keine periodische Durchführung" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
@@ -86,7 +86,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <!-- A_23216 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A244" title="CS: erweiterter Health-Check - keine anderen Endpunkte zulässig" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
@@ -101,7 +101,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <!-- A_23219 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-A245" title="CS: einfacher Health-Check" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
@@ -124,7 +124,7 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <!-- A_23218 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A246" title="CS: einfacher Health-Check - keine anderen Endpunkte zulässig" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
