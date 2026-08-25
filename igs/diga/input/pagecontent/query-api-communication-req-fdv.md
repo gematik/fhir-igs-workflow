@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core.query-api-communication-req-fdv.md %}
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-schnittstellen-query-api.html)
 
 ### Modulspezifische Anforderungen
 
@@ -13,7 +13,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Commun
 <!-- A_26007 -->
 <requirement conformance="MAY" key="IG-TIFLOW-DIGA-A5" title="E-Rezept-FdV: E-Rezept zuweisen - Flowtype 162 - Kostenträger auswählen" version="0">
   <meta lockversion="false"/>
-  <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+  <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das E-Rezept-FdV KANN im Anwendungsfall "E-Rezept einer abgebenden Institution zuweisen" es dem Nutzer ermöglichen, für E-Rezepte mit dem Flowtype 162 einen Kostenträger zum Zuweisen einer DiGA auszuwählen.
@@ -26,7 +26,7 @@ Beim Zuweisen einer DiGA-Verordnung ist keine freie Textnachricht vorgesehen, um
 <!-- A_19201-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A6" title="E-Rezept-FdV: Verordnung zuweisen - Nachricht erstellen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
     Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq mit  

@@ -18,4 +18,5 @@ refresh_special_urls() {
 
 source "$ROOT_DIR/scripts/prepare-environment.sh"
 
+"$ROOT_DIR/scripts/update-tiflow-core-version.sh" "$PROJECT_ROOT"
 refresh_special_urls

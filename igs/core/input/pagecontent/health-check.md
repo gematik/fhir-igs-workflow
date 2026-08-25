@@ -26,13 +26,13 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <!-- A_23214 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A240" title="CS: Health-Check - Datensparsamkeit" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienstes MUSS auf Grundlage der Datensparsamkeit sicherstellen, dass neben den fachlich notwendigen Anfragen an den TI-Flow-Fachdienst so sparsam wie möglich mit Health-Checks umgegangen wird.
@@ -41,13 +41,13 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <!-- A_23215 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A241" title="CS: Health-Check - keine Health-Checks mit Fehlerrückgabe" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen Health-Check durchführen, welcher die erwartete Rückgabe eines Fehlercodes vorsieht.
@@ -56,13 +56,13 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <!-- A_23223 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-A242" title="CS: erweiterter Health-Check" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienstes KANN einen erweiterten Health-Check auf der Endpunkt ⇒ "POST /ASL [GET /metadata]" durchführen.
@@ -71,13 +71,13 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <!-- A_23217 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A243" title="CS: erweiterter Health-Check - keine periodische Durchführung" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen erweiterten Health-Check periodisch durchführen, welcher periodisch den Endpunkt  ⇒ "POST /ASL [GET /metadata]" abfragt.
@@ -86,13 +86,13 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <!-- A_23216 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A244" title="CS: erweiterter Health-Check - keine anderen Endpunkte zulässig" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen erweiterten Health-Check durchführen, welcher andere als die jeweils vorgegebenen Endpunkte des TI-Flow-Fachdienstes nutzt.
@@ -101,13 +101,13 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <!-- A_23219 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-A245" title="CS: einfacher Health-Check" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienstes KANN einen einfachen Health-Check auf der Endpunkt / (root) mit Abfrage ⇒ ( "GET / [---]" ) durchführen, welcher mit Ausnahmen periodisch die Erreichbarkeit des TI-Flow-Fachdienstes feststellt und folgende Kriterien erfüllt: 
@@ -124,13 +124,13 @@ Dieses Verfahren soll in der produktiven Betriebsumgebung nur dann angewandt wer
 <!-- A_23218 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A246" title="CS: einfacher Health-Check - keine anderen Endpunkte zulässig" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienstes DARF NICHT einen einfachen Health-Check durchführen, welcher einen anderen Endpunkt als ⇒ ( "GET / [---]" ) abfragt.

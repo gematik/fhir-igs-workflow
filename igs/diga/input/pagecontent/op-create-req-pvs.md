@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an ein PVS für die Operation 
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core.op-create-req-pvs.md %}
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-schnittstellen-operation-api.html)
 
 ### Modulspezifische Anforderungen
 
@@ -13,7 +13,7 @@ Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz v
 <!-- A_26373 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-DIGA-A22" title="PS verordnende LEI: keine elektronische Verordnung einer DiGA zu Lasten BG/UK" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+  <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der verordnenden LEI DARF bei der Verordnung einer DiGA zu Lasten einer Berufsgenossenschaft oder Unfallkasse NICHT die elektronische Verordnung nutzen.

@@ -19,10 +19,10 @@ Request/Response-Beispiele und das vollständige Protokoll (bind/bound/ping) sin
 <!-- TI-Flow-26_2 BSI_23 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A461" title="CS: Subscription - Handling häufiger Ping-Events" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienst MUSS bei der Verarbeitung eingehender Ressourcen berücksichtigen, dass jede Ressource zu einem `ping` führen kann, potentiell im Millisekundenbereich und eine Strategie implementieren, um eine Überlastung zu vermeiden (z.B. durch kurze Wartezeiten vor Abrufen), wobei zwischenzeitlich eingegangene Ressourcen bei nachfolgenden Abrufen gesammelt abgerufen werden können.
@@ -31,10 +31,10 @@ Request/Response-Beispiele und das vollständige Protokoll (bind/bound/ping) sin
 <!-- TI-Flow-26_2 BSI_23 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A462" title="CS: Subscription - Wiederverbindung nach WebSocket-Fehler" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das Clientsystem des TI-Flow-Fachdienst MUSS im Fall, dass die WebSocket-Verbindung zu einem Subscription-Endpunkt unerwartet terminiert wird, vor dem Aufbau einer neuen WebSocket-Verbindung eine zufällig gewählte Wartezeit zwischen 5 und 60 Sekunden warten, bis eine neue Verbindung aufgebaut wird.

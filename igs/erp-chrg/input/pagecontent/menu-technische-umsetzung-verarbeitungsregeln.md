@@ -4,7 +4,7 @@ Diese Seite beschreibt gesonderte Verarbeitungsregeln und technische Aspekte fü
 
 #### Zuordnung Workflow
 
-Für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel für PKV-Versicherte wird der Workflow-Typ "200" eingeführt. Für den Workflow von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel mit Steuerung durch Leistungserbringer wird der Workflow-Typ "209" eingeführt.
+Für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel für PKV-Versicherte wird der Workflow-Typ "200" verwendet. Für ärztliche und zahnärztliche Verordnungen für apothekenpflichtige Arzneimittel mit Steuerung durch Leistungserbringer wird der Workflow-Typ "209" verwendet.
 
 Im Workflow-Typ "200"  und Workflow-Typ "209" werden dasselbe Informationsmodell für den Verordnungsdatensatz (siehe https://simplifier.net/erezept ) wie bei der Verordnung für GKV-Versicherte verwendet.
 Hinweis: In MedicationRequest.insurance.Coverage.type mit dem Codesystem Coverage.type.coding in https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage ist erkennbar, ob der Versicherte, für den das E-Rezept erstellt wurde, bei einer PKV versichert ist.
@@ -33,7 +33,7 @@ Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code
 <!--A_24577-->
 <requirement conformance="MAY" key="IG-TIFLOW-CHRG-A3" title="E-Rezept-FdV: optional: 2D-Code Abrechnungsinformation anzeigen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
       Das E-Rezept-FdV KANN den Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" umsetzen.
@@ -42,7 +42,7 @@ Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code
 <!--A_22726-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A4" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" es dem Nutzer ermöglichen, ein E-Rezept für die Anzeige des 2D-Code der Abrechnungsinformation auszuwählen, um einer Apotheke das Einscannen zu ermöglichen und sie somit für das Ändern des PKV-Abgabedatensatzes zu berechtigen.
@@ -51,7 +51,7 @@ Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code
 <!--A_22727-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A5" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" für das ausgewählte E-Rezept den Abrechnungsinformation-Token erstellen.
@@ -60,7 +60,7 @@ Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code
 <!--A_22728-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A6" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" mit dem erstellten Abrechnungsinformation-Token einen 2D-Code erstellen und auf dem Display des Endgerätes anzeigen.
@@ -72,7 +72,7 @@ Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus de
 <!--A_24555-->
 <requirement conformance="MAY" key="IG-TIFLOW-CHRG-A7" title="E-Rezept-FdV: optional: Abrechnungsinformation exportieren" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
       Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation exportieren" umsetzen.
@@ -81,7 +81,7 @@ Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus de
 <!--A_22184-02-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A8" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF/A erstellen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
       Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation exportieren" auf Basis der vom TI-Flow-Fachdienst zu einer Prescription-ID heruntergeladenen ChargeItem, Verordnungsdatensatz, PKV-Abgabedatensatz und Quittung Ressourcen
@@ -97,7 +97,7 @@ Für die Visualisierung der Abrechnungsinformation für PKV-Versicherte ist die 
 <!--A_22185-01-->
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A9" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF teilen" version="0">
     <meta lockversion="false"/>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
       Das E-Rezept-FdV MUSS es dem Nutzer im Anwendungsfall "Abrechnungsinformation exportieren" ermöglichen, das erstellte PDF mit anderen Apps zu teilen, um den Versicherten die Möglichkeit zu geben, seine Abrechnungsinformation an Krankenversicherungen oder andere Institutionen zur Abrechnung zu übermitteln.

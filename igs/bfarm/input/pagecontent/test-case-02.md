@@ -1,5 +1,3 @@
-## Beispiel 2: Wirkstoff Verordnung
-
 Dieses Beispiel demonstriert das Mapping einer E-T-Rezept Wirkstoff-Verordnung mit allen Quellressourcen in den digitalen Durchschlag.
 
 ---

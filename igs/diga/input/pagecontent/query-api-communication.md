@@ -78,3 +78,19 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 		</div>
 	</div>
 </div>
+
+### DELETE /Communication
+- Kostenträger: Löschen von Zuweisungen von Versicherten
+- Versicherter: Löschen der Rückmeldungen des Kostenträgers
+
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Communication"
+	data-api-fhir-interaction="delete">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
+		</pre>
+	</div>
+</div>

@@ -24,35 +24,9 @@ Die Telematik-ID der Apotheke wird ebenfalls an das BfArM übertragen, damit das
 
 Folgende Daten sind, sofern im jeweiligen Datensatz vorhanden, im digitalen Durchschlag E-T-Rezept enthalten:
 
-|Fachliches Datum|Datengrundlage|Referenz der Datengrundlage|
-|---|---|---|
-|Datum der Signatur|QES des Verordnungsdatensatzes|1.2.840.113549.1.9.5 signingTime|
-|Rezept-ID|Task|Task.identifier[PrescriptionID].value|
-|Bezeichnung des Fertigarzneimittels oder des Wirkstoffes ODER Rezeptur (verordnetes Arzneimittel)|Verordnungsdatensatz|Medication.code<br>Medication.ingredient.itemCodeableConcept|
-|Wirkstärke (verordnetes Arzneimittel)|Verordnungsdatensatz|Medication.ingredient.strength|
-|Bezeichnung des Fertigarzneimittels oder des Wirkstoffes ODER Rezeptur (abgegebenes Arzneimittel)|Dispensierdatensatz|Medication.code<br>Medication.ingredient.itemCodeableConcept|
-|Wirkstärke (abgegebenes Arzneimittel)|Dispensierdatensatz|Medication.ingredient.strength|
-|Darreichungsform (verordnetes Arzneimittel)|Verordnungsdatensatz|Medication.form|
-|Darreichungsform (abgegebenes Arzneimittel)|Dispensierdatensatz|Medication.form|
-|Abzugebende Menge (verordnetes Arzneimittel), Packungsgröße, Anzahl Packungen|Verordnungsdatensatz|Medication.amount/Medication.extension:Normgroesse<br>MedicationRequest.dispenseRequest.quantity|
-|Abzugebende Menge (abgegebenes Arzneimittel)|Dispensierdatensatz|Medication.amount/Medication.extension:Normgroesse<br>MedicationDispense.quantity|
-|Dosierung (verordnetes Arzneimittel)|Verordnungsdatensatz|MedicationRequest.dosageInstruction|
-|Dosierung (abgegebenes Arzneimittel)|Dispensierdatensatz|MedicationDispense.dosageInstruction|
-|Reichdauer (verordnetes Arzneimittel)|Verordnungsdatensatz*|MedicationRequest.dispenseRequest.expectedSupplyDuration|
-|Name der Apotheke|FHIR-VZD|Organization.name|
-|Telematik-ID der Apotheke|Dispensierdatensatz|MedicationDispense.performer|
-|Anschrift der Apotheke|FHIR-VZD|Organization<br>HealthcareService<br>Location.address|
-|Telefonnummer der Apotheke (optional im FHIR-VZD)|FHIR-VZD|HealthcareService.telecom|
-|Datum der Abgabe|Dispensierdatensatz|MedicationDispense.whenHandedOver|
-|Bestätigung der ärztlichen Person zur Einhaltung der Sicherheitsmaßnahmen|Verordnungsdatensatz*|MedicationRequest.extension:T-Rezept:EinhaltungSicherheitsmassnahmen|
-|Bestätigung der Aushändigung von Informationsmaterialien|Verordnungsdatensatz*|MedicationRequest.extension:T-Rezept:AushaendigungInformationsmaterialien|
-|Behandlung außerhalb der zugelassenen Anwendungsgebiete (Off-Label)|Verordnungsdatensatz*|MedicationRequest.extension:T-Rezept:Off-Label|
-|Angabe, ob Verschreibung für eine gebärfähige Frau|Verordnungsdatensatz*|MedicationRequest.extension:T-Rezept:GebaerfaehigeFrau|
-|Bestätigung ausreichender Sachkenntnisse|Verordnungsdatensatz*|MedicationRequest.extension:T-Rezept:ErklaerungSachkenntnis|
+{% include StructureDefinition-erp-tprescription-carbon-copy-logical-diff.xhtml %}
 
-<div><figcaption><strong>Tabelle: </strong>Daten des digitalen Durchschlags E-T-Rezept</figcaption></div>
-
-Die Informationseinheiten sind auch im [Logischen Modell digitaler Durchschlag E-T-Rezept](./StructureDefinition-erp-tprescription-carbon-copy-logical.html) beschrieben.
+<div><figcaption><strong>Fachmodell: </strong>Daten des digitalen Durchschlags E-T-Rezept</figcaption></div>
 
 ### Übertragung des digitalen Durchschlags
 

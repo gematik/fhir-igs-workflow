@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Medica
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core.query-api-medicationdispense-req-fdv.md %}
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-schnittstellen-query-api.html)
 
 ### Modulspezifische Anforderungen
 
@@ -11,7 +11,7 @@ Der Kostenträger stellt die Abgabeinformationen beim Abschluss des Workflows zu
 <!-- A_26013 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A25" title="E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Anzeige des Freischaltcodes" version="0">
   <meta lockversion="false"/>
-  <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+  <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" für einen Task mit Flowtyp 162 dem Nutzer den Freischaltcode den Freischaltcode in geeigneter Weise darstellen.
@@ -20,7 +20,7 @@ Der Kostenträger stellt die Abgabeinformationen beim Abschluss des Workflows zu
 <!-- A_26340 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A26" title="E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Supportinformationen für DiGA-App" version="0">
   <meta lockversion="false"/>
-  <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+  <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das E-Rezept-FdV MUSS im Anwendungsfall "Abgabeinformationen abfragen" für einen Task mit Flowtyp 162 dem Nutzer Supportinformationen zu der DiGA-App zusammen mit dem Freischaltcode anzeigen.

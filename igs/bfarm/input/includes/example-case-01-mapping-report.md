@@ -1,15 +1,9 @@
-# StructureMap Transformation Report
-
-
-## Summary
 
 **Anwendungsfall:** Verschreibung und Abgabe eines PZN-Medikaments (Pomalidomid) mit spezifischer Dosierung und Transformation in einen digitalen Durchschlag.
 
 **Beispiel-Artefakte:**
 - **Digitaler Durchschlag (Ergebnis):** [`Parameters-example-case-01-digitaler-durchschlag.json`](test-examples/Parameters-example-case-01-digitaler-durchschlag.json)
 
-
-## Resource Mapping Details
 
 ### Medication
 

@@ -9,7 +9,7 @@ Für die Signatur des Abgabedatensatzes wird der Konnektor verwendet.
 <!-- A_21619-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A1" title="PS abgebende LEI: Abgabedatensatz mit QES: OCSP Response einbetten" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Das PS der abgebenden LEI MUSS beim Signieren des Abgabedatensatzes mit einer QES die Signaturoperation des Konnektors mit eingebetteter OCSP-Antwort (IncludeRevocationInfo = true) ausführen.
@@ -18,7 +18,7 @@ Für die Signatur des Abgabedatensatzes wird der Konnektor verwendet.
 <!-- A_21244-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A2" title="PS abgebende LEI: Abgabedatensatz signieren - Signaturverfahren" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Das PS der abgebenden LEI MUSS die Signatur des Abgabedatensatzes mittels Einzelsignatur, Stapelsignatur und Komfortsignatur unterstützen.
@@ -27,7 +27,7 @@ Für die Signatur des Abgabedatensatzes wird der Konnektor verwendet.
 <!-- A_27050 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A3" title="PS abgebende LEI: Abgabedatensatz signieren - Gültigkeit SMC-B prüfen" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
      Das PS der abgebenden LEI MUSS beim Signieren eines Abgabedatensatzes mit einer nonQES vor dem Signieren prüfen, dass die für die nonQES verwendet SMC-B gültig ist.

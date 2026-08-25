@@ -1,5 +1,3 @@
-## Beispiel 3: Freitext Verordnung
-
 Dieses Beispiel demonstriert das Mapping einer E-T-Rezept Freitext-Verordnung mit allen Quellressourcen in den digitalen Durchschlag.
 
 ---

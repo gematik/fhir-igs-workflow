@@ -1,6 +1,6 @@
 ### Anforderungen der Schnittstelle aus der Core-Spezifikation
 
-{% include core-query-api-consent-req-fd.md %}
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-schnittstellen-query-api.html)
 
 ### Anforderungen der Schnittstelle aus diesem Modul
 

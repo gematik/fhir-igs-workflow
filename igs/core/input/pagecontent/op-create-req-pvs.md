@@ -3,7 +3,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
 <!-- A_19275 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A257" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle erstellen" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
         Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" eine Bundle-FHIR-Ressource gemäß Profilierung https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle Rezept-ID aus der Task-Ressource als Identifier erstellen.
@@ -16,7 +16,7 @@ Das PS der verordnenden LEI darf FHIR-Extensions nicht im Verordnungsdatensatz v
 <!-- A_22893 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A258" title="PS verordnende LEI: E-Rezept erstellen - Gleichheit Ausstellungsdatum und QES Erstellung" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+  <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der verordnenden LEI MUSS sicherstellen, dass das Datum authoredOn des Verordnungsdatensatzes dem Datum in QES.Erstellung im Signaturobjekt entspricht.
@@ -27,7 +27,7 @@ Es gelten weitere modulspezifische Anforderungen für den Verordnungsdatensatz.
 <!-- A_19276 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A259" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-ID abrufen" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+  <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
     <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die HTTP-Operation POST /Task/$create mit
@@ -53,7 +53,7 @@ Für die qualifizierte elektronische Signatur des Verordnungsbundels wird der Ko
 <!-- A_19281-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A260" title="PS verordnende LEI: E-Rezept erstellen - E-Rezept-Bundle QES signieren" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+  <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
     <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
   </actor>
   Das PS der verordnenden LEI MUSS im Anwendungsfall "E-Rezept durch Verordnenden erstellen" für das E-Rezept die Signaturoperation des Konnektors mit 
