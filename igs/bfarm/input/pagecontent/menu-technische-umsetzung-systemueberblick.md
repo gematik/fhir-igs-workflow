@@ -10,7 +10,7 @@ Zur Anreicherung von Apothekendaten greift der TI-Flow-Fachdienst auf den FHIR-V
     <div class="gem-ig-img-container" style="--box-width: 1000px; margin-bottom: 30px;">
         <img src="./ueberblick-t-rezept.png" alt="TI für E-T-Rezept" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung: </strong>Übersicht E-Rezept Komponenten für das E-T-Rezept</figcaption>
+    <figcaption><strong>Abbildung: </strong>Übersicht Komponenten für das E-T-Rezept</figcaption>
 </figure>
 
 <br>
