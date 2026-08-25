@@ -73,7 +73,7 @@ InstanceOf: ERP_TPrescription_Organization
 Usage: #inline
 * id = "8b416995-852f-4933-99bf-c71ad76abae3"
 * name = "Stadt Apotheke"
-* identifier[TelematikID].value = "Organisation 3-2arvtst-ap000053"
+* identifier[TelematikID].value = "3-2arvtst-ap000053"
 * telecom.system = #phone
 * telecom.value = "1234"
 * telecom.use = #work
