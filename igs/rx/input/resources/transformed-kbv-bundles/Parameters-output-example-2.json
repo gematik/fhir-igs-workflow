@@ -13,6 +13,7 @@
           "name": "medication",
           "resource": {
             "resourceType": "Medication",
+            "id": "86fa62c7-06a0-418e-ba26-e99baa053c07",
             "meta": {
               "profile": [
                 "https://gematik.de/fhir/epa-medication/StructureDefinition/epa-medication"
@@ -54,21 +55,16 @@
               ]
             },
             "authoredOn": "2024-05-20",
-            "dosageInstruction": [
-              {
-                "extension": [
-                  {
-                    "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag",
-                    "valueBoolean": true
-                  }
-                ],
-                "text": "1-0-0-0"
-              }
-            ],
             "dispenseRequest": {
               "quantity": {
                 "value": 1,
                 "unit": "Packung"
+              }
+            },
+            "subject": {
+              "identifier": {
+                "system": "http://fhir.de/sid/gkv/kvid-10",
+                "value": "X110411319"
               }
             },
             "extension": [
@@ -199,6 +195,7 @@
           "name": "practitioner",
           "resource": {
             "resourceType": "Practitioner",
+            "id": "bc329f24-3d65-4286-bf06-b54dd6cad655",
             "meta": {
               "profile": [
                 "https://gematik.de/fhir/directory/StructureDefinition/PractitionerDirectory"
