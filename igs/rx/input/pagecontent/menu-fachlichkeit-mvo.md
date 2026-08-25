@@ -72,7 +72,8 @@ Der Verordnende legt den Beginn des Gültigkeitszeitraumes für jede Teilverordn
 Die Abrechnungsmöglichkeit gegenüber den Kostenträgern ist bestimmt durch die Arzneimittel-Richtlinie des G-BA und die Regelungen der ergänzenden Verträge nach § 129 Absatz 5 SGB V in denen der Zeitraum, in dem eine Abrechnung zu Lasten der Krankenkassen möglich ist, festgelegt ist. Bei den Teilverordnungen ist eine Abrechnung gegenüber dem Kostenträger möglich, wenn das E-Rezept innerhalb des Gültigkeitszeitraum beliefert und quittiert wird.
 
 Bis zum Erreichen des Gültigkeitszeitraums ist keine Einsicht für die Apotheke in das E-Rezept möglich. Der Versicherte kann mittels E-Rezept-FdV oder E-Rezept-AdV die E-Rezepte einsehen.
-Kürzere Belieferungsfristen nach § 12 Absatz 1 Nummer 1 Buchstabe c BtMVV und den § 3a Absatz 4 und 3b Absatz 2 AMVV bleiben unberührt. mDas bedeutet, es gibt keine Mehrfachverordnung für Entlassrezepte, BTM-Rezepte und T-Rezepte.
+
+Kürzere Belieferungsfristen nach § 12 Absatz 1 Nummer 1 Buchstabe c BtMVV und den §§ 3a Absatz 4 und 3b Absatz 2 AMVV bleiben unberührt. Das bedeutet, es gibt keine Mehrfachverordnung für Entlassrezepte, eBTM-Rezepte und E-T-Rezepte.
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
@@ -89,13 +90,12 @@ Es besteht beim Löschen kein Unterschied zu Einzelrezepten. Wenn eine Teilveror
 
 Für die Teilverordnungen gelten die gleichen Löschfristen wie für Einzelrezepte. D.h. Teilverordnungen werden automatisch 10 Tage nach Ablauf der Gültigkeit oder 100 Tage nach Dispensierung gelöscht.
 
-#### Ausdruck für den Versicherten
+#### Patientenausdruck für den Versicherten
 
-Der Versicherte kann einen Ausdruck für die Teilverordnungen durch den Verordnenden erhalten.
-Regelungen für das Erstellen des Ausdrucks für die Teilverordnungen einer Mehrfachverordnung sind in der , Technischen Anlage zur elektronischen Arzneimittelverordnung (E16A)" [KBV ITA_VGEX TECHNISCHE ANLAGE_ ERP] getroffen.
+Der Versicherte kann einen Patientenausdruck für die Teilverordnungen durch den Verordnenden erhalten.
+Regelungen für das Erstellen des Ausdrucks für die Teilverordnungen einer Mehrfachverordnung sind in der "Technischen Anlage zur elektronischen Arzneimittelverordnung (E16A)" [KBV_ITA_VGEX_TECHNISCHE_ANLAGE_ERP] getroffen.
 
-Wenn ein Ausdruck die Daten zu mehrere Teilverordnungen einer Mehrfachverordnung beinhaltet und diese eingescannt werden, dann dürfen die E-Rezept-Token der Teilverordnungen, welche noch nicht ihren Gültigkeitszeitraum erreicht haben, nicht automatisch im AVS gespeichert werden, da der Versicherte das Recht hat, für diese ggf. eine andere Apotheke für das Einlösen auszuwählen. Das Speichern kann auf Wunsch des Versicherten erfolgen.
-
+Wenn ein Patientenausdruck die Daten zu mehrere Teilverordnungen einer Mehrfachverordnung beinhaltet und diese durch eine Apotheke eingescannt werden, dann dürfen die E-Rezept-Token der Teilverordnungen, welche noch nicht ihren Gültigkeitszeitraum erreicht haben, nicht automatisch im AVS gespeichert werden, da der Versicherte das Recht hat, für diese ggf. eine andere Apotheke für das Einlösen auszuwählen. Das Speichern kann auf Wunsch des Versicherten erfolgen.
 
 ### Flowtypes und Verarbeitung
 
