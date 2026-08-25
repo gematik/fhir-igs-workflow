@@ -1,10 +1,10 @@
-> Hinweis: Für den Verordnungsprozess von Rezepten gibt es regulierende Vorgaben, welche durch die  Primärsysteme der verordnenden Leistungserbringerinstitutionen umgesetzt werden müssen. U.a.
-> 
-> - § 73 SGB V
-> - Bundesmantelvertrag-Ärzte
-> - "Technische Anlage zur elektronischen Arzneimittelversorgung"
-> 
-> [KBV_ITA_VGEX_Technische_Anlage_ERP] Die in diesem Implementierungsleitfaden beschriebenen best practice für User Experience soll die Umsetzung im Primärsystem so unterstützen, dass der Verordnungsprozess für den Nutzer effizient erfolgen kann. Die best practice für User Experience stellen eine Umsetzungsempfehlung dar. D.h. es ist den Herstellern der Primärsystem freigestellt, effizientere Lösungen zu implementieren, welche den Verordnungsprozessen in den Primärsystemen entsprechen.
+Hinweis: Für den Verordnungsprozess von Rezepten gibt es regulierende Vorgaben, welche durch die  Primärsysteme der verordnenden Leistungserbringerinstitutionen umgesetzt werden müssen. U.a.
+
+- <span>§</span> 73 SGB V
+- Bundesmantelvertrag-Ärzte
+- "Technische Anlage zur elektronischen Arzneimittelversorgung" [KBV_ITA_VGEX_Technische_Anlage_ERP] 
+
+Die in diesem Implementierungsleitfaden beschriebenen best practice für User Experience soll die Umsetzung im Primärsystem so unterstützen, dass der Verordnungsprozess für den Nutzer effizient erfolgen kann. Die best practice für User Experience stellen eine Umsetzungsempfehlung dar. D.h. es ist den Herstellern der Primärsystem freigestellt, effizientere Lösungen zu implementieren, welche den Verordnungsprozessen in den Primärsystemen entsprechen.
 
 ### Allgemeine Hinweise
 
@@ -23,7 +23,7 @@ Der Nutzer des Systems soll in jedem Verordnungsvorgang für Arzneimittel die M�
 
 #### Ladevorgänge im Hintergrund
 
-Das Primärsystem soll bei Ladevorgängen zum Anlegen, Speichern und Verarbeiten eines E-Rezepts dem Nutzer das Weiterarbeiten im System erlauben. Insbesondere Signaturen sollen gemäß [gemILF_PS]#A_23502 - Signaturerstellung im Hintergrund im Hintergrund verarbeitet werden. Dem Nutzer werden nur bei Fehlermeldungen auffällige und für den Nutzer verständliche Hinweise angezeigt. Erfolgsmeldungen können so in die Benutzeroberfläche integriert werden, dass sie keine Interaktion des Nutzers verlangen und den Nutzer nicht im weiteren Arbeitsprozess stören.
+Das Primärsystem soll bei Ladevorgängen zum Anlegen, Speichern und Verarbeiten eines E-Rezepts dem Nutzer das Weiterarbeiten im System erlauben. Insbesondere Signaturen sollen gemäß [gemILF_PS]#A_23502 im Hintergrund verarbeitet werden. Dem Nutzer werden nur bei Fehlermeldungen auffällige und für den Nutzer verständliche Hinweise angezeigt. Erfolgsmeldungen können so in die Benutzeroberfläche integriert werden, dass sie keine Interaktion des Nutzers verlangen und den Nutzer nicht im weiteren Arbeitsprozess stören.
 
 <!-- A_23561 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A154" title="PS verordnende LEI: UX - Verarbeitungsvorgänge im Hintergrund" version="0">
@@ -40,7 +40,7 @@ Das Primärsystem soll bei Ladevorgängen zum Anlegen, Speichern und Verarbeiten
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-     Das PS der verordnenden LEI SOLL dem Nutzer das Ergebnis einer Verarbeitung , welche das PS im Hintergrund durchgeführt hat, darstellen, ohne dabei den Arbeitsfluss zu unterbrechen. Fehlermeldungen sollen dabei deutlicher sichtbar sein als Erfolgsmeldungen.
+     Das PS der verordnenden LEI SOLL dem Nutzer das Ergebnis einer Verarbeitung, welche das PS im Hintergrund durchgeführt hat, darstellen, ohne dabei den Arbeitsfluss zu unterbrechen. Fehlermeldungen sollen dabei deutlicher sichtbar sein als Erfolgsmeldungen.
 </requirement>
 
 ### Konfigurationsmöglichkeiten des Systems
@@ -58,9 +58,8 @@ In den Einstellungen des Primärsystems kann das E-Rezept übergreifend oder fü
      Das PS der verordnenden LEI SOLL einen patienten-individuellen Konfigurationsparameter anbieten, ob Verordnungen für den Patienten per Default als E-Rezept erstellt werden.
 </requirement>
 
-#### Default Konfiguration und Vorbelegung für die Erstellung
-
-eines E-Rezeptes Um Rezepte schnell erstellen zu können, soll es möglich sein, in den Einstellungen bestimmte Parameter und Verhalten von neu erstellten E-Rezepten zu setzen. In den Einstellungen des Primärsystems kann für das E-Rezept je Patient der Einlöseweg als Default eingestellt werden (Patientenausdruck, E-Rezept-App oder eGK). Wenn der Ausdruck konfiguriert wurde, wird dann standardmäßig bei jedem E-Rezept automatisch der Patientenausdruck gedruckt. Der Nutzer spart sich in dem Fall einen zusätzlichen Klick bei jedem E-Rezept. Weitere Konfigurationsparameter und Übernahme von hinterlegten Stammdaten können den Verordnungsprozess beschleunigen.
+#### Default Konfiguration und Vorbelegung für die Erstellung eines E-Rezeptes 
+Um Rezepte schnell erstellen zu können, soll es möglich sein, in den Einstellungen bestimmte Parameter und Verhalten von neu erstellten E-Rezepten zu setzen. In den Einstellungen des Primärsystems kann für das E-Rezept je Patient der Einlöseweg als Default eingestellt werden (Patientenausdruck, E-Rezept-App oder eGK). Wenn der Ausdruck konfiguriert wurde, wird nach dem erfolgreichen Einstellen des E-Rezepts in den Fachdienst automatisch ein Patientenausdruck gedruckt. Der Nutzer spart sich in dem Fall einen zusätzlichen Klick bei jedem E-Rezept. Weitere Konfigurationsparameter und Übernahme von hinterlegten Stammdaten können den Verordnungsprozess beschleunigen.
 
 <!-- A_23564 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A157" title="PS verordnende LEI: UX - Defaulteinstellung E-Rezept-Ausdruck" version="0">
@@ -141,7 +140,7 @@ Das Primärsystem soll für die Einführung des patienten-individuellen Konfigur
     <th>Alternative</th>
     <td>
       Alternativ zu Schritt 1 und 2 kann der Prozess zum Erzeugen einer wiederholten Verordnung aus einer Patientenhistorie, 
-      Verordnungen aus einer Hausapotheke und aus einem Medikationsplan nach § 31a SGB V gestartet werden. 
+      Verordnungen aus einer Hausapotheke und aus einem Medikationsplan nach <span>§</span> 31a SGB V gestartet werden. 
       Die Regelungen aus Anlage 23 BMV-Ä sind zu beachten.
     </td>
   </tr>
@@ -282,7 +281,7 @@ Hinweis: Mit der Umsetzung der Aufgabenliste für das Signieren der Verordnungen
 
 #### Entscheidungsunterstützung: E-Rezept oder Muster 16
 
-Derzeit können nicht alle Verordnungsinhalte, die per Muster 16 zu verschreiben sind, als E-Rezept abgebildet werden. Der Nutzer soll hier nicht überlegen müssen, was er per E- Rezept verschreiben kann und was nicht. In der Benutzerführung soll der Nutzer informiert werden, ob eine Verordnung als E-Rezept erstellt werden kann oder nicht. Um zu vermeiden, dass der Nutzer etwas über die Freitextverordnung verschreibt, was derzeit nicht als E-Rezept zulässig ist, soll der Nutzer bei einer Freitextverordnung darüber in Kenntnis gesetzt werden, was derzeit als E-Rezept verordnet werden darf. Ein aktueller Stand der verfügbaren Features (Umfang der Anwendung E-Rezept) ist auf der gematik/api-erp Seite auf GitHub zu finden.
+Derzeit können nicht alle Verordnungsinhalte, die per Muster 16 zu verschreiben sind, als E-Rezept abgebildet werden. Der Nutzer soll hier nicht überlegen müssen, was er per E-Rezept verschreiben kann und was nicht. In der Benutzerführung soll der Nutzer informiert werden, ob eine Verordnung als E-Rezept erstellt werden kann oder nicht. Um zu vermeiden, dass der Nutzer etwas über die Freitextverordnung verschreibt, was derzeit nicht als E-Rezept zulässig ist, soll der Nutzer bei einer Freitextverordnung darüber in Kenntnis gesetzt werden, was derzeit als E-Rezept verordnet werden darf. Ein aktueller Stand der verfügbaren Features (Umfang der Anwendung E-Rezept) ist auf der gematik/api-erp Seite auf GitHub zu finden.
 
 <!-- A_23576 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A169" title="PS verordnende LEI: UX - Anwendbarkeit E-Rezept" version="0">
@@ -321,7 +320,7 @@ Um weiterführende Informationen zu einer Verordnung zu notieren (z.B. die Diagn
 
 #### Verordnender Arzt aus HBA gefüllt
 
-Beim Erstellen einer Verordnung kann es zu einer Abweichung zwischen dem die Verordnung Erstellenden und dem die Verordnung Signierenden kommen. Dies ist nach der §2 AMVV in Absatz (1) Satz 1 nicht zulässig.Es ist verpflichtend, dass der im Verordnungsdatensatz in author referenzierte Practitioner mit dem im Signaturzertifikat der QES angegebenen Person übereinstimmt.
+Beim Erstellen einer Verordnung kann es zu einer Abweichung zwischen dem die Verordnung Erstellenden und dem die Verordnung Signierenden kommen. Dies ist nach der <span>§</span> 2 AMVV in Absatz (1) Satz 1 nicht zulässig.Es ist verpflichtend, dass der im Verordnungsdatensatz in author referenzierte Practitioner mit dem im Signaturzertifikat der QES angegebenen Person übereinstimmt.
 
 <!-- A_23579 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A172" title="PS verordnende LEI: E-Rezept erstellen - author Practitioner gemäß signierendem HBA" version="0">
@@ -336,8 +335,8 @@ Beim Erstellen einer Verordnung kann es zu einer Abweichung zwischen dem die Ver
 
 Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Vertretungsfall" findet keine Anwendung in ZPVS. Wenn Ärzte aufgrund von Urlaub/Krankheit/Abwesenheit in der eigenen Praxis ausfallen, dürfen sie sich von einem Kollegen für maximal bis zu 3 Monate innerhalb von 12 Monaten vertreten lassen. Der Nutzer soll (ggf. für einen bestimmten Zeitraum) entscheiden können, welcher der Vertretungsfälle zutrifft (z.B. im Rechtemanagement des Systems). Das System füllt dann die Informationen zum Verordnenden Arzt in der Verordnung automatisch richtig aus. Dabei gibt es folgende Vertretungsfälle (siehe [https://www.kbv.de/html/erezept.php], Stand 27.02.2023)
 
-- **Kollegiale Vertretung**: (nach § 20 Musterberufsordnung): Die/der abwesende Arzt lässt sich von einem fachgleichen Kollegen/in in dessen Praxis vertreten. Die Abrechnung erfolgt über die LANR/BSNR des Vertretenden. Im Datensatz der elektronischen Verordnung erfolgt keine Kennzeichnung einer Vertretungskonstellation, es werden die Daten der ausstellenden Person und der vertretenden Praxis übermittelt.
-- **Persönliche Vertretung**: Ein Vertreter oder eine Vertreterin wird in der Praxis des Vertretenen tätig, bspw. als dessen Sicherstellungsassistentin im Falle von Kindererziehungszeiten. Rechtsgrundlage wäre hier § 32 Abs. 2, Satz 2 Ärzte- Zulassungsverordnung. Die Abrechnung erfolgt über die LANR/BSNR des Vertretenen. Es muss eine Kennzeichnung des Vertreters im Datensatz erfolgen. Es werden die Daten der vertretenden ausstellenden Person sowie des vertretenen Arztes und dessen Praxis übermittelt.
+- **Kollegiale Vertretung**: (nach <span>§</span> 20 Musterberufsordnung): Die/der abwesende Arzt lässt sich von einem fachgleichen Kollegen/in in dessen Praxis vertreten. Die Abrechnung erfolgt über die LANR/BSNR des Vertretenden. Im Datensatz der elektronischen Verordnung erfolgt keine Kennzeichnung einer Vertretungskonstellation, es werden die Daten der ausstellenden Person und der vertretenden Praxis übermittelt.
+- **Persönliche Vertretung**: Ein Vertreter oder eine Vertreterin wird in der Praxis des Vertretenen tätig, bspw. als dessen Sicherstellungsassistentin im Falle von Kindererziehungszeiten. Rechtsgrundlage wäre hier <span>§</span> 32 Abs. 2, Satz 2 Ärzte- Zulassungsverordnung. Die Abrechnung erfolgt über die LANR/BSNR des Vertretenen. Es muss eine Kennzeichnung des Vertreters im Datensatz erfolgen. Es werden die Daten der vertretenden ausstellenden Person sowie des vertretenen Arztes und dessen Praxis übermittelt.
 
 <!-- A_23580 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A173" title="PS verordnende LEI: UX - Vertretungssituation - Möglichkeit zur Entscheidung über Vertretungsfall" version="0">
@@ -345,7 +344,7 @@ Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Vertretungsfa
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-     Das PS der verordnenden LEI SOLL es ermöglichen für ein Nutzerprofil eine Vertretungssituation für einen Zeitraum zu hinterlegen. Folgende Konfigurationen sind zulässig: Kollegiale Vertretung (nach § 20 Musterberufsordnung) Persönliche Vertretung (nach § 32 Abs. 2, Satz 2 Ärzte-Zulassungsverordnung
+     Das PS der verordnenden LEI SOLL es ermöglichen für ein Nutzerprofil eine Vertretungssituation für einen Zeitraum zu hinterlegen. Folgende Konfigurationen sind zulässig: Kollegiale Vertretung (nach <span>§</span> 20 Musterberufsordnung) Persönliche Vertretung (nach <span>§</span> 32 Abs. 2, Satz 2 Ärzte-Zulassungsverordnung
 </requirement>
 
 <!-- A_23581 -->
@@ -363,7 +362,7 @@ Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Vertretungsfa
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-     Das PS der verordnenden LEI SOLL bei der Vertretungskonstellation "Kollegiale Vertretung" (nach § 20 Musterberufsordnung) den vertretenden Arzt, der die Verordnung ausstellt und signiert, in der Verordnung hinterlegen.
+     Das PS der verordnenden LEI SOLL bei der Vertretungskonstellation "Kollegiale Vertretung" (nach <span>§</span> 20 Musterberufsordnung) den vertretenden Arzt, der die Verordnung ausstellt und signiert, in der Verordnung hinterlegen.
 </requirement>
 
 Der ausstellende (signierende) Arzt wird in KBV_PR_ERP_Composition Composition.author angegeben.
@@ -374,7 +373,7 @@ Der ausstellende (signierende) Arzt wird in KBV_PR_ERP_Composition Composition.a
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-     Das PS der verordnenden LEI SOLL bei der Vertretungskonstellation "Persönliche Vertretung" (nach § 32 Abs. 2, Satz 2 Ärzte-Zulassungsverordnung) sowohl den vertretenden Arzt, der die Verordnung ausstellt und signiert, als auch den zu vertretenden Arzt in der Verordnung hinterlegen.
+     Das PS der verordnenden LEI SOLL bei der Vertretungskonstellation "Persönliche Vertretung" (nach <span>§</span> 32 Abs. 2, Satz 2 Ärzte-Zulassungsverordnung) sowohl den vertretenden Arzt, der die Verordnung ausstellt und signiert, als auch den zu vertretenden Arzt in der Verordnung hinterlegen.
 </requirement>
 
 Nach der "Technischen Anlage zur elektronischen Arzneimittelversorgung" (P36-34, Stand 15.11.2022) der KBV wird die Verordnung bei der persönlichen Vertretung wie folgt angepasst werden:
@@ -385,7 +384,7 @@ Composition.attester.party hinterlegt.
 
 ##### Sonderfall Weiterbildungsassistent
 
-Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Weiterbildungsassistent" findet keine Anwendung in ZPVS. EinWeiterbildungsassistent ist berechtigt, E-Rezepte auszustellen, solange die ordnungsgemäße Überwachung und Anleitung durch eine Vertragsärztin oder einen Vertragsarzt gewährleistet ist.
+Hinweis: Das in diesem Abschnitt beschriebene Szenario "Sonderfall Weiterbildungsassistent" findet keine Anwendung in ZPVS. Ein Weiterbildungsassistent ist berechtigt, E-Rezepte auszustellen, solange die ordnungsgemäße Überwachung und Anleitung durch eine Vertragsärztin oder einen Vertragsarzt gewährleistet ist.
 
 <!-- A_23583 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A177" title="PS verordnende LEI: UX - Weiterbildungsassistent - Möglichkeit zur Entscheidung über Weiterbildungsassistent" version="0">
@@ -416,7 +415,7 @@ Die für den Weiterbildungsassistenten und die ausbildende Person anzugebenden D
      Das PS der verordnenden LEI SOLL beim Erstellen eines E-Rezeptes durch einen Weiterbildungsassistenten die Daten des Weiterbildungsassistenten und der ausbildenden Person in den Verordnungsdatensatz übernehmen.
 </requirement>
 
-Der Weiterbildungsassistent signiert mit seinem HBA das E-Rezept. Wenn der Weiterbildungsassistent noch keinen HBA besitzt, dann kann er nicht als Ersteller des E- Rezeptes erfasst werden. Siehe auch [https://www.kbv.de/html/erezept.php ]
+Der Weiterbildungsassistent signiert mit seinem HBA das E-Rezept. Wenn der Weiterbildungsassistent noch keinen HBA besitzt, dann kann er nicht als Ersteller des E-Rezeptes erfasst werden. Siehe auch [https://www.kbv.de/html/erezept.php ]
 
 #### Verordnung E-T-Rezept
 
@@ -428,7 +427,7 @@ Für die Verordnungen von E-T-Rezepten sind gesonderte UX-Vorgaben definiert, um
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-     Das PS der verordnenden LEI MUSS beim Erstellen von Verordnungen für Arzneimittel nach §3a AMVV sicherstellen, dass das Kennzeichen "T-Rezept" dem Nutzer gut sichtbar angezeigt wird.
+     Das PS der verordnenden LEI MUSS beim Erstellen von Verordnungen für Arzneimittel nach <span>§</span> 3a AMVV sicherstellen, dass das Kennzeichen "T-Rezept" dem Nutzer gut sichtbar angezeigt wird.
 </requirement>
 
 <!-- A_27861 -->
@@ -702,7 +701,7 @@ Wenn es technisch nicht möglich ist ein E-Rezept auszustellen (Ausfall einer de
 
 ##### Verständliche Fehlermeldungen
 
-Im Arbeitsablauf des Nutzers können Fehler in der Erstellung und Verarbeitung eines E- Rezeptes auftreten. Da vom Nutzer kein technisches Vorwissen erwartet werden darf, sind Fehlermeldungen so anzugeben, dass dieser nach Möglichkeit darauf reagieren kann. Hierbei sollen Fehlermeldungen so aufbereitet werden, dass der Nutzer versteht, welches System im Prozess den Fehler verursacht hat. Außerdem sollen bei technischen Fehlern diese sprachlich aufbereitet werden, so dass der Nutzer den Inhalt des Fehlers verstehen kann.
+Im Arbeitsablauf des Nutzers können Fehler in der Erstellung und Verarbeitung eines E-Rezeptes auftreten. Da vom Nutzer kein technisches Vorwissen erwartet werden darf, sind Fehlermeldungen so anzugeben, dass dieser nach Möglichkeit darauf reagieren kann. Hierbei sollen Fehlermeldungen so aufbereitet werden, dass der Nutzer versteht, welches System im Prozess den Fehler verursacht hat. Außerdem sollen bei technischen Fehlern diese sprachlich aufbereitet werden, so dass der Nutzer den Inhalt des Fehlers verstehen kann.
 
 <!-- A_23605 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A204" title="PS verordnende LEI: UX - Verständliche Fehlermeldungen - technische Fehler" version="0">

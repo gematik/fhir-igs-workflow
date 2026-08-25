@@ -7,7 +7,7 @@ Der TI-Flow-Fachdienst prüft beim Einstellen des E-T-Rezeptes die Angaben im Ve
 <ul>
 <li>Die Bestätigung des Arztes, dass die Sicherheitsmaßnahmen gemäß der aktuellen Fachinformation eines entsprechenden Fertigarzneimittels eingehalten werden, insbesondere, dass erforderlichenfalls ein Schwangerschafts-Präventionsprogramm durchgeführt wird, muss vorhanden sein.</li>
 <li>Die Bestätigung des Arztes, dass der Patientin oder dem Patienten vor Beginn der medikamentösen Behandlung geeignete medizinische Informationsmaterialien ausgehändigt wurden, muss vorhanden sein.</li>
-<li>Die Bestätigung des Arztes, dass er über ausreichende Sachkenntnisse zur Verschreibung von Arzneimitteln nach §3a Abs. 1 Satz 1 AMVV verfügt, muss vorhanden sein.</li>
+<li>Die Bestätigung des Arztes, dass er über ausreichende Sachkenntnisse zur Verschreibung von Arzneimitteln nach <span>§</span> 3a Abs. 1 Satz 1 AMVV verfügt, muss vorhanden sein.</li>
 <li>Die Angabe der Reichdauer muss vorhanden sein.</li>
 </ul>
 
@@ -33,7 +33,7 @@ Der TI-Flow-Fachdienst überträgt die Daten unmittelbar - also ohne Beteiligung
 
 Nach der Übertragung der Daten in das T-Register befinden sich die Daten im Verantwortungsbereich des BfArM (Grenze der Sicherheitsleistung der TI). Dies betrifft insbesondere die weitere Verarbeitung der Daten durch das BfArM und die sich anschließenden Verarbeitungsvorgänge. Eine ggf. notwendige Kommunikation vom BfArM mit abgebenden Apotheken oder eine Übermittlung von Daten vom BfArM an den TI-Flow-Fachdienst ist durch dieses Feature nicht vorgesehen.
 
-Die Nutzung des FHIR-VZD durch den TI-Flow-Fachdienst erfolgt im Rahmen einer Anwendung der TI (E-Rezept) gemäß § 313 Abs. 3 SGB V. Dabei werden der Name, die Anschrift und - sofern eingetragen - die Telefonnummer der abgebenden Apotheke abgefragt und an das BfArM übermittelt.
+Die Nutzung des FHIR-VZD durch den TI-Flow-Fachdienst erfolgt im Rahmen einer Anwendung der TI (E-Rezept) gemäß <span>§</span> 313 Abs. 3 SGB V. Dabei werden der Name, die Anschrift und - sofern eingetragen - die Telefonnummer der abgebenden Apotheke abgefragt und an das BfArM übermittelt.
 
 ### Neuer Anwendungsfall
 

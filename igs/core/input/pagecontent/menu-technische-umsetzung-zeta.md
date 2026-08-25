@@ -169,7 +169,7 @@ DPoP: <dpop-proof-jwt>
 
 #### Was der PEP prüft
 
-Der PEP prüft bei jedem Request folgende Bedingungen (gemäß §A_25668 gemSpec_ZETA):
+Der PEP prüft bei jedem Request folgende Bedingungen (gemäß [gemSpec_ZETA] A_25668):
 
 1. **AT-Signatur** – das AT muss vom bekannten Authorization Server signiert sein
 2. **Ablaufzeit** – `exp`-Claim des AT muss in der Zukunft liegen
@@ -181,7 +181,7 @@ Alle fünf Prüfungen müssen bestanden werden. Schlägt eine fehl, wird der Req
 
 #### Step-up Authentication
 
-Fehlt im AT ein benötigter Scope oder passt die Audience nicht zur aufgerufenen URL, signalisiert der PEP einen Step-up (§A_28525):
+Fehlt im AT ein benötigter Scope oder passt die Audience nicht zur aufgerufenen URL, signalisiert der PEP einen Step-up (A_28525):
 
 ```http
 HTTP/1.1 401 Unauthorized

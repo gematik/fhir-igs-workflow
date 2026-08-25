@@ -5,9 +5,9 @@ Eine MVO besteht aus mehreren Teilverordnungen, die jeweils als eigenes E-Rezept
 
 ### Kontext
 
-Mehrfachverordnungen sollen die Versorgung mit Arzneimittel für chronisch Kranke erleichtern. Hierfür wurde in § 31 Absatz 1b SGB V die Grundlage geschaffen: "Für Versicherte, die eine kontinuierliche Versorgung mit einem bestimmten Arzneimittel benötigen, können Vertragsärzte Verordnungen ausstellen, nach denen eine nach der Erstabgabe bis zu dreimal sich wiederholende Abgabe erlaubt ist. Die Verordnungen sind besonders zu kennzeichnen. Sie dürfen bis zu einem Jahr nach Ausstellungsdatum zu Lasten der gesetzlichen Krankenkasse durch Apotheken beliefert werden."
+Mehrfachverordnungen sollen die Versorgung mit Arzneimittel für chronisch Kranke erleichtern. Hierfür wurde in <span>§</span> 31 Absatz 1b SGB V die Grundlage geschaffen: "Für Versicherte, die eine kontinuierliche Versorgung mit einem bestimmten Arzneimittel benötigen, können Vertragsärzte Verordnungen ausstellen, nach denen eine nach der Erstabgabe bis zu dreimal sich wiederholende Abgabe erlaubt ist. Die Verordnungen sind besonders zu kennzeichnen. Sie dürfen bis zu einem Jahr nach Ausstellungsdatum zu Lasten der gesetzlichen Krankenkasse durch Apotheken beliefert werden."
 
-Neben § 31 Absatz 1b SGB V regelt § 4 Abs. 3 AMVV i.V.m. § 2 Abs. 1 Nr. 6a AMVV die gesetzliche Grundlage der Mehrfachverordnungen.
+Neben <span>§</span> 31 Absatz 1b SGB V regelt <span>§</span> 4 Abs. 3 AMVV i.V.m. <span>§</span> 2 Abs. 1 Nr. 6a AMVV die gesetzliche Grundlage der Mehrfachverordnungen.
 
 Aus der Mehrfachverordnung ergeben sich Vorteile für Patienten und die Abläufe in Arztpraxen, da die Rezepte für Dauermedikationen im Voraus ausgestellt werden können und somit Wege zur Arztpraxis zum Rezepte abholen entfallen.
 
@@ -69,11 +69,11 @@ Die Mehrfachverordnung ist unabhängig vom Versichertenverhältnis, d.h. anwendb
 
 Der Verordnende legt den Beginn des Gültigkeitszeitraumes für jede Teilverordnung im Verordnungsdatensatz fest. Der Verordnende kann das Ende der Gültigkeitszeitraumes einer Teilverordnung festlegen. Falls das Ende nicht durch den Verordnenden festgelegt wird, dann gilt die Teilverordnung bis 365 Tage nach dem Ausstellungsdatum der Mehrfachverordnung.
 
-Die Abrechnungsmöglichkeit gegenüber den Kostenträgern ist bestimmt durch die Arzneimittel-Richtlinie des G-BA und die Regelungen der ergänzenden Verträge nach § 129 Absatz 5 SGB V in denen der Zeitraum, in dem eine Abrechnung zu Lasten der Krankenkassen möglich ist, festgelegt ist. Bei den Teilverordnungen ist eine Abrechnung gegenüber dem Kostenträger möglich, wenn das E-Rezept innerhalb des Gültigkeitszeitraum beliefert und quittiert wird.
+Die Abrechnungsmöglichkeit gegenüber den Kostenträgern ist bestimmt durch die Arzneimittel-Richtlinie des G-BA und die Regelungen der ergänzenden Verträge nach <span>§</span> 129 Absatz 5 SGB V in denen der Zeitraum, in dem eine Abrechnung zu Lasten der Krankenkassen möglich ist, festgelegt ist. Bei den Teilverordnungen ist eine Abrechnung gegenüber dem Kostenträger möglich, wenn das E-Rezept innerhalb des Gültigkeitszeitraum beliefert und quittiert wird.
 
 Bis zum Erreichen des Gültigkeitszeitraums ist keine Einsicht für die Apotheke in das E-Rezept möglich. Der Versicherte kann mittels E-Rezept-FdV oder E-Rezept-AdV die E-Rezepte einsehen.
 
-Kürzere Belieferungsfristen nach § 12 Absatz 1 Nummer 1 Buchstabe c BtMVV und den §§ 3a Absatz 4 und 3b Absatz 2 AMVV bleiben unberührt. Das bedeutet, es gibt keine Mehrfachverordnung für Entlassrezepte, eBTM-Rezepte und E-T-Rezepte.
+Kürzere Belieferungsfristen nach <span>§</span> 12 Absatz 1 Nummer 1 Buchstabe c BtMVV und den <span>§§</span> 3a Absatz 4 und 3b Absatz 2 AMVV bleiben unberührt. Das bedeutet, es gibt keine Mehrfachverordnung für Entlassrezepte, eBTM-Rezepte und E-T-Rezepte.
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
@@ -105,7 +105,7 @@ Unabhängig vom Flowtype bleibt die fachliche Regel gleich: jede Teilverordnung 
 
 ### Anwendungsfälle
 
-**Beteiligte Systeme:** PVS/KIS, AVS, TI-Flow-Fachdienst, E-Rezept-FdV
+**Beteiligte Systeme:** PVS/ZPVS/KIS, AVS, TI-Flow-Fachdienst, E-Rezept-FdV
 
 #### Technische Anwendungsfälle der Verordnung
 

@@ -25,9 +25,9 @@ Der TI-Flow-Fachdienst prüft bei Operationsaufrufen, ob die E-Rezepte die folge
 - Gültigkeitszeitraum ist erreicht,
 - Gültigkeitszeitraum ist nicht überschritten,
 - der Workflow zum E-Rezept hat den Status "ready".
-- Ein E-Rezept, welches die obigen Kriterien erfüllt, wird im Kontext dieses Features als einlösbares E-Rezept bezeichnet.
+Ein E-Rezept, welches die obigen Kriterien erfüllt, wird im Kontext dieses Features als einlösbares E-Rezept bezeichnet.
 
-Ein Versicherter kann sich im E-Rezept-FdV anzeigen lassen, welche seiner E-Rezepte im europäischen Ausland einlösbar sind
+Ein Versicherter kann sich im E-Rezept-Frontend des Versicherten8 (E-Rezept-FdV) anzeigen lassen, welche seiner E-Rezepte im europäischen Ausland einlösbar sind.
 
 #### Autorisierung
 
@@ -43,7 +43,7 @@ Ein Versicherter muss den Zugriff eines LE-EU auf seine E-Rezepte autorisieren. 
 
 Versicherten-ID und Zugriffscode bilden zusammen die Information zur Zugriffsberechtigung und dienen der Autorisierung des LE-EU beim Operationsaufruf am TI-Flow-Fachdienst.
 
-Der Zugriffscode wird dezentral im E-Rezept-Frontend des Versicherten (FdV) erzeugt. Das E-Rezept-FdV registriert den Zugriffscode am TI-Flow-Fachdienst. 
+Der Zugriffscode wird dezentral im E-Rezept-FdV erzeugt. Das E-Rezept-FdV registriert den Zugriffscode am TI-Flow-Fachdienst. 
 
 Ein Zugriffscode kann nur am TI-Flow-Fachdienst registriert werden, wenn eine "Einwilligung zum Einlösen im EU-Ausland" des Versicherten vorliegt.
 
@@ -72,9 +72,9 @@ UC_3_14_Einwilligung_erteilen, UC_3_15_Einwilligung_widerrufen, UC_3_16_Zugriffs
 
 {% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zur Verwaltung von <i>E-Rezepten im EU Ausland</i>" %}
 
-#### Interaktion NCPeH
+#### Interaktion NCPeH-FD
 
-**Beteiligte Systeme:** TI-Flow-Fachdienst, NCPeH
+**Beteiligte Systeme:** TI-Flow-Fachdienst, NCPeH-FD
 
 {% assign scenario_use_cases = "UC_4_19_Demographische_Daten_abrufen,
 UC_4_20_Liste_Einloesbare_Abrufen, UC_4_21_Liste_Ausgewaehlte_Abrufen, UC_4_22_Abgabe_EU" | split: ", " %}
