@@ -61,8 +61,8 @@ Dabei können Fehler aus den folgenden Quellen definiert sein:
 
 |Quelle|Beschreibung|Beispiel|
 |---|---|---|
-|[HL7 OperationOutcome Codes](https://hl7.org/fhir/R4/codesystem-operation-outcome.html)|FHIR übergreifende Fehlercodes definiert in der FHIR-Spezifikation.|MSG_ID_INVALID - invalid id of the FHIR-Resource|
-|[TI-Common OperationOutcomeDetailsCS](https://gemspec.gematik.de/ig/fhir/ti/1.3.0/CodeSystem-operation-outcome-details-codes.html)|TI-weite Fehlercodes, die für FHIR Systeme der TI gelten.|SVC_INVALID_ACCESS_TOKEN - Ungültiges ACCESS_TOKEN|
+|[HL7 OperationOutcome Codes]|FHIR übergreifende Fehlercodes definiert in der FHIR-Spezifikation.|MSG_ID_INVALID - invalid id of the FHIR-Resource|
+|[TI-Common OperationOutcomeDetailsCS]|TI-weite Fehlercodes, die für FHIR Systeme der TI gelten.|SVC_INVALID_ACCESS_TOKEN - Ungültiges ACCESS_TOKEN|
 |[TI-Flow OperationOutcomeDetailsCS](./CodeSystem-tiflow-operation-outcome-details-cs.html)|Fehlercodes, die für die TIFlow-Anwendungen gelten.|TIFLOW_AUTH_ROLE_NOT_ALLOWED - Rolle für den Endpunkt nicht autorisiert|
 |TI-Flow Modul OperationOutcomeDetailsCS|Fehlercodes, die für das konkrete TI-Flow Modul definiert wurden.|TIFLOW_EREZEPT_PZN_INVALID - Invalide PZN|
 
@@ -115,7 +115,7 @@ Die folgenden Fehlercodes können ungeachtet des Endpunktes auftreten und gelten
 <div><figcaption><strong>Tabelle: </strong>Globale Fehlercodes</figcaption></div>
 
 
-##### Query-API
+##### RESTful API
 
 Für die Ressourcen-Endpunkte in FHIR gelten die folgenden übergreifenden Fehlercodes. Diese sind jeweils für die FHIR-Interaktionen definiert:
 

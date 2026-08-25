@@ -16,7 +16,7 @@ Für Entwickler sind zwei Protokollphasen klar zu unterscheiden:
 
 Bevor ein Client Tokens anfragen kann, muss er einmalig pro ZETA Guard-Instanz registriert werden. Die Registrierung liefert eine `client_id`.
 
-```http
+```
 POST /register
 Content-Type: application/json
 
@@ -50,7 +50,7 @@ Wird für neue Sessions verwendet, wenn noch kein gültiges Refresh Token vorlie
 
 **Token Request:**
 
-```http
+```
 POST /token
 Content-Type: application/x-www-form-urlencoded
 DPoP: <dpop-proof-jwt>
@@ -85,7 +85,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Atoken-exchange
 
 Sobald ein Refresh Token vorhanden ist, kann damit ohne erneute SM(C)-B-Interaktion ein neues AT geholt werden. Das RT ist 12 Stunden gültig – innerhalb dieses Zeitraums ist keine Neuattestation nötig.
 
-```http
+```
 POST /token
 Content-Type: application/x-www-form-urlencoded
 DPoP: <dpop-proof-jwt>
@@ -161,7 +161,7 @@ Der PEP ist ein HTTP-Proxy, der vor dem TI-Flow-Fachdienst Resource Server sitzt
 
 **Request-Format:**
 
-```http
+```
 GET /rx/Task
 Authorization: DPoP <access-token>
 DPoP: <dpop-proof-jwt>

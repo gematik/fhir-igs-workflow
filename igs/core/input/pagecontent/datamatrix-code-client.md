@@ -19,8 +19,11 @@ Diese beiden Datenfelder, URL des Tasks und AccessCode, werden vom Versicherten 
     zusammenstellen, damit diese Zeichenkette als Referenz in einer E-Rezept-Nachricht oder in einem JSON-Array für die Generierung eines 2D-Codes verwendet werden kann.
 </requirement>
 
-Beispiel für E-Rezept-Einlöseinformationen (z.B. für Nutzung als Referenz in Communication-Ressource):  
+**Beispiel für E-Rezept-Einlöseinformationen (z.B. für Nutzung als Referenz in Communication-Ressource)**:
+
+```  
 "Task/160.000.000.000.123.76/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
+```
 
 <!-- A_19553-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A230" title="Generierung 2D-Code als Sammlung" version="0">
@@ -38,22 +41,39 @@ Beispiel für E-Rezept-Einlöseinformationen (z.B. für Nutzung als Referenz in 
     zusammenfassen, um daraus einen 2D-Code generieren zu können.
 </requirement>
 
-Beispiel für genau ein E-Rezept-Token (für die Codierung als 2D-Code):
+**Beispiel für genau ein E-Rezept-Token (für die Codierung als 2D-Code)**:
 
-{   "urls": [ "Task/160.000.000.000.123.76/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" ]}
-
-Beispiel für eine Sammlung von drei E-Rezept-Token (für die Codierung als 2D-Code):
-
+```json
 {   
-    "urls": ["Task/160.000.000.000.123.76/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea", 
-    "Task/160.123.456.789.123.58/$accept?ac=0936cfa582b447144b71ac89eb7bb83a77c67c99d4054f91ee3703acf5d6a629", 
-    "Task/160.000.346.211.638.15/$accept?ac=d3e6092ae3af14b5225e2ddbe5a4f59b3939a907d6fdd5ce6a760ca71f45d8e5"   
+    "urls": [ "
+        Task/160.000.000.000.123.76/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea" 
+    ]
+}
+```
+
+**Beispiel für eine Sammlung von drei E-Rezept-Token (für die Codierung als 2D-Code)**:
+
+```json
+{   
+    "urls": [
+        "Task/160.000.000.000.123.76/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea", 
+        "Task/160.123.456.789.123.58/$accept?ac=0936cfa582b447144b71ac89eb7bb83a77c67c99d4054f91ee3703acf5d6a629", 
+        "Task/160.000.346.211.638.15/$accept?ac=d3e6092ae3af14b5225e2ddbe5a4f59b3939a907d6fdd5ce6a760ca71f45d8e5"   
     ]
 } 
+```
 
 Der Datentyp der Task.id erlaubt bis zu 64 Zeichen zur Angabe einer ID des Tasks. Mit der zulässigen Maximallänge ergibt sich folgendes Beispiel, aus dem die maximale Datengröße für einen 2D-Datamatrix-Code ergibt (Umbrücke und Leerzeichen werden im Sinne der Datenkomprimierung entfernt).
 
-{"urls":["Task/1234567891011121314151617181920212223242526272829303132333435361/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea","Task/1234567891011121314151617181920212223242526272829303132333435362/$accept?ac=0936cfa582b447144b71ac89eb7bb83a77c67c99d4054f91ee3703acf5d6a629","Task/1234567891011121314151617181920212223242526272829303132333435363/$accept?ac=d3e6092ae3af14b5225e2ddbe5a4f59b3939a907d6fdd5ce6a760ca71f45d8e5"]} 
+```json
+{
+    "urls":[
+        "Task/1234567891011121314151617181920212223242526272829303132333435361/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea",
+        "Task/1234567891011121314151617181920212223242526272829303132333435362/$accept?ac=0936cfa582b447144b71ac89eb7bb83a77c67c99d4054f91ee3703acf5d6a629",
+        "Task/1234567891011121314151617181920212223242526272829303132333435363/$accept?ac=d3e6092ae3af14b5225e2ddbe5a4f59b3939a907d6fdd5ce6a760ca71f45d8e5"
+        ]
+    } 
+```
 
 <!-- A_19543 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A231" title="Generierung DataMatrix-Code" version="0">
@@ -173,8 +193,11 @@ Um auf Wunsch des Versicherten den PKV-Abgabedatensatz ändern zu können,  muss
     Das E-Rezept-FdV MUSS zum Erstellen eines Token für die Zugriffsinformationen für eine Abrechnungsinformation die ID auf einen ChargeItem zusammen mit dem AccessCode zum Ändern aus den lokal verfügbaren Informationen einer Abrechnungsinformation als URL in der Form: 2D-Code-Daten = "ChargeItem/" + ChargeItem.id  + "?ac=" + AccessCode zusammenstellen, damit diese Zeichenkette als Referenz in einer E-Rezept-Nachricht oder für die Generierung eines 2D-Codes verwendet werden kann.
 </requirement>
 
-Beispiel für Abrechnungsinformation-Token: <br>
+**Beispiel für Abrechnungsinformation-Token**: <br>
+
+```
 "ChargeItem/200.100.000.000.004.30?ac=0037c20b8e893b690f07d784fcfcf38c748454c08253a8b2c0499347576ca612"
+```
 
 <!-- A_22730 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A239" title="Generierung 2D-Code Abrechnungsinformation-Token" version="0">
@@ -189,7 +212,10 @@ Beispiel für Abrechnungsinformation-Token: <br>
     darstellen, um daraus einen 2D-Code generieren zu können.
 </requirement>
 
-Beispiel für die Codierung als 2D-Code:
+**Beispiel für die Codierung als 2D-Code**:
+
+```json
 { 
-"urls": [ "ChargeItem/200.100.000.000.004.30?ac=0037c20b8e893b690f07d784fcfcf38c748454c08253a8b2c0499347576ca612" ]
- }
+    "urls": [ "ChargeItem/200.100.000.000.004.30?ac=0037c20b8e893b690f07d784fcfcf38c748454c08253a8b2c0499347576ca612" ]
+}
+```

@@ -95,7 +95,7 @@ Der TUC gibt neben dem Status der Zertifikatsprüfung auch die im Zertifikat ent
 Zusätzlich zu der Transportverschlüsselung mittels TLS werden die zu übermittelten Daten mit dem VAU-Protokoll gesichert. Es gelten die Vorgaben aus [gemSpec_Krypt]#VAU-Protokoll für ePA für alle.
 
 <figure>
-	<div class="gem-ig-img-container" style="--box-width: 800px; margin-bottom: 30px;">
+	<div class="gem-ig-img-container" style="--box-width: 100%; margin-bottom: 30px;">
 		<img src="./tif-epa-uebertragung.drawio.png" alt="Transport durch die TI" style="width: 100%;">
 	</div>
 	<figcaption><strong>Abbildung: </strong>Transport durch die TI</figcaption>
@@ -143,7 +143,6 @@ Für die Authentisierung erstellt der TI-Flow-Fachdienst einen self-signed Beare
 
 *Hinweis:* Die Adressierung kann bspw. durch automatische Auflösung (z. B. DNS-basiert) oder durch Deployment-Konfiguration erfolgen.
 
-Für die Bezeichnung der Ressourcen Records siehe "A_24592-* Anbieter ePA-Aktensystem - Registrierung an übergreifender ePA-Domäne". Die Informationen zu jedem ePA-Aktensystem enthalten den Endpunkt für den Authorization Service [I_Authorization_Service], Medication Service [I_Medication_Service] und Information Service [I_Information_Service].
 
 <!-- A_25938 -->
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A382" title="TI-Flow-Fachdienst - ePA - Aktualisierung Cache ePA-Aktensysteme" version="0">
