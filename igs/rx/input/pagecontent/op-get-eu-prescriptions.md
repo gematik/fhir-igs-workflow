@@ -26,20 +26,40 @@ Die Nachricht wird als HTTP `POST` an `/$get-eu-prescriptions` gesendet.
 			{% include OperationDefinition-GETPrescriptionEU.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Request-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+		<div data-name="Prescriptions-Retrieval - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-RETRIEVAL XML %}
 		</div>
-	</div>
--->
-<!--
-	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleERPEUOperationOutcomeError XML %}
+		<div data-name="Prescriptions-Retrieval - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-RETRIEVAL JSON %}
+		</div>
+		<div data-name="Prescriptions-List - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-LIST XML %}
+		</div>
+		<div data-name="Prescriptions-List - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-LIST JSON %}
+		</div>
+		<div data-name="Prescriptions-Demographics - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleEUGETPrescriptionDEMOGRAPHICS XML %}
+		</div>
+		<div data-name="Prescriptions-Demographics - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleEUGETPrescriptionDEMOGRAPHICS JSON %}
 		</div>
 	</div>
--->
+	<div id="Response-Examples">
+		<div data-name="200 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleGetEUPrescriptionBundle XML %}
+		</div>
+		<div data-name="200 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleGetEUPrescriptionBundle JSON %}
+		</div>
+		<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationGetEUError XML %}
+		</div>
+		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationGetEUError JSON %}
+		</div>
+	</div>
 </div>
 
 

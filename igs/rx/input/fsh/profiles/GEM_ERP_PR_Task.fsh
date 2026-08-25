@@ -46,7 +46,7 @@ and GEM_ERP_EX_EU_IS_REDEEMABLE_BY_PATIENT_AUTHORIZATION named eu-isRedeemableBy
     * code 1..1
     * code = #1 (exactly)
 
-// ePriscription for the patient
+// ePrescription for the patient
 * input[patientReceipt] 0..1 MS
   * ^short = "JSON-Bundle der Verordnung, das von einem FdV konsumiert werden soll"
   * value[x] only Reference(Bundle)

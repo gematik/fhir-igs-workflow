@@ -1,3 +1,4 @@
+/*
 Instance: GenericTask
 InstanceOf: GEM_ERP_PR_Task
 Title: "Task erstellt durch Fachdienst via $create Operation"
@@ -12,8 +13,9 @@ Usage: #example
 * status = #draft
 * intent = #order
 * insert DateTime(authoredOn)
+*/
 
-
+/*
 Instance: QueryTaskSearchResponseBundle
 InstanceOf: Bundle
 Usage: #example
@@ -26,7 +28,9 @@ Description: "Beispiel fuer eine Task-Suchantwort mit zwei Treffern"
 * link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task?status=ready&_count=2"
 * entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Task/b12eb5f7-91ce-4887-93c7-800454601377"
 * entry[=].resource = GenericTask
+*/
 
+/*
 Instance: QueryAuditEventSearchResponseBundle
 InstanceOf: Bundle
 Usage: #example
@@ -39,6 +43,7 @@ Description: "Beispiel fuer eine AuditEvent-Suchantwort"
 * link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/AuditEvent?date=ge2025-01-01"
 * entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa"
 * entry[=].resource = AuditEventSample
+*/
 
 Instance: QueryMedicationDispenseSearchResponseBundle
 InstanceOf: Bundle
@@ -61,7 +66,7 @@ Description: "Beispiel einer Consent-Ressource fuer die Consent-Query"
 * id = "QueryConsentCHARGCONS"
 * status = #active
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy "Privacy Consent"
-* category[+] = http://loinc.org#59284-0 "Consent Document"
+* category[+] = http://loinc.org#59284-0 "Einwilligung - Dokument"
 * patient.identifier.system = "http://fhir.de/sid/gkv/kvid-10"
 * patient.identifier.value = "X123456789"
 * dateTime = "2025-01-15T10:15:00+01:00"

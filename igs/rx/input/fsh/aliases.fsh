@@ -8,7 +8,7 @@ Alias: $erp-communication-reply = https://gematik.de/fhir/erp/StructureDefinitio
 Alias: $erp-communication-representative = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Representative
 Alias: $erp-medication-dispense = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense
 
-Alias: $tiflow-core-oo-cs = https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs
+Alias: $tiflow-core-oo-cs = https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs
 Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes
 Alias: $hl7-oo = http://terminology.hl7.org/CodeSystem/operation-outcome
 

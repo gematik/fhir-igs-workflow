@@ -28,17 +28,14 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 			{% include OperationDefinition-tiflow-rx-abort-op.json %}
 		</pre>
 	</div>
-<!--
-	<div id="Request-Examples">
-	</div>
--->
-<!--
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
+		<div data-name="Fehler 403 - Beispiel für Abort-Operation Fehlerantwort application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationAbortErrorRoleFdV JSON %}
+		</div>
+		<div data-name="Fehler 403 - Beispiel für Abort-Operation Fehlerantwort application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationAbortErrorRoleFdV XML %}
 		</div>
 	</div>
--->
 </div>
 
 ### Hinweise

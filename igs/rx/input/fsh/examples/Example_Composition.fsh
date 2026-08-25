@@ -13,6 +13,6 @@ Usage: #inline
 * insert DateTime(date)
 * insert DateTime(event.period.start)
 * insert DateTime(event.period.end)
-* author.reference = "urn:uuid:1413b38d-81a6-432a-a801-98d7307a422b"
+* author.reference = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Device/ReceiptBundleDevice"
 * title = "Quittung"
 * section[+].entry.reference = "urn:uuid:b939a82a-9c23-4b6d-a139-f468d1b9d652"

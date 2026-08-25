@@ -12,8 +12,8 @@ Usage: #example
 Title: "GEM_ERPEU_PR_PAR_Access_Authorization_Response"
 * parameter[countryCode].valueCoding.code = #BE
 * parameter[accessCode].valueIdentifier.value = "ABC123"
-* parameter[validUntil].valueInstant = "2025-10-01T13:12:32+02:00"
-* parameter[createdAt].valueInstant = "2025-10-01T12:12:32+02:00"
+* insert DateTimeStamp(parameter[createdAt].valueInstant)
+* insert DateTimeStampPlus1Hr(parameter[validUntil].valueInstant)
 
 // Invalid Examples to Test Invariants
 

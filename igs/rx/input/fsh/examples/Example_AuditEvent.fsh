@@ -1,3 +1,4 @@
+/*
 Instance: AuditEventSample
 InstanceOf: TIFlowAuditEventRest
 Title: "AuditEvent-Eintrag vom TI-Flow-Fachdienst"
@@ -36,3 +37,4 @@ Usage: #example
 * entity[=].type.code = #Task
 * entity[=].what.identifier.system = "https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_PrescriptionId"
 * entity[=].what.identifier.value = "160.123.456.789.123.58"
+*/

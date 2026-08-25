@@ -8,7 +8,7 @@ version: 2.0.0-ballot.2
 # version: 0.9.0
 date: 2026-06-30
 copyrightYear: 2026+
-releaseLabel: ballot # ci-build, ballot, release
+releaseLabel: ci-build # ci-build, ballot, release
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: gematik GmbH
@@ -16,9 +16,9 @@ publisher:
   email: erp-umsetzung@gematik.de
 
 dependencies:
-  hl7.fhir.uv.xver-r5.r4: latest
-  de.basisprofil.r4: 1.5.4
-  de.gematik.ti: 1.4.0-ballot.1
+  hl7.fhir.uv.xver-r5.r4: 0.1.0
+  de.basisprofil.r4: 1.6.0
+  de.gematik.ti: 1.4.0-ballot.2
   de.gematik.tiflow: 2.0.0-ballot.2
 
 applyExtensionMetadataToRoot: false
@@ -272,6 +272,7 @@ parameters:
     - https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense
     - https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task
     - https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus
+    - https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_OrganizationType
     - https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationMap
     - https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationdispenseMap
     - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpBundleMap
@@ -303,7 +304,10 @@ parameters:
     - Parameters/*
     - CapabilityStatement/*
     - Provenance/*
+    - Communication/*
     - Consent/*
+    - Task/*
+    - AuditEvent/*    
   no-validate:
     - Bundle/1f339db0-9e55-4946-9dfa-f1b30953be9b
     - Bundle/9c85a2a5-92ee-4a57-83cb-ba90a0df2a21
@@ -321,30 +325,30 @@ parameters:
     - StructureMap/KBVPrErpPrescriptionMap
     - StructureMap/KBVPrForOrganizationMap
     - StructureMap/KBVPrForPractitionerMap
-    - Bundle/Bundle-AcceptOperation
-    - Bundle/ExampleAcceptResponseBundle
-    - Bundle/ExampleRxCommunicationSearchset
-    - Bundle/ExampleRxMedicationDispenseSearchset
-    - Bundle/ExampleRxTaskSearchset
-    - Bundle/dffbfd6a-5712-4798-bdc8-07201eb77ab8
-    - Bundle/example-searchset-auditevent
-    - Bundle/example-searchset-consent
-    - Bundle/example-searchset-medicationdispense
-    - Bundle/example-searchset-task
+    # - Bundle/Bundle-AcceptOperation
+    # - Bundle/ExampleAcceptResponseBundle
+    # - Bundle/ExampleRxCommunicationSearchset
+    # - Bundle/ExampleRxMedicationDispenseSearchset
+    # - Bundle/ExampleRxTaskSearchset
+    # - Bundle/dffbfd6a-5712-4798-bdc8-07201eb77ab8
+    # - Bundle/example-searchset-auditevent
+    # - Bundle/example-searchset-consent
+    # - Bundle/example-searchset-medicationdispense
+    # - Bundle/example-searchset-task
     - Communication/2be1c6ac-5d10-47f6-84ee-8318b2c22c76
     - Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596
     - Communication/a218a36e-f2fd-4603-ba67-c827acfef01b
-    - Consent/QueryConsentCHARGCONS
-    - Task/9b48f82c-9c11-4a57-aa72-a805f9537a82
-    - Task/TaskInClosedState
-    - Task/TaskInReadyState
-    - Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e
-    - Task/f5c21409-b84b-4125-8649-5630a00906b1
-    - Parameters/output-example-1
-    - Parameters/output-example-2
-    - Parameters/output-example-3
-    - Parameters/output-example-4
-    - Parameters/output-example-5
-    - AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa
-    - StructureDefinition/logical-eu-dispense-data
+    # - Consent/QueryConsentCHARGCONS
+    # - Task/9b48f82c-9c11-4a57-aa72-a805f9537a82
+    # - Task/TaskInClosedState
+    # - Task/TaskInReadyState
+    # - Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e
+    # - Task/f5c21409-b84b-4125-8649-5630a00906b1
+    # - Parameters/output-example-1
+    # - Parameters/output-example-2
+    # - Parameters/output-example-3
+    # - Parameters/output-example-4
+    # - Parameters/output-example-5
+    # - AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa
+    # - StructureDefinition/logical-eu-dispense-data
   #autoload-resources: true

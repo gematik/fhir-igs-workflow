@@ -25,20 +25,22 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$dispense` gesendet.
 			{% include OperationDefinition-tiflow-rx-dispense-op.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleRxOperationRequestParameters XML %}
+			{% fragment Parameters/ExampleDispenseInputParameters XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleDispenseInputParameters JSON %}
 		</div>
 	</div>
--->
-<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
+			{% fragment OperationOutcome/ExampleOperationDispenseRoleError XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationDispenseRoleError JSON %}
 		</div>
 	</div>
--->
 </div>
 
 ### Hinweise

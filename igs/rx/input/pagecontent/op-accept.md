@@ -26,13 +26,26 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$accept` gesendet.
 			{% include OperationDefinition-tiflow-rx-accept-op.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
+		<div data-name="200 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleRXAcceptResponse XML %}
 		</div>
+		<div data-name="403 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationAcceptRoleError XML %}
+		</div>
+		<div data-name="409 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationAcceptError XML %}
+		</div>
+		<div data-name="200 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleRXAcceptResponse JSON %}
+		</div>
+		<div data-name="403 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationAcceptRoleError JSON %}
+		</div>
+		<div data-name="409 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationAcceptError JSON %}
+		</div>	
 	</div>
--->
 </div>
 
 ### Hinweise
