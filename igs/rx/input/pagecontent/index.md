@@ -2,23 +2,24 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des TI-Flow
 
 ### Zweck und Geltungsbereich
 
-- Grundlegende Workflows für E-Rezepte zur Arzneimittelversorgung:
-  - **160, 200** zur Verordnung von Arzneimitteln
+- Workflows für die Verordnung von Arzneimitteln (E-Rezepte):
+  - **160, 200** zur Verordnung von apothekenpflichtigen Arzneimitteln
   - **169, 209** zur Verordnung von Arzneimitteln mit Workflowsteuerung durch den Leistungserbringer
   - **166** zur Verordnung von E-T-Rezepten
+- Einlösen von E-Rezepten im EU-Ausland (Feature "EU Zugriff E-Rezept", siehe [gemF_eRp_EU_V1.0.1](https://gemspec.gematik.de/docs/gemF/gemF_eRp_EU/gemF_eRp_EU_V1.0.1/))
 - Profile, Operationen und Validierungsregeln
-- Funktionale Anforderungen
-- Einlösen von E-Rezepten im EU-Ausland (Feature "EU Zugriff E-Rezept", siehe [gemspec eRp EU 1.0.1](https://gemspec.gematik.de/docs/gemF/gemF_eRp_EU/gemF_eRp_EU_V1.0.1/)): Ergänzungen an den Schnittstellen des TI-Flow-Fachdienstes sowie Use Cases für Versicherte zur Verwaltung von Einwilligung und Zugriff
+- Funktionale Anforderungen an den Fachdienst und die Clientsysteme
+
 
 ### Nicht im Scope
 
 - Modul-übergreifende Anwendungsfälle
 - Produkttyp-spezifische Implementierungsdetails außerhalb des Fachdienstes
 - Beschreibung und Definition von Prozessen außerhalb des Fachdienstes
-- Anbindung der TI an die eHDSI
+- Anbindung der TI an die eHealth Digital Services Infrastructure (eHDSI)
 - Mapping zwischen deutschen Verordnungsdaten und dem EU-Datenmodell
 - Abrechnung von im EU-Ausland eingelösten E-Rezepten
-- Workflows, die nicht final mit Stakeholdern des TI-Flow abgestimmt sind <!-- TI-Flow-26_2 KBV_20, KBV_04 -->
+- Workflows, die nicht final mit Stakeholdern des TI-Flow abgestimmt sind (u.a. Workflow zur Verordnung von Betäubungsmitteln) <!-- TI-Flow-26_2 KBV_20, KBV_04 -->
 
 ### Anforderungen zur Umsetzung des IGs
 
@@ -33,10 +34,10 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des TI-Flow
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Workflows 160, 166, 169, 200 und 209 den Implementation Guide "E-Rezept für Arzneimittel" umsetzen.
+    Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN zur Umsetzung der Workflows 160, 166, 169, 200 und 209 den Implementation Guide "E-Rezept für Arzneimittel" umsetzen.
 </requirement>
 
 <!-- A_20213-01, A_23027, A_19300-01, A_23028, A_19299-02, A_19297-01, A_19295-01, A_22483-01 -->
@@ -51,10 +52,10 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des TI-Flow
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnende LEI">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+    Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN zur Umsetzung des Implementation Guides "E-Rezept für Arzneimittel" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 </requirement>
 
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A270" title="E-Rezept: Anwendung des Features 'EU Zugriff E-Rezept' für Einlösen von E-Rezepten im EU Ausland" version="0">
@@ -62,10 +63,13 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des TI-Flow
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
     <actor name="NCPeH_ePeDA" description="ePrescription/eDispensation Land-A National Contact Point for eHealth">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Einlösens von E-Rezepten im EU Ausland die in diesem Implementation Guide definierten Inhalte zum Feature "EU Zugriff E-Rezept" umsetzen.
+    Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN zur Umsetzung des Einlösens von E-Rezepten im EU Ausland die in diesem Implementation Guide definierten Inhalte zum Feature "EU Zugriff E-Rezept" umsetzen.
 </requirement>
 
 <!-- A_22206-01, A_27189 -->
@@ -74,10 +78,13 @@ Dieser Implementation Guide beschreibt die Datenmodelle und Prozesse des TI-Flow
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
     <actor name="NCPeH_ePeDA" description="ePrescription/eDispensation Land-A National Contact Point for eHealth">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst und dessen Client MÜSSEN zur Umsetzung des Features "EU Zugriff E-Rezept" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG für das Feature definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+    Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN zur Umsetzung des Features "EU Zugriff E-Rezept" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG für das Feature definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
 </requirement>
 
 
