@@ -8,7 +8,7 @@ Dieser Implementation Guide beschreibt Profile und deren Verwendung für den Dat
 
 ### Nicht im Scope
 
-- Beschreibung des Workflow **166** zur Verordnung von E-T-Rezepten, hierzu siehe [gemIG_TIFlow_rx].
+- Beschreibung des Workflow **166** zur Verordnung von E-T-Rezepten, hierzu siehe [gemIG_TIFlow_rx](https://gemspec.gematik.de/ig/fhir/ti-flow-rx/{{ site.data.constants.tiflow-rx-version }}).
 
 ### Anforderungen zur Umsetzung des IGs
 
