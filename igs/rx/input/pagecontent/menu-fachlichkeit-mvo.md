@@ -19,17 +19,16 @@ Die User Stories beschreiben die Erwartungen der Nutzer für die neuen digitalen
 
 Als Versicherter möchte ich:
 - für jedes einzelne E-Rezept aus meiner Mehrfachverordnung eine Apotheke frei auswählen können, damit ich wählen kann, ob ich die einzelnen Rezepte in der gleichen oder in unterschiedlichen Apotheken einlöse.
-- erkennen können, dass ein Rezept Bestandteil einer Mehrfachverordnung ist, um meine Abläufe (d.h. Gänge zum Arzt für Abholung Rezepte und Gänge zur Apotheke für Einlösung Rezepte) besser organisieren zu können.
+- erkennen können, dass ein Rezept Bestandteil einer Mehrfachverordnung ist, um meine Abläufe (d.h. Gänge zum Arzt für das Abholen der Rezepte und Gänge zur Apotheke für das Einlösen der Rezepte) besser organisieren zu können.
 - erkennen können, um das wievielte Rezept einer Mehrfachverordnung es sich handelt, damit ich meine Medikamenteneinnahme sowie die Termine beim Arzt und Apotheker einplanen kann.
 - sehen können, wie viele E-Rezepte aus meiner Mehrfachverordnung ich bereits eingelöst habe.
 - sehen können, wann ich mein einzelnes E-Rezept aus der Mehrfachverordnung einlösen kann, das heißt den Beginn der Einlösefrist.
 - genau sehen können, wie lange jede einzelne Verordnung gültig ist, das heißt das Ende der Einlösefrist.
-- dass ich meine E-Rezepte darüber hinaus wie alle meine anderen Rezepte in meiner E-Rezept-App verwalten kann, um mich nicht mit neuen Abläufen in meiner E-Rezept App oder mit dem Arzt und 
+- , dass ich meine E-Rezepte darüber hinaus wie alle meine anderen Rezepte in meiner E-Rezept-App verwalten kann, um mich nicht mit neuen Abläufen in meiner E-Rezept App oder mit dem Arzt und 
 Apotheker herumschlagen zu müssen.
-- dass meine E-Rezept-App mich dabei unterstützt, dass ich das richtige E-Rezept in der Apotheke einlöse, damit ich in der Apotheke keine Zeit damit verschwende, einen ungültigen Token vorzuzeigen z.B. wenn ein E-Rezept erst in der Zukunft eingelöst werden kann.
-- dass meine E-Rezept-App mich dabei unterstützt, dass ich auf den ersten Blick erkenne, dass der Beginn der Einlösefrist eines E-Rezeptes erst in der Zukunft liegt.
-- erinnert werden, dass eine Teilverordnung gültig geworden ist, damit ich nicht vergesse, das 
-Rezept einzulösen.
+- , dass meine E-Rezept-App mich dabei unterstützt, dass ich das richtige E-Rezept in der Apotheke einlöse, damit ich in der Apotheke keine Zeit damit verschwende, einen ungültigen Token vorzuzeigen z.B. wenn ein E-Rezept erst in der Zukunft eingelöst werden kann.
+- , dass meine E-Rezept-App mich dabei unterstützt, dass ich auf den ersten Blick erkenne, dass der Beginn der Einlösefrist eines E-Rezeptes erst in der Zukunft liegt.
+- daran erinnert werden, dass eine Teilverordnung gültig geworden ist, damit ich nicht vergesse, das Rezept einzulösen.
 - jedes einzelne E-Rezept einer Mehrfachverordnung löschen können.
 
 
@@ -38,8 +37,8 @@ Rezept einzulösen.
 
 Als Verordnender möchte ich:
 
-- dass mein Primärsystem mich dabei unterstützt, eine Mehrfachverordnung auszustellen, so dass ich identische Felder nur einmal ausfülle und mich auf das Ausfüllen der Unterschiede (z.B. Anzahl der einzelnen Rezepte) konzentrieren kann. 
-- dass mein Primärsystem mich dabei unterstützt, die Einlösefristen für die einzelnen E-Rezepte automatisch zu berechnen und auszufüllen, so dass ich nicht mühsam Termine berechnen muss.
+- , dass mein Primärsystem mich dabei unterstützt, eine Mehrfachverordnung auszustellen, so dass ich identische Felder nur einmal ausfülle und mich auf das Ausfüllen der Unterschiede (z.B. Anzahl der einzelnen Rezepte) konzentrieren kann. 
+- , dass mein Primärsystem mich dabei unterstützt, die Einlösefristen für die einzelnen E-Rezepte automatisch zu berechnen und auszufüllen, so dass ich nicht mühsam Termine berechnen muss.
 - alle einzelnen E-Rezepte einer Mehrfachverordnung in einem Schritt löschen können, damit ich eventuell auftretende Fehler schnell und unkompliziert korrigieren kann.
 - dass mein Primärsystem mich dabei unterstützt, die einzelnen Teilverordnungen einfach und unkompliziert in einem Arbeitsschritt zu signieren.
 
@@ -47,11 +46,12 @@ Als Verordnender möchte ich:
 
 Als Apotheker möchte ich:
 
-- erkennen können, dass ein Rezept Bestandteil einer Mehrfachverordnung ist. sehen können, um das wievielte Rezept einer Mehrfachverordnung es sich handelt.
+- erkennen können, dass ein Rezept Bestandteil einer Mehrfachverordnung ist. 
+- sehen können, um das wievielte Rezept einer Mehrfachverordnung es sich handelt.
 - jedes E-Rezept einer Mehrfachverordnung einzeln abrufen, beliefern und abrechnen können.
 - ein E-Rezept einer Mehrfachverordnung, das mir zugewiesen worden ist, löschen können.
 - erkennen können, wenn der Beginn des Einlösezeitraumes einer Verordnung noch nicht erreicht wurde, sodass ich keine unnötige Arbeit mit noch nicht gültigen Rezepten habe.
-- wenn mein Patient es sich wünscht, die Zugangsinformationen und den Gültigkeitszeitraum zum Rezept speichern und später (wenn sie gültig werden) abrufen können.
+- , wenn mein Patient es sich wünscht, die Zugangsinformationen und den Gültigkeitszeitraum zum Rezept speichern und später (wenn sie gültig werden) abrufen können.
 
 ### Fachliches Konzept
 
