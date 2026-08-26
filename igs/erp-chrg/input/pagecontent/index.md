@@ -50,10 +50,6 @@ Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und
 Schnittstellen. Szenarien und Anwendungsfälle verweisen auf die zugehörigen
 technischen Kapitel und Profile.
 
-### Abhängigkeiten
-
-{% include dependency-table.xhtml %}
-
 ### Kontakt und Feedback
 
 Für Fragen und Feedback wenden Sie sich bitte an

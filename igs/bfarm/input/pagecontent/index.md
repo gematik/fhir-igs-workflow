@@ -36,10 +36,6 @@ Dieser Implementation Guide ist "von links nach rechts" zu lesen. Die Menüstruk
 
 Für einen Überblick über die Inhalte und die Struktur dieses Implementation Guides kann die [Inhaltsübersicht](toc.html) konsultiert werden. Dort sind die verschiedenen Kapitel und Abschnitte mit ihren jeweiligen Inhalten und Anforderungen aufgeführt.
 
-### Abhängigkeiten
-
-{% include dependency-table.xhtml %}
-
 ### Kontakt und Feedback
 
 Für Fragen und Feedback wenden Sie sich bitte an [erp-umsetzung@gematik.de](mailto:erp-umsetzung@gematik.de).

@@ -85,9 +85,6 @@ Anforderungen und Anwendungsfälle werden durch eine eindeutige ID sowie die
 Schlüsselworte MUSS, DARF NICHT, SOLL, SOLL NICHT, KANN gemäß RFC 2119
 gekennzeichnet.
 
-### Abhängigkeiten
-
-{% include dependency-table.xhtml %}
 
 ### Kontakt und Feedback
 
