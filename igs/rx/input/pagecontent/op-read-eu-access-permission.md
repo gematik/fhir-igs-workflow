@@ -1,0 +1,46 @@
+Mit der FHIR-Operation kann die Zugriffsberechtigung für die in der Nutzerinformation (zeta-user-info.identifier) angegebene KVNR abgerufen werden. Diese Operation steht Versicherten zur Verfügung.
+
+### Nachricht
+
+Die Nachricht wird als HTTP `GET` an `/$read-eu-access-permission` gesendet.
+
+### Anforderungen an Schnittstelle
+
+- [Server Anforderungen zu `$read-eu-access-permission`](./op-read-eu-access-permission-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FdV-Anforderungen zu `$read-eu-access-permission`](./op-read-eu-access-permission-req-fdv.html): Anforderungen an das TI-Flow-FdV zur Nutzung der Schnittstelle.
+
+### API Beschreibung
+
+<div class="gematik-api"
+	data-api-type="FHIROperation"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-invoke-level="system"
+	data-api-operation-id="readEUAccessPermissionOperation">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
+		</pre>
+	</div>
+	<div id="OperationDefinition">
+		<pre>
+			{% include OperationDefinition-ReadEUAccessPermission.json %}
+		</pre>
+	</div>
+	<div id="Response-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/Example-EU-PermissionResponse XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/Example-EU-PermissionResponse JSON %}
+		</div>
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleERPEUOperationOutcomeError XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleERPEUOperationOutcomeError JSON %}
+		</div>
+	</div>
+</div>
+
+
+

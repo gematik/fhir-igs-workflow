@@ -33,8 +33,6 @@ RuleSet: TaskInteraction(expectation)
 * insert TaskSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
 * insert TaskReadInteractionStatusCodes
-* insert CapResourceInteraction(#patch, #SHALL)
-* insert TaskPatchInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(authored-on, http://hl7.org/fhir/SearchParameter/Task-authored-on, #date, {expectation}, "Task.authoredOn - Unterstützt die Suche nach dem Erstellungsdatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(status, http://hl7.org/fhir/SearchParameter/Task-status, #token, {expectation}, "Task.status - Unterstützt die Suche nach dem Status einer Task")

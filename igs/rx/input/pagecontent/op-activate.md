@@ -26,20 +26,34 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$activate` gesendet.
 			{% include OperationDefinition-tiflow-rx-activate-op.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleRxOperationRequestParameters XML %}
+			{% fragment Parameters/ExampleOperationActivateParametersInput XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleOperationActivateParametersInput JSON %}
 		</div>
 	</div>
--->
-<!--
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
+		<div data-name="200 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Task/TaskInReadyState XML %}
+		</div>
+		<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationActivateInvalidRoleError XML %}
+		</div>
+		<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationActivateError XML %}
+		</div>
+		<div data-name="200 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Task/TaskInReadyState JSON %}
+		</div>
+		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationActivateInvalidRoleError JSON %}
+		</div>
+		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationActivateError JSON %}
 		</div>
 	</div>
--->
 </div>
 
 

@@ -5,13 +5,13 @@ Zur Umsetzung der ZETA Architektur müssen Clientsysteme folgende Anforderungen 
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A434" title="CS: ZETA Client" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="NCPeH_ePeDA" description="ePrescription/eDispensation Land-A National Contact Point for eHealth">
@@ -24,13 +24,13 @@ Zur Umsetzung der ZETA Architektur müssen Clientsysteme folgende Anforderungen 
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A435" title="CS: ZETA Client - Kommunikation mit Fachdienst" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="NCPeH_ePeDA" description="ePrescription/eDispensation Land-A National Contact Point for eHealth">
@@ -43,13 +43,13 @@ Hinweis: Der Zeta-Client beinhaltet zwingend zu nutzende Kommunikationsfunktione
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A436" title="CS: ZETA Client - Authentisierung" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="NCPeH_ePeDA" description="ePrescription/eDispensation Land-A National Contact Point for eHealth">
@@ -60,13 +60,13 @@ Hinweis: Der Zeta-Client beinhaltet zwingend zu nutzende Kommunikationsfunktione
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A437" title="CS: ZETA Client - ZETA/ASL-Kanal" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="NCPeH_ePeDA" description="ePrescription/eDispensation Land-A National Contact Point for eHealth">

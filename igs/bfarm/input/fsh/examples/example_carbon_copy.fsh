@@ -3,7 +3,7 @@ InstanceOf: ERP_TPrescription_CarbonCopy
 Usage: #example
 Title: "Beispiel digitaler Durchschlag E-T-Rezept"
 Description: "Dieses Beispiel wurde manuell angelegt, um den Aufbau eines digitalen Durchschlags abzubilden"
-* meta.profile = "https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.1"
+* meta.profile = "https://gematik.de/fhir/tiflow/bfarm/StructureDefinition/erp-tprescription-carbon-copy|1.2"
 * parameter[rxPrescription]
   * name = "rxPrescription"
   * part[prescriptionSignatureDate]
@@ -73,7 +73,7 @@ InstanceOf: ERP_TPrescription_Organization
 Usage: #inline
 * id = "8b416995-852f-4933-99bf-c71ad76abae3"
 * name = "Stadt Apotheke"
-* identifier[TelematikID].value = "Organisation 3-2arvtst-ap000053"
+* identifier[TelematikID].value = "3-2arvtst-ap000053"
 * telecom.system = #phone
 * telecom.value = "1234"
 * telecom.use = #work
@@ -91,8 +91,8 @@ Usage: #inline
 * extension[teratogenic]
   * extension[off-label].valueBoolean = true
   * extension[childbearing-potential].valueBoolean = true
-  * extension[security-compliance].valueBoolean = false
-  * extension[hand-out-information-material].valueBoolean = false
+  * extension[security-compliance].valueBoolean = true
+  * extension[hand-out-information-material].valueBoolean = true
   * extension[declaration-of-expertise].valueBoolean = true
 * status = #completed
 * intent = #order
@@ -102,7 +102,7 @@ Usage: #inline
 * subject.identifier.value.extension[=].valueCode = #not-permitted
 * medicationReference.reference = "Medication/TRP-Carbon-Copy-Medication"
 * authoredOn = "2025-05-20"
-* extension[renderedDosageInstruction].valueMarkdown = "1-0-1-0 Stück"
+* extension[renderedDosageInstruction].valueMarkdown = "1-0-2-0 Stück"
 * extension[generatedDosageInstructionsMeta]
   * url = $generatedMeta
   * extension[+].url = "algorithmVersion"

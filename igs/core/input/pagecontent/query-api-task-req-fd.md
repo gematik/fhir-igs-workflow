@@ -165,6 +165,7 @@ Diese Operation führt nicht zu einer Statusänderung bei den zurück gelieferte
 
 
 #### HTTP-Operation GET - Prüfung PoPP-Token
+
 Wenn der TI-Flow-Fachdienst in einem Aufruf einen PoPP-Token empfängt muss geprüft werden, dass der Token vom PoPP-Service ausgestellt wurde. Hierzu wird die Signatur des PoPP-Tokens geprüft.
 
 Der TI-Flow-Fachdienst setzt gemäß [gemSpec_PoPP_Service] in der Rolle PoPP-Verifier folgende Prüfschritte via TI-PKI um (siehe [gemSpec_PoPP_Service]#5.1.2 PoPP-Token Prüfung, A_27015):
@@ -323,7 +324,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
       abbrechen.
 </requirement>
 
-### GET /Task/<id> (Einzelne Verordnung)
+### GET /Task/&lt;id&gt; (Einzelne Verordnung)
 
 Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezifische Verordnung steht ausschließlich dem Versicherten bzw. einer abgebenden Institution mit Wissen um das Secret zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.
 
@@ -614,7 +615,7 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
 </requirement>
 
 <!-- A_27550 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A122" title="TI-Flow-Fachdienst -Task markieren - Versicherter - Prüfung KVNR" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A122" title="TI-Flow-Fachdienst - Task markieren - Versicherter - Prüfung KVNR" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

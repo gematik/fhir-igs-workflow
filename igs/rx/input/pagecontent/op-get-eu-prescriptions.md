@@ -1,0 +1,65 @@
+Der abgebenden Apotheke im europäischen Ausland werden Ressourcen des MedicationRequest sowie die darin verknüpften Ressourcen mit Informationen über im europäischen Ausland einlösbare Verordnungen bereitgestellt. Der Zugriff auf diese Ressourcen erfolgt ausschließlich lesend durch den deutschen NCPeH-FD, der die Informationen entsprechend aufbereitet und weiterleitet.
+
+### Nachricht
+
+Die Nachricht wird als HTTP `POST` an `/$get-eu-prescriptions` gesendet.
+
+### Anforderungen an Schnittstelle
+
+- [Server Anforderungen zu `$get-eu-prescriptions`](./op-get-eu-prescriptions-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
+- [NCPeH Anforderungen zu `$get-eu-prescriptions`](./op-get-eu-prescriptions-req-ncpeha.html): Anforderungen an den NCPeH-FD zur Nutzung der Schnittstelle.
+
+### API Beschreibung
+
+<div class="gematik-api"
+	data-api-type="FHIROperation"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-invoke-level="system"
+	data-api-operation-id="getEUPrescriptionsOperation">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
+		</pre>
+	</div>
+	<div id="OperationDefinition">
+		<pre>
+			{% include OperationDefinition-GETPrescriptionEU.json %}
+		</pre>
+	</div>
+	<div id="Request-Examples">
+		<div data-name="Prescriptions-Retrieval - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-RETRIEVAL XML %}
+		</div>
+		<div data-name="Prescriptions-Retrieval - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-RETRIEVAL JSON %}
+		</div>
+		<div data-name="Prescriptions-List - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-LIST XML %}
+		</div>
+		<div data-name="Prescriptions-List - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleEUGETPrescriptionE-PRESCRIPTIONS-LIST JSON %}
+		</div>
+		<div data-name="Prescriptions-Demographics - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleEUGETPrescriptionDEMOGRAPHICS XML %}
+		</div>
+		<div data-name="Prescriptions-Demographics - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/ExampleEUGETPrescriptionDEMOGRAPHICS JSON %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<div data-name="200 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleGetEUPrescriptionBundle XML %}
+		</div>
+		<div data-name="200 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleGetEUPrescriptionBundle JSON %}
+		</div>
+		<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationGetEUError XML %}
+		</div>
+		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationGetEUError JSON %}
+		</div>
+	</div>
+</div>
+
+

@@ -11,12 +11,15 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 |Apotheke|GET X-PoPP-Token|E-Rezepte von Versicherten abrufen (PoPP)|
 |Apotheke|GET /&#60;id&#62;?ac=|Recovery Secret|
 |Apotheke|GET /&#60;id&#62;?secret=|Quittung erneut abrufen|
+|Versicherter|PATCH /&#60;id&#62;|E-Rezept zum Einlösen im EU-Ausland markieren|
 
 ### Anforderungen an Schnittstelle
 
 - [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-- [FdV-Anforderungen für Task-Query](./query-api-task-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [FdV-Anforderungen für Task-Query](./query-api-task-req-fdv.html): Anforderungen an das TI-Flow-FdV zur Nutzung der Schnittstelle.
 - [AVS-Anforderungen für Task-Query](./query-api-task-req-avs.html): Anforderungen an das AVS zur Nutzung der Schnittstelle.
+
+Anforderungen für den **NCPeH-Fachdienst** zur Nutzung der Operationen am `/Task`-Endpunkt finden sich in [gemSpec_NCPeH_FD] ab Kapitel [6.2.4](https://gemspec.gematik.de/docs/gemSpec/gemSpec_NCPeH_FD/latest/#6.2.4).
 
 ### Resource API
 
@@ -33,13 +36,14 @@ Anfragen an die <i>Task</i>-Ressource können über die RESTful API mittels HTTP
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleRxTaskSearchset XML %}
 		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleRxTaskSearchset JSON %}
+		</div>
 	</div>
--->
 </div>
 
 ### Instance API
@@ -57,11 +61,43 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleRxTaskSearchset XML %}
+			{% fragment Task/TaskInReadyState XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Task/TaskInReadyState JSON %}
 		</div>
 	</div>
--->
+</div>
+
+#### Task markieren (Einlösen im EU-Ausland)
+
+Über eine HTTP-PATCH-Anfrage an den Endpunkt <i>/Task/&lt;id&gt;</i> kann der Versicherte ein E-Rezept zum Einlösen im EU-Ausland markieren.
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-interaction="patch">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
+		</pre>
+	</div>
+	<div id="Request-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/Example-PATCH-Task-Single-Input-Request-True XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/Example-PATCH-Task-Single-Input-Request-True JSON %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Task/ExampleERPEUTaskInReadyState XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Task/ExampleERPEUTaskInReadyState JSON %}
+		</div>
+	</div>
 </div>

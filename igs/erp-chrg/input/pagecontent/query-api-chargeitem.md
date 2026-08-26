@@ -19,7 +19,7 @@ Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource ChargeItem w
 ### Anforderungen an Schnittstelle
 
 - [Server-Anforderungen zu ChargeItem](./query-api-chargeitem-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-- [FdV-Anforderungen zu ChargeItem](./query-api-chargeitem-req-fdv.html): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [FdV-Anforderungen zu ChargeItem](./query-api-chargeitem-req-fdv.html): Anforderungen an ein TI-Flow-FdV zur Nutzung der Schnittstelle.
 - [AVS-Anforderungen zu ChargeItem](./query-api-chargeitem-req-avs.html): Anforderungen an ein AVS zur Nutzung der Schnittstelle.
 
 #### Resource API
@@ -36,11 +36,123 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleERPCHRGChargeItemSearchset XML %}
 		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleERPCHRGChargeItemSearchset JSON %}
+		</div>
 	</div>
--->
+</div>
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="ChargeItem"
+	data-api-fhir-interaction="read">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>	
+	<div id="Response-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment ChargeItem/ChargeItem-GET-Completed XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment ChargeItem/ChargeItem-GET-Completed JSON %}
+		</div>
+	</div>
+</div>
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="ChargeItem"
+	data-api-fhir-interaction="create">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>
+	<div id="Request-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment ChargeItem/ChargeItem-POST-Binary XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment ChargeItem/ChargeItem-POST-Binary JSON %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment ChargeItem/ChargeItem-GET-Completed XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment ChargeItem/ChargeItem-GET-Completed JSON %}
+		</div>
+	</div>
+</div>
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="ChargeItem"
+	data-api-fhir-interaction="update">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>
+	<div id="Request-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment ChargeItem/ChargeItem-POST-Binary XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment ChargeItem/ChargeItem-POST-Binary JSON %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment ChargeItem/ChargeItem-GET-Completed XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment ChargeItem/ChargeItem-GET-Completed JSON %}
+		</div>
+	</div>
+</div>
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="ChargeItem"
+	data-api-fhir-interaction="patch">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>
+	<div id="Request-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/ChargeItem-PATCH-Input XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/ChargeItem-PATCH-Input JSON %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment ChargeItem/ChargeItem-GET-Completed XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment ChargeItem/ChargeItem-GET-Completed JSON %}
+		</div>
+	</div>
+</div>
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="ChargeItem"
+	data-api-fhir-interaction="delete">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>	
 </div>

@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der `Task`-Query-End
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core.query-api-task-req-avs.md %}
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-schnittstellen-query-api.html)
 
 
 ### Modulspezifische Anforderungen
@@ -14,7 +14,7 @@ Mit diesem Anwendungsfall kann die abgebende LEI die Zugriffsinformationen zu al
 <!-- A_22435-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A10" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - PoPP-Token abrufen" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+  <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" einen PoPP-Token vom PoPP-Service abrufen.
@@ -27,7 +27,7 @@ Hinweis: Im Response des PoPP-Service erhält das PS den PoPP-Token im JWT Compa
 <!-- A_22437-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A11" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen (PoPP) - E-Rezepte abrufen" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+  <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" die HTTP-Operation GET /Task mit
@@ -46,7 +46,7 @@ Abgerufene Rezepte, welche nicht durch die Apotheke beliefert werden, müssen du
 <!-- A_23152 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A12" title="PS abgebende LEI: E-Rezepte von Versicherten abrufen - nicht belieferte E-Rezepte zurückgeben" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+  <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der abgebenden LEI MUSS im Anwendungsfall "E-Rezepte von Versicherten abrufen" den Nutzer geeignet unterstützen, heruntergeladene und damit reservierte E-Rezepte, welche nicht beliefert werden, wieder zurückzugeben, um dem Versicherten zu ermöglichen, diese in einer anderen Apotheke einzulösen.

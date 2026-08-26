@@ -10,12 +10,11 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 |Versicherter|GET /&#60;id&#62;|Spezifischen Task abrufen|
 |Kostenträger|GET /&#60;id&#62;?ac=|Recovery Secret|
 |Kostenträger|GET /&#60;id&#62;?secret=|Quittung erneut abrufen|
-|Versicherter|PATCH|Task markieren|
 
 ### Anforderungen an Schnittstelle
 
 - [FD-Anforderungen zur Task-Query](./query-api-task-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-- [FdV-Anforderungen für Task-Query](./query-api-task-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [FdV-Anforderungen für Task-Query](./query-api-task-req-fdv.html): Anforderungen an das TI-Flow-FdV zur Nutzung der Schnittstelle.
 - [KTR-Anforderungen für Task-Query](./query-api-task-req-ktr.html): Anforderungen an das Clientsystem Kostenträger zur Nutzung der Schnittstelle.
 
 #### API Beschreibung
@@ -29,37 +28,13 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleDiGATaskSearchset XML %}
 		</div>
-	</div>
--->
-</div>
-
-<div class="gematik-api"
-	data-api-type="FHIRResource"
-	data-api-fhir-resource-type="Task"
-	data-api-fhir-interaction="patch">
-	<div id="CapabilityStatement">
-		<pre>
-			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
-		</pre>
-	</div>
-<!--
-	<div id="Request-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleDiGAOperationRequestParameters XML %}
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleDiGATaskSearchset JSON %}
 		</div>
 	</div>
--->
-<!--
-	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleDiGATaskSearchset XML %}
-		</div>
-	</div>
--->
 </div>
 

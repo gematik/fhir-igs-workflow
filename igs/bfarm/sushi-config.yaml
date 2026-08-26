@@ -9,8 +9,8 @@ name: gemIG_TIFlow_bfarm
 title: Implementation Guide TIFlow - Datenaustausch BfArM Webdienst
 description: Dieser IG Beschreibt Schnittstellen und Profile für den Datenaustauch zwischen TI-Flow-Fachdienst und BfArM Webdienst
 status: draft # draft | active | retired | unknown
-version: 2.0.0-ballot.2
-date: 2026-06-30
+version: 2.0.0-ballot.3
+date: 2026-08-27
 copyrightYear: 2026+
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 applyExtensionMetadataToRoot: false
@@ -27,7 +27,8 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  de.gematik.ti: 1.4.0-ballot.1
+  de.gematik.ti: 1.4.0-ballot.2
+  hl7.fhir.uv.xver-r5.r4: 0.1.0
 # The pages property corresponds to IG.definition.page. SUSHI can
 # auto-generate the page list, but if the author includes pages in
 # this file, it is assumed that the author will fully manage the
@@ -78,6 +79,7 @@ menu:
     Beispiele: tests.html
     Referenzen: referenced.html
     Downloads: downloads.html
+    Abhängigkeiten: dependencies.html
     Release Notes: release-notes.html
     Lizenz: license.html
   FHIR-Artefakte: artifacts.html
@@ -117,6 +119,8 @@ pages:
     title: "Referenzen"
   downloads.md:
     title: "Downloads"
+  dependencies.md:
+    title: Abhängigkeiten
   release-notes.md:
     title: "Release Notes"
   # spec-sheet.md:
@@ -267,11 +271,11 @@ parameters:
     - Bundle/example-case-03-mapping-bundle
     - Bundle/example-case-04-mapping-bundle
     - Bundle/VZD-SearchSet-Bundle
-    - StructureDefinition/erp-tprescription-carbon-copy
-    - StructureDefinition/erp-tprescription-medication-request
-    - StructureDefinition/erp-tprescription-organization
-    - Parameters/TRP-Carbon-Copy
-    - MedicationRequest/ExampleMedicationRequest-T
+    # - StructureDefinition/erp-tprescription-carbon-copy
+    # - StructureDefinition/erp-tprescription-medication-request
+    # - StructureDefinition/erp-tprescription-organization
+    # - Parameters/TRP-Carbon-Copy
+    # - MedicationRequest/ExampleMedicationRequest-T
     - StructureMap/ERPTPrescriptionStructureMapCarbonCopy
     - StructureMap/ERPTPrescriptionStructureMapGEMMedication
     - StructureMap/ERPTPrescriptionStructureMapMedicationRequest

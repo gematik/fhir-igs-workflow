@@ -3,7 +3,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core.op-activate-req-fd.md %}
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-schnittstellen-operation-api.html)
 
 ### Modulspezifische Anforderungen
 
@@ -45,7 +45,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
             <td>-</td>
         </tr>
     </table> 
-    abbrechen, damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.
+    abbrechen, damit nur solche Leistungserbringer eine signierte Verordnung einstellen, die zur Verordnung von DiGAs ermächtigt sind.
 </requirement>
 
 <br>
@@ -113,7 +113,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
             <td>-</td>
         </tr>
     </table> 
-    abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden.
+    abbrechen, um sicherzustellen, dass diese Workflows nicht für Verordnungen für PKV-Versicherte genutzt werden.
 </requirement>
 
 <br>
@@ -157,7 +157,7 @@ Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallka
   <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   </actor>
-  Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.<br>
+  Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte Verordnungs-Bundle gemäß TAB_eRpDM_005 belegen.<br>
 
   <table>
     <tr> 

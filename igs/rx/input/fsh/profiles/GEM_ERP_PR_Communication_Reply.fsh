@@ -16,7 +16,7 @@ Description: "Antwort vom Leistungserbringer an den Patienten"
   * content[x] only string
   * content[x] MS
     * ^short = "Der tatsächliche Inhalt der Nachricht"
-    * ^comment = "Dieser Inhalt muss gemäß gemSpec_DM_eRp ein JSON sein."
+    * ^comment = "Dieser Inhalt muss im JSON-Format sein."
 
   * extension
     * ^slicing.discriminator.type = #value

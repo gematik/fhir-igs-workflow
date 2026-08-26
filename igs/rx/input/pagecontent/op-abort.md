@@ -7,7 +7,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 ### Anforderungen an Schnittstelle
 
 - [FD-Anforderungen zu `$abort`](./op-abort-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-- [FdV-Anforderungen zu `$abort`](./op-abort-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [FdV-Anforderungen zu `$abort`](./op-abort-req-fdv.html): Anforderungen an das TI-Flow-FdV zur Nutzung der Schnittstelle.
 - [PVS-Anforderungen zu `$abort`](./op-abort-req-pvs.html): Anforderungen an das PVS zur Nutzung der Schnittstelle.
 - [AVS-Anforderungen zu `$abort`](./op-abort-req-avs.html): Anforderungen an das AVS zur Nutzung der Schnittstelle.
 
@@ -28,17 +28,14 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 			{% include OperationDefinition-tiflow-rx-abort-op.json %}
 		</pre>
 	</div>
-<!--
-	<div id="Request-Examples">
-	</div>
--->
-<!--
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleRxOperationOutcomeError XML %}
+		<div data-name="Fehler 403 - Beispiel für Abort-Operation Fehlerantwort application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationAbortErrorRoleFdV JSON %}
+		</div>
+		<div data-name="Fehler 403 - Beispiel für Abort-Operation Fehlerantwort application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationAbortErrorRoleFdV XML %}
 		</div>
 	</div>
--->
 </div>
 
 ### Hinweise

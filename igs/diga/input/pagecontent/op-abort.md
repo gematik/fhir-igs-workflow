@@ -4,7 +4,7 @@ Die FHIR-Operation `$abort` überführt einen im Status `ready` oder `completed`
 Diese Operation basiert auf der $abort Operation des Basis-Workflow für E-Rezepte.
 
 ### Nachricht
-Die Operation $abort wird als HTTP POST auf /Task/<id>/$abort ausgeführt.
+Die Operation $abort wird als HTTP POST auf /Task/&lt;id&gt;/$abort ausgeführt.
 
 ### Anforderungen an Schnittstelle
 
@@ -31,11 +31,12 @@ Die Operation $abort wird als HTTP POST auf /Task/<id>/$abort ausgeführt.
       {% include OperationDefinition-tiflow-diga-abort-op.json %}
     </pre>
   </div>
-<!--
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleDiGAOperationOutcomeError XML %}
+		<div data-name="Fehler 403 - Beispiel für Abort-Operation Fehlerantwort application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationAbortErrorRoleFdV JSON %}
+		</div>
+		<div data-name="Fehler 403 - Beispiel für Abort-Operation Fehlerantwort application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/ExampleOperationAbortErrorRoleFdV XML %}
 		</div>
 	</div>
--->
 </div>

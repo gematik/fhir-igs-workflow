@@ -1,23 +1,29 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 828f2a9562ace72aeb9283d90d853b7e056004ff8e6b7593919ed4c63844561d
+content_hash: cea02ee3bea33d5788a9d1c0994432dd2b4da1ede361f7e487db817c9364c556
 created: '2026-06-25T11:30:11.256256'
-date: '2026-06-25T11:30:11.256258'
+date: '2026-08-25T13:20:57.169247'
 key: IG-TIFLOW-CORE-A219
-modified: '2026-06-25T11:30:11.256257'
+modified: '2026-08-25T13:20:57.169247'
 release_status: NEW
 source: input/pagecontent/op-create-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation
-  den Parameter workflowType (Rezepttyp) aus dem HTTP-Body des POST-Requests entnehmen,
-  als Attribut Task.extension:flowType des zu erstellenden Tasks verwenden und bei
-  Fehlen bzw. Nicht-Konformität des Parameters den Request als unzulässig abweisen,
-  damit auf Basis dieser Parameter ausschließlich gültige Workflows gestartet werden
-  können und dem Versicherten bei Einsicht des Tasks der Weg in entweder eine Apotheke
-  oder ein Sanitätshaus oder eine andere zuständige Einrichtung gewiesen werden kann.
+text: "Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks mittels HTTP-POST/$create-Operation\
+  \ den Parameter workflowType (Workflow-Typ für die Verordneung) aus dem HTTP-Body\
+  \ des POST-Requests entnehmen, als Attribut Task.extension:flowType des zu erstellenden\
+  \ Tasks verwenden und bei Fehlen bzw. Nicht-Konformität des Parameters den Request\
+  \ mit folgendem Fehler als unzulässig abweisen:\n \n <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_FLOWTYPE_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Flowtype\
+  \ nicht zulässig.</td>\n </tr>\n </table>\n \n , damit auf Basis dieser Parameter\
+  \ ausschließlich gültige Workflows gestartet werden können und dem Versicherten\
+  \ bei Einsicht des Tasks der Weg in entweder eine Apotheke oder ein Sanitätshaus\
+  \ oder eine andere zuständige Einrichtung gewiesen werden kann."
 title: TI-Flow-Fachdienst - Task erzeugen - Parametrierung Task für Workflow-Typ
 version: 0

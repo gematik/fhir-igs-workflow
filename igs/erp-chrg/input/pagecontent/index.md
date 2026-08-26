@@ -20,13 +20,13 @@ TI-Flow-Fachdienstes und beschreibt die relevanten Use Cases.
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Verwaltung von Abrechnungsinformationen zu Arzneimitteln den Implementation Guide "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte" umsetzen.
+    Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Verwaltung von Abrechnungsinformationen zu Arzneimitteln den Implementation Guide "TIFlow - Abrechnungsinformatione" umsetzen.
 </requirement>
 
 <!-- A_22206-01, A_22205-0, A_22204, A_22963, A_22205-01 -->
@@ -35,13 +35,13 @@ TI-Flow-Fachdienstes und beschreibt die relevanten Use Cases.
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+    Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "TIFlow - Abrechnungsinformationen" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus gemIG_TIFlow_core, die in diesem IG referenziert werden.
 </requirement>
 
 ### Wie dieser IG zu lesen ist
@@ -49,10 +49,6 @@ TI-Flow-Fachdienstes und beschreibt die relevanten Use Cases.
 Die Kapitel folgen der Struktur Fachlichkeit, Technische Umsetzung und
 Schnittstellen. Szenarien und Anwendungsfälle verweisen auf die zugehörigen
 technischen Kapitel und Profile.
-
-### Abhängigkeiten
-
-{% include dependency-table.xhtml %}
 
 ### Kontakt und Feedback
 

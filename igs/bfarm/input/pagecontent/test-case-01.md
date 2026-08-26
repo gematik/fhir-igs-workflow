@@ -1,5 +1,3 @@
-## Beispiel 1: PZN Verordnung
-
 Dieses Beispiel demonstriert das Mapping einer E-T-Rezept PZN-Verordnung mit allen Quellressourcen in den digitalen Durchschlag.
 
 ---

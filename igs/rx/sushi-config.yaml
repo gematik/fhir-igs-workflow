@@ -4,9 +4,9 @@ id: de.gematik.tiflow.erezept
 name: gemIG_TIFlow_erezept
 title: Implementation Guide TIFlow - Verordnungen für Arzneimittel
 status: draft # draft | active | retired | unknown
-version: 2.0.0-ballot.2
+version: 2.0.0-ballot.3
 # version: 0.9.0
-date: 2026-06-30
+date: 2026-08-27
 copyrightYear: 2026+
 releaseLabel: ballot # ci-build, ballot, release
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
@@ -16,9 +16,10 @@ publisher:
   email: erp-umsetzung@gematik.de
 
 dependencies:
-  de.basisprofil.r4: 1.5.4
-  de.gematik.ti: 1.4.0-ballot.1
-  de.gematik.tiflow: 2.0.0-ballot.2
+  hl7.fhir.uv.xver-r5.r4: 0.1.0
+  de.basisprofil.r4: 1.6.0
+  de.gematik.ti: 1.4.0-ballot.2
+  de.gematik.tiflow: 2.0.0-ballot.3
 
 applyExtensionMetadataToRoot: false
 
@@ -30,20 +31,26 @@ menu:
     Teratogene Arzneimittel: menu-fachlichkeit-t-rezept.html
     Mehrfachverordnungen: menu-fachlichkeit-mvo.html
     Workflow-Steuerung durch LE: menu-fachlichkeit-wf-le.html
+    Szenario EU: menu-fachlichkeit-szenario-eu.html
     UX verordnend: menu-fachlichkeit-ux-verordnend.html
     UX abgebend: menu-fachlichkeit-ux-abgebend.html
   Technische Umsetzung:
     Technische Anwendungsfälle: menu-technische-umsetzung-anwendungsfaelle.html
     Strukturierte Dosierungen: menu-technische-umsetzung-dosierung.html
     Dispensierinformationen: menu-technische-umsetzung-dispensierinformationen.html
+    ePA Medication Service: menu-technische-umsetzung-epa-ms.html
     Mappings: menu-technische-umsetzung-mapping.html
+    Technisches Konzept EU: menu-technische-umsetzung-konzept.html
+    Datenschutz und Sicherheit EU: menu-technische-umsetzung-datenschutz-und-sicherheit.html
     Zugriffsprotokollierung: menu-technische-umsetzung-audit-service.html
+    Löschfristen: ttl.html
   Schnittstellen:
     Query API: menu-schnittstellen-query-api.html
     Operation API: menu-schnittstellen-operation-api.html
   Über:
     Referenzen: referenced.html
     Downloads: downloads.html
+    Abhängigkeiten: dependencies.html
     #OpenAPI: erp-openapi.html
     Release Notes: release-notes.html
     #Steckbriefe: spec-sheet.html
@@ -64,6 +71,8 @@ pages:
       title: "Verordnung von Mehrfachverordnungen (MVO)"
     menu-fachlichkeit-t-rezept.md:
       title: "Verordnung von E-T-Rezepten"
+    menu-fachlichkeit-szenario-eu.md:
+      title: "Einlösen von E-Rezepten im europäischen Ausland"
     menu-fachlichkeit-ux-verordnend.md:
       title: "Best practice UX Primärsysteme für verordnende LEIs"
     menu-fachlichkeit-ux-abgebend.md:
@@ -80,6 +89,8 @@ pages:
       title: "Abgabedatensatz signieren" 
     menu-technische-umsetzung-kim.md:
       title: "E-Rezept-spezifische KIM-Messages" 
+    menu-technische-umsetzung-epa-ms.md:
+      title: "Technische Umsetzung - Übermittlung an den ePA Medication Service"
     menu-technische-umsetzung-mapping.md:
       title: "Vorgaben zum Mapping von FHIR-Instanzen"
       mapping-prescription.md:
@@ -114,8 +125,14 @@ pages:
         title: "Beispiel für eine Transformation einer Rezepturverordnung"
       comparison-Bundle-input-example-5.md:
         title: "Beispiel für eine Transformation einer Verordnung mit absoluter Referenzierung"
+    menu-technische-umsetzung-konzept.md:
+      title: "Technisches Konzept - Einlösen im EU-Ausland"
+    menu-technische-umsetzung-datenschutz-und-sicherheit.md:
+      title: "Datenschutz und Sicherheit - Einlösen im EU-Ausland"
     menu-technische-umsetzung-audit-service.md:
       title: "Zugriffsprotokollierung mit AuditEvent"
+  ttl.md:
+    title: "Löschfristen"
   menu-schnittstellen-query-api.md:
     title: "Query API"
     query-api-task.md:
@@ -142,6 +159,12 @@ pages:
         title: "AVS-Anforderungen: Communication-Query"
       query-api-communication-req-data.md:
         title: "Datenmodell payload"
+    query-api-consent.md:
+      title: "Query API: Consent"
+      query-api-consent-req-fd.md:
+        title: "FD-Anforderungen: Consent"
+      query-api-consent-req-fdv.md:
+        title: "FdV-Anforderungen: Consent"
   menu-schnittstellen-operation-api.md:
     title: "Operation API"
     op-create.md:
@@ -190,10 +213,42 @@ pages:
         title: "PVS-Anforderungen $abort"
       op-abort-req-avs.md:
         title: "AVS-Anforderungen $abort"
+    op-grant-eu-access-permission.md:
+      title: "Operation API: Zugriffsberechtigung erstellen"
+      op-grant-eu-access-permission-req-fd.md:
+        title: "Server Anforderungen: Zugriffsberechtigung erstellen"
+      op-grant-eu-access-permission-req-fdv.md:
+        title: "FdV-Anforderungen: Zugriffsberechtigung erstellen"
+    op-read-eu-access-permission.md:
+      title: "Operation API: Zugriffsberechtigung einsehen"
+      op-read-eu-access-permission-req-fd.md:
+        title: "FD-Anforderungen: Zugriffsberechtigung einsehen"
+      op-read-eu-access-permission-req-fdv.md:
+        title: "FdV-Anforderungen: Zugriffsberechtigung einsehen"
+    op-revoke-eu-access-permission.md:
+      title: "Operation API: Zugriffsberechtigung löschen"
+      op-revoke-eu-access-permission-req-fd.md:
+        title: "FD-Anforderungen: Zugriffsberechtigung löschen"
+      op-revoke-eu-access-permission-req-fdv.md:
+        title: "FdV-Anforderungen: Zugriffsberechtigung löschen"
+    op-get-eu-prescriptions.md:
+      title: "Operation API: E-Rezepte zur Einlösung im EU-Ausland abrufen"
+      op-get-eu-prescriptions-req-fd.md:
+        title: "FD-Anforderungen: E-Rezepte zur Einlösung im EU-Ausland abrufen"
+      op-get-eu-prescriptions-req-ncpeha.md:
+        title: "NCPeH-Anforderungen: E-Rezepte zur Einlösung im EU-Ausland abrufen"
+    op-eu-close.md:
+      title: "Operation API: Abgabe von E-Rezepten im EU-Ausland"
+      op-eu-close-req-fd.md:
+        title: "FD-Anforderungen: Abgabe von E-Rezepten im EU-Ausland"
+      op-eu-close-req-ncpeha.md:
+        title: "NCPeH-Anforderungen: Abgabe von E-Rezepten im EU-Ausland"
   artifacts.md:
     title: "FHIR-Artefakte"
   referenced.md:
     title: "Referenzen"
+  dependencies.md:
+    title: Abhängigkeiten
   downloads.md:
     title: "Downloads"
   # erp-openapi.md:
@@ -223,6 +278,7 @@ parameters:
     - https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense
     - https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task
     - https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus
+    - https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_OrganizationType
     - https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationMap
     - https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationdispenseMap
     - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpBundleMap
@@ -254,6 +310,10 @@ parameters:
     - Parameters/*
     - CapabilityStatement/*
     - Provenance/*
+    - Communication/*
+    - Consent/*
+    - Task/*
+    - AuditEvent/*    
   no-validate:
     - Bundle/1f339db0-9e55-4946-9dfa-f1b30953be9b
     - Bundle/9c85a2a5-92ee-4a57-83cb-ba90a0df2a21
@@ -271,29 +331,30 @@ parameters:
     - StructureMap/KBVPrErpPrescriptionMap
     - StructureMap/KBVPrForOrganizationMap
     - StructureMap/KBVPrForPractitionerMap
-    - Bundle/Bundle-AcceptOperation
-    - Bundle/ExampleAcceptResponseBundle
-    - Bundle/ExampleRxCommunicationSearchset
-    - Bundle/ExampleRxMedicationDispenseSearchset
-    - Bundle/ExampleRxTaskSearchset
-    - Bundle/dffbfd6a-5712-4798-bdc8-07201eb77ab8
-    - Bundle/example-searchset-auditevent
-    - Bundle/example-searchset-consent
-    - Bundle/example-searchset-medicationdispense
-    - Bundle/example-searchset-task
+    # - Bundle/Bundle-AcceptOperation
+    # - Bundle/ExampleAcceptResponseBundle
+    # - Bundle/ExampleRxCommunicationSearchset
+    # - Bundle/ExampleRxMedicationDispenseSearchset
+    # - Bundle/ExampleRxTaskSearchset
+    # - Bundle/dffbfd6a-5712-4798-bdc8-07201eb77ab8
+    # - Bundle/example-searchset-auditevent
+    # - Bundle/example-searchset-consent
+    # - Bundle/example-searchset-medicationdispense
+    # - Bundle/example-searchset-task
     - Communication/2be1c6ac-5d10-47f6-84ee-8318b2c22c76
     - Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596
     - Communication/a218a36e-f2fd-4603-ba67-c827acfef01b
-    - Consent/QueryConsentCHARGCONS
-    - Task/9b48f82c-9c11-4a57-aa72-a805f9537a82
-    - Task/TaskInClosedState
-    - Task/TaskInReadyState
-    - Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e
-    - Task/f5c21409-b84b-4125-8649-5630a00906b1
-    - Parameters/output-example-1
-    - Parameters/output-example-2
-    - Parameters/output-example-3
-    - Parameters/output-example-4
-    - Parameters/output-example-5
-    - AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa
+    # - Consent/QueryConsentCHARGCONS
+    # - Task/9b48f82c-9c11-4a57-aa72-a805f9537a82
+    # - Task/TaskInClosedState
+    # - Task/TaskInReadyState
+    # - Task/d70932d1-9e1c-483c-b2d4-b7dced09b35e
+    # - Task/f5c21409-b84b-4125-8649-5630a00906b1
+    # - Parameters/output-example-1
+    # - Parameters/output-example-2
+    # - Parameters/output-example-3
+    # - Parameters/output-example-4
+    # - Parameters/output-example-5
+    # - AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa
+    - StructureDefinition/logical-eu-dispense-data
   #autoload-resources: true

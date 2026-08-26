@@ -11,53 +11,57 @@ Usage:
 
 import json
 import os
+import shutil
 import sys
 import subprocess
 import tempfile
-from urllib.request import urlopen
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
 
 def resolve_hapi_jar() -> Path:
-    """Resolve HAPI validator path from env vars or HOME fallback."""
+    """Resolve the shared HAPI validator cache, with an explicit override."""
     configured = os.getenv("FHIR_VALIDATOR_JAR") or os.getenv("HAPI_VALIDATOR_JAR")
     if configured:
         return Path(configured).expanduser().resolve()
-    return (Path.home() / ".fhir" / "validators" / "validator_cli.jar").resolve()
+    return project_root().parents[1] / "input-cache" / "current_hapi_validator.jar"
 
 
 def ensure_hapi_jar(hapi_jar_path: Path) -> bool:
-    """Ensure validator jar exists, downloading it when missing."""
+    """Provision the shared HAPI validator cache when it is missing."""
     if hapi_jar_path.exists():
         return True
 
-    download_url = os.getenv(
-        "FHIR_VALIDATOR_URL",
-        "https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar",
-    )
-
-    hapi_jar_path.parent.mkdir(parents=True, exist_ok=True)
+    installer = project_root().parents[1] / "scripts" / "install-hapi-validator.sh"
     print(f"ℹ HAPI validator not found at: {hapi_jar_path}")
-    print(f"⬇ Downloading validator_cli.jar from: {download_url}")
+    return subprocess.run([str(installer)], check=False).returncode == 0 and hapi_jar_path.exists()
 
-    try:
-        with urlopen(download_url, timeout=120) as response:
-            data = response.read()
 
-        if not data:
-            print("❌ Download failed: empty response")
-            return False
+def project_root() -> Path:
+    return Path(__file__).resolve().parents[2]
 
-        tmp_path = hapi_jar_path.with_suffix(".jar.tmp")
-        with tmp_path.open("wb") as tmp_file:
-            tmp_file.write(data)
-        tmp_path.replace(hapi_jar_path)
-        print(f"✅ Downloaded validator jar to: {hapi_jar_path}")
-        return True
-    except Exception as exc:  # noqa: BLE001
-        print(f"❌ Failed to download HAPI validator: {exc}")
-        return False
+
+def validator_subprocess_env() -> dict[str, str]:
+    """Isolate the validator's package resolution from ~/.fhir/packages."""
+    isolated_home = os.getenv("FHIR_VALIDATOR_HOME") or str(project_root().parents[1] / "input-cache" / "fhir-validator-home")
+    Path(isolated_home).mkdir(parents=True, exist_ok=True)
+    return {**os.environ, "HOME": isolated_home}
+
+
+def load_validator_dependencies() -> list[str]:
+    configured = os.getenv("HAPI_VALIDATOR_IGS", "")
+    if not configured:
+        raise RuntimeError("HAPI_VALIDATOR_IGS must be configured by post-build.sh.")
+    return [dependency for dependency in configured.splitlines() if dependency]
+
+
+def create_local_validator_ig() -> tempfile.TemporaryDirectory[str]:
+    temp_ig = tempfile.TemporaryDirectory(prefix="bfarm-validator-")
+    resources_dir = project_root() / "fsh-generated" / "resources"
+    for pattern in ("StructureMap-*.json", "StructureDefinition-*.json"):
+        for resource in resources_dir.glob(pattern):
+            shutil.copy2(resource, temp_ig.name)
+    return temp_ig
 
 
 def sanitize_decimal_value(value):
@@ -152,6 +156,7 @@ def run_hapi_transform(
     hapi_jar_path: Path,
     input_bundle: Path,
     output_file: Path,
+    local_ig_dir: str,
     fhir_version: str = "4.0.1",
     transform_url: str = "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy"
 ) -> tuple[int, str, str]:
@@ -162,21 +167,8 @@ def run_hapi_transform(
         Tuple of (return_code, stdout, stderr)
     """
     
-    # Get the project root (3 levels up from this script)
-    script_dir = Path(__file__).parent
-    project_root = script_dir.parent.parent
-    
-    # Define IG dependencies
-    ig_paths = [
-        str(project_root / "fsh-generated" / "resources"),
-        "de.gematik.erezept-workflow.r4",
-        #"kbv.ita.erp",
-        "de.gematik.fhir.directory",
-        "de.gematik.ti",
-        "hl7.fhir.uv.xver-r5.r4",
-        #"de.basisprofil.r4",
-        "de.gematik.epa.medication",
-    ]
+    project_directory = project_root()
+    ig_paths = [local_ig_dir, *load_validator_dependencies()]
     
     # Build argument tail shared by modern and legacy syntax variants.
     shared_args = [
@@ -189,17 +181,7 @@ def run_hapi_transform(
     for ig_path in ig_paths:
         shared_args.extend(["-ig", ig_path])
 
-    modern_cmd = [
-        "java",
-        "-jar",
-        str(hapi_jar_path),
-        "transform",
-        transform_url,
-        str(input_bundle),
-        *shared_args,
-    ]
-
-    legacy_cmd = [
+    command = [
         "java",
         "-jar",
         str(hapi_jar_path),
@@ -214,45 +196,14 @@ def run_hapi_transform(
     print(f"   Output: {output_file}")
     print(f"   Transform: {transform_url}\n")
     
-    # Try modern syntax first, then retry with legacy syntax for older validators.
     result = subprocess.run(
-        modern_cmd,
+        command,
         capture_output=True,
         text=True,
-        cwd=str(project_root)
+        cwd=str(project_directory),
+        env=validator_subprocess_env(),
     )
-
-    if result.returncode == 0:
-        return result.returncode, result.stdout, result.stderr
-
-    print(
-        "⚠ Modern transform syntax failed. "
-        "Retrying with legacy '-transform' syntax..."
-    )
-
-    legacy_result = subprocess.run(
-        legacy_cmd,
-        capture_output=True,
-        text=True,
-        cwd=str(project_root)
-    )
-
-    if legacy_result.returncode == 0:
-        combined_stdout = "\n".join(
-            text for text in [result.stdout, legacy_result.stdout] if text
-        )
-        combined_stderr = "\n".join(
-            text for text in [result.stderr, legacy_result.stderr] if text
-        )
-        return legacy_result.returncode, combined_stdout, combined_stderr
-
-    combined_stdout = "\n".join(
-        text for text in [result.stdout, legacy_result.stdout] if text
-    )
-    combined_stderr = "\n".join(
-        text for text in [result.stderr, legacy_result.stderr] if text
-    )
-    return legacy_result.returncode, combined_stdout, combined_stderr
+    return result.returncode, result.stdout, result.stderr
 
 
 def main():
@@ -305,11 +256,13 @@ def main():
 
     try:
         # Run transformation
-        return_code, stdout, stderr = run_hapi_transform(
-            hapi_jar_path,
-            sanitized_bundle,
-            output_file
-        )
+        with create_local_validator_ig() as local_ig_dir:
+            return_code, stdout, stderr = run_hapi_transform(
+                hapi_jar_path,
+                sanitized_bundle,
+                output_file,
+                local_ig_dir,
+            )
     finally:
         if sanitized_bundle != input_bundle and sanitized_bundle.exists():
             sanitized_bundle.unlink()

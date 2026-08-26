@@ -5,7 +5,7 @@ Die Query API für Consent ermöglicht das Erteilen, Einsehen und Widerrufen der
 ### Anforderungen an die Schnittstelle
 
 - [Server-Anforderungen zur Consent-Query](./query-api-consent-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-- [FdV-Anforderungen zur Consent-Query](./query-api-consent-req-fdv.html): Anforderungen an das E-Rezept-FdV des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
+- [FdV-Anforderungen zur Consent-Query](./query-api-consent-req-fdv.html): Anforderungen an das TI-Flow-FdV des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
 
 Für die Verwaltung der Einwilligung zum Speichern der Abrechnungsinformationen wird Consent.category.coding.code mit dem Codesystem https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType verwendet.
 
@@ -20,11 +20,50 @@ Für die Verwaltung der Einwilligung zum Speichern der Abrechnungsinformationen 
 			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleERPCHRGConsentSearchset XML %}
 		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleERPCHRGConsentSearchset JSON %}
+		</div>
 	</div>
--->
+</div>
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Consent"
+	data-api-fhir-interaction="create">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>
+	<div id="Request-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Consent/ChargeItemConsent-Request XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Consent/ChargeItemConsent-Request JSON %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Consent/0dcc5d4c-bf24-4c06-b02e-be5bc24587e2 XML %}
+		</div>
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Consent/0dcc5d4c-bf24-4c06-b02e-be5bc24587e2 JSON %}
+		</div>
+	</div>
+</div>
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Consent"
+	data-api-fhir-interaction="delete">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>	
 </div>

@@ -25,12 +25,12 @@
     },
     {
         "key": "IG-TIFLOW-DIGA-A10",
-        "title": "E-Rezept-FdV: Kostenträger suchen - Telematik-ID im Verzeichnisdienst suchen",
+        "title": "TI-Flow-FdV: Kostenträger suchen - Telematik-ID im Verzeichnisdienst suchen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -38,23 +38,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/api-add-fhirvzd.md",
-        "text": "Das E-Rezept-FdV SOLL im Anwendungsfall \"Kostenträger suchen\", wenn die IKNR des Kostenträgers des Nutzers verfügbar ist, zur Ermittlung der Telematik-ID des Kostenträgers des Nutzers folgende Suchabfrage am FHIRVZD durchführen:\n  <ul>\n  <li>Abfrage der Ressource \"HealthcareService\"</li>\n  <li>HealthcareServices, deren Organisation aktiv sind</li>\n  <li>HealthcareServices, deren Organisation den Typ-oid \"1.2.276.0.76.4.59\" haben</li>\n  <li>HealthcareServices, deren Organisation einen Identifier vom Typ \"IKNR\" haben</li>\n  <li>HealthcareServices, deren Organisation eine IKNR mit IKNR aus dem ACCESS_TOKEN enthält</li>\n  <li>HealthcareServices, deren Organisation einen Identifier vom Typ \"Telematik-ID\" haben</li>\n  <li>Einbeziehen der Organisation in das Rückgabeergebnis</li>\n  </ul>",
+        "text": "Das TI-Flow-FdV SOLL im Anwendungsfall \"Kostenträger suchen\", wenn die IKNR des Kostenträgers des Nutzers verfügbar ist, zur Ermittlung der Telematik-ID des Kostenträgers des Nutzers folgende Suchabfrage am FHIRVZD durchführen:\n <ul>\n <li>Abfrage der Ressource \"HealthcareService\"</li>\n <li>HealthcareServices, deren Organisation aktiv sind</li>\n <li>HealthcareServices, deren Organisation den Typ-oid \"1.2.276.0.76.4.59\" haben</li>\n <li>HealthcareServices, deren Organisation einen Identifier vom Typ \"IKNR\" haben</li>\n <li>HealthcareServices, deren Organisation eine IKNR mit IKNR aus dem ACCESS_TOKEN enthält</li>\n <li>HealthcareServices, deren Organisation einen Identifier vom Typ \"Telematik-ID\" haben</li>\n <li>Einbeziehen der Organisation in das Rückgabeergebnis</li>\n </ul>",
         "conformance": "SHOULD",
         "created": "2026-06-25T12:48:11.233283",
-        "modified": "2026-06-25T12:48:11.233284",
-        "date": "2026-06-25T12:48:11.233285",
-        "content_hash": "3ceea69c679d35fbde5e531aa89591c6889b2cab0844a5efe93d44c9b7fdf5e9",
+        "modified": "2026-08-26T13:45:24.203444",
+        "date": "2026-08-26T13:45:24.203444",
+        "content_hash": "bc821f060e5c0983b7b02e671c535783c3941551d98806a97642fbf427d64c36",
         "path": "api-add-fhirvzd.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-DIGA-A11",
-        "title": "E-Rezept-FdV: Kostenträger Suchen - Liste verfügbarer Kostenträger ermitteln",
+        "title": "TI-Flow-FdV: Kostenträger Suchen - Liste verfügbarer Kostenträger ermitteln",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -62,23 +62,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/api-add-fhirvzd.md",
-        "text": "Das E-Rezept-FdV SOLL im Anwendungsfall \"Kostenträger suchen\", wenn die IKNR oder Telematik-ID des Kostenträgers des Nutzers nicht verfügbar ist, die Liste aller Kostenträger aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird:\n  <ul>\n  <li>Abfrage der Ressource \"HealthcareService\"</li>\n  <li>HealthcareServices, deren Organisation aktiv sind</li>\n  <li>HealthcareServices, deren Organisation den Typ-oid \"1.2.276.0.76.4.59\" haben</li>\n  <li>HealthcareServices, deren Organisation einen Identifier vom Typ \"IKNR\" haben</li>\n  <li>HealthcareServices, deren Organisation einen Identifier vom Typ \"Telematik-ID\" haben</li>\n  <li>Einbeziehen der Organisation in das Rückgabeergebnis</li>\n  </ul>",
+        "text": "Das TI-Flow-FdV SOLL im Anwendungsfall \"Kostenträger suchen\", wenn die IKNR oder Telematik-ID des Kostenträgers des Nutzers nicht verfügbar ist, die Liste aller Kostenträger aus dem Verzeichnisdienst ermitteln, indem an den Verzeichnisdienst folgende Abfrage gestellt wird:\n <ul>\n <li>Abfrage der Ressource \"HealthcareService\"</li>\n <li>HealthcareServices, deren Organisation aktiv sind</li>\n <li>HealthcareServices, deren Organisation den Typ-oid \"1.2.276.0.76.4.59\" haben</li>\n <li>HealthcareServices, deren Organisation einen Identifier vom Typ \"IKNR\" haben</li>\n <li>HealthcareServices, deren Organisation einen Identifier vom Typ \"Telematik-ID\" haben</li>\n <li>Einbeziehen der Organisation in das Rückgabeergebnis</li>\n </ul>",
         "conformance": "SHOULD",
         "created": "2026-06-25T12:48:11.233563",
-        "modified": "2026-06-25T12:48:11.233564",
-        "date": "2026-06-25T12:48:11.233565",
-        "content_hash": "a16e844c49ee922f9df78348b64dd05715ab4d9c2dea94e0b1c17d1760003a63",
+        "modified": "2026-08-26T13:45:24.203782",
+        "date": "2026-08-26T13:45:24.203782",
+        "content_hash": "0f25a8d2a94e8ef9250df0990aa1ae241397d8ad9e4620850f1ad41a5f07aada",
         "path": "api-add-fhirvzd.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-DIGA-A12",
-        "title": "PS verordnende LEI: TIFlow-DIGA - verpflichtende Anwendungsfälle",
+        "title": "PS verordnende LEI: TIFlow - DIGA - verpflichtende Anwendungsfälle",
         "actor": [
-            "PS_E-Rezept_verordnend"
+            "PS_TI-Flow_verordnend"
         ],
         "test_procedures": {
-            "PS_E-Rezept_verordnend": [
+            "PS_TI-Flow_verordnend": [
                 "Herstellererklärung"
             ]
         },
@@ -86,23 +86,47 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md",
-        "text": "Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle\n    <ul>\n        <li>UC 2.1 - E-Rezepte erzeugen</li>\n        <li>E-Rezept qualifiziert signieren</li>\n        <li>UC 2.3 - E-Rezept einstellen</li>\n        <li>UC 2.5 - E-Rezept durch Verordnenden löschen</li>\n    </ul>\n    umsetzen.",
+        "text": "Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle\n <ul>\n <li>UC 2.1 - E-Rezepte erzeugen</li>\n <li>E-Rezept qualifiziert signieren</li>\n <li>UC 2.3 - E-Rezept einstellen</li>\n <li>UC 2.5 - E-Rezept durch Verordnenden löschen</li>\n </ul>\n umsetzen.",
         "conformance": "SHALL",
         "created": "2026-06-25T12:48:11.234585",
-        "modified": "2026-06-25T12:48:11.234586",
-        "date": "2026-06-25T12:48:11.234587",
-        "content_hash": "60eaa51359e90cdff408ed3a62d36babee15e166023bda02d18996815196b111",
+        "modified": "2026-08-24T14:30:39.973162",
+        "date": "2026-08-25T14:32:11.399405",
+        "content_hash": "4ee0f91891d298331d2b1d869a5bca38511e739218199716bce844596edf0c63",
         "path": "menu-technische-umsetzung-anwendungsfaelle.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-DIGA-A129",
+        "title": "DiGA: Löschfrist abgelaufener Verordnungen",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/ttl.md",
+        "text": "Der TI-Flow-Fachdienst MUSS einen Task mit Flowtype 162 nach Ablauf der Löschfrist gemäß der folgenden Festlegung automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.\n\t<table>\n\t\t<tr> \n\t\t<th>Task.status nach Statuswechsel</th>\n\t\t<th>Löschfrist</th>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>draft</td>\n\t\t<td>10 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>ready</td>\n\t\t<td>10 Tage nach Datum in Task.expiryDate</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>in-progress</td>\n\t\t<td>30 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>completed</td>\n\t\t<td>30 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t\t<tr> \n\t\t<td>cancelled</td>\n\t\t<td>10 Tage nach Statuswechsel</td>\n\t\t</tr>\n\t</table>",
+        "conformance": "SHALL",
+        "created": "2026-07-28T07:25:30.063602",
+        "modified": "2026-08-24T14:30:39.970483",
+        "date": "2026-08-24T14:30:39.970483",
+        "content_hash": "d2edc5ad28e721d678b196d257e9ae7d1ac484a8f834e8b489e116c88f5f37b7",
+        "path": "ttl.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-DIGA-A13",
-        "title": "E-Rezept-FdV: TIFlow-DIGA - verpflichtende Anwendungsfälle",
+        "title": "TI-Flow-FdV: TIFlow - DIGA - verpflichtende Anwendungsfälle",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -110,23 +134,71 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md",
-        "text": "Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle\n    <ul>\n        <li>UC 3.1 - E-Rezepte durch Versicherten abrufen</li>\n        <li>UC 3.2 - E-Rezept durch Versicherten löschen</li>\n        <li>Kostenträger suchen</li>\n        <li>UC 3.3 - Nachricht durch Versicherten übermitteln</li>\n        <li>UC 3.4 - Nachricht durch Versicherten empfangen</li>\n        <li>UC 3.8 - Nachricht durch Versicherten löschen</li>\n        <li>UC 3.5 - Protokolldaten abrufen</li>\n    </ul>\n    umsetzen.",
+        "text": "Das TI-Flow-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle\n <ul>\n <li>UC 3.1 - E-Rezepte durch Versicherten abrufen</li>\n <li>UC 3.2 - E-Rezept durch Versicherten löschen</li>\n <li>Kostenträger suchen</li>\n <li>UC 3.3 - Nachricht durch Versicherten übermitteln</li>\n <li>UC 3.4 - Nachricht durch Versicherten empfangen</li>\n <li>UC 3.8 - Nachricht durch Versicherten löschen</li>\n <li>UC 3.5 - Protokolldaten abrufen</li>\n </ul>\n umsetzen.",
         "conformance": "SHALL",
         "created": "2026-06-25T12:48:11.234856",
-        "modified": "2026-06-25T12:48:11.234857",
-        "date": "2026-06-25T12:48:11.234858",
-        "content_hash": "97924d89ada878b7765b7e220f54ae1b3033480ffd54def287c3ae524d6294a5",
+        "modified": "2026-08-26T13:45:24.204653",
+        "date": "2026-08-26T13:45:24.204653",
+        "content_hash": "db50cce413536232dc26dd476e9951304007861f76f6f168980d9bcaee371a57",
         "path": "menu-technische-umsetzung-anwendungsfaelle.html",
         "release": "2.0.0"
     },
     {
-        "key": "IG-TIFLOW-DIGA-A14",
-        "title": "CS Kostenträger: TIFlow-DIGA - verpflichtende Anwendungsfälle",
+        "key": "IG-TIFLOW-DIGA-A130",
+        "title": "DiGA: Löschen referenzierter Bundles",
         "actor": [
-            "CS_E-Rezept_KTR"
+            "TI-Flow_FD"
         ],
         "test_procedures": {
-            "CS_E-Rezept_KTR": [
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/ttl.md",
+        "text": "Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines Tasks mit Flowtype 162 alle referenzierten Bundles ebenfalls löschen.",
+        "conformance": "SHALL",
+        "created": "2026-07-28T07:25:30.063857",
+        "modified": "2026-08-24T14:30:39.970773",
+        "date": "2026-08-24T14:30:39.970773",
+        "content_hash": "951e3f5a3092d10fa06ae405feb783c54503338bc1f28820465488172b6c274b",
+        "path": "ttl.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-DIGA-A131",
+        "title": "DiGA: Löschfrist veraltete Nachrichten",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/ttl.md",
+        "text": "Der TI-Flow-Fachdienst MUSS eine gespeicherte Ressource Communication automatisch löschen:\n\t<ul>\n\t\t<li>ohne eine Referenz auf einen Task in Communication.basedOn nach 30 Tagen ab ihrem Sendedatum Communication.sent,</li>\n\t\t<li>mit einer Referenz auf einen Task mit Flowtype 162 in Communication.basedOn gemäß der Löschfrist beim Löschen des Tasks.</li>\n\t</ul>",
+        "conformance": "SHALL",
+        "created": "2026-07-28T07:25:30.064053",
+        "modified": "2026-08-24T14:30:39.970968",
+        "date": "2026-08-24T14:30:39.970968",
+        "content_hash": "530b7dcdc831ac294bb3c4aab852358bff50d45a43dc9becabd40f3771dd6042",
+        "path": "ttl.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-DIGA-A14",
+        "title": "CS Kostenträger: TIFlow - DIGA - verpflichtende Anwendungsfälle",
+        "actor": [
+            "CS_TI-Flow_KTR"
+        ],
+        "test_procedures": {
+            "CS_TI-Flow_KTR": [
                 "Herstellererklärung"
             ]
         },
@@ -134,12 +206,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md",
-        "text": "Das Clientsystem des Kostenträgers MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle\n    <ul>\n        <li>UC 4.1 - E-Rezept durch Abgebenden abrufen</li>\n        <li>UC 4.2 - E-Rezept durch Abgebenden zurückgeben</li>\n        <li>UC 4.4 - Quittung abrufen</li>\n        <li>UC 4.17 - Verordnung erneut abrufen</li>\n        <li>UC 4.8 - Quittung erneut abrufen</li>\n        <li>UC 4.6 - Nachrichten durch Abgebenden empfangen</li>\n        <li>UC 4.7 - Nachricht durch Abgebenden übermitteln</li>\n        <li>UC 4.9 - Nachricht durch Abgebenden löschen</li>\n    </ul>\n    umsetzen.",
+        "text": "Das Clientsystem des Kostenträgers MUSS für die Umsetzung der Verordnung von DiGAs die Anwendungsfälle\n <ul>\n <li>UC 4.1 - E-Rezept durch Abgebenden abrufen</li>\n <li>UC 4.2 - E-Rezept durch Abgebenden zurückgeben</li>\n <li>UC 4.4 - Quittung abrufen</li>\n <li>UC 4.17 - Verordnung erneut abrufen</li>\n <li>UC 4.8 - Quittung erneut abrufen</li>\n <li>UC 4.6 - Nachrichten durch Abgebenden empfangen</li>\n <li>UC 4.7 - Nachricht durch Abgebenden übermitteln</li>\n <li>UC 4.9 - Nachricht durch Abgebenden löschen</li>\n </ul>\n umsetzen.",
         "conformance": "SHALL",
         "created": "2026-06-25T12:48:11.235132",
-        "modified": "2026-06-25T12:48:11.235133",
-        "date": "2026-06-25T12:48:11.235134",
-        "content_hash": "b455cd8991c3a2374263a1b081ed410864a482f2431efce48b227061ebbf69f8",
+        "modified": "2026-08-24T14:30:39.973770",
+        "date": "2026-08-25T14:32:11.400172",
+        "content_hash": "c6e573b8f2b4de57d99867e733ce92ccb6b305204067c7563be04b5226cfeb18",
         "path": "menu-technische-umsetzung-anwendungsfaelle.html",
         "release": "2.0.0"
     },
@@ -158,12 +230,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-activate-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die einer der folgenden professionOID entspricht:\n  <ul>\n    <li>oid_arzt</li>\n    <li>oid_zahnarzt</li>\n    <li>oid_psychotherapeut</li>\n    <li>oid_ps_psychotherapeut</li>\n    <li>oid_kuj_psychotherapeut</li>\n  </ul>\n  die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von DiGAs ermächtigt sind.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate, wenn die QES gemäß der professionOID des Signaturzertifikats des Signierenden nicht von einer Berufsgruppe ausgestellt wurde, die einer der folgenden professionOID entspricht:\n <ul>\n <li>oid_arzt</li>\n <li>oid_zahnarzt</li>\n <li>oid_psychotherapeut</li>\n <li>oid_ps_psychotherapeut</li>\n <li>oid_kuj_psychotherapeut</li>\n </ul>\n die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit nur solche Leistungserbringer eine signierte Verordnung einstellen, die zur Verordnung von DiGAs ermächtigt sind.",
         "conformance": "SHALL",
         "created": "2026-06-25T12:48:11.236012",
-        "modified": "2026-06-25T12:48:11.236017",
-        "date": "2026-06-25T12:48:11.236018",
-        "content_hash": "cd604c8867d5a8447568ed6cd3687b6de782ea60c02c1b9e00c091a99b195dad",
+        "modified": "2026-08-24T14:30:39.974281",
+        "date": "2026-08-24T14:30:39.974281",
+        "content_hash": "26672869bcd0c093a384646f7a5c4535fdbf73c5e2b48393269edf6872beaccd",
         "path": "op-activate-req-fd.html",
         "release": "2.0.0"
     },
@@ -206,12 +278,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-activate-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, dass Coverage.type.coding.code nicht mit dem Wert \"PKV\" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_COVERAGE_TYPE_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table> \n    abbrechen, um sicherzustellen, dass diese Workflows nicht für E-Rezepte für PKV-Versicherte genutzt werden.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate prüfen, dass Coverage.type.coding.code nicht mit dem Wert \"PKV\" belegt ist und im Fehlerfall die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_COVERAGE_TYPE_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, um sicherzustellen, dass diese Workflows nicht für Verordnungen für PKV-Versicherte genutzt werden.",
         "conformance": "SHALL",
         "created": "2026-06-25T12:48:11.236908",
-        "modified": "2026-06-25T12:48:11.236910",
-        "date": "2026-06-25T12:48:11.236910",
-        "content_hash": "5ae38015d12b0e52f69766fba34cc5b109fcbda63dd3d1a8bb396f055c7ef90f",
+        "modified": "2026-08-24T14:30:39.975547",
+        "date": "2026-08-24T14:30:39.975547",
+        "content_hash": "f9ce7583ff09141eede19c07fa14a4fd1a93809ddeba50b2bd3ff54f62666cd2",
         "path": "op-activate-req-fd.html",
         "release": "2.0.0"
     },
@@ -243,10 +315,10 @@
         "key": "IG-TIFLOW-DIGA-A2",
         "title": "CS Kostenträger: Nachricht versenden - Flowtype 162 - Communication erstellen",
         "actor": [
-            "CS_E-Rezept_KTR"
+            "CS_TI-Flow_KTR"
         ],
         "test_procedures": {
-            "CS_E-Rezept_KTR": [
+            "CS_TI-Flow_KTR": [
                 "Konformitätsbestätigung"
             ]
         },
@@ -258,7 +330,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T12:48:11.229403",
         "modified": "2026-06-25T12:48:11.229408",
-        "date": "2026-06-25T12:48:11.229409",
+        "date": "2026-08-25T14:32:11.394150",
         "content_hash": "78c3dc4fa7508f525ed6e312c05e870ca5bab18ebc6f02c1873c0cbdb65ec2fd",
         "path": "query-api-communication-req-ktr.html",
         "release": "2.0.0"
@@ -278,12 +350,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-activate-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte E-Rezept-Bundle gemäß TAB_eRpDM_005 belegen.<br>\n\n  <table>\n    <tr> \n      <th>Feld in Task</th>\n      <th>Feldbelegung</th>\n    </tr>\n    <tr> \n      <td>Task.performerType.coding.system</td>\n      <td>\"https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType\"</td>\n    </tr>\n    <tr> \n      <td>Task.performerType.coding.code</td>\n      <td>\"1.2.276.0.76.4.59\"</td>\n    </tr>\n    <tr> \n      <td>Task.performerType.coding.diplay</td>\n      <td>\"Kostenträger\"</td>\n    </tr>\n    <tr> \n      <td>Task.PrescriptionType.valueCoding.display</td>\n      <td>\"Flowtype für Digitale Gesundheitsanwendungen\"</td>\n    </tr>\n    <tr> \n      <td>Task.ExpiryDate</td>\n      <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>\n    </tr>\n    <tr> \n      <td>Task.AcceptDate</td>\n      <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>\n    </tr>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_005 Prozessparameter Flowtype 162</figcaption></div>",
+        "text": "Der TI-Flow-Fachdienst MUSS bei einem Task mit Task.flowType = 162 die Attribute in Task in Abhängigkeit des in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebenen gültig signierte Verordnungs-Bundle gemäß TAB_eRpDM_005 belegen.<br>\n\n <table>\n <tr> \n <th>Feld in Task</th>\n <th>Feldbelegung</th>\n </tr>\n <tr> \n <td>Task.performerType.coding.system</td>\n <td>\"https://gematik.de/fhir/erp/CodeSystemGEM_ERP_CS_OrganizationType\"</td>\n </tr>\n <tr> \n <td>Task.performerType.coding.code</td>\n <td>\"1.2.276.0.76.4.59\"</td>\n </tr>\n <tr> \n <td>Task.performerType.coding.diplay</td>\n <td>\"Kostenträger\"</td>\n </tr>\n <tr> \n <td>Task.PrescriptionType.valueCoding.display</td>\n <td>\"Flowtype für Digitale Gesundheitsanwendungen\"</td>\n </tr>\n <tr> \n <td>Task.ExpiryDate</td>\n <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>\n </tr>\n <tr> \n <td>Task.AcceptDate</td>\n <td>&#60;Datum der QES.Erstellung im Signaturobjekt&#62; + 3 Kalendermonate</td>\n </tr>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_005 Prozessparameter Flowtype 162</figcaption></div>",
         "conformance": "SHALL",
         "created": "2026-06-25T12:48:11.237843",
-        "modified": "2026-06-25T12:48:11.237845",
-        "date": "2026-06-25T12:48:11.237846",
-        "content_hash": "117fd0d7cf1e2709914360e7ac6e382cdeb4ddffca40a75a8de1ae9698c4b600",
+        "modified": "2026-08-24T14:30:39.976548",
+        "date": "2026-08-24T14:30:39.976548",
+        "content_hash": "08cdf91c0671d6ba4efcc93a83ef1062bc8230e5a5e3d466378ac8fc52b72621",
         "path": "op-activate-req-fd.html",
         "release": "2.0.0"
     },
@@ -315,10 +387,10 @@
         "key": "IG-TIFLOW-DIGA-A22",
         "title": "PS verordnende LEI: keine elektronische Verordnung einer DiGA zu Lasten BG/UK",
         "actor": [
-            "PS_E-Rezept_verordnend"
+            "PS_TI-Flow_verordnend"
         ],
         "test_procedures": {
-            "PS_E-Rezept_verordnend": [
+            "PS_TI-Flow_verordnend": [
                 "Herstellererklärung"
             ]
         },
@@ -330,7 +402,7 @@
         "conformance": "SHALL NOT",
         "created": "2026-06-25T12:48:11.240185",
         "modified": "2026-06-25T12:48:11.240187",
-        "date": "2026-06-25T12:48:11.240187",
+        "date": "2026-08-25T14:32:11.405562",
         "content_hash": "fb74102bd2cc3d481244c7425f2201da3500d7e880ac6649a359ed8f9470e27c",
         "path": "op-create-req-pvs.html",
         "release": "2.0.0"
@@ -339,18 +411,18 @@
         "key": "IG-TIFLOW-DIGA-A23",
         "title": "E-Rezept: Anwendung des IG 'Verordnungen für Digitale Gesundheitsanwendungen (DiGA)' für Workflow 162",
         "actor": [
-            "CS_E-Rezept_KTR",
+            "CS_TI-Flow_KTR",
             "TI-Flow_FD",
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "CS_E-Rezept_KTR": [
+            "CS_TI-Flow_KTR": [
                 "Herstellererklärung"
             ],
             "TI-Flow_FD": [
                 "Herstellererklärung"
             ],
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -362,7 +434,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T12:48:11.240568",
         "modified": "2026-06-25T12:48:11.240570",
-        "date": "2026-06-25T12:48:11.240570",
+        "date": "2026-08-25T14:32:11.406084",
         "content_hash": "a904374719edcb2c1c19c1781d3d5754b784a33f4678b8c2daf9d4efac36d5c9",
         "path": "index.html",
         "release": "2.0.0"
@@ -371,18 +443,18 @@
         "key": "IG-TIFLOW-DIGA-A24",
         "title": "E-Rezept: Umsetzung des Moduls 'Verordnungen für Digitale Gesundheitsanwendungen (DiGA)'",
         "actor": [
-            "CS_E-Rezept_KTR",
+            "CS_TI-Flow_KTR",
             "TI-Flow_FD",
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "CS_E-Rezept_KTR": [
+            "CS_TI-Flow_KTR": [
                 "Herstellererklärung"
             ],
             "TI-Flow_FD": [
                 "Herstellererklärung"
             ],
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -394,19 +466,19 @@
         "conformance": "SHALL",
         "created": "2026-06-25T12:48:11.240819",
         "modified": "2026-06-25T12:48:11.240821",
-        "date": "2026-06-25T12:48:11.240821",
+        "date": "2026-08-25T14:32:11.406434",
         "content_hash": "769cd936d30d160f2a4e45c048db532718135ea8dfc9d7c235bbb049678af10a",
         "path": "index.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-DIGA-A25",
-        "title": "E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Anzeige des Freischaltcodes",
+        "title": "TI-Flow-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Anzeige des Freischaltcodes",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -414,23 +486,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-medicationdispense-req-fdv.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abgabeinformationen abfragen\" dem Nutzer Abgabeinformationen eines Tasks mit Flowtyp 162 den Freischaltcode in geeigneter Weise darstellen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abgabeinformationen abfragen\" für einen Task mit Flowtyp 162 dem Nutzer den Freischaltcode den Freischaltcode in geeigneter Weise darstellen.",
         "conformance": "SHALL",
         "created": "2026-06-25T12:48:11.242156",
-        "modified": "2026-06-25T12:48:11.242157",
-        "date": "2026-06-25T12:48:11.242158",
-        "content_hash": "50b22b084b9aac3765346f3c03057b7a3ed680a74885b9ef376d0636f59654e0",
+        "modified": "2026-08-26T13:45:24.210654",
+        "date": "2026-08-26T13:45:24.210654",
+        "content_hash": "292a512d15cded2afa57d29c325ca210710d1adb9db2a205d9055668d4d0f952",
         "path": "query-api-medicationdispense-req-fdv.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-DIGA-A26",
-        "title": "E-Rezept-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Supportinformationen für DiGA-App",
+        "title": "TI-Flow-FdV: Abgabeinformationen abfragen - Flowtyp 162 - Supportinformationen für DiGA-App",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -438,12 +510,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-medicationdispense-req-fdv.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abgabeinformationen abfragen\" dem Nutzer zusammen mit den Abgabeinformationen zu einer DiGA-App Supportinformationen zu der DiGA-App anzeigen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abgabeinformationen abfragen\" für einen Task mit Flowtyp 162 dem Nutzer Supportinformationen zu der DiGA-App zusammen mit dem Freischaltcode anzeigen.",
         "conformance": "SHALL",
         "created": "2026-06-25T12:48:11.242300",
-        "modified": "2026-06-25T12:48:11.242301",
-        "date": "2026-06-25T12:48:11.242302",
-        "content_hash": "acecfb43c77136fbd8afa89cfef724e19151067305bf79415872ddef47cc19f0",
+        "modified": "2026-08-26T13:45:24.210831",
+        "date": "2026-08-26T13:45:24.210831",
+        "content_hash": "563b1fb89fbb606f6706509b0f69aea819f0b6b6b0558fa6157a9ddf4edcd0a7",
         "path": "query-api-medicationdispense-req-fdv.html",
         "release": "2.0.0"
     },
@@ -451,10 +523,10 @@
         "key": "IG-TIFLOW-DIGA-A27",
         "title": "CS Kostenträger: Dispensierinformationen - Flowtype 162 - MedicationDispense erstellen",
         "actor": [
-            "CS_E-Rezept_KTR"
+            "CS_TI-Flow_KTR"
         ],
         "test_procedures": {
-            "CS_E-Rezept_KTR": [
+            "CS_TI-Flow_KTR": [
                 "Konformitätsbestätigung"
             ]
         },
@@ -466,7 +538,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T12:48:11.242726",
         "modified": "2026-06-25T12:48:11.242728",
-        "date": "2026-06-25T12:48:11.242729",
+        "date": "2026-08-25T14:32:11.407722",
         "content_hash": "c784aa6ef3a683351aaa86ca41e139804194a02bee7e239e5a1b4341dc6fbc29",
         "path": "op-close-req-ktr.html",
         "release": "2.0.0"
@@ -499,10 +571,10 @@
         "key": "IG-TIFLOW-DIGA-A29",
         "title": "PS verordnende LEI: E-Rezept einstellen - Flowtype 162 - Patientenausdruck",
         "actor": [
-            "PS_E-Rezept_verordnend"
+            "PS_TI-Flow_verordnend"
         ],
         "test_procedures": {
-            "PS_E-Rezept_verordnend": [
+            "PS_TI-Flow_verordnend": [
                 "Herstellererklärung"
             ]
         },
@@ -514,7 +586,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T12:48:11.233922",
         "modified": "2026-06-25T12:48:11.233926",
-        "date": "2026-06-25T12:48:11.233927",
+        "date": "2026-08-25T14:32:11.398808",
         "content_hash": "eb0e99fc3b57670743e2ac3c2f2ccead76a7511fd38d7583f33dc297f29ccf14",
         "path": "op-activate-req-pvs.html",
         "release": "2.0.0"
@@ -593,12 +665,12 @@
     },
     {
         "key": "IG-TIFLOW-DIGA-A5",
-        "title": "E-Rezept-FdV: E-Rezept zuweisen - Flowtype 162 - Kostenträger auswählen",
+        "title": "TI-Flow-FdV: E-Rezept zuweisen - Flowtype 162 - Kostenträger auswählen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -606,23 +678,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-communication-req-fdv.md",
-        "text": "Das E-Rezept-FdV KANN im Anwendungsfall \"E-Rezept einer abgebenden Institution zuweisen\" es dem Nutzer ermöglichen, für E-Rezepte mit dem Flowtype 162 einen Kostenträger zum Zuweisen einer DiGA auszuwählen.",
+        "text": "Das TI-Flow-FdV KANN im Anwendungsfall \"E-Rezept einer abgebenden Institution zuweisen\" es dem Nutzer ermöglichen, für E-Rezepte mit dem Flowtype 162 einen Kostenträger zum Zuweisen einer DiGA auszuwählen.",
         "conformance": "MAY",
         "created": "2026-06-25T12:48:11.231144",
-        "modified": "2026-06-25T12:48:11.231147",
-        "date": "2026-06-25T12:48:11.231148",
-        "content_hash": "52ef9504b5b7d92a3166528627cf3820d55ade98441e3da2f23336163eb82b71",
+        "modified": "2026-08-26T13:45:24.200779",
+        "date": "2026-08-26T13:45:24.200779",
+        "content_hash": "7de7df580a0d1c9f781d471a479a2069917c2bab4029dc4953f04ac797131a59",
         "path": "query-api-communication-req-fdv.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-DIGA-A6",
-        "title": "E-Rezept-FdV: Verordnung zuweisen - Nachricht erstellen",
+        "title": "TI-Flow-FdV: Verordnung zuweisen - Nachricht erstellen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -630,12 +702,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-communication-req-fdv.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq mit  \n    <ul>\n      <li>Telematik-ID der ausgewählten abgebenden LEI in recipient</li>\n      <li>E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als \"/Task/&lt;id&gt;/$accept?ac=...\" </li>\n    </ul>\n    erstellen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq mit \n <ul>\n <li>Telematik-ID der ausgewählten abgebenden LEI in recipient</li>\n <li>E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als \"/Task/&lt;id&gt;/$accept?ac=...\" </li>\n </ul>\n erstellen.",
         "conformance": "SHALL",
         "created": "2026-06-25T12:48:11.231360",
-        "modified": "2026-06-25T12:48:11.231362",
-        "date": "2026-06-25T12:48:11.231363",
-        "content_hash": "b94d62a583acbbf551023e96d65f0549e481c9fcb7235ae578fcd6c1066abb55",
+        "modified": "2026-08-26T13:45:24.201043",
+        "date": "2026-08-26T13:45:24.201043",
+        "content_hash": "4a9d118aefab0a236bf90e70892fe8b4efebbeafbe843b48b808c86722f1f8ee",
         "path": "query-api-communication-req-fdv.html",
         "release": "2.0.0"
     },
@@ -665,12 +737,12 @@
     },
     {
         "key": "IG-TIFLOW-DIGA-A8",
-        "title": "E-Rezept-FdV: optional: Kostenträger suchen",
+        "title": "TI-Flow-FdV: optional: Kostenträger suchen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -678,23 +750,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/api-add-fhirvzd.md",
-        "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Kostenträger suchen\" umsetzen.",
+        "text": "Das TI-Flow-FdV KANN den Anwendungsfall \"Kostenträger suchen\" umsetzen.",
         "conformance": "MAY",
         "created": "2026-06-25T12:48:11.232892",
-        "modified": "2026-06-25T12:48:11.232893",
-        "date": "2026-06-25T12:48:11.232894",
-        "content_hash": "4365684f37cff634ca82a563a7b2bac310524ce2e65f10fcbf82427b76c22084",
+        "modified": "2026-08-26T13:45:24.203017",
+        "date": "2026-08-26T13:45:24.203017",
+        "content_hash": "d9aa2a32cf3330e423129ff3f7c06ef16b1b7cec301c5ee9eced41cce7b57fe9",
         "path": "api-add-fhirvzd.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-DIGA-A9",
-        "title": "E-Rezept-FdV: Kostenträger suchen - IKNR aus ACCESS_TOKEN beziehen",
+        "title": "TI-Flow-FdV: Kostenträger suchen - IKNR aus ACCESS_TOKEN beziehen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -702,12 +774,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/api-add-fhirvzd.md",
-        "text": "Das E-Rezept-FdV SOLL im Anwendungsfall \"Kostenträger suchen\" die IKNR des Kostenträgers des Nutzers aus dem ACCESS_TOKEN claim \"organizationIK\" ermitteln.",
+        "text": "Das TI-Flow-FdV SOLL im Anwendungsfall \"Kostenträger suchen\" die IKNR des Kostenträgers des Nutzers aus dem ACCESS_TOKEN claim \"organizationIK\" ermitteln.",
         "conformance": "SHOULD",
         "created": "2026-06-25T12:48:11.233048",
-        "modified": "2026-06-25T12:48:11.233050",
-        "date": "2026-06-25T12:48:11.233050",
-        "content_hash": "d46c6f52a00f09abb606e99ad70280c8623bc163919969fab4fa937e4cc22391",
+        "modified": "2026-08-26T13:45:24.203185",
+        "date": "2026-08-26T13:45:24.203185",
+        "content_hash": "4b3f3ea053551afcad808e3d9d1828c7abf20b086ea910f4dcf4063198fb31d4",
         "path": "api-add-fhirvzd.html",
         "release": "2.0.0"
     }

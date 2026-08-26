@@ -8,7 +8,7 @@ Alias: $erp-communication-reply = https://gematik.de/fhir/erp/StructureDefinitio
 Alias: $erp-communication-representative = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Representative
 Alias: $erp-medication-dispense = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_MedicationDispense
 
-Alias: $tiflow-core-oo-cs = https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs
+Alias: $tiflow-core-oo-cs = https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs
 Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes
 Alias: $hl7-oo = http://terminology.hl7.org/CodeSystem/operation-outcome
 
@@ -56,9 +56,11 @@ Alias: $prescription-id-ns = https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS
 Alias: $eu-access-code-ns = https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_EU_AccessCode
 Alias: $cs-flowtype = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType
 Alias: $cs-features = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_Features
+Alias: $cs-availability-status = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_AvailabilityStatus
 Alias: $ex-capability-feature = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_CapabilityStatement_Feature
 Alias: $ex-capability-environment = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_CapabilityStatement_Environment
-
+Alias: $ex-supply-options-type = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_SupplyOptionsType
+Alias: $ex-availability-state = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_AvailabilityState
 // TI Common
 Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes
 
@@ -72,3 +74,15 @@ Alias: $hl7-oo = http://terminology.hl7.org/CodeSystem/operation-outcome
 
 // R5 Backport
 Alias: $medicationDispense-renderedDosageInstruction-r5 = http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction
+
+// EU (grenzüberschreitender Datenaustausch)
+Alias: $cs-iso-3166 = urn:iso:std:iso:3166
+Alias: $cs-consent-scope = http://terminology.hl7.org/CodeSystem/consentscope
+Alias: $v3-ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
+Alias: $cs-organization-profession-oid = https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID
+Alias: $sid-identifier-rx-originator-process = https://gematik.de/fhir/epa-medication/sid/rx-originator-process-identifier
+Alias: $sid-identifier-dispensation = https://gematik.de/fhir/epa-medication/sid/dispensation-identifier
+Alias: $cs-drug-category = https://gematik.de/fhir/epa-medication/CodeSystem/epa-drug-category-cs
+Alias: $cs-oid-practitioner-role = urn:oid:2.16.840.1.113883.2.9.6.2.7
+Alias: $profession-oid-vs = https://gematik.de/fhir/directory/ValueSet/OrganizationProfessionOIDTypeVS
+Alias: $epa-role-of-healthcare-vs = https://gematik.de/fhir/terminology/ValueSet/epa-structural-role-of-healthcare-professional-vs

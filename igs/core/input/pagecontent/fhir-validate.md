@@ -6,7 +6,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS bei der Prüfung der zeitlichen Gültigkeit einer FHIR Ressource den Wert aus dem Element gemäß folgender Tabelle zugrunde legen. 
+     Der TI-Flow-Fachdienst MUSS bei der Prüfung der zeitlichen Gültigkeit einer FHIR Ressource den Referenzwert aus dem Element gemäß folgender Tabelle zugrunde legen. 
 
   <table>
     <thead>
@@ -78,6 +78,16 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
   <div><figcaption><strong>Tabelle: </strong>TAB_ERP_FD_PruefungGueltigkeit_FHIR_Ressource Werte bei Prüfung der zeitlichen Gültigkeit einer FHIR Ressource</figcaption></div>
 </requirement>
 
+<!-- TI-Flow-26_2 BSI_07 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A458" title="TI-Flow-Fachdienst - Gültigkeitswerte gegen aktuelle FHIR-Konfiguration auswerten" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS den ermittelten Referenzwert der Gültigkeit gegen die aktuell gültige FHIR-Konfiguration auswerten und als Referenzzeitpunkt für die Prüfung der zeitlichen Gültigkeit einer FHIR Ressource zugrundelegen.
+</requirement>
+
+
 <!-- A_27658 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A274" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation" version="0">
 	<meta lockversion="false"/>
@@ -134,6 +144,21 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
+     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    <actor name="NCPeH_ePeDA" description="ePrescription/eDispensation Land-A National Contact Point for eHealth">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
      Der TI-Flow-Fachdienst und die Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung jeder FHIR-Ressource sicherstellen, dass im Element meta.profile genau ein Eintrag enthalten ist, wenn im Profil das Element meta.profile verpflichtend anzugeben ist; bei Abweichung ist die Ressource als fehlerhaft zu behandeln und darf nicht übermittelt werden.
 </requirement>
 
@@ -145,7 +170,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Auffälligkeiten die Operation mit dem folgenden Fehler:
+	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Abweichung die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -177,7 +202,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Auffälligkeiten die Operation mit dem folgenden Fehler:
+	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Abweichung die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -209,7 +234,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Auffälligkeiten die Operation mit dem folgenden Fehler:
+	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Abweichung die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -241,7 +266,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Auffälligkeiten die Operation mit dem folgenden Fehler:
+	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Abweichung die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -270,22 +295,22 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 <!-- A_26237-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A282" title="FHIR-Ressourcen - Ressource-ID in fullUrl" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="NCPeH_ePeDA" description="ePrescription/eDispensation Land-A National Contact Point for eHealth">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource die ID der fullURL (Bundle.entry.fullurl) der Ressource auf die ID der Ressource (Bundle.entry.resource.id) setzen, sofern das http(s)-Schema verwendet wird.
@@ -294,22 +319,22 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 <!-- A_26238-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A283" title="FHIR-Ressourcen - Format fullUrl" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="NCPeH_ePeDA" description="ePrescription/eDispensation Land-A National Contact Point for eHealth">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource sicherstellen, dass die fullURL (Bundle.entry.fullUrl) entweder im [Format http-Schema] oder im [Format urn:uuid-Schema] vorliegt.
@@ -318,26 +343,28 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 <!-- A_22216-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A284" title="FHIR-Ressourcen Versionsangabe" version="0">
     <meta lockversion="false"/>
-    <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="NCPeH_ePeDA" description="ePrescription/eDispensation Land-A National Contact Point for eHealth">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
+    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der zweistelligen Versionsnummer (major.minor) gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen, zu dessen aktuell gültiger Profilversion sie mutmaßlich validieren.
+     Der TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der zweistelligen Versionsnummer (major.minor) gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen.
 </requirement>
+<!-- TI-Flow-26_2 BSI_09 -->
+
 
 ### Validierung von Extensions
 

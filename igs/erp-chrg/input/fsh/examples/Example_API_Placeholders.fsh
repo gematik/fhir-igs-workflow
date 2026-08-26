@@ -24,8 +24,8 @@ Description: "Example response for GET /Communication"
 * total = 1
 * link[+].relation = "self"
 * link[=].url = "https://erp-ref.example.org/Communication?received=NULL"
-* entry[+].fullUrl = "https://erp-ref.example.org/Communication/Communication_ChargChangeRequest"
-* entry[=].resource = Communication_ChargChangeRequest
+* entry[+].fullUrl = "https://erp-ref.example.org/Communication/Communication_ChargChangeRequest_Response"
+* entry[=].resource = Communication_ChargChangeRequest_Response
 * entry[=].search.mode = #match
 
 Instance: ExampleERPCHRGConsentSearchset

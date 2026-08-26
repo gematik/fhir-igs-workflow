@@ -9,10 +9,8 @@ Description: "Generische Workflow-Communication"
 * basedOn 1..1 MS
 * basedOn only Reference(GEM_ERP_PR_Task)
 * basedOn ^type.aggregation = #referenced
-  * ^short = "Gibt das E-Rezept-Token gemäß gemSpec_DM_eRp an."
-  * ^comment = "Hat die Form 'Task/{{PrescriptionID}}'"
   * reference 1..1 MS
-    * ^short = "Gibt das E-Rezept-Token gemäß gemSpec_DM_eRp an."
+    * ^short = "Referenz zum E-Rezept-Task"
     * ^comment = "Hat die Form 'Task/{{PrescriptionID}}'"
 
 

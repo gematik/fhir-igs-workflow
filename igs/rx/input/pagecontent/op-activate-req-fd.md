@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core.op-activate-req-fd.md %}
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-schnittstellen-operation-api.html)
 
 ### Modulspezifische Anforderungen
 
@@ -357,7 +357,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
     </tr>
     <tr> 
       <td>Task.PrescriptionType.valueCoding.display</td>
-      <td>"Flowtype für Arzneimittel nach § 3a AMVV"</td>
+      <td>"Flowtype für Arzneimittel nach <span>§</span> 3a AMVV"</td>
     </tr>
     <tr> 
       <td>Task.ExpiryDate</td>

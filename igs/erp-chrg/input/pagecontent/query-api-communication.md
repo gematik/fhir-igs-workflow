@@ -16,7 +16,7 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 ### Anforderungen an die Schnittstelle
 
 - [FD-Anforderungen zu Communications](./query-api-communication-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-- [FdV-Anforderungen zu Communications](./query-api-communication-req-fdv.html): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [FdV-Anforderungen zu Communications](./query-api-communication-req-fdv.html): Anforderungen an ein TI-Flow-FdV zur Nutzung der Schnittstelle.
 - [AVS-Anforderungen zu Communications](./query-api-communication-req-avs.html): Anforderungen an ein Apothekenverwaltungssystem zur Nutzung der Schnittstelle.
 
 ### Resource API
@@ -36,14 +36,89 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mit
 			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
 		</pre>
 	</div>
-<!--
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/ExampleERPCHRGCommunicationSearchset XML %}
 		</div>
-		-->
+		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/ExampleERPCHRGCommunicationSearchset JSON %}
+		</div>
 	</div>
--->
+</div>
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Communication"
+	data-api-fhir-interaction="read">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>	
+	<div id="Response-Examples">
+		<div data-name="ChargChangeRequest - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/b4cf7f71-3ade-40ab-97a9-929f95af29f2 XML %}
+		</div>
+		<div data-name="ChargChangeRequest - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Communication/b4cf7f71-3ade-40ab-97a9-929f95af29f2 JSON %}
+		</div>
+		<div data-name="ChargChangeReply - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/3bbc2209-9c23-4553-986e-a5c9f69a39fb XML %}
+		</div>
+		<div data-name="ChargChangeReply - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Communication/3bbc2209-9c23-4553-986e-a5c9f69a39fb JSON %}
+		</div>
+	</div>
+</div>
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Communication"
+	data-api-fhir-interaction="create">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>
+	<div id="Request-Examples">
+		<div data-name="ChargChangeRequest - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/b4cf7f71-3ade-40ab-97a9-929f95af29f2-1 XML %}
+		</div>
+		<div data-name="ChargChangeRequest - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Communication/b4cf7f71-3ade-40ab-97a9-929f95af29f2-1 JSON %}
+		</div>
+		<div data-name="ChargChangeReply - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/3bbc2209-9c23-4553-986e-a5c9f69a39fb-1 XML %}
+		</div>
+		<div data-name="ChargChangeReply - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Communication/3bbc2209-9c23-4553-986e-a5c9f69a39fb-1 JSON %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<div data-name="ChargChangeRequest - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/b4cf7f71-3ade-40ab-97a9-929f95af29f2 XML %}
+		</div>
+		<div data-name="ChargChangeRequest - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Communication/b4cf7f71-3ade-40ab-97a9-929f95af29f2 JSON %}
+		</div>
+		<div data-name="ChargChangeReply - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/3bbc2209-9c23-4553-986e-a5c9f69a39fb XML %}
+		</div>
+		<div data-name="ChargChangeReply - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Communication/3bbc2209-9c23-4553-986e-a5c9f69a39fb JSON %}
+		</div>
+	</div>
+</div>
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Communication"
+	data-api-fhir-interaction="delete">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-erpchrg.json %}
+		</pre>
+	</div>	
 </div>
 
 ## Sicherheitsanforderungen

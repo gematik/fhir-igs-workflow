@@ -27,3 +27,12 @@ Description: "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den Operat
 * #TIFLOW_EREZEPT_MVO_NOT_VALID "MVO not valid yet" "The multiple prescription part is not redeemable yet because its redemption period has not started"
   * ^designation.language = #de-DE
   * ^designation.value = "Teilverordnung noch nicht einlösbar"
+* #TIFLOW_EREZEPT_NO_PRESCRIPTIONS_FOUND "No prescriptions found" "No redeemable prescriptions were found for the requested query scope"
+  * ^designation.language = #de-DE
+  * ^designation.value = "Keine einlösbaren Verordnungen gefunden"
+* #TIFLOW_EREZEPT_NOT_ACTIVATED "EU redemption not activated" "The addressed task is not activated for EU redemption"
+  * ^designation.language = #de-DE
+  * ^designation.value = "EU-Einlösung nicht aktiviert"
+* #TIFLOW_EREZEPT_COUNTRY_CODE_INVALID "Country code invalid" "The provided country code is not supported for ePrescription or eDispensation processing"
+  * ^designation.language = #de-DE
+  * ^designation.value = "Ländercode ungültig"

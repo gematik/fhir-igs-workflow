@@ -2,26 +2,26 @@
     "document_info": {
         "id": "gemIG_TIFlow_chargeitem",
         "title": "Implementation Guide TIFlow - Abrechnungsinformationen",
-        "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2",
-        "version": "2.0.0-ballot.2",
-        "date": "1782777600",
+        "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3",
+        "version": "2.0.0-ballot.3",
+        "date": "1787788800",
         "status": "released",
         "classification": "public"
     },
     "requirements": [
         {
             "key": "IG-TIFLOW-CHRG-A1",
-            "title": "E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen",
+            "title": "TI-Flow-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation-Token einer Apotheke übermitteln\" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq mit \n    <ul>\n        <li>Telematik-ID der ausgewählten abgebenden LEI in recipient</li>\n        <li>Textnachricht in payload contentString</li>\n        <li>E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als \"/ChargeItem/&#60;id&#62;?ac=...\"</li>\n    </ul> \n    erstellen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation-Token einer Apotheke übermitteln\" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq mit \n <ul>\n <li>Telematik-ID der ausgewählten abgebenden LEI in recipient</li>\n <li>Textnachricht in payload contentString</li>\n <li>E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als \"/ChargeItem/&#60;id&#62;?ac=...\"</li>\n </ul> \n erstellen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -31,21 +31,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-communication-req-fdv.html#IG-TIFLOW-CHRG-A1"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-communication-req-fdv.html#IG-TIFLOW-CHRG-A1"
         },
         {
             "key": "IG-TIFLOW-CHRG-A10",
-            "title": "E-Rezept-FdV: optional: Liste Abrechnungsinformationen abrufen",
+            "title": "TI-Flow-FdV: optional: Liste Abrechnungsinformationen abrufen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Liste Abrechnungsinformationen abrufen\" umsetzen.",
+            "text": "Das TI-Flow-FdV KANN den Anwendungsfall \"Liste Abrechnungsinformationen abrufen\" umsetzen.",
             "conformance": "MAY",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -55,21 +55,69 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A10"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A10"
+        },
+        {
+            "key": "IG-TIFLOW-CHRG-A100",
+            "title": "E-Rezept Charging: Löschfrist ChargeItem",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/ttl.html#IG-TIFLOW-CHRG-A100"
+        },
+        {
+            "key": "IG-TIFLOW-CHRG-A101",
+            "title": "E-Rezept Charging: Löschen referenzierter Bundles bei ChargeItem-Löschung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT27",
+                            "name": "Sich.techn. Eignung: Produktgutachten"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/ttl.html#IG-TIFLOW-CHRG-A101"
         },
         {
             "key": "IG-TIFLOW-CHRG-A11",
-            "title": "E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest",
+            "title": "TI-Flow-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Liste Abrechnungsinformationen abfragen\" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Liste Abrechnungsinformationen abfragen\" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -79,21 +127,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A11"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A11"
         },
         {
             "key": "IG-TIFLOW-CHRG-A12",
-            "title": "E-Rezept-FdV: optional: Abrechnungsinformation abrufen",
+            "title": "TI-Flow-FdV: optional: Abrechnungsinformation abrufen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Abrechnungsinformation durch den Versicherten abrufen\" umsetzen.",
+            "text": "Das TI-Flow-FdV KANN den Anwendungsfall \"Abrechnungsinformation durch den Versicherten abrufen\" umsetzen.",
             "conformance": "MAY",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -103,21 +151,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A12"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A12"
         },
         {
             "key": "IG-TIFLOW-CHRG-A13",
-            "title": "E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz",
+            "title": "TI-Flow-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation abfragen\" zum Abrufen der Information zu einem einzelnen Datensatz vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem/&#60;id&#62;/ mit \n      <ul>\n        <li>Prescription-ID in URL &#60;id&#62;</li>\n      </ul>\n      ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation abfragen\" zum Abrufen der Information zu einem einzelnen Datensatz vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem/&#60;id&#62;/ mit \n <ul>\n <li>Prescription-ID in URL &#60;id&#62;</li>\n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -127,21 +175,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A13"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A13"
         },
         {
             "key": "IG-TIFLOW-CHRG-A14",
-            "title": "E-Rezept-FdV: optional: Abrechnungsinformation markieren",
+            "title": "TI-Flow-FdV: optional: Abrechnungsinformation markieren",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Abrechnungsinformation markieren\" umsetzen.",
+            "text": "Das TI-Flow-FdV KANN den Anwendungsfall \"Abrechnungsinformation markieren\" umsetzen.",
             "conformance": "MAY",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -151,21 +199,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A14"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A14"
         },
         {
             "key": "IG-TIFLOW-CHRG-A15",
-            "title": "E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen",
+            "title": "TI-Flow-FdV: Abrechnungsinformation markieren - Markierungen auswählen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation markieren\" es dem Nutzer ermöglichen, eine oder mehrere der folgenden Inhalte als Markierung für eine Abrechnungsinformation zu wählen oder abzuwählen:\n      <ul>\n        <li>zur Abrechnung bei Krankenversicherung eingereicht (extention \"insuranceProvider\")</li>\n        <li>zur Abrechnung bei der Beihilfe eingereicht (extention \"subsity\")</li>\n        <li>zur Einreichung beim Finanzamt verwendet (extention \"taxOffice\")</li>\n      </ul>",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation markieren\" es dem Nutzer ermöglichen, eine oder mehrere der folgenden Inhalte als Markierung für eine Abrechnungsinformation zu wählen oder abzuwählen:\n <ul>\n <li>zur Abrechnung bei Krankenversicherung eingereicht (extention \"insuranceProvider\")</li>\n <li>zur Abrechnung bei der Beihilfe eingereicht (extention \"subsity\")</li>\n <li>zur Einreichung beim Finanzamt verwendet (extention \"taxOffice\")</li>\n </ul>",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -175,21 +223,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A15"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A15"
         },
         {
             "key": "IG-TIFLOW-CHRG-A16",
-            "title": "E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest",
+            "title": "TI-Flow-FdV: Abrechnungsinformation markieren - Speicherrequest",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation markieren\" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /ChargeItem/&#60;id&#62; mit \n        <ul>\n            <li>Prescription-ID in URL &#60;id&#62;</li>\n        </ul>\n      für jede zu ändernde Markierung\n        <ul>\n            <li>\"add\" in type</li>\n            <li>zu ändernde Markierung in path</li>\n            <li>geänderter Wert in value</li>\n        </ul>\n      ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation markieren\" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /ChargeItem/&#60;id&#62; mit \n <ul>\n <li>Prescription-ID in URL &#60;id&#62;</li>\n </ul>\n für jede zu ändernde Markierung\n <ul>\n <li>\"add\" in type</li>\n <li>zu ändernde Markierung in path</li>\n <li>geänderter Wert in value</li>\n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -199,21 +247,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A16"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A16"
         },
         {
             "key": "IG-TIFLOW-CHRG-A17",
-            "title": "E-Rezept-FdV: optional: Abrechnungsinformation löschen",
+            "title": "TI-Flow-FdV: optional: Abrechnungsinformation löschen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Abrechnungsinformation löschen\" umsetzen.",
+            "text": "Das TI-Flow-FdV KANN den Anwendungsfall \"Abrechnungsinformation löschen\" umsetzen.",
             "conformance": "MAY",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -223,21 +271,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A17"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A17"
         },
         {
             "key": "IG-TIFLOW-CHRG-A18",
-            "title": "E-Rezept-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen",
+            "title": "TI-Flow-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" es dem Nutzer ermöglichen, eine Abrechnungsinformationen zum Löschen auszuwählen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" es dem Nutzer ermöglichen, eine Abrechnungsinformationen zum Löschen auszuwählen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -247,21 +295,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A18"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A18"
         },
         {
             "key": "IG-TIFLOW-CHRG-A19",
-            "title": "E-Rezept-FdV: Abrechnungsinformation löschen - Bestätigung",
+            "title": "TI-Flow-FdV: Abrechnungsinformation löschen - Bestätigung",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" vom Nutzer eine Bestätigung einholen, dass die selektierte Abrechnungsinformation gelöscht werden soll und die Möglichkeit geben, das Löschen abzubrechen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" vom Nutzer eine Bestätigung einholen, dass die selektierte Abrechnungsinformation gelöscht werden soll und die Möglichkeit geben, das Löschen abzubrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -271,21 +319,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A19"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A19"
         },
         {
             "key": "IG-TIFLOW-CHRG-A2",
-            "title": "E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf TI-Flow-Fachdienst einstellen",
+            "title": "TI-Flow-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf TI-Flow-Fachdienst einstellen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation-Token einer Apotheke übermitteln\" zum Einstellen der Nachricht die HTTP-Operation POST /Communication  mit\n    <ul>\n        <li>Communication Ressource in HTTP-Request-Body</li>\n    </ul>\n    ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation-Token einer Apotheke übermitteln\" zum Einstellen der Nachricht die HTTP-Operation POST /Communication mit\n <ul>\n <li>Communication Ressource in HTTP-Request-Body</li>\n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -295,21 +343,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-communication-req-fdv.html#IG-TIFLOW-CHRG-A2"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-communication-req-fdv.html#IG-TIFLOW-CHRG-A2"
         },
         {
             "key": "IG-TIFLOW-CHRG-A20",
-            "title": "E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest",
+            "title": "TI-Flow-FdV: Abrechnungsinformation löschen - Löschrequest",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" die HTTP-Operation DELETE /ChargeItem/&#60;id&#62; des TI-Flow-Fachdienstes mit\n      <ul>\n        <li>Prescription-ID in URL &#60;id&#62;</li>\n      </ul>\n      ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" die HTTP-Operation DELETE /ChargeItem/&#60;id&#62; des TI-Flow-Fachdienstes mit\n <ul>\n <li>Prescription-ID in URL &#60;id&#62;</li>\n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -319,21 +367,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A20"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A20"
         },
         {
             "key": "IG-TIFLOW-CHRG-A21",
-            "title": "E-Rezept-FdV: Hinweis automatisches Löschen Abrechnungsinformationen",
+            "title": "TI-Flow-FdV: Hinweis automatisches Löschen Abrechnungsinformationen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV KANN, wenn es das Management von Abrechnungsinformationen unterstützt, den Nutzer vor Erreichen der Aufbewahrungsfrist der Abrechnungsinformation einen Hinweis zum automatischen Löschen geben, um dem Nutzer die Möglichkeit zu geben, falls gewünscht die Daten herunterzuladen und zu archivieren.",
+            "text": "Das TI-Flow-FdV KANN, wenn es das Management von Abrechnungsinformationen unterstützt, den Nutzer vor Erreichen der Aufbewahrungsfrist der Abrechnungsinformation einen Hinweis zum automatischen Löschen geben, um dem Nutzer die Möglichkeit zu geben, falls gewünscht die Daten herunterzuladen und zu archivieren.",
             "conformance": "MAY",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -343,7 +391,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A21"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fdv.html#IG-TIFLOW-CHRG-A21"
         },
         {
             "key": "IG-TIFLOW-CHRG-A22",
@@ -355,9 +403,9 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -367,7 +415,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A22"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A22"
         },
         {
             "key": "IG-TIFLOW-CHRG-A23",
@@ -379,9 +427,9 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -391,7 +439,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A23"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A23"
         },
         {
             "key": "IG-TIFLOW-CHRG-A24",
@@ -403,9 +451,9 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -415,7 +463,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A24"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A24"
         },
         {
             "key": "IG-TIFLOW-CHRG-A25",
@@ -427,9 +475,9 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -439,7 +487,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A25"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A25"
         },
         {
             "key": "IG-TIFLOW-CHRG-A26",
@@ -451,9 +499,9 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -463,7 +511,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A26"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A26"
         },
         {
             "key": "IG-TIFLOW-CHRG-A27",
@@ -475,9 +523,9 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -487,7 +535,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A27"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A27"
         },
         {
             "key": "IG-TIFLOW-CHRG-A28",
@@ -499,9 +547,9 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -511,7 +559,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A28"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A28"
         },
         {
             "key": "IG-TIFLOW-CHRG-A29",
@@ -523,9 +571,9 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -535,21 +583,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A29"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A29"
         },
         {
             "key": "IG-TIFLOW-CHRG-A3",
-            "title": "E-Rezept-FdV: optional: 2D-Code Abrechnungsinformation anzeigen",
+            "title": "TI-Flow-FdV: optional: 2D-Code Abrechnungsinformation anzeigen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" umsetzen.",
+            "text": "Das TI-Flow-FdV KANN den Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" umsetzen.",
             "conformance": "MAY",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -559,7 +607,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-verarbeitungsregeln.html#IG-TIFLOW-CHRG-A3"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/menu-technische-umsetzung-verarbeitungsregeln.html#IG-TIFLOW-CHRG-A3"
         },
         {
             "key": "IG-TIFLOW-CHRG-A30",
@@ -571,9 +619,9 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -583,7 +631,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A30"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A30"
         },
         {
             "key": "IG-TIFLOW-CHRG-A31",
@@ -595,9 +643,9 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -607,7 +655,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A31"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-avs.html#IG-TIFLOW-CHRG-A31"
         },
         {
             "key": "IG-TIFLOW-CHRG-A32",
@@ -619,9 +667,9 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -631,21 +679,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-communication-req-avs.html#IG-TIFLOW-CHRG-A32"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-communication-req-avs.html#IG-TIFLOW-CHRG-A32"
         },
         {
             "key": "IG-TIFLOW-CHRG-A33",
-            "title": "E-Rezept-FdV: TIFlow-CHRG - verpflichtende Anwendungsfälle",
+            "title": "TI-Flow-FdV: TIFlow-CHRG - verpflichtende Anwendungsfälle",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle\n    <ul>\n        <li>UC 3.14 - Einwilligung durch Versicherten erteilen</li>\n        <li>UC 3.15 - Einwilligung durch Versicherten widerrufen</li>\n        <li>UC 3.13 - Einwilligungen durch Versicherten einsehen</li>\n        <li>UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen</li>\n        <li>Abrechnungsinformationen durch den Versicherten weitergeben</li>\n        <li>UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren</li>\n        <li>UC 3.11 - Abrechnungsinformationen durch den Versicherten löschen</li>\n        <li>Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes</li>\n    </ul>\n    umsetzen.",
+            "text": "Das TI-Flow-FdV MUSS für die Umsetzung der Nutzung von Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle\n <ul>\n <li>UC 3.14 - Einwilligung durch Versicherten erteilen</li>\n <li>UC 3.15 - Einwilligung durch Versicherten widerrufen</li>\n <li>UC 3.13 - Einwilligungen durch Versicherten einsehen</li>\n <li>UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen</li>\n <li>Abrechnungsinformationen durch den Versicherten weitergeben</li>\n <li>UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren</li>\n <li>UC 3.11 - Abrechnungsinformationen durch den Versicherten löschen</li>\n <li>Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes</li>\n </ul>\n umsetzen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -655,7 +703,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-CHRG-A33"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-CHRG-A33"
         },
         {
             "key": "IG-TIFLOW-CHRG-A34",
@@ -667,9 +715,9 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -679,141 +727,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-CHRG-A34"
-        },
-        {
-            "key": "IG-TIFLOW-CHRG-A35",
-            "title": "Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Einwilligung in die Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte möglich ist.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-datenschutz-und-sicherheit.html#IG-TIFLOW-CHRG-A35"
-        },
-        {
-            "key": "IG-TIFLOW-CHRG-A36",
-            "title": "Verarbeitung von Abrechnungsinformationen nur nach Einwilligung",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte erfolgt, die hierfür eingewilligt haben.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-datenschutz-und-sicherheit.html#IG-TIFLOW-CHRG-A36"
-        },
-        {
-            "key": "IG-TIFLOW-CHRG-A37",
-            "title": "Verarbeitung von Abrechnungsinformationen im TI-Flow-Fachdienst nur nach Einwilligung",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst DARF NICHT Abrechnungsinformationen verarbeiten, wenn keine Einwilligung des PKV-Versicherten erfolgt ist.",
-            "conformance": "SHALL NOT",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-datenschutz-und-sicherheit.html#IG-TIFLOW-CHRG-A37"
-        },
-        {
-            "key": "IG-TIFLOW-CHRG-A38",
-            "title": "Nichtabstreitbarkeit der Einwilligung",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Die Fachanwendung E-Rezept MUSS sicherstellen, dass die technische Umsetzung der Einwilligung im E-Rezept-FdV und des Vermerkens dieser im TI-Flow-Fachdienst so zuverlässig ist, dass der Vermerk im TI-Flow-Fachdienst als nicht abstreitbar angesehen werden kann.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-datenschutz-und-sicherheit.html#IG-TIFLOW-CHRG-A38"
-        },
-        {
-            "key": "IG-TIFLOW-CHRG-A39",
-            "title": "Löschen von Abrechnungsinformationen nach zehn Jahren",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS Abrechnungsinformationen zu einem E-Rezept nach zehn Jahren löschen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-datenschutz-und-sicherheit.html#IG-TIFLOW-CHRG-A39"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-CHRG-A34"
         },
         {
             "key": "IG-TIFLOW-CHRG-A4",
-            "title": "E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen",
+            "title": "TI-Flow-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" es dem Nutzer ermöglichen, ein E-Rezept für die Anzeige des 2D-Code der Abrechnungsinformation auszuwählen, um einer Apotheke das Einscannen zu ermöglichen und sie somit für das Ändern des PKV-Abgabedatensatzes zu berechtigen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" es dem Nutzer ermöglichen, ein E-Rezept für die Anzeige des 2D-Code der Abrechnungsinformation auszuwählen, um einer Apotheke das Einscannen zu ermöglichen und sie somit für das Ändern des PKV-Abgabedatensatzes zu berechtigen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -823,79 +751,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-verarbeitungsregeln.html#IG-TIFLOW-CHRG-A4"
-        },
-        {
-            "key": "IG-TIFLOW-CHRG-A40",
-            "title": "Information über Möglichkeit des Speicherns der Abrechnungsinformationen nur für konkretes E-Rezept",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS sicherstellen, dass abgebende Leistungserbringer die Information über die Möglichkeit des Speicherns der Abrechnungsinformationen im TI-Flow-Fachdienst nur im Kontext eines konkreten E-Rezepts erhalten.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-datenschutz-und-sicherheit.html#IG-TIFLOW-CHRG-A40"
-        },
-        {
-            "key": "IG-TIFLOW-CHRG-A41",
-            "title": "Schutz der Abrechnungsinformationen",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS die Abrechnungsinformationen während der Verarbeitung (inkl. Transport und Speichern) vor unberechtigter Einsichtnahme oder Manipulation schützen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-datenschutz-und-sicherheit.html#IG-TIFLOW-CHRG-A41"
-        },
-        {
-            "key": "IG-TIFLOW-CHRG-A42",
-            "title": "Protokollierung der Einwilligung bzw. des Widerrufs",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS die Einwilligung in das Speichern der Abrechnungsinformationen und deren Widerruf - inkl. Zeitpunkt der Aktion - für den Versicherten protokollieren.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-datenschutz-und-sicherheit.html#IG-TIFLOW-CHRG-A42"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/menu-technische-umsetzung-verarbeitungsregeln.html#IG-TIFLOW-CHRG-A4"
         },
         {
             "key": "IG-TIFLOW-CHRG-A43",
@@ -919,7 +775,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-consent-req-fd.html#IG-TIFLOW-CHRG-A43"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-consent-req-fd.html#IG-TIFLOW-CHRG-A43"
         },
         {
             "key": "IG-TIFLOW-CHRG-A44",
@@ -943,14 +799,14 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A44"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A44"
         },
         {
             "key": "IG-TIFLOW-CHRG-A45",
             "title": "TI-Flow-Fachdienst - Signaturzertifikat SMC-B prüfen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS ein Signatur-Zertifikat einer nonQES-Signatur eine Leistungserbringerinstitution gemäß [gemSpec_PKI]#TUC_PKI_018 mit folgenden Parametern auf Gültigkeit prüfen: Tabelle # : TAB_eRPFD_013 Parameter Prüfung Signaturzertifikat SMC-B Parameter Zertifikat Signaturzertifikat aus nonQES PolicyList oid_smc_b_osig intendedKeyUsage nonRepudiation intendedExtendedKeyUsage (leer) OCSP-Graceperiod 12 Stunden Offline-Modus nein Prüfmodus OCSP Der TI-Flow-Fachdienst darf die OCSP-Response für die Abfrage des Zertifikatsstatus für 12 Stunden zwischenspeichern.",
+            "text": "Der TI-Flow-Fachdienst MUSS das Signatur-Zertifikat einer nonQES-Signatur eine Leistungserbringerinstitution gemäß [gemSpec_PKI]#TUC_PKI_018 mit folgenden Parametern auf Gültigkeit prüfen:\n <table>\n <thead>\n <tr>\n <th>Parameter</th>\n <th></th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>Zertifikat</td>\n <td>Signaturzertifikat aus nonQES</td>\n </tr>\n <tr>\n <td>PolicyList</td>\n <td>oid_smc_b_osig</td>\n </tr>\n <tr>\n <td>intendedKeyUsage</td>\n <td>nonRepudiation</td>\n </tr>\n <tr>\n <td>intendedExtendedKeyUsage</td>\n <td>(leer)</td>\n </tr>\n <tr>\n <td>OCSP-Graceperiod</td>\n <td>12 Stunden</td>\n </tr>\n <tr>\n <td>Offline-Modus</td>\n <td>nein</td>\n </tr>\n <tr>\n <td>Prüfmodus</td>\n <td>OCSP</td>\n </tr>\n </tbody>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_013 Parameter Prüfung Signaturzertifikat</figcaption></div>",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -967,7 +823,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A45"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A45"
         },
         {
             "key": "IG-TIFLOW-CHRG-A46",
@@ -991,7 +847,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A46"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A46"
         },
         {
             "key": "IG-TIFLOW-CHRG-A47",
@@ -1015,7 +871,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A47"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A47"
         },
         {
             "key": "IG-TIFLOW-CHRG-A48",
@@ -1039,7 +895,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A48"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A48"
         },
         {
             "key": "IG-TIFLOW-CHRG-A49",
@@ -1063,21 +919,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A49"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A49"
         },
         {
             "key": "IG-TIFLOW-CHRG-A5",
-            "title": "E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen",
+            "title": "TI-Flow-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" für das ausgewählte E-Rezept den Abrechnungsinformation-Token erstellen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" für das ausgewählte E-Rezept den Abrechnungsinformation-Token erstellen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -1087,7 +943,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-verarbeitungsregeln.html#IG-TIFLOW-CHRG-A5"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/menu-technische-umsetzung-verarbeitungsregeln.html#IG-TIFLOW-CHRG-A5"
         },
         {
             "key": "IG-TIFLOW-CHRG-A50",
@@ -1111,7 +967,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A50"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A50"
         },
         {
             "key": "IG-TIFLOW-CHRG-A51",
@@ -1135,7 +991,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A51"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A51"
         },
         {
             "key": "IG-TIFLOW-CHRG-A52",
@@ -1159,7 +1015,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A52"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A52"
         },
         {
             "key": "IG-TIFLOW-CHRG-A53",
@@ -1183,7 +1039,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A53"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A53"
         },
         {
             "key": "IG-TIFLOW-CHRG-A54",
@@ -1207,7 +1063,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A54"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A54"
         },
         {
             "key": "IG-TIFLOW-CHRG-A55",
@@ -1231,7 +1087,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A55"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A55"
         },
         {
             "key": "IG-TIFLOW-CHRG-A56",
@@ -1255,7 +1111,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A56"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A56"
         },
         {
             "key": "IG-TIFLOW-CHRG-A57",
@@ -1279,7 +1135,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A57"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A57"
         },
         {
             "key": "IG-TIFLOW-CHRG-A58",
@@ -1303,7 +1159,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A58"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A58"
         },
         {
             "key": "IG-TIFLOW-CHRG-A59",
@@ -1327,21 +1183,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A59"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A59"
         },
         {
             "key": "IG-TIFLOW-CHRG-A6",
-            "title": "E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen",
+            "title": "TI-Flow-FdV: 2D-Code Abrechnungsinformation anzeigen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" mit dem erstellten Abrechnungsinformation-Token einen 2D-Code erstellen und auf dem Display des Endgerätes anzeigen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" mit dem erstellten Abrechnungsinformation-Token einen 2D-Code erstellen und auf dem Display des Endgerätes anzeigen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -1351,7 +1207,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-verarbeitungsregeln.html#IG-TIFLOW-CHRG-A6"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/menu-technische-umsetzung-verarbeitungsregeln.html#IG-TIFLOW-CHRG-A6"
         },
         {
             "key": "IG-TIFLOW-CHRG-A60",
@@ -1375,7 +1231,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A60"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A60"
         },
         {
             "key": "IG-TIFLOW-CHRG-A61",
@@ -1399,7 +1255,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A61"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A61"
         },
         {
             "key": "IG-TIFLOW-CHRG-A62",
@@ -1423,7 +1279,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A62"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A62"
         },
         {
             "key": "IG-TIFLOW-CHRG-A63",
@@ -1447,7 +1303,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A63"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A63"
         },
         {
             "key": "IG-TIFLOW-CHRG-A64",
@@ -1471,7 +1327,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A64"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A64"
         },
         {
             "key": "IG-TIFLOW-CHRG-A65",
@@ -1495,7 +1351,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A65"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A65"
         },
         {
             "key": "IG-TIFLOW-CHRG-A66",
@@ -1519,7 +1375,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A66"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A66"
         },
         {
             "key": "IG-TIFLOW-CHRG-A67",
@@ -1543,7 +1399,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A67"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A67"
         },
         {
             "key": "IG-TIFLOW-CHRG-A68",
@@ -1567,7 +1423,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A68"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A68"
         },
         {
             "key": "IG-TIFLOW-CHRG-A69",
@@ -1591,21 +1447,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A69"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A69"
         },
         {
             "key": "IG-TIFLOW-CHRG-A7",
-            "title": "E-Rezept-FdV: optional: Abrechnungsinformation exportieren",
+            "title": "TI-Flow-FdV: optional: Abrechnungsinformation exportieren",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Abrechnungsinformation exportieren\" umsetzen.",
+            "text": "Das TI-Flow-FdV KANN den Anwendungsfall \"Abrechnungsinformation exportieren\" umsetzen.",
             "conformance": "MAY",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -1615,7 +1471,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-verarbeitungsregeln.html#IG-TIFLOW-CHRG-A7"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/menu-technische-umsetzung-verarbeitungsregeln.html#IG-TIFLOW-CHRG-A7"
         },
         {
             "key": "IG-TIFLOW-CHRG-A70",
@@ -1639,7 +1495,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A70"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A70"
         },
         {
             "key": "IG-TIFLOW-CHRG-A71",
@@ -1663,7 +1519,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A71"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A71"
         },
         {
             "key": "IG-TIFLOW-CHRG-A72",
@@ -1687,7 +1543,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A72"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A72"
         },
         {
             "key": "IG-TIFLOW-CHRG-A73",
@@ -1711,7 +1567,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A73"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A73"
         },
         {
             "key": "IG-TIFLOW-CHRG-A74",
@@ -1735,7 +1591,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A74"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A74"
         },
         {
             "key": "IG-TIFLOW-CHRG-A75",
@@ -1759,7 +1615,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A75"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A75"
         },
         {
             "key": "IG-TIFLOW-CHRG-A76",
@@ -1783,7 +1639,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A76"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A76"
         },
         {
             "key": "IG-TIFLOW-CHRG-A77",
@@ -1807,7 +1663,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A77"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A77"
         },
         {
             "key": "IG-TIFLOW-CHRG-A78",
@@ -1831,7 +1687,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A78"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A78"
         },
         {
             "key": "IG-TIFLOW-CHRG-A79",
@@ -1855,21 +1711,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A79"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A79"
         },
         {
             "key": "IG-TIFLOW-CHRG-A8",
-            "title": "E-Rezept-FdV: Abrechnungsinformation exportieren - PDF/A erstellen",
+            "title": "TI-Flow-FdV: Abrechnungsinformation exportieren - PDF/A erstellen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation exportieren\" auf Basis der vom TI-Flow-Fachdienst zu einer Prescription-ID heruntergeladenen ChargeItem, Verordnungsdatensatz, PKV-Abgabedatensatz und Quittung Ressourcen\n      <ul>\n        <li>einen Ausdruck erstellen,</li>\n        <li>für den Ausdruck ein PDF gemäß PDF/A-3-Standard (ISO 19005-3) erstellen,</li>\n        <li>in das Dokument den signierten Verordnungsdatensatz (&#60;Prescription-ID&#62;_verordnung.p7s), den signierten PKV-Abgabedatensatz (&#60;Prescription-ID&#62;_abgabedaten.p7s) und den signierten Quittung Datensatz (&#60;Prescription-ID&#62;_quittung.p7s) gemäß PDF/A-3 einbetten.</li>\n      </ul>",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation exportieren\" auf Basis der vom TI-Flow-Fachdienst zu einer Prescription-ID heruntergeladenen ChargeItem, Verordnungsdatensatz, PKV-Abgabedatensatz und Quittung Ressourcen\n <ul>\n <li>einen Ausdruck erstellen,</li>\n <li>für den Ausdruck ein PDF gemäß PDF/A-3-Standard (ISO 19005-3) erstellen,</li>\n <li>in das Dokument den signierten Verordnungsdatensatz (&#60;Prescription-ID&#62;_verordnung.p7s), den signierten PKV-Abgabedatensatz (&#60;Prescription-ID&#62;_abgabedaten.p7s) und den signierten Quittung Datensatz (&#60;Prescription-ID&#62;_quittung.p7s) gemäß PDF/A-3 einbetten.</li>\n </ul>",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -1879,7 +1735,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-verarbeitungsregeln.html#IG-TIFLOW-CHRG-A8"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/menu-technische-umsetzung-verarbeitungsregeln.html#IG-TIFLOW-CHRG-A8"
         },
         {
             "key": "IG-TIFLOW-CHRG-A80",
@@ -1903,7 +1759,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A80"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A80"
         },
         {
             "key": "IG-TIFLOW-CHRG-A81",
@@ -1927,7 +1783,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A81"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A81"
         },
         {
             "key": "IG-TIFLOW-CHRG-A82",
@@ -1951,7 +1807,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A82"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A82"
         },
         {
             "key": "IG-TIFLOW-CHRG-A83",
@@ -1975,7 +1831,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A83"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A83"
         },
         {
             "key": "IG-TIFLOW-CHRG-A84",
@@ -1999,7 +1855,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A84"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A84"
         },
         {
             "key": "IG-TIFLOW-CHRG-A85",
@@ -2023,7 +1879,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A85"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A85"
         },
         {
             "key": "IG-TIFLOW-CHRG-A86",
@@ -2047,7 +1903,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A86"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A86"
         },
         {
             "key": "IG-TIFLOW-CHRG-A87",
@@ -2071,7 +1927,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A87"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A87"
         },
         {
             "key": "IG-TIFLOW-CHRG-A88",
@@ -2095,7 +1951,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A88"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A88"
         },
         {
             "key": "IG-TIFLOW-CHRG-A89",
@@ -2119,21 +1975,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A89"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A89"
         },
         {
             "key": "IG-TIFLOW-CHRG-A9",
-            "title": "E-Rezept-FdV: Abrechnungsinformation exportieren - PDF teilen",
+            "title": "TI-Flow-FdV: Abrechnungsinformation exportieren - PDF teilen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS es dem Nutzer im Anwendungsfall \"Abrechnungsinformation exportieren\" ermöglichen, das erstellte PDF mit anderen Apps zu teilen, um den Versicherten die Möglichkeit zu geben, seine Abrechnungsinformation an Krankenversicherungen oder andere Institutionen zur Abrechnung zu übermitteln.",
+            "text": "Das TI-Flow-FdV MUSS es dem Nutzer im Anwendungsfall \"Abrechnungsinformation exportieren\" ermöglichen, das erstellte PDF mit anderen Apps zu teilen, um den Versicherten die Möglichkeit zu geben, seine Abrechnungsinformation an Krankenversicherungen oder andere Institutionen zur Abrechnung zu übermitteln.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -2143,7 +1999,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-verarbeitungsregeln.html#IG-TIFLOW-CHRG-A9"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/menu-technische-umsetzung-verarbeitungsregeln.html#IG-TIFLOW-CHRG-A9"
         },
         {
             "key": "IG-TIFLOW-CHRG-A90",
@@ -2167,7 +2023,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A90"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A90"
         },
         {
             "key": "IG-TIFLOW-CHRG-A91",
@@ -2191,7 +2047,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A91"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A91"
         },
         {
             "key": "IG-TIFLOW-CHRG-A92",
@@ -2215,7 +2071,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A92"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A92"
         },
         {
             "key": "IG-TIFLOW-CHRG-A93",
@@ -2239,21 +2095,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A93"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A93"
         },
         {
             "key": "IG-TIFLOW-CHRG-A94",
             "title": "E-Rezept: Anwendung des IG 'Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte' für die Verwaltung von Abrechnungsinformationen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Verwaltung von Abrechnungsinformationen zu Arzneimitteln den Implementation Guide \"Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte\" umsetzen.",
+            "text": "Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Verwaltung von Abrechnungsinformationen zu Arzneimitteln den Implementation Guide \"TIFlow - Abrechnungsinformatione\" umsetzen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -2277,9 +2133,9 @@
                 },
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -2289,21 +2145,21 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/index.html#IG-TIFLOW-CHRG-A94"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/index.html#IG-TIFLOW-CHRG-A94"
         },
         {
             "key": "IG-TIFLOW-CHRG-A95",
             "title": "E-Rezept: Umsetzung des Moduls 'Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte'",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides \"Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte\" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.",
+            "text": "Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides \"TIFlow - Abrechnungsinformationen\" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus gemIG_TIFlow_core, die in diesem IG referenziert werden.",
             "conformance": "SHALL",
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -2327,9 +2183,9 @@
                 },
                 {
                     "product_type": {
-                        "name": "eRp_FdV",
-                        "id": "productType88",
-                        "description": "E-Rezept-Frontend des Versicherten"
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
                     },
                     "test_procedure": [
                         {
@@ -2339,7 +2195,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/index.html#IG-TIFLOW-CHRG-A95"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/index.html#IG-TIFLOW-CHRG-A95"
         },
         {
             "key": "IG-TIFLOW-CHRG-A96",
@@ -2363,7 +2219,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-communication-req-fd.html#IG-TIFLOW-CHRG-A96"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-communication-req-fd.html#IG-TIFLOW-CHRG-A96"
         },
         {
             "key": "IG-TIFLOW-CHRG-A97",
@@ -2387,7 +2243,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A97"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A97"
         },
         {
             "key": "IG-TIFLOW-CHRG-A98",
@@ -2411,7 +2267,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A98"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/query-api-chargeitem-req-fd.html#IG-TIFLOW-CHRG-A98"
         },
         {
             "key": "IG-TIFLOW-CHRG-A99",
@@ -2435,7 +2291,7 @@
                     ]
                 }
             ],
-            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.2/menu-technische-umsetzung-audit-service.html#IG-TIFLOW-CHRG-A99"
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0-ballot.3/menu-technische-umsetzung-audit-service.html#IG-TIFLOW-CHRG-A99"
         }
     ]
 }

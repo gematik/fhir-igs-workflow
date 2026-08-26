@@ -884,10 +884,6 @@ def generate_markdown_report(test_case_dir: Path, output_file: Path) -> None:
     
     # Generate report
     md = []
-    md.append(f"# StructureMap Transformation Report")
-    md.append(f"")
-    md.append(f"")
-    md.append(f"## Summary")
     md.append(f"")
     
     # Add enhanced summary with German description and artifact links
@@ -900,9 +896,6 @@ def generate_markdown_report(test_case_dir: Path, output_file: Path) -> None:
     total_mapped_fields = 0
     total_unmapped_fields = 0
     total_new_fields = 0
-    
-    md.append(f"## Resource Mapping Details")
-    md.append(f"")
     
     # Group source resources by type
     source_by_type = {}

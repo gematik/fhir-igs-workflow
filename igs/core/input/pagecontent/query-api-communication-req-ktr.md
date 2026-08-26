@@ -1,4 +1,4 @@
-Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutzung der `Communication`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen an ein Clientsystem des Kostenrägers zur Nutzung der `Communication`-Query-Endpunkte.
 
 
 ### Nachrichten abrufen
@@ -6,7 +6,7 @@ Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutz
 <!-- A_21556 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A51" title="CS Kostenträger: Nachrichten abrufen - Häufigkeit" version="0">
   <meta lockversion="false"/>
-  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+  <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" zwischen den Aufrufen der Operation GET /Communication mindestens 5 Minuten warten. Der Zeitraum zwischen den Aufrufen muss um eine zufällige Zeitspanne zwischen 0 und 10.000 Millisekunden verlängert werden, um eine Gleichverteilung der Anfragen am TI-Flow-Fachdienst über alle Clientsysteme zu erreichen.
@@ -15,7 +15,7 @@ Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutz
 <!-- A_19329-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A52" title="CS Kostenträger: Nachrichten abrufen - Abfrage" version="0">
   <meta lockversion="false"/>
-  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+  <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachrichten von Versicherten empfangen" die HTTP-Operation GET /Communication mit
@@ -26,7 +26,7 @@ Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutz
   ausführen.
 </requirement>
 
-Falls eine oder mehrere E-Rezept-Nachrichten für den Kostenträger auf dem TI-Flow-Fachdienst bereitstehen, übermittelt der TI-Flow-Fachdienst ein Bundle von Communication Ressourcen.
+Falls eine oder mehrere Nachrichten für den Kostenträger auf dem TI-Flow-Fachdienst bereitstehen, übermittelt der TI-Flow-Fachdienst ein Bundle von Communication Ressourcen.
 
 
 ### Nachricht versenden
@@ -36,7 +36,7 @@ Die für die Nachricht zu verwendende Communication-Ressource wird modul- und an
 <!-- A_19334 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A53" title="CS Kostenträger: Nachricht versenden - Nachricht auf Fachdienst einstellen" version="0">
   <meta lockversion="false"/>
-  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+  <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die HTTP-Operation POST /Communication mit
@@ -53,7 +53,7 @@ Mit diesem Anwendungsfall kann ein Kostenträger von ihm versendete Nachrichten 
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A453" title="CS Kostenträger: Nachricht löschen - Nachricht auswählen" version="0">
   <meta lockversion="false"/>
-  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+  <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das Clientsystem Kostenträger MUSS es dem Nutzer ermöglichen, eine Nachricht zum Löschen auf dem Fachdienst auszuwählen.
@@ -61,7 +61,7 @@ Mit diesem Anwendungsfall kann ein Kostenträger von ihm versendete Nachrichten 
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A454" title="CS Kostenträger: Nachricht löschen - Bestätigung einholen" version="0">
   <meta lockversion="false"/>
-  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+  <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das Clientsystem Kostenträger MUSS vom Nutzer eine Bestätigung einholen, dass die ausgewählte Nachricht gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.
@@ -70,7 +70,7 @@ Mit diesem Anwendungsfall kann ein Kostenträger von ihm versendete Nachrichten 
 <!-- A_21489 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A54" title="CS Kostenträger: Nachricht löschen - Löschrequest" version="0">
   <meta lockversion="false"/>
-  <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+  <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das Clientsystem Kostenträger MUSS im Anwendungsfall "Nachricht durch Abgebenden löschen" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; mit
@@ -82,6 +82,6 @@ Mit diesem Anwendungsfall kann ein Kostenträger von ihm versendete Nachrichten 
 
 Der Fachdienst prüft anhand der Telematik-ID aus den Nutzerinformationen (zeta-user-info), ob der Kostenträger der Absender der zu löschenden Nachricht ist.
 
-Das Clientsystem Kostenträger KANN im Anwendungsfall "Nachricht durch Abgebenden löschen" dem Nutzer ermöglichen, die Nachricht auch lokal im PS zu löschen.
+Das Clientsystem Kostenträger KANN im Anwendungsfall "Nachricht durch Abgebenden löschen" dem Nutzer ermöglichen, die Nachricht auch lokal im Clientsystem zu löschen.
 
 Hinweis: Nachrichten an Versicherte sind immer an den Workflow der referenzierten Verordnung gebunden. Wenn ein Workflow, bspw. durch den Versicherten oder aufgrund von durch den Fachdienst durchgesetzte Löschfristen, auf dem Fachdienst gelöscht wird, dann werden auch alle zugehörigen Nachrichten gelöscht.

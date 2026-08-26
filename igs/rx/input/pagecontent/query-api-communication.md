@@ -15,7 +15,7 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 ### Anforderungen an Schnittstelle
 
 - [FD-Anforderungen zur Communication-Query](./query-api-communication-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-- [FdV-Anforderungen für Communication-Query](./query-api-communication-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [FdV-Anforderungen für Communication-Query](./query-api-communication-req-fdv.html): Anforderungen an das TI-Flow-FdV zur Nutzung der Schnittstelle.
 - [AVS-Anforderungen für Communication-Query](./query-api-communication-req-avs.html): Anforderungen an das AVS zur Nutzung der Schnittstelle.
 - [Datenmodell Payload für Communication-Query](./query-api-communication-req-data.html): Datenmodell Payload zur Nutzung der Schnittstelle.
 
@@ -39,16 +39,16 @@ Der Aufruf erfolgt als http-POST-Operation. Der Server prüft die Nachricht auf 
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
-<!--
+
 	<div id="Response-Examples">
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596 JSON %}
+			{% fragment Communication/ExampleCommunicationReplyPharmacy JSON %}
 		</div>
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/7977a4ab-97a9-4d95-afb3-6c4c1e2ac596 XML %}
+			{% fragment Communication/ExampleCommunicationReplyPharmacy XML %}
 		</div>
 	</div>
--->
+
 </div>
 
 #### Abrufen von Communications
@@ -65,16 +65,16 @@ Als Apotheke oder Kostenträger möchten wir alle Nachrichten des Monats April 2
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
-<!--
+
 	<div id="Response-Examples">
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleRxCommunicationSearchset JSON %}
+			{% fragment Bundle/ExampleCommunicationGetDispReq JSON %}
 		</div>
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleRxCommunicationSearchset XML %}
+			{% fragment Bundle/ExampleCommunicationGetDispReq XML %}
 		</div>
 	</div>
--->
+
 </div>
 
 ### Instance API
@@ -92,13 +92,13 @@ Um spezifische Details zu einer einzelnen _Communciation_ mittels der RESTful AP
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
-<!--
+
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleRxCommunicationSearchset XML %}
+			{% fragment Bundle/ExampleCommunicationGetDispReq XML %}
 		</div>
 	</div>
--->
+
 </div>
 
 #### Löschen von Communications

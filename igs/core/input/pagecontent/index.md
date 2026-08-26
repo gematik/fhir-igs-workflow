@@ -34,7 +34,7 @@ Dieser "IG TIFlow Kernfunktionalitäten" fokussiert auf die technische Basisschi
 - Validierung von FHIR-Ressourcen und Bundles
 - Modulübergreifende Operationen auf Task ($create, $activate, $abort, ...)
 - Zugriffs- und Systemprotokollierung (AuditEvent)
-- Löschfristen und automatisches Löschen
+- Allgemeine Anforderungen zur Datenbereinigung
 
 Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow Landschaft weiterverwendet:
 
@@ -44,22 +44,6 @@ Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow
 | Funktions IG | Diese Implementation Guides enthalten Beschreibungen zu Endpunkten und Funktionalitäten, die als Bausteine wiederverwendet werden können und daher zentral beschrieben werden. Sie existieren nicht als eigene Anwendung in der TI-Flow-Fachdienst landschaft. |
 
 <div><figcaption><strong>Tabelle: </strong>Beschreibung der IG Arten im TI-Flow-Fachdienst</figcaption></div>
-
-<br>
-
-<figure>
-    <div class="gem-ig-svg-container" style="--box-width: 500px; margin-bottom: 30px;">
-        <object
-            data="./ig-landscape.svg"
-            type="image/svg+xml"
-            aria-label="Übersicht der FHIR-IGs des TI-Flow-Fachdienst"
-            style="width: 100%;"
-            >
-            <img src="./ig-landscape.svg" alt="Übersicht der FHIR-IGs des TI-Flow-Fachdienst" style="width: 100%;">
-            </object>
-    </div>
-    <figcaption><strong>Abbildung: </strong>Übersicht der FHIR-IGs des TI-Flow-Fachdienst</figcaption>
-</figure>
 
 <br>
 
@@ -82,10 +66,6 @@ Modulspezifische Operationen, wie die $dispense-Operation im Arzneimittel IG, wi
 - [Operation API (modulübergreifend)](./menu-schnittstellen-operation-api.html)
 - [Zugriffsprotokollierung](./audit-service.html)
 - [Löschfristen](./ttl.html)
-
-### Abhängigkeiten
-
-{% include dependency-table.xhtml %}
 
 ## Bezug zu weiteren IGs
 

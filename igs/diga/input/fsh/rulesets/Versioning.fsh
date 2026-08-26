@@ -1,7 +1,7 @@
 Alias: $version = 2.0.0
 
 RuleSet: MetaDate(element)
-* {element} = "2026-06-30"
+* {element} = "2026-08-27"
 
 RuleSet: MetaStatus(element)
 * {element} = #active
@@ -69,3 +69,6 @@ RuleSet: DateTimeStamp(field)
 
 RuleSet: DateTimeStampPlus1Hr(field)
 * {field} = "2028-10-01T16:44:00.434+00:00"
+
+RuleSet: DiGAExpiryDate(field) //Date plus 100 Tage
+* {field} = "2028-10-09"

@@ -16,7 +16,6 @@ IMPORT_SYSTEM_ALIASES: dict[str, str] = {
 CODE_CLASSIFICATIONS: dict[str, tuple] = {
     "TIFLOW_CHARGEITEM_": ("erp-chrg", "TIFLOW_CHARGEITEM_CS_OperationOutcomeDetails", "TIFLOW_CHARGEITEM_VS_OperationOutcomeDetails", False),
     "TIFLOW_EREZEPT_": ("rx", "TIFLOW_EREZEPT_CS_OperationOutcomeDetails", "TIFLOW_EREZEPT_VS_OperationOutcomeDetails", False),
-    "TIFLOW_XBORDER_": ("erp-eu", "TIFLOW_XBORDER_CS_OperationOutcomeDetails", "TIFLOW_XBORDER_VS_OperationOutcomeDetails", False),
     "TIFLOW_DIGA_": ("diga", "TIFLOW_DIGA_CS_OperationOutcomeDetails", "TIFLOW_DIGA_VS_OperationOutcomeDetails", False),
     "TIFLOW_": ("core", "TIFLOW_CS_OperationOutcomeDetails", "TIFLOW_VS_OperationOutcomeDetails", False),
     "MSG_": ("varies", None, None, True),
@@ -39,7 +38,6 @@ def module_outcome_valueset_name(module: str) -> Optional[str]:
         "rx": "TIFLOW_EREZEPT_VS_OperationOutcomeDetails",
         "diga": "TIFLOW_DIGA_VS_OperationOutcomeDetails",
         "erp-chrg": "TIFLOW_CHARGEITEM_VS_OperationOutcomeDetails",
-        "erp-eu": "TIFLOW_XBORDER_VS_OperationOutcomeDetails",
     }
     return mapping.get(module)
 

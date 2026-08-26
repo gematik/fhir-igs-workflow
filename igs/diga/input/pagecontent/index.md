@@ -26,10 +26,10 @@ Verordnen bis zum Einlösen.
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Workflow 162 den Implementation Guide "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" umsetzen.
@@ -41,10 +41,10 @@ Verordnen bis zum Einlösen.
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="eRp_FdV" description="E-Rezept-Frontend des Versicherten">
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="CS_E-Rezept_KTR" description="CS-Schnittstelle für E-Rezept/Kostenträger">
+    <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Verordnungen für Digitale Gesundheitsanwendungen (DiGA)" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
@@ -56,13 +56,13 @@ Verordnen bis zum Einlösen.
 #### Apps
 In diesem IG werden verschiedene Apps betrachtet.
 
-**App nach § 360 Abs. 10 SGB V**
+**App nach <span>§</span> 360 Abs. 10 SGB V**
 
-Eine App nach § 360 Abs. 10 SGB V kann dem Versicherten durch seine Krankenkasse oder die gematik zur Verfügung gestellt werden. Sie wird als E-Rezept-FdV bezeichnet.
+Eine App nach <span>§</span> 360 Abs. 10 SGB V kann dem Versicherten durch seine Krankenkasse oder die gematik zur Verfügung gestellt werden. Sie wird als TI-Flow-FdV bezeichnet.
 
 **Service-App der Krankenkasse**
 
-Eine Krankenkassen-App ist eine App, die dem Versicherten Services seiner Krankenkasse zur Verfügung stellt und nicht den Regelungen nach § 360 Abs. 10 SGB V unterliegt.
+Eine Krankenkassen-App ist eine App, die dem Versicherten Services seiner Krankenkasse zur Verfügung stellt und nicht den Regelungen nach <span>§</span> 360 Abs. 10 SGB V unterliegt.
 
 **DiGA-App**
 
@@ -85,9 +85,6 @@ Anforderungen und Anwendungsfälle werden durch eine eindeutige ID sowie die
 Schlüsselworte MUSS, DARF NICHT, SOLL, SOLL NICHT, KANN gemäß RFC 2119
 gekennzeichnet.
 
-### Abhängigkeiten
-
-{% include dependency-table.xhtml %}
 
 ### Kontakt und Feedback
 

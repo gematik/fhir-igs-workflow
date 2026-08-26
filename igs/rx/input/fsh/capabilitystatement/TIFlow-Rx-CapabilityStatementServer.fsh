@@ -23,6 +23,11 @@ Description: "CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Wor
 * insert CommunicationInteraction(#SHALL)
 * insert MedicationDispenseInteraction(#SHALL)
 * insert SubscriptionInteraction(#SHALL)
+* insert ConsentInteraction(#SHALL)
+* insert GrantEUAccessPermissionInteraction(#SHALL)
+* insert ReadEUAccessPermissionInteraction(#SHALL)
+* insert RevokeEUAccessPermissionInteraction(#SHALL)
+* insert GetEUPrescriptionsInteraction(#SHALL)
 
 RuleSet: TaskInteraction(expectation)
 * insert CapSupportResource(Task, #SHALL)
@@ -32,7 +37,11 @@ RuleSet: TaskInteraction(expectation)
 * insert TaskSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#read, #SHALL)
 * insert TaskReadInteractionStatusCodes
+* insert CapResourceInteraction(#patch, #SHALL)
 
+* insert CapSupportResourceSearchParam(_id, http://hl7.org/fhir/SearchParameter/Resource-id, #token, {expectation}, "Task.id - Unterstützt die Suche nach der Task-ID")
+* insert CapSupportResourceSearchParamNoDefinition(prescription-id, #token, {expectation}, "Task.identifier - Unterstützt die Suche nach der E-Rezept-ID")
+* insert CapSupportResourceSearchParamNoDefinition(access-code, #token, {expectation}, "Task.identifier - Unterstützt die Suche nach dem Zugriffscode")
 * insert CapSupportResourceSearchParam(authored-on, http://hl7.org/fhir/SearchParameter/Task-authored-on, #date, {expectation}, "Task.authoredOn - Unterstützt die Suche nach dem Erstellungsdatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(status, http://hl7.org/fhir/SearchParameter/Task-status, #token, {expectation}, "Task.status - Unterstützt die Suche nach dem Status einer Task")
 * insert CapSupportResourceSearchParamNoDefinition(expiry-date, #date, {expectation}, "Task.extension:expiryDate.valueDate - Unterstützt die Suche nach dem Verfallsdatum")
@@ -56,6 +65,8 @@ RuleSet: TaskInteraction(expectation)
 * insert TaskAbortOperationStatusCodes
 * insert CapSupportResourceOperation(dispense, TIFlowRXOPDispense, {expectation}, "Documents medication dispensation without changing Task status")
 * insert TaskDispenseOperationStatusCodes
+* insert CapSupportResourceOperation(eu-close, EUCloseOperation, {expectation}, "Finishes the EU ePrescription workflow and creates a signed receipt bundle")
+* insert EuCloseOperationStatusCodes
 
 RuleSet: MedicationDispenseInteraction(expectation)
 * insert CapSupportResource(MedicationDispense, #SHALL)
@@ -101,3 +112,31 @@ RuleSet: SubscriptionInteraction(expectation)
 * insert SubscriptionSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#create, {expectation})
 * insert SubscriptionCreateInteractionStatusCodes
+
+RuleSet: ConsentInteraction(expectation)
+* insert CapSupportResource(Consent, {expectation})
+
+* insert CapResourceInteraction(#search-type, #SHALL)
+* insert ConsentSearchTypeInteractionStatusCodes
+* insert CapResourceInteraction(#create, #SHALL)
+* insert ConsentCreateInteractionStatusCodes
+* insert CapResourceInteraction(#delete, #SHALL)
+* insert ConsentDeleteInteractionStatusCodes
+
+* insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")
+
+RuleSet: GrantEUAccessPermissionInteraction(expectation)
+* insert CapSupportSystemOperation(grant-eu-access-permission, GrantEUAccessPermission, {expectation}, "Registers access code and country for EU prescription access")
+* insert GrantEUAccessPermissionOperationStatusCodes
+
+RuleSet: ReadEUAccessPermissionInteraction(expectation)
+* insert CapSupportSystemOperation(read-eu-access-permission, ReadEUAccessPermission, {expectation}, "Reads the currently registered EU access code")
+* insert ReadEUAccessPermissionOperationStatusCodes
+
+RuleSet: RevokeEUAccessPermissionInteraction(expectation)
+* insert CapSupportSystemOperation(revoke-eu-access-permission, RevokeEUAccessPermission, {expectation}, "Revokes the currently registered EU access code")
+* insert RevokeEUAccessPermissionOperationStatusCodes
+
+RuleSet: GetEUPrescriptionsInteraction(expectation)
+* insert CapSupportSystemOperation(get-eu-prescriptions, GETPrescriptionEU, {expectation}, "Returns prescription information for EU ePrescription workflows")
+* insert GetEUPrescriptionsOperationStatusCodes

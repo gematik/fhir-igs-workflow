@@ -1,12 +1,12 @@
 [
     {
         "key": "IG-TIFLOW-CHRG-A1",
-        "title": "E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen",
+        "title": "TI-Flow-FdV: Abrechnungsinformation-Token übermitteln - Nachricht erstellen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -14,23 +14,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-communication-req-fdv.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation-Token einer Apotheke übermitteln\" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq mit \n    <ul>\n        <li>Telematik-ID der ausgewählten abgebenden LEI in recipient</li>\n        <li>Textnachricht in payload contentString</li>\n        <li>E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als \"/ChargeItem/&#60;id&#62;?ac=...\"</li>\n    </ul> \n    erstellen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation-Token einer Apotheke übermitteln\" eine FHIR Ressource Communication des Profils https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq mit \n <ul>\n <li>Telematik-ID der ausgewählten abgebenden LEI in recipient</li>\n <li>Textnachricht in payload contentString</li>\n <li>E-Rezept-Token in basedOn reference auf Task inkl. AccessCode als \"/ChargeItem/&#60;id&#62;?ac=...\"</li>\n </ul> \n erstellen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.921844",
-        "modified": "2026-06-25T13:00:23.921850",
-        "date": "2026-06-25T13:00:23.921852",
-        "content_hash": "b614c893236f3400e9b340643590e8dfbebbaa32e13391712c0a3ef6f25778a4",
+        "modified": "2026-08-26T13:45:24.874235",
+        "date": "2026-08-26T13:45:24.874235",
+        "content_hash": "7875365936bc87e6206b29fb092e4343187a5fbb79de9bafe54e346a6728e512",
         "path": "query-api-communication-req-fdv.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A10",
-        "title": "E-Rezept-FdV: optional: Liste Abrechnungsinformationen abrufen",
+        "title": "TI-Flow-FdV: optional: Liste Abrechnungsinformationen abrufen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -38,23 +38,71 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
-        "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Liste Abrechnungsinformationen abrufen\" umsetzen.",
+        "text": "Das TI-Flow-FdV KANN den Anwendungsfall \"Liste Abrechnungsinformationen abrufen\" umsetzen.",
         "conformance": "MAY",
         "created": "2026-06-25T13:00:23.924079",
-        "modified": "2026-06-25T13:00:23.924081",
-        "date": "2026-06-25T13:00:23.924082",
-        "content_hash": "0be057ca4f39f3b67066ecac7bb4f1bfd3af16d64537b2d31f4bc3b8c3169b7f",
+        "modified": "2026-08-26T13:45:24.876939",
+        "date": "2026-08-26T13:45:24.876939",
+        "content_hash": "01eb9decf65d357578ec64357ad02c2091e402efe1e08d9c19386760d807ea1a",
         "path": "query-api-chargeitem-req-fdv.html",
         "release": "2.0.0"
     },
     {
-        "key": "IG-TIFLOW-CHRG-A11",
-        "title": "E-Rezept-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest",
+        "key": "IG-TIFLOW-CHRG-A100",
+        "title": "E-Rezept Charging: Löschfrist ChargeItem",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FD"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/ttl.md",
+        "text": "Der TI-Flow-Fachdienst MUSS ein ChargeItem innerhalb eines Monats nach Ablauf von 10 Jahren nach dem Erstellen der Ressource automatisch löschen und das Löschen in einem AuditEvent für den Versicherten nachvollziehbar protokollieren.",
+        "conformance": "SHALL",
+        "created": "2026-07-28T11:39:12.978908",
+        "modified": "2026-07-28T11:39:12.978915",
+        "date": "2026-07-28T11:39:12.978917",
+        "content_hash": "a76d0a5567d2adbf2ed862b1ee8a8aef45dde0866e9d0210d437857652252292",
+        "path": "ttl.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A101",
+        "title": "E-Rezept Charging: Löschen referenzierter Bundles bei ChargeItem-Löschung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produktgutachten"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/ttl.md",
+        "text": "Der TI-Flow-Fachdienst MUSS bei jedem Löschen eines ChargeItems alle referenzierten Bundles (E-Rezept-Bundle, Quittungs-Bundle, PKV-Abgabedatensatz) ebenfalls löschen, damit die Informationen rund um ein gelöschtes ChargeItem ebenfalls entfernt werden.",
+        "conformance": "SHALL",
+        "created": "2026-07-28T11:39:12.979121",
+        "modified": "2026-07-28T11:39:12.979126",
+        "date": "2026-07-28T11:39:12.979127",
+        "content_hash": "862f96e61cbe0be88faadcba67543a618b9b9ac231083731fd3afcd2240e03a3",
+        "path": "ttl.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A11",
+        "title": "TI-Flow-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest",
+        "actor": [
+            "TI-Flow_FdV"
+        ],
+        "test_procedures": {
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -62,23 +110,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Liste Abrechnungsinformationen abfragen\" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem ausführen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Liste Abrechnungsinformationen abfragen\" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem ausführen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.924218",
-        "modified": "2026-06-25T13:00:23.924219",
-        "date": "2026-06-25T13:00:23.924220",
-        "content_hash": "99c4de6d2e907437a79a5c29060fd4022066291f33285aa7a3174f5cf1f42975",
+        "modified": "2026-08-26T13:45:24.877098",
+        "date": "2026-08-26T13:45:24.877098",
+        "content_hash": "bc3a27ff9d04d19bdd4cf5000e260f8c7e35e2a20e67c706ff8fdfd965e92750",
         "path": "query-api-chargeitem-req-fdv.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A12",
-        "title": "E-Rezept-FdV: optional: Abrechnungsinformation abrufen",
+        "title": "TI-Flow-FdV: optional: Abrechnungsinformation abrufen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -86,23 +134,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
-        "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Abrechnungsinformation durch den Versicherten abrufen\" umsetzen.",
+        "text": "Das TI-Flow-FdV KANN den Anwendungsfall \"Abrechnungsinformation durch den Versicherten abrufen\" umsetzen.",
         "conformance": "MAY",
         "created": "2026-06-25T13:00:23.924348",
-        "modified": "2026-06-25T13:00:23.924349",
-        "date": "2026-06-25T13:00:23.924350",
-        "content_hash": "de764a67a396942a545c14bf7049cc70a0af8b3ec5867a429a08f838ad5a55c8",
+        "modified": "2026-08-26T13:45:24.877264",
+        "date": "2026-08-26T13:45:24.877264",
+        "content_hash": "d4d6af4abb695377116520034d594d9700f43813dc19c1807b7e04d6da58807f",
         "path": "query-api-chargeitem-req-fdv.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A13",
-        "title": "E-Rezept-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz",
+        "title": "TI-Flow-FdV: Abrechnungsinformation abrufen - Abfragerequest einzelner Datensatz",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -110,23 +158,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation abfragen\" zum Abrufen der Information zu einem einzelnen Datensatz vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem/&#60;id&#62;/ mit \n      <ul>\n        <li>Prescription-ID in URL &#60;id&#62;</li>\n      </ul>\n      ausführen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation abfragen\" zum Abrufen der Information zu einem einzelnen Datensatz vom TI-Flow-Fachdienst die HTTP-Operation GET /ChargeItem/&#60;id&#62;/ mit \n <ul>\n <li>Prescription-ID in URL &#60;id&#62;</li>\n </ul>\n ausführen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.924519",
-        "modified": "2026-06-25T13:00:23.924521",
-        "date": "2026-06-25T13:00:23.924521",
-        "content_hash": "5c18d19b5c605b50a8e5bea7d26ea09a1402c220e826c84ffaf66cd7d7eb82ce",
+        "modified": "2026-08-26T13:45:24.877458",
+        "date": "2026-08-26T13:45:24.877458",
+        "content_hash": "4e2098bdc85425c3b44b5a8d5fd9913c8ddd88166e1956b3c4aa23399d4f6108",
         "path": "query-api-chargeitem-req-fdv.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A14",
-        "title": "E-Rezept-FdV: optional: Abrechnungsinformation markieren",
+        "title": "TI-Flow-FdV: optional: Abrechnungsinformation markieren",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -134,23 +182,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
-        "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Abrechnungsinformation markieren\" umsetzen.",
+        "text": "Das TI-Flow-FdV KANN den Anwendungsfall \"Abrechnungsinformation markieren\" umsetzen.",
         "conformance": "MAY",
         "created": "2026-06-25T13:00:23.924665",
-        "modified": "2026-06-25T13:00:23.924667",
-        "date": "2026-06-25T13:00:23.924667",
-        "content_hash": "597f7231f91cb6eb88e961716698b9a5699860867ea7295873f260bea2ad8685",
+        "modified": "2026-08-26T13:45:24.877647",
+        "date": "2026-08-26T13:45:24.877647",
+        "content_hash": "66d0694f09a9ed6d9be738d3af9cac2c7b3b2fbd81de968d44cc8d10201c1877",
         "path": "query-api-chargeitem-req-fdv.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A15",
-        "title": "E-Rezept-FdV: Abrechnungsinformation markieren - Markierungen auswählen",
+        "title": "TI-Flow-FdV: Abrechnungsinformation markieren - Markierungen auswählen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -158,23 +206,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation markieren\" es dem Nutzer ermöglichen, eine oder mehrere der folgenden Inhalte als Markierung für eine Abrechnungsinformation zu wählen oder abzuwählen:\n      <ul>\n        <li>zur Abrechnung bei Krankenversicherung eingereicht (extention \"insuranceProvider\")</li>\n        <li>zur Abrechnung bei der Beihilfe eingereicht (extention \"subsity\")</li>\n        <li>zur Einreichung beim Finanzamt verwendet (extention \"taxOffice\")</li>\n      </ul>",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation markieren\" es dem Nutzer ermöglichen, eine oder mehrere der folgenden Inhalte als Markierung für eine Abrechnungsinformation zu wählen oder abzuwählen:\n <ul>\n <li>zur Abrechnung bei Krankenversicherung eingereicht (extention \"insuranceProvider\")</li>\n <li>zur Abrechnung bei der Beihilfe eingereicht (extention \"subsity\")</li>\n <li>zur Einreichung beim Finanzamt verwendet (extention \"taxOffice\")</li>\n </ul>",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.924843",
-        "modified": "2026-06-25T13:00:23.924844",
-        "date": "2026-06-25T13:00:23.924845",
-        "content_hash": "5dbb9c727324c18a7c32ba05f58fffa180dce8a80326a43a522312b38eeb76a2",
+        "modified": "2026-08-26T13:45:24.877846",
+        "date": "2026-08-26T13:45:24.877846",
+        "content_hash": "fe56298290f2c9446e941bb78eaed0010a910c72dbdbe0ab9702c8dd4d2c25b5",
         "path": "query-api-chargeitem-req-fdv.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A16",
-        "title": "E-Rezept-FdV: Abrechnungsinformation markieren - Speicherrequest",
+        "title": "TI-Flow-FdV: Abrechnungsinformation markieren - Speicherrequest",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -182,23 +230,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation markieren\" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /ChargeItem/&#60;id&#62; mit \n        <ul>\n            <li>Prescription-ID in URL &#60;id&#62;</li>\n        </ul>\n      für jede zu ändernde Markierung\n        <ul>\n            <li>\"add\" in type</li>\n            <li>zu ändernde Markierung in path</li>\n            <li>geänderter Wert in value</li>\n        </ul>\n      ausführen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation markieren\" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation PATCH /ChargeItem/&#60;id&#62; mit \n <ul>\n <li>Prescription-ID in URL &#60;id&#62;</li>\n </ul>\n für jede zu ändernde Markierung\n <ul>\n <li>\"add\" in type</li>\n <li>zu ändernde Markierung in path</li>\n <li>geänderter Wert in value</li>\n </ul>\n ausführen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.925077",
-        "modified": "2026-06-25T13:00:23.925078",
-        "date": "2026-06-25T13:00:23.925079",
-        "content_hash": "2c1a25badfaa07af9f40d3d4fc26a9b22699618b9675f45b05b523c4a8d4fffd",
+        "modified": "2026-08-26T13:45:24.878132",
+        "date": "2026-08-26T13:45:24.878132",
+        "content_hash": "a14d9f72a2cce880b6cf320fd8885cde125c8a7bd856e128f9a470edd116902f",
         "path": "query-api-chargeitem-req-fdv.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A17",
-        "title": "E-Rezept-FdV: optional: Abrechnungsinformation löschen",
+        "title": "TI-Flow-FdV: optional: Abrechnungsinformation löschen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -206,23 +254,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
-        "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Abrechnungsinformation löschen\" umsetzen.",
+        "text": "Das TI-Flow-FdV KANN den Anwendungsfall \"Abrechnungsinformation löschen\" umsetzen.",
         "conformance": "MAY",
         "created": "2026-06-25T13:00:23.925241",
-        "modified": "2026-06-25T13:00:23.925242",
-        "date": "2026-06-25T13:00:23.925243",
-        "content_hash": "a5d1a794bf8d56baf8917235402e73c060a558eb4500d07aba2bc33a1d12790e",
+        "modified": "2026-08-26T13:45:24.878357",
+        "date": "2026-08-26T13:45:24.878357",
+        "content_hash": "87d978b4bc1c763f08cdf5b735a0060565460948bd00e05f8a06c2fbea42a693",
         "path": "query-api-chargeitem-req-fdv.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A18",
-        "title": "E-Rezept-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen",
+        "title": "TI-Flow-FdV: Abrechnungsinformation löschen - Abrechnungsinformationen zum Löschen auswählen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -230,23 +278,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" es dem Nutzer ermöglichen, eine Abrechnungsinformationen zum Löschen auszuwählen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" es dem Nutzer ermöglichen, eine Abrechnungsinformationen zum Löschen auszuwählen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.925427",
-        "modified": "2026-06-25T13:00:23.925428",
-        "date": "2026-06-25T13:00:23.925429",
-        "content_hash": "ae57ec0c9e4df122c3e8d55213ca6b2b254b2164f87ea082ed906249b5e58ba1",
+        "modified": "2026-08-26T13:45:24.878518",
+        "date": "2026-08-26T13:45:24.878518",
+        "content_hash": "7e2c420a2726a66da34dd3e333181f611fa01972533eef22d5d7dcbb012e3bd0",
         "path": "query-api-chargeitem-req-fdv.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A19",
-        "title": "E-Rezept-FdV: Abrechnungsinformation löschen - Bestätigung",
+        "title": "TI-Flow-FdV: Abrechnungsinformation löschen - Bestätigung",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -254,23 +302,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" vom Nutzer eine Bestätigung einholen, dass die selektierte Abrechnungsinformation gelöscht werden soll und die Möglichkeit geben, das Löschen abzubrechen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" vom Nutzer eine Bestätigung einholen, dass die selektierte Abrechnungsinformation gelöscht werden soll und die Möglichkeit geben, das Löschen abzubrechen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.925561",
-        "modified": "2026-06-25T13:00:23.925562",
-        "date": "2026-06-25T13:00:23.925563",
-        "content_hash": "6f8a9957ea0cda003df9e51155525eba40de18d9a6c0d9e77fa6b78ba7b21d82",
+        "modified": "2026-08-26T13:45:24.878682",
+        "date": "2026-08-26T13:45:24.878682",
+        "content_hash": "b9563374b41466c0b2cce679eccb2a4f92677c08339086039755af1673817bd7",
         "path": "query-api-chargeitem-req-fdv.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A2",
-        "title": "E-Rezept-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf TI-Flow-Fachdienst einstellen",
+        "title": "TI-Flow-FdV: Abrechnungsinformation-Token übermitteln - Nachricht auf TI-Flow-Fachdienst einstellen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -278,23 +326,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-communication-req-fdv.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation-Token einer Apotheke übermitteln\" zum Einstellen der Nachricht die HTTP-Operation POST /Communication  mit\n    <ul>\n        <li>Communication Ressource in HTTP-Request-Body</li>\n    </ul>\n    ausführen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation-Token einer Apotheke übermitteln\" zum Einstellen der Nachricht die HTTP-Operation POST /Communication mit\n <ul>\n <li>Communication Ressource in HTTP-Request-Body</li>\n </ul>\n ausführen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.922351",
-        "modified": "2026-06-25T13:00:23.922354",
-        "date": "2026-06-25T13:00:23.922355",
-        "content_hash": "19f2d2992b6d9cfafc52e75b57c7b5efba886da5768c93ccba84ada8eca08094",
+        "modified": "2026-08-26T13:45:24.874882",
+        "date": "2026-08-26T13:45:24.874882",
+        "content_hash": "ebbbc3b9cfb4fc7805e02d73d4ff06fecab893aeef90642753729ee68ced9ed9",
         "path": "query-api-communication-req-fdv.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A20",
-        "title": "E-Rezept-FdV: Abrechnungsinformation löschen - Löschrequest",
+        "title": "TI-Flow-FdV: Abrechnungsinformation löschen - Löschrequest",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -302,23 +350,23 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" die HTTP-Operation DELETE /ChargeItem/&#60;id&#62; des TI-Flow-Fachdienstes mit\n      <ul>\n        <li>Prescription-ID in URL &#60;id&#62;</li>\n      </ul>\n      ausführen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation löschen\" die HTTP-Operation DELETE /ChargeItem/&#60;id&#62; des TI-Flow-Fachdienstes mit\n <ul>\n <li>Prescription-ID in URL &#60;id&#62;</li>\n </ul>\n ausführen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.925725",
-        "modified": "2026-06-25T13:00:23.925726",
-        "date": "2026-06-25T13:00:23.925727",
-        "content_hash": "762868be118b6ecd52019a6bbc7435d28252056640c8e3d5ca7dbed92136761a",
+        "modified": "2026-08-26T13:45:24.879160",
+        "date": "2026-08-26T13:45:24.879160",
+        "content_hash": "d2679db40a51a23d2fb1c3862075c883d44e09ce96b34a7afe14b404c10002b2",
         "path": "query-api-chargeitem-req-fdv.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A21",
-        "title": "E-Rezept-FdV: Hinweis automatisches Löschen Abrechnungsinformationen",
+        "title": "TI-Flow-FdV: Hinweis automatisches Löschen Abrechnungsinformationen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -326,12 +374,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fdv.md",
-        "text": "Das E-Rezept-FdV KANN, wenn es das Management von Abrechnungsinformationen unterstützt, den Nutzer vor Erreichen der Aufbewahrungsfrist der Abrechnungsinformation einen Hinweis zum automatischen Löschen geben, um dem Nutzer die Möglichkeit zu geben, falls gewünscht die Daten herunterzuladen und zu archivieren.",
+        "text": "Das TI-Flow-FdV KANN, wenn es das Management von Abrechnungsinformationen unterstützt, den Nutzer vor Erreichen der Aufbewahrungsfrist der Abrechnungsinformation einen Hinweis zum automatischen Löschen geben, um dem Nutzer die Möglichkeit zu geben, falls gewünscht die Daten herunterzuladen und zu archivieren.",
         "conformance": "MAY",
         "created": "2026-06-25T13:00:23.925866",
-        "modified": "2026-06-25T13:00:23.925867",
-        "date": "2026-06-25T13:00:23.925868",
-        "content_hash": "6ab8cfc5f521552e1b571390835a3d0a44a2ae9c634088a70a62191fc0d7ed89",
+        "modified": "2026-08-26T13:45:24.879353",
+        "date": "2026-08-26T13:45:24.879353",
+        "content_hash": "c8a63ce81f56c0813af33ea57b915ff1478298d4b3f854fe81ebc613c5942058",
         "path": "query-api-chargeitem-req-fdv.html",
         "release": "2.0.0"
     },
@@ -339,10 +387,10 @@
         "key": "IG-TIFLOW-CHRG-A22",
         "title": "PS abgebende LEI: Abrechnungsinformation bereitstellen - Einwilligung muss vorliegen",
         "actor": [
-            "PS_E-Rezept_abgebend"
+            "PS_TI-Flow_Apotheke"
         ],
         "test_procedures": {
-            "PS_E-Rezept_abgebend": [
+            "PS_TI-Flow_Apotheke": [
                 "Herstellererklärung"
             ]
         },
@@ -354,7 +402,7 @@
         "conformance": "SHALL NOT",
         "created": "2026-06-25T13:00:23.926167",
         "modified": "2026-06-25T13:00:23.926169",
-        "date": "2026-06-25T13:00:23.926169",
+        "date": "2026-08-25T14:32:12.342406",
         "content_hash": "af7e3c55edc98faba9c656616b52ccd81a6c00e2d84069875477e9eb6c4e023b",
         "path": "query-api-chargeitem-req-avs.html",
         "release": "2.0.0"
@@ -363,10 +411,10 @@
         "key": "IG-TIFLOW-CHRG-A23",
         "title": "PS abgebende LEI: Abrechnungsinformation bereitstellen - E-Rezept auswählen",
         "actor": [
-            "PS_E-Rezept_abgebend"
+            "PS_TI-Flow_Apotheke"
         ],
         "test_procedures": {
-            "PS_E-Rezept_abgebend": [
+            "PS_TI-Flow_Apotheke": [
                 "Herstellererklärung"
             ]
         },
@@ -378,7 +426,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.926304",
         "modified": "2026-06-25T13:00:23.926305",
-        "date": "2026-06-25T13:00:23.926306",
+        "date": "2026-08-25T14:32:12.342643",
         "content_hash": "0d4e883b18dc3afde61e29a135a1b0946b651ab3df039cdd76784b66872bf315",
         "path": "query-api-chargeitem-req-avs.html",
         "release": "2.0.0"
@@ -387,10 +435,10 @@
         "key": "IG-TIFLOW-CHRG-A24",
         "title": "PS abgebende LEI: Abrechnungsinformation bereitstellen - PKV-Abgabedatensatz erstellen",
         "actor": [
-            "PS_E-Rezept_abgebend"
+            "PS_TI-Flow_Apotheke"
         ],
         "test_procedures": {
-            "PS_E-Rezept_abgebend": [
+            "PS_TI-Flow_Apotheke": [
                 "Konformitätsbestätigung"
             ]
         },
@@ -402,7 +450,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.926440",
         "modified": "2026-06-25T13:00:23.926441",
-        "date": "2026-06-25T13:00:23.926442",
+        "date": "2026-08-25T14:32:12.342884",
         "content_hash": "50de6c5f254b85807a955108c5804e296ef05e5d672148e62708dc19e4444083",
         "path": "query-api-chargeitem-req-avs.html",
         "release": "2.0.0"
@@ -411,10 +459,10 @@
         "key": "IG-TIFLOW-CHRG-A25",
         "title": "PS abgebende LEI: Abrechnungsinformation bereitstellen - ChargeItem erstellen",
         "actor": [
-            "PS_E-Rezept_abgebend"
+            "PS_TI-Flow_Apotheke"
         ],
         "test_procedures": {
-            "PS_E-Rezept_abgebend": [
+            "PS_TI-Flow_Apotheke": [
                 "Konformitätsbestätigung"
             ]
         },
@@ -426,7 +474,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.926580",
         "modified": "2026-06-25T13:00:23.926581",
-        "date": "2026-06-25T13:00:23.926582",
+        "date": "2026-08-25T14:32:12.343116",
         "content_hash": "3cbbc55bcc98f914331cdc164801b9ff3701c63bdcaac1ff11d86e2158f3946e",
         "path": "query-api-chargeitem-req-avs.html",
         "release": "2.0.0"
@@ -435,10 +483,10 @@
         "key": "IG-TIFLOW-CHRG-A26",
         "title": "PS abgebende LEI: Abrechnungsinformation bereitstellen - Speicherrequest",
         "actor": [
-            "PS_E-Rezept_abgebend"
+            "PS_TI-Flow_Apotheke"
         ],
         "test_procedures": {
-            "PS_E-Rezept_abgebend": [
+            "PS_TI-Flow_Apotheke": [
                 "Konformitätsbestätigung"
             ]
         },
@@ -450,7 +498,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.926757",
         "modified": "2026-06-25T13:00:23.926758",
-        "date": "2026-06-25T13:00:23.926759",
+        "date": "2026-08-25T14:32:12.343396",
         "content_hash": "8092c99d85f0ab5b6b57b6707201ec8f1d7162c3ca0dde898688a38775f5daf5",
         "path": "query-api-chargeitem-req-avs.html",
         "release": "2.0.0"
@@ -459,10 +507,10 @@
         "key": "IG-TIFLOW-CHRG-A27",
         "title": "PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz zum Ändern auswählen",
         "actor": [
-            "PS_E-Rezept_abgebend"
+            "PS_TI-Flow_Apotheke"
         ],
         "test_procedures": {
-            "PS_E-Rezept_abgebend": [
+            "PS_TI-Flow_Apotheke": [
                 "Herstellererklärung"
             ]
         },
@@ -474,7 +522,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.926909",
         "modified": "2026-06-25T13:00:23.926910",
-        "date": "2026-06-25T13:00:23.926911",
+        "date": "2026-08-25T14:32:12.343682",
         "content_hash": "799f792d06bdb96f1a9e84886b5b90484daffc303c2b25352c56741633ca806d",
         "path": "query-api-chargeitem-req-avs.html",
         "release": "2.0.0"
@@ -483,10 +531,10 @@
         "key": "IG-TIFLOW-CHRG-A28",
         "title": "PS abgebende LEI: PKV-Abgabedatensatz ändern - PKV-Abgabedatensatz erstellen",
         "actor": [
-            "PS_E-Rezept_abgebend"
+            "PS_TI-Flow_Apotheke"
         ],
         "test_procedures": {
-            "PS_E-Rezept_abgebend": [
+            "PS_TI-Flow_Apotheke": [
                 "Konformitätsbestätigung"
             ]
         },
@@ -498,7 +546,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.927055",
         "modified": "2026-06-25T13:00:23.927056",
-        "date": "2026-06-25T13:00:23.927057",
+        "date": "2026-08-25T14:32:12.343904",
         "content_hash": "bf841eedee730e8153701ecce0fd13517864432e03334f6c92cf27f310f365b1",
         "path": "query-api-chargeitem-req-avs.html",
         "release": "2.0.0"
@@ -507,10 +555,10 @@
         "key": "IG-TIFLOW-CHRG-A29",
         "title": "PS abgebende LEI: PKV-Abgabedatensatz ändern - ChargeItem erstellen",
         "actor": [
-            "PS_E-Rezept_abgebend"
+            "PS_TI-Flow_Apotheke"
         ],
         "test_procedures": {
-            "PS_E-Rezept_abgebend": [
+            "PS_TI-Flow_Apotheke": [
                 "Konformitätsbestätigung"
             ]
         },
@@ -522,19 +570,19 @@
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.927189",
         "modified": "2026-06-25T13:00:23.927190",
-        "date": "2026-06-25T13:00:23.927190",
+        "date": "2026-08-25T14:32:12.344120",
         "content_hash": "6b22efb1cdc8e69356f522e94237cd8426926211a587304053b6c0a54b601a5b",
         "path": "query-api-chargeitem-req-avs.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A3",
-        "title": "E-Rezept-FdV: optional: 2D-Code Abrechnungsinformation anzeigen",
+        "title": "TI-Flow-FdV: optional: 2D-Code Abrechnungsinformation anzeigen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -542,12 +590,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-verarbeitungsregeln.md",
-        "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" umsetzen.",
+        "text": "Das TI-Flow-FdV KANN den Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" umsetzen.",
         "conformance": "MAY",
         "created": "2026-06-25T13:00:23.922721",
-        "modified": "2026-06-25T13:00:23.922724",
-        "date": "2026-06-25T13:00:23.922725",
-        "content_hash": "7dc2cac2e0ee16a3ac95dd596c46657755fa4b3e6ec3f3ab232a0b75e2211ecb",
+        "modified": "2026-08-26T13:45:24.875160",
+        "date": "2026-08-26T13:45:24.875160",
+        "content_hash": "ee9afbbd8d18d66b328a12ba634fc911a070a0fb605f6b461ebdd9c467d94e1a",
         "path": "menu-technische-umsetzung-verarbeitungsregeln.html",
         "release": "2.0.0"
     },
@@ -555,10 +603,10 @@
         "key": "IG-TIFLOW-CHRG-A30",
         "title": "PS abgebende LEI: PKV-Abgabedatensatz ändern - Speicherrequest",
         "actor": [
-            "PS_E-Rezept_abgebend"
+            "PS_TI-Flow_Apotheke"
         ],
         "test_procedures": {
-            "PS_E-Rezept_abgebend": [
+            "PS_TI-Flow_Apotheke": [
                 "Konformitätsbestätigung"
             ]
         },
@@ -570,7 +618,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.927386",
         "modified": "2026-06-25T13:00:23.927388",
-        "date": "2026-06-25T13:00:23.927388",
+        "date": "2026-08-25T14:32:12.344406",
         "content_hash": "c90898e2858587bc53bd67c3482f25739f6c7bba0c7be11517958933f8dc5d37",
         "path": "query-api-chargeitem-req-avs.html",
         "release": "2.0.0"
@@ -579,10 +627,10 @@
         "key": "IG-TIFLOW-CHRG-A31",
         "title": "PS abgebende LEI: Abrechnungsinformation abrufen - Leserequest",
         "actor": [
-            "PS_E-Rezept_abgebend"
+            "PS_TI-Flow_Apotheke"
         ],
         "test_procedures": {
-            "PS_E-Rezept_abgebend": [
+            "PS_TI-Flow_Apotheke": [
                 "Produkttest"
             ]
         },
@@ -594,7 +642,7 @@
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.927589",
         "modified": "2026-06-25T13:00:23.927590",
-        "date": "2026-06-25T13:00:23.927591",
+        "date": "2026-08-25T14:32:12.344725",
         "content_hash": "e1f88c126b058c9df681d1cd9cce698035d3e21814c8bf4facdcfb15d5bae70d",
         "path": "query-api-chargeitem-req-avs.html",
         "release": "2.0.0"
@@ -603,10 +651,10 @@
         "key": "IG-TIFLOW-CHRG-A32",
         "title": "PS abgebende LEI: Nachricht versenden - Apotheke  - Abrechnungsinformation - Communication Ressource erstellen",
         "actor": [
-            "PS_E-Rezept_abgebend"
+            "PS_TI-Flow_Apotheke"
         ],
         "test_procedures": {
-            "PS_E-Rezept_abgebend": [
+            "PS_TI-Flow_Apotheke": [
                 "Herstellererklärung"
             ]
         },
@@ -618,19 +666,19 @@
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.927944",
         "modified": "2026-06-25T13:00:23.927945",
-        "date": "2026-06-25T13:00:23.927946",
+        "date": "2026-08-25T14:32:12.345024",
         "content_hash": "e12153f2c70c81b791d6a02a2c8c676ce909b065a86bf83c0b3003d1237d495c",
         "path": "query-api-communication-req-avs.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A33",
-        "title": "E-Rezept-FdV: TIFlow-CHRG - verpflichtende Anwendungsfälle",
+        "title": "TI-Flow-FdV: TIFlow-CHRG - verpflichtende Anwendungsfälle",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -638,12 +686,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md",
-        "text": "Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle\n    <ul>\n        <li>UC 3.14 - Einwilligung durch Versicherten erteilen</li>\n        <li>UC 3.15 - Einwilligung durch Versicherten widerrufen</li>\n        <li>UC 3.13 - Einwilligungen durch Versicherten einsehen</li>\n        <li>UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen</li>\n        <li>Abrechnungsinformationen durch den Versicherten weitergeben</li>\n        <li>UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren</li>\n        <li>UC 3.11 - Abrechnungsinformationen durch den Versicherten löschen</li>\n        <li>Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes</li>\n    </ul>\n    umsetzen.",
+        "text": "Das TI-Flow-FdV MUSS für die Umsetzung der Nutzung von Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle\n <ul>\n <li>UC 3.14 - Einwilligung durch Versicherten erteilen</li>\n <li>UC 3.15 - Einwilligung durch Versicherten widerrufen</li>\n <li>UC 3.13 - Einwilligungen durch Versicherten einsehen</li>\n <li>UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen</li>\n <li>Abrechnungsinformationen durch den Versicherten weitergeben</li>\n <li>UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren</li>\n <li>UC 3.11 - Abrechnungsinformationen durch den Versicherten löschen</li>\n <li>Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes</li>\n </ul>\n umsetzen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.928527",
-        "modified": "2026-06-25T13:00:23.928530",
-        "date": "2026-06-25T13:00:23.928531",
-        "content_hash": "6c1060c5f566063fdddaef9eda909e78d66730cee8e8b51eb5a7820d8a80a933",
+        "modified": "2026-08-26T13:45:24.881907",
+        "date": "2026-08-26T13:45:24.881907",
+        "content_hash": "36ee67f5153bb523470c47f77a76d6b8c0492b07b5935a6cfab9f56cecf52af4",
         "path": "menu-technische-umsetzung-anwendungsfaelle.html",
         "release": "2.0.0"
     },
@@ -651,10 +699,10 @@
         "key": "IG-TIFLOW-CHRG-A34",
         "title": "PS abgebende LEI: TIFlow-CHRG - verpflichtende Anwendungsfälle",
         "actor": [
-            "PS_E-Rezept_abgebend"
+            "PS_TI-Flow_Apotheke"
         ],
         "test_procedures": {
-            "PS_E-Rezept_abgebend": [
+            "PS_TI-Flow_Apotheke": [
                 "Herstellererklärung"
             ]
         },
@@ -666,139 +714,19 @@
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.928776",
         "modified": "2026-06-25T13:00:23.928777",
-        "date": "2026-06-25T13:00:23.928778",
+        "date": "2026-08-25T14:32:12.345840",
         "content_hash": "40d95da37ad153a740c84dd7f235cd39f37018e98d3d3a00c8438609aa56dcb2",
         "path": "menu-technische-umsetzung-anwendungsfaelle.html",
         "release": "2.0.0"
     },
     {
-        "key": "IG-TIFLOW-CHRG-A35",
-        "title": "Einwilligung in Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
-        "text": "Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Einwilligung in die Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte möglich ist.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T13:00:23.929099",
-        "modified": "2026-06-25T13:00:23.929101",
-        "date": "2026-06-25T13:00:23.929102",
-        "content_hash": "14d95d4fca0b2fe94b1d0b78dbdd1e0c99242e76e230476329fb9e218dc9f3cb",
-        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CHRG-A36",
-        "title": "Verarbeitung von Abrechnungsinformationen nur nach Einwilligung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
-        "text": "Die Fachanwendung E-Rezept MUSS sicherstellen, dass eine Verarbeitung von Abrechnungsinformationen nur für PKV-Versicherte erfolgt, die hierfür eingewilligt haben.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T13:00:23.929239",
-        "modified": "2026-06-25T13:00:23.929240",
-        "date": "2026-06-25T13:00:23.929241",
-        "content_hash": "82a6a43cdbd3ca40f34a4b67fa64d37c172f41fa52b7d7d44a4bc58e59d448e1",
-        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CHRG-A37",
-        "title": "Verarbeitung von Abrechnungsinformationen im TI-Flow-Fachdienst nur nach Einwilligung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
-        "text": "Der TI-Flow-Fachdienst DARF NICHT Abrechnungsinformationen verarbeiten, wenn keine Einwilligung des PKV-Versicherten erfolgt ist.",
-        "conformance": "SHALL NOT",
-        "created": "2026-06-25T13:00:23.929373",
-        "modified": "2026-06-25T13:00:23.929374",
-        "date": "2026-06-25T13:00:23.929375",
-        "content_hash": "c9a8bc54db5047192bee477253f719bcf2e12c72a8e1329eec9bc78e789dc60e",
-        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CHRG-A38",
-        "title": "Nichtabstreitbarkeit der Einwilligung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
-        "text": "Die Fachanwendung E-Rezept MUSS sicherstellen, dass die technische Umsetzung der Einwilligung im E-Rezept-FdV und des Vermerkens dieser im TI-Flow-Fachdienst so zuverlässig ist, dass der Vermerk im TI-Flow-Fachdienst als nicht abstreitbar angesehen werden kann.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T13:00:23.929507",
-        "modified": "2026-06-25T13:00:23.929508",
-        "date": "2026-06-25T13:00:23.929509",
-        "content_hash": "46daf529a4bd26ba03c594a215c77887e68999edabd0793578174681ca9195e9",
-        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CHRG-A39",
-        "title": "Löschen von Abrechnungsinformationen nach zehn Jahren",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
-        "text": "Der TI-Flow-Fachdienst MUSS Abrechnungsinformationen zu einem E-Rezept nach zehn Jahren löschen.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T13:00:23.929639",
-        "modified": "2026-06-25T13:00:23.929640",
-        "date": "2026-06-25T13:00:23.929641",
-        "content_hash": "1f33b72f0fe3082c52def1bdff501b5bb17084d68f63ffe6af3ce01b1fe7dfa5",
-        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
-        "release": "2.0.0"
-    },
-    {
         "key": "IG-TIFLOW-CHRG-A4",
-        "title": "E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen",
+        "title": "TI-Flow-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -806,85 +734,13 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-verarbeitungsregeln.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" es dem Nutzer ermöglichen, ein E-Rezept für die Anzeige des 2D-Code der Abrechnungsinformation auszuwählen, um einer Apotheke das Einscannen zu ermöglichen und sie somit für das Ändern des PKV-Abgabedatensatzes zu berechtigen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" es dem Nutzer ermöglichen, ein E-Rezept für die Anzeige des 2D-Code der Abrechnungsinformation auszuwählen, um einer Apotheke das Einscannen zu ermöglichen und sie somit für das Ändern des PKV-Abgabedatensatzes zu berechtigen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.922935",
-        "modified": "2026-06-25T13:00:23.922937",
-        "date": "2026-06-25T13:00:23.922938",
-        "content_hash": "d0df99865af03dc04f8e7d01126f15d697a789d029b8a93c119930cf40492089",
+        "modified": "2026-08-26T13:45:24.875333",
+        "date": "2026-08-26T13:45:24.875333",
+        "content_hash": "a8d5d7b641303452dd1e3cb7e370316029ea831e43c2955a42645fce35829fcf",
         "path": "menu-technische-umsetzung-verarbeitungsregeln.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CHRG-A40",
-        "title": "Information über Möglichkeit des Speicherns der Abrechnungsinformationen nur für konkretes E-Rezept",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
-        "text": "Der TI-Flow-Fachdienst MUSS sicherstellen, dass abgebende Leistungserbringer die Information über die Möglichkeit des Speicherns der Abrechnungsinformationen im TI-Flow-Fachdienst nur im Kontext eines konkreten E-Rezepts erhalten.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T13:00:23.929772",
-        "modified": "2026-06-25T13:00:23.929773",
-        "date": "2026-06-25T13:00:23.929774",
-        "content_hash": "c87ca37a72b851b1adc4391189eadb8020d061da3440366596c526c1e1ba19d4",
-        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CHRG-A41",
-        "title": "Schutz der Abrechnungsinformationen",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
-        "text": "Der TI-Flow-Fachdienst MUSS die Abrechnungsinformationen während der Verarbeitung (inkl. Transport und Speichern) vor unberechtigter Einsichtnahme oder Manipulation schützen.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T13:00:23.929901",
-        "modified": "2026-06-25T13:00:23.929903",
-        "date": "2026-06-25T13:00:23.929903",
-        "content_hash": "f49df7a6f25fbee022c946a605071b9ca1fc9f97c187686414b42bf451ca63f1",
-        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CHRG-A42",
-        "title": "Protokollierung der Einwilligung bzw. des Widerrufs",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-datenschutz-und-sicherheit.md",
-        "text": "Der TI-Flow-Fachdienst MUSS die Einwilligung in das Speichern der Abrechnungsinformationen und deren Widerruf - inkl. Zeitpunkt der Aktion - für den Versicherten protokollieren.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T13:00:23.930051",
-        "modified": "2026-06-25T13:00:23.930052",
-        "date": "2026-06-25T13:00:23.930053",
-        "content_hash": "9231d9c69dbaaa2a2e7b7bedf7af8de0144abdee2036399658577969ff2a3702",
-        "path": "menu-technische-umsetzung-datenschutz-und-sicherheit.html",
         "release": "2.0.0"
     },
     {
@@ -950,12 +806,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS ein Signatur-Zertifikat einer nonQES-Signatur eine Leistungserbringerinstitution gemäß [gemSpec_PKI]#TUC_PKI_018 mit folgenden Parametern auf Gültigkeit prüfen: Tabelle # : TAB_eRPFD_013 Parameter Prüfung Signaturzertifikat SMC-B Parameter Zertifikat Signaturzertifikat aus nonQES PolicyList oid_smc_b_osig intendedKeyUsage nonRepudiation intendedExtendedKeyUsage (leer) OCSP-Graceperiod 12 Stunden Offline-Modus nein Prüfmodus OCSP Der TI-Flow-Fachdienst darf die OCSP-Response für die Abfrage des Zertifikatsstatus für 12 Stunden zwischenspeichern.",
+        "text": "Der TI-Flow-Fachdienst MUSS das Signatur-Zertifikat einer nonQES-Signatur eine Leistungserbringerinstitution gemäß [gemSpec_PKI]#TUC_PKI_018 mit folgenden Parametern auf Gültigkeit prüfen:\n <table>\n <thead>\n <tr>\n <th>Parameter</th>\n <th></th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>Zertifikat</td>\n <td>Signaturzertifikat aus nonQES</td>\n </tr>\n <tr>\n <td>PolicyList</td>\n <td>oid_smc_b_osig</td>\n </tr>\n <tr>\n <td>intendedKeyUsage</td>\n <td>nonRepudiation</td>\n </tr>\n <tr>\n <td>intendedExtendedKeyUsage</td>\n <td>(leer)</td>\n </tr>\n <tr>\n <td>OCSP-Graceperiod</td>\n <td>12 Stunden</td>\n </tr>\n <tr>\n <td>Offline-Modus</td>\n <td>nein</td>\n </tr>\n <tr>\n <td>Prüfmodus</td>\n <td>OCSP</td>\n </tr>\n </tbody>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_013 Parameter Prüfung Signaturzertifikat</figcaption></div>",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.930950",
-        "modified": "2026-06-25T13:00:23.930951",
-        "date": "2026-06-25T13:00:23.930952",
-        "content_hash": "e8c8bfe081cefda96719c26b344f68bb23f700117eba758734dff76e55066d80",
+        "modified": "2026-07-28T12:12:11.963114",
+        "date": "2026-07-28T12:12:11.963114",
+        "content_hash": "d756b5610bdd7787b5f118ff308ffe46fc91f927df396e6f80413be067558d86",
         "path": "query-api-chargeitem-req-fd.html",
         "release": "2.0.0"
     },
@@ -1057,12 +913,12 @@
     },
     {
         "key": "IG-TIFLOW-CHRG-A5",
-        "title": "E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen",
+        "title": "TI-Flow-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -1070,12 +926,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-verarbeitungsregeln.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" für das ausgewählte E-Rezept den Abrechnungsinformation-Token erstellen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" für das ausgewählte E-Rezept den Abrechnungsinformation-Token erstellen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.923107",
-        "modified": "2026-06-25T13:00:23.923109",
-        "date": "2026-06-25T13:00:23.923110",
-        "content_hash": "2c1ec2281c1e262eb3f816400dca26ec2113c9d8536ca8e3b89cb06a94ca8a3e",
+        "modified": "2026-08-26T13:45:24.875522",
+        "date": "2026-08-26T13:45:24.875522",
+        "content_hash": "e93807a54a557d84e4e9982e9de59a78a03309260c79e95901b3832e9d1efa81",
         "path": "menu-technische-umsetzung-verarbeitungsregeln.html",
         "release": "2.0.0"
     },
@@ -1321,12 +1177,12 @@
     },
     {
         "key": "IG-TIFLOW-CHRG-A6",
-        "title": "E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen",
+        "title": "TI-Flow-FdV: 2D-Code Abrechnungsinformation anzeigen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -1334,12 +1190,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-verarbeitungsregeln.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" mit dem erstellten Abrechnungsinformation-Token einen 2D-Code erstellen und auf dem Display des Endgerätes anzeigen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"2D-Code Abrechnungsinformation anzeigen\" mit dem erstellten Abrechnungsinformation-Token einen 2D-Code erstellen und auf dem Display des Endgerätes anzeigen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.923273",
-        "modified": "2026-06-25T13:00:23.923275",
-        "date": "2026-06-25T13:00:23.923275",
-        "content_hash": "443b4feb9dc76d46d598c7be3c8bb7dbd02a77fa0527dfb88f71a914dfa53f84",
+        "modified": "2026-08-26T13:45:24.875690",
+        "date": "2026-08-26T13:45:24.875690",
+        "content_hash": "a0f15e8ee98ff2e64074869ba4d96b4ccc14e650ba5e9ae3f24ab709077077ab",
         "path": "menu-technische-umsetzung-verarbeitungsregeln.html",
         "release": "2.0.0"
     },
@@ -1585,12 +1441,12 @@
     },
     {
         "key": "IG-TIFLOW-CHRG-A7",
-        "title": "E-Rezept-FdV: optional: Abrechnungsinformation exportieren",
+        "title": "TI-Flow-FdV: optional: Abrechnungsinformation exportieren",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -1598,12 +1454,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-verarbeitungsregeln.md",
-        "text": "Das E-Rezept-FdV KANN den Anwendungsfall \"Abrechnungsinformation exportieren\" umsetzen.",
+        "text": "Das TI-Flow-FdV KANN den Anwendungsfall \"Abrechnungsinformation exportieren\" umsetzen.",
         "conformance": "MAY",
         "created": "2026-06-25T13:00:23.923404",
-        "modified": "2026-06-25T13:00:23.923406",
-        "date": "2026-06-25T13:00:23.923406",
-        "content_hash": "3b1337cf5367e44930fdf32e654f9e97ff43e99fa77e5d6ca771c835226cf950",
+        "modified": "2026-08-26T13:45:24.875858",
+        "date": "2026-08-26T13:45:24.875858",
+        "content_hash": "cf415b79ac7b7b7e1793774e6839151f2d20e1b1216b475382ffffa6655056d1",
         "path": "menu-technische-umsetzung-verarbeitungsregeln.html",
         "release": "2.0.0"
     },
@@ -1849,12 +1705,12 @@
     },
     {
         "key": "IG-TIFLOW-CHRG-A8",
-        "title": "E-Rezept-FdV: Abrechnungsinformation exportieren - PDF/A erstellen",
+        "title": "TI-Flow-FdV: Abrechnungsinformation exportieren - PDF/A erstellen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -1862,12 +1718,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-verarbeitungsregeln.md",
-        "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abrechnungsinformation exportieren\" auf Basis der vom TI-Flow-Fachdienst zu einer Prescription-ID heruntergeladenen ChargeItem, Verordnungsdatensatz, PKV-Abgabedatensatz und Quittung Ressourcen\n      <ul>\n        <li>einen Ausdruck erstellen,</li>\n        <li>für den Ausdruck ein PDF gemäß PDF/A-3-Standard (ISO 19005-3) erstellen,</li>\n        <li>in das Dokument den signierten Verordnungsdatensatz (&#60;Prescription-ID&#62;_verordnung.p7s), den signierten PKV-Abgabedatensatz (&#60;Prescription-ID&#62;_abgabedaten.p7s) und den signierten Quittung Datensatz (&#60;Prescription-ID&#62;_quittung.p7s) gemäß PDF/A-3 einbetten.</li>\n      </ul>",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abrechnungsinformation exportieren\" auf Basis der vom TI-Flow-Fachdienst zu einer Prescription-ID heruntergeladenen ChargeItem, Verordnungsdatensatz, PKV-Abgabedatensatz und Quittung Ressourcen\n <ul>\n <li>einen Ausdruck erstellen,</li>\n <li>für den Ausdruck ein PDF gemäß PDF/A-3-Standard (ISO 19005-3) erstellen,</li>\n <li>in das Dokument den signierten Verordnungsdatensatz (&#60;Prescription-ID&#62;_verordnung.p7s), den signierten PKV-Abgabedatensatz (&#60;Prescription-ID&#62;_abgabedaten.p7s) und den signierten Quittung Datensatz (&#60;Prescription-ID&#62;_quittung.p7s) gemäß PDF/A-3 einbetten.</li>\n </ul>",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.923611",
-        "modified": "2026-06-25T13:00:23.923613",
-        "date": "2026-06-25T13:00:23.923614",
-        "content_hash": "7159cc5ecf19e64d7b7c2ca254635ec2de2ac02d0201559019306c33ae60e899",
+        "modified": "2026-08-26T13:45:24.876074",
+        "date": "2026-08-26T13:45:24.876074",
+        "content_hash": "0241f38120176e5a662e3ace940d2e8c7feae82a5273a9c0345292378e671da4",
         "path": "menu-technische-umsetzung-verarbeitungsregeln.html",
         "release": "2.0.0"
     },
@@ -2113,12 +1969,12 @@
     },
     {
         "key": "IG-TIFLOW-CHRG-A9",
-        "title": "E-Rezept-FdV: Abrechnungsinformation exportieren - PDF teilen",
+        "title": "TI-Flow-FdV: Abrechnungsinformation exportieren - PDF teilen",
         "actor": [
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Produkttest"
             ]
         },
@@ -2126,12 +1982,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-verarbeitungsregeln.md",
-        "text": "Das E-Rezept-FdV MUSS es dem Nutzer im Anwendungsfall \"Abrechnungsinformation exportieren\" ermöglichen, das erstellte PDF mit anderen Apps zu teilen, um den Versicherten die Möglichkeit zu geben, seine Abrechnungsinformation an Krankenversicherungen oder andere Institutionen zur Abrechnung zu übermitteln.",
+        "text": "Das TI-Flow-FdV MUSS es dem Nutzer im Anwendungsfall \"Abrechnungsinformation exportieren\" ermöglichen, das erstellte PDF mit anderen Apps zu teilen, um den Versicherten die Möglichkeit zu geben, seine Abrechnungsinformation an Krankenversicherungen oder andere Institutionen zur Abrechnung zu übermitteln.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.923772",
-        "modified": "2026-06-25T13:00:23.923774",
-        "date": "2026-06-25T13:00:23.923774",
-        "content_hash": "b0fc57360a97c6ec85914db822ceac9db66bd03f3db9e8e849bac39daa589262",
+        "modified": "2026-08-26T13:45:24.876310",
+        "date": "2026-08-26T13:45:24.876310",
+        "content_hash": "3c8730dbe78bcb6f288a27907fc11409650deecbae88f8d5e557ac359b10f4f3",
         "path": "menu-technische-umsetzung-verarbeitungsregeln.html",
         "release": "2.0.0"
     },
@@ -2235,18 +2091,18 @@
         "key": "IG-TIFLOW-CHRG-A94",
         "title": "E-Rezept: Anwendung des IG 'Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte' für die Verwaltung von Abrechnungsinformationen",
         "actor": [
-            "PS_E-Rezept_abgebend",
+            "PS_TI-Flow_Apotheke",
             "TI-Flow_FD",
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "PS_E-Rezept_abgebend": [
+            "PS_TI-Flow_Apotheke": [
                 "Herstellererklärung"
             ],
             "TI-Flow_FD": [
                 "Herstellererklärung"
             ],
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -2254,12 +2110,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/index.md",
-        "text": "Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Verwaltung von Abrechnungsinformationen zu Arzneimitteln den Implementation Guide \"Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte\" umsetzen.",
+        "text": "Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Verwaltung von Abrechnungsinformationen zu Arzneimitteln den Implementation Guide \"TIFlow - Abrechnungsinformatione\" umsetzen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.946833",
-        "modified": "2026-06-25T13:00:23.946834",
-        "date": "2026-06-25T13:00:23.946835",
-        "content_hash": "f05d6d790212bcc37926ee7f5f11f5729bfd27e8e1b863485a1c94ea5e9a2fb9",
+        "modified": "2026-08-26T13:30:34.509859",
+        "date": "2026-08-26T13:30:34.509859",
+        "content_hash": "7a44071eacf6b96a30246954702bcfa56cc24c26da7bef6c58794b3749cf8d7b",
         "path": "index.html",
         "release": "2.0.0"
     },
@@ -2267,18 +2123,18 @@
         "key": "IG-TIFLOW-CHRG-A95",
         "title": "E-Rezept: Umsetzung des Moduls 'Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte'",
         "actor": [
-            "PS_E-Rezept_abgebend",
+            "PS_TI-Flow_Apotheke",
             "TI-Flow_FD",
-            "eRp_FdV"
+            "TI-Flow_FdV"
         ],
         "test_procedures": {
-            "PS_E-Rezept_abgebend": [
+            "PS_TI-Flow_Apotheke": [
                 "Herstellererklärung"
             ],
             "TI-Flow_FD": [
                 "Herstellererklärung"
             ],
-            "eRp_FdV": [
+            "TI-Flow_FdV": [
                 "Herstellererklärung"
             ]
         },
@@ -2286,12 +2142,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/index.md",
-        "text": "Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides \"Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte\" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.",
+        "text": "Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides \"TIFlow - Abrechnungsinformationen\" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus gemIG_TIFlow_core, die in diesem IG referenziert werden.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.947085",
-        "modified": "2026-06-25T13:00:23.947086",
-        "date": "2026-06-25T13:00:23.947087",
-        "content_hash": "e180055bfcce0e6e282c2d2d48214d23100efe6a2591d7f31ad90afc94828a19",
+        "modified": "2026-08-26T13:30:34.510175",
+        "date": "2026-08-26T13:30:34.510175",
+        "content_hash": "d76f09f2e5cc40c86d657e2f2180ba3586724e26259ec54281c9f403d75bfd5a",
         "path": "index.html",
         "release": "2.0.0"
     },

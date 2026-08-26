@@ -16,7 +16,46 @@ Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels d
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS ein Signatur-Zertifikat einer nonQES-Signatur eine Leistungserbringerinstitution gemäß [gemSpec_PKI]#TUC_PKI_018 mit folgenden Parametern auf Gültigkeit prüfen: Tabelle # : TAB_eRPFD_013 Parameter Prüfung Signaturzertifikat SMC-B Parameter Zertifikat Signaturzertifikat aus nonQES PolicyList oid_smc_b_osig intendedKeyUsage nonRepudiation intendedExtendedKeyUsage (leer) OCSP-Graceperiod 12 Stunden Offline-Modus nein Prüfmodus OCSP Der TI-Flow-Fachdienst darf die OCSP-Response für die Abfrage des Zertifikatsstatus für 12 Stunden zwischenspeichern.
+    Der TI-Flow-Fachdienst MUSS das Signatur-Zertifikat einer nonQES-Signatur eine Leistungserbringerinstitution gemäß [gemSpec_PKI]#TUC_PKI_018 mit folgenden Parametern auf Gültigkeit prüfen:
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Zertifikat</td>
+                <td>Signaturzertifikat aus nonQES</td>
+            </tr>
+            <tr>
+                <td>PolicyList</td>
+                <td>oid_smc_b_osig</td>
+            </tr>
+            <tr>
+                <td>intendedKeyUsage</td>
+                <td>nonRepudiation</td>
+            </tr>
+            <tr>
+                <td>intendedExtendedKeyUsage</td>
+                <td>(leer)</td>
+            </tr>
+            <tr>
+                <td>OCSP-Graceperiod</td>
+                <td>12 Stunden</td>
+            </tr>
+            <tr>
+                <td>Offline-Modus</td>
+                <td>nein</td>
+            </tr>
+            <tr>
+                <td>Prüfmodus</td>
+                <td>OCSP</td>
+            </tr>
+        </tbody>
+    </table>
+    <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_013 Parameter Prüfung Signaturzertifikat</figcaption></div> 
 </requirement>
 
 ### GET /ChargeItem

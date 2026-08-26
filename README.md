@@ -31,7 +31,7 @@ If your local binary is named `fhirscripts-dev`, use that command instead.
 Build IGs sequentially (core first):
 
 ```shell
-for ig in core bfarm diga erp-chrg erp-eu rx; do
+for ig in core bfarm diga erp-chrg rx; do
 	echo "=== Building $ig ==="
 	(
 		cd "igs/$ig"
@@ -107,6 +107,5 @@ Module pages can include selected Markdown snippets from core without copying al
 	`{% include core.query-api-consent-fd-requirements.md %}`
 - Build step copies only referenced `core-*.md` includes from
 	`igs/core/input/pagecontent/<name>.md` to `igs/<module>/input/includes/core-<name>.md`
-- Sync script: [scripts/merge-core-includes.sh](scripts/merge-core-includes.sh)
 
 This keeps core as source of truth and synchronizes only tagged include files.

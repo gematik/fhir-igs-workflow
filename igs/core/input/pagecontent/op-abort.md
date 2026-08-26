@@ -9,7 +9,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/{id}/$abort` gesendet.
 - [Server-Anforderungen zu `$abort`](./op-abort-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [PVS-Anforderungen zu `$abort`](./op-abort-req-pvs.html): Anforderungen an ein Praxisverwaltungssystem zur Nutzung der Schnittstelle.
 - [AVS-Anforderungen zu `$abort`](./op-abort-req-avs.html): Anforderungen an ein Praxisverwaltungssystem zur Nutzung der Schnittstelle.
-- [FdV-Anforderungen zu `$abort`](./op-abort-req-avs.html): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [FdV-Anforderungen zu `$abort`](./op-abort-req-avs.html): Anforderungen an ein TI-Flow-FdV zur Nutzung der Schnittstelle.
 
 ### API Beschreibung
 

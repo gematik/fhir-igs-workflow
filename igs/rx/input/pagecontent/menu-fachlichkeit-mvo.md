@@ -5,9 +5,9 @@ Eine MVO besteht aus mehreren Teilverordnungen, die jeweils als eigenes E-Rezept
 
 ### Kontext
 
-Mehrfachverordnungen sollen die Versorgung mit Arzneimittel für chronisch Kranke erleichtern. Hierfür wurde in § 31 Absatz 1b SGB V die Grundlage geschaffen: "Für Versicherte, die eine kontinuierliche Versorgung mit einem bestimmten Arzneimittel benötigen, können Vertragsärzte Verordnungen ausstellen, nach denen eine nach der Erstabgabe bis zu dreimal sich wiederholende Abgabe erlaubt ist. Die Verordnungen sind besonders zu kennzeichnen. Sie dürfen bis zu einem Jahr nach Ausstellungsdatum zu Lasten der gesetzlichen Krankenkasse durch Apotheken beliefert werden."
+Mehrfachverordnungen sollen die Versorgung mit Arzneimittel für chronisch Kranke erleichtern. Hierfür wurde in <span>§</span> 31 Absatz 1b SGB V die Grundlage geschaffen: "Für Versicherte, die eine kontinuierliche Versorgung mit einem bestimmten Arzneimittel benötigen, können Vertragsärzte Verordnungen ausstellen, nach denen eine nach der Erstabgabe bis zu dreimal sich wiederholende Abgabe erlaubt ist. Die Verordnungen sind besonders zu kennzeichnen. Sie dürfen bis zu einem Jahr nach Ausstellungsdatum zu Lasten der gesetzlichen Krankenkasse durch Apotheken beliefert werden."
 
-Neben § 31 Absatz 1b SGB V regelt § 4 Abs. 3 AMVV i.V.m. § 2 Abs. 1 Nr. 6a AMVV die gesetzliche Grundlage der Mehrfachverordnungen.
+Neben <span>§</span> 31 Absatz 1b SGB V regelt <span>§</span> 4 Abs. 3 AMVV i.V.m. <span>§</span> 2 Abs. 1 Nr. 6a AMVV die gesetzliche Grundlage der Mehrfachverordnungen.
 
 Aus der Mehrfachverordnung ergeben sich Vorteile für Patienten und die Abläufe in Arztpraxen, da die Rezepte für Dauermedikationen im Voraus ausgestellt werden können und somit Wege zur Arztpraxis zum Rezepte abholen entfallen.
 
@@ -19,17 +19,16 @@ Die User Stories beschreiben die Erwartungen der Nutzer für die neuen digitalen
 
 Als Versicherter möchte ich:
 - für jedes einzelne E-Rezept aus meiner Mehrfachverordnung eine Apotheke frei auswählen können, damit ich wählen kann, ob ich die einzelnen Rezepte in der gleichen oder in unterschiedlichen Apotheken einlöse.
-- erkennen können, dass ein Rezept Bestandteil einer Mehrfachverordnung ist, um meine Abläufe (d.h. Gänge zum Arzt für Abholung Rezepte und Gänge zur Apotheke für Einlösung Rezepte) besser organisieren zu können.
+- erkennen können, dass ein Rezept Bestandteil einer Mehrfachverordnung ist, um meine Abläufe (d.h. Gänge zum Arzt für das Abholen der Rezepte und Gänge zur Apotheke für das Einlösen der Rezepte) besser organisieren zu können.
 - erkennen können, um das wievielte Rezept einer Mehrfachverordnung es sich handelt, damit ich meine Medikamenteneinnahme sowie die Termine beim Arzt und Apotheker einplanen kann.
 - sehen können, wie viele E-Rezepte aus meiner Mehrfachverordnung ich bereits eingelöst habe.
 - sehen können, wann ich mein einzelnes E-Rezept aus der Mehrfachverordnung einlösen kann, das heißt den Beginn der Einlösefrist.
 - genau sehen können, wie lange jede einzelne Verordnung gültig ist, das heißt das Ende der Einlösefrist.
-- dass ich meine E-Rezepte darüber hinaus wie alle meine anderen Rezepte in meiner E-Rezept-App verwalten kann, um mich nicht mit neuen Abläufen in meiner E-Rezept App oder mit dem Arzt und 
+- , dass ich meine E-Rezepte darüber hinaus wie alle meine anderen Rezepte in meiner E-Rezept-App verwalten kann, um mich nicht mit neuen Abläufen in meiner E-Rezept App oder mit dem Arzt und 
 Apotheker herumschlagen zu müssen.
-- dass meine E-Rezept-App mich dabei unterstützt, dass ich das richtige E-Rezept in der Apotheke einlöse, damit ich in der Apotheke keine Zeit damit verschwende, einen ungültigen Token vorzuzeigen z.B. wenn ein E-Rezept erst in der Zukunft eingelöst werden kann.
-- dass meine E-Rezept-App mich dabei unterstützt, dass ich auf den ersten Blick erkenne, dass der Beginn der Einlösefrist eines E-Rezeptes erst in der Zukunft liegt.
-- erinnert werden, dass eine Teilverordnung gültig geworden ist, damit ich nicht vergesse, das 
-Rezept einzulösen.
+- , dass meine E-Rezept-App mich dabei unterstützt, dass ich das richtige E-Rezept in der Apotheke einlöse, damit ich in der Apotheke keine Zeit damit verschwende, einen ungültigen Token vorzuzeigen z.B. wenn ein E-Rezept erst in der Zukunft eingelöst werden kann.
+- , dass meine E-Rezept-App mich dabei unterstützt, dass ich auf den ersten Blick erkenne, dass der Beginn der Einlösefrist eines E-Rezeptes erst in der Zukunft liegt.
+- daran erinnert werden, dass eine Teilverordnung gültig geworden ist, damit ich nicht vergesse, das Rezept einzulösen.
 - jedes einzelne E-Rezept einer Mehrfachverordnung löschen können.
 
 
@@ -38,8 +37,8 @@ Rezept einzulösen.
 
 Als Verordnender möchte ich:
 
-- dass mein Primärsystem mich dabei unterstützt, eine Mehrfachverordnung auszustellen, so dass ich identische Felder nur einmal ausfülle und mich auf das Ausfüllen der Unterschiede (z.B. Anzahl der einzelnen Rezepte) konzentrieren kann. 
-- dass mein Primärsystem mich dabei unterstützt, die Einlösefristen für die einzelnen E-Rezepte automatisch zu berechnen und auszufüllen, so dass ich nicht mühsam Termine berechnen muss.
+- , dass mein Primärsystem mich dabei unterstützt, eine Mehrfachverordnung auszustellen, so dass ich identische Felder nur einmal ausfülle und mich auf das Ausfüllen der Unterschiede (z.B. Anzahl der einzelnen Rezepte) konzentrieren kann. 
+- , dass mein Primärsystem mich dabei unterstützt, die Einlösefristen für die einzelnen E-Rezepte automatisch zu berechnen und auszufüllen, so dass ich nicht mühsam Termine berechnen muss.
 - alle einzelnen E-Rezepte einer Mehrfachverordnung in einem Schritt löschen können, damit ich eventuell auftretende Fehler schnell und unkompliziert korrigieren kann.
 - dass mein Primärsystem mich dabei unterstützt, die einzelnen Teilverordnungen einfach und unkompliziert in einem Arbeitsschritt zu signieren.
 
@@ -47,11 +46,12 @@ Als Verordnender möchte ich:
 
 Als Apotheker möchte ich:
 
-- erkennen können, dass ein Rezept Bestandteil einer Mehrfachverordnung ist. sehen können, um das wievielte Rezept einer Mehrfachverordnung es sich handelt.
+- erkennen können, dass ein Rezept Bestandteil einer Mehrfachverordnung ist. 
+- sehen können, um das wievielte Rezept einer Mehrfachverordnung es sich handelt.
 - jedes E-Rezept einer Mehrfachverordnung einzeln abrufen, beliefern und abrechnen können.
 - ein E-Rezept einer Mehrfachverordnung, das mir zugewiesen worden ist, löschen können.
 - erkennen können, wenn der Beginn des Einlösezeitraumes einer Verordnung noch nicht erreicht wurde, sodass ich keine unnötige Arbeit mit noch nicht gültigen Rezepten habe.
-- wenn mein Patient es sich wünscht, die Zugangsinformationen und den Gültigkeitszeitraum zum Rezept speichern und später (wenn sie gültig werden) abrufen können.
+- , wenn mein Patient es sich wünscht, die Zugangsinformationen und den Gültigkeitszeitraum zum Rezept speichern und später (wenn sie gültig werden) abrufen können.
 
 ### Fachliches Konzept
 
@@ -69,10 +69,11 @@ Die Mehrfachverordnung ist unabhängig vom Versichertenverhältnis, d.h. anwendb
 
 Der Verordnende legt den Beginn des Gültigkeitszeitraumes für jede Teilverordnung im Verordnungsdatensatz fest. Der Verordnende kann das Ende der Gültigkeitszeitraumes einer Teilverordnung festlegen. Falls das Ende nicht durch den Verordnenden festgelegt wird, dann gilt die Teilverordnung bis 365 Tage nach dem Ausstellungsdatum der Mehrfachverordnung.
 
-Die Abrechnungsmöglichkeit gegenüber den Kostenträgern ist bestimmt durch die Arzneimittel-Richtlinie des G-BA und die Regelungen der ergänzenden Verträge nach § 129 Absatz 5 SGB V in denen der Zeitraum, in dem eine Abrechnung zu Lasten der Krankenkassen möglich ist, festgelegt ist. Bei den Teilverordnungen ist eine Abrechnung gegenüber dem Kostenträger möglich, wenn das E-Rezept innerhalb des Gültigkeitszeitraum beliefert und quittiert wird.
+Die Abrechnungsmöglichkeit gegenüber den Kostenträgern ist bestimmt durch die Arzneimittel-Richtlinie des G-BA und die Regelungen der ergänzenden Verträge nach <span>§</span> 129 Absatz 5 SGB V in denen der Zeitraum, in dem eine Abrechnung zu Lasten der Krankenkassen möglich ist, festgelegt ist. Bei den Teilverordnungen ist eine Abrechnung gegenüber dem Kostenträger möglich, wenn das E-Rezept innerhalb des Gültigkeitszeitraum beliefert und quittiert wird.
 
-Bis zum Erreichen des Gültigkeitszeitraums ist keine Einsicht für die Apotheke in das E-Rezept möglich. Der Versicherte kann mittels E-Rezept-FdV oder E-Rezept-AdV die E-Rezepte einsehen.
-Kürzere Belieferungsfristen nach § 12 Absatz 1 Nummer 1 Buchstabe c BtMVV und den § 3a Absatz 4 und 3b Absatz 2 AMVV bleiben unberührt. mDas bedeutet, es gibt keine Mehrfachverordnung für Entlassrezepte, BTM-Rezepte und T-Rezepte.
+Bis zum Erreichen des Gültigkeitszeitraums ist keine Einsicht für die Apotheke in das E-Rezept möglich. Der Versicherte kann mittels TI-Flow-FdV die E-Rezepte einsehen.
+
+Kürzere Belieferungsfristen nach <span>§</span> 12 Absatz 1 Nummer 1 Buchstabe c BtMVV und den <span>§§</span> 3a Absatz 4 und 3b Absatz 2 AMVV bleiben unberührt. Das bedeutet, es gibt keine Mehrfachverordnung für Entlassrezepte, eBTM-Rezepte und E-T-Rezepte.
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
@@ -89,13 +90,12 @@ Es besteht beim Löschen kein Unterschied zu Einzelrezepten. Wenn eine Teilveror
 
 Für die Teilverordnungen gelten die gleichen Löschfristen wie für Einzelrezepte. D.h. Teilverordnungen werden automatisch 10 Tage nach Ablauf der Gültigkeit oder 100 Tage nach Dispensierung gelöscht.
 
-#### Ausdruck für den Versicherten
+#### Patientenausdruck für den Versicherten
 
-Der Versicherte kann einen Ausdruck für die Teilverordnungen durch den Verordnenden erhalten.
-Regelungen für das Erstellen des Ausdrucks für die Teilverordnungen einer Mehrfachverordnung sind in der , Technischen Anlage zur elektronischen Arzneimittelverordnung (E16A)" [KBV ITA_VGEX TECHNISCHE ANLAGE_ ERP] getroffen.
+Der Versicherte kann einen Patientenausdruck für die Teilverordnungen durch den Verordnenden erhalten.
+Regelungen für das Erstellen des Ausdrucks für die Teilverordnungen einer Mehrfachverordnung sind in der "Technischen Anlage zur elektronischen Arzneimittelverordnung (E16A)" [KBV_ITA_VGEX_TECHNISCHE_ANLAGE_ERP] getroffen.
 
-Wenn ein Ausdruck die Daten zu mehrere Teilverordnungen einer Mehrfachverordnung beinhaltet und diese eingescannt werden, dann dürfen die E-Rezept-Token der Teilverordnungen, welche noch nicht ihren Gültigkeitszeitraum erreicht haben, nicht automatisch im AVS gespeichert werden, da der Versicherte das Recht hat, für diese ggf. eine andere Apotheke für das Einlösen auszuwählen. Das Speichern kann auf Wunsch des Versicherten erfolgen.
-
+Wenn ein Patientenausdruck die Daten zu mehrere Teilverordnungen einer Mehrfachverordnung beinhaltet und diese durch eine Apotheke eingescannt werden, dann dürfen die E-Rezept-Token der Teilverordnungen, welche noch nicht ihren Gültigkeitszeitraum erreicht haben, nicht automatisch im AVS gespeichert werden, da der Versicherte das Recht hat, für diese ggf. eine andere Apotheke für das Einlösen auszuwählen. Das Speichern kann auf Wunsch des Versicherten erfolgen.
 
 ### Flowtypes und Verarbeitung
 
@@ -105,7 +105,7 @@ Unabhängig vom Flowtype bleibt die fachliche Regel gleich: jede Teilverordnung 
 
 ### Anwendungsfälle
 
-**Beteiligte Systeme:** PVS/KIS, AVS, TI-Flow-Fachdienst, E-Rezept-FdV
+**Beteiligte Systeme:** PVS/ZPVS/KIS, AVS, TI-Flow-Fachdienst, TI-Flow-FdV
 
 #### Technische Anwendungsfälle der Verordnung
 

@@ -2,8 +2,8 @@ Diese Seite enthält die normativen Anforderungen an das PVS für die Operation 
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core.op-create-req-pvs.md %}
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-schnittstellen-operation-api.html)
 
 ### Modulspezifische Anforderungen
 
-Es bestehen keine modulspezifischen Anforderungen.
+Es gibt keine modulspezifischen Anforderungen.

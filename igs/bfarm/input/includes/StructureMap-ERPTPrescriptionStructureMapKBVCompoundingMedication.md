@@ -8,6 +8,8 @@
 | `kbvMedicationCompounding.extension` | `bfarmMedication.extension` | Mappt Rezeptur-spezifische Extensions von KBV- zu BfArM-Format |
 | `kbvMedicationCompounding.extension [KBV_EX_ERP_Medication_Packaging]` | `bfarmMedication.extension.url` | Transformiert KBV-Verpackungs-Extension in gematik-Formulierungs-Verpackungs-Extension<br>→ setzt URL 'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-formulation-packaging-extension' |
 | `kbvMedicationCompounding.extension [KBV_EX_ERP_Medication_Packaging].value` | `bfarmMedication.extension.url.value` | Übernimmt den Verpackungswert für die Rezeptur<br>→ übernimmt Wert aus Quellvariable |
+| `kbvMedicationCompounding.extension [KBV_EX_ERP_Medication_CompoundingInstruction]` | `bfarmMedication.extension.url` | Transformiert KBV-Herstellungsanweisung-Extension in gematik-Formulierungs-Herstellungsanweisung-Extension<br>→ setzt URL 'https://gematik.de/fhir/epa-medication/StructureDefinition/medication-manufacturing-instructions-extension' |
+| `kbvMedicationCompounding.extension [KBV_EX_ERP_Medication_CompoundingInstruction].value` | `bfarmMedication.extension.url.value` | Übernimmt den Herstellungsanweisung für die Rezeptur<br>→ übernimmt Wert aus Quellvariable |
 | `kbvMedicationCompounding.id` | `bfarmMedication.id` | Übernimmt die eindeutige Medication-ID unverändert<br>→ übernimmt Wert aus Quellvariable |
 | `kbvMedicationCompounding.code` | `bfarmMedication.code` | Mappt den Rezeptur-Code mit Bezeichnung |
 | `kbvMedicationCompounding.code.text` | `bfarmMedication.code.text` | Kopiert die Bezeichnung der Rezeptur (z.B. 'Hydrocortison-Salbe 1%')<br>→ übernimmt Wert aus Quellvariable |

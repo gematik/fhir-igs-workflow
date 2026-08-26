@@ -1,0 +1,32 @@
+Die Operation führt zum Löschen der für den Versicherten gespeicherten Zugriffsberechtigung. Diese Operation steht dem Versicherten, der die Zugriffsberechtigung erteilt hat, zur Verfügung.
+
+### Nachricht
+
+Die Nachricht wird als HTTP `DELETE` an `/$revoke-eu-access-permission` gesendet.
+
+### Anforderungen an die Schnittstelle
+
+- [Server Anforderungen zu `$revoke-eu-access-permission`](./op-revoke-eu-access-permission-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
+- [FdV-Anforderungen zu `$revoke-eu-access-permission`](./op-revoke-eu-access-permission-req-fdv.html): Anforderungen an das TI-Flow-FdV zur Nutzung der Schnittstelle.
+
+### API Beschreibung
+
+<div class="gematik-api"
+	data-api-type="FHIROperation"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-invoke-level="system"
+	data-api-operation-id="revokeEUAccessPermissionOperation">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
+		</pre>
+	</div>
+	<div id="OperationDefinition">
+		<pre>
+			{% include OperationDefinition-RevokeEUAccessPermission.json %}
+		</pre>
+	</div>
+</div>
+
+
+

@@ -6,8 +6,8 @@ name: gemIG_TIFlow_core
 title: Implementation Guide TIFlow - Kernfunktionalitäten
 status: draft # draft | active | retired | unknown
 license: Apache-2.0
-version: 2.0.0-ballot.2
-date: 2026-06-30
+version: 2.0.0-ballot.3
+date: 2026-08-27
 copyrightYear: 2026+
 copyright: gematik GmbH / Dieser Implementation Guide ist lizenziert unter [Apache License](./license.html), Version 2.0.
 releaseLabel: ballot # ci-build, ballot, release
@@ -18,8 +18,8 @@ publisher:
   email: erp-umsetzung@gematik.de
 
 dependencies:
-  de.basisprofil.r4: 1.5.4
-  de.gematik.ti: 1.4.0-ballot.1
+  de.basisprofil.r4: 1.6.0
+  de.gematik.ti: 1.4.0-ballot.2
 
 menu:
   Start: index.html
@@ -36,10 +36,11 @@ menu:
     Datamatrix Code: datamatrix-code-client.html
     Health Check: health-check.html
     Ausgabe Konfiguration: capability-statement-extensions.html
+    Prüfidentitäten: basic-pruefidentitaeten.html
   Technische Funktionsmerkmale:
     Systemüberblick: menu-technische-umsetzung-systemueberblick.html
     Zero Trust Access (ZETA): menu-technische-umsetzung-zeta.html
-    ePA Medication Service: menu-technische-umsetzung-epa-ms.html
+    Kommunikation mit ePA-Aktensystem: menu-technische-umsetzung-epa.html
     Push Notification: menu-technische-umsetzung-push.html
     Subscrition: menu-technische-umsetzung-subscription.html
   Schnittstellen:
@@ -48,6 +49,8 @@ menu:
     Additional API: menu-schnittstellen-additional-api.html 
   Über:
     Anforderungsmapping: requirement-mapping-0_9_0-to-2_0_0.html
+    Referenzen: referenced.html
+    Abhängigkeiten: dependencies.html
     Release Notes: release-notes.html
     Anforderungslisten: requirements.html
     Lizenz: license.html
@@ -82,6 +85,8 @@ pages:
     title: "Data Matrix Code"
   fehlerbehandlung-client.md:
     title: "Fehlerbehandlung Clientsysteme"
+  basic-pruefidentitaeten.md:
+    title: "Prüfidentitäten"
   menu-schnittstellen-datenschutz-und-sicherheit.md:
     title: "Datenschutz und Sicherheit"
   menu-technische-umsetzung-systemueberblick.md:
@@ -90,8 +95,8 @@ pages:
     title: "Technische Umsetzung - Zero Trust Access (ZETA)"
     zeta-client.md:
       title: "Nutzung ZETA durch Clientsystme"
-  menu-technische-umsetzung-epa-ms.md:
-    title: "Technische Umsetzung - ePA Medication Service"
+  menu-technische-umsetzung-epa.md:
+    title: "Technische Umsetzung - Kommunikation mit ePA-Aktensystem"
   menu-technische-umsetzung-push.md:
     title: "Technische Umsetzung - Push Notification"
   menu-technische-umsetzung-subscription.md:
@@ -216,6 +221,10 @@ pages:
     title: "FHIR-Artefakte"
   requirement-mapping-0_9_0-to-2_0_0.md:
     title: "Mapping alter Anforderungen auf FHIR-IG Anforderungen"
+  referenced.md:
+    title: "Referenzen"
+  dependencies.md:
+    title: Abhängigkeiten
   release-notes.md:
     title: "Release Notes"
   license.md:
@@ -242,16 +251,6 @@ parameters:
     - https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Signature
     - https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus
     - https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_FlowType
-  no-validate: # TODO REmove
-    - Bundle/*
-    - Medication/*
-    - Communication/*
-    - MedicationDispense/*
-    - OperationDefinition/*
-    - OperationOutcome/*
-    - Parameters/*
-    - StructureDefinition/*
-    - Task/*
   no-narrative: # TODO REmove
     - Bundle/*
     - Medication/*
@@ -266,3 +265,5 @@ parameters:
     - input/pagecontent
     - input/content
     - input/intro-notes
+  no-validate:
+    - StructureDefinition/ti-feature-definition

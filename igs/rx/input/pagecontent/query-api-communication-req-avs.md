@@ -2,7 +2,7 @@ Diese Seite beschreibt Anforderungen an das AVS zur Nutzung der `Communication`-
 
 ### Anforderungen aus der Core Spezifikation
 
-{% include core.query-api-communication-req-avs.md %}
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-schnittstellen-query-api.html)
 
 ### Modulspezifische Anforderungen
 
@@ -15,7 +15,7 @@ siehe [Datenmodell Payload für Communication-Query](./query-api-communication-r
 <!-- A_21373 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A55" title="PS abgebende LEI: Nachricht versenden - Externe URL ausschließlich für Einlösung" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+  <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der abgebenden LEI MUSS sicherstellen, dass die Einbettung einer externen URL ausschließlich für das Einlösen von E-Rezepten in einer externen Bestellplattform genutzt wird.
@@ -24,10 +24,10 @@ siehe [Datenmodell Payload für Communication-Query](./query-api-communication-r
 <!-- A_28538 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A56" title="PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Nachricht erstellen" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+  <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
-  Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die Nachricht gemäß der Struktur [gemSpec_DM_eRp#TAB_eRpDM_003] und 
+  Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall "Nachricht an Versicherten versenden" die Nachricht gemäß der Struktur für Communication-Ressourcen und 
   <ul>
     <li>einem communicationType entsprechend der zu übermittelnden Information</li>
     <li>TransactionID aus der empfangenen Nachricht des Versicherten</li>
@@ -39,12 +39,12 @@ Für TAB_eRpDM_003 siehe [Datenmodell Payload für Communication-Query](./query-
 
 Beispiele für diesen Anwendungsfall stehen im GitHub  https://github.com/gematik/interactive-api-erp . 
 
-Die Erläuterung und das Schema des Payloads sind in [gemSpec_DM_eRp#TAB_eRpDM_003] zu finden.
+Die Nachrichtenstruktur wird durch die Communication-Ressource und ihre Erweiterungen definiert.
 
 <!-- A_19333-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A57" title="PS abgebende LEI: Nachricht versenden - Belieferung Arzneimittel - Communication Ressource erstellen" version="0">
   <meta lockversion="false"/>
-  <actor name="PS_E-Rezept_abgebend" description="E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)">
+  <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
     <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
   </actor>
   Das PS der abgebenden LEI (Apotheke) MUSS im Anwendungsfall "Nachricht an Versicherten versenden" bezüglich der Belieferung eines Arzneimittels eine Communication Ressource mit dem Profil GEM_ERP_PR_Communication_Reply mit 
