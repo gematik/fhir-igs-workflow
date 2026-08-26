@@ -16,7 +16,7 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 ### Anforderungen an Schnittstelle
 
 - [FD-Anforderungen zu Communications](./query-api-communication-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-- [FdV-Anforderungen zu Communications](./query-api-communication-req-fdv.html): Anforderungen an ein E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [FdV-Anforderungen zu Communications](./query-api-communication-req-fdv.html): Anforderungen an ein TI-Flow-FdV zur Nutzung der Schnittstelle.
 - [KTR-Anforderungen zu Communications](./query-api-communication-req-ktr.html): Anforderungen an ein CS Kostenträger zur Nutzung der Schnittstelle.
 
 

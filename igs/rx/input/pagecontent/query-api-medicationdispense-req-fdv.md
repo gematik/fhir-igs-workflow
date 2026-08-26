@@ -1,4 +1,4 @@
-Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `MedicationDispense`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen an das TI-Flow-FdV zur Nutzung der `MedicationDispense`-Query-Endpunkte.
 
 ### Anforderungen aus der Core Spezifikation
 

@@ -52,7 +52,7 @@ E-T-Rezepte dürfen nur 6 Kalendertage nach dem Ausstellungstag beliefert werden
 
 Eine Belieferung von E-T-Rezepten via Versand ist ausgeschlossen (<span>§</span> 17 Abs. 2b ApBetrO). 
 
-Für Versicherte ist es wichtig, auf dem Patientenausdruck bzw. im E-Rezept-FdV erkennen zu können, dass es sich um ein E-Rezept mit kürzerer Gültigkeit handelt und dass nicht alle Belieferungsoptionen zur Verfügung stehen.
+Für Versicherte ist es wichtig, auf dem Patientenausdruck bzw. im TI-Flow-FdV erkennen zu können, dass es sich um ein E-Rezept mit kürzerer Gültigkeit handelt und dass nicht alle Belieferungsoptionen zur Verfügung stehen.
 
 Die Verarbeitung von E-T-Rezepten in dem Primärsystem der abgebenden Apotheke verhält sich grundsätzlich analog zu E-Rezepten von apothekenpflichtigen Arzneimitteln. Die Kategorie "T-Rezept" sowie die zusätzlichen Angaben des Arztes aus <span>§</span> 3a Abs. 2, 3 und 5 AMVV müssen in der Warenwirtschaft leicht zu erkennen sein, damit die Apotheke die Rezepte prüfen können. 
 
@@ -117,7 +117,7 @@ Als Apotheke möchte ich ...
 - ... mich darauf verlassen können, dass nur gültige und vollständig ausgefüllte E-T-Rezepte bei mir eingelöst werden, sodass ich keinen Aufwand mit der Prüfung von Pflichtangaben (z.B. wurden alle Angaben zur Aufklärung durch den Arzt bestätigt) habe. 
 - als Apotheke möchte ich mich darauf verlassen können, dass die Angabe der Reichdauer gesetzeskonform ist und Pflichtangaben auf der Verordnung nicht vergessen werden, sodass ich mich auf die Inhaltliche Prüfung der Verordnung fokussieren kann.
 - ... , dass sich E-T-Rezepte in der Handhabung, abgesehen von der gesetzlich vorgegebenen Dokumentation, in meiner Warenwirtschaft nicht von normalen E-Rezepten unterscheiden, so dass sich die Prozesse in meiner Apotheke nicht ändern.
-- .... , dass Patienten bei E-T-Rezepten bei digitalen Einlösewegen (E-Rezept-FdV oder Apotheken Apps mit CardLink) erst gar nicht der Versand der Arzneimittel angeboten wird, da es nicht zulässig ist.
+- .... , dass Patienten bei E-T-Rezepten bei digitalen Einlösewegen (TI-Flow-FdV oder Apotheken Apps mit CardLink) erst gar nicht der Versand der Arzneimittel angeboten wird, da es nicht zulässig ist.
 - ... die abgetrennte Menge des verordneten Arzneimittels in meiner Arzneimitteldatenbank suchen können, sofern diese im Verordnungsdatensatz nicht erfasst wurde, damit ich die Reichweitenberechnung des Arztes nachvollziehen kann.
 
 Mögliche Darstellung im Primärsystem der Apotheke (TI-Demonstrator):
@@ -148,13 +148,13 @@ Als Patient möchte ich ....
 - ..., dass mir nur zulässige Belieferungsoptionen angezeigt werden, damit ich keine unnötigen Abstimmungsaufwände mit der Apotheke habe (Versand darf nicht angeboten werden).
 - ... die kürzere Gültigkeit der E-T-Rezepte in meiner App und dem Ausdruck leicht erkennen können, sodass ich das Rezept rechtzeitig einlöse.
 
-Mögliche Darstellung im E-Rezept-FdV (TI-Demonstrator):
+Mögliche Darstellung im TI-Flow-FdV (TI-Demonstrator):
 
 <figure>
     <div class="gem-ig-img-container" style="--box-width: 300px; margin-bottom: 30px;">
         <img src="./fachl-t-rezept-6.png" alt="E-T-Rezept im FdV" style="width: 100%;">
     </div>
-    <figcaption><strong>Abbildung: </strong>Darstellung eines Einlösevorgangs von einem E-T-Rezept im E-Rezept-FdV</figcaption>
+    <figcaption><strong>Abbildung: </strong>Darstellung eines Einlösevorgangs von einem E-T-Rezept im TI-Flow-FdV</figcaption>
 </figure>
 
 <br>
@@ -188,7 +188,7 @@ Das E-T-Rezept liegt auf dem TI-Flow-Fachdienst zum Abruf durch den Versicherten
 
 ### Beliefern
 
-Der Versicherte kann ein E-T-Rezept über die für E-Rezepte von apothekenpflichtigen Arzneimitteln bestehenden Wege einer Apotheke zuweisen (E-Rezept-FdV, Patientenausdruck, eGK in der Apotheke).
+Der Versicherte kann ein E-T-Rezept über die für E-Rezepte von apothekenpflichtigen Arzneimitteln bestehenden Wege einer Apotheke zuweisen (TI-Flow-FdV, Patientenausdruck, eGK in der Apotheke).
 
 Eine Apotheke schließt den Vorgang zu einem E-T-Rezept analog zu E-Rezepten für apothekenpflichtige Arzneimittel ab und erhält dadurch die Quittung für das E-T-Rezept. Die Abgabe des Arzneimittels muss innerhalb der gesetzlichen Vorgaben erfolgen.
 

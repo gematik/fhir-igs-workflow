@@ -58,7 +58,7 @@ In diesem IG werden verschiedene Apps betrachtet.
 
 **App nach <span>§</span> 360 Abs. 10 SGB V**
 
-Eine App nach <span>§</span> 360 Abs. 10 SGB V kann dem Versicherten durch seine Krankenkasse oder die gematik zur Verfügung gestellt werden. Sie wird als E-Rezept-FdV bezeichnet.
+Eine App nach <span>§</span> 360 Abs. 10 SGB V kann dem Versicherten durch seine Krankenkasse oder die gematik zur Verfügung gestellt werden. Sie wird als TI-Flow-FdV bezeichnet.
 
 **Service-App der Krankenkasse**
 

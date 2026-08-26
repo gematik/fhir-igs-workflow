@@ -1,6 +1,6 @@
 Die Funktionalität zu Push Notification für FdVs ist anwendungsübergreifend in [gemF_PushNotification] beschrieben.
 
-Der TI-Flow-Fachdienst übernimmt die Rolle "Fachdienst". Er verwaltet FdV-Instanzen, die sich bei ihm für den Empfang von Push Notifications registriert haben, erstellt Push Notifications für vom Nutzer abonnierte Ereignisse und übermittelt diese an das zuständige Push Gateway. Der TI-Flow-Fachdienst bietet Schnittstellen für das E-Rezept-FdV zur Registrierung, Deregistrierung und Konfiguration von Kanälen an.
+Der TI-Flow-Fachdienst übernimmt die Rolle "Fachdienst". Er verwaltet FdV-Instanzen, die sich bei ihm für den Empfang von Push Notifications registriert haben, erstellt Push Notifications für vom Nutzer abonnierte Ereignisse und übermittelt diese an das zuständige Push Gateway. Der TI-Flow-Fachdienst bietet Schnittstellen für das TI-Flow-FdV zur Registrierung, Deregistrierung und Konfiguration von Kanälen an.
 
 ### Push Notification senden
 
@@ -221,7 +221,7 @@ Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push No
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall "Push Notifications" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:
+    Der TI-Flow-Fachdienst und das TI-Flow-FdV MÜSSEN für den Anwendungsfall "Push Notifications" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:
 
 <table>
 <thead>

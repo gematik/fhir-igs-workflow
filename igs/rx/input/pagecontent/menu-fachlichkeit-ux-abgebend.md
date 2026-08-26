@@ -2,11 +2,11 @@
 
 ### Zuweisung von E-Rezepten an eine Apotheke
 
-Dieser Abschnitt beschreibt UX-Guidelines für den Fall der Zuweisung eines E-Rezeptes an eine Apotheke via E-Rezept-FdV oder via KIM (KIM-Dienstkennung: "eRezept;Zuweisung;V1.0"). Im folgenden werden diese beiden Fälle als "Zuweisung" bezeichnet.
+Dieser Abschnitt beschreibt UX-Guidelines für den Fall der Zuweisung eines E-Rezeptes an eine Apotheke via TI-Flow-FdV oder via KIM (KIM-Dienstkennung: "eRezept;Zuweisung;V1.0"). Im folgenden werden diese beiden Fälle als "Zuweisung" bezeichnet.
 
 #### Hinweise bei zugewiesenen E-Rezepten
 
-Wenn ein E-Rezept über das E-Rezept-FdV oder über KIM an eine Apotheke zugewiesen wird, soll der Sender schnellstmöglich über die Annahme und Bearbeitung des E-Rezeptes durch die Apotheke informiert werden. Dabei ist der Hinweis über den Erhalt eines E-Rezeptes via KIM oder E-Rezept-FdV so lange im AVS anzuzeigen, bis der Hinweis verarbeitet wurde. Im Falle der Zuweisung per E-Rezept-FdV soll eine Rückmeldung an den Kunden übermittelt werden. Bei Erhalt eines E-Rezeptes soll potentiell jeder Arbeitsplatz einen Hinweis erhalten. Es soll konfiguriert werden können, an welchen Arbeitsplätzen der Hinweis angezeigt wird.
+Wenn ein E-Rezept über das TI-Flow-FdV oder über KIM an eine Apotheke zugewiesen wird, soll der Sender schnellstmöglich über die Annahme und Bearbeitung des E-Rezeptes durch die Apotheke informiert werden. Dabei ist der Hinweis über den Erhalt eines E-Rezeptes via KIM oder TI-Flow-FdV so lange im AVS anzuzeigen, bis der Hinweis verarbeitet wurde. Im Falle der Zuweisung per TI-Flow-FdV soll eine Rückmeldung an den Kunden übermittelt werden. Bei Erhalt eines E-Rezeptes soll potentiell jeder Arbeitsplatz einen Hinweis erhalten. Es soll konfiguriert werden können, an welchen Arbeitsplätzen der Hinweis angezeigt wird.
 
 <!-- A_23786 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A117" title="PS abgebende LEI: UX - Zuweisung - Hinweis" version="0">
@@ -14,12 +14,12 @@ Wenn ein E-Rezept über das E-Rezept-FdV oder über KIM an eine Apotheke zugewie
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-     Das PS der abgebenden LEI SOLL bei Erhalt einer Zuweisung via KIM oder über das E-Rezept-FdV einen entsprechenden Hinweis an den Arbeitsplätzen in der Apotheke anzeigen, um ein zeitnahes Bearbeiten der Zuweisung zu bewirken.
+     Das PS der abgebenden LEI SOLL bei Erhalt einer Zuweisung via KIM oder über das TI-Flow-FdV einen entsprechenden Hinweis an den Arbeitsplätzen in der Apotheke anzeigen, um ein zeitnahes Bearbeiten der Zuweisung zu bewirken.
 </requirement>
 
 Nachdem die Apotheke eine Zuweisung erhalten hat soll das Primärsystem, so weit möglich, Daten im Hintergrund verarbeiten und einen möglichst automatischen Arbeitsablauf starten. Zuweisungen, die einen E-Rezept-Token enthalten, sollen dabei einfach in das System integriert werden können, indem automatisch ein Vorgang angelegt wird, dem das E-Rezept zugeordnet wird. Folgende Nachrichten enthalten einen E-Rezept-Token:
 - KIM-Nachricht mit Dienstkennung "eRezept;Zuweisung;V1.0"
-- Communication des E-Rezept-FdV (GEM_ERP_PR_Communication_DispReq)
+- Communication des TI-Flow-FdV (GEM_ERP_PR_Communication_DispReq)
 
 <!-- A_23787 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A118" title="PS abgebende LEI: UX - Zuweisung - Übernahme E-Rezept aus Nachricht in einen Vorgang" version="0">
@@ -27,7 +27,7 @@ Nachdem die Apotheke eine Zuweisung erhalten hat soll das Primärsystem, so weit
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-     Das PS der abgebenden LEI SOLL bei Erhalt einer Zuweisung eines E-Rezeptes via KIM oder über das E-Rezept-FdV prüfen, ob ein Vorgang im Primärsystem zur Rezept-ID existiert und falls nicht automatisch einen Vorgang anlegen und die Informationen zum E-Rezept in diesen Vorgang übernehmen
+     Das PS der abgebenden LEI SOLL bei Erhalt einer Zuweisung eines E-Rezeptes via KIM oder über das TI-Flow-FdV prüfen, ob ein Vorgang im Primärsystem zur Rezept-ID existiert und falls nicht automatisch einen Vorgang anlegen und die Informationen zum E-Rezept in diesen Vorgang übernehmen
 </requirement>
 
 #### Konfiguration von Nachrichten bei Zuweisung
@@ -40,7 +40,7 @@ Im Arbeitsablauf der Apotheke ist der Austausch und die Kommunikation mit den Ku
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-     Das PS der abgebenden LEI SOLL die Möglichkeit bieten, bestimmte Nachrichten zu konfigurieren, die entweder automatisch versendet oder als Vorlage für den manuellen Versand genutzt werden können. Folgende Nachrichtentypen sind zu berücksichtigen: Empfangsbestätigung nach Zuweisung eines E-Rezepts via KIM oder E-Rezept-FdV Abholbenachrichtigung an einen Kunden (Nicht-)Lieferbarkeit eines Medikament
+     Das PS der abgebenden LEI SOLL die Möglichkeit bieten, bestimmte Nachrichten zu konfigurieren, die entweder automatisch versendet oder als Vorlage für den manuellen Versand genutzt werden können. Folgende Nachrichtentypen sind zu berücksichtigen: Empfangsbestätigung nach Zuweisung eines E-Rezepts via KIM oder TI-Flow-FdV Abholbenachrichtigung an einen Kunden (Nicht-)Lieferbarkeit eines Medikament
 </requirement>
 
 Für die individuelle Kommunikation und Benachrichtigung von Kunden sollen die Nachrichten mit möglichst wenig Aufwand erstellt werden können. In Vorlagen für Nachrichten können Platzhalter verwendet werden, die bei Nutzung der Vorlagen automatisch befüllt werden.
@@ -60,12 +60,12 @@ Für die individuelle Kommunikation und Benachrichtigung von Kunden sollen die N
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-     Das PS der abgebenden LEI SOLL es dem Nutzer ermöglichen zu konfigurieren, ob die Empfangsbestätigung automatisch nach Zuweisung via KIM und/oder Zuweisung via E-Rezept-FdV übermittelt werden soll.
+     Das PS der abgebenden LEI SOLL es dem Nutzer ermöglichen zu konfigurieren, ob die Empfangsbestätigung automatisch nach Zuweisung via KIM und/oder Zuweisung via TI-Flow-FdV übermittelt werden soll.
 </requirement>
 
 #### Nachrichtenaustausch bei zugewiesenen Rezepten
 
-Nach Zuweisung eines E-Rezepts über KIM kann es erforderlich sein, mit dem Verordnenden Arzt in Kontakt zu treten. Wenn ein Versicherter ein E-Rezept über das E-Rezept-FdV einer Apotheke zugewiesen hat, ist es wichtig, dass der Versicherte über den Verlauf des Bearbeitungsvorgangs informiert wird. Aktuell kann der Nutzer des E-Rezept-FdV nicht auf Nachrichten der Apotheke antworten, daher soll die Apotheke den Versicherten mit entsprechenden Informationen über den Bestellvorgang informieren. Rückmeldungen, wie bspw. der Empfang der Zuweisung und das Herunterladen des E-Rezepts, können automatisch erfolgen. Der Nutzer soll die Möglichkeit haben, vorkonfigurierte Nachrichten zu verwenden, die vor dem Versenden editierbar sind, um bspw. zusätzliche Informationen zum Vorgang hinzuzufügen.
+Nach Zuweisung eines E-Rezepts über KIM kann es erforderlich sein, mit dem Verordnenden Arzt in Kontakt zu treten. Wenn ein Versicherter ein E-Rezept über das TI-Flow-FdV einer Apotheke zugewiesen hat, ist es wichtig, dass der Versicherte über den Verlauf des Bearbeitungsvorgangs informiert wird. Aktuell kann der Nutzer des TI-Flow-FdV nicht auf Nachrichten der Apotheke antworten, daher soll die Apotheke den Versicherten mit entsprechenden Informationen über den Bestellvorgang informieren. Rückmeldungen, wie bspw. der Empfang der Zuweisung und das Herunterladen des E-Rezepts, können automatisch erfolgen. Der Nutzer soll die Möglichkeit haben, vorkonfigurierte Nachrichten zu verwenden, die vor dem Versenden editierbar sind, um bspw. zusätzliche Informationen zum Vorgang hinzuzufügen.
 
 <!-- A_23791 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A122" title="PS abgebende LEI: UX - Zuweisung - Empfangsbestätigung" version="0">
@@ -109,7 +109,7 @@ Neben vorher beschriebenen Nachrichten, soll das System ebenfalls ermöglichen, 
      Das PS der abgebenden LEI SOLL es dem Nutzer ermöglichen, manuell erstellte Nachrichten an den Sender einer Zuweisung zu übermitteln.
 </requirement>
 
-Das Erstellen und Senden einer Nachricht soll nach Möglichkeit aus dem Arbeitsfluss im AVS möglich sein, ohne dabei ein separates Programm öffnen zu müssen. Weiterhin ist eine fortlaufende Kommunikation mit einem Vorgang zu verknüpfen, sodass der Anwender den Nachrichtenverlauf nachvollziehen kann. Dies bezieht sich sowohl auf die Kommunikation via KIM, als auch via E-Rezept-FdV.
+Das Erstellen und Senden einer Nachricht soll nach Möglichkeit aus dem Arbeitsfluss im AVS möglich sein, ohne dabei ein separates Programm öffnen zu müssen. Weiterhin ist eine fortlaufende Kommunikation mit einem Vorgang zu verknüpfen, sodass der Anwender den Nachrichtenverlauf nachvollziehen kann. Dies bezieht sich sowohl auf die Kommunikation via KIM, als auch via TI-Flow-FdV.
 
 <!-- A_23795 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A126" title="PS abgebende LEI: UX - Zuweisung - Nachrichten an Sender - ohne Medienbruch" version="0">
@@ -192,7 +192,7 @@ Der TI-Flow-Fachdienst löscht eingestellte Rezepte zehn Tage nach Ablaufen eine
 
 #### Finden von vorhandenen Vorgängen per Scan des E-Rezept-Tokens nach Zuweisung
 
-Wenn ein Versicherter das E-Rezept-Token entweder per E-Rezept-FdV übermittelt oder in der Filiale den zugehörigen Datamatrix-Code vorgezeigt hat, dann ruft die Apotheke das E-Rezept vom TI-Flow-Fachdienst ab. Das E-Rezept erhält den Status "in-progress". Ein E-Rezept mit diesem Status kann nicht noch einmal vom E-Rezept- Fachdienst abgerufen  werden. Wenn der Kunde das Medikament dann zu einem späteren Zeitpunkt in der Filiale abholt, soll es möglich sein, den zugehörigen Vorgang im AVS auch per Scan des E-Rezept-Token zu finden. Hinweis: Die Abfrage eines bereits durch die Apotheke heruntergeladenen E-Rezepts am TI-Flow-Fachdienstes liefert einen Fehler. Daher sollte diese Abfrage nicht durchgeführt werden.
+Wenn ein Versicherter das E-Rezept-Token entweder per TI-Flow-FdV übermittelt oder in der Filiale den zugehörigen Datamatrix-Code vorgezeigt hat, dann ruft die Apotheke das E-Rezept vom TI-Flow-Fachdienst ab. Das E-Rezept erhält den Status "in-progress". Ein E-Rezept mit diesem Status kann nicht noch einmal vom E-Rezept- Fachdienst abgerufen  werden. Wenn der Kunde das Medikament dann zu einem späteren Zeitpunkt in der Filiale abholt, soll es möglich sein, den zugehörigen Vorgang im AVS auch per Scan des E-Rezept-Token zu finden. Hinweis: Die Abfrage eines bereits durch die Apotheke heruntergeladenen E-Rezepts am TI-Flow-Fachdienstes liefert einen Fehler. Daher sollte diese Abfrage nicht durchgeführt werden.
 
 <!-- A_23801 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A132" title="PS abgebende LEI: UX - Suche nach Vorgang mittels E-Rezept-Token" version="0">

@@ -1,6 +1,6 @@
 {% assign use_cases = site.data['gen-use-cases'] %}
 
-Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consent`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen an das TI-Flow-FdV zur Nutzung der `Consent`-Query-Endpunkte.
 
 ### Einwilligung erteilen
 
@@ -10,30 +10,30 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consen
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- A_22709-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A287" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A287" title="TI-Flow-FdV: Einwilligung erteilen - Einwilligungstext" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" den Text für die Einwilligung derart gestalten, dass dem Nutzer eine informierte Einwilligung möglich ist. Insbesondere MÜSSEN enthalten sein: der Verwendungszweck, die konkreten Informationen über die Art der erhobenen Daten, die Speicherdauer, Hinweis auf Freiwilligkeit, auf Widerrufsrecht, Hinweis auf die Folgen bei Verweigerung oder Widerruf.
+    Das TI-Flow-FdV MUSS im Anwendungsfall "Einwilligung erteilen" den Text für die Einwilligung derart gestalten, dass dem Nutzer eine informierte Einwilligung möglich ist. Insbesondere MÜSSEN enthalten sein: der Verwendungszweck, die konkreten Informationen über die Art der erhobenen Daten, die Speicherdauer, Hinweis auf Freiwilligkeit, auf Widerrufsrecht, Hinweis auf die Folgen bei Verweigerung oder Widerruf.
 </requirement>
 
 <!-- A_22163-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A288" title="E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A288" title="TI-Flow-FdV: Einwilligung erteilen - Einwilligung eingeben" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" es dem Nutzer ermöglichen, die Einwilligung einzugeben.
+    Das TI-Flow-FdV MUSS im Anwendungsfall "Einwilligung erteilen" es dem Nutzer ermöglichen, die Einwilligung einzugeben.
 </requirement>
 
 <!-- A_22165-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A289" title="E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A289" title="TI-Flow-FdV: Einwilligung erteilen - Consent Ressource erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" eine Consent Ressource mit:
+    Das TI-Flow-FdV MUSS im Anwendungsfall "Einwilligung erteilen" eine Consent Ressource mit:
     <ul>
         <li>Versicherten-ID in Consent.patient.identifier</li>
         <li>Einwilligungstyp in Consent.category.coding.code</li>
@@ -42,12 +42,12 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consen
 </requirement>
 
 <!-- A_22166-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A290" title="E-Rezept-FdV: Einwilligung erteilen - Speicherrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A290" title="TI-Flow-FdV: Einwilligung erteilen - Speicherrequest" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung erteilen" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation POST /Consent mit:
+    Das TI-Flow-FdV MUSS im Anwendungsfall "Einwilligung erteilen" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation POST /Consent mit:
     <ul>
         <li>Consent Ressource im HTTP-Request-Body</li>
     </ul>
@@ -62,12 +62,12 @@ Diese Seite beschreibt Anforderungen an das E-Rezept-FdV zur Nutzung der `Consen
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- A_22168-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A291" title="E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A291" title="TI-Flow-FdV: Einwilligungsinformation abrufen - Abfragerequest" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligungsinformation abrufen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /Consent mit ausführen.
+    Das TI-Flow-FdV MUSS im Anwendungsfall "Einwilligungsinformation abrufen" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /Consent mit ausführen.
 </requirement>
 
 In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwilligungstyp des Consent ist in Consent.category.coding.code angegeben. Die Werte können sich auf folgende Codesysteme beziehen: [GEM_ERPCHRG_CS_ConsentType], [GEM_ERPEU_CS_ConsentType].
@@ -80,33 +80,33 @@ In der Response können mehrere Consent Ressourcen enthalten sein. Der Einwillig
 {% include use-case-diagram.html diagram=use_case.diagram title=use_case.title %}
 
 <!-- A_22169-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A292" title="E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A292" title="TI-Flow-FdV: Einwilligung widerrufen - Widerruf eingeben" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" es dem Nutzer ermöglichen, den Widerruf zu erfassen.
+    Das TI-Flow-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" es dem Nutzer ermöglichen, den Widerruf zu erfassen.
 </requirement>
 
 <!-- A_22330-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A293" title="E-Rezept-FdV: Einwilligung widerrufen - Bestätigung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A293" title="TI-Flow-FdV: Einwilligung widerrufen - Bestätigung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" vom Nutzer eine Bestätigung einholen, dass die Einwilligung widerrufen werden soll, somit ggf. korrespondierende Daten gelöscht werden und die Möglichkeit geben, das Widerrufen abzubrechen.
+    Das TI-Flow-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" vom Nutzer eine Bestätigung einholen, dass die Einwilligung widerrufen werden soll, somit ggf. korrespondierende Daten gelöscht werden und die Möglichkeit geben, das Widerrufen abzubrechen.
 </requirement>
 
 <!-- TI-Flow-26_2 PKV-CHI-03 -->
 > *Hinweis:* Bei Widerruf der Einwilligung sollte der FdV-Hersteller den Versicherten über die Konsequenzen der Datenlöschung informieren, insbesondere über die Auswirkungen auf Leistungsprüfung, erneute Einreichung, Beweiswert und Kundenservice.
 
 <!-- A_22171-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A294" title="E-Rezept-FdV: Einwilligung widerrufen - Löschrequest" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A294" title="TI-Flow-FdV: Einwilligung widerrufen - Löschrequest" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" zum Löschen der Information im TI-Flow-Fachdienst die HTTP-Operation DELETE /Consent/?category=&lt;Einwilligungstyp&gt; mit:
+    Das TI-Flow-FdV MUSS im Anwendungsfall "Einwilligung widerrufen" zum Löschen der Information im TI-Flow-Fachdienst die HTTP-Operation DELETE /Consent/?category=&lt;Einwilligungstyp&gt; mit:
     <ul>
         <li>Einwilligungstyp in ?category</li>
     </ul>

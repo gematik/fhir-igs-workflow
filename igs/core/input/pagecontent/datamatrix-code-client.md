@@ -1,7 +1,7 @@
 ### 2D-Code für E-Rezept-Token
 
 Um ein E-Rezept beliefern zu können, muss die Apotheke das Wissen um die Referenz des steuernden Tasks und den AccessCode zum Nachweis der Berechtigung erlangen.
-Diese beiden Datenfelder, URL des Tasks und AccessCode, werden vom Versicherten zur Verfügung gestellt. Die Bereitstellung kann als E-Rezept-Nachricht über den TI-Flow-Fachdienst oder als 2D-Code erfolgen. Die Bereitstellung als 2D-Code erfolgt entweder über das Abscannen des Codes von einem Patientenausdruck oder vom Display des E-Rezept-FdV, welches den Code auf dem Display des Geräts des Versicherten anzeigt.
+Diese beiden Datenfelder, URL des Tasks und AccessCode, werden vom Versicherten zur Verfügung gestellt. Die Bereitstellung kann als E-Rezept-Nachricht über den TI-Flow-Fachdienst oder als 2D-Code erfolgen. Die Bereitstellung als 2D-Code erfolgt entweder über das Abscannen des Codes von einem Patientenausdruck oder vom Display des TI-Flow-FdV, welches den Code auf dem Display des Geräts des Versicherten anzeigt.
 
 <!-- A_19554 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A229" title="Datenstruktur Einlöseinformationen für E-Rezept" version="0">
@@ -12,7 +12,7 @@ Diese beiden Datenfelder, URL des Tasks und AccessCode, werden vom Versicherten 
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV und das PS der verordnenden LEI MÜSSEN zum Erstellen eines E-Rezept-Token die ID auf einen Task zusammen mit dem AccessCode des Tasks aus den lokal verfügbaren Informationen einer Verordnung als URL in der Form:
+    Das TI-Flow-FdV und das PS der verordnenden LEI MÜSSEN zum Erstellen eines E-Rezept-Token die ID auf einen Task zusammen mit dem AccessCode des Tasks aus den lokal verfügbaren Informationen einer Verordnung als URL in der Form:
     <ul>
     <li>2D-Code-Daten = "Task/" + Task.id + "/$accept?ac=" + AccessCode</li>
     </ul>
@@ -34,7 +34,7 @@ Diese beiden Datenfelder, URL des Tasks und AccessCode, werden vom Versicherten 
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS eine Sammlung von einer und bis zu drei E-Rezept-Referenzen als Array in JSON-Notation gemäß [JSON] der folgenden Form  
+    Das TI-Flow-FdV MUSS eine Sammlung von einer und bis zu drei E-Rezept-Referenzen als Array in JSON-Notation gemäß [JSON] der folgenden Form  
     <ul>
     <li>2D-Code-Daten = { "urls": [ "E-Rezept 1", "E-Rezept 2", "E-Rezept 3" ] }</li>
     </ul>
@@ -84,41 +84,41 @@ Der Datentyp der Task.id erlaubt bis zu 64 Zeichen zur Angabe einer ID des Tasks
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV und das PS der verordnenden LEI MÜSSEN die Datenstruktur für 2D-Code-Daten in eine DataMatrix-Darstellung gemäß ISO/IEC 16022:2006 überführen können.
+    Das TI-Flow-FdV und das PS der verordnenden LEI MÜSSEN die Datenstruktur für 2D-Code-Daten in eine DataMatrix-Darstellung gemäß ISO/IEC 16022:2006 überführen können.
 </requirement>
 
 ### 2D-Code anzeigen
 
-Der Nutzer eines E-Rezept-FdV kann die Zugriffs Rezeptinformationen als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um das/die E-Rezept/E-Rezepte direkt in der Apotheke einlösen zu können.
+Der Nutzer eines TI-Flow-FdV kann die Zugriffs Rezeptinformationen als 2D-Code auf dem Bildschirm seines TI-Flow-FdVs anzeigen lassen, um das/die E-Rezept/E-Rezepte direkt in der Apotheke einlösen zu können.
 
 <!-- A_21401-02 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A232" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - Flowtype 169 / 209 - Anzeige nicht zulässig" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A232" title="TI-Flow-FdV: E-Rezept-Token als 2D-Code anzeigen - Flowtype 169 / 209 - Anzeige nicht zulässig" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV DARF im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" es dem Nutzer NICHT ermöglichen, einen E-Rezept-Token für ein E-Rezept mit dem Flowtype 169 oder 209 zu erstellen und anzuzeigen.
+    Das TI-Flow-FdV DARF im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" es dem Nutzer NICHT ermöglichen, einen E-Rezept-Token für ein E-Rezept mit dem Flowtype 169 oder 209 zu erstellen und anzuzeigen.
 </requirement>
 
 Ein 2D-Code kann bis zu 3 E-Rezept-Token beinhalten. Sollen mehr E-Rezept-Token übermittelt werden, können bspw. mehrere 2D-Codes erzeugt und angezeigt werden.
 
 <!-- A_24571 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A233" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - maximal 3 E-Rezept-Token in 2D-Code" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A233" title="TI-Flow-FdV: E-Rezept-Token als 2D-Code anzeigen - maximal 3 E-Rezept-Token in 2D-Code" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV DARF NICHT im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" mehr als drei E-Rezept-Token in einem 2D-Code zusammenfassen.
+    Das TI-Flow-FdV DARF NICHT im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" mehr als drei E-Rezept-Token in einem 2D-Code zusammenfassen.
 </requirement>
 
 
 <!-- A_20181-01 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A234" title="E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - personenbezogene Daten" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A234" title="TI-Flow-FdV: E-Rezept-Token als 2D-Code anzeigen - personenbezogene Daten" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
-    Das E-Rezept-FdV DARF NICHT im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" personenbezogene Daten zusammen mit der Anzeige des 2D-Codes anzeigen.
+    Das TI-Flow-FdV DARF NICHT im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" personenbezogene Daten zusammen mit der Anzeige des 2D-Codes anzeigen.
 </requirement>
 
 ### 2D-Code einscannen
@@ -182,7 +182,7 @@ Die Apotheke stimmt mit dem Patienten ab, wie mit der Teilverordnung verfahren w
 
 ### 2D-Code für Abrechnungsinformation-Token
 
-Um auf Wunsch des Versicherten den PKV-Abgabedatensatz ändern zu können,  muss die Apotheke das Wissen um die Referenz des ChargeItem und den AccessCode zum Nachweis der Berechtigung erlangen. Diese Informationen werden vom Versicherten zur Verfügung gestellt. Die Bereitstellung kann als Nachricht über den TI-Flow-Fachdienst oder durch Abscannen als 2D-Code vom Display der E-Rezept-FdV erfolgen. 
+Um auf Wunsch des Versicherten den PKV-Abgabedatensatz ändern zu können,  muss die Apotheke das Wissen um die Referenz des ChargeItem und den AccessCode zum Nachweis der Berechtigung erlangen. Diese Informationen werden vom Versicherten zur Verfügung gestellt. Die Bereitstellung kann als Nachricht über den TI-Flow-Fachdienst oder durch Abscannen als 2D-Code vom Display eines TI-Flow-FdV erfolgen. 
 
 <!-- A_22729 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A238" title="Datenstruktur Zugriffsinformationen für Abrechnungsinformation" version="0">
@@ -190,7 +190,7 @@ Um auf Wunsch des Versicherten den PKV-Abgabedatensatz ändern zu können,  muss
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS zum Erstellen eines Token für die Zugriffsinformationen für eine Abrechnungsinformation die ID auf einen ChargeItem zusammen mit dem AccessCode zum Ändern aus den lokal verfügbaren Informationen einer Abrechnungsinformation als URL in der Form: 2D-Code-Daten = "ChargeItem/" + ChargeItem.id  + "?ac=" + AccessCode zusammenstellen, damit diese Zeichenkette als Referenz in einer E-Rezept-Nachricht oder für die Generierung eines 2D-Codes verwendet werden kann.
+    Das TI-Flow-FdV MUSS zum Erstellen eines Token für die Zugriffsinformationen für eine Abrechnungsinformation die ID auf einen ChargeItem zusammen mit dem AccessCode zum Ändern aus den lokal verfügbaren Informationen einer Abrechnungsinformation als URL in der Form: 2D-Code-Daten = "ChargeItem/" + ChargeItem.id  + "?ac=" + AccessCode zusammenstellen, damit diese Zeichenkette als Referenz in einer E-Rezept-Nachricht oder für die Generierung eines 2D-Codes verwendet werden kann.
 </requirement>
 
 **Beispiel für Abrechnungsinformation-Token**: <br>
@@ -205,7 +205,7 @@ Um auf Wunsch des Versicherten den PKV-Abgabedatensatz ändern zu können,  muss
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS einen Abrechnungsinformation-Token in JSON-Notation gemäß [JSON] der folgenden Form 
+    Das TI-Flow-FdV MUSS einen Abrechnungsinformation-Token in JSON-Notation gemäß [JSON] der folgenden Form 
     <ul>
     <li>2D-Code-Daten = { "urls": [ "Abrechnungsinformation" ] }</li>
     </ul>

@@ -11,9 +11,9 @@ Die Fachanwendung E-Rezept ermöglicht eine Übermittlung von ärztlichen und za
 
 Der verordnende Leistungserbringer erstellt für einen Versicherten ein E-Rezept, welches auf dem zentralen TI-Flow-Fachdienst abgelegt wird. 
 
-Der Standardfall sieht vor, dass der Versicherte seine E-Rezepte mit dem E-Rezept-Frontend des Versicherten auf seinem technischen Gerät verwaltet. Mit dem E-Rezept-Frontend des Versicherten kann der Versicherte einen E-Rezept-Token generieren, der eine Apotheke seiner Wahl für den Zugriff auf ein konkretes E-Rezept im TI-Flow-Fachdienst berechtigt. Der Versicherte übermittelt den E-Rezept-Token elektronisch an eine Apotheke oder legt ihn in Form eines 2D-Codes in einer Apotheke vor. Die elektronische Übertragung des E-Rezept-Tokens an eine Apotheke erfolgt über den TI-Flow-Fachdienst.
+Der Standardfall sieht vor, dass der Versicherte seine E-Rezepte mit einem TI-Flow-FdV auf seinem technischen Gerät verwaltet. Mit einem TI-Flow-FdV kann der Versicherte einen E-Rezept-Token generieren, der eine Apotheke seiner Wahl für den Zugriff auf ein konkretes E-Rezept im TI-Flow-Fachdienst berechtigt. Der Versicherte übermittelt den E-Rezept-Token elektronisch an eine Apotheke oder legt ihn in Form eines 2D-Codes in einer Apotheke vor. Die elektronische Übertragung des E-Rezept-Tokens an eine Apotheke erfolgt über den TI-Flow-Fachdienst.
 
-Für Versicherte, welche kein E-Rezept-Frontend des Versicherten nutzen, erstellt der verordnende Leistungserbringer einen Patientenausdruck, welchen der Versicherte in der Apotheke vorlegen kann. Der Patientenausdruck beinhaltet den E-Rezept-Token in Form eines 2D-Code, welcher durch die Apotheke eingescant werden kann.
+Für Versicherte, welche kein TI-Flow-FdV nutzen, erstellt der verordnende Leistungserbringer einen Patientenausdruck, welchen der Versicherte in der Apotheke vorlegen kann. Der Patientenausdruck beinhaltet den E-Rezept-Token in Form eines 2D-Code, welcher durch die Apotheke eingescant werden kann.
 
 Als weitere Alternative kann durch die Übergabe der Gesundheitskarte die Apotheke berechtigt werden, auf die einlösbaren E-Rezepte des Versicherten zuzugreifen.
 
@@ -23,11 +23,11 @@ Der Versicherte hat die Hoheit über das E-Rezept, da jeglicher Zugriff auf ein 
 
 Mit der Übergabe bzw. dem Einlesen des E-Rezept-Tokens an einen/durch einen Apotheker erfolgt die Aufforderung zur Dispensierung. Der Apotheker lädt das E-Rezept vom zentralen TI-Flow-Fachdienst und verarbeitet es. Zugriffe auf den TI-Flow-Fachdienst werden im TI-Flow-Fachdienst protokolliert und sind durch den jeweils betroffenen Versicherten einsehbar.
 
-Die dezentrale E-Rezept-Fachlogik wird im Primärsystem der verordnenden und abgebenden Leistungserbringerinstitutionen, sowie im E-Rezept-Frontend des Versicherten (E-Rezept-FdV) umgesetzt. Alle Clientsysteme nutzen Dienste der zentralen TI-Plattform, wobei die Primärsysteme der Leistungserbringer zusätzlich auf Funktionalitäten des Konnektors zurückgreifen.
+Die dezentrale E-Rezept-Fachlogik wird im Primärsystem der verordnenden und abgebenden Leistungserbringerinstitutionen, sowie im TI-Flow-Frontend des Versicherten (TI-Flow-FdV) umgesetzt. Alle Clientsysteme nutzen Dienste der zentralen TI-Plattform, wobei die Primärsysteme der Leistungserbringer zusätzlich auf Funktionalitäten des Konnektors zurückgreifen.
 
 In der TI gibt es genau einen Anbieter für den TI-Flow-Fachdienst.
 
-Ein E-Rezept-Frontend des Versicherten muss diskriminierungsfrei, werbefrei und unabhängig sein.
+Ein TI-Flow-Frontend des Versicherten muss diskriminierungsfrei, werbefrei und unabhängig sein.
 
 Für den Zugang zur Telematikinfrastruktur nutzt der Versicherte seine eGK mit NFC-Schnittstelle oder seine durch seine Krankenkasse/-versicherung bereitgestellte elektronische Identität, sodass eine Nutzung des E-Rezepts auch ohne weitere Hardware an den Geräten des Versicherten möglich ist.
 
@@ -54,10 +54,10 @@ Für den Zugang zur Telematikinfrastruktur nutzt der Versicherte seine eGK mit N
 - Als Patient möchte ich die ausgewählten E-Rezepte löschen können, so dass ich mein Recht auf informationelle Selbstbestimmung ausüben kann.
 - Als Patient möchte ich Rückmeldung darüber erhalten, wenn die ausgewählten E-Rezepte gelöscht worden sind, so dass ich sicher sein kann, dass die Daten auch wirklich nicht mehr vorliegen.
 - Als Patient möchte ich Rückmeldung darüber erhalten, wenn das Löschen fehlgeschlagen ist, so dass ich auf anderem Wege ein Löschen einleiten kann.
-- Als Patient möchte ich eigenständig E-Rezepte aus meinem E-Rezept-FdV löschen können, um die Übersichtlichkeit in der Ansicht zu erhöhen.
-- Als Patient möchte ich nicht mehr benötigte E-Rezepte mit zugehörigen Informationen oder Nachrichten aus der Ansicht meines E-Rezept-FdV löschen können.
+- Als Patient möchte ich eigenständig E-Rezepte aus meinem TI-Flow-FdV löschen können, um die Übersichtlichkeit in der Ansicht zu erhöhen.
+- Als Patient möchte ich nicht mehr benötigte E-Rezepte mit zugehörigen Informationen oder Nachrichten aus der Ansicht meines TI-Flow-FdV löschen können.
 
-Mit diesem Anwendungsfall kann der Nutzer die lokal in seinem E-Rezept-FdV gespeicherten E-Rezepte mit allen dazugehörigen Informationen löschen.
+Mit diesem Anwendungsfall kann der Nutzer die lokal in seinem TI-Flow-FdV gespeicherten E-Rezepte mit allen dazugehörigen Informationen löschen.
 
 
 ### Verordnung apothekenpflichtiger Arzneimittel (GKV/PKV)
@@ -123,7 +123,7 @@ Versicherte verwalten ihre E-Rezepte in der E-Rezept-App, sehen Zugriffsprotokol
 
 ### Anwendungsfälle
 
-**Beteiligte Systeme:** PVS/ZPVS/KIS, AVS, E-Rezept-FdV , TI-Flow-Fachdienst
+**Beteiligte Systeme:** PVS/ZPVS/KIS, AVS, TI-Flow-FdV , TI-Flow-Fachdienst
 
 #### Technische Anwendungsfälle der Verordnung
 

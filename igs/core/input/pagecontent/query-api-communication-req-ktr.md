@@ -1,4 +1,4 @@
-Diese Seite beschreibt Anforderungen ein Clientsystem des Kostenrägers zur Nutzung der `Communication`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen an ein Clientsystem des Kostenrägers zur Nutzung der `Communication`-Query-Endpunkte.
 
 
 ### Nachrichten abrufen

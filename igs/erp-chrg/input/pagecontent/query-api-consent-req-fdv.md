@@ -1,4 +1,4 @@
-Diese Seite beschreibt Anforderungen für das E-Rezept-FdV zur Nutzung der `Consent`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen für das TI-Flow-FdV zur Nutzung der `Consent`-Query-Endpunkte.
 
 ### Anforderungen aus der Core Spezifikation
 

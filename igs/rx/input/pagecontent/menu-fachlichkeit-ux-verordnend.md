@@ -67,7 +67,7 @@ Um Rezepte schnell erstellen zu können, soll es möglich sein, in den Einstellu
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-     Das PS der verordnenden LEI SOLL einen patienten-individuellen Konfigurationsparameter anbieten, ob für ein E-Rezept default-mäßig der Patientenausdruck ausgedruckt, oder ob das Rezept über das E-Rezept-FdV oder mittels eGK eingelöst werden soll.
+     Das PS der verordnenden LEI SOLL einen patienten-individuellen Konfigurationsparameter anbieten, ob für ein E-Rezept default-mäßig der Patientenausdruck ausgedruckt, oder ob das Rezept über das TI-Flow-FdV oder mittels eGK eingelöst werden soll.
 </requirement>
 
 Das Primärsystem soll für die Einführung des patienten-individuellen Konfigurationsparameter einen Defaultwert anbieten.Die initiale Wert der Einstellung kann auf Basis der letztmaligen oder ersten Ausstellung eines E-Rezeptes für den Versicherten gesetzt werden.

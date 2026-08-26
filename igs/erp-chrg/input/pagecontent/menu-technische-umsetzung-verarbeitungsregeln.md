@@ -25,66 +25,66 @@ Die Zuordnung eines E-Rezeptes zu einem Versicherten erfolgt auf Basis der Versi
 
 Die Authentisierung des Nutzers am TI-Flow-Fachdienst erfolgt über den ZETA Guard. 
 
-### Verarbeitungsregeln für das E-Rezept-FdV
+### Verarbeitungsregeln für das TI-Flow-FdV
 
 #### Abrechnungsinformation-Token als 2D-Code anzeigen
-Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code auf dem Bildschirm seines E-Rezept-FdVs anzeigen lassen, um es direkt in der Apotheke vorzuzeigen und die Apotheke damit zu berechtigen, die Abrechnungsinformation vom TI-Flow-Fachdienst abzurufen und den PKV-Abgabedatensatz einmalig zu ändern.
+Mit diesem Anwendungsfall kann der Nutzer den AccessCode zum Ändern als 2D-Code auf dem Bildschirm seines TI-Flow-FdVs anzeigen lassen, um es direkt in der Apotheke vorzuzeigen und die Apotheke damit zu berechtigen, die Abrechnungsinformation vom TI-Flow-Fachdienst abzurufen und den PKV-Abgabedatensatz einmalig zu ändern.
 
 <!--A_24577-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A3" title="E-Rezept-FdV: optional: 2D-Code Abrechnungsinformation anzeigen" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A3" title="TI-Flow-FdV: optional: 2D-Code Abrechnungsinformation anzeigen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-      Das E-Rezept-FdV KANN den Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" umsetzen.
+      Das TI-Flow-FdV KANN den Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" umsetzen.
 </requirement>
 
 <!--A_22726-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A4" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A4" title="TI-Flow-FdV: 2D-Code Abrechnungsinformation anzeigen - E-Rezept auswählen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-      Das E-Rezept-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" es dem Nutzer ermöglichen, ein E-Rezept für die Anzeige des 2D-Code der Abrechnungsinformation auszuwählen, um einer Apotheke das Einscannen zu ermöglichen und sie somit für das Ändern des PKV-Abgabedatensatzes zu berechtigen.
+      Das TI-Flow-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" es dem Nutzer ermöglichen, ein E-Rezept für die Anzeige des 2D-Code der Abrechnungsinformation auszuwählen, um einer Apotheke das Einscannen zu ermöglichen und sie somit für das Ändern des PKV-Abgabedatensatzes zu berechtigen.
 </requirement>
 
 <!--A_22727-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A5" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A5" title="TI-Flow-FdV: 2D-Code Abrechnungsinformation anzeigen - Abrechnungsinformation-Token erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-      Das E-Rezept-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" für das ausgewählte E-Rezept den Abrechnungsinformation-Token erstellen.
+      Das TI-Flow-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" für das ausgewählte E-Rezept den Abrechnungsinformation-Token erstellen.
 </requirement>
 
 <!--A_22728-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A6" title="E-Rezept-FdV: 2D-Code Abrechnungsinformation anzeigen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A6" title="TI-Flow-FdV: 2D-Code Abrechnungsinformation anzeigen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-      Das E-Rezept-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" mit dem erstellten Abrechnungsinformation-Token einen 2D-Code erstellen und auf dem Display des Endgerätes anzeigen.
+      Das TI-Flow-FdV MUSS im Anwendungsfall "2D-Code Abrechnungsinformation anzeigen" mit dem erstellten Abrechnungsinformation-Token einen 2D-Code erstellen und auf dem Display des Endgerätes anzeigen.
 </requirement>
 
 #### Abrechnungsinformation exportieren
-Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus dem E-Rezept-FdV exportieren, um es zur Abrechnung einzureichen oder zu archivieren.
+Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus dem TI-Flow-FdV exportieren, um es zur Abrechnung einzureichen oder zu archivieren.
 
 <!--A_24555-->
-<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A7" title="E-Rezept-FdV: optional: Abrechnungsinformation exportieren" version="0">
+<requirement conformance="MAY" key="IG-TIFLOW-CHRG-A7" title="TI-Flow-FdV: optional: Abrechnungsinformation exportieren" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-      Das E-Rezept-FdV KANN den Anwendungsfall "Abrechnungsinformation exportieren" umsetzen.
+      Das TI-Flow-FdV KANN den Anwendungsfall "Abrechnungsinformation exportieren" umsetzen.
 </requirement>
 
 <!--A_22184-02-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A8" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF/A erstellen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A8" title="TI-Flow-FdV: Abrechnungsinformation exportieren - PDF/A erstellen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-      Das E-Rezept-FdV MUSS im Anwendungsfall "Abrechnungsinformation exportieren" auf Basis der vom TI-Flow-Fachdienst zu einer Prescription-ID heruntergeladenen ChargeItem, Verordnungsdatensatz, PKV-Abgabedatensatz und Quittung Ressourcen
+      Das TI-Flow-FdV MUSS im Anwendungsfall "Abrechnungsinformation exportieren" auf Basis der vom TI-Flow-Fachdienst zu einer Prescription-ID heruntergeladenen ChargeItem, Verordnungsdatensatz, PKV-Abgabedatensatz und Quittung Ressourcen
       <ul>
         <li>einen Ausdruck erstellen,</li>
         <li>für den Ausdruck ein PDF gemäß PDF/A-3-Standard (ISO 19005-3) erstellen,</li>
@@ -95,12 +95,12 @@ Mit diesem Anwendungsfall kann der Versicherte die Abrechnungsinformation aus de
 Für die Visualisierung der Abrechnungsinformation für PKV-Versicherte ist die zwischen DAV und PKV-Verband vereinbarte Technische Anlage zu den PKV-Abgabedaten und dem dortigen Kapitel 6 Ausdruck für den Privatversicherten sowie dem Unterkapitel 6.2 Spezifikation des Ausdrucks für den Versicherten [Empfehlung](http://www.abda.de/themen/e-health/datenauschtausch-pkv) zu beachten. Zur Umsetzungsunterstützung siehe auch [hier](https://github.com/DAV-ABDA/eRezept-Beispiele/tree/main/PKV). 
 
 <!--A_22185-01-->
-<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A9" title="E-Rezept-FdV: Abrechnungsinformation exportieren - PDF teilen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A9" title="TI-Flow-FdV: Abrechnungsinformation exportieren - PDF teilen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-      Das E-Rezept-FdV MUSS es dem Nutzer im Anwendungsfall "Abrechnungsinformation exportieren" ermöglichen, das erstellte PDF mit anderen Apps zu teilen, um den Versicherten die Möglichkeit zu geben, seine Abrechnungsinformation an Krankenversicherungen oder andere Institutionen zur Abrechnung zu übermitteln.
+      Das TI-Flow-FdV MUSS es dem Nutzer im Anwendungsfall "Abrechnungsinformation exportieren" ermöglichen, das erstellte PDF mit anderen Apps zu teilen, um den Versicherten die Möglichkeit zu geben, seine Abrechnungsinformation an Krankenversicherungen oder andere Institutionen zur Abrechnung zu übermitteln.
 </requirement>
 
 Das schließt das Versenden per E-Mail oder die Ablage im Dateisystem ein.

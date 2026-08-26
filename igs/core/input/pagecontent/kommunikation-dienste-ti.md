@@ -109,7 +109,7 @@ Die Kommunikation zum TI-Flow-Fachdienst wird zusätzlich zu TLS über einen sic
 	das Kommunikationsprotokoll zwischen VAU des TI-Flow-Fachdienstes und Clientsysteme des TI-Flow-Fachdienstes in der Rolle TI-Flow-Client nutzen.
 </requirement>
 
-Für Informationen zum Kommunikationsprotokoll zwischen E-Rezept-FdV und der VAU des TI-Flow-Fachdienstes siehe [gemSpec_Krypt]#E-Rezept-spezifische Vorgaben und [gemSpec_Krypt]#ZETA/ASL (VAU-Protokoll).
+Für Informationen zum Kommunikationsprotokoll zwischen TI-Flow-FdV und der VAU des TI-Flow-Fachdienstes siehe [gemSpec_Krypt]#E-Rezept-spezifische Vorgaben und [gemSpec_Krypt]#ZETA/ASL (VAU-Protokoll).
 
 <!-- TI-Flow-26_2 BSI_16 -->
 <requirement conformance="MAY" key="IG-TIFLOW-CORE-A459" title="CS: Alternative VAU-Zertifikat-Verifikation mittels Konnektor" version="0">
