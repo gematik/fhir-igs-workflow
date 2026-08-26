@@ -9,7 +9,7 @@ Die Nachricht zur Interaktion mit Dispensierinformationen am TI-Flow-Fachdienst 
 ### Anforderungen an Schnittstelle
 
 - [Server-Anforderungen zur MedicationDispense-Query](./query-api-medicationdispense-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-- [FdV-Anforderungen zur MedicationDispense-Query](./query-api-medicationdispense-req-fdv.html): Anforderungen an das E-Rezept-FdV des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
+- [FdV-Anforderungen zur MedicationDispense-Query](./query-api-medicationdispense-req-fdv.html): Anforderungen an das TI-Flow-FdV des TI-Flow-Fachdienstes zur Nutzung der Schnittstelle.
 
 ### API
 

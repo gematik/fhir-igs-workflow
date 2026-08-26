@@ -683,10 +683,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A139",
-            "title": "E-Rezept-FdV: Push Notifications - Channelkonfiguration - OpenAPI",
+            "title": "TI-Flow-FdV: Push Notifications - Channelkonfiguration - OpenAPI",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall \"Push Notifications\" umsetzt, für die Registrierung und Verwaltung der Channels für die FdV-Instanzen des Versicherten am TI-Flow-Fachdienst die Operationen gemäß [OpenAPI_FD] verwenden.",
+            "text": "Das TI-Flow-FdV MUSS, wenn es den Anwendungsfall \"Push Notifications\" umsetzt, für die Registrierung und Verwaltung der Channels für die FdV-Instanzen des Versicherten am TI-Flow-Fachdienst die Operationen gemäß [OpenAPI_FD] verwenden.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -1501,78 +1501,6 @@
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/query-api-subscription-req-fd.html#IG-TIFLOW-CORE-A167"
         },
         {
-            "key": "IG-TIFLOW-CORE-A168",
-            "title": "PS abgebende LEI: E-Rezepte löschen - E-Rezept auswählen",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept zum Löschen auf dem Fachdienst auszuwählen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "PS_TI-Flow_Apotheke",
-                        "id": "productType179",
-                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT28",
-                            "name": "funkt. Eignung: Konformitätsbestätigung"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/op-abort-req-avs.html#IG-TIFLOW-CORE-A168"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A169",
-            "title": "PS abgebende LEI: E-Rezept löschen - Bestätigung",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "PS_TI-Flow_Apotheke",
-                        "id": "productType179",
-                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT28",
-                            "name": "funkt. Eignung: Konformitätsbestätigung"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/op-abort-req-avs.html#IG-TIFLOW-CORE-A169"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A170",
-            "title": "PS abgebende LEI: E-Rezept durch Abgebenden löschen",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Das PS der abgebenden LEI MUSS den Anwendungsfall \"UC 4.3 - E-Rezept durch Abgebenden löschen\" aus [gemSysL_eRp] gemäß TAB_ILFERP_009 umsetzen. Tabelle # : TAB_ILFERP_009 - E-Rezept durch Abgebenden löschen Name E-Rezept durch Abgebenden löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter der abgebenden LEI Vorbedingung Die LEI hat das E-Rezept vom TI-Flow-Fachdienst heruntergeladen. Der Nutzer hat ein E-Rezept zum Löschen markiert und das Löschen bestätigt. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte E-Rezept ist vom TI-Flow-Fachdienst unwiederbringlich gelöscht. Standardablauf Task-ID und Geheimnis des E-Rezepts bestimmen E-Rezept auf Fachdienst löschen E-Rezept-Token in PS löschen",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "PS_TI-Flow_Apotheke",
-                        "id": "productType179",
-                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT28",
-                            "name": "funkt. Eignung: Konformitätsbestätigung"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/op-abort-req-avs.html#IG-TIFLOW-CORE-A170"
-        },
-        {
             "key": "IG-TIFLOW-CORE-A171",
             "title": "PS abgebende LEI: E-Rezept löschen - Löschrequest",
             "version": 0,
@@ -1985,7 +1913,7 @@
             "title": "TI-Flow-Fachdienst - Task aktivieren - Überprüfung KVNR im Profil KBV_PR_FOR_Patient",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate einen im FHIR Profil KBV_PR_FOR_Patient gespeicherten Wert für Patient.identifier:versichertenId.value gemäß der Anlage 1 der \"Prüfziffernberechnung für die Krankenversichertennummer nach § 290 SGB V\" vom 26.02.2019 beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_KVNR_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Ungültige Versichertennummer (KVNR): Die übergebene Versichertennummer des Patienten entspricht nicht den Prüfziffer-Validierungsregeln.</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate einen im FHIR Profil KBV_PR_FOR_Patient gespeicherten Wert für Patient.identifier:versichertenId.value gemäß der Anlage 1 der \"Prüfziffernberechnung für die Krankenversichertennummer nach <span>§</span> 290 SGB V\" vom 26.02.2019 beschriebenen Prüfalgorithmus validieren, und bei einer fehlerhaften Prüfung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_KVNR_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Ungültige Versichertennummer (KVNR): Die übergebene Versichertennummer des Patienten entspricht nicht den Prüfziffer-Validierungsregeln.</td>\n </tr>\n </table> \n abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -2009,7 +1937,7 @@
             "title": "TI-Flow-Fachdienst - Task aktivieren - Überprüfung der ANR und ZANR im Profil KBV_PR_FOR_Practitioner",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate einen im FHIR Profil KBV_PR_FOR_Practitioner hinterlegten Wert für identifier:ANR.value bzw. identifier:ZANR.value gemäß der Anlage 6 BMV-Ä der \"Technischen Anlage zum Vertrag über den Datenaustausch zwischen dem GKV-Spitzenverband (Spitzenverband Bund der Krankenkassen) und der Kassenärztlichen Bundesvereinigung\" unter \"Aufbau der lebenslangen Arztnummer - LANR\" beschriebenen Prüfalgorithmus unter Beachtung der folgenden zulässigen Ausnahmen validieren, und bei einer fehlerhaften Prüfung auf diese Auffälligkeit gemäß der Konfiguration reagieren.\n    <table>\n        <tr> \n            <th>ANR/ZANR</th>\n            <th>Ursache</th>\n        </tr>\n        <tr> \n            <td>555555 plus Ordnungsnummer für die Reihenfolge in der Anzeige an die ASV-Verzeichnisstelle (KH-Zähler) plus Fachgruppencode</td>\n            <td>Verordnungen im Rahmen der Versorgung nach § 116b Abs. 1 SGB</td>\n        </tr>\n    </table>\n    <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_016 Zulässige Ausnahmen in Form von Pseudoarztnummern</figcaption></div>",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate einen im FHIR Profil KBV_PR_FOR_Practitioner hinterlegten Wert für identifier:ANR.value bzw. identifier:ZANR.value gemäß der Anlage 6 BMV-Ä der \"Technischen Anlage zum Vertrag über den Datenaustausch zwischen dem GKV-Spitzenverband (Spitzenverband Bund der Krankenkassen) und der Kassenärztlichen Bundesvereinigung\" unter \"Aufbau der lebenslangen Arztnummer - LANR\" beschriebenen Prüfalgorithmus unter Beachtung der folgenden zulässigen Ausnahmen validieren, und bei einer fehlerhaften Prüfung auf diese Auffälligkeit gemäß der Konfiguration reagieren.\n <table>\n <tr> \n <th>ANR/ZANR</th>\n <th>Ursache</th>\n </tr>\n <tr> \n <td>555555 plus Ordnungsnummer für die Reihenfolge in der Anzeige an die ASV-Verzeichnisstelle (KH-Zähler) plus Fachgruppencode</td>\n <td>Verordnungen im Rahmen der Versorgung nach <span>§</span> 116b Abs. 1 SGB</td>\n </tr>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_016 Zulässige Ausnahmen in Form von Pseudoarztnummern</figcaption></div>",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -2102,10 +2030,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A197",
-            "title": "E-Rezept-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen",
+            "title": "TI-Flow-FdV: E-Rezepte abrufen - Liste E-Rezepte abrufen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezepte abrufen\" zum Herunterladen alle E-Rezepte des Nutzers die HTTP-Operation GET /Task ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezepte abrufen\" zum Herunterladen alle E-Rezepte des Nutzers die HTTP-Operation GET /Task ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -2126,10 +2054,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A198",
-            "title": "E-Rezept-FdV: E-Rezept abrufen - E-Rezepte lokal speichern",
+            "title": "TI-Flow-FdV: E-Rezept abrufen - E-Rezepte lokal speichern",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV KANN es dem Versicherten ermöglichen, die vom TI-Flow-Fachdienst heruntergeladenen E-Rezepte im lokalen Speicher persistent abzulegen.",
+            "text": "Das TI-Flow-FdV KANN es dem Versicherten ermöglichen, die vom TI-Flow-Fachdienst heruntergeladenen E-Rezepte im lokalen Speicher persistent abzulegen.",
             "conformance": "MAY",
             "characteristics": [
                 {
@@ -2150,10 +2078,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A199",
-            "title": "E-Rezept-FdV: E-Rezepte abrufen - Spezifisches E-Rezept herunterladen",
+            "title": "TI-Flow-FdV: E-Rezepte abrufen - Spezifisches E-Rezept herunterladen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezepte abrufen\" zum Herunterladen einer spezifischen Verordnung des Nutzers die HTTP-Operation GET /Task/&lt;id&gt; mit \n    <ul>\n        <li>Task-ID in URL &lt;id&gt; </li>\n    </ul>\n    ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezepte abrufen\" zum Herunterladen einer spezifischen Verordnung des Nutzers die HTTP-Operation GET /Task/&lt;id&gt; mit \n <ul>\n <li>Task-ID in URL &lt;id&gt; </li>\n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -2801,7 +2729,7 @@
             "title": "E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst und das E-Rezept-FdV MÜSSEN für den Anwendungsfall \"Push Notifications\" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:\n\n<table>\n<thead>\n<tr>\n<th>Attribut</th>\n<th>verpflichtend</th>\n<th>Beschreibung</th>\n<th>zulässige Werte</th>\n<th>Beispiel</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ChannelId</td>\n<td>ja</td>\n<td>Der Trigger, der die Push Notification initiiert hat.</td>\n<td>bis zu 30 Stellen, UTF-8</td>\n<td>erp.communication.new</td>\n</tr>\n<tr>\n<td>Identifier</td>\n<td>ja</td>\n<td>Ein Identifier, der als Kontext zur Nachricht dient.</td>\n<td>bis zu 50 Stellen, UTF-8</td>\n<td>160.000.000.000.123.76</td>\n</tr>\n<tr>\n<td>IdentifierType</td>\n<td>ja</td>\n<td>Der Art Identifier, der mitgeschickt wird.</td>\n<td>bis zu 20 Stellen, UTF-8</td>\n<td>TaskId</td>\n</tr>\n<tr>\n<td>Product</td>\n<td>ja</td>\n<td>Der Name des verordneten bzw. abgegebenen Produkts (Medikament oder DiGA).</td>\n<td>bis zu 100 Stellen, UTF-8</td>\n<td>Sumatriptan-1a Pharma 100 mg Tabletten</td>\n</tr>\n<tr>\n<td>ActorName</td>\n<td>ja</td>\n<td>Der Name des Akteurs. Das kann zum Beispiel der Name der Apotheke oder des Kostenträgers sein.</td>\n<td>bis zu 100 Stellen, UTF-8</td>\n<td>Meine Apotheke</td>\n</tr>\n<tr>\n<td>Message</td>\n<td>nein</td>\n<td>Die Nachricht, die an den Versicherten verschickt wird.<br>Nachrichten mit mehr als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (...) ergänzt werden.</td>\n<td>bis zu 240 Stellen, UTF-8</td>\n<td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen.</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>TAB_eRp_DM_004 Push Notification Datenstruktur Nachrichteninhalte</figcaption></div>",
+            "text": "Der TI-Flow-Fachdienst und das TI-Flow-FdV MÜSSEN für den Anwendungsfall \"Push Notifications\" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:\n\n<table>\n<thead>\n<tr>\n<th>Attribut</th>\n<th>verpflichtend</th>\n<th>Beschreibung</th>\n<th>zulässige Werte</th>\n<th>Beispiel</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ChannelId</td>\n<td>ja</td>\n<td>Der Trigger, der die Push Notification initiiert hat.</td>\n<td>bis zu 30 Stellen, UTF-8</td>\n<td>erp.communication.new</td>\n</tr>\n<tr>\n<td>Identifier</td>\n<td>ja</td>\n<td>Ein Identifier, der als Kontext zur Nachricht dient.</td>\n<td>bis zu 50 Stellen, UTF-8</td>\n<td>160.000.000.000.123.76</td>\n</tr>\n<tr>\n<td>IdentifierType</td>\n<td>ja</td>\n<td>Der Art Identifier, der mitgeschickt wird.</td>\n<td>bis zu 20 Stellen, UTF-8</td>\n<td>TaskId</td>\n</tr>\n<tr>\n<td>Product</td>\n<td>ja</td>\n<td>Der Name des verordneten bzw. abgegebenen Produkts (Medikament oder DiGA).</td>\n<td>bis zu 100 Stellen, UTF-8</td>\n<td>Sumatriptan-1a Pharma 100 mg Tabletten</td>\n</tr>\n<tr>\n<td>ActorName</td>\n<td>ja</td>\n<td>Der Name des Akteurs. Das kann zum Beispiel der Name der Apotheke oder des Kostenträgers sein.</td>\n<td>bis zu 100 Stellen, UTF-8</td>\n<td>Meine Apotheke</td>\n</tr>\n<tr>\n<td>Message</td>\n<td>nein</td>\n<td>Die Nachricht, die an den Versicherten verschickt wird.<br>Nachrichten mit mehr als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (...) ergänzt werden.</td>\n<td>bis zu 240 Stellen, UTF-8</td>\n<td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen.</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>TAB_eRp_DM_004 Push Notification Datenstruktur Nachrichteninhalte</figcaption></div>",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -2838,7 +2766,7 @@
             "title": "Datenstruktur Einlöseinformationen für E-Rezept",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV und das PS der verordnenden LEI MÜSSEN zum Erstellen eines E-Rezept-Token die ID auf einen Task zusammen mit dem AccessCode des Tasks aus den lokal verfügbaren Informationen einer Verordnung als URL in der Form:\n    <ul>\n    <li>2D-Code-Daten = \"Task/\" + Task.id + \"/$accept?ac=\" + AccessCode</li>\n    </ul>\n    zusammenstellen, damit diese Zeichenkette als Referenz in einer E-Rezept-Nachricht oder in einem JSON-Array für die Generierung eines 2D-Codes verwendet werden kann.",
+            "text": "Das TI-Flow-FdV und das PS der verordnenden LEI MÜSSEN zum Erstellen eines E-Rezept-Token die ID auf einen Task zusammen mit dem AccessCode des Tasks aus den lokal verfügbaren Informationen einer Verordnung als URL in der Form:\n <ul>\n <li>2D-Code-Daten = \"Task/\" + Task.id + \"/$accept?ac=\" + AccessCode</li>\n </ul>\n zusammenstellen, damit diese Zeichenkette als Referenz in einer E-Rezept-Nachricht oder in einem JSON-Array für die Generierung eines 2D-Codes verwendet werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -2875,7 +2803,7 @@
             "title": "Generierung 2D-Code als Sammlung",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS eine Sammlung von einer und bis zu drei E-Rezept-Referenzen als Array in JSON-Notation gemäß [JSON] der folgenden Form  \n    <ul>\n    <li>2D-Code-Daten = { \"urls\": [ \"E-Rezept 1\", \"E-Rezept 2\", \"E-Rezept 3\" ] }</li>\n    </ul>\n    zusammenfassen, um daraus einen 2D-Code generieren zu können.",
+            "text": "Das TI-Flow-FdV MUSS eine Sammlung von einer und bis zu drei E-Rezept-Referenzen als Array in JSON-Notation gemäß [JSON] der folgenden Form \n <ul>\n <li>2D-Code-Daten = { \"urls\": [ \"E-Rezept 1\", \"E-Rezept 2\", \"E-Rezept 3\" ] }</li>\n </ul>\n zusammenfassen, um daraus einen 2D-Code generieren zu können.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -2912,7 +2840,7 @@
             "title": "Generierung DataMatrix-Code",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV und das PS der verordnenden LEI MÜSSEN die Datenstruktur für 2D-Code-Daten in eine DataMatrix-Darstellung gemäß ISO/IEC 16022:2006 überführen können.",
+            "text": "Das TI-Flow-FdV und das PS der verordnenden LEI MÜSSEN die Datenstruktur für 2D-Code-Daten in eine DataMatrix-Darstellung gemäß ISO/IEC 16022:2006 überführen können.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -2946,10 +2874,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A232",
-            "title": "E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - Flowtype 169 / 209 - Anzeige nicht zulässig",
+            "title": "TI-Flow-FdV: E-Rezept-Token als 2D-Code anzeigen - Flowtype 169 / 209 - Anzeige nicht zulässig",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV DARF im Anwendungsfall \"E-Rezept-Token als 2D-Code anzeigen\" es dem Nutzer NICHT ermöglichen, einen E-Rezept-Token für ein E-Rezept mit dem Flowtype 169 oder 209 zu erstellen und anzuzeigen.",
+            "text": "Das TI-Flow-FdV DARF im Anwendungsfall \"E-Rezept-Token als 2D-Code anzeigen\" es dem Nutzer NICHT ermöglichen, einen E-Rezept-Token für ein E-Rezept mit dem Flowtype 169 oder 209 zu erstellen und anzuzeigen.",
             "conformance": "SHALL NOT",
             "characteristics": [
                 {
@@ -2970,10 +2898,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A233",
-            "title": "E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - maximal 3 E-Rezept-Token in 2D-Code",
+            "title": "TI-Flow-FdV: E-Rezept-Token als 2D-Code anzeigen - maximal 3 E-Rezept-Token in 2D-Code",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV DARF NICHT im Anwendungsfall \"E-Rezept-Token als 2D-Code anzeigen\" mehr als drei E-Rezept-Token in einem 2D-Code zusammenfassen.",
+            "text": "Das TI-Flow-FdV DARF NICHT im Anwendungsfall \"E-Rezept-Token als 2D-Code anzeigen\" mehr als drei E-Rezept-Token in einem 2D-Code zusammenfassen.",
             "conformance": "SHALL NOT",
             "characteristics": [
                 {
@@ -2994,10 +2922,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A234",
-            "title": "E-Rezept-FdV: E-Rezept-Token als 2D-Code anzeigen - personenbezogene Daten",
+            "title": "TI-Flow-FdV: E-Rezept-Token als 2D-Code anzeigen - personenbezogene Daten",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV DARF NICHT im Anwendungsfall \"E-Rezept-Token als 2D-Code anzeigen\" personenbezogene Daten zusammen mit der Anzeige des 2D-Codes anzeigen.",
+            "text": "Das TI-Flow-FdV DARF NICHT im Anwendungsfall \"E-Rezept-Token als 2D-Code anzeigen\" personenbezogene Daten zusammen mit der Anzeige des 2D-Codes anzeigen.",
             "conformance": "SHALL NOT",
             "characteristics": [
                 {
@@ -3106,7 +3034,7 @@
             "title": "Datenstruktur Zugriffsinformationen für Abrechnungsinformation",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS zum Erstellen eines Token für die Zugriffsinformationen für eine Abrechnungsinformation die ID auf einen ChargeItem zusammen mit dem AccessCode zum Ändern aus den lokal verfügbaren Informationen einer Abrechnungsinformation als URL in der Form: 2D-Code-Daten = \"ChargeItem/\" + ChargeItem.id  + \"?ac=\" + AccessCode zusammenstellen, damit diese Zeichenkette als Referenz in einer E-Rezept-Nachricht oder für die Generierung eines 2D-Codes verwendet werden kann.",
+            "text": "Das TI-Flow-FdV MUSS zum Erstellen eines Token für die Zugriffsinformationen für eine Abrechnungsinformation die ID auf einen ChargeItem zusammen mit dem AccessCode zum Ändern aus den lokal verfügbaren Informationen einer Abrechnungsinformation als URL in der Form: 2D-Code-Daten = \"ChargeItem/\" + ChargeItem.id + \"?ac=\" + AccessCode zusammenstellen, damit diese Zeichenkette als Referenz in einer E-Rezept-Nachricht oder für die Generierung eines 2D-Codes verwendet werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -3130,7 +3058,7 @@
             "title": "Generierung 2D-Code Abrechnungsinformation-Token",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS einen Abrechnungsinformation-Token in JSON-Notation gemäß [JSON] der folgenden Form \n    <ul>\n    <li>2D-Code-Daten = { \"urls\": [ \"Abrechnungsinformation\" ] }</li>\n    </ul>\n    darstellen, um daraus einen 2D-Code generieren zu können.",
+            "text": "Das TI-Flow-FdV MUSS einen Abrechnungsinformation-Token in JSON-Notation gemäß [JSON] der folgenden Form \n <ul>\n <li>2D-Code-Daten = { \"urls\": [ \"Abrechnungsinformation\" ] }</li>\n </ul>\n darstellen, um daraus einen 2D-Code generieren zu können.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4790,10 +4718,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A287",
-            "title": "E-Rezept-FdV: Einwilligung erteilen - Einwilligungstext",
+            "title": "TI-Flow-FdV: Einwilligung erteilen - Einwilligungstext",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Einwilligung erteilen\" den Text für die Einwilligung derart gestalten, dass dem Nutzer eine informierte Einwilligung möglich ist. Insbesondere MÜSSEN enthalten sein: der Verwendungszweck, die konkreten Informationen über die Art der erhobenen Daten, die Speicherdauer, Hinweis auf Freiwilligkeit, auf Widerrufsrecht, Hinweis auf die Folgen bei Verweigerung oder Widerruf.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Einwilligung erteilen\" den Text für die Einwilligung derart gestalten, dass dem Nutzer eine informierte Einwilligung möglich ist. Insbesondere MÜSSEN enthalten sein: der Verwendungszweck, die konkreten Informationen über die Art der erhobenen Daten, die Speicherdauer, Hinweis auf Freiwilligkeit, auf Widerrufsrecht, Hinweis auf die Folgen bei Verweigerung oder Widerruf.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4814,10 +4742,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A288",
-            "title": "E-Rezept-FdV: Einwilligung erteilen - Einwilligung eingeben",
+            "title": "TI-Flow-FdV: Einwilligung erteilen - Einwilligung eingeben",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Einwilligung erteilen\" es dem Nutzer ermöglichen, die Einwilligung einzugeben.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Einwilligung erteilen\" es dem Nutzer ermöglichen, die Einwilligung einzugeben.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4838,10 +4766,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A289",
-            "title": "E-Rezept-FdV: Einwilligung erteilen - Consent Ressource erstellen",
+            "title": "TI-Flow-FdV: Einwilligung erteilen - Consent Ressource erstellen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Einwilligung erteilen\" eine Consent Ressource mit:\n    <ul>\n        <li>Versicherten-ID in Consent.patient.identifier</li>\n        <li>Einwilligungstyp in Consent.category.coding.code</li>\n    </ul>\n    erstellen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Einwilligung erteilen\" eine Consent Ressource mit:\n <ul>\n <li>Versicherten-ID in Consent.patient.identifier</li>\n <li>Einwilligungstyp in Consent.category.coding.code</li>\n </ul>\n erstellen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4862,10 +4790,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A290",
-            "title": "E-Rezept-FdV: Einwilligung erteilen - Speicherrequest",
+            "title": "TI-Flow-FdV: Einwilligung erteilen - Speicherrequest",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Einwilligung erteilen\" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation POST /Consent mit:\n    <ul>\n        <li>Consent Ressource im HTTP-Request-Body</li>\n    </ul>\n    ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Einwilligung erteilen\" zum Speichern der Information im TI-Flow-Fachdienst die HTTP-Operation POST /Consent mit:\n <ul>\n <li>Consent Ressource im HTTP-Request-Body</li>\n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4886,10 +4814,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A291",
-            "title": "E-Rezept-FdV: Einwilligungsinformation abrufen - Abfragerequest",
+            "title": "TI-Flow-FdV: Einwilligungsinformation abrufen - Abfragerequest",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Einwilligungsinformation abrufen\" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /Consent mit ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Einwilligungsinformation abrufen\" zum Abrufen der Information vom TI-Flow-Fachdienst die HTTP-Operation GET /Consent mit ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4910,10 +4838,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A292",
-            "title": "E-Rezept-FdV: Einwilligung widerrufen - Widerruf eingeben",
+            "title": "TI-Flow-FdV: Einwilligung widerrufen - Widerruf eingeben",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Einwilligung widerrufen\" es dem Nutzer ermöglichen, den Widerruf zu erfassen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Einwilligung widerrufen\" es dem Nutzer ermöglichen, den Widerruf zu erfassen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4934,10 +4862,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A293",
-            "title": "E-Rezept-FdV: Einwilligung widerrufen - Bestätigung",
+            "title": "TI-Flow-FdV: Einwilligung widerrufen - Bestätigung",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Einwilligung widerrufen\" vom Nutzer eine Bestätigung einholen, dass die Einwilligung widerrufen werden soll, somit ggf. korrespondierende Daten gelöscht werden und die Möglichkeit geben, das Widerrufen abzubrechen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Einwilligung widerrufen\" vom Nutzer eine Bestätigung einholen, dass die Einwilligung widerrufen werden soll, somit ggf. korrespondierende Daten gelöscht werden und die Möglichkeit geben, das Widerrufen abzubrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4958,10 +4886,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A294",
-            "title": "E-Rezept-FdV: Einwilligung widerrufen - Löschrequest",
+            "title": "TI-Flow-FdV: Einwilligung widerrufen - Löschrequest",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Einwilligung widerrufen\" zum Löschen der Information im TI-Flow-Fachdienst die HTTP-Operation DELETE /Consent/?category=&lt;Einwilligungstyp&gt; mit:\n    <ul>\n        <li>Einwilligungstyp in ?category</li>\n    </ul>\n    ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Einwilligung widerrufen\" zum Löschen der Information im TI-Flow-Fachdienst die HTTP-Operation DELETE /Consent/?category=&lt;Einwilligungstyp&gt; mit:\n <ul>\n <li>Einwilligungstyp in ?category</li>\n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -5150,10 +5078,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A301",
-            "title": "E-Rezept-FdV: Protokolldaten anzeigen - Protokolleinträge abrufen",
+            "title": "TI-Flow-FdV: Protokolldaten anzeigen - Protokolleinträge abrufen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Protokolldaten anzeigen\" zum Abrufen der Protokolleinträge vom TI-Flow-Fachdienst die HTTP-Operation GET /AuditEvent ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Protokolldaten anzeigen\" zum Abrufen der Protokolleinträge vom TI-Flow-Fachdienst die HTTP-Operation GET /AuditEvent ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -5504,78 +5432,6 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/query-api-subscription-req-avs.html#IG-TIFLOW-CORE-A310"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A311",
-            "title": "PS verordnende LEI: E-Rezepte löschen - E-Rezept zum Löschen auswählen",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Das PS der verordnenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept zum Löschen auf dem Fachdienst auszuwählen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "PS_TI-Flow_verordnend",
-                        "id": "productType178",
-                        "description": "PS-Schnittstelle für TI-Flow/verordnendes System"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT28",
-                            "name": "funkt. Eignung: Konformitätsbestätigung"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/op-abort-req-pvs.html#IG-TIFLOW-CORE-A311"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A312",
-            "title": "PS verordnende LEI: E-Rezept löschen - Bestätigung",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Das PS der verordnenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept gelöscht werden soll und die Möglichkeit geben, das Löschen abzubrechen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "PS_TI-Flow_verordnend",
-                        "id": "productType178",
-                        "description": "PS-Schnittstelle für TI-Flow/verordnendes System"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT28",
-                            "name": "funkt. Eignung: Konformitätsbestätigung"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/op-abort-req-pvs.html#IG-TIFLOW-CORE-A312"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A313",
-            "title": "PS verordnende LEI: E-Rezept durch Verordnenden löschen",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Das PS der verordnenden LEI MUSS den Anwendungsfall \"UC 2.5 - E-Rezept durch Verordnenden löschen\" aus [gemSysL_eRp] gemäß TAB_ILFERP_004 umsetzen. Tabelle # : TAB_ILFERP_004 - E-Rezept durch Verordnenden löschen Name E-Rezept durch Verordnenden löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter verordnende LEI Vorbedingung Der Nutzer hat ein E-Rezept zum Löschen markiert und das Löschen bestätigt. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte E-Rezept ist vom TI-Flow-Fachdienst unwiederbringlich gelöscht. Standardablauf Task-ID und AccessCode des E-Rezepts bestimmen E-Rezept auf TI-Flow-Fachdienst löschen E-Rezept-Token in PS löschen",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "PS_TI-Flow_verordnend",
-                        "id": "productType178",
-                        "description": "PS-Schnittstelle für TI-Flow/verordnendes System"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT28",
-                            "name": "funkt. Eignung: Konformitätsbestätigung"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/op-abort-req-pvs.html#IG-TIFLOW-CORE-A313"
         },
         {
             "key": "IG-TIFLOW-CORE-A314",
@@ -6107,10 +5963,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A339",
-            "title": "E-Rezept-FdV: Abgabeinformationen abfragen - MedicationDispense abrufen",
+            "title": "TI-Flow-FdV: Abgabeinformationen abfragen - MedicationDispense abrufen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Abgabeinformationen abfragen\" die HTTP-Operation GET /MedicationDispense mit\n    <ul>\n        <li>optional: Suchparameter gemäß https://www.hl7.org/fhir/medicationdispense.html#search</li>\n    </ul>\n    ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Abgabeinformationen abfragen\" die HTTP-Operation GET /MedicationDispense mit\n <ul>\n <li>optional: Suchparameter gemäß https://www.hl7.org/fhir/medicationdispense.html#search</li>\n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -6935,10 +6791,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A374",
-            "title": "E-Rezept-FdV: Push Notifications - Instanz registrieren - OpenAPI",
+            "title": "TI-Flow-FdV: Push Notifications - Instanz registrieren - OpenAPI",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall \"Push Notifications\" umsetzt, für die Registrierung und Verwaltung der FdV-Instanzen am TI-Flow-Fachdienst die Operationen gemäß [OpenAPI_PUSH_FD] verwenden.",
+            "text": "Das TI-Flow-FdV MUSS, wenn es den Anwendungsfall \"Push Notifications\" umsetzt, für die Registrierung und Verwaltung der FdV-Instanzen am TI-Flow-Fachdienst die Operationen gemäß [OpenAPI_PUSH_FD] verwenden.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -8507,10 +8363,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A44",
-            "title": "E-Rezept-FdV: E-Rezept löschen - Hinweis zu Daten in ePA",
+            "title": "TI-Flow-FdV: E-Rezept löschen - Hinweis zu Daten in ePA",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept löschen\" dem Nutzer einen Hinweis geben, wie sich das Löschen auf die Informationen zum E-Rezept in der elektronischen Patientenakte auswirkt.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezept löschen\" dem Nutzer einen Hinweis geben, wie sich das Löschen auf die Informationen zum E-Rezept in der elektronischen Patientenakte auswirkt.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -8771,10 +8627,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A45",
-            "title": "E-Rezept-FdV: E-Rezept löschen - E-Rezept zum Löschen auswählen",
+            "title": "TI-Flow-FdV: E-Rezept löschen - E-Rezept zum Löschen auswählen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept löschen\" es dem Nutzer ermöglichen, ein E-Rezept zum Löschen auszuwählen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezept löschen\" es dem Nutzer ermöglichen, ein E-Rezept zum Löschen auszuwählen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -9037,10 +8893,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A46",
-            "title": "E-Rezept-FdV:  E-Rezepte löschen - Coverage PKV - Warnung Abgabeinformationen",
+            "title": "TI-Flow-FdV:  E-Rezepte löschen - Coverage PKV - Warnung Abgabeinformationen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept löschen\", falls das E-Rezept-FdV die Funktionalität für Abrechnungsinformationen unterstützt, wenn der Nutzer ein E-Rezept mit Kostenträgertyp (Coverage.type.coding.code) \"PKV\" zum Löschen ausgewählt hat und für das E-Rezept noch keine Abrechnungsinformationen bereitgestellt wurden, eine Warnung anzeigen, dass ein Bereitstellen der Abrechnungsinformationen zum E-Rezept nach dem Löschen des E-Rezepts nicht mehr möglich ist.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezept löschen\", falls das TI-Flow-FdV die Funktionalität für Abrechnungsinformationen unterstützt, wenn der Nutzer ein E-Rezept mit Kostenträgertyp (Coverage.type.coding.code) \"PKV\" zum Löschen ausgewählt hat und für das E-Rezept noch keine Abrechnungsinformationen bereitgestellt wurden, eine Warnung anzeigen, dass ein Bereitstellen der Abrechnungsinformationen zum E-Rezept nach dem Löschen des E-Rezepts nicht mehr möglich ist.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -9276,9 +9132,9 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "CS_E-Rezept_KTR",
-                        "id": "productType136",
-                        "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
+                        "name": "CS_TI-Flow_KTR",
+                        "id": "productType181",
+                        "description": "CS-Schnittstelle für TI-Flow/Kostenträger"
                     },
                     "test_procedure": [
                         {
@@ -9289,9 +9145,9 @@
                 },
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -9302,9 +9158,9 @@
                 },
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_verordnend",
-                        "id": "productType99",
-                        "description": "E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)"
+                        "name": "PS_TI-Flow_verordnend",
+                        "id": "productType178",
+                        "description": "PS-Schnittstelle für TI-Flow/verordnendes System"
                     },
                     "test_procedure": [
                         {
@@ -9326,9 +9182,9 @@
             "characteristics": [
                 {
                     "product_type": {
-                        "name": "CS_E-Rezept_KTR",
-                        "id": "productType136",
-                        "description": "CS-Schnittstelle für E-Rezept/Kostenträger"
+                        "name": "CS_TI-Flow_KTR",
+                        "id": "productType181",
+                        "description": "CS-Schnittstelle für TI-Flow/Kostenträger"
                     },
                     "test_procedure": [
                         {
@@ -9339,9 +9195,9 @@
                 },
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_abgebend",
-                        "id": "productType98",
-                        "description": "E-Rezept-Schnittstelle eines abgebenden PS (Apotheke)"
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
                     },
                     "test_procedure": [
                         {
@@ -9352,9 +9208,9 @@
                 },
                 {
                     "product_type": {
-                        "name": "PS_E-Rezept_verordnend",
-                        "id": "productType99",
-                        "description": "E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)"
+                        "name": "PS_TI-Flow_verordnend",
+                        "id": "productType178",
+                        "description": "PS-Schnittstelle für TI-Flow/verordnendes System"
                     },
                     "test_procedure": [
                         {
@@ -9368,10 +9224,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A47",
-            "title": "E-Rezept-FdV: E-Rezept löschen - Bestätigung",
+            "title": "TI-Flow-FdV: E-Rezept löschen - Bestätigung",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept löschen\" vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept gelöscht werden soll und die Möglichkeit geben, das Löschen abzubrechen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezept löschen\" vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept gelöscht werden soll und die Möglichkeit geben, das Löschen abzubrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -9391,35 +9247,11 @@
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/op-abort-req-fdv.html#IG-TIFLOW-CORE-A47"
         },
         {
-            "key": "IG-TIFLOW-CORE-A48",
-            "title": "E-Rezept-FdV: E-Rezept löschen",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS den Anwendungsfall \"UC 3.2 - E-Rezept durch Versicherten löschen\" aus [gemSysL_eRp] gemäß TAB_FdVERP_008 umsetzen. Tabelle # : TAB_FdVERP_008 - E-Rezept löschen Name E-Rezept löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Versicherter Vorbedingung Der Nutzer hat ein zum Löschen markiert und das Löschen bestätigt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte E-Rezept ist vom TI-Flow-Fachdienst unwiederbringlich gelöscht. Standardablauf Task-ID und AccessCode des E-Rezepts bestimmen E-Rezept löschen E-Rezept-Token löschen",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FdV",
-                        "id": "productType183",
-                        "description": "TI-Flow-Frontend des Versicherten"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/op-abort-req-fdv.html#IG-TIFLOW-CORE-A48"
-        },
-        {
             "key": "IG-TIFLOW-CORE-A49",
-            "title": "E-Rezept-FdV: E-Rezept löschen - Löschrequest",
+            "title": "TI-Flow-FdV: E-Rezept löschen - Löschrequest",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezepte löschen\" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort des TI-Flow-Fachdienstes mit\n    <ul>  \n        <li>Task-ID in URL &lt;id&gt;</li> \n    </ul>\n    ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezepte löschen\" für das zu löschende E-Rezept die HTTP-Operation POST /Task/&lt;id&gt;/$abort des TI-Flow-Fachdienstes mit\n <ul> \n <li>Task-ID in URL &lt;id&gt;</li> \n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -9440,10 +9272,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A50",
-            "title": "E-Rezept-FdV: E-Rezept löschen - E-Rezept-Token löschen",
+            "title": "TI-Flow-FdV: E-Rezept löschen - E-Rezept-Token löschen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept löschen\" für das zu löschende E-Rezept nach erfolgreichem Aufruf der Operation \"Ein E-Rezept löschen\" die Daten zum E-Rezept-Token lokal löschen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezept löschen\" für das zu löschende E-Rezept nach erfolgreichem Aufruf der Operation \"Ein E-Rezept löschen\" die Daten zum E-Rezept-Token lokal löschen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -9923,7 +9755,7 @@
             "title": "Nachrichten abrufen - Nachrichten von Fachdienst herunterladen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Nachrichten von Apotheken anzeigen\" zum Herunterladen von Nachrichten vom TI-Flow-Fachdienst die HTTP-Operation GET /Communication mit\n    <ul>\n        <li>optional: ?received=null für nur ungelesene Nachrichten</li>\n        <li>optional: ?received=gtYYYY-MM-DD_sort=sent für Nachrichten jünger als Datum DD.MM.YYYY</li>\n    </ul>\n    ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Nachrichten von Apotheken anzeigen\" zum Herunterladen von Nachrichten vom TI-Flow-Fachdienst die HTTP-Operation GET /Communication mit\n <ul>\n <li>optional: ?received=null für nur ungelesene Nachrichten</li>\n <li>optional: ?received=gtYYYY-MM-DD_sort=sent für Nachrichten jünger als Datum DD.MM.YYYY</li>\n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -9947,7 +9779,7 @@
             "title": "Nachricht senden - E-Rezept zuweisen - Status prüfen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\" den aktuellen Status des E-Rezepts ermitteln, prüfen ob Task.status = ready ist und anderenfalls den Anwendungsfall abbrechen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\" den aktuellen Status des E-Rezepts ermitteln, prüfen ob Task.status = ready ist und anderenfalls den Anwendungsfall abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -9971,7 +9803,7 @@
             "title": "Nachricht senden - E-Rezept zuweisen - Ende Gültigkeit prüfen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\" prüfen, ob das Ende der Einlösefrist (Task.ExpiryDate) zu einem früherem Zeitpunkt als das aktuelle Datum liegt und in diesem Fall den Anwendungsfall abbrechen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\" prüfen, ob das Ende der Einlösefrist (Task.ExpiryDate) zu einem früherem Zeitpunkt als das aktuelle Datum liegt und in diesem Fall den Anwendungsfall abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -9995,7 +9827,7 @@
             "title": "Nachricht senden - E-Rezept zuweisen - Zuweisen - TransactionID",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\" im Rahmen der Belieferung eines Arzneimittels für den payload_contentstring eine TransactionID erzeugen, um Nachrichten zu dem Vorgang zuordnen zu können.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\" im Rahmen der Belieferung eines Arzneimittels für den payload_contentstring eine TransactionID erzeugen, um Nachrichten zu dem Vorgang zuordnen zu können.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -10019,7 +9851,7 @@
             "title": "Nachricht senden - E-Rezept zuweisen - Auf Nachricht antworten - TransactionID",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\" im Rahmen der Belieferung eines Arzneimittels, wenn der Nutzer auf eine empfangene Nachricht einer Apotheke antwortet, die TransactionID aus der empfangenen Nachricht der Apotheke unverändert im payload contentString der Textnachricht an die Apotheke zurückgeben.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\" im Rahmen der Belieferung eines Arzneimittels, wenn der Nutzer auf eine empfangene Nachricht einer Apotheke antwortet, die TransactionID aus der empfangenen Nachricht der Apotheke unverändert im payload contentString der Textnachricht an die Apotheke zurückgeben.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -10043,7 +9875,7 @@
             "title": "Nachricht senden - Nachricht auf Fachdienst einstellen",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Nachricht senden\" zum Übermitteln einer Nachricht über den TI-Flow-Fachdienst die HTTP-Operation POST /Communication mit\n    <ul>\n        <li>Communication Ressource in HTTP-Request-Body</li> \n    </ul>\n    ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Nachricht senden\" zum Übermitteln einer Nachricht über den TI-Flow-Fachdienst die HTTP-Operation POST /Communication mit\n <ul>\n <li>Communication Ressource in HTTP-Request-Body</li> \n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -10064,10 +9896,10 @@
         },
         {
             "key": "IG-TIFLOW-CORE-A78",
-            "title": "E-Rezept-FdV: Nachricht löschen - Löschrequest",
+            "title": "TI-Flow-FdV: Nachricht löschen - Löschrequest",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das E-Rezept-FdV MUSS im Anwendungsfall \"Nachrichten löschen\" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; des TI-Flow-Fachdienstes mit\n    <ul>\n        <li>Communication-ID in URL &lt;id&gt;</li> \n    </ul>\n    ausführen.",
+            "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"Nachrichten löschen\" für die zu löschende Nachricht die HTTP-Operation DELETE /Communication/&lt;id&gt; des TI-Flow-Fachdienstes mit\n <ul>\n <li>Communication-ID in URL &lt;id&gt;</li> \n </ul>\n ausführen.",
             "conformance": "SHALL",
             "characteristics": [
                 {

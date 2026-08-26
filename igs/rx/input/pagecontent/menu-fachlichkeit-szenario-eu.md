@@ -25,9 +25,9 @@ Der TI-Flow-Fachdienst prüft bei Operationsaufrufen, ob die E-Rezepte die folge
 - Gültigkeitszeitraum ist erreicht,
 - Gültigkeitszeitraum ist nicht überschritten,
 - der Workflow zum E-Rezept hat den Status "ready".
-- Ein E-Rezept, welches die obigen Kriterien erfüllt, wird im Kontext dieses Features als einlösbares E-Rezept bezeichnet.
+Ein E-Rezept, welches die obigen Kriterien erfüllt, wird im Kontext dieses Features als einlösbares E-Rezept bezeichnet.
 
-Ein Versicherter kann sich im E-Rezept-FdV anzeigen lassen, welche seiner E-Rezepte im europäischen Ausland einlösbar sind
+Ein Versicherter kann sich im TI-Flow-Frontend des Versicherten8 (TI-Flow-FdV) anzeigen lassen, welche seiner E-Rezepte im europäischen Ausland einlösbar sind.
 
 #### Autorisierung
 
@@ -43,11 +43,11 @@ Ein Versicherter muss den Zugriff eines LE-EU auf seine E-Rezepte autorisieren. 
 
 Versicherten-ID und Zugriffscode bilden zusammen die Information zur Zugriffsberechtigung und dienen der Autorisierung des LE-EU beim Operationsaufruf am TI-Flow-Fachdienst.
 
-Der Zugriffscode wird dezentral im E-Rezept-Frontend des Versicherten (FdV) erzeugt. Das E-Rezept-FdV registriert den Zugriffscode am TI-Flow-Fachdienst. 
+Der Zugriffscode wird dezentral im TI-Flow-FdV erzeugt. Das TI-Flow-FdV registriert den Zugriffscode am TI-Flow-Fachdienst. 
 
 Ein Zugriffscode kann nur am TI-Flow-Fachdienst registriert werden, wenn eine "Einwilligung zum Einlösen im EU-Ausland" des Versicherten vorliegt.
 
-Bei der Registrierung des Zugriffscodes am TI-Flow-Fachdienst wird geprüft, ob einlösbare Rezepte im TI-Flow-Fachdienst für die KVNR des Versicherten vorliegen. Falls keine einlösbaren E-Rezepte vorliegen, wird der Zugriffscode nicht registriert und der Versicherte erhält eine entsprechende Meldung in seinem E-Rezept-FdV.
+Bei der Registrierung des Zugriffscodes am TI-Flow-Fachdienst wird geprüft, ob einlösbare Rezepte im TI-Flow-Fachdienst für die KVNR des Versicherten vorliegen. Falls keine einlösbaren E-Rezepte vorliegen, wird der Zugriffscode nicht registriert und der Versicherte erhält eine entsprechende Meldung in seinem TI-Flow-FdV.
 
 Ein Zugriffscode ist eine Stunde gültig.
 
@@ -55,7 +55,7 @@ Der Versicherte kann einen Zugriffscode vor dem Ende des Gültigkeitszeitraumes 
 
 Wenn der Versicherte einen neuen Zugriffscode erstellt, dann wird ein zuvor bestehender Zugriffscode überschrieben und somit nicht mehr für die Autorisierung akzeptiert.
 
-Der registrierte Zugriffscode wird dem Nutzer im E-Rezept-FdV zusammen mit dem Gültigkeitszeitraum angezeigt, damit der Nutzer den Zugriffscode der LEI-EU übermitteln kann.
+Der registrierte Zugriffscode wird dem Nutzer im TI-Flow-FdV zusammen mit dem Gültigkeitszeitraum angezeigt, damit der Nutzer den Zugriffscode der LEI-EU übermitteln kann.
 
 Nach Ablauf der Gültigkeit löscht der TI-Flow-Fachdienst den Zugriffscode.
 
@@ -65,16 +65,16 @@ Es gibt keine Möglichkeit in der Rolle Vertreter den Zugriff des LE-EU auf die 
 
 #### Versicherteninteraktion
 
-**Beteiligte Systeme:** TI-Flow-Fachdienst, E-Rezept-FdV
+**Beteiligte Systeme:** TI-Flow-Fachdienst, TI-Flow-FdV
 
 {% assign scenario_use_cases = "UC_3_13_Einwilligungen_einsehen,
 UC_3_14_Einwilligung_erteilen, UC_3_15_Einwilligung_widerrufen, UC_3_16_Zugriffsberechtigung_erstellen, UC_3_17_Zugriffsberechtigung_loeschen, UC_3_18_Zugriffsberechtigung_einsehen, UC_3_19_e_rezept_markieren" | split: ", " %}
 
 {% include use-case-overview.table.html scenario_use_case_ids=scenario_use_cases use_cases=use_cases caption="Technische Anwendungsfälle mit Bezug zur Verwaltung von <i>E-Rezepten im EU Ausland</i>" %}
 
-#### Interaktion NCPeH
+#### Interaktion NCPeH-FD
 
-**Beteiligte Systeme:** TI-Flow-Fachdienst, NCPeH
+**Beteiligte Systeme:** TI-Flow-Fachdienst, NCPeH-FD
 
 {% assign scenario_use_cases = "UC_4_19_Demographische_Daten_abrufen,
 UC_4_20_Liste_Einloesbare_Abrufen, UC_4_21_Liste_Ausgewaehlte_Abrufen, UC_4_22_Abgabe_EU" | split: ", " %}

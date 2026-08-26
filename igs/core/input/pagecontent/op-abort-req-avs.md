@@ -1,31 +1,8 @@
 Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an das AVS für die Nutzung der Operation `$abort`.
 
-<!-- A_19241 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A168" title="PS abgebende LEI: E-Rezepte löschen - E-Rezept auswählen" version="0">
-    <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
-        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
-    </actor>
-     Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept zum Löschen auf dem Fachdienst auszuwählen.
-</requirement>
+Das PS der abgebenden LEI MUSS es dem Nutzer ermöglichen, ein E-Rezept zum Löschen auf dem Fachdienst auszuwählen.
 
-<!-- A_19242 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A169" title="PS abgebende LEI: E-Rezept löschen - Bestätigung" version="0">
-    <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
-        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
-    </actor>
-     Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.
-</requirement>
-
-<!-- A_19243 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A170" title="PS abgebende LEI: E-Rezept durch Abgebenden löschen" version="0">
-    <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
-        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
-    </actor>
-     Das PS der abgebenden LEI MUSS den Anwendungsfall "UC 4.3 - E-Rezept durch Abgebenden löschen" aus [gemSysL_eRp] gemäß TAB_ILFERP_009 umsetzen. Tabelle # : TAB_ILFERP_009 - E-Rezept durch Abgebenden löschen Name E-Rezept durch Abgebenden löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Leistungserbringer, Mitarbeiter der abgebenden LEI Vorbedingung Die LEI hat das E-Rezept vom TI-Flow-Fachdienst heruntergeladen. Der Nutzer hat ein E-Rezept zum Löschen markiert und das Löschen bestätigt. Die LEI hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte E-Rezept ist vom TI-Flow-Fachdienst unwiederbringlich gelöscht. Standardablauf Task-ID und Geheimnis des E-Rezepts bestimmen E-Rezept auf Fachdienst löschen E-Rezept-Token in PS löschen
-</requirement>
+Das PS der abgebenden LEI MUSS vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept gelöscht werden soll, und die Möglichkeit geben, das Löschen abzubrechen.
 
 <!-- A_19244 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A171" title="PS abgebende LEI: E-Rezept löschen - Löschrequest" version="0">

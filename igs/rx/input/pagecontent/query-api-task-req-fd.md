@@ -6,7 +6,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 ### Modulspezifische Anforderungen
 
-#### GET /Task
+#### GET /Task (Liste)
 
 ##### Workflowspezifische Anforderungen
 
@@ -16,12 +16,10 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst DARF den AccessCode beim Zugriff durch den Versicherten NICHT an das E-Rezept-Frontend des Versicherten herausgeben, wenn der Flowtype des Tasks den Wert für die Workflowsteuerung durch Leistungserbringer enthält (169, 209).
+    Der TI-Flow-Fachdienst DARF NICHT beim Aufruf der HTTP-GET-Operation auf den Endpunkt /Task durch einen Versicherten, im Response für Tasks mit Task.extension:flowType = 169 oder 209 den AccessCode übermitteln.
 </requirement>
 
-<!-- ToDo: Dubliziern A_21360-01 für einzelabruf -->
-
-#### GET /Task/&lt;id&gt;
+#### GET /Task/&#60;id&#62; (Einzelne Verordnung)
 
 ##### Workflowspezifische Anforderungen
 
@@ -55,6 +53,15 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
         </tr>
     </table> 
     abbrechen.
+</requirement>
+
+<!-- A_21360-01 -->
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-A306" title="TI-Flow-Fachdienst - Task abrufen - Flowtype 169/209 - Versicherter keine Einlöseinformationen" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst DARF NICHT beim Aufruf der HTTP-GET-Operation auf einen einzelnen /Task/&lt;id&gt; durch einen Versicherten, wenn Task.extension:flowType = 169 oder 209 ist, im Response den AccessCode zum Task übermitteln.
 </requirement>
 
 #### PATCH /Task

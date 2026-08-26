@@ -357,7 +357,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     </tr>
     <tr> 
       <td>Task.PrescriptionType.valueCoding.display</td>
-      <td>"Flowtype für Arzneimittel nach § 3a AMVV"</td>
+      <td>"Flowtype für Arzneimittel nach <span>§</span> 3a AMVV"</td>
     </tr>
     <tr> 
       <td>Task.ExpiryDate</td>

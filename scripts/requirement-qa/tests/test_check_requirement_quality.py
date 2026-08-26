@@ -75,12 +75,12 @@ class TestSubjectDetection:
         assert actor == "Anb_TI-Flow_FD"
 
     def test_detect_erp_fdv_subject(self):
-        """Detect eRp-FdV subject."""
-        text = "Das E-Rezept-FdV MUSS den Code validieren."
+        """Detect TI-Flow-FdV subject."""
+        text = "Das TI-Flow-FdV MUSS den Code validieren."
         result = detect_subject(text)
         assert result is not None
         subject_prefix, actor, canonical = result
-        assert actor == "eRp_FdV"
+        assert actor == "TI-Flow_FdV"
 
     def test_no_subject_detected(self):
         """Return None when no recognized subject found."""

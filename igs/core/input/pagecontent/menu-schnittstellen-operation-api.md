@@ -5,4 +5,4 @@ Die folgenden Operation APIs stellt der TI-Flow-Fachdienst zur verfügung
 - Primärsystem: [Operation API: Task abrufen](./op-accept.html)
 - Primärsystem: [Operation API: Task zurückweisen](./op-reject.html)
 - Primärsystem: [Operation API: Task schließen](./op-close.html)
-- Primärsystem / E-Rezept-FdV: [Operation API: E-Rezept löschen](./op-abort.html)
+- Primärsystem / TI-Flow-FdV: [Operation API: E-Rezept löschen](./op-abort.html)

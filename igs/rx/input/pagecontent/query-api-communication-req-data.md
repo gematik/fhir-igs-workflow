@@ -3,7 +3,7 @@ Diese Seite beschreibt Anforderungen an das Datenmodell für den payload der `Co
 #### E-Rezept einer Apotheke zuweisen
 
 <!-- A_23876-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A69" title="E-Rezept-FdV: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A69" title="TI-Flow-FdV: Nachrichtenaustausch - E-Rezept einer Apotheke zuweisen - Datenstruktur Nachricht" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -14,7 +14,7 @@ Diese Seite beschreibt Anforderungen an das Datenmodell für den payload der `Co
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst, das E-Rezept-FdV und das PS der abgebenden LEI MÜSSEN für den Anwendungsfall "E-Rezept einer Apotheke zuweisen" Nachrichten mit der Datenstruktur gemäß der Tabelle in der contentString-Eigenschaft des GEM_ERP_PR_Communication_DispReq-Profils unterstützen. 
+     Der TI-Flow-Fachdienst, das TI-Flow-FdV und das PS der abgebenden LEI MÜSSEN für den Anwendungsfall "E-Rezept einer Apotheke zuweisen" Nachrichten mit der Datenstruktur gemäß der Tabelle in der contentString-Eigenschaft des GEM_ERP_PR_Communication_DispReq-Profils unterstützen. 
      
     <table>
   <thead>
@@ -163,7 +163,7 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst, das E-Rezept-FdV und das PS der abgebenden LEI MÜSSEN für den Anwendungsfall "Nachricht durch Abgebenden übermitteln" Nachrichten mit der folgenden Datenstruktur in der contentString-Eigenschaft des GEM_ERP_PR_Communication_Reply unterstützen.
+    Der TI-Flow-Fachdienst, das TI-Flow-FdV und das PS der abgebenden LEI MÜSSEN für den Anwendungsfall "Nachricht durch Abgebenden übermitteln" Nachrichten mit der folgenden Datenstruktur in der contentString-Eigenschaft des GEM_ERP_PR_Communication_Reply unterstützen.
      
   <table>
   <thead>

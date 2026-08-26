@@ -6,7 +6,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 ### Modulspezifische Anforderungen
 
-Um die Einlösung einer elektronischen DiGA-Verordnung (Flowtype 162) sicherzustellen, ist dem Patienten ein Ausdruck auszuhändigen, ausgenommen der Patient lehnt einen Ausdruck ab, da er bspw. ein E-Rezept-Frontend des Versicherten der Krankenkasse oder der gematik nutzt.
+Um die Einlösung einer elektronischen DiGA-Verordnung (Flowtype 162) sicherzustellen, ist dem Patienten ein Ausdruck auszuhändigen, ausgenommen der Patient lehnt einen Ausdruck ab, da er bspw. ein TI-Flow-FdV der Krankenkasse oder der gematik nutzt.
 
 <!-- A_28862 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A29" title="PS verordnende LEI: E-Rezept einstellen - Flowtype 162 - Patientenausdruck" version="0">

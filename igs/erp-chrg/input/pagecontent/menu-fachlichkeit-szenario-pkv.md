@@ -15,7 +15,7 @@ Der Ablauf für die Übermittlung von ärztlichen und zahnärztlichen Verordnung
 
 <br>
 
-Der (Zahn-)Arzt verschreibt ein E-Rezept. Das E-Rezept wird auf den TI-Flow-Fachdienst übertragen. Der Versicherte erhält einen E-Rezept-Token im E-Rezept-FdV oder auf einem Tokenausdruck. Der Versicherte übermittelt den E-Rezept-Token an eine Apotheke seiner Wahl. Die Apotheke ruft das E-Rezept vom TI-Flow-Fachdienst ab und dispensiert es. Die Apotheke stellt, sofern das E-Rezept nicht dem Sachleistungsprinzip unterliegt, auf Wunsch des Versicherten die Abrechnungsinformation zum E-Rezept im TI-Flow-Fachdienst bereit. Dort werden sie mit Einwilligung des Versicherten bis zu 10 Jahren gespeichert. Alternativ übergibt der Apotheker dem Versicherten im Ersatzverfahren einen Papierbeleg mit den abrechnungsrelevanten Informationen für die Abrechnung. Der Versicherte lädt die digital bereitgestellte Abrechnungsinformation mit dem E-Rezept-FdV vom TI-Flow-Fachdienst herunter. Der Versicherte kann für die Abrechnung die Abrechnungsinformation an eine App seiner PKV / der Beihilfe weiterleiten, in einem Portal des Kostenträgers hochladen oder ausdrucken.
+Der (Zahn-)Arzt verschreibt ein E-Rezept. Das E-Rezept wird auf den TI-Flow-Fachdienst übertragen. Der Versicherte erhält einen E-Rezept-Token im TI-Flow-FdV oder auf einem Tokenausdruck. Der Versicherte übermittelt den E-Rezept-Token an eine Apotheke seiner Wahl. Die Apotheke ruft das E-Rezept vom TI-Flow-Fachdienst ab und dispensiert es. Die Apotheke stellt, sofern das E-Rezept nicht dem Sachleistungsprinzip unterliegt, auf Wunsch des Versicherten die Abrechnungsinformation zum E-Rezept im TI-Flow-Fachdienst bereit. Dort werden sie mit Einwilligung des Versicherten bis zu 10 Jahren gespeichert. Alternativ übergibt der Apotheker dem Versicherten im Ersatzverfahren einen Papierbeleg mit den abrechnungsrelevanten Informationen für die Abrechnung. Der Versicherte lädt die digital bereitgestellte Abrechnungsinformation mit dem TI-Flow-FdV vom TI-Flow-Fachdienst herunter. Der Versicherte kann für die Abrechnung die Abrechnungsinformation an eine App seiner PKV / der Beihilfe weiterleiten, in einem Portal des Kostenträgers hochladen oder ausdrucken.
 
 Der Ablauf für die Übermittlung von ärztlichen und zahnärztlichen Verordnungen für apothekenpflichtige Arzneimittel mit Steuerung durch den Leistungserbringer für PKV-Versicherte orientiert sich an der Verordnung von apothekenpflichtige Arzneimittel mit Steuerung durch den Leistungserbringer für GKV-Versicherte (Workflow-Typ "169").
 
@@ -58,7 +58,7 @@ Der PKV-Abgabedatensatz wird durch die Apotheke erstellt. Er enthält, sofern in
 
 Die Quittung wird durch den TI-Flow-Fachdienst erstellt und fortgeschritten signiert. Sie dient dem Versicherten bei der Abrechnung gegenüber dem Kostenträger als Nachweis, dass ein Arzneimittel auf ein E-Rezept einmalig über die TI abgegeben worden ist.
 
-Der PKV-Versicherte hat die Möglichkeit, die Abrechnung in einem Zeitraum von bis zu 10 Jahren bei seiner Krankenversicherung vorzunehmen. Daher werden die Abrechnungsinformationen so lange für den Versicherten im TI-Flow-Fachdienst vorgehalten, bevor sie automatisch gelöscht werden (Rechtliche Grundlage § 360 Abs. 13 SGB V). Der PKV-Versicherte hat die Möglichkeit, sie vorab, beispielsweise wenn die Abrechnung abgeschlossen wurde, zu löschen.
+Der PKV-Versicherte hat die Möglichkeit, die Abrechnung in einem Zeitraum von bis zu 10 Jahren bei seiner Krankenversicherung vorzunehmen. Daher werden die Abrechnungsinformationen so lange für den Versicherten im TI-Flow-Fachdienst vorgehalten, bevor sie automatisch gelöscht werden (Rechtliche Grundlage <span>§</span> 360 Abs. 13 SGB V). Der PKV-Versicherte hat die Möglichkeit, sie vorab, beispielsweise wenn die Abrechnung abgeschlossen wurde, zu löschen.
 
 Eine Langzeitarchivierung der Abrechnungsinformation im TI-Flow-Fachdienst ist nicht vorgesehen. Hierfür kann der Versicherte beispielsweise die elektronische Patientenakte (ePA) nutzen.
 
@@ -67,7 +67,7 @@ Der PKV-Versicherte kann über die E-Rezept App die Abrechnungsinformation digit
 ### Einwilligung zum Speichern der Abrechungsinformationen
 Das Speichern der Abrechnungsinformationen erfolgt nur mit Einwilligung des Versicherten. Diese Einwilligung kann der Versicherte speichern, einsehen und jederzeit widerrufen. Sie wird unbefristet erteilt, und mit dem Widerruf der Einwilligung werden bereits gespeicherte Abrechnungsinformationen gelöscht. 
 
-**Beteiligte Systeme:** TI-Flow-Fachdienst, E-Rezept-FdV
+**Beteiligte Systeme:** TI-Flow-Fachdienst, TI-Flow-FdV
 
 **Technische Anwendungsfälle**
 
@@ -94,13 +94,13 @@ Der Versicherte ruft die Abrechnungsinformation im FdV ab, kann sie exportieren 
 
 Die Quittung wird durch den TI-Flow-Fachdienst erstellt und fortgeschritten signiert. Sie dient dem Versicherten bei der Abrechnung gegenüber dem Kostenträger als Nachweis, dass ein Arzneimittel auf ein E-Rezept einmalig über die TI abgegeben worden ist.
 
-Der PKV-Versicherte hat die Möglichkeit, die Abrechnung in einem Zeitraum von bis zu 10 Jahren bei seiner Krankenversicherung vorzunehmen. Daher werden die Abrechnungsinformationen so lange für den Versicherten im TI-Flow-Fachdienst vorgehalten, bevor sie automatisch gelöscht werden (rechtliche Grundlage § 360 Abs. 13 SGB V). Der PKV-Versicherte hat außerdem die Möglichkeit, sie vorab (z. B. nach Abschluss der Abrechnung) zu löschen.
+Der PKV-Versicherte hat die Möglichkeit, die Abrechnung in einem Zeitraum von bis zu 10 Jahren bei seiner Krankenversicherung vorzunehmen. Daher werden die Abrechnungsinformationen so lange für den Versicherten im TI-Flow-Fachdienst vorgehalten, bevor sie automatisch gelöscht werden (rechtliche Grundlage <span>§</span> 360 Abs. 13 SGB V). Der PKV-Versicherte hat außerdem die Möglichkeit, sie vorab (z. B. nach Abschluss der Abrechnung) zu löschen.
 
 Eine Langzeitarchivierung der Abrechnungsinformation im TI-Flow-Fachdienst ist nicht vorgesehen. Hierfür kann der Versicherte beispielsweise die elektronische Patientenakte (ePA) nutzen.
 
 Die Löschfristen für das E-Rezept mit den in Beziehung stehenden Daten, wie Dispensierinformationen und Kommunikationen zum E-Rezept, werden unabhängig von der zugehörigen Abrechnungsinformation durchgesetzt. Siehe [gemSysL_eRp]#A_18525.
 
-**Beteiligte Systeme:** TI-Flow-Fachdienst, E-Rezept-FdV
+**Beteiligte Systeme:** TI-Flow-Fachdienst, TI-Flow-FdV
 
 **Technische Anwendungsfälle**
 

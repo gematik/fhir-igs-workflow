@@ -11,7 +11,7 @@ Für den Empfang von Push Notifications in einem FdV muss sich die App-Instanz a
 ### Anforderungen an Schnittstelle
 
 - [FD-Anforderungen zur Pushers-Query](./query-api-pushers-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-- [FdV-Anforderungen zur Pushers-Query](./query-api-pushers-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [FdV-Anforderungen zur Pushers-Query](./query-api-pushers-req-fdv.html): Anforderungen an das TI-Flow-FdV zur Nutzung der Schnittstelle.
 
 
 ### Resource API

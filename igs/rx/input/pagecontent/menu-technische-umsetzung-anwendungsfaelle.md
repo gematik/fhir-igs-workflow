@@ -24,15 +24,15 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
     umsetzen.
 </requirement>
 
-#### E-Rezept-FdV 
+#### TI-Flow-FdV 
 
 <!-- A_19443 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A72" title="E-Rezept-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A72" title="TI-Flow-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneimittel die Anwendungsfälle
+    Das TI-Flow-FdV MUSS für die Umsetzung der Nutzung von E-Rezepten für Arzneimittel die Anwendungsfälle
     <ul>
         <li>UC 3.1 - E-Rezepte durch Versicherten abrufen</li>
         <li>UC 3.2 - E-Rezept durch Versicherten löschen</li>
@@ -45,12 +45,12 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 </requirement>
 
 <!-- A_19443 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A247" title="E-Rezept-FdV: TIFlow-EU - optionale Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A247" title="TI-Flow-FdV: TIFlow-EU - optionale Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle
+    Das TI-Flow-FdV MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle
 
     <ul>
     <li>UC 3.13 - Einwilligung einsehen</li>
@@ -438,12 +438,12 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 
 
 <!--A_27116 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A248" title="E-Rezept-FdV: Zugriffsberechtigung anzeigen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A248" title="TI-Flow-FdV: Zugriffsberechtigung anzeigen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das E-Rezept-FdV MUSS im Anwendungsfall "Zugriffsberechtigung anzeigen" folgende Informationen auf dem Display anzeigen: 
+    Das TI-Flow-FdV MUSS im Anwendungsfall "Zugriffsberechtigung anzeigen" folgende Informationen auf dem Display anzeigen: 
     <ul>
     <li>Name des Landes,</li>
     <li>Gültigkeitsende,</li>
@@ -454,13 +454,13 @@ Für die QES-Prüfung wird die PKCS#7-Datei verwendet. Die Verordnungsdaten des 
 
 Für die Anzeige der Gültigkeitsdauer ist die Zeitzone zu beachten, in der der Nutzer sich befindet.
 
-Das E-Rezept-FdV MUSS bei der Anzeige des Zugriffscodes die Lesbarkeit der Zeichen des Zugriffscodes sicherstellen.
+Das TI-Flow-FdV MUSS bei der Anzeige des Zugriffscodes die Lesbarkeit der Zeichen des Zugriffscodes sicherstellen.
 
 Hinweis: Mit Lesbarkeit ist das Erkennen und Unterscheiden einzelner Buchstaben und Ziffern gemeint, d.h. die Unterscheidbarkeit von beispielsweise von 0 (Null) und O (Großbuchstabe O), sowie I (Großbuchstabe i) und l (Kleinbuchstabe L) und 1 (Ziffer Eins).
 
-Das E-Rezept-FdV MUSS die Gültigkeitsdauer der Zugriffsberechtigung auf dem Display hervorheben, wenn die Gültigkeitsdauer 10 Minuten unterschreitet.
+Das TI-Flow-FdV MUSS die Gültigkeitsdauer der Zugriffsberechtigung auf dem Display hervorheben, wenn die Gültigkeitsdauer 10 Minuten unterschreitet.
 
-Das E-Rezept-FdV MUSS, wenn die Gültigkeit der Zugriffsberechtigung zeitlich abgelaufen ist, den Versicherten informieren.
+Das TI-Flow-FdV MUSS, wenn die Gültigkeit der Zugriffsberechtigung zeitlich abgelaufen ist, den Versicherten informieren.
 
 Hinweis: Es reicht aus, dass die Information über den Ablauf der Zugriffsberechtigung nur angezeigt wird, während der Nutzer auf dem Gerät aktiv ist.
 
@@ -523,6 +523,6 @@ Der zeitliche Ablauf der Zugriffsberechtigung wird nicht durch den TI-Flow-Fachd
 
 *Hinweis: Für den Anwendungsfall "Abgabe von E-Rezepten im europäischen Ausland" wird angenommen, dass die vollständigen Dispensierinformationen zu einer ePrescription (E-Rezept) in genau einem eDispensation Dokument (CDA) vom LE-EU übermittelt werden.*
 
-Nach der Bereitstellung der Dispensierinformationen im TI-Flow-Fachdienst kann der Versicherte diese mit seinem E-Rezept-FdV herunterladen und anzeigen lassen.
+Nach der Bereitstellung der Dispensierinformationen im TI-Flow-Fachdienst kann der Versicherte diese mit seinem TI-Flow-FdV herunterladen und anzeigen lassen.
 
 Eine Übermittlung der Dispensierinformationen an den ePA Medication Service ist perspektivisch vorgesehen. Die Funktionalität wird ergänzt, sobald die Voraussetzungen in den verwendeten Datenmodellen geschaffen wurden.

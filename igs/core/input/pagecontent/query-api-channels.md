@@ -14,7 +14,7 @@ Die Nachricht zur Interaktion mit Konfigurationen für Push Notifications als Re
 ### Anforderungen an Schnittstelle
 
 - [FD-Anforderungen zur channels-Query](./query-api-channels-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
-- [FdV-Anforderungen zur channels-Query](./query-api-channels-req-fdv.html): Anforderungen an das E-Rezept-FdV zur Nutzung der Schnittstelle.
+- [FdV-Anforderungen zur channels-Query](./query-api-channels-req-fdv.html): Anforderungen an das TI-Flow-FdV zur Nutzung der Schnittstelle.
 
 
 ### Resource API

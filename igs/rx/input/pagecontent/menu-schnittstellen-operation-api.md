@@ -4,7 +4,7 @@ Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem _Primärsystem eR
 
 - Primärsystem: [Operation API: E-Rezept erstellen](./op-create.html)
 - Primärsystem: [Operation API: E-Rezept aktivieren](./op-activate.html)
-- Primärsystem / E-Rezept-FdV: [Operation API: E-Rezept löschen](./op-abort.html)
+- Primärsystem / TI-Flow-FdV: [Operation API: E-Rezept löschen](./op-abort.html)
 
 ### E-Rezepte beliefern
 
@@ -15,11 +15,11 @@ Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem _Primärsystem eR
 
 ### Verwaltung der Zugriffsberechtigung durch den Versicherten (EU)
 
-- E-Rezept-FdV: [Operation API: Zugriffsberechtigung erstellen](./op-grant-eu-access-permission.html)
-- E-Rezept-FdV: [Operation API: Zugriffsberechtigung abfragen](./op-read-eu-access-permission.html)
-- E-Rezept-FdV: [Operation API: Zugriffsberechtigung löschen](./op-revoke-eu-access-permission.html)
+- TI-Flow-FdV: [Operation API: Zugriffsberechtigung erstellen](./op-grant-eu-access-permission.html)
+- TI-Flow-FdV: [Operation API: Zugriffsberechtigung abfragen](./op-read-eu-access-permission.html)
+- TI-Flow-FdV: [Operation API: Zugriffsberechtigung löschen](./op-revoke-eu-access-permission.html)
 
 ### Belieferung durch eine Apotheke im europäischen Ausland
 
-- NCPeH: [Operation API: Interaktion NCPeH - Abrufen](./op-get-eu-prescriptions.html)
-- NCPeH: [Operation API: Interaktion NCPeH - Abgeben](./op-eu-close.html)
+- NCPeH-FD: [Operation API: Interaktion NCPeH - Abrufen](./op-get-eu-prescriptions.html)
+- NCPeH-FD: [Operation API: Interaktion NCPeH - Abgeben](./op-eu-close.html)

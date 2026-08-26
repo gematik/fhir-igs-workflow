@@ -4,4 +4,4 @@ Mit dem DiGA-Workflow erhalten zwei neue Akteure Zugriff auf den TI-Flow-Fachdie
 Der Schutzbedarf einer DiGA-Verordnung ist mit dem von Arzneimittelverordnungen vergleichbar. Der Freischaltcode ist Teil der Abgabeinformation und unterliegt
 somit dem gleichen Schutzbedarf. Der Zugriff wird für den Versicherten protokolliert.
 
-Das Einlösen erfolgt vorzugsweise über ein E-Rezept-FdV. Alternativ können Versicherte einen Patientenausdruck per Post an den Kostenträger senden oder falls angeboten, den Patientenausdruck über die Service-App der Krankenkasse einscannen.
+Das Einlösen erfolgt vorzugsweise über ein TI-Flow-FdV. Alternativ können Versicherte einen Patientenausdruck per Post an den Kostenträger senden oder falls angeboten, den Patientenausdruck über die Service-App der Krankenkasse einscannen.
