@@ -1,4 +1,4 @@
-Instance: TIFlow-CORE-OP-Validate
+Instance: TIFlowCOREOPValidate
 InstanceOf: OperationDefinition
 Usage: #definition
 Title: "Validieren einer FHIR-Ressource"
@@ -19,7 +19,7 @@ Mit dem Parameter `returnBoolean` kann wahlweise ein kompaktes boolesches Ergebn
 
 * code = #validate
 * id = "tiflow-core-validate-op"
-* name = "TIFlow-CORE-OP-Validate"
+* name = "TIFlowCOREOPValidate"
 
 * inputProfile = Canonical(TIFlowCOREValidateOperationInput)
 * outputProfile = Canonical(TIFlowCOREValidateOperationOutput)

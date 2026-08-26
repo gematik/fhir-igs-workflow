@@ -23,6 +23,8 @@ Die nachfolgenden Tabellen enthalten die Bezeichnung der in diesem Implementatio
 | PZN | Pharmazentralnummer |
 | TI | Telematikinfrastruktur |
 | UC | Use Case, Anwendungsfall |
+
+
 <div><figcaption><strong>Tabelle:</strong> Abkürzungen</figcaption></div>
 
 ### Dokumente & Verweise der gematik

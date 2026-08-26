@@ -4,7 +4,7 @@ Zur Unterstützung der Aufgaben eines Dienstleisters vor Ort (DVO) stellt die ge
 
 Da es keine Test-/Prüf-HBAs für die Produktivumgebung der TI gibt, ersteht beim Erstellen einer Verordnung für eine PK eGK eine echte Verordnung, für die keine Leistung erbracht werden darf.
 
-<requirement conformance="SHALL" key="" title="CS: Verordnungen für fiktive Versicherte erkennen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A467" title="CS: Verordnungen für fiktive Versicherte erkennen" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -18,7 +18,7 @@ Da es keine Test-/Prüf-HBAs für die Produktivumgebung der TI gibt, ersteht bei
     Das Clientsystem des TI-Flow-Fachdienstes MUSS eine die Versicherten-ID in einer Verordnung prüfen und Verordnungen für einen fiktiven Versicherten erkennen.
 </requirement>
 
-<requirement conformance="SHALL" key="" title="CS: Hinweis auf Verordnung für fiktiven Versicherten" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A468" title="CS: Hinweis auf Verordnung für fiktiven Versicherten" version="0">
     <meta lockversion="false"/>
     <actor name="PS_E-Rezept_verordnend" description="E-Rezept-Schnittstelle eines verordnenden PS (Leistungserbringer)">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

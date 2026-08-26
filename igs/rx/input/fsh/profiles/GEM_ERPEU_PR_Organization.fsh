@@ -11,6 +11,7 @@ Description: "This Organization Profile is sent by the NCPeH when redeeming a Pr
   * ^comment = "There are not yet specific identifier systems defined. Therefore the field system is optional, but has to be used if there is a known identifier system."
   * system MS
   * value 1..1 MS
+// * identifier[TelematikID] 1..1 MS
 
 * name 1..1 MS
 

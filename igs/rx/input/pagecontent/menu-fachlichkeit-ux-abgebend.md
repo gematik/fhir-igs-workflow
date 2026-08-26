@@ -87,7 +87,7 @@ Sobald der Vorgang seitens der Apotheke bearbeitet wurde, möchte der Nutzer den
      Das PS der abgebenden LEI SOLL es Nutzer ermöglichen, eine vorkonfigurierte oder manuell erstellte Abholbenachrichtigung an den Sender einer Zuweisung zu übermitteln. Die Abholinformationen sind entsprechend einzubetten.
 </requirement>
 
-Falls ein Medikament in der Apotheke nicht verfügbar ist, ist das dem Kunden mitzuteilen. In diesem Fall ist das E-Rezept am TI-Flow-Fachdienst wieder freizugeben (Operation POST /Task/<id>/$reject). Es empfiehlt sich dem Kunden die klare Handlungsempfehlung mitzugeben, dass eine andere Apotheke zum Einlösen des Rezepts gesucht werden muss.
+Falls ein Medikament in der Apotheke nicht verfügbar ist, ist das dem Kunden mitzuteilen. In diesem Fall ist das E-Rezept am TI-Flow-Fachdienst wieder freizugeben (Operation POST /Task/&lt;id&gt;/$reject). Es empfiehlt sich dem Kunden die klare Handlungsempfehlung mitzugeben, dass eine andere Apotheke zum Einlösen des Rezepts gesucht werden muss.
 
 <!-- A_23793 -->
 <requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A124" title="PS abgebende LEI: UX - Zuweisung  - Nachricht bei Nicht-Verfügbarkeit eines Medikaments" version="0">
@@ -142,7 +142,7 @@ Exemplarisch eine Beispielnachricht, wie sie der Kunde im Frontend des Versicher
 
 ### Bedienen eines Rezepts
 
-Dieser Abschnitt beschreibt UX-Guidelines für den Prozess der Bedienung eines E- Rezeptes. Hinweis: Für die Bedienung von E-Rezepten ist es es wichtig, alle Informationen zum Datenaustausch mit dem TI-Flow-Fachdienst zu sichern. Insbesondere bei Verlust des Secrets nach dem Herunterladen des E-Rezepts (Operation POST /Task/<id>/$accept) ist die Weiterverarbeitung des E-Rezepts nicht mehr möglich.
+Dieser Abschnitt beschreibt UX-Guidelines für den Prozess der Bedienung eines E- Rezeptes. Hinweis: Für die Bedienung von E-Rezepten ist es es wichtig, alle Informationen zum Datenaustausch mit dem TI-Flow-Fachdienst zu sichern. Insbesondere bei Verlust des Secrets nach dem Herunterladen des E-Rezepts (Operation POST /Task/&lt;id&gt;/$accept) ist die Weiterverarbeitung des E-Rezepts nicht mehr möglich.
 
 #### Bedienen von E-Rezepten nach Ablauf von Fristen
 
@@ -266,7 +266,7 @@ abrechnen zu lassen Es soll die Möglichkeit bestehen, einem Vorgang nachträgli
 
 #### Weiterleiten von E-Rezepten an eine andere Apotheke
 
-Für Apothekenverbünde mit mehreren Filialen besteht die Möglichkeit E-Rezepte für die Belieferung weiterzuleiten. Dies kann von Interesse sein, wenn beispielsweise innerhalb eines Verbundes eine Apotheke sich um Vorbestellungen und Botendienste kümmert.  In dem Fall können die anderen Apotheken des Verbundes die vom TI-Flow-Fachdienst heruntergeladenen E-Rezepte an diese Apotheke weiterleiten. Das Weiterleiten kann auch im Rahmen eines Inhaberwechsels genutzt werden. Hinweis: Beim Abruf der Quittung erfolgt im TI-Flow-Fachdienst keine Prüfung, ob die Telematik-ID der Quittung abrufenden Apotheke mit der Telematik-ID der Apotheke übereinstimmt, welche das E-Rezept heruntergeladen und den Status in "in-progress" geändert hat. Für das Weiterleiten eines E-Rezeptes werden AccessCode, Task-ID, Secret des E- Rezeptes sowie sämtliche Inhalte der E-Rezeptes übermittelt. Die weitere Bearbeitung des E-Rezeptes kann ohne den Umweg über Freigabe des E-Rezeptes von einer Apotheke und erneutes Herunterladen durch eine andere Apotheke erfolgen. Wenn eine Apotheke Zugang zu diesen Informationen erhält, kann diese die Abgabe vollziehen. Hierzu muss die empfangene Apotheke die FHIR-OperationPOST /Task/<id>/$close des Rezeptes beim Fachdienst aufrufen.
+Für Apothekenverbünde mit mehreren Filialen besteht die Möglichkeit E-Rezepte für die Belieferung weiterzuleiten. Dies kann von Interesse sein, wenn beispielsweise innerhalb eines Verbundes eine Apotheke sich um Vorbestellungen und Botendienste kümmert.  In dem Fall können die anderen Apotheken des Verbundes die vom TI-Flow-Fachdienst heruntergeladenen E-Rezepte an diese Apotheke weiterleiten. Das Weiterleiten kann auch im Rahmen eines Inhaberwechsels genutzt werden. Hinweis: Beim Abruf der Quittung erfolgt im TI-Flow-Fachdienst keine Prüfung, ob die Telematik-ID der Quittung abrufenden Apotheke mit der Telematik-ID der Apotheke übereinstimmt, welche das E-Rezept heruntergeladen und den Status in "in-progress" geändert hat. Für das Weiterleiten eines E-Rezeptes werden AccessCode, Task-ID, Secret des E- Rezeptes sowie sämtliche Inhalte der E-Rezeptes übermittelt. Die weitere Bearbeitung des E-Rezeptes kann ohne den Umweg über Freigabe des E-Rezeptes von einer Apotheke und erneutes Herunterladen durch eine andere Apotheke erfolgen. Wenn eine Apotheke Zugang zu diesen Informationen erhält, kann diese die Abgabe vollziehen. Hierzu muss die empfangene Apotheke die FHIR-OperationPOST /Task/&lt;id&gt;/$close des Rezeptes beim Fachdienst aufrufen.
 
 <!-- A_23806 -->
 <requirement conformance="MAY" key="IG-TIFLOW-ERP-A137" title="PS abgebende LEI: UX - Weiterleitung eines E-Rezepts" version="0">
@@ -288,7 +288,7 @@ Für die sichere Kommunikation kann KIM verwendet werden.
      Das PS der abgebenden LEI KANN eine Möglichkeit bieten, die von einer anderen Filial-Apotheke übermittelten Informationen zu einem E-Rezept zu importieren und einen Vorgang dazu zu öffnen.
 </requirement>
 
-Unter der Annahme, dass die Apotheken in einem Apothekenverbund die gleiche Software nutzen, wurde bisher darauf verzichtet eine standardisiertes Schnittstelle bspw. auf Basis von KIM-Nachrichten zu entwickeln. Hinweis: Es ist zu vermeiden, E-Rezepte mittels Zurückweisen (Operation POST /Task/<id>/$reject) und erneuten Abrufen  (Operation POST /Task/<id>/$accept) zu übergeben. Diese Vorgehensweise erzeugt Protokolleinträge und zukünftig Notifications für den Versicherten, welche für diesen ggf. nicht nachvollziehbar sind.
+Unter der Annahme, dass die Apotheken in einem Apothekenverbund die gleiche Software nutzen, wurde bisher darauf verzichtet eine standardisiertes Schnittstelle bspw. auf Basis von KIM-Nachrichten zu entwickeln. Hinweis: Es ist zu vermeiden, E-Rezepte mittels Zurückweisen (Operation POST /Task/&lt;id&gt;/$reject) und erneuten Abrufen  (Operation POST /Task/&lt;id&gt;/$accept) zu übergeben. Diese Vorgehensweise erzeugt Protokolleinträge und zukünftig Notifications für den Versicherten, welche für diesen ggf. nicht nachvollziehbar sind.
 
 #### Bedienen von E-T-Rezepten
 
@@ -327,7 +327,7 @@ Die Quittung für ein beliefertes E-Rezept muss innerhalb einer vertraglich vere
      Das PS der abgebenden LEI SOLL die Quittung mittels der Operation POST /Task/&lt;id&gt;/$close automatisch abrufen, wenn eine konfigurierbare Frist nach Abgabe des E-Rezept erreicht ist und der Quittungsabruf noch nicht erfolgt ist.
 </requirement>
 
-Hinweis: Der TI-Flow-Fachdienst bietet mit der Operation GET /Task/<id> die Möglichkeit, die Quittung nach dem erstmaligen Aufruf der Operation POST /Task/<id>/$close noch einmal abzurufen. Dies ist nur möglich, bis das E-Rezept durch den Versicherten oder nach Erreichen der Löschfrist automatisch durch den E-Rezept- Fachdienst gelöscht wird. Der Anwendungsfall "Quittung abrufen" generiert nicht nur die Quittung für die Abrechnung der Apotheke, sondern schließt auch den Workflow im TI-Flow-Fachdienst ab. Der Versicherte hat Einblick in den Statusverlauf und kann ein E-Rezept auch nach Abschluss des Workflows löschen. Das AVS muss bei der Abgabe jeglichen Rezepttyps und unabhängig vom Kostenträger den Workflow über diesen Anwendungsfall abschließen.
+Hinweis: Der TI-Flow-Fachdienst bietet mit der Operation GET /Task/&lt;id&gt; die Möglichkeit, die Quittung nach dem erstmaligen Aufruf der Operation POST /Task/&lt;id&gt;/$close noch einmal abzurufen. Dies ist nur möglich, bis das E-Rezept durch den Versicherten oder nach Erreichen der Löschfrist automatisch durch den E-Rezept- Fachdienst gelöscht wird. Der Anwendungsfall "Quittung abrufen" generiert nicht nur die Quittung für die Abrechnung der Apotheke, sondern schließt auch den Workflow im TI-Flow-Fachdienst ab. Der Versicherte hat Einblick in den Statusverlauf und kann ein E-Rezept auch nach Abschluss des Workflows löschen. Das AVS muss bei der Abgabe jeglichen Rezepttyps und unabhängig vom Kostenträger den Workflow über diesen Anwendungsfall abschließen.
 
 <!-- A_25643 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A142" title="PS abgebende LEI: UX - Workflow von E-Rezepten abschließen" version="0">

@@ -1,4 +1,4 @@
-Die FHIR-Operation $eu-close beendet den E-Rezept-Workflow des unter der <id> geführten Tasks und speichert die von der europäischen Apotheke übermittelten Dispensierinformationen für den Versicherten. Diese Operation steht ausschließlich dem NCPeH-FD zur Verfügung.
+Die FHIR-Operation $eu-close beendet den E-Rezept-Workflow des unter der &lt;id&gt; geführten Tasks und speichert die von der europäischen Apotheke übermittelten Dispensierinformationen für den Versicherten. Diese Operation steht ausschließlich dem NCPeH-FD zur Verfügung.
 
 ### Nachricht
 

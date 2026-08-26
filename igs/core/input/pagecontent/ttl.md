@@ -4,7 +4,7 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 
 > *Hinweis:* Spezifische Löschfristen für Anwendungsmodule und deren Workflows und werden in den jeweiligen Implementation Guides definiert.
 
-## Allgemeine Anforderungen zur Protokollierung beim Löschen
+### Allgemeine Anforderungen zur Protokollierung beim Löschen
 
 <!-- A_19256-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A129" title="TI-Flow-Fachdienst - Löschfrist veraltete Protokolleinträge" version="0">

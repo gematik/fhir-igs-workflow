@@ -324,7 +324,7 @@ Der TI-Flow-Fachdienst prüft zur Umsetzung von A_26452-* die Telematik-ID aus d
       abbrechen.
 </requirement>
 
-### GET /Task/<id> (Einzelne Verordnung)
+### GET /Task/&lt;id&gt; (Einzelne Verordnung)
 
 Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezifische Verordnung steht ausschließlich dem Versicherten bzw. einer abgebenden Institution mit Wissen um das Secret zur Verfügung. Die GET-Operation ohne Referenz einer FHIR-Operation führt zu keiner Statusänderung.
 

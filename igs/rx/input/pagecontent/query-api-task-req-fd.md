@@ -21,7 +21,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 <!-- ToDo: Dubliziern A_21360-01 für einzelabruf -->
 
-#### GET /Task/<id>
+#### GET /Task/&lt;id&gt;
 
 ##### Workflowspezifische Anforderungen
 

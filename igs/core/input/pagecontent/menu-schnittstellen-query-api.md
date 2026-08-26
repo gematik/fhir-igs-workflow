@@ -10,9 +10,6 @@ Die folgenden Endpunkte und Ressourcen sind in allen Anwendungsmodulen des TI-Fl
 - [Protokollierung: AuditEvent](./query-api-auditevent.html)
 - [Gerät: Device](./query-api-device.html)
 
-### Push-Notification APIs
-- [Push: Pushers-API](./query-api-pushers.html)
-- [Push: Channels-API](./query-api-channels.html)
 
 ### Ressourcen in mehreren Modul IGs
 

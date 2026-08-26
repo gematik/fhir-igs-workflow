@@ -47,22 +47,6 @@ Inhalte aus diesem IG werden dann in zwei weiteren Arten von IG's in der TI-Flow
 
 <br>
 
-<figure>
-    <div class="gem-ig-svg-container" style="--box-width: 500px; margin-bottom: 30px;">
-        <object
-            data="./ig-landscape.svg"
-            type="image/svg+xml"
-            aria-label="Übersicht der FHIR-IGs des TI-Flow-Fachdienst"
-            style="width: 100%;"
-            >
-            <img src="./ig-landscape.svg" alt="Übersicht der FHIR-IGs des TI-Flow-Fachdienst" style="width: 100%;">
-            </object>
-    </div>
-    <figcaption><strong>Abbildung: </strong>Übersicht der FHIR-IGs des TI-Flow-Fachdienst</figcaption>
-</figure>
-
-<br>
-
 ### Methodik
 
 Dieser IG beschreibt die grundlegenden, modulübergreifenden Kernfunktionalitäten des TI-Flow-Fachdienstes. Sobald eine Funktionalität oder ein Endpunkt von mehreren IGs der TI-Flow-Familie genutzt wird, werden die zugehörigen Anforderungen und Beschreibungen zentral in diesem IG dokumentiert. So werden Redundanzen in den einzelnen Modul-IGs vermieden.
@@ -82,10 +66,6 @@ Modulspezifische Operationen, wie die $dispense-Operation im Arzneimittel IG, wi
 - [Operation API (modulübergreifend)](./menu-schnittstellen-operation-api.html)
 - [Zugriffsprotokollierung](./audit-service.html)
 - [Löschfristen](./ttl.html)
-
-### Abhängigkeiten
-
-{% include dependency-table.xhtml %}
 
 ## Bezug zu weiteren IGs
 

@@ -4,7 +4,7 @@ Die FHIR-Operation `$abort` überführt einen im Status `ready` oder `completed`
 Diese Operation basiert auf der $abort Operation des Basis-Workflow für E-Rezepte.
 
 ### Nachricht
-Die Operation $abort wird als HTTP POST auf /Task/<id>/$abort ausgeführt.
+Die Operation $abort wird als HTTP POST auf /Task/&lt;id&gt;/$abort ausgeführt.
 
 ### Anforderungen an Schnittstelle
 

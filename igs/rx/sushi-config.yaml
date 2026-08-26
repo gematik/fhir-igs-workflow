@@ -8,7 +8,7 @@ version: 2.0.0-ballot.3
 # version: 0.9.0
 date: 2026-08-27
 copyrightYear: 2026+
-releaseLabel: ci-build # ci-build, ballot, release
+releaseLabel: ballot # ci-build, ballot, release
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: gematik GmbH
@@ -38,6 +38,7 @@ menu:
     Technische Anwendungsfälle: menu-technische-umsetzung-anwendungsfaelle.html
     Strukturierte Dosierungen: menu-technische-umsetzung-dosierung.html
     Dispensierinformationen: menu-technische-umsetzung-dispensierinformationen.html
+    ePA Medication Service: menu-technische-umsetzung-epa-ms.html
     Mappings: menu-technische-umsetzung-mapping.html
     Technisches Konzept EU: menu-technische-umsetzung-konzept.html
     Datenschutz und Sicherheit EU: menu-technische-umsetzung-datenschutz-und-sicherheit.html
@@ -49,6 +50,7 @@ menu:
   Über:
     Referenzen: referenced.html
     Downloads: downloads.html
+    Abhängigkeiten: dependencies.html
     #OpenAPI: erp-openapi.html
     Release Notes: release-notes.html
     #Steckbriefe: spec-sheet.html
@@ -87,6 +89,8 @@ pages:
       title: "Abgabedatensatz signieren" 
     menu-technische-umsetzung-kim.md:
       title: "E-Rezept-spezifische KIM-Messages" 
+    menu-technische-umsetzung-epa-ms.md:
+      title: "Technische Umsetzung - Übermittlung an den ePA Medication Service"
     menu-technische-umsetzung-mapping.md:
       title: "Vorgaben zum Mapping von FHIR-Instanzen"
       mapping-prescription.md:
@@ -243,6 +247,8 @@ pages:
     title: "FHIR-Artefakte"
   referenced.md:
     title: "Referenzen"
+  dependencies.md:
+    title: Abhängigkeiten
   downloads.md:
     title: "Downloads"
   # erp-openapi.md:
@@ -350,5 +356,5 @@ parameters:
     # - Parameters/output-example-4
     # - Parameters/output-example-5
     # - AuditEvent/9361863d-fec0-4ba9-8776-7905cf1b0cfa
-    # - StructureDefinition/logical-eu-dispense-data
+    - StructureDefinition/logical-eu-dispense-data
   #autoload-resources: true
