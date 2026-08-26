@@ -11,7 +11,6 @@ ValueSet/tiflow-chargeitem-operation-outcome-details-vs
 {% include artifacts-table-generator.html render=valuesets %}
 <div><figcaption><strong>Tabelle:</strong> Value Sets</figcaption></div>
 
-{% comment %}
 ### Terminologien: Code Systems
 
 {% capture codesystems %}
@@ -19,7 +18,6 @@ CodeSystem/tiflow-chargeitem-operation-outcome-details-cs
 {% endcapture %}
 {% include artifacts-table-generator.html render=codesystems %}
 <div><figcaption><strong>Tabelle:</strong> Code Systems</figcaption></div>
-{% endcomment %}
 
 ### Systemverhalten
 
@@ -29,8 +27,6 @@ Das _Capability_ _Statement_ beschreibt die Anforderungen und Fähigkeiten, die 
 
 {% include artifacts-table-generator.html resourceType="CapabilityStatement" %}
 <div><figcaption><strong>Tabelle:</strong> Capability Statements</figcaption></div>
-
-{% comment %}
 
 ### Ressourcenprofile
 
@@ -44,20 +40,10 @@ StructureDefinition/GEM-ERPCHRG-PR-PAR-Patch-ChargeItem-Input
 {% include artifacts-table-generator.html render=profiles %}
 <div><figcaption><strong>Tabelle:</strong> Ressourcenprofile</figcaption></div>
 
-### Datentypen
-
-{% capture datatypes %}
-{% endcapture %}
-{% include artifacts-table-generator.html render=datatypes %}
-<div><figcaption><strong>Tabelle:</strong> Datentypen</figcaption></div>
-{% endcomment %}
-
-{% comment %}
 ### Erweiterungen (Extension) Definitions
 
 {% include artefacts-structuredef-table-generator.html type="Extension"%}
 <div><figcaption><strong>Tabelle:</strong> Extension Definitions</figcaption></div>
-{% endcomment %}
 
 
 ### Beispielinstanzen

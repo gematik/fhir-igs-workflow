@@ -4,3 +4,4 @@
 | example-case-02 | ✓ | ✓ | - |
 | example-case-03 | ✓ | ✓ | - |
 | example-case-04 | ✓ | ✓ | - |
+| example-case-05 | ✓ | ✓ | - |

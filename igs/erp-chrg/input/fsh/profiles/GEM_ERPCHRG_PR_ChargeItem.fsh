@@ -1,6 +1,7 @@
 Profile: GEM_ERPCHRG_PR_ChargeItem
 Parent: ChargeItem
 Id: GEM-ERPCHRG-PR-ChargeItem
+Description: "Abrechnungsinformationen einer Verordnung"
 * insert LegacyMeta(StructureDefinition, GEM_ERPCHRG_PR_ChargeItem)
 
 * extension ^slicing.discriminator.type = #value

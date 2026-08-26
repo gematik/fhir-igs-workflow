@@ -41,6 +41,13 @@ def project_root() -> Path:
     return Path(__file__).resolve().parents[2]
 
 
+def validator_subprocess_env() -> dict[str, str]:
+    """Isolate the validator's package resolution from ~/.fhir/packages."""
+    isolated_home = os.getenv("FHIR_VALIDATOR_HOME") or str(project_root().parents[1] / "input-cache" / "fhir-validator-home")
+    Path(isolated_home).mkdir(parents=True, exist_ok=True)
+    return {**os.environ, "HOME": isolated_home}
+
+
 def load_validator_dependencies() -> list[str]:
     configured = os.getenv("HAPI_VALIDATOR_IGS", "")
     if not configured:
@@ -193,7 +200,8 @@ def run_hapi_transform(
         command,
         capture_output=True,
         text=True,
-        cwd=str(project_directory)
+        cwd=str(project_directory),
+        env=validator_subprocess_env(),
     )
     return result.returncode, result.stdout, result.stderr
 

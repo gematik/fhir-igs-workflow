@@ -3,7 +3,13 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 IG_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/../../.." && pwd)"
 HAPI_VALIDATOR_JAR_PATH="${1:?Usage: run-structuremap-tests.sh <validator-jar>}"
+
+# Isolate package resolution for the pinned validator from the user's shared
+# ~/.fhir/packages cache, whose format may differ between tool versions.
+export FHIR_VALIDATOR_HOME="$ROOT_DIR/input-cache/fhir-validator-home"
+mkdir -p "$FHIR_VALIDATOR_HOME"
 
 # Packages required by HAPI in addition to the SUSHI dependencies.
 # Pin a package by appending its version, e.g. "kbv.ita.erp#1.4.3".
@@ -62,7 +68,7 @@ for dependency in "${HAPI_VALIDATOR_DEPENDENCIES[@]}"; do
 	VALIDATOR_IG_ARGS+=( -ig "$dependency" )
 done
 
-java -jar "$HAPI_VALIDATOR_JAR_PATH" \
+HOME="$FHIR_VALIDATOR_HOME" java -jar "$HAPI_VALIDATOR_JAR_PATH" \
 	"$MAPPING_BUNDLE_SOURCE" \
 	-transform "https://gematik.de/fhir/tiflow-bfarm/StructureMap/ERPTPrescriptionStructureMapCarbonCopy" \
 	-version 4.0.1 \
