@@ -36,15 +36,6 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
      Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept löschen" vom Nutzer eine Bestätigung einholen, dass das ausgewählte E-Rezept gelöscht werden soll und die Möglichkeit geben, das Löschen abzubrechen.
 </requirement>
 
-<!-- A_19221-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A48" title="E-Rezept-FdV: E-Rezept löschen" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Das E-Rezept-FdV MUSS den Anwendungsfall "UC 3.2 - E-Rezept durch Versicherten löschen" aus [gemSysL_eRp] gemäß TAB_FdVERP_008 umsetzen. Tabelle # : TAB_FdVERP_008 - E-Rezept löschen Name E-Rezept löschen Auslöser Aufruf des Anwendungsfalls in der GUI Akteur Versicherter Vorbedingung Der Nutzer hat ein zum Löschen markiert und das Löschen bestätigt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Das ausgewählte E-Rezept ist vom TI-Flow-Fachdienst unwiederbringlich gelöscht. Standardablauf Task-ID und AccessCode des E-Rezepts bestimmen E-Rezept löschen E-Rezept-Token löschen
-</requirement>
-
 <!-- A_19222-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A49" title="E-Rezept-FdV: E-Rezept löschen - Löschrequest" version="0">
     <meta lockversion="false"/>

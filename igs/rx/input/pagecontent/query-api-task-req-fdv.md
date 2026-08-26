@@ -59,15 +59,6 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
      Das E-Rezept-FdV MUSS im Anwendungsfall "E-Rezept markieren" dem Nutzer ermöglichen, ein oder mehrere E-Rezepte auszuwählen.
 </requirement>
 
-<!-- A_27490 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A253" title="E-Rezept-FdV: E-Rezept markieren" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
-        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
-    </actor>
-     Das E-Rezept-FdV MUSS, wenn es den Anwendungsfall umsetzt, den Anwendungsfall "E-Rezept durch den Versicherten markieren" gemäß TAB_FdVERP_029 umsetzen. Tabelle #: TAB_FdVERP_029 - E-Rezept markieren Name E-Rezept markieren Auslöser Aufruf des Anwendungsfalls in der Graphical User Interface (GUI) Akteur Versicherter Vorbedingung Der Nutzer hat eine oder mehrere Markierungen aus- oder abgewählt. Der Nutzer hat sich gegenüber der TI authentisiert. Nachbedingung Die Markierungen sind im TI-Flow-Fachdienst gespeichert. Standardablauf Task-ID bestimmen FHIR Ressource erstellen Daten im TI-Flow-Fachdienst speichern
-</requirement>
-
 <!-- A_27545 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A254" title="E-Rezept-FdV: E-Rezept markieren - FHIR Ressource erstellen" version="0">
     <meta lockversion="false"/>
