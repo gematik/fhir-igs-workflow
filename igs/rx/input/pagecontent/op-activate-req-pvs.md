@@ -66,7 +66,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 </requirement>
 
 <!-- A_27836 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A64" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - Bestätigungen nach <span>§</span> 3a Abs. 2, 5 AMVV" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A64" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 166 - Bestätigungen nach &lt;span&gt;§&lt;/span&gt; 3a Abs. 2, 5 AMVV" version="0">§</span> 3a Abs. 2, 5 AMVV" version="0">
     <meta lockversion="false"/>
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>

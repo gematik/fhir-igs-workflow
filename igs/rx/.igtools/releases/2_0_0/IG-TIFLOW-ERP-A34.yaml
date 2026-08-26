@@ -1,21 +1,20 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL NOT
-content_hash: f1bc49c0a4713a19a29f2e9d91bf9bc31a39f94980737dc6e087aa8c89be8494
+content_hash: c88ab6d918e29f92fbb3ff8ddd232eefc76b99f1ce0179dac572b6b3e81adae2
 created: '2026-06-25T11:43:04.331735'
-date: '2026-06-25T11:43:04.331746'
+date: '2026-08-26T13:45:25.889444'
 key: IG-TIFLOW-ERP-A34
-modified: '2026-06-25T11:43:04.331745'
+modified: '2026-08-26T13:45:25.889444'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produktgutachten
-text: Der TI-Flow-Fachdienst DARF den AccessCode beim Zugriff durch den Versicherten
-  NICHT an das E-Rezept-Frontend des Versicherten herausgeben, wenn der Flowtype des
-  Tasks den Wert für die Workflowsteuerung durch Leistungserbringer enthält (169,
-  209).
+text: Der TI-Flow-Fachdienst DARF NICHT beim Aufruf der HTTP-GET-Operation auf den
+  Endpunkt /Task durch einen Versicherten, im Response für Tasks mit Task.extension:flowType
+  = 169 oder 209 den AccessCode übermitteln.
 title: TI-Flow-Fachdienst - Liste Task abrufen - Flowtype 169 / 209 - Versicherter
   keine Einlöseinformationen
 version: 0

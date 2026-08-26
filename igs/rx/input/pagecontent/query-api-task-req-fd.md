@@ -56,7 +56,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 </requirement>
 
 <!-- A_21360-01 -->
-<requirement conformance="SHALL NOT" key="" title="TI-Flow-Fachdienst - Task abrufen - Flowtype 169/209 - Versicherter keine Einlöseinformationen" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-A306" title="TI-Flow-Fachdienst - Task abrufen - Flowtype 169/209 - Versicherter keine Einlöseinformationen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
