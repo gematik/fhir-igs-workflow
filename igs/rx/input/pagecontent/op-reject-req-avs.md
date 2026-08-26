@@ -6,4 +6,4 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 ### Modulspezifische Anforderungen
 
-<!-- ToDo -->
+Es gibt keine modulspezifischen Anforderungen.
