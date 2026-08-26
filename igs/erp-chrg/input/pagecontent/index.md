@@ -26,7 +26,7 @@ TI-Flow-Fachdienstes und beschreibt die relevanten Use Cases.
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Verwaltung von Abrechnungsinformationen zu Arzneimitteln den Implementation Guide "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte" umsetzen.
+    Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung der Verwaltung von Abrechnungsinformationen zu Arzneimitteln den Implementation Guide "TIFlow - Abrechnungsinformatione" umsetzen.
 </requirement>
 
 <!-- A_22206-01, A_22205-0, A_22204, A_22963, A_22205-01 -->
@@ -41,7 +41,7 @@ TI-Flow-Fachdienstes und beschreibt die relevanten Use Cases.
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "Abrechnungsinformationen zu E-Rezepten für PKV-Versicherte" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus [gemIG_TIFlow_core], die in diesem IG referenziert werden.
+    Der TI-Flow-Fachdienst und dessen Clients MÜSSEN zur Umsetzung des Implementation Guides "TIFlow - Abrechnungsinformationen" alle Anforderungen und FHIR-Artefakte umsetzen, die in diesem IG definiert sind, sowie Anforderungen und Artefakte aus gemIG_TIFlow_core, die in diesem IG referenziert werden.
 </requirement>
 
 ### Wie dieser IG zu lesen ist

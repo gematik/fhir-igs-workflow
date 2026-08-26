@@ -39,6 +39,13 @@ def create_local_validator_ig() -> tempfile.TemporaryDirectory[str]:
     return temp_ig
 
 
+def validator_subprocess_env() -> dict[str, str]:
+    """Isolate the validator's package resolution from ~/.fhir/packages."""
+    isolated_home = os.getenv("FHIR_VALIDATOR_HOME") or str(project_root().parents[1] / "input-cache" / "fhir-validator-home")
+    Path(isolated_home).mkdir(parents=True, exist_ok=True)
+    return {**os.environ, "HOME": isolated_home}
+
+
 def load_ig_dependencies(project_root: Path) -> list[str]:
     """Load IG dependencies from package.json, returning `package#version` entries."""
     package_json = project_root / "package.json"
@@ -147,6 +154,7 @@ def run_validator(cmd: list[str], working_dir: Path) -> subprocess.CompletedProc
         cwd=str(working_dir),
         capture_output=True,
         text=True,
+        env=validator_subprocess_env(),
     )
 
 
