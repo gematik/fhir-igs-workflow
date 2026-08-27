@@ -1,16 +1,7 @@
 <!-- TI-Flow-26_2 BSI_21 -->
-Der TI-Flow-Fachdienst verwaltet Verordnungen (bspw. E-Rezepte) in der Telematikinfrastruktur als ein zentraler Ressourcenserver auf Basis des FHIR-Standards mit einer RESTful API. Die Rezepte werden dabei über eine eindeutige Ressourcen-ID (Rezept-ID) adressiert. Zusätzlich protokolliert der TI-Flow-Fachdienst alle Zugriffe auf ein E-Rezept für den Versicherten und verwaltet die Statusübergänge eines E-Rezepts. Für einen Nachrichtenaustausch zwischen Apotheken und Versichertezur Belieferung von E-Rezepten ist eine Kommunikation über den TI-Flow-Fachdienst möglich.
+Der TI-Flow-Fachdienst verwaltet Verordnungen (bspw. E-Rezepte) in der Telematikinfrastruktur als ein zentraler Ressourcenserver auf Basis des FHIR-Standards mit einer RESTful API. Die Verordnungen werden dabei über eine eindeutige Ressourcen-ID adressiert. Zusätzlich protokolliert der TI-Flow-Fachdienst alle Zugriffe auf eine Verordnung für den Versicherten und verwaltet die Statusübergänge einer Verordnung. Für einen Nachrichtenaustausch zwischen Apotheken und Versicherte zur Belieferung von Verordnungen ist eine Kommunikation über den TI-Flow-Fachdienst möglich.
 
 Der TI-Flow-Fachdienst wird auf einem TI-Flow-Cluster betrieben, das als Healthcare Confidential Computing (HCC) Plattform dient. Diese HCC-Umgebung stellt sichere Ausführungsumgebungen in Form von Confidential Virtual Machines (CVMs) bereit, die das Konzept der vertrauenswürdigen Ausführungsumgebung (VAU) implementieren. Die VAU sichert eine durchgängige Verschlüsselung der Verordnungen und zugehörigen Daten – während des Transports über den ZETA Guard, der verarbeitenden CVMs und der verschlüsselten Persistierung in den Datenbanken der HCC-Infrastruktur – durch eine Kombination kryptografischer Verfahren.
-
-<figure>
-    <div class="gem-ig-img-container" style="--box-width: 700px; margin-bottom: 30px;">
-        <img src="./vau-erp-fd.png" alt="VAU des TI-Flow-Fachdienstes" style="width: 100%;">
-    </div>
-    <figcaption><strong>Abbildung: </strong>Systemüberblick</figcaption>
-</figure>
-
-<br>
 
 ### Systemkontext
 Der TI-Flow-Fachdienst stellt Schnittstellen für die Verwaltung von E-Rezepten und für den Nachrichtenaustausch bereit. Diese werden von Leistungserbringerinstitutionen, Kostenträger und Versicherten genutzt, die über ihre jeweiligen Clientsysteme auf den TI-Flow-Fachdienst zugreifen.
