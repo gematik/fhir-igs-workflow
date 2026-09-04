@@ -2,6 +2,13 @@
 
 Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-schnittstellen-query-api.html)
 
+Der TI-Flow-Fachdienst MUSS für das Modul Arzneimittel folgende Operationen unterstützen:
+|Akteur|Operation|
+|---|---|
+|Versicherter|GET /Consent|
+|Versicherter|POST /Consent|
+|Versicherter|DELETE /Consent|
+
 ### Anforderungen der Schnittstelle aus diesem Modul
 
 #### DELETE
