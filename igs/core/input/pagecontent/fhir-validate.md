@@ -1,5 +1,7 @@
 Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelte FHIR-Ressourcen. Die folgenden Anforderungen beschreiben Mindestprüfungen.
 
+### Allgemeine Prüfungen zur FHIR-Validierung
+
 <!-- A_23384-06 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A273" title="TI-Flow-Fachdienst - Prüfung Gültigkeit FHIR Ressourcen" version="0">
     <meta lockversion="false"/>
@@ -105,6 +107,8 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
     </actor>
      Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Datums- und Zeitangaben ohne Zeitzoneninformation, die entsprechend dem Datum gültige deutsche Zeitzone (CET/CEST) angewendet wird.
 </requirement>
+
+### Prüfung der meta.profile-Definition
 
 <!-- A_27698 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A276" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile" version="0">
