@@ -166,10 +166,34 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
      Der TI-Flow-Fachdienst und die Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung jeder FHIR-Ressource sicherstellen, dass im Element meta.profile genau ein Eintrag enthalten ist, wenn im Profil das Element meta.profile verpflichtend anzugeben ist; bei Abweichung ist die Ressource als fehlerhaft zu behandeln und darf nicht übermittelt werden.
 </requirement>
 
-### Prüfung von Referenzen in Bundles
+### Referenzierungen und fullUrl in FHIR-Bundles
+
+FHIR ermöglicht die Verknüpfung von Ressourcen über Referenzen. Das erfolgt über den Datentyp [Reference](https://hl7.org/fhir/R4/references.html). Referenzen dienen dazu, auf andere Ressourcen innerhalb derselben oder einer anderen FHIR-Instanz zu verweisen.
+
+Im TI-Flow-Kontext werden Referenzen auf FHIR-Ressourcen grundsätzlich mit dem `urn:uuid`-Schema angegeben. Dadurch bleibt die Referenz eindeutig und unabhängig von einer konkreten URL.
+
+Innerhalb eines [FHIR-Bundle](https://hl7.org/fhir/R4/bundle.html#references) dient die `fullUrl` als eindeutige Kennung eines Bundle-Eintrags. Für den Wert von `fullUrl` sind verschiedene Formate möglich, insbesondere `oid`, `urn:uuid` und `http(s)`. 
+
+Im TI-Flow-Kontext wird für Bundle-Einträge das `urn:uuid`-Schema bevorzugt. Die `fullUrl` muss dabei mit der ID der referenzierten Ressource konsistent sein, damit die Referenzierung eindeutig und prüfbar bleibt.
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A469" title="TI-Flow-Fachdienst - FHIR-Ressource erzeugen - fullUrl Format in FHIR-Bundles" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS beim Erzeugen von FHIR-Bundles im `fullUrl`-Element das `urn:uuid`-Schema verwenden.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A470" title="TI-Flow-Fachdienst - FHIR-Ressource erzeugen - Format von Referenzen in FHIR-Ressourcen" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS beim Erzeugen von FHIR-Datensätzen für die Referenzierung von FHIR-Ressourcen das `urn:uuid`-Schema verwenden.
+</requirement>
 
 <!-- A_26229-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A278" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Pruefung Konsistenz Ressource IDs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A278" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Konsistenz Ressource IDs" version="0">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
