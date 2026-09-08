@@ -74,3 +74,5 @@ RuleSet: DateTimeStampPlus1Hr(field)
 RuleSet: PackageMetaProfileExactly(profile)
 * meta.profile[workflowProfile] = "https://gematik.de/fhir/erpchrg/{profile}|2.0" (exactly)
 
+RuleSet: FachdienstVersion(field)
+* {field} = "1.18.0"

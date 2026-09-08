@@ -22,10 +22,10 @@ Für die Verwaltung der Einwilligung zum Speichern der Abrechnungsinformationen 
 	</div>
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleERPCHRGConsentSearchset XML %}
+			{% fragment Bundle/Example-Consent-Bundle XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleERPCHRGConsentSearchset JSON %}
+			{% fragment Bundle/Example-Consent-Bundle JSON %}
 		</div>
 	</div>
 </div>
@@ -41,18 +41,18 @@ Für die Verwaltung der Einwilligung zum Speichern der Abrechnungsinformationen 
 	</div>
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Consent/ChargeItemConsent-Request XML %}
+			{% fragment Consent/Example-GEM-ERPCHRG-Consent XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Consent/ChargeItemConsent-Request JSON %}
+			{% fragment Consent/Example-GEM-ERPCHRG-Consent JSON %}
 		</div>
 	</div>
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Consent/0dcc5d4c-bf24-4c06-b02e-be5bc24587e2 XML %}
+			{% fragment Consent/Example-GEM-ERPCHRG-Consent XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Consent/0dcc5d4c-bf24-4c06-b02e-be5bc24587e2 JSON %}
+			{% fragment Consent/Example-GEM-ERPCHRG-Consent JSON %}
 		</div>
 	</div>
 </div>

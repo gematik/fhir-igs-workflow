@@ -49,17 +49,17 @@ RuleSet: ChargeItemInteraction(expectation)
 * insert CapSupportResourceSearchParamNoDefinition(__offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
 
 RuleSet: CommunicationInteraction(expectation)
-* insert CapSupportResource(Communication, #SHALL)
-* insert CapSupportProfile(GEM_ERPCHRG_PR_Communication_ChargChangeReq, #SHALL)
-* insert CapSupportProfile(GEM_ERPCHRG_PR_Communication_ChargChangeReply, #SHALL)
+* insert CapSupportResource(Communication, {expectation})
+* insert CapSupportProfile(GEM_ERPCHRG_PR_Communication_ChargChangeReq, {expectation})
+* insert CapSupportProfile(GEM_ERPCHRG_PR_Communication_ChargChangeReply, {expectation})
 
-* insert CapResourceInteraction(#search-type, #SHALL)
+* insert CapResourceInteraction(#search-type, {expectation})
 * insert CommunicationSearchTypeInteractionStatusCodes
-* insert CapResourceInteraction(#read, #SHALL)
+* insert CapResourceInteraction(#read, {expectation})
 * insert CommunicationReadInteractionStatusCodes
-* insert CapResourceInteraction(#create, #SHALL)
+* insert CapResourceInteraction(#create, {expectation})
 * insert CommunicationCreateInteractionStatusCodes
-* insert CapResourceInteraction(#delete, #SHALL)
+* insert CapResourceInteraction(#delete, {expectation})
 * insert CommunicationDeleteInteractionStatusCodes
 
 RuleSet: ConsentInteraction(expectation)

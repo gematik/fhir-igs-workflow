@@ -1,7 +1,7 @@
 Die Query API für ChargeItem ermöglicht den Zugriff auf Abrechnungsinformationen (Verordnungsdatensatz, PKV‑Abgabedatensatz, Quittung). Die Abrechnungsinformation wird als ChargeItem mit Referenzen auf die Datensätze abgebildet.
 
 ### Profilierung
-Die Profilierung der Ressource ChargeItem ist hier dokumentiert: https://simplifier.net/erezept-patientenrechnung/gem_erpchrg_pr_chargeitem
+Die Profilierung der Ressource ChargeItem ist hier dokumentiert: [GEM_ERPCHRG_PR_ChargeItem](https://simplifier.net/erezept-patientenrechnung/gem_erpchrg_pr_chargeitem)
 
 ### Nachricht
 Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource ChargeItem wird über die folgenden HTTP-Methoden ermöglicht:
@@ -38,10 +38,10 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 	</div>
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleERPCHRGChargeItemSearchset XML %}
+			{% fragment Bundle/Example-ChargeItem-Bundle XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleERPCHRGChargeItemSearchset JSON %}
+			{% fragment Bundle/Example-ChargeItem-Bundle JSON %}
 		</div>
 	</div>
 </div>
@@ -57,10 +57,10 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 	</div>	
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment ChargeItem/ChargeItem-GET-Completed XML %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment ChargeItem/ChargeItem-GET-Completed JSON %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem JSON %}
 		</div>
 	</div>
 </div>
@@ -76,18 +76,18 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 	</div>
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment ChargeItem/ChargeItem-POST-Binary XML %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-Binary XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment ChargeItem/ChargeItem-POST-Binary JSON %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-Binary JSON %}
 		</div>
 	</div>
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment ChargeItem/ChargeItem-GET-Completed XML %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment ChargeItem/ChargeItem-GET-Completed JSON %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem JSON %}
 		</div>
 	</div>
 </div>
@@ -103,18 +103,18 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 	</div>
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment ChargeItem/ChargeItem-POST-Binary XML %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-Binary XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment ChargeItem/ChargeItem-POST-Binary JSON %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-Binary JSON %}
 		</div>
 	</div>
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment ChargeItem/ChargeItem-GET-Completed XML %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment ChargeItem/ChargeItem-GET-Completed JSON %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem JSON %}
 		</div>
 	</div>
 </div>
@@ -130,18 +130,18 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 	</div>
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ChargeItem-PATCH-Input XML %}
+			{% fragment Parameters/Example-GEM-ERPCHRG-Patch-ChargeItem-Input XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Parameters/ChargeItem-PATCH-Input JSON %}
+			{% fragment Parameters/Example-GEM-ERPCHRG-Patch-ChargeItem-Input JSON %}
 		</div>
 	</div>
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment ChargeItem/ChargeItem-GET-Completed XML %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment ChargeItem/ChargeItem-GET-Completed JSON %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem JSON %}
 		</div>
 	</div>
 </div>

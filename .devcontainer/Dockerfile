@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/devcontainers/base:alpine-3.20
 ENV CLOUD_SDK_VERSION=464.0.0
 ENV FIRELY_TERMINAL_VERSION=3.3.2
 ENV JAVA_VALIDATOR_VERSION=6.3.25
-ENV SUSHI_VERSION=3.16.4
+ENV SUSHI_VERSION=3.20.1
 
 # Google Cloud SDK herunterladen und installieren
 RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \

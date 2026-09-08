@@ -38,10 +38,10 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mit
 	</div>
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleERPCHRGCommunicationSearchset XML %}
+			{% fragment Bundle/Example-Communication-Bundle XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleERPCHRGCommunicationSearchset JSON %}
+			{% fragment Bundle/Example-Communication-Bundle JSON %}
 		</div>
 	</div>
 </div>
@@ -57,16 +57,16 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mit
 	</div>	
 	<div id="Response-Examples">
 		<div data-name="ChargChangeRequest - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/b4cf7f71-3ade-40ab-97a9-929f95af29f2 XML %}
+			{% fragment Communication/Example-Communication-ChargChangeReq XML %}
 		</div>
 		<div data-name="ChargChangeRequest - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Communication/b4cf7f71-3ade-40ab-97a9-929f95af29f2 JSON %}
+			{% fragment Communication/Example-Communication-ChargChangeReq JSON %}
 		</div>
 		<div data-name="ChargChangeReply - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/3bbc2209-9c23-4553-986e-a5c9f69a39fb XML %}
+			{% fragment Communication/Example-Communication-ChargChangeReply XML %}
 		</div>
 		<div data-name="ChargChangeReply - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Communication/3bbc2209-9c23-4553-986e-a5c9f69a39fb JSON %}
+			{% fragment Communication/Example-Communication-ChargChangeReply JSON %}
 		</div>
 	</div>
 </div>
@@ -82,30 +82,18 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mit
 	</div>
 	<div id="Request-Examples">
 		<div data-name="ChargChangeRequest - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/b4cf7f71-3ade-40ab-97a9-929f95af29f2-1 XML %}
+			{% fragment Communication/Example-Communication-ChargChangeReq XML %}
 		</div>
-		<div data-name="ChargChangeRequest - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Communication/b4cf7f71-3ade-40ab-97a9-929f95af29f2-1 JSON %}
-		</div>
-		<div data-name="ChargChangeReply - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/3bbc2209-9c23-4553-986e-a5c9f69a39fb-1 XML %}
-		</div>
-		<div data-name="ChargChangeReply - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Communication/3bbc2209-9c23-4553-986e-a5c9f69a39fb-1 JSON %}
+		<div data-name="ChargChangeRequest - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-Communication-ChargChangeReq JSON %}
 		</div>
 	</div>
 	<div id="Response-Examples">
 		<div data-name="ChargChangeRequest - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/b4cf7f71-3ade-40ab-97a9-929f95af29f2 XML %}
+			{% fragment Communication/Example-Communication-ChargChangeReply XML %}
 		</div>
 		<div data-name="ChargChangeRequest - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Communication/b4cf7f71-3ade-40ab-97a9-929f95af29f2 JSON %}
-		</div>
-		<div data-name="ChargChangeReply - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/3bbc2209-9c23-4553-986e-a5c9f69a39fb XML %}
-		</div>
-		<div data-name="ChargChangeReply - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Communication/3bbc2209-9c23-4553-986e-a5c9f69a39fb JSON %}
+			{% fragment Communication/Example-Communication-ChargChangeReply JSON %}
 		</div>
 	</div>
 </div>

@@ -13,10 +13,3 @@ Title: "Placeholder bundle for receipt"
 Usage: #example
 * id = "200.000.000.000.000.01"
 * type = #collection
-
-Instance: Example-PrescriptionItemBundle
-InstanceOf: Bundle
-Title: "Placeholder bundle for KBV prescription item"
-Usage: #example
-* id = "0428d416-149e-48a4-977c-394887b3d85c"
-* type = #collection
