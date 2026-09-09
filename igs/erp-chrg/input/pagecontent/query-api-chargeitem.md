@@ -90,10 +90,10 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 	</div>
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment ChargeItem/Example-GEM_ERPCHRG-ChargeItem-POST-Response XML %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-POST-Response XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment ChargeItem/Example-GEM_ERPCHRG-ChargeItem-POST-Response JSON %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-POST-Response JSON %}
 		</div>
 	</div>
 </div>
