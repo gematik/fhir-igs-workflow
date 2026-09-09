@@ -1,7 +1,16 @@
-Instance: Example-DAV-PKV-Abgabedatensatz
+Instance: Example-DAV-PKV-AbgabedatenBundle
 InstanceOf: DAV_PKV_PR_ERP_AbgabedatenBundle
-Usage: #example
+Usage: #inline
+* id = $UUID_DAV_PKV_AbgabedatenBundle
 * insert PKV_Abgabedatensatz
+
+Instance: Example-DAV-PKV-AbgabedatenBundle-with-Signature
+InstanceOf: DAV_PKV_PR_ERP_AbgabedatenBundle
+Usage: #inline
+* id = $UUID_DAV_PKV_AbgabedatenBundle_with_Signature
+* insert PKV_Abgabedatensatz
+* signature = Example-GEM-ERP-Signature
+
 
 RuleSet: PKV_Abgabedatensatz
 * identifier.value = "200.000.000.000.000.01"

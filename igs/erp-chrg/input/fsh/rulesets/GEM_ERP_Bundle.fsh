@@ -1,6 +1,15 @@
 Instance: Example-GEM-ERP-Bundle
 InstanceOf: GEM_ERP_PR_Bundle
 Usage: #example
+* insert GEM_ERP_Bundle
+
+Instance: Example-GEM-ERP-Bundle-Inline
+InstanceOf: GEM_ERP_PR_Bundle
+Usage: #inline
+* id = $UUID_GEM_ERP_Bundle
+* insert GEM_ERP_Bundle
+
+RuleSet: GEM_ERP_Bundle
 * identifier.value = "160.000.000.000.000.01"
 * insert DateTimeStamp(timestamp)
 * link.relation = "self"
@@ -11,7 +20,7 @@ Usage: #example
 * entry[SigningDevice].resource = Example-GEM-ERP-Device
 * entry[PrescriptionDigest].fullUrl = $URN_GEM_ERP_Digest
 * entry[PrescriptionDigest].resource = Example-GEM-ERP-Digest
-* signature = GEM-ERP-PR-Signature
+* signature = Example-GEM-ERP-Signature
 
 Instance: Example-GEM-ERP-Composition
 InstanceOf: GEM_ERP_PR_Composition
@@ -44,7 +53,7 @@ Usage: #inline
 * meta.versionId = "1"
 * data = "tJg8c5ZtdhzEEhJ0ZpAsUVFx5dKuYgQFs5oKgthi17M="
 
-Instance: GEM-ERP-PR-Signature
+Instance: Example-GEM-ERP-Signature
 InstanceOf: GEM_ERP_PR_Signature
 Usage: #inline
 * type[AuthorsSignature].system = "urn:iso-astm:E1762-95:2013"

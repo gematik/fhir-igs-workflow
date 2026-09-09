@@ -61,6 +61,9 @@ RuleSet: Meta-With-Versioning
 RuleSet: Date(field)
 * {field} = "2028-10-01"
 
+RuleSet: DatePlus30days(field)
+* {field} = "2028-10-31"
+
 RuleSet: DateTime(field)
 * {field} = "2028-10-01T15:29:00+00:00"
 

@@ -1,13 +1,24 @@
-Instance: Example-KBV-PKV-Verordnungsdatensatz
+Instance: Example-KBV-Bundle-PKV
 InstanceOf: KBV_PR_ERP_Bundle
-Usage: #example
+Usage: #inline
+* id = $UUID_KBV_PR_ERP_Bundle
 * insert PKV_Verordnungsdatensatz
+* signature = Example-GEM-ERP-Signature
+
+Instance: Example-KBV-Bundle-PKV-with-Signature
+InstanceOf: KBV_PR_ERP_Bundle
+Usage: #inline
+* id = $UUID_KBV_PR_ERP_Bundle_with_Signature
+* insert PKV_Verordnungsdatensatz
+* insert PKV_Verordnungsdatensatz_DocumentMeta
+* signature = Example-GEM-ERP-Signature
+
 
 RuleSet: PKV_Verordnungsdatensatz
-* meta.versionId = "1"
 * type = #document
-* identifier.value = "200.000.000.000.000.01"
+* meta.versionId = "1"
 * insert DateTimeStamp(meta.lastUpdated)
+* identifier.value = "200.000.000.000.000.01"
 * insert DateTimeStamp(timestamp)
 * entry[Dokumenteninformation].fullUrl = "http://pvs.praxis-topp-gluecklich.local/fhir/Composition/Example-PKV-Composition"
 * entry[Dokumenteninformation].resource = Example-PKV-Composition
@@ -23,6 +34,11 @@ RuleSet: PKV_Verordnungsdatensatz
 * entry[Einrichtung].resource = Example-PKV-Organization
 * entry[Krankenversicherungsverhaeltnis].fullUrl = "http://pvs.praxis-topp-gluecklich.local/fhir/Coverage/Example-PKV-Coverage"
 * entry[Krankenversicherungsverhaeltnis].resource = Example-PKV-Coverage
+
+// dom-4: only applies to the standalone document, not when the Bundle is contained elsewhere.
+RuleSet: PKV_Verordnungsdatensatz_DocumentMeta
+* meta.versionId = "1"
+* insert DateTimeStamp(meta.lastUpdated)
 
 
 Instance: Example-PKV-Composition
@@ -53,8 +69,9 @@ Usage: #inline
 * extension[Mehrfachverordnung].extension[Kennzeichen].valueBoolean = true
 * extension[Mehrfachverordnung].extension[Nummerierung].valueRatio.numerator.value = 2
 * extension[Mehrfachverordnung].extension[Nummerierung].valueRatio.denominator.value = 4
-* extension[Mehrfachverordnung].extension[Zeitraum].valuePeriod.start = "2023-07-02"
-* extension[Mehrfachverordnung].extension[Zeitraum].valuePeriod.end = "2023-09-30"
+* extension[Mehrfachverordnung].extension[Zeitraum].valuePeriod
+  * insert Date(start)
+  * insert DatePlus30days(end)
 * extension[Mehrfachverordnung].extension[ID].valueIdentifier.system = "urn:ietf:rfc:3986"
 * extension[Mehrfachverordnung].extension[ID].valueIdentifier.value = "urn:uuid:24e2e10d-e962-4d1c-be4f-8760e690a5f0"
 * medicationReference = Reference(Example-PKV-MedicationIngredient)
