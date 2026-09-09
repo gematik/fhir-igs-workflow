@@ -57,16 +57,16 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 	</div>	
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment ChargeItem/Example-GEM-ERP-Bundle-GET-Response-Pharmacy XML %}
+			{% fragment Bundle/Example-GEM-ERP-Bundle-GET-Response-Pharmacy XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment ChargeItem/Example-GEM-ERP-Bundle-GET-Response-Pharmacy JSON %}
+			{% fragment Bundle/Example-GEM-ERP-Bundle-GET-Response-Pharmacy JSON %}
 		</div>
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment ChargeItem/Example-GEM-ERP-Bundle-GET-Response-Insured-Signed XML %}
+		<div data-name="ChargGetResponse application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/Example-GEM-ERP-Bundle-GET-Response-Insured-Signed XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment ChargeItem/Example-GEM-ERP-Bundle-GET-Response-Insured-Signed JSON %}
+		<div data-name="ChargGetResponse application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/Example-GEM-ERP-Bundle-GET-Response-Insured-Signed JSON %}
 		</div>
 	</div>
 </div>
@@ -120,7 +120,7 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-PUT-Response XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-PUT-Response %}
+			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-PUT-Response JSON %}
 		</div>
 	</div>
 </div>
