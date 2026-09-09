@@ -50,6 +50,6 @@ Usage: #inline
 * type[AuthorsSignature].system = "urn:iso-astm:E1762-95:2013"
 * type[AuthorsSignature].code = #1.2.840.10065.1.12.1.1
 * insert DateTimeStamp(when)
-* who = Reference(https://erp.zentral.erp.splitdns.ti-dienste.de/Device/Example-GEM-ERP-Device)
+* who = Reference($URN_GEM_ERP_Device)
 * sigFormat = urn:ietf:bcp:13#application/pkcs7-mime
 * data = "RGllcyBpc3QgZWluIEJlaXNwaWVs"

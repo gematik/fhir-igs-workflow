@@ -64,7 +64,7 @@ Usage: #inline
 * insurance = Reference(Example-PKV-Coverage)
 * note.text = "Dummy-Hinweis für die Apotheke"
 * extension[Dosierungskennzeichen].valueBoolean = false
-* dispenseRequest.quantity = 2 '{Packung}'
+* dispenseRequest.quantity.value = 2
 
 Instance: Example-PKV-MedicationIngredient
 InstanceOf: KBV_PR_ERP_Medication_Ingredient
