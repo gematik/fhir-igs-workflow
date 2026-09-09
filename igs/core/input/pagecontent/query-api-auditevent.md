@@ -9,7 +9,7 @@ Die AuditEvent-Query wird über HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
 - [Server-Anforderungen zur AuditEvent-Query](./query-api-auditevent-req-fd.html): Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der Schnittstelle.
 - [FdV-Anforderungen zur AuditEvent-Query](./query-api-auditevent-req-fdv.html): Anforderungen an das TI-Flow-FdV zur Nutzung der Schnittstelle.
 
-### API Beschreibung
+### API Beschreibung [Resource API]
 
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"
@@ -30,6 +30,22 @@ Die AuditEvent-Query wird über HTTP `GET` auf `/AuditEvent` und `/AuditEvent/{i
     </div>
   </div>
 -->
+</div>
+
+
+### API Beschreibung [Instance API]
+
+Um spezifische Details zu einem einzelnen _AuditEvent_ mittels der RESTful API zu erhalten, wird die _AuditEvent Instance API_ verwendet, indem eine HTTP GET-Anfrage an den Endpunkt <i>/AuditEvent/&lt;id&gt;</i> gestellt wird.
+
+<div class="gematik-apidoc"
+  data-api-type="FHIRResource"
+  data-api-fhir-resource-type="AuditEvent"
+  data-api-fhir-interaction="read">
+  <div id="CapabilityStatement">
+    <pre>
+      {% include CapabilityStatement-ti-flow-fachdienst-server.json %}
+    </pre>
+  </div>
 </div>
 
 
