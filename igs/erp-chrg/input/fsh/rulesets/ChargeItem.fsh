@@ -7,10 +7,9 @@ Usage: #example
 
 RuleSet: ChargeItemComplete
 * insert ChargeItem
-* contained[+] = Example-KBV-Bundle-PKV
 * contained[+] = Example-DAV-PKV-AbgabedatenBundle
 * contained[+] = Example-GEM-ERP-Bundle
-* supportingInformation[prescriptionItemBundle] = Reference(Example-KBV-Bundle-PKV)
+* supportingInformation[prescriptionItemBundle] = Reference($URN_KBV_PR_ERP_Bundle)
 * supportingInformation[dispenseItemBundle] = Reference(Example-DAV-PKV-AbgabedatenBundle)
 * supportingInformation[receiptBundle] = Reference(Example-GEM-ERP-Bundle)
 

@@ -3,6 +3,7 @@ InstanceOf: KBV_PR_ERP_Bundle
 Usage: #inline
 * id = $UUID_KBV_PR_ERP_Bundle
 * insert PKV_Verordnungsdatensatz
+* insert PKV_Verordnungsdatensatz_DocumentMeta
 * signature = Example-GEM-ERP-Signature
 
 Instance: Example-KBV-Bundle-PKV-with-Signature
@@ -16,8 +17,6 @@ Usage: #inline
 
 RuleSet: PKV_Verordnungsdatensatz
 * type = #document
-* meta.versionId = "1"
-* insert DateTimeStamp(meta.lastUpdated)
 * identifier.value = "200.000.000.000.000.01"
 * insert DateTimeStamp(timestamp)
 * entry[Dokumenteninformation].fullUrl = "http://pvs.praxis-topp-gluecklich.local/fhir/Composition/Example-PKV-Composition"

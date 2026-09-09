@@ -17,6 +17,6 @@ Instance: Example-GEM-ERPCHRG-ChargeItem-Signed
 InstanceOf: GEM_ERPCHRG_PR_ChargeItem
 Usage: #inline
 * insert ChargeItemWithAccessCode
-* supportingInformation[prescriptionItemBundle] = Reference(Example-KBV-Bundle-PKV-with-Signature)
+* supportingInformation[prescriptionItemBundle] = Reference($URN_KBV_PR_ERP_Bundle_with_Signature)
 * supportingInformation[dispenseItemBundle] = Reference(Example-DAV-PKV-AbgabedatenBundle-with-Signature)
 * supportingInformation[receiptBundle] = Reference(Example-GEM-ERP-Bundle-Inline)
