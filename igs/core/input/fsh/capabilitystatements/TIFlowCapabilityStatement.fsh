@@ -18,63 +18,17 @@ Usage: #definition
 
 * extension[baseUrl].valueString = $erp-base-url
 
-//Header
+// Header
 * insert Content-Type(true)
 * insert Authorization(true)
 
-//Ressourcen
+// Ressourcen
 * insert DeviceInteraction(#SHALL)
 * insert AuditEventInteraction(#SHALL)
 
-// Move to ChargeItem
-// RuleSet: ChargeItemInteraction(expectation)
-// * insert CapSupportResource(ChargeItem, {expectation})
+// // System-level Operations
+// * insert CapSupportSystemOperation(validate, TIFlowCOREOPValidate, #MAY, "Diese Operation validiert eine FHIR-Ressource gegen eine konfigurierbare FHIR-Konfiguration.")
 
-// * insert CapResourceInteraction(#search-type, #SHALL)
-// * insert ChargeItemSearchTypeInteractionStatusCodes
-// * insert CapResourceInteraction(#read, #SHALL)
-// * insert ChargeItemReadInteractionStatusCodes
-// * insert CapResourceInteraction(#create, #SHALL)
-// * insert ChargeItemCreateInteractionStatusCodes
-// * insert CapResourceInteraction(#update, #SHALL)
-// * insert ChargeItemUpdateInteractionStatusCodes
-// * insert CapResourceInteraction(#patch, #SHALL)
-// * insert ChargeItemPatchInteractionStatusCodes
-// * insert CapResourceInteraction(#delete, #SHALL)
-// * insert ChargeItemDeleteInteractionStatusCodes
-
-// * insert CapSupportResourceSearchParam(entered-date, http://hl7.org/fhir/SearchParameter/ChargeItem-entered-date, #date, {expectation}, "ChargeItem.enteredDate - Unterstützt die Suche nach dem Eingangsdatum; default sort if _sort is not provided")
-// * insert CapSupportResourceSearchParam(_lastUpdated, http://hl7.org/fhir/SearchParameter/Resource-lastUpdated, #date, {expectation}, "ChargeItem.meta.lastUpdated - Unterstützt die Suche nach dem zuletzt aktualisierten Datum")
-// * insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Unterstützt das Sortieren nach unterstützten ChargeItem-Suchkriterien")
-// * insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50")
-// * insert CapSupportResourceSearchParamNoDefinition(_offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
-
-// Abrechnung: Move to chrg und erp-eu
-// RuleSet: ConsentInteraction(expectation)
-// * insert CapSupportResource(Consent, {expectation})
-
-// * insert CapResourceInteraction(#search-type, #SHALL)
-// * insert ConsentSearchTypeInteractionStatusCodes
-// * insert CapResourceInteraction(#create, #SHALL)
-// * insert ConsentCreateInteractionStatusCodes
-// * insert CapResourceInteraction(#delete, #SHALL)
-// * insert ConsentDeleteInteractionStatusCodes
-
-// * insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")
-
-// RuleSet: MedicationDispenseInteraction(expectation)
-// * insert CapSupportResource(MedicationDispense, #SHALL)
-
-// * insert CapResourceInteraction(#search-type, #SHALL)
-// * insert MedicationDispenseSearchTypeInteractionStatusCodes
-
-// * insert CapSupportResourceSearchParam(whenhandedover, http://hl7.org/fhir/SearchParameter/MedicationDispense-whenhandedover, #date, {expectation}, "MedicationDispense.whenHandedOver - Unterstützt die Suche nach dem Abgabedatum")
-// * insert CapSupportResourceSearchParam(whenprepared, http://hl7.org/fhir/SearchParameter/MedicationDispense-whenprepared, #date, {expectation}, "MedicationDispense.whenPrepared - Unterstützt die Suche nach dem Herstellungsdatum")
-// * insert CapSupportResourceSearchParam(performer, http://hl7.org/fhir/SearchParameter/MedicationDispense-performer, #string, {expectation}, "MedicationDispense.performer.actor.identifier.value - Unterstützt die Suche einer MedicationDispense zu einer Abgebenden LEI.")
-// * insert CapSupportResourceSearchParam(identifier, http://hl7.org/fhir/SearchParameter/MedicationDispense-identifier, #token, {expectation}, "MedicationDispense.identifier - Unterstützt die Suche nach einer MedicationDispense zu einem E-Rezept.")
-// * insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Unterstützt das Sortieren nach unterstützten MedicationDispense-Suchkriterien")
-// * insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50")
-// * insert CapSupportResourceSearchParamNoDefinition(_offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
 
 RuleSet: DeviceInteraction(expectation)
 * insert CapSupportResource(Device, {expectation})
@@ -90,6 +44,7 @@ RuleSet: AuditEventInteraction(expectation)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert AuditEventSearchTypeInteractionStatusCodes
+
 * insert CapResourceInteraction(#read, #SHALL)
 * insert AuditEventReadInteractionStatusCodes
 
@@ -98,5 +53,3 @@ RuleSet: AuditEventInteraction(expectation)
 * insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Unterstützt das Sortieren nach unterstützten AuditEvent-Suchkriterien")
 * insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50")
 * insert CapSupportResourceSearchParamNoDefinition(_offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
-
-

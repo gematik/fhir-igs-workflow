@@ -7,7 +7,7 @@ RuleSet: GlobalQueryErrorCodes
 // Query-API Interactions
 RuleSet: ReadInteractionStatusCodes
 * insert GlobalQueryErrorCodes
-* rest.resource[=].interaction[=] insert Successful
+// * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
@@ -40,7 +40,7 @@ RuleSet: CreateInteractionStatusCodes
 
 RuleSet: SearchTypeInteractionStatusCodes
 * insert GlobalQueryErrorCodes
-* rest.resource[=].interaction[=] insert Successful
+* rest.resource[=].interaction[=] insert SuccessfulWithBundle
 * rest.resource[=].interaction[=] insert UnknownSearchParameter
 * rest.resource[=].interaction[=] insert InvalidQueryParameters
 * rest.resource[=].interaction[=] insert UnknownResourceType
@@ -98,6 +98,11 @@ RuleSet: AuditEventSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
 
 RuleSet: AuditEventReadInteractionStatusCodes
+* rest.resource[=].interaction[=]
+  * extension[responseInfo][+]
+    * extension[statusCode].valueString = "200"
+    * extension[description].valueString = "Successful operation"
+    * extension[responseType].valueString = "AuditEvent"
 * insert ReadInteractionStatusCodes
 
 RuleSet: MedicationDispenseSearchTypeInteractionStatusCodes
