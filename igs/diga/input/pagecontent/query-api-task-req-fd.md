@@ -4,18 +4,6 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-schnittstellen-query-api.html)
 
-
-<req>
-wenn popp dann 405-Method not allowed
-</req>
-<req>
-wenn patch dann 405-Method not allowed
-</req>
-frage an KI was besser ist
-
-kein popp
-kein patch task
-
 ### Modulspezifische Anforderungen
 
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-DIGA-A132" title="TI-Flow-Fachdienst - Flowtype 162 - kein Liste Task abrufen" version="0">
