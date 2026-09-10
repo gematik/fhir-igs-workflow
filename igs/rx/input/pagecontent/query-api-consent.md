@@ -4,11 +4,11 @@ Diese Seite beschreibt den Einstieg in die Consent-Query-Schnittstelle.
 
 Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource _Consent_ wird über die folgenden HTTP-Methoden ermöglicht:
 
-|HTTP-Methode|Ergebnis der Anfrage|
-|---|---|
-|GET|Einwilligungen einsehen|
-|POST|Einwilligung erteilen|
-|DELETE|Einwilligung widerrufen|
+|Akteur|HTTP-Methode|Ergebnis der Anfrage|
+|---|---|---|
+|Versicherter|GET|Einwilligungen einsehen|
+|Versicherter|POST|Einwilligung erteilen|
+|Versicherter|DELETE|Einwilligung widerrufen|
 
 ### Anforderungen an die Schnittstelle
 

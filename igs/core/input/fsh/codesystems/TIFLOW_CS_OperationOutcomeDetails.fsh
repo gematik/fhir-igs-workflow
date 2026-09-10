@@ -136,3 +136,6 @@ Description: "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details a
 * #TIFLOW_BLOCKED_FEATURE "Blocked Feature" "The functionality for a feature is blocked in the TI-Flow-Fachdienst."
   * ^designation.language = #de-DE
   * ^designation.value = "Gesperrtes Feature"
+* #TIFLOW_NOT_SUPPORTED "TODO: short" "TODO: description"
+  * ^designation.language = #de-DE
+  * ^designation.value = "TODO: german"
