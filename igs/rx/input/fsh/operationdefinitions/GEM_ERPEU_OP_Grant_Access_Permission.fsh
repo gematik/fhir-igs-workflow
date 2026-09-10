@@ -1,8 +1,9 @@
 Instance: GrantEUAccessPermission
-InstanceOf: OperationDefinition
+InstanceOf: TIOperationDefinition
 Usage: #definition
 * insert Operation(GrantEUAccessPermission)
 * description = "This operation receives the access code and the country that the patient wants to grant access to. The operation validates the country and creates registeres the Access Code."
+* extension[method][+].valueCode = #POST
 * code = #grant-eu-access-permission
 * system = true
 * type = false

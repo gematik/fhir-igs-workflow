@@ -17,7 +17,7 @@ Description: "CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Wor
 * rest.mode = #server
 * extension[baseUrl].valueString = $erp-base-url
 
-* insert ImportCapabilityStatment(TIFlowFachdienstServer, #SHALL)
+* insert ImportCapabilityStatment(TIFlowBasicServer, #SHALL)
 
 * insert TaskInteraction(#SHALL)
 * insert CommunicationInteraction(#SHALL)
