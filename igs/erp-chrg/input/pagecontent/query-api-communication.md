@@ -56,17 +56,11 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mit
 		</pre>
 	</div>	
 	<div id="Response-Examples">
-		<div data-name="ChargChangeRequest - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/Example-Communication-ChargChangeReq XML %}
+		<div data-name="Nachrichtenliste - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-Bundle-Communication-ChargChangeReq-GET-Response XML %}
 		</div>
-		<div data-name="ChargChangeRequest - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Communication/Example-Communication-ChargChangeReq JSON %}
-		</div>
-		<div data-name="ChargChangeReply - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/Example-Communication-ChargChangeReply XML %}
-		</div>
-		<div data-name="ChargChangeReply - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Communication/Example-Communication-ChargChangeReply JSON %}
+		<div data-name="Nachrichtenliste - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Communication/Example-Bundle-Communication-ChargChangeReq-GET-Response JSON %}
 		</div>
 	</div>
 </div>
@@ -81,19 +75,31 @@ Anfragen an die <i>Communication</i>-Ressource können über die RESTful API mit
 		</pre>
 	</div>
 	<div id="Request-Examples">
-		<div data-name="ChargChangeRequest - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/Example-Communication-ChargChangeReq XML %}
+		<div data-name="Fachdienst an einen Versicherten - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-Communication-ChargChangeReply-POST-Request XML %}
 		</div>
-		<div data-name="ChargChangeRequest - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/Example-Communication-ChargChangeReq JSON %}
+		<div data-name="Fachdienst an einen Versicherten - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-Communication-ChargChangeReply-POST-Request JSON %}
+		</div>
+		<div data-name="ChargeItem zuweisen - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-Example-Communication-ChargChangeReq-Assign-POST-Request XML %}
+		</div>
+		<div data-name="ChargeItem zuweisen - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-Communication-ChargChangeReq-Assign-POST-Request JSON %}
 		</div>
 	</div>
 	<div id="Response-Examples">
-		<div data-name="ChargChangeRequest - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/Example-Communication-ChargChangeReply XML %}
+		<div data-name="Fachdienst an einen Versicherten - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-Communication-ChargChangeReply-POST-Response XML %}
 		</div>
-		<div data-name="ChargChangeRequest - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Communication/Example-Communication-ChargChangeReply JSON %}
+		<div data-name="Fachdienst an einen Versicherten - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-Communication-ChargChangeReply-POST-Response JSON %}
+		</div>
+		<div data-name="ChargeItem zuweisen - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-Communication-ChargChangeReq-POST-Assign-Response XML %}
+		</div>
+		<div data-name="ChargeItem zuweisen - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Communication/Example-Communication-ChargChangeReq-POST-Assign-Response JSON %}
 		</div>
 	</div>
 </div>
