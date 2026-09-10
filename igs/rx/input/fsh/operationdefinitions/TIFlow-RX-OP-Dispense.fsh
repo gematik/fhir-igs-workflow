@@ -1,9 +1,10 @@
 Instance: TIFlowRXOPDispense
-InstanceOf: OperationDefinition
+InstanceOf: TIOperationDefinition
 Usage: #definition
 Title: "E-Rezept vorläufig abgeben"
 Description: "Die Operation $dispense ermöglicht es der Apotheke, eine Ausgabe für ein Medikament durchzuführen, ohne den Status der Aufgabe zu ändern. Diese Aktion erlaubt es einem Frontend anzuzeigen, dass ein Medikament ausgegeben wurde, bevor es von der Apotheke abgeschlossen wird."
 * insert OperationResource(Task, true, false, false, true)
+* extension[method][+].valueCode = #POST
 * code = #dispense
 * id = "tiflow-rx-dispense-op"
 * name = "TIFlowRXOPDispense"
