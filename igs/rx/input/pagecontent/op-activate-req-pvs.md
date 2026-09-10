@@ -26,15 +26,6 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 als Identifier des Patienten in Patient.identifer.value die KVNR des Versicherten verwenden.
 </requirement>
 
-<!-- A_22542-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A60" title="PS verordnende LEI: E-Rezept erstellen - Flowtype 200/209 - Versicherungstyp PKV" version="0">
-    <meta lockversion="false"/>
-    <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
-        <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
-    </actor>
-    Das PS der verordnenden LEI MUSS im Verordnungsdatensatz für ein E-Rezept des Flowtype 200 oder 209 für Coverage.type.coding.code den Wert "PKV" verwenden.
-</requirement>
-
 ### Anforderungen für Mehrfachverordnung
 <!-- A_22636 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A61" title="PS verordnende LEI: E-Rezept erstellen - Mehrfachverordnung - Beginn Einlösefrist" version="0">
