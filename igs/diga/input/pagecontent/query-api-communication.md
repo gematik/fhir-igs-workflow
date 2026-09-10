@@ -7,7 +7,7 @@ Communication wird für die Kommunikation zwischen Versicherten und Kostenträge
 
 Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über die folgenden HTTP-Methoden ermöglicht:
 
-|Aktuer|HTTP-Methode|Ergebnis der Anfrage|
+|Akteur|HTTP-Methode|Ergebnis der Anfrage|
 |---|---|---|
 |Versicherter, Kostenträger|GET|Nachrichten abrufen|
 |Versicherter, Kostenträger|POST|Nachricht einstellen|

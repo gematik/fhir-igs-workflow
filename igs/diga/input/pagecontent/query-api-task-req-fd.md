@@ -9,7 +9,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-DIGA-A132" title="TI-Flow-Fachdienst - Flowtype 162 - kein Liste Task abrufen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst DARF die Schnittstelle `GET /Task` für das Anwendungsmodul DiGA mit dem HTTP-Header `X-PoPP-Token` NICHT unterstützen und bei Aufruf mit dem Fehler
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
@@ -40,7 +40,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 <requirement conformance="SHALL NOT" key="IG-TIFLOW-DIGA-A133" title="TI-Flow-Fachdienst - Flowtype 162 - kein Task aktualisieren" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
      Der TI-Flow-Fachdienst DARF die Schnittstelle `PATCH /Task` für das Anwendungsmodul DiGA NICHT unterstützen und bei Aufruf mit dem Fehler
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
