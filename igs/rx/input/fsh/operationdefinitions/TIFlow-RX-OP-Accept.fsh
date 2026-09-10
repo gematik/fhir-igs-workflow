@@ -1,9 +1,10 @@
 Instance: TIFlowRXOPAccept
-InstanceOf: OperationDefinition
+InstanceOf: TIOperationDefinition
 Usage: #definition
 Title: "E-Rezept abrufen"
 Description: "Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. Der Status der referenzierten Aufgabe ändert sich in 'in-progress'."
 * insert OperationResource(Task, true, false, false, true)
+* extension[method][+].valueCode = #POST
 * code = #accept
 * id = "tiflow-rx-accept-op"
 * name = "TIFlowRXOPAccept"

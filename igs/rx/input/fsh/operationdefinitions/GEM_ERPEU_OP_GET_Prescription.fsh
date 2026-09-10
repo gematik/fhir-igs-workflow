@@ -1,8 +1,9 @@
 Instance: GETPrescriptionEU
-InstanceOf: OperationDefinition
+InstanceOf: TIOperationDefinition
 Usage: #definition
 * insert Operation(GETPrescriptionEU)
 * description = "The Operation gets Presciption Information from the ERP System for usage in the e-prescription workflow for EU countries"
+* extension[method][+].valueCode = #POST
 * code = #get-eu-prescriptions
 * affectsState = false
 * system = true

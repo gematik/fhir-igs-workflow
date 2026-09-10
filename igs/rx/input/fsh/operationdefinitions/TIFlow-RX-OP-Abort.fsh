@@ -1,9 +1,10 @@
 Instance: TIFlowRXOPAbort
-InstanceOf: OperationDefinition
+InstanceOf: TIOperationDefinition
 Usage: #definition
 Title: "E-Rezept abbrechen"
 Description: "Diese Operation bricht den Workflow eines E-Rezepts ab und löscht alle Daten, die mit dieser Aufgabe zusammenhängen."
 * insert OperationResource(Task, true, false, false, true)
+* extension[method][+].valueCode = #POST
 * code = #abort
 * id = "tiflow-rx-abort-op"
 * name = "TIFlowRXOPAbort"

@@ -1,17 +1,18 @@
 merger:
   resource:
-    - CapabilityStatement/erp-fachdienst-server
+    - CapabilityStatement/ti-flow-fachdienst-server-rx
 
 openapi:
-  path-output: input-cache
+  path-output: output
   with-metadata: true
   with-format-parameter: true
   with-accept-header: true
+  with-pagination: false
   capability-statement:
-    - input: CapabilityStatement/erp-fachdienst-server
-      output: erp-fachdienst-server.openapi.json
+    - input: CapabilityStatement/ti-flow-fachdienst-server-rx
+      output: ti-flow-fachdienst-server-rx.openapi.json
       #additional-openapi: input/openapi/render.yaml
-    - input: CapabilityStatement/erp-fachdienst-server
-      output: erp-fachdienst-server.openapi.yaml
+    - input: CapabilityStatement/ti-flow-fachdienst-server-rx
+      output: ti-flow-fachdienst-server-rx.openapi.yaml
       #additional-openapi: input/openapi/render.yaml
    

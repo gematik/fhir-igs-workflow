@@ -18,9 +18,11 @@ Usage: #definition
 
 * extension[baseUrl].valueString = $erp-base-url
 
-// Header
-* insert Content-Type(true)
-* insert Authorization(true)
+* insert ImportCapabilityStatment(TIFlowBasicServer, #SHALL)
+
+// // Header
+// * insert Content-Type(true)
+// * insert Authorization(true)
 
 // Ressourcen
 * insert DeviceInteraction(#SHALL)
