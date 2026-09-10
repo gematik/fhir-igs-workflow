@@ -1,5 +1,5 @@
 RuleSet: ImportCapabilityStatment (capabilityStatement, expectation)
-* imports[+] = capabilityStatement
+* imports[+] = {capabilityStatement}
 * imports[=].extension[+].url = $capabilitystatement-expectation
 * imports[=].extension[=].valueCode = {expectation}
 

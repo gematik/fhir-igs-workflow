@@ -61,6 +61,9 @@ RuleSet: Meta-With-Versioning
 RuleSet: Date(field)
 * {field} = "2028-10-01"
 
+RuleSet: DatePlus30days(field)
+* {field} = "2028-10-31"
+
 RuleSet: DateTime(field)
 * {field} = "2028-10-01T15:29:00+00:00"
 
@@ -74,3 +77,5 @@ RuleSet: DateTimeStampPlus1Hr(field)
 RuleSet: PackageMetaProfileExactly(profile)
 * meta.profile[workflowProfile] = "https://gematik.de/fhir/erpchrg/{profile}|2.0" (exactly)
 
+RuleSet: FachdienstVersion(field)
+* {field} = "1.18.0"
