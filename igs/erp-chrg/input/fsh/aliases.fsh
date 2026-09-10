@@ -5,6 +5,9 @@ Alias: $identifier-iknr = http://fhir.de/sid/arge-ik/iknr
 Alias: $tiflow-core-oo-cs = https://gematik.de/fhir/tiflow/core/CodeSystem/tiflow-operation-outcome-details-cs
 Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes
 Alias: $hl7-oo = http://terminology.hl7.org/CodeSystem/operation-outcome
+Alias: $v3-ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
+Alias: $consentscope = http://terminology.hl7.org/CodeSystem/consentscope
+Alias: $GEM_ERPCHRG_CS_ConsentType = https://gematik.de/fhir/erpchrg/CodeSystem/GEM_ERPCHRG_CS_ConsentType
 
 // Abgabedaten
 Alias: $DAV-CS-ERP-CompositionTypes = http://fhir.abda.de/eRezeptAbgabedaten/CodeSystem/DAV-CS-ERP-CompositionTypes

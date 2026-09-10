@@ -19,3 +19,16 @@ Usage: #example
 * insert ApoTelematikID(sender.identifier)
 * insert DateTimeStamp(sent)
 * payload.contentString = "Erledigt."
+
+Instance: Example-Communication-Bundle
+InstanceOf: Bundle
+Usage: #example
+Title: "Communication searchset response for ERP-CHRG"
+Description: "Example response for GET /Communication"
+* type = #searchset
+* total = 1
+* link[+].relation = "self"
+* link[=].url = "https://erp-ref.example.org/Communication?received=NULL"
+* entry[+].fullUrl = "https://erp-ref.example.org/Communication/Example-Communication-ChargChangeReq"
+* entry[=].resource = Example-Communication-ChargChangeReq
+* entry[=].search.mode = #match
