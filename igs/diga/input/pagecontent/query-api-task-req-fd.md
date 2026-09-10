@@ -4,20 +4,78 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-schnittstellen-query-api.html)
 
-Der TI-Flow-Fachdienst MUSS für das Modul DIGA folgende Operationen unterstützen:
-|Akteur|Operation|
-|---|---|
-|Versicherter|GET /Task|
-|Versicherter|GET /Task/&#60;id&#62;|
-|Kostenträger|GET /Task/&#60;id&#62;?ac=|
-|Kostenträger|GET /Task/&#60;id&#62;?secret=|
 
-Der TI-Flow-Fachdienst DARF für das Modul DiGA die Operation nicht unterstützen:
-|Operation|
-|---|
-|GET /Task (PoPP-Token)|
-|PATCH /Task/&#60;id&#62;|
+<req>
+wenn popp dann 405-Method not allowed
+</req>
+<req>
+wenn patch dann 405-Method not allowed
+</req>
+frage an KI was besser ist
+
+kein popp
+kein patch task
 
 ### Modulspezifische Anforderungen
 
-Es gibt keine modulspezifischen Anforderungen.
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-DIGA-A132" title="TI-Flow-Fachdienst - Flowtype 162 - kein Liste Task abrufen" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst DARF die Schnittstelle `GET /Task` für das Anwendungsmodul DiGA mit dem HTTP-Header `X-PoPP-Token` NICHT unterstützen und bei Aufruf mit dem Fehler
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>501 - Not Implemented</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_NOT_SUPPORTED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>This API is not supported.</td>
+        </tr>
+      </table>
+     abbrechen.
+</requirement>
+
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-DIGA-A133" title="TI-Flow-Fachdienst - Flowtype 162 - kein Task aktualisieren" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst DARF die Schnittstelle `PATCH /Task` für das Anwendungsmodul DiGA NICHT unterstützen und bei Aufruf mit dem Fehler
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>501 - Not Implemented</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_NOT_SUPPORTED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>This API is not supported.</td>
+        </tr>
+      </table>
+     abbrechen.
+</requirement>

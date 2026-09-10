@@ -150,6 +150,10 @@ Usage: #definition
 * group[=].element[44].code = #TIFLOW_BLOCKED_FLOWTYPE
 * group[=].element[44].target[0].code = #79270
 * group[=].element[44].target[0].equivalence = #equivalent
+* group[=].element[45].code = #TIFLOW_NOT_SUPPORTED
+* group[=].element[45].target[0].code = #79276
+* group[=].element[45].target[0].equivalence = #equivalent
+
 
 
 
