@@ -44,12 +44,12 @@ Das _Capability_ _Statement_ beschreibt die Anforderungen und Fähigkeiten, die 
 {% include artifacts-table-generator.html resourceType="CapabilityStatement" %}
 <div><figcaption><strong>Tabelle:</strong> Capability Statements</figcaption></div>
 
-{% comment %}
+
 #### Operation Definitions
 
 {% include artifacts-table-generator.html resourceType="OperationDefinition" %}
 <div><figcaption><strong>Tabelle:</strong> Operation Definitions</figcaption></div>
-{% endcomment %}
+
 
 {%comment%}
 #### Suchparameter

@@ -39,5 +39,7 @@ Auch Schematron-Dateien sind zum Herunterladen verfügbar:
 
 Die bereitgestellte OpenAPI-Definition dient **ausschließlich** als Hilfestellung bei der Implementierung. Sie enthält nicht alle möglichen Fehlercodes oder Rückgabewerte und kann daher nicht als normativ betrachtet werden. Für eine vollständige und korrekte Implementierung sind die offiziellen Spezifikationen und begleitenden Dokumentationen maßgeblich.
 
-- [OpenAPI-JSON des Core TI-Flow-Fachdienstes]
-- [OpenAPI-YAML des Core TI-Flow-Fachdienstes]
+- [OpenAPI-JSON des TI-Flow-Fachdienstes]
+- [OpenAPI-YAML des TI-Flow-Fachdienstes]
+- [OpenAPI-JSON für die Client TIFlow-Validierung]
+- [OpenAPI-YAML für die Client TIFlow-Validierung]
