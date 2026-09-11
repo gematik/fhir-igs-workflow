@@ -168,160 +168,10 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 
 ### Referenzierungen und fullUrl in FHIR-Bundles
 
-FHIR ermöglicht die Verknüpfung von Ressourcen über Referenzen. Das erfolgt über den Datentyp [Reference](https://hl7.org/fhir/R4/references.html). Referenzen dienen dazu, auf andere Ressourcen innerhalb derselben oder einer anderen FHIR-Instanz zu verweisen.
-
-Im TI-Flow-Kontext werden Referenzen auf FHIR-Ressourcen grundsätzlich mit dem `urn:uuid`-Schema angegeben. Dadurch bleibt die Referenz eindeutig und unabhängig von einer konkreten URL.
-
-Innerhalb eines [FHIR-Bundle](https://hl7.org/fhir/R4/bundle.html#references) dient die `fullUrl` als eindeutige Kennung eines Bundle-Eintrags. Für den Wert von `fullUrl` sind verschiedene Formate möglich, insbesondere `oid`, `urn:uuid` und `http(s)`. 
-
-Im TI-Flow-Kontext wird für Bundle-Einträge das `urn:uuid`-Schema bevorzugt. Die `fullUrl` muss dabei mit der ID der referenzierten Ressource konsistent sein, damit die Referenzierung eindeutig und prüfbar bleibt.
-
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A469" title="TI-Flow-Fachdienst - FHIR-Ressource erzeugen - fullUrl Format in FHIR-Bundles" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS beim Erzeugen von FHIR-Bundles im `fullUrl`-Element das `urn:uuid`-Schema verwenden.
-</requirement>
-
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A470" title="TI-Flow-Fachdienst - FHIR-Ressource erzeugen - Format von Referenzen in FHIR-Ressourcen" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS beim Erzeugen von FHIR-Datensätzen für die Referenzierung von FHIR-Ressourcen das `urn:uuid`-Schema verwenden.
-</requirement>
-
-<!-- A_26229-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A278" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Konsistenz Ressource IDs" version="0">
-	<meta lockversion="false"/>
-	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-  	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Abweichung die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>400 - Bad Request</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>MSG_RESOURCE_ID_MISMATCH</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>Die ID einer Ressource und die ID der zugehörigen fullUrl stimmen nicht überein.</td>
-        </tr>
-    </table> 
-    abbrechen.
-</requirement>
-
-<!-- A_26233-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A279" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Format fullUrl" version="0">
-	<meta lockversion="false"/>
-	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-  	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Abweichung die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>400 - Bad Request</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>TIFLOW_RESOURCE_FULLURL_INVALID</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>Format der fullUrl ist ungültig.</td>
-        </tr>
-    </table> 
-    abbrechen.
-</requirement>
-
-<!-- A_27648 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A280" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id" version="0">
-	<meta lockversion="false"/>
-	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-  	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Abweichung die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>400 - Bad Request</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>MSG_RESOURCE_ID_MISSING</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>Die ID einer Ressource im Bundle ist nicht vorhanden.</td>
-        </tr>
-    </table> 
-    abbrechen.
-</requirement>
-
-<!-- A_27649 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A281" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen" version="0">
-	<meta lockversion="false"/>
-	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-    	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-  	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Abweichung die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>400 - Bad Request</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>MSG_RESOURCE_ID_FAIL</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>Referenz einer Ressource konnte nicht aufgelöst werden.</td>
-        </tr>
-    </table> 
-    abbrechen.
-</requirement>
+Vorgaben für die Validierung von FHIR-Objekten sind im IG [TI-Common Validierung] beschrieben.
 
 <!-- A_26237-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A282" title="FHIR-Ressourcen - Ressource-ID in fullUrl" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A471" title="FHIR-Ressourcen - Ressource-ID in fullUrl" version="0">
     <meta lockversion="false"/>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -335,17 +185,15 @@ Im TI-Flow-Kontext wird für Bundle-Einträge das `urn:uuid`-Schema bevorzugt. D
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource die ID der fullURL (Bundle.entry.fullurl) der Ressource auf die ID der Ressource (Bundle.entry.resource.id) setzen, sofern das http(s)-Schema verwendet wird.
+     Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource die ID der fullURL (Bundle.entry.fullurl) der Ressource auf die ID der Ressource (Bundle.entry.resource.id) setzen, sofern das http(s)-Schema verwendet wird.
 </requirement>
 
+
 <!-- A_26238-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A283" title="FHIR-Ressourcen - Format fullUrl" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A472" title="FHIR-Ressourcen - Format fullUrl" version="0">
     <meta lockversion="false"/>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -359,17 +207,14 @@ Im TI-Flow-Kontext wird für Bundle-Einträge das `urn:uuid`-Schema bevorzugt. D
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource sicherstellen, dass die fullURL (Bundle.entry.fullUrl) entweder im [Format http-Schema] oder im [Format urn:uuid-Schema] vorliegt.
+     Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource sicherstellen, dass die fullURL (Bundle.entry.fullUrl) entweder im [Format http-Schema] oder im [Format urn:uuid-Schema] vorliegt.
 </requirement>
 
 <!-- A_22216-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A284" title="FHIR-Ressourcen Versionsangabe" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A473" title="FHIR-Ressourcen Versionsangabe" version="0">
     <meta lockversion="false"/>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -393,16 +238,15 @@ Im TI-Flow-Kontext wird für Bundle-Einträge das `urn:uuid`-Schema bevorzugt. D
 </requirement>
 <!-- TI-Flow-26_2 BSI_09 -->
 
-
 ### Validierung von Extensions
 
 <!-- A_22927-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A285" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A474" title="FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions" version="0">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
   	</actor>
-	Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstellen, dass keine Extension vorhanden ist, die an einer nicht im FHIR-Profil spezifizierten Stelle verwendet wird. Sollte eine solche Extension gefunden werden, gilt der Datensatz als ungültig. In diesem Fall ist die Operation mit dem folgenden Fehler:
+	Der FHIR Data Service MUSS bei der Validierung einer FHIR-Ressource sicherstellen, dass keine Extension vorhanden ist, die an einer nicht im FHIR-Profil spezifizierten Stelle verwendet wird. Sollte eine solche Extension gefunden werden, gilt der Datensatz als ungültig. In diesem Fall ist die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -429,7 +273,7 @@ Im TI-Flow-Kontext wird für Bundle-Einträge das `urn:uuid`-Schema bevorzugt. D
 </requirement>
 
 <!-- A_27672 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A286" title="FHIR Ressourcen - Ausschluss unspezifizierter Extensions" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A475" title="FHIR Ressourcen - Ausschluss unspezifizierter Extensions" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
