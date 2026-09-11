@@ -85,9 +85,6 @@ Description: "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details a
 * #TIFLOW_TASK_DELETED "Task deleted" "The task was already cancelled or deleted and can no longer be processed"
   * ^designation.language = #de-DE
   * ^designation.value = "Task wurde gelöscht"
-* #TIFLOW_RESOURCE_FULLURL_INVALID "Bundle fullUrl invalid" "A resource fullUrl in the bundle is invalid or does not match the bundle rules"
-  * ^designation.language = #de-DE
-  * ^designation.value = "Bundle-fullUrl ungültig"
 * #TIFLOW_BOM_DETECTED "Byte order mark detected" "A UTF byte order mark was detected where it is not permitted"
   * ^designation.language = #de-DE
   * ^designation.value = "Byte-Order-Mark erkannt"

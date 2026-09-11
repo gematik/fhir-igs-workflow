@@ -99,9 +99,6 @@ Usage: #definition
 * group[=].element[27].code = #TIFLOW_RECIPIENT_INVALID
 * group[=].element[27].target[0].code = #79226
 * group[=].element[27].target[0].equivalence = #equivalent
-* group[=].element[28].code = #TIFLOW_RESOURCE_FULLURL_INVALID
-* group[=].element[28].target[0].code = #79227
-* group[=].element[28].target[0].equivalence = #equivalent
 * group[=].element[29].code = #TIFLOW_SECRET_MISMATCH
 * group[=].element[29].target[0].code = #79228
 * group[=].element[29].target[0].equivalence = #equivalent
