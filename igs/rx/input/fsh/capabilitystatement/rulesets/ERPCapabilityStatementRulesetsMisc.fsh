@@ -60,3 +60,11 @@ RuleSet: CapSupportOperation(name, operation, expectation, documentation)
 
 RuleSet: CapSupportSystemOperation(name, operation, expectation, documentation)
 * rest insert CapSupportOperation({name}, {operation}, {expectation}, {documentation})
+
+
+RuleSet: CapSupportResourceConditionalDelete(value, expectation)
+* rest.resource[=]
+  * conditionalDelete = {value}
+    * extension[+]
+      * url = $capabilitystatement-expectation
+      * valueCode = {expectation}

@@ -13,6 +13,15 @@ Description: "Die $close-Operation beendet den E-Rezept-Workflow und erstellt ei
 * outputProfile = Canonical(GEM_ERP_PR_PAR_CloseOperation_Output)
 
 
+* parameter[+]
+  * extension[parameterLocation].valueCode = #query
+  * name = #secret
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "[Nur von der Apotheke zu verwenden] Der secret Parameter, der es einer Apotheke ermöglicht, exklusiv über die URL und den Parameter ?secret auf die Aufgabe zuzugreifen."
+  * type = #string
+
 // in
 // * parameter[+]
 //   * name = #rxDispensation

@@ -13,6 +13,7 @@ Description: "Mit der $accept-Operation beansprucht eine Apotheke ein E-Rezept. 
 
 // in
 * parameter[+]
+  * extension[parameterLocation].valueCode = #query
   * name = #ac
   * use = #in
   * min = 1

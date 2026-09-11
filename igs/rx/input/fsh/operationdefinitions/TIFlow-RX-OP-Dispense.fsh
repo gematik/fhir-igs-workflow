@@ -11,6 +11,14 @@ Description: "Die Operation $dispense ermöglicht es der Apotheke, eine Ausgabe 
 
 * inputProfile = Canonical(GEM_ERP_PR_PAR_DispenseOperation_Input)
 
+* parameter[+]
+  * extension[parameterLocation].valueCode = #query
+  * name = #secret
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "[Nur von der Apotheke zu verwenden] Der secret Parameter, der es einer Apotheke ermöglicht, exklusiv über die URL und den Parameter ?secret auf die Aufgabe zuzugreifen."
+  * type = #string
 
 // in
 // * parameter[+]
