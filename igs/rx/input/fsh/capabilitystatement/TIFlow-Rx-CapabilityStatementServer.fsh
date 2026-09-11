@@ -41,7 +41,8 @@ RuleSet: TaskInteraction(expectation)
 
 * insert CapSupportResourceSearchParam(_id, http://hl7.org/fhir/SearchParameter/Resource-id, #token, {expectation}, "Task.id - Unterstützt die Suche nach der Task-ID")
 * insert CapSupportResourceSearchParamNoDefinition(prescription-id, #token, {expectation}, "Task.identifier - Unterstützt die Suche nach der E-Rezept-ID")
-* insert CapSupportResourceSearchParamNoDefinition(access-code, #token, {expectation}, "Task.identifier - Unterstützt die Suche nach dem Zugriffscode")
+* insert CapSupportResourceSearchParamNoDefinition(ac, #token, {expectation}, "Task.identifier - Zugriffscode")
+// * rest.resource[=].searchParam[=].extension[interaction].valueCode = #read
 * insert CapSupportResourceSearchParam(authored-on, http://hl7.org/fhir/SearchParameter/Task-authored-on, #date, {expectation}, "Task.authoredOn - Unterstützt die Suche nach dem Erstellungsdatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(status, http://hl7.org/fhir/SearchParameter/Task-status, #token, {expectation}, "Task.status - Unterstützt die Suche nach dem Status einer Task")
 * insert CapSupportResourceSearchParamNoDefinition(expiry-date, #date, {expectation}, "Task.extension:expiryDate.valueDate - Unterstützt die Suche nach dem Verfallsdatum")
@@ -115,13 +116,13 @@ RuleSet: SubscriptionInteraction(expectation)
 
 RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResource(Consent, {expectation})
-
+// * insert CapSupportResourceConditionalDelete(true, #SHALL)
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert ConsentSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#create, #SHALL)
 * insert ConsentCreateInteractionStatusCodes
-* insert CapResourceInteraction(#delete, #SHALL)
-* insert ConsentDeleteInteractionStatusCodes
+// * insert CapResourceInteraction(#delete, #SHALL)
+// * insert ConsentDeleteInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")
 

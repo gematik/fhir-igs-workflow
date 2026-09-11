@@ -11,6 +11,7 @@ Description: "Diese Operation bricht den Workflow eines E-Rezepts ab und löscht
 
 // in
 * parameter[+]
+  * extension[parameterLocation].valueCode = #query
   * name = #ac
   * use = #in
   * min = 0
@@ -20,6 +21,7 @@ Description: "Diese Operation bricht den Workflow eines E-Rezepts ab und löscht
 
 // alternative in
 * parameter[+]
+  * extension[parameterLocation].valueCode = #query
   * name = #secret
   * use = #in
   * min = 0

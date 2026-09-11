@@ -11,6 +11,7 @@ Description: "Lehnt die Ausgabe eines E-Rezepts ab. Die Aufgabe wird in einen ak
 
 // in
 * parameter[+]
+  * extension[parameterLocation].valueCode = #query
   * name = #secret
   * use = #in
   * min = 1
