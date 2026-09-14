@@ -391,17 +391,17 @@ policies:
       - { method: GET, path: "AuditEvent" }
       - { method: GET, path: "AuditEvent/{id}" }
 
-  # ── Zugriffsprotokoll ────────────────────────────────────────────────────────
+  # ── Push-Notification ────────────────────────────────────────────────────────
 
   "tif-notification":
     description: "App Notification verwalten"
     roles:
       - { oid: "1.2.276.0.76.4.49", description: "oid_versicherter" }
     rules:
-      - { method: GET,  path: "rx/pushers" }
-      - { method: POST, path: "rx/pushers/set" }
-      - { method: GET,  path: "rx/channels" }
-      - { method: POST, path: "rx/channels/{pushkey}" }
+      - { method: GET,  path: "/pushers" }
+      - { method: POST, path: "/pushers/set" }
+      - { method: GET,  path: "/channels" }
+      - { method: POST, path: "/channels/{pushkey}" }
 
 ```
 
