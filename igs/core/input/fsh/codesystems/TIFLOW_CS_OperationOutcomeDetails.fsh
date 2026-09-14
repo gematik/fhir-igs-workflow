@@ -133,3 +133,6 @@ Description: "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details a
 * #TIFLOW_BLOCKED_FEATURE "Blocked Feature" "The functionality for a feature is blocked in the TI-Flow-Fachdienst."
   * ^designation.language = #de-DE
   * ^designation.value = "Gesperrtes Feature"
+* #TIFLOW_RESOURCE_FULLURL_INVALID "Invalid fullUrl format" "The format of the fullUrl is invalid"
+  * ^designation.language = #de-DE
+  * ^designation.value = "Das Format der fullURL ist invalide."
