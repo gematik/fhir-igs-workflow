@@ -13,6 +13,6 @@ Description: "Bundle mit allen Communication-Ressourcen des TiFlow-Fachdienstes 
 
 Instance: Example-Communication-ChargChangeReq-GET-Response
 InstanceOf: GEM_ERPCHRG_PR_Communication_ChargChangeReq
-Title: "Communication message sent by patient to pharmacy to request the change of an existing ChargeItem by providing the AccessCode"
+Title: "Nachricht des Versicherten an die Apotheke zur Änderungsanforderung eines ChargeItems mit AccessCode"
 Usage: #example
 * insert Communication_ChargChangeReq

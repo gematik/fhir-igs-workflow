@@ -37,10 +37,10 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 		</pre>
 	</div>
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+		<div data-name="Abrechnungsliste" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/Example-GEM-ERP-Bundle-GET-Response-Insured-Unsigned XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+		<div data-name="Abrechnungsliste" data-type="JSON" data-render="ig-Fragment">
 			{% fragment Bundle/Example-GEM-ERP-Bundle-GET-Response-Insured-Unsigned JSON %}
 		</div>
 	</div>
@@ -56,16 +56,16 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 		</pre>
 	</div>	
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/Example-GEM-ERP-Bundle-GET-Response-Pharmacy XML %}
+		<div data-name="ChargeItem Abruf durch Apotheke" data-type="XML" data-render="ig-Fragment">
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+		<div data-name="ChargeItem Abruf durch Apotheke" data-type="JSON" data-render="ig-Fragment">
 			{% fragment Bundle/Example-GEM-ERP-Bundle-GET-Response-Pharmacy JSON %}
 		</div>
-		<div data-name="ChargGetResponse application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+		<div data-name="ChargeItem Abruf durch Versicherten" data-type="XML" data-render="ig-Fragment">
 			{% fragment Bundle/Example-GEM-ERP-Bundle-GET-Response-Insured-Signed XML %}
 		</div>
-		<div data-name="ChargGetResponse application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+		<div data-name="ChargeItem Abruf durch Versicherten" data-type="JSON" data-render="ig-Fragment">
 			{% fragment Bundle/Example-GEM-ERP-Bundle-GET-Response-Insured-Signed JSON %}
 		</div>
 	</div>
@@ -81,18 +81,18 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 		</pre>
 	</div>
 	<div id="Request-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+		<div data-name="Bereitstellen der PKV-Abrechnungsinformationen durch die Apotheke" data-type="XML" data-render="ig-Fragment">
 			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-POST-Request XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+		<div data-name="Bereitstellen der PKV-Abrechnungsinformationen durch die Apotheke" data-type="JSON" data-render="ig-Fragment">
 			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-POST-Request JSON %}
 		</div>
 	</div>
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+		<div data-name="Rückgabe des erstellten ChargeItems" data-type="XML" data-render="ig-Fragment">
 			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-POST-Response XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+		<div data-name="Rückgabe des erstellten ChargeItems" data-type="JSON" data-render="ig-Fragment">
 			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-POST-Response JSON %}
 		</div>
 	</div>
@@ -108,18 +108,18 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 		</pre>
 	</div>
 	<div id="Request-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+		<div data-name="Überschreiben des PKV-Abgabedatensatzes durch die Apotheke" data-type="XML" data-render="ig-Fragment">
 			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-PUT-Request XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+		<div data-name="Überschreiben des PKV-Abgabedatensatzes durch die Apotheke" data-type="JSON" data-render="ig-Fragment">
 			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-PUT-Request JSON %}
 		</div>
 	</div>
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+		<div data-name="ChargeItem nach Überschreibung" data-type="XML" data-render="ig-Fragment">
 			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-PUT-Response XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+		<div data-name="ChargeItem nach Überschreibung" data-type="JSON" data-render="ig-Fragment">
 			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-PUT-Response JSON %}
 		</div>
 	</div>
@@ -135,18 +135,18 @@ Anfragen an die <i>ChargeItem</i>-Ressource können über die RESTful API durchg
 		</pre>
 	</div>
 	<div id="Request-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+		<div data-name="Markieren des Einreichungsstatus durch den Versicherten" data-type="XML" data-render="ig-Fragment">
 			{% fragment Parameters/Example-GEM-ERPCHRG-ChargeItem-PATCH-Request XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+		<div data-name="Markieren des Einreichungsstatus durch den Versicherten" data-type="JSON" data-render="ig-Fragment">
 			{% fragment Parameters/Example-GEM-ERPCHRG-ChargeItem-PATCH-Request JSON %}
 		</div>
 	</div>
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+		<div data-name="ChargeItem nach Markierung" data-type="XML" data-render="ig-Fragment">
 			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-PATCH-Response XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+		<div data-name="ChargeItem nach Markierung" data-type="JSON" data-render="ig-Fragment">
 			{% fragment ChargeItem/Example-GEM-ERPCHRG-ChargeItem-PATCH-Response JSON %}
 		</div>
 	</div>

@@ -4,3 +4,4 @@ Title: "Bestätigung der erteilten Einwilligung"
 Description: "Consent-Ressource des TiFlow-Fachdienstes nach erfolgreicher Speicherung der Einwilligung des Versicherten"
 Usage: #example
 * insert Consent
+* insert DateTimeStamp(dateTime)

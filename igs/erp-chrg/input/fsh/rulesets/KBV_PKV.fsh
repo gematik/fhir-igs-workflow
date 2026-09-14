@@ -34,18 +34,15 @@ RuleSet: PKV_Verordnungsdatensatz
 * entry[Krankenversicherungsverhaeltnis].fullUrl = "http://pvs.praxis-topp-gluecklich.local/fhir/Coverage/Example-PKV-Coverage"
 * entry[Krankenversicherungsverhaeltnis].resource = Example-PKV-Coverage
 
-// dom-4: only applies to the standalone document, not when the Bundle is contained elsewhere.
 RuleSet: PKV_Verordnungsdatensatz_DocumentMeta
 * meta.versionId = "1"
 * insert DateTimeStamp(meta.lastUpdated)
-
 
 Instance: Example-PKV-Composition
 InstanceOf: KBV_PR_ERP_Composition
 Usage: #inline
 * meta.versionId = "1"
 * extension[Rechtsgrundlage].valueCoding = $KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN#00
-* extension[PKV-Tarif].valueCoding = $KBV_CS_SFHIR_KBV_PKV_TARIFF#03
 * subject = Reference(Example-PKV-Patient)
 * insert DateTime(date)
 * author[Arzt] = Reference(Example-PKV-Practitioner)
@@ -58,21 +55,11 @@ Instance: Example-KBV-PKV-Prescription
 InstanceOf: KBV_PR_ERP_Prescription
 Usage: #inline
 * meta.versionId = "1"
-* status = #active
-* intent = #order
-* extension[Zuzahlungsstatus].valueCoding = $KBV_CS_FOR_StatusCoPayment#0
 * extension[Notdienstgebuehr].valueBoolean = false
 * extension[SER].valueBoolean = false
-* extension[Unfallinformationen].extension[Unfallkennzeichen].valueCoding = $KBV_CS_FOR_Ursache_Type#1
-* extension[Unfallinformationen].extension[Unfalltag].valueDate = "2023-07-01"
-* extension[Mehrfachverordnung].extension[Kennzeichen].valueBoolean = true
-* extension[Mehrfachverordnung].extension[Nummerierung].valueRatio.numerator.value = 2
-* extension[Mehrfachverordnung].extension[Nummerierung].valueRatio.denominator.value = 4
-* extension[Mehrfachverordnung].extension[Zeitraum].valuePeriod
-  * insert Date(start)
-  * insert DatePlus30days(end)
-* extension[Mehrfachverordnung].extension[ID].valueIdentifier.system = "urn:ietf:rfc:3986"
-* extension[Mehrfachverordnung].extension[ID].valueIdentifier.value = "urn:uuid:24e2e10d-e962-4d1c-be4f-8760e690a5f0"
+* extension[Mehrfachverordnung].extension[Kennzeichen].valueBoolean = false
+* status = #active
+* intent = #order
 * medicationReference = Reference(Example-PKV-MedicationIngredient)
 * subject = Reference(Example-PKV-Patient)
 * insert Date(authoredOn)
@@ -93,7 +80,6 @@ Usage: #inline
 * amount.numerator.unit = "Stk"
 * amount.denominator.value = 1
 * ingredient[+]
-  * itemCodeableConcept = $ask#Dummy-ASK
   * itemCodeableConcept.text = "Ibuprofen"
   * strength.numerator.value = 800
   * strength.numerator.unit = "mg"
@@ -117,16 +103,14 @@ Instance: Example-PKV-Organization
 InstanceOf: KBV_PR_FOR_Organization
 Usage: #inline
 * meta.versionId = "1"
-* identifier[Betriebsstaettennummer].value = "031234567"
-* name = "Hausarztpraxis Dr. Topp-Glücklich"
 * telecom[telefon].value = "0301234567"
+* identifier[Betriebsstaettennummer].value = "031234567"
 * address[Strassenanschrift]
   * type = #both
   * line = "Musterstr. 2"
   * line.extension[Hausnummer].valueString = "2"
   * line.extension[Strasse].valueString = "Musterstr."
   * city = "Berlin"
-  * postalCode = "10623"
 
 Instance: Example-PKV-Patient
 InstanceOf: KBV_PR_FOR_Patient
@@ -134,8 +118,8 @@ Usage: #inline
 * meta.versionId = "1"
 * identifier[versichertenId].value = "P123464117"
 * name[name]
-  * .use = #official
-  * family.extension[nachname].valueString = "Königsstein"
+  * use = #official
+  * family.extension[nachname].valueString = "Meier"
   * family = "Ludger Königsstein"
   * given = "Ludger"
 * birthDate = "1935-06-22"

@@ -16,3 +16,4 @@ Title: "Die Erteilte Einwilligung"
 Description: "Consent-Ressource des TiFlow-Fachdienstes"
 Usage: #example
 * insert Consent
+* insert DateTimeStamp(dateTime)

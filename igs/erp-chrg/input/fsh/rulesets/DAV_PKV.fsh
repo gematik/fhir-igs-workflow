@@ -41,8 +41,7 @@ Usage: #inline
 * id = $UUID_DAV_PKV_AbgabedatenApotheke
 * identifier.value = "308412345"
 * name = "Adler-Apotheke"
-* address[+]
-  * type = #physical
+* address
   * line = "Taunusstraße 89"
   * line.extension[Strasse].valueString = "Taunusstraße"
   * line.extension[Hausnummer].valueString = "89"
@@ -73,12 +72,10 @@ Usage: #inline
     * extension[MwSt-Satz].valueDecimal = 19.00
     * extension[KostenVersicherter].extension[Kategorie].valueCodeableConcept = $DAV-PKV-CS-ERP-KostenVersicherterKategorie#0
     * extension[KostenVersicherter].extension[Kostenbetrag].valueMoney.value = 0.00
-    * extension[KostenVersicherter].extension[Kostenbetrag].valueMoney.currency = #EUR
     * type = #informational
     * factor = 1
     * amount.value = 21.04
     * amount.currency = #EUR
 * totalGross.extension[Gesamtzuzahlung].valueMoney.value = 0.00
-* totalGross.extension[Gesamtzuzahlung].valueMoney.currency = #EUR
 * totalGross.value = 21.04
 * totalGross.currency = #EUR

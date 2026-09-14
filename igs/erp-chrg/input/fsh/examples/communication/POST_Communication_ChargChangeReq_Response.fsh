@@ -1,7 +1,7 @@
 Instance: Example-Communication-ChargChangeReq-POST-Assign-Response
 InstanceOf: GEM_ERPCHRG_PR_Communication_ChargChangeReq
-Title: "Bestätigung der Zuweisung durch den Fachdienst"
-Description: "TiFlow-Fachdienst prüft die Nachricht auf Zulässigkeit und ergänzt Metainformationen wie Sendezeitpunkt und Absenderangaben aus dem ACCESS_TOKEN"
+Title: "Bestätigung der übermittelten Nachricht"
+Description: "Communication-Ressource des TiFlow-Fachdienstes nach Annahme der Nachricht mit AccessCode, ergänzt um Sendezeitpunkt und Absenderangaben aus dem ACCESS_TOKEN"
 Usage: #example
 * insert Communication_ChargChangeReq
 * insert PKV_Identifier(sender.identifier)

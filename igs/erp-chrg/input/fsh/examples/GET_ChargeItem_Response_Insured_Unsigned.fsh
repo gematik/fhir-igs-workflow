@@ -1,7 +1,7 @@
 Instance: Example-GEM-ERP-Bundle-GET-Response-Insured-Unsigned
 InstanceOf: Bundle
-Title: "Abrechnungsinformation zum Ändern abrufen"
-Description: "Apotheke ruft mit dem AccessCode zum Ändern das Bundle mit ChargeItem, Verordnungsdatensatz (mit QES) und Abgabedatensatz (mit ursprünglicher Signatur) zur Korrektur ab"
+Title: "Abrechnungsinformationen durch den Versicherten abrufen"
+Description: "Versicherter ruft seine Liste von ChargeItems ohne enthaltene Referenzen ab, z. B. bei fehlenden lokalen Daten nach Smartphone-Wechsel"
 Usage: #example
 * type = #searchset
 * total = 2
