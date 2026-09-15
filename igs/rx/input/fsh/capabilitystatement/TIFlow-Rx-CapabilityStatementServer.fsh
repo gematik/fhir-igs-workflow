@@ -41,8 +41,10 @@ RuleSet: TaskInteraction(expectation)
 
 * insert CapSupportResourceSearchParam(_id, http://hl7.org/fhir/SearchParameter/Resource-id, #token, {expectation}, "Task.id - Unterstützt die Suche nach der Task-ID")
 * insert CapSupportResourceSearchParamNoDefinition(prescription-id, #token, {expectation}, "Task.identifier - Unterstützt die Suche nach der E-Rezept-ID")
-* insert CapSupportResourceSearchParamNoDefinition(ac, #token, {expectation}, "Task.identifier - Zugriffscode")
-// * rest.resource[=].searchParam[=].extension[interaction].valueCode = #read
+
+* insert CapSupportResourceSearchParamNoDefinition(ac, #token, {expectation}, "Zugriffscode")
+* rest.resource[=].searchParam[=].extension[interaction].valueCode = #read
+
 * insert CapSupportResourceSearchParam(authored-on, http://hl7.org/fhir/SearchParameter/Task-authored-on, #date, {expectation}, "Task.authoredOn - Unterstützt die Suche nach dem Erstellungsdatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(status, http://hl7.org/fhir/SearchParameter/Task-status, #token, {expectation}, "Task.status - Unterstützt die Suche nach dem Status einer Task")
 * insert CapSupportResourceSearchParamNoDefinition(expiry-date, #date, {expectation}, "Task.extension:expiryDate.valueDate - Unterstützt die Suche nach dem Verfallsdatum")
@@ -116,7 +118,17 @@ RuleSet: SubscriptionInteraction(expectation)
 
 RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResource(Consent, {expectation})
-// * insert CapSupportResourceConditionalDelete(true, #SHALL)
+// * rest.resource[+].type = #Consent
+// * rest.resource[=].versioning = #versioned-update
+// * rest.resource[=].readHistory = true
+// ConditionalDelete
+// * rest.resource[=].extension[responseInfo][+]
+//   * extension[statusCode].valueString = "204"
+//   * extension[description].valueString = "Die Anfrage wurde erfolgreich bearbeitet. Die Response enthält jedoch keine Daten."
+//   * extension[interaction].valueCode = #conditional-delete
+* rest.resource[=] insert TiflowErezeptSuccessNoContent(#conditional-delete)
+* insert CapSupportResourceConditionalDelete(#multiple)
+
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert ConsentSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#create, #SHALL)
@@ -124,7 +136,11 @@ RuleSet: ConsentInteraction(expectation)
 // * insert CapResourceInteraction(#delete, #SHALL)
 // * insert ConsentDeleteInteractionStatusCodes
 
+
 * insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")
+* rest.resource[=].searchParam[=]
+  * extension[interaction][+].valueCode = #conditional-delete
+  * extension[interaction][+].valueCode = #delete
 
 RuleSet: GrantEUAccessPermissionInteraction(expectation)
 * insert CapSupportSystemOperation(grant-eu-access-permission, GrantEUAccessPermission, {expectation}, "Registers access code and country for EU prescription access")

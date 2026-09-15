@@ -166,6 +166,7 @@ RuleSet: TiflowSignatureInvalid
   * extension[description].valueString = "Signature invalid"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_SIGNATURE_INVALID"
+  
 
 RuleSet: TiflowSignatureInvalidIssuingRole
 * extension[responseInfo][+]
@@ -321,5 +322,14 @@ RuleSet: TiflowErezeptCountryCodeInvalid
   * extension[description].valueString = "Country code invalid"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_EREZEPT_COUNTRY_CODE_INVALID"
+
+
+RuleSet: TiflowErezeptSuccessNoContent(interaction)
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "204"
+  * extension[description].valueString = "Die Anfrage wurde erfolgreich bearbeitet. Die Response enthält jedoch keine Daten."
+  * extension[interaction].valueCode = {interaction}
+
+
 
 // Errors for all System Operations

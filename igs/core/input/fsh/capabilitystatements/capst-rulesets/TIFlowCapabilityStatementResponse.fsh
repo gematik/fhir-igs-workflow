@@ -226,3 +226,22 @@ RuleSet: TiflowTimeout
   * extension[description].valueString = "Timeout"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_TIMEOUT"
+
+
+RuleSet: ClientTimeout
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "408"
+  * extension[description].valueString = "Request Timeout"
+
+
+
+RuleSet: GatewayTimeout
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "504"
+  * extension[description].valueString = "Gateway Timeout"
+
+
+RuleSet: InternalServerError
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "500"
+  * extension[description].valueString = "Internal Server Error"

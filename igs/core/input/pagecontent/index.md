@@ -62,7 +62,7 @@ Modulspezifische Operationen, wie die $dispense-Operation im Arzneimittel IG, wi
 
 - [FHIR-Artefakte](./artifacts.html)
 - [FHIR-Validierung](./fhir-validate.html)
-- [Query API (modulübergreifend)](./menu-schnittstellen-query-api.html)
+- [Resource API (modulübergreifend)](./menu-schnittstellen-query-api.html)
 - [Operation API (modulübergreifend)](./menu-schnittstellen-operation-api.html)
 - [Zugriffsprotokollierung](./audit-service.html)
 - [Löschfristen](./ttl.html)

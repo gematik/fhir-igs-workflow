@@ -1,4 +1,4 @@
-Die folgenden Query APIs stellt der TI-Flow-Fachdienst den Clientsystemen zur Verfügung, um FHIR-Daten gezielt abrufen zu können.
+Die folgenden Resource APIs stellt der TI-Flow-Fachdienst den Clientsystemen zur Verfügung, um FHIR-Daten gezielt abrufen zu können.
 
 Im Core-IG werden sowohl Endpunkte beschrieben, die in allen Modulen verwendet werden, wie auch Endpunkte die in mehreren IGs verwendet werden.
 
