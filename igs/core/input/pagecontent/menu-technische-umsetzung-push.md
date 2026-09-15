@@ -7,7 +7,7 @@ Der TI-Flow-Fachdienst übernimmt die Rolle "Fachdienst". Er verwaltet FdV-Insta
 Der TI-Flow-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Notifications wie in [OpenAPI_PushGateway] beschrieben. Der Nachrichteninhalt, auf den in diesem Kapitel verwiesen wird, ist der Inhalt des Ciphertexts.
 
 <!-- TI-Flow-26-2 PKV-FD-09 -->
-Die Übermittlung von Notification-Objekten an den Push Gateway wird über einen asynchronen Prozess realisiert. Dies hat neben den Vorteilen die Konsequenz, dass es bei der Übermittlung der Daten an den Push Gateway zu Verzögerungen kommen kann. Dadurch kann sich auch die Zustellung und somit der Empfang der Push Notifications beim Versicherten verzögern.
+Die Übermittlung von Notification-Objekten an den Push Gateway wird über einen asynchronen Prozess realisiert. Dies hat neben den Vorteilen die Konsequenz, dass es bei der Übermittlung der Daten an den Push Gateway zu Verzögerungen kommen kann. Dadurch kann sich auch die Zustellung und somit der Empfang der Push Notifications beim Versicherten verzögern oder im schlimmsten Fall ausbleiben.
 
 <!-- A_28115 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A225" title="TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="0">
