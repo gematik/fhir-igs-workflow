@@ -20,3 +20,11 @@ Usage: #definition
 // Header
 * insert Content-Type(true)
 * insert Authorization(true)
+
+// Response Types
+* insert ClientTimeout
+* insert GatewayTimeout
+* insert InternalServerError
+* insert TiflowTimeout
+* insert TiflowInternalError
+* insert InvalidRequest

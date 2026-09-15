@@ -46,12 +46,12 @@ RuleSet: InvalidRequest
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_BAD_FORMAT"
 
-RuleSet: RequestTimeout
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "408"
-  * extension[description].valueString = "Request timeout"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_TIMEOUT"
+// RuleSet: RequestTimeout
+// * extension[responseInfo][+]
+//   * extension[statusCode].valueString = "408"
+//   * extension[description].valueString = "Request timeout"
+//   * extension[responseType].valueString = "TIFlowOperationOutcome"
+//   * extension[errorCode].valueString = "MSG_TIMEOUT"
 
 RuleSet: InternalServerError
 * extension[responseInfo][+]

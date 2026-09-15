@@ -1,45 +1,45 @@
-// Errors for all Resource Endpoints
-RuleSet: GlobalQueryErrorCodes
-* rest.resource[=].interaction[=] insert InvalidRequest
-* rest.resource[=].interaction[=] insert TiflowInternalError
-* rest.resource[=].interaction[=] insert TiflowTimeout
+// // Errors for all Resource Endpoints
+// RuleSet: GlobalQueryErrorCodes
+// * rest.resource[=].interaction[=] insert InvalidRequest
+// * rest.resource[=].interaction[=] insert TiflowInternalError
+// * rest.resource[=].interaction[=] insert TiflowTimeout
 
 // Query-API Interactions
 RuleSet: ReadInteractionStatusCodes
-* insert GlobalQueryErrorCodes
+// * insert GlobalQueryErrorCodes
 // * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: UpdateInteractionStatusCodes
-* insert GlobalQueryErrorCodes
+// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: PatchInteractionStatusCodes
-* insert GlobalQueryErrorCodes
+// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: DeleteInteractionStatusCodes
-* insert GlobalQueryErrorCodes
+// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert SuccessfulNoContent
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: CreateInteractionStatusCodes
-* insert GlobalQueryErrorCodes
+// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert SuccessfulCreated
 * rest.resource[=].interaction[=] insert UnknownResourceType
 
 RuleSet: SearchTypeInteractionStatusCodes
-* insert GlobalQueryErrorCodes
+// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert SuccessfulWithBundle
 * rest.resource[=].interaction[=] insert UnknownSearchParameter
 * rest.resource[=].interaction[=] insert InvalidQueryParameters
@@ -96,6 +96,7 @@ RuleSet: CommunicationDeleteInteractionStatusCodes
 
 RuleSet: AuditEventSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
+* rest.resource[=].interaction[=] insert TiflowAuthRoleNotAllowed
 
 RuleSet: AuditEventReadInteractionStatusCodes
 * rest.resource[=].interaction[=]
@@ -104,6 +105,8 @@ RuleSet: AuditEventReadInteractionStatusCodes
     * extension[description].valueString = "Successful operation"
     * extension[responseType].valueString = "AuditEvent"
 * insert ReadInteractionStatusCodes
+* rest.resource[=].interaction[=] insert TiflowAuthRoleNotAllowed
+
 
 RuleSet: MedicationDispenseSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
@@ -113,27 +116,27 @@ RuleSet: DeviceSearchTypeInteractionStatusCodes
 
 // Operation-API Error-Constellations
 
-RuleSet: GlobalOperationErrorCodes
+// RuleSet: GlobalOperationErrorCodes
 
-* insert InvalidRequest
+// * insert InvalidRequest
 
-* insert RequestTimeout
+// * insert RequestTimeout
 
-* insert InternalServerError
+// * insert InternalServerError
 
-* insert TiflowInternalError
+// * insert TiflowInternalError
 
-* insert TiflowTimeout
+// * insert TiflowTimeout
 
 RuleSet: InstanceOperationStatusCodes
 * insert ResourceIsNotKnown
 * insert ResourceWasDeleted
-* insert GlobalOperationErrorCodes
+// * insert GlobalOperationErrorCodes
 
 RuleSet: TypeOperationStatusCodes
 * insert OpUnknown
 * insert UnknownResourceType
-* insert GlobalOperationErrorCodes
+// * insert GlobalOperationErrorCodes
 
 // Concrete Operations
 RuleSet: TaskCreateOperationStatusCodes
