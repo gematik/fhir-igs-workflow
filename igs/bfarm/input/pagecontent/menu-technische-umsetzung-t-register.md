@@ -36,12 +36,6 @@ Für das Mapping zur Erstellung des digitalen Durchschlags wird die Seite [Erzeu
 
 Nach Erstellen des Datensatzes für den digitalen Durchschlag wird ein Übermittlungsauftrag in der Warteschlange eingestellt und die Übermittlung an den BfArM Webdienst via Webschnittstelle versucht. Nach erfolgreichem Übermitteln der Daten wird der Übermittlungsauftrag aus der Warteschlange gelöscht.
 
-<!-- TI-Flow-26-2 PKV-FD-09 -->
-Dieser asynchrone Prozess hat neben den Vorteilen für die Clientsysteme die folgenden Konsequenzen:
-
-- Clientsysteme wissen nach Abschluss ihres Operationsaufrufes nicht, ob und wann die Übertragung an den BfArM Webdienst erfolgt.
-- Es kann im Livebetrieb nicht nachvollzogen werden, warum eine Übertragung nicht erfolgreich stattgefunden hat, weil der Response des BfArM Webdienstes mit der Fehlerbeschreibung nicht an das Clientsystem übermittelt wird.
-
 Bei Übermittlungsfehlern, bei denen ein Retry sinnvoll ist, wie z.B.
 
 - Nicht Erreichbarkeit des Dienstes
