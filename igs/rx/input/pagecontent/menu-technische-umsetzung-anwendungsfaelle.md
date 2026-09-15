@@ -7,27 +7,25 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 
 #### PS verordnende LEI
 
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A71" title="PS verordnende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A71" title="PS verordnende LEI: E-Rezept - Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das PS der verordnenden LEI MUSS für die Umsetzung der Verordnung von E-Rezepten für Arzneimittel die Anwendungsfälle
-
     <ul>
-    <li>UC 2.1 - E-Rezepte erzeugen</li>
-    <li>E-Rezept qualifiziert signieren</li>
-    <li>UC 2.3 - E-Rezept einstellen</li>
-    <li>UC 2.5 - E-Rezept durch Verordnenden löschen</li>
+        <li>UC 2.1 - E-Rezepte erzeugen</li>
+        <li>E-Rezept qualifiziert signieren</li>
+        <li>UC 2.3 - E-Rezept einstellen</li>
+        <li>UC 2.5 - E-Rezept durch Verordnenden löschen</li>
     </ul>
 
     umsetzen.
 </requirement>
-
 #### TI-Flow-FdV 
 
 <!-- A_19443 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A72" title="TI-Flow-FdV: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A72" title="TI-Flow-FdV: E-Rezept - Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -45,30 +43,28 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
 </requirement>
 
 <!-- A_19443 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A247" title="TI-Flow-FdV: TIFlow-EU - optionale Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A247" title="TI-Flow-FdV: Einlösen im EU-Ausland - Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das TI-Flow-FdV MUSS für die Umsetzung der Bedienung von E-Rezepten im EU Kontext die Anwendungsfälle
-
+    Das TI-Flow-FdV MUSS, wenn es das Einlösen von E-Rezepten im EU-Ausland unterstützt, die Anwendungsfälle
     <ul>
-    <li>UC 3.13 - Einwilligung einsehen</li>
-    <li>UC 3.14 - Einwilligung erteilen</li>
-    <li>UC 3.15 - Einwilligung widerrufen</li>
-    <li>UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen</li>
-    <li>UC 3.17 - Zugriffsberechtigung durch Versicherten löschen</li>
-    <li>UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen</li>
-    <li>Zugriffsberechtigung anzeigen</li>
-    <li>UC 3.19 - E-Rezept durch den Versicherten markieren</li>
+        <li>UC 3.13 - Einwilligung einsehen</li>
+        <li>UC 3.14 - Einwilligung erteilen</li>
+        <li>UC 3.15 - Einwilligung widerrufen</li>
+        <li>UC 3.16 - Zugriffsberechtigung durch Versicherten erstellen</li>
+        <li>UC 3.17 - Zugriffsberechtigung durch Versicherten löschen</li>
+        <li>UC 3.18 - Zugriffsberechtigung durch Versicherten einsehen</li>
+        <li>Zugriffsberechtigung anzeigen</li>
+        <li>UC 3.19 - E-Rezept durch den Versicherten markieren</li>
     </ul>
-
     umsetzen.
 </requirement>
 
 #### PS abgebende LEI
 
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A73" title="PS abgebende LEI: TIFlow-RX - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A73" title="PS abgebende LEI: E-Rezept - Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -90,14 +86,14 @@ Diese Seite beschreibt die technischen Anwendungsfälle, die für das Modul der 
     umsetzen.
 </requirement>
 
-<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A74" title="PS abgebende LEI: TIFlow-RX - empfohlene Anwendungsfälle" version="0">
+<requirement conformance="SHOULD" key="IG-TIFLOW-ERP-A74" title="PS abgebende LEI: E-Rezept - empfohlene Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     Das PS der abgebenden LEI SOLL für die Umsetzung der Belieferung von E-Rezepten für Arzneimittel den Anwendungsfall
     <ul>
-    <li>UC 4.16 - Dispensierinformationen bereitstellen</li>
+        <li>UC 4.16 - Dispensierinformationen bereitstellen</li>
     </ul>
     umsetzen.
 </requirement>
