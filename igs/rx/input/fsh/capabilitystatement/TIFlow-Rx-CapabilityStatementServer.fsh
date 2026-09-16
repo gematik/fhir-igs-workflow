@@ -56,18 +56,25 @@ RuleSet: TaskInteraction(expectation)
 
 * insert CapSupportResourceOperation(create, TIFlowRXOPCreate, {expectation}, "Creates a Task for a specific flow type")
 * insert TaskCreateOperationStatusCodes
+
 * insert CapSupportResourceOperation(activate, TIFlowRXOPActivate, {expectation}, "Activates the created Task using the signed ePrescription bundle")
 * insert TaskActivateOperationStatusCodes
+
 * insert CapSupportResourceOperation(accept, TIFlowRXOPAccept, {expectation}, "Pharmacy claims an ePrescription and sets Task status to in-progress")
 * insert TaskAcceptOperationStatusCodes
+
 * insert CapSupportResourceOperation(reject, TIFlowRXOPReject, {expectation}, "Rejects dispensing and resets Task status to active")
 * insert TaskRejectOperationStatusCodes
+
 * insert CapSupportResourceOperation(close, TIFlowRXOPClose, {expectation}, "Finishes the ePrescription workflow and sets Task status to completed")
 * insert TaskCloseOperationStatusCodes
+
 * insert CapSupportResourceOperation(abort, TIFlowRXOPAbort, {expectation}, "Aborts the ePrescription workflow and deletes Task related data")
 * insert TaskAbortOperationStatusCodes
+
 * insert CapSupportResourceOperation(dispense, TIFlowRXOPDispense, {expectation}, "Documents medication dispensation without changing Task status")
 * insert TaskDispenseOperationStatusCodes
+
 * insert CapSupportResourceOperation(eu-close, EUCloseOperation, {expectation}, "Finishes the EU ePrescription workflow and creates a signed receipt bundle")
 * insert EuCloseOperationStatusCodes
 
@@ -118,16 +125,8 @@ RuleSet: SubscriptionInteraction(expectation)
 
 RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResource(Consent, {expectation})
-// * rest.resource[+].type = #Consent
-// * rest.resource[=].versioning = #versioned-update
-// * rest.resource[=].readHistory = true
-// ConditionalDelete
-// * rest.resource[=].extension[responseInfo][+]
-//   * extension[statusCode].valueString = "204"
-//   * extension[description].valueString = "Die Anfrage wurde erfolgreich bearbeitet. Die Response enthält jedoch keine Daten."
-//   * extension[interaction].valueCode = #conditional-delete
 * rest.resource[=] insert TiflowErezeptSuccessNoContent(#conditional-delete)
-* insert CapSupportResourceConditionalDelete(#multiple)
+* insert CapSupportResourceConditionalDelete(#single)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert ConsentSearchTypeInteractionStatusCodes

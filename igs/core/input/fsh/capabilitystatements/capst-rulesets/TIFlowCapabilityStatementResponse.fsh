@@ -231,17 +231,23 @@ RuleSet: TiflowTimeout
 RuleSet: ClientTimeout
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "408"
-  * extension[description].valueString = "Request Timeout"
+  * extension[description].valueString = "Request Timeout (ZETA)"
 
 
 
 RuleSet: GatewayTimeout
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "504"
-  * extension[description].valueString = "Gateway Timeout"
+  * extension[description].valueString = "Gateway Timeout (ZETA)"
 
 
 RuleSet: InternalServerError
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "500"
-  * extension[description].valueString = "Internal Server Error"
+  * extension[description].valueString = "Internal Server Error (ZETA)"
+
+
+RuleSet: TooManyRequests
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "429"
+  * extension[description].valueString = "Too Many Requests (ZETA)"
