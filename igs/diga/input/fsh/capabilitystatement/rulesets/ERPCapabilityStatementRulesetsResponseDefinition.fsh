@@ -1,6 +1,5 @@
 // Errors for all Resource Endpoints
 RuleSet: GlobalQueryErrorCodes
-
 * rest.resource[=].interaction[=] insert InvalidRequest
 
 // Query-API Interactions

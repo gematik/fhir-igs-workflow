@@ -231,7 +231,7 @@ RuleSet: TiflowTimeout
 RuleSet: ClientTimeout
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "408"
-  * extension[description].valueString = "Request Timeout (ZETA)"
+  * extension[description].valueString = "Request Timeout"
 
 
 
