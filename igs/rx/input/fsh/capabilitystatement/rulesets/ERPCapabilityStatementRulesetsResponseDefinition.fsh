@@ -48,6 +48,8 @@ RuleSet: TaskCreateOperationStatusCodes
 * rest.resource[=].operation[=] insert SvcValidationFailed
 * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert TiflowWarning253
+* rest.resource[=].operation[=] insert TiflowWarning254
 
 RuleSet: TaskSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
@@ -79,6 +81,9 @@ RuleSet: TaskActivateOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowErezeptPznInvalid
 * rest.resource[=].operation[=] insert TiflowOcspBackendError
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert TiflowWarning252
+* rest.resource[=].operation[=] insert TiflowWarning253
+* rest.resource[=].operation[=] insert TiflowWarning254
 
 RuleSet: TaskAcceptOperationStatusCodes
 * rest.resource[=].operation[=] insert Successful
@@ -107,6 +112,8 @@ RuleSet: TaskCloseOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert TiflowWarning253
+* rest.resource[=].operation[=] insert TiflowWarning254
 
 RuleSet: TaskAbortOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulNoContent
@@ -124,6 +131,8 @@ RuleSet: TaskDispenseOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowSecretMismatch
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
+* rest.resource[=].operation[=] insert TiflowWarning253
+* rest.resource[=].operation[=] insert TiflowWarning254
 
 RuleSet: CommunicationSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
@@ -133,6 +142,8 @@ RuleSet: CommunicationReadInteractionStatusCodes
 
 RuleSet: CommunicationCreateInteractionStatusCodes
 * insert CreateInteractionStatusCodes
+* rest.resource[=].interaction[=] insert TiflowWarning253
+* rest.resource[=].interaction[=] insert TiflowWarning254
 
 RuleSet: CommunicationDeleteInteractionStatusCodes
 * insert DeleteInteractionStatusCodes
@@ -161,6 +172,8 @@ RuleSet: SystemQueryOperationStatusCodesWithNormalSuccess
 
 RuleSet: ConsentSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
+* rest.resource[=].interaction[=] insert TiflowWarning253
+* rest.resource[=].interaction[=] insert TiflowWarning254
 
 RuleSet: ConsentCreateInteractionStatusCodes
 * insert CreateInteractionStatusCodes
