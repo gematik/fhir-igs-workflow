@@ -23,6 +23,7 @@ Usage: #definition
 
 // Response Types
 * insert ClientTimeout
+* insert TooManyRequests
 * insert GatewayTimeout
 * insert InternalServerError
 * insert TiflowTimeout
