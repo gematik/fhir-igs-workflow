@@ -1,7 +1,9 @@
 Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelte FHIR-Ressourcen. Die folgenden Anforderungen beschreiben Mindestprüfungen.
 
+### Allgemeine Prüfungen zur FHIR-Validierung
+
 <!-- A_23384-06 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A273" title="TI-Flow-Fachdienst - Prüfung Gültigkeit FHIR Ressourcen" version="0">
+<requirement conformance="SHALL" core-a273"="" key="IG-TIFLOW-CORE-A476" title="TI-Flow-Fachdienst - Prüfung Gültigkeit FHIR Ressourcen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -79,7 +81,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 
 <!-- TI-Flow-26_2 BSI_07 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A458" title="TI-Flow-Fachdienst - Gültigkeitswerte gegen aktuelle FHIR-Konfiguration auswerten" version="0">
+<requirement conformance="SHALL" core-a458"="" key="IG-TIFLOW-CORE-A477" title="TI-Flow-Fachdienst - Gültigkeitswerte gegen aktuelle FHIR-Konfiguration auswerten" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -89,7 +91,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 
 
 <!-- A_27658 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A274" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation" version="0">
+<requirement conformance="SHALL" core-a274"="" key="IG-TIFLOW-CORE-A478" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation" version="0">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -98,7 +100,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 
 <!-- A_27659 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A275" title="FHIR-Ressourcen - Datumsangabe ohne Zeitzoneninformation" version="0">
+<requirement conformance="SHALL" core-a275"="" key="IG-TIFLOW-CORE-A479" title="FHIR-Ressourcen - Datumsangabe ohne Zeitzoneninformation" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -106,8 +108,10 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
      Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Datums- und Zeitangaben ohne Zeitzoneninformation, die entsprechend dem Datum gültige deutsche Zeitzone (CET/CEST) angewendet wird.
 </requirement>
 
+### Prüfung der meta.profile-Definition
+
 <!-- A_27698 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A276" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile" version="0">
+<requirement conformance="SHALL" core-a276"="" key="IG-TIFLOW-CORE-A480" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile" version="0">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -139,7 +143,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 
 <!-- A_27697 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A277" title="FHIR-Ressourcen - Eindeutige Angabe meta.profile" version="0">
+<requirement conformance="SHALL" core-a277"="" key="IG-TIFLOW-CORE-A481" title="FHIR-Ressourcen - Eindeutige Angabe meta.profile" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -162,10 +166,42 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
      Der TI-Flow-Fachdienst und die Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung jeder FHIR-Ressource sicherstellen, dass im Element meta.profile genau ein Eintrag enthalten ist, wenn im Profil das Element meta.profile verpflichtend anzugeben ist; bei Abweichung ist die Ressource als fehlerhaft zu behandeln und darf nicht übermittelt werden.
 </requirement>
 
-### Prüfung von Referenzen in Bundles
+### Validierung von Referenzen in FHIR-Objekten
+
+FHIR ermöglicht die Verknüpfung von Ressourcen über Referenzen. Das erfolgt über den Datentyp [Reference](https://hl7.org/fhir/R4/references.html). Referenzen dienen dazu, auf andere Ressourcen innerhalb derselben oder einer anderen FHIR-Instanz zu verweisen.
+
+Der TI-Flow-Fachdienst erzeugen und validieren diese Angaben.
+
+Beim Erzeugen von FHIR-Objekten verwendet der TI-Flow-Fachdienst grundsätzlich das `urn:uuid`-Schema, um eine Referenz anzugeben. Das ermöglicht eine direkte Auflösung innerhalb des Artefakts.
+
+#### Referenzierungen und fullUrl in FHIR-Bundles
+
+Innerhalb eines [FHIR-Bundle](https://hl7.org/fhir/R4/bundle.html#references) dient die `fullUrl` als eindeutige Kennung eines Bundle-Eintrags, damit Resourcen im Bundle referenziert und aufgelöst werden können. Für den Wert von `fullUrl` sind sieht die FHIR Spezifikation verschiedene Formate vor: 
+
+- `oid`, 
+- `urn:uuid` 
+- und `http(s)`
+
+Die `fullUrl` muss dabei mit der ID der referenzierten Ressource konsistent sein, damit die Referenzierung eindeutig und prüfbar bleibt.
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A482" title="FHIR-Ressource erzeugen - fullUrl Format in FHIR-Bundles" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS beim Erzeugen von FHIR-Bundles im `fullUrl`-Element das `urn:uuid`-Schema verwenden.
+</requirement>
+
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A483" title="FHIR-Ressource erzeugen - Format von Referenzen in FHIR-Ressourcen" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS beim Erzeugen von FHIR-Datensätzen für die Referenzierung von FHIR-Ressourcen das `urn:uuid`-Schema verwenden.
+</requirement>
 
 <!-- A_26229-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A278" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Pruefung Konsistenz Ressource IDs" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A484" title="FHIR-Ressource validieren - Prüfung Konsistenz Ressource IDs" version="0">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -197,7 +233,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 
 <!-- A_26233-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A279" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Format fullUrl" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A485" title="FHIR-Ressource validieren - Prüfung Format fullUrl" version="0">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -222,14 +258,14 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Format der fullUrl ist ungültig.</td>
+            <td>Invalid format of the fullUrl</td>
         </tr>
     </table> 
     abbrechen.
 </requirement>
 
 <!-- A_27648 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A280" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A486" title="FHIR-Ressource validieren - Prüfung Existenz von Ressource.id" version="0">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -254,14 +290,14 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Die ID einer Ressource im Bundle ist nicht vorhanden.</td>
+            <td>The ID of a resource in the bundle does not exist</td>
         </tr>
     </table> 
     abbrechen.
 </requirement>
 
 <!-- A_27649 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A281" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A487" title="FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen" version="0">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -286,14 +322,19 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Referenz einer Ressource konnte nicht aufgelöst werden.</td>
+            <td>Reference to a resource could not be resolved</td>
         </tr>
     </table> 
     abbrechen.
 </requirement>
 
+
+### Referenzierungen und fullUrl in FHIR-Bundles
+
+Vorgaben für die Validierung von FHIR-Objekten sind im IG [TI-Common Validierung] beschrieben.
+
 <!-- A_26237-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A282" title="FHIR-Ressourcen - Ressource-ID in fullUrl" version="0">
+<requirement conformance="SHALL" core-a471"="" key="IG-TIFLOW-CORE-A488" title="FHIR-Ressourcen - Ressource-ID in fullUrl" version="0">
     <meta lockversion="false"/>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -307,17 +348,15 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource die ID der fullURL (Bundle.entry.fullurl) der Ressource auf die ID der Ressource (Bundle.entry.resource.id) setzen, sofern das http(s)-Schema verwendet wird.
+     Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource die ID der fullURL (Bundle.entry.fullurl) der Ressource auf die ID der Ressource (Bundle.entry.resource.id) setzen, sofern das http(s)-Schema verwendet wird.
 </requirement>
 
+
 <!-- A_26238-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A283" title="FHIR-Ressourcen - Format fullUrl" version="0">
+<requirement conformance="SHALL" core-a472"="" key="IG-TIFLOW-CORE-A489" title="FHIR-Ressourcen - Format fullUrl" version="0">
     <meta lockversion="false"/>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -331,17 +370,14 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource sicherstellen, dass die fullURL (Bundle.entry.fullUrl) entweder im [Format http-Schema] oder im [Format urn:uuid-Schema] vorliegt.
+     Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource sicherstellen, dass die fullURL (Bundle.entry.fullUrl) entweder im [Format http-Schema] oder im [Format urn:uuid-Schema] vorliegt.
 </requirement>
 
 <!-- A_22216-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A284" title="FHIR-Ressourcen Versionsangabe" version="0">
+<requirement conformance="SHALL" core-a473"="" key="IG-TIFLOW-CORE-A490" title="FHIR-Ressourcen Versionsangabe" version="0">
     <meta lockversion="false"/>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Konformitätsbestätigung">funkt. Eignung: Konformitätsbestätigung</testProcedure>
@@ -365,11 +401,10 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 <!-- TI-Flow-26_2 BSI_09 -->
 
-
 ### Validierung von Extensions
 
 <!-- A_22927-03 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A285" title="TI-Flow-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions" version="0">
+<requirement conformance="SHALL" core-a474"="" key="IG-TIFLOW-CORE-A491" title="FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions" version="0">
 	<meta lockversion="false"/>
 	<actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
     	<testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -401,7 +436,7 @@ Der TI-Flow-Fachdienst validiert bei Operationen von Clientsystemen übermittelt
 </requirement>
 
 <!-- A_27672 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A286" title="FHIR Ressourcen - Ausschluss unspezifizierter Extensions" version="0">
+<requirement conformance="SHALL" core-a475"="" key="IG-TIFLOW-CORE-A492" title="FHIR Ressourcen - Ausschluss unspezifizierter Extensions" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
