@@ -142,6 +142,7 @@ RuleSet: CommunicationDeleteInteractionStatusCodes
 
 RuleSet: MedicationDispenseSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
+* rest.resource[=].interaction[=] insert TiflowAuthRoleNotAllowed
 
 RuleSet: MedicationDispenseReadInteractionStatusCodes
 * insert ReadInteractionStatusCodes
