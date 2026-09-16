@@ -19,9 +19,6 @@ Usage: #definition
 
 * insert ImportCapabilityStatment(TIFlowBasicServer, #SHALL)
 
-* imports[=].extension[0].url = $capabilitystatement-expectation
-* imports[=].extension[0].valueCode = #SHALL
-
 * insert TaskInteraction(#SHALL)
 * insert CommunicationInteraction(#SHALL)
 * insert MedicationDispenseInteraction(#SHALL)

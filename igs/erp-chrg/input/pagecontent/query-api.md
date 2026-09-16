@@ -1,4 +1,4 @@
-Diese Seite bietet einen Einstieg in die Query‑API‑Seiten der einzelnen FHIR‑Ressourcen.
+Diese Seite bietet einen Einstieg in die Resource‑API‑Seiten der einzelnen FHIR‑Ressourcen.
 
 ### Ressourcen
 - [ChargeItem](./query-api-chargeitem.html)
