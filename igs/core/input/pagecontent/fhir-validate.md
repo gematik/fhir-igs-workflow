@@ -222,7 +222,7 @@ Die `fullUrl` muss dabei mit der ID der referenzierten Ressource konsistent sein
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>MSG_RESOURCE_ID_MISMATCH</td>
+            <td>SVC_VALIDATION_FAILED</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -254,7 +254,7 @@ Die `fullUrl` muss dabei mit der ID der referenzierten Ressource konsistent sein
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_RESOURCE_FULLURL_INVALID</td>
+            <td>SVC_VALIDATION_FAILED</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -286,7 +286,7 @@ Die `fullUrl` muss dabei mit der ID der referenzierten Ressource konsistent sein
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>MSG_RESOURCE_ID_MISSING</td>
+            <td>SVC_VALIDATION_FAILED</td>
         </tr>
         <tr>
             <th>Details Text</th>
@@ -318,7 +318,7 @@ Die `fullUrl` muss dabei mit der ID der referenzierten Ressource konsistent sein
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>MSG_RESOURCE_ID_FAIL</td>
+            <td>SVC_VALIDATION_FAILED</td>
         </tr>
         <tr>
             <th>Details Text</th>
