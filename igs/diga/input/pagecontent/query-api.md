@@ -1,5 +1,5 @@
-<!-- Query API -->
-Diese Seite bietet einen Einstieg in die Query-API-Seiten der einzelnen FHIR-Ressourcen.
+<!-- Resource API -->
+Diese Seite bietet einen Einstieg in die Resource-API-Seiten der einzelnen FHIR-Ressourcen.
 
 ### Ressourcen
 - [Task](./query-api-task.html)

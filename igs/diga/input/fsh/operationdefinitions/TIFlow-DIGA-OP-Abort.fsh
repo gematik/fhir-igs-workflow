@@ -1,15 +1,17 @@
 Instance: TIFlow-DIGA-OP-Abort
-InstanceOf: OperationDefinition
+InstanceOf: TIOperationDefinition
 Usage: #definition
 Title: "E-Rezept abbrechen"
 Description: "Diese Operation bricht den Workflow einer DiGA-Verordnung ab und löscht alle Daten, die mit dieser Aufgabe zusammenhängen."
 * insert OperationResource(Task, true, false, false, true)
+* extension[method][+].valueCode = #POST
 * code = #abort
 * id = "tiflow-diga-abort-op"
 * name = "TIFlow-DIGA-OP-Abort"
 
 // in
 * parameter[+]
+  * extension[parameterLocation].valueCode = #query
   * name = #ac
   * use = #in
   * min = 0
@@ -19,6 +21,7 @@ Description: "Diese Operation bricht den Workflow einer DiGA-Verordnung ab und l
 
 // alternative in
 * parameter[+]
+  * extension[parameterLocation].valueCode = #query
   * name = #secret
   * use = #in
   * min = 0

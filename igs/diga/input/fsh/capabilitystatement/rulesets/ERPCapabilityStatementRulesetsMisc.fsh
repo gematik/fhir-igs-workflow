@@ -44,7 +44,7 @@ RuleSet: CapSupportResourceOperation(name, operation, expectation, documentation
 RuleSet: CapSupportOperation(name, operation, expectation, documentation)
 * operation[+]
   * name = "{name}"
-  * definition = "{operation}"
+  * definition = Canonical({operation})
   * documentation = {documentation}
   * extension[expectation].valueCode = {expectation}
 
