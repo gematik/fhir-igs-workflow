@@ -42,17 +42,17 @@ RuleSet: TaskInteraction(expectation)
 * insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50")
 * insert CapSupportResourceSearchParamNoDefinition(_offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
 
-* insert CapSupportResourceOperation(create, https://gematik.de/fhir/erp/OperationDefinition/CreateOperationDefinition, {expectation}, "Creates a Task for a specific flow type")
+* insert CapSupportResourceOperation(create, TIFlow-DIGA-OP-Create, {expectation}, "Creates a Task for a specific flow type")
 * insert TaskCreateOperationStatusCodes
-* insert CapSupportResourceOperation(activate, https://gematik.de/fhir/erp/OperationDefinition/ActivateOperationDefinition, {expectation}, "Activates the created Task using the signed ePrescription bundle")
+* insert CapSupportResourceOperation(activate, TIFlow-DIGA-OP-Activate, {expectation}, "Activates the created Task using the signed ePrescription bundle")
 * insert TaskActivateOperationStatusCodes
-* insert CapSupportResourceOperation(accept, https://gematik.de/fhir/erp/OperationDefinition/AcceptOperationDefinition, {expectation}, "Payor claims an ePrescription and sets Task status to in-progress")
+* insert CapSupportResourceOperation(accept, TIFlow-DIGA-OP-Accept, {expectation}, "Payor claims an ePrescription and sets Task status to in-progress")
 * insert TaskAcceptOperationStatusCodes
-* insert CapSupportResourceOperation(reject, https://gematik.de/fhir/erp/OperationDefinition/RejectOperationDefinition, {expectation}, "Rejects dispensing and resets Task status to active")
+* insert CapSupportResourceOperation(reject, RejectOperation, {expectation}, "Rejects dispensing and resets Task status to active")
 * insert TaskRejectOperationStatusCodes
-* insert CapSupportResourceOperation(close, https://gematik.de/fhir/erp/OperationDefinition/CloseOperationDefinition, {expectation}, "Finishes the ePrescription workflow and sets Task status to completed")
+* insert CapSupportResourceOperation(close, CloseOperation, {expectation}, "Finishes the ePrescription workflow and sets Task status to completed")
 * insert TaskCloseOperationStatusCodes
-* insert CapSupportResourceOperation(abort, https://gematik.de/fhir/erp/OperationDefinition/AbortOperationDefinition, {expectation}, "Aborts the ePrescription workflow and deletes Task related data")
+* insert CapSupportResourceOperation(abort, TIFlow-DIGA-OP-Abort, {expectation}, "Aborts the ePrescription workflow and deletes Task related data")
 * insert TaskAbortOperationStatusCodes
 
 RuleSet: CommunicationInteraction(expectation)

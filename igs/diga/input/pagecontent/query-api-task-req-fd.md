@@ -1,4 +1,4 @@
-Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für die `Task`-Query-Endpunkte.
+Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für die `Task`-Endpunkte.
 
 ### Anforderungen aus der Core Spezifikation
 
