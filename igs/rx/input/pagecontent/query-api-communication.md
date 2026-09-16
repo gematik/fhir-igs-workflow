@@ -6,11 +6,11 @@ Communication wird für die Kommunikation zwischen Versicherten und Apotheke ver
 
 Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über die folgenden HTTP-Methoden ermöglicht:
 
-|HTTP-Methode|Ergebnis der Anfrage|
-|---|---|
-|GET|Nachrichten abrufen|
-|POST|Nachricht einstellen|
-|DELETE|Nachricht löschen|
+|Akteur|HTTP-Methode|Ergebnis der Anfrage|
+|---|---|---|
+|Versicherter, Apotheke|GET|Nachrichten abrufen|
+|Versicherter, Apotheke|POST|Nachricht einstellen|
+|Versicherter, Apotheke|DELETE|Nachricht löschen|
 
 ### Anforderungen an Schnittstelle
 

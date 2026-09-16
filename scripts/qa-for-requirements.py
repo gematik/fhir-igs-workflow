@@ -207,8 +207,8 @@ def main() -> int:
     else:
         run_and_record(
             "Run IG Tools",
-            "Run igtools process for all IGs",
-            ["./all", "igtools", "process"],
+            "Run reqtools process for all IGs",
+            ["./all", "reqtools", "process"],
             strict=True,
             cwd=repo_root,
         )
