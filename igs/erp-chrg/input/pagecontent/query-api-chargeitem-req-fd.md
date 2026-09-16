@@ -1,4 +1,4 @@
-Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `ChargeItem`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `ChargeItem`-Endpunkte.
 
 ### Allgemeine Regeln
 <!--A_22111-->
