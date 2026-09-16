@@ -1,60 +1,38 @@
-// Errors for all Resource Endpoints
-// RuleSet: GlobalQueryErrorCodes
-
-// * rest.resource[=].interaction[=] insert InvalidRequest
-
-// * rest.resource[=].interaction[=] insert TiflowTimeout
-
-// * rest.resource[=].interaction[=] insert TiflowInternalError
-
 // Query-API Interactions
 RuleSet: ReadInteractionStatusCodes
-// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 // * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: PatchInteractionStatusCodes
-// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 // * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: DeleteInteractionStatusCodes
-// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert SuccessfulNoContent
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 // * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: CreateInteractionStatusCodes
-// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert SuccessfulCreated
 * rest.resource[=].interaction[=] insert UnknownResourceType
 
 RuleSet: SearchTypeInteractionStatusCodes
-// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownSearchParameter
 * rest.resource[=].interaction[=] insert InvalidQueryParameters
 * rest.resource[=].interaction[=] insert UnknownResourceType
 
-// Operation-API Error-Constellations
-
-// RuleSet: GlobalOperationErrorCodes
-
-// * insert InvalidRequest
-
-// * insert TiflowInternalError
-
-// * insert TiflowTimeout
+RuleSet: InstanceOperationfullURLValidate
+* insert ResourceIsNotKnown
 
 RuleSet: InstanceOperationStatusCodes
 * insert ResourceIsNotKnown
 * insert ResourceWasDeleted
-// * insert GlobalOperationErrorCodes
 
 RuleSet: SubscriptionSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes

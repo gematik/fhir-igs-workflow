@@ -1,45 +1,35 @@
 // // Errors for all Resource Endpoints
-// RuleSet: GlobalQueryErrorCodes
-// * rest.resource[=].interaction[=] insert InvalidRequest
-// * rest.resource[=].interaction[=] insert TiflowInternalError
-// * rest.resource[=].interaction[=] insert TiflowTimeout
 
 // Query-API Interactions
 RuleSet: ReadInteractionStatusCodes
-// * insert GlobalQueryErrorCodes
-// * rest.resource[=].interaction[=] insert Successful
+* rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: UpdateInteractionStatusCodes
-// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: PatchInteractionStatusCodes
-// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: DeleteInteractionStatusCodes
-// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert SuccessfulNoContent
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: CreateInteractionStatusCodes
-// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert SuccessfulCreated
 * rest.resource[=].interaction[=] insert UnknownResourceType
 
 RuleSet: SearchTypeInteractionStatusCodes
-// * insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert SuccessfulWithBundle
 * rest.resource[=].interaction[=] insert UnknownSearchParameter
 * rest.resource[=].interaction[=] insert InvalidQueryParameters
@@ -116,27 +106,13 @@ RuleSet: DeviceSearchTypeInteractionStatusCodes
 
 // Operation-API Error-Constellations
 
-// RuleSet: GlobalOperationErrorCodes
-
-// * insert InvalidRequest
-
-// * insert RequestTimeout
-
-// * insert InternalServerError
-
-// * insert TiflowInternalError
-
-// * insert TiflowTimeout
-
 RuleSet: InstanceOperationStatusCodes
 * insert ResourceIsNotKnown
 * insert ResourceWasDeleted
-// * insert GlobalOperationErrorCodes
 
 RuleSet: TypeOperationStatusCodes
 * insert OpUnknown
 * insert UnknownResourceType
-// * insert GlobalOperationErrorCodes
 
 // Concrete Operations
 RuleSet: TaskCreateOperationStatusCodes

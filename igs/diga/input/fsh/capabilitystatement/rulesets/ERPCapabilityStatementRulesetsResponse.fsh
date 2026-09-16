@@ -248,3 +248,10 @@ RuleSet: TiflowTimeout
   * extension[description].valueString = "Timeout"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_TIMEOUT"
+
+RuleSet: fullUrlIDValidate
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "253"
+  * extension[description].valueString = "Resource is not known"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "MSG_RESOURCE_ID_FAIL"

@@ -329,7 +329,3 @@ RuleSet: TiflowErezeptSuccessNoContent(interaction)
   * extension[statusCode].valueString = "204"
   * extension[description].valueString = "Die Anfrage wurde erfolgreich bearbeitet. Die Response enthält jedoch keine Daten."
   * extension[interaction].valueCode = {interaction}
-
-
-
-// Errors for all System Operations
