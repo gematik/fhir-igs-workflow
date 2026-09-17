@@ -39,29 +39,23 @@ Die API-Beschreibung für den Aufruf der Operation findet sich auf:
   </div>
   <div id="Response-Examples">
     <pre>
-			POST /Task/$create HTTP/1.1
-			Host: example.org
-			Content-Type: application/fhir+xml; charset=UTF-8
-			Accept: application/fhir+xml
-		</pre>
-		<div data-name="200 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Task/TaskInCreatedState XML %}
-		</div>
-		<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationCreateError XML %}
-		</div>
-		<div data-name="403 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleCreateOperationOutputError XML %}
-		</div>
-		<div data-name="200 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Task/TaskInCreatedState JSON %}
-		</div>
-		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationCreateError JSON %}
-		</div>
-		<div data-name="403 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleCreateOperationOutputError JSON %}
-		</div>
+		POST /Task/$create HTTP/1.1
+		Host: example.org
+		Content-Type: application/fhir+xml; charset=UTF-8
+		Accept: application/fhir+xml
+	</pre>
+	<div data-name="200 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+		{% fragment Task/TaskInCreatedState XML %}
+	</div>
+	<div data-name="200 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+		{% fragment Task/TaskInCreatedState JSON %}
+	</div>
+	<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
+		{% fragment OperationOutcome/ExampleOperationCreateError XML %}
+	</div>
+	<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
+		{% fragment OperationOutcome/ExampleOperationCreateError JSON %}
+	</div>
   </div>
 </div>
 

@@ -35,9 +35,12 @@ RuleSet: TaskInteraction(expectation)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert TaskSearchTypeInteractionStatusCodes
+
 * insert CapResourceInteraction(#read, #SHALL)
 * insert TaskReadInteractionStatusCodes
+
 * insert CapResourceInteraction(#patch, #SHALL)
+* insert TaskPatchInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(_id, http://hl7.org/fhir/SearchParameter/Resource-id, #token, {expectation}, "Task.id - Unterstützt die Suche nach der Task-ID")
 * insert CapSupportResourceSearchParamNoDefinition(prescription-id, #token, {expectation}, "Task.identifier - Unterstützt die Suche nach der E-Rezept-ID")
