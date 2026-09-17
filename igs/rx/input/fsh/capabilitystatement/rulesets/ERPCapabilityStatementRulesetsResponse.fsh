@@ -355,3 +355,43 @@ RuleSet: TiflowErezeptSuccessNoContent(interaction)
   * extension[description].valueString = "Die Anfrage wurde erfolgreich bearbeitet. Die Response enthält jedoch keine Daten."
   * extension[interaction].valueCode = {interaction}
 
+
+RuleSet: TiflowMessageToSelf
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400"
+  * extension[description].valueString = "Nachricht an sich selbst nicht zulässig."
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_MESSAGE_TO_SELF"
+
+
+RuleSet: TIFLOW_COMMUNICATION_PAYLOAD_INVALID
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400"
+  * extension[description].valueString = "Kommunikationsinhalt ungültig."
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_COMMUNICATION_PAYLOAD_INVALID"
+
+
+RuleSet: TIFLOW_INSURANT_NOT_ELIGIBLE
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400"
+  * extension[description].valueString = "Versicherter nicht berechtigt"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_INSURANT_NOT_ELIGIBLE"
+
+
+RuleSet: TIFLOW_RECIPIENT_INVALID
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "403"
+  * extension[description].valueString = "Empfänger ungültig"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_RECIPIENT_INVALID"
+
+
+RuleSet: TIFLOW_MVO_NOT_VALID_YET
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400"
+  * extension[description].valueString = "MVO noch nicht gültig"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_MVO_NOT_VALID_YET"
+

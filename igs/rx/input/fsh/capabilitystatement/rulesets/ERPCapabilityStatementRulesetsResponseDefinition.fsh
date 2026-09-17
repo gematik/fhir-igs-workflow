@@ -150,7 +150,16 @@ RuleSet: CommunicationReadInteractionStatusCodes
 * insert ReadInteractionStatusCodes
 
 RuleSet: CommunicationCreateInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SuccessfulCreatedWithResponseType("Communication")
 * insert CreateInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SvcValidationFailed
+* rest.resource[=].interaction[=] insert TiflowMessageToSelf
+* rest.resource[=].interaction[=] insert TiflowTaskStatusMismatch
+* rest.resource[=].interaction[=] insert TIFLOW_COMMUNICATION_PAYLOAD_INVALID
+* rest.resource[=].interaction[=] insert TIFLOW_INSURANT_NOT_ELIGIBLE
+* rest.resource[=].interaction[=] insert TIFLOW_RECIPIENT_INVALID
+* rest.resource[=].interaction[=] insert TiflowTaskExpired
+* rest.resource[=].interaction[=] insert TIFLOW_MVO_NOT_VALID_YET
 
 
 RuleSet: CommunicationDeleteInteractionStatusCodes

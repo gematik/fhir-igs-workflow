@@ -29,7 +29,7 @@ RuleSet: DeleteInteractionStatusCodes
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: CreateInteractionStatusCodes
-* rest.resource[=].interaction[=] insert SuccessfulCreated
+// * rest.resource[=].interaction[=] insert SuccessfulCreated
 * rest.resource[=].interaction[=] insert UnknownResourceType
 
 RuleSet: SearchTypeInteractionStatusCodes
@@ -92,11 +92,7 @@ RuleSet: AuditEventSearchTypeInteractionStatusCodes
 * insert GlobalErrorsStatusCodes
 
 RuleSet: AuditEventReadInteractionStatusCodes
-* rest.resource[=].interaction[=]
-  * extension[responseInfo][+]
-    * extension[statusCode].valueString = "200"
-    * extension[description].valueString = "Successful operation"
-    * extension[responseType].valueString = "AuditEvent"
+* rest.resource[=].interaction[=] insert SuccessfulWithResponseType("AuditEvent")
 * insert ReadInteractionStatusCodes
 * insert GlobalErrorsStatusCodes
 
@@ -113,6 +109,7 @@ RuleSet: SubscriptionSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
 
 RuleSet: SubscriptionCreateInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SuccessfulCreatedWithResponseType("Subscription")
 * insert CreateInteractionStatusCodes
 
 // Operation-API Error-Constellations

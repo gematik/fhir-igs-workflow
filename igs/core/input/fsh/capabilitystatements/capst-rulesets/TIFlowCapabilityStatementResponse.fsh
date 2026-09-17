@@ -1,3 +1,18 @@
+
+RuleSet: SuccessfulWithResponseType(responseType)
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "200"
+  * extension[description].valueString = "Successful operation"
+  * extension[responseType].valueString = {responseType}
+
+
+RuleSet: SuccessfulCreatedWithResponseType(responseType)
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "201"
+  * extension[description].valueString = "Resource created"
+  * extension[responseType].valueString = {responseType}
+
+
 RuleSet: Successful
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "200"
