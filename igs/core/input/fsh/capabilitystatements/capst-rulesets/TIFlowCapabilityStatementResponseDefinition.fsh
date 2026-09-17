@@ -109,6 +109,12 @@ RuleSet: DeviceSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
 * insert GlobalErrorsStatusCodes
 
+RuleSet: SubscriptionSearchTypeInteractionStatusCodes
+* insert SearchTypeInteractionStatusCodes
+
+RuleSet: SubscriptionCreateInteractionStatusCodes
+* insert CreateInteractionStatusCodes
+
 // Operation-API Error-Constellations
 
 // RuleSet: InstanceOperationStatusCodes
