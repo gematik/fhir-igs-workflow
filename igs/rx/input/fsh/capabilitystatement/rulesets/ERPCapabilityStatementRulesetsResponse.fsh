@@ -330,26 +330,3 @@ RuleSet: TiflowErezeptSuccessNoContent(interaction)
   * extension[description].valueString = "Die Anfrage wurde erfolgreich bearbeitet. Die Response enthält jedoch keine Daten."
   * extension[interaction].valueCode = {interaction}
 
-
-RuleSet: TiflowWarning252
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "252"
-  * extension[description].valueString = "Die Anfrage hat eine ungültige Arztnummer (LANR oder ZANR): Die übergebene Arztnummer entspricht nicht den Prüfziffer-Validierungsregeln."
-  // * extension[responseType].valueString = "TIFlowOperationOutcome"
-  // * extension[errorCode].valueString = "TIFLOW_EREZEPT_COUNTRY_CODE_INVALID"
-
-
-RuleSet: TiflowWarning253
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "253"
-  * extension[description].valueString = "Die ID einer Ressource und die ID ihrer zugehörigen fullUrl stimmen nicht überein."
-  // * extension[responseType].valueString = "TIFlowOperationOutcome"
-  // * extension[errorCode].valueString = "TIFLOW_EREZEPT_COUNTRY_CODE_INVALID"
-
-
-RuleSet: TiflowWarning254
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "254"
-  * extension[description].valueString = "Die ID einer Ressource und die ID ihrer zugehörigen fullUrl stimmen nicht überein."
-  // * extension[responseType].valueString = "TIFlowOperationOutcome"
-  // * extension[errorCode].valueString = "TIFLOW_EREZEPT_COUNTRY_CODE_INVALID"

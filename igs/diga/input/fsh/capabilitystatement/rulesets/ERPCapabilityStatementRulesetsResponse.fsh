@@ -248,30 +248,3 @@ RuleSet: TiflowTimeout
   * extension[description].valueString = "Timeout"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_TIMEOUT"
-
-// RuleSet: fullUrlIDValidate
-// * extension[responseInfo][+]
-//   * extension[statusCode].valueString = "253"
-//   * extension[description].valueString = "Resource is not known"
-//   * extension[responseType].valueString = "TIFlowOperationOutcome"
-//   * extension[errorCode].valueString = "MSG_RESOURCE_ID_FAIL"
-
-
-// Warnings
-
-RuleSet: TiflowWarning252
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "252"
-  * extension[description].valueString = "Die Anfrage hat eine ungültige Arztnummer (LANR oder ZANR): Die übergebene Arztnummer entspricht nicht den Prüfziffer-Validierungsregeln."
-
-
-RuleSet: TiflowWarning253
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "253"
-  * extension[description].valueString = "Die ID einer Ressource und die ID ihrer zugehörigen fullUrl stimmen nicht überein."
-
-
-RuleSet: TiflowWarning254
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "254"
-  * extension[description].valueString = "Die fullUrl einer FHIR-Ressource entspricht nicht der von FHIR vorgegebenen Regex zur Bildung von fullUrls."
