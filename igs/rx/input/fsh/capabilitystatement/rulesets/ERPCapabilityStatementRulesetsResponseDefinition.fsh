@@ -40,12 +40,6 @@ RuleSet: InstanceOperationStatusCodes
 * insert SvcIdentityMismatch
 * insert ResourceWasDeleted
 
-RuleSet: SubscriptionSearchTypeInteractionStatusCodes
-* insert SearchTypeInteractionStatusCodes
-
-RuleSet: SubscriptionCreateInteractionStatusCodes
-* insert CreateInteractionStatusCodes
-
 // Konkrete Operationen
 
 // Task/$create
