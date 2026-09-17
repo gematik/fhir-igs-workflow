@@ -16,3 +16,6 @@
 
 ## Schematron
 - [Schematron (komprimierter Ordner)](schematrons.zip)
+
+## OpenAPI
+- [OpenAPI Datei](bfarm.yml){::download="true"}
