@@ -1,36 +1,33 @@
-// Errors for all Resource Endpoints
-RuleSet: GlobalQueryErrorCodes
-* rest.resource[=].interaction[=] insert InvalidRequest
-
 // Query-API Interactions
 RuleSet: ReadInteractionStatusCodes
-* insert GlobalQueryErrorCodes
-* rest.resource[=].interaction[=] insert Successful
+* rest.resource[=].interaction[=] insert InvalidRequest
+// * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: PatchInteractionStatusCodes
-* insert GlobalQueryErrorCodes
+* rest.resource[=].interaction[=] insert InvalidRequest
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: DeleteInteractionStatusCodes
-* insert GlobalQueryErrorCodes
+* rest.resource[=].interaction[=] insert InvalidRequest
 * rest.resource[=].interaction[=] insert SuccessfulNoContent
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: CreateInteractionStatusCodes
-* insert GlobalQueryErrorCodes
+* rest.resource[=].interaction[=] insert InvalidRequest
 * rest.resource[=].interaction[=] insert SuccessfulCreated
 * rest.resource[=].interaction[=] insert UnknownResourceType
 
 RuleSet: SearchTypeInteractionStatusCodes
-* insert GlobalQueryErrorCodes
+// 401 - Ungültiges/Abgelaufenes AccessToken
+* rest.resource[=].interaction[=] insert InvalidRequest
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownSearchParameter
 * rest.resource[=].interaction[=] insert InvalidQueryParameters

@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 9c551fe4fd0be2f8cbab6174f979b89e6399bbf12a90bebae9af743e344406e6
+content_hash: 2bb09d26b31c95d6c32a0d251dc5c357fa25c484d159578ee73667ce87552df2
 created: '2026-09-14T11:57:17.217602'
-date: '2026-09-14T11:57:17.217605'
+date: '2026-09-17T09:05:33.828118'
 key: IG-TIFLOW-CORE-A487
-modified: '2026-09-14T11:57:17.217604'
+modified: '2026-09-17T09:05:33.828118'
 release_status: NEW
 source: input/pagecontent/fhir-validate.md
 status: ACTIVE
@@ -15,13 +15,11 @@ test_procedures:
 text: "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen,\
   \ ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles]\
   \ ermittelt werden können und bei Abweichung die Operation mit dem folgenden Fehler:\n\
-  \      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
-  \ collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400\
-  \ - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n\
-  \            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n\
-  \            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details\
-  \ Code</th>\n            <td>MSG_RESOURCE_ID_FAIL</td>\n        </tr>\n        <tr>\n\
-  \            <th>Details Text</th>\n            <td>Reference to a resource could\
-  \ not be resolved</td>\n        </tr>\n    </table> \n    abbrechen."
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details\
+  \ Text</th>\n <td>Reference to a resource could not be resolved</td>\n </tr>\n </table>\
+  \ \n abbrechen."
 title: FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen
 version: 0
