@@ -174,17 +174,17 @@ RuleSet: MedicationDispenseReadInteractionStatusCodes
 
 // EU-spezifische Status-Codes (grenzüberschreitender Datenaustausch)
 
-RuleSet: GlobalSystemOperationErrorCodes
+// RuleSet: GlobalSystemOperationErrorCodes
 
-* insert InvalidRequest
+// * insert InvalidRequest
 
 RuleSet: SystemOperationStatusCodesWithParameters
 * insert SuccessfulWithParameters
-* insert GlobalSystemOperationErrorCodes
+// * insert GlobalSystemOperationErrorCodes
 
 RuleSet: SystemQueryOperationStatusCodesWithNormalSuccess
 * insert Successful
-* insert GlobalSystemOperationErrorCodes
+// * insert GlobalSystemOperationErrorCodes
 
 // Consent Query-API Interactions
 
@@ -193,10 +193,11 @@ RuleSet: ConsentSearchTypeInteractionStatusCodes
 
 
 RuleSet: ConsentCreateInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SuccessfulCreatedWithResponseType("Consent")
 * insert CreateInteractionStatusCodes
-
-RuleSet: ConsentDeleteInteractionStatusCodes
-* insert DeleteInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SvcIdentityMismatch
+* rest.resource[=].interaction[=] insert SvcValidationFailed
+* rest.resource[=].interaction[=] insert TIFLOW_CONSENT_ALREADY_EXISTS
 
 // EU Operationen
 

@@ -395,3 +395,19 @@ RuleSet: TIFLOW_MVO_NOT_VALID_YET
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_MVO_NOT_VALID_YET"
 
+
+RuleSet: TIFLOW_CONSENT_ALREADY_EXISTS
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "409"
+  * extension[description].valueString = "Einwilligung existiert bereits"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_CONSENT_ALREADY_EXISTS"
+
+
+RuleSet: TIFLOW_CONSENT_CATEGORY_REQUIRED(interaction)
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "405"
+  * extension[description].valueString = "Einwilligungskategorie erforderlich"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_CONSENT_CATEGORY_REQUIRED"
+  * extension[interaction].valueCode = {interaction}

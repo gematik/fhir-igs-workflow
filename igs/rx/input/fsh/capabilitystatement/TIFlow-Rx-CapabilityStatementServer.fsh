@@ -121,14 +121,13 @@ RuleSet: CommunicationInteraction(expectation)
 RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResource(Consent, {expectation})
 * rest.resource[=] insert TiflowErezeptSuccessNoContent(#conditional-delete)
+* rest.resource[=] insert TIFLOW_CONSENT_CATEGORY_REQUIRED(#conditional-delete)
 * insert CapSupportResourceConditionalDelete(#single)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert ConsentSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#create, #SHALL)
 * insert ConsentCreateInteractionStatusCodes
-// * insert CapResourceInteraction(#delete, #SHALL)
-// * insert ConsentDeleteInteractionStatusCodes
 
 
 * insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")
