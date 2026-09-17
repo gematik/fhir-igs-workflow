@@ -3,10 +3,28 @@ RuleSet: Successful
   * extension[statusCode].valueString = "200"
   * extension[description].valueString = "Successful operation"
 
+RuleSet: SuccessfulWithResponseType(responseType)
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "200"
+  * extension[description].valueString = "Successful operation"
+  * extension[responseType].valueString = {responseType}
+
+RuleSet: SuccessfulWithBundle
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "200"
+  * extension[description].valueString = "Successful operation"
+  * extension[responseType].valueString = "Bundle"
+
 RuleSet: SuccessfulCreated
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "201"
   * extension[description].valueString = "Resource created"
+
+RuleSet: SuccessfulCreatedWithResponseType(responseType)
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "201"
+  * extension[description].valueString = "Resource created"
+  * extension[responseType].valueString = {responseType}
 
 RuleSet: SuccessfulNoContent
 * extension[responseInfo][+]
@@ -83,12 +101,12 @@ RuleSet: TiflowSignatureNoOcspResponse
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_SIGNATURE_NO_OCSP_RESPONSE"
 
-RuleSet: TiflowAuthRoleNotAllowed
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "403"
-  * extension[description].valueString = "Access role not allowed"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+// RuleSet: TiflowAuthRoleNotAllowed
+// * extension[responseInfo][+]
+//   * extension[statusCode].valueString = "403"
+//   * extension[description].valueString = "Access role not allowed"
+//   * extension[responseType].valueString = "TIFlowOperationOutcome"
+//   * extension[errorCode].valueString = "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
 
 RuleSet: TiflowTaskStatusMismatch
 * extension[responseInfo][+]
@@ -272,6 +290,13 @@ RuleSet: TiflowTimeout
   * extension[description].valueString = "Timeout"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_TIMEOUT"
+
+RuleSet: TiflowNotActivated
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "409"
+  * extension[description].valueString = "Conflict"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_EREZEPT_NOT_ACTIVATED"
 
 // EU-spezifische Response-Definitionen (grenzüberschreitender Datenaustausch)
 

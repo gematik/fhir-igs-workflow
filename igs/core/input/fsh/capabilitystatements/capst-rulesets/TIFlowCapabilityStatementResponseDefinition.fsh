@@ -1,4 +1,4 @@
-// // Errors for all Resource Endpoints
+// Errors for all Resource Endpoints
 RuleSet: GlobalErrorsStatusCodes
 * rest.resource[=].interaction[=] insert TiflowTimeout
 * rest.resource[=].interaction[=] insert TiflowInternalError
@@ -89,6 +89,7 @@ RuleSet: SearchTypeInteractionStatusCodes
 
 RuleSet: AuditEventSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
+* insert GlobalErrorsStatusCodes
 
 RuleSet: AuditEventReadInteractionStatusCodes
 * rest.resource[=].interaction[=]
