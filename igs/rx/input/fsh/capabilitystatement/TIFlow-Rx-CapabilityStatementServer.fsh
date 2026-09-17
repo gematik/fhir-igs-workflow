@@ -22,7 +22,6 @@ Description: "CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Wor
 * insert TaskInteraction(#SHALL)
 * insert CommunicationInteraction(#SHALL)
 * insert MedicationDispenseInteraction(#SHALL)
-* insert SubscriptionInteraction(#SHALL)
 * insert ConsentInteraction(#SHALL)
 * insert GrantEUAccessPermissionInteraction(#SHALL)
 * insert ReadEUAccessPermissionInteraction(#SHALL)
@@ -118,13 +117,6 @@ RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Unterstützt das Sortieren nach unterstützten Communication-Suchkriterien")
 * insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50")
 * insert CapSupportResourceSearchParamNoDefinition(_offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
-
-RuleSet: SubscriptionInteraction(expectation)
-* insert CapSupportResource(Subscription, {expectation})
-* insert CapResourceInteraction(#search-type, {expectation})
-* insert SubscriptionSearchTypeInteractionStatusCodes
-* insert CapResourceInteraction(#create, {expectation})
-* insert SubscriptionCreateInteractionStatusCodes
 
 RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResource(Consent, {expectation})

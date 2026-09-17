@@ -23,7 +23,7 @@ Usage: #definition
 // Ressourcen
 * insert DeviceInteraction(#SHALL)
 * insert AuditEventInteraction(#SHALL)
-
+* insert SubscriptionInteraction(#SHALL)
 
 RuleSet: DeviceInteraction(expectation)
 * insert CapSupportResource(Device, {expectation})
@@ -49,3 +49,10 @@ RuleSet: AuditEventInteraction(expectation)
 * insert CapSupportResourceSearchParamNoDefinition(_sort, #string, {expectation}, "Unterstützt das Sortieren nach unterstützten AuditEvent-Suchkriterien")
 * insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50")
 * insert CapSupportResourceSearchParamNoDefinition(_offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
+
+RuleSet: SubscriptionInteraction(expectation)
+* insert CapSupportResource(Subscription, {expectation})
+* insert CapResourceInteraction(#search-type, {expectation})
+* insert SubscriptionSearchTypeInteractionStatusCodes
+* insert CapResourceInteraction(#create, {expectation})
+* insert SubscriptionCreateInteractionStatusCodes
