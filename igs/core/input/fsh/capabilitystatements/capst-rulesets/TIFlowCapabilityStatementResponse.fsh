@@ -129,12 +129,12 @@ RuleSet: TiflowAccesscodeMismatch
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_ACCESSCODE_MISMATCH"
 
-RuleSet: TiflowAuthRoleNotAllowed
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "403"
-  * extension[description].valueString = "Access role not allowed"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+// RuleSet: TiflowAuthRoleNotAllowed
+// * extension[responseInfo][+]
+//   * extension[statusCode].valueString = "403"
+//   * extension[description].valueString = "Access role not allowed"
+//   * extension[responseType].valueString = "TIFlowOperationOutcome"
+//   * extension[errorCode].valueString = "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
 
 RuleSet: TiflowFlowtypeMismatch
 * extension[responseInfo][+]
@@ -234,7 +234,6 @@ RuleSet: ClientTimeout
   * extension[description].valueString = "Request Timeout"
 
 
-
 RuleSet: GatewayTimeout
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "504"
@@ -251,3 +250,15 @@ RuleSet: TooManyRequests
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "429"
   * extension[description].valueString = "Too Many Requests (ZETA)"
+
+
+RuleSet: Unauthorized
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "401"
+  * extension[description].valueString = "Unauthorized (ZETA)"
+
+
+RuleSet: AuthRoleNotAllowed
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "403"
+  * extension[description].valueString = "Access role not allowed"

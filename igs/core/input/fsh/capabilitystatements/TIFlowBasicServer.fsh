@@ -26,6 +26,6 @@ Usage: #definition
 * insert TooManyRequests
 * insert GatewayTimeout
 * insert InternalServerError
-* insert TiflowTimeout
-* insert TiflowInternalError
 * insert InvalidRequest
+* insert Unauthorized
+* insert AuthRoleNotAllowed
