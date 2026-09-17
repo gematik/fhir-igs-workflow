@@ -17,7 +17,7 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 
 #### PS verordnende LEI
 
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A12" title="PS verordnende LEI: TIFlow - DIGA - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A12" title="PS verordnende LEI: TIFlow - DIGA - Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
@@ -34,27 +34,41 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
 
 #### TI-Flow-FdV 
 
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A13" title="TI-Flow-FdV: TIFlow - DIGA - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A13" title="TI-Flow-FdV: TIFlow - DIGA - Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das TI-Flow-FdV MUSS für die Umsetzung der Nutzung von Verordnungen von DiGAs die Anwendungsfälle
+    Das TI-Flow-FdV MUSS, wenn es das Einlösen von Verordnungen für DiGAs unterstützt, die Anwendungsfälle
     <ul>
         <li>UC 3.1 - E-Rezepte durch Versicherten abrufen</li>
         <li>UC 3.2 - E-Rezept durch Versicherten löschen</li>
-        <li>Kostenträger suchen</li>
         <li>UC 3.3 - Nachricht durch Versicherten übermitteln</li>
         <li>UC 3.4 - Nachricht durch Versicherten empfangen</li>
         <li>UC 3.8 - Nachricht durch Versicherten löschen</li>
+        <li>UC 3.13 - Einwilligung einsehen</li>
+        <li>UC 3.14 - Einwilligung erteilen</li>
+        <li>UC 3.15 - Einwilligung widerrufen</li>
         <li>UC 3.5 - Protokolldaten abrufen</li>
+    </ul>
+    umsetzen.
+</requirement>
+
+<requirement conformance="SHALL" key="" title="TI-Flow-FdV: TIFlow - DIGA - optionale Anwendungsfälle" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das TI-Flow-FdV SOLL, wenn es das Einlösen von Verordnungen für DiGAs unterstützt, den Anwendungsfall
+    <ul>
+        <li>Kostenträger suchen</li>
     </ul>
     umsetzen.
 </requirement>
 
 #### Clientsystem Kostenträger
 
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A14" title="CS Kostenträger: TIFlow - DIGA - verpflichtende Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A14" title="CS Kostenträger: TIFlow - DIGA - Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="CS_TI-Flow_KTR" description="CS-Schnittstelle für TI-Flow/Kostenträger">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
