@@ -70,6 +70,23 @@ Die technische Authentifizierung erfolgt dann über den `/token` Endpunkt, der d
     , um auf die Endpunkte des BfArM Webdienstes zugreifen zu können.
 </requirement>
 
+### TLS-Verbindung
+
+Zur Absicherung der Datenübermittlung muss der Transport der Nachrichten zwischen TI-Flow-Fachdienst und BfArM Webdienst mittels HTTPS erfolgen. Transport Layer Security (TLS) ist gemäß den Vorgaben aus [gemSpec_Krypt]#E-Rezept-spezifische Vorgaben einzusetzen.
+
+<!-- A_28933 -->
+<requirement conformance="SHALL" key="" title="TI-Flow-Fachdienst - BfArM - Prüfung der Validierungsstufe des TLS-Server-Zertifikats" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS beim Aufbau einer HTTPS-Verbindung zum BfArM Webdienst prüfen, dass das TLS-Server-Zertifikat im Erweiterungsfeld Certificate Policies (OID 2.5.29.32) einen der folgenden Policy Identifier enthält:
+    <ul>
+      <li>2.23.140.1.2.2 (OV - organization-validated)</li>
+      <li>2.23.140.1.1 (EV - extended-validation)</li>
+    </ul>
+    und bei Fehlen die Verbindung abbrechen, um eine sichere Validierungsstufe des TLS-Server-Zertifikats zu gewährleisten.
+</requirement>
 
 ### Lokalisierung
 
@@ -256,7 +273,7 @@ Bei der Suche nach Apothekendaten basierend auf der Telematik-lD besteht die Mö
 
 1. Die betroffene Telematik-ID wird unverändert in den digitalen Durchschlag aus den Dispensierinformationen übernommen.
 2. Der Wert für commonName aus den Nutzerinformationen der Anfrage (zeta-user-info) wird als Name der Apotheke im digitalen Durchschlag gesetzt. Sollte der commonName in den Nutzerinformationen nicht gesetzt sein (NULL), dann wird "unbekannt" als Name der Apotheke im digitalen Durchschlag gesetzt.
-3. Der Datensatz wird an den BfArM-Webdienst übertragen.
+3. Der Datensatz wird an den BfArM Webdienst übertragen.
 4. Sollte der übermittelte Datensatz durch das BfArM untersucht werden müssen, erfolgt eine bilaterale Abstimmung zwischen gematik und BfArM zur Klärung des Sachverhalts.
 
 <!-- A_28979 -->
