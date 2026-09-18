@@ -4121,602 +4121,6 @@
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/query-api-pushers-req-fd.html#IG-TIFLOW-CORE-A272"
         },
         {
-            "key": "IG-TIFLOW-CORE-A273",
-            "title": "TI-Flow-Fachdienst - Prüfung Gültigkeit FHIR Ressourcen",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei der Prüfung der zeitlichen Gültigkeit einer FHIR Ressource den Referenzwert aus dem Element gemäß folgender Tabelle zugrunde legen. \n\n <table>\n <thead>\n <tr>\n <th>Bezeichnung</th>\n <th>Package</th>\n <th>FHIR Profil</th>\n <th>Element/Zeitpunkt</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>KBV Verordnungsdatensatz</td>\n <td><code>kbv.ita.erp</code></td>\n <td><code>KBV_PR_ERP_Prescription</code></td>\n <td><code>MedicationRequest.authoredOn</code></td>\n </tr>\n <tr>\n <td>KBV Verordnungsdatensatz DiGA</td>\n <td><code>kbv.itv.evdga</code></td>\n <td><code>KBV_PR_EVDGA_HealthAppRequest</code></td>\n <td><code>DeviceRequest.authoredOn</code></td>\n </tr>\n <tr>\n <td>Communication</td>\n <td><code>de.gematik.erezept-workflow.r4</code></td>\n <td>\n <code>GEM_ERP_PR_Communication_DispReq</code>\n <code>GEM_ERP_PR_Communication_Reply</code>\n <code>GEM_ERP_PR_Communication_DiGA</code>\n </td>\n <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n </tr>\n <tr>\n <td>MedicationDispense</td>\n <td><code>de.gematik.erezept-workflow.r4</code></td>\n <td>\n <code>Gem_erxMedicationDispense</code>\n <code>GEM_ERP_PR_MedicationDispense</code>\n </td>\n <td><code>MedicationDispense.whenHandedOver</code></td>\n </tr>\n <tr>\n <td>PKV Patientenrechnung</td>\n <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>\n <td>\n <code>GEM_ERPCHRG_PR_ChargeItem</code>\n <code>GEM_ERPCHRG_PR_Consent</code>\n </td>\n <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n </tr>\n <tr>\n <td>PKV Patientenrechnung Communication</td>\n <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>\n <td>\n <code>GEM_ERPCHRG_PR_Communication_ChargChangeReq</code>\n <code>GEM_ERPCHRG_PR_Communication_ChargChangeReply</code>\n </td>\n <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n </tr>\n <tr>\n <td>PKV Abgabedatensatz</td>\n <td><code>de.abda.eRezeptAbgabedatenPKV</code></td>\n <td><code>DAV_PKV_PR_ERP_Abgabeinformationen</code></td>\n <td><code>MedicationDispense.whenHandedOver</code></td>\n </tr>\n </tbody>\n </table>\n <div><figcaption><strong>Tabelle: </strong>TAB_ERP_FD_PruefungGueltigkeit_FHIR_Ressource Werte bei Prüfung der zeitlichen Gültigkeit einer FHIR Ressource</figcaption></div>",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A273"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A274",
-            "title": "TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS sicherstellen, dass alle Datums- und Zeitangaben ohne explizite Zeitzoneninformation als deutsche Zeit (CET/CEST) entsprechend der historischen oder aktuellen Regelung interpretiert werden.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A274"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A275",
-            "title": "FHIR-Ressourcen - Datumsangabe ohne Zeitzoneninformation",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Datums- und Zeitangaben ohne Zeitzoneninformation, die entsprechend dem Datum gültige deutsche Zeitzone (CET/CEST) angewendet wird.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A275"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A276",
-            "title": "TI-Flow-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, dass maximal ein meta.profile-Eintrag vorhanden ist und bei Abweichung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_META_PROFILE_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table>\n    abbrechen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A276"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A277",
-            "title": "FHIR-Ressourcen - Eindeutige Angabe meta.profile",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst und die Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung jeder FHIR-Ressource sicherstellen, dass im Element meta.profile genau ein Eintrag enthalten ist, wenn im Profil das Element meta.profile verpflichtend anzugeben ist; bei Abweichung ist die Ressource als fehlerhaft zu behandeln und darf nicht übermittelt werden.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "CS_TI-Flow_KTR",
-                        "id": "productType181",
-                        "description": "CS-Schnittstelle für TI-Flow/Kostenträger"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "NCPeH_ePeDA",
-                        "id": "productType156",
-                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "PS_TI-Flow_Apotheke",
-                        "id": "productType179",
-                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "PS_TI-Flow_verordnend",
-                        "id": "productType178",
-                        "description": "PS-Schnittstelle für TI-Flow/verordnendes System"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FdV",
-                        "id": "productType183",
-                        "description": "TI-Flow-Frontend des Versicherten"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A277"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A278",
-            "title": "TI-Flow-Fachdienst - FHIR-Ressource validieren - Pruefung Konsistenz Ressource IDs",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Abweichung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>MSG_RESOURCE_ID_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Die ID einer Ressource und die ID der zugehörigen fullUrl stimmen nicht überein.</td>\n </tr>\n </table> \n abbrechen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A278"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A279",
-            "title": "TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Format fullUrl",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Abweichung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_RESOURCE_FULLURL_INVALID</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Format der fullUrl ist ungültig.</td>\n </tr>\n </table> \n abbrechen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A279"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A280",
-            "title": "TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Existenz von Ressource.id",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Abweichung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>MSG_RESOURCE_ID_MISSING</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Die ID einer Ressource im Bundle ist nicht vorhanden.</td>\n </tr>\n </table> \n abbrechen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A280"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A281",
-            "title": "TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Abweichung die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>MSG_RESOURCE_ID_FAIL</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Referenz einer Ressource konnte nicht aufgelöst werden.</td>\n </tr>\n </table> \n abbrechen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A281"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A282",
-            "title": "FHIR-Ressourcen - Ressource-ID in fullUrl",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource die ID der fullURL (Bundle.entry.fullurl) der Ressource auf die ID der Ressource (Bundle.entry.resource.id) setzen, sofern das http(s)-Schema verwendet wird.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "CS_TI-Flow_KTR",
-                        "id": "productType181",
-                        "description": "CS-Schnittstelle für TI-Flow/Kostenträger"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "NCPeH_ePeDA",
-                        "id": "productType156",
-                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "PS_TI-Flow_Apotheke",
-                        "id": "productType179",
-                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT28",
-                            "name": "funkt. Eignung: Konformitätsbestätigung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "PS_TI-Flow_verordnend",
-                        "id": "productType178",
-                        "description": "PS-Schnittstelle für TI-Flow/verordnendes System"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT28",
-                            "name": "funkt. Eignung: Konformitätsbestätigung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FdV",
-                        "id": "productType183",
-                        "description": "TI-Flow-Frontend des Versicherten"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A282"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A283",
-            "title": "FHIR-Ressourcen - Format fullUrl",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource sicherstellen, dass die fullURL (Bundle.entry.fullUrl) entweder im [Format http-Schema] oder im [Format urn:uuid-Schema] vorliegt.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "CS_TI-Flow_KTR",
-                        "id": "productType181",
-                        "description": "CS-Schnittstelle für TI-Flow/Kostenträger"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "NCPeH_ePeDA",
-                        "id": "productType156",
-                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "PS_TI-Flow_Apotheke",
-                        "id": "productType179",
-                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT28",
-                            "name": "funkt. Eignung: Konformitätsbestätigung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "PS_TI-Flow_verordnend",
-                        "id": "productType178",
-                        "description": "PS-Schnittstelle für TI-Flow/verordnendes System"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT28",
-                            "name": "funkt. Eignung: Konformitätsbestätigung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FdV",
-                        "id": "productType183",
-                        "description": "TI-Flow-Frontend des Versicherten"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A283"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A284",
-            "title": "FHIR-Ressourcen Versionsangabe",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der zweistelligen Versionsnummer (major.minor) gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "CS_TI-Flow_KTR",
-                        "id": "productType181",
-                        "description": "CS-Schnittstelle für TI-Flow/Kostenträger"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "NCPeH_ePeDA",
-                        "id": "productType156",
-                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "PS_TI-Flow_Apotheke",
-                        "id": "productType179",
-                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT28",
-                            "name": "funkt. Eignung: Konformitätsbestätigung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "PS_TI-Flow_verordnend",
-                        "id": "productType178",
-                        "description": "PS-Schnittstelle für TI-Flow/verordnendes System"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT28",
-                            "name": "funkt. Eignung: Konformitätsbestätigung"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                },
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FdV",
-                        "id": "productType183",
-                        "description": "TI-Flow-Frontend des Versicherten"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT02",
-                            "name": "funkt. Eignung: Herstellererklärung"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A284"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A285",
-            "title": "TI-Flow-Fachdienst - FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstellen, dass keine Extension vorhanden ist, die an einer nicht im FHIR-Profil spezifizierten Stelle verwendet wird. Sollte eine solche Extension gefunden werden, gilt der Datensatz als ungültig. In diesem Fall ist die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abzubrechen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A285"
-        },
-        {
-            "key": "IG-TIFLOW-CORE-A286",
-            "title": "FHIR Ressourcen - Ausschluss unspezifizierter Extensions",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Extensions nur an den Stellen verwendet werden, an denen sie im FHIR-Profil ausdrücklich definiert sind.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A286"
-        },
-        {
             "key": "IG-TIFLOW-CORE-A287",
             "title": "TI-Flow-FdV: Einwilligung erteilen - Einwilligungstext",
             "version": 0,
@@ -8066,7 +7470,7 @@
             "title": "CS: ZETA Client",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS die ZETA Client Funktionen gemäß [gemSST_PS_ZETA_V] umsetzen.",
+            "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS die ZETA Client Funktionen gemäß [gemILF_ZETA_API] umsetzen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -8818,30 +8222,6 @@
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/query-api-communication-req-avs.html#IG-TIFLOW-CORE-A456"
         },
         {
-            "key": "IG-TIFLOW-CORE-A458",
-            "title": "TI-Flow-Fachdienst - Gültigkeitswerte gegen aktuelle FHIR-Konfiguration auswerten",
-            "version": 0,
-            "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS den ermittelten Referenzwert der Gültigkeit gegen die aktuell gültige FHIR-Konfiguration auswerten und als Referenzzeitpunkt für die Prüfung der zeitlichen Gültigkeit einer FHIR Ressource zugrundelegen.",
-            "conformance": "SHALL",
-            "characteristics": [
-                {
-                    "product_type": {
-                        "name": "TI-Flow_FD",
-                        "id": "productType175",
-                        "description": "TI-Flow-Fachdienst"
-                    },
-                    "test_procedure": [
-                        {
-                            "id": "testProcedurePT03",
-                            "name": "funkt. Eignung: Test Produkt/FA"
-                        }
-                    ]
-                }
-            ],
-            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A458"
-        },
-        {
             "key": "IG-TIFLOW-CORE-A459",
             "title": "CS: Alternative VAU-Zertifikat-Verifikation mittels Konnektor",
             "version": 0,
@@ -9247,6 +8627,511 @@
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/op-abort-req-fdv.html#IG-TIFLOW-CORE-A47"
         },
         {
+            "key": "IG-TIFLOW-CORE-A476",
+            "title": "TI-Flow-Fachdienst - Prüfung Gültigkeit FHIR Ressourcen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS bei der Prüfung der zeitlichen Gültigkeit einer FHIR Ressource den Referenzwert aus dem Element gemäß folgender Tabelle zugrunde legen. \n\n  <table>\n    <thead>\n      <tr>\n        <th>Bezeichnung</th>\n        <th>Package</th>\n        <th>FHIR Profil</th>\n        <th>Element/Zeitpunkt</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>KBV Verordnungsdatensatz</td>\n        <td><code>kbv.ita.erp</code></td>\n        <td><code>KBV_PR_ERP_Prescription</code></td>\n        <td><code>MedicationRequest.authoredOn</code></td>\n      </tr>\n      <tr>\n        <td>KBV Verordnungsdatensatz DiGA</td>\n        <td><code>kbv.itv.evdga</code></td>\n        <td><code>KBV_PR_EVDGA_HealthAppRequest</code></td>\n        <td><code>DeviceRequest.authoredOn</code></td>\n      </tr>\n      <tr>\n        <td>Communication</td>\n        <td><code>de.gematik.erezept-workflow.r4</code></td>\n        <td>\n          <code>GEM_ERP_PR_Communication_DispReq</code>\n          <code>GEM_ERP_PR_Communication_Reply</code>\n          <code>GEM_ERP_PR_Communication_DiGA</code>\n        </td>\n        <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n      </tr>\n      <tr>\n        <td>MedicationDispense</td>\n        <td><code>de.gematik.erezept-workflow.r4</code></td>\n        <td>\n          <code>Gem_erxMedicationDispense</code>\n          <code>GEM_ERP_PR_MedicationDispense</code>\n        </td>\n        <td><code>MedicationDispense.whenHandedOver</code></td>\n      </tr>\n      <tr>\n        <td>PKV Patientenrechnung</td>\n        <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>\n        <td>\n          <code>GEM_ERPCHRG_PR_ChargeItem</code>\n          <code>GEM_ERPCHRG_PR_Consent</code>\n        </td>\n        <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n      </tr>\n      <tr>\n        <td>PKV Patientenrechnung Communication</td>\n        <td><code>de.gematik.erezept-patientenrechnung.r4</code></td>\n        <td>\n          <code>GEM_ERPCHRG_PR_Communication_ChargChangeReq</code>\n          <code>GEM_ERPCHRG_PR_Communication_ChargChangeReply</code>\n        </td>\n        <td>Zeitpunkt des Aufrufs der Operation am TI-Flow-Fachdienst</td>\n      </tr>\n      <tr>\n        <td>PKV Abgabedatensatz</td>\n        <td><code>de.abda.eRezeptAbgabedatenPKV</code></td>\n        <td><code>DAV_PKV_PR_ERP_Abgabeinformationen</code></td>\n        <td><code>MedicationDispense.whenHandedOver</code></td>\n      </tr>\n    </tbody>\n  </table>\n  <div><figcaption><strong>Tabelle: </strong>TAB_ERP_FD_PruefungGueltigkeit_FHIR_Ressource Werte bei Prüfung der zeitlichen Gültigkeit einer FHIR Ressource</figcaption></div>",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A476"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A477",
+            "title": "TI-Flow-Fachdienst - Gültigkeitswerte gegen aktuelle FHIR-Konfiguration auswerten",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS den ermittelten Referenzwert der Gültigkeit gegen die aktuell gültige FHIR-Konfiguration auswerten und als Referenzzeitpunkt für die Prüfung der zeitlichen Gültigkeit einer FHIR Ressource zugrundelegen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A477"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A478",
+            "title": "TI-Flow-Fachdienst - FHIR-Ressource validieren - Prüfung Datumsangabe ohne Zeitzoneninformation",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS sicherstellen, dass alle Datums- und Zeitangaben ohne explizite Zeitzoneninformation als deutsche Zeit (CET/CEST) entsprechend der historischen oder aktuellen Regelung interpretiert werden.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A478"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A479",
+            "title": "FHIR-Ressourcen - Datumsangabe ohne Zeitzoneninformation",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Datums- und Zeitangaben ohne Zeitzoneninformation, die entsprechend dem Datum gültige deutsche Zeitzone (CET/CEST) angewendet wird.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A479"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A480",
+            "title": "TI-Flow-Fachdienst - FHIR-Ressource validieren - Eindeutige Angabe meta.profile",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, dass maximal ein meta.profile-Eintrag vorhanden ist und bei Abweichung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_META_PROFILE_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>-</td>\n        </tr>\n    </table>\n    abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A480"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A481",
+            "title": "FHIR-Ressourcen - Eindeutige Angabe meta.profile",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst und die Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung jeder FHIR-Ressource sicherstellen, dass im Element meta.profile genau ein Eintrag enthalten ist, wenn im Profil das Element meta.profile verpflichtend anzugeben ist; bei Abweichung ist die Ressource als fehlerhaft zu behandeln und darf nicht übermittelt werden.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "CS_TI-Flow_KTR",
+                        "id": "productType181",
+                        "description": "CS-Schnittstelle für TI-Flow/Kostenträger"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_TI-Flow_verordnend",
+                        "id": "productType178",
+                        "description": "PS-Schnittstelle für TI-Flow/verordnendes System"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A481"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A482",
+            "title": "FHIR-Ressource erzeugen - fullUrl Format in FHIR-Bundles",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Erzeugen von FHIR-Bundles im `fullUrl`-Element das `urn:uuid`-Schema verwenden.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A482"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A483",
+            "title": "FHIR-Ressource erzeugen - Format von Referenzen in FHIR-Ressourcen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Erzeugen von FHIR-Datensätzen für die Referenzierung von FHIR-Ressourcen das `urn:uuid`-Schema verwenden.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A483"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A484",
+            "title": "FHIR-Ressource validieren - Prüfung Konsistenz Ressource IDs",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob die ID der Ressource (Bundle.entry.resource.id) und die ID ihrer fullUrl (Bundle.entry.fullurl) übereinstimmen und bei Abweichung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>MSG_RESOURCE_ID_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Die ID einer Ressource und die ID der zugehörigen fullUrl stimmen nicht überein.</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A484"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A485",
+            "title": "FHIR-Ressource validieren - Prüfung Format fullUrl",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Abweichung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_RESOURCE_FULLURL_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Invalid format of the fullUrl</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A485"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A486",
+            "title": "FHIR-Ressource validieren - Prüfung Existenz von Ressource.id",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ Bundle prüfen, ob für jedes entry im Bundle die ID der Ressource (Bundle.entry.resource.id) vorhanden ist und bei Abweichung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>MSG_RESOURCE_ID_MISSING</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>The ID of a resource in the bundle does not exist</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A486"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A487",
+            "title": "FHIR-Ressource validieren - Prüfung Auflösbarkeit von Referenzen",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource prüfen, ob angegebene Referenzen nach [FHIR Spezifikation Auflösen von Referenzen in Bundles] ermittelt werden können und bei Abweichung die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>MSG_RESOURCE_ID_FAIL</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Reference to a resource could not be resolved</td>\n        </tr>\n    </table> \n    abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A487"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A488",
+            "title": "FHIR-Ressourcen - Ressource-ID in fullUrl",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource die ID der fullURL (Bundle.entry.fullurl) der Ressource auf die ID der Ressource (Bundle.entry.resource.id) setzen, sofern das http(s)-Schema verwendet wird.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "CS_TI-Flow_KTR",
+                        "id": "productType181",
+                        "description": "CS-Schnittstelle für TI-Flow/Kostenträger"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT28",
+                            "name": "funkt. Eignung: Konformitätsbestätigung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_TI-Flow_verordnend",
+                        "id": "productType178",
+                        "description": "PS-Schnittstelle für TI-Flow/verordnendes System"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT28",
+                            "name": "funkt. Eignung: Konformitätsbestätigung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A488"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A489",
+            "title": "FHIR-Ressourcen - Format fullUrl",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Clientsysteme des TI-Flow-Fachdienstes MÜSSEN bei der Erstellung einer FHIR-Ressource sicherstellen, dass die fullURL (Bundle.entry.fullUrl) entweder im [Format http-Schema] oder im [Format urn:uuid-Schema] vorliegt.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "CS_TI-Flow_KTR",
+                        "id": "productType181",
+                        "description": "CS-Schnittstelle für TI-Flow/Kostenträger"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT28",
+                            "name": "funkt. Eignung: Konformitätsbestätigung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_TI-Flow_verordnend",
+                        "id": "productType178",
+                        "description": "PS-Schnittstelle für TI-Flow/verordnendes System"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT28",
+                            "name": "funkt. Eignung: Konformitätsbestätigung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A489"
+        },
+        {
             "key": "IG-TIFLOW-CORE-A49",
             "title": "TI-Flow-FdV: E-Rezept löschen - Löschrequest",
             "version": 0,
@@ -9269,6 +9154,143 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/op-abort-req-fdv.html#IG-TIFLOW-CORE-A49"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A490",
+            "title": "FHIR-Ressourcen Versionsangabe",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst und Clientsystem des TI-Flow-Fachdienstes MÜSSEN alle generierten FHIR-Ressourcen mit der zweistelligen Versionsnummer (major.minor) gemäß [datatypes.html#canonical](https://www.hl7.org/fhir/datatypes.html#canonical) im Feld Ressource.meta.profile kennzeichnen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "CS_TI-Flow_KTR",
+                        "id": "productType181",
+                        "description": "CS-Schnittstelle für TI-Flow/Kostenträger"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "NCPeH_ePeDA",
+                        "id": "productType156",
+                        "description": "ePrescription/eDispensation Land-A National Contact Point for eHealth"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_TI-Flow_Apotheke",
+                        "id": "productType179",
+                        "description": "PS-Schnittstelle für TI-Flow/Apotheke"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT28",
+                            "name": "funkt. Eignung: Konformitätsbestätigung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "PS_TI-Flow_verordnend",
+                        "id": "productType178",
+                        "description": "PS-Schnittstelle für TI-Flow/verordnendes System"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT28",
+                            "name": "funkt. Eignung: Konformitätsbestätigung"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                },
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FdV",
+                        "id": "productType183",
+                        "description": "TI-Flow-Frontend des Versicherten"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT02",
+                            "name": "funkt. Eignung: Herstellererklärung"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A490"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A491",
+            "title": "FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstellen, dass keine Extension vorhanden ist, die an einer nicht im FHIR-Profil spezifizierten Stelle verwendet wird. Sollte eine solche Extension gefunden werden, gilt der Datensatz als ungültig. In diesem Fall ist die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abzubrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A491"
+        },
+        {
+            "key": "IG-TIFLOW-CORE-A492",
+            "title": "FHIR Ressourcen - Ausschluss unspezifizierter Extensions",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst und Clientsysteme des TI-Flow-Fachdienstes MÜSSEN sicherstellen, dass bei der Erstellung von Datensätzen Extensions nur an den Stellen verwendet werden, an denen sie im FHIR-Profil ausdrücklich definiert sind.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow/2.0.0-ballot.3/fhir-validate.html#IG-TIFLOW-CORE-A492"
         },
         {
             "key": "IG-TIFLOW-CORE-A50",
@@ -9923,7 +9945,7 @@
             "title": "TI-Flow-Fachdienst - unzulässige Operationen Task",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem HTTP-Code \"405 - Method Not Allowed\" abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.",
+            "text": "Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Task mittels der HTTP-Operationen PUT, HEAD und DELETE sowie POST ohne die Angabe einer gültigen FHIR-Operation unterbinden und mit mit dem Fehler\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>405 - Method Not Allowed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>MSG_UNKNOWN_OPERATION</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>unknown FHIR http operation</td>\n </tr>\n </table> \n \n abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.",
             "conformance": "SHALL",
             "characteristics": [
                 {

@@ -54,7 +54,7 @@ Die folgenden Abschnitte beschreiben die technischen Anwendungsfälle, die für 
     umsetzen.
 </requirement>
 
-<requirement conformance="SHALL" key="" title="TI-Flow-FdV: TIFlow - DIGA - optionale Anwendungsfälle" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A134" title="TI-Flow-FdV: TIFlow - DIGA - optionale Anwendungsfälle" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
