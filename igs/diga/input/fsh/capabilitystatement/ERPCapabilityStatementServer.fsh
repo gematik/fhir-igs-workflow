@@ -26,6 +26,7 @@ Usage: #definition
 RuleSet: TaskInteraction(expectation)
 * insert CapSupportResource(Task, #SHALL)
 * insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task, #SHALL)
+* insert CapSupportProfileUrl(Canonical(TIFlowDiGATask), #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert TaskSearchTypeInteractionStatusCodes
@@ -55,6 +56,7 @@ RuleSet: TaskInteraction(expectation)
 RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportResource(Communication, #SHALL)
 * insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA, #SHALL)
+* insert CapSupportProfileUrl(https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq, #SHALL)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert CommunicationSearchTypeInteractionStatusCodes
