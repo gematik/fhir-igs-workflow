@@ -19,6 +19,10 @@ Description: "CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Wor
 
 * insert ImportCapabilityStatment(TIFlowBasicServer, #SHALL)
 
+// Global Response HTTP Status Codes
+* insert TiflowTimeout
+* insert TiflowInternalError
+
 * insert TaskInteraction(#SHALL)
 * insert CommunicationInteraction(#SHALL)
 * insert MedicationDispenseInteraction(#SHALL)

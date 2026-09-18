@@ -1,7 +1,7 @@
 // Errors for all Resource Endpoints
-RuleSet: GlobalErrorsStatusCodes
-* rest.resource[=].interaction[=] insert TiflowTimeout
-* rest.resource[=].interaction[=] insert TiflowInternalError
+// RuleSet: GlobalErrorsStatusCodes
+// * rest.resource[=].interaction[=] insert TiflowTimeout
+// * rest.resource[=].interaction[=] insert TiflowInternalError
 
 // Query-API Interactions
 RuleSet: ReadInteractionStatusCodes
@@ -52,14 +52,14 @@ RuleSet: TaskCreateOperationStatusCodes
 
 RuleSet: TaskSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
-* insert GlobalErrorsStatusCodes
+// * insert GlobalErrorsStatusCodes
 
 RuleSet: TaskReadInteractionStatusCodes
 * rest.resource[=].interaction[=] insert SuccessfulWithResponseType("Task")
 * insert ReadInteractionStatusCodes
 * rest.resource[=].interaction[=] insert SvcIdentityMismatch
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
-* insert GlobalErrorsStatusCodes
+// * insert GlobalErrorsStatusCodes
 
 RuleSet: TaskPatchInteractionStatusCodes
 * rest.resource[=].interaction[=] insert SuccessfulWithResponseType("Task")
@@ -68,7 +68,7 @@ RuleSet: TaskPatchInteractionStatusCodes
 * rest.resource[=].interaction[=] insert SvcValidationFailed
 * rest.resource[=].interaction[=] insert TiflowNotActivated
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
-* insert GlobalErrorsStatusCodes
+// * insert GlobalErrorsStatusCodes
 
 
 RuleSet: TaskActivateOperationStatusCodes

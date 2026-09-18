@@ -20,6 +20,10 @@ Usage: #definition
 
 * insert ImportCapabilityStatment(TIFlowBasicServer, #SHALL)
 
+// // Global Response HTTP Status Codes
+// * insert TiflowTimeout
+// * insert TiflowInternalError
+
 // Ressourcen
 * insert DeviceInteraction(#SHALL)
 * insert AuditEventInteraction(#SHALL)

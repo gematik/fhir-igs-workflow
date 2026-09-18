@@ -107,10 +107,12 @@ RuleSet: DeviceSearchTypeInteractionStatusCodes
 
 RuleSet: SubscriptionSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
+* insert GlobalErrorsStatusCodes
 
 RuleSet: SubscriptionCreateInteractionStatusCodes
 * rest.resource[=].interaction[=] insert SuccessfulCreatedWithResponseType("Subscription")
 * insert CreateInteractionStatusCodes
+* insert GlobalErrorsStatusCodes
 
 // Operation-API Error-Constellations
 
