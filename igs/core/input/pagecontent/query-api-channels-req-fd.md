@@ -64,11 +64,11 @@ Mit der Operation GET /channels können die verfügbaren Channels abgefragt werd
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
@@ -102,16 +102,15 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
-<!-- ToDo Hendre: Warum lautet der FehlerCode bei vergleichbaren Afos TIFLOW_AUTH_ROLE_NOT_ALLOWED? -->
 
 
 ### POST /channels
@@ -142,16 +141,15 @@ Mit der Operation GET /channels/{pushkey} können die Channels und deren Konfigu
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.
 </requirement>
-<!-- ToDo Hendre: Warum lautet der FehlerCode bei vergleichbaren Afos TIFLOW_AUTH_ROLE_NOT_ALLOWED? -->
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A430" title="TI-Flow-Fachdienst - Push Notifications - Channels konfigurieren - Schemavalidierung" version="0">
   <meta lockversion="false"/>

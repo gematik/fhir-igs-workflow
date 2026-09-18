@@ -65,11 +65,11 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in Verordnunge
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
@@ -380,11 +380,11 @@ Der Zugriff mittels der HTTP-Operation GET für die Einsichtnahme in eine spezif
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
@@ -627,11 +627,11 @@ Der Zugriff mittels der HTTP-Operation PATCH steht ausschließlich dem Versicher
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit E-Rezepte nicht durch Unberechtigte markiert werden können.
