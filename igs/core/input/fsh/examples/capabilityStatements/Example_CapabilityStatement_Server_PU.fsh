@@ -1,8 +1,10 @@
 Instance: ExampleCapabilityStatementServerPU
 InstanceOf: TICapabilityStatement
-Title: "Example CapabilityStatement Server PU - RX"
-Description: "Example capability statement for productive environment with common features enabled."
 Usage: #example
+
+* title = "Example CapabilityStatement Server PU - RX"
+* description = "Example capability statement for productive environment with common features enabled."
+
 * status = #active
 * version = "2.0.0"
 * date = "2026-03-16"

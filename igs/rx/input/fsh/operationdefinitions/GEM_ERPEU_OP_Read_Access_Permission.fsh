@@ -1,8 +1,9 @@
 Instance: ReadEUAccessPermission
-InstanceOf: OperationDefinition
+InstanceOf: TIOperationDefinition
 Usage: #definition
 * insert Operation(ReadEUAccessPermission)
 * description = "This operation reads the currenty in the E-Rezept-Fachdienst registered Access Code for redeeming ePrescriptions in an EU country."
+* extension[method][+].valueCode = #POST
 * code = #read-eu-access-permission
 * system = true
 * type = false

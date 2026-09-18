@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an das AVS für die Operation 
 
 ### Anforderungen aus der Core Spezifikation
 
-Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gematik.de/fhir/tiflow/{ site.data.constants.tiflow_core_version }/op-reject-req-avs.html)
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gematik.de/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/op-reject-req-avs.html)
 
 ### Modulspezifische Anforderungen
 

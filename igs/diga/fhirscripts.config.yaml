@@ -5,6 +5,7 @@ install:
   - requirements
   - publishtools
   - igtools
+  - epatools
 deploy:
   env:
     dev: gematik_gemspec_fhir_dev-0
@@ -17,7 +18,9 @@ build:
     - requirements
     - shell: reqtools polarion ./input/content
     - sushi
+    - cap_statements
     - requirements
     - igpub
+    - openapi
     - igpub_qa
     - shell: ./scripts/post-build.sh

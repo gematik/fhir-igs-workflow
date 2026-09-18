@@ -1,15 +1,17 @@
 Instance: TIFlowRXOPReject
-InstanceOf: OperationDefinition
+InstanceOf: TIOperationDefinition
 Usage: #definition
 Title: "E-Rezept zurückgeben"
 Description: "Lehnt die Ausgabe eines E-Rezepts ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Apotheker zugänglich oder kann vom Patienten gelöscht werden."
 * insert OperationResource(Task, true, false, false, true)
+* extension[method][+].valueCode = #POST
 * code = #reject
 * id = "tiflow-rx-reject-op"
 * name = "TIFlowRXOPReject"
 
 // in
 * parameter[+]
+  * extension[parameterLocation].valueCode = #query
   * name = #secret
   * use = #in
   * min = 1

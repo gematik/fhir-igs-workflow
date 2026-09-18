@@ -84,29 +84,3 @@ Description: "Beispiel fuer eine Consent-Suchantwort"
 * link[=].url = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent?category=CHARGCONS"
 * entry[+].fullUrl = "https://erp-ref.zentral.erp.splitdns.ti-dienste.de/Consent/QueryConsentCHARGCONS"
 * entry[=].resource = QueryConsentCHARGCONS
-
-Instance: QuerySubscriptionCreateRequest
-InstanceOf: Subscription
-Usage: #example
-Title: "Anfrage fuer POST /Subscription"
-Description: "Beispiel fuer eine Subscription-Anlage"
-* id = "example-create-subscription-request"
-* status = #requested
-* reason = "Benachrichtigung ueber neue Communication-Ressourcen"
-* criteria = "Communication?received=NULL&recipient=1-2-3-4-5"
-* channel.type = #rest-hook
-* channel.endpoint = "https://apotheke.example.org/erp/notification"
-* channel.payload = #application/fhir+json
-
-Instance: QuerySubscriptionCreateResponse
-InstanceOf: Subscription
-Usage: #example
-Title: "Antwort fuer POST /Subscription"
-Description: "Beispiel fuer eine erfolgreiche Subscription-Anlage"
-* id = "example-create-subscription-response"
-* status = #active
-* reason = "Subscription erfolgreich registriert"
-* criteria = "Communication?received=NULL&recipient=1-2-3-4-5"
-* channel.type = #rest-hook
-* channel.endpoint = "https://apotheke.example.org/erp/notification"
-* channel.payload = #application/fhir+json

@@ -4,11 +4,11 @@ id: de.gematik.tiflow.erezept
 name: gemIG_TIFlow_erezept
 title: Implementation Guide TIFlow - Verordnungen für Arzneimittel
 status: draft # draft | active | retired | unknown
-version: 2.0.0-ballot.3
+version: 2.0.0
 # version: 0.9.0
 date: 2026-08-27
 copyrightYear: 2026+
-releaseLabel: ballot # ci-build, ballot, release
+releaseLabel: ci-build # ci-build, ballot, release
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: gematik GmbH
@@ -18,8 +18,8 @@ publisher:
 dependencies:
   hl7.fhir.uv.xver-r5.r4: 0.1.0
   de.basisprofil.r4: 1.6.0
-  de.gematik.ti: 1.4.0-ballot.2
-  de.gematik.tiflow: 2.0.0-ballot.3
+  de.gematik.ti: 1.4.0-rc.1
+  de.gematik.tiflow: 2.0.0
 
 applyExtensionMetadataToRoot: false
 
@@ -45,13 +45,13 @@ menu:
     Zugriffsprotokollierung: menu-technische-umsetzung-audit-service.html
     Löschfristen: ttl.html
   Schnittstellen:
-    Query API: menu-schnittstellen-query-api.html
+    Resource API: menu-schnittstellen-query-api.html
     Operation API: menu-schnittstellen-operation-api.html
   Über:
     Referenzen: referenced.html
     Downloads: downloads.html
     Abhängigkeiten: dependencies.html
-    #OpenAPI: erp-openapi.html
+    OpenAPI: erp-openapi.html
     Release Notes: release-notes.html
     #Steckbriefe: spec-sheet.html
     #Versionsvergleiche: comparisons.html
@@ -134,33 +134,33 @@ pages:
   ttl.md:
     title: "Löschfristen"
   menu-schnittstellen-query-api.md:
-    title: "Query API"
+    title: "Resource API"
     query-api-task.md:
-      title: "Query API: Task"
+      title: "Resource API: Task"
       query-api-task-req-fd.md:
-        title: "FD-Anforderungen: Task-Query"
+        title: "FD-Anforderungen: Task"
       query-api-task-req-fdv.md:
-        title: "FdV-Anforderungen: Task-Query"
+        title: "FdV-Anforderungen: Task"
       query-api-task-req-avs.md:
-        title: "AVS-Anforderungen: Task-Query"
+        title: "AVS-Anforderungen: Task"
     query-api-medicationdispense.md:
-      title: "Query API: MedicationDispense"
+      title: "Resource API: MedicationDispense"
       query-api-medicationdispense-req-fd.md:
-        title: "FD-Anforderungen: MedicationDispense-Query"
+        title: "FD-Anforderungen: MedicationDispense"
       query-api-medicationdispense-req-fdv.md:
-        title: "FdV-Anforderungen: MedicationDispense-Query"
+        title: "FdV-Anforderungen: MedicationDispense"
     query-api-communication.md:
-      title: "Query API: Communication"
+      title: "Resource API: Communication"
       query-api-communication-req-fd.md:
-        title: "FD-Anforderungen: Communication-Query"
+        title: "FD-Anforderungen: Communication"
       query-api-communication-req-fdv.md:
-        title: "FdV-Anforderungen: Communication-Query"
+        title: "FdV-Anforderungen: Communication"
       query-api-communication-req-avs.md:
-        title: "AVS-Anforderungen: Communication-Query"
+        title: "AVS-Anforderungen: Communication"
       query-api-communication-req-data.md:
         title: "Datenmodell payload"
     query-api-consent.md:
-      title: "Query API: Consent"
+      title: "Resource API: Consent"
       query-api-consent-req-fd.md:
         title: "FD-Anforderungen: Consent"
       query-api-consent-req-fdv.md:
@@ -251,8 +251,8 @@ pages:
     title: Abhängigkeiten
   downloads.md:
     title: "Downloads"
-  # erp-openapi.md:
-  #   title: "OpenAPI: E-Rezept Produkttypen"
+  erp-openapi.md:
+    title: "OpenAPI: E-Rezept"
   release-notes.md:
     title: "Release Notes"
   # spec-sheet.md:

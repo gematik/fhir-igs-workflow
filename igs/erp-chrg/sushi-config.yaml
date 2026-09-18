@@ -5,10 +5,10 @@ id: de.gematik.tiflow.chargeitem
 name: gemIG_TIFlow_chargeitem
 title: Implementation Guide TIFlow - Abrechnungsinformationen
 status: draft # draft | active | retired | unknown
-version: 2.0.0-ballot.3
+version: 2.0.0
 date: 2026-08-27
 copyrightYear: 2026+
-releaseLabel: ballot # ci-build, ballot, release
+releaseLabel: ci-build # ci-build, ballot, release
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: gematik GmbH
@@ -17,8 +17,8 @@ publisher:
 
 dependencies:
   de.basisprofil.r4: 1.6.0 # Abweichung zur package.json wegen fehlender Snapshots in Version 1.5.2
-  de.gematik.tiflow: 2.0.0-ballot.3
-  de.gematik.ti: 1.4.0-ballot.2
+  de.gematik.tiflow: 2.0.0
+  de.gematik.ti: 1.4.0-rc.1
 
 menu:
   Start: index.html
@@ -33,11 +33,11 @@ menu:
     Datenschutz und Sicherheit: menu-technische-umsetzung-datenschutz-und-sicherheit.html
     Zugriffsprotokollierung: menu-technische-umsetzung-audit-service.html
   Schnittstellen:
-    Query API: query-api.html
+    Resource API: query-api.html
   Anhänge:
     Referenzen: referenced.html
     Downloads: downloads.html
-    # OpenAPI: erp-chrg-openapi.html
+    OpenAPI: chrg-openapi.html
     Abhängigkeiten: dependencies.html
     Release Notes: release-notes.html
     #Steckbriefe: spec-sheet.html
@@ -63,37 +63,37 @@ pages:
     menu-technische-umsetzung-audit-service.md:
       title: "Zugriffsprotokollierung mit AuditEvent"
   query-api.md:
-    title: "Query API"
+    title: "Resource API"
     query-api-chargeitem.md:
-      title: "Query API: ChargeItem"
+      title: "Resource API: ChargeItem"
       query-api-chargeitem-req-fd.md:
-        title: "FD-Anforderungen: ChargeItem-Query"
+        title: "FD-Anforderungen: ChargeItem"
       query-api-chargeitem-req-fdv.md:
-        title: "FdV-Anforderungen: ChargeItem-Query"
+        title: "FdV-Anforderungen: ChargeItem"
       query-api-chargeitem-req-avs.md:
-        title: "AVS-Anforderungen: ChargeItem-Query"
+        title: "AVS-Anforderungen: ChargeItem"
     query-api-consent.md:
-      title: "Query API: Consent"
+      title: "Resource API: Consent"
       query-api-consent-req-fd.md:
-        title: "FD-Anforderungen: Consent-Query"
+        title: "FD-Anforderungen: Consent"
       query-api-consent-req-fdv.md:
-        title: "FdV-Anforderungen: Consent-Query"
+        title: "FdV-Anforderungen: Consent"
     query-api-communication.md:
       title: "Query API: Communication"
       query-api-communication-req-fd.md:
-        title: "FD-Anforderungen: Communication-Query"
+        title: "FD-Anforderungen: Communication"
       query-api-communication-req-fdv.md:
-        title: "FdV-Anforderungen: Communication-Query"
+        title: "FdV-Anforderungen: Communication"
       query-api-communication-req-avs.md:
-        title: "AVS-Anforderungen: Communication-Query"
+        title: "AVS-Anforderungen: Communication"
   artifacts.md:
     title: "FHIR-Artefakte"
   referenced.md:
     title: "Referenzen"
   downloads.md:
     title: "Downloads"
-  # erp-openapi.md:
-  #   title: "OpenAPI: E-Rezept Produkttypen"
+  chrg-openapi.md:
+    title: "OpenAPI"
   dependencies.md:
     title: Abhängigkeiten
   release-notes.md:

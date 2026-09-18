@@ -1,4 +1,4 @@
-Diese Seite beschreibt Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der `Communication`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen an den TI-Flow-Fachdienst zur Bereitstellung der `Communication`-Endpunkte.
 
 ### Anforderungen aus der Core Spezifikation
 

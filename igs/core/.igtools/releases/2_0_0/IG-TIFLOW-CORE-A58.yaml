@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: a66c3d79227c6d523fd559a2f5086d301a105fc4b0bfbda03626bd5cd4adacda
+content_hash: 3de84e56e299490a0fb4a1595463ac9048624bf491b4887a2f1b3f538c871459
 created: '2026-06-25T11:30:11.209615'
-date: '2026-06-25T11:30:11.209617'
+date: '2026-09-18T09:37:57.983782'
 key: IG-TIFLOW-CORE-A58
-modified: '2026-06-25T11:30:11.209616'
+modified: '2026-09-18T09:37:57.983782'
 release_status: NEW
 source: input/pagecontent/query-api-channels-req-fd.md
 status: ACTIVE
@@ -14,17 +14,13 @@ test_procedures:
   - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /channels/{pushkey}\
   \ die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass\
-  \ ausschließlich Nutzer in der Rolle \n  <ul>\n    <li>oid_versicherter</li>\n \
-  \ </ul>\n  die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden\
-  \ Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
-  \ collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403\
-  \ - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n\
-  \            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n\
-  \            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details\
-  \ Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n\
-  \        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist\
-  \ nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n\
-  \    </table> \n    abbrechen, damit die Operation nicht durch unberechtigte Dritte\
+  \ ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n </ul>\n\
+  \ die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n\
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n\
+  \ <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n\
+  \ <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n\
+  \ </tr>\n </table> \n abbrechen, damit die Operation nicht durch unberechtigte Dritte\
   \ ausgeführt wird."
 title: TI-Flow-Fachdienst - Push Notifications - Channels einer Instanz abrufen -
   Rollenprüfung

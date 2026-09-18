@@ -25,7 +25,7 @@ Folgende Berufe und Einrichtungsarten sind zugelassen:
       <th>OID</th>
     </tr>
   </thead>
-  <tbody>
+      <td>E-Rezepte in EU einlösen</td>
     <tr>
       <td>Betriebsstätte Arzt</td>
       <td><code>oid_praxis_arzt</code></td>
@@ -118,7 +118,7 @@ Es wird die Liste der von der Anwendung angeforderten Berechtigungen mit der Lis
     </tr>
     <tr>
       <td><code>tif-rx-task-ePeDA</code></td>
-      <td>E-Rezeptr in EU einlösen</td>
+      <td>E-Rezept in EU einlösen</td>
     </tr>
     <tr>
       <td><code>tif-rx-communication</code></td>
@@ -141,8 +141,16 @@ Es wird die Liste der von der Anwendung angeforderten Berechtigungen mit der Lis
       <td>EU-Berechtigung verwalten</td>
     </tr>
     <tr>
-      <td><code>tif-rx-subscription</code></td>
+      <td><code>tif-global</code></td>
+      <td>Globale Schnittstellen nutzen</td>
+    </tr>
+    <tr>
+      <td><code>tif-global-subscription</code></td>
       <td>Benachrichtigungen registrieren</td>
+    </tr>
+    <tr>
+      <td><code>tif-rx-metadata</code></td>
+      <td>Server Capabilities für E-Rezept abrufen</td>
     </tr>
     <tr>
       <td><code>tif-rx-task-probe</code></td>
@@ -165,8 +173,8 @@ Es wird die Liste der von der Anwendung angeforderten Berechtigungen mit der Lis
       <td>Nachrichten zu DiGA-Verordnungen</td>
     </tr>
     <tr>
-      <td><code>tif-diga-subscription</code></td>
-      <td>Benachrichtigungen registrieren</td>
+      <td><code>tif-diga-metadata</code></td>
+      <td>Server Capabilities für DiGA abrufen</td>
     </tr>
     <tr>
       <td><code>tif-diga-task-probe</code></td>
@@ -199,14 +207,64 @@ Refresh Token: Wenn das Access Token abgelaufen ist, kann die Anwendung dieses z
 
 
 
-### Referenzen
+### Geltungsbereich der Scopes
+
+Die Scopes `tif-global`, `tif-global-subscription`, `tif-rx-metadata` und
+`tif-diga-metadata` sowie die fachlichen Scopes für E-Rezept, DiGA,
+Zugriffsprotokoll und Push-Benachrichtigungen sind in dieser Seite vollständig
+aufgeführt. `Device` und `Subscription` sind globale Schnittstellen; die
+Metadata-Endpunkte sind den jeweiligen Modulen zugeordnet.
 
 #### Policy-Definition
 
 ```yaml
 policies:
 
+  # ── Global ─────────────────────────────────────────────────────────────
+
+  "tif-global":
+    description: "Globale Schnittstellen"
+    roles:
+      - { oid: "1.2.276.0.76.4.50", description: "oid_praxis_arzt" }
+      - { oid: "1.2.276.0.76.4.51", description: "oid_zahnarztpraxis" }
+      - { oid: "1.2.276.0.76.4.52", description: "oid_praxis_psychotherapeut" }
+      - { oid: "1.2.276.0.76.4.53", description: "oid_krankenhaus" }
+      - { oid: "1.2.276.0.76.4.257", description: "oid_institution-vorsorge-reha" }
+      - { oid: "1.2.276.0.76.4.54", description: "oid_oeffentliche_apotheke" }
+      - { oid: "1.2.276.0.76.4.55", description: "oid_krankenhausapotheke" }
+      - { oid: "1.2.276.0.76.4.49", description: "oid_versicherter" }
+      - { oid: "1.2.276.0.76.4.292", description: "oid_ncpeh" }
+      - { oid: "1.2.276.0.76.4.58", description: "oid_bs_gematik" }
+      - { oid: "1.2.276.0.76.4.59", description: "oid_kostentraeger" }
+    rules:
+      - { method: GET, path: "Device" }
+
+
+  "tif-global-subscription":
+    description: "Benachrichtigungen registrieren"
+    roles:
+      - { oid: "1.2.276.0.76.4.54", description: "oid_oeffentliche_apotheke" }
+      - { oid: "1.2.276.0.76.4.55", description: "oid_krankenhausapotheke" }
+      - { oid: "1.2.276.0.76.4.59", description: "oid_kostentraeger" }
+    rules:
+      - { method: POST, path: "Subscription" }
+
   # ── Arzneimittel ─────────────────────────────────────────────────────────────
+
+  "tif-rx-metadata":
+    description: "Server Capabilities abrufen"
+    roles:
+      - { oid: "1.2.276.0.76.4.50", description: "oid_praxis_arzt" }
+      - { oid: "1.2.276.0.76.4.51", description: "oid_zahnarztpraxis" }
+      - { oid: "1.2.276.0.76.4.52", description: "oid_praxis_psychotherapeut" }
+      - { oid: "1.2.276.0.76.4.53", description: "oid_krankenhaus" }
+      - { oid: "1.2.276.0.76.4.257", description: "oid_institution-vorsorge-reha" }
+      - { oid: "1.2.276.0.76.4.54", description: "oid_oeffentliche_apotheke" }
+      - { oid: "1.2.276.0.76.4.55", description: "oid_krankenhausapotheke" }
+      - { oid: "1.2.276.0.76.4.49", description: "oid_versicherter" }
+      - { oid: "1.2.276.0.76.4.292", description: "oid_ncpeh" }
+    rules:
+      - { method: GET, path: "rx/metadata" }
 
   "tif-rx-task-prescribe":
     description: "E-Rezept verordnen"
@@ -215,7 +273,7 @@ policies:
       - { oid: "1.2.276.0.76.4.51", description: "oid_zahnarztpraxis" }
       - { oid: "1.2.276.0.76.4.52", description: "oid_praxis_psychotherapeut" }
       - { oid: "1.2.276.0.76.4.53", description: "oid_krankenhaus" }
-      - { oid: "1.2.276.0.76.4.56", description: "oid_institution-vorsorge-reha" }
+      - { oid: "1.2.276.0.76.4.257", description: "oid_institution-vorsorge-reha" }
     rules:
       - { method: POST, path: "rx/Task/$create" }
       - { method: POST, path: "rx/Task/{id}/$activate" }
@@ -244,8 +302,8 @@ policies:
       - { method: GET,   path: "rx/Task/{id}" }
       - { method: POST,  path: "rx/Task/{id}/$abort" }
       - { method: PATCH, path: "rx/Task/{id}" }
-      - { method: GET,   path: "rx/medicationdispense/" }
-      - { method: GET,   path: "rx/medicationdispense/{id}" }
+      - { method: GET,   path: "rx/MedicationDispense/" }
+      - { method: GET,   path: "rx/MedicationDispense/{id}" }
 
   "tif-rx-task-ePeDA":
     description: "E-Rezepte in EU einlösen"
@@ -262,10 +320,10 @@ policies:
       - { oid: "1.2.276.0.76.4.54", description: "oid_oeffentliche_apotheke" }
       - { oid: "1.2.276.0.76.4.55", description: "oid_krankenhausapotheke" }
     rules:
-      - { method: POST,   path: "/rx/Communication" }
-      - { method: GET,    path: "/rx/Communication" }
-      - { method: GET,    path: "/rx/Communication/{id}" }
-      - { method: DELETE, path: "/rx/Communication/{id}" }
+      - { method: POST,   path: "rx/Communication" }
+      - { method: GET,    path: "rx/Communication" }
+      - { method: GET,    path: "rx/Communication/{id}" }
+      - { method: DELETE, path: "rx/Communication/{id}" }
 
   "tif-rx-chargeitem-manage":
     description: "Abrechnungsinformationen verwalten"
@@ -305,14 +363,6 @@ policies:
       - { method: POST,   path: "rx/$grant-eu-access-permission" }
       - { method: DELETE, path: "rx/$revoke-eu-access-permission" }
 
-  "tif-rx-subscription":
-    description: "Benachrichtigungen registrieren"
-    roles:
-      - { oid: "1.2.276.0.76.4.54", description: "oid_oeffentliche_apotheke" }
-      - { oid: "1.2.276.0.76.4.55", description: "oid_krankenhausapotheke" }
-    rules:
-      - { method: POST, path: "rx/Subscription" }
-
   "tif-rx-task-probe":
     description: "Probing E-Rezept"
     roles:
@@ -322,6 +372,20 @@ policies:
 
   # ── DiGA Verordnung ────────────────────────────────────────────────────────
 
+  "tif-diga-metadata":
+    description: "Server Capabilities abrufen"
+    roles:
+      - { oid: "1.2.276.0.76.4.50", description: "oid_praxis_arzt" }
+      - { oid: "1.2.276.0.76.4.51", description: "oid_zahnarztpraxis" }
+      - { oid: "1.2.276.0.76.4.52", description: "oid_praxis_psychotherapeut" }
+      - { oid: "1.2.276.0.76.4.53", description: "oid_krankenhaus" }
+      - { oid: "1.2.276.0.76.4.257", description: "oid_institution-vorsorge-reha" }
+      - { oid: "1.2.276.0.76.4.59", description: "oid_kostentraeger" }
+      - { oid: "1.2.276.0.76.4.49", description: "oid_versicherter" }
+      - { oid: "1.2.276.0.76.4.58", description: "oid_bs_gematik" }
+    rules:
+      - { method: GET, path: "diga/metadata" }
+
   "tif-diga-task-prescribe":
     description: "DiGA Verordnung verordnen"
     roles:
@@ -329,7 +393,7 @@ policies:
       - { oid: "1.2.276.0.76.4.51", description: "oid_zahnarztpraxis" }
       - { oid: "1.2.276.0.76.4.52", description: "oid_praxis_psychotherapeut" }
       - { oid: "1.2.276.0.76.4.53", description: "oid_krankenhaus" }
-      - { oid: "1.2.276.0.76.4.56", description: "oid_institution-vorsorge-reha" }
+      - { oid: "1.2.276.0.76.4.257", description: "oid_institution-vorsorge-reha" }
     rules:
       - { method: POST, path: "diga/Task/$create" }
       - { method: POST, path: "diga/Task/{id}/$activate" }
@@ -353,8 +417,8 @@ policies:
       - { method: GET,  path: "diga/Task/" }
       - { method: GET,  path: "diga/Task/{id}" }
       - { method: POST, path: "diga/Task/{id}/$abort" }
-      - { method: GET,  path: "diga/medicationdispense/" }
-      - { method: GET,  path: "diga/medicationdispense/{id}" }
+      - { method: GET,  path: "diga/MedicationDispense/" }
+      - { method: GET,  path: "diga/MedicationDispense/{id}" }
 
   "tif-diga-communication":
     description: "Nachrichten zu DiGA-Verordnungen"
@@ -362,17 +426,10 @@ policies:
       - { oid: "1.2.276.0.76.4.49", description: "oid_versicherter" }
       - { oid: "1.2.276.0.76.4.59", description: "oid_kostentraeger" }
     rules:
-      - { method: POST,   path: "/diga/Communication" }
-      - { method: GET,    path: "/diga/Communication" }
-      - { method: GET,    path: "/diga/Communication/{id}" }
-      - { method: DELETE, path: "/diga/Communication/{id}" }
-
-  "tif-diga-subscription":
-    description: "Benachrichtigungen registrieren"
-    roles:
-      - { oid: "1.2.276.0.76.4.59", description: "oid_kostentraeger" }
-    rules:
-      - { method: POST, path: "diga/Subscription" }
+      - { method: POST,   path: "diga/Communication" }
+      - { method: GET,    path: "diga/Communication" }
+      - { method: GET,    path: "diga/Communication/{id}" }
+      - { method: DELETE, path: "diga/Communication/{id}" }
 
   "tif-diga-task-probe":
     description: "Probing DiGA"
@@ -398,10 +455,10 @@ policies:
     roles:
       - { oid: "1.2.276.0.76.4.49", description: "oid_versicherter" }
     rules:
-      - { method: GET,  path: "/pushers" }
-      - { method: POST, path: "/pushers/set" }
-      - { method: GET,  path: "/channels" }
-      - { method: POST, path: "/channels/{pushkey}" }
+      - { method: GET,  path: "pushers" }
+      - { method: POST, path: "pushers/set" }
+      - { method: GET,  path: "channels" }
+      - { method: POST, path: "channels/{pushkey}" }
 
 ```
 
@@ -412,6 +469,9 @@ policies:
   "access_token_ttl": 300,
   "refresh_token_ttl": 43200,
   "allowed_scopes": [
+    "tif-global",
+    "tif-global-subscription",
+    "tif-rx-metadata",
     "tif-rx-task-prescribe",
     "tif-rx-task-dispense",
     "tif-rx-task-manage",
@@ -421,13 +481,12 @@ policies:
     "tif-rx-chargeitem-provide",
     "tif-rx-consent-manage",
     "tif-rx-eu-access-manage",
-    "tif-rx-subscription",
     "tif-rx-task-probe",
+    "tif-diga-metadata",
     "tif-diga-task-prescribe",
     "tif-diga-task-dispense",
     "tif-diga-task-manage",
     "tif-diga-communication",
-    "tif-diga-subscription",
     "tif-diga-task-probe",
     "tif-audit",
     "tif-notification"

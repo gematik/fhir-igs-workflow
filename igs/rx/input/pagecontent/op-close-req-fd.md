@@ -2,7 +2,7 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 ### Anforderungen aus der Core Spezifikation
 
-Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gematik.de/fhir/tiflow/{ site.data.constants.tiflow_core_version }/op-close-req-fd.html)
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gematik.de/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/op-close-req-fd.html)
 
 ### Modulspezifische Anforderungen
 
@@ -33,11 +33,11 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.

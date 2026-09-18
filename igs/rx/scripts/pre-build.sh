@@ -43,4 +43,4 @@ fi
 # python3 "$SCRIPT_DIR/testscripts/generate-provide-prescription-docs.py"
 
 # Generate Markdown Tables for StructureMaps
-./scripts/fml_table.sh
+# ./scripts/fml_table.sh

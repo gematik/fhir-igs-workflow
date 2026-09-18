@@ -1,4 +1,4 @@
-Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `ChargeItem`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen an Clients zur Nutzung der `ChargeItem`-Endpunkte.
 
 ### Abrechnungsinformationen abrufen
 #### Liste von Abrechnungsinformationen abrufen (GET /ChargeItem)

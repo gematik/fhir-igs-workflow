@@ -1,4 +1,4 @@
-Diese Seite beschreibt Anforderungen an ein Clientsystem des Kostenträgers zur Nutzung der `Communication`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen an ein Clientsystem des Kostenträgers zur Nutzung der `Communication`-Endpunkte.
 
 ### Anforderungen aus der Core Spezifikation
 

@@ -1,37 +1,33 @@
-// Errors for all Resource Endpoints
-RuleSet: GlobalQueryErrorCodes
-
-* rest.resource[=].interaction[=] insert InvalidRequest
-
 // Query-API Interactions
 RuleSet: ReadInteractionStatusCodes
-* insert GlobalQueryErrorCodes
-* rest.resource[=].interaction[=] insert Successful
+* rest.resource[=].interaction[=] insert InvalidRequest
+// * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: PatchInteractionStatusCodes
-* insert GlobalQueryErrorCodes
+* rest.resource[=].interaction[=] insert InvalidRequest
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: DeleteInteractionStatusCodes
-* insert GlobalQueryErrorCodes
+* rest.resource[=].interaction[=] insert InvalidRequest
 * rest.resource[=].interaction[=] insert SuccessfulNoContent
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: CreateInteractionStatusCodes
-* insert GlobalQueryErrorCodes
+* rest.resource[=].interaction[=] insert InvalidRequest
 * rest.resource[=].interaction[=] insert SuccessfulCreated
 * rest.resource[=].interaction[=] insert UnknownResourceType
 
 RuleSet: SearchTypeInteractionStatusCodes
-* insert GlobalQueryErrorCodes
+// 401 - Ungültiges/Abgelaufenes AccessToken
+* rest.resource[=].interaction[=] insert InvalidRequest
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownSearchParameter
 * rest.resource[=].interaction[=] insert InvalidQueryParameters
@@ -65,6 +61,7 @@ RuleSet: TaskCreateOperationStatusCodes
 * rest.resource[=].operation[=] insert TypeOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 
+
 RuleSet: TaskSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
 
@@ -94,6 +91,7 @@ RuleSet: TaskActivateOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowOcspBackendError
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
+
 RuleSet: TaskAcceptOperationStatusCodes
 * rest.resource[=].operation[=] insert Successful
 * rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
@@ -120,6 +118,7 @@ RuleSet: TaskCloseOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
+
 RuleSet: TaskAbortOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulNoContent
 * rest.resource[=].operation[=] insert SvcIdentityMismatch
@@ -142,6 +141,7 @@ RuleSet: CommunicationDeleteInteractionStatusCodes
 
 RuleSet: MedicationDispenseSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
+* rest.resource[=].interaction[=] insert TiflowAuthRoleNotAllowed
 
 RuleSet: MedicationDispenseReadInteractionStatusCodes
 * insert ReadInteractionStatusCodes

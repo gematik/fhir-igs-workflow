@@ -3,10 +3,28 @@ RuleSet: Successful
   * extension[statusCode].valueString = "200"
   * extension[description].valueString = "Successful operation"
 
+RuleSet: SuccessfulWithResponseType(responseType)
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "200"
+  * extension[description].valueString = "Successful operation"
+  * extension[responseType].valueString = {responseType}
+
+RuleSet: SuccessfulWithBundle
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "200"
+  * extension[description].valueString = "Successful operation"
+  * extension[responseType].valueString = "Bundle"
+
 RuleSet: SuccessfulCreated
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "201"
   * extension[description].valueString = "Resource created"
+
+RuleSet: SuccessfulCreatedWithResponseType(responseType)
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "201"
+  * extension[description].valueString = "Resource created"
+  * extension[responseType].valueString = {responseType}
 
 RuleSet: SuccessfulNoContent
 * extension[responseInfo][+]
@@ -83,12 +101,12 @@ RuleSet: TiflowSignatureNoOcspResponse
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_SIGNATURE_NO_OCSP_RESPONSE"
 
-RuleSet: TiflowAuthRoleNotAllowed
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "403"
-  * extension[description].valueString = "Access role not allowed"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
+// RuleSet: TiflowAuthRoleNotAllowed
+// * extension[responseInfo][+]
+//   * extension[statusCode].valueString = "403"
+//   * extension[description].valueString = "Access role not allowed"
+//   * extension[responseType].valueString = "TIFlowOperationOutcome"
+//   * extension[errorCode].valueString = "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
 
 RuleSet: TiflowTaskStatusMismatch
 * extension[responseInfo][+]
@@ -166,6 +184,7 @@ RuleSet: TiflowSignatureInvalid
   * extension[description].valueString = "Signature invalid"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_SIGNATURE_INVALID"
+  
 
 RuleSet: TiflowSignatureInvalidIssuingRole
 * extension[responseInfo][+]
@@ -272,6 +291,13 @@ RuleSet: TiflowTimeout
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_TIMEOUT"
 
+RuleSet: TiflowNotActivated
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "409"
+  * extension[description].valueString = "Conflict"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_EREZEPT_NOT_ACTIVATED"
+
 // EU-spezifische Response-Definitionen (grenzüberschreitender Datenaustausch)
 
 RuleSet: SuccessfulWithParameters
@@ -322,4 +348,66 @@ RuleSet: TiflowErezeptCountryCodeInvalid
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_EREZEPT_COUNTRY_CODE_INVALID"
 
-// Errors for all System Operations
+
+RuleSet: TiflowErezeptSuccessNoContent(interaction)
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "204"
+  * extension[description].valueString = "Die Anfrage wurde erfolgreich bearbeitet. Die Response enthält jedoch keine Daten."
+  * extension[interaction].valueCode = {interaction}
+
+
+RuleSet: TiflowMessageToSelf
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400"
+  * extension[description].valueString = "Nachricht an sich selbst nicht zulässig."
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_MESSAGE_TO_SELF"
+
+
+RuleSet: TIFLOW_COMMUNICATION_PAYLOAD_INVALID
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400"
+  * extension[description].valueString = "Kommunikationsinhalt ungültig."
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_COMMUNICATION_PAYLOAD_INVALID"
+
+
+RuleSet: TIFLOW_INSURANT_NOT_ELIGIBLE
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400"
+  * extension[description].valueString = "Versicherter nicht berechtigt"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_INSURANT_NOT_ELIGIBLE"
+
+
+RuleSet: TIFLOW_RECIPIENT_INVALID
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "403"
+  * extension[description].valueString = "Empfänger ungültig"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_RECIPIENT_INVALID"
+
+
+RuleSet: TIFLOW_MVO_NOT_VALID_YET
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "400"
+  * extension[description].valueString = "MVO noch nicht gültig"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_MVO_NOT_VALID_YET"
+
+
+RuleSet: TIFLOW_CONSENT_ALREADY_EXISTS
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "409"
+  * extension[description].valueString = "Einwilligung existiert bereits"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_CONSENT_ALREADY_EXISTS"
+
+
+RuleSet: TIFLOW_CONSENT_CATEGORY_REQUIRED(interaction)
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "405"
+  * extension[description].valueString = "Einwilligungskategorie erforderlich"
+  * extension[responseType].valueString = "TIFlowOperationOutcome"
+  * extension[errorCode].valueString = "TIFLOW_CONSENT_CATEGORY_REQUIRED"
+  * extension[interaction].valueCode = {interaction}

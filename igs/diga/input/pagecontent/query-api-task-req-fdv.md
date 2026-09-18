@@ -1,4 +1,4 @@
-Diese Seite beschreibt Anforderungen an das TI-Flow-FdV zur Nutzung der `Task`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen an das TI-Flow-FdV zur Nutzung der `Task`-Endpunkte.
 
 ### Anforderungen aus der Core Spezifikation
 

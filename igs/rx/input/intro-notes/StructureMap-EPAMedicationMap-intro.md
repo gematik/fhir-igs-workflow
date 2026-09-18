@@ -1,6 +1,9 @@
 
 **Titel:** EPAMedication-Map
 
+Diese StructureMap ist nicht für den Einsatz in einer Mapping-Engine geeignet. Sie bildet eine informative Grundlage für das Mapping für den ePA-MedicationService.
+{:.dragon}
+
 **Beschreibung:** Router StructureMap for KBV_PR_ERP_Medication_Compounding|1.3.2, KBV_PR_ERP_Medication_FreeText|1.3.2, KBV_PR_ERP_Medication_Ingredient|1.3.2, KBV_PR_ERP_Medication_PZN|1.3.2 -> EPAMedication|1.0.6-2
 
 | Quelle (Eingangsdaten) | Ziel (Ausgabedaten) | Transformation & Beschreibung |

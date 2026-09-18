@@ -1,4 +1,4 @@
-Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `ChargeItem`-Query-Endpunkte.
+Diese Seite beschreibt Anforderungen am TI-Flow-Fachdienst zur Nutzung der `ChargeItem`-Endpunkte.
 
 ### Allgemeine Regeln
 <!--A_22111-->
@@ -85,11 +85,11 @@ Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource ChargeItem mittels d
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
@@ -151,11 +151,11 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt 
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.
@@ -303,11 +303,11 @@ Der TI-Flow-Fachdienst DARF beim Aufruf der Operation GET /ChargeItem/&#60;id&#6
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte eingestellt werden kann.
@@ -775,11 +775,11 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte aktualisiert werden kann.
@@ -877,11 +877,11 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte aktualisiert werden kann.
@@ -1242,11 +1242,11 @@ Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte gelöscht werden kann.

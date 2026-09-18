@@ -1,87 +1,80 @@
 // Errors for all Resource Endpoints
-RuleSet: GlobalQueryErrorCodes
-
-* rest.resource[=].interaction[=] insert InvalidRequest
-
-* rest.resource[=].interaction[=] insert TiflowTimeout
-
-* rest.resource[=].interaction[=] insert TiflowInternalError
+// RuleSet: GlobalErrorsStatusCodes
+// * rest.resource[=].interaction[=] insert TiflowTimeout
+// * rest.resource[=].interaction[=] insert TiflowInternalError
 
 // Query-API Interactions
 RuleSet: ReadInteractionStatusCodes
-* insert GlobalQueryErrorCodes
-* rest.resource[=].interaction[=] insert Successful
+// * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
-* rest.resource[=].interaction[=] insert ResourceWasDeleted
+// * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: PatchInteractionStatusCodes
-* insert GlobalQueryErrorCodes
-* rest.resource[=].interaction[=] insert Successful
+// * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
-* rest.resource[=].interaction[=] insert ResourceWasDeleted
+// * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: DeleteInteractionStatusCodes
-* insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert SuccessfulNoContent
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
-* rest.resource[=].interaction[=] insert ResourceWasDeleted
+// * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: CreateInteractionStatusCodes
-* insert GlobalQueryErrorCodes
-* rest.resource[=].interaction[=] insert SuccessfulCreated
+// * rest.resource[=].interaction[=] insert SuccessfulCreated
 * rest.resource[=].interaction[=] insert UnknownResourceType
 
 RuleSet: SearchTypeInteractionStatusCodes
-* insert GlobalQueryErrorCodes
-* rest.resource[=].interaction[=] insert Successful
+* rest.resource[=].interaction[=] insert SuccessfulWithBundle
 * rest.resource[=].interaction[=] insert UnknownSearchParameter
 * rest.resource[=].interaction[=] insert InvalidQueryParameters
 * rest.resource[=].interaction[=] insert UnknownResourceType
 
-// Operation-API Error-Constellations
-
-RuleSet: GlobalOperationErrorCodes
-
-* insert InvalidRequest
-
-* insert TiflowInternalError
-
-* insert TiflowTimeout
+RuleSet: InstanceOperationfullURLValidate
+* insert ResourceIsNotKnown
 
 RuleSet: InstanceOperationStatusCodes
 * insert ResourceIsNotKnown
+* insert SvcIdentityMismatch
 * insert ResourceWasDeleted
-* insert GlobalOperationErrorCodes
-
-RuleSet: SubscriptionSearchTypeInteractionStatusCodes
-* insert SearchTypeInteractionStatusCodes
-
-RuleSet: SubscriptionCreateInteractionStatusCodes
-* insert CreateInteractionStatusCodes
 
 // Konkrete Operationen
 
 // Task/$create
 RuleSet: TaskCreateOperationStatusCodes
-* rest.resource[=].operation[=] insert SuccessfulCreated
+* rest.resource[=].operation[=] insert SuccessfulCreatedWithResponseType("Parameters")
+// * rest.resource[=].operation[=] insert SuccessfulCreated
 * rest.resource[=].operation[=] insert SvcValidationFailed
-* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
+
 
 RuleSet: TaskSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
+// * insert GlobalErrorsStatusCodes
 
 RuleSet: TaskReadInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SuccessfulWithResponseType("Task")
 * insert ReadInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SvcIdentityMismatch
+* rest.resource[=].interaction[=] insert ResourceWasDeleted
+// * insert GlobalErrorsStatusCodes
+
+RuleSet: TaskPatchInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SuccessfulWithResponseType("Task")
+* insert ReadInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SvcIdentityMismatch
+* rest.resource[=].interaction[=] insert SvcValidationFailed
+* rest.resource[=].interaction[=] insert TiflowNotActivated
+* rest.resource[=].interaction[=] insert ResourceWasDeleted
+// * insert GlobalErrorsStatusCodes
+
 
 RuleSet: TaskActivateOperationStatusCodes
-* rest.resource[=].operation[=] insert Successful
+* rest.resource[=].operation[=] insert SuccessfulWithResponseType("Parameters")
 * rest.resource[=].operation[=] insert SvcValidationFailed
 * rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
-* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert TiflowCoverageTypeMismatch
 * rest.resource[=].operation[=] insert TiflowFlowtypeMismatch
 * rest.resource[=].operation[=] insert TiflowIknrInvalid
@@ -102,10 +95,11 @@ RuleSet: TaskActivateOperationStatusCodes
 * rest.resource[=].operation[=] insert TiflowOcspBackendError
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
+
 RuleSet: TaskAcceptOperationStatusCodes
-* rest.resource[=].operation[=] insert Successful
+* rest.resource[=].operation[=] insert SuccessfulWithResponseType("Bundle")
 * rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
-* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+// * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert TiflowTaskDeleted
 * rest.resource[=].operation[=] insert TiflowTaskExpired
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
@@ -115,37 +109,39 @@ RuleSet: TaskAcceptOperationStatusCodes
 RuleSet: TaskRejectOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulNoContent
 * rest.resource[=].operation[=] insert TiflowSecretMismatch
-* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+// * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
 RuleSet: TaskCloseOperationStatusCodes
-* rest.resource[=].operation[=] insert Successful
+* rest.resource[=].operation[=] insert SuccessfulWithResponseType("Parameters")
 * rest.resource[=].operation[=] insert SvcValidationFailed
 * rest.resource[=].operation[=] insert TiflowMedicationDispenseMissing
 * rest.resource[=].operation[=] insert TiflowSecretMismatch
 * rest.resource[=].operation[=] insert TiflowSignatureNoOcspResponse
 * rest.resource[=].operation[=] insert TiflowMedicationDispenseInvalid
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
-* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+// * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
+
 
 RuleSet: TaskAbortOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulNoContent
 * rest.resource[=].operation[=] insert SvcIdentityMismatch
 * rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
-* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+// * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert TiflowSecretMismatch
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
 RuleSet: TaskDispenseOperationStatusCodes
-* rest.resource[=].operation[=] insert Successful
+* rest.resource[=].operation[=] insert SuccessfulNoContent
 * rest.resource[=].operation[=] insert SvcValidationFailed
-* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+// * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert TiflowSecretMismatch
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
+
 
 RuleSet: CommunicationSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
@@ -154,7 +150,17 @@ RuleSet: CommunicationReadInteractionStatusCodes
 * insert ReadInteractionStatusCodes
 
 RuleSet: CommunicationCreateInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SuccessfulCreatedWithResponseType("Communication")
 * insert CreateInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SvcValidationFailed
+* rest.resource[=].interaction[=] insert TiflowMessageToSelf
+* rest.resource[=].interaction[=] insert TiflowTaskStatusMismatch
+* rest.resource[=].interaction[=] insert TIFLOW_COMMUNICATION_PAYLOAD_INVALID
+* rest.resource[=].interaction[=] insert TIFLOW_INSURANT_NOT_ELIGIBLE
+* rest.resource[=].interaction[=] insert TIFLOW_RECIPIENT_INVALID
+* rest.resource[=].interaction[=] insert TiflowTaskExpired
+* rest.resource[=].interaction[=] insert TIFLOW_MVO_NOT_VALID_YET
+
 
 RuleSet: CommunicationDeleteInteractionStatusCodes
 * insert DeleteInteractionStatusCodes
@@ -163,32 +169,35 @@ RuleSet: MedicationDispenseSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
 
 RuleSet: MedicationDispenseReadInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SuccessfulWithResponseType("MedicationDispense")
 * insert ReadInteractionStatusCodes
 
 // EU-spezifische Status-Codes (grenzüberschreitender Datenaustausch)
 
-RuleSet: GlobalSystemOperationErrorCodes
+// RuleSet: GlobalSystemOperationErrorCodes
 
-* insert InvalidRequest
+// * insert InvalidRequest
 
 RuleSet: SystemOperationStatusCodesWithParameters
 * insert SuccessfulWithParameters
-* insert GlobalSystemOperationErrorCodes
+// * insert GlobalSystemOperationErrorCodes
 
 RuleSet: SystemQueryOperationStatusCodesWithNormalSuccess
 * insert Successful
-* insert GlobalSystemOperationErrorCodes
+// * insert GlobalSystemOperationErrorCodes
 
 // Consent Query-API Interactions
 
 RuleSet: ConsentSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
 
-RuleSet: ConsentCreateInteractionStatusCodes
-* insert CreateInteractionStatusCodes
 
-RuleSet: ConsentDeleteInteractionStatusCodes
-* insert DeleteInteractionStatusCodes
+RuleSet: ConsentCreateInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SuccessfulCreatedWithResponseType("Consent")
+* insert CreateInteractionStatusCodes
+* rest.resource[=].interaction[=] insert SvcIdentityMismatch
+* rest.resource[=].interaction[=] insert SvcValidationFailed
+* rest.resource[=].interaction[=] insert TIFLOW_CONSENT_ALREADY_EXISTS
 
 // EU Operationen
 
@@ -198,30 +207,30 @@ RuleSet: GrantEUAccessPermissionOperationStatusCodes
 * rest.operation[=] insert TiflowConsentRequired
 * rest.operation[=] insert TiflowErezeptCountryCodeInvalid
 
-* rest.operation[=] insert TiflowAuthRoleNotAllowed
+// * rest.operation[=] insert TiflowAuthRoleNotAllowed
 
 RuleSet: ReadEUAccessPermissionOperationStatusCodes
 * rest.operation[=] insert SystemOperationStatusCodesWithParameters
 
-* rest.operation[=] insert TiflowAuthRoleNotAllowed
+// * rest.operation[=] insert TiflowAuthRoleNotAllowed
 
 RuleSet: RevokeEUAccessPermissionOperationStatusCodes
 * rest.operation[=] insert SystemQueryOperationStatusCodesWithNormalSuccess
 
-* rest.operation[=] insert TiflowAuthRoleNotAllowed
+// * rest.operation[=] insert TiflowAuthRoleNotAllowed
 
 RuleSet: GetEUPrescriptionsOperationStatusCodes
 * rest.operation[=] insert SystemOperationStatusCodesWithParameters
 * rest.operation[=] insert SvcValidationFailed
 * rest.operation[=] insert TiflowAccessPermissionInvalid
-* rest.operation[=] insert TiflowAuthRoleNotAllowed
+// * rest.operation[=] insert TiflowAuthRoleNotAllowed
 * rest.operation[=] insert TiflowConsentRequired
 * rest.operation[=] insert TiflowErezeptNoPrescriptionsFound
 
 RuleSet: EuCloseOperationStatusCodes
 * rest.resource[=].operation[=] insert SvcValidationFailed
 * rest.resource[=].operation[=] insert TiflowAccessPermissionInvalid
-* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+// * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 * rest.resource[=].operation[=] insert TiflowConsentMissing
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes

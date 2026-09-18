@@ -17,12 +17,15 @@ Description: "CapabilityStatement für den E-Rezept-Fachdienst (Arzneimittel-Wor
 * rest.mode = #server
 * extension[baseUrl].valueString = $erp-base-url
 
-* insert ImportCapabilityStatment(TIFlowFachdienstServer, #SHALL)
+* insert ImportCapabilityStatment(TIFlowBasicServer, #SHALL)
+
+// Global Response HTTP Status Codes
+* insert TiflowTimeout
+* insert TiflowInternalError
 
 * insert TaskInteraction(#SHALL)
 * insert CommunicationInteraction(#SHALL)
 * insert MedicationDispenseInteraction(#SHALL)
-* insert SubscriptionInteraction(#SHALL)
 * insert ConsentInteraction(#SHALL)
 * insert GrantEUAccessPermissionInteraction(#SHALL)
 * insert ReadEUAccessPermissionInteraction(#SHALL)
@@ -35,13 +38,19 @@ RuleSet: TaskInteraction(expectation)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert TaskSearchTypeInteractionStatusCodes
+
 * insert CapResourceInteraction(#read, #SHALL)
 * insert TaskReadInteractionStatusCodes
+
 * insert CapResourceInteraction(#patch, #SHALL)
+* insert TaskPatchInteractionStatusCodes
 
 * insert CapSupportResourceSearchParam(_id, http://hl7.org/fhir/SearchParameter/Resource-id, #token, {expectation}, "Task.id - Unterstützt die Suche nach der Task-ID")
 * insert CapSupportResourceSearchParamNoDefinition(prescription-id, #token, {expectation}, "Task.identifier - Unterstützt die Suche nach der E-Rezept-ID")
-* insert CapSupportResourceSearchParamNoDefinition(access-code, #token, {expectation}, "Task.identifier - Unterstützt die Suche nach dem Zugriffscode")
+
+* insert CapSupportResourceSearchParamNoDefinition(ac, #token, {expectation}, "Zugriffscode")
+* rest.resource[=].searchParam[=].extension[interaction].valueCode = #read
+
 * insert CapSupportResourceSearchParam(authored-on, http://hl7.org/fhir/SearchParameter/Task-authored-on, #date, {expectation}, "Task.authoredOn - Unterstützt die Suche nach dem Erstellungsdatum; default sort if _sort is not provided")
 * insert CapSupportResourceSearchParam(status, http://hl7.org/fhir/SearchParameter/Task-status, #token, {expectation}, "Task.status - Unterstützt die Suche nach dem Status einer Task")
 * insert CapSupportResourceSearchParamNoDefinition(expiry-date, #date, {expectation}, "Task.extension:expiryDate.valueDate - Unterstützt die Suche nach dem Verfallsdatum")
@@ -53,18 +62,25 @@ RuleSet: TaskInteraction(expectation)
 
 * insert CapSupportResourceOperation(create, TIFlowRXOPCreate, {expectation}, "Creates a Task for a specific flow type")
 * insert TaskCreateOperationStatusCodes
+
 * insert CapSupportResourceOperation(activate, TIFlowRXOPActivate, {expectation}, "Activates the created Task using the signed ePrescription bundle")
 * insert TaskActivateOperationStatusCodes
+
 * insert CapSupportResourceOperation(accept, TIFlowRXOPAccept, {expectation}, "Pharmacy claims an ePrescription and sets Task status to in-progress")
 * insert TaskAcceptOperationStatusCodes
+
 * insert CapSupportResourceOperation(reject, TIFlowRXOPReject, {expectation}, "Rejects dispensing and resets Task status to active")
 * insert TaskRejectOperationStatusCodes
+
 * insert CapSupportResourceOperation(close, TIFlowRXOPClose, {expectation}, "Finishes the ePrescription workflow and sets Task status to completed")
 * insert TaskCloseOperationStatusCodes
+
 * insert CapSupportResourceOperation(abort, TIFlowRXOPAbort, {expectation}, "Aborts the ePrescription workflow and deletes Task related data")
 * insert TaskAbortOperationStatusCodes
+
 * insert CapSupportResourceOperation(dispense, TIFlowRXOPDispense, {expectation}, "Documents medication dispensation without changing Task status")
 * insert TaskDispenseOperationStatusCodes
+
 * insert CapSupportResourceOperation(eu-close, EUCloseOperation, {expectation}, "Finishes the EU ePrescription workflow and creates a signed receipt bundle")
 * insert EuCloseOperationStatusCodes
 
@@ -106,24 +122,22 @@ RuleSet: CommunicationInteraction(expectation)
 * insert CapSupportResourceSearchParamNoDefinition(_count, #number, {expectation}, "Maximale Anzahl zurückgegebener Einträge pro Seite; maximum value is 50")
 * insert CapSupportResourceSearchParamNoDefinition(_offset, #number, {expectation}, "Nullbasierter Offset des ersten zurückgegebenen Eintrags; default is 0")
 
-RuleSet: SubscriptionInteraction(expectation)
-* insert CapSupportResource(Subscription, {expectation})
-* insert CapResourceInteraction(#search-type, {expectation})
-* insert SubscriptionSearchTypeInteractionStatusCodes
-* insert CapResourceInteraction(#create, {expectation})
-* insert SubscriptionCreateInteractionStatusCodes
-
 RuleSet: ConsentInteraction(expectation)
 * insert CapSupportResource(Consent, {expectation})
+* rest.resource[=] insert TiflowErezeptSuccessNoContent(#conditional-delete)
+* rest.resource[=] insert TIFLOW_CONSENT_CATEGORY_REQUIRED(#conditional-delete)
+* insert CapSupportResourceConditionalDelete(#single)
 
 * insert CapResourceInteraction(#search-type, #SHALL)
 * insert ConsentSearchTypeInteractionStatusCodes
 * insert CapResourceInteraction(#create, #SHALL)
 * insert ConsentCreateInteractionStatusCodes
-* insert CapResourceInteraction(#delete, #SHALL)
-* insert ConsentDeleteInteractionStatusCodes
+
 
 * insert CapSupportResourceSearchParam(category, http://hl7.org/fhir/SearchParameter/Consent-category, #token, {expectation}, "Consent.category - Unterstützt die Suche nach der Art der Einwilligung")
+* rest.resource[=].searchParam[=]
+  * extension[interaction][+].valueCode = #conditional-delete
+  * extension[interaction][+].valueCode = #delete
 
 RuleSet: GrantEUAccessPermissionInteraction(expectation)
 * insert CapSupportSystemOperation(grant-eu-access-permission, GrantEUAccessPermission, {expectation}, "Registers access code and country for EU prescription access")

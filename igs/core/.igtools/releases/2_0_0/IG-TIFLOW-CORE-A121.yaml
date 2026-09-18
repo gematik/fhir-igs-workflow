@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 486ea643295a2d204e45eed4187539ba9f2184f2110b1e3d958f2af06a8f8546
+content_hash: 471efc3a4e64651d063559307d6c0578bfbf24eee8402c5a52528e086a184124
 created: '2026-06-25T11:30:11.222136'
-date: '2026-06-25T11:30:11.222138'
+date: '2026-09-18T09:37:58.006382'
 key: IG-TIFLOW-CORE-A121
-modified: '2026-06-25T11:30:11.222137'
+modified: '2026-09-18T09:37:58.006382'
 release_status: NEW
 source: input/pagecontent/query-api-task-req-fd.md
 status: ACTIVE
@@ -14,18 +14,14 @@ test_procedures:
   - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS bei Aufruf der HTTP-PATCH-Operation auf den Endpunkt\
   \ /Task/&lt;id&gt; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen,\
-  \ dass ausschließlich Nutzer in der Rolle: \n     <ul>\n        <li>oid_versicherter</li>\n\
-  \     </ul>\n     die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen\
-  \ die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"\
-  border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n         \
-  \   <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n  \
-  \      <tr>\n            <th>Severity</th>\n            <td>error</td>\n       \
-  \ </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n\
-  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n\
-  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der\
-  \ Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n    \
-  \    </tr>\n    </table> \n    abbrechen, damit E-Rezepte nicht durch Unberechtigte\
-  \ markiert werden können."
+  \ dass ausschließlich Nutzer in der Rolle: \n <ul>\n <li>oid_versicherter</li>\n\
+  \ </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die\
+  \ Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403\
+  \ - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table>\
+  \ \n abbrechen, damit E-Rezepte nicht durch Unberechtigte markiert werden können."
 title: TI-Flow-Fachdienst - Task markieren - Versicherter - Rollenprüfung Versicherter
   markiert Rezepte
 version: 0

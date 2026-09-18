@@ -38,7 +38,6 @@ Auch Schematron-Dateien sind zum Herunterladen verfügbar:
 
 Die bereitgestellte OpenAPI-Definition dient **ausschließlich** als Hilfestellung bei der Implementierung. Sie enthält nicht alle möglichen Fehlercodes oder Rückgabewerte und kann daher nicht als normativ betrachtet werden. Für eine vollständige und korrekte Implementierung sind die offiziellen Spezifikationen und begleitenden Dokumentationen maßgeblich.
 
-- [OpenAPI JSON des eRp Fachdienst Servers]
-- [OpenAPI YAML des eRp Fachdienst Servers]
-- [OpenAPI JSON des eRp Fachdienst Clients]
-- [OpenAPI YAML des eRp Fachdienst Clients]
+- [OpenAPI-JSON des eRp Fachdienst Servers]
+- [OpenAPI-YAML des eRp Fachdienst Servers]
+

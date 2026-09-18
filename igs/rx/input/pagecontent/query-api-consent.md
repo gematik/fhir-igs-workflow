@@ -71,9 +71,7 @@ Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Der Fachdi
 
 </div>
 
-### Instance API
-
-#### Löschen einer einzelnen Einwilligung
+#### Löschen einer Einwilligung
 
 Als Versicherter möchte ich meine erteilte Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen widerrufen. Mit dem Widerruf der Einwilligung werden bereits gespeicherte Abrechnungsinformationen gelöscht.
 
@@ -82,7 +80,7 @@ Der Aufruf erfolgt als http-`DELETE`-Operation auf die Ressource /Consent. Der F
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"
   data-api-fhir-resource-type="Consent"
-  data-api-fhir-interaction="delete">
+  data-api-fhir-interaction="conditional-delete">
   <div id="CapabilityStatement">
     <pre>
       {% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}

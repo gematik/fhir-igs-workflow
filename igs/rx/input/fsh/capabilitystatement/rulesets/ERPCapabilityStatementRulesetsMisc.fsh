@@ -7,8 +7,10 @@ RuleSet: CapSupportResource(resource, expectation)
 * rest.resource[+].type = #{resource}
 * rest.resource[=].versioning = #versioned-update
 * rest.resource[=].readHistory = true
-* rest.resource[=].extension[+].url = $capabilitystatement-expectation
-* rest.resource[=].extension[=].valueCode = {expectation}
+// * rest.resource[=].extension[+].url = $capabilitystatement-expectation
+// * rest.resource[=].extension[=].valueCode = {expectation}
+* rest.resource[=].extension[expectation][+].valueCode = {expectation}
+
 
 RuleSet: CapSupportProfileUrl(profileUrl, expectation)
 * rest.resource[=].supportedProfile[+] = "{profileUrl}"
@@ -36,8 +38,9 @@ RuleSet: CapSupportResourceSearchParamNoDefinition(name, type, expectation, docu
   * name = "{name}"
   * type = {type}
   * documentation = {documentation}
-  * extension[+].url = $capabilitystatement-expectation
-  * extension[=].valueCode = {expectation}
+  * extension[expectation].valueCode = {expectation}
+  // * extension[+].url = $capabilitystatement-expectation
+  // * extension[=].valueCode = {expectation}
 
 RuleSet: CapSupportSearchParam(name, canonical, type, expectation, documentation)
 * searchParam[+]
@@ -45,8 +48,9 @@ RuleSet: CapSupportSearchParam(name, canonical, type, expectation, documentation
   * definition = "{canonical}"
   * type = {type}
   * documentation = {documentation}
-  * extension[+].url = $capabilitystatement-expectation
-  * extension[=].valueCode = {expectation}
+  * extension[expectation].valueCode = {expectation}
+  // * extension[+].url = $capabilitystatement-expectation
+  // * extension[=].valueCode = {expectation}
 
 RuleSet: CapSupportResourceOperation(name, operation, expectation, documentation)
 * rest.resource[=] insert CapSupportOperation({name}, {operation}, {expectation}, {documentation})
@@ -60,3 +64,8 @@ RuleSet: CapSupportOperation(name, operation, expectation, documentation)
 
 RuleSet: CapSupportSystemOperation(name, operation, expectation, documentation)
 * rest insert CapSupportOperation({name}, {operation}, {expectation}, {documentation})
+
+
+RuleSet: CapSupportResourceConditionalDelete(value)
+* rest.resource[=]
+  * conditionalDelete = {value}

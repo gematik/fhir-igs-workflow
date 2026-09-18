@@ -63,7 +63,7 @@ Dabei können Fehler aus den folgenden Quellen definiert sein:
 |---|---|---|
 |[HL7 OperationOutcome Codes]|FHIR übergreifende Fehlercodes definiert in der FHIR-Spezifikation.|MSG_ID_INVALID - invalid id of the FHIR-Resource|
 |[TI-Common OperationOutcomeDetailsCS]|TI-weite Fehlercodes, die für FHIR Systeme der TI gelten.|SVC_INVALID_ACCESS_TOKEN - Ungültiges ACCESS_TOKEN|
-|[TI-Flow OperationOutcomeDetailsCS](./CodeSystem-tiflow-operation-outcome-details-cs.html)|Fehlercodes, die für die TIFlow-Anwendungen gelten.|TIFLOW_AUTH_ROLE_NOT_ALLOWED - Rolle für den Endpunkt nicht autorisiert|
+|[TI-Flow OperationOutcomeDetailsCS](./CodeSystem-tiflow-operation-outcome-details-cs.html)|Fehlercodes, die für die TIFlow-Anwendungen gelten.|TIFLOW_IKNR_INVALID - Invalide IKNR|
 |TI-Flow Modul OperationOutcomeDetailsCS|Fehlercodes, die für das konkrete TI-Flow Modul definiert wurden.|TIFLOW_EREZEPT_PZN_INVALID - Invalide PZN|
 
 <div><figcaption><strong>Tabelle: </strong>Quellen von OperationOutcome Terminologien</figcaption></div>
@@ -72,7 +72,7 @@ Der jeweilige IG bindet ein ValueSet an das OperationOutcome wodurch die Liste d
 
 ### Beschreibung von Fehlercodes im IG
 
-In den IGs der TI-Flow Anwendungen sind die Schnittstellen jeweils beschrieben (ref. [Query API](./menu-schnittstellen-query-api.html)). Jede dieser Seiten enthält eine farblich gekennzeichnete API Beschreibung mit möglichen HTTP-Headern, Query-Parametern, Beispiele für Request- und Response-Body, sowie eine Auflistung der Fehlercodes, die dieser Endpunkt zurückgeben kann.
+In den IGs der TI-Flow Anwendungen sind die Schnittstellen jeweils beschrieben (ref. [Resource API](./menu-schnittstellen-query-api.html)). Jede dieser Seiten enthält eine farblich gekennzeichnete API Beschreibung mit möglichen HTTP-Headern, Query-Parametern, Beispiele für Request- und Response-Body, sowie eine Auflistung der Fehlercodes, die dieser Endpunkt zurückgeben kann.
 
 Die Liste an möglichen Fehlercodes, die ein Endpunkt zurückgibt, ergibt sich dabei aus
 
@@ -188,7 +188,7 @@ Für die Ressourcen-Endpunkte in FHIR gelten die folgenden übergreifenden Fehle
     </tbody>
 </table>
 
-<div><figcaption><strong>Tabelle: </strong>Fehlercodes für Query-API</figcaption></div><br>
+<div><figcaption><strong>Tabelle: </strong>Fehlercodes für Resource-API</figcaption></div><br>
 
 ##### Operation-API
 

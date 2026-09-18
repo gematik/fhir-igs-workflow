@@ -1,41 +1,26 @@
-// Errors for all Resource Endpoints
-RuleSet: GlobalQueryErrorCodes
-
-* rest.resource[=].interaction[=] insert InvalidRequest
-
-* rest.resource[=].interaction[=] insert RequestTimeout
-
-* rest.resource[=].interaction[=] insert InternalServerError
-
 // Query-API Interactions
 RuleSet: ReadInteractionStatusCodes
-* insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
 
 RuleSet: SearchTypeInteractionStatusCodes
-* insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownSearchParameter
 * rest.resource[=].interaction[=] insert InvalidQueryParameters
 * rest.resource[=].interaction[=] insert UnknownResourceType
 
 RuleSet: CreateInteractionStatusCodes
-* insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert SuccessfulCreated
 
 RuleSet: UpdateInteractionStatusCodes
-* insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert Successful
 
 RuleSet: PatchInteractionStatusCodes
-* insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert Successful
 
 RuleSet: DeleteInteractionStatusCodes
-* insert GlobalQueryErrorCodes
 * rest.resource[=].interaction[=] insert SuccessfulNoContent
 
 
