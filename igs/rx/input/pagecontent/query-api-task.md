@@ -61,6 +61,7 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
+<!-- 	
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Task/TaskInReadyState XML %}
@@ -69,6 +70,7 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 			{% fragment Task/TaskInReadyState JSON %}
 		</div>
 	</div>
+	 -->
 </div>
 
 #### Task markieren (Einlösen im EU-Ausland)

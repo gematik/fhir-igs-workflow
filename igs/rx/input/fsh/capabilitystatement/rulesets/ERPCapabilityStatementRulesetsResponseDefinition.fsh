@@ -51,11 +51,12 @@ RuleSet: TaskCreateOperationStatusCodes
 
 
 RuleSet: TaskSearchTypeInteractionStatusCodes
+* rest.resource[=].interaction[=] insert X-PoPP-Token(true)
 * insert SearchTypeInteractionStatusCodes
 // * insert GlobalErrorsStatusCodes
 
 RuleSet: TaskReadInteractionStatusCodes
-* rest.resource[=].interaction[=] insert SuccessfulWithResponseType("Task")
+* rest.resource[=].interaction[=] insert SuccessfulWithResponseType("Bundle")
 * insert ReadInteractionStatusCodes
 * rest.resource[=].interaction[=] insert SvcIdentityMismatch
 * rest.resource[=].interaction[=] insert ResourceWasDeleted
