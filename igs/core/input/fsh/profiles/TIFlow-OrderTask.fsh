@@ -4,7 +4,7 @@ Id: tiflow-order-task
 Title: "Task für TIFlow Verordnungen"
 Description: "Task für die Verwaltung von Workflows der TIFlow Verordnungen"
 * insert Meta-With-Versioning
-* ^status = #draft
+* ^status = #active
 
 
 * identifier ^slicing.discriminator.type = #value

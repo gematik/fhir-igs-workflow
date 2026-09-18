@@ -1,10 +1,10 @@
 // General rule to handle versions for all EU structure definitions
 RuleSet: Versioning
-* ^status = #draft
+* ^status = #active
 * ^version = "2.0.0"
-* ^date = "2026-08-27"
+* ^date = "2026-09-23"
 
 RuleSet: OperationVersioning
-* status = #draft
+* status = #active
 * version = "2.0.0"
-* date = "2026-08-27"
+* date = "2026-09-23"
