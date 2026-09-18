@@ -63,7 +63,7 @@ Dabei können Fehler aus den folgenden Quellen definiert sein:
 |---|---|---|
 |[HL7 OperationOutcome Codes]|FHIR übergreifende Fehlercodes definiert in der FHIR-Spezifikation.|MSG_ID_INVALID - invalid id of the FHIR-Resource|
 |[TI-Common OperationOutcomeDetailsCS]|TI-weite Fehlercodes, die für FHIR Systeme der TI gelten.|SVC_INVALID_ACCESS_TOKEN - Ungültiges ACCESS_TOKEN|
-|[TI-Flow OperationOutcomeDetailsCS](./CodeSystem-tiflow-operation-outcome-details-cs.html)|Fehlercodes, die für die TIFlow-Anwendungen gelten.|TIFLOW_AUTH_ROLE_NOT_ALLOWED - Rolle für den Endpunkt nicht autorisiert|
+|[TI-Flow OperationOutcomeDetailsCS](./CodeSystem-tiflow-operation-outcome-details-cs.html)|Fehlercodes, die für die TIFlow-Anwendungen gelten.|TIFLOW_IKNR_INVALID - Invalide IKNR|
 |TI-Flow Modul OperationOutcomeDetailsCS|Fehlercodes, die für das konkrete TI-Flow Modul definiert wurden.|TIFLOW_EREZEPT_PZN_INVALID - Invalide PZN|
 
 <div><figcaption><strong>Tabelle: </strong>Quellen von OperationOutcome Terminologien</figcaption></div>

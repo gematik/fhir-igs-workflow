@@ -33,11 +33,11 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit die Verordnung nicht durch einen Unberechtigten abgerufen werden kann.
