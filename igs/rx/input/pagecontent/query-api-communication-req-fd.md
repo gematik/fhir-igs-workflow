@@ -10,7 +10,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 Für Prüfung Payload siehe [Datenmodell Payload für Communication-Query](./query-api-communication-req-data.html)
 
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Einstellen von Communications - FHIR-Validierung" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A309" title="TI-Flow-Fachdienst - Einstellen von Communications - FHIR-Validierung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -57,7 +57,7 @@ und bei negativem Prüfergebnis die Operation mit dem folgenden Fehler abbrechen
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>FHIR Profile validation failed./td>
+            <td>FHIR Profile validation failed.</td>
         </tr>
     </table> 
 
