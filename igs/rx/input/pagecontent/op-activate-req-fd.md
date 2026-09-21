@@ -85,34 +85,36 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 #### Anforderungen zur Validierung
 
 <!-- A_19025-03 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - FHIR-Validierung Verordnungsdatensatz Arzneimittel" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A308" title="TI-Flow-Fachdienst - Task aktivieren - FHIR-Validierung Verordnungsdatensatz Arzneimittel" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den innerhalb des PKCS#7-Datensatz enveloping-enthaltenen FHIR-Datensatz gegen das Profil `https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle` aus `kbv.ita.erp` validieren und bei Invalidität die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>400 - Bad Request</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>SVC_VALIDATION_FAILED</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>FHIR Profile Validation Failed</td>
-        </tr>
-    </table> 
+     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den innerhalb des PKCS#7-Datensatz enveloping-enthaltenen FHIR-Datensatz gegen das Profil https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle aus kbv.ita.erp validieren und bei Invalidität die Operation mit dem folgenden Fehler:
+
+<table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+<tr>
+    <th>HTTP-Code</th>
+    <td>400 - Bad Request</td>
+</tr>
+<tr>
+    <th>Severity</th>
+    <td>error</td>
+</tr>
+<tr>
+    <th>Code</th>
+    <td>invalid</td>
+</tr>
+<tr>
+    <th>Details Code</th>
+    <td>SVC_VALIDATION_FAILED</td>
+</tr>
+<tr>
+    <th>Details Text</th>
+    <td>FHIR Profile Validation Failed.</td>
+</tr>
+</table> 
+
     abbrechen.
 </requirement>
 

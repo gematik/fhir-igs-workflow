@@ -45,7 +45,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 #### Anforderungen zur Validierung
 
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - Ausführung nach OperationDefinition" version="1">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A307" title="TI-Flow-Fachdienst - Task schließen - Ausführung nach OperationDefinition" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -70,7 +70,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>FHIR Profile validation failed./td>
+            <td>FHIR Profile validation failed.</td>
         </tr>
     </table> 
 </requirement>

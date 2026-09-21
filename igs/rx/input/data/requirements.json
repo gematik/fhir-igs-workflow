@@ -5480,6 +5480,78 @@
         "release": "2.0.0"
     },
     {
+        "key": "IG-TIFLOW-ERP-A307",
+        "title": "TI-Flow-Fachdienst - Task schließen - Ausführung nach OperationDefinition",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-close-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>E-Rezept Abgabe vollziehen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-rx-close-op.html\">TIFlowRXOPClose</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler abbrechen:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed.</td>\n </tr>\n </table>",
+        "conformance": "SHALL",
+        "created": "2026-09-21T12:32:06.087583",
+        "modified": "2026-09-21T14:12:07.892626",
+        "date": "2026-09-21T14:12:07.892626",
+        "content_hash": "65d85a3ebc77058843aa062a45c5cdd872434a70908796c254132d69f82cab75",
+        "path": "op-close-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A308",
+        "title": "TI-Flow-Fachdienst - Task aktivieren - FHIR-Validierung Verordnungsdatensatz Arzneimittel",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-activate-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den innerhalb des PKCS#7-Datensatz enveloping-enthaltenen FHIR-Datensatz gegen das Profil https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle aus kbv.ita.erp validieren und bei Invalidität die Operation mit dem folgenden Fehler:\n\n<table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n<tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n</tr>\n<tr>\n <th>Severity</th>\n <td>error</td>\n</tr>\n<tr>\n <th>Code</th>\n <td>invalid</td>\n</tr>\n<tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n</tr>\n<tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed.</td>\n</tr>\n</table> \n\n abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-09-21T12:32:06.131901",
+        "modified": "2026-09-21T14:12:07.928097",
+        "date": "2026-09-21T14:12:07.928097",
+        "content_hash": "4767c458a62e19a713507bbb09ea519ccf6e76bca1bf7d92ad27b8302651da7a",
+        "path": "op-activate-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A309",
+        "title": "TI-Flow-Fachdienst - Einstellen von Communications - FHIR-Validierung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-communication-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf des Endpunkts `POST /Communication` unter den benannten Prüfbedingungen die folgende Profilvalidierung durchführen:\n\n <table>\n <thead>\n <tr>\n <th>Prüfbedingung</th>\n <th>Profil</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>Rolle: oid_versicherter</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq</code></td>\n </tr>\n <tr>\n <td>Rolle: oid_apotheke, oid_krankenhausapotheke</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply</code></td>\n </tr>\n </tbody>\n </table>\n\nund bei negativem Prüfergebnis die Operation mit dem folgenden Fehler abbrechen:\n\n<table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed.</td>\n </tr>\n </table>",
+        "conformance": "SHALL",
+        "created": "2026-09-21T12:32:06.169562",
+        "modified": "2026-09-21T14:12:07.966665",
+        "date": "2026-09-21T14:12:07.966665",
+        "content_hash": "f9fa710b30c892bfa50a5bf0ba35636390269892f3d9a87be6d76f91edc8b38e",
+        "path": "query-api-communication-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
         "key": "IG-TIFLOW-ERP-A31",
         "title": "TI-Flow-FdV: E-Rezept zuweisen - Auf Nachricht antworten - Payload",
         "actor": [
