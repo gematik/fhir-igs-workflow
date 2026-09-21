@@ -6,6 +6,8 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 ### Modulspezifische Anforderungen
 
+#### Anforderungen zur Signaturprüfung
+
 <!-- A_19225-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A75" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - QES durch berechtigte Berufsgruppe" version="0">
     <meta lockversion="false"/>
@@ -78,6 +80,42 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     </table> 
     abbrechen, damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von T-Rezepten ermächtigt sind.
 </requirement>
+
+
+#### Anforderungen zur Validierung
+
+<!-- A_19025-03 -->
+<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - FHIR-Validierung Verordnungsdatensatz Arzneimittel" version="1">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den innerhalb des PKCS#7-Datensatz enveloping-enthaltenen FHIR-Datensatz gegen das Profil `https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle` aus `kbv.ita.erp` validieren und bei Invalidität die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_VALIDATION_FAILED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>FHIR Profile Validation Failed</td>
+        </tr>
+    </table> 
+    abbrechen.
+</requirement>
+
 
 <!-- A_25642 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A77" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160/169/200/209 - Prüfung Arzneimittelverordnung" version="0">
@@ -271,7 +309,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mit Flowtype 160, 166, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate bei erfolgreichem Abschluss der Operation, die Daten des Verordnungsdatensatzes für die Übermittlung in den ePA Medication Service bereitstellen.
 </requirement>
 
-### Prozessparamter
+#### Anforderungen zu Prozessparamtern
 
 <!-- A_27844, A_19999 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A85" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 160 - Prozessparameter" version="0">
@@ -556,7 +594,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     wenn das in der http-POST-Operation /Task/&#60;id&#62;/$activate übergebene, gültig signierte E-Rezept-Bundle in der Extension https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis in Bundle.Composition den code="04" oder "14" des Code-Systems https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN ("Entlassmanagement-Kennzeichen") enthält und die übrigen Prozessparameter unverändert übernehmen, damit der Prozess für das E-Rezept mit den abweichenden Festlegungen für das Entlassrezept gemäß Arzneimittelrichtlinie [AM-RL] umgesetzt wird.
 </requirement>
 
-### Verifizieren von Prüfziffern
+#### Verifizieren von Prüfziffern
 
 <!-- A_23892 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A219" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_ERP_Medication_PZN" version="0">
@@ -655,7 +693,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 </requirement>
 
 
-### Prüfung von Mehrfachverordnungen
+#### Prüfung von Mehrfachverordnungen
 
 <!-- A_22627-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A91" title="TI-Flow-Fachdienst - Task aktivieren - Mehrfachverordnung - zulässige Flowtype" version="0">
