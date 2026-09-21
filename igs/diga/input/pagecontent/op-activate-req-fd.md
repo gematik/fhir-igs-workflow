@@ -3,7 +3,7 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 ### Anforderungen aus der Core Spezifikation
 
-Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gematik.de/fhir/tiflow/{ site.data.constants.tiflow_core_version }/op-activate-req-fd.html)
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gematik.de/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/op-activate-req-fd.html)
 
 ### Modulspezifische Anforderungen
 
@@ -86,7 +86,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
             <td>FHIR Profile Validation Failed</td>
         </tr>
     </table> 
-    
+
     abbrechen.
 </requirement>
 
