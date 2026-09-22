@@ -75,7 +75,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>FHIR Profile validation failed.</td>
+            <td>FHIR Profile validation failed</td>
         </tr>
     </table>
 </requirement>

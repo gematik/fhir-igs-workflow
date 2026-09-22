@@ -30,7 +30,7 @@ Für Prüfung Payload siehe [Datenmodell Payload für Communication-Query](./que
         <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq</code></td>
       </tr>
       <tr>
-        <td>Rolle: oid_apotheke, oid_krankenhausapotheke</td>
+        <td>Rolle: oid_oeffentliche_apotheke, oid_krankenhausapotheke</td>
         <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply</code></td>
       </tr>
     </tbody>
@@ -57,7 +57,7 @@ und bei negativem Prüfergebnis die Operation mit dem folgenden Fehler abbrechen
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>FHIR Profile validation failed.</td>
+            <td>FHIR Profile validation failed</td>
         </tr>
     </table> 
 
