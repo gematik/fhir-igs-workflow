@@ -1,40 +1,4 @@
-### Anforderungen der Schnittstelle aus diesem Modul
-
-<!-- A_27059 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A227" title="TI-Flow-Fachdienst - eu-prescription abfragen - Rollenprüfung" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
-    </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
-     <ul>
-     <li>oid_ncpeh </li>
-     </ul>
-     die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>-</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>-</td>
-        </tr>
-    </table> 
-    abbrechen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.
-</requirement>
+### Modulspezifische Anforderungen
 
 #### Anforderungen zur Validierung
 
@@ -67,6 +31,8 @@
         </tr>
     </table>
 </requirement>
+
+#### Anforderungen zur Geschäftslogik
 
 <!-- A_27060 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A228" title="TI-Flow-Fachdienst - eu-prescription abfragen - Schemaprüfung" version="0">
@@ -349,3 +315,4 @@
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, den Push Notification Prozess für den Trigger mit der ChannelId "erp.eu.prescription.redeem" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.
 </requirement>
+

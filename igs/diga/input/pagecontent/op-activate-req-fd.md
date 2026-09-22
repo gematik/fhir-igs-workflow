@@ -85,6 +85,8 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     </table>
 </requirement>
 
+#### Anforderungen zur Geschäftslogik
+
 <!-- A_19025-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A135" title="TI-Flow-Fachdienst - Task aktivieren - FHIR-Validierung Verordnungsdatensatz DiGA" version="0">
     <meta lockversion="false"/>
@@ -260,3 +262,4 @@ Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallka
   </table>
   <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_005 Prozessparameter Flowtype 162</figcaption></div>
 </requirement>
+

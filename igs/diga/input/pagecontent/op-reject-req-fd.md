@@ -6,43 +6,11 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 ### Modulspezifische Anforderungen
 
-<!-- A_19170-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A1" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung" version="0">
-  <meta lockversion="false"/>
-  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-    <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
-  </actor>
-  Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 162 HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
-  <ul>
-    <li>oid_kostentraeger</li>
-  </ul>
-  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>-</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>-</td>
-        </tr>
-    </table> 
-    abbrechen, damit die Verordnung nicht durch einen Unberechtigten zurückgewiesen werden kann.
-</requirement>
-
 #### Anforderungen zur Validierung
+
+
+
+#### Anforderungen zur Geschäftslogik
 
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task zurückgeben - Flowtype 162 - Ausführung der OperationDefinition" version="0">
     <meta lockversion="false"/>
@@ -73,3 +41,4 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
         </tr>
     </table>
 </requirement>
+

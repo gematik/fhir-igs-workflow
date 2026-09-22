@@ -6,43 +6,6 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 ### Modulspezifische Anforderungen
 
-<!-- A_19170-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A13" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung" version="0">
-  <meta lockversion="false"/>
-  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-    <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
-  </actor>
-  Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
-  <ul>
-    <li>oid_oeffentliche_apotheke</li>
-    <li>oid_krankenhausapotheke</li>
-  </ul>
-  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>-</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>-</td>
-        </tr>
-    </table> 
-    abbrechen, damit das E-Rezept nicht durch einen Unberechtigten zurückgewiesen werden kann.
-</requirement>
-
 #### Anforderungen zur Validierung
 
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task zurückweisen - Ausführung der OperationDefinition" version="0">
@@ -97,3 +60,43 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject, wenn bereits Dispensierinformationen im TI-Flow-Fachdienst zum Task gespeichert wurden, die Daten für die Löschinformation dieser Dispensierinformationen für die Übermittlung in den ePA Medication Service bereitstellen.
 </requirement>
+
+#### Anforderungen zur Geschäftslogik
+
+<!-- A_19170-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A13" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung" version="0">
+  <meta lockversion="false"/>
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
+  <ul>
+    <li>oid_oeffentliche_apotheke</li>
+    <li>oid_krankenhausapotheke</li>
+  </ul>
+  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>-</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, damit das E-Rezept nicht durch einen Unberechtigten zurückgewiesen werden kann.
+</requirement>
+
