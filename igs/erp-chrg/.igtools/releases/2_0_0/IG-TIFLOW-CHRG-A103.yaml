@@ -1,0 +1,33 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 1aeb50cd94416f3c7768824e2d3412ecf13d60ec6f05babf40b49a15484ec191
+created: '2026-09-22T15:04:47.772298'
+date: '2026-09-22T15:04:47.772303'
+key: IG-TIFLOW-CHRG-A103
+modified: '2026-09-22T15:04:47.772302'
+release_status: NEW
+source: input/pagecontent/query-api-communication-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf des Endpunkts `POST /Communication`\
+  \ unter den benannten Prüfbedingungen die folgende Profilvalidierung durchführen:\n\
+  \n  <table>\n    <thead>\n      <tr>\n        <th>Prüfbedingung</th>\n        <th>Profil</th>\n\
+  \      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>Rolle: oid_versicherter</td>\n\
+  \        <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq</code></td>\n\
+  \      </tr>\n      <tr>\n        <td>Rolle: oid_oeffentliche_apotheke, oid_krankenhausapotheke</td>\n\
+  \        <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReply</code></td>\n\
+  \      </tr>\n    </tbody>\n  </table>\n\nund bei negativem Prüfergebnis die Operation\
+  \ mit dem folgenden Fehler abbrechen:\n\n<table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
+  \            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n         \
+  \   <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n\
+  \            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n      \
+  \  <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR\
+  \ Profile validation failed</td>\n        </tr>\n    </table>"
+title: TI-Flow-Fachdienst - Abrechnungsinformationen - Einstellen von Communications
+  - FHIR-Validierung
+version: 0

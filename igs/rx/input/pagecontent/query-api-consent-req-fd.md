@@ -7,7 +7,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 #### POST /Consent
 
 <!-- A_22351 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A316" title="TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

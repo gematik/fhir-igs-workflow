@@ -38,7 +38,7 @@
 
 #### Anforderungen zur Validierung
 
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Ausführung der OperationDefinition" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A317" title="TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Ausführung der OperationDefinition" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
