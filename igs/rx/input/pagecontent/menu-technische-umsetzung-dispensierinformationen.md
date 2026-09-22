@@ -104,3 +104,15 @@ Die Dosieranweisung werden in der MedicationDispense als Freitext angegeben. Die
 Hinweis: Eine Substitution im Sinne der obigen Anforderung liegt immer dann vor, wenn die PZN des abgegebenen Arzneimittels nicht identisch mit der PZN des verordneten Arzneimittels ist. Ausgeschlossen sind Sonder-PZN.
 
 Hinweis: Im Falle einer Nicht-PZN-Verordnung ist das Setzen des Substitutionskennzeichens optional.
+
+<!-- E-Rezept_26_2 C_12780 -->
+<!-- A_29039 -->
+<requirement conformance="SHALL NOT" key="" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - keine Sonder-PZN" version="0">
+    <meta lockversion="false"/>
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    Das PS der abgebenden LEI DARF beim Erstellen von Dispensierinformationen NICHT Sonder-PZNs in den Dispensierinformationen aufnehmen, damit nur medizinisch relevante Informationen an den TI-Flow-Fachdienst übertragen werden.
+</requirement>
+
+In den Dispensinformationen dürfen nur PZN des Preis- und Produktverzeichnisses nach § 131 Absatz 4 SGB V gemeldet werden. Alle weiteren medizinisch relevanten Ausprägungen (SOKs - "http://TA1.abda.de") werden als geeignete Freitext-Bezeichnungen geliefert.

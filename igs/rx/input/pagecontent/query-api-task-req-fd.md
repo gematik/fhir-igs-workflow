@@ -99,7 +99,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 </requirement>
 
 <!-- A_28500 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A245" title="TI-Flow-Fachdienst - Task markieren - Versicherter - nur einlösbare E-Rezepte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A245" title="TI-Flow-Fachdienst - Task markieren - Versicherter - nur in EU einlösbare E-Rezepte" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
@@ -125,6 +125,39 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
         <tr>
             <th>Details Text</th>
             <td>-</td>
+        </tr>
+    </table> 
+    abbrechen.
+</requirement>
+
+<!-- E-Rezept_26_2 C_12722 -->
+<!-- A_28910 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A245" title="TI-Flow-Fachdienst - Task markieren - Versicherter - nur zur Einlösung verfügbare E-Rezepte " version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten prüfen, ob für den adressierte Task Task.status = "ready" ist und anderfalls mit dem folgenden Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_TASK_STATUS_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Task has invalid status.</td>
         </tr>
     </table> 
     abbrechen.

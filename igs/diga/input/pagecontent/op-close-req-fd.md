@@ -44,3 +44,12 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
    abbrechen.
 </requirement>
 
+<!-- E-Rezept_26_2 C_12832 -->
+<!-- A_28129-01 -->
+<requirement conformance="SHALL" key="" title="TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Push Notification Versicherter" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.close" und den Versicherten mit der KVNR = Task.for initiieren.
+</requirement>

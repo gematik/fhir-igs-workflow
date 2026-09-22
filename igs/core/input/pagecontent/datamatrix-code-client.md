@@ -24,21 +24,24 @@ Diese beiden Datenfelder, URL des Tasks und AccessCode, werden vom Versicherten 
 ```  
 "Task/160.000.000.000.123.76/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea"
 ```
-
-<!-- A_19553-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A230" title="Generierung 2D-Code als Sammlung" version="0">
+<!-- E-Rezept_26_2 C_12730 -->
+<!-- A_19553-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A230" title="2D-Code für den Sammeltoken" version="0">
     <meta lockversion="false"/>
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
+        <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
+    </actor>
+    <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das TI-Flow-FdV MUSS eine Sammlung von einer und bis zu drei E-Rezept-Referenzen als Array in JSON-Notation gemäß [JSON] der folgenden Form  
+    Das TI-Flow-FdV, das PS der verordnenden LEI und das PS der abgebenden LEI MÜSSEN eine Sammlung von einer und bis zu vier E-Rezept-Referenzen als Array in JSON-Notation gemäß [JSON] der folgenden Form  
     <ul>
-    <li>2D-Code-Daten = { "urls": [ "E-Rezept 1", "E-Rezept 2", "E-Rezept 3" ] }</li>
+    <li>2D-Code-Daten = { "urls": [ "E-Rezept 1", "E-Rezept 2", "E-Rezept 3", "E-Rezept 4" ] }</li>
     </ul>
-    zusammenfassen, um daraus einen 2D-Code generieren zu können.
+    zusammenfassen, um daraus einen 2D-Code generieren bzw. diesen einscannen zu können.
 </requirement>
 
 **Beispiel für genau ein E-Rezept-Token (für die Codierung als 2D-Code)**:
@@ -51,14 +54,15 @@ Diese beiden Datenfelder, URL des Tasks und AccessCode, werden vom Versicherten 
 }
 ```
 
-**Beispiel für eine Sammlung von drei E-Rezept-Token (für die Codierung als 2D-Code)**:
+**Beispiel für eine Sammlung von vier E-Rezept-Token (für die Codierung als 2D-Code)**:
 
 ```json
 {   
     "urls": [
         "Task/160.000.000.000.123.76/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea", 
         "Task/160.123.456.789.123.58/$accept?ac=0936cfa582b447144b71ac89eb7bb83a77c67c99d4054f91ee3703acf5d6a629", 
-        "Task/160.000.346.211.638.15/$accept?ac=d3e6092ae3af14b5225e2ddbe5a4f59b3939a907d6fdd5ce6a760ca71f45d8e5"   
+        "Task/160.000.346.211.638.15/$accept?ac=d3e6092ae3af14b5225e2ddbe5a4f59b3939a907d6fdd5ce6a760ca71f45d8e5",
+        "Task/160.000.012.345.678.43/$accept?ac=a1f84c29e057b63d91fc2e4078d5c3a82b6e1f490d37c85ae12b96045f78e3d1"   
     ]
 } 
 ```
@@ -70,7 +74,8 @@ Der Datentyp der Task.id erlaubt bis zu 64 Zeichen zur Angabe einer ID des Tasks
     "urls":[
         "Task/1234567891011121314151617181920212223242526272829303132333435361/$accept?ac=777bea0e13cc9c42ceec14aec3ddee2263325dc2c6c699db115f58fe423607ea",
         "Task/1234567891011121314151617181920212223242526272829303132333435362/$accept?ac=0936cfa582b447144b71ac89eb7bb83a77c67c99d4054f91ee3703acf5d6a629",
-        "Task/1234567891011121314151617181920212223242526272829303132333435363/$accept?ac=d3e6092ae3af14b5225e2ddbe5a4f59b3939a907d6fdd5ce6a760ca71f45d8e5"
+        "Task/1234567891011121314151617181920212223242526272829303132333435363/$accept?ac=d3e6092ae3af14b5225e2ddbe5a4f59b3939a907d6fdd5ce6a760ca71f45d8e5",
+        "Task/1234567891011121314151617181920212223242526272829303132333435364/$accept?ac=ertz092ae3af14b5225e2ddbe5a4f59b3939a907d6fdd5ce6a760ca71f45dhgf"
         ]
     } 
 ```
@@ -100,15 +105,16 @@ Der Nutzer eines TI-Flow-FdV kann die Zugriffs Rezeptinformationen als 2D-Code a
     Das TI-Flow-FdV DARF im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" es dem Nutzer NICHT ermöglichen, einen E-Rezept-Token für ein E-Rezept mit dem Flowtype 169 oder 209 zu erstellen und anzuzeigen.
 </requirement>
 
-Ein 2D-Code kann bis zu 3 E-Rezept-Token beinhalten. Sollen mehr E-Rezept-Token übermittelt werden, können bspw. mehrere 2D-Codes erzeugt und angezeigt werden.
+Ein 2D-Code kann bis zu 4 E-Rezept-Token beinhalten. Sollen mehr E-Rezept-Token übermittelt werden, können bspw. mehrere 2D-Codes erzeugt und angezeigt werden.
 
-<!-- A_24571 -->
-<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A233" title="TI-Flow-FdV: E-Rezept-Token als 2D-Code anzeigen - maximal 3 E-Rezept-Token in 2D-Code" version="0">
+<!-- E-Rezept_26_2 C_12730 -->
+<!-- A_24571-01 -->
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-CORE-A233" title="TI-Flow-FdV: E-Rezept-Token als 2D-Code anzeigen - maximal 4 E-Rezept-Token in 2D-Code" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
     </actor>
-    Das TI-Flow-FdV DARF NICHT im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" mehr als drei E-Rezept-Token in einem 2D-Code zusammenfassen.
+    Das TI-Flow-FdV DARF NICHT im Anwendungsfall "E-Rezept-Token als 2D-Code anzeigen" mehr als vier E-Rezept-Token in einem 2D-Code zusammenfassen.
 </requirement>
 
 
@@ -151,7 +157,11 @@ Das PS der abgebenden LEI muss es dem Nutzer ermöglichen, einen 2D-Code für da
     Das Clientsystem einer abgebenden Institution MUSS zur Schadsoftware-Prüfung der gescannten Inhalte mindestens eine strukturelle Validierung des 2D-Codes durchführen und sicherstellen, dass die entnommenen Token den erwarteten Datenstrukturen entsprechen.
 </requirement>
 
-Der 2D-Code für E-Rezept-Token enthält mindestens einen Token für ein E-Rezept und kann zu 3 Token zusammenfassen. Dies dient einer besseren Usability.
+Der 2D-Code für E-Rezept-Token enthält mindestens einen Token für ein E-Rezept und kann bis zu 4 Token zusammenfassen. 
+
+Der 2D-Code für Token von DiGA-Verordnungen enthält mindestens einen Token für eine Verordnung und kann bis zu 3 Token zusammenfassen.
+
+Dies dient einer besseren Usability.
 
 Der 2D-Code für Abrechnungsinformation-Token enthält genau einen Token.
 

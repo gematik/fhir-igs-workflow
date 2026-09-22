@@ -35,13 +35,19 @@
 
 #### Anforderungen zur Geschäftslogik
 
-<!-- A_27069 -->
+<!-- E-Rezept_26_2 C_12790 -->
+<!-- A_27069-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A262" title="TI-Flow-Fachdienst - Task schließen - EU - Schemaprüfung" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] sowie bei der darin enthaltenen MedicationDispense:
+     <ul>
+     <li>Korrektheit der Rezept-ID https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId als MedicationDispense.identifier und</li>
+     <li>die KVNR des Versicherten im referenzierten Task (Task.for) gegen KVNR in MedicationDispense.subject:identifier</li>
+     </ul>
+     prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>

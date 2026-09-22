@@ -151,7 +151,8 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
 
 #### Nachricht durch Abgebenden übermitteln
 
-<!-- A_23877-02 -->
+<!-- E-Rezept_26_2 C_12810 -->
+<!-- A_23877-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A70" title="PS abgebende LEI: Nachrichtenaustausch - Nachricht durch Abgebenden übermitteln - Datenstruktur Nachricht" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
@@ -271,14 +272,14 @@ Ein JSON-Schema zur Validierung ist unter [Comm_DispReq_JSON_Schema] zu finden.
     </tr>
     <tr>
       <td>pickupCodeHR</td>
-      <td>Falls communicationType = pickupCodeHR und supplyOptionsType = onPremise: ja<br>Ansonsten: verboten</td>
+      <td>Falls communicationType = pickupCodeHR: ja<br>Ansonsten: verboten</td>
       <td>Menschenlesbarer Abholcode</td>
       <td>1-8 Stellen</td>
       <td>12315615</td>
     </tr>
     <tr>
       <td>pickupCodeDMC</td>
-      <td>Falls communicationType = pickupCodeDMC und supplyOptionsType = onPremise: ja<br>Ansonsten: verboten</td>
+      <td>Falls communicationType = pickupCodeDMC: ja<br>Ansonsten: verboten</td>
       <td>Maschinenlesbarer Abholcode (Data-Matrix-Code gemäß ISO/IEC 16022:2006)</td>
       <td>8-2000 Stellen</td>
       <td>5346a991-c5c6-49c8-b87b-4cdd255bbde4</td>

@@ -9,7 +9,8 @@ Der TI-Flow-Fachdienst erstellt ein Notification-Objekt für verschlüsselte Not
 <!-- TI-Flow-26-2 PKV-FD-09 -->
 Die Übermittlung von Notification-Objekten an den Push Gateway wird über einen asynchronen Prozess realisiert. Dies hat die Konsequenz, dass es bei der Übermittlung der Daten an den Push Gateway zu Verzögerungen kommen kann. Dadurch kann sich auch die Zustellung und somit der Empfang der Push Notifications beim Versicherten verzögern.
 
-<!-- A_28115 -->
+<!-- E-Rezept_26_2 C_12832 -->
+<!-- A_28115-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A225" title="TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
@@ -71,8 +72,7 @@ Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeabl
 <td>Task.identifier.PrescriptionID</td>
 <td>TaskId</td>
 <td>
-Falls Task.flowType = "160","166","169","200","209": GEM_ERP_PR_PAR_CloseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]<br>
-Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 </td>
 <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
 <td>POST /Task/&lt;id&gt;/$close</td>
