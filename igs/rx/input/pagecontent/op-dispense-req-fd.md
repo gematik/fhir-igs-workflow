@@ -46,7 +46,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS die Operation <i>Dispensierinformationen bereitstellen</i> gemäß der FHIR OperationDefinition <a href="./OperationDefinition-tiflow-rx-dispense-op.html">TIFlowRXOPDispense</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler abbrechen:
+    Der TI-Flow-Fachdienst MUSS die Operation <i>Dispensierinformationen bereitstellen</i> gemäß der FHIR OperationDefinition <a href="./OperationDefinition-tiflow-rx-dispense-op.html">TIFlowRXOPDispense</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -69,6 +69,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
             <td>FHIR Profile validation failed</td>
         </tr>
     </table>
+   abbrechen.
 </requirement>
 
 <!-- A_24280 -->
