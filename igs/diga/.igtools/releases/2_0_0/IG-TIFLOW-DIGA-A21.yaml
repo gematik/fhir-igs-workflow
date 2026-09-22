@@ -1,0 +1,28 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 4feaf9bc7286b16263ea2dcf98ab55e70dc20fdb24c5ff1bc7b0190f1ee3aa3c
+created: '2026-09-22T15:18:35.391629'
+date: '2026-09-22T15:18:35.391631'
+key: IG-TIFLOW-DIGA-A21
+modified: '2026-09-22T15:18:35.391630'
+release_status: NEW
+source: input/pagecontent/op-accept-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produktgutachten
+text: "Der TI-Flow-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 162 mittels\
+  \ HTTP-POST/$accept-Operation auf den in der URL referenzierten/Task/&#60;id&#62;\
+  \ die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass\
+  \ ausschließlich Nutzer in der Rolle\n    <ul><li>oid_kostentraeger</li></ul>\n\
+  \    die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit\
+  \ dem folgenden Fehler:\n            <table id=\"error-code\" style=\"border: 1px\
+  \ solid black; border-collapse: collapse;\">\n                <tr><th>HTTP-Code</th><td>403\
+  \ - Forbidden</td></tr>\n                <tr><th>Severity</th><td>error</td></tr>\n\
+  \                <tr><th>Code</th><td>invalid</td></tr>\n                <tr><th>Details\
+  \ Code</th><td>-</td></tr>\n                <tr><th>Details Text</th><td>-</td></tr>\n\
+  \        </table>\n        abbrechen, damit die Verordnung nicht durch einen Unberechtigten\
+  \ abgerufen werden kann."
+title: TI-Flow-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung
+version: 0
