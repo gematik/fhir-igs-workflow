@@ -17,7 +17,7 @@ Der ePA-Aktensystem nutzt sein C.FD.TLS-S Zertifikat für den TLS-Verbindungsauf
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorgaben von [gemSpec_PKI] und des TUC_PKI_018 mit den Eingangsdaten gemäß der Tabelle Tab_eRPFD_018 prüfen und im Fehlerfall den Aufbau der HTTPS-Verbindung abbrechen. Tabelle #: Tab_eRPFD_018 - Eingangsdaten für die Prüfung des ePA-Aktensystem Server-Zertifikats
+Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorgaben von [gemSpec_PKI] und des TUC_PKI_018 mit den Eingangsdaten gemäß der Tabelle Tab_eRPFD_018 prüfen und im Fehlerfall den Aufbau der HTTPS-Verbindung abbrechen.
 
 <table>
 <thead>
