@@ -12,7 +12,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 #### Anforderungen zur Geschäftslogik
 
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task abrufen - Flowtype 162 - Ausführung der OperationDefinition" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A142" title="TI-Flow-Fachdienst - Task abrufen - Flowtype 162 - Ausführung der OperationDefinition" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
