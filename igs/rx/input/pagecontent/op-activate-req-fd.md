@@ -81,7 +81,6 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     abbrechen, damit nur solche Leistungserbringer ein signiertes E-Rezept einstellen, die zur Verordnung von T-Rezepten ermächtigt sind.
 </requirement>
 
-
 #### Anforderungen zur Validierung
 
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task aktivieren - Ausführung der OperationDefinition" version="0">
@@ -1110,3 +1109,6 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     </table> 
     abbrechen.
 </requirement>
+
+#### Anforderungen zur Geschäftslogik
+

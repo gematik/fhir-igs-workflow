@@ -6,16 +6,11 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 ### Modulspezifische Anforderungen
 
-<!-- A_19214 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A28" title="TI-Flow-Fachdienst - Task erzeugen - Flowtype 162 - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks die Felder Task.performerType und Task.PrescriptionType.valueCoding.display entsprechend dem übergebenen, gültigen Parameter Task.extension:flowType belegen.
-</requirement>
-
 #### Anforderungen zur Validierung
+
+
+
+#### Anforderungen zur Geschäftslogik
 
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task erzeugen - Flowtype 162 - Ausführung der OperationDefinition" version="0">
     <meta lockversion="false"/>
@@ -48,3 +43,4 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 </requirement>
 
 Die Belegung ergibt sich workflow-typ abhängig aus den [Prozessparametern](./op-activate-req-fd.html).
+
