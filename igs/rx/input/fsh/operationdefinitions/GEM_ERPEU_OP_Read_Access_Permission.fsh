@@ -1,8 +1,10 @@
 Instance: ReadEUAccessPermission
 InstanceOf: TIOperationDefinition
 Usage: #definition
+Title: "EU-Zugriffsberechtigung abfragen"
+Description: "Die Operation $read-eu-access-permission liest den aktuell im E-Rezept-Fachdienst registrierten Zugriffscode für das Einlösen von E-Rezepten in einem EU-Land."
 * insert Operation(ReadEUAccessPermission)
-* description = "This operation reads the currenty in the E-Rezept-Fachdienst registered Access Code for redeeming ePrescriptions in an EU country."
+* id = "read-eu-access-permission"
 * extension[method][+].valueCode = #POST
 * code = #read-eu-access-permission
 * system = true

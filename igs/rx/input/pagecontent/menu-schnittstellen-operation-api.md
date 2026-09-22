@@ -2,9 +2,9 @@ Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem _Primärsystem eR
 
 ### E-Rezepte bereitstellen
 
-- Primärsystem: [Operation API: E-Rezept erstellen](./op-create.html)
-- Primärsystem: [Operation API: E-Rezept aktivieren](./op-activate.html)
-- Primärsystem / TI-Flow-FdV: [Operation API: E-Rezept löschen](./op-abort.html)
+- Primärsystem: [Operation API: Task erstellen](./op-create.html)
+- Primärsystem: [Operation API: Task aktivieren](./op-activate.html)
+- Primärsystem / TI-Flow-FdV: [Operation API: Task löschen](./op-abort.html)
 
 ### E-Rezepte beliefern
 
