@@ -216,7 +216,7 @@ Die Vorgaben für die Verschlüsselung sind in `A_27161-* - Fachdienst - Push No
 ### Push Notification Datenstruktur
 
 <!-- A_28124 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A228" title="E-Rezept - Push Notifications - Datenstruktur Nachrichteninhalte" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A228" title="TI-Flow-Fachdienst - Push Notifications - Datenstruktur Nachrichteninhalte" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>
