@@ -46,7 +46,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 <!-- E-Rezept_26_2 C_12832 -->
 <!-- A_28129-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A138" title="TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Push Notification Versicherter" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A135" title="TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Push Notification Versicherter" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

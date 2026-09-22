@@ -132,7 +132,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 <!-- E-Rezept_26_2 C_12722 -->
 <!-- A_28910 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A245" title="TI-Flow-Fachdienst - Task markieren - Versicherter - nur zur Einlösung verfügbare E-Rezepte " version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A307" title="TI-Flow-Fachdienst - Task markieren - Versicherter - nur zur Einlösung verfügbare E-Rezepte " version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
