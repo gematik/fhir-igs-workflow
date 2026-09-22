@@ -1,4 +1,4 @@
-Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem _Primärsystem eRP_ sowie dem _TI-Flow-Fachdienst_ zur Verfügung.
+Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem _Primärsystem eRP_, _NCPeH-FD_ sowie dem _#TI-Flow-FdV_ zur Verfügung.
 
 ### E-Rezepte bereitstellen
 
@@ -11,6 +11,7 @@ Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem _Primärsystem eR
 - Primärsystem: [Operation API: Task abrufen](./op-accept.html)
 - Primärsystem: [Operation API: Task zurückweisen](./op-reject.html)
 - Primärsystem: [Operation API: Dispensierinformationen bereitstellen](./op-dispense.html)
+- Primärsystem: [Operation API: Task löschen](./op-abort.html)
 - Primärsystem: [Operation API: Task schließen](./op-close.html)
 
 ### Verwaltung der Zugriffsberechtigung durch den Versicherten (EU)

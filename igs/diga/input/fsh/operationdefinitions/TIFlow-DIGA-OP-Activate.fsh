@@ -1,7 +1,7 @@
 Instance: TIFlow-DIGA-OP-Activate
 InstanceOf: TIOperationDefinition
 Usage: #definition
-Title: "E-Rezept aktivieren"
+Title: "Task aktivieren"
 Description: "Diese Operation aktiviert die erstellte Aufgabe für das Rezept. Der Eingabeparameter muss das qualifizierte signierte Bundle des Rezepts enthalten. Der TI-Flow-Fachdienst validiert das Rezept, aktualisiert die Task-ressource und startet den Workflow."
 * insert OperationResource(Task, true, false, false, true)
 * extension[method][+].valueCode = #POST
