@@ -1,5 +1,41 @@
 ### Modulspezifische Anforderungen
 
+<!-- A_27068 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A261" title="TI-Flow-Fachdienst - Task schließen - EU - Rollenprüfung" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
+     <ul>
+     <li>oid_ncpeh</li>
+     </ul>
+     die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>-</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table>
+    abbrechen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.
+</requirement>
+
 #### Anforderungen zur Validierung
 
 <requirement conformance="SHALL" title="TI-Flow-Fachdienst - Task schließen - EU - Ausführung der OperationDefinition" version="0">
