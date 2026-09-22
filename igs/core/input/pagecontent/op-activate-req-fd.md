@@ -131,7 +131,7 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>FHIR Profile validation failed.</td>
+            <td>FHIR Profile validation failed</td>
         </tr>
     </table> 
     abbrechen, damit kein Schadcode und keine "fachfremden" Daten in den TI-Flow-Fachdienst hochgeladen werden.

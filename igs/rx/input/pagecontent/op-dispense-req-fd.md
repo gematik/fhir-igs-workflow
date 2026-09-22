@@ -70,7 +70,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>FHIR Profile validation failed.</td>
+            <td>FHIR Profile validation failed</td>
         </tr>
     </table>
 </requirement>

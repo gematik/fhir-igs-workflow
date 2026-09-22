@@ -62,7 +62,5 @@ Um spezifische Details zu einem einzelnen _MedicationDispense_ mittels der RESTf
 	</div>
 </div>
 
-#### Hinweise
 
-- ...Hinweise
 
