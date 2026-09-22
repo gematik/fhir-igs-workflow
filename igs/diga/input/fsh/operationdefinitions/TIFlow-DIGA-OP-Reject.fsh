@@ -1,7 +1,7 @@
 Instance: RejectOperation
 InstanceOf: TIOperationDefinition
 Usage: #definition
-Title: "E-Rezept zurückgeben"
+Title: "Task zurückgeben"
 Description: "Lehnt die Ausgabe einer DiGA-Verordnung ab. Die Aufgabe wird in einen aktiven Zustand zurückgesetzt, das secret wird gelöscht, und der Task wird für jeden anderen Kostenträger zugänglich oder kann vom Patienten gelöscht werden."
 * insert OperationResource(Task, true, false, false, true)
 * extension[method][+].valueCode = #POST
