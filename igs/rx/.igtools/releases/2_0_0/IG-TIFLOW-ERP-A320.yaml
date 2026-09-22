@@ -1,0 +1,28 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 789e23e5d481d5dac7a68e9b9ec890820a193cfafb0009e238e893d33f3b2327
+created: '2026-09-22T15:09:29.654589'
+date: '2026-09-22T15:09:29.654595'
+key: IG-TIFLOW-ERP-A320
+modified: '2026-09-22T15:09:29.654593'
+release_status: NEW
+source: input/pagecontent/op-accept-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS die Operation <i>Task akzeptieren</i> gemäß der\
+  \ FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-rx-accept-op.html\"\
+  >TIFlowRXOPAccept</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS\
+  \ entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen\
+  \ erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"\
+  error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n  \
+  \      <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n\
+  \        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n\
+  \        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR\
+  \ Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen."
+title: TI-Flow-Fachdienst - Task akzeptieren - Ausführung der OperationDefinition
+version: 0

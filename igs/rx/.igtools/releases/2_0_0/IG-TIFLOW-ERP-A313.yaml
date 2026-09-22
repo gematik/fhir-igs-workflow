@@ -1,0 +1,29 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 1bc15eca6bb7325ed58e38dcda9eee024ae6ce5eafab0520c04fac48174f9375
+created: '2026-09-22T15:09:29.609052'
+date: '2026-09-22T15:09:29.609056'
+key: IG-TIFLOW-ERP-A313
+modified: '2026-09-22T15:09:29.609055'
+release_status: NEW
+source: input/pagecontent/op-dispense-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS die Operation <i>Dispensierinformationen bereitstellen</i>\
+  \ gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-rx-dispense-op.html\"\
+  >TIFlowRXOPDispense</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS\
+  \ entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen\
+  \ erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"\
+  error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n  \
+  \      <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n\
+  \        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n\
+  \        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR\
+  \ Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen."
+title: TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Ausführung der
+  OperationDefinition
+version: 0

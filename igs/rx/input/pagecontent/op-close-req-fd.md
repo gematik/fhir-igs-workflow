@@ -8,7 +8,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 #### Anforderungen zur Validierung
 
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A307" title="TI-Flow-Fachdienst - Task schließen - Ausführung der OperationDefinition" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A311" title="TI-Flow-Fachdienst - Task schließen - Ausführung der OperationDefinition" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
