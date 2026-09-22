@@ -1,8 +1,10 @@
 Instance: GrantEUAccessPermission
 InstanceOf: TIOperationDefinition
 Usage: #definition
+Title: "EU-Zugriffsberechtigung erstellen"
+Description: "Die Operation $grant-eu-access-permission empfängt den Zugriffscode und das Land, für das der Versicherte eine Zugriffsberechtigung erteilen möchte. Die Operation prüft das Land und registriert den Zugriffscode."
 * insert Operation(GrantEUAccessPermission)
-* description = "This operation receives the access code and the country that the patient wants to grant access to. The operation validates the country and creates registeres the Access Code."
+* id = "grant-eu-access-permission"
 * extension[method][+].valueCode = #POST
 * code = #grant-eu-access-permission
 * system = true
