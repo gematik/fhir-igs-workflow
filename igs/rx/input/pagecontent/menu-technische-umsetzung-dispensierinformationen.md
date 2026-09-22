@@ -107,7 +107,7 @@ Hinweis: Im Falle einer Nicht-PZN-Verordnung ist das Setzen des Substitutionsken
 
 <!-- E-Rezept_26_2 C_12780 -->
 <!-- A_29039 -->
-<requirement conformance="SHALL NOT" key="" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - keine Sonder-PZN" version="0">
+<requirement conformance="SHALL NOT" key="IG-TIFLOW-ERP-A308" title="PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - keine Sonder-PZN" version="0">
     <meta lockversion="false"/>
     <actor name="PS_TI-Flow_Apotheke" description="PS-Schnittstelle für TI-Flow/Apotheke">
         <testProcedure id="Herstellererklärung">funkt. Eignung: Herstellererklärung</testProcedure>

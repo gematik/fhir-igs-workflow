@@ -1,23 +1,28 @@
 actor:
+- PS_TI-Flow_Apotheke
 - PS_TI-Flow_verordnend
 - TI-Flow_FdV
 conformance: SHALL
-content_hash: d8a236ca724e04238f410e4f9f442d892e3ed43cf3cba9073fc721738e0b16e4
+content_hash: 3b00614f1d666676baa6e839668ad448eec13441fc4782526c8b0f0549a08eac
 created: '2026-06-25T11:30:11.260951'
-date: '2026-08-26T13:45:23.633731'
+date: '2026-09-22T15:00:25.326222'
 key: IG-TIFLOW-CORE-A230
-modified: '2026-08-26T13:45:23.633731'
+modified: '2026-09-22T15:00:25.326222'
 release_status: NEW
 source: input/pagecontent/datamatrix-code-client.md
 status: ACTIVE
 test_procedures:
+  PS_TI-Flow_Apotheke:
+  - Herstellererklärung
   PS_TI-Flow_verordnend:
   - Herstellererklärung
   TI-Flow_FdV:
   - Herstellererklärung
-text: "Das TI-Flow-FdV MUSS eine Sammlung von einer und bis zu drei E-Rezept-Referenzen\
-  \ als Array in JSON-Notation gemäß [JSON] der folgenden Form \n <ul>\n <li>2D-Code-Daten\
-  \ = { \"urls\": [ \"E-Rezept 1\", \"E-Rezept 2\", \"E-Rezept 3\" ] }</li>\n </ul>\n\
-  \ zusammenfassen, um daraus einen 2D-Code generieren zu können."
-title: Generierung 2D-Code als Sammlung
+text: "Das TI-Flow-FdV, das PS der verordnenden LEI und das PS der abgebenden LEI\
+  \ MÜSSEN eine Sammlung von einer und bis zu vier E-Rezept-Referenzen als Array in\
+  \ JSON-Notation gemäß [JSON] der folgenden Form \n <ul>\n <li>2D-Code-Daten = {\
+  \ \"urls\": [ \"E-Rezept 1\", \"E-Rezept 2\", \"E-Rezept 3\", \"E-Rezept 4\" ] }</li>\n\
+  \ </ul>\n zusammenfassen, um daraus einen 2D-Code generieren bzw. diesen einscannen\
+  \ zu können."
+title: 2D-Code für den Sammeltoken
 version: 0
