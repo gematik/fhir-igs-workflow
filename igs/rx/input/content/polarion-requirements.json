@@ -3884,7 +3884,7 @@
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen - Push Notification Versicherter",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.get\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.eu.prescription.get\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -3908,7 +3908,7 @@
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Push Notification Versicherter",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.redeem\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.eu.prescription.redeem\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4532,7 +4532,7 @@
             "title": "TI-Flow-Fachdienst - Task schließen - EU - Push Notification Versicherter",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.eu.prescription.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -5902,7 +5902,7 @@
             "title": "TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Push Notification Versicherter",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$dispense bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.task.dispense\" und den Versicherten mit der KVNR = Task.for initiieren.",
+            "text": "Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$dispense bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.task.dispense\" und den Versicherten mit der KVNR = Task.for initiieren.",
             "conformance": "SHALL",
             "characteristics": [
                 {
