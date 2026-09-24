@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 9bcc33a9768b12b80d6f7185780fcb5cc7c7b7f10a0e255ec6501bda0f04e66d
+content_hash: 2542edc486c05097775a8afe97d98fac5d38f00ac5aa5ecbeb9d0096febc0783
 created: '2026-09-22T15:09:29.646517'
-date: '2026-09-22T15:09:29.646521'
+date: '2026-09-24T06:10:12.478507'
 key: IG-TIFLOW-ERP-A316
-modified: '2026-09-22T15:09:29.646520'
+modified: '2026-09-24T06:10:12.478507'
 release_status: NEW
 source: input/pagecontent/query-api-consent-req-fd.md
 status: ACTIVE
@@ -14,17 +14,14 @@ test_procedures:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf des Endpunkts `POST /Consent` unter\
   \ den benannten Prüfbedingungen die folgende Profilvalidierung durchführen:\n\n\
-  \  <table>\n    <thead>\n      <tr>\n        <th>Prüfbedingung</th>\n        <th>Profil</th>\n\
-  \      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>Rolle: oid_versicherter</td>\n\
-  \        <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM-ERPEU-PR-Consent</code></td>\n\
-  \      </tr>\n    </tbody>\n  </table>\n\nund bei negativem Prüfergebnis die Operation\
-  \ mit dem folgenden Fehler abbrechen:\n\n<table id=\"error-code\" style=\"border:\
-  \ 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
-  \            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n         \
-  \   <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n\
-  \            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n      \
-  \  <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n\
-  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR\
-  \ Profile validation failed</td>\n        </tr>\n    </table>"
+  \ <table>\n <thead>\n <tr>\n <th>Prüfbedingung</th>\n <th>Profil</th>\n </tr>\n\
+  \ </thead>\n <tbody>\n <tr>\n <td>Rolle: oid_versicherter</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM-ERPEU-PR-Consent</code></td>\n\
+  \ </tr>\n </tbody>\n </table>\n\nund bei negativem Prüfergebnis die Operation mit\
+  \ dem folgenden Fehler:\n\n<table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed</td>\n\
+  \ </tr>\n </table> \n\nabbrechen."
 title: TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung
 version: 0

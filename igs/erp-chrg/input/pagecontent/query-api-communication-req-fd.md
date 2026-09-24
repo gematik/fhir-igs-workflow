@@ -36,7 +36,7 @@ Für Prüfung Payload siehe [Datenmodell Payload für Communication-Query](./que
     </tbody>
   </table>
 
-und bei negativem Prüfergebnis die Operation mit dem folgenden Fehler abbrechen:
+und bei negativem Prüfergebnis die Operation mit dem folgenden Fehler:
 
 <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
@@ -60,6 +60,8 @@ und bei negativem Prüfergebnis die Operation mit dem folgenden Fehler abbrechen
             <td>FHIR Profile validation failed</td>
         </tr>
     </table> 
+
+abbrechen.
 
 </requirement>
 

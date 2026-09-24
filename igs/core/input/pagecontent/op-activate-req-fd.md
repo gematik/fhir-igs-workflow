@@ -279,9 +279,6 @@ Diese Seite enthält die workflowtyp-übergreifenden normativen Anforderungen an
     abbrechen, damit der nachfolgende Workflow ausschließlich auf Basis vom Leistungserbringer mittels Signatur freigegebener Daten erfolgt.
 </requirement>
 
-
-<!-- ToDo: Muss in der Afo das FHIR-Schema vorgegeben werden oder ergibt sich das aus dem FHIR-Datensatz oder muss es zusätzlich noch mit dem WF-Type abgeglichen werden? -->
-
 <!-- A_19025-03 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A410" title="TI-Flow-Fachdienst - Task aktivieren - Verordnung speichern" version="0">
   <meta lockversion="false"/>
