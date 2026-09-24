@@ -1,5 +1,5 @@
 <!-- Operation API -->
-Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem _Primärsystem eRP_ sowie dem _ClientSystem Kostenträger_ im Rahmen des DiGA-Workflows zur Verfügung.
+Die folgenden Operation APIs stellt der TI-Flow-Fachdienst dem _Primärsystem eRP_ sowie dem _Clientsystem Kostenträger_ im Rahmen des DiGA-Workflows zur Verfügung.
 Operationen entsprechen dem Basis-Workflow des TI-Flow-Fachdienstes.
 
 ### DiGA Verordnung bereitstellen
