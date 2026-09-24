@@ -30,7 +30,35 @@ Der zweite Message-Typ dient der freien Kommunikation zur Belieferung des E-Reze
     <actor name="PS_TI-Flow_verordnend" description="PS-Schnittstelle für TI-Flow/verordnendes System">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine Message mit "Content-Type: multipart/mixed;..." und der folgenden Struktur verwenden. Tabelle # : Struktur der Message mit "Content-Type: multipart/mixed;..." Teil Inhalt optional Freitext Freitextmessage für den Empfänger default: "direkte Zuweisung E-Rezept" nein Einlöseinformation E-Rezept-Token als Link nach 2D-Code für E-Rezept-Token Nach 45 Zeichen MUSS ein Steuerzeichen "CRLF" eingefügt werden nein Therapieplan Therapieplan als Anhang, base64 codiert ja
+    Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine Message mit "Content-Type: multipart/mixed;..." und der folgenden Struktur verwenden.
+    <table>
+    <thead>
+    <tr>
+    <th>Teil</th>
+    <th>Inhalt</th>
+    <th>optional</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Freitext</td>
+    <td>Freitextmessage für den Empfänger<br>default: "direkte Zuweisung E-Rezept"</td>
+    <td>nein</td>
+    </tr>
+    <tr>
+    <td>Einlöseinformation</td>
+    <td>E-Rezept-Token als Link<br>Nach 45 Zeichen MUSS ein Steuerzeichen "CRLF" eingefügt werden</td>
+    <td>nein</td>
+    </tr>
+    <tr>
+    <td>Therapieplan</td>
+    <td>Therapieplan als Anhang, base64 codiert</td>
+    <td>ja</td>
+    </tr>
+    </tbody>
+    </table>
+    <div><figcaption><strong>Tabelle: </strong>Struktur der Message mit "Content-Type: multipart/mixed;..."</figcaption></div>
+
 </requirement>
 
 <!-- A_21874 -->
