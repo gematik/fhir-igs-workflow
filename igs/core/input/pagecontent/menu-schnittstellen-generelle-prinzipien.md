@@ -145,7 +145,7 @@ Die Verordnungs-ID wird durch den TI-Flow-Fachdienst beim Anlegen eines Tasks f�
 
 Für den Übergang der Anwendung E-Rezept vom E-Rezept-Fachdienst zum TI-Flow-Fachdienst muss es für ein Clientsystem möglich sein zu erkennen, auf welchem Fachdienst ein Task eingestellt wurde, ohne diesen vorher abzufragen.
 
-Der TI-Flow-Fachdienst erzeugt Tasks für jeden Workflow > `&#60;flowtype&#62;`.0**1**0.000.000.000.`&#60;prüfziffer&#62;`. Siehe hierzu auch die [Anforderungen des TI-Flow-Fachdienst für die $create-Operation](./op-create-req-fd.html).
+Der TI-Flow-Fachdienst erzeugt Tasks für jeden Workflow &#60;flowtype&#62;.0**1**0.000.000.000.&#60;prüfziffer&#62;. Siehe hierzu auch die [Anforderungen des TI-Flow-Fachdienst für die $create-Operation](./op-create-req-fd.html).
 
 <!-- A_19218 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A358" title="Prüfung Verordnungs-ID" version="0">
