@@ -46,3 +46,36 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     </table> 
     abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
 </requirement>
+
+<!-- A_19146 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A10" title="TI-Flow-Fachdienst - E-Rezept löschen - Versicherter - Statusprüfung ungleich in-progress" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort verhindern, wenn der Status des adressierten Tasks in-progress ist und der aufrufende Nutzer der Versicherte ist,
+    und die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>TIFLOW_TASK_STATUS_MISMATCH</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>Task has invalid status.</td>
+        </tr>
+    </table> 
+    abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
+</requirement>

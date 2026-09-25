@@ -274,6 +274,30 @@
             "link": "https://gematik.de/fhir/tiflow-diga/2.0.0/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-DIGA-A134"
         },
         {
+            "key": "IG-TIFLOW-DIGA-A135",
+            "title": "TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Push Notification Versicherter",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.task.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0/op-close-req-fd.html#IG-TIFLOW-DIGA-A135"
+        },
+        {
             "key": "IG-TIFLOW-DIGA-A14",
             "title": "CS Kostenträger: TIFlow - DIGA - Anwendungsfälle",
             "version": 0,

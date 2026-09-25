@@ -29,11 +29,34 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 		</pre>
 	</div>
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleDiGATaskSearchset XML %}
+		<div data-name="Liste von Tasks abrufen" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/Example-GET-Task-Response-Searchset XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleDiGATaskSearchset JSON %}
+		<div data-name="Liste von Tasks abrufen" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/Example-GET-Task-Response-Searchset JSON %}
+		</div>
+	</div>
+</div>
+
+### Instance API
+
+#### API Beschreibung
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Task"
+	data-api-fhir-interaction="read">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
+		</pre>
+	</div>
+	<div id="Response-Examples">
+		<div data-name="Versicherter: Spezifischen Task abrufen" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/Example-GET-Task-Response XML %}
+		</div>
+		<div data-name="Versicherter: Spezifischen Task abrufen" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/Example-GET-Task-Response JSON %}
 		</div>
 	</div>
 </div>

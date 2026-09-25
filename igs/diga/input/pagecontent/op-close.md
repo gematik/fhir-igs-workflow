@@ -28,30 +28,30 @@ Die Operation $close wird als HTTP POST auf /Task/&#60;id&#62;/$close ausgeführ
 	</div>
 	<div id="Request-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleCloseInputParametersDiGA XML %}
+			{% fragment Parameters/Example-POST-Close-Request XML %}
 		</div>
 		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleCloseInputParametersDiGA JSON %}
+			{% fragment Parameters/Example-POST-Close-Request JSON %}
 		</div>
 	</div>
 	<div id="Response-Examples">
-		<div data-name="200 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleOperationCloseOutput XML %}
+		<div data-name="200 - signiertes Quittungs-Bundle" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/Example-POST-Close-Response XML %}
 		</div>
-		<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationCloseError XML %}
+		<div data-name="200 - signiertes Quittungs-Bundle" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/Example-POST-Close-Response JSON %}
 		</div>
-		<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationCloseProfileError XML %}
+		<div data-name="400 - FHIR-Profilvalidierung" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-400-Validation-Failed XML %}
 		</div>
-		<div data-name="200 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleOperationCloseOutput JSON %}
+		<div data-name="400 - FHIR-Profilvalidierung" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-400-Validation-Failed JSON %}
 		</div>
-		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationCloseError JSON %}
+		<div data-name="400 - MedicationDispense ungültig" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-400-MedicationDispense XML %}
 		</div>
-		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationCloseProfileError JSON %}
+		<div data-name="400 - MedicationDispense ungültig" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-400-MedicationDispense JSON %}
 		</div>
 	</div>
 </div>

@@ -8,15 +8,6 @@ RuleSet: OperationResource(resource, affectsState, system, type, instance)
 * instance = {instance}
 
 
-RuleSet: DiGA_Task(status)
-* status = #{status}
-* insert Task162Exension
-* extension[flowType].valueCoding.display = "Flowtype für Digitale Gesundheitsanwendungen"
-* insert TaskIdentifier(162)
-//* insert GKV_Identifier(for.identifier) -> Only when not draft
-* insert TaskMiscInfo
-* performerType = $GEM_ERP_CS_OrganizationType#urn:oid:1.2.276.0.76.4.59 "Kostenträger"
-* performerType.text = "Kostenträger"
 
 RuleSet: Task162Exension
 * extension[flowType].valueCoding = $cs-flowtype#162 "Flowtype für Digitale Gesundheitsanwendungen"
@@ -26,10 +17,6 @@ RuleSet: Task162Exension
 RuleSet: TaskIdentifier(flowType)
 * identifier[PrescriptionID].use = #official
 * identifier[PrescriptionID].value = "{flowType}.000.000.000.000.01"
-
-RuleSet: GKV_Identifier(field)
-* insert KVNR({field}.value)
-* {field}.system = "http://fhir.de/sid/gkv/kvid-10"
 
 RuleSet: TaskMiscInfo
 * insert DateTime(authoredOn)

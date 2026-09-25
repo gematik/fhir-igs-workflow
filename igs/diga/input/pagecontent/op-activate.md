@@ -29,31 +29,31 @@ Die Operation $activate wird als HTTP POST auf /Task/&#60;id&#62;/$activate ausg
 		</pre>
 	</div>
 	<div id="Request-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleOperationActivateParametersInput XML %}
+		<div data-name="Parameters mit E-Rezept-Binary" data-type="XML" data-render="ig-Fragment">
+			{% fragment Parameters/Example-POST-Activate-Request XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Parameters/ExampleOperationActivateParametersInput JSON %}
+		<div data-name="Parameters mit E-Rezept-Binary" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Parameters/Example-POST-Activate-Request JSON %}
 		</div>
 	</div>
 	<div id="Response-Examples">
-		<div data-name="200 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Task/ExampleDiGATaskInReadyState XML %}
+		<div data-name="200 - DiGA-Task im Status ready" data-type="XML" data-render="ig-Fragment">
+			{% fragment Task/Example-POST-Activate-Response XML %}
 		</div>
-		<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationActivateInvalidRoleError XML %}
+		<div data-name="200 - DiGA-Task im Status ready" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Task/Example-POST-Activate-Response JSON %}
 		</div>
-		<div data-name="400 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationActivateError XML %}
+		<div data-name="400 - Signatur ungültig" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-400-InvalidSignature XML %}
 		</div>
-		<div data-name="200 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Task/ExampleDiGATaskInReadyState JSON %}
+		<div data-name="400 - Signatur ungültig" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-400-InvalidSignature JSON %}
 		</div>
-		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationActivateInvalidRoleError JSON %}
+		<div data-name="400 - FHIR-Profilvalidierung" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-400-Validation-Failed XML %}
 		</div>
-		<div data-name="400 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationActivateError JSON %}
+		<div data-name="400 - FHIR-Profilvalidierung" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-400-Validation-Failed JSON %}
 		</div>
 	</div>
 </div>

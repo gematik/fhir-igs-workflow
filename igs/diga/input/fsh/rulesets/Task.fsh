@@ -4,9 +4,12 @@ RuleSet: TaskExtension(flowType)
 * insert ExpiryDate(extension[expiryDate].valueDate)
 
 RuleSet: Task162Extension
-//* extension[flowType].valueCoding = $cs-flowtype#162 "Muster 16 (Digitale Gesundheitsanwendungen)"
+* extension[flowType].valueCoding = $cs-flowtype#162 "Muster 16 (Digitale Gesundheitsanwendungen)"
 * insert DiGAExpiryDate(extension[acceptDate].valueDate) // Expiry, weil so festgelegt beide Daten 3 Monate
 * insert DiGAExpiryDate(extension[expiryDate].valueDate)
+
+RuleSet: TaskExension(flowType)
+* extension[flowType].valueCoding = $cs-flowtype#{flowType}
 
 RuleSet: TaskIdentifierAccessCode
 * identifier[AccessCode].use = #official
@@ -27,24 +30,6 @@ RuleSet: TaskInputReceipt(ref)
 RuleSet: TaskOutputReceipt(ref)
 * output[receipt].type = $GEM_ERP_CS_DocumentType#3
 * output[receipt].valueReference = Reference({ref})
-
-RuleSet: KVNR(field)
-* {field} = "X123456789"
-
-RuleSet: PKV_Identifier(field)
-* {field}.value = "P987654321"
-* {field}.system = "http://fhir.de/sid/gkv/kvid-10"
-
-RuleSet: ApoTelematikID(field)
-* {field}.system = "https://gematik.de/fhir/sid/telematik-id"
-* {field}.value = "3-2-APO-XanthippeVeilchenblau01"
-
-RuleSet: ArztTelematikID(field)
-* {field} = "1-2-DOC-Testkarte-012423424"
-
-RuleSet: KTRTelematikID(field)
-* {field}.system = "https://gematik.de/fhir/sid/telematik-id"
-* {field}.value = "8-SMC-B-Testkarte-883110000116873"
 
 RuleSet: GKV_Task(status)
 * status = #{status}
