@@ -2,18 +2,26 @@
 title Ablaufdiagramm Verordnung von DiGA
 hide footbox
 autonumber "<b>[0]"
-actor "PVS" as PVS
-participant "TI-Flow-FdV" as FDV
+actor "Verordnender" as VERO
+participant "PVS" as PVS
+participant "FdV" as FDV
 participant "TI-Flow-Fachdienst" as FD
-database "FHIR Verzeichnisdienst" as VZD
-participant "Kostenträger" as AVS
+participant "FHIR Verzeichnisdienst" as VZD
+participant "Kostenträger-Clientsystem" as KTR
 
+    VERO -> PVS: Verordnungsdatensaetze auswählen
     PVS -> FD: Workflow erstellen\nmit $Create (Workflow 162)
-
     PVS -> PVS: Verordnungsdatensatz\nerstellen
+    
+    VERO -> PVS: QES auslösen()
     PVS -> PVS: Verordnungsdatensatz\nmit QES signieren 
+    PVS --> VERO: Signierte Verordnung
+    
+    VERO -> PVS: Verordnung zum Einstellen auswählen
 	PVS -> FD: Einstellen der \nVerordnung mit $activate
     FD -> FD: QES und FHIR prüfen
+    PVS -> VERO: Verordnung eingestellt
+    
     FDV -> FD: Abruf der Verordnungen\nmit GET /Task
 
 
@@ -21,24 +29,24 @@ participant "Kostenträger" as AVS
     FDV -> FDV: Communication Ressource\nfür Zuweisen erstellen
     FDV -> FD: POST /Communication 
 
-	AVS <- FD: WebSocket-Signal neue Communication\nmit "Zuweisung DiGA-Verordnung"
+	KTR <- FD: WebSocket-Signal neue Communication\nmit "Zuweisung DiGA-Verordnung"
 
-    AVS -> FD: GET /Communication 	
-    AVS -> FD: Abruf der Verordnung mit $accept\n(Task-ID und AccessCode\naus Communication)
+    KTR -> FD: GET /Communication 	
+    KTR -> FD: Abruf der Verordnung mit $accept\n(Task-ID und AccessCode\naus Communication)
  
 alt Erfolgreiche Bearbeitung des E-Rezepts
-    AVS -> AVS: Freischaltcode erzeugen
+    KTR -> KTR: Freischaltcode erzeugen
 	
-	AVS -> FD: $close (Freischaltcode \nin Dispensierinformation enthalten)
+	KTR -> FD: $close (Freischaltcode \nin Dispensierinformation enthalten)
     FDV <- FD: Abruf Dispensierinformation
     FDV -> FDV: Verwendung Freischaltcode\nmit DiGA
 
-    AVS -> AVS: die weitere Verarbeitung\ninklusiver Abrechnung\nerfolgt in Kassenhoheit\nmit den DiGA-Anbietern
+    KTR -> KTR: die weitere Verarbeitung\ninklusiver Abrechnung\nerfolgt in Kassenhoheit\nmit den DiGA-Anbietern
 else E-Rezept wird zurückgegeben
-    AVS -> AVS: Prüfung ergibt Rückgabe des E-Rezeptes
-    AVS -> FD: $reject (Rückgabe der Verordnung\nan den TI-Flow-Fachdienst)
+    KTR -> KTR: Prüfung ergibt Rückgabe des E-Rezeptes
+    KTR -> FD: $reject (Rückgabe der Verordnung\nan den TI-Flow-Fachdienst)
 	
-	AVS -> FD: POST /Communication mit\nRückgabegrund als Freitext
+	KTR -> FD: POST /Communication mit\nRückgabegrund als Freitext
     FDV -> FDV: Darstellung des Rückgabegrundes an den Versicherten
 end
-@enduml  
+@enduml

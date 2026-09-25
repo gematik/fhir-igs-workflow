@@ -27,23 +27,23 @@ Die Operation $accept wird als HTTP POST auf /Task/&#60;id&#62;/$accept ausgefü
 		</pre>
 	</div>
 	<div id="Response-Examples">
-		<div data-name="200 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleDiGAAcceptResponse XML %}
+		<div data-name="200 - DiGA-Verordnung per $accept-Operation abzurufen" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/Example-POST-Accept-Response XML %}
 		</div>
-		<div data-name="403 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationAcceptRoleError XML %}
+		<div data-name="200 - DiGA-Verordnung per $accept-Operation abzurufen" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/Example-POST-Accept-Response JSON %}
 		</div>
-		<div data-name="409 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationAcceptError XML %}
+		<div data-name="403 - Operation für Rolle nicht erlaubt" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-403-Role XML %}
 		</div>
-		<div data-name="200 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleDiGAAcceptResponse JSON %}
+		<div data-name="403 - Operation für Rolle nicht erlaubt" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-403-Role JSON %}
 		</div>
-		<div data-name="403 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationAcceptRoleError JSON %}
+		<div data-name="412 - Task-Status passt nicht" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-412-Task-Status XML %}
 		</div>
-		<div data-name="409 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationAcceptError JSON %}
+		<div data-name="412 - Task-Status passt nicht" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-412-Task-Status JSON %}
 		</div>	
 	</div>
 </div>

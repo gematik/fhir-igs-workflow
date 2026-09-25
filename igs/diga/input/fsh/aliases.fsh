@@ -26,6 +26,7 @@ Alias: $identifier-telematik-id = https://gematik.de/fhir/sid/telematik-id
 // Workflow
 Alias: $cs-flowtype = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType
 Alias: $GEM_ERP_CS_DocumentType = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType
+Alias: $GEM_ERP_EX_Beneficiary = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_Beneficiary
 
 //Schlüsseltabellen
 Alias: $GEM_ERP_CS_OrganizationType = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_OrganizationType
@@ -33,3 +34,11 @@ Alias: $GEM_ERP_CS_OrganizationType = https://gematik.de/fhir/erp/CodeSystem/GEM
 // OperationOutcome details
 Alias: $cs-tiflow-oo-details = https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs
 Alias: $cs-ti-oo-details = https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes
+
+// Example-IDs
+Alias: $UUID-binary-DiGA = 00000000-0000-4000-8000-000000000001
+Alias: $URN-binary-DiGA = urn:uuid:00000000-0000-4000-8000-000000000001
+Alias: $UUID-device-DiGA = 00000000-0000-4000-8000-000000000002
+Alias: $URN-device-DiGA = urn:uuid:00000000-0000-4000-8000-000000000002
+Alias: $UUID-DiGA-receipt-composition = 00000000-0000-4000-8000-000000000003
+Alias: $URN-DiGA-receipt-composition = urn:uuid:00000000-0000-4000-8000-000000000003

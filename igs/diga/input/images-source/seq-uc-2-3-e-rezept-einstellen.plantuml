@@ -1,24 +1,24 @@
 @startuml
 title UC 2.3 - Verordnung einstellen
 
-actor "(Zahn-)Arzt / Psychotherapeuten" as Arzt
-participant "Primärsystem" as PS
+actor "Verordnender" as VERO
+participant "PVS" as PVS
 participant "TI-Flow-Fachdienst" as FD
 
-Arzt -> PS: Verordnung zum Einstellen auswählen()
-activate PS
+VERO -> PVS: Verordnung zum Einstellen auswählen()
+activate PVS
 
-PS -> FD: POST /Task/{id}/$activate (AccessCode, QES-Bundle)
+PVS -> FD: POST /Task/{id}/$activate (AccessCode, QES-Bundle)
 activate FD
 FD -> FD: AccessCode prüfen()
 FD -> FD: Status Task prüfen()
 FD -> FD: Signatur und Daten prüfen()
 FD -> FD: Status auf "ready" setzen()
-FD --> PS: Status, Verordnung aktualisiert
+FD --> PVS: Status, Verordnung aktualisiert
 deactivate FD
 
-PS -> PS: E-Rezept-Token erstellen()
-PS --> Arzt: Verordnung eingestellt
-deactivate PS
+PVS -> PVS: E-Rezept-Token erstellen()
+PVS --> VERO: Verordnung eingestellt
+deactivate PVS
 
 @enduml

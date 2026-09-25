@@ -1,20 +1,20 @@
 @startuml
 title Verordnungsdatensatz qualifiziert signieren
 
-actor "Verordnender" as V
-participant "Primärsystem" as PS
+actor "Verordnender" as VERO
+participant "PVS" as PVS
 participant "Konnektor" as K
 
-V -> PS: QES auslösen()
-activate PS
+VERO -> PVS: QES auslösen()
+activate PVS
 
-PS -> K: sign_Document_QES(Verordnungsdatensatz)
+PVS -> K: sign_Document_QES(Verordnungsdatensatz)
 activate K
-K --> PS: QES-Signatur
+K --> PVS: QES-Signatur
 deactivate K
 
-PS -> PS: Signierten Verordnungsdatensatz speichern()
-PS --> V: QES abgeschlossen
-deactivate PS
+PVS -> PVS: Signierten Verordnungsdatensatz speichern()
+PVS --> VERO: QES abgeschlossen
+deactivate PVS
 
 @enduml

@@ -38,19 +38,19 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 		</pre>
 	</div>
 	<div id="Request-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/Communication-Reply-DiGA-payload XML %}
+		<div data-name="DiGA-Nachricht eines Kostenträgers" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-POST-Communication-Request XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Communication/Communication-Reply-DiGA-payload JSON %}
+		<div data-name="DiGA-Nachricht eines Kostenträgers" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Communication/Example-POST-Communication-Request JSON %}
 		</div>
 	</div>
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/Communication-Reply-DiGA XML %}
+		<div data-name="Bestätigte DiGA-Nachricht" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-POST-Communication-Response XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Communication/Communication-Reply-DiGA JSON %}
+		<div data-name="Bestätigte DiGA-Nachricht" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Communication/Example-POST-Communication-Response JSON %}
 		</div>
 	</div>
 </div>
@@ -70,11 +70,11 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 		</pre>
 	</div>
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleDiGACommunicationSearchset XML %}
+		<div data-name="DiGA-Nachrichtenliste" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/Example-GET-Communication-Response XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleDiGACommunicationSearchset JSON %}
+		<div data-name="DiGA-Nachrichtenliste" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/Example-GET-Communication-Response JSON %}
 		</div>
 	</div>
 </div>

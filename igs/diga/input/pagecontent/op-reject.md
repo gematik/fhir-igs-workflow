@@ -30,17 +30,17 @@ Die Operation $reject wird als HTTP POST auf /Task/&#60;id&#62;/$reject ausgefü
 		</pre>
 	</div>	
 	<div id="Response-Examples">
-		<div data-name="Fehler 403 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationRejectRolleError XML %}
+		<div data-name="Fehler 403 - Operation für Rolle nicht erlaubt" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-403-Role XML %}
 		</div>
-		<div data-name="Fehler 412 - application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationRejectError XML %}
+		<div data-name="Fehler 403 - Operation für Rolle nicht erlaubt" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-403-Role JSON %}
 		</div>
-		<div data-name="Fehler 403 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationRejectRolleError JSON %}
+		<div data-name="Fehler 412 - Task-Status passt nicht" data-type="XML" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-412-Task-Status XML %}
 		</div>
-		<div data-name="Fehler 412 - application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment OperationOutcome/ExampleOperationRejectError JSON %}
+		<div data-name="Fehler 412 - Task-Status passt nicht" data-type="JSON" data-render="ig-Fragment">
+			{% fragment OperationOutcome/Example-Operation-Error-412-Task-Status JSON %}
 		</div>
 	</div>
 </div>
