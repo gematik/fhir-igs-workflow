@@ -1,0 +1,28 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: a0be98b9a0817f0d51d7f95dd73d595b705d9167f6c9a9aed0d731cc2b49f88a
+created: '2026-09-22T15:09:29.648194'
+date: '2026-09-22T15:09:29.648201'
+key: IG-TIFLOW-ERP-A317
+modified: '2026-09-22T15:09:29.648200'
+release_status: NEW
+source: input/pagecontent/op-read-eu-access-permission-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS die Operation <i>EU-Zugriffsberechtigung abfragen</i>\
+  \ gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-read-eu-access-permission.html\"\
+  >ReadEUAccessPermission</a> ausführen. Die Verarbeitung und Validierung der Daten\
+  \ MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen\
+  \ erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"\
+  error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n  \
+  \      <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n\
+  \        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n\
+  \        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR\
+  \ Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen."
+title: TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Ausführung der OperationDefinition
+version: 0

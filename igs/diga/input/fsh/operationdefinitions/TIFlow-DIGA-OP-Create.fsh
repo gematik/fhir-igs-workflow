@@ -1,7 +1,7 @@
 Instance: TIFlow-DIGA-OP-Create
 InstanceOf: TIOperationDefinition
 Usage: #definition
-Title: "E-Rezept erstellen"
+Title: "Task erzeugen"
 Description: "Diese Operation erstellt eine Aufgabe für die Verschreibung eines bestimmten Flowtypes."
 * insert OperationResource(Task, true, false, true, false)
 * extension[method][+].valueCode = #POST

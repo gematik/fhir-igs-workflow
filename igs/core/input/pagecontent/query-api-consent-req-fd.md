@@ -90,38 +90,6 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
   abbrechen, damit eine Einwilligung für einen Versicherten nicht durch Dritte erteilt werden kann.
 </requirement>
 
-<!-- A_22351 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A204" title="TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung" version="0">
-  <meta lockversion="false"/>
-  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-    <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-  </actor>
-  Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Consent übertragene Consent Ressource gegen das FHIR-Profil Consent prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:
-  <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-    <tr>
-        <th>HTTP-Code</th>
-        <td>400 - Bad Request</td>
-    </tr>
-    <tr>
-        <th>Severity</th>
-        <td>error</td>
-    </tr>
-    <tr>
-        <th>Code</th>
-        <td>invalid</td>
-    </tr>
-    <tr>
-        <th>Details Code</th>
-        <td>SVC_VALIDATION_FAILED</td>
-    </tr>
-    <tr>
-        <th>Details Text</th>
-        <td>FHIR Profile Validation Failed</td>
-    </tr>
-  </table> 
-  abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.
-</requirement>
-
 <!-- A_22162-01 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A205" title="TI-Flow-Fachdienst - Consent schreiben - nur eine Einwilligung pro KVNR und Einwilligungstyp" version="0">
   <meta lockversion="false"/>

@@ -1,7 +1,7 @@
 Instance: CloseOperation
 InstanceOf: TIOperationDefinition
 Usage: #definition
-Title: "E-Rezept Abgabe vollziehen"
+Title: "Task schließen"
 Description: "Die $close-Operation beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status der Aufgabe ändert sich anschließend in #completed."
 * insert OperationResource(Task, true, false, false, true)
 * extension[method][+].valueCode = #POST

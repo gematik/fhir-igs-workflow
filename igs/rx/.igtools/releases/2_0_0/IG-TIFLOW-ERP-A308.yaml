@@ -1,20 +1,27 @@
 actor:
-- PS_TI-Flow_Apotheke
-conformance: SHALL NOT
-content_hash: a32a0e2c5d229a090da98ccc7610c17bfa75a89e6d86682cc9483675b7a9c7ad
-created: '2026-09-22T15:01:12.168421'
-date: '2026-09-22T15:01:12.168426'
+- TI-Flow_FD
+conformance: SHALL
+content_hash: fa82d3eefcfe5dc11765b3488d21a09f3e809d898746d9b76fd06a5c6a7ef575
+created: '2026-09-21T12:32:06.131901'
+date: '2026-09-22T15:09:29.628951'
 key: IG-TIFLOW-ERP-A308
-modified: '2026-09-22T15:01:12.168424'
+modified: '2026-09-22T15:09:29.628951'
 release_status: NEW
-source: input/pagecontent/menu-technische-umsetzung-dispensierinformationen.md
+source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
-  PS_TI-Flow_Apotheke:
-  - Herstellererklärung
-text: Das PS der abgebenden LEI DARF beim Erstellen von Dispensierinformationen NICHT
-  Sonder-PZNs in den Dispensierinformationen aufnehmen, damit nur medizinisch relevante
-  Informationen an den TI-Flow-Fachdienst übertragen werden.
-title: 'PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 -
-  keine Sonder-PZN'
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate den innerhalb des PKCS#7-Datensatz enveloping-enthaltenen\
+  \ FHIR-Datensatz gegen das Profil https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle\
+  \ aus kbv.ita.erp validieren und bei Invalidität die Operation mit dem folgenden\
+  \ Fehler:\n\n<table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n<tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n</tr>\n\
+  <tr>\n <th>Severity</th>\n <td>error</td>\n</tr>\n<tr>\n <th>Code</th>\n <td>invalid</td>\n\
+  </tr>\n<tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n</tr>\n<tr>\n\
+  \ <th>Details Text</th>\n <td>FHIR Profile validation failed</td>\n</tr>\n</table>\
+  \ \n\n abbrechen."
+title: TI-Flow-Fachdienst - Task aktivieren - FHIR-Validierung Verordnungsdatensatz
+  Arzneimittel
 version: 0

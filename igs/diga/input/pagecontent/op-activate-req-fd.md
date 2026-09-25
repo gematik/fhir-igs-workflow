@@ -3,10 +3,11 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 ### Anforderungen aus der Core Spezifikation
 
-Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gematik.de/fhir/tiflow/{ site.data.constants.tiflow_core_version }/op-activate-req-fd.html)
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gematik.de/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/op-activate-req-fd.html)
 
 ### Modulspezifische Anforderungen
 
+#### Anforderungen zur Signaturprüfung
 
 <!-- A_25990 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A15" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - QES durch berechtigte Berufsgruppe" version="0">
@@ -22,7 +23,79 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     <li>oid_ps_psychotherapeut</li>
     <li>oid_kuj_psychotherapeut</li>
   </ul>
+
   die Operation mit dem folgenden Fehler:
+
+<table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+<tr>
+    <th>HTTP-Code</th>
+    <td>400 - Bad Request</td>
+</tr>
+<tr>
+    <th>Severity</th>
+    <td>error</td>
+</tr>
+<tr>
+    <th>Code</th>
+    <td>invalid</td>
+</tr>
+<tr>
+    <th>Details Code</th>
+    <td>TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</td>
+</tr>
+<tr>
+    <th>Details Text</th>
+    <td>-</td>
+</tr>
+</table> 
+    abbrechen, damit nur solche Leistungserbringer eine signierte Verordnung einstellen, die zur Verordnung von DiGAs ermächtigt sind.
+</requirement>
+
+<br>
+
+#### Anforderungen zur Validierung
+
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A149" title="TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Ausführung der OperationDefinition" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS die Operation <i>Task aktivieren</i> gemäß der FHIR OperationDefinition <a href="./OperationDefinition-tiflow-diga-activate-op.html">TIFlow-DIGA-OP-Activate</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_VALIDATION_FAILED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>FHIR Profile validation failed</td>
+        </tr>
+    </table>
+   abbrechen.
+</requirement>
+
+#### Anforderungen zur Geschäftslogik
+
+<!-- A_19025-03 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A135" title="TI-Flow-Fachdienst - Task aktivieren - FHIR-Validierung Verordnungsdatensatz DiGA" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den innerhalb des PKCS#7-Datensatz enveloping-enthaltenen FHIR-Datensatz gegen das Profil https://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle aus kbv.itv.evdga validieren und bei Invalidität die Operation mit dem folgenden Fehler:
+
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
@@ -38,17 +111,16 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_SIGNATURE_INVALID_ISSUING_ROLE</td>
+            <td>SVC_VALIDATION_FAILED</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>-</td>
+            <td>FHIR Profile Validation Failed</td>
         </tr>
     </table> 
-    abbrechen, damit nur solche Leistungserbringer eine signierte Verordnung einstellen, die zur Verordnung von DiGAs ermächtigt sind.
-</requirement>
 
-<br>
+    abbrechen.
+</requirement>
 
 <!-- A_25992 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A17" title="TI-Flow-Fachdienst - Task aktivieren - Überprüfung der PZN im Profil KBV_PR_EVDGA_HealthAppRequest" version="0">
@@ -191,3 +263,4 @@ Dieser Ausschluss erfolgt temporär. In einer späteren Version können Unfallka
   </table>
   <div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_005 Prozessparameter Flowtype 162</figcaption></div>
 </requirement>
+

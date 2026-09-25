@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from typing import Dict, Iterable, List, Set, Tuple
 from pathlib import Path
 
@@ -19,9 +20,11 @@ from .parsing import (
     find_valueset_files,
     parse_capability_endpoint_rulesets,
     parse_response_error_codes,
+    parse_response_status_codes,
     parse_ruleset_references,
     parse_valueset_external_includes,
     resolve_ruleset_codes,
+    resolve_ruleset_status_codes,
     REQUIREMENT_KEY_ATTR_RE,
     REQUIREMENT_TAG_RE,
     REQUIREMENT_TITLE_ATTR_RE,
@@ -284,6 +287,70 @@ def check_valueset_import_descriptions(ig_roots: Dict[str, Path]) -> List[Findin
                     ),
                 )
             )
+
+    return findings
+
+
+def _normalize_http_status_code(value: str) -> str:
+    """Normalize requirement and CapabilityStatement HTTP status strings to numeric form."""
+    match = re.search(r"\b(\d{3})\b", value or "")
+    return match.group(1) if match else (value or "400")
+
+
+def check_capabilitystatement_http_status_consistency(
+    error_codes: List[ErrorCode],
+    ig_roots: Dict[str, Path],
+) -> List[Finding]:
+    """Check that a requirement's HTTP status matches the relevant CapabilityStatement mapping."""
+    findings: List[Finding] = []
+
+    grouped: Dict[Tuple[str, str], List[ErrorCode]] = {}
+    for err in error_codes:
+        grouped.setdefault((err.module, err.endpoint), []).append(err)
+
+    for (module, endpoint), errs in grouped.items():
+        if not endpoint.startswith("op:"):
+            continue
+
+        target_modules = [module] if module != "core" else [m for m in ig_roots if m != "core"]
+        for target_module in target_modules:
+            ig_root = ig_roots.get(target_module)
+            if not ig_root:
+                continue
+
+            cap_file, resp_def_file, resp_file = _cap_files(ig_root)
+            endpoint_rulesets = parse_capability_endpoint_rulesets(cap_file)
+            endpoint_rule = endpoint_rulesets.get(endpoint)
+            if not endpoint_rule:
+                continue
+
+            refs = parse_ruleset_references(resp_def_file)
+            base_status_codes = parse_response_status_codes(resp_file)
+            cap_statuses = resolve_ruleset_status_codes(endpoint_rule, refs, base_status_codes)
+
+            for err in errs:
+                allowed_statuses = cap_statuses.get(err.code, set())
+                if not allowed_statuses:
+                    continue
+
+                requirement_status = _normalize_http_status_code(err.http_code)
+                if requirement_status not in allowed_statuses:
+                    exemplar_statuses = ", ".join(sorted(allowed_statuses)) if allowed_statuses else "unknown"
+                    findings.append(
+                        Finding(
+                            type="CAPSTAT_HTTP_CODE_MISMATCH",
+                            ig_module=target_module,
+                            file_path=err.file_path,
+                            line=err.line,
+                            code=err.code,
+                            requirement_key=err.requirement_key,
+                            message=(
+                                f"Requirement '{err.requirement_key}' declares HTTP status {requirement_status} "
+                                f"for code '{err.code}', but CapabilityStatement RuleSet '{endpoint_rule}' "
+                                f"in module '{target_module}' exposes {exemplar_statuses}"
+                            ),
+                        )
+                    )
 
     return findings
 

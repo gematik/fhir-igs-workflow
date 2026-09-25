@@ -6,22 +6,18 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 ### Modulspezifische Anforderungen
 
-<!-- A_19166-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A104" title="TI-Flow-Fachdienst - Task akzeptieren - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
+#### Anforderungen zur Validierung
+
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A320" title="TI-Flow-Fachdienst - Task akzeptieren - Ausführung der OperationDefinition" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 160, 166, 169, 200 oder 209 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten /Task/&lt;id&gt; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich abgebende Institutionen in der Rolle
-    <ul>
-      <li>oid_oeffentliche_apotheke</li> 
-      <li>oid_krankenhausapotheke</li>
-    </ul>
-    die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    Der TI-Flow-Fachdienst MUSS die Operation <i>Task akzeptieren</i> gemäß der FHIR OperationDefinition <a href="./OperationDefinition-tiflow-rx-accept-op.html">TIFlowRXOPAccept</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
+            <td>400 - Bad Request</td>
         </tr>
         <tr>
             <th>Severity</th>
@@ -33,14 +29,14 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>-</td>
+            <td>SVC_VALIDATION_FAILED</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>-</td>
+            <td>FHIR Profile validation failed</td>
         </tr>
-    </table> 
-    abbrechen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.
+    </table>
+   abbrechen.
 </requirement>
 
 <!-- A_22635-02 -->
@@ -84,3 +80,43 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept, wenn der Verordnungsdatensatz Coverage.type.coding.code = "PKV" enthält und für die KVNR des begünstigten Versicherten (Task.for) eine Consent Ressource mit Consent.patient.identifier = KVNR und Consent.category.coding.code = "CHARGCONS" existiert, das Response Bundle um die Consent Ressource ergänzen, um der abgebenden LEI die Information zu übermitteln, dass der Versicherte eine Einwilligung zum Speichern der Abrechnungsinformationen auf dem TI-Flow-Fachdienst erteilt hat.
 </requirement>
+
+#### Anforderungen zur Geschäftslogik
+
+<!-- A_19166-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A104" title="TI-Flow-Fachdienst - Task akzeptieren - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 160, 166, 169, 200 oder 209 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten /Task/&lt;id&gt; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich abgebende Institutionen in der Rolle
+    <ul>
+      <li>oid_oeffentliche_apotheke</li> 
+      <li>oid_krankenhausapotheke</li>
+    </ul>
+    die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>-</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.
+</requirement>
+
