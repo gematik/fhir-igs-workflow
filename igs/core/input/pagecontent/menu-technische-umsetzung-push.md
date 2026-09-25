@@ -10,7 +10,7 @@ Die Funktionalität zu Push Notification für FdVs ist anwendungsübergreifend i
     <actor name="TI-Flow_FdV" description="TI-Flow-Frontend des Versicherten">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-     Das TI-Flow-FdV MUSS, wenn es den Anwendungsfall "Push Notifications" umsetzt, für die Registrierung und Verwaltung der FdV-Instanzen sowie der Channels die ZETA Client Funktion verwenden.
+     Das TI-Flow-FdV MUSS, wenn es den Anwendungsfall "Push Notifications" umsetzt, für die Registrierung und Verwaltung der FdV-Instanzen sowie der Channels die Funktionalität des ZETA Clients verwenden.
 </requirement>
 
 ### Push Notification senden
