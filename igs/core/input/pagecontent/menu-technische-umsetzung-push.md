@@ -55,7 +55,7 @@ Die Übermittlung von Notification-Objekten an den Notification Service wird üb
 <td>Task.identifier.PrescriptionID</td>
 <td>TaskId</td>
 <td>
-Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
+Falls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>
 Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 </td>
 <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
@@ -67,7 +67,7 @@ Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeabl
 <td>Task.identifier.PrescriptionID</td>
 <td>TaskId</td>
 <td>
-Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
+Falls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>
 Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 </td>
 <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
@@ -79,7 +79,7 @@ Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeabl
 <td>Task.identifier.PrescriptionID</td>
 <td>TaskId</td>
 <td>
-Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
+Falls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>
 Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 </td>
 <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
@@ -102,7 +102,7 @@ KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 <td>Task.identifier.PrescriptionID</td>
 <td>TaskId</td>
 <td>
-Falls Task.flowType = "160","166","169","200","209": GEM_ERP_PR_PAR_DispenseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]<br>
+Falls [Arzneimittel]: GEM_ERP_PR_PAR_DispenseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]<br>
 Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 </td>
 <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
@@ -114,7 +114,7 @@ Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeabl
 <td>Task.identifier.PrescriptionID</td>
 <td>TaskId</td>
 <td>
-Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
+Falls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>
 Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 </td>
 <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
@@ -187,11 +187,30 @@ Falls Profil GEM_ERP_PR_Communication_DiGA: Communication.payload.content
 <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_028 Nachrichteninhalt Push Notification</figcaption></div>
 
 <p>
-<strong>Definition [medicationName]:</strong><br>
-Falls medication dem Profil "KBV_PR_ERP_Medication_Ingredient" entspricht:<br>
+Damit die Tabelle etwas übersichtlicher gestaltet ist, werden einige Abkürzungen verwendet. Diese werden hier beschrieben:
+<table>
+<thead>
+<tr>
+<th>Abkürzung</th>
+<th>Definition</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>[Arzneimittel]</td>
+<td>Task.flowType = "160","166","169","200","209"</td>
+</tr>
+
+<tr>
+<td>[medicationName]</td>
+<td>Falls medication dem Profil "KBV_PR_ERP_Medication_Ingredient" entspricht:<br>
 `Medication.ingredient.item.itemCodeableConcept.text`<br>
 Ansonsten:<br>
-`Medication.code.text`
+`Medication.code.text`</td>
+</tr>
+</tbody>
+</table>
 </p>
 
 

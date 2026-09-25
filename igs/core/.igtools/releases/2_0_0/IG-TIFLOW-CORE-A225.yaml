@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 5415517aada169aa7faf122ef92104f0b01f012dfec554933aa9224ddb9f982b
+content_hash: 927b883fb93d095e5d363f32c931139951643cb255a62ff169e847aeec61254c
 created: '2026-06-25T11:30:11.258651'
-date: '2026-09-24T08:50:36.756090'
+date: '2026-09-25T11:49:12.096548'
 key: IG-TIFLOW-CORE-A225
-modified: '2026-09-24T08:50:36.756090'
+modified: '2026-09-25T11:49:12.096548'
 release_status: NEW
 source: input/pagecontent/menu-technische-umsetzung-push.md
 status: ACTIVE
@@ -51,7 +51,7 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   <td>
 
-  Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
+  Falls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>
 
   Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 
@@ -74,7 +74,7 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   <td>
 
-  Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
+  Falls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>
 
   Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 
@@ -97,7 +97,7 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   <td>
 
-  Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
+  Falls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>
 
   Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 
@@ -141,7 +141,7 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   <td>
 
-  Falls Task.flowType = "160","166","169","200","209": GEM_ERP_PR_PAR_DispenseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]<br>
+  Falls [Arzneimittel]: GEM_ERP_PR_PAR_DispenseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]<br>
 
   Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 
@@ -164,7 +164,7 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   <td>
 
-  Falls Task.flowType = "160","166","169","200","209": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
+  Falls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>
 
   Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
 
@@ -303,15 +303,52 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   <p>
 
-  <strong>Definition [medicationName]:</strong><br>
+  Damit die Tabelle etwas übersichtlicher gestaltet ist, werden einige Abkürzungen
+  verwendet. Diese werden hier beschrieben:
 
-  Falls medication dem Profil "KBV_PR_ERP_Medication_Ingredient" entspricht:<br>
+  <table>
+
+  <thead>
+
+  <tr>
+
+  <th>Abkürzung</th>
+
+  <th>Definition</th>
+
+  </tr>
+
+  </thead>
+
+
+  <tbody>
+
+  <tr>
+
+  <td>[Arzneimittel]</td>
+
+  <td>Task.flowType = "160","166","169","200","209"</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>[medicationName]</td>
+
+  <td>Falls medication dem Profil "KBV_PR_ERP_Medication_Ingredient" entspricht:<br>
 
   `Medication.ingredient.item.itemCodeableConcept.text`<br>
 
   Ansonsten:<br>
 
-  `Medication.code.text`
+  `Medication.code.text`</td>
+
+  </tr>
+
+  </tbody>
+
+  </table>
 
   </p>'
 title: TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen
