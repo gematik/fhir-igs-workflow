@@ -14,7 +14,7 @@
             "title": "TI-Flow-Fachdienst - Task zurückweisen - Flowtype 162 - Rollenprüfung",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 162 HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_kostentraeger</li>\n </ul>\n die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit die Verordnung nicht durch einen Unberechtigten zurückgewiesen werden kann.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 162 HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n    <ul><li>oid_kostentraeger</li></ul>\n    die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n            <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n                <tr><th>HTTP-Code</th><td>403 - Forbidden</td></tr>\n                <tr><th>Severity</th><td>error</td></tr>\n                <tr><th>Code</th><td>invalid</td></tr>\n                <tr><th>Details Code</th><td>-</td></tr>\n                <tr><th>Details Text</th><td>-</td></tr>\n        </table>\n        abbrechen, damit die Verordnung nicht durch einen Unberechtigten zurückgewiesen werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -298,6 +298,30 @@
             "link": "https://gematik.de/fhir/tiflow-diga/2.0.0/op-activate-req-fd.html#IG-TIFLOW-DIGA-A135"
         },
         {
+            "key": "IG-TIFLOW-DIGA-A136",
+            "title": "TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Push Notification Versicherter",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.task.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0/op-close-req-fd.html#IG-TIFLOW-DIGA-A136"
+        },
+        {
             "key": "IG-TIFLOW-DIGA-A14",
             "title": "CS Kostenträger: TIFlow - DIGA - Anwendungsfälle",
             "version": 0,
@@ -320,6 +344,174 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow-diga/2.0.0/menu-technische-umsetzung-anwendungsfaelle.html#IG-TIFLOW-DIGA-A14"
+        },
+        {
+            "key": "IG-TIFLOW-DIGA-A143",
+            "title": "TI-Flow-Fachdienst - Einstellen von Communications - FlowType 162 - FHIR-Validierung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf des Endpunkts `POST /Communication` unter den benannten Prüfbedingungen die folgende Profilvalidierung durchführen:\n\n <table>\n <thead>\n <tr>\n <th>Prüfbedingung</th>\n <th>Profil</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>Rolle: oid_versicherter</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq</code></td>\n </tr>\n <tr>\n <td>Rolle: oid_kostentraeger</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA</code></td>\n </tr>\n </tbody>\n </table>\n\nund bei negativem Prüfergebnis die Operation mit dem folgenden Fehler:\n\n<table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed</td>\n </tr>\n </table> \n\nabbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0/query-api-communication-req-fd.html#IG-TIFLOW-DIGA-A143"
+        },
+        {
+            "key": "IG-TIFLOW-DIGA-A144",
+            "title": "TI-Flow-Fachdienst - Task zurückgeben - Flowtype 162 - Ausführung der OperationDefinition",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>Task zurückgeben</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-diga-reject-op.html\">TIFlow-DIGA-OP-Reject</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0/op-reject-req-fd.html#IG-TIFLOW-DIGA-A144"
+        },
+        {
+            "key": "IG-TIFLOW-DIGA-A145",
+            "title": "TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Ausführung der OperationDefinition",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>Task schließen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-diga-close-op.html\">TIFlow-DIGA-OP-Close</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0/op-close-req-fd.html#IG-TIFLOW-DIGA-A145"
+        },
+        {
+            "key": "IG-TIFLOW-DIGA-A146",
+            "title": "TI-Flow-Fachdienst - Task abbrechen - Flowtype 162 - Ausführung der OperationDefinition",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>Task abbrechen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-diga-abort-op.html\">TIFlow-DIGA-OP-Abort</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0/op-abort-req-fd.html#IG-TIFLOW-DIGA-A146"
+        },
+        {
+            "key": "IG-TIFLOW-DIGA-A147",
+            "title": "TI-Flow-Fachdienst - Task erzeugen - Flowtype 162 - Ausführung der OperationDefinition",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>Task erzeugen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-diga-create-op.html\">TIFlow-DIGA-OP-Create</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0/op-create-req-fd.html#IG-TIFLOW-DIGA-A147"
+        },
+        {
+            "key": "IG-TIFLOW-DIGA-A148",
+            "title": "TI-Flow-Fachdienst - Task abrufen - Flowtype 162 - Ausführung der OperationDefinition",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>Task abrufen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-diga-accept-op.html\">TIFlow-DIGA-OP-Accept</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0/op-accept-req-fd.html#IG-TIFLOW-DIGA-A148"
+        },
+        {
+            "key": "IG-TIFLOW-DIGA-A149",
+            "title": "TI-Flow-Fachdienst - Task aktivieren - Flowtype 162 - Ausführung der OperationDefinition",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>Task aktivieren</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-diga-activate-op.html\">TIFlow-DIGA-OP-Activate</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0/op-activate-req-fd.html#IG-TIFLOW-DIGA-A149"
         },
         {
             "key": "IG-TIFLOW-DIGA-A15",
@@ -470,7 +662,7 @@
             "title": "TI-Flow-Fachdienst - Task akzeptieren - Flowtype 162 - Rollenprüfung",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 162 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_kostentraeger</li>\n </ul>\n die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit die Verordnung nicht durch einen Unberechtigten abgerufen werden kann.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Abrufen eines Tasks mit Flowtype 162 mittels HTTP-POST/$accept-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n    <ul><li>oid_kostentraeger</li></ul>\n    die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n            <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n                <tr><th>HTTP-Code</th><td>403 - Forbidden</td></tr>\n                <tr><th>Severity</th><td>error</td></tr>\n                <tr><th>Code</th><td>invalid</td></tr>\n                <tr><th>Details Code</th><td>-</td></tr>\n                <tr><th>Details Text</th><td>-</td></tr>\n        </table>\n        abbrechen, damit die Verordnung nicht durch einen Unberechtigten abgerufen werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -738,7 +930,7 @@
             "title": "TI-Flow-Fachdienst - Task schliessen - Flowtype 162 - Rollenprüfung",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#60; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_kostentraeger</li>\n </ul>\n die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n    <ul><li>oid_kostentraeger</li></ul>\n    die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n            <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n                <tr><th>HTTP-Code</th><td>403 - Forbidden</td></tr>\n                <tr><th>Severity</th><td>error</td></tr>\n                <tr><th>Code</th><td>invalid</td></tr>\n                <tr><th>Details Code</th><td>-</td></tr>\n                <tr><th>Details Text</th><td>-</td></tr>\n        </table>\n        abbrechen, damit der Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -786,7 +978,7 @@
             "title": "TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Profilprüfung MedicationDispense",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#62; sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht und anderenfalls die Operation mit dem folgenden Fehler:\n  <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_MEDICATION_DISPENSE_INVALID</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen für digitale Gesundheitsanwendungen zulässig.</td>\n        </tr>\n    </table>\n    abbrechen.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST/$close-Operation auf den in der URL referenzierten/Task/&#60;id&#62; sicherstellen, dass das in GEM_ERP_PR_PAR_CloseOperation_Input enthaltene MedicationDispense-Objekt dem Profil GEM_ERP_PR_MedicationDispense_DiGA entspricht und anderenfalls die Operation mit dem folgenden Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n                <tr><th>HTTP-Code</th><td>400 - Bad Request</td></tr>\n                <tr><th>Severity</th><td>error</td></tr>\n                <tr><th>Code</th><td>invalid</td></tr>\n                <tr><th>Details Code</th><td>TIFLOW_MEDICATION_DISPENSE_INVALID</td></tr>\n                <tr><th>Details Text</th><td>Unzulässige Abgabeinformationen: Für diesen Workflow sind nur Abgabeinformationen für digitale Gesundheitsanwendungen zulässig.</td></tr>\n        </table>\n        abbrechen.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -858,7 +1050,7 @@
             "title": "TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 162 - Rollenprüfung",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks mit Flowtype 162 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_versicherter</li>\n <li>oid_praxis_arzt</li>\n <li>oid_zahnarztpraxis</li>\n <li>oid_krankenhaus</li>\n <li>oid_praxis_psychotherapeut</li>\n <li>oid_institution-vorsorge-reha</li>\n </ul>\n die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks mit Flowtype 162 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n    <ul>\n        <li>oid_versicherter</li>\n        <li>oid_praxis_arzt</li>\n        <li>oid_zahnarztpraxis</li>\n        <li>oid_krankenhaus</li>\n        <li>oid_praxis_psychotherapeut</li>\n        <li>oid_institution-vorsorge-reha</li>\n    </ul>\n    die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n            <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n                <tr><th>HTTP-Code</th><td>403 - Forbidden</td></tr>\n                <tr><th>Severity</th><td>error</td></tr>\n                <tr><th>Code</th><td>invalid</td></tr>\n                <tr><th>Details Code</th><td>-</td></tr>\n                <tr><th>Details Text</th><td>-</td></tr>\n        </table>\n        abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.",
             "conformance": "SHALL",
             "characteristics": [
                 {

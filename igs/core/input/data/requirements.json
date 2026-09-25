@@ -672,30 +672,6 @@
         "release": "2.0.0"
     },
     {
-        "key": "IG-TIFLOW-CORE-A139",
-        "title": "TI-Flow-FdV: Push Notifications - Channelkonfiguration - OpenAPI",
-        "actor": [
-            "TI-Flow_FdV"
-        ],
-        "test_procedures": {
-            "TI-Flow_FdV": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-channels-req-fdv.md",
-        "text": "Das TI-Flow-FdV MUSS, wenn es den Anwendungsfall \"Push Notifications\" umsetzt, für die Registrierung und Verwaltung der Channels für die FdV-Instanzen des Versicherten am TI-Flow-Fachdienst die Operationen gemäß [OpenAPI_FD] verwenden.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.230766",
-        "modified": "2026-08-26T13:45:23.600427",
-        "date": "2026-08-26T13:45:23.600427",
-        "content_hash": "0109d9c006c92140342b75ef6b3069f1860925e072bdc3f460113aadedfcb67a",
-        "path": "query-api-channels-req-fdv.html",
-        "release": "2.0.0"
-    },
-    {
         "key": "IG-TIFLOW-CORE-A140",
         "title": "TI-Flow-Fachdienst - E-Rezept löschen - Versicherter - Prüfung KVNR",
         "actor": [
@@ -830,12 +806,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-abort-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$abort bei erfolgreichem Abschluss der Operation, wenn die Rolle des aufrufenden Nutzers ungleich oid_versicherter ist, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.task.abort\" und den Versicherten mit der KVNR = Task.for initiieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$abort bei erfolgreichem Abschluss der Operation, wenn die Rolle des aufrufenden Nutzers ungleich oid_versicherter ist, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.task.abort\" und den Versicherten mit der KVNR = Task.for initiieren.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.232888",
-        "modified": "2026-06-25T11:30:11.232889",
-        "date": "2026-06-25T11:30:11.232890",
-        "content_hash": "87b5422ffef1dffd3b7061cf10b4bc7a843e9d118890ad825d8deabe00279417",
+        "modified": "2026-09-24T08:50:36.370524",
+        "date": "2026-09-24T08:50:36.370524",
+        "content_hash": "c25eb208b74a896a0c96935ad91efe401c3db047ac10033d399e5eac9f49fac8",
         "path": "op-abort-req-fd.html",
         "release": "2.0.0"
     },
@@ -1490,12 +1466,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-activate-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im Aufrufparameter übergebenen FHIR-Operationsparameter des QES-Datensatzes als PKCS#7-Datei einer Enveloping CAdES-Signatur entgegennehmen und verarbeiten und bei Fehlen oder ungültiger ASN.1 Datenstruktur die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed.</td>\n        </tr>\n    </table> \n    abbrechen, damit kein Schadcode und keine \"fachfremden\" Daten in den TI-Flow-Fachdienst hochgeladen werden.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$activate den im Aufrufparameter übergebenen FHIR-Operationsparameter des QES-Datensatzes als PKCS#7-Datei einer Enveloping CAdES-Signatur entgegennehmen und verarbeiten und bei Fehlen oder ungültiger ASN.1 Datenstruktur die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed</td>\n </tr>\n </table> \n abbrechen, damit kein Schadcode und keine \"fachfremden\" Daten in den TI-Flow-Fachdienst hochgeladen werden.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.240716",
-        "modified": "2026-06-25T11:30:11.240718",
-        "date": "2026-06-25T11:30:11.240718",
-        "content_hash": "1e14c889cda07e6161c8c1d59db591f4ad3dd73b28bd38d6da25fd40b6055eaf",
+        "modified": "2026-09-22T15:04:46.630999",
+        "date": "2026-09-22T15:04:46.630999",
+        "content_hash": "7ea53308ab50387abdc5358648b7e14c026f5745da9966351c2259987491da32",
         "path": "op-activate-req-fd.html",
         "release": "2.0.0"
     },
@@ -1658,12 +1634,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-activate-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.task.activate\" und den Versicherten mit der KVNR = Task.for initiieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.task.activate\" und den Versicherten mit der KVNR = Task.for initiieren.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.245640",
-        "modified": "2026-06-25T11:30:11.245642",
-        "date": "2026-06-25T11:30:11.245642",
-        "content_hash": "aa72e29763de97426736938837ed911e3860b22d5e95fd562df32f7fac8060db",
+        "modified": "2026-09-24T08:50:36.685284",
+        "date": "2026-09-24T08:50:36.685284",
+        "content_hash": "118952853e15dff580836f41df2fdc69e96c47f180e563715538801224d31a0a",
         "path": "op-activate-req-fd.html",
         "release": "2.0.0"
     },
@@ -2024,30 +2000,6 @@
         "modified": "2026-06-25T11:30:11.251163",
         "date": "2026-06-25T11:30:11.251163",
         "content_hash": "405067a203c5f07aa1e76efd873f1f5264f844e593c9346261f82d598dba1189",
-        "path": "query-api-consent-req-fd.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A204",
-        "title": "TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-consent-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource Consent übertragene Consent Ressource gegen das FHIR-Profil Consent prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n  <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n    <tr>\n        <th>HTTP-Code</th>\n        <td>400 - Bad Request</td>\n    </tr>\n    <tr>\n        <th>Severity</th>\n        <td>error</td>\n    </tr>\n    <tr>\n        <th>Code</th>\n        <td>invalid</td>\n    </tr>\n    <tr>\n        <th>Details Code</th>\n        <td>SVC_VALIDATION_FAILED</td>\n    </tr>\n    <tr>\n        <th>Details Text</th>\n        <td>FHIR Profile Validation Failed</td>\n    </tr>\n  </table> \n  abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.251598",
-        "modified": "2026-06-25T11:30:11.251599",
-        "date": "2026-06-25T11:30:11.251600",
-        "content_hash": "226fa587976ea945449fb415da87637ec77030dd9c5bc017fae0113e32bb0533",
         "path": "query-api-consent-req-fd.html",
         "release": "2.0.0"
     },
@@ -2522,36 +2474,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-push.md",
-        "text": "Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß TAB_eRPFD_028 erzeugen.\n\n<table>\n<thead>\n<tr>\n<th>ChannelId</th>\n<th>Identifier</th>\n<th>IdentifierType</th>\n<th>Product</th>\n<th>ActorName</th>\n<th>Message</th>\n</tr>\n</thead>\n<tbody>\n\n<tr>\n<td>erp.task.activate</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nFalls Task.flowType = \"160\",\"166\",\"169\",\"200\",\"209\": KBV_PR_ERP_Bundle.entry.[medicationName]<br>\nFalls Task.flowType = \"162\": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>POST /Task/&lt;id&gt;/$activate</td>\n</tr>\n\n<tr>\n<td>erp.task.accept</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nFalls Task.flowType = \"160\",\"166\",\"169\",\"200\",\"209\": KBV_PR_ERP_Bundle.entry.[medicationName]<br>\nFalls Task.flowType = \"162\": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>POST /Task/&lt;id&gt;/$accept</td>\n</tr>\n\n<tr>\n<td>erp.task.reject</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nFalls Task.flowType = \"160\",\"166\",\"169\",\"200\",\"209\": KBV_PR_ERP_Bundle.entry.[medicationName]<br>\nFalls Task.flowType = \"162\": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>POST /Task/&lt;id&gt;/$reject</td>\n</tr>\n\n<tr>\n<td>erp.task.close</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nFalls Task.flowType = \"160\",\"166\",\"169\",\"200\",\"209\": GEM_ERP_PR_PAR_CloseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]<br>\nFalls Task.flowType = \"162\": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>POST /Task/&lt;id&gt;/$close</td>\n</tr>\n\n<tr>\n<td>erp.task.dispense</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nFalls Task.flowType = \"160\",\"166\",\"169\",\"200\",\"209\": GEM_ERP_PR_PAR_DispenseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]<br>\nFalls Task.flowType = \"162\": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>POST /Task/&lt;id&gt;/$dispense</td>\n</tr>\n\n<tr>\n<td>erp.task.abort</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nFalls Task.flowType = \"160\",\"166\",\"169\",\"200\",\"209\": KBV_PR_ERP_Bundle.entry.[medicationName]<br>\nFalls Task.flowType = \"162\": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>POST /Task/&lt;id&gt;/$abort</td>\n</tr>\n\n<tr>\n<td>erp.communication.new</td>\n<td>Communication.basedOn.reference</td>\n<td>TaskId</td>\n<td>\nFalls Communication.basedOn.reference.Task.flowType = \"160\",\"166\",\"200\": KBV_PR_ERP_Bundle.entry.[medicationName]<br>\nFalls Communication.basedOn.reference.Task.flowType = \"162\": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>\nPOST /Communication<br>\nFalls Profil GEM_ERP_PR_Communication_Reply: Communication.payload.content.info_text<br>\nFalls Profil GEM_ERP_PR_Communication_DiGA: Communication.payload.content\n</td>\n</tr>\n\n<tr>\n<td>erp.chargeitem.create</td>\n<td>ChargeItem.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>POST /ChargeItem</td>\n</tr>\n\n<tr>\n<td>erp.chargeitem.update</td>\n<td>ChargeItem.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>PUT /ChargeItem/&lt;id&gt;</td>\n</tr>\n\n<tr>\n<td>erp.eu.prescription.get</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>erp.eu.prescription.redeem</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>erp.eu.prescription.close</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter[rxDispensation].[medication].[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter.part[practionerData].name.text</td>\n<td>-</td>\n</tr>\n\n</tbody>\n</table>\n<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_028 Nachrichteninhalt Push Notification</figcaption></div>\n\n<p>\n<strong>Definition [medicationName]:</strong><br>\nFalls medication dem Profil \"KBV_PR_ERP_Medication_Ingredient\" entspricht:<br>\n`Medication.ingredient.item.itemCodeableConcept.text`<br>\nAnsonsten:<br>\n`Medication.code.text`\n</p>",
+        "text": "Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß TAB_eRPFD_028 erzeugen.\n\n<table>\n<thead>\n<tr>\n<th>ChannelId</th>\n<th>Identifier</th>\n<th>IdentifierType</th>\n<th>Product</th>\n<th>ActorName</th>\n<th>Message</th>\n</tr>\n</thead>\n<tbody>\n\n<tr>\n<td>tiflow.task.activate</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nFalls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>\nFalls Task.flowType = \"162\": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.accept</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nFalls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>\nFalls Task.flowType = \"162\": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.reject</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nFalls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>\nFalls Task.flowType = \"162\": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.close</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.dispense</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nFalls [Arzneimittel]: GEM_ERP_PR_PAR_DispenseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]<br>\nFalls Task.flowType = \"162\": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.abort</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nFalls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>\nFalls Task.flowType = \"162\": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.communication.new</td>\n<td>Communication.basedOn.reference</td>\n<td>TaskId</td>\n<td>\nFalls Communication.basedOn.reference.Task.flowType = \"160\",\"166\",\"200\": KBV_PR_ERP_Bundle.entry.[medicationName]<br>\nFalls Communication.basedOn.reference.Task.flowType = \"162\": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>\nPOST /Communication<br>\nFalls Profil GEM_ERP_PR_Communication_Reply: Communication.payload.content.info_text<br>\nFalls Profil GEM_ERP_PR_Communication_DiGA: Communication.payload.content\n</td>\n</tr>\n\n<tr>\n<td>tiflow.chargeitem.create</td>\n<td>ChargeItem.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.chargeitem.update</td>\n<td>ChargeItem.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.eu.prescription.get</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.eu.prescription.redeem</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.eu.prescription.close</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter[rxDispensation].[medication].[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter.part[practionerData].name.text</td>\n<td>-</td>\n</tr>\n\n</tbody>\n</table>\n<div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_028 Nachrichteninhalt Push Notification</figcaption></div>\n\n<p>\nDamit die Tabelle etwas übersichtlicher gestaltet ist, werden einige Abkürzungen verwendet. Diese werden hier beschrieben:\n<table>\n<thead>\n<tr>\n<th>Abkürzung</th>\n<th>Definition</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>[Arzneimittel]</td>\n<td>Task.flowType = \"160\",\"166\",\"169\",\"200\",\"209\"</td>\n</tr>\n\n<tr>\n<td>[medicationName]</td>\n<td>Falls medication dem Profil \"KBV_PR_ERP_Medication_Ingredient\" entspricht:<br>\n`Medication.ingredient.item.itemCodeableConcept.text`<br>\nAnsonsten:<br>\n`Medication.code.text`</td>\n</tr>\n</tbody>\n</table>\n</p>",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.258651",
-        "modified": "2026-06-25T11:30:11.258652",
-        "date": "2026-06-25T11:30:11.258653",
-        "content_hash": "83645d82732ac420df740027dd13ba3057c374416cc7642ae53e7cd21b4e81e8",
-        "path": "menu-technische-umsetzung-push.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A226",
-        "title": "TI-Flow-Fachdienst - Push Notification senden - verpflichtende Verschlüsselung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/menu-technische-umsetzung-push.md",
-        "text": "Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification verschlüsseln.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.259197",
-        "modified": "2026-06-25T11:30:11.259199",
-        "date": "2026-06-25T11:30:11.259200",
-        "content_hash": "64308c3f54be48372cfff881e4740a21366ab82ab0cc51b8cd174909adfe0d02",
+        "modified": "2026-09-25T11:49:12.096548",
+        "date": "2026-09-25T11:49:12.096548",
+        "content_hash": "927b883fb93d095e5d363f32c931139951643cb255a62ff169e847aeec61254c",
         "path": "menu-technische-umsetzung-push.html",
         "release": "2.0.0"
     },
@@ -2570,12 +2498,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-push.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notifcation das Identifier-Feld des äußeren Notification-Objekts (notification.identifier) in Abhängigkeit von der ChannelId wie folgt befüllen:\n     <table>\n     <tr>\n        <th>ChannelId</th>\n        <th>Identifier.Feld</th>\n     </tr>\n     <tr>\n        <td>erp.communication.new</td>\n        <td>Identifier des zugehörigen Communication (Communication.id)</td>\n     </tr>\n     <tr>\n        <td>ungleich erp.communication.new</td>\n        <td>Identifier des zugehörigen Protokolleintrags (AuditEvent.id)</td>\n     </tr>\n     </table>",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Erstellen einer Push Notifcation das Reference-Feld des äußeren NotificationRequest-Objekts (notificationRequest.reference) in Abhängigkeit von der ChannelId wie folgt befüllen:\n <table>\n <tr>\n <th>ChannelId</th>\n <th>Identifier.Feld</th>\n </tr>\n <tr>\n <td>tiflow.communication.new</td>\n <td>Identifier des zugehörigen Communication (Communication.id)</td>\n </tr>\n <tr>\n <td>ungleich tiflow.communication.new</td>\n <td>Identifier des zugehörigen Protokolleintrags (AuditEvent.id)</td>\n </tr>\n </table>",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.259464",
-        "modified": "2026-06-25T11:30:11.259465",
-        "date": "2026-06-25T11:30:11.259466",
-        "content_hash": "e068114d527aca227af09168639d9dd4ea14fc8954639a39986b82bdce2fff3a",
+        "modified": "2026-09-24T12:49:39.708110",
+        "date": "2026-09-24T12:49:39.708110",
+        "content_hash": "29e0de1c27fd9f50280c24cf4d0c16d4d2e52aed6e623ab9da6187ac34879d79",
         "path": "menu-technische-umsetzung-push.html",
         "release": "2.0.0"
     },
@@ -2598,12 +2526,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-push.md",
-        "text": "Der TI-Flow-Fachdienst und das TI-Flow-FdV MÜSSEN für den Anwendungsfall \"Push Notifications\" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:\n\n<table>\n<thead>\n<tr>\n<th>Attribut</th>\n<th>verpflichtend</th>\n<th>Beschreibung</th>\n<th>zulässige Werte</th>\n<th>Beispiel</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ChannelId</td>\n<td>ja</td>\n<td>Der Trigger, der die Push Notification initiiert hat.</td>\n<td>bis zu 30 Stellen, UTF-8</td>\n<td>erp.communication.new</td>\n</tr>\n<tr>\n<td>Identifier</td>\n<td>ja</td>\n<td>Ein Identifier, der als Kontext zur Nachricht dient.</td>\n<td>bis zu 50 Stellen, UTF-8</td>\n<td>160.000.000.000.123.76</td>\n</tr>\n<tr>\n<td>IdentifierType</td>\n<td>ja</td>\n<td>Der Art Identifier, der mitgeschickt wird.</td>\n<td>bis zu 20 Stellen, UTF-8</td>\n<td>TaskId</td>\n</tr>\n<tr>\n<td>Product</td>\n<td>ja</td>\n<td>Der Name des verordneten bzw. abgegebenen Produkts (Medikament oder DiGA).</td>\n<td>bis zu 100 Stellen, UTF-8</td>\n<td>Sumatriptan-1a Pharma 100 mg Tabletten</td>\n</tr>\n<tr>\n<td>ActorName</td>\n<td>ja</td>\n<td>Der Name des Akteurs. Das kann zum Beispiel der Name der Apotheke oder des Kostenträgers sein.</td>\n<td>bis zu 100 Stellen, UTF-8</td>\n<td>Meine Apotheke</td>\n</tr>\n<tr>\n<td>Message</td>\n<td>nein</td>\n<td>Die Nachricht, die an den Versicherten verschickt wird.<br>Nachrichten mit mehr als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (...) ergänzt werden.</td>\n<td>bis zu 240 Stellen, UTF-8</td>\n<td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen.</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>TAB_eRp_DM_004 Push Notification Datenstruktur Nachrichteninhalte</figcaption></div>",
+        "text": "Der TI-Flow-Fachdienst und das TI-Flow-FdV MÜSSEN für den Anwendungsfall \"Push Notifications\" Nachrichteninhalte mit der folgenden Datenstruktur im JSON Format unterstützen:\n\n<table>\n<thead>\n<tr>\n<th>Attribut</th>\n<th>verpflichtend</th>\n<th>Beschreibung</th>\n<th>zulässige Werte</th>\n<th>Beispiel</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ChannelId</td>\n<td>ja</td>\n<td>Der Trigger, der die Push Notification initiiert hat.</td>\n<td>bis zu 30 Stellen, UTF-8</td>\n<td>tiflow.communication.new</td>\n</tr>\n<tr>\n<td>Identifier</td>\n<td>ja</td>\n<td>Ein Identifier, der als Kontext zur Nachricht dient.</td>\n<td>bis zu 50 Stellen, UTF-8</td>\n<td>160.000.000.000.123.76</td>\n</tr>\n<tr>\n<td>IdentifierType</td>\n<td>ja</td>\n<td>Der Art Identifier, der mitgeschickt wird.</td>\n<td>bis zu 20 Stellen, UTF-8</td>\n<td>TaskId</td>\n</tr>\n<tr>\n<td>Product</td>\n<td>ja</td>\n<td>Der Name des verordneten bzw. abgegebenen Produkts (Medikament oder DiGA).</td>\n<td>bis zu 100 Stellen, UTF-8</td>\n<td>Sumatriptan-1a Pharma 100 mg Tabletten</td>\n</tr>\n<tr>\n<td>ActorName</td>\n<td>ja</td>\n<td>Der Name des Akteurs. Das kann zum Beispiel der Name der Apotheke oder des Kostenträgers sein.</td>\n<td>bis zu 100 Stellen, UTF-8</td>\n<td>Meine Apotheke</td>\n</tr>\n<tr>\n<td>Message</td>\n<td>nein</td>\n<td>Die Nachricht, die an den Versicherten verschickt wird.<br>Nachrichten mit mehr als 240 Zeichen müssen nach 237 Zeichen abgeschnitten und mit drei Punkten (...) ergänzt werden.</td>\n<td>bis zu 240 Stellen, UTF-8</td>\n<td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen.</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>TAB_eRp_DM_004 Push Notification Datenstruktur Nachrichteninhalte</figcaption></div>",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.260153",
-        "modified": "2026-09-22T14:37:42.079658",
-        "date": "2026-09-22T14:37:42.079658",
-        "content_hash": "029c115dcd89a5f45695a605cfffbc1c4f22fbcfc359129dba026409a0378df7",
+        "modified": "2026-09-24T08:50:36.763619",
+        "date": "2026-09-24T08:50:36.763619",
+        "content_hash": "a2ff1012958c36b008d6a71c71a40441e7243e9e9eade04f108ffc8ff3e09f2e",
         "path": "menu-technische-umsetzung-push.html",
         "release": "2.0.0"
     },
@@ -2637,12 +2565,16 @@
     },
     {
         "key": "IG-TIFLOW-CORE-A230",
-        "title": "Generierung 2D-Code als Sammlung",
+        "title": "2D-Code für den Sammeltoken",
         "actor": [
+            "PS_TI-Flow_Apotheke",
             "PS_TI-Flow_verordnend",
             "TI-Flow_FdV"
         ],
         "test_procedures": {
+            "PS_TI-Flow_Apotheke": [
+                "Herstellererklärung"
+            ],
             "PS_TI-Flow_verordnend": [
                 "Herstellererklärung"
             ],
@@ -2654,12 +2586,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/datamatrix-code-client.md",
-        "text": "Das TI-Flow-FdV MUSS eine Sammlung von einer und bis zu drei E-Rezept-Referenzen als Array in JSON-Notation gemäß [JSON] der folgenden Form \n <ul>\n <li>2D-Code-Daten = { \"urls\": [ \"E-Rezept 1\", \"E-Rezept 2\", \"E-Rezept 3\" ] }</li>\n </ul>\n zusammenfassen, um daraus einen 2D-Code generieren zu können.",
+        "text": "Das TI-Flow-FdV, das PS der verordnenden LEI und das PS der abgebenden LEI MÜSSEN eine Sammlung von einer und bis zu vier E-Rezept-Referenzen als Array in JSON-Notation gemäß [JSON] der folgenden Form \n <ul>\n <li>2D-Code-Daten = { \"urls\": [ \"E-Rezept 1\", \"E-Rezept 2\", \"E-Rezept 3\", \"E-Rezept 4\" ] }</li>\n </ul>\n zusammenfassen, um daraus einen 2D-Code generieren bzw. diesen einscannen zu können.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.260951",
-        "modified": "2026-08-26T13:45:23.633731",
-        "date": "2026-08-26T13:45:23.633731",
-        "content_hash": "d8a236ca724e04238f410e4f9f442d892e3ed43cf3cba9073fc721738e0b16e4",
+        "modified": "2026-09-22T15:00:25.326222",
+        "date": "2026-09-22T15:00:25.326222",
+        "content_hash": "3b00614f1d666676baa6e839668ad448eec13441fc4782526c8b0f0549a08eac",
         "path": "datamatrix-code-client.html",
         "release": "2.0.0"
     },
@@ -2717,7 +2649,7 @@
     },
     {
         "key": "IG-TIFLOW-CORE-A233",
-        "title": "TI-Flow-FdV: E-Rezept-Token als 2D-Code anzeigen - maximal 3 E-Rezept-Token in 2D-Code",
+        "title": "TI-Flow-FdV: E-Rezept-Token als 2D-Code anzeigen - maximal 4 E-Rezept-Token in 2D-Code",
         "actor": [
             "TI-Flow_FdV"
         ],
@@ -2730,12 +2662,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/datamatrix-code-client.md",
-        "text": "Das TI-Flow-FdV DARF NICHT im Anwendungsfall \"E-Rezept-Token als 2D-Code anzeigen\" mehr als drei E-Rezept-Token in einem 2D-Code zusammenfassen.",
+        "text": "Das TI-Flow-FdV DARF NICHT im Anwendungsfall \"E-Rezept-Token als 2D-Code anzeigen\" mehr als vier E-Rezept-Token in einem 2D-Code zusammenfassen.",
         "conformance": "SHALL NOT",
         "created": "2026-06-25T11:30:11.261494",
-        "modified": "2026-08-26T13:45:23.634614",
-        "date": "2026-08-26T13:45:23.634614",
-        "content_hash": "291d21eac149d39c3aef70c25386aa7e356034fc9fb7e6228bf8e1d8bd30098d",
+        "modified": "2026-09-22T15:00:25.327043",
+        "date": "2026-09-22T15:00:25.327043",
+        "content_hash": "727c3261343e82f894758f8deb40798981d573f262ec4ee5c3e5532fa53474ab",
         "path": "datamatrix-code-client.html",
         "release": "2.0.0"
     },
@@ -3270,12 +3202,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-accept-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept bei erfolgreichem Abschluss der Operation den Push Notification Prozess für den Trigger mit der ChannelId \"erp.task.accept\" und den Versicherten mit der KVNR = Task.for initiieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$accept bei erfolgreichem Abschluss der Operation den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.task.accept\" und den Versicherten mit der KVNR = Task.for initiieren.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.267018",
-        "modified": "2026-06-25T11:30:11.267019",
-        "date": "2026-06-25T11:30:11.267020",
-        "content_hash": "14495f9199a7d47d2abab732194ea31eb3757ddca5e5cee9e72fed6789e05943",
+        "modified": "2026-09-24T08:50:36.827833",
+        "date": "2026-09-24T08:50:36.827833",
+        "content_hash": "82082b60f837d460c3da205250e5c00b5007cec8f9ae025370b7ee9e8eb7478a",
         "path": "op-accept-req-fd.html",
         "release": "2.0.0"
     },
@@ -3601,126 +3533,6 @@
         "date": "2026-08-25T14:32:10.545809",
         "content_hash": "f3a6a4387a564f4638f567979b5a1d1a0b810f228ff772fa90335d2fed65623d",
         "path": "fehlerbehandlung-client.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A268",
-        "title": "TI-Flow-Fachdienst - unzulässige Operationen Pushers",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produktgutachten"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-pushers-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Pushers mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem folgenden Fehler:\n      <table id=\"error-code-json\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>405 - Method Not Allowed</td>\n        </tr>\n        <tr>\n            <th>Error Code</th>\n            <td>methodNotAllowed</td>\n        </tr>\n        <tr>\n            <th>Error Details</th>\n            <td>Die verwendete HTTP-Methode ist für diese Ressource nicht zulässig</td>\n        </tr>\n    </table> \n    abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.272140",
-        "modified": "2026-06-25T11:30:11.272142",
-        "date": "2026-06-25T11:30:11.272142",
-        "content_hash": "afa98d6d78c7796bf4dde0dad36a0a7821f7fcf7c23780c67ba4a82f51724214",
-        "path": "query-api-pushers-req-fd.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A269",
-        "title": "TI-Flow-Fachdienst - Push Notifications - Pushers - OpenApi_Notification_Fachdienst",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-pushers-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS die API mit den Endpunkten GET /pushers und POST /pushers/set gemäß [OpenAPI_PUSH_FD] bereitstellen.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.272318",
-        "modified": "2026-06-26T08:42:24.493083",
-        "date": "2026-06-26T08:42:24.493083",
-        "content_hash": "484ce1cce8c98dc01ec7208e44e8a083f1bd28a9a87b50db43282a260c27009d",
-        "path": "query-api-pushers-req-fd.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A270",
-        "title": "TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Rollenprüfung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produktgutachten"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-pushers-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /pushers die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n  <ul>\n    <li>oid_versicherter</li>\n  </ul>\n  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:\n      <table id=\"error-code-json\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Error Code</th>\n            <td>invalidOid</td>\n        </tr>\n        <tr>\n            <th>Error Details</th>\n            <td>-</td>\n        </tr>        \n    </table> \n    abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.272593",
-        "modified": "2026-06-25T11:30:11.272594",
-        "date": "2026-06-25T11:30:11.272595",
-        "content_hash": "90303ffe809f487b07b570361ae551f092bb1a792bc473afff1dc01e10bb6cdb",
-        "path": "query-api-pushers-req-fd.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A271",
-        "title": "TI-Flow-Fachdienst - Push Notifications - App-Registrierungen abrufen - Filter auf KVNR des Versicherten",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-pushers-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /pushers die dem Versicherten zugeordneten Pusher-Ressourcen anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren, damit ausschließlich Versicherte ihre eigenen App-Registrierungen einsehen können.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.272777",
-        "modified": "2026-06-25T11:30:11.272778",
-        "date": "2026-06-25T11:30:11.272779",
-        "content_hash": "39eb0d56a2818a4e566a1ea9d76ba624fc5ecb3b0e0980d5f3ac0658e2b35ba8",
-        "path": "query-api-pushers-req-fd.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A272",
-        "title": "TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Rollenprüfung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produktgutachten"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-pushers-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n  <ul>\n    <li>oid_versicherter</li>\n  </ul>\n  die Operation aufrufen, und bei Abweichungen mit dem folgenden Fehler:\n      <table id=\"error-code-json\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Error Code</th>\n            <td>invalidOid</td>\n        </tr>\n        <tr>\n            <th>Error Details</th>\n            <td>-</td>\n        </tr>        \n    </table> \n    abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.273323",
-        "modified": "2026-06-25T11:30:11.273324",
-        "date": "2026-06-25T11:30:11.273325",
-        "content_hash": "d34190c307646a881ee47505acd29a577b723f47095553d88c049cd5b8bdba39",
-        "path": "query-api-pushers-req-fd.html",
         "release": "2.0.0"
     },
     {
@@ -4854,12 +4666,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-communication-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht mittels HTTP-POST-Operation über /Communication bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.communication.new\" und den Versicherten mit der KVNR = Communication.recipient initiieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Einstellen einer Nachricht mittels HTTP-POST-Operation über /Communication bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.communication.new\" und den Versicherten mit der KVNR = Communication.recipient initiieren.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.293003",
-        "modified": "2026-06-25T11:30:11.293004",
-        "date": "2026-06-25T11:30:11.293005",
-        "content_hash": "d5c995c8f79442113a33ab152f8b691f06d03bad4a08ec2aa0cda2165fba7a5f",
+        "modified": "2026-09-24T08:50:36.657785",
+        "date": "2026-09-24T08:50:36.657785",
+        "content_hash": "b71cb31e9dcb4b272243038e6b116378f3bb2f65c7fd771aefb554edae65d210",
         "path": "query-api-communication-req-fd.html",
         "release": "2.0.0"
     },
@@ -5608,30 +5420,6 @@
         "release": "2.0.0"
     },
     {
-        "key": "IG-TIFLOW-CORE-A374",
-        "title": "TI-Flow-FdV: Push Notifications - Instanz registrieren - OpenAPI",
-        "actor": [
-            "TI-Flow_FdV"
-        ],
-        "test_procedures": {
-            "TI-Flow_FdV": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-pushers-req-fdv.md",
-        "text": "Das TI-Flow-FdV MUSS, wenn es den Anwendungsfall \"Push Notifications\" umsetzt, für die Registrierung und Verwaltung der FdV-Instanzen am TI-Flow-Fachdienst die Operationen gemäß [OpenAPI_PUSH_FD] verwenden.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.301602",
-        "modified": "2026-08-26T13:45:23.681104",
-        "date": "2026-08-26T13:45:23.681104",
-        "content_hash": "1ecbdf2bbb11e7aae8667ab6bad0929b771364e75444475ddca1c49791a9a5aa",
-        "path": "query-api-pushers-req-fdv.html",
-        "release": "2.0.0"
-    },
-    {
         "key": "IG-TIFLOW-CORE-A375",
         "title": "TI-Flow-Fachdienst - Selbstauskunft Device-Informationen",
         "actor": [
@@ -5670,12 +5458,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-epa.md",
-        "text": "Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorgaben von [gemSpec_PKI] und des TUC_PKI_018 mit den Eingangsdaten gemäß der Tabelle Tab_eRPFD_018 prüfen und im Fehlerfall den Aufbau der HTTPS-Verbindung abbrechen. Tabelle #: Tab_eRPFD_018 - Eingangsdaten für die Prüfung des ePA-Aktensystem Server-Zertifikats\n\n<table>\n<thead>\n<tr>\n<th>TUC_PKI_018 Eingangsdaten</th>\n<th>Zulässiger Wert bzw. Beschreibung</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>TSL</td>\n<td>die entsprechende TSL für Infrastrukturkomponenten</td>\n</tr>\n<tr>\n<td>Zertifikat</td>\n<td>das zu prüfende Zertifikat vom Kommunikationspartner</td>\n</tr>\n<tr>\n<td>Referenzzeitpunkt</td>\n<td>aktuelle Systemzeit</td>\n</tr>\n<tr>\n<td>Prüfmodus</td>\n<td>OCSP</td>\n</tr>\n<tr>\n<td>PolicyList</td>\n<td>oid_fd_tls_s</td>\n</tr>\n<tr>\n<td>Vorgesehene KeyUsage</td>\n<td>digitalSignature</td>\n</tr>\n<tr>\n<td>Vorgesehene ExtendedKeyUsage</td>\n<td>id-kp-serverAuth</td>\n</tr>\n<tr>\n<td>GracePeriod</td>\n<td>der Wert muss konfigurierbar sein</td>\n</tr>\n<tr>\n<td>Offline-Modus</td>\n<td>nein</td>\n</tr>\n<tr>\n<td>Timeout</td>\n<td>Default-Wert (siehe [gemSpec_PKI])</td>\n</tr>\n<tr>\n<td>TOLERATE_OCSP_FAILURE</td>\n<td>Default-Wert (siehe [gemSpec_PKI])</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Eingangsdaten für die Prüfung des ePA-Aktensystem Server-Zertifikats</figcaption></div>",
+        "text": "Der TI-Flow-Fachdienst MUSS das Zertifikat des ePA-Aktensystems gemäß den Vorgaben von [gemSpec_PKI] und des TUC_PKI_018 mit den Eingangsdaten gemäß der Tabelle Tab_eRPFD_018 prüfen und im Fehlerfall den Aufbau der HTTPS-Verbindung abbrechen.\n\n<table>\n<thead>\n<tr>\n<th>TUC_PKI_018 Eingangsdaten</th>\n<th>Zulässiger Wert bzw. Beschreibung</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>TSL</td>\n<td>die entsprechende TSL für Infrastrukturkomponenten</td>\n</tr>\n<tr>\n<td>Zertifikat</td>\n<td>das zu prüfende Zertifikat vom Kommunikationspartner</td>\n</tr>\n<tr>\n<td>Referenzzeitpunkt</td>\n<td>aktuelle Systemzeit</td>\n</tr>\n<tr>\n<td>Prüfmodus</td>\n<td>OCSP</td>\n</tr>\n<tr>\n<td>PolicyList</td>\n<td>oid_fd_tls_s</td>\n</tr>\n<tr>\n<td>Vorgesehene KeyUsage</td>\n<td>digitalSignature</td>\n</tr>\n<tr>\n<td>Vorgesehene ExtendedKeyUsage</td>\n<td>id-kp-serverAuth</td>\n</tr>\n<tr>\n<td>GracePeriod</td>\n<td>der Wert muss konfigurierbar sein</td>\n</tr>\n<tr>\n<td>Offline-Modus</td>\n<td>nein</td>\n</tr>\n<tr>\n<td>Timeout</td>\n<td>Default-Wert (siehe [gemSpec_PKI])</td>\n</tr>\n<tr>\n<td>TOLERATE_OCSP_FAILURE</td>\n<td>Default-Wert (siehe [gemSpec_PKI])</td>\n</tr>\n</tbody>\n</table>\n\n<div><figcaption><strong>Tabelle: </strong>Eingangsdaten für die Prüfung des ePA-Aktensystem Server-Zertifikats</figcaption></div>",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.302676",
-        "modified": "2026-08-25T15:11:42.703441",
-        "date": "2026-08-25T15:11:42.703441",
-        "content_hash": "28667239beda095524d357ebf12e30558ebb8d4112f606ec7a34a9ad1a66a92c",
+        "modified": "2026-09-25T11:28:49.552122",
+        "date": "2026-09-25T11:28:49.552122",
+        "content_hash": "06420ddb47af3ef1e7dc2bfca4fd00bb859068cbb09950da36b14af2fca26447",
         "path": "menu-technische-umsetzung-epa.html",
         "release": "2.0.0"
     },
@@ -6496,30 +6284,6 @@
         "release": "2.0.0"
     },
     {
-        "key": "IG-TIFLOW-CORE-A419",
-        "title": "TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Zeitstempel ändern",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Herstellererklärung"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-pushers-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set, wenn eine neue App-Registrierung angelegt wird, den aktuellen Zeitpunkt als Zeitstempel des Anlegens mit der App-Registrierung verknüpft speichern.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.273512",
-        "modified": "2026-06-25T11:30:11.273514",
-        "date": "2026-06-25T11:30:11.273514",
-        "content_hash": "536ba7df41b15f8414d06acca23b871debc7dcf8ac08670d6cc3b12049fc809c",
-        "path": "query-api-pushers-req-fd.html",
-        "release": "2.0.0"
-    },
-    {
         "key": "IG-TIFLOW-CORE-A42",
         "title": "TI-Flow-Fachdienst - Task zurückweisen - Telematik-ID der abgebenden LEI löschen",
         "actor": [
@@ -6774,61 +6538,13 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-reject-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.task.reject\" und den Versicherten mit der KVNR = Task.for initiieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$reject bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.task.reject\" und den Versicherten mit der KVNR = Task.for initiieren.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.200982",
-        "modified": "2026-06-25T11:30:11.200983",
-        "date": "2026-06-25T11:30:11.200984",
-        "content_hash": "3c21362d6cad48e3441064f6b0ee80cdf920e9a4b825364bfbc5fa844fd737aa",
+        "modified": "2026-09-24T08:50:36.794868",
+        "date": "2026-09-24T08:50:36.794868",
+        "content_hash": "28aa451f7f9a5992692be905b195a000f836afbd111efc8b69313fdb4bfbd211",
         "path": "op-reject-req-fd.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A430",
-        "title": "TI-Flow-Fachdienst - Push Notifications - Channels konfigurieren - Schemavalidierung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produktgutachten"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-channels-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /channels/{pushkey} das Payload gegen das Schema in [OpenAPI_FD] validieren und bei Abweichungen mit dem folgenden Fehler:\n      <table id=\"error-code-json\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Error Code</th>\n            <td>malformedRequest</td>\n        </tr>\n        <tr>\n            <th>Error Details</th>\n            <td>Ungültiger http-Request</td>\n        </tr>\n    </table> \n    abbrechen, damit kein Schadcode und keine \"fachfremden\" Daten in den TI-Flow-Fachdienst hochgeladen werden.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.210327",
-        "modified": "2026-06-25T11:30:11.210328",
-        "date": "2026-06-25T11:30:11.210329",
-        "content_hash": "7c2974bc0d1227ba5ef39379aa93a1cc22e7487b62bc654f16b0d0352f0d005b",
-        "path": "query-api-channels-req-fd.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A431",
-        "title": "TI-Flow-Fachdienst - Push Notifications - App-Registrierung - Schemavalidierung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produktgutachten"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-pushers-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /pushers/set das Payload gegen das Schema in [OpenAPI_PUSH_FD] validieren und bei Abweichungen mit dem folgenden Fehler:\n <table id=\"error-code-json\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Error Code</th>\n <td>malformedRequest</td>\n </tr>\n <tr>\n <th>Error Details</th>\n <td>Ungültiger http-Request</td>\n </tr>\n </table> \n abbrechen, damit kein Schadcode und keine \"fachfremden\" Daten in den TI-Flow-Fachdienst hochgeladen werden.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.273016",
-        "modified": "2026-06-26T08:42:24.494012",
-        "date": "2026-06-26T08:42:24.494012",
-        "content_hash": "0f952b58a7f5db0429bf2b0f9b8b4f5cae47f6a2fc21fe4296bd1fa80a152afe",
-        "path": "query-api-pushers-req-fd.html",
         "release": "2.0.0"
     },
     {
@@ -6918,12 +6634,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/zeta-client.md",
-        "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS sicherstellen, dass jegliche Kommunikation mit dem TI-FlowFachdienst über den ZETA Client erfolgt.",
+        "text": "Das Clientsystem des TI-Flow-Fachdienstes MUSS sicherstellen, dass jegliche Kommunikation mit dem TI-Flow-Fachdienst über den ZETA Client erfolgt.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:30:11.268688",
-        "modified": "2026-06-25T11:30:11.268689",
-        "date": "2026-08-25T14:32:10.542571",
-        "content_hash": "2ed8fd4cfbdf94f63d48029776961214c90d377c3aa63d6bfe9013b8e3dbe199",
+        "modified": "2026-09-24T12:49:39.390630",
+        "date": "2026-09-24T12:49:39.390630",
+        "content_hash": "62bf1371b4f7d8f79a972c79a3bdf429cb9879fb77825f93eab36c97358d5c12",
         "path": "zeta-client.html",
         "release": "2.0.0"
     },
@@ -8332,6 +8048,54 @@
         "release": "2.0.0"
     },
     {
+        "key": "IG-TIFLOW-CORE-A493",
+        "title": "TI-Flow-FdV: Push Notifications - ZETA Client",
+        "actor": [
+            "TI-Flow_FdV"
+        ],
+        "test_procedures": {
+            "TI-Flow_FdV": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-push.md",
+        "text": "Das TI-Flow-FdV MUSS, wenn es den Anwendungsfall \"Push Notifications\" umsetzt, für die Registrierung und Verwaltung der FdV-Instanzen sowie der Channels die Funktionalität des ZETA Clients verwenden.",
+        "conformance": "SHALL",
+        "created": "2026-09-24T13:49:20.579164",
+        "modified": "2026-09-25T11:28:49.808309",
+        "date": "2026-09-25T11:28:49.808309",
+        "content_hash": "f2669fb4ad702f002ee8fdd87e01070a2894e5e292a4d6e4c10da363f36c4a89",
+        "path": "menu-technische-umsetzung-push.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CORE-A494",
+        "title": "TI-Flow-Fachdienst - Push Notification senden - Aufruf Notification Service",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-push.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Auftreten eines Triggers für Push Notifications den Nachrichteninhalt erstellen und den Notification Service unter Verwendung der [OpenAPI_NotificationService] aufrufen.",
+        "conformance": "SHALL",
+        "created": "2026-09-24T13:49:20.579849",
+        "modified": "2026-09-24T13:49:20.579856",
+        "date": "2026-09-24T13:49:20.579859",
+        "content_hash": "18be2f3fe596ca495c5b139772ffd906da91d8c2e98434023fa6fc0dcaa2ce84",
+        "path": "menu-technische-umsetzung-push.html",
+        "release": "2.0.0"
+    },
+    {
         "key": "IG-TIFLOW-CORE-A50",
         "title": "TI-Flow-FdV: E-Rezept löschen - E-Rezept-Token löschen",
         "actor": [
@@ -8449,126 +8213,6 @@
         "date": "2026-08-25T14:32:10.467528",
         "content_hash": "9200be71ff46a6557b76b5cfabd3eb7e25f320a0409f637e4a59a57c1a35692a",
         "path": "query-api-communication-req-ktr.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A55",
-        "title": "TI-Flow-Fachdienst - unzulässige Operationen Channels",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produktgutachten"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-channels-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS alle Zugriffe auf die Ressource Channels mittels der HTTP-Operationen PUT, PATCH, HEAD und DELETE unterbinden und mit dem folgenden Fehler:\n      <table id=\"error-code-json\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>405 - Method Not Allowed</td>\n        </tr>\n        <tr>\n            <th>Error Code</th>\n            <td>methodNotAllowed</td>\n        </tr>\n        <tr>\n            <th>Error Details</th>\n            <td>Die verwendete HTTP-Methode ist für diese Ressource nicht zulässig</td>\n        </tr>\n    </table> \n    abbrechen, damit keine unzulässigen Operationen ausgeführt werden können.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.208659",
-        "modified": "2026-06-25T11:30:11.208660",
-        "date": "2026-06-25T11:30:11.208661",
-        "content_hash": "74f38046f748ea6a999685c39eeb40e4342d6281e06a5792f78c38b0480bf6b4",
-        "path": "query-api-channels-req-fd.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A56",
-        "title": "TI-Flow-Fachdienst - Push Notifications - Channels- OpenApi_Notification_Fachdienst",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-channels-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS die API mit den Endpunkten GET /channels, GET /channels/{pushkey} und POST /channels/{pushkey} gemäß [OpenAPI_FD] bereitstellen.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.208840",
-        "modified": "2026-06-25T11:30:11.208841",
-        "date": "2026-06-25T11:30:11.208842",
-        "content_hash": "b460fcd83fa174f97a735bfeb7c0641b8aad972f806f9320400c1d2848b74dd3",
-        "path": "query-api-channels-req-fd.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A57",
-        "title": "TI-Flow-Fachdienst - Push Notifications - Channels abrufen - Rollenprüfung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produktgutachten"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-channels-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /channels die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.209204",
-        "modified": "2026-09-18T09:37:57.983218",
-        "date": "2026-09-18T09:37:57.983218",
-        "content_hash": "924baa9ebdd7232adb8a499df0e89203bd1256f51d5469abf0d540f139c50d50",
-        "path": "query-api-channels-req-fd.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A58",
-        "title": "TI-Flow-Fachdienst - Push Notifications - Channels einer Instanz abrufen - Rollenprüfung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produktgutachten"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-channels-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation GET /channels/{pushkey} die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.209615",
-        "modified": "2026-09-18T09:37:57.983782",
-        "date": "2026-09-18T09:37:57.983782",
-        "content_hash": "3de84e56e299490a0fb4a1595463ac9048624bf491b4887a2f1b3f538c871459",
-        "path": "query-api-channels-req-fd.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A59",
-        "title": "TI-Flow-Fachdienst - Push Notifications - Channels konfigurieren - Rollenprüfung",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produktgutachten"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/query-api-channels-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Operation POST /channels/{pushkey} die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit die Operation nicht durch unberechtigte Dritte ausgeführt wird.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.210011",
-        "modified": "2026-09-18T09:37:57.984366",
-        "date": "2026-09-18T09:37:57.984366",
-        "content_hash": "664d8b384146d925162ed28857cba18cdd7ae5a88be3835cc81d70ddb052dd55",
-        "path": "query-api-channels-req-fd.html",
         "release": "2.0.0"
     },
     {
@@ -8712,30 +8356,6 @@
         "modified": "2026-06-25T11:30:11.212675",
         "date": "2026-06-25T11:30:11.212675",
         "content_hash": "df868e29da9911e54437bb13f4c1b4fab31d9d1f9ed80e07c2db755ba84cd77a",
-        "path": "op-close-req-fd.html",
-        "release": "2.0.0"
-    },
-    {
-        "key": "IG-TIFLOW-CORE-A66",
-        "title": "TI-Flow-Fachdienst - Task schließen - Push Notification Versicherter",
-        "actor": [
-            "TI-Flow_FD"
-        ],
-        "test_procedures": {
-            "TI-Flow_FD": [
-                "Produkttest"
-            ]
-        },
-        "version": 0,
-        "release_status": "NEW",
-        "status": "ACTIVE",
-        "source": "input/pagecontent/op-close-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.task.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
-        "conformance": "SHALL",
-        "created": "2026-06-25T11:30:11.212810",
-        "modified": "2026-06-25T11:30:11.212812",
-        "date": "2026-06-25T11:30:11.212812",
-        "content_hash": "5a897424b0a7d8661336aa8282adfb45a50db0c8c1e00f18cff254b479f34c05",
         "path": "op-close-req-fd.html",
         "release": "2.0.0"
     },
