@@ -1,8 +1,10 @@
 Instance: GETPrescriptionEU
 InstanceOf: TIOperationDefinition
 Usage: #definition
+Title: "EU-Verordnungsinformationen abrufen"
+Description: "Die Operation $get-eu-prescriptions ruft Verordnungsinformationen aus dem E-Rezept-Fachdienst für den Einsatz im E-Rezept-Workflow in EU-Ländern ab."
 * insert Operation(GETPrescriptionEU)
-* description = "The Operation gets Presciption Information from the ERP System for usage in the e-prescription workflow for EU countries"
+* id = "get-prescription-eu"
 * extension[method][+].valueCode = #POST
 * code = #get-eu-prescriptions
 * affectsState = false

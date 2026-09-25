@@ -1,21 +1,27 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 8efd1c72be3613857a6302c6699e93f3d950c7d6fe4c383d494e82a6cc4cc38f
-created: '2026-09-22T15:00:26.101758'
-date: '2026-09-22T15:00:26.101765'
+content_hash: a178ba9eab46ab899caefdb74ea46ee8adb011d2957d56bc5745f8c132e3fd7c
+created: '2026-09-21T12:32:14.866799'
+date: '2026-09-21T14:17:02.265376'
 key: IG-TIFLOW-DIGA-A135
-modified: '2026-09-22T15:00:26.101763'
+modified: '2026-09-21T14:17:02.265376'
 release_status: NEW
-source: input/pagecontent/op-close-req-fd.md
+source: input/pagecontent/op-activate-req-fd.md
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
-text: Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels
-  HTTP-POST-Operation über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource
-  übermittelt wird und die Operation erfolgreich abgeschlossen werden kann, den Push
-  Notification Prozess für den Trigger mit der ChannelId "erp.task.close" und den
-  Versicherten mit der KVNR = Task.for initiieren.
-title: TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Push Notification Versicherter
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&#60;id&#62;/$activate den innerhalb des PKCS#7-Datensatz enveloping-enthaltenen\
+  \ FHIR-Datensatz gegen das Profil https://fhir.kbv.de/StructureDefinition/KBV_PR_EVDGA_Bundle\
+  \ aus kbv.itv.evdga validieren und bei Invalidität die Operation mit dem folgenden\
+  \ Fehler:\n\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n\
+  \ <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
+  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n\
+  \ </table> \n\n abbrechen."
+title: TI-Flow-Fachdienst - Task aktivieren - FHIR-Validierung Verordnungsdatensatz
+  DiGA
 version: 0

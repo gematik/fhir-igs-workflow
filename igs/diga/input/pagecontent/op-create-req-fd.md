@@ -2,9 +2,15 @@ Diese Seite enthält die normativen Anforderungen an den Fachdienst für die Ope
 
 ### Anforderungen aus der Core Spezifikation
 
-Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gematik.de/fhir/tiflow/{ site.data.constants.tiflow_core_version }/op-create-req-fd.html)
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gematik.de/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/op-create-req-fd.html)
 
 ### Modulspezifische Anforderungen
+
+#### Anforderungen zur Validierung
+
+
+
+#### Anforderungen zur Geschäftslogik
 
 <!-- A_19214 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A28" title="TI-Flow-Fachdienst - Task erzeugen - Flowtype 162 - Ergänzung Performer-Typ für Einlöseinstitutstyp" version="0">
@@ -15,4 +21,36 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     Der TI-Flow-Fachdienst MUSS beim Erzeugen eines Tasks die Felder Task.performerType und Task.PrescriptionType.valueCoding.display entsprechend dem übergebenen, gültigen Parameter Task.extension:flowType belegen.
 </requirement>
 
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A147" title="TI-Flow-Fachdienst - Task erzeugen - Flowtype 162 - Ausführung der OperationDefinition" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS die Operation <i>Task erzeugen</i> gemäß der FHIR OperationDefinition <a href="./OperationDefinition-tiflow-diga-create-op.html">TIFlow-DIGA-OP-Create</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_VALIDATION_FAILED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>FHIR Profile validation failed</td>
+        </tr>
+    </table>
+   abbrechen.
+</requirement>
+
 Die Belegung ergibt sich workflow-typ abhängig aus den [Prozessparametern](./op-activate-req-fd.html).
+

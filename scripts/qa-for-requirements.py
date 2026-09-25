@@ -77,16 +77,6 @@ def main() -> int:
         help="Path to quality CSV report (default: qa/requirement-quality-report.csv)",
     )
     parser.add_argument(
-        "--fix",
-        action="store_true",
-        help="Apply automatic fixes for all issues (implies --quality-fix and fixes error codes/CapabilityStatement)",
-    )
-    parser.add_argument(
-        "--quality-fix",
-        action="store_true",
-        help="Apply automatic safe fixes during quality checks only",
-    )
-    parser.add_argument(
         "--strict-quality",
         action=argparse.BooleanOptionalAction,
         default=True,
@@ -138,15 +128,8 @@ def main() -> int:
         action="store_true",
         help="Run only the error code consistency routine (skip IG tools and quality checks)",
     )
-    parser.add_argument(
-        "--errors-fix",
-        action="store_true",
-        help="Run only the error code consistency routine with --fix (implies --errors)",
-    )
     args = parser.parse_args()
 
-    if args.errors_fix:
-        args.errors = True
     if args.errors and args.skip_error_codes:
         parser.error("--errors cannot be combined with --skip-error-codes")
 
@@ -195,8 +178,6 @@ def main() -> int:
             "--output-csv",
             error_csv,
         ]
-        if args.errors_fix or args.fix:
-            error_code_cmd.append("--fix")
         error_code_rc = run_and_record(
             "Check error code consistency",
             "Check error code consistency",
@@ -220,8 +201,6 @@ def main() -> int:
             "--output-csv",
             args.quality_output_csv,
         ]
-        if args.quality_fix or args.fix:
-            quality_cmd.append("--fix")
 
         quality_rc = run_and_record(
             "Check requirement quality",
@@ -239,8 +218,6 @@ def main() -> int:
                 "--output-csv",
                 error_csv,
             ]
-            if args.fix:
-                error_code_cmd.append("--fix")
             error_code_rc = run_and_record(
                 "Check error code consistency",
                 "Check error code consistency",
@@ -259,8 +236,6 @@ def main() -> int:
                 "--output-csv",
                 telemetry_csv,
             ]
-            if args.fix:
-                telemetry_cmd.append("--fix")
             telemetry_rc = run_and_record(
                 "Check telemetry mapping completeness",
                 "Check telemetry mapping completeness",

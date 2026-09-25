@@ -1,4 +1,4 @@
-### Anforderungen der Schnittstelle aus diesem Modul
+### Modulspezifische Anforderungen
 
 <!-- A_27088 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A280" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Rollenprüfung" version="0">
@@ -6,9 +6,9 @@
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
-     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
+     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
      <ul>
-     <li>oid_versicherter </li>
+     <li>oid_versicherter</li>
      </ul>
      die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
@@ -32,9 +32,44 @@
             <th>Details Text</th>
             <td>-</td>
         </tr>
-    </table> 
-    abbrechen, damit eine Zugriffsberechtigte nicht durch Unberechtigte erteilt werden kann.
+    </table>
+    abbrechen, damit eine Zugriffsberechtigung nicht durch Unberechtigte erteilt werden kann.
 </requirement>
+
+#### Anforderungen zur Validierung
+
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A322" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Ausführung der OperationDefinition" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS die Operation <i>EU-Zugriffsberechtigung erstellen</i> gemäß der FHIR OperationDefinition <a href="./OperationDefinition-grant-eu-access-permission.html">GrantEUAccessPermission</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>400 - Bad Request</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>SVC_VALIDATION_FAILED</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>FHIR Profile validation failed</td>
+        </tr>
+    </table>
+   abbrechen.
+</requirement>
+
+#### Anforderungen zur Geschäftslogik
 
 <!-- A_27089 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A281" title="TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Prüfung Einwillung für KVNR" version="0">
@@ -172,3 +207,4 @@
     </actor>
      Der TI-Flow-Fachdienst MUSS periodisch prüfen, dass keine zeitlich ungültigen Zugriffsberechtigungen gespeichert sind.
 </requirement>
+

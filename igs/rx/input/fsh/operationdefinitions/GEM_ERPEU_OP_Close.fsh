@@ -1,8 +1,10 @@
 Instance: EUCloseOperation
 InstanceOf: TIOperationDefinition
 Usage: #definition
+Title: "Task aus der EU schließen"
+Description: "Die Operation $eu-close beendet den E-Rezept-Workflow und erstellt eine Quittung. Das Ergebnis dieses Vorgangs ist ein signiertes Bundle, das für weitere finanzielle Verarbeitung verwendet wird. Der Status des Tasks ändert sich anschließend in #completed."
 * insert Operation(EUCloseOperation)
-* description = "The operation $close finishes the e-prescription workflow and creates a receipt. The Output of this operation is a signed Bundle, to be used for further financial processing. The status of the Task then changes into #completed"
+* id = "eu-close-operation"
 * extension[method][+].valueCode = #POST
 * code = #eu-close
 * system = false
