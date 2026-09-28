@@ -381,7 +381,7 @@ RuleSet: TIFLOW_RECIPIENT_INVALID
   * extension[errorCode].valueString = "TIFLOW_RECIPIENT_INVALID"
 
 
-RuleSet: 
+RuleSet: TIFLOW_MVO_NOT_VALID_YET
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400"
   * extension[description].valueString = "MVO not valid yet"
