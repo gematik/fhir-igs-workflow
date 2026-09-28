@@ -47,16 +47,27 @@ JSON_ERROR_CODE_RE = re.compile(
     re.DOTALL,
 )
 
-# Regex to extract element code mappings from the ConceptMap FSH file.
-# Matches lines like: * group[=].element[0].code = #TIFLOW_OCSP_BACKEND_ERROR
+# Regexes to extract element and target mappings from the ConceptMap FSH file.
+# The parser accepts both legacy numeric paths and FSH's append syntax.
 CM_ELEMENT_CODE_RE = re.compile(
-    r"^\*\s+group\[.*?\]\.element\[\d+\]\.code\s*=\s*#(\S+)", re.MULTILINE
+    r"^\s*\*\s+group\[.*?\]\.element\[(?:\d+|\+|=)\]\.code\s*=\s*#(\S+)",
+    re.MULTILINE,
 )
 
-# Regex to extract target code from ConceptMap FSH file.
-# Matches lines like: * group[=].element[0].target[0].code = #79001
 CM_TARGET_CODE_RE = re.compile(
-    r"^\*\s+group\[.*?\]\.element\[(\d+)\]\.target\[\d+\]\.code\s*=\s*#(\S+)", re.MULTILINE
+    r"^\s*\*\s+group\[.*?\]\.element\[(?:\d+|\+|=)\]\.target\[(?:\d+|\+|=)\]\.code\s*=\s*#(\S+)",
+    re.MULTILINE,
+)
+CM_ELEMENT_START_RE = re.compile(
+    r"^\s*\*\s+group\[.*?\]\.element\[(?:\d+|\+|=)\]\s*$"
+)
+CM_TARGET_START_RE = re.compile(r"^\s*\*\s+target\[(?:\d+|\+|=)\]\s*$")
+CM_NESTED_CODE_RE = re.compile(r"^\s*\*\s+code\s*=\s*#(\S+)")
+CM_FLAT_MAPPING_RE = re.compile(
+    r"^(?P<indent>\s*)\*\s+group\[(?P<group>[^]]+)\]\.element\[\d+\]\.code\s*=\s*#(?P<code>\S+)\n"
+    r"(?P=indent)\*\s+group\[(?P=group)\]\.element\[\d+\]\.target\[\d+\]\.code\s*=\s*#(?P<target>\S+)\n"
+    r"(?P=indent)\*\s+group\[(?P=group)\]\.element\[\d+\]\.target\[\d+\]\.equivalence\s*=\s*#(?P<equivalence>\S+)",
+    re.MULTILINE,
 )
 
 # Regex to extract the source system URL from the ConceptMap group.
@@ -97,7 +108,9 @@ CM_ALL_TARGET_CODES_RE = re.compile(
 
 # Regex to find the CodeSystem URL used as source in a ConceptMap group.
 CM_GROUP_SOURCE_URL_RE = re.compile(
-    r"^\*\s+group\[\+\]\.source\s*=\s*\"([^\"]+)\"", re.MULTILINE
+    r"^\s*\*\s+group\[\+\]\.source\s*=\s*\"([^\"]+)\""
+    r"|^\s*\*\s+group\[\+\]\s*$\s*^\s*\*\s+source\s*=\s*\"([^\"]+)\"",
+    re.MULTILINE,
 )
 
 # Discovery patterns for OperationOutcomeDetails artifacts.
@@ -166,28 +179,56 @@ def parse_conceptmap_mappings(fsh_path: Path) -> Dict[str, str | None]:
     """
     content = fsh_path.read_text(encoding="utf-8")
 
-    # Parse line by line, tracking element code and target code pairs.
-    # Element codes and target codes are associated by their position (sequential lines).
+    # Parse line by line, tracking element code and target code pairs. Both the
+    # legacy flat paths and nested FSH rules are accepted.
     result: Dict[str, str | None] = {}
     current_element_code: str | None = None
+    nested_element = False
+    nested_target = False
 
     for line in content.splitlines():
-        # Match element code line
         elem_match = CM_ELEMENT_CODE_RE.match(line)
         if elem_match:
-            # If we had a previous element code without a target, record it
             if current_element_code is not None and current_element_code not in result:
                 result[current_element_code] = None
             current_element_code = elem_match.group(1)
+            nested_element = False
+            nested_target = False
             continue
 
-        # Match target code line
         target_match = CM_TARGET_CODE_RE.match(line)
         if target_match:
-            target_code = target_match.group(2)
             if current_element_code is not None:
-                result[current_element_code] = target_code
+                result[current_element_code] = target_match.group(1)
                 current_element_code = None
+            nested_element = False
+            nested_target = False
+            continue
+
+        if CM_ELEMENT_START_RE.match(line):
+            if current_element_code is not None and current_element_code not in result:
+                result[current_element_code] = None
+            current_element_code = None
+            nested_element = True
+            nested_target = False
+            continue
+
+        if CM_TARGET_START_RE.match(line):
+            nested_element = False
+            nested_target = True
+            continue
+
+        nested_code_match = CM_NESTED_CODE_RE.match(line)
+        if nested_code_match and nested_element:
+            current_element_code = nested_code_match.group(1)
+            nested_element = False
+            continue
+
+        if nested_code_match and nested_target:
+            if current_element_code is not None:
+                result[current_element_code] = nested_code_match.group(1)
+                current_element_code = None
+            nested_target = False
             continue
 
     # Handle last element if it had no target
@@ -403,7 +444,7 @@ def _find_group_for_codesystem(
     Returns the URL string if found, None otherwise.
     """
     for match in CM_GROUP_SOURCE_URL_RE.finditer(conceptmap_content):
-        url = match.group(1)
+        url = match.group(1) or match.group(2)
         if url == codesystem_url:
             return url
     return None
@@ -503,14 +544,12 @@ def fix_missing_mappings(
             # Append a new group at the end of the file
             group_header = (
                 f"\n// {cs_filename}\n"
-                f"* group[+].source = \"{group_source_url}\"\n"
-                f"* group[=].target = \"ti-flow-telemetriedaten-statuscodes\"\n"
+                "* group[+]\n"
+                f"  * source = \"{group_source_url}\"\n"
+                "  * target = \"ti-flow-telemetriedaten-statuscodes\"\n"
             )
             conceptmap_content = conceptmap_content.rstrip("\n") + "\n" + group_header
             existing_url = group_source_url
-
-        max_idx = _get_max_element_index(conceptmap_content, existing_url)
-        current_idx = max_idx + 1
 
         # Build new lines to append to this group's section
         new_lines: List[str] = []
@@ -522,19 +561,22 @@ def fix_missing_mappings(
                 print("  ERROR: No more target codes available in range 79200-79999")
                 break
 
-            new_lines.append(f"* group[=].element[{current_idx}].code = #{f.code}")
-            new_lines.append(f"* group[=].element[{current_idx}].target[0].code = #{next_target}")
-            new_lines.append(f"* group[=].element[{current_idx}].target[0].equivalence = #equivalent")
+            new_lines.append("* group[=].element[+]")
+            new_lines.append(f"  * code = #{f.code}")
+            new_lines.append("  * target[+]")
+            new_lines.append(f"    * code = #{next_target}")
+            new_lines.append("    * equivalence = #equivalent")
 
             used_codes.add(next_target)
             next_target += 1
-            current_idx += 1
             applied += 1
 
         if new_lines:
             # Find insertion point: end of the group section
             source_pattern = re.compile(
-                r"^\*\s+group\[\+\]\.source\s*=\s*\""
+                r"^\s*\*\s+group\[\+\]\.source\s*=\s*\""
+                + re.escape(existing_url)
+                + r"\"|^\s*\*\s+group\[\+\]\s*$\s*^\s*\*\s+source\s*=\s*\""
                 + re.escape(existing_url)
                 + r"\"",
                 re.MULTILINE,
@@ -543,7 +585,7 @@ def fix_missing_mappings(
             if source_match:
                 # Find the next group[+] start or end of file
                 next_group = re.search(
-                    r"^\*\s+group\[\+\]\.source\s*=",
+                    r"^\s*\*\s+group\[\+\](?:\.source\s*=|\s*$)",
                     conceptmap_content[source_match.end():],
                     re.MULTILINE,
                 )
@@ -579,6 +621,27 @@ def fix_missing_mappings(
         print(f"  Fixed {applied} missing mapping(s) in {conceptmap_path.name}")
 
     return applied
+
+
+def normalize_flat_mappings(conceptmap_path: Path) -> int:
+    """Convert legacy numeric mapping triples to nested append-style FSH rules."""
+    content = conceptmap_path.read_text(encoding="utf-8")
+
+    def replacement(match: re.Match[str]) -> str:
+        indent = match.group("indent")
+        group = match.group("group")
+        return (
+            f"{indent}* group[{group}].element[+]\n"
+            f"{indent}  * code = #{match.group('code')}\n"
+            f"{indent}  * target[+]\n"
+            f"{indent}    * code = #{match.group('target')}\n"
+            f"{indent}    * equivalence = #{match.group('equivalence')}"
+        )
+
+    normalized_content, normalized = CM_FLAT_MAPPING_RE.subn(replacement, content)
+    if normalized:
+        conceptmap_path.write_text(normalized_content, encoding="utf-8")
+    return normalized
 
 
 def main() -> int:
@@ -623,10 +686,14 @@ def main() -> int:
 
     findings = run_check(ig_roots, codesystem_paths, valueset_paths)
 
-    if args.fix and findings:
+    if args.fix:
         print("\n==> Applying auto-fixes...")
         applied = fix_missing_mappings(findings, ig_roots, codesystem_paths, valueset_paths)
-        if applied > 0:
+        conceptmap_path = find_conceptmap_file(ig_roots)
+        normalized = normalize_flat_mappings(conceptmap_path) if conceptmap_path else 0
+        if normalized > 0:
+            print(f"  Normalized {normalized} legacy mapping(s) in {conceptmap_path.name}")
+        if applied > 0 or normalized > 0:
             print("\nRe-running checks after fixes...")
             findings = run_check(ig_roots, codesystem_paths, valueset_paths)
 
