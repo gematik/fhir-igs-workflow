@@ -110,7 +110,7 @@ RuleSet: TiflowSignatureNoOcspResponse
 
 RuleSet: TiflowTaskStatusMismatch
 * extension[responseInfo][+]
-  * extension[statusCode].valueString = "400"
+  * extension[statusCode].valueString = "412"
   * extension[description].valueString = "Task status mismatch"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_TASK_STATUS_MISMATCH"

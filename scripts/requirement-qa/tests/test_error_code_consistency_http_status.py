@@ -1,7 +1,40 @@
 from pathlib import Path
 
-from error_code_consistency.checks import check_capabilitystatement_http_status_consistency
+from error_code_consistency.checks import (
+    check_capabilitystatement_http_status_consistency,
+    check_requirement_http_status_invariants,
+)
 from error_code_consistency.models import ErrorCode
+
+
+def _task_status_error_code(http_code: str) -> ErrorCode:
+    return ErrorCode(
+        code="TIFLOW_TASK_STATUS_MISMATCH",
+        file_path=Path("igs/core/input/pagecontent/op-abort-req-fd.md"),
+        line=70,
+        requirement_key="IG-TIFLOW-CORE-A142",
+        http_code=http_code,
+        severity="error",
+        code_field="invalid",
+        module="core",
+        endpoint="op:abort",
+    )
+
+
+def test_task_status_mismatch_requires_http_412():
+    findings = check_requirement_http_status_invariants(
+        [_task_status_error_code("403 - Forbidden")]
+    )
+
+    assert len(findings) == 1
+    assert findings[0].type == "REQUIREMENT_HTTP_STATUS_MISMATCH"
+    assert "expected 412" in findings[0].message
+
+
+def test_task_status_mismatch_accepts_http_412():
+    assert not check_requirement_http_status_invariants(
+        [_task_status_error_code("412 - Precondition Failed")]
+    )
 
 
 def test_capabilitystatement_http_status_mismatch_detected(tmp_path):

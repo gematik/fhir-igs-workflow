@@ -26,7 +26,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
+            <td>412 - Precondition Failed</td>
         </tr>
         <tr>
             <th>Severity</th>
@@ -68,7 +68,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
+            <td>412 - Precondition Failed</td>
         </tr>
         <tr>
             <th>Severity</th>
@@ -136,7 +136,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
+            <td>412 - Precondition Failed</td>
         </tr>
         <tr>
             <th>Severity</th>

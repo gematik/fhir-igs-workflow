@@ -78,7 +78,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
-            <td>409 - Conflict</td>
+            <td>412 - Precondition Failed</td>
         </tr>
         <tr>
             <th>Severity</th>
