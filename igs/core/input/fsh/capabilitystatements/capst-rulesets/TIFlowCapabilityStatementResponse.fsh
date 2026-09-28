@@ -144,13 +144,6 @@ RuleSet: TiflowAccesscodeMismatch
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_ACCESSCODE_MISMATCH"
 
-// RuleSet: TiflowAuthRoleNotAllowed
-// * extension[responseInfo][+]
-//   * extension[statusCode].valueString = "403"
-//   * extension[description].valueString = "Access role not allowed"
-//   * extension[responseType].valueString = "TIFlowOperationOutcome"
-//   * extension[errorCode].valueString = "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
-
 RuleSet: TiflowFlowtypeMismatch
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400"

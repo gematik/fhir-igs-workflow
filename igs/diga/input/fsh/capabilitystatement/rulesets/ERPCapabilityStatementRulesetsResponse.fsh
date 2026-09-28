@@ -102,13 +102,6 @@ RuleSet: TiflowSignatureNoOcspResponse
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_SIGNATURE_NO_OCSP_RESPONSE"
 
-RuleSet: TiflowAuthRoleNotAllowed
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "403"
-  * extension[description].valueString = "Access role not allowed"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
-
 RuleSet: TiflowTaskStatusMismatch
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "412"
