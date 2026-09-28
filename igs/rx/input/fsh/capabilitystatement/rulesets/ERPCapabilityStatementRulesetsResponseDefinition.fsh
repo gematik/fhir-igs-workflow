@@ -204,6 +204,7 @@ RuleSet: ConsentCreateInteractionStatusCodes
 
 RuleSet: GrantEUAccessPermissionOperationStatusCodes
 * rest.operation[=] insert SystemOperationStatusCodesWithParameters
+* rest.operation[=] insert SvcValidationFailed
 * rest.operation[=] insert TiflowAccessCodeInvalid
 * rest.operation[=] insert TiflowConsentRequired
 * rest.operation[=] insert TiflowErezeptCountryCodeInvalid
