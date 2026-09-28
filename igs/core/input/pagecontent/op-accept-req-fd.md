@@ -116,7 +116,7 @@ Hinweis: Die Informationen in OperationOutcome werden ggf. als mehrere Strings i
     <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
+            <td>400 - Bad Request</td>
         </tr>
         <tr>
             <th>Severity</th>
