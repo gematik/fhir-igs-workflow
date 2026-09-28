@@ -23,7 +23,7 @@ Die Nachricht wird als HTTP `DELETE` an `/$revoke-eu-access-permission` gesendet
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-RevokeEUAccessPermission.json %}
+			{% include OperationDefinition-revoke-eu-access-permission.json %}
 		</pre>
 	</div>
 </div>

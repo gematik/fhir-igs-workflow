@@ -23,7 +23,7 @@ Die Nachricht wird als HTTP `POST` an `/Task/$eu-close` gesendet.
 	</div>
 	<div id="OperationDefinition">
 		<pre>
-			{% include OperationDefinition-EUCloseOperation.json %}
+			{% include OperationDefinition-eu-close-operation.json %}
 		</pre>
 	</div>
 	<div id="Request-Examples">
