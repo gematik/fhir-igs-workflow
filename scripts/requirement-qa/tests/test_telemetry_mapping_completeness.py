@@ -4,7 +4,9 @@ from check_telemetry_mapping_completeness import (
     Finding,
     fix_missing_mappings,
     normalize_flat_mappings,
+    parse_conceptmap_groups,
     parse_conceptmap_mappings,
+    run_check,
 )
 
 
@@ -54,3 +56,41 @@ def test_normalize_flat_mapping_uses_nested_append_syntax(tmp_path):
         "    * code = #79205\n"
         "    * equivalence = #equivalent\n"
     )
+
+
+def test_module_mapping_is_checked_and_fixed_in_own_ig(tmp_path):
+    core = tmp_path / "core"
+    rx = tmp_path / "rx"
+    core_map = core / "input/fsh/conceptmaps/TIFLOW_CM_TelemetryDataStatusCodes.fsh"
+    rx_map = rx / "input/fsh/conceptmaps/TIFLOW_CM_TelemetryDataStatusCodes.fsh"
+    codesystem = rx / "input/fsh/codesystems/TIFLOW_EREZEPT_CS_OperationOutcomeDetails.fsh"
+    for path in (core_map, rx_map, codesystem):
+        path.parent.mkdir(parents=True, exist_ok=True)
+    core_map.write_text(
+        '* group[+].source = "https://example.test/core"\n'
+        '* group[=].element[+].code = #TIFLOW_EREZEPT_NEW\n'
+        '* group[=].element[=].target[+].code = #79200\n',
+        encoding="utf-8",
+    )
+    rx_map.write_text(
+        'Instance: RX-Telemetry\n'
+        '* group[+].source = "https://example.test/wrong"\n'
+        '* group[=].element[+].code = #TIFLOW_EREZEPT_NEW\n'
+        '* group[=].element[=].target[+].code = #79202\n',
+        encoding="utf-8",
+    )
+    codesystem.write_text(
+        'CodeSystem: RxCodes\nId: rx-codes\n* #TIFLOW_EREZEPT_NEW "New" "New"\n',
+        encoding="utf-8",
+    )
+
+    roots = [core, rx]
+    findings = run_check(roots, [codesystem], [])
+    assert [(finding.type, finding.code) for finding in findings] == [
+        ("MISSING_MAPPING", "TIFLOW_EREZEPT_NEW")
+    ]
+    assert fix_missing_mappings(findings, roots, [codesystem], []) == 1
+    assert parse_conceptmap_groups(rx_map)[
+        "https://gematik.de/fhir/erp/CodeSystem/rx-codes"
+    ] == {"TIFLOW_EREZEPT_NEW": "79201"}
+    assert not run_check(roots, [codesystem], [])
