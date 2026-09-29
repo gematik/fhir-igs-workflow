@@ -106,6 +106,54 @@
             "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0/ttl.html#IG-TIFLOW-CHRG-A101"
         },
         {
+            "key": "IG-TIFLOW-CHRG-A102",
+            "title": "TI-Flow-Fachdienst - Abrechnungsinformationen - Consent schreiben - FHIR-Validierung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf des Endpunkts `POST /Consent` unter den benannten Prüfbedingungen die folgende Profilvalidierung durchführen:\n\n <table>\n <thead>\n <tr>\n <th>Prüfbedingung</th>\n <th>Profil</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>Rolle: oid_versicherter</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERPCHRG_PR_Consent</code></td>\n </tr>\n </tbody>\n </table>\n\nund bei negativem Prüfergebnis die Operation mit dem folgenden Fehler:\n\n<table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed</td>\n </tr>\n </table> \n\nabbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0/query-api-consent-req-fd.html#IG-TIFLOW-CHRG-A102"
+        },
+        {
+            "key": "IG-TIFLOW-CHRG-A103",
+            "title": "TI-Flow-Fachdienst - Abrechnungsinformationen - Einstellen von Communications - FHIR-Validierung",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf des Endpunkts `POST /Communication` unter den benannten Prüfbedingungen die folgende Profilvalidierung durchführen:\n\n <table>\n <thead>\n <tr>\n <th>Prüfbedingung</th>\n <th>Profil</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>Rolle: oid_versicherter</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq</code></td>\n </tr>\n <tr>\n <td>Rolle: oid_oeffentliche_apotheke, oid_krankenhausapotheke</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReply</code></td>\n </tr>\n </tbody>\n </table>\n\nund bei negativem Prüfergebnis die Operation mit dem folgenden Fehler:\n\n<table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed</td>\n </tr>\n </table> \n\nabbrechen.",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-chargeitem/2.0.0/query-api-communication-req-fd.html#IG-TIFLOW-CHRG-A103"
+        },
+        {
             "key": "IG-TIFLOW-CHRG-A11",
             "title": "TI-Flow-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest",
             "version": 0,
@@ -1286,7 +1334,7 @@
             "title": "TI-Flow-Fachdienst - Abrechnungsinformation bereitstellen - FHIR-Validierung ChargeItem",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeItem übertragene ChargeItem-Ressource gegen das FHIR-Profil ChargeItem prüfen und \n    <ul>\n    <li>die Korrektheit der Rezept-ID (GEM_ERP_PR_PrescriptionId) im referenzierten Task als ChargeItem.identifier, </li>\n    <li>die Korrektheit der Versicherten-ID des Versicherten im referenzierten Task (Task.for) gegen ChargeItem.subject.identifier </li>\n    <li>und die Korrektheit der Telematik-ID der Apotheke gemäß Nutzerinformation (zeta-user-info.identifier) mit dem Wert in ChargeItem.enterer.identifier</li>\n    </ul>\n    prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.",
+            "text": "Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeItem übertragene ChargeItem-Ressource gegen das FHIR-Profil https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_ChargeItem prüfen und \n <ul>\n <li>die Korrektheit der Rezept-ID (GEM_ERP_PR_PrescriptionId) im referenzierten Task als ChargeItem.identifier, </li>\n <li>die Korrektheit der Versicherten-ID des Versicherten im referenzierten Task (Task.for) gegen ChargeItem.subject.identifier </li>\n <li>und die Korrektheit der Telematik-ID der Apotheke gemäß Nutzerinformation (zeta-user-info.identifier) mit dem Wert in ChargeItem.enterer.identifier</li>\n </ul>\n prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.",
             "conformance": "SHALL",
             "characteristics": [
                 {
