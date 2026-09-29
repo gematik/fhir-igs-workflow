@@ -1,0 +1,106 @@
+Der TI-Flow-Fachdienst ermöglicht den Versand von Push Notifications für verschiedene Anwendungsfälle. Die Details sind in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/menu-technische-umsetzung-push.html) zu finden, und unten sind die modulspezifischen Anforderungen.
+
+<!-- E-Rezept_26_2 C_12832 -->
+<!-- A_28115-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A150" title="TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen - DiGA" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+     Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß der Tabelle erzeugen.
+
+<table>
+<thead>
+<tr>
+<th>ChannelId</th>
+<th>Identifier</th>
+<th>IdentifierType</th>
+<th>Product</th>
+<th>ActorName</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td>tiflow.task.activate</td>
+<td>Task.identifier.PrescriptionID</td>
+<td>TaskId</td>
+<td>
+KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>tiflow.task.accept</td>
+<td>Task.identifier.PrescriptionID</td>
+<td>TaskId</td>
+<td>
+KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>tiflow.task.reject</td>
+<td>Task.identifier.PrescriptionID</td>
+<td>TaskId</td>
+<td>
+KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>tiflow.task.close</td>
+<td>Task.identifier.PrescriptionID</td>
+<td>TaskId</td>
+<td>
+KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>tiflow.task.dispense</td>
+<td>Task.identifier.PrescriptionID</td>
+<td>TaskId</td>
+<td>
+KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>tiflow.task.abort</td>
+<td>Task.identifier.PrescriptionID</td>
+<td>TaskId</td>
+<td>
+KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>tiflow.communication.new</td>
+<td>Communication.basedOn.reference</td>
+<td>TaskId</td>
+<td>
+KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+</td>
+<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
+<td>
+Communication.payload.content
+</td>
+</tr>
+
+</tbody>
+</table>
+</requirement>

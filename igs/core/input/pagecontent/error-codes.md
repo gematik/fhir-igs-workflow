@@ -243,7 +243,7 @@ Hierfür gelten für die TIFlow-Anwendungen die folgenden Fehlercodes für Opera
 
 ### Struktur von Fehlern bei Nicht-FHIR APIs
 
-Der TI-Flow-Fachdienst bietet Schnittstellen, deren Austauschformat nicht nach FHIR modelliert wurde. Bspw. [Push-API: Pusher](./query-api-pushers.html). 
+Der TI-Flow-Fachdienst bietet Schnittstellen, deren Austauschformat nicht nach FHIR modelliert wurde.  
 
 Diese Schnittstellen haben eine eigens definierte JSON Struktur von Fehlern, die in der jeweils referenzierten OpenAPI dokumentiert ist. Im Fehlerfall erhalten Clients eine HTTP Antwort mit HTTP Status Code und einem Response Body im Media Type <i>application/json</i>.
 

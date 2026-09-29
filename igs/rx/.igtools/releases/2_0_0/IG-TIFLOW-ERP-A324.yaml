@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 927b883fb93d095e5d363f32c931139951643cb255a62ff169e847aeec61254c
-created: '2026-06-25T11:30:11.258651'
-date: '2026-09-25T11:49:12.096548'
-key: IG-TIFLOW-CORE-A225
-modified: '2026-09-25T11:49:12.096548'
+content_hash: eb93edb51ff066d205dcc2834eddb28cf69ab665e765bfc90d535a8874022e7f
+created: '2026-09-29T11:46:25.221345'
+date: '2026-09-29T11:46:25.221384'
+key: IG-TIFLOW-ERP-A324
+modified: '2026-09-29T11:46:25.221374'
 release_status: NEW
 source: input/pagecontent/menu-technische-umsetzung-push.md
 status: ACTIVE
@@ -13,7 +13,7 @@ test_procedures:
   TI-Flow_FD:
   - Produkttest
 text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß
-  TAB_eRPFD_028 erzeugen.
+  der Tabelle erzeugen.
 
 
   <table>
@@ -51,9 +51,7 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   <td>
 
-  Falls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>
-
-  Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+  KBV_PR_ERP_Bundle.entry.[medicationName]
 
   </td>
 
@@ -74,9 +72,7 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   <td>
 
-  Falls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>
-
-  Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+  KBV_PR_ERP_Bundle.entry.[medicationName]
 
   </td>
 
@@ -97,30 +93,7 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   <td>
 
-  Falls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>
-
-  Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
-
-  </td>
-
-  <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
-
-  <td>-</td>
-
-  </tr>
-
-
-  <tr>
-
-  <td>tiflow.task.close</td>
-
-  <td>Task.identifier.PrescriptionID</td>
-
-  <td>TaskId</td>
-
-  <td>
-
-  KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+  KBV_PR_ERP_Bundle.entry.[medicationName]
 
   </td>
 
@@ -141,9 +114,7 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   <td>
 
-  Falls [Arzneimittel]: GEM_ERP_PR_PAR_DispenseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]<br>
-
-  Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+  GEM_ERP_PR_PAR_DispenseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]
 
   </td>
 
@@ -164,9 +135,7 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   <td>
 
-  Falls [Arzneimittel]: KBV_PR_ERP_Bundle.entry.[medicationName]<br>
-
-  Falls Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+  KBV_PR_ERP_Bundle.entry.[medicationName]
 
   </td>
 
@@ -187,9 +156,7 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   <td>
 
-  Falls Communication.basedOn.reference.Task.flowType = "160","166","200": KBV_PR_ERP_Bundle.entry.[medicationName]<br>
-
-  Falls Communication.basedOn.reference.Task.flowType = "162": KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+  KBV_PR_ERP_Bundle.entry.[medicationName]
 
   </td>
 
@@ -197,47 +164,9 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   <td>
 
-  POST /Communication<br>
-
-  Falls Profil GEM_ERP_PR_Communication_Reply: Communication.payload.content.info_text<br>
-
-  Falls Profil GEM_ERP_PR_Communication_DiGA: Communication.payload.content
+  Communication.payload.content.info_text
 
   </td>
-
-  </tr>
-
-
-  <tr>
-
-  <td>tiflow.chargeitem.create</td>
-
-  <td>ChargeItem.identifier.PrescriptionID</td>
-
-  <td>TaskId</td>
-
-  <td>ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName]</td>
-
-  <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
-
-  <td>-</td>
-
-  </tr>
-
-
-  <tr>
-
-  <td>tiflow.chargeitem.update</td>
-
-  <td>ChargeItem.identifier.PrescriptionID</td>
-
-  <td>TaskId</td>
-
-  <td>ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName]</td>
-
-  <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
-
-  <td>-</td>
 
   </tr>
 
@@ -297,9 +226,6 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   </table>
 
-  <div><figcaption><strong>Tabelle: </strong>TAB_eRPFD_028 Nachrichteninhalt Push
-  Notification</figcaption></div>
-
 
   <p>
 
@@ -325,15 +251,6 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   <tr>
 
-  <td>[Arzneimittel]</td>
-
-  <td>Task.flowType = "160","166","169","200","209"</td>
-
-  </tr>
-
-
-  <tr>
-
   <td>[medicationName]</td>
 
   <td>Falls medication dem Profil "KBV_PR_ERP_Medication_Ingredient" entspricht:<br>
@@ -352,4 +269,5 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
 
   </p>'
 title: TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen
+  - E-Rezept
 version: 0

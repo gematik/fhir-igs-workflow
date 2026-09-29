@@ -374,12 +374,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-kim.md",
-        "text": "Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine Message mit \"Content-Type: multipart/mixed;...\" und der folgenden Struktur verwenden. Tabelle # : Struktur der Message mit \"Content-Type: multipart/mixed;...\" Teil Inhalt optional Freitext Freitextmessage für den Empfänger default: \"direkte Zuweisung E-Rezept\" nein Einlöseinformation E-Rezept-Token als Link nach 2D-Code für E-Rezept-Token Nach 45 Zeichen MUSS ein Steuerzeichen \"CRLF\" eingefügt werden nein Therapieplan Therapieplan als Anhang, base64 codiert ja",
+        "text": "Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine Message mit \"Content-Type: multipart/mixed;...\" und der folgenden Struktur verwenden.\n <table>\n <thead>\n <tr>\n <th>Teil</th>\n <th>Inhalt</th>\n <th>optional</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>Freitext</td>\n <td>Freitextmessage für den Empfänger<br>default: \"direkte Zuweisung E-Rezept\"</td>\n <td>nein</td>\n </tr>\n <tr>\n <td>Einlöseinformation</td>\n <td>E-Rezept-Token als Link<br>Nach 45 Zeichen MUSS ein Steuerzeichen \"CRLF\" eingefügt werden</td>\n <td>nein</td>\n </tr>\n <tr>\n <td>Therapieplan</td>\n <td>Therapieplan als Anhang, base64 codiert</td>\n <td>ja</td>\n </tr>\n </tbody>\n </table>\n <div><figcaption><strong>Tabelle: </strong>Struktur der Message mit \"Content-Type: multipart/mixed;...\"</figcaption></div>",
         "conformance": "SHALL",
         "created": "2026-06-25T11:43:04.366200",
-        "modified": "2026-08-24T14:40:49.956804",
-        "date": "2026-08-25T14:32:14.950263",
-        "content_hash": "2633af1c4328d1cefb33fbe9d39bf6497ff3966af00f4eae8bb576bc74340a07",
+        "modified": "2026-09-28T10:14:22.375270",
+        "date": "2026-09-28T10:14:22.375270",
+        "content_hash": "8c100cad6d4ce1fbf8fdbfe16268bc99661b0c51c44c8c03d2c543cfe114cf74",
         "path": "menu-technische-umsetzung-kim.html",
         "release": "2.0.0"
     },
@@ -3422,7 +3422,7 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_ncpeh </li>\n </ul>\n die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_ncpeh</li>\n </ul>\n die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table>\n abbrechen, damit E-Rezepte nicht durch Unberechtigte abgerufen werden können.",
         "conformance": "SHALL",
         "created": "2026-07-28T07:25:32.019396",
         "modified": "2026-09-18T09:46:40.883320",
@@ -3889,7 +3889,7 @@
     },
     {
         "key": "IG-TIFLOW-ERP-A245",
-        "title": "TI-Flow-Fachdienst - Task markieren - Versicherter - nur einlösbare E-Rezepte",
+        "title": "TI-Flow-Fachdienst - Task markieren - Versicherter - nur in EU einlösbare E-Rezepte",
         "actor": [
             "TI-Flow_FD"
         ],
@@ -4238,7 +4238,7 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-read-eu-access-permission-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /$read-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table>\n abbrechen, damit die Information zur Einwilligung nicht durch Unberechtigte ausgelesen werden kann.",
         "conformance": "SHALL",
         "created": "2026-07-24T14:30:45.769786",
         "modified": "2026-09-18T09:46:41.097815",
@@ -4310,7 +4310,7 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-eu-close-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_ncpeh</li>\n </ul>\n die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_ncpeh</li>\n </ul>\n die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table>\n abbrechen, damit der E-Rezept-Workflow nicht durch einen Unberechtigten abgeschlossen werden kann.",
         "conformance": "SHALL",
         "created": "2026-07-24T14:30:45.770694",
         "modified": "2026-09-18T09:46:41.099154",
@@ -4334,12 +4334,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-eu-close-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] sowie bei der darin enthaltenen MedicationDispense:\n <ul>\n <li>Korrektheit der Rezept-ID https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId als MedicationDispense.identifier und</li>\n <li>die KVNR des Versicherten im referenzierten Task (Task.for) gegen KVNR in MedicationDispense.subject:identifier</li>\n </ul>\n prüfen und im Fehlerfall die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen.",
         "conformance": "SHALL",
         "created": "2026-07-24T14:30:45.771120",
-        "modified": "2026-07-24T14:30:45.771121",
-        "date": "2026-07-24T14:30:45.771122",
-        "content_hash": "e21b6bdc03cca7c9382bbbad045ca2b054d801314a3f0887b633945c1ebca254",
+        "modified": "2026-09-22T15:01:12.130784",
+        "date": "2026-09-22T15:01:12.130784",
+        "content_hash": "495025b3233b856e16ff754bafb417a429bf0adb22a515e48461f052474c2def",
         "path": "op-eu-close-req-fd.html",
         "release": "2.0.0"
     },
@@ -4526,12 +4526,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-communication-req-fdv.md",
-        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\" prüfen, ob bei Teilverordnungen von Mehrfachverordnungen (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) erreicht ist und in diesem Fall den Anwendungsfall abbrechen.",
+        "text": "Das TI-Flow-FdV MUSS im Anwendungsfall \"E-Rezept einer Apotheke zuweisen\" prüfen, ob bei Teilverordnungen von Mehrfachverordnungen (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen = true) der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start) erreicht ist und falls nicht, den Anwendungsfall abbrechen.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:43:04.330133",
-        "modified": "2026-08-26T13:45:25.888134",
-        "date": "2026-08-26T13:45:25.888134",
-        "content_hash": "bd3ea7a8537e8548e3e0432e4343cb9a2a8c4206f84bcd03242759a57110edb5",
+        "modified": "2026-09-22T15:01:12.086738",
+        "date": "2026-09-22T15:01:12.086738",
+        "content_hash": "9395e8fd7f9d21dda15e4b08b7e720d3592f7331fda524e91fade65aeee735ac",
         "path": "query-api-communication-req-fdv.html",
         "release": "2.0.0"
     },
@@ -4750,7 +4750,7 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-revoke-eu-access-permission-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit die Information zur Zugriffsberechtigung nicht durch Unberechtigte gelöscht werden kann.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table>\n abbrechen, damit die Information zur Zugriffsberechtigung nicht durch Unberechtigte gelöscht werden kann.",
         "conformance": "SHALL",
         "created": "2026-07-24T14:30:45.789094",
         "modified": "2026-09-18T09:46:41.203857",
@@ -4822,12 +4822,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-grant-eu-access-permission-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter </li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit eine Zugriffsberechtigte nicht durch Unberechtigte erteilt werden kann.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /$grant-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table>\n abbrechen, damit eine Zugriffsberechtigung nicht durch Unberechtigte erteilt werden kann.",
         "conformance": "SHALL",
         "created": "2026-07-24T14:30:45.801172",
-        "modified": "2026-09-18T09:46:41.249788",
-        "date": "2026-09-18T09:46:41.249788",
-        "content_hash": "6b1d474f030b5747d214802c4caabdee18eb998843306dbe43311d8fb6ca68a2",
+        "modified": "2026-09-22T15:09:29.682725",
+        "date": "2026-09-22T15:09:29.682725",
+        "content_hash": "c6a272d36cdc7605c9539cdaa2fe33ea67ec668df8b99df9d2f5f3502a2b59ae",
         "path": "op-grant-eu-access-permission-req-fd.html",
         "release": "2.0.0"
     },
@@ -5481,7 +5481,7 @@
     },
     {
         "key": "IG-TIFLOW-ERP-A307",
-        "title": "TI-Flow-Fachdienst - Task schließen - Ausführung nach OperationDefinition",
+        "title": "TI-Flow-Fachdienst - Task markieren - Versicherter - nur zur Einlösung verfügbare E-Rezepte ",
         "actor": [
             "TI-Flow_FD"
         ],
@@ -5493,14 +5493,14 @@
         "version": 0,
         "release_status": "NEW",
         "status": "ACTIVE",
-        "source": "input/pagecontent/op-close-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>E-Rezept Abgabe vollziehen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-rx-close-op.html\">TIFlowRXOPClose</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler abbrechen:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed.</td>\n </tr>\n </table>",
+        "source": "input/pagecontent/query-api-task-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten prüfen, ob für den adressierte Task Task.status = \"ready\" ist und anderfalls mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Task has invalid status.</td>\n </tr>\n </table> \n abbrechen.",
         "conformance": "SHALL",
         "created": "2026-09-21T12:32:06.087583",
-        "modified": "2026-09-21T14:12:07.892626",
-        "date": "2026-09-21T14:12:07.892626",
-        "content_hash": "65d85a3ebc77058843aa062a45c5cdd872434a70908796c254132d69f82cab75",
-        "path": "op-close-req-fd.html",
+        "modified": "2026-09-22T15:09:29.606673",
+        "date": "2026-09-22T15:09:29.606673",
+        "content_hash": "65c634cf103098e96b1e206994f1f548ba31e892a67aa141b4c518321f06ad10",
+        "path": "query-api-task-req-fd.html",
         "release": "2.0.0"
     },
     {
@@ -5518,12 +5518,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-activate-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den innerhalb des PKCS#7-Datensatz enveloping-enthaltenen FHIR-Datensatz gegen das Profil https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle aus kbv.ita.erp validieren und bei Invalidität die Operation mit dem folgenden Fehler:\n\n<table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n<tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n</tr>\n<tr>\n <th>Severity</th>\n <td>error</td>\n</tr>\n<tr>\n <th>Code</th>\n <td>invalid</td>\n</tr>\n<tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n</tr>\n<tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed.</td>\n</tr>\n</table> \n\n abbrechen.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation über /Task/&#60;id&#62;/$activate den innerhalb des PKCS#7-Datensatz enveloping-enthaltenen FHIR-Datensatz gegen das Profil https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle aus kbv.ita.erp validieren und bei Invalidität die Operation mit dem folgenden Fehler:\n\n<table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n<tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n</tr>\n<tr>\n <th>Severity</th>\n <td>error</td>\n</tr>\n<tr>\n <th>Code</th>\n <td>invalid</td>\n</tr>\n<tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n</tr>\n<tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed</td>\n</tr>\n</table> \n\n abbrechen.",
         "conformance": "SHALL",
         "created": "2026-09-21T12:32:06.131901",
-        "modified": "2026-09-21T14:12:07.928097",
-        "date": "2026-09-21T14:12:07.928097",
-        "content_hash": "4767c458a62e19a713507bbb09ea519ccf6e76bca1bf7d92ad27b8302651da7a",
+        "modified": "2026-09-22T15:09:29.628951",
+        "date": "2026-09-22T15:09:29.628951",
+        "content_hash": "fa82d3eefcfe5dc11765b3488d21a09f3e809d898746d9b76fd06a5c6a7ef575",
         "path": "op-activate-req-fd.html",
         "release": "2.0.0"
     },
@@ -5542,12 +5542,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-communication-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf des Endpunkts `POST /Communication` unter den benannten Prüfbedingungen die folgende Profilvalidierung durchführen:\n\n <table>\n <thead>\n <tr>\n <th>Prüfbedingung</th>\n <th>Profil</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>Rolle: oid_versicherter</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq</code></td>\n </tr>\n <tr>\n <td>Rolle: oid_apotheke, oid_krankenhausapotheke</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply</code></td>\n </tr>\n </tbody>\n </table>\n\nund bei negativem Prüfergebnis die Operation mit dem folgenden Fehler abbrechen:\n\n<table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed.</td>\n </tr>\n </table>",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf des Endpunkts `POST /Communication` unter den benannten Prüfbedingungen die folgende Profilvalidierung durchführen:\n\n <table>\n <thead>\n <tr>\n <th>Prüfbedingung</th>\n <th>Profil</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>Rolle: oid_versicherter</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq</code></td>\n </tr>\n <tr>\n <td>Rolle: oid_oeffentliche_apotheke, oid_krankenhausapotheke</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_Reply</code></td>\n </tr>\n </tbody>\n </table>\n\nund bei negativem Prüfergebnis die Operation mit dem folgenden Fehler:\n\n<table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed</td>\n </tr>\n </table> \n\nabbrechen.",
         "conformance": "SHALL",
         "created": "2026-09-21T12:32:06.169562",
-        "modified": "2026-09-21T14:12:07.966665",
-        "date": "2026-09-21T14:12:07.966665",
-        "content_hash": "f9fa710b30c892bfa50a5bf0ba35636390269892f3d9a87be6d76f91edc8b38e",
+        "modified": "2026-09-24T06:10:12.500286",
+        "date": "2026-09-24T06:10:12.500286",
+        "content_hash": "073a4a6949305d35225a031f5e09d8ddc63068a112955b0cb8a2fef77bde9aac",
         "path": "query-api-communication-req-fd.html",
         "release": "2.0.0"
     },
@@ -5576,6 +5576,246 @@
         "release": "2.0.0"
     },
     {
+        "key": "IG-TIFLOW-ERP-A310",
+        "title": "TI-Flow-Fachdienst - Task zurückweisen - Ausführung der OperationDefinition",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-reject-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>Task zurückweisen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-rx-reject-op.html\">TIFlowRXOPReject</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:09:29.591095",
+        "modified": "2026-09-22T15:09:29.591099",
+        "date": "2026-09-22T15:09:29.591101",
+        "content_hash": "47e70bf6a49c8a7fca0e8a223fbdff930b8d5a76dffdd07aa8bc1439a7008ae0",
+        "path": "op-reject-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A311",
+        "title": "TI-Flow-Fachdienst - Task schließen - Ausführung der OperationDefinition",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-close-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>E-Rezept Abgabe vollziehen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-rx-close-op.html\">TIFlowRXOPClose</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler abbrechen:\n           <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:09:29.593090",
+        "modified": "2026-09-22T15:09:29.593092",
+        "date": "2026-09-22T15:09:29.593093",
+        "content_hash": "5f1dbb04268f2754b48d00bef61e611d974da17977d5bb7b81b2887d3e01ef58",
+        "path": "op-close-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A312",
+        "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Ausführung der OperationDefinition",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>EU-Verordnungsinformationen abrufen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-get-prescription-eu.html\">GETPrescriptionEU</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:09:29.596342",
+        "modified": "2026-09-22T15:09:29.596344",
+        "date": "2026-09-22T15:09:29.596345",
+        "content_hash": "c2bfe552d7c0a2a3f6a0d99eb7e4e91672dde9e55985858f045bf0c0f9ec32fb",
+        "path": "op-get-eu-prescriptions-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A313",
+        "title": "TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Ausführung der OperationDefinition",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-dispense-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>Dispensierinformationen bereitstellen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-rx-dispense-op.html\">TIFlowRXOPDispense</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:09:29.609052",
+        "modified": "2026-09-22T15:09:29.609055",
+        "date": "2026-09-22T15:09:29.609056",
+        "content_hash": "1bc15eca6bb7325ed58e38dcda9eee024ae6ce5eafab0520c04fac48174f9375",
+        "path": "op-dispense-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A314",
+        "title": "TI-Flow-Fachdienst - E-Rezept löschen - Ausführung der OperationDefinition",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-abort-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>E-Rezept löschen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-rx-abort-op.html\">TIFlowRXOPAbort</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:09:29.613491",
+        "modified": "2026-09-22T15:09:29.613497",
+        "date": "2026-09-22T15:09:29.613498",
+        "content_hash": "35ec643d57b5865e837307eba271e954a9040f179b0f118c7ae63e8252b8a632",
+        "path": "op-abort-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A315",
+        "title": "TI-Flow-Fachdienst - Task aktivieren - Ausführung der OperationDefinition",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-activate-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>Task aktivieren</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-rx-activate-op.html\">TIFlowRXOPActivate</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler abbrechen:\n           <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:09:29.628567",
+        "modified": "2026-09-22T15:09:29.628570",
+        "date": "2026-09-22T15:09:29.628571",
+        "content_hash": "4deeefa9965a778ba7412f46e0729ef9496f32649df4ae8eaf68f10bba26b562",
+        "path": "op-activate-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A316",
+        "title": "TI-Flow-Fachdienst - Consent schreiben - FHIR-Validierung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-consent-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf des Endpunkts `POST /Consent` unter den benannten Prüfbedingungen die folgende Profilvalidierung durchführen:\n\n <table>\n <thead>\n <tr>\n <th>Prüfbedingung</th>\n <th>Profil</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>Rolle: oid_versicherter</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM-ERPEU-PR-Consent</code></td>\n </tr>\n </tbody>\n </table>\n\nund bei negativem Prüfergebnis die Operation mit dem folgenden Fehler:\n\n<table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed</td>\n </tr>\n </table> \n\nabbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:09:29.646517",
+        "modified": "2026-09-24T06:10:12.478507",
+        "date": "2026-09-24T06:10:12.478507",
+        "content_hash": "2542edc486c05097775a8afe97d98fac5d38f00ac5aa5ecbeb9d0096febc0783",
+        "path": "query-api-consent-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A317",
+        "title": "TI-Flow-Fachdienst - Zugriffsberechtigung lesen - Ausführung der OperationDefinition",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-read-eu-access-permission-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>EU-Zugriffsberechtigung abfragen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-read-eu-access-permission.html\">ReadEUAccessPermission</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:09:29.648194",
+        "modified": "2026-09-22T15:09:29.648200",
+        "date": "2026-09-22T15:09:29.648201",
+        "content_hash": "a0be98b9a0817f0d51d7f95dd73d595b705d9167f6c9a9aed0d731cc2b49f88a",
+        "path": "op-read-eu-access-permission-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A318",
+        "title": "TI-Flow-Fachdienst - Task schließen - EU - Ausführung der OperationDefinition",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-eu-close-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>Task aus der EU schließen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-eu-close-operation.html\">EUCloseOperation</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:09:29.649696",
+        "modified": "2026-09-22T15:09:29.649698",
+        "date": "2026-09-22T15:09:29.649699",
+        "content_hash": "fa6a646e0557f1a3690667bae1008ddb432a318bf87d636f5d99f16fd3357745",
+        "path": "op-eu-close-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A319",
+        "title": "TI-Flow-Fachdienst - Task erzeugen - Ausführung der OperationDefinition",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-create-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>Task erzeugen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-rx-create-op.html\">TIFlowRXOPCreate</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:09:29.653325",
+        "modified": "2026-09-22T15:09:29.653329",
+        "date": "2026-09-22T15:09:29.653330",
+        "content_hash": "7b7b243bf79c34f941d2f11ba5b3e1f4992006f0f3d7f1d73958102631e10698",
+        "path": "op-create-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
         "key": "IG-TIFLOW-ERP-A32",
         "title": "TI-Flow-FdV: E-Rezept zuweisen - Nachricht erstellen",
         "actor": [
@@ -5597,6 +5837,126 @@
         "date": "2026-08-26T13:45:25.888940",
         "content_hash": "3637beaaca92c537dbb1c3dfb2d883cd9119b79d786f4ad38857e7bfeee582a2",
         "path": "query-api-communication-req-fdv.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A320",
+        "title": "TI-Flow-Fachdienst - Task akzeptieren - Ausführung der OperationDefinition",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-accept-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>Task akzeptieren</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-tiflow-rx-accept-op.html\">TIFlowRXOPAccept</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:09:29.654589",
+        "modified": "2026-09-22T15:09:29.654593",
+        "date": "2026-09-22T15:09:29.654595",
+        "content_hash": "789e23e5d481d5dac7a68e9b9ec890820a193cfafb0009e238e893d33f3b2327",
+        "path": "op-accept-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A321",
+        "title": "TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Ausführung der OperationDefinition",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-revoke-eu-access-permission-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>EU-Zugriffsberechtigung löschen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-revoke-eu-access-permission.html\">RevokeEUAccessPermission</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:09:29.671273",
+        "modified": "2026-09-22T15:09:29.671275",
+        "date": "2026-09-22T15:09:29.671276",
+        "content_hash": "b788c673b234e6f8cca6d179772e831cc9233458ae45fe32d19936cb7d9f5199",
+        "path": "op-revoke-eu-access-permission-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A322",
+        "title": "TI-Flow-Fachdienst - Zugriffsberechtigung schreiben - Ausführung der OperationDefinition",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/op-grant-eu-access-permission-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS die Operation <i>EU-Zugriffsberechtigung erstellen</i> gemäß der FHIR OperationDefinition <a href=\"./OperationDefinition-grant-eu-access-permission.html\">GrantEUAccessPermission</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:\n    <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile validation failed</td>\n        </tr>\n    </table>\n   abbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:09:29.683232",
+        "modified": "2026-09-22T15:09:29.683233",
+        "date": "2026-09-22T15:09:29.683235",
+        "content_hash": "cd9d3ecf81d76702a9b5326a71366dcd8706861518d234b8babd5646e0ee5c2f",
+        "path": "op-grant-eu-access-permission-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A323",
+        "title": "PS abgebende LEI: Dispensierinformationen - Flowtype 160/166/169/200/209 - keine Sonder-PZN",
+        "actor": [
+            "PS_TI-Flow_Apotheke"
+        ],
+        "test_procedures": {
+            "PS_TI-Flow_Apotheke": [
+                "Herstellererklärung"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-dispensierinformationen.md",
+        "text": "Das PS der abgebenden LEI DARF beim Erstellen von Dispensierinformationen NICHT Sonder-PZNs in den Dispensierinformationen aufnehmen, damit nur medizinisch relevante Informationen an den TI-Flow-Fachdienst übertragen werden.",
+        "conformance": "SHALL NOT",
+        "created": "2026-09-22T15:09:29.692470",
+        "modified": "2026-09-22T15:09:29.692474",
+        "date": "2026-09-22T15:09:29.692475",
+        "content_hash": "a32a0e2c5d229a090da98ccc7610c17bfa75a89e6d86682cc9483675b7a9c7ad",
+        "path": "menu-technische-umsetzung-dispensierinformationen.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-ERP-A324",
+        "title": "TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen - E-Rezept",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-push.md",
+        "text": "Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß der Tabelle erzeugen.\n\n<table>\n<thead>\n<tr>\n<th>ChannelId</th>\n<th>Identifier</th>\n<th>IdentifierType</th>\n<th>Product</th>\n<th>ActorName</th>\n<th>Message</th>\n</tr>\n</thead>\n<tbody>\n\n<tr>\n<td>tiflow.task.activate</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.accept</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.reject</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.dispense</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nGEM_ERP_PR_PAR_DispenseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.abort</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.communication.new</td>\n<td>Communication.basedOn.reference</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>\nCommunication.payload.content.info_text\n</td>\n</tr>\n\n<tr>\n<td>tiflow.eu.prescription.get</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.eu.prescription.redeem</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.eu.prescription.close</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter[rxDispensation].[medication].[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter.part[practionerData].name.text</td>\n<td>-</td>\n</tr>\n\n</tbody>\n</table>\n\n<p>\nDamit die Tabelle etwas übersichtlicher gestaltet ist, werden einige Abkürzungen verwendet. Diese werden hier beschrieben:\n<table>\n<thead>\n<tr>\n<th>Abkürzung</th>\n<th>Definition</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>[medicationName]</td>\n<td>Falls medication dem Profil \"KBV_PR_ERP_Medication_Ingredient\" entspricht:<br>\n`Medication.ingredient.item.itemCodeableConcept.text`<br>\nAnsonsten:<br>\n`Medication.code.text`</td>\n</tr>\n</tbody>\n</table>\n</p>",
+        "conformance": "SHALL",
+        "created": "2026-09-29T11:46:25.221345",
+        "modified": "2026-09-29T11:46:25.221374",
+        "date": "2026-09-29T11:46:25.221384",
+        "content_hash": "eb93edb51ff066d205dcc2834eddb28cf69ab665e765bfc90d535a8874022e7f",
+        "path": "menu-technische-umsetzung-push.html",
         "release": "2.0.0"
     },
     {
@@ -6470,12 +6830,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-communication-req-data.md",
-        "text": "Der TI-Flow-Fachdienst, das TI-Flow-FdV und das PS der abgebenden LEI MÜSSEN für den Anwendungsfall \"Nachricht durch Abgebenden übermitteln\" Nachrichten mit der folgenden Datenstruktur in der contentString-Eigenschaft des GEM_ERP_PR_Communication_Reply unterstützen.\n \n <table>\n <thead>\n <tr>\n <th>Attribut</th>\n <th>verpflichtend</th>\n <th>Beschreibung</th>\n <th>zulässige Werte</th>\n <th>Beispiel</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>version</td>\n <td>ja</td>\n <td>Gibt die Version des JSON an. Aktuell immer 3. Kann im weiteren Lebenszyklus verändert werden.</td>\n <td>nummerisch, bis zu 6 Stellen</td>\n <td>3</td>\n </tr>\n <tr>\n <td>communicationType</td>\n <td>ja</td>\n <td>Beschreibt die Art der Nachricht.</td>\n <td>text, link, reservationStatus, pickupCodeHR, pickupCodeDMC, deliveryStatus, paymentInfo</td>\n <td>reservationStatus</td>\n </tr>\n <tr>\n <td>text</td>\n <td>Falls communicationType = text oder link: ja<br>Falls communicationType = pickupCodeHR, pickupCodeDMC, deliveryStatus oder paymentInfo: nein<br>Falls communicationType = reservationStatus: verboten</td>\n <td>Zusätzlicher Freitext der Apotheke an den Versicherten. Falls communicationType gleich \"link\" ist, beschreibt dies das URL-Ziel, sodass der Versicherte vor dem Aufruf über das Ziel des Absprungs informiert wird.</td>\n <td>800 Stellen, keine URL</td>\n <td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen. Den Abholcode finden Sie anbei.</td>\n </tr>\n <tr>\n <td>url</td>\n <td>Falls communicationType = link: ja<br>Ansonsten: verboten</td>\n <td>Einbettung einer externen URL ausschließlich für das Einlösen von E-Rezepten in einer externen Bestellplattform.</td>\n <td>500 Stellen, HTTPS-URL gemäß RFC3986</td>\n <td>https://www.meine-apotheke.de/pickup/59b52340-7a6a-430d-99ea-45a8e5cd03f6</td>\n </tr>\n <tr>\n <td>transactionID</td>\n <td>ja</td>\n <td>Wiederholung aus der empfangenen Nachricht. Dient dazu, Nachrichten einer Transaktion zuordnen zu können.</td>\n <td>36 Stellen, UUID</td>\n <td>8196b610-9b77-47ab-936e-362cd92ef2aa</td>\n </tr>\n <tr>\n <td>readyForCollection</td>\n <td>Falls communicationType = reservationStatus: ja<br>Ansonsten: verboten</td>\n <td>Zeitpunkt der Verfügbarkeit</td>\n <td>immediately, sameDay, nextDay, nextDayAM, nextDayPM, unknown, notAvailable</td>\n <td>immediately</td>\n </tr>\n <tr>\n <td>deliveryStatus</td>\n <td>Falls communicationType = deliveryStatus: ja<br>Ansonsten: verboten</td>\n <td>Information zum Status der Lieferung (Bote, Versand)</td>\n <td>preparedWaiting, inTransport, delivered, incident</td>\n <td>inTransport</td>\n </tr>\n <tr>\n <td>inTransportPosition</td>\n <td>Falls communicationType = deliveryStatus: nein<br>Ansonsten: verboten</td>\n <td>GMS Position des Transporters</td>\n <td>Lat, Long</td>\n <td><pre>{\n \"long\": 13.387595793605172,\n \"lat\": 52.522529939635795\n}</pre></td>\n </tr>\n <tr>\n <td>inTransportETA</td>\n <td>Falls communicationType = deliveryStatus: nein<br>Ansonsten: verboten</td>\n <td>Erwartete Ankunft Zeitfenster von - bis</td>\n <td>TIMESTAMP-TIMESTAMP</td>\n <td><pre>{\n \"from\": 1735736400,\n \"to\": 1735741800\n}</pre></td>\n </tr>\n <tr>\n <td>totalAmount</td>\n <td>Falls communicationType = paymentInfo: ja<br>Ansonsten: verboten</td>\n <td>Zu zahlender Betrag in Eurocent, rein nummerisch</td>\n <td>Nummerisch</td>\n <td>12550</td>\n </tr>\n <tr>\n <td>paymentMethods</td>\n <td>Falls communicationType = paymentInfo: nein<br>Ansonsten: verboten</td>\n <td>Verfügbare Zahlungsarten</td>\n <td>Array aus Objects: cash, bankaccount, creditcard, paypal (optional)</td>\n <td><pre>\"paymentMethods\": [\n { \"method\": \"cash\" },\n {\n \"method\": \"bankaccount\",\n \"url\": \"https://my.payment.provider.de/pay/...\"\n },\n {\n \"method\": \"paypal\",\n \"url\": \"https://paypal.me/&lt;some_account&gt;\"\n }\n]</pre></td>\n </tr>\n <tr>\n <td>pickupCodeHR</td>\n <td>Falls communicationType = pickupCodeHR und supplyOptionsType = onPremise: ja<br>Ansonsten: verboten</td>\n <td>Menschenlesbarer Abholcode</td>\n <td>1-8 Stellen</td>\n <td>12315615</td>\n </tr>\n <tr>\n <td>pickupCodeDMC</td>\n <td>Falls communicationType = pickupCodeDMC und supplyOptionsType = onPremise: ja<br>Ansonsten: verboten</td>\n <td>Maschinenlesbarer Abholcode (Data-Matrix-Code gemäß ISO/IEC 16022:2006)</td>\n <td>8-2000 Stellen</td>\n <td>5346a991-c5c6-49c8-b87b-4cdd255bbde4</td>\n </tr>\n </tbody>\n</table>\n \n<div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_003 Nachricht als Apotheke an einen Versicherten schicken</figcaption></div>",
+        "text": "Der TI-Flow-Fachdienst, das TI-Flow-FdV und das PS der abgebenden LEI MÜSSEN für den Anwendungsfall \"Nachricht durch Abgebenden übermitteln\" Nachrichten mit der folgenden Datenstruktur in der contentString-Eigenschaft des GEM_ERP_PR_Communication_Reply unterstützen.\n \n <table>\n <thead>\n <tr>\n <th>Attribut</th>\n <th>verpflichtend</th>\n <th>Beschreibung</th>\n <th>zulässige Werte</th>\n <th>Beispiel</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>version</td>\n <td>ja</td>\n <td>Gibt die Version des JSON an. Aktuell immer 3. Kann im weiteren Lebenszyklus verändert werden.</td>\n <td>nummerisch, bis zu 6 Stellen</td>\n <td>3</td>\n </tr>\n <tr>\n <td>communicationType</td>\n <td>ja</td>\n <td>Beschreibt die Art der Nachricht.</td>\n <td>text, link, reservationStatus, pickupCodeHR, pickupCodeDMC, deliveryStatus, paymentInfo</td>\n <td>reservationStatus</td>\n </tr>\n <tr>\n <td>text</td>\n <td>Falls communicationType = text oder link: ja<br>Falls communicationType = pickupCodeHR, pickupCodeDMC, deliveryStatus oder paymentInfo: nein<br>Falls communicationType = reservationStatus: verboten</td>\n <td>Zusätzlicher Freitext der Apotheke an den Versicherten. Falls communicationType gleich \"link\" ist, beschreibt dies das URL-Ziel, sodass der Versicherte vor dem Aufruf über das Ziel des Absprungs informiert wird.</td>\n <td>800 Stellen, keine URL</td>\n <td>Wir möchten Sie informieren, dass Ihre bestellten Medikamente zur Abholung bereitstehen. Den Abholcode finden Sie anbei.</td>\n </tr>\n <tr>\n <td>url</td>\n <td>Falls communicationType = link: ja<br>Ansonsten: verboten</td>\n <td>Einbettung einer externen URL ausschließlich für das Einlösen von E-Rezepten in einer externen Bestellplattform.</td>\n <td>500 Stellen, HTTPS-URL gemäß RFC3986</td>\n <td>https://www.meine-apotheke.de/pickup/59b52340-7a6a-430d-99ea-45a8e5cd03f6</td>\n </tr>\n <tr>\n <td>transactionID</td>\n <td>ja</td>\n <td>Wiederholung aus der empfangenen Nachricht. Dient dazu, Nachrichten einer Transaktion zuordnen zu können.</td>\n <td>36 Stellen, UUID</td>\n <td>8196b610-9b77-47ab-936e-362cd92ef2aa</td>\n </tr>\n <tr>\n <td>readyForCollection</td>\n <td>Falls communicationType = reservationStatus: ja<br>Ansonsten: verboten</td>\n <td>Zeitpunkt der Verfügbarkeit</td>\n <td>immediately, sameDay, nextDay, nextDayAM, nextDayPM, unknown, notAvailable</td>\n <td>immediately</td>\n </tr>\n <tr>\n <td>deliveryStatus</td>\n <td>Falls communicationType = deliveryStatus: ja<br>Ansonsten: verboten</td>\n <td>Information zum Status der Lieferung (Bote, Versand)</td>\n <td>preparedWaiting, inTransport, delivered, incident</td>\n <td>inTransport</td>\n </tr>\n <tr>\n <td>inTransportPosition</td>\n <td>Falls communicationType = deliveryStatus: nein<br>Ansonsten: verboten</td>\n <td>GMS Position des Transporters</td>\n <td>Lat, Long</td>\n <td><pre>{\n \"long\": 13.387595793605172,\n \"lat\": 52.522529939635795\n}</pre></td>\n </tr>\n <tr>\n <td>inTransportETA</td>\n <td>Falls communicationType = deliveryStatus: nein<br>Ansonsten: verboten</td>\n <td>Erwartete Ankunft Zeitfenster von - bis</td>\n <td>TIMESTAMP-TIMESTAMP</td>\n <td><pre>{\n \"from\": 1735736400,\n \"to\": 1735741800\n}</pre></td>\n </tr>\n <tr>\n <td>totalAmount</td>\n <td>Falls communicationType = paymentInfo: ja<br>Ansonsten: verboten</td>\n <td>Zu zahlender Betrag in Eurocent, rein nummerisch</td>\n <td>Nummerisch</td>\n <td>12550</td>\n </tr>\n <tr>\n <td>paymentMethods</td>\n <td>Falls communicationType = paymentInfo: nein<br>Ansonsten: verboten</td>\n <td>Verfügbare Zahlungsarten</td>\n <td>Array aus Objects: cash, bankaccount, creditcard, paypal (optional)</td>\n <td><pre>\"paymentMethods\": [\n { \"method\": \"cash\" },\n {\n \"method\": \"bankaccount\",\n \"url\": \"https://my.payment.provider.de/pay/...\"\n },\n {\n \"method\": \"paypal\",\n \"url\": \"https://paypal.me/&lt;some_account&gt;\"\n }\n]</pre></td>\n </tr>\n <tr>\n <td>pickupCodeHR</td>\n <td>Falls communicationType = pickupCodeHR: ja<br>Ansonsten: verboten</td>\n <td>Menschenlesbarer Abholcode</td>\n <td>1-8 Stellen</td>\n <td>12315615</td>\n </tr>\n <tr>\n <td>pickupCodeDMC</td>\n <td>Falls communicationType = pickupCodeDMC: ja<br>Ansonsten: verboten</td>\n <td>Maschinenlesbarer Abholcode (Data-Matrix-Code gemäß ISO/IEC 16022:2006)</td>\n <td>8-2000 Stellen</td>\n <td>5346a991-c5c6-49c8-b87b-4cdd255bbde4</td>\n </tr>\n </tbody>\n</table>\n \n<div><figcaption><strong>Tabelle: </strong>TAB_eRpDM_003 Nachricht als Apotheke an einen Versicherten schicken</figcaption></div>",
         "conformance": "SHALL",
         "created": "2026-06-25T11:43:04.346155",
-        "modified": "2026-08-26T13:45:25.907494",
-        "date": "2026-08-26T13:45:25.907494",
-        "content_hash": "b44314e8bbf5e310ce1e74b4fd6296f547e2c4ee0526ef155da7cb36ca8df1b0",
+        "modified": "2026-09-22T15:01:12.106073",
+        "date": "2026-09-22T15:01:12.106073",
+        "content_hash": "41bab776507b9cd52001ce050d34e07237a2bd946d2d5449c5be6fd5550ef6be",
         "path": "query-api-communication-req-data.html",
         "release": "2.0.0"
     },
