@@ -46,11 +46,6 @@ Usage: #definition
     * code = #79204
     * equivalence = #equivalent
 * group[=].element[+]
-  * code = #TIFLOW_AUTH_ROLE_NOT_ALLOWED
-  * target[+]
-    * code = #79205
-    * equivalence = #equivalent
-* group[=].element[+]
   * code = #TIFLOW_BOM_DETECTED
   * target[+]
     * code = #79206
@@ -114,11 +109,6 @@ Usage: #definition
   * code = #TIFLOW_KVNR_INVALID
   * target[+]
     * code = #79218
-    * equivalence = #equivalent
-* group[=].element[+]
-  * code = #TIFLOW_KVNR_MISMATCH
-  * target[+]
-    * code = #79219
     * equivalence = #equivalent
 * group[=].element[+]
   * code = #TIFLOW_LANR_ZANR_INVALID
@@ -240,16 +230,6 @@ Usage: #definition
   * target[+]
     * code = #79276
     * equivalence = #equivalent
-
-* group[=].element[+]
-  * code = #TIFLOW_RESOURCE_FULLURL_INVALID
-  * target[+]
-    * code = #79227
-    * equivalence = #equivalent
-
-
-
-
 
 
 // Non OperationOutcome JSON Fehlercodes
