@@ -297,6 +297,36 @@ def _normalize_http_status_code(value: str) -> str:
     return match.group(1) if match else (value or "400")
 
 
+def check_requirement_http_status_invariants(error_codes: List[ErrorCode]) -> List[Finding]:
+    """Check error codes whose requirements have a fixed HTTP status contract."""
+    findings: List[Finding] = []
+
+    for err in error_codes:
+        if err.code != "TIFLOW_TASK_STATUS_MISMATCH":
+            continue
+
+        requirement_status = _normalize_http_status_code(err.http_code)
+        if requirement_status == "412":
+            continue
+
+        findings.append(
+            Finding(
+                type="REQUIREMENT_HTTP_STATUS_MISMATCH",
+                ig_module=err.module,
+                file_path=err.file_path,
+                line=err.line,
+                code=err.code,
+                requirement_key=err.requirement_key,
+                message=(
+                    f"Requirement '{err.requirement_key}' declares HTTP status {requirement_status} "
+                    "for code 'TIFLOW_TASK_STATUS_MISMATCH'; expected 412"
+                ),
+            )
+        )
+
+    return findings
+
+
 def check_capabilitystatement_http_status_consistency(
     error_codes: List[ErrorCode],
     ig_roots: Dict[str, Path],

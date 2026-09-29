@@ -8,7 +8,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 #### POST /Communication
 
-Für Prüfung Payload siehe [Datenmodell Payload für Communication-Query](./query-api-communication-req-data.html)
+Für Prüfung Payload siehe Datenmodell Payload für Communication-Query im [IG - TIFlow Arzneimittel]. 
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A103" title="TI-Flow-Fachdienst - Abrechnungsinformationen - Einstellen von Communications - FHIR-Validierung" version="0">
     <meta lockversion="false"/>

@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
-"""Check that all codes in configured CodeSystems are mapped in the telemetry ConceptMap.
+"""Validate telemetry ConceptMaps against OperationOutcomeDetails ValueSets.
 
-This script parses FSH CodeSystem files and the TIFLOW_CM_TelemetryDataStatusCodes
-ConceptMap to verify that:
-1. Every code defined in the CodeSystem(s) has an entry in the ConceptMap.
-2. Each mapped entry has a target code (telemetry status code) assigned.
+Check required mappings, reject codes absent from the defining ValueSet (or JSON
+error tables), and reject duplicate telemetry target codes across IGs.
+Only the CSV report is written; FSH resources are never modified.
 
 Exit codes:
-  0 - All codes are fully mapped.
-  1 - One or more codes are missing from the ConceptMap or lack a target code.
+    0 - No findings.
+    1 - One or more validation findings.
 """
 
 from __future__ import annotations
@@ -34,6 +33,9 @@ VS_INCLUDE_CODE_RE = re.compile(
     r"^\*\s+include\s+\$?(\S+)#(\S+)(?:\s+\"[^\"]*\")?\s*$",
     re.MULTILINE,
 )
+VS_INCLUDE_SYSTEM_RE = re.compile(
+    r"^\*\s+include\s+codes\s+from\s+system\s+\$?(\S+)\s*$", re.MULTILINE
+)
 
 # Regex to extract alias definitions from a FSH aliases file.
 # Matches lines like: Alias: $ti-oo = https://gematik.de/fhir/ti/CodeSystem/...
@@ -47,24 +49,22 @@ JSON_ERROR_CODE_RE = re.compile(
     re.DOTALL,
 )
 
-# Regex to extract element code mappings from the ConceptMap FSH file.
-# Matches lines like: * group[=].element[0].code = #TIFLOW_OCSP_BACKEND_ERROR
+# Regexes to extract element and target mappings from the ConceptMap FSH file.
+# The parser accepts both legacy numeric paths and FSH's append syntax.
 CM_ELEMENT_CODE_RE = re.compile(
-    r"^\*\s+group\[.*?\]\.element\[\d+\]\.code\s*=\s*#(\S+)", re.MULTILINE
+    r"^\s*\*\s+group\[.*?\]\.element\[(?:\d+|\+|=)\]\.code\s*=\s*#(\S+)",
+    re.MULTILINE,
 )
 
-# Regex to extract target code from ConceptMap FSH file.
-# Matches lines like: * group[=].element[0].target[0].code = #79001
 CM_TARGET_CODE_RE = re.compile(
-    r"^\*\s+group\[.*?\]\.element\[(\d+)\]\.target\[\d+\]\.code\s*=\s*#(\S+)", re.MULTILINE
+    r"^\s*\*\s+group\[.*?\]\.element\[(?:\d+|\+|=)\]\.target\[(?:\d+|\+|=)\]\.code\s*=\s*#(\S+)",
+    re.MULTILINE,
 )
-
-# Regex to extract the source system URL from the ConceptMap group.
-# Matches: * group[+].source = "https://..."
-CM_GROUP_SOURCE_RE = re.compile(
-    r"^\*\s+group\[\+\]\.source\s*=\s*\"([^\"]+)\"", re.MULTILINE
+CM_ELEMENT_START_RE = re.compile(
+    r"^\s*\*\s+group\[.*?\]\.element\[(?:\d+|\+|=)\]\s*$"
 )
-
+CM_TARGET_START_RE = re.compile(r"^\s*\*\s+target\[(?:\d+|\+|=)\]\s*$")
+CM_NESTED_CODE_RE = re.compile(r"^\s*\*\s+code\s*=\s*#(\S+)")
 
 @dataclass
 class Finding:
@@ -86,18 +86,11 @@ CS_NAME_RE = re.compile(r"^CodeSystem:\s*(\S+)", re.MULTILINE)
 # Matches lines like: * ^url = "https://..."
 CS_URL_RE = re.compile(r"^\*\s+\^url\s*=\s*\"([^\"]+)\"", re.MULTILINE)
 
-# Range for auto-assigned telemetry target codes.
-TARGET_CODE_RANGE_START = 79200
-TARGET_CODE_RANGE_END = 79999
-
-# Regex to find ALL numeric target codes in the ConceptMap (for collision detection).
-CM_ALL_TARGET_CODES_RE = re.compile(
-    r"\.target\[\d+\]\.code\s*=\s*#(\d+)", re.MULTILINE
-)
-
 # Regex to find the CodeSystem URL used as source in a ConceptMap group.
 CM_GROUP_SOURCE_URL_RE = re.compile(
-    r"^\*\s+group\[\+\]\.source\s*=\s*\"([^\"]+)\"", re.MULTILINE
+    r"^\s*\*\s+group\[\+\]\.source\s*=\s*\"([^\"]+)\""
+    r"|^\s*\*\s+group\[\+\]\s*$\s*^\s*\*\s+source\s*=\s*\"([^\"]+)\"",
+    re.MULTILINE,
 )
 
 # Discovery patterns for OperationOutcomeDetails artifacts.
@@ -159,51 +152,107 @@ def parse_codesystem_name(fsh_path: Path) -> str | None:
     return match.group(1) if match else None
 
 
-def parse_conceptmap_mappings(fsh_path: Path) -> Dict[str, str | None]:
-    """Extract mapped codes and their target values from the ConceptMap FSH file.
-
-    Returns a dict mapping source code -> target code (or None if no target assigned).
-    """
-    content = fsh_path.read_text(encoding="utf-8")
-
-    # Parse line by line, tracking element code and target code pairs.
-    # Element codes and target codes are associated by their position (sequential lines).
-    result: Dict[str, str | None] = {}
+def _parse_mapping_entries(content: str) -> List[tuple[str, str | None]]:
+    # Parse line by line, tracking element code and target code pairs. Both the
+    # legacy flat paths and nested FSH rules are accepted.
+    result: List[tuple[str, str | None]] = []
     current_element_code: str | None = None
+    has_target = False
+    nested_element = False
+    nested_target = False
 
     for line in content.splitlines():
-        # Match element code line
         elem_match = CM_ELEMENT_CODE_RE.match(line)
         if elem_match:
-            # If we had a previous element code without a target, record it
-            if current_element_code is not None and current_element_code not in result:
-                result[current_element_code] = None
+            if current_element_code is not None and not has_target:
+                result.append((current_element_code, None))
             current_element_code = elem_match.group(1)
+            has_target = False
+            nested_element = False
+            nested_target = False
             continue
 
-        # Match target code line
         target_match = CM_TARGET_CODE_RE.match(line)
         if target_match:
-            target_code = target_match.group(2)
             if current_element_code is not None:
-                result[current_element_code] = target_code
-                current_element_code = None
+                result.append((current_element_code, target_match.group(1)))
+                has_target = True
+            nested_element = False
+            nested_target = False
+            continue
+
+        if CM_ELEMENT_START_RE.match(line):
+            if current_element_code is not None and not has_target:
+                result.append((current_element_code, None))
+            current_element_code = None
+            has_target = False
+            nested_element = True
+            nested_target = False
+            continue
+
+        if CM_TARGET_START_RE.match(line):
+            nested_element = False
+            nested_target = True
+            continue
+
+        nested_code_match = CM_NESTED_CODE_RE.match(line)
+        if nested_code_match and nested_element:
+            current_element_code = nested_code_match.group(1)
+            has_target = False
+            nested_element = False
+            continue
+
+        if nested_code_match and nested_target:
+            if current_element_code is not None:
+                result.append((current_element_code, nested_code_match.group(1)))
+                has_target = True
+            nested_target = False
             continue
 
     # Handle last element if it had no target
-    if current_element_code is not None and current_element_code not in result:
-        result[current_element_code] = None
+    if current_element_code is not None and not has_target:
+        result.append((current_element_code, None))
 
     return result
 
 
-def find_conceptmap_file(ig_roots: List[Path]) -> Path | None:
-    """Locate the TIFLOW_CM_TelemetryDataStatusCodes.fsh file in known IG roots."""
-    for ig_root in ig_roots:
-        candidates = list(ig_root.rglob("TIFLOW_CM_TelemetryDataStatusCodes.fsh"))
-        if candidates:
-            return candidates[0]
-    return None
+def _parse_mappings(content: str) -> Dict[str, str | None]:
+    return dict(_parse_mapping_entries(content))
+
+
+def parse_conceptmap_mappings(fsh_path: Path) -> Dict[str, str | None]:
+    """Return all source codes and target codes in a ConceptMap."""
+    return _parse_mappings(fsh_path.read_text(encoding="utf-8"))
+
+
+def parse_conceptmap_groups(fsh_path: Path) -> Dict[str, Dict[str, str | None]]:
+    """Return mappings keyed by their source CodeSystem URL."""
+    content = fsh_path.read_text(encoding="utf-8")
+    sources = list(CM_GROUP_SOURCE_URL_RE.finditer(content))
+    return {
+        (match.group(1) or match.group(2)): _parse_mappings(
+            content[match.end():sources[index + 1].start() if index + 1 < len(sources) else len(content)]
+        )
+        for index, match in enumerate(sources)
+    }
+
+
+def parse_conceptmap_group_entries(fsh_path: Path) -> List[tuple[str, str, str | None]]:
+    """Return every source/target pair, including repeated source codes."""
+    content = fsh_path.read_text(encoding="utf-8")
+    sources = list(CM_GROUP_SOURCE_URL_RE.finditer(content))
+    return [
+        (match.group(1) or match.group(2), code, target)
+        for index, match in enumerate(sources)
+        for code, target in _parse_mapping_entries(
+            content[match.end():sources[index + 1].start() if index + 1 < len(sources) else len(content)]
+        )
+    ]
+
+
+def find_conceptmap_file(ig_root: Path) -> Path:
+    """Return an IG's telemetry ConceptMap path."""
+    return ig_root / "input" / "fsh" / "conceptmaps" / "TIFLOW_CM_TelemetryDataStatusCodes.fsh"
 
 
 def discover_codesystem_files(ig_roots: List[Path]) -> List[Path]:
@@ -225,38 +274,28 @@ def discover_valueset_files(ig_roots: List[Path]) -> List[Path]:
 def parse_codesystem_source_url(fsh_path: Path) -> str | None:
     """Resolve the CodeSystem source URL used in the ConceptMap for a CodeSystem file.
 
-    Prefer explicit * ^url if available. Otherwise fallback to DEFAULT_CODESYSTEM_URL_BASE + Id.
+    Prefer explicit * ^url if available. Otherwise use the standard CodeSystem base URL.
     """
     content = fsh_path.read_text(encoding="utf-8")
     url_match = CS_URL_RE.search(content)
     if url_match:
         return url_match.group(1)
-
     cs_id = parse_codesystem_id(fsh_path)
-    if cs_id:
-        return f"{DEFAULT_CODESYSTEM_URL_BASE}/{cs_id}"
-    return None
+    return f"{DEFAULT_CODESYSTEM_URL_BASE}/{cs_id}" if cs_id else None
 
-# Group source identifier for JSON error codes extracted from markdown requirement tables.
+
 JSON_ERROR_CODES_GROUP_URL = "json-fehlercodes"
-
-# Files to skip when scanning for JSON error code tables.
 JSON_ERROR_CODE_SKIP_FILES = {"CHEAT_SHEET.md"}
 
 
 def parse_json_error_codes_from_markdown(ig_roots: List[Path]) -> Set[str]:
-    """Scan markdown files under igs/ for error-code-json tables and extract Error Code values.
-
-    Skips files listed in JSON_ERROR_CODE_SKIP_FILES.
-    Returns a set of unique error code strings.
-    """
+    """Collect JSON error codes from IG requirement tables."""
     codes: Set[str] = set()
     for ig_root in ig_roots:
         for md_file in ig_root.rglob("*.md"):
             if md_file.name in JSON_ERROR_CODE_SKIP_FILES:
                 continue
-            content = md_file.read_text(encoding="utf-8")
-            for match in JSON_ERROR_CODE_RE.finditer(content):
+            for match in JSON_ERROR_CODE_RE.finditer(md_file.read_text(encoding="utf-8")):
                 code = match.group(1).strip()
                 if code and code != "-":
                     codes.add(code)
@@ -269,109 +308,121 @@ def run_check(
     valueset_paths: List[Path] | None = None,
     output_csv: Path | None = None,
 ) -> List[Finding]:
-    """Run the telemetry mapping completeness check.
-
-    Returns a list of findings (empty if all codes are mapped).
-    """
+    """Check mappings for local CodeSystems, imported ValueSet codes, and JSON errors."""
     if codesystem_paths is None:
         codesystem_paths = discover_codesystem_files(ig_roots)
     if valueset_paths is None:
         valueset_paths = discover_valueset_files(ig_roots)
 
-    conceptmap_path = find_conceptmap_file(ig_roots)
-    if conceptmap_path is None:
-        print("ERROR: Could not find TIFLOW_CM_TelemetryDataStatusCodes.fsh")
-        return [Finding(
-            type="CONCEPTMAP_NOT_FOUND",
-            codesystem_file="",
-            code="",
-            message="TIFLOW_CM_TelemetryDataStatusCodes.fsh not found in any IG root",
-        )]
+    findings: List[Finding] = []
+    mapped_by_ig: Dict[str, Dict[str, Dict[str, str | None]]] = {}
+    for ig_root in ig_roots:
+        conceptmap_path = find_conceptmap_file(ig_root)
+        if not conceptmap_path.exists():
+            findings.append(Finding(
+                type="CONCEPTMAP_NOT_FOUND",
+                codesystem_file=ig_root.name,
+                code="",
+                message=f"Telemetry ConceptMap not found in IG '{ig_root.name}'",
+            ))
+            continue
+        mapped_by_ig[ig_root.name] = parse_conceptmap_groups(conceptmap_path)
 
-    if not codesystem_paths:
-        print("ERROR: No CodeSystem files found")
-        return [Finding(
-            type="CODESYSTEM_NOT_FOUND",
-            codesystem_file=CODESYSTEM_DISCOVERY_GLOB,
-            code="",
-            message="No CodeSystem files found in any IG root",
-        )]
-
-    # Parse concept map
-    mapped_codes = parse_conceptmap_mappings(conceptmap_path)
-
-    # Build system reference -> URL map for ValueSet include lines.
-    # Sources: aliases, discovered local CodeSystems, and known external references.
     system_ref_url_map: Dict[str, str] = dict(EXTERNAL_SYSTEM_REF_URLS)
-    aliases = parse_aliases(ig_roots)
-    system_ref_url_map.update(aliases)
+    system_ref_url_map.update(parse_aliases(ig_roots))
     for cs_path in codesystem_paths:
         cs_name = parse_codesystem_name(cs_path)
         cs_url = parse_codesystem_source_url(cs_path)
         if cs_name and cs_url:
             system_ref_url_map[cs_name] = cs_url
 
-    findings: List[Finding] = []
-
     for cs_path in codesystem_paths:
-        cs_codes = parse_codesystem_codes(cs_path)
-        cs_filename = cs_path.name
-
-        for code in sorted(cs_codes):
+        mapped_codes = mapped_by_ig.get(cs_path.parents[3].name, {}).get(
+            parse_codesystem_source_url(cs_path), {}
+        )
+        for code in sorted(parse_codesystem_codes(cs_path)):
             if code not in mapped_codes:
                 findings.append(Finding(
-                    type="MISSING_MAPPING",
-                    codesystem_file=cs_filename,
-                    code=code,
-                    message=f"Code '{code}' is not mapped in the ConceptMap",
+                    "MISSING_MAPPING", cs_path.name, code,
+                    f"Code '{code}' is not mapped in the ConceptMap",
                 ))
             elif mapped_codes[code] is None:
                 findings.append(Finding(
-                    type="MISSING_TARGET_CODE",
-                    codesystem_file=cs_filename,
-                    code=code,
-                    message=f"Code '{code}' is mapped but has no target code assigned",
+                    "MISSING_TARGET_CODE", cs_path.name, code,
+                    f"Code '{code}' is mapped but has no target code assigned",
                 ))
 
-    # Check individually included codes from ValueSet files
+    owner_by_url = {
+        parse_codesystem_source_url(cs_path): cs_path.parents[3].name
+        for cs_path in codesystem_paths
+    }
     for vs_path in valueset_paths:
-        vs_code_entries = parse_valueset_individual_codes(vs_path)
-        for system_ref, code in vs_code_entries:
+        for system_ref, code in parse_valueset_individual_codes(vs_path):
             resolved_url = system_ref_url_map.get(system_ref)
             source_label = resolved_url if resolved_url else vs_path.name
+            mapped_codes = mapped_by_ig.get(owner_by_url.get(resolved_url, "core"), {}).get(
+                resolved_url, {}
+            )
             if code not in mapped_codes:
                 findings.append(Finding(
-                    type="MISSING_MAPPING",
-                    codesystem_file=source_label,
-                    code=code,
-                    message=f"Code '{code}' is not mapped in the ConceptMap",
+                    "MISSING_MAPPING", source_label, code,
+                    f"Code '{code}' is not mapped in the ConceptMap",
                 ))
             elif mapped_codes[code] is None:
                 findings.append(Finding(
-                    type="MISSING_TARGET_CODE",
-                    codesystem_file=source_label,
-                    code=code,
-                    message=f"Code '{code}' is mapped but has no target code assigned",
+                    "MISSING_TARGET_CODE", source_label, code,
+                    f"Code '{code}' is mapped but has no target code assigned",
                 ))
 
-    # Check JSON error codes from markdown requirement tables
+    mapped_codes = mapped_by_ig.get("core", {}).get(JSON_ERROR_CODES_GROUP_URL, {})
     json_codes = parse_json_error_codes_from_markdown(ig_roots)
     for code in sorted(json_codes):
         if code not in mapped_codes:
             findings.append(Finding(
-                type="MISSING_MAPPING",
-                codesystem_file="error-code-json",
-                code=code,
-                message=f"Code '{code}' is not mapped in the ConceptMap",
+                "MISSING_MAPPING", "error-code-json", code,
+                f"Code '{code}' is not mapped in the ConceptMap",
             ))
         elif mapped_codes[code] is None:
             findings.append(Finding(
-                type="MISSING_TARGET_CODE",
-                codesystem_file="error-code-json",
-                code=code,
-                message=f"Code '{code}' is mapped but has no target code assigned",
+                "MISSING_TARGET_CODE", "error-code-json", code,
+                f"Code '{code}' is mapped but has no target code assigned",
             ))
 
+    allowed_by_source: Dict[str, Set[str]] = {JSON_ERROR_CODES_GROUP_URL: json_codes}
+    cs_by_name = {parse_codesystem_name(path): path for path in codesystem_paths}
+    for vs_path in valueset_paths:
+        content = vs_path.read_text(encoding="utf-8")
+        for system_ref in VS_INCLUDE_SYSTEM_RE.findall(content):
+            source_url = system_ref_url_map.get(system_ref)
+            if source_url and system_ref in cs_by_name:
+                allowed_by_source.setdefault(source_url, set()).update(
+                    parse_codesystem_codes(cs_by_name[system_ref])
+                )
+        for system_ref, code in parse_valueset_individual_codes(vs_path):
+            source_url = system_ref_url_map.get(system_ref)
+            if source_url:
+                allowed_by_source.setdefault(source_url, set()).add(code)
+
+    used_targets: Dict[str, tuple[Path, str, str]] = {}
+    for ig_root in ig_roots:
+        conceptmap_path = find_conceptmap_file(ig_root)
+        if not conceptmap_path.exists():
+            continue
+        for source_url, code, target in parse_conceptmap_group_entries(conceptmap_path):
+            if code not in allowed_by_source.get(source_url, set()):
+                findings.append(Finding(
+                    "EXTRA_MAPPING", str(conceptmap_path), code,
+                    f"Code '{code}' in source '{source_url}' is not in an OperationOutcomeDetails ValueSet or JSON error table",
+                ))
+            if target is not None:
+                if target in used_targets:
+                    prior_path, prior_source, prior_code = used_targets[target]
+                    findings.append(Finding(
+                        "DUPLICATE_TELEMETRY_CODE", str(conceptmap_path), target,
+                        f"Telemetry code '{target}' for '{source_url}#{code}' is also used by '{prior_source}#{prior_code}' in {prior_path}",
+                    ))
+                else:
+                    used_targets[target] = (conceptmap_path, source_url, code)
     return findings
 
 
@@ -381,204 +432,12 @@ def write_csv_report(csv_path: Path, findings: List[Finding], codesystem_paths: 
     with csv_path.open("w", encoding="utf-8", newline="") as fp:
         writer = csv.writer(fp)
         writer.writerow(["type", "codesystem_file", "code", "message"])
-        for f in findings:
-            writer.writerow([f.type, f.codesystem_file, f.code, f.message])
+        for finding in findings:
+            writer.writerow([finding.type, finding.codesystem_file, finding.code, finding.message])
         writer.writerow([
             "SUMMARY", "", "",
             f"Checked {len(codesystem_paths)} CodeSystem file(s), found {len(findings)} issue(s).",
         ])
-
-
-def _collect_all_used_target_codes(conceptmap_path: Path) -> Set[int]:
-    """Collect all numeric target codes already used in the ConceptMap."""
-    content = conceptmap_path.read_text(encoding="utf-8")
-    return {int(m) for m in CM_ALL_TARGET_CODES_RE.findall(content)}
-
-
-def _find_group_for_codesystem(
-    conceptmap_content: str, codesystem_url: str
-) -> str | None:
-    """Find the source URL in the ConceptMap that matches the given CodeSystem URL.
-
-    Returns the URL string if found, None otherwise.
-    """
-    for match in CM_GROUP_SOURCE_URL_RE.finditer(conceptmap_content):
-        url = match.group(1)
-        if url == codesystem_url:
-            return url
-    return None
-
-
-def _get_max_element_index(conceptmap_content: str, group_source_url: str) -> int:
-    """Find the highest element index used in the group with the given source URL.
-
-    Returns -1 if no elements exist for that group.
-    """
-    # Find the position of the group source line
-    source_pattern = re.compile(
-        r"^\*\s+group\[\+\]\.source\s*=\s*\""
-        + re.escape(group_source_url)
-        + r"\"",
-        re.MULTILINE,
-    )
-    source_match = source_pattern.search(conceptmap_content)
-    if not source_match:
-        return -1
-
-    # Find the next group[+] start (if any) to limit our search scope
-    next_group = re.search(
-        r"^\*\s+group\[\+\]\.source\s*=",
-        conceptmap_content[source_match.end():],
-        re.MULTILINE,
-    )
-    if next_group:
-        section = conceptmap_content[source_match.start():source_match.end() + next_group.start()]
-    else:
-        section = conceptmap_content[source_match.start():]
-
-    # Find all element indices in this section
-    indices = [int(m) for m in re.findall(r"element\[(\d+)\]", section)]
-    return max(indices) if indices else -1
-
-
-def fix_missing_mappings(
-    findings: List[Finding],
-    ig_roots: List[Path],
-    codesystem_paths: List[Path] | None = None,
-    valueset_paths: List[Path] | None = None,
-) -> int:
-    """Add missing code mappings to the ConceptMap.
-
-    Assigns target codes from 79200 upward (lowest unused in 79200-79999 range).
-    Creates new groups in the ConceptMap for CodeSystems that don't have one yet.
-    Returns the number of fixes applied.
-    """
-    if codesystem_paths is None:
-        codesystem_paths = discover_codesystem_files(ig_roots)
-    if valueset_paths is None:
-        valueset_paths = discover_valueset_files(ig_roots)
-
-    missing_findings = [f for f in findings if f.type == "MISSING_MAPPING"]
-    if not missing_findings:
-        return 0
-
-    conceptmap_path = find_conceptmap_file(ig_roots)
-    if conceptmap_path is None:
-        return 0
-
-    # Collect all used target codes in the full range
-    used_codes = _collect_all_used_target_codes(conceptmap_path)
-
-    # Build a mapping from codesystem_file identifier -> group URL.
-    # For CodeSystems: filename -> URL
-    # For JSON error codes: "error-code-json" -> "json-fehlercodes"
-    # For ValueSet codes: codesystem_file is already the resolved URL itself.
-    cs_url_map: Dict[str, str] = {}
-    for cs_path in codesystem_paths:
-        source_url = parse_codesystem_source_url(cs_path)
-        if source_url:
-            cs_url_map[cs_path.name] = source_url
-    cs_url_map["error-code-json"] = JSON_ERROR_CODES_GROUP_URL
-
-    conceptmap_content = conceptmap_path.read_text(encoding="utf-8")
-
-    # Group findings by codesystem file
-    findings_by_cs: Dict[str, List[Finding]] = {}
-    for f in missing_findings:
-        findings_by_cs.setdefault(f.codesystem_file, []).append(f)
-
-    # Allocate target codes from the bottom of the range upward
-    next_target = TARGET_CODE_RANGE_START
-    applied = 0
-
-    for cs_filename, cs_findings in findings_by_cs.items():
-        group_source_url = cs_url_map.get(cs_filename)
-        if group_source_url is None:
-            # For ValueSet codes, codesystem_file is already the resolved URL
-            group_source_url = cs_filename
-
-        # Check if the group already exists in the ConceptMap; create it if not
-        existing_url = _find_group_for_codesystem(conceptmap_content, group_source_url)
-        if existing_url is None:
-            # Append a new group at the end of the file
-            group_header = (
-                f"\n// {cs_filename}\n"
-                f"* group[+].source = \"{group_source_url}\"\n"
-                f"* group[=].target = \"ti-flow-telemetriedaten-statuscodes\"\n"
-            )
-            conceptmap_content = conceptmap_content.rstrip("\n") + "\n" + group_header
-            existing_url = group_source_url
-
-        max_idx = _get_max_element_index(conceptmap_content, existing_url)
-        current_idx = max_idx + 1
-
-        # Build new lines to append to this group's section
-        new_lines: List[str] = []
-        for f in sorted(cs_findings, key=lambda x: x.code):
-            # Find next available target code (lowest unused, counting up)
-            while next_target <= TARGET_CODE_RANGE_END and next_target in used_codes:
-                next_target += 1
-            if next_target > TARGET_CODE_RANGE_END:
-                print("  ERROR: No more target codes available in range 79200-79999")
-                break
-
-            new_lines.append(f"* group[=].element[{current_idx}].code = #{f.code}")
-            new_lines.append(f"* group[=].element[{current_idx}].target[0].code = #{next_target}")
-            new_lines.append(f"* group[=].element[{current_idx}].target[0].equivalence = #equivalent")
-
-            used_codes.add(next_target)
-            next_target += 1
-            current_idx += 1
-            applied += 1
-
-        if new_lines:
-            # Find insertion point: end of the group section
-            source_pattern = re.compile(
-                r"^\*\s+group\[\+\]\.source\s*=\s*\""
-                + re.escape(existing_url)
-                + r"\"",
-                re.MULTILINE,
-            )
-            source_match = source_pattern.search(conceptmap_content)
-            if source_match:
-                # Find the next group[+] start or end of file
-                next_group = re.search(
-                    r"^\*\s+group\[\+\]\.source\s*=",
-                    conceptmap_content[source_match.end():],
-                    re.MULTILINE,
-                )
-                if next_group:
-                    # Back up past any preceding blank lines and comments
-                    abs_pos = source_match.end() + next_group.start()
-                    while abs_pos > 0 and conceptmap_content[abs_pos - 1] == "\n":
-                        abs_pos -= 1
-                        # Skip over the preceding line if it's a comment or blank
-                        line_start = conceptmap_content.rfind("\n", 0, abs_pos)
-                        line_start = line_start + 1 if line_start >= 0 else 0
-                        line = conceptmap_content[line_start:abs_pos]
-                        if line.strip() == "" or line.strip().startswith("//"):
-                            abs_pos = line_start
-                        else:
-                            abs_pos = abs_pos + 1  # restore the \n we consumed
-                            break
-                    insert_pos = abs_pos
-                    insert_text = "\n".join(new_lines) + "\n\n"
-                else:
-                    # Append at end of file
-                    insert_pos = len(conceptmap_content)
-                    insert_text = "\n" + "\n".join(new_lines) + "\n"
-
-                conceptmap_content = (
-                    conceptmap_content[:insert_pos]
-                    + insert_text
-                    + conceptmap_content[insert_pos:]
-                )
-
-    if applied > 0:
-        conceptmap_path.write_text(conceptmap_content, encoding="utf-8")
-        print(f"  Fixed {applied} missing mapping(s) in {conceptmap_path.name}")
-
-    return applied
 
 
 def main() -> int:
@@ -595,11 +454,6 @@ def main() -> int:
         "--output-csv",
         default="qa/telemetry-mapping-report.csv",
         help="Path to CSV report (default: qa/telemetry-mapping-report.csv)",
-    )
-    parser.add_argument(
-        "--fix",
-        action="store_true",
-        help="Add missing codes to the ConceptMap with auto-assigned target codes (79200 upward)",
     )
     args = parser.parse_args()
 
@@ -622,13 +476,6 @@ def main() -> int:
     valueset_paths = discover_valueset_files(ig_roots)
 
     findings = run_check(ig_roots, codesystem_paths, valueset_paths)
-
-    if args.fix and findings:
-        print("\n==> Applying auto-fixes...")
-        applied = fix_missing_mappings(findings, ig_roots, codesystem_paths, valueset_paths)
-        if applied > 0:
-            print("\nRe-running checks after fixes...")
-            findings = run_check(ig_roots, codesystem_paths, valueset_paths)
 
     csv_path = Path(args.output_csv)
     write_csv_report(csv_path, findings, codesystem_paths)

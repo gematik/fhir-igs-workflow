@@ -127,23 +127,12 @@ Für die Ressourcen-Endpunkte in FHIR gelten die folgenden übergreifenden Fehle
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Instance - <a href="https://hl7.org/fhir/R4/http.html#read">read</a></td>
-            <td>
-                <ul>
-                    <li>MSG_UNKNOWN_TYPE - Unknown resource type</li>
-                    <li>MSG_RESOURCE_ID_FAIL - Resource is not known</li>
-                    <li>MSG_DELETED - Resource was deleted</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
+                <tr>
             <td>Instance - <a href="https://hl7.org/fhir/R4/http.html#update">update</a></td>
             <td>
                 <ul>
                     <li>MSG_UNKNOWN_TYPE - Unknown resource type</li>
                     <li>MSG_RESOURCE_ID_FAIL - Resource is not known</li>
-                    <li>MSG_DELETED - Resource was deleted</li>
                 </ul>
             </td>
         </tr>
@@ -153,7 +142,6 @@ Für die Ressourcen-Endpunkte in FHIR gelten die folgenden übergreifenden Fehle
                 <ul>
                     <li>MSG_UNKNOWN_TYPE - Unknown resource type</li>
                     <li>MSG_RESOURCE_ID_FAIL - Resource is not known</li>
-                    <li>MSG_DELETED - Resource was deleted</li>
                 </ul>
             </td>
         </tr>
@@ -163,7 +151,6 @@ Für die Ressourcen-Endpunkte in FHIR gelten die folgenden übergreifenden Fehle
                 <ul>
                     <li>MSG_UNKNOWN_TYPE - Unknown resource type</li>
                     <li>MSG_RESOURCE_ID_FAIL - Resource is not known</li>
-                    <li>MSG_DELETED - Resource was deleted</li>
                 </ul>
             </td>
         </tr>
@@ -234,7 +221,6 @@ Hierfür gelten für die TIFlow-Anwendungen die folgenden Fehlercodes für Opera
             <td>
                 <ul>
                     <li>MSG_RESOURCE_ID_FAIL - Resource is not known</li>
-                    <li>MSG_DELETED - Resource was deleted</li>
                 </ul>
             </td>
         </tr>

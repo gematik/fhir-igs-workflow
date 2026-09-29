@@ -81,7 +81,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
+            <td>412 - Precondition Failed</td>
         </tr>
         <tr>
             <th>Severity</th>
