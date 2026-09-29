@@ -192,37 +192,6 @@ Die folgenden Anforderungen definieren spezifische Fehlercodes, die in verschied
       abbrechen, damit Clients erkennen können, dass eine Ressource mit der angeforderten ID nicht existiert.
 </requirement>
 
-<requirement conformance="SHALL" key="IG-TIFLOW-CORE-A426" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_DELETED" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-      Der TI-Flow-Fachdienst MUSS im Falle, dass auf eine gelöschte Ressource zugegriffen wird, die Anfrage mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>410 - Gone</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>not-found</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>MSG_DELETED</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>Resource was deleted</td>
-        </tr>
-      </table>
-      abbrechen, damit Clients erkennen können, dass eine Ressource dauerhaft gelöscht wurde.
-</requirement>
-
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A427" title="TI-Flow-Fachdienst - Fehlerbehandlung - Fehlercode MSG_PARAM_UNKNOWN" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">

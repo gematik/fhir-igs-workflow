@@ -302,11 +302,6 @@ Usage: #definition
     * code = #79266
     * equivalence = #equivalent
 * group[=].element[+]
-  * code = #MSG_DELETED
-  * target[+]
-    * code = #79267
-    * equivalence = #equivalent
-* group[=].element[+]
   * code = #MSG_PARAM_UNKNOWN
   * target[+]
     * code = #79269
