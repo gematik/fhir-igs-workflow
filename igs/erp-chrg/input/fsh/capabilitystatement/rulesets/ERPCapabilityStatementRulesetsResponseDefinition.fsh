@@ -3,7 +3,7 @@ RuleSet: ReadInteractionStatusCodes
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
-* rest.resource[=].interaction[=] insert ResourceWasDeleted
+
 
 RuleSet: SearchTypeInteractionStatusCodes
 * rest.resource[=].interaction[=] insert Successful

@@ -13,9 +13,6 @@ Description: "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details a
 * #TIFLOW_SIGNATURE_NO_OCSP_RESPONSE "No OCSP response for signature" "Certificate revocation status could not be determined because no OCSP response was available"
   * ^designation.language = #de-DE
   * ^designation.value = "Keine OCSP-Antwort zur Signatur"
-* #TIFLOW_AUTH_ROLE_NOT_ALLOWED "Access role not allowed" "The authenticated actor role is not permitted to execute this operation"
-  * ^designation.language = #de-DE
-  * ^designation.value = "Zugriffsrolle nicht zulässig"
 * #TIFLOW_CONSENT_ALREADY_EXISTS "Consent already exists" "A consent for the same scope already exists and cannot be created again"
   * ^designation.language = #de-DE
   * ^designation.value = "Einwilligung existiert bereits"
@@ -82,9 +79,6 @@ Description: "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details a
 * #TIFLOW_LANR_ZANR_INVALID "LANR or ZANR invalid" "The provided LANR or ZANR is invalid or not accepted for this operation"
   * ^designation.language = #de-DE
   * ^designation.value = "LANR oder ZANR ungültig"
-* #TIFLOW_TASK_DELETED "Task deleted" "The task was already cancelled or deleted and can no longer be processed"
-  * ^designation.language = #de-DE
-  * ^designation.value = "Task wurde gelöscht"
 * #TIFLOW_BOM_DETECTED "Byte order mark detected" "A UTF byte order mark was detected where it is not permitted"
   * ^designation.language = #de-DE
   * ^designation.value = "Byte-Order-Mark erkannt"

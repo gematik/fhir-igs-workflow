@@ -13,7 +13,6 @@ Description: "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details a
 * include $hl7-oo#MSG_RESOURCE_ID_FAIL "unable to allocate resource id"
 * include $hl7-oo#MSG_BAD_FORMAT
 * include $hl7-oo#MSG_UNKNOWN_TYPE
-* include $hl7-oo#MSG_DELETED
 * include $hl7-oo#MSG_PARAM_UNKNOWN
 * include $hl7-oo#MSG_BAD_SYNTAX
 * include $hl7-oo#MSG_UNKNOWN_OPERATION

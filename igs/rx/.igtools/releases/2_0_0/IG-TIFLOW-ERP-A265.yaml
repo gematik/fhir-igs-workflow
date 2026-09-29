@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 0c59060a35b3a81f8a68029e2e31a2b3200555a021775df35d45db6797cc94b2
+content_hash: a817836e90c89b67f93fcd83fb0792fb6976b27371b2e945675d99e7a9bfdf45
 created: '2026-07-24T14:30:45.772350'
-date: '2026-07-24T14:30:45.772352'
+date: '2026-09-28T10:29:27.545432'
 key: IG-TIFLOW-ERP-A265
-modified: '2026-07-24T14:30:45.772351'
+modified: '2026-09-28T10:29:27.545432'
 release_status: NEW
 source: input/pagecontent/op-eu-close-req-fd.md
 status: ACTIVE
@@ -15,13 +15,11 @@ test_procedures:
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts\
   \ /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD sicherstellen, dass Task.status\
   \ = in-progress ist und bei Ungleichheit die Operation mit dem folgenden Fehler:\n\
-  \      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
-  \ collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403\
-  \ - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n\
-  \            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n\
-  \            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details\
-  \ Code</th>\n            <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n        </tr>\n \
-  \       <tr>\n            <th>Details Text</th>\n            <td>Task has invalid\
-  \ status.</td>\n        </tr>\n    </table> \n    abbrechen."
+  \ <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\"\
+  >\n <tr>\n <th>HTTP-Code</th>\n <td>412 - Precondition Failed</td>\n </tr>\n <tr>\n\
+  \ <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n\
+  \ </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Task has invalid status.</td>\n </tr>\n\
+  \ </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task schließen - EU - Statusprüfung
 version: 0
