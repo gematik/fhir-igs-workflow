@@ -171,11 +171,6 @@ Usage: #definition
     * code = #79232
     * equivalence = #equivalent
 * group[=].element[+]
-  * code = #TIFLOW_TASK_DELETED
-  * target[+]
-    * code = #79233
-    * equivalence = #equivalent
-* group[=].element[+]
   * code = #TIFLOW_TASK_EXPIRED
   * target[+]
     * code = #79234

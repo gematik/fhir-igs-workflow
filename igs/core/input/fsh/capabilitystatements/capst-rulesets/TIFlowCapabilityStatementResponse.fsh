@@ -78,15 +78,6 @@ RuleSet: ResourceIsNotKnown
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_RESOURCE_ID_FAIL"
 
-
-RuleSet: ResourceWasDeleted
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "410"
-  * extension[description].valueString = "Resource was deleted"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_DELETED"
-
-
 RuleSet: EmptyList
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "404"
@@ -185,13 +176,6 @@ RuleSet: TiflowSignatureInvalid
   * extension[description].valueString = "Signature invalid"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_SIGNATURE_INVALID"
-
-RuleSet: TiflowTaskDeleted
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "410"
-  * extension[description].valueString = "Task deleted"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_TASK_DELETED"
 
 RuleSet: TiflowTaskExpired
 * extension[responseInfo][+]

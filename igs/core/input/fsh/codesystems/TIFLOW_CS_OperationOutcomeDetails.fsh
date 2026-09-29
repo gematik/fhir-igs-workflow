@@ -79,9 +79,6 @@ Description: "Codes, die im Rahmen des TIFlow in den OperationOutcomes.details a
 * #TIFLOW_LANR_ZANR_INVALID "LANR or ZANR invalid" "The provided LANR or ZANR is invalid or not accepted for this operation"
   * ^designation.language = #de-DE
   * ^designation.value = "LANR oder ZANR ungültig"
-* #TIFLOW_TASK_DELETED "Task deleted" "The task was already cancelled or deleted and can no longer be processed"
-  * ^designation.language = #de-DE
-  * ^designation.value = "Task wurde gelöscht"
 * #TIFLOW_BOM_DETECTED "Byte order mark detected" "A UTF byte order mark was detected where it is not permitted"
   * ^designation.language = #de-DE
   * ^designation.value = "Byte-Order-Mark erkannt"

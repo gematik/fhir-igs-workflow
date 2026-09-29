@@ -4,21 +4,21 @@ RuleSet: ReadInteractionStatusCodes
 // * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
-* rest.resource[=].interaction[=] insert ResourceWasDeleted
+
 
 RuleSet: PatchInteractionStatusCodes
 * rest.resource[=].interaction[=] insert InvalidRequest
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
-* rest.resource[=].interaction[=] insert ResourceWasDeleted
+
 
 RuleSet: DeleteInteractionStatusCodes
 * rest.resource[=].interaction[=] insert InvalidRequest
 * rest.resource[=].interaction[=] insert SuccessfulNoContent
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
-* rest.resource[=].interaction[=] insert ResourceWasDeleted
+
 
 RuleSet: CreateInteractionStatusCodes
 * rest.resource[=].interaction[=] insert InvalidRequest
@@ -45,7 +45,6 @@ RuleSet: GlobalOperationErrorCodes
 
 RuleSet: InstanceOperationStatusCodes
 * insert ResourceIsNotKnown
-* insert ResourceWasDeleted
 * insert GlobalOperationErrorCodes
 
 RuleSet: TypeOperationStatusCodes
@@ -59,7 +58,7 @@ RuleSet: TaskCreateOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulCreated
 * rest.resource[=].operation[=] insert SvcValidationFailed
 * rest.resource[=].operation[=] insert TypeOperationStatusCodes
-* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+
 
 
 RuleSet: TaskSearchTypeInteractionStatusCodes
@@ -76,7 +75,7 @@ RuleSet: TaskActivateOperationStatusCodes
 * rest.resource[=].operation[=] insert SvcValidationFailed
 * rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
 * rest.resource[=].operation[=] insert TiflowAlternativeIkForbidden
-* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+
 * rest.resource[=].operation[=] insert TiflowCoverageTypeMismatch
 * rest.resource[=].operation[=] insert TiflowFlowtypeMismatch
 * rest.resource[=].operation[=] insert TiflowIknrInvalid
@@ -95,8 +94,7 @@ RuleSet: TaskActivateOperationStatusCodes
 RuleSet: TaskAcceptOperationStatusCodes
 * rest.resource[=].operation[=] insert Successful
 * rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
-* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
-* rest.resource[=].operation[=] insert TiflowTaskDeleted
+
 * rest.resource[=].operation[=] insert TiflowTaskExpired
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
@@ -104,7 +102,7 @@ RuleSet: TaskAcceptOperationStatusCodes
 RuleSet: TaskRejectOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulNoContent
 * rest.resource[=].operation[=] insert TiflowSecretMismatch
-* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
@@ -113,7 +111,7 @@ RuleSet: TaskCloseOperationStatusCodes
 * rest.resource[=].operation[=] insert SvcValidationFailed
 * rest.resource[=].operation[=] insert TiflowSecretMismatch
 * rest.resource[=].operation[=] insert TiflowSignatureNoOcspResponse
-* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+
 * rest.resource[=].operation[=] insert TiflowMedicationDispenseInvalid
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
@@ -123,7 +121,7 @@ RuleSet: TaskAbortOperationStatusCodes
 * rest.resource[=].operation[=] insert SuccessfulNoContent
 * rest.resource[=].operation[=] insert SvcIdentityMismatch
 * rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
-* rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
+
 * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
 
@@ -141,7 +139,6 @@ RuleSet: CommunicationDeleteInteractionStatusCodes
 
 RuleSet: MedicationDispenseSearchTypeInteractionStatusCodes
 * insert SearchTypeInteractionStatusCodes
-* rest.resource[=].interaction[=] insert TiflowAuthRoleNotAllowed
 
 RuleSet: MedicationDispenseReadInteractionStatusCodes
 * insert ReadInteractionStatusCodes

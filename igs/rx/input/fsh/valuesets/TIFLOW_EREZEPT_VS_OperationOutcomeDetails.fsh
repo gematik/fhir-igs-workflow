@@ -25,7 +25,6 @@ Description: "E-Rezept-spezifische Codes, die im Rahmen des TIFlow in den Operat
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_SIGNATURE_AUTHOREDON_MISMATCH "Signature authoredOn mismatch"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_IKNR_INVALID "IKNR invalid"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_LANR_ZANR_INVALID "LANR or ZANR invalid"
-* include TIFLOWOperationOutcomeDetailsCS#TIFLOW_TASK_DELETED "Task deleted"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_TASK_EXPIRED "Task expired"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_MESSAGE_TO_SELF "Message to self not allowed"
 * include TIFLOWOperationOutcomeDetailsCS#TIFLOW_COMMUNICATION_PAYLOAD_INVALID "Communication payload invalid"

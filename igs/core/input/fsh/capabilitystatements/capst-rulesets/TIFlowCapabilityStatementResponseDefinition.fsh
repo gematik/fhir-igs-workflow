@@ -8,25 +8,25 @@ RuleSet: GlobalErrorsStatusCodes
 RuleSet: ReadInteractionStatusCodes
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
-* rest.resource[=].interaction[=] insert ResourceWasDeleted
+
 
 RuleSet: UpdateInteractionStatusCodes
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
-* rest.resource[=].interaction[=] insert ResourceWasDeleted
+
 
 RuleSet: PatchInteractionStatusCodes
 * rest.resource[=].interaction[=] insert Successful
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
-* rest.resource[=].interaction[=] insert ResourceWasDeleted
+
 
 RuleSet: DeleteInteractionStatusCodes
 * rest.resource[=].interaction[=] insert SuccessfulNoContent
 * rest.resource[=].interaction[=] insert UnknownResourceType
 * rest.resource[=].interaction[=] insert ResourceIsNotKnown
-* rest.resource[=].interaction[=] insert ResourceWasDeleted
+
 
 RuleSet: CreateInteractionStatusCodes
 // * rest.resource[=].interaction[=] insert SuccessfulCreated
@@ -118,7 +118,6 @@ RuleSet: SubscriptionCreateInteractionStatusCodes
 
 // RuleSet: InstanceOperationStatusCodes
 // * insert ResourceIsNotKnown
-// * insert ResourceWasDeleted
 
 // RuleSet: TypeOperationStatusCodes
 // * insert OpUnknown
@@ -129,14 +128,12 @@ RuleSet: SubscriptionCreateInteractionStatusCodes
 // * rest.resource[=].operation[=] insert SuccessfulCreated
 // * rest.resource[=].operation[=] insert SvcValidationFailed
 // * rest.resource[=].operation[=] insert TypeOperationStatusCodes
-// * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 
 // // Task/<id>/$activate
 // RuleSet: TaskActivateOperationStatusCodes
 // * rest.resource[=].operation[=] insert SuccessfulWithParameters
 // * rest.resource[=].operation[=] insert SvcValidationFailed
 // * rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
-// * rest.resource[=].operation[=] insert TiflowAuthRoleNotAllowed
 // * rest.resource[=].operation[=] insert TiflowFlowtypeMismatch
 // * rest.resource[=].operation[=] insert TiflowIknrInvalid
 // * rest.resource[=].operation[=] insert TiflowKvnrInvalid
@@ -153,7 +150,6 @@ RuleSet: SubscriptionCreateInteractionStatusCodes
 // RuleSet: TaskAcceptOperationStatusCodes
 // * rest.resource[=].operation[=] insert Successful
 // * rest.resource[=].operation[=] insert TiflowAccesscodeMismatch
-// * rest.resource[=].operation[=] insert TiflowTaskDeleted
 // * rest.resource[=].operation[=] insert TiflowTaskExpired
 // * rest.resource[=].operation[=] insert TiflowTaskStatusMismatch
 // * rest.resource[=].operation[=] insert InstanceOperationStatusCodes
