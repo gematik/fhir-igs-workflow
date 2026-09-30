@@ -1,11 +1,11 @@
 @startuml
 title UC 3.1 - Verordnungen durch Versicherten abrufen
 
-actor "Versicherter" as V
+actor "Versicherter" as VER
 participant "FdV" as FdV
 participant "TI-Flow-Fachdienst" as FD
 
-V -> FdV: Verordnungen abrufen()
+VER -> FdV: Verordnungen abrufen()
 activate FdV
 
 FdV -> FD: GET /Task ()
@@ -14,7 +14,7 @@ FD -> FD: Verordnungen nach Versicherten-ID ermitteln()
 FD --> FdV: Verordnungen, Status, Zeitpunkte, AccessCodes
 deactivate FD
 
-FdV --> V: Liste der Verordnungen
+FdV --> VER: Liste der Verordnungen
 deactivate FdV
 
 @enduml

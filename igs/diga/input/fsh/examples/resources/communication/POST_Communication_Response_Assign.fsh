@@ -1,0 +1,13 @@
+Instance: Example-POST-Communication-Response-Assign
+InstanceOf: TIFlowCommunication
+Title: "DiGA-Verordnung dem Kostenträger zuweisen"
+Description: "Versicherter sendet eine Communication mit AccessCode zur Anforderung der DiGA-Abgabe an den Kostenträger (WorkflowType '162'), ohne JSON-Payload, nur mit E-Rezept-Token"
+Usage: #example
+* meta.profile = "https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq"
+* extension[0].url = $cs-prescription-type
+* extension[0].valueCoding = $cs-flowtype#160
+* status = #unknown
+* basedOn.reference = "Task/Example-DiGA-Task-Ready"
+* insert KTRTelematik_Identifier(recipient.identifier)
+* insert GKV_Identifier(sender.identifier)
+* insert DateTimeStamp(sent)
