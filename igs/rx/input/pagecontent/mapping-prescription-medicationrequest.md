@@ -11,9 +11,7 @@ Die folgenden Punkte sind relevant für das Mapping der MedicationRequest Ressou
 
 ## Generelles Mapping des Profils
 
-Die folgende Tabelle stellt generell das Mapping der beiden Profile gegenüber:
-
-{% include StructureMap-KBVPrErpPrescriptionMap-intro.md %}
+Generell werden die Strukturen der Quelle in das Zielprofil überführt.
 
 ## Transformationsregeln
 

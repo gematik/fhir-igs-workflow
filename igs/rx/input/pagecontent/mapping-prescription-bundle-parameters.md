@@ -13,9 +13,7 @@ Die folgenden Punkte sind relevant für das Mapping der Bundle Ressource:
 
 ## Generelles Mapping des Profils
 
-Die folgende Tabelle stellt generell das Mapping der beiden Profile gegenüber:
-
-{% include StructureMap-KBVPrErpBundleMap-intro.md %}
+Generell werden die Strukturen der Quelle in das Zielprofil überführt.
 
 ## Transformationsregeln
 

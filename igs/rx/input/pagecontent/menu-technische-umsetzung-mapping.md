@@ -11,13 +11,7 @@ Der TI-Flow-Fachdienst muss daher in der Lage sein, die von den verordnenden Sys
 
 <br>
 
-Dabei führt der TI-Flow-Fachdienst keine Interpretation oder Anreicherung von medizinischen Daten durch und führt daher rein technische Mappings aus. Die Mappings werden einer Anwendung der gematik definiert und in diesem Projekt als StructureMaps angegeben und mit Transformationsregeln ergänzt.
-
-## Regeln für das Mapping von FHIR-Instanzen
-
-FHIR bietet die Möglichkeit Angaben zu Mappings zwischen verschiedenen Ressourcenstrukturen mittels [StructureMap](https://www.hl7.org/fhir/structuremap.html) zu definieren. Dieses Projekt nutzt StructureMaps, um die Mappings der Verordnungs- und Dispensierdaten zu beschreiben und damit Tabellen zu erstellen, die angeben, wie die einzelnen Elemente der Quellstruktur in die Zielstruktur überführt werden.
-
-Zusätzlich zu den StructureMaps, die Regeln zum Mapping definieren, gibt es Transformationsregeln, die zusätzliche programmatische Vorgaben zum Mapping treffen. Auf den Detailseiten zu Verordnungs- bzw. Dispensierdaten ist unten jeweils eine Übersicht der verwendeten Transformationsregeln zu finden, die alle Profile der jeweiligen Übertragung betreffen. Auf den Seiten der einzelnen Ressourcen sind die gleichen Transformationsregeln zusätzlich im Kontext der jeweiligen Ressource aufgeführt.
+Dabei führt der TI-Flow-Fachdienst keine Interpretation oder Anreicherung von medizinischen Daten durch und führt daher rein technische Mappings aus. Dabei sollen die Quellen in die Zielprofile überführt und mit Transformationsregeln ergänzt werden.
 
 ## Übertragen von *Verordnungsdaten* an den ePA Medication Service
 
@@ -33,13 +27,3 @@ Der TI-Flow-Fachdienst empfängt die Dispensierinformationen durch Abschluss ein
 Die Übertragung der Dispensierinformationen an den ePA Medication Service via ([ePA Operation API: Dispensierinformationen einstellen](https://gemspec.gematik.de/ig/fhir/epa-medication/{{ site.data.constants.epa_med_service_version }}/op-provide-dispensation-erp.html)) erfolgt erst nach Abschluss des Workflows indem die $close-Operation aufgerufen wird.
 
 Für technische Details zum Mapping von Dispensierinformationen und den dazugehörigen Transformationsregeln siehe: [Mapping von Dispensierinformationen](./mapping-dispensation.html).
-
-## Beispiele
-
-Die folgenden Seiten beschreiben beispielhaft das Mapping von verschiedenen KBV_PR_ERP_Bundle Instanzen in die EPAOpProvidePrescriptionERPInputParameters Struktur:
-
-- [Beispiel des Mappings einer PZN Verordnung](./comparison-Bundle-input-example-1.html)
-- [Beispiel des Mappings einer Wirkstoffverordnung](./comparison-Bundle-input-example-2.html)
-- [Beispiel des Mappings einer Freitextverordnung](./comparison-Bundle-input-example-3.html)
-- [Beispiel des Mappings einer Rezepturverordnung](./comparison-Bundle-input-example-5.html)
-- [Beispiel des Mappings mit absoluter Referenzierung](./comparison-Bundle-input-example-4.html)

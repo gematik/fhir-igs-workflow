@@ -24,7 +24,6 @@ Für dieses Mapping wird ein FHIR-Bundle in eine FHIR-Parameters Struktur überf
 Die folgende Seite beschreibt das generelle Mapping des Bundles:
 - [Mapping der Bundle Ressource](./mapping-prescription-bundle-parameters.html)
 
-Diese Structuremap kann in Kombination mit den StructureMaps aus diesem Projekt verwendet werden, um die Verordnungsdaten in die von der ePA geforderten Formate zu überführen.
 
 Die folgenden Seiten beschreiben die Mappings der einzelnen Ressourcen im Detail:
 - [Mapping der Practitioner Ressource](./mapping-prescription-practitioner.html)
