@@ -27,13 +27,3 @@ Der TI-Flow-Fachdienst empfängt die Dispensierinformationen durch Abschluss ein
 Die Übertragung der Dispensierinformationen an den ePA Medication Service via ([ePA Operation API: Dispensierinformationen einstellen](https://gemspec.gematik.de/ig/fhir/epa-medication/{{ site.data.constants.epa_med_service_version }}/op-provide-dispensation-erp.html)) erfolgt erst nach Abschluss des Workflows indem die $close-Operation aufgerufen wird.
 
 Für technische Details zum Mapping von Dispensierinformationen und den dazugehörigen Transformationsregeln siehe: [Mapping von Dispensierinformationen](./mapping-dispensation.html).
-
-## Beispiele
-
-Die folgenden Seiten beschreiben beispielhaft das Mapping von verschiedenen KBV_PR_ERP_Bundle Instanzen in die EPAOpProvidePrescriptionERPInputParameters Struktur:
-
-- [Beispiel des Mappings einer PZN Verordnung](./comparison-Bundle-input-example-1.html)
-- [Beispiel des Mappings einer Wirkstoffverordnung](./comparison-Bundle-input-example-2.html)
-- [Beispiel des Mappings einer Freitextverordnung](./comparison-Bundle-input-example-3.html)
-- [Beispiel des Mappings einer Rezepturverordnung](./comparison-Bundle-input-example-5.html)
-- [Beispiel des Mappings mit absoluter Referenzierung](./comparison-Bundle-input-example-4.html)
