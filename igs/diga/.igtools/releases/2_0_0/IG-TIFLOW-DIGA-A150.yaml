@@ -1,6 +1,7 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
+<<<<<<< HEAD
 content_hash: f9d224475ec1319dbcea717400097829579e0015618f0af98d0eba940cdc6611
 created: '2026-09-29T08:47:12.978997'
 date: '2026-09-29T08:47:12.979095'
@@ -8,10 +9,20 @@ key: IG-TIFLOW-DIGA-A150
 modified: '2026-09-29T08:47:12.979089'
 release_status: NEW
 source: input/pagecontent/menu-technische-umsetzung-push.md
+=======
+content_hash: e409af8396c6fa88ec4fccc02810bdbd8b8bf144d01e499cfcfb52ac6317d5a0
+created: '2026-10-01T06:28:45.087030'
+date: '2026-10-01T06:28:45.087037'
+key: IG-TIFLOW-DIGA-A150
+modified: '2026-10-01T06:28:45.087035'
+release_status: NEW
+source: input/pagecontent/op-abort-req-fd.md
+>>>>>>> c71f96a825 (change name of concept map and build requirements)
 status: ACTIVE
 test_procedures:
   TI-Flow_FD:
   - Produkttest
+<<<<<<< HEAD
 text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß
   der Tabelle erzeugen.
 
@@ -197,4 +208,20 @@ text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification
   </table>'
 title: TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen
   - DiGA
+=======
+text: "Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der\
+  \ <id> adressierten /Task/<id>/$abort verhindern, wenn der Status des adressierten\
+  \ Tasks in-progress ist und der aufrufende Nutzer der Versicherte ist,\n    und\
+  \ die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"\
+  border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n         \
+  \   <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n  \
+  \      <tr>\n            <th>Severity</th>\n            <td>error</td>\n       \
+  \ </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
+  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Task\
+  \ has invalid status.</td>\n        </tr>\n    </table> \n    abbrechen, damit die\
+  \ Verordnung nicht durch einen Unberechtigten gelöscht werden kann."
+title: TI-Flow-Fachdienst - E-Rezept löschen - Versicherter - Statusprüfung ungleich
+  in-progress
+>>>>>>> c71f96a825 (change name of concept map and build requirements)
 version: 0

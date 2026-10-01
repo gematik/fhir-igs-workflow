@@ -23,10 +23,7 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 
 
 ### POST /Communication
-- Zuweisung einer Verordnung durch den Versicherten an den Kostenträger. Der Payload ist hierbei optional (Kardinalität 0..1)
-- Übermittlung einer Nachricht durch den Kostenträger an den Versicherten.
-
-
+Zuweisung einer Verordnung durch den Versicherten an den Kostenträger. Der Payload ist hierbei optional (Kardinalität 0..1)
 
 <div class="gematik-api"
 	data-api-type="FHIRResource"
@@ -38,19 +35,48 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 		</pre>
 	</div>
 	<div id="Request-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/Communication-Reply-DiGA-payload XML %}
+		<div data-name="Zuweisung einer Verordnung durch den Versicherten" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-POST-Communication-Request-Assign XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Communication/Communication-Reply-DiGA-payload JSON %}
+		<div data-name="Zuweisung einer Verordnung durch den Versicherten" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Communication/Example-POST-Communication-Request-Assign JSON %}
 		</div>
 	</div>
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Communication/Communication-Reply-DiGA XML %}
+		<div data-name="Zuweisung einer Verordnung durch den Versicherten" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-POST-Communication-Response-Assign XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Communication/Communication-Reply-DiGA JSON %}
+		<div data-name="Zuweisung einer Verordnung durch den Versicherten" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Communication/Example-POST-Communication-Response-Assign JSON %}
+		</div>
+	</div>
+</div>
+
+Übermittlung einer Nachricht durch den Kostenträger an den Versicherten.
+
+<div class="gematik-api"
+	data-api-type="FHIRResource"
+	data-api-fhir-resource-type="Communication"
+	data-api-fhir-interaction="create">
+	<div id="CapabilityStatement">
+		<pre>
+			{% include CapabilityStatement-ti-flow-fachdienst-server-diga.json %}
+		</pre>
+	</div>
+	<div id="Request-Examples">
+		<div data-name="DiGA-Nachricht eines Kostenträgers" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-POST-Communication-Request XML %}
+		</div>
+		<div data-name="DiGA-Nachricht eines Kostenträgers" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Communication/Example-POST-Communication-Request JSON %}
+		</div>
+	</div>
+	<div id="Response-Examples">
+		<div data-name="Bestätigte DiGA-Nachricht" data-type="XML" data-render="ig-Fragment">
+			{% fragment Communication/Example-POST-Communication-Response XML %}
+		</div>
+		<div data-name="Bestätigte DiGA-Nachricht" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Communication/Example-POST-Communication-Response JSON %}
 		</div>
 	</div>
 </div>
@@ -70,11 +96,11 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über di
 		</pre>
 	</div>
 	<div id="Response-Examples">
-		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleDiGACommunicationSearchset XML %}
+		<div data-name="DiGA-Nachrichtenliste" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/Example-GET-Communication-Response XML %}
 		</div>
-		<div data-name="application/fhir+json" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Bundle/ExampleDiGACommunicationSearchset JSON %}
+		<div data-name="DiGA-Nachrichtenliste" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/Example-GET-Communication-Response JSON %}
 		</div>
 	</div>
 </div>
