@@ -1,5 +1,5 @@
 Instance: Example-POST-Communication-Response-Assign
-InstanceOf: TIFlowCommunication
+InstanceOf: Communication
 Title: "DiGA-Verordnung dem Kostenträger zuweisen"
 Description: "Versicherter sendet eine Communication mit AccessCode zur Anforderung der DiGA-Abgabe an den Kostenträger (WorkflowType '162'), ohne JSON-Payload, nur mit E-Rezept-Token"
 Usage: #example
