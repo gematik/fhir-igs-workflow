@@ -19,6 +19,8 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 
 #### API Beschreibung
 
+Als Versicherter alle E-Rezepte einsehen.
+
 <div class="gematik-api"
 	data-api-type="FHIRResource"
 	data-api-fhir-resource-type="Task"
@@ -30,10 +32,10 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 	</div>
 	<div id="Response-Examples">
 		<div data-name="Liste von Tasks abrufen" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/Example-GET-Task-Response-All XML %}
+			{% fragment Bundle/Example-GET-Task-Response-All-Insured XML %}
 		</div>
 		<div data-name="Liste von Tasks abrufen" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Bundle/Example-GET-Task-Response-All JSON %}
+			{% fragment Bundle/Example-GET-Task-Response-All-Insured JSON %}
 		</div>
 	</div>
 </div>
@@ -41,6 +43,9 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 ### Instance API
 
 #### API Beschreibung
+
+- Der Zugriff auf ein einzelnes E-Rezept ist durch den Versicherten mit Nachweis seiner Identität
+- E-Rezept durch den Kostenträger erneut abrufen. Der TIFlow-Fachdienst überträgt daraufhin den Task mit Secret und das QES Verordnungsbundle an die Kostenträger.
 
 <div class="gematik-api"
 	data-api-type="FHIRResource"
@@ -53,10 +58,16 @@ Die Nachricht zur Interaktion mit Verordnungen als FHIR-Ressource _Task_ wird ü
 	</div>
 	<div id="Response-Examples">
 		<div data-name="Versicherter: Spezifischen Task abrufen" data-type="XML" data-render="ig-Fragment">
-			{% fragment Bundle/Example-GET-Task-Response-Single XML %}
+			{% fragment Bundle/Example-GET-Task-Response-Single-Insured XML %}
 		</div>
 		<div data-name="Versicherter: Spezifischen Task abrufen" data-type="JSON" data-render="ig-Fragment">
-			{% fragment Bundle/Example-GET-Task-Response-Single JSON %}
+			{% fragment Bundle/Example-GET-Task-Response-Single-Insured JSON %}
+		</div>
+		<div data-name="Kostenträger: E-Rezept erneut abrufen" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/Example-GET-Task-Response-Single-Performer XML %}
+		</div>
+		<div data-name="Kostenträger: E-Rezept erneut abrufen" data-type="JSON" data-render="ig-Fragment">
+			{% fragment Bundle/Example-GET-Task-Response-Single-Performer JSON %}
 		</div>
 	</div>
 </div>

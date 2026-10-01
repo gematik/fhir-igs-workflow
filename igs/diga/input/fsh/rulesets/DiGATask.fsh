@@ -12,7 +12,6 @@ RuleSet: DiGA_Task_Ready
 * insert DiGA_Task(ready)
 * insert GKV_Identifier(for.identifier) // Only when not draft
 * insert TaskIdentifierAccessCode
-* insert TaskInputReceipt(Example-Bundle-DiGA)
 
 RuleSet: DiGA_Task(status)
 * status = #{status}
