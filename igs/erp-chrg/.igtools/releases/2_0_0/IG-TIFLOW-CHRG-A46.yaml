@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: 0f76573605b16948bb1681a428a5232c30ae1d898219c541a538b955748fbcfb
+content_hash: 5fe5387afb3558fdacfc6c9fb6fd351f5ef1e5b71e8dcf0e20121f21666642c1
 created: '2026-06-25T13:00:23.931336'
-date: '2026-06-25T13:00:23.931338'
+date: '2026-09-18T09:48:47.886891'
 key: IG-TIFLOW-CHRG-A46
-modified: '2026-06-25T13:00:23.931338'
+modified: '2026-09-18T09:48:47.886891'
 release_status: NEW
 source: input/pagecontent/query-api-chargeitem-req-fd.md
 status: ACTIVE
@@ -14,17 +14,13 @@ test_procedures:
   - Produktgutachten
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt\
   \ /ChargeItem die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen,\
-  \ dass ausschließlich Nutzer in der Rolle \n    <ul>\n    <li>oid_versicherter</li>\n\
-  \    </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen\
-  \ mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px\
-  \ solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n\
-  \            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n           \
-  \ <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n \
-  \           <th>Code</th>\n            <td>invalid</td>\n        </tr>\n       \
-  \ <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n\
-  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der\
-  \ Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n    \
-  \    </tr>\n    </table> \n    abbrechen, damit E-Rezepte nicht durch Unberechtigte\
-  \ ausgelesen werden können."
+  \ dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n\
+  \ </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen mit\
+  \ dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit\
+  \ E-Rezepte nicht durch Unberechtigte ausgelesen werden können."
 title: TI-Flow-Fachdienst - Abrechnungsinformationen abrufen - Rollenprüfung Versicherter
 version: 0

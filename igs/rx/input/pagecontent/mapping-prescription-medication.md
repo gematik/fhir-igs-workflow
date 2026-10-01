@@ -12,9 +12,7 @@ Die folgenden Punkte sind relevant für das Mapping der Medication Ressource:
 
 ## Generelles Mapping des Profils
 
-Die folgende Tabelle stellt generell das Mapping der beiden Profile gegenüber:
-
-{% include StructureMap-EPAMedicationMap-intro.md %}
+Generell werden die Strukturen der Quelle in das Zielprofil überführt.
 
 Die folgenden Unterseiten beschreiben die Mappings der verschiedenen KBV-Medication-Profile zu EPA Medication im Detail:
 

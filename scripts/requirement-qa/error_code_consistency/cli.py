@@ -10,10 +10,12 @@ from typing import Dict, Iterable, Set
 
 from .checks import (
     check_capabilitystatement_consistency,
+    check_capabilitystatement_http_status_consistency,
     check_cs_vs_consistency,
     check_description_consistency,
     check_module_codesystem_placement,
     check_orphaned_codes,
+    check_requirement_http_status_invariants,
     check_requirements_missing_keys,
     check_undefined_code_rulesets,
     check_valueset_import_descriptions,
@@ -148,6 +150,8 @@ def _run_all_checks(error_codes, ig_roots, include_extra: bool) -> list:
     findings.extend(
         check_capabilitystatement_consistency(error_codes, ig_roots, include_extra=include_extra)
     )
+    findings.extend(check_requirement_http_status_invariants(error_codes))
+    findings.extend(check_capabilitystatement_http_status_consistency(error_codes, ig_roots))
     findings.extend(check_description_consistency(ig_roots))
     findings.extend(check_valueset_import_descriptions(ig_roots))
     findings.extend(check_module_codesystem_placement(ig_roots))

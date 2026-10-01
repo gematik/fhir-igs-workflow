@@ -6,22 +6,18 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
 
 ### Modulspezifische Anforderungen
 
-<!-- A_24279 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A36" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung Abgebender stellt Dispensierinformationen bereit" version="0">
+#### Anforderungen zur Validierung
+
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A313" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Ausführung der OperationDefinition" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense auf den in der URL referenzierten /Task/&lt;id&gt; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen
-        <ul> 
-        <li>oid_oeffentliche_apotheke</li>
-        <li>oid_krankenhausapotheke</li>
-        </ul>
-        die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+    Der TI-Flow-Fachdienst MUSS die Operation <i>Dispensierinformationen bereitstellen</i> gemäß der FHIR OperationDefinition <a href="./OperationDefinition-tiflow-rx-dispense-op.html">TIFlowRXOPDispense</a> ausführen. Die Verarbeitung und Validierung der Daten MUSS entsprechend den in der OperationDefinition festgelegten Regeln und Strukturen erfolgen und bei Abweichung die Operation mit folgendem Fehler:
+    <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
+            <td>400 - Bad Request</td>
         </tr>
         <tr>
             <th>Severity</th>
@@ -33,14 +29,14 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>SVC_VALIDATION_FAILED</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>FHIR Profile validation failed</td>
         </tr>
-    </table> 
-    abbrechen, damit Dispensierinformationen nicht durch einen Unberechtigten eingestellt werden kann.
+    </table>
+   abbrechen.
 </requirement>
 
 <!-- A_24280 -->
@@ -85,7 +81,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
+            <td>412 - Precondition Failed</td>
         </tr>
         <tr>
             <th>Severity</th>
@@ -196,7 +192,7 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>
-        Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$dispense bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "erp.task.dispense" und den Versicherten mit der KVNR = Task.for initiieren.
+        Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$dispense bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId "tiflow.task.dispense" und den Versicherten mit der KVNR = Task.for initiieren.
 </requirement>
 
 <!-- A_24284 -->
@@ -207,3 +203,43 @@ Für diese Seite bestehen keine Anforderungen aus der Core Spezifikation.
     </actor>
         Der TI-Flow-Fachdienst DARF bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense den Status des Task bei Aufrufen der POST /Task/&lt;id&gt;/$dispense Operation NICHT verändern.
 </requirement>
+
+#### Anforderungen zur Geschäftslogik
+
+<!-- A_24279 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A36" title="TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Rollenprüfung Abgebender stellt Dispensierinformationen bereit" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+    </actor>
+        Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels POST /Task/&lt;id&gt;/$dispense auf den in der URL referenzierten /Task/&lt;id&gt; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen
+        <ul> 
+        <li>oid_oeffentliche_apotheke</li>
+        <li>oid_krankenhausapotheke</li>
+        </ul>
+        die Operation am Fachdienst aufrufen und bei Abweichungen die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>-</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, damit Dispensierinformationen nicht durch einen Unberechtigten eingestellt werden kann.
+</requirement>
+

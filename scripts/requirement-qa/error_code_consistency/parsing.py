@@ -34,6 +34,11 @@ RULESET_INSERT_RE = re.compile(
     r'^\s*\*\s*(?:rest\.[^\s]+\s+)?insert\s+([A-Za-z0-9_\-]+)\s*$', re.MULTILINE
 )
 RULESET_ERROR_CODE_RE = re.compile(r'extension\[errorCode\]\.valueString\s*=\s*"([^"]+)"')
+RULESET_STATUS_CODE_RE = re.compile(r'extension\[statusCode\]\.valueString\s*=\s*"([^"]+)"')
+RULESET_STATUS_CODE_PAIR_RE = re.compile(
+    r'extension\[statusCode\]\.valueString\s*=\s*"([^"]+)".*?extension\[errorCode\]\.valueString\s*=\s*"([^"]+)"',
+    re.DOTALL,
+)
 
 RULESET_HEADER_RE = re.compile(
     r'^\s*RuleSet:\s*([A-Za-z0-9_\-]+)Interaction\(expectation\)', re.MULTILINE
@@ -234,6 +239,28 @@ def parse_response_error_codes(file_path: Path) -> Dict[str, Set[str]]:
     }
 
 
+def _normalize_status_code(value: str) -> str:
+    """Normalize HTTP status strings like '412 - Precondition Failed' to '412'."""
+    match = re.search(r"\b(\d{3})\b", value or "")
+    return match.group(1) if match else (value or "400")
+
+
+def parse_response_status_codes(file_path: Path) -> Dict[str, Dict[str, str]]:
+    """Return {ruleset_name: {error_code: status_code}} from a response RuleSet file."""
+    if not file_path.exists():
+        return {}
+
+    content = file_path.read_text(encoding="utf-8")
+    result: Dict[str, Dict[str, str]] = {}
+    for name, section in _iter_ruleset_sections(content):
+        codes: Dict[str, str] = {}
+        for status_code, error_code in RULESET_STATUS_CODE_PAIR_RE.findall(section):
+            codes[error_code] = _normalize_status_code(status_code)
+        if codes:
+            result[name] = codes
+    return result
+
+
 def resolve_ruleset_codes(
     ruleset: str,
     refs: Dict[str, List[str]],
@@ -252,6 +279,31 @@ def resolve_ruleset_codes(
         out.update(base_error_codes.get(ref, set()))
         if ref in refs:
             out.update(resolve_ruleset_codes(ref, refs, base_error_codes, seen))
+    return out
+
+
+def resolve_ruleset_status_codes(
+    ruleset: str,
+    refs: Dict[str, List[str]],
+    base_status_codes: Dict[str, Dict[str, str]],
+    seen: Optional[Set[str]] = None,
+) -> Dict[str, Set[str]]:
+    """Recursively resolve all status codes reachable from a given RuleSet."""
+    if seen is None:
+        seen = set()
+    if ruleset in seen:
+        return {}
+    seen.add(ruleset)
+
+    out: Dict[str, Set[str]] = {}
+    for code, status in base_status_codes.get(ruleset, {}).items():
+        out.setdefault(code, set()).add(status)
+    for ref in refs.get(ruleset, []):
+        for code, status in base_status_codes.get(ref, {}).items():
+            out.setdefault(code, set()).add(status)
+        if ref in refs:
+            for code, statuses in resolve_ruleset_status_codes(ref, refs, base_status_codes, seen).items():
+                out.setdefault(code, set()).update(statuses)
     return out
 
 

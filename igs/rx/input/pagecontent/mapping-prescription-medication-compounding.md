@@ -12,9 +12,7 @@ Die folgenden Punkte sind relevant für das Mapping der Rezeptur Medication Ress
 
 ## Generelles Mapping des Profils
 
-Die folgende Tabelle stellt generell das Mapping der beiden Profile gegenüber:
-
-{% include StructureMap-KBVPrErpMedicationCompoundingMap-intro.md %}
+Generell werden die Strukturen der Quelle in das Zielprofil überführt.
 
 Zur Übersicht der Medication-Mappings siehe:
 - [Mapping der Medication Ressource](./mapping-prescription-medication.md)

@@ -1,0 +1,25 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: b04c3a69ed6cdc254cdfeb70fb3e9d9c62e4e5330503788183c1fc814cb94f86
+created: '2026-09-14T11:57:17.216896'
+date: '2026-09-17T09:05:33.827112'
+key: IG-TIFLOW-CORE-A485
+modified: '2026-09-17T09:05:33.827112'
+release_status: NEW
+source: input/pagecontent/fhir-validate.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource vom Typ\
+  \ Bundle prüfen, ob der Wert von fullUrls der entries (Bundle.entry.fullUrl) dem\
+  \ [Format http-Schema] oder [Format urn:uuid-Schema] entsprechen und bei Abweichung\
+  \ die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400\
+  \ - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>Invalid\
+  \ format of the fullUrl</td>\n </tr>\n </table> \n abbrechen."
+title: FHIR-Ressource validieren - Prüfung Format fullUrl
+version: 0

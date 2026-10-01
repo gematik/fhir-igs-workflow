@@ -3,7 +3,7 @@ Id: tiflow-order-task-status-vs
 Title: "TIFlow Order Task ValueSet"
 Description: "TIFlow Order Task ValueSet"
 * insert Meta-VS
-* ^status = #draft
+* ^status = #active
 
 * $hl7-task-status-cs|4.0.1#draft
 * $hl7-task-status-cs|4.0.1#ready

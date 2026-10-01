@@ -1,23 +1,26 @@
 actor:
 - PS_TI-Flow_verordnend
 conformance: SHALL
-content_hash: 2633af1c4328d1cefb33fbe9d39bf6497ff3966af00f4eae8bb576bc74340a07
+content_hash: 8c100cad6d4ce1fbf8fdbfe16268bc99661b0c51c44c8c03d2c543cfe114cf74
 created: '2026-06-25T11:43:04.366200'
-date: '2026-08-25T14:32:14.950263'
+date: '2026-09-28T10:14:22.375270'
 key: IG-TIFLOW-ERP-A112
-modified: '2026-08-24T14:40:49.956804'
+modified: '2026-09-28T10:14:22.375270'
 release_status: NEW
 source: input/pagecontent/menu-technische-umsetzung-kim.md
 status: ACTIVE
 test_procedures:
   PS_TI-Flow_verordnend:
   - Produkttest
-text: 'Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine
-  Message mit "Content-Type: multipart/mixed;..." und der folgenden Struktur verwenden.
-  Tabelle # : Struktur der Message mit "Content-Type: multipart/mixed;..." Teil Inhalt
-  optional Freitext Freitextmessage für den Empfänger default: "direkte Zuweisung
-  E-Rezept" nein Einlöseinformation E-Rezept-Token als Link nach 2D-Code für E-Rezept-Token
-  Nach 45 Zeichen MUSS ein Steuerzeichen "CRLF" eingefügt werden nein Therapieplan
-  Therapieplan als Anhang, base64 codiert ja'
+text: "Das PS der verordnenden LEI MUSS bei Versand einer Zuweisungs-Message eine\
+  \ Message mit \"Content-Type: multipart/mixed;...\" und der folgenden Struktur verwenden.\n\
+  \ <table>\n <thead>\n <tr>\n <th>Teil</th>\n <th>Inhalt</th>\n <th>optional</th>\n\
+  \ </tr>\n </thead>\n <tbody>\n <tr>\n <td>Freitext</td>\n <td>Freitextmessage für\
+  \ den Empfänger<br>default: \"direkte Zuweisung E-Rezept\"</td>\n <td>nein</td>\n\
+  \ </tr>\n <tr>\n <td>Einlöseinformation</td>\n <td>E-Rezept-Token als Link<br>Nach\
+  \ 45 Zeichen MUSS ein Steuerzeichen \"CRLF\" eingefügt werden</td>\n <td>nein</td>\n\
+  \ </tr>\n <tr>\n <td>Therapieplan</td>\n <td>Therapieplan als Anhang, base64 codiert</td>\n\
+  \ <td>ja</td>\n </tr>\n </tbody>\n </table>\n <div><figcaption><strong>Tabelle:\
+  \ </strong>Struktur der Message mit \"Content-Type: multipart/mixed;...\"</figcaption></div>"
 title: E-Rezept - Struktur Zuweisungs-Message
 version: 0

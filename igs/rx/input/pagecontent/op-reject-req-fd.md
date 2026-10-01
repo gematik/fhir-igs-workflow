@@ -2,9 +2,44 @@ Diese Seite enthält die workflowtyp-spezifischen normativen Anforderungen an de
 
 ### Anforderungen aus der Core Spezifikation
 
-Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-schnittstellen-operation-api.html)
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gematik.de/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/op-reject-req-fd.html)
 
 ### Modulspezifische Anforderungen
+
+#### Anforderungen zur Validierung
+
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A310" title="TI-Flow-Fachdienst - Task zurückweisen - Ausführung der OperationDefinition" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS die Operation <i>Task zurückweisen</i> gemäß der FHIR OperationDefinition <a href="./OperationDefinition-tiflow-rx-reject-op.html">TIFlowRXOPReject</a> ausführen.
+</requirement>
+
+<!-- A_24286-02 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A14" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Dispensierinformationen löschen" version="0">
+  <meta lockversion="false"/>
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die Dispensierinformationen, falls welche vorhanden sind, löschen: 
+  <ul>
+    <li>Medication, die aus der MedicationDispense referenziert wird --> löschen</li>
+    <li>MedicationDispense zum dazugehörigen Task --> löschen</li>
+    <li>Task.extension:lastMedicationDispense --> löschen</li>
+  </ul>
+</requirement>
+
+<!-- A_25926 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A15" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject, wenn bereits Dispensierinformationen im TI-Flow-Fachdienst zum Task gespeichert wurden, die Daten für die Löschinformation dieser Dispensierinformationen für die Übermittlung in den ePA Medication Service bereitstellen.
+</requirement>
+
+#### Anforderungen zur Geschäftslogik
 
 <!-- A_19170-02 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A13" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Rollenprüfung" version="0">
@@ -33,35 +68,13 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit das E-Rezept nicht durch einen Unberechtigten zurückgewiesen werden kann.
 </requirement>
 
-<!-- A_24286-02 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A14" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Dispensierinformationen löschen" version="0">
-  <meta lockversion="false"/>
-  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-    <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
-  </actor>
-  Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject die Dispensierinformationen, falls welche vorhanden sind, löschen: 
-  <ul>
-    <li>Medication, die aus der MedicationDispense referenziert wird --> löschen</li>
-    <li>MedicationDispense zum dazugehörigen Task --> löschen</li>
-    <li>Task.extension:lastMedicationDispense --> löschen</li>
-  </ul>
-</requirement>
-
-<!-- A_25926 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A15" title="TI-Flow-Fachdienst - Task zurückweisen - Flowtype 160/169/200/209 - Löschmarkierungen Medikationsliste bereitstellen (Dispensierinformationen)" version="0">
-    <meta lockversion="false"/>
-    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
-    </actor>
-    Der TI-Flow-Fachdienst MUSS beim Zurückweisen eines Tasks mit Flowtype 160, 169, 200 oder 209 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$reject, wenn bereits Dispensierinformationen im TI-Flow-Fachdienst zum Task gespeichert wurden, die Daten für die Löschinformation dieser Dispensierinformationen für die Übermittlung in den ePA Medication Service bereitstellen.
-</requirement>

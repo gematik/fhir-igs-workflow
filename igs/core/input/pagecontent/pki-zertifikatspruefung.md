@@ -25,17 +25,10 @@ Clientsysteme verwenden bei den in TAB_ILFERP_012 dargestellten Aktivitäten Zer
 <td>aktiv</td>
 </tr>
 <tr>
-<td>Aufbau sicherer Kanal zur VAU des TI-Flow-Fachdienstes</td>
-<td>ja</td>
-<td>C.FD.ENC</td>
-<td>oid_erp-vau</td>
-<td>aktiv</td>
-</tr>
-<tr>
 <td>Nur für PS der abgebenden LEI: Signaturzertifikat TI-Flow-Fachdienst</td>
 <td>ja</td>
 <td>C.FD.OSIG</td>
-<td>oid_erezept</td>
+<td>oid_tiflow</td>
 <td>aktiv</td>
 </tr>
 </table>

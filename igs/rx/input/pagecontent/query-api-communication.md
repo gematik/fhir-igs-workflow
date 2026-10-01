@@ -1,4 +1,4 @@
-Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/query-api-communication.html) und beschreibt den Einstieg in die Communication-Query-Schnittstelle.
+Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/query-api-communication.html) und beschreibt den Einstieg in die Communication-Query-Schnittstelle.
 
 Communication wird für die Kommunikation zwischen Versicherten und Apotheke verwendet.
 
@@ -6,11 +6,11 @@ Communication wird für die Kommunikation zwischen Versicherten und Apotheke ver
 
 Die Interaktion mit Nachrichten als FHIR-Ressource _Communication_ wird über die folgenden HTTP-Methoden ermöglicht:
 
-|HTTP-Methode|Ergebnis der Anfrage|
-|---|---|
-|GET|Nachrichten abrufen|
-|POST|Nachricht einstellen|
-|DELETE|Nachricht löschen|
+|Akteur|HTTP-Methode|Ergebnis der Anfrage|
+|---|---|---|
+|Versicherter, Apotheke|GET|Nachrichten abrufen|
+|Versicherter, Apotheke|POST|Nachricht einstellen|
+|Versicherter, Apotheke|DELETE|Nachricht löschen|
 
 ### Anforderungen an Schnittstelle
 

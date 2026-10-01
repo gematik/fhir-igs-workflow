@@ -1,6 +1,6 @@
 ### Zugriffsprotokoll für den Versicherten
 
-Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Weitere Details sind in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/audit-service.html) zu finden, und unten sind die modulspezifischen Anforderungen.
+Der TI-Flow-Fachdienst führt Zugriffsprotokolle für Versicherte, in denen alle Zugriffe auf die personenbezogenen und medizinischen Daten eines Versicherten für den Versicherten einsehbar sind. Weitere Details sind in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/audit-service.html) zu finden. Nachfolgend sind modulspezifische Anforderungen beschrieben.
 
 <requirement conformance="SHALL" key="IG-TIFLOW-CHRG-A99" title="TI-Flow-Fachdienst - Versichertenprotokoll zu DiGA-Operationen" version="0">
     <meta lockversion="false"/>

@@ -2,50 +2,18 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
 
 ### Anforderungen aus der Core Spezifikation
 
-Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-schnittstellen-operation-api.html)
+Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](https://gematik.de/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/op-abort-req-fd.html)
 
 ### Modulspezifische Anforderungen
 
-<!-- A_19026-01 -->
-<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A48" title="TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
-  <meta lockversion="false"/>
-  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
-    <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
-  </actor>
-  Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks mit Flowtype 160, 166, 169, 200 oder 209 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen
-  <ul>
-    <li>oid_versicherter</li>
-    <li>oid_praxis_arzt</li>
-    <li>oid_zahnarztpraxis</li>
-    <li>oid_krankenhaus</li>
-    <li>oid_institution-vorsorge-reha</li>
-    <li>oid_oeffentliche_apotheke</li>
-    <li>oid_krankenhausapotheke</li>
-  </ul>
-  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
-      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
-        </tr>
-        <tr>
-            <th>Severity</th>
-            <td>error</td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>invalid</td>
-        </tr>
-        <tr>
-            <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
-        </tr>
-        <tr>
-            <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
-        </tr>
-    </table> 
-    abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
+#### Anforderungen zur Validierung
+
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A314" title="TI-Flow-Fachdienst - E-Rezept löschen - Ausführung der OperationDefinition" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS die Operation <i>E-Rezept löschen</i> gemäß der FHIR OperationDefinition <a href="./OperationDefinition-tiflow-rx-abort-op.html">TIFlowRXOPAbort</a> ausführen.
 </requirement>
 
 <!-- A_19145-01 -->
@@ -58,7 +26,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
+            <td>412 - Precondition Failed</td>
         </tr>
         <tr>
             <th>Severity</th>
@@ -100,7 +68,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
+            <td>412 - Precondition Failed</td>
         </tr>
         <tr>
             <th>Severity</th>
@@ -168,7 +136,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
       <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
         <tr>
             <th>HTTP-Code</th>
-            <td>403 - Forbidden</td>
+            <td>412 - Precondition Failed</td>
         </tr>
         <tr>
             <th>Severity</th>
@@ -207,3 +175,48 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
     </actor>
         Der TI-Flow-Fachdienst MUSS beim Löschen eines E-Rezepts mittels POST /Task/$abort durch einen Versicherten, wenn Task.status = ready, die Daten für die Löschinformation des Verordnungsdatensatzes für die Übermittlung in den ePA Medication Service bereitstellen.
 </requirement>
+
+#### Anforderungen zur Geschäftslogik
+
+<!-- A_19026-01 -->
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A48" title="TI-Flow-Fachdienst - E-Rezept löschen - Flowtype 160/166/169/200/209 - Rollenprüfung" version="0">
+  <meta lockversion="false"/>
+  <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+    <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
+  </actor>
+  Der TI-Flow-Fachdienst MUSS beim Löschen eines Tasks mit Flowtype 160, 166, 169, 200 oder 209 mittels HTTP-POST/$abort-Operation auf den in der URL referenzierten/Task/&#60;id&#62; die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen
+  <ul>
+    <li>oid_versicherter</li>
+    <li>oid_praxis_arzt</li>
+    <li>oid_zahnarztpraxis</li>
+    <li>oid_krankenhaus</li>
+    <li>oid_institution-vorsorge-reha</li>
+    <li>oid_oeffentliche_apotheke</li>
+    <li>oid_krankenhausapotheke</li>
+  </ul>
+  die Operation am Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:
+      <table id="error-code" style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th>HTTP-Code</th>
+            <td>403 - Forbidden</td>
+        </tr>
+        <tr>
+            <th>Severity</th>
+            <td>error</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>invalid</td>
+        </tr>
+        <tr>
+            <th>Details Code</th>
+            <td>-</td>
+        </tr>
+        <tr>
+            <th>Details Text</th>
+            <td>-</td>
+        </tr>
+    </table> 
+    abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.
+</requirement>
+

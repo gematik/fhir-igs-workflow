@@ -96,6 +96,78 @@
         "release": "2.0.0"
     },
     {
+        "key": "IG-TIFLOW-CHRG-A102",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformationen - Consent schreiben - FHIR-Validierung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-consent-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf des Endpunkts `POST /Consent` unter den benannten Prüfbedingungen die folgende Profilvalidierung durchführen:\n\n <table>\n <thead>\n <tr>\n <th>Prüfbedingung</th>\n <th>Profil</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>Rolle: oid_versicherter</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERPCHRG_PR_Consent</code></td>\n </tr>\n </tbody>\n </table>\n\nund bei negativem Prüfergebnis die Operation mit dem folgenden Fehler:\n\n<table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed</td>\n </tr>\n </table> \n\nabbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:04:47.748957",
+        "modified": "2026-09-24T06:10:11.407337",
+        "date": "2026-09-24T06:10:11.407337",
+        "content_hash": "81fb11e7c680ac03d301d9bff721bcc28eea3f4e4e5d2af68cb51a660d1b7835",
+        "path": "query-api-consent-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A103",
+        "title": "TI-Flow-Fachdienst - Abrechnungsinformationen - Einstellen von Communications - FHIR-Validierung",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/query-api-communication-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf des Endpunkts `POST /Communication` unter den benannten Prüfbedingungen die folgende Profilvalidierung durchführen:\n\n <table>\n <thead>\n <tr>\n <th>Prüfbedingung</th>\n <th>Profil</th>\n </tr>\n </thead>\n <tbody>\n <tr>\n <td>Rolle: oid_versicherter</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReq</code></td>\n </tr>\n <tr>\n <td>Rolle: oid_oeffentliche_apotheke, oid_krankenhausapotheke</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERPCHRG_PR_Communication_ChargChangeReply</code></td>\n </tr>\n </tbody>\n </table>\n\nund bei negativem Prüfergebnis die Operation mit dem folgenden Fehler:\n\n<table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed</td>\n </tr>\n </table> \n\nabbrechen.",
+        "conformance": "SHALL",
+        "created": "2026-09-22T15:04:47.772298",
+        "modified": "2026-09-24T06:10:11.429162",
+        "date": "2026-09-24T06:10:11.429162",
+        "content_hash": "a12129ec260905f4e2dcd129fae2162909e40568b5f0e3a14026517c4345943f",
+        "path": "query-api-communication-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-CHRG-A104",
+        "title": "TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen - Charge Items",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-push.md",
+        "text": "Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß der Tabelle erzeugen.\n\n<table>\n<thead>\n<tr>\n<th>ChannelId</th>\n<th>Identifier</th>\n<th>IdentifierType</th>\n<th>Product</th>\n<th>ActorName</th>\n<th>Message</th>\n</tr>\n</thead>\n<tbody>\n\n<tr>\n<td>tiflow.chargeitem.create</td>\n<td>ChargeItem.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.chargeitem.update</td>\n<td>ChargeItem.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n</tbody>\n</table>\n\n<p>\nDamit die Tabelle etwas übersichtlicher gestaltet ist, werden einige Abkürzungen verwendet. Diese werden hier beschrieben:\n<table>\n<thead>\n<tr>\n<th>Abkürzung</th>\n<th>Definition</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>[medicationName]</td>\n<td>Falls medication dem Profil \"KBV_PR_ERP_Medication_Ingredient\" entspricht:<br>\n`Medication.ingredient.item.itemCodeableConcept.text`<br>\nAnsonsten:<br>\n`Medication.code.text`</td>\n</tr>\n</tbody>\n</table>\n</p>",
+        "conformance": "SHALL",
+        "created": "2026-09-29T11:41:05.841891",
+        "modified": "2026-09-29T11:41:05.841909",
+        "date": "2026-09-29T11:41:05.841915",
+        "content_hash": "b62c588c8a7d649a1e3794beaa6cf235bc970c8bdcfec6659a7c21fce4e4e3d8",
+        "path": "menu-technische-umsetzung-push.html",
+        "release": "2.0.0"
+    },
+    {
         "key": "IG-TIFLOW-CHRG-A11",
         "title": "TI-Flow-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest",
         "actor": [
@@ -673,7 +745,7 @@
     },
     {
         "key": "IG-TIFLOW-CHRG-A33",
-        "title": "TI-Flow-FdV: TIFlow-CHRG - verpflichtende Anwendungsfälle",
+        "title": "TI-Flow-FdV: Abrechnungsinformationen - Anwendungsfälle",
         "actor": [
             "TI-Flow_FdV"
         ],
@@ -686,18 +758,18 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md",
-        "text": "Das TI-Flow-FdV MUSS für die Umsetzung der Nutzung von Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle\n <ul>\n <li>UC 3.14 - Einwilligung durch Versicherten erteilen</li>\n <li>UC 3.15 - Einwilligung durch Versicherten widerrufen</li>\n <li>UC 3.13 - Einwilligungen durch Versicherten einsehen</li>\n <li>UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen</li>\n <li>Abrechnungsinformationen durch den Versicherten weitergeben</li>\n <li>UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren</li>\n <li>UC 3.11 - Abrechnungsinformationen durch den Versicherten löschen</li>\n <li>Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes</li>\n </ul>\n umsetzen.",
+        "text": "Das TI-Flow-FdV MUSS, wenn es Abrechnungsinformationen für PKV-Versicherte unterstützt, die Anwendungsfälle\n <ul>\n <li>UC 3.14 - Einwilligung durch Versicherten erteilen</li>\n <li>UC 3.15 - Einwilligung durch Versicherten widerrufen</li>\n <li>UC 3.13 - Einwilligungen durch Versicherten einsehen</li>\n <li>UC 3.10 - Abrechnungsinformationen durch Versicherten abrufen</li>\n <li>Abrechnungsinformationen durch den Versicherten weitergeben</li>\n <li>UC 3.12 - Abrechnungsinformationen durch den Versicherten markieren</li>\n <li>UC 3.11 - Abrechnungsinformationen durch den Versicherten löschen</li>\n <li>Berechtigen der Apotheke zum Ändern des PKV-Abgabedatensatzes</li>\n </ul>\n umsetzen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.928527",
-        "modified": "2026-08-26T13:45:24.881907",
-        "date": "2026-08-26T13:45:24.881907",
-        "content_hash": "36ee67f5153bb523470c47f77a76d6b8c0492b07b5935a6cfab9f56cecf52af4",
+        "modified": "2026-09-18T08:32:05.718501",
+        "date": "2026-09-18T08:32:05.718501",
+        "content_hash": "35da5351f5c564f493df2daa38cd49376abe31c295b2ed543beeea0e06142231",
         "path": "menu-technische-umsetzung-anwendungsfaelle.html",
         "release": "2.0.0"
     },
     {
         "key": "IG-TIFLOW-CHRG-A34",
-        "title": "PS abgebende LEI: TIFlow-CHRG - verpflichtende Anwendungsfälle",
+        "title": "PS abgebende LEI: Abrechnungsinformationen - Anwendungsfälle",
         "actor": [
             "PS_TI-Flow_Apotheke"
         ],
@@ -710,12 +782,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/menu-technische-umsetzung-anwendungsfaelle.md",
-        "text": "Das PS der abgebenden LEI MUSS für die Umsetzung der Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle\n    <ul>\n        <li>UC 4.5 - Abgabedatensatz durch Abgebenden signieren</li>\n        <li>UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen</li>\n        <li>UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen</li>\n        <li>UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern</li>\n    </ul>\n    umsetzen.",
+        "text": "Das PS der abgebenden LEI MUSS für die Umsetzung der Abrechnungsinformationen für PKV-Versicherte die Anwendungsfälle\n <ul>\n <li>UC 4.5 - Abgabedatensatz durch Abgebenden signieren</li>\n <li>UC 4.11 - Abrechnungsinformation durch Abgebenden bereitstellen</li>\n <li>UC 4.10 - Abrechnungsinformationen durch Abgebenden abrufen</li>\n <li>UC 4.13 - PKV-Abgabedatensatz durch Abgebenden ändern</li>\n </ul>\n umsetzen.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.928776",
-        "modified": "2026-06-25T13:00:23.928777",
-        "date": "2026-08-25T14:32:12.345840",
-        "content_hash": "40d95da37ad153a740c84dd7f235cd39f37018e98d3d3a00c8438609aa56dcb2",
+        "modified": "2026-09-18T08:32:05.718815",
+        "date": "2026-09-18T08:32:05.718815",
+        "content_hash": "b3cf17ecf5a3abd5eef87fa9ab9de082354b8dd8e4638ea0dace01db29c60cec",
         "path": "menu-technische-umsetzung-anwendungsfaelle.html",
         "release": "2.0.0"
     },
@@ -830,12 +902,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /ChargeItem die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n    <ul>\n    <li>oid_versicherter</li>\n    </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf den Endpunkt /ChargeItem die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.931336",
-        "modified": "2026-06-25T13:00:23.931338",
-        "date": "2026-06-25T13:00:23.931338",
-        "content_hash": "0f76573605b16948bb1681a428a5232c30ae1d898219c541a538b955748fbcfb",
+        "modified": "2026-09-18T09:48:47.886891",
+        "date": "2026-09-18T09:48:47.886891",
+        "content_hash": "5fe5387afb3558fdacfc6c9fb6fd351f5ef1e5b71e8dcf0e20121f21666642c1",
         "path": "query-api-chargeitem-req-fd.html",
         "release": "2.0.0"
     },
@@ -950,12 +1022,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der der Rollen \n    <ul>\n        <li>oid_versicherter</li>\n        <li>oid_oeffentliche_apotheke</li>\n        <li>oid_krankenhausapotheke</li> \n    </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-GET-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der der Rollen \n <ul>\n <li>oid_versicherter</li>\n <li>oid_oeffentliche_apotheke</li>\n <li>oid_krankenhausapotheke</li> \n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit E-Rezepte nicht durch Unberechtigte ausgelesen werden können.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.932161",
-        "modified": "2026-06-25T13:00:23.932162",
-        "date": "2026-06-25T13:00:23.932163",
-        "content_hash": "235c3dcfe4fbab9fab6b3de90e2de5aa065acfa8bbbcf0e8c34e487e08b217e4",
+        "modified": "2026-09-18T09:48:47.888031",
+        "date": "2026-09-18T09:48:47.888031",
+        "content_hash": "8841304b77e22b5da71793381f695ee807e67b7814ab840f6e0c839ec29ee383",
         "path": "query-api-chargeitem-req-fd.html",
         "release": "2.0.0"
     },
@@ -1094,12 +1166,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen \n    <ul>\n        <li>oid_oeffentliche_apotheke</li>\n        <li>oid_krankenhausapotheke</li>\n    </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte eingestellt werden kann.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-POST-Operation auf den Endpunkt /ChargeItem die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen \n <ul>\n <li>oid_oeffentliche_apotheke</li>\n <li>oid_krankenhausapotheke</li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen und bei Abweichungen mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte eingestellt werden kann.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.934039",
-        "modified": "2026-06-25T13:00:23.934040",
-        "date": "2026-06-25T13:00:23.934041",
-        "content_hash": "288cefa6ba3f5025dc1d0155b74351c78fa8f07ff2e79e2fcd0d208b96c46a72",
+        "modified": "2026-09-18T09:48:47.890772",
+        "date": "2026-09-18T09:48:47.890772",
+        "content_hash": "2e8bb113aa9807cc2898ee18f8031df850419d291b98e4849ee329e54fdaec67",
         "path": "query-api-chargeitem-req-fd.html",
         "release": "2.0.0"
     },
@@ -1286,12 +1358,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeItem übertragene ChargeItem-Ressource gegen das FHIR-Profil ChargeItem prüfen und \n    <ul>\n    <li>die Korrektheit der Rezept-ID (GEM_ERP_PR_PrescriptionId) im referenzierten Task als ChargeItem.identifier, </li>\n    <li>die Korrektheit der Versicherten-ID des Versicherten im referenzierten Task (Task.for) gegen ChargeItem.subject.identifier </li>\n    <li>und die Korrektheit der Telematik-ID der Apotheke gemäß Nutzerinformation (zeta-user-info.identifier) mit dem Wert in ChargeItem.enterer.identifier</li>\n    </ul>\n    prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.",
+        "text": "Der TI-Flow-Fachdienst MUSS die im HTTP-POST-Operation auf die Ressource ChargeItem übertragene ChargeItem-Ressource gegen das FHIR-Profil https://gematik.de/fhir/erpchrg/StructureDefinition/GEM_ERPCHRG_PR_ChargeItem prüfen und \n <ul>\n <li>die Korrektheit der Rezept-ID (GEM_ERP_PR_PrescriptionId) im referenzierten Task als ChargeItem.identifier, </li>\n <li>die Korrektheit der Versicherten-ID des Versicherten im referenzierten Task (Task.for) gegen ChargeItem.subject.identifier </li>\n <li>und die Korrektheit der Telematik-ID der Apotheke gemäß Nutzerinformation (zeta-user-info.identifier) mit dem Wert in ChargeItem.enterer.identifier</li>\n </ul>\n prüfen und bei Nicht-Konformität die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen, damit nur FHIR-valide Ressourcen in den TI-Flow-Fachdienst hochgeladen werden.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.936739",
-        "modified": "2026-06-25T13:00:23.936740",
-        "date": "2026-06-25T13:00:23.936741",
-        "content_hash": "2acdddc839de7ad628b2d403729517136fa608a6b06389c8adf718ab8e10eaf9",
+        "modified": "2026-09-22T15:04:47.757315",
+        "date": "2026-09-22T15:04:47.757315",
+        "content_hash": "3b5369b670d407d7d4f35604e3cd709c79959d2216045820f5c4a29fe6cf8623",
         "path": "query-api-chargeitem-req-fd.html",
         "release": "2.0.0"
     },
@@ -1550,12 +1622,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /ChargeItem bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.chargeitem.create\" und den Versicherten mit der KVNR = ChargeItem.subject initiieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /ChargeItem bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.chargeitem.create\" und den Versicherten mit der KVNR = ChargeItem.subject initiieren.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.939280",
-        "modified": "2026-06-25T13:00:23.939281",
-        "date": "2026-06-25T13:00:23.939282",
-        "content_hash": "d549fa62663cd4148e6c23cfa07c97aecbdb5b7ff1b40fa95f0db1616ab24191",
+        "modified": "2026-09-29T09:57:09.524618",
+        "date": "2026-09-29T09:57:09.524618",
+        "content_hash": "9fa9197cfa639a86c7df7ca51801d85696bf2c961a67229fe2e5d1da3227dc71",
         "path": "query-api-chargeitem-req-fd.html",
         "release": "2.0.0"
     },
@@ -1598,12 +1670,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PATCH-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n    <ul>\n    <li>oid_versicherter</li>\n  </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte aktualisiert werden kann.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PATCH-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte aktualisiert werden kann.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.939965",
-        "modified": "2026-06-25T13:00:23.939966",
-        "date": "2026-06-25T13:00:23.939967",
-        "content_hash": "abc62013421607dba5df1129a3799ccc2315ed52a6fc12a367d63a8ea3d0ad64",
+        "modified": "2026-09-18T09:48:47.898433",
+        "date": "2026-09-18T09:48:47.898433",
+        "content_hash": "c00c7f81f56510786f66aacab5011387e87dc7982d23c5bf2277a994673157a2",
         "path": "query-api-chargeitem-req-fd.html",
         "release": "2.0.0"
     },
@@ -1670,12 +1742,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen \n    <ul>\n        <li>oid_oeffentliche_apotheke</li>\n        <li>oid_krankenhausapotheke</li>\n    </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte aktualisiert werden kann.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der Http-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in einer der Rollen \n <ul>\n <li>oid_oeffentliche_apotheke</li>\n <li>oid_krankenhausapotheke</li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte aktualisiert werden kann.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.941152",
-        "modified": "2026-06-25T13:00:23.941153",
-        "date": "2026-06-25T13:00:23.941154",
-        "content_hash": "e9f29d16080b02850bbf43c0a1c9a35bd8f0b3176309d694e247da991985e717",
+        "modified": "2026-09-18T09:48:47.900294",
+        "date": "2026-09-18T09:48:47.900294",
+        "content_hash": "a6f791e2e7659e0b37a77fc367c43afd08e10e4c8d1c83360c7a4a2d5e5411d9",
         "path": "query-api-chargeitem-req-fd.html",
         "release": "2.0.0"
     },
@@ -1958,12 +2030,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.chargeitem.update\" und den Versicherten mit der KVNR = ChargeItem.subject initiieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.chargeitem.update\" und den Versicherten mit der KVNR = ChargeItem.subject initiieren.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.944893",
-        "modified": "2026-06-25T13:00:23.944895",
-        "date": "2026-06-25T13:00:23.944895",
-        "content_hash": "9d2ed55df2eaa9e6dbdd091626f9adbfc340abbf0bbf55291fa453404a0d9117",
+        "modified": "2026-09-29T09:57:09.573787",
+        "date": "2026-09-29T09:57:09.573787",
+        "content_hash": "3fcd06696acc51efd8c2fddd5c6bcfd2f87ff6cf3904d4d102d05dbf6ca1e330",
         "path": "query-api-chargeitem-req-fd.html",
         "release": "2.0.0"
     },
@@ -2030,12 +2102,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n    <ul>\n        <li>oid_versicherter</li>\n    </ul>\n    die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>\n        </tr>\n    </table> \n    abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte gelöscht werden kann.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle \n <ul>\n <li>oid_versicherter</li>\n </ul>\n die Operation am TI-Flow-Fachdienst aufrufen, und bei Abweichungen die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen, damit eine Abrechnungsinformation nicht durch Unberechtigte gelöscht werden kann.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.945664",
-        "modified": "2026-06-25T13:00:23.945665",
-        "date": "2026-06-25T13:00:23.945666",
-        "content_hash": "af424024dcaccc9c8e66a45a906ba79d043fc72ccb8a14ab8fd3c72b9596dc3f",
+        "modified": "2026-09-18T09:48:47.905908",
+        "date": "2026-09-18T09:48:47.905908",
+        "content_hash": "7db7fbce7b79c31cc52ac06ef87419df5c8b6216d4e5fc3f45c5735b52d913c7",
         "path": "query-api-chargeitem-req-fd.html",
         "release": "2.0.0"
     },

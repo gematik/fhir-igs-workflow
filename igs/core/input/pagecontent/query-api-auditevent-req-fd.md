@@ -1,4 +1,4 @@
-<!-- FD-Anforderungen: Query API AuditEvent -->
+<!-- FD-Anforderungen: Resource API AuditEvent -->
 
 Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für die AuditEvent-Query-Endpunkte.
 
@@ -39,11 +39,11 @@ Diese Seite enthält die normativen Anforderungen an den TI-Flow-Fachdienst für
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
     </table> 
     abbrechen, damit Protokolleinträge nicht durch Unberechtigte ausgelesen werden können.

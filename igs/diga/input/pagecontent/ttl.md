@@ -27,11 +27,11 @@ Der TI-Flow-Fachdienst realisiert Datensparsamkeit durch automatisches Löschen 
 		</tr>
 		<tr> 
 		<td>in-progress</td>
-		<td>30 Tage nach Statuswechsel</td>
+		<td>100 Tage nach Statuswechsel</td>
 		</tr>
 		<tr> 
 		<td>completed</td>
-		<td>30 Tage nach Statuswechsel</td>
+		<td>100 Tage nach Statuswechsel</td>
 		</tr>
 		<tr> 
 		<td>cancelled</td>

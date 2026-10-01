@@ -3,12 +3,12 @@ fhirVersion: 4.0.1
 id: de.gematik.tiflow.erezept
 name: gemIG_TIFlow_erezept
 title: Implementation Guide TIFlow - Verordnungen für Arzneimittel
-status: draft # draft | active | retired | unknown
-version: 2.0.0-ballot.3
+status: active # draft | active | retired | unknown
+version: 2.0.0
 # version: 0.9.0
-date: 2026-08-27
+date: 2026-10-02
 copyrightYear: 2026+
-releaseLabel: ballot # ci-build, ballot, release
+releaseLabel: release # ci-build, ballot, release
 jurisdiction: urn:iso:std:iso:3166#DE "Germany" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: gematik GmbH
@@ -18,14 +18,14 @@ publisher:
 dependencies:
   hl7.fhir.uv.xver-r5.r4: 0.1.0
   de.basisprofil.r4: 1.6.0
-  de.gematik.ti: 1.4.0-ballot.2
-  de.gematik.tiflow: 2.0.0-ballot.3
+  de.gematik.ti: 1.4.0
+  de.gematik.tiflow: 2.0.0
 
 applyExtensionMetadataToRoot: false
 
 menu:
   Start: index.html
-  Inhaltsverzeichnis: toc.html
+  # Inhaltsverzeichnis: toc.html
   Fachlichkeit:
     Arzneimittel: menu-fachlichkeit-e-rezept.html
     Teratogene Arzneimittel: menu-fachlichkeit-t-rezept.html
@@ -42,16 +42,17 @@ menu:
     Mappings: menu-technische-umsetzung-mapping.html
     Technisches Konzept EU: menu-technische-umsetzung-konzept.html
     Datenschutz und Sicherheit EU: menu-technische-umsetzung-datenschutz-und-sicherheit.html
+    Push Notification: menu-technische-umsetzung-push.html
     Zugriffsprotokollierung: menu-technische-umsetzung-audit-service.html
     Löschfristen: ttl.html
   Schnittstellen:
-    Query API: menu-schnittstellen-query-api.html
+    Resource API: menu-schnittstellen-query-api.html
     Operation API: menu-schnittstellen-operation-api.html
   Über:
     Referenzen: referenced.html
     Downloads: downloads.html
     Abhängigkeiten: dependencies.html
-    #OpenAPI: erp-openapi.html
+    OpenAPI: erp-openapi.html
     Release Notes: release-notes.html
     #Steckbriefe: spec-sheet.html
     #Versionsvergleiche: comparisons.html
@@ -85,6 +86,8 @@ pages:
       title: "Validierung von Dosierungsinformationen"
     menu-technische-umsetzung-dispensierinformationen.md:
       title: "Erstellen von Dispensierinformationen" 
+    menu-technische-umsetzung-push.md:
+      title: "Push Notification"
     menu-technische-umsetzung-abgabedatensatz.md:
       title: "Abgabedatensatz signieren" 
     menu-technische-umsetzung-kim.md:
@@ -115,16 +118,6 @@ pages:
             title: "Mapping einer PZN Medikation"
       mapping-dispensation.md:
         title: "Mapping von Dispensierinformationen"
-      comparison-Bundle-input-example-1.md:
-        title: "Beispiel für eine Transformation einer PZN"
-      comparison-Bundle-input-example-2.md:
-        title: "Beispiel für eine Transformation einer Wirkstoffverordnung"
-      comparison-Bundle-input-example-3.md:
-        title: "Beispiel für eine Transformation einer Freitextverordnung"
-      comparison-Bundle-input-example-4.md:
-        title: "Beispiel für eine Transformation einer Rezepturverordnung"
-      comparison-Bundle-input-example-5.md:
-        title: "Beispiel für eine Transformation einer Verordnung mit absoluter Referenzierung"
     menu-technische-umsetzung-konzept.md:
       title: "Technisches Konzept - Einlösen im EU-Ausland"
     menu-technische-umsetzung-datenschutz-und-sicherheit.md:
@@ -134,33 +127,33 @@ pages:
   ttl.md:
     title: "Löschfristen"
   menu-schnittstellen-query-api.md:
-    title: "Query API"
+    title: "Resource API"
     query-api-task.md:
-      title: "Query API: Task"
+      title: "Resource API: Task"
       query-api-task-req-fd.md:
-        title: "FD-Anforderungen: Task-Query"
+        title: "FD-Anforderungen: Task"
       query-api-task-req-fdv.md:
-        title: "FdV-Anforderungen: Task-Query"
+        title: "FdV-Anforderungen: Task"
       query-api-task-req-avs.md:
-        title: "AVS-Anforderungen: Task-Query"
+        title: "AVS-Anforderungen: Task"
     query-api-medicationdispense.md:
-      title: "Query API: MedicationDispense"
+      title: "Resource API: MedicationDispense"
       query-api-medicationdispense-req-fd.md:
-        title: "FD-Anforderungen: MedicationDispense-Query"
+        title: "FD-Anforderungen: MedicationDispense"
       query-api-medicationdispense-req-fdv.md:
-        title: "FdV-Anforderungen: MedicationDispense-Query"
+        title: "FdV-Anforderungen: MedicationDispense"
     query-api-communication.md:
-      title: "Query API: Communication"
+      title: "Resource API: Communication"
       query-api-communication-req-fd.md:
-        title: "FD-Anforderungen: Communication-Query"
+        title: "FD-Anforderungen: Communication"
       query-api-communication-req-fdv.md:
-        title: "FdV-Anforderungen: Communication-Query"
+        title: "FdV-Anforderungen: Communication"
       query-api-communication-req-avs.md:
-        title: "AVS-Anforderungen: Communication-Query"
+        title: "AVS-Anforderungen: Communication"
       query-api-communication-req-data.md:
         title: "Datenmodell payload"
     query-api-consent.md:
-      title: "Query API: Consent"
+      title: "Resource API: Consent"
       query-api-consent-req-fd.md:
         title: "FD-Anforderungen: Consent"
       query-api-consent-req-fdv.md:
@@ -206,7 +199,7 @@ pages:
     op-abort.md:
       title: "Operation $abort (Task abbrechen)"
       op-abort-req-fd.md:
-        title: "FdV-Anforderungen $abort"
+        title: "FD-Anforderungen $abort"
       op-abort-req-fdv.md:
         title: "E-Rezept-FdV Anforderungen $abort"
       op-abort-req-pvs.md:
@@ -251,8 +244,8 @@ pages:
     title: Abhängigkeiten
   downloads.md:
     title: "Downloads"
-  # erp-openapi.md:
-  #   title: "OpenAPI: E-Rezept Produkttypen"
+  erp-openapi.md:
+    title: "OpenAPI: E-Rezept"
   release-notes.md:
     title: "Release Notes"
   # spec-sheet.md:
@@ -279,20 +272,9 @@ parameters:
     - https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Task
     - https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_AvailabilityStatus
     - https://gematik.de/fhir/erp/ValueSet/GEM_ERP_VS_OrganizationType
-    - https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationMap
-    - https://gematik.de/fhir/structure-comparer/StructureMap/GEMErpPrMedicationdispenseMap
-    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpBundleMap
-    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationCompoundingMap
-    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationFreetextMap
-    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationIngredientMap
-    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpMedicationPznMap
-    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrErpPrescriptionMap
-    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForOrganizationMap
-    - https://gematik.de/fhir/structure-comparer/StructureMap/KBVPrForPractitionerMap
 
   path-resource:
     - input/resources/*
-    # - input/resources/structuremaps
     # - input/resources/kbv-bundles
     # - input/resources/transformed-kbv-bundles
   path-pages:
@@ -320,17 +302,6 @@ parameters:
     - Bundle/4863d1fb-dc26-4680-bb35-018610d1749d
     - Bundle/44420ed9-7388-4be5-acc5-9c124fad9f34
     - Bundle/9581ce65-b118-4751-9073-19c091b341e0
-    - StructureMap/GEMErpPrMedicationMap
-    - StructureMap/GEMErpPrMedicationdispenseMap
-    - StructureMap/GEMErpPrMedicationdispenseMap
-    - StructureMap/KBVPrErpBundleMap
-    - StructureMap/KBVPrErpMedicationCompoundingMap
-    - StructureMap/KBVPrErpMedicationFreetextMap
-    - StructureMap/KBVPrErpMedicationIngredientMap
-    - StructureMap/KBVPrErpMedicationPznMap
-    - StructureMap/KBVPrErpPrescriptionMap
-    - StructureMap/KBVPrForOrganizationMap
-    - StructureMap/KBVPrForPractitionerMap
     # - Bundle/Bundle-AcceptOperation
     # - Bundle/ExampleAcceptResponseBundle
     # - Bundle/ExampleRxCommunicationSearchset

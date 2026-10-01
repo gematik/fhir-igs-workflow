@@ -26,8 +26,9 @@ RuleSet: CapSupportResourceSearchParamNoDefinition(name, type, expectation, docu
   * name = "{name}"
   * type = {type}
   * documentation = {documentation}
-  * extension[+].url = $capabilitystatement-expectation
-  * extension[=].valueCode = {expectation}
+  * extension[expectation].valueCode = {expectation}
+  // * extension[+].url = $capabilitystatement-expectation
+  // * extension[=].valueCode = {expectation}
 
 RuleSet: CapSupportSearchParam(name, canonical, type, expectation, documentation)
 * searchParam[+]
@@ -44,6 +45,12 @@ RuleSet: CapSupportResourceOperation(name, operation, expectation, documentation
 RuleSet: CapSupportOperation(name, operation, expectation, documentation)
 * operation[+]
   * name = "{name}"
-  * definition = "{operation}"
+  * definition = Canonical({operation})
   * documentation = {documentation}
   * extension[expectation].valueCode = {expectation}
+
+
+RuleSet: ImportCapabilityStatment (capabilityStatement, expectation)
+* imports[+] = Canonical({capabilityStatement})
+* imports[=].extension[+].url = $capabilitystatement-expectation
+* imports[=].extension[=].valueCode = {expectation}

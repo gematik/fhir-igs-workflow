@@ -4,11 +4,11 @@ Diese Seite beschreibt den Einstieg in die Consent-Query-Schnittstelle.
 
 Die Nachricht zur Interaktion mit Einwilligungen als FHIR-Ressource _Consent_ wird über die folgenden HTTP-Methoden ermöglicht:
 
-|HTTP-Methode|Ergebnis der Anfrage|
-|---|---|
-|GET|Einwilligungen einsehen|
-|POST|Einwilligung erteilen|
-|DELETE|Einwilligung widerrufen|
+|Akteur|HTTP-Methode|Ergebnis der Anfrage|
+|---|---|---|
+|Versicherter|GET|Einwilligungen einsehen|
+|Versicherter|POST|Einwilligung erteilen|
+|Versicherter|DELETE|Einwilligung widerrufen|
 
 ### Anforderungen an die Schnittstelle
 
@@ -71,9 +71,7 @@ Der Aufruf erfolgt als http-GET-Operation auf die Ressource /Consent. Der Fachdi
 
 </div>
 
-### Instance API
-
-#### Löschen einer einzelnen Einwilligung
+#### Löschen einer Einwilligung
 
 Als Versicherter möchte ich meine erteilte Einwilligung zur elektronischen Speicherung meiner Abrechnungsinformationen widerrufen. Mit dem Widerruf der Einwilligung werden bereits gespeicherte Abrechnungsinformationen gelöscht.
 
@@ -82,7 +80,7 @@ Der Aufruf erfolgt als http-`DELETE`-Operation auf die Ressource /Consent. Der F
 <div class="gematik-apidoc"
   data-api-type="FHIRResource"
   data-api-fhir-resource-type="Consent"
-  data-api-fhir-interaction="delete">
+  data-api-fhir-interaction="conditional-delete">
   <div id="CapabilityStatement">
     <pre>
       {% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}

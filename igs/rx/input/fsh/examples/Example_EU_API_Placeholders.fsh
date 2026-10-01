@@ -1,17 +1,5 @@
 // TODO: Validate and replace placeholder examples used by gematik-api blocks in pagecontent.
 
-Instance: ExampleERPEUOperationOutcomeError
-InstanceOf: TIFlowOperationOutcome
-Title: "Beispiel für Abort-Operation Fehlerantwort (412)"
-Description: "Beispiel für eine Fehlerantwort bei der Abort-Operation"
-Usage: #example
-* id = "ExampleERPEUOperationOutcomeError"
-* issue[+]
-  * severity = #error
-  * code = #invalid
-  * details.coding.system = $tiflow-core-oo-cs
-  * details.coding.code = #TIFLOW_AUTH_ROLE_NOT_ALLOWED
-  * details.text = "Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern"
 
 Instance: ExampleERPEUTaskInReadyState
 InstanceOf: GEM_ERP_PR_Task

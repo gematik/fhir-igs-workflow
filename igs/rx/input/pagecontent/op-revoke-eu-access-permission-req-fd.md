@@ -1,4 +1,4 @@
-### Anforderungen der Schnittstelle aus diesem Modul
+### Modulspezifische Anforderungen
 
 <!-- A_27084 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A278" title="TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Rollenprüfung" version="0">
@@ -6,7 +6,7 @@
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produktgutachten">Sich.techn. Eignung: Produktgutachten</testProcedure>
     </actor>
-    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle 
+    Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission die zeta-user-info.professionOID des Nutzers bestimmen und sicherstellen, dass ausschließlich Nutzer in der Rolle
     <ul>
     <li>oid_versicherter</li>
     </ul>
@@ -26,15 +26,27 @@
         </tr>
         <tr>
             <th>Details Code</th>
-            <td>TIFLOW_AUTH_ROLE_NOT_ALLOWED</td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Details Text</th>
-            <td>Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern</td>
+            <td>-</td>
         </tr>
-    </table> 
+    </table>
     abbrechen, damit die Information zur Zugriffsberechtigung nicht durch Unberechtigte gelöscht werden kann.
 </requirement>
+
+#### Anforderungen zur Validierung
+
+<requirement conformance="SHALL" key="IG-TIFLOW-ERP-A321" title="TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Ausführung der OperationDefinition" version="0">
+    <meta lockversion="false"/>
+    <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
+        <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
+    </actor>
+    Der TI-Flow-Fachdienst MUSS die Operation <i>EU-Zugriffsberechtigung löschen</i> gemäß der FHIR OperationDefinition <a href="./OperationDefinition-revoke-eu-access-permission.html">RevokeEUAccessPermission</a> ausführen.
+</requirement>
+
+#### Anforderungen zur Geschäftslogik
 
 <!-- A_27085 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-ERP-A279" title="TI-Flow-Fachdienst - Zugriffsberechtigung löschen - Löschen" version="0">
@@ -44,3 +56,4 @@
     </actor>
     Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-DELETE-Operation auf den Endpunkt /$revoke-eu-access-permission den zeta-user-info.identifier des Nutzers (KVNR) bestimmen und, falls vorhanden, zu dieser KVNR gespeicherte Zugriffsberechtigungen löschen.
 </requirement>
+

@@ -1,5 +1,5 @@
 Instance: TIFlowCOREOPValidate
-InstanceOf: OperationDefinition
+InstanceOf: TIOperationDefinition
 Usage: #definition
 Title: "Validieren einer FHIR-Ressource"
 Description: """Diese Operation validiert eine FHIR-Ressource gegen eine konfigurierbare FHIR-Konfiguration.
@@ -10,6 +10,7 @@ Mit dem Parameter `returnBoolean` kann wahlweise ein kompaktes boolesches Ergebn
 // TI-Flow-26_2 DAV_03
 * insert Meta-Instance
 * kind = #operation
+* extension[method][+].valueCode = #POST
 * affectsState = false
 * system = true
 * type = false

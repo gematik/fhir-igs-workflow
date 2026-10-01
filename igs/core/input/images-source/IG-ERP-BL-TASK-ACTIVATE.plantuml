@@ -27,7 +27,7 @@ if (QES + KBV bundle valid?) then (ok)
 	:Set Task.for, performerType, eu-isRedeemable flag;
 	:Set Task.status = ready;
 	:Prepare data for ePA Medication Service;
-	:Trigger push notification erp.task.activate;
+	:Trigger push notification tiflow.task.activate;
 	:Return updated Task (HTTP 200);
 else (error)
 	:Return OperationOutcome 400/512 (signature/schema error);

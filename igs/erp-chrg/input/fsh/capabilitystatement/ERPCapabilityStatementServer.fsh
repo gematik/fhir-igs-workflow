@@ -17,9 +17,7 @@ Usage: #definition
 * rest.mode = #server
 * extension[baseUrl].valueString = $erp-base-url
 
-* imports[+] = $cap-erp-fd
-* imports[=].extension[0].url = $capabilitystatement-expectation
-* imports[=].extension[0].valueCode = #SHALL
+* insert ImportCapabilityStatment(TIFlowBasicServer, #SHALL)
 
 * insert ChargeItemInteraction(#SHALL)
 * insert ConsentInteraction(#SHALL)

@@ -1,0 +1,200 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: f9d224475ec1319dbcea717400097829579e0015618f0af98d0eba940cdc6611
+created: '2026-09-29T08:47:12.978997'
+date: '2026-09-29T08:47:12.979095'
+key: IG-TIFLOW-DIGA-A150
+modified: '2026-09-29T08:47:12.979089'
+release_status: NEW
+source: input/pagecontent/menu-technische-umsetzung-push.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: 'Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß
+  der Tabelle erzeugen.
+
+
+  <table>
+
+  <thead>
+
+  <tr>
+
+  <th>ChannelId</th>
+
+  <th>Identifier</th>
+
+  <th>IdentifierType</th>
+
+  <th>Product</th>
+
+  <th>ActorName</th>
+
+  <th>Message</th>
+
+  </tr>
+
+  </thead>
+
+  <tbody>
+
+
+  <tr>
+
+  <td>tiflow.task.activate</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
+
+  <td>-</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>tiflow.task.accept</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
+
+  <td>-</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>tiflow.task.reject</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
+
+  <td>-</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>tiflow.task.close</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
+
+  <td>-</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>tiflow.task.dispense</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
+
+  <td>-</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>tiflow.task.abort</td>
+
+  <td>Task.identifier.PrescriptionID</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
+
+  <td>-</td>
+
+  </tr>
+
+
+  <tr>
+
+  <td>tiflow.communication.new</td>
+
+  <td>Communication.basedOn.reference</td>
+
+  <td>TaskId</td>
+
+  <td>
+
+  KBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text
+
+  </td>
+
+  <td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>
+
+  <td>
+
+  Communication.payload.content
+
+  </td>
+
+  </tr>
+
+
+  </tbody>
+
+  </table>'
+title: TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen
+  - DiGA
+version: 0

@@ -1,0 +1,28 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: fd833a2f00047035836658bac713a49dc6a6d9be53dda642850cd0ae1ebb1908
+created: '2026-09-22T15:09:28.065857'
+date: '2026-09-24T06:10:10.991585'
+key: IG-TIFLOW-DIGA-A143
+modified: '2026-09-24T06:10:10.991585'
+release_status: NEW
+source: input/pagecontent/query-api-communication-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf des Endpunkts `POST /Communication`\
+  \ unter den benannten Prüfbedingungen die folgende Profilvalidierung durchführen:\n\
+  \n <table>\n <thead>\n <tr>\n <th>Prüfbedingung</th>\n <th>Profil</th>\n </tr>\n\
+  \ </thead>\n <tbody>\n <tr>\n <td>Rolle: oid_versicherter</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DispReq</code></td>\n\
+  \ </tr>\n <tr>\n <td>Rolle: oid_kostentraeger</td>\n <td><code>https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_Communication_DiGA</code></td>\n\
+  \ </tr>\n </tbody>\n </table>\n\nund bei negativem Prüfergebnis die Operation mit\
+  \ dem folgenden Fehler:\n\n<table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400 - Bad Request</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_VALIDATION_FAILED</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR Profile validation failed</td>\n\
+  \ </tr>\n </table> \n\nabbrechen."
+title: TI-Flow-Fachdienst - Einstellen von Communications - FlowType 162 - FHIR-Validierung
+version: 0

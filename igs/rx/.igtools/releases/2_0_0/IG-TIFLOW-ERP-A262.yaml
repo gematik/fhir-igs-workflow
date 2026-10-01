@@ -1,11 +1,11 @@
 actor:
 - TI-Flow_FD
 conformance: SHALL
-content_hash: e21b6bdc03cca7c9382bbbad045ca2b054d801314a3f0887b633945c1ebca254
+content_hash: 495025b3233b856e16ff754bafb417a429bf0adb22a515e48461f052474c2def
 created: '2026-07-24T14:30:45.771120'
-date: '2026-07-24T14:30:45.771122'
+date: '2026-09-22T15:01:12.130784'
 key: IG-TIFLOW-ERP-A262
-modified: '2026-07-24T14:30:45.771121'
+modified: '2026-09-22T15:01:12.130784'
 release_status: NEW
 source: input/pagecontent/op-eu-close-req-fd.md
 status: ACTIVE
@@ -14,14 +14,15 @@ test_procedures:
   - Produkttest
 text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts\
   \ /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD das im http-Body des Requests enthaltene\
-  \ Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] prüfen\
-  \ und im Fehlerfall die Operation mit dem folgenden Fehler:\n      <table id=\"\
-  error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n  \
-  \      <tr>\n            <th>HTTP-Code</th>\n            <td>400 - Bad Request</td>\n\
-  \        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n\
-  \        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n\
-  \        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n\
-  \        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>FHIR\
-  \ Profile Validation Failed</td>\n        </tr>\n    </table> \n    abbrechen."
+  \ Parameter-Objekt gegen das Profil [GEM_ERP_PR_PAR_EU_CloseOperation_Input] sowie\
+  \ bei der darin enthaltenen MedicationDispense:\n <ul>\n <li>Korrektheit der Rezept-ID https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_PR_PrescriptionId als MedicationDispense.identifier\
+  \ und</li>\n <li>die KVNR des Versicherten im referenzierten Task (Task.for) gegen\
+  \ KVNR in MedicationDispense.subject:identifier</li>\n </ul>\n prüfen und im Fehlerfall\
+  \ die Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>400\
+  \ - Bad Request</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n\
+  \ <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>SVC_VALIDATION_FAILED</td>\n </tr>\n <tr>\n <th>Details Text</th>\n <td>FHIR\
+  \ Profile Validation Failed</td>\n </tr>\n </table> \n abbrechen."
 title: TI-Flow-Fachdienst - Task schließen - EU - Schemaprüfung
 version: 0

@@ -1,3 +1,18 @@
+
+RuleSet: SuccessfulWithResponseType(responseType)
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "200"
+  * extension[description].valueString = "Successful operation"
+  * extension[responseType].valueString = {responseType}
+
+
+RuleSet: SuccessfulCreatedWithResponseType(responseType)
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "201"
+  * extension[description].valueString = "Resource created"
+  * extension[responseType].valueString = {responseType}
+
+
 RuleSet: Successful
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "200"
@@ -63,15 +78,6 @@ RuleSet: ResourceIsNotKnown
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_RESOURCE_ID_FAIL"
 
-
-RuleSet: ResourceWasDeleted
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "410"
-  * extension[description].valueString = "Resource was deleted"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_DELETED"
-
-
 RuleSet: EmptyList
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "404"
@@ -129,13 +135,6 @@ RuleSet: TiflowAccesscodeMismatch
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_ACCESSCODE_MISMATCH"
 
-RuleSet: TiflowAuthRoleNotAllowed
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "403"
-  * extension[description].valueString = "Access role not allowed"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_AUTH_ROLE_NOT_ALLOWED"
-
 RuleSet: TiflowFlowtypeMismatch
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400"
@@ -178,13 +177,6 @@ RuleSet: TiflowSignatureInvalid
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_SIGNATURE_INVALID"
 
-RuleSet: TiflowTaskDeleted
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "410"
-  * extension[description].valueString = "Task deleted"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "TIFLOW_TASK_DELETED"
-
 RuleSet: TiflowTaskExpired
 * extension[responseInfo][+]
   * extension[statusCode].valueString = "400"
@@ -226,3 +218,39 @@ RuleSet: TiflowTimeout
   * extension[description].valueString = "Timeout"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "TIFLOW_TIMEOUT"
+
+
+RuleSet: ClientTimeout
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "408"
+  * extension[description].valueString = "Request Timeout"
+
+
+RuleSet: GatewayTimeout
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "504"
+  * extension[description].valueString = "Gateway Timeout (ZETA)"
+
+
+RuleSet: InternalServerError
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "500"
+  * extension[description].valueString = "Internal Server Error (ZETA)"
+
+
+RuleSet: TooManyRequests
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "429"
+  * extension[description].valueString = "Too Many Requests (ZETA)"
+
+
+RuleSet: Unauthorized
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "401"
+  * extension[description].valueString = "Unauthorized (ZETA)"
+
+
+RuleSet: AuthRoleNotAllowed
+* extension[responseInfo][+]
+  * extension[statusCode].valueString = "403"
+  * extension[description].valueString = "Access role not allowed"

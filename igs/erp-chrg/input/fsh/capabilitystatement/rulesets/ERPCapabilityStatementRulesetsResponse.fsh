@@ -46,12 +46,12 @@ RuleSet: InvalidRequest
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_BAD_FORMAT"
 
-RuleSet: RequestTimeout
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "408"
-  * extension[description].valueString = "Request timeout"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_TIMEOUT"
+// RuleSet: RequestTimeout
+// * extension[responseInfo][+]
+//   * extension[statusCode].valueString = "408"
+//   * extension[description].valueString = "Request timeout"
+//   * extension[responseType].valueString = "TIFlowOperationOutcome"
+//   * extension[errorCode].valueString = "MSG_TIMEOUT"
 
 RuleSet: InternalServerError
 * extension[responseInfo][+]
@@ -88,15 +88,6 @@ RuleSet: ResourceIsNotKnown
   * extension[description].valueString = "Resource is not known"
   * extension[responseType].valueString = "TIFlowOperationOutcome"
   * extension[errorCode].valueString = "MSG_RESOURCE_ID_FAIL"
-
-
-RuleSet: ResourceWasDeleted
-* extension[responseInfo][+]
-  * extension[statusCode].valueString = "410"
-  * extension[description].valueString = "Resource was deleted"
-  * extension[responseType].valueString = "TIFlowOperationOutcome"
-  * extension[errorCode].valueString = "MSG_DELETED"
-
 
 RuleSet: EmptyList
 * extension[responseInfo][+]

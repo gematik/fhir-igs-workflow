@@ -1,9 +1,3 @@
-RuleSet: ImportCapabilityStatment (capabilityStatement, expectation)
-* imports[+] = capabilityStatement
-* imports[=].extension[+].url = $capabilitystatement-expectation
-* imports[=].extension[=].valueCode = {expectation}
-
-
 RuleSet: CapSupportResource (resource, expectation)
 * rest.resource[+].type = #{resource}
 * rest.resource[=].versioning = #versioned-update
@@ -81,3 +75,9 @@ RuleSet: CapSupportOperation(name, operation, expectation, documentation)
   * definition = Canonical({operation})
   * documentation = {documentation}
   * extension[expectation].valueCode = {expectation}
+
+
+RuleSet: ImportCapabilityStatment (capabilityStatement, expectation)
+* imports[+] = Canonical({capabilityStatement})
+* imports[=].extension[+].url = $capabilitystatement-expectation
+* imports[=].extension[=].valueCode = {expectation}

@@ -5,6 +5,7 @@ install:
   - requirements
   - publishtools
   - igtools
+  - epatools
 deploy:
   env:
     dev: gematik_gemspec_fhir_dev-0
@@ -12,12 +13,14 @@ deploy:
 build:
   pipeline:
     - shell: ./scripts/pre-build.sh
-    - shell: ../../scripts/install-ig-packages.sh ./fhir-ig-installer.conf
+    # - shell: ../../scripts/install-ig-packages.sh ./fhir-ig-installer.conf
     - shell: ./scripts/generate-heading-links-js.sh
     - requirements
     - shell: reqtools polarion ./input/content
     - sushi
+    - cap_statements
     - requirements
     - igpub
+    - openapi
     - igpub_qa
     - shell: ./scripts/post-build.sh

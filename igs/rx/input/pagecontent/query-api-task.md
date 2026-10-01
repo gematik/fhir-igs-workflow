@@ -1,4 +1,4 @@
-Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/{{ site.data.constants.tiflow_core_version }}/query-api-task.html) und beschreibt den Einstieg in die Task-Query-Schnittstelle.
+Diese Seite basiert auf der gleichnamigen Schnittstelle in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/query-api-task.html) und beschreibt den Einstieg in die Task-Query-Schnittstelle.
 
 ### Nachricht
 
@@ -61,6 +61,7 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 			{% include CapabilityStatement-ti-flow-fachdienst-server-rx.json %}
 		</pre>
 	</div>
+<!-- 	
 	<div id="Response-Examples">
 		<div data-name="application/fhir+xml" data-type="XML" data-render="ig-Fragment">
 			{% fragment Task/TaskInReadyState XML %}
@@ -69,6 +70,7 @@ Um spezifische Details zu einem einzelnen _Task_ mittels der RESTful API zu erha
 			{% fragment Task/TaskInReadyState JSON %}
 		</div>
 	</div>
+	 -->
 </div>
 
 #### Task markieren (Einlösen im EU-Ausland)
