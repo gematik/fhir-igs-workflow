@@ -6,17 +6,6 @@ Usage: #example
 * parameter[+].name = "workflowType"
 * parameter[=].valueCoding = GEM_ERP_CS_FlowType#162
 
-Instance: ExampleCreateOperationOutputError
-InstanceOf: TIFlowOperationOutcome
-Title: "Error 403 - Beispiel für Create-Operation Fehlerantwort"
-Description: "Beispiel für eine Fehlerantwort bei der Create-Operation mit FHIR-Validierungsfehlern"
-Usage: #example
-* issue[+]
-  * severity = #error
-  * code = #forbidden
-  * details.coding.system = $cs-tiflow-oo-details
-  * details.coding.code = #TIFLOW_AUTH_ROLE_NOT_ALLOWED
-  * details.text = "Der Nutzer ist nicht berechtigt, die aufgerufene Operation anzufordern"
 
 Instance: ExampleOperationCreateError
 InstanceOf: TIFlowOperationOutcome

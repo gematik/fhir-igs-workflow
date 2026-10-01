@@ -26,8 +26,9 @@ RuleSet: CapSupportResourceSearchParamNoDefinition(name, type, expectation, docu
   * name = "{name}"
   * type = {type}
   * documentation = {documentation}
-  * extension[+].url = $capabilitystatement-expectation
-  * extension[=].valueCode = {expectation}
+  * extension[expectation].valueCode = {expectation}
+  // * extension[+].url = $capabilitystatement-expectation
+  // * extension[=].valueCode = {expectation}
 
 RuleSet: CapSupportSearchParam(name, canonical, type, expectation, documentation)
 * searchParam[+]
