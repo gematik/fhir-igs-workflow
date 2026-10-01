@@ -1,4 +1,6 @@
-Der TI-Flow-Fachdienst ermöglicht den Versand von Push Notifications für verschiedene Anwendungsfälle. Die Details sind in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-technische-umsetzung-push.html) zu finden, und unten sind die modulspezifischen Anforderungen.
+Der TI-Flow-Fachdienst ermöglicht den Versand von Push Notifications für verschiedene Anwendungsfälle. Die Details sind in der [Core-Spezifikation](https://gemspec.gematik.de/ig/fhir/tiflow/{{ site.data.constants.tiflow_core_version }}/menu-technische-umsetzung-push.html) zu finden.
+
+### Modulspezifische Anforderungen
 
 <!-- E-Rezept_26_2 C_12832 -->
 <!-- A_28115-01 -->
