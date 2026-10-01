@@ -25,6 +25,7 @@ Alias: $identifier-telematik-id = https://gematik.de/fhir/sid/telematik-id
 
 // Workflow
 Alias: $cs-flowtype = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_FlowType
+
 Alias: $cs-prescription-type = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_PrescriptionType
 Alias: $GEM_ERP_CS_DocumentType = https://gematik.de/fhir/erp/CodeSystem/GEM_ERP_CS_DocumentType
 Alias: $GEM_ERP_EX_Beneficiary = https://gematik.de/fhir/erp/StructureDefinition/GEM_ERP_EX_Beneficiary

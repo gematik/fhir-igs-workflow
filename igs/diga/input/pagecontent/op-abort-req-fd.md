@@ -47,7 +47,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 </requirement>
 
 <!-- A_19146 -->
-<requirement conformance="SHALL" title="TI-Flow-Fachdienst - E-Rezept löschen - Versicherter - Statusprüfung ungleich in-progress" version="0">
+<requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A150" title="TI-Flow-Fachdienst - E-Rezept löschen - Versicherter - Statusprüfung ungleich in-progress" version="0">
     <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>

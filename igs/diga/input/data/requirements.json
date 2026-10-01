@@ -529,7 +529,11 @@
     },
     {
         "key": "IG-TIFLOW-DIGA-A150",
+<<<<<<< HEAD
         "title": "TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen - DiGA",
+=======
+        "title": "TI-Flow-Fachdienst - E-Rezept löschen - Versicherter - Statusprüfung ungleich in-progress",
+>>>>>>> c71f96a825 (change name of concept map and build requirements)
         "actor": [
             "TI-Flow_FD"
         ],
@@ -541,6 +545,7 @@
         "version": 0,
         "release_status": "NEW",
         "status": "ACTIVE",
+<<<<<<< HEAD
         "source": "input/pagecontent/menu-technische-umsetzung-push.md",
         "text": "Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß der Tabelle erzeugen.\n\n<table>\n<thead>\n<tr>\n<th>ChannelId</th>\n<th>Identifier</th>\n<th>IdentifierType</th>\n<th>Product</th>\n<th>ActorName</th>\n<th>Message</th>\n</tr>\n</thead>\n<tbody>\n\n<tr>\n<td>tiflow.task.activate</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.accept</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.reject</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.close</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.dispense</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.abort</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.communication.new</td>\n<td>Communication.basedOn.reference</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>\nCommunication.payload.content\n</td>\n</tr>\n\n</tbody>\n</table>",
         "conformance": "SHALL",
@@ -549,6 +554,16 @@
         "date": "2026-09-29T08:47:12.979095",
         "content_hash": "f9d224475ec1319dbcea717400097829579e0015618f0af98d0eba940cdc6611",
         "path": "menu-technische-umsetzung-push.html",
+=======
+        "source": "input/pagecontent/op-abort-req-fd.md",
+        "text": "Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der <id> adressierten /Task/<id>/$abort verhindern, wenn der Status des adressierten Tasks in-progress ist und der aufrufende Nutzer der Versicherte ist,\n    und die Operation mit dem folgenden Fehler:\n      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse: collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>403 - Forbidden</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details Code</th>\n            <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n        </tr>\n        <tr>\n            <th>Details Text</th>\n            <td>Task has invalid status.</td>\n        </tr>\n    </table> \n    abbrechen, damit die Verordnung nicht durch einen Unberechtigten gelöscht werden kann.",
+        "conformance": "SHALL",
+        "created": "2026-10-01T06:28:45.087030",
+        "modified": "2026-10-01T06:28:45.087035",
+        "date": "2026-10-01T06:28:45.087037",
+        "content_hash": "e409af8396c6fa88ec4fccc02810bdbd8b8bf144d01e499cfcfb52ac6317d5a0",
+        "path": "op-abort-req-fd.html",
+>>>>>>> c71f96a825 (change name of concept map and build requirements)
         "release": "2.0.0"
     },
     {
