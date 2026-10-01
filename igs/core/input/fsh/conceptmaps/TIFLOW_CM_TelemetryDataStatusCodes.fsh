@@ -9,6 +9,7 @@ Usage: #definition
 * experimental = false
 * version = "2.0.0"
 * date = "2026-05-04"
+* name = "TIFLOWCMTelemetryDataStatusCodes"
 
 // core
 * group[+].source = "https://gematik.de/fhir/erp/CodeSystem/tiflow-operation-outcome-details-cs"

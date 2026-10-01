@@ -8,6 +8,7 @@ Usage: #definition
 * experimental = false
 * version = "2.0.0"
 * date = "2026-05-04"
+* name = "TIFLOWERPCHRGCMTelemetryDataStatusCodes"
 
 * group[+].source = "https://gematik.de/fhir/erp/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs"
 * group[=].target = "ti-flow-telemetriedaten-statuscodes"
