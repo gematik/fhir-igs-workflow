@@ -10,7 +10,7 @@ Usage: #definition
 * date = "2026-05-04"
 * name = "TIFLOWERPCHRGCMTelemetryDataStatusCodes"
 
-* group[+].source = "https://gematik.de/fhir/erp/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs"
+* group[+].source = "https://gematik.de/fhir/tiflow-chargeitem/CodeSystem/tiflow-chargeitem-operation-outcome-details-cs"
 * group[=].target = "ti-flow-telemetriedaten-statuscodes"
 
 * group[=].element[+]
