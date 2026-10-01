@@ -8,7 +8,7 @@ Für diese Schnittstelle gelten die Anforderungen aus der [Core-Spezifikation](h
 
 #### POST /Communication
 
-Für Prüfung Payload siehe [Datenmodell Payload für Communication-Query](./query-api-communication-req-data.html)
+Für Prüfung Payload siehe [Datenmodell Payload für Communication-Query](https://gemspec.gematik.de/ig/fhir/tiflow-erezept/2.0.0/query-api-communication-req-data.html)
 
 <requirement conformance="SHALL" key="IG-TIFLOW-DIGA-A143" title="TI-Flow-Fachdienst - Einstellen von Communications - FlowType 162 - FHIR-Validierung" version="0">
     <meta lockversion="false"/>
