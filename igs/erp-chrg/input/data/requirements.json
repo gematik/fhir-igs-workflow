@@ -144,6 +144,30 @@
         "release": "2.0.0"
     },
     {
+        "key": "IG-TIFLOW-CHRG-A104",
+        "title": "TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen - Charge Items",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-push.md",
+        "text": "Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß der Tabelle erzeugen.\n\n<table>\n<thead>\n<tr>\n<th>ChannelId</th>\n<th>Identifier</th>\n<th>IdentifierType</th>\n<th>Product</th>\n<th>ActorName</th>\n<th>Message</th>\n</tr>\n</thead>\n<tbody>\n\n<tr>\n<td>tiflow.chargeitem.create</td>\n<td>ChargeItem.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.chargeitem.update</td>\n<td>ChargeItem.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>ChargeItem.supportingInformation.KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n</tbody>\n</table>\n\n<p>\nDamit die Tabelle etwas übersichtlicher gestaltet ist, werden einige Abkürzungen verwendet. Diese werden hier beschrieben:\n<table>\n<thead>\n<tr>\n<th>Abkürzung</th>\n<th>Definition</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>[medicationName]</td>\n<td>Falls medication dem Profil \"KBV_PR_ERP_Medication_Ingredient\" entspricht:<br>\n`Medication.ingredient.item.itemCodeableConcept.text`<br>\nAnsonsten:<br>\n`Medication.code.text`</td>\n</tr>\n</tbody>\n</table>\n</p>",
+        "conformance": "SHALL",
+        "created": "2026-09-29T11:41:05.841891",
+        "modified": "2026-09-29T11:41:05.841909",
+        "date": "2026-09-29T11:41:05.841915",
+        "content_hash": "b62c588c8a7d649a1e3794beaa6cf235bc970c8bdcfec6659a7c21fce4e4e3d8",
+        "path": "menu-technische-umsetzung-push.html",
+        "release": "2.0.0"
+    },
+    {
         "key": "IG-TIFLOW-CHRG-A11",
         "title": "TI-Flow-FdV: Liste Abrechnungsinformationen abrufen - Abfragerequest",
         "actor": [
@@ -1598,12 +1622,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /ChargeItem bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.chargeitem.create\" und den Versicherten mit der KVNR = ChargeItem.subject initiieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation auf den Endpunkt /ChargeItem bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.chargeitem.create\" und den Versicherten mit der KVNR = ChargeItem.subject initiieren.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.939280",
-        "modified": "2026-06-25T13:00:23.939281",
-        "date": "2026-06-25T13:00:23.939282",
-        "content_hash": "d549fa62663cd4148e6c23cfa07c97aecbdb5b7ff1b40fa95f0db1616ab24191",
+        "modified": "2026-09-29T09:57:09.524618",
+        "date": "2026-09-29T09:57:09.524618",
+        "content_hash": "9fa9197cfa639a86c7df7ca51801d85696bf2c961a67229fe2e5d1da3227dc71",
         "path": "query-api-chargeitem-req-fd.html",
         "release": "2.0.0"
     },
@@ -2006,12 +2030,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/query-api-chargeitem-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.chargeitem.update\" und den Versicherten mit der KVNR = ChargeItem.subject initiieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PUT-Operation auf eine konkrete über &#60;id&#62; adressierte /ChargeItem/&#60;id&#62; Ressource durch eine abgebende LEI bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.chargeitem.update\" und den Versicherten mit der KVNR = ChargeItem.subject initiieren.",
         "conformance": "SHALL",
         "created": "2026-06-25T13:00:23.944893",
-        "modified": "2026-06-25T13:00:23.944895",
-        "date": "2026-06-25T13:00:23.944895",
-        "content_hash": "9d2ed55df2eaa9e6dbdd091626f9adbfc340abbf0bbf55291fa453404a0d9117",
+        "modified": "2026-09-29T09:57:09.573787",
+        "date": "2026-09-29T09:57:09.573787",
+        "content_hash": "3fcd06696acc51efd8c2fddd5c6bcfd2f87ff6cf3904d4d102d05dbf6ca1e330",
         "path": "query-api-chargeitem-req-fd.html",
         "release": "2.0.0"
     },

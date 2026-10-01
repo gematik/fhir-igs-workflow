@@ -3830,12 +3830,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.get\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.eu.prescription.get\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
         "conformance": "SHALL",
         "created": "2026-07-24T14:30:45.725887",
-        "modified": "2026-07-24T14:30:45.725888",
-        "date": "2026-07-24T14:30:45.725889",
-        "content_hash": "f38b57da314c17928d86ea09ab7d63814e4202cca8a8c0b7b24ed997eb0709d3",
+        "modified": "2026-09-24T09:05:00.656718",
+        "date": "2026-09-24T09:05:00.656718",
+        "content_hash": "f3f90652a752eef226a0f818556535d177c7339a8e91ee9c39b37c91afd977ff",
         "path": "op-get-eu-prescriptions-req-fd.html",
         "release": "2.0.0"
     },
@@ -3854,12 +3854,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-get-eu-prescriptions-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.redeem\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.eu.prescription.redeem\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
         "conformance": "SHALL",
         "created": "2026-07-24T14:30:45.726036",
-        "modified": "2026-07-24T14:30:45.726037",
-        "date": "2026-07-24T14:30:45.726038",
-        "content_hash": "af600efc76150e9b7b3f60fe3ba8ca758e0ce33cb2e35e6968eb980ce48811a0",
+        "modified": "2026-09-24T09:05:00.657334",
+        "date": "2026-09-24T09:05:00.657334",
+        "content_hash": "3041a69b4e957a37e4adda31f23f33aa5575f8c221da0282f836fe6d87f93c71",
         "path": "op-get-eu-prescriptions-req-fd.html",
         "release": "2.0.0"
     },
@@ -4478,12 +4478,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-eu-close-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.eu.prescription.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
         "conformance": "SHALL",
         "created": "2026-07-24T14:30:45.772868",
-        "modified": "2026-07-24T14:30:45.772869",
-        "date": "2026-07-24T14:30:45.772870",
-        "content_hash": "c4874a44ffe9bcf53e911ad46e720ef91b7f2766f2fda4bf8ee16764f5c2a9f2",
+        "modified": "2026-09-24T09:05:00.409622",
+        "date": "2026-09-24T09:05:00.409622",
+        "content_hash": "fa451a9e2ac4c4262858f3feeef7de43cd52fe5312f727279eea02d2ee66b8c5",
         "path": "op-eu-close-req-fd.html",
         "release": "2.0.0"
     },
@@ -5936,6 +5936,30 @@
         "release": "2.0.0"
     },
     {
+        "key": "IG-TIFLOW-ERP-A324",
+        "title": "TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen - E-Rezept",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-push.md",
+        "text": "Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß der Tabelle erzeugen.\n\n<table>\n<thead>\n<tr>\n<th>ChannelId</th>\n<th>Identifier</th>\n<th>IdentifierType</th>\n<th>Product</th>\n<th>ActorName</th>\n<th>Message</th>\n</tr>\n</thead>\n<tbody>\n\n<tr>\n<td>tiflow.task.activate</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.accept</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.reject</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.dispense</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nGEM_ERP_PR_PAR_DispenseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.abort</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.communication.new</td>\n<td>Communication.basedOn.reference</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>\nCommunication.payload.content.info_text\n</td>\n</tr>\n\n<tr>\n<td>tiflow.eu.prescription.get</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.eu.prescription.redeem</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.eu.prescription.close</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter[rxDispensation].[medication].[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter.part[practionerData].name.text</td>\n<td>-</td>\n</tr>\n\n</tbody>\n</table>\n\n<p>\nDamit die Tabelle etwas übersichtlicher gestaltet ist, werden einige Abkürzungen verwendet. Diese werden hier beschrieben:\n<table>\n<thead>\n<tr>\n<th>Abkürzung</th>\n<th>Definition</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>[medicationName]</td>\n<td>Falls medication dem Profil \"KBV_PR_ERP_Medication_Ingredient\" entspricht:<br>\n`Medication.ingredient.item.itemCodeableConcept.text`<br>\nAnsonsten:<br>\n`Medication.code.text`</td>\n</tr>\n</tbody>\n</table>\n</p>",
+        "conformance": "SHALL",
+        "created": "2026-09-29T11:46:25.221345",
+        "modified": "2026-09-29T11:46:25.221374",
+        "date": "2026-09-29T11:46:25.221384",
+        "content_hash": "eb93edb51ff066d205dcc2834eddb28cf69ab665e765bfc90d535a8874022e7f",
+        "path": "menu-technische-umsetzung-push.html",
+        "release": "2.0.0"
+    },
+    {
         "key": "IG-TIFLOW-ERP-A33",
         "title": "TI-Flow-FdV: Apotheke suchen - Filter Öffentliche Apotheke",
         "actor": [
@@ -6238,12 +6262,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-dispense-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$dispense bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.task.dispense\" und den Versicherten mit der KVNR = Task.for initiieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$dispense bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.task.dispense\" und den Versicherten mit der KVNR = Task.for initiieren.",
         "conformance": "SHALL",
         "created": "2026-06-25T11:43:04.335563",
-        "modified": "2026-06-25T11:43:04.335564",
-        "date": "2026-06-25T11:43:04.335565",
-        "content_hash": "c078494895598bbda5297903c7315dad2d2e45c3a00333855329ad2fa007d73e",
+        "modified": "2026-09-24T09:05:00.468495",
+        "date": "2026-09-24T09:05:00.468495",
+        "content_hash": "16a946ab1936dafc79abe70361349c68dd53daf8bbb1f6b96e77fd7e5fe25ce8",
         "path": "op-dispense-req-fd.html",
         "release": "2.0.0"
     },

@@ -302,7 +302,7 @@
             "title": "TI-Flow-Fachdienst - Task schließen - Flowtype 162 - Push Notification Versicherter",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.task.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.task.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -536,6 +536,30 @@
                 }
             ],
             "link": "https://gematik.de/fhir/tiflow-diga/2.0.0/op-activate-req-fd.html#IG-TIFLOW-DIGA-A15"
+        },
+        {
+            "key": "IG-TIFLOW-DIGA-A150",
+            "title": "TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen - DiGA",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß der Tabelle erzeugen.\n\n<table>\n<thead>\n<tr>\n<th>ChannelId</th>\n<th>Identifier</th>\n<th>IdentifierType</th>\n<th>Product</th>\n<th>ActorName</th>\n<th>Message</th>\n</tr>\n</thead>\n<tbody>\n\n<tr>\n<td>tiflow.task.activate</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.accept</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.reject</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.close</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.dispense</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.abort</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.communication.new</td>\n<td>Communication.basedOn.reference</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>\nCommunication.payload.content\n</td>\n</tr>\n\n</tbody>\n</table>",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-diga/2.0.0/menu-technische-umsetzung-push.html#IG-TIFLOW-DIGA-A150"
         },
         {
             "key": "IG-TIFLOW-DIGA-A17",

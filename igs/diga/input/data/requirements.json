@@ -302,12 +302,12 @@
         "release_status": "NEW",
         "status": "ACTIVE",
         "source": "input/pagecontent/op-close-req-fd.md",
-        "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.task.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
+        "text": "Der TI-Flow-Fachdienst MUSS beim Beenden eines Tasks mit Flowtype 162 mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$close, wenn eine MedicationDispense Ressource übermittelt wird und die Operation erfolgreich abgeschlossen werden kann, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.task.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
         "conformance": "SHALL",
         "created": "2026-09-22T15:09:28.051665",
-        "modified": "2026-09-22T15:09:28.051667",
-        "date": "2026-09-22T15:09:28.051668",
-        "content_hash": "8efd1c72be3613857a6302c6699e93f3d950c7d6fe4c383d494e82a6cc4cc38f",
+        "modified": "2026-09-25T11:23:36.238098",
+        "date": "2026-09-25T11:23:36.238098",
+        "content_hash": "821f36731a4f27350ce9726cc72a8d96cceaa1f102127f321da1f9cd53e15c8b",
         "path": "op-close-req-fd.html",
         "release": "2.0.0"
     },
@@ -525,6 +525,30 @@
         "date": "2026-08-24T14:30:39.974281",
         "content_hash": "26672869bcd0c093a384646f7a5c4535fdbf73c5e2b48393269edf6872beaccd",
         "path": "op-activate-req-fd.html",
+        "release": "2.0.0"
+    },
+    {
+        "key": "IG-TIFLOW-DIGA-A150",
+        "title": "TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen - DiGA",
+        "actor": [
+            "TI-Flow_FD"
+        ],
+        "test_procedures": {
+            "TI-Flow_FD": [
+                "Produkttest"
+            ]
+        },
+        "version": 0,
+        "release_status": "NEW",
+        "status": "ACTIVE",
+        "source": "input/pagecontent/menu-technische-umsetzung-push.md",
+        "text": "Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß der Tabelle erzeugen.\n\n<table>\n<thead>\n<tr>\n<th>ChannelId</th>\n<th>Identifier</th>\n<th>IdentifierType</th>\n<th>Product</th>\n<th>ActorName</th>\n<th>Message</th>\n</tr>\n</thead>\n<tbody>\n\n<tr>\n<td>tiflow.task.activate</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.accept</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.reject</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.close</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.dispense</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.abort</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.communication.new</td>\n<td>Communication.basedOn.reference</td>\n<td>TaskId</td>\n<td>\nKBV_PR_EVDGA_Bundle.entry.DeviceRequest.codeCodeableConcept.text\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>\nCommunication.payload.content\n</td>\n</tr>\n\n</tbody>\n</table>",
+        "conformance": "SHALL",
+        "created": "2026-09-29T08:47:12.978997",
+        "modified": "2026-09-29T08:47:12.979089",
+        "date": "2026-09-29T08:47:12.979095",
+        "content_hash": "f9d224475ec1319dbcea717400097829579e0015618f0af98d0eba940cdc6611",
+        "path": "menu-technische-umsetzung-push.html",
         "release": "2.0.0"
     },
     {

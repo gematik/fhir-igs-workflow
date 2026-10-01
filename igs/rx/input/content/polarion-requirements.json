@@ -3884,7 +3884,7 @@
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage aller einlösbaren Verordnungsinformationen - Push Notification Versicherter",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.get\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.eu.prescription.get\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -3908,7 +3908,7 @@
             "title": "TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids - Push Notification Versicherter",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.redeem\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.eu.prescription.redeem\" und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -4532,7 +4532,7 @@
             "title": "TI-Flow-Fachdienst - Task schließen - EU - Push Notification Versicherter",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.eu.prescription.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
+            "text": "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts /Task/&lt;id&gt;/$eu-close durch den NCPeH-FD bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.eu.prescription.close\" und den Versicherten mit der KVNR = Task.for initiieren.",
             "conformance": "SHALL",
             "characteristics": [
                 {
@@ -6018,6 +6018,30 @@
             "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0/menu-technische-umsetzung-dispensierinformationen.html#IG-TIFLOW-ERP-A323"
         },
         {
+            "key": "IG-TIFLOW-ERP-A324",
+            "title": "TI-Flow-Fachdienst - Push Notification senden - Nachrichteninhalt erzeugen - E-Rezept",
+            "version": 0,
+            "status": "ACTIVE",
+            "text": "Der TI-Flow-Fachdienst MUSS den Nachrichteninhalt einer Push Notification gemäß der Tabelle erzeugen.\n\n<table>\n<thead>\n<tr>\n<th>ChannelId</th>\n<th>Identifier</th>\n<th>IdentifierType</th>\n<th>Product</th>\n<th>ActorName</th>\n<th>Message</th>\n</tr>\n</thead>\n<tbody>\n\n<tr>\n<td>tiflow.task.activate</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.accept</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.reject</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.dispense</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nGEM_ERP_PR_PAR_DispenseOperation_Input.parameter[rxDispensation].part[medication].[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.task.abort</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.communication.new</td>\n<td>Communication.basedOn.reference</td>\n<td>TaskId</td>\n<td>\nKBV_PR_ERP_Bundle.entry.[medicationName]\n</td>\n<td>zeta-user-info.commonName aus Nutzerinformationen das Aufrufs</td>\n<td>\nCommunication.payload.content.info_text\n</td>\n</tr>\n\n<tr>\n<td>tiflow.eu.prescription.get</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.eu.prescription.redeem</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>KBV_PR_ERP_Bundle.entry.[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_GET_Prescription_Input.parameter.part[practionerName].valueString</td>\n<td>-</td>\n</tr>\n\n<tr>\n<td>tiflow.eu.prescription.close</td>\n<td>Task.identifier.PrescriptionID</td>\n<td>TaskId</td>\n<td>GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter[rxDispensation].[medication].[medicationName]</td>\n<td>GEM_ERPEU_PR_PAR_CloseOperation_Input.parameter.part[practionerData].name.text</td>\n<td>-</td>\n</tr>\n\n</tbody>\n</table>\n\n<p>\nDamit die Tabelle etwas übersichtlicher gestaltet ist, werden einige Abkürzungen verwendet. Diese werden hier beschrieben:\n<table>\n<thead>\n<tr>\n<th>Abkürzung</th>\n<th>Definition</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>[medicationName]</td>\n<td>Falls medication dem Profil \"KBV_PR_ERP_Medication_Ingredient\" entspricht:<br>\n`Medication.ingredient.item.itemCodeableConcept.text`<br>\nAnsonsten:<br>\n`Medication.code.text`</td>\n</tr>\n</tbody>\n</table>\n</p>",
+            "conformance": "SHALL",
+            "characteristics": [
+                {
+                    "product_type": {
+                        "name": "TI-Flow_FD",
+                        "id": "productType175",
+                        "description": "TI-Flow-Fachdienst"
+                    },
+                    "test_procedure": [
+                        {
+                            "id": "testProcedurePT03",
+                            "name": "funkt. Eignung: Test Produkt/FA"
+                        }
+                    ]
+                }
+            ],
+            "link": "https://gematik.de/fhir/tiflow-erezept/2.0.0/menu-technische-umsetzung-push.html#IG-TIFLOW-ERP-A324"
+        },
+        {
             "key": "IG-TIFLOW-ERP-A33",
             "title": "TI-Flow-FdV: Apotheke suchen - Filter Öffentliche Apotheke",
             "version": 0,
@@ -6310,7 +6334,7 @@
             "title": "TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Push Notification Versicherter",
             "version": 0,
             "status": "ACTIVE",
-            "text": "Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$dispense bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"erp.task.dispense\" und den Versicherten mit der KVNR = Task.for initiieren.",
+            "text": "Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen mittels HTTP-POST-Operation über /Task/&lt;id&gt;/$dispense bei erfolgreichem Abschluss der Operation, den Push Notification Prozess für den Trigger mit der ChannelId \"tiflow.task.dispense\" und den Versicherten mit der KVNR = Task.for initiieren.",
             "conformance": "SHALL",
             "characteristics": [
                 {
