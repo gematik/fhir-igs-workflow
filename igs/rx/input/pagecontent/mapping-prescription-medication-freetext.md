@@ -11,9 +11,7 @@ Die folgenden Punkte sind relevant für das Mapping der Freitext Medication Ress
 
 ## Generelles Mapping des Profils
 
-Die folgende Tabelle stellt generell das Mapping der beiden Profile gegenüber:
-
-{% include StructureMap-KBVPrErpMedicationFreetextMap-intro.md %}
+Generell werden die Strukturen der Quelle in das Zielprofil überführt.
 
 Zur Übersicht der Medication-Mappings siehe:
 - [Mapping der Medication Ressource](./mapping-prescription-medication.md)

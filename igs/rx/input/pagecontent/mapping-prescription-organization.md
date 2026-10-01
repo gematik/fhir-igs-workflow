@@ -12,9 +12,7 @@ Die folgenden Punkte sind relevant für das Mapping der Organization Ressource:
 
 ## Generelles Mapping des Profils
 
-Die folgende Tabelle stellt generell das Mapping der beiden Profile gegenüber:
-
-{% include StructureMap-KBVPrForOrganizationMap-intro.md %}
+Generell werden die Strukturen der Quelle in das Zielprofil überführt.
 
 ## Transformationsregeln
 

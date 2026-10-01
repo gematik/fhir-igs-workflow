@@ -11,13 +11,7 @@ Der TI-Flow-Fachdienst muss daher in der Lage sein, die von den verordnenden Sys
 
 <br>
 
-Dabei führt der TI-Flow-Fachdienst keine Interpretation oder Anreicherung von medizinischen Daten durch und führt daher rein technische Mappings aus. Die Mappings werden einer Anwendung der gematik definiert und in diesem Projekt als StructureMaps angegeben und mit Transformationsregeln ergänzt.
-
-## Regeln für das Mapping von FHIR-Instanzen
-
-FHIR bietet die Möglichkeit Angaben zu Mappings zwischen verschiedenen Ressourcenstrukturen mittels [StructureMap](https://www.hl7.org/fhir/structuremap.html) zu definieren. Dieses Projekt nutzt StructureMaps, um die Mappings der Verordnungs- und Dispensierdaten zu beschreiben und damit Tabellen zu erstellen, die angeben, wie die einzelnen Elemente der Quellstruktur in die Zielstruktur überführt werden.
-
-Zusätzlich zu den StructureMaps, die Regeln zum Mapping definieren, gibt es Transformationsregeln, die zusätzliche programmatische Vorgaben zum Mapping treffen. Auf den Detailseiten zu Verordnungs- bzw. Dispensierdaten ist unten jeweils eine Übersicht der verwendeten Transformationsregeln zu finden, die alle Profile der jeweiligen Übertragung betreffen. Auf den Seiten der einzelnen Ressourcen sind die gleichen Transformationsregeln zusätzlich im Kontext der jeweiligen Ressource aufgeführt.
+Dabei führt der TI-Flow-Fachdienst keine Interpretation oder Anreicherung von medizinischen Daten durch und führt daher rein technische Mappings aus. Dabei sollen die Quellen in die Zielprofile überführt und mit Transformationsregeln ergänzt werden.
 
 ## Übertragen von *Verordnungsdaten* an den ePA Medication Service
 
