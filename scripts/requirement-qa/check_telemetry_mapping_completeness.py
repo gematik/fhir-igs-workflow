@@ -97,8 +97,8 @@ CM_GROUP_SOURCE_URL_RE = re.compile(
 CODESYSTEM_DISCOVERY_GLOB = "*CS_OperationOutcomeDetails*.fsh"
 VALUESET_DISCOVERY_GLOB = "*VS_OperationOutcomeDetails*.fsh"
 
-# Fallback base URL for CodeSystems when URL is not explicitly declared in FSH.
-DEFAULT_CODESYSTEM_URL_BASE = "https://gematik.de/fhir/erp/CodeSystem"
+# Matches the top-level canonical in an IG's sushi-config.yaml.
+SUSHI_CANONICAL_RE = re.compile(r"^canonical:\s*['\"]?([^'\"\s#]+)", re.MULTILINE)
 
 # External system names used in ValueSet includes that are not declared as aliases.
 EXTERNAL_SYSTEM_REF_URLS = {
@@ -271,17 +271,28 @@ def discover_valueset_files(ig_roots: List[Path]) -> List[Path]:
     return sorted(found)
 
 
-def parse_codesystem_source_url(fsh_path: Path) -> str | None:
-    """Resolve the CodeSystem source URL used in the ConceptMap for a CodeSystem file.
+def find_ig_canonical(fsh_path: Path) -> str | None:
+    """Return the canonical from the sushi-config.yaml of the IG containing fsh_path."""
+    for parent in fsh_path.resolve().parents:
+        sushi_config = parent / "sushi-config.yaml"
+        if sushi_config.exists():
+            match = SUSHI_CANONICAL_RE.search(sushi_config.read_text(encoding="utf-8"))
+            return match.group(1).rstrip("/") if match else None
+    return None
 
-    Prefer explicit * ^url if available. Otherwise use the standard CodeSystem base URL.
+
+def parse_codesystem_source_url(fsh_path: Path) -> str | None:
+    """Resolve the CodeSystem URL the same way SUSHI does.
+
+    Prefer explicit * ^url; otherwise use <IG canonical>/CodeSystem/<Id>.
     """
     content = fsh_path.read_text(encoding="utf-8")
     url_match = CS_URL_RE.search(content)
     if url_match:
         return url_match.group(1)
     cs_id = parse_codesystem_id(fsh_path)
-    return f"{DEFAULT_CODESYSTEM_URL_BASE}/{cs_id}" if cs_id else None
+    canonical = find_ig_canonical(fsh_path)
+    return f"{canonical}/CodeSystem/{cs_id}" if cs_id and canonical else None
 
 
 JSON_ERROR_CODES_GROUP_URL = "json-fehlercodes"
@@ -318,15 +329,8 @@ def run_check(
     mapped_by_ig: Dict[str, Dict[str, Dict[str, str | None]]] = {}
     for ig_root in ig_roots:
         conceptmap_path = find_conceptmap_file(ig_root)
-        if not conceptmap_path.exists():
-            findings.append(Finding(
-                type="CONCEPTMAP_NOT_FOUND",
-                codesystem_file=ig_root.name,
-                code="",
-                message=f"Telemetry ConceptMap not found in IG '{ig_root.name}'",
-            ))
-            continue
-        mapped_by_ig[ig_root.name] = parse_conceptmap_groups(conceptmap_path)
+        if conceptmap_path.exists():
+            mapped_by_ig[ig_root.name] = parse_conceptmap_groups(conceptmap_path)
 
     system_ref_url_map: Dict[str, str] = dict(EXTERNAL_SYSTEM_REF_URLS)
     system_ref_url_map.update(parse_aliases(ig_roots))
@@ -335,6 +339,30 @@ def run_check(
         cs_url = parse_codesystem_source_url(cs_path)
         if cs_name and cs_url:
             system_ref_url_map[cs_name] = cs_url
+
+    owner_by_url = {
+        parse_codesystem_source_url(cs_path): cs_path.parents[3].name
+        for cs_path in codesystem_paths
+    }
+    json_codes = parse_json_error_codes_from_markdown(ig_roots)
+
+    # A ConceptMap is only required for IGs that own codes needing a telemetry mapping.
+    igs_needing_map: Set[str] = {
+        cs_path.parents[3].name for cs_path in codesystem_paths if parse_codesystem_codes(cs_path)
+    }
+    for vs_path in valueset_paths:
+        for system_ref, _ in parse_valueset_individual_codes(vs_path):
+            igs_needing_map.add(owner_by_url.get(system_ref_url_map.get(system_ref), "core"))
+    if json_codes:
+        igs_needing_map.add("core")
+    for ig_root in ig_roots:
+        if ig_root.name in igs_needing_map and ig_root.name not in mapped_by_ig:
+            findings.append(Finding(
+                type="CONCEPTMAP_NOT_FOUND",
+                codesystem_file=ig_root.name,
+                code="",
+                message=f"Telemetry ConceptMap not found in IG '{ig_root.name}'",
+            ))
 
     for cs_path in codesystem_paths:
         mapped_codes = mapped_by_ig.get(cs_path.parents[3].name, {}).get(
@@ -352,10 +380,6 @@ def run_check(
                     f"Code '{code}' is mapped but has no target code assigned",
                 ))
 
-    owner_by_url = {
-        parse_codesystem_source_url(cs_path): cs_path.parents[3].name
-        for cs_path in codesystem_paths
-    }
     for vs_path in valueset_paths:
         for system_ref, code in parse_valueset_individual_codes(vs_path):
             resolved_url = system_ref_url_map.get(system_ref)
@@ -375,7 +399,6 @@ def run_check(
                 ))
 
     mapped_codes = mapped_by_ig.get("core", {}).get(JSON_ERROR_CODES_GROUP_URL, {})
-    json_codes = parse_json_error_codes_from_markdown(ig_roots)
     for code in sorted(json_codes):
         if code not in mapped_codes:
             findings.append(Finding(
@@ -403,13 +426,26 @@ def run_check(
             if source_url:
                 allowed_by_source.setdefault(source_url, set()).add(code)
 
+    url_by_cs_id = {
+        parse_codesystem_id(cs_path): parse_codesystem_source_url(cs_path)
+        for cs_path in codesystem_paths
+    }
     used_targets: Dict[str, tuple[Path, str, str]] = {}
     for ig_root in ig_roots:
         conceptmap_path = find_conceptmap_file(ig_root)
         if not conceptmap_path.exists():
             continue
+        wrong_sources: Set[str] = set()
         for source_url, code, target in parse_conceptmap_group_entries(conceptmap_path):
-            if code not in allowed_by_source.get(source_url, set()):
+            expected_url = url_by_cs_id.get(source_url.rstrip("/").rsplit("/", 1)[-1])
+            if expected_url and expected_url != source_url:
+                if source_url not in wrong_sources:
+                    wrong_sources.add(source_url)
+                    findings.append(Finding(
+                        "WRONG_SOURCE_URL", str(conceptmap_path), "",
+                        f"ConceptMap group source '{source_url}' must be '{expected_url}'",
+                    ))
+            elif code not in allowed_by_source.get(source_url, set()):
                 findings.append(Finding(
                     "EXTRA_MAPPING", str(conceptmap_path), code,
                     f"Code '{code}' in source '{source_url}' is not in an OperationOutcomeDetails ValueSet or JSON error table",
