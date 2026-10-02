@@ -12,7 +12,7 @@ Usage: #definition
 * name = "TIFLOWCMTelemetryDataStatusCodes"
 
 // core
-* group[+].source = "https://gematik.de/fhir/erp/CodeSystem/tiflow-operation-outcome-details-cs"
+* group[+].source = "https://gematik.de/fhir/tiflow/CodeSystem/tiflow-operation-outcome-details-cs"
 * group[=].target = "ti-flow-telemetriedaten-statuscodes"
 
 * group[=].element[+]
@@ -225,26 +225,6 @@ Usage: #definition
   * code = #TIFLOW_NOT_SUPPORTED
   * target[+]
     * code = #79276
-    * equivalence = #equivalent
-
-
-// Non OperationOutcome JSON Fehlercodes
-* group[+].source = "json-fehlercodes"
-* group[=].target = "ti-flow-telemetriedaten-statuscodes"
-* group[=].element[+]
-  * code = #invalidOid
-  * target[+]
-    * code = #79262
-    * equivalence = #equivalent
-* group[=].element[+]
-  * code = #methodNotAllowed
-  * target[+]
-    * code = #79263
-    * equivalence = #equivalent
-* group[=].element[+]
-  * code = #malformedRequest
-  * target[+]
-    * code = #79264
     * equivalence = #equivalent
 
 // https://gematik.de/fhir/ti/CodeSystem/operation-outcome-details-codes

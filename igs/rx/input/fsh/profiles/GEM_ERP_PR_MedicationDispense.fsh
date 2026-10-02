@@ -5,7 +5,8 @@ Title: "GEM ERP PR MedicationDispense"
 Description: "Dispensierung eines E-Rezepts"
 * insert LegacyMetaProfile(GEM_ERP_PR_MedicationDispense)
 
-* obeys workflow-dosageExtensionBeiDosierung
+* obeys tiflow-dosageExtensionBeiDosierung
+* obeys tiflow-ExtRequiresDosage-MD
 
 * identifier contains prescriptionID 1..1
 * identifier[prescriptionID] only EPrescriptionId
@@ -23,9 +24,9 @@ Description: "Dispensierung eines E-Rezepts"
 * performer.actor.identifier 1..
 * performer.actor.identifier only IdentifierTelematikId
 * whenPrepared ^mustSupport = false
-* whenPrepared obeys workflow-abgabeDatumsFormat
+* whenPrepared obeys tiflow-abgabeDatumsFormat
 * whenHandedOver 1..
-* whenHandedOver obeys workflow-abgabeDatumsFormat
+* whenHandedOver obeys tiflow-abgabeDatumsFormat
 
 * note
   * ^short = "Abgabehinweise"
@@ -51,12 +52,17 @@ Description: "Dispensierung eines E-Rezepts"
 * eventHistory 0..0
 
 
-Invariant: workflow-abgabeDatumsFormat
+Invariant: tiflow-abgabeDatumsFormat
 Description: "Wert muss ein Datum in der Form: YYYY-MM-DD sein."
 * severity = #error
 * expression = "toString().length()=10"
 
-Invariant: workflow-dosageExtensionBeiDosierung
+Invariant: tiflow-dosageExtensionBeiDosierung
 Description: "Wenn eine Dosierung angegeben wurde, muss der generierte Dosierungstext, sowie die Metainformationen zur Generierung angegeben werden."
 Expression: "dosageInstruction.exists() implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction').exists() and extension.where(url = 'http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta').exists()"
+Severity: #error
+
+Invariant: tiflow-ExtRequiresDosage-MD
+Description: "Wenn eine Dosierungserweiterung (GeneratedDosageInstructionsMeta oder renderedDosageInstruction) vorhanden ist, muss mindestens eine Dosierungsanweisung vorhanden sein."
+Expression: "( extension.where( url = 'http://ig.fhir.de/igs/medication/StructureDefinition/GeneratedDosageInstructionsMeta' or url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction' ).exists() ) implies dosageInstruction.exists()"
 Severity: #error
