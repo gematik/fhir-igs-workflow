@@ -1,0 +1,27 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: fc34628b63bddd734840de09c5bacc9079891df0dbcf35e345619bcb6af83ce7
+created: '2026-10-05T10:24:35.047929'
+date: '2026-10-05T12:20:41.302714'
+key: IG-TIFLOW-DIGA-A151
+modified: '2026-10-05T12:20:41.302714'
+release_status: NEW
+source: input/pagecontent/op-abort-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der\
+  \ <id> adressierten /Task/<id>/$abort verhindern, wenn der Status des adressierten\
+  \ Tasks in-progress ist und der aufrufende Nutzer der Versicherte ist,\n und die\
+  \ Operation mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border:\
+  \ 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>412\
+  \ - Precondition Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Task has invalid status.</td>\n </tr>\n </table> \n abbrechen, damit die Verordnung\
+  \ nicht durch einen Unberechtigten gelöscht werden kann."
+title: TI-Flow-Fachdienst - E-Rezept löschen - Versicherter - Statusprüfung ungleich
+  in-progress
+version: 0

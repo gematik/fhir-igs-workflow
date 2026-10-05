@@ -4,6 +4,9 @@ Wenn die Telematik-ID des KTR des Versicherten nicht im Programmcode hinterlegt 
 muss diese zur Laufzeit bestimmt werden. Hierfür nutzt das TI-Flow-FdV das IKNR des
 KTR, wodurch es dann in der Lage ist nach der Telematik-ID im FHIRVZD zu suchen.
 
+Die Schnittstellenbeschreibung des FHIRVZD ist in der [API-Spezifikation des Verzeichnisdienstes (api-vzd)](https://github.com/gematik/api-vzd) veröffentlicht.
+
+
 <!-- A_26009 -->
 <requirement conformance="MAY" key="IG-TIFLOW-DIGA-A8" title="TI-Flow-FdV: optional: Kostenträger suchen" version="0">
   <meta lockversion="false"/>
