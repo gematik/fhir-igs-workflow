@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/devcontainers/base:alpine-3.20
 
 # Setzen der Umgebungsvariablen
 ENV CLOUD_SDK_VERSION=464.0.0
-ENV FIRELY_TERMINAL_VERSION=3.3.2
+ENV FIRELY_TERMINAL_VERSION=3.4.0
 ENV JAVA_VALIDATOR_VERSION=6.3.25
 ENV SUSHI_VERSION=3.16.4
 
@@ -31,9 +31,6 @@ RUN apk add --no-cache jekyll
 
 # Install py-pip
 RUN apk add --no-cache py-pip py3-yaml pipx
-
-# Install yq
-RUN apk add --no-cache yq
 
 # Install Firely Terminal as vscode user
 # Switch to the vscode user
@@ -76,10 +73,6 @@ COPY codfsh-config.yaml /home/vscode/.fhir/settings/codfsh-config.yaml
 # Installing PlantUML...
 RUN apk add curl graphviz fontconfig
 
-# Setup scripts
-RUN mkdir /scripts
-RUN curl -L https://raw.githubusercontent.com/gematik/fhir-scripts/refs/heads/main/scripts/fhir_scripts.sh -o /scripts/fhir_scripts.sh && chmod +x /scripts/fhir_scripts.sh
-RUN /scripts/fhir_scripts.sh pytools
 
 # Setzen des Arbeitsverzeichnis
 WORKDIR /workspace
