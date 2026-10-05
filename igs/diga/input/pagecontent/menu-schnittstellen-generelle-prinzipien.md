@@ -8,5 +8,5 @@ Zum Ermitteln der Telematik-ID aus der IKNR des Kostenträgers nutzt der das TI-
 
 ### Kommunikation
 Die Zuweisung einer DiGA-Verordnung durch einen Versicherten an den Kostenträger erfolgt per Communication im TI-Flow-FdV. 
-Die Adressierung der Communication erfolgt über die Telematik-ID des Kostenträgers. Der Kostenträger kann vor dem Versenden der Communication im TI-Flow-FdV vorausgewählt aus einer Liste auswählbar sein. Die Authentisierungsinformationen des Versicherten beinhaltet die IKNR des Kostenträgers. Auf Basis der IKNR wird die Telematik-ID ermittelt. 
+Die Adressierung der Communication erfolgt über die Telematik-ID des Kostenträgers. Der Kostenträger kann vor dem Versenden der Communication im TI-Flow-FdV aus einer Liste ausgewählt werden, wobei bereits ein Vorschlag vormarkiert ist. Die Authentisierungsinformationen des Versicherten beinhaltet die IKNR des Kostenträgers. Auf Basis der IKNR wird die Telematik-ID ermittelt. 
 Beim Zuweisen einer DiGA-Verordnungen kann Communication.payload entfallen (Kardinalitaet 0..1).

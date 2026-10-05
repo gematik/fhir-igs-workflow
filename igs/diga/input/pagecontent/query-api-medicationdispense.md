@@ -28,22 +28,22 @@ Die Interaktion mit Nachrichten als FHIR-Ressource _MedicationDispense_ wird üb
 	</div>
 	<div id="Response-Examples">
 		<div data-name="200 - Name-And-PZN" data-type="XML" data-render="ig-Fragment">
-			{% fragment MedicationDispense/Example-MedicationDispense-DiGA-Name-And-PZN XML %}
+			{% fragment Bundle/Example-GET-MedicationDispense-Response-Name-And-PZN XML %}
 		</div>		
-		<div data-name="200 - DeepLink" data-type="XML" data-render="ig-Fragment">
-			{% fragment MedicationDispense/Example-MedicationDispense-DiGA-DeepLink XML %}
-		</div>		
-		<div data-name="200 - No redeem Code" data-type="XML" data-render="ig-Fragment">
-			{% fragment MedicationDispense/Example-MedicationDispense-DiGA-NoRedeemCode XML %}
-		</div>
 		<div data-name="200 - Name-And-PZN" data-type="JSON" data-render="ig-Fragment">
-			{% fragment MedicationDispense/Example-MedicationDispense-DiGA-Name-And-PZN JSON %}
+			{% fragment Bundle/Example-GET-MedicationDispense-Response-Name-And-PZN JSON %}
+		</div>
+		<div data-name="200 - DeepLink" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/Example-GET-MedicationDispense-Response-DeepLink XML %}
 		</div>
 		<div data-name="200 - DeepLink" data-type="JSON" data-render="ig-Fragment">
-			{% fragment MedicationDispense/Example-MedicationDispense-DiGA-DeepLink JSON %}
+			{% fragment Bundle/Example-GET-MedicationDispense-Response-DeepLink JSON %}
 		</div>
 		<div data-name="200 - No redeem Code" data-type="JSON" data-render="ig-Fragment">
-			{% fragment MedicationDispense/Example-MedicationDispense-DiGA-NoRedeemCode JSON %}
+			{% fragment Bundle/Example-GET-MedicationDispense-Response-NoRedeemCode JSON %}
+		</div>		
+		<div data-name="200 - No redeem Code" data-type="XML" data-render="ig-Fragment">
+			{% fragment Bundle/Example-GET-MedicationDispense-Response-NoRedeemCode XML %}
 		</div>
 	</div>
 </div>
