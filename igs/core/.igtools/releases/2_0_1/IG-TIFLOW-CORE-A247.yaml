@@ -1,0 +1,28 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 015abf2fe1fb63d93357a169cbb17e59cac0bc86fd6ca729a52154183360fcad
+created: '2026-06-25T11:30:11.265274'
+date: '2026-09-29T10:27:54.993633'
+key: IG-TIFLOW-CORE-A247
+modified: '2026-09-29T10:27:54.993633'
+release_status: STABLE
+source: input/pagecontent/op-accept-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Zugriff auf einen Task mittels HTTP-POST-Operation\
+  \ über /Task/&lt;id&gt;/$accept, wenn der referenzierte /Task/&lt;id&gt; existiert,\
+  \ jedoch kein AccessCode im Task.identifier:AccessCode als https://gematik.de/fhir/erp/NamingSystem/GEM_ERP_NS_AccessCode\
+  \ vorhanden ist oder der Status Task.status = cancelled ist, die Operation mit dem\
+  \ folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>412 - Precondition\
+  \ Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Task has invalid status.</td>\n </tr>\n\
+  \ </table> \n abbrechen, damit die abgebende Institution den Versicherten über die\
+  \ zwischenzeitliche Löschung des Datensatzes in Kenntnis setzen kann."
+title: TI-Flow-Fachdienst - Task akzeptieren - Prüfung Datensatz zwischenzeitlich
+  gelöscht
+version: 0

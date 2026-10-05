@@ -1,0 +1,26 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 7a2e0c99ea0a455f1de5a2b108ca52fe2ebc44efb4009faed85fa3fdde6c5c9d
+created: '2026-09-21T12:32:06.087583'
+date: '2026-09-28T11:06:16.532265'
+key: IG-TIFLOW-ERP-A307
+modified: '2026-09-28T11:06:16.532265'
+release_status: STABLE
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete\
+  \ über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten\
+  \ prüfen, ob für den adressierte Task Task.status = \"ready\" ist und anderfalls\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>412 - Precondition\
+  \ Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Task has invalid status.</td>\n </tr>\n\
+  \ </table> \n abbrechen."
+title: TI-Flow-Fachdienst - Task markieren - Versicherter - nur zur Einlösung verfügbare
+  E-Rezepte 
+version: 0

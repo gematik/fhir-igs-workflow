@@ -1,0 +1,20 @@
+actor:
+- TI-Flow_FdV
+conformance: SHALL
+content_hash: 9395e8fd7f9d21dda15e4b08b7e720d3592f7331fda524e91fade65aeee735ac
+created: '2026-06-25T11:43:04.330133'
+date: '2026-09-22T15:01:12.086738'
+key: IG-TIFLOW-ERP-A27
+modified: '2026-09-22T15:01:12.086738'
+release_status: STABLE
+source: input/pagecontent/query-api-communication-req-fdv.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FdV:
+  - Produkttest
+text: Das TI-Flow-FdV MUSS im Anwendungsfall "E-Rezept einer Apotheke zuweisen" prüfen,
+  ob bei Teilverordnungen von Mehrfachverordnungen (MedicationRequest.extension:Mehrfachverordnung.extension:Kennzeichen
+  = true) der Beginn der Einlösefrist (MedicationRequest.extension:Mehrfachverordnung.extension:Zeitraum.value[x]:valuePeriod.start)
+  erreicht ist und falls nicht, den Anwendungsfall abbrechen.
+title: 'TI-Flow-FdV: E-Rezept zuweisen - Beginn Gültigkeit prüfen'
+version: 0

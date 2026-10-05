@@ -1,4 +1,4 @@
-Alias: $version = 2.0.0
+Alias: $version = 2.0.1
 
 RuleSet: MetaDate(element)
 * {element} = "2026-10-02"

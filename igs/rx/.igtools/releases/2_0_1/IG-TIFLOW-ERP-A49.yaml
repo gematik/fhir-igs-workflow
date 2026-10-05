@@ -1,0 +1,28 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: ad31b775c1b1a35e81369f7b4ba266e16beb1c2d0c511ceb876912ab6d9b5afb
+created: '2026-06-25T11:43:04.337203'
+date: '2026-09-28T10:28:46.841565'
+key: IG-TIFLOW-ERP-A49
+modified: '2026-09-28T10:28:46.841565'
+release_status: STABLE
+source: input/pagecontent/op-abort-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS das Löschen eines E-Rezepts über den mittels der\
+  \ &lt;id&gt; adressierten /Task/&lt;id&gt;/$abort verhindern und die Operation mit\
+  \ dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>412 - Precondition\
+  \ Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n\
+  \ <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>Task has invalid status.</td>\n </tr>\n\
+  \ </table> \n abweisen, wenn der Status des adressierten Tasks gleich \"in-progress\"\
+  \ ist und die Rolle des aufrufenden Nutzers nicht einer der folgenden Rollen entspricht:\n\
+  \ <ul>\n <li>oid_oeffentliche_apotheke</li>\n <li>oid_krankenhausapotheke</li>\n\
+  \ </ul>\n damit Nutzer außerhalb der Apotheke keine Rezepte löschen, die sich aktuell\
+  \ in Belieferung befinden."
+title: TI-Flow-Fachdienst - E-Rezept löschen - Apotheke - Statusprüfung in-progress
+version: 0

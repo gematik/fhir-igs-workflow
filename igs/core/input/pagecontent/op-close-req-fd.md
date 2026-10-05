@@ -114,7 +114,7 @@ Die Rollenprüfung der zugreifenden Institution erfolgt workflowtyp-spezifisch.
 
 <!-- A_26337 -->
 <requirement conformance="SHALL" key="IG-TIFLOW-CORE-A64" title="TI-Flow-Fachdienst - Task schließen - Zeitstempel MedicationDispense" version="0">
-    <meta lockversion="true"/>
+    <meta lockversion="false"/>
     <actor name="TI-Flow_FD" description="TI-Flow-Fachdienst">
         <testProcedure id="Produkttest">funkt. Eignung: Test Produkt/FA</testProcedure>
     </actor>

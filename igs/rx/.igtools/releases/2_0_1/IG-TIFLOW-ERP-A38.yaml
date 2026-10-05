@@ -1,0 +1,24 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 56236ffe3c6bb7e73e7d2e2341296f5c4aca3f2a4def791a9706aea0915182c4
+created: '2026-06-25T11:43:04.334120'
+date: '2026-09-28T10:29:27.505777'
+key: IG-TIFLOW-ERP-A38
+modified: '2026-09-28T10:29:27.505777'
+release_status: STABLE
+source: input/pagecontent/op-dispense-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produktgutachten
+text: "Der TI-Flow-Fachdienst MUSS bei der Bereitstellung von Dispensierinformationen\
+  \ mittels POST /Task/&lt;id&gt;/$dispense auf Task.status = in-progress prüfen\
+  \ und bei Ungleichheit die Operation mit dem folgenden Fehler:\n <table id=\"error-code\"\
+  \ style=\"border: 1px solid black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n\
+  \ <td>412 - Precondition Failed</td>\n </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n\
+  \ </tr>\n <tr>\n <th>Code</th>\n <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n\
+  \ <td>TIFLOW_TASK_STATUS_MISMATCH</td>\n </tr>\n <tr>\n <th>Details Text</th>\n\
+  \ <td>Task has invalid status.</td>\n </tr>\n </table> \n abbrechen."
+title: TI-Flow-Fachdienst - Dispensierinformationen bereitstellen - Prüfung Status
+version: 0

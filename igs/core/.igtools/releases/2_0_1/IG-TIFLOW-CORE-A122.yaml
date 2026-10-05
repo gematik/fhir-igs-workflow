@@ -1,0 +1,27 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 83de8bd03fd4ebb30c9a5ea85d6de12c0343084cb7291afb643288e9c067c3d7
+created: '2026-06-25T11:30:11.222530'
+date: '2026-08-24T14:30:39.236841'
+key: IG-TIFLOW-CORE-A122
+modified: '2026-08-24T14:30:39.236841'
+release_status: STABLE
+source: input/pagecontent/query-api-task-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-PATCH-Operation auf eine konkrete\
+  \ über &lt;id&gt; adressierte /Task/&lt;id&gt; Ressource durch einen Versicherten,\
+  \ den Versicherten anhand des zeta-user-info.identifier des Nutzers (KVNR) identifizieren,\
+  \ diese gegen die im gespeicherten Datensatz in Task.for.identifier hinterlegte\
+  \ KVNR des begünstigten Versicherten prüfen und bei Ungleichheit die Operation mit\
+  \ dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid black;\
+  \ border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>SVC_IDENTITY_MISMATCH</td>\n\
+  \ </tr>\n <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table> \n abbrechen,\
+  \ damit ausschließlich der begünstigte Versicherte als Berechtigter einen Task ändert."
+title: TI-Flow-Fachdienst - Task markieren - Versicherter - Prüfung KVNR
+version: 0

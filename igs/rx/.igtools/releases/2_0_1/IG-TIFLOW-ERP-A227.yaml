@@ -1,0 +1,26 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 3e2a82758bf42b70d9735485014f633dc4d266cf7feffc0ce6a701bb899f91f9
+created: '2026-07-28T07:25:32.019396'
+date: '2026-09-18T09:46:40.883320'
+key: IG-TIFLOW-ERP-A227
+modified: '2026-09-18T09:46:40.883320'
+release_status: STABLE
+source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produktgutachten
+text: "Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts\
+  \ /$get-eu-prescriptions die zeta-user-info.professionOID des Nutzers bestimmen\
+  \ und sicherstellen, dass ausschließlich Nutzer in der Rolle\n <ul>\n <li>oid_ncpeh</li>\n\
+  \ </ul>\n die Operation am Fachdienst aufrufen und bei Abweichungen die Operation\
+  \ mit dem folgenden Fehler:\n <table id=\"error-code\" style=\"border: 1px solid\
+  \ black; border-collapse: collapse;\">\n <tr>\n <th>HTTP-Code</th>\n <td>403 - Forbidden</td>\n\
+  \ </tr>\n <tr>\n <th>Severity</th>\n <td>error</td>\n </tr>\n <tr>\n <th>Code</th>\n\
+  \ <td>invalid</td>\n </tr>\n <tr>\n <th>Details Code</th>\n <td>-</td>\n </tr>\n\
+  \ <tr>\n <th>Details Text</th>\n <td>-</td>\n </tr>\n </table>\n abbrechen, damit\
+  \ E-Rezepte nicht durch Unberechtigte abgerufen werden können."
+title: TI-Flow-Fachdienst - eu-prescription abfragen - Rollenprüfung
+version: 0

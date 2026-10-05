@@ -1,0 +1,28 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: f07a6f29d9226382bc582026fb1f37876c805e6a59e518830ad18ff88efe5b08
+created: '2026-09-14T11:57:17.218977'
+date: '2026-09-14T11:57:17.218979'
+key: IG-TIFLOW-CORE-A491
+modified: '2026-09-14T11:57:17.218978'
+release_status: STABLE
+source: input/pagecontent/fhir-validate.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: "Der TI-Flow-Fachdienst MUSS bei der Validierung einer FHIR-Ressource sicherstellen,\
+  \ dass keine Extension vorhanden ist, die an einer nicht im FHIR-Profil spezifizierten\
+  \ Stelle verwendet wird. Sollte eine solche Extension gefunden werden, gilt der\
+  \ Datensatz als ungültig. In diesem Fall ist die Operation mit dem folgenden Fehler:\n\
+  \      <table id=\"error-code\" style=\"border: 1px solid black; border-collapse:\
+  \ collapse;\">\n        <tr>\n            <th>HTTP-Code</th>\n            <td>400\
+  \ - Bad Request</td>\n        </tr>\n        <tr>\n            <th>Severity</th>\n\
+  \            <td>error</td>\n        </tr>\n        <tr>\n            <th>Code</th>\n\
+  \            <td>invalid</td>\n        </tr>\n        <tr>\n            <th>Details\
+  \ Code</th>\n            <td>SVC_VALIDATION_FAILED</td>\n        </tr>\n       \
+  \ <tr>\n            <th>Details Text</th>\n            <td>FHIR Profile Validation\
+  \ Failed</td>\n        </tr>\n    </table> \n    abzubrechen."
+title: FHIR-Ressource validieren - Ausschluss unspezifizierter Extensions
+version: 0

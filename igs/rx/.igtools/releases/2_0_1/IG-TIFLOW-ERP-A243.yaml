@@ -1,0 +1,22 @@
+actor:
+- TI-Flow_FD
+conformance: SHALL
+content_hash: 3041a69b4e957a37e4adda31f23f33aa5575f8c221da0282f836fe6d87f93c71
+created: '2026-07-24T14:30:45.726036'
+date: '2026-09-24T09:05:00.657334'
+key: IG-TIFLOW-ERP-A243
+modified: '2026-09-24T09:05:00.657334'
+release_status: STABLE
+source: input/pagecontent/op-get-eu-prescriptions-req-fd.md
+status: ACTIVE
+test_procedures:
+  TI-Flow_FD:
+  - Produkttest
+text: Der TI-Flow-Fachdienst MUSS beim Aufruf der HTTP-POST-Operation des Endpunkts
+  /$get-eu-prescriptions durch den NCPeH-FD bei erfolgreichem Abschluss der Operation,
+  wenn Parameters.parameter:requestData.part:prescription-id nicht leer ist, den Push
+  Notification Prozess für den Trigger mit der ChannelId "tiflow.eu.prescription.redeem"
+  und den Versicherten mit der KVNR = Task.for für jeden Task initiieren.
+title: TI-Flow-Fachdienst - eu-prescription abfragen - Abfrage nach Liste Rezept-Ids
+  - Push Notification Versicherter
+version: 0
