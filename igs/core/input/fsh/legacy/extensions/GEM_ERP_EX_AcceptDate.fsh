@@ -1,7 +1,7 @@
 Extension: GEM_ERP_EX_AcceptDate
 Id: GEM-ERP-EX-AcceptDate
 Title: "TI Flow AcceptDate"
-Description: "Diese Extension sollte in der Task-Ressource verwendet werden. Sie speichert das Datum, bis zu welcher eine Verordnung zu Lasten der gesetzlichen Krankenkasse eingelöst werden kann."
+Description: "Frist bis zu welcher ein Rezept zu Lasten der gesetzlichen Krankenkasse eingelöst werden kann."
 Context: Task
 
 * insert Meta

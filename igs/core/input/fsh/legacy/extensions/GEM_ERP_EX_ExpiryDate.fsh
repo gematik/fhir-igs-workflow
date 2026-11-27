@@ -1,7 +1,7 @@
 Extension: GEM_ERP_EX_ExpiryDate
 Id: GEM-ERP-EX-ExpiryDate
 Title: "TI Flow ExpiryDate"
-Description: "Diese Erweiterung sollte in der Task-Ressource verwendet werden. Sie zeigt die Einlösefrist der Verordnung an."
+Description: "Frist bis zu welcher die Verordnung beliefert werden darf." 
 Context: Task
 
 * insert Meta
